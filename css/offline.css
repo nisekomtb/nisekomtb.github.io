@@ -1,0 +1,220 @@
+/**
+ * ------------------------------------------------------------------------
+ * JA Space Template
+ * ------------------------------------------------------------------------
+ * Copyright (C) 2004-2018 J.O.O.M Solutions Co., Ltd. All Rights Reserved.
+ * @license - Copyrighted Commercial Software
+ * Author: J.O.O.M Solutions Co., Ltd
+ * Websites:  http://www.joomlart.com -  http://www.joomlancers.com
+ * This file may not be redistributed in whole or significant part.
+ * ------------------------------------------------------------------------
+*/
+
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: #000;
+  color: #9e9e9e;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  font-family: "Metropolis", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.72;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+}
+
+.offline-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 30px;
+}
+
+.outline {
+  background: #0e0e0e;
+  border-radius: 4px;
+  margin: 0 auto;
+  max-width: 100%;
+  padding: 72px;
+  width: 480px;
+}
+
+.outline h1 {
+  color: #fff;
+  display: block;
+  line-height: 1.0666;
+  font-size: 40px;
+  margin-bottom: 30px;
+  margin-top: 0;
+  font-weight: 300;
+  text-align: center;
+}
+
+.outline p.message {
+  text-align: center;
+  margin: 0 0 30px 0;
+  color: #9e9e9e;
+}
+
+.input > p {
+  margin: 0 0 20px 0;
+}
+
+#form-login fieldset {
+  border: 0;
+  padding: 0;
+}
+
+#form-login-secretkey,
+#form-login-username,
+#form-login-password {
+  margin-bottom: 30px;
+  margin-top: 0;
+}
+
+#form-login-secretkey label,
+#form-login-username label,
+#form-login-password label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#form-login-secretkey input,
+#form-login-username input,
+#form-login-password input {
+  background: rgba(255,255,255,0.05);
+  border: none;
+  height: 54px;
+  width: 100%;
+  color: #fff;
+  font-size: 14px;
+  padding: 15px;
+}
+
+#form-login-secretkey input:focus,
+#form-login-username input:focus,
+#form-login-password input:focus {
+  box-shadow: none;
+  background: rgba(255,255,255,0.1);
+}
+
+#form-login-remember {
+  margin-bottom: 30px;
+}
+
+#submit-buton .button {
+  background: linear-gradient(145deg,#fd7d57,#f55d59);
+  border: 0;
+  border-radius: 50px;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  padding: 16px 48px;
+  font-size: 14px;
+  line-height: 1.6;
+  text-decoration: none;
+  transition: background 800ms;
+  width: 100%;
+}
+
+#submit-buton .button:hover,
+#submit-buton .button:focus,
+#submit-buton .button:active {
+  background: linear-gradient(145deg,#f55d59,#f55d59);
+  color: #fff;
+}
+
+/* Message Error */
+#system-message-container {
+  width: 100%;
+}
+
+#system-message .error,
+#system-message .alert {
+  background: #f2dede;
+  color: #b94a48;
+  margin: auto;
+  padding: 20px;
+  width: 700px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: left;
+  max-width: 100%;
+}
+
+.error.message ul {
+  padding: 0;
+  list-style: none;
+}
+
+.alert {
+  position: relative;
+}
+
+.alert h4 {
+  font-size: 18px;
+  margin: 0 0 5px;
+}
+
+.alert p {
+  margin: 5px 0 0 0;
+}
+
+.close {
+  right: 15px;
+  top: 15px;
+  position: absolute;
+  cursor: pointer;
+  height: 16px;
+  text-align: center;
+  width: 16px;
+  line-height: 16px;
+  font-size: 20px;
+}
+
+
+@media (max-width: 480px){
+  .offline-wrap {
+    padding: 0;
+  }
+
+  .outline {
+    padding: 36px;
+  }
+
+  .offline-container {
+    width: 100%;
+    border: none;
+    padding: 0;
+  }
+
+  .form-offline {
+    width: 100%;
+  }
+
+  .form-group {
+    width: 100%;
+  }
+
+  /* Message Error */
+  #system-message .error,
+  #system-message .alert {
+    width: 100%;
+  }
+}
