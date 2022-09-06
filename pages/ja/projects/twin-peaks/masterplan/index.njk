@@ -1,0 +1,34 @@
+{% set lang = 'ja' %}
+{% set title = 'ツイン・ピーク マスタープラン' %}
+{% set pathSegments = ['projects', 'twin-peaks', 'masterplan'] %}
+
+{% extends "layout.njk" %}
+
+{% block header %}
+		{% import 'macros/masthead.njk' as masthead %}
+		{{ masthead.masthead(img='/images/bg/bg-header-twinpeaks.jpg', title)}}
+{% endblock %}
+
+{% block content %}
+		<hr id="system-readmore">
+		<div id="proposal" style="width:100%;"></div>
+		<script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+		<script type="text/javascript">
+				document.addEventListener("adobe_dc_view_sdk.ready", function () {
+						var adobeDCView = new AdobeDC.View({clientId: "f0f1f4f9e60e4b1aaa94d2564aa3349f", divId: "proposal", backgroundColor: "#000000"});
+						adobeDCView.previewFile({
+								content: {
+										location: {
+												url: "/pdfs/NAMTBA.Twin-Peaks-Masterplan.en.pdf"
+										}
+								},
+								metaData: {
+										fileName: "NAMTBA-Twin-Peaks-Masterplan.pdf"
+								}
+						}, {
+								embedMode: "IN_LINE",
+								showPrintPDF: false
+						});
+				});
+		</script>
+{% endblock %}

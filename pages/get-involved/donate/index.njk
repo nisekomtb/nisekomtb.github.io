@@ -1,0 +1,279 @@
+{% set lang = 'en' %}
+{% set title = 'Donate' %}
+{% set pathSegments = ['get-involved', 'donate'] %}
+
+{% extends "layout.njk" %}
+
+{% block content %}
+		<div class="t3-section-wrap">
+
+				<div class="section">
+
+						<div class="module-title-wrap">
+								<h3 class="module-title ja-animate" data-animation="move-from-bottom" data-delay="200">Why Donate?</h3>
+								<div class="sub-heading ja-animate" data-animation="move-from-bottom" data-delay="400">
+										<span>
+												<strong>Our trails</strong>,
+												<strong>our community</strong>
+												and
+												<strong>our future</strong>
+												depend on donations both big and small:
+										</span>
+								</div>
+						</div>
+						<div class="module-title-wrap" style="max-width:900px;">
+								<div class="features-desc ja-animate" data-animation="move-from-bottom" data-delay="600">
+										<div style="font-size:150%;">
+												<span>
+														<strong style="color:#fff;">Our trails</strong>
+														cannot happen without financial support. Sustainable trail building & trail maintenance are costly. Free to use trails, such as the proposed Twin Peaks trail center, will inherently lack lift & access pass sales that a pay-to-use park could use to fund trail development and maintenance. Your donation can make trails like this open to the public helping our sport to remain accessible for all.</span>
+										</div>
+								</div>
+						</div>
+						<div class="module-title-wrap" style="max-width:900px;">
+								<div class="features-desc ja-animate" data-animation="move-from-bottom" data-delay="800">
+										<div style="font-size:150%;">
+												<span>
+														<strong style="color:#fff;">Our community</strong>
+														stands to greatly benefit from your funding - not just through the trails that funding will bring, but through events as well. NAMTBA hopes to incorporate youth development skills clinics to introduce the next generation to our sport. We plan to hold community barbecues & fundraising events to give back to our community and raise awareness of our mission. None of this will be possible without generous support from folks just like you.
+												</span>
+										</div>
+								</div>
+						</div>
+						<div class="module-title-wrap" style="max-width:900px; margin-bottom:0;">
+								<div class="features-desc ja-animate" data-animation="move-from-bottom" data-delay="1000">
+										<div style="font-size:150%;">
+												<span>
+														<strong style="color:#fff;">Our future</strong>
+														depends on donations. Our organization is currently run by passionate volunteers, all of whom are sacrificing their nights and weekends to pour their energy and expertise into NAMTBA. We have day jobs, we have families & we have all of the other responsibilities life has to throw at us. While all of us are happy to donate our time to a cause we believe in, we look forward to the day we can employ a handful of folks to work full time towards making NAMTBA's vision a reality. Your donation will help make this happen.
+												</span>
+										</div>
+								</div>
+						</div>
+
+				</div>
+
+				<div class="t3-section acm-features style-2">
+						<div class="row equal-height equal-height-child benefits">
+								<div class="col col-sm-12 col-md-3 col-md-3">
+										<div class="features-item ja-animate" data-animation="move-from-bottom" data-delay="item-0" style="min-height: 696px;">
+												<div class="font-icon">
+														<span class="icon ion-logo-yen"></span></div>
+												<h4></h4>
+												<p>
+														<div class="" style="font-size: 24px; padding-bottom:13px;" itemprop="price">
+																<div>
+																		<div>¥1,000</div>
+																</div>
+														</div>
+												</p>
+												<a class="action" href="javascript:ad(1000);">
+														<span>Donate now</span>
+												</a>
+										</div>
+								</div>
+								<div class="col col-sm-12 col-md-3">
+										<div class="features-item ja-animate" data-animation="move-from-bottom" data-delay="item-1" style="min-height: 696px;">
+												<div class="font-icon">
+														<span class="icon ion-logo-yen"></span></div>
+												<h4></h4>
+												<p>
+														<div class="" style="font-size: 24px; padding-bottom:13px;" itemprop="price">
+																<div>
+																		<div>¥5,000</div>
+																</div>
+														</div>
+												</p>
+												<a class="action" href="javascript:ad(5000);">
+														<span>Donate now</span>
+												</a>
+										</div>
+								</div>
+								<div class="col col-sm-12 col-md-3">
+										<div class="features-item ja-animate" data-animation="move-from-bottom" data-delay="item-2" style="min-height: 696px;">
+												<div class="font-icon">
+														<span class="icon ion-logo-yen"></span></div>
+												<h4></h4>
+												<p>
+														<div class="" style="font-size: 24px; padding-bottom:13px;" itemprop="price">
+																<div>
+																		<div>¥10,000</div>
+																</div>
+														</div>
+												</p>
+												<a class="action" href="javascript:ad(10000);">
+														<span>Donate now</span>
+												</a>
+										</div>
+								</div>
+								<div class="col col-sm-12 col-md-3">
+										<div class="features-item ja-animate" data-animation="move-from-bottom" data-delay="item-3" style="min-height: 696px;">
+												<div class="font-icon">
+														<span class="icon ion-logo-yen"></span></div>
+												<h4></h4>
+												<p><input id="custom-donation" type="number" placeholder="Other" min="1000" step="1000"></p>
+												<script type="text/javascript">
+														function ad(selectedPrice) {
+																var product = {
+																		id: 484307482,
+																		quantity: 1,
+																		selectedPrice: selectedPrice,
+																		callback: function (success, product, cart) {
+																				location.hash = '#!/~/cart';
+																		}
+																}
+
+																Ecwid
+																		.Cart
+																		.addProduct(product);
+														}
+
+														function acd() {
+																let selectedPrice = parseInt(document.getElementById("custom-donation").value);
+																if (isNaN(selectedPrice)) 
+																		return;
+																var product = {
+																		id: 484307482,
+																		quantity: 1,
+																		selectedPrice: selectedPrice,
+																		callback: function (success, product, cart) {
+																				location.hash = '#!/~/cart';
+																		}
+																}
+
+																Ecwid
+																		.Cart
+																		.addProduct(product);
+														}
+												</script>
+												<a class="action" href="javascript:acd();">
+														<span>Donate now</span>
+												</a>
+										</div>
+								</div>
+						</div>
+				</div>
+
+				<div class="section">
+
+						<div id="my-store-71386768"></div>
+						<div>
+								<script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?71386768&lang=en-GB&data_platform=code&data_date=2022-02-02" charset="utf-8"></script>
+								<script type='text/javascript'>
+										xProductBrowser("defaultCategoryId=127408307");
+								</script>
+								<script type="text/javascript">
+										window.ec = window.ec || Object();
+										window.ec.config = window.ec.config || Object();
+										window.ec.config.custom_redirect_after_purchase = 'https://www.namtba.com/get-involved/thanks';
+										window.ec.storefront = window.ec.storefront || Object();
+										window.ec.storefront.product_details_show_share_buttons = false;
+										window.ec.storefront.product_details_show_qty = true;
+										window.ec.storefront.product_details_show_in_stock_label = false;
+										window.ec.storefront.show_breadcrumbs = false;
+
+										function scrollTo(selector) {
+												const elem = document.querySelector(selector);
+												const bodyRect = document
+														.body
+														.getBoundingClientRect();
+												const elemRect = elem.getBoundingClientRect();
+												const offset = elemRect.top - bodyRect.top;
+												window.scroll(0, offset);
+												return false;
+										}
+
+										Ecwid
+												.OnPageSwitch
+												.add(function (page) {
+														if (page.type === "CATEGORY") {
+																scrollTo('#Section151');
+																const cart = document.querySelector('.ec-cart--empty');
+																if (cart) 
+																		cart.style["display"] = "none";
+																return false;
+														}
+												});
+
+										Ecwid.refreshConfig();
+								</script>
+								<style>
+										.product-details__sidebar {
+												text-align: center !important;
+												text-align: -moz-center !important;
+												text-align: -webkit-center !important;
+										}
+
+										#ProductBrowser-1 {
+												min-height: auto !important;
+										}
+
+										.form-control {
+												text-align: center !important;
+												text-align: -moz-center !important;
+												text-align: -webkit-center !important;
+										}
+
+										.ec-form__row--continue .form-control--done {
+												text-align: left !important;
+										}
+
+										.form-control button.form-control__button {
+												color: #ffffff !important;
+												background-color: #fd7d57 !important;
+												border-color: transparent !important;
+												background: linear-gradient(135deg,#fd7d57,#f55d59) !important;
+
+												border: 0 !important;
+												border-radius: 30px !important;
+												font-weight: 500 !important;
+												padding-left: 36px !important;
+												padding-right: 36px !important;
+
+												width: auto !important;
+												font-size: 14px !important;
+										}
+
+										.form-control button.form-control__button:hover {
+												background: #fd7d57 !important;
+												background: linear-gradient(155deg, #fd7d57, #fd7d57) !important;
+										}
+
+										img.ecwid-PaymentMethodsBlockSvg {
+												background: #fff !important;
+										}
+
+										.ec-cart__button--apple-pay {
+												text-align: center !important;
+												text-align: -moz-center !important;
+												text-align: -webkit-center !important;
+										}
+
+										.ec-cart__button--apple-pay .form-control--button {
+												border: 1px #fff solid !important;
+												padding-left: 36px !important;
+												padding-right: 36px !important;
+												border-radius: 30px !important;
+												width: 170px !important;
+												margin: 0 auto !important;
+												position: relative !important;
+										}
+								</style>
+						</div>
+
+				</div>
+
+				<div class="t3-section">
+						<div class="module-title-wrap">
+								<div class="sub-heading ja-animate" data-animation="move-from-right" data-delay="600">
+										<span>Need help with your donation? Feel free to get in touch and we'll be happy to help!</span>
+								</div>
+								<div class="t3-section action ja-animate" data-animation="move-from-right" data-delay="800">
+										<a class="btn btn-primary" href="mailto:info@namtba.com">Get in touch</a>
+								</div>
+						</div>
+				</div>
+
+		</div>
+
+{% endblock %}

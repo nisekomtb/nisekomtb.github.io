@@ -1,0 +1,245 @@
+{% set lang = 'ja' %}
+{% set title = 'ツインピークスパーク' %}
+{% set pathSegments = ['projects', 'twin-peaks'] %}
+
+{% extends "layout.njk" %}
+
+{% block header %}
+		{% import 'macros/masthead.njk' as masthead %}
+		{{masthead.masthead(img='/images/bg/bg-header-twinpeaks.jpg', title)}}
+{% endblock %}
+
+{% block content %}
+		<style>
+				.prizes .num {
+						color: #0e0e0e;
+						font-size: 200%;
+						position: absolute;
+						margin-left: -47px;
+						font-weight: bold;
+						margin-top: 7px;
+				}
+
+				.prizes .features-item:hover .num {
+						color: #fd7d57;
+				}
+
+				.gold {
+						color: #ffd97b;
+						font-size: 12px !important;
+						font-family: "Metropolis", Helvetica, Arial, sans-serif;
+						font-weight: 700;
+						text-transform: uppercase;
+						letter-spacing: 0;
+						margin-top: 30px;
+				}
+
+				.features-item .sponsors {
+						margin: 30px auto;
+				}
+
+				.features-item .sponsors a {
+						margin-right: 10px;
+						width: 50px;
+						display: inline;
+				}
+
+				.features-item .sponsors img {
+						width: 50px;
+						display: inline;
+						border-radius: 50%;
+				}
+
+				.features-item .small > div {
+						position: relative;
+				}
+
+				.features-item .small {
+						font-style: italic;
+						font-size: 75%;
+						margin-top: 30px;
+				}
+
+				table.funding {
+						margin-left: auto;
+						margin-right: auto;
+				}
+
+				table.funding th,
+				table.levels td {
+						border: 4px solid #000;
+						vertical-align: middle;
+				}
+
+				table.funding th {
+						color: #ffd97b;
+						font-size: 12px;
+						font-family: "Metropolis", Helvetica, Arial, sans-serif;
+						font-weight: 700;
+						text-transform: uppercase;
+						letter-spacing: 0;
+						padding: 12px 10px 12px 0;
+				}
+
+				table.funding th.fst {
+						text-align: right;
+						display: none;
+				}
+
+				table.funding th.row {
+						text-align: center;
+				}
+
+				table.funding td {
+						background-color: #0e0e0e;
+						text-align: center;
+						padding: 10px 15px;
+						font-weight: 700;
+				}
+
+				@media (min-width: 600px) {
+						table.funding td {
+								padding: 10px 15px;
+						}
+				}
+
+				@media (min-width: 768px) {
+						table.funding td {
+								padding: 10px 30px;
+						}
+				}
+
+				@media (min-width: 992px) {
+						table.funding td {
+								padding: 10px 50px;
+						}
+				}
+		</style>
+
+		<div class="t3-section-wrap">
+
+				<div class="section">
+
+						<div class="module-title-wrap" style="max-width:900px;">
+								<div class="features-desc ja-animate" data-animation="move-from-bottom" data-delay="200">
+										<div style="font-size:150%;">
+												<span>ニセコエリアマウンテンバイク協会（NAMTBA）の手がける、ツインピークスバイクパークを皆様に紹介いたします。このバイクパークは、ニセコエリアに20km以上になる世界クラスのマウンテンバイクコースを思う存分楽しめ、また使用料無料の公共のバイクパークです。このバイクパークは日本でもまだ少なく北海道では初めての公共バイクパークとなります。このような公共の場が存在することで、ニセコエリアでのマウンテンバイクは、老若男女、利用料、そして能力を問わず、アクセスの便利なコミュニティの生まれる親しみやすい場になるでしょう。</span>
+										</div>
+								</div>
+						</div>
+
+				</div>
+
+				<div class="section">
+
+						<div class="module-title-wrap">
+								<h3 class="module-title ja-animate" data-animation="move-from-bottom" data-delay="600">特徴・ロケーション</h3>
+						</div>
+
+						<div class="module-title-wrap ja-animate" style="max-width:900px; overflow:hidden;" data-animation="move-from-bottom" data-delay="800">
+								<div style="margin-top:-67px; height:547px;">
+										<iframe src="https://www.google.com/maps/d/embed?mid=1SiKhCuZFnFuYMHv3Op-AAtaXK71_D4pp&hl=ja&ehbc=2E312F" height="547" frameborder="0" allow="fullscreen" style="width:100%; border:0; height:547px !important;"></iframe>
+								</div>
+								<em>バイクパークの概略図(イメージ図)</em>
+						</div>
+
+						<div class="module-title-wrap" style="max-width:900px;">
+								<div class="features-desc ja-animate" data-animation="move-from-bottom" data-delay="800">
+										<p style="font-size:150%;">ツインピークスパークは、ヒラフ村泉郷地区の地図上真上に位置する双子山にあり、21kmのシングルトラックマウンテンバイクのトレイルが整備される予定です。</p>
+										<p style="font-size:150%;">NAMTBAは、世界的に有名なトレイルビルダー社
+												<a href="https://www.allegra-tourismus.com/en/home" target="_blank">「Allegra Tourismus社」</a>
+												と共同で、このバイクパークの設計と建設に嬉しくも取り組んでいます。初級、中級、上級者向けのコースと、バイクパークの麓には2kmのスキルセンターループの整備が予定されています。また、幼いライダーのために、キックバイクのループも用意され、キッズライダーは練習に励み、マウンテンバイク普及も容易になります。</p>
+										<p style="font-size:150%;">詳しくは、<a href="/ja/projects/twin-peaks/masterplan">こちらの</a>全体計画をご覧ください。</p>
+								</div>
+						</div>
+
+				</div>
+
+				<div class="section">
+						{% import 'macros/carousel.njk' as carousel %}
+						{{carousel.carousel('トレイルにつてお知らせ', 'トレイル造成工事は8月16日に正式に開始しました。', ['/images/twinpeaks/twinpeaks-01.jpg', '/images/twinpeaks/twinpeaks-02.jpg', '/images/twinpeaks/twinpeaks-03.jpg', '/images/twinpeaks/twinpeaks-04.jpg', '/images/twinpeaks/twinpeaks-05.jpg', '/images/twinpeaks/twinpeaks-06.jpg', '/images/twinpeaks/twinpeaks-07.jpg', '/images/twinpeaks/twinpeaks-08.jpg'])}}
+
+				</div>
+
+				<div class="section">
+
+						<div class="module-title-wrap">
+								<h3 class="module-title ja-animate" data-animation="move-from-bottom" data-delay="200">私たちが必要とする資金
+								</h3>
+						</div>
+
+						<div class="module-title-wrap" style="max-width:900px;">
+								<div class="features-desc ja-animate" data-animation="move-from-bottom" data-delay="400">
+										<p style="font-size:150%;">NAMTBAは、このクラウドファンディングキャンペーンと、国内外の企業からの寄付や協賛を通じて、バイクパークの建設資金を募っております。すでに地元企業から1,000万円の資金を賜り、2022年秋のオープンに向けて、8kmのトレイル建設が始まっています。</p>
+										<p style="font-size:150%;">第一段階の総費用は1,800万円で、2022年のトレイル建設完了までにさらに800万円が必要です。
+										</p>
+								</div>
+						</div>
+
+						{#
+				</div>
+				<div class="section">
+				<div class="module-title-wrap">
+						<h3 class="module-title ja-animate" data-animation="move-from-bottom" data-delay="200">支援の方法</h3>
+				</div>
+
+				<div class="module-title-wrap container" style="max-width:900px;">
+						<div class="features-desc ja-animate" data-animation="move-from-bottom" data-delay="400">
+								<div style="font-size:150%;">
+										<span>皆様のご協力により、ツインピークスバイクパークは、地域社会にとって真に付加価値の高い資源となり、ニセコを夏の観光地として確固たるものにする世界的なバイクパークになるでしょう。NAMTBAは、この価値あるプロジェクトの建設にご貢献していただけたらと思い皆様に抽選会と出資へのご参加をご提案させていただきます。
+										</span>
+								</div>
+						</div>
+						<div class="action ja-animate" style="margin-top: 72px;" data-animation="move-from-bottom" data-delay="800">
+								<a class="btn btn-primary" href="/ja/get-involved/crowdfund">Participate in the raffle and fundraiser</a>
+						</div>
+				</div> #}
+				</div>
+
+				<div class="section">
+
+						<div class="module-title-wrap">
+								<h3 class="module-title ja-animate" data-animation="move-from-bottom" data-delay="200">ツインピークスバイクパーク、資金調達の詳細</h3>
+						</div>
+
+						<div class="module-title-wrap" style="max-width:900px;">
+								<div class="features-desc ja-animate" data-animation="move-from-bottom" data-delay="400">
+										<p style="font-size:150%;">ツインピークスバイクパーク、資金調達の詳細： バイクパーク21kmのトレイルにかかる総工費は5400万円に達する見込みです。これには、スキルセンターとバイクパーク入り口に整備予定の子供用キックバイクゾーンが含まれます。
+										</p>
+										<p style="font-size:150%;">NAMTBAは、このバイクパークの資金調達先として国内外を対象としており。完成時には、以下のような資金調達先から資金提供を賜っている見込みです:</p>
+										<p>
+												<table class="funding">
+														<tr>
+																<td>地方及び国の政府機関</td>
+														</tr>
+														<tr>
+																<td>地元企業</td>
+														</tr>
+														<tr>
+																<td>クラウドファンディング</td>
+														</tr>
+														<tr>
+																<td>地域のクラブ・会員</td>
+														</tr>
+												</table>
+										</p>
+								</div>
+						</div>
+
+				</div>
+
+				<div class="section">
+
+						<div class="module-title-wrap">
+								<h3 class="module-title ja-animate" data-animation="move-from-bottom" data-delay="200">資金調達先</h3>
+						</div>
+
+						<div class="module-title-wrap" style="max-width:900px;">
+								<div class="features-desc ja-animate" data-animation="move-from-bottom" data-delay="400">
+										<p style="font-size:150%;">NAMTBAは、上記に限らず、あらゆる資金調達手段の可能性を追求しています。また、地元企業やマウンテンバイク業界関係者からの支援にも感謝しています。 NAMTBAは、2022年にNPO法人として設立したため政府からの資金提供を受ける事ができませんでしたが、2023年に向け必要な手続きを進めております。現在、第1期の資金は寄付や協賛企業様にご支援いただいており、ツインピークスバイクパークの今後の段階やさらなるプロジェクトの資金もまた寄付、協賛企業様、政府補助金などのご支援賜りますよう想定しております。
+										</p>
+								</div>
+						</div>
+				</div>
+
+		{% endblock %}

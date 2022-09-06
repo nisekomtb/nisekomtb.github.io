@@ -1,0 +1,29 @@
+{% set lang = 'en' %}
+{% set title = 'Our Proposal' %}
+{% set pathSegments = ['proposal'] %}
+
+{% extends "layout.njk" %}
+
+{% block content %}
+		<hr id="system-readmore">
+		<div id="proposal" style="width:100%;"></div>
+		<script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+		<script type="text/javascript">
+				document.addEventListener("adobe_dc_view_sdk.ready", function () {
+						var adobeDCView = new AdobeDC.View({clientId: "f0f1f4f9e60e4b1aaa94d2564aa3349f", divId: "proposal", backgroundColor: "#000000"});
+						adobeDCView.previewFile({
+								content: {
+										location: {
+												url: "/pdfs/NAMTBA.Proposal.en.pdf"
+										}
+								},
+								metaData: {
+										fileName: "NAMTBA-proposal.v1.1.0.pdf"
+								}
+						}, {
+								embedMode: "IN_LINE",
+								showPrintPDF: false
+						});
+				});
+		</script>
+{% endblock %}
