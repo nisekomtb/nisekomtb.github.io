@@ -697,6 +697,12 @@
 						position: relative;
 				}
 
+				.features-item .action {
+						font-size: 125%;
+						border: 1px #ffffff solid;
+						display: inline-block !important;
+				}
+
 				.features-item .small {
 						font-style: italic;
 						font-size: 75%;
@@ -707,20 +713,41 @@
 						display: block !important;
 				}
 
+				html#ecwid_html body#ecwid_body .ec-size .ec-store .details-gallery__images-spacer {
+						margin-top: 35px;
+				}
+
 				.product-details__sidebar {
-						text-align: center !important;
+						/*text-align: center !important;
 						text-align: -moz-center !important;
-						text-align: -webkit-center !important;
+						text-align: -webkit-center !important;*/
 				}
 
 				#ProductBrowser-1 {
 						min-height: auto !important;
 				}
 
+				html#ecwid_html body#ecwid_body .ec-size .ec-store .label--notice .label__text {
+						/*color: #000;*/
+				}
+
+				html#ecwid_html body#ecwid_body .ec-size .ec-store .label--notice {
+						/*background-color: #ffd97b;*/
+						background-color: #fd7d57;
+				}
+
+				html#ecwid_html body#ecwid_body .ec-size .ec-store .label--notice::before {
+						color: #fd7d57;
+				}
+
+				html#ecwid_html body#ecwid_body .ec-size .ec-store .label--notice::after {
+						color: #fd7d57;
+				}
+
 				.form-control {
-						text-align: center !important;
+						/*text-align: center !important;
 						text-align: -moz-center !important;
-						text-align: -webkit-center !important;
+						text-align: -webkit-center !important;*/
 				}
 
 				.ec-form__row--continue .form-control--done {
@@ -773,12 +800,23 @@
 				}
 
 				a.breadcrumbs__link--last:after {
-						content: 'Back to fundraiser store';
-						font-size: initial;
+						content: '✕';
+						font-size: 20px;
+						font-weight: bold;
+						float: right;
+						/*margin-top: -15px;*/
+				}
+
+				html#ecwid_html body#ecwid_body #raffle-store .ec-size .ec-store .details-gallery__images-spacer {
+						margin-top: 0;
 				}
 
 				#raffle-store a.breadcrumbs__link--last {
 						display: none;
+				}
+
+				html#ecwid_html body#ecwid_body #raffle-store .ec-size .ec-store .ec-cart--empty .ec-cart__button {
+						/*display: none;*/
 				}
 		</style>
 
@@ -790,6 +828,23 @@
 						if (window.location.hash != '' && window.location.hash != '#' && window.location.hash != '#purchases' && window.location.hash != '#raffle' && window.location.hash != '#story') {
 								window.location.hash = hash;
 						}
+				}
+
+				function scrollTo(selector) {
+						const elem = document.querySelector(selector);
+						const bodyRect = document
+								.body
+								.getBoundingClientRect();
+						const elemRect = elem.getBoundingClientRect();
+						const offset = elemRect.top - bodyRect.top;
+
+						(function ($) {
+								$('html, body').animate({
+										scrollTop: offset
+								}, 500);
+						})(jQuery);
+
+						return false;
 				}
 
 				function loadStore(store, args) {
@@ -899,9 +954,21 @@
 				<div class="t3-section-wrap tab-content" id="raffle">
 
 						<div class="section acm-features style-2 prizes">
-								<div class="module-title-wrap" style="margin-top:30px; margin-bottom:30px;">
-										<p style="font-size:150%;" class="ja-animate" data-animation="move-from-bottom" data-delay="400">
-												Every ticket pays for 2½ meters of trail and a chance to win one of the below prizes:</p>
+								<div style="max-width:750px; margin: 0 auto;">
+										<div class="col col-sm-12 col-md-8">
+												<div class="module-title-wrap" style="margin-top:40px; margin-bottom:30px;">
+														<p style="font-size:150%;" class="ja-animate" data-animation="move-from-left" data-delay="400">
+																Every ticket pays for 2½ meters of trail and a chance to win one of the below prizes:</p>
+												</div>
+										</div>
+										<div class="col col-sm-12 col-md-4">
+												<div class="module-title-wrap" style="margin-top:50px; margin-bottom:30px;">
+
+														<div class="action ja-animate" data-animation="move-from-right" data-delay="600">
+																<a href="#raffle-store" class="btn btn-primary to-raffle">Enter here</a>
+														</div>
+												</div>
+										</div>
 								</div>
 
 								<div class="row" data-animation="move-from-bottom" data-delay="1800">
@@ -925,7 +992,10 @@
 																		<p class="gold">RockShox Deluxe Select+ 230mm Shock</p>
 																		<p class="gold">Shimano Deore M6100 Drivetrain</p>
 																		<p class="gold">Bosch Performance CX Motor</p>
-																		<p class="gold">Bosch PowerTube 500Wh Battery</p>
+																		<p class="gold">Bosch PowerTube 625 Battery</p>
+																		<a class="btn action to-raffle" href="#raffle-store">
+																				<span>Enter here</span>
+																		</a>
 																		<p class="small">Exact model, specs and colour may differ. Available for pickup in Niseko, postage in Japan, or storage until your next visit. We will try to supply the most appropriate size possible to the lucky winner.</p>
 																</div>
 																<div class="col col-sm-12 col-md-8">
@@ -1013,6 +1083,9 @@
 														<p class="gold">3 night stay in Suiboku 2 bedroom apartment by Niseko Wow</p>
 														<p class="gold">3 day 4WD van rental from Holiday Niseko</p>
 														<p class="gold">Dinner for two at Temporada</p>
+														<a class="btn action to-raffle" href="#raffle-store">
+																<span>Enter here</span>
+														</a>
 														<div class="sponsors">
 																<a href="https://hokkaidobackcountryclub.com" target="_blank">
 																		<img src="/images/company/higuma/hbc.png" alt="Hokkaido Backcountry Club">
@@ -1021,7 +1094,7 @@
 																		<img src="/images/company/higuma/holiday-niseko.2.png" alt="Holiday Niseko">
 																</a>
 																<a href="https://niseko-wow.com" target="_blank">
-																		<img src="/images/company/shika/niseko-wow.png" alt="">
+																		<img src="/images/company/shika/niseko-wow.png" alt="Niseko Wow">
 																</a>
 																<a href="https://www.temporada-niseko.com" target="_blank">
 																		<img src="/images/company/temporada.png" alt="Temporada">
@@ -1055,6 +1128,9 @@
 														<p class="gold">3 days e-mountainbike rental for two from NOASC</p>
 														<p class="gold">Half day guided e-mountainbike tour for two from NOASC</p>
 														<p class="gold">1 day rafting/Ducky trip for two by NOASC</p>
+														<a class="btn action to-raffle" href="#raffle-store">
+																<span>Enter here</span>
+														</a>
 														<div class="sponsors">
 																<a href="https://holidayniseko.com" target="_blank">
 																		<img src="/images/company/higuma/holiday-niseko.2.png" alt="Holiday Niseko"/>
@@ -1088,12 +1164,15 @@
 														<p style="font-size:125%;">A value of
 																<strong>¥193,000</strong>
 														</p>
+														<a class="btn action to-raffle" href="#raffle-store">
+																<span>Enter here</span>
+														</a>
 														<div class="sponsors">
 																<a href="https://hokkaidobackcountryclub.com" target="_blank">
 																		<img src="/images/company/higuma/hbc.png" alt="Hokkaido Backcountry Club"/>
 																</a>
 														</div>
-														<p class="small" style="margin-top:30px;">Valid from January to March 2023 or 2024, subject to availability.</p>
+														<p class="small" style="margin-top:30px;">Valid from January to March 2023 or 2024.</p>
 												</div>
 										</div>
 
@@ -1112,12 +1191,15 @@
 														<p style="font-size:125%;">A value of
 																<strong>¥160,000</strong>
 														</p>
+														<a class="btn action to-raffle" href="#raffle-store">
+																<span>Enter here</span>
+														</a>
 														<div class="sponsors">
 																<a href="https://hokkaidobackcountryclub.com" target="_blank">
 																		<img src="/images/company/higuma/hbc.png" alt="Hokkaido Backcountry Club"/>
 																</a>
 														</div>
-														<p class="small" style="margin-top:30px;">Valid from January to March 2023 or 2024, subject to availability.</p>
+														<p class="small" style="margin-top:30px;">Valid from January to March 2023 or 2024.</p>
 												</div>
 										</div>
 
@@ -1136,6 +1218,9 @@
 														<p style="font-size:125%;">A value of
 																<strong>¥92,400</strong>
 														</p>
+														<a class="btn action to-raffle" href="#raffle-store">
+																<span>Enter here</span>
+														</a>
 														<div class="sponsors">
 																<a href="https://www.burton.com/" target="_blank">
 																		<img src="/images/company/tanuki/burton.png" alt="Burton"/>
@@ -1213,22 +1298,37 @@
 
 				var hash = 'raffle';
 
-				window.onhashchange = locationHashChanged;
+				//window.onhashchange = locationHashChanged;
 
 				xProductBrowser("defaultProductId=485712291", "categoriesPerRow=3", "views=grid(20,3) list(60) table(60)", "categoryView=grid", "searchView=list", "id=raffle-store");
 				window.ecwid_script_defer = true;
 				window.ecwid_dynamic_widgets = true;
 
-				/*$(document).ready(function () {
-								if (window.location.hash == '#purchases') {
+				Ecwid
+						.OnPageSwitch
+						.add(function (page) {
+								if (page.type === "CATEGORY" && page.categoryId === 0) {
+										window.location.hash = '#!/Raffle-Ticket/p/485712291';
+										return false;
+								}
+						});
+
+				$(document).ready(function () {
+
+						$('a[href^="#raffle-store"]').click(function (event) {
+								scrollTo('#raffle-store');
+								event.preventDefault();
+						});
+
+						/*if (window.location.hash == '#purchases') {
 										openTab('purchases');
 								} else if (window.location.hash == '#story') {
 										openTab('story');
 								} else {
 										//loadStore('raffle-store', ['defaultProductId=485712291']);
 										//xProductBrowser("defaultProductId=485712291", "categoriesPerRow=3", "views=grid(20,3) list(60) table(60)", "categoryView=grid", "searchView=list", "id=purchases-store");
-								}
-						});*/
+								}*/
+				});
 		</script>
 
                   <!-- Item tags -->
