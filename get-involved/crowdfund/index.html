@@ -822,13 +822,7 @@
 
 		<script id="ecwid-script" data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?71386768&lang=en-GB&data_platform=code&data_date=2022-08-27" charset="utf-8"></script>
 		<script type="text/javascript">
-				var hash = 'raffle';
-
-				function locationHashChanged() {
-						if (window.location.hash != '' && window.location.hash != '#' && window.location.hash != '#purchases' && window.location.hash != '#raffle' && window.location.hash != '#story') {
-								window.location.hash = hash;
-						}
-				}
+				var currentTab = 'raffle';
 
 				function scrollTo(selector) {
 						const elem = document.querySelector(selector);
@@ -861,9 +855,14 @@
 						ecwid_onBodyDone();
 				}
 
-				function openTab(tab) {
-						hash = tab;
-						window.location.hash = tab;
+				function openTab(tab, pushState = true) {
+						currentTab = tab;
+
+						if (pushState) {
+								history.pushState({
+										tab: tab
+								}, "", `?t=${tab}`)
+						}
 
 						var i;
 
@@ -957,8 +956,9 @@
 								<div style="max-width:750px; margin: 0 auto;">
 										<div class="col col-sm-12 col-md-8">
 												<div class="module-title-wrap" style="margin-top:40px; margin-bottom:30px;">
-														<p style="font-size:150%;" class="ja-animate" data-animation="move-from-left" data-delay="400">
-																Every ticket pays for 2½ meters of trail and a chance to win one of the below prizes:</p>
+														<p style="font-size:100%;" class="ja-animate" data-animation="move-from-left" data-delay="400">
+																Every ticket pays for 2½ meters of trail and a chance to win the below prizes. Everyone is a winner since we all get kilometres of world class trails to ride for
+																<strong>FREE</strong>!</p>
 												</div>
 										</div>
 										<div class="col col-sm-12 col-md-4">
@@ -1254,7 +1254,7 @@
 						<div class="section">
 
 								<div class="module-title-wrap" style="margin-top:30px; margin-bottom:30px;">
-										<p style="margin-bottom:0; font-size:150%;" class="ja-animate" data-animation="move-from-bottom" data-delay="800">Your purchases build trails!</p>
+										<p style="margin-bottom:0; font-size:100%;" class="ja-animate" data-animation="move-from-bottom" data-delay="800">Your purchases build trails!</p>
 								</div>
 
 								<div>
@@ -1296,18 +1296,23 @@
 				window.ec.storefront.product_details_position_breadcrumbs = 25;
 				window.ec.storefront.breadcrumbs_separator = "";
 
-				var hash = 'raffle';
+				let params = new URLSearchParams(document.location.search);
+				currentTab = (params.get("t") === null)
+						? currentTab
+						: params.get("t");
+				if (currentTab === "purchases") {
+						xProductBrowser("defaultCategoryId=137728300", "categoriesPerRow=3", "views=grid(20,3) list(60) table(60)", "categoryView=grid", "searchView=list", "id=purchases-store");
+				} else {
+						xProductBrowser("defaultProductId=485712291", "categoriesPerRow=3", "views=grid(20,3) list(60) table(60)", "categoryView=grid", "searchView=list", "id=raffle-store");
+				}
 
-				//window.onhashchange = locationHashChanged;
-
-				xProductBrowser("defaultProductId=485712291", "categoriesPerRow=3", "views=grid(20,3) list(60) table(60)", "categoryView=grid", "searchView=list", "id=raffle-store");
 				window.ecwid_script_defer = true;
 				window.ecwid_dynamic_widgets = true;
 
 				Ecwid
 						.OnPageSwitch
 						.add(function (page) {
-								if (page.type === "CATEGORY" && page.categoryId === 0) {
+								if (currentTab === "raffle" && page.type === "CATEGORY") {
 										window.location.hash = '#!/Raffle-Ticket/p/485712291';
 										return false;
 								}
@@ -1320,14 +1325,9 @@
 								event.preventDefault();
 						});
 
-						/*if (window.location.hash == '#purchases') {
-										openTab('purchases');
-								} else if (window.location.hash == '#story') {
-										openTab('story');
-								} else {
-										//loadStore('raffle-store', ['defaultProductId=485712291']);
-										//xProductBrowser("defaultProductId=485712291", "categoriesPerRow=3", "views=grid(20,3) list(60) table(60)", "categoryView=grid", "searchView=list", "id=purchases-store");
-								}*/
+						if (currentTab !== "raffle") {
+								openTab(currentTab, false);
+						}
 				});
 		</script>
 

@@ -369,18 +369,17 @@
 
       
 		<!-- MASTHEAD -->
-		<div class="wrap t3-masthead ">
+		<div class="wrap t3-masthead t3-section-wrap">
 				<div class="ja-masthead" style="background-image: url('/images/bg/bg-header-twinpeaks.jpg')">
 						<div class="ja-masthead-detail">
 								<h3 class="ja-masthead-title">ツインピークス クラウドファンディング</h3>
-								<div class="ja-masthead-description">Twin Peaks; Niseko's first world class, free-to-use, community bike park.</div>
-								<!--p class="lead" data-animation="move-from-bottom" data-delay="800"-->
-								<div class="fund-progress" data-animation="move-from-bottom" data-delay="400">
+								<div class="ja-masthead-description">ツインピークスパーク：ニセコ初、世界基準の無料で利用できるコミュニティーバイクパーク。</div>
+								<div class="fund-progress">
 										<div class="outer">
-												<div class="inner" data-animation="move-from-left" data-delay="700"></div>
+												<div class="inner ja-animate" data-animation="move-from-left" data-delay="200"></div>
 										</div>
 								</div>
-								<div class="fund-progress" data-animation="move-from-bottom" data-delay="400">
+								<div class="fund-progress">
 										<div class="labels">
 												<div class="left">
 														<small>0km</small>
@@ -393,8 +392,7 @@
 												</div>
 										</div>
 								</div>
-								<small>Trail kilometers funded.</small>
-								<!--/p-->
+								<small>回収資金でどれだけのトレイルを造成できるか(kmで表示)</small>
 						</div>
 				</div>
 		</div>
@@ -429,6 +427,12 @@
 						padding-bottom: 50px !important;
 				}
 
+				@media (max-width: 767px) {
+						.t3-mainbody {
+								padding-top: 0 !important;
+						}
+				}
+
 				.fund-progress {
 						display: flex;
 						justify-content: center;
@@ -438,7 +442,7 @@
 
 				.fund-progress .outer {
 						margin-top: 20px;
-						width: 30%;
+						width: 60%;
 						height: 1rem;
 						border-radius: 1rem;
 						position: relative;
@@ -465,7 +469,7 @@
 				}
 
 				.fund-progress .labels {
-						width: 30%;
+						width: 60%;
 						margin-top: 10px;
 						position: relative;
 				}
@@ -480,8 +484,136 @@
 						right: 0;
 				}
 
+				@media (min-width: 480px) {
+						.fund-progress .outer {
+								width: 50%;
+						}
+
+						.fund-progress .labels {
+								width: 50%;
+						}
+				}
+
+				@media (min-width: 768px) {
+						.fund-progress .outer {
+								width: 30%;
+						}
+
+						.fund-progress .labels {
+								width: 30%;
+						}
+				}
+
 				h3.module-title {
 						font-size: 150%;
+				}
+
+				.tabs {
+						border: 1px #8e8e8e solid;
+						border-radius: 15px;
+						margin-top: inherit !important;
+						margin-bottom: inherit !important;
+						max-width: 900px;
+				}
+
+				.tabs .col {
+						padding: 10px !important;
+				}
+
+				.tabs .tab {
+						padding: 10px;
+						border-radius: 10px;
+						text-align: center;
+						background-color: #0e0e0e;
+				}
+
+				.tabs {
+						cursor: pointer;
+				}
+
+				.tabs .tab h3 {
+						margin: 0;
+						font-weight: bold;
+						font-size: 120%;
+						color: #eeeeee;
+				}
+
+				.tabs .tab:hover h3 {
+						/* color: #fd7d57; */
+				}
+
+				.tabs .active {
+						background-color: #1e1e1e !important;
+				}
+
+				.tabs .active h3 {
+						color: #ffffff;
+				}
+
+				.tabs .tab:hover {
+						background-color: #2e2e2e !important;
+				}
+
+				.tab-content {
+						animation: fadeEffect 1s;
+						/* Fading effect takes 1 second */
+				}
+
+				.carousel .hero {
+						border: 1px #ccc solid;
+						border radius: 5px;
+				}
+
+				.carousel .thumbs {
+						display: flex;
+						flex-flow: row wrap;
+						margin-left: -5px;
+						margin-right: -5px;
+						margin-top: 5px;
+				}
+
+				.carousel .thumbwrap {
+						width: 20%;
+				}
+
+				@media (max-width: 1199px) {
+						.carousel .thumbwrap {
+								width: 33.333333333%;
+						}
+				}
+
+				@media (max-width: 992px) {
+						.carousel .thumbwrap {
+								width: 25%;
+						}
+				}
+
+				@media (max-width: 480px) {
+						.carousel .thumbwrap {
+								width: 33.333333333%;
+						}
+				}
+
+				.carousel .thumb {
+						margin: 5px;
+						cursor: pointer;
+						border: 1px #ccc solid;
+						border radius: 5px;
+				}
+
+				.carousel .thumb:hover {
+						opacity: 0.8;
+				}
+
+				/* Go from zero to full opacity */
+				@keyframes fadeEffect {
+						from {
+								opacity: 0;
+						}
+
+						to {
+								opacity: 1;
+						}
 				}
 
 				.prizes .num {
@@ -514,23 +646,61 @@
 
 				.features-item .sponsors {
 						margin: 30px auto;
+						display: flex;
+						flex-flow: row wrap;
+						justify-content: center;
 				}
 
 				.features-item .sponsors a {
-						margin-right: 10px;
-						width: 50px;
-						display: inline;
+						margin: 0 5px;
 				}
 
 				.features-item .sponsors img {
-						width: 50px;
-						display: inline;
-						border-radius: 50%;
 						margin-bottom: 10px;
+						height: 50px;
+				}
+
+				.features-item .products {
+						margin: 30px auto;
+						display: flex;
+						flex-flow: row wrap;
+						justify-content: center;
+				}
+
+				.features-item .products .prodwrap {
+						width: 50%;
+				}
+
+				@media (max-width: 480px) {
+						.features-item .products .prodwrap {
+								width: 100%;
+						}
+				}
+
+				.features-item .products .prodwrap.full {
+						width: 100%;
+				}
+
+				@media (max-width: 991px) {
+						.features-item .products .prodwrap.full {
+								width: auto;
+						}
+				}
+
+				.features-item .products .prod {
+						margin: 0 5px 10px;
+						border: 1px #ccc solid;
+						border radius: 5px;
 				}
 
 				.features-item .small > div {
 						position: relative;
+				}
+
+				.features-item .action {
+						font-size: 125%;
+						border: 1px #ffffff solid;
+						display: inline-block !important;
 				}
 
 				.features-item .small {
@@ -543,20 +713,41 @@
 						display: block !important;
 				}
 
+				html#ecwid_html body#ecwid_body .ec-size .ec-store .details-gallery__images-spacer {
+						margin-top: 35px;
+				}
+
 				.product-details__sidebar {
-						text-align: center !important;
+						/*text-align: center !important;
 						text-align: -moz-center !important;
-						text-align: -webkit-center !important;
+						text-align: -webkit-center !important;*/
 				}
 
 				#ProductBrowser-1 {
 						min-height: auto !important;
 				}
 
+				html#ecwid_html body#ecwid_body .ec-size .ec-store .label--notice .label__text {
+						/*color: #000;*/
+				}
+
+				html#ecwid_html body#ecwid_body .ec-size .ec-store .label--notice {
+						/*background-color: #ffd97b;*/
+						background-color: #fd7d57;
+				}
+
+				html#ecwid_html body#ecwid_body .ec-size .ec-store .label--notice::before {
+						color: #fd7d57;
+				}
+
+				html#ecwid_html body#ecwid_body .ec-size .ec-store .label--notice::after {
+						color: #fd7d57;
+				}
+
 				.form-control {
-						text-align: center !important;
+						/*text-align: center !important;
 						text-align: -moz-center !important;
-						text-align: -webkit-center !important;
+						text-align: -webkit-center !important;*/
 				}
 
 				.ec-form__row--continue .form-control--done {
@@ -609,379 +800,530 @@
 				}
 
 				a.breadcrumbs__link--last:after {
-						content: 'Back to fundraiser store';
-						font-size: initial;
+						content: '✕';
+						font-size: 20px;
+						font-weight: bold;
+						float: right;
+						/*margin-top: -15px;*/
+				}
+
+				html#ecwid_html body#ecwid_body #raffle-store .ec-size .ec-store .details-gallery__images-spacer {
+						margin-top: 0;
 				}
 
 				#raffle-store a.breadcrumbs__link--last {
 						display: none;
 				}
 
-				table.funding {
-						margin-left: auto;
-						margin-right: auto;
-				}
-
-				table.funding th,
-				table.levels td {
-						border: 4px solid #000;
-						vertical-align: middle;
-				}
-
-				table.funding th {
-						color: #ffd97b;
-						font-size: 12px;
-						font-family: "Metropolis", Helvetica, Arial, sans-serif;
-						font-weight: 700;
-						text-transform: uppercase;
-						letter-spacing: 0;
-						padding: 12px 10px 12px 0;
-				}
-
-				table.funding th.fst {
-						text-align: right;
-						display: none;
-				}
-
-				table.funding th.row {
-						text-align: center;
-				}
-
-				table.funding td {
-						background-color: #0e0e0e;
-						text-align: center;
-						padding: 10px 15px;
-						font-weight: 700;
-				}
-
-				@media (min-width: 600px) {
-						table.funding td {
-								padding: 10px 15px;
-						}
-				}
-
-				@media (min-width: 768px) {
-						table.funding td {
-								padding: 10px 30px;
-						}
-				}
-
-				@media (min-width: 992px) {
-						table.funding td {
-								padding: 10px 50px;
-						}
+				html#ecwid_html body#ecwid_body #raffle-store .ec-size .ec-store .ec-cart--empty .ec-cart__button {
+						/*display: none;*/
 				}
 		</style>
 
-		<div class="t3-section ja-inview acm-features style-2 prizes" style="padding-top:0;">
+		<script id="ecwid-script" data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?71386768&lang=ja-JP&data_platform=code&data_date=2022-08-27" charset="utf-8"></script>
+		<script type="text/javascript">
+				var currentTab = 'raffle';
 
-				<style>
-						.tabs {
-								border: 1px #8e8e8e solid;
-								border-radius: 15px;
-								margin-top: inherit !important;
-								margin-bottom: inherit !important;
-								max-width: 900px;
-						}
+				function scrollTo(selector) {
+						const elem = document.querySelector(selector);
+						const bodyRect = document
+								.body
+								.getBoundingClientRect();
+						const elemRect = elem.getBoundingClientRect();
+						const offset = elemRect.top - bodyRect.top;
 
-						.tabs .col {
-								padding: 10px !important;
-						}
+						(function ($) {
+								$('html, body').animate({
+										scrollTop: offset
+								}, 500);
+						})(jQuery);
 
-						.tabs .tab {
-								padding: 10px;
-								border-radius: 10px;
-								text-align: center;
-								background-color: #0e0e0e;
-						}
+						return false;
+				}
 
-						.tabs {
-								cursor: pointer;
-						}
-
-						.tabs .tab h3 {
-								margin: 0;
-								font-weight: bold;
-								font-size: 120%;
-								color: #eeeeee;
-						}
-
-						.tabs .tab:hover h3 {
-								/* color: #fd7d57; */
-						}
-
-						.tabs .active {
-								background-color: #1e1e1e !important;
-						}
-
-						.tabs .active h3 {
-								color: #ffffff;
-						}
-
-						.tabs .tab:hover {
-								background-color: #2e2e2e !important;
-						}
-
-						.tab-content {
-								animation: fadeEffect 1s;
-								/* Fading effect takes 1 second */
-						}
-
-						/* Go from zero to full opacity */
-						@keyframes fadeEffect {
-								from {
-										opacity: 0;
+				function loadStore(store, args) {
+						if (typeof Ecwid != 'undefined') 
+								Ecwid.destroy();
+						window._xnext_initialization_scripts = [
+								{
+										widgetType: 'ProductBrowser',
+										id: store,
+										arg: ["id=productBrowser"].concat(args)
 								}
+						];
 
-								to {
-										opacity: 1;
-								}
+						ecwid_onBodyDone();
+				}
+
+				function openTab(tab, pushState = true) {
+						currentTab = tab;
+
+						if (pushState) {
+								history.pushState({
+										tab: tab
+								}, "", `?t=${tab}`)
 						}
-				</style>
 
-				<div class="row tabs module-title-wrap" data-animation="move-from-bottom" data-delay="1800">
-						<div class="col col-sm-12 col-md-4">
-								<div class="tab active" onclick="openTab(event, 'purchases');">
-										<h3>Fundraiser store</h3>
-								</div>
-						</div>
-						<div class="col col-sm-12 col-md-4">
-								<div class="tab" onclick="openTab(event, 'raffle');">
-										<h3>Big prize raffle</h3>
-								</div>
-						</div>
-						<div class="col col-sm-12 col-md-4">
-								<div class="tab" onclick="openTab(event, 'park-info');">
-										<h3>Twin Peak's story</h3>
-								</div>
-						</div>
-				</div>
+						var i;
 
-				<div class="tab-content" id="purchases">
+						// Get all elements with class="tabcontent" and hide them
+						const tabcontent = document.getElementsByClassName("tab-content");
+						for (i = 0; i < tabcontent.length; i++) {
+								tabcontent[i].style.display = "none";
+						}
 
-						<div class="module-title-wrap" style="margin-top:30px; margin-bottom:30px;">
-								<!--h3 class="module-title ja-animate" data-animation="move-from-bottom" data-delay="1200" style="margin-top:30px;"> Fundraiser purchases</h3-->
-								<!--p style="margin-bottom:0;">From your purchases, all proceeds will go towards the construction of the Twin Peaks Bike Park.</p-->
-								<p style="margin-bottom:0; font-size:150%;" class="ja-animate" data-animation="move-from-bottom" data-delay="400">Your purchases build trails</p>
-								<!--h3 class="module-title" style="margin-bottom:0; font-size:150%;">Your purchases build trails</h3-->
-						</div>
+						// Get all elements with class="tab" and remove the class "active"
+						const tabs = document.getElementsByClassName("tab");
+						for (i = 0; i < tabs.length; i++) {
+								tabs[i].className = tabs[i]
+										.className
+										.replace(" active", "");
+						}
 
-						<div>
-								<div id="purchases-store"></div>
+						// Show the current tab, and add an "active" class to the button that opened the tab
+						document
+								.getElementById(tab)
+								.style
+								.display = "block";
 
-								<script id="ecwid-script" data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?71386768&lang=ja-JP&data_platform=code&data_date=2022-08-27" charset="utf-8"></script>
-								<script type="text/javascript">
+						document
+								.getElementById(tab + '-tab')
+								.className += " active";
 
-										window.location.hash = '';
-										window.ec = window.ec || Object();
-										window.ec.config = window.ec.config || Object();
-										window.ec.config.custom_redirect_after_purchase = 'https://www.namtba.com/get-involved/thanks';
-										window.ec.config.navigation_scrolling = "DISABLED";
-										window.ec.storefront = window.ec.storefront || Object();
-										window.ec.storefront.product_details_show_share_buttons = false;
-										window.ec.storefront.product_details_show_qty = true;
-										window.ec.storefront.product_details_show_in_stock_label = true;
-										window.ec.storefront.show_breadcrumbs = true;
-										window.ec.storefront.product_details_show_breadcrumbs = true;
-										window.ec.storefront.product_details_position_breadcrumbs = 25;
-										window.ec.storefront.breadcrumbs_separator = "";
+						if (tab == 'purchases') {
+								document
+										.getElementById('raffle-store')
+										.replaceChildren();
+								loadStore('purchases-store', ['defaultCategoryId=137728300', 'views=grid(20,3) list(60) table(60)'])
 
-										/* var script = document.createElement('script');
-											script.charset = 'utf-8';
-											script.type = 'text/javascript';
-											script.src = 'https://app.ecwid.com/script.js?71386768';
+						} else if (tab == 'raffle') {
+								document
+										.getElementById('purchases-store')
+										.replaceChildren();
+								loadStore('raffle-store', ['defaultProductId=485712291'])
+						}
 
-											document.getElementById('purchases-store').appendChild(script); */
+				}
 
-										function loadStore(store, args) {
-												if (typeof Ecwid != 'undefined') 
-														Ecwid.destroy();
-												window._xnext_initialization_scripts = [
-														{
-																widgetType: 'ProductBrowser',
-																id: store,
-																arg: ["id=productBrowser"].concat(args)
-														}
-												];
+				function changeHero(source, img) {
+						document
+								.getElementById('carousel-hero')
+								.src = img;
 
-												/* if (!document.getElementById('ecwid-script')) {
-													var script = document.createElement('script');
-													script.charset = 'utf-8';
-													script.type = 'text/javascript';
-													script.src = 'https://app.ecwid.com/script.js?71386768';
-													script.id = 'ecwid-script'
-													document.body.appendChild(script);
-												} else { */
-												ecwid_onBodyDone();
-												/* } */
+						const thumbs = document.getElementsByClassName("thumb");
+						for (i = 0; i < thumbs.length; i++) {
+								thumbs[i].className = thumbs[i]
+										.className
+										.replace(" active", "");
+						}
 
-												/* window._xnext_initialization_scripts = [
-													{
-														widgetType: 'ProductBrowser', id: store, arg: [
-															'id=' + store
-														].concat(args)
-													}
-												];
+						source.className += " active"
 
-												// Initialize Minicart Widget. A div with class '.ec-cart-widget' must be present on a page
+				}
+		</script>
 
-												Ecwid.init(); */
+		<div class="t3-section-wrap">
 
-										}
+				<div class="section" style="padding-top:0;">
 
-										function openTab(evt, tab) {
-												window.location.hash = '';
-
-												var i;
-
-												// Get all elements with class="tabcontent" and hide them
-												const tabcontent = document.getElementsByClassName("tab-content");
-												for (i = 0; i < tabcontent.length; i++) {
-														tabcontent[i].style.display = "none";
-												}
-
-												// Get all elements with class="tab" and remove the class "active"
-												const tabs = document.getElementsByClassName("tab");
-												for (i = 0; i < tabs.length; i++) {
-														tabs[i].className = tabs[i]
-																.className
-																.replace(" active", "");
-												}
-
-												// Show the current tab, and add an "active" class to the button that opened the tab
-												document
-														.getElementById(tab)
-														.style
-														.display = "block";
-												evt.currentTarget.className += " active";
-
-												/* document.getElementById('store').replaceChildren(); */
-
-												if (tab == 'purchases') {
-
-														/* Ecwid.openPage('category', { 'id': 137728300 }); */
-														/* xProductBrowser("defaultCategoryId=137728300", "categoriesPerRow=3", "views=grid(20,3) list(60) table(60)", "categoryView=grid", "searchView=list", "id=store"); */
-														document
-																.getElementById('raffle-store')
-																.replaceChildren();
-														loadStore('purchases-store', ['defaultCategoryId=137728300', 'views=grid(20,3) list(60) table(60)'])
-														/* document.getElementById('store-wrapper').style.display = "block"; */
-
-												} else if (tab == 'raffle') {
-
-														/* xProductBrowser("defaultProductId=485712291", "id=store"); */
-														/* Ecwid.openPage('product', { 'id': 485712291 }); */
-														document
-																.getElementById('purchases-store')
-																.replaceChildren();
-														loadStore('raffle-store', ['defaultProductId=485712291'])
-														/* document.getElementById('store-wrapper').style.display = "block"; */
-												}
-
-										}
-
-										/* loadStore('purchases-store', ['defaultCategoryId=137728300', 'views=grid(20,3) list(60) table(60)']) */
-										xProductBrowser("defaultCategoryId=137728300", "categoriesPerRow=3", "views=grid(20,3) list(60) table(60)", "categoryView=grid", "searchView=list", "id=purchases-store");
-										window.ecwid_script_defer = true;
-										window.ecwid_dynamic_widgets = true;
-								</script>
-
-						</div>
-
-				</div>
-
-				<div class="tab-content" id="raffle" style="display:none;">
-
-						<div class="module-title-wrap" style="margin-top:30px; margin-bottom:30px;">
-								<!--h3 class="module-title ja-animate" data-animation="move-from-bottom" data-delay="1200">Raffle prizes</h3-->
-								<p style="font-size:150%;" class="ja-animate" data-animation="move-from-bottom" data-delay="400">
-										Each ¥5,000 ticket earns you an additional chance to win one of the amazing prizes below:</p>
-						</div>
-
-						<div class="row equal-height equal-height-child" data-animation="move-from-bottom" data-delay="1800">
+						<div class="row tabs module-title-wrap">
 								<div class="col col-sm-12 col-md-4">
-										<div class="features-item ja-animate" data-animation="move-from-bottom" data-delay="item-0">
-												<div class="font-icon"><span class="icon ion-ios-trophy"><span class="num">1</span></span>
-												</div>
-												<h4>2023<br/>Niseko Spring getaway</h4>
-												<div class="sponsors">
-														<a href="https://hokkaidobackcountryclub.com" target="_blank">
-																<img src="/images/company/hokkaidobackcountryclub.jpeg" alt="Hokkaido Backcountry Club"/>
-														</a>
-														<a href="https://holidayniseko.com" target="_blank">
-																<img src="/images/company/holidayniseko.png" alt="Holiday Niseko"/>
-														</a>
-														<a href="https://www.temporada-niseko.com" target="_blank">
-																<img src="/images/company/temporada.jpeg" alt="Temporada"/>
-														</a>
-												</div>
-												<p class="gold" style="margin-top:10px;">Heli ski day for two with Hokkaido Backcountry</p>
-												<p class="gold">3 night stay at Kabayama townhouses by Holiday Niseko</p>
-												<p class="gold">3 day 4WD van rental from Holiday Niseko</p>
-												<p class="gold">Dinner for two at Temporada</p>
-												<p class="small">Valid from March 1 to March 20 2023. If unable to fly due to weather conditions you will be provided credit for a heli-day in 2024. A combined value of ¥500,000</p>
+										<div id="raffle-tab" class="tab active" onclick="openTab('raffle');">
+												<h3>大抽選会の賞品</h3>
 										</div>
 								</div>
 								<div class="col col-sm-12 col-md-4">
-										<div class="features-item ja-animate" data-animation="move-from-bottom" data-delay="item-1">
-												<div class="font-icon"><span class="icon ion-ios-trophy"><span class="num">2</span></span>
-												</div>
-												<h4>2023 Summer 5 day extravaganza</h4>
-												<div class="sponsors">
-														<a href="https://holidayniseko.com" target="_blank">
-																<img src="/images/company/holidayniseko.png" alt="Holiday Niseko"/>
-														</a>
-														<a href="https://rhythmjapan.com" target="_blank">
-																<img src="/images/company/rhythm.jpg" alt="Rhythm Japan"/>
-														</a>
-														<a href="https://noasc.com" target="_blank">
-																<img src="/images/company/noasc.jpeg" alt="NOASC"/>
-														</a>
-												</div>
-												<p class="gold" style="margin-top:10px;">5 night stay at Kabayama townhouses by Holiday Niseko
-												</p>
-												<p class="gold">4 days e-mountainbike/road bike rental for 2 from Rhythm</p>
-												<p class="gold">1 day rafting/Ducky trip for 2 by NOASC</p>
-												<p class="small">Valid from July 1 to September 30 2023. A combined value of ¥250,000</p>
+										<div id="purchases-tab" class="tab" onclick="openTab('purchases');">
+												<h3>募金箱</h3>
 										</div>
 								</div>
 								<div class="col col-sm-12 col-md-4">
-										<div class="features-item ja-animate" data-animation="move-from-bottom" data-delay="item-2">
-												<div class="font-icon"><span class="icon ion-ios-trophy"><span class="num">3</span></span>
-												</div>
-												<h4>2 day cat skiing at Shimamaki by Hokkaido Backcountry</h4>
-												<div class="sponsors">
-														<a href="https://hokkaidobackcountryclub.com" target="_blank">
-																<img src="/images/company/hokkaidobackcountryclub.jpeg" alt="Hokkaido Backcountry Club"/>
-														</a>
-												</div>
-												<p class="small">Valid from January to March 2023, subject to availability. Value of ¥193,000
-												</p>
+										<div id="story-tab" class="tab" onclick="openTab('story');">
+												<h3>ツインピークス物語</h3>
 										</div>
 								</div>
 						</div>
 
-						<div class="module-title-wrap"></div>
-
-						<div id="raffle-store"></div>
-
 				</div>
-
-				<div class="tab-content" id="park-info" style="display:none;">
-
-						<div class="module-title-wrap" style="margin-top:70px; max-width:900px;">
-								<p style="font-size:150%;" class="ja-animate" data-animation="move-from-bottom" data-delay="400">
-										The Niseko Area Mountain Bike Association (NAMTBA) presents to you the Twin Peaks Bike Park. A free-to-use public bike park bringing the Niseko area 20+ kilometers of world class mountain bike trails. The park will be the first of its kind in Hokkaido and just one of a small handful of such parks in Japan. The incredible range of planned facilities will make mountain biking in the area accessible and approachable to all ages, all budgets and all abilities.</p>
-								<p>
-										<a class="btn btn-primary ja-animate" data-animation="move-from-bottom" data-delay="1000" href="/projects/twin-peaks">More info</a>
-								</p>
-						</div>
-
-				</div>
-
-				<!--div class="module-title-wrap"></div> <div class="module-title-wrap"> <h3 class="module-title ja-animate" data-animation="move-from-bottom" data-delay="200">The Twin Peaks Bike Park, funding in detail</h3> </div> <div class="module-title-wrap" style="max-width:900px;"> <div class="features-desc ja-animate" data-animation="move-from-bottom" data-delay="800"> <p style="font-size:150%;">Total construction costs for the park's 21 kilometers of trails are estimated to reach ¥54 million. This includes the skills center and the kids' balance bike zone at the entrance of the park.</p> <p style="font-size:150%;">NAMTBA is targeting domestic and international sources to fund the park. Upon completion, funding is expected to have been received from the following sources:</p> <p> <table class="funding"> <tr> <td>Local and National government bodies</td> </tr> <tr> <td>Local Businesses</td> </tr> <tr> <td>Crowdfunding</td> </tr> <tr> <td>Local clubs/Membership</td> </tr> </table> </p> </div> </div> <div class="module-title-wrap"> <h3 class="module-title ja-animate" data-animation="move-from-bottom" data-delay="200">Funding sources</h3> </div> <div class="module-title-wrap" style="max-width:900px;"> <div class="features-desc ja-animate" data-animation="move-from-bottom" data-delay="800"> <p style="font-size:150%;">NAMTBA is pursuing all potential funding avenues including, but not limited to, those listed above. We are thankful for the support we have been receiving from the Kutchan Tourism Association , Kutchan Council and local businesses and from businesses within the mountain bike industry. To complete all of phase 1 we now need your help by participating in our campaign.</p> </div> </div> <div class="module-title-wrap"> <h3 class="module-title ja-animate" data-animation="move-from-bottom" data-delay="200">About NAMTBA </h3> </div> <div class="module-title-wrap" style="max-width:900px;"> <div class="features-desc ja-animate" data-animation="move-from-bottom" data-delay="800"> <p style="font-size:150%;">NAMTBA is a registered nonprofit organization, our dedicated team of 24 board members have united with a shared vision to grow the sport of mountain biking in Niseko for the betterment of our community.</p> <p style="font-size:150%;">Among our ranks you’ll find the GM’s of two ski resorts, town council members, local business leaders, the president of the local tourism association and the president of Hokkaido’s largest forestry company. We have an equitable representation of Nationalities, genders and rider experience levels.</p> </div> </div> <div class="module-title-wrap"> <h3 class="module-title ja-animate" data-animation="move-from-bottom" data-delay="200">NAMTBA’s Mission</h3> </div> <div class="module-title-wrap" style="max-width:900px;"> <div class="features-desc ja-animate" data-animation="move-from-bottom" data-delay="800"> <p style="font-size:150%;">To transform Niseko into Asia’s premier mountain bike destination by creating a large network of world class mountain bike trails and make Niseko a true year round destination.</p> <p style="font-size:150%;">Niseko has made itself known as Asia’s premier winter destination attracting Asia’s elite and snow enthusiasts from all over the world. Asia is yet to have a resort emerge as a true mountain bike destination. With Niseko already being in the spotlight for winter we have the unique opportunity to take the lead. Niseko already has the infrastructure required to create Asia's number one Mountain biking destination and to tap into the growing affluent mountain bike tourism industry. We have modern luxury lodgings, onsens, beautiful vistas, fresh local produce, proximity to an international airport, robust private and public transportation infrastructure, restaurants, cafes, bars and a multilingual workforce.</p> <p style="font-size:150%;">The Niseko area is growing at a rapid clip and by 2030 it will be home to one of Hokkaido's few Shinkansen stops. Through the construction of bike trails NAMTBA seeks to bolster the area’s summer tourism infrastructure and aims to elevate the area to realize its potential as a true 4 season destination resort.</p> </div> </div-->
 
 		</div>
+
+		<div style="min-height: 500px;">
+
+				<div class="t3-section-wrap tab-content" id="raffle">
+
+						<div class="section acm-features style-2 prizes">
+
+								<div style="max-width:750px; margin: 0 auto;">
+										<div class="col col-sm-12 col-md-8">
+												<div class="module-title-wrap" style="margin-top:40px; margin-bottom:30px;">
+														<p style="font-size:100%;" class="ja-animate" data-animation="move-from-left" data-delay="400">
+																皆様からの抽選券ご購入による収益は、2½ メートルのトレイル造成と以下の賞品を獲得するチャンスに対して支払われます。 が！世界クラスのトレイルを何キロも<strong>無料</strong>で走れるので、皆、勝者です！</p>
+												</div>
+										</div>
+										<div class="col col-sm-12 col-md-4">
+												<div class="module-title-wrap" style="margin-top:50px; margin-bottom:30px;">
+
+														<div class="action ja-animate" data-animation="move-from-right" data-delay="600">
+																<a href="#raffle-store" class="btn btn-primary to-raffle">抽選申し込みはこちら</a>
+														</div>
+												</div>
+										</div>
+								</div>
+
+								<div class="row" data-animation="move-from-bottom" data-delay="1800">
+										<div class="col col-sm-12 col-md-12">
+												<div class="features-item ja-animate" data-animation="move-from-bottom" data-delay="item-0">
+
+														<div class="row">
+																<div class="col col-sm-12 col-md-4">
+																		<div class="font-icon"><span class="icon ion-ios-trophy"><span class="num">1</span></span>
+																		</div>
+																		<h4>Trek Rail 5 フルサスペンション電動マウンテンバイク</h4>
+																		<div class="sponsors">
+																				<a href="https://www.trekbikes.com" target="_blank">
+																						<img src="/images/company/trek.png" alt="Trek Bikes" style="width: 200px; height: auto;"/>
+																				</a>
+																		</div>
+																		<p style="font-size:125%;">総額<strong>740,000円</strong>相当
+																		</p>
+																		<p class="gold" style="margin-top:30px;">RockShox 35 Gold RL 160mm フォーク</p>
+																		<p class="gold">RockShox Deluxe Select+ 230mm ショック</p>
+																		<p class="gold">Shimano Deore M6100 ドライブトレイン</p>
+																		<p class="gold">Bosch Performance CX モーター</p>
+																		<p class="gold">Bosch PowerTube 625 バッテリー</p>
+																		<a class="btn action to-raffle" href="#raffle-store">
+																				<span>抽選申し込みはこちら</span>
+																		</a>
+																		<p class="small">実際のモデル、仕様、色は異なる場合があります。ニセコでの受け取り、日本国内での郵送、または次回訪問まで保管可能です。当選された方には、可能な限り最適なサイズをお届けします。</p>
+																</div>
+																<div class="col col-sm-12 col-md-8">
+																		<div class="carousel">
+																				<div class="hero">
+																						<img id="carousel-hero" src="/images/prizes/rail-0.jpeg"/>
+																				</div>
+																				<div class="thumbs">
+																						<div class="thumbwrap">
+																										<div class="thumb active" onclick="changeHero(this, '/images/prizes/rail-0.jpeg');">
+																												<img src="/images/prizes/rail-0.jpeg"/>
+																										</div>
+																								</div><div class="thumbwrap">
+																										<div class="thumb " onclick="changeHero(this, '/images/prizes/rail-1.jpeg');">
+																												<img src="/images/prizes/rail-1.jpeg"/>
+																										</div>
+																								</div><div class="thumbwrap">
+																										<div class="thumb " onclick="changeHero(this, '/images/prizes/rail-2.jpeg');">
+																												<img src="/images/prizes/rail-2.jpeg"/>
+																										</div>
+																								</div><div class="thumbwrap">
+																										<div class="thumb " onclick="changeHero(this, '/images/prizes/rail-3.jpeg');">
+																												<img src="/images/prizes/rail-3.jpeg"/>
+																										</div>
+																								</div><div class="thumbwrap">
+																										<div class="thumb " onclick="changeHero(this, '/images/prizes/rail-4.jpeg');">
+																												<img src="/images/prizes/rail-4.jpeg"/>
+																										</div>
+																								</div><div class="thumbwrap">
+																										<div class="thumb " onclick="changeHero(this, '/images/prizes/rail-5.jpeg');">
+																												<img src="/images/prizes/rail-5.jpeg"/>
+																										</div>
+																								</div><div class="thumbwrap">
+																										<div class="thumb " onclick="changeHero(this, '/images/prizes/rail-6.jpeg');">
+																												<img src="/images/prizes/rail-6.jpeg"/>
+																										</div>
+																								</div><div class="thumbwrap">
+																										<div class="thumb " onclick="changeHero(this, '/images/prizes/rail-7.jpeg');">
+																												<img src="/images/prizes/rail-7.jpeg"/>
+																										</div>
+																								</div><div class="thumbwrap">
+																										<div class="thumb " onclick="changeHero(this, '/images/prizes/rail-8.jpeg');">
+																												<img src="/images/prizes/rail-8.jpeg"/>
+																										</div>
+																								</div><div class="thumbwrap">
+																										<div class="thumb " onclick="changeHero(this, '/images/prizes/rail-9.jpeg');">
+																												<img src="/images/prizes/rail-9.jpeg"/>
+																										</div>
+																								</div>
+																				</div>
+																		</div>
+																</div>
+														</div>
+
+												</div>
+										</div>
+								</div>
+
+						</div>
+
+						<div class="section acm-features style-2 prizes">
+
+								<div class="row equal-height equal-height-child" data-animation="move-from-bottom" data-delay="200">
+										<div class="col col-sm-12 col-md-6">
+												<div class="features-item ja-animate" data-animation="move-from-bottom" data-delay="item-0">
+														<div class="font-icon"><span class="icon ion-ios-trophy"><span class="num">2</span></span>
+														</div>
+														<h4>ニセコ春の旅</h4>
+														<div class="products">
+																<div class="prodwrap">
+																		<div class="prod">
+																				<img src="/images/prizes/heli.jpg" alt="ヘリスキー"/>
+																		</div>
+																</div>
+																<div class="prodwrap">
+																		<div class="prod">
+																				<img src="/images/prizes/suiboku.jpg" alt="Suiboku2ベッドルームアパートメント"/>
+																		</div>
+																</div>
+														</div>
+														<p style="font-size:125%;">総額<strong>530,000円</strong>相当
+														</p>
+														<p class="gold" style="margin-top:30px;">Hokkaido Backcountry提供ヘリスキー１日件（2名様分）</p>
+														<p class="gold">ニセコWOWのSuiboku2ベッドルームアパートメントでの3泊</p>
+														<p class="gold">ホリデーニセコによる4WDバンの3日間レンタル</p>
+														<p class="gold">テンポラーダでディナー（2名様分）</p>
+														<a class="btn action to-raffle" href="#raffle-store">
+																<span>抽選申し込みはこちら</span>
+														</a>
+														<div class="sponsors">
+																<a href="https://hokkaidobackcountryclub.com" target="_blank">
+																		<img src="/images/company/higuma/hbc.png" alt="Hokkaido Backcountry Club">
+																</a>
+																<a href="https://holidayniseko.com" target="_blank">
+																		<img src="/images/company/higuma/holiday-niseko.2.png" alt="Holiday Niseko">
+																</a>
+																<a href="https://niseko-wow.com" target="_blank">
+																		<img src="/images/company/shika/niseko-wow.png" alt="Niseko Wow">
+																</a>
+																<a href="https://www.temporada-niseko.com" target="_blank">
+																		<img src="/images/company/temporada.png" alt="Temporada">
+																</a>
+														</div>
+														<p class="small">有効期：2023 年または 2024 年3月1日から3月20日まで。 天候によりフライト困難な場合、翌年にその機会をご提供します。</p>
+												</div>
+										</div>
+										<div class="col col-sm-12 col-md-6">
+												<div class="features-item ja-animate" data-animation="move-from-bottom" data-delay="item-1">
+														<div class="font-icon"><span class="icon ion-ios-trophy"><span class="num">3</span></span>
+														</div>
+														<h4>夏5日間の「贅沢」</h4>
+														<div class="products">
+																<div class="prodwrap">
+																		<div class="prod">
+																				<img src="/images/prizes/kabayama.jpg" alt="樺山タウンハウス"/>
+																		</div>
+																</div>
+																<div class="prodwrap">
+																		<div class="prod">
+																				<img src="/images/prizes/emtb-tour.jpg" alt="電動マウンテンバイク半日ガイドツアー"/>
+																		</div>
+																</div>
+														</div>
+														<p style="font-size:125%;">総額<strong>250,000円</strong>相当
+														</p>
+														<p class="gold" style="margin-top:30px;">ホリデーニセコの樺山タウンハウスでの5泊
+														</p>
+														<p class="gold">NOASCのE-マウンテンバイク 3日間レンタル（2名様分）</p>
+														<p class="gold">電動マウンテンバイク半日ガイドツアー（NOASCより2名様分提供)</p>
+														<p class="gold">NOASCによるラフティング/ダッキートリップ1日券（2名様分）</p>
+														<a class="btn action to-raffle" href="#raffle-store">
+																<span>抽選申し込みはこちら</span>
+														</a>
+														<div class="sponsors">
+																<a href="https://holidayniseko.com" target="_blank">
+																		<img src="/images/company/higuma/holiday-niseko.2.png" alt="Holiday Niseko"/>
+																</a>
+																<a href="https://noasc.com" target="_blank">
+																		<img src="/images/company/shika/noasc.png" alt="NOASC"/>
+																</a>
+														</div>
+														<p class="small">有効期間：2023 年または 2024 年7月1日から9月30日 まで。</p>
+												</div>
+										</div>
+								</div>
+
+						</div>
+
+						<div class="section acm-features style-2 prizes">
+								<div class="row equal-height equal-height-child" data-animation="move-from-bottom" data-delay="200">
+
+										<div class="col col-sm-12 col-md-4">
+												<div class="features-item ja-animate" data-animation="move-from-bottom" data-delay="item-0">
+														<div class="font-icon"><span class="icon ion-ios-trophy"><span class="num">4</span></span>
+														</div>
+														<h4>Hokkaido Backcountry提供、島牧でキャットスキー2日間コース</h4>
+														<div class="products">
+																<div class="prodwrap full">
+																		<div class="prod">
+																				<img src="/images/prizes/cat-ski.jpg" alt="キャットスキー"/>
+																		</div>
+																</div>
+														</div>
+														<p style="font-size:125%;">総額<strong>193,000円</strong>相当
+														</p>
+														<a class="btn action to-raffle" href="#raffle-store">
+																<span>抽選申し込みはこちら</span>
+														</a>
+														<div class="sponsors">
+																<a href="https://hokkaidobackcountryclub.com" target="_blank">
+																		<img src="/images/company/higuma/hbc.png" alt="Hokkaido Backcountry Club"/>
+																</a>
+														</div>
+														<p class="small" style="margin-top:30px;">有効期間：2023 年または 2024 年1月から3月まで。</p>
+												</div>
+										</div>
+
+										<div class="col col-sm-12 col-md-4">
+												<div class="features-item ja-animate" data-animation="move-from-bottom" data-delay="item-1">
+														<div class="font-icon"><span class="icon ion-ios-trophy"><span class="num">5</span></span>
+														</div>
+														<h4>Hokkaido Backcountry提供ヘリスキー１日件</h4>
+														<div class="products">
+																<div class="prodwrap full">
+																		<div class="prod">
+																				<img src="/images/prizes/heli.jpg" alt="ヘリスキー"/>
+																		</div>
+																</div>
+														</div>
+														<p style="font-size:125%;">総額<strong>160,000円</strong>相当
+														</p>
+														<a class="btn action to-raffle" href="#raffle-store">
+																<span>抽選申し込みはこちら</span>
+														</a>
+														<div class="sponsors">
+																<a href="https://hokkaidobackcountryclub.com" target="_blank">
+																		<img src="/images/company/higuma/hbc.png" alt="Hokkaido Backcountry Club"/>
+																</a>
+														</div>
+														<p class="small" style="margin-top:30px;">有効期間：2023 年または 2024 年1月から3月まで。</p>
+												</div>
+										</div>
+
+										<div class="col col-sm-12 col-md-4">
+												<div class="features-item ja-animate" data-animation="move-from-bottom" data-delay="item-2">
+														<div class="font-icon"><span class="icon ion-ios-trophy"><span class="num">6</span></span>
+														</div>
+														<h4>Burton 154 Freethinkerー 2022年モデル</h4>
+														<div class="products">
+																<div class="prodwrap full">
+																		<div class="prod">
+																				<img src="/images/prizes/freethinker.jpg" alt="Burton Freethinker"/>
+																		</div>
+																</div>
+														</div>
+														<p style="font-size:125%;">総額<strong>92,000円</strong>相当
+														</p>
+														<a class="btn action to-raffle" href="#raffle-store">
+																<span>抽選申し込みはこちら</span>
+														</a>
+														<div class="sponsors">
+																<a href="https://www.burton.com/" target="_blank">
+																		<img src="/images/company/tanuki/burton.png" alt="Burton"/>
+																</a>
+														</div>
+														<p class="small" style="margin-top:30px;">ニセコでの受け取り、日本国内での郵送、または次回訪問まで保管可能です。</p>
+												</div>
+										</div>
+
+								</div>
+
+						</div>
+
+						<div class="t3-section">
+
+								<div class="module-title-wrap">
+										<p style="font-size:150%;" class="ja-animate" data-animation="move-from-bottom" data-delay="400">
+												さらに賞品は続々登場予定</p>
+								</div>
+
+								<div class="module-title-wrap"></div>
+
+								<div id="raffle-store"></div>
+
+						</div>
+
+				</div>
+
+				<div class="t3-section-wrap tab-content" id="purchases" style="display:none;">
+
+						<div class="section">
+
+								<div class="module-title-wrap" style="margin-top:30px; margin-bottom:30px;">
+										<p style="margin-bottom:0; font-size:100%;" class="ja-animate" data-animation="move-from-bottom" data-delay="800">皆様のご購入によりトレイルは成長します。</p>
+								</div>
+
+								<div>
+										<div id="purchases-store"></div>
+								</div>
+
+						</div>
+
+				</div>
+
+				<div class="t3-section-wrap  tab-content" id="story" style="display:none;">
+						<div class="section">
+
+								<div class="module-title-wrap" style="margin-top:70px; max-width:900px;">
+										<p style="font-size:150%;" class="ja-animate" data-animation="move-from-bottom" data-delay="400">
+												The Niseko Area Mountain Bike Association (NAMTBA) presents to you the Twin Peaks Bike Park. A free-to-use public bike park bringing the Niseko area 20+ kilometers of world class mountain bike trails. The park will be the first of its kind in Hokkaido and just one of a small handful of such parks in Japan. The incredible range of planned facilities will make mountain biking in the area accessible and approachable to all ages, all budgets and all abilities.</p>
+										<p>
+												<a class="btn btn-primary ja-animate" data-animation="move-from-bottom" data-delay="1000" href="/projects/twin-peaks">詳しくはこちら</a>
+										</p>
+								</div>
+
+						</div>
+
+				</div>
+
+		</div>
+
+		<script type="text/javascript">
+				window.ec = window.ec || Object();
+				window.ec.config = window.ec.config || Object();
+				window.ec.config.custom_redirect_after_purchase = 'https://www.namtba.com/ja/get-involved/thanks';
+				window.ec.config.navigation_scrolling = "DISABLED";
+				window.ec.storefront = window.ec.storefront || Object();
+				window.ec.storefront.product_details_show_share_buttons = false;
+				window.ec.storefront.product_details_show_qty = true;
+				window.ec.storefront.product_details_show_in_stock_label = true;
+				window.ec.storefront.show_breadcrumbs = true;
+				window.ec.storefront.product_details_show_breadcrumbs = true;
+				window.ec.storefront.product_details_position_breadcrumbs = 25;
+				window.ec.storefront.breadcrumbs_separator = "";
+
+				let params = new URLSearchParams(document.location.search);
+				currentTab = (params.get("t") === null)
+						? currentTab
+						: params.get("t");
+				if (currentTab === "purchases") {
+						xProductBrowser("defaultCategoryId=137728300", "categoriesPerRow=3", "views=grid(20,3) list(60) table(60)", "categoryView=grid", "searchView=list", "id=purchases-store");
+				} else {
+						xProductBrowser("defaultProductId=485712291", "categoriesPerRow=3", "views=grid(20,3) list(60) table(60)", "categoryView=grid", "searchView=list", "id=raffle-store");
+				}
+
+				window.ecwid_script_defer = true;
+				window.ecwid_dynamic_widgets = true;
+
+				Ecwid
+						.OnPageSwitch
+						.add(function (page) {
+								if (currentTab === "raffle" && page.type === "CATEGORY") {
+										window.location.hash = '#!/Raffle-Ticket/p/485712291';
+										return false;
+								}
+						});
+
+				$(document).ready(function () {
+
+						$('a[href^="#raffle-store"]').click(function (event) {
+								scrollTo('#raffle-store');
+								event.preventDefault();
+						});
+
+						if (currentTab !== "raffle") {
+								openTab(currentTab, false);
+						}
+				});
+		</script>
 
                   <!-- Item tags -->
                   <!-- // Item tags -->
