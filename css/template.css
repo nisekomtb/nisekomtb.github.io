@@ -6192,6 +6192,39 @@ div.t3-wrapper {
   flex-wrap: nowrap;
 }
 
+.nav li.action>a {
+  color: #ffd97b;
+  /*padding: 0;*/
+  font-weight: 500;
+
+}
+
+.nav>li.action>a:hover,
+.nav>li.action>a:focus,
+.nav>li.action>a:active {
+  color: #fd7d57 !important;
+}
+
+.nav>li.action.active>a {
+  background: transparent;
+  color: #fd7d57;
+}
+
+.nav>li.action>a:after {
+  content: "\f119";
+  font-family: "Ionicons";
+  margin-left: 3px;
+  position: relative;
+  left: 0;
+  -webkit-transition: all 500ms;
+  -o-transition: all 500ms;
+  transition: all 500ms;
+}
+
+.nav>li.action>a:hover:after {
+  left: 5px;
+}
+
 .headright .menu>li>a {
   color: #ffd97b;
   padding: 0;
