@@ -173,6 +173,7 @@
         <img src="/images/logos/logo.png"/>
       </a>
       
+      
     </div>
     <!-- // LOGO -->
 
@@ -394,14 +395,14 @@
 														<small>0km</small>
 												</div>
 												<div class="right">
-														<small>20km</small>
+														<small>8km</small>
 												</div>
 												<div>
-														<small>10km</small>
+														<small>4km</small>
 												</div>
 										</div>
 								</div>
-								<small>Trail kilometers funded.</small>
+								<small>Phase 1 trail kilometers funded.</small>
 						</div>
 				</div>
 		</div>
@@ -966,7 +967,7 @@
 										<div class="col col-sm-12 col-md-8">
 												<div class="module-title-wrap" style="margin-top:40px; margin-bottom:30px;">
 														<p style="font-size:100%;" class="ja-animate" data-animation="move-from-left" data-delay="400">
-																Every ticket pays for 2½ meters of trail and a chance to win the below prizes. Everyone is a winner since we all get kilometres of world class trails to ride for
+																Every ticket pays for 2 meters of trail and a chance to win the below prizes. Everyone is a winner since we all get kilometres of world class trails to ride for
 																<strong>FREE</strong>!</p>
 												</div>
 										</div>
@@ -1350,13 +1351,16 @@
 
 								<div class="module-title-wrap" style="max-width:900px;">
 										<p style="font-size:130%;" class="ja-animate" data-animation="move-from-bottom" data-delay="200">
-												We are also accepting donations and actively seeking sponsorship to fund this project and the Niseko Area Mountain Bike Association. Please check the “Get Involved” section of our website to learn more.
+												We are also accepting donations and actively seeking sponsorship to fund this project and the Niseko Area Mountain Bike Association.
+										</p>
+										<p style="font-size:130%;" class="ja-animate" data-animation="move-from-bottom" data-delay="400">
+												Please check the “Get Involved” section of our website to learn more.
 										</p>
 								</div>
 
 								<div class="module-title-wrap">
 										<p>
-												<a class="btn ja-animate" style="font-size:130%;" data-animation="move-from-bottom" data-delay="400" href="/projects/twin-peaks">Twin Peaks more info</a>
+												<a class="btn ja-animate" style="font-size:130%;" data-animation="move-from-bottom" data-delay="600" href="/projects/twin-peaks">Twin Peaks more info</a>
 										</p>
 								</div>
 						</div>
@@ -1404,6 +1408,8 @@
 				$(document).ready(function () {
 
 						$('a[href^="#raffle-store"]').click(function (event) {
+								if (currentTab !== 'raffle') 
+										openTab('raffle');
 								scrollTo('#raffle-store');
 								event.preventDefault();
 						});
