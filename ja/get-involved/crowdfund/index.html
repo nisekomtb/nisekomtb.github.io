@@ -929,7 +929,7 @@
 				}
 
 				function loadStore(store, args) {
-						if (typeof Ecwid != 'undefined') 
+						if (typeof Ecwid != 'undefined' && Ecwid.destroy != undefined) 
 								Ecwid.destroy();
 						window._xnext_initialization_scripts = [
 								{
