@@ -469,14 +469,14 @@
 						overflow: hidden;
 						transition: all 0.5s;
 						will-change: transform;
-						box-shadow: 0 0 5px #fd7d57;
+						box-shadow: 0 0 5px #4dad2a;
 				}
 
 				.fund-progress .inner {
 						position: absolute;
 						height: 100%;
 						width: 100%;
-						background-color: #fd7d57;
+						background-color: #4dad2a;
 						top: 0;
 						bottom: 0;
 						left: -55%;
@@ -528,16 +528,61 @@
 						font-size: 150%;
 				}
 
+				.fixed-tabs {
+						position: fixed;
+						left: 0;
+						top: 15px;
+						width: 100%;
+						padding-left: 18px;
+						padding-right: 18px;
+				}
+
+				.fixed-tabs .tabs {
+						margin: auto;
+						position: relative;
+						z-index: 1;
+						max-width: 720px;
+				}
+
+				@media (min-width: 992px) {
+						.fixed-tabs .tabs {
+								max-width: 724px;
+						}
+				}
+
+				@media (min-width: 1200px) {
+						.fixed-tabs .tabs {
+								max-width: 900px;
+						}
+				}
+
 				.tabs {
 						border: 1px #8e8e8e solid;
 						border-radius: 15px;
 						margin-top: inherit !important;
 						margin-bottom: inherit !important;
 						max-width: 900px;
+						background-color: #000000;
 				}
 
 				.tabs .col {
 						padding: 10px !important;
+						float: left;
+						width: 33.3333333333%;
+				}
+
+				@media (max-width: 359px) {
+						.tabs .col {
+								width: 100%;
+						}
+
+						.tabs .col:nth-child(1) {
+								padding-bottom: 0 !important;
+						}
+
+						.tabs .col:nth-child(2) {
+								padding-bottom: 0 !important;
+						}
 				}
 
 				.tabs .tab {
@@ -558,12 +603,26 @@
 						color: #eeeeee;
 				}
 
-				.tabs .tab:hover h3 {
-						/* color: #fd7d57; */
+				@media (max-width: 767px) {
+						.tabs .tab h3 {
+								font-size: 100%;
+						}
+				}
+
+				@media (max-width: 402px) {
+						.tabs .tab h3 {
+								font-size: 90%;
+						}
+				}
+
+				@media (max-width: 375px) {
+						.tabs .tab h3 {
+								font-size: 80%;
+						}
 				}
 
 				.tabs .active {
-						background-color: #1e1e1e !important;
+						background-color: #fd7d57 !important;
 				}
 
 				.tabs .active h3 {
@@ -572,6 +631,10 @@
 
 				.tabs .tab:hover {
 						background-color: #2e2e2e !important;
+				}
+				.tabs .tab.active:hover {
+						background-color: #fd7d57 !important;
+						cursor: auto;
 				}
 
 				.tab-content {
@@ -923,6 +986,17 @@
 								loadStore('raffle-store', ['defaultProductId=485712291'])
 						}
 
+						scrollTo('#tabs-top');
+
+				}
+
+				var lastScroll = 0;
+				function checkTabsPosition(offset) {
+						if (jQuery(window).scrollTop() > lastScroll && jQuery(window).scrollTop() > offset) {
+								jQuery('.tabs-container').addClass('fixed-tabs');
+						} else if (jQuery(window).scrollTop() < lastScroll && jQuery(window).scrollTop() < offset) {
+								jQuery('.tabs-container').removeClass('fixed-tabs');
+						}
 				}
 
 				function changeHero(source, img) {
@@ -942,24 +1016,27 @@
 				}
 		</script>
 
-		<div class="t3-section-wrap">
+		<a id="tabs-top"></a>
+
+		<div class="t3-section-wrap" style="position:relative; z-index:9999; min-height:65px;">
 
 				<div class="section" style="padding-top:0;">
-
-						<div class="row tabs module-title-wrap">
-								<div class="col col-sm-12 col-md-4">
-										<div id="raffle-tab" class="tab active" onclick="openTab('raffle');">
-												<h3>Big prize raffle</h3>
+						<div class="tabs-container">
+								<div class="row tabs module-title-wrap">
+										<div class="col">
+												<div id="raffle-tab" class="tab active" onclick="openTab('raffle');">
+														<h3>Big prize raffle</h3>
+												</div>
 										</div>
-								</div>
-								<div class="col col-sm-12 col-md-4">
-										<div id="purchases-tab" class="tab" onclick="openTab('purchases');">
-												<h3>Fundraiser store</h3>
+										<div class="col">
+												<div id="purchases-tab" class="tab" onclick="openTab('purchases');">
+														<h3>Fundraiser store</h3>
+												</div>
 										</div>
-								</div>
-								<div class="col col-sm-12 col-md-4">
-										<div id="story-tab" class="tab" onclick="openTab('story');">
-												<h3>Twin Peak's story</h3>
+										<div class="col">
+												<div id="story-tab" class="tab" onclick="openTab('story');">
+														<h3>Twin Peak's story</h3>
+												</div>
 										</div>
 								</div>
 						</div>
@@ -968,7 +1045,7 @@
 
 		</div>
 
-		<div style="min-height: 500px;">
+		<div style="min-height: 1000px;">
 
 				<div class="t3-section-wrap tab-content" id="raffle">
 
@@ -1427,6 +1504,17 @@
 						if (currentTab !== "raffle") {
 								openTab(currentTab, false);
 						}
+
+						let offset = (jQuery('.tabs-container').offset().top + jQuery('.tabs-container').height() - 85);
+
+						$(window).scroll(() => {
+								checkTabsPosition(offset);
+								lastScroll = jQuery(window).scrollTop();
+						});
+
+						$(window).resize(() => {
+								offset = (jQuery('.tabs-container').offset().top + jQuery('.tabs-container').height() - 85);
+						});
 				});
 		</script>
 
