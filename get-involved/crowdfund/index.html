@@ -477,7 +477,7 @@
 						background-color: #4dad2a;
 						top: 0;
 						bottom: 0;
-						left: -55%;
+						left: -45%;
 						border-radius: inherit;
 						display: flex;
 						justify-content: center;
@@ -907,7 +907,7 @@
 
 		<script id="ecwid-script" data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?71386768&lang=en-GB&data_platform=code&data_date=2022-08-27" charset="utf-8"></script>
 		<script type="text/javascript">
-				var currentTab = 'raffle';
+				var currentTab = 'purchases';
 
 				function scrollTo(selector) {
 						const elem = document.querySelector(selector);
@@ -975,18 +975,9 @@
 								.getElementById(tab + '-tab')
 								.className += " active";
 
-						if (tab == 'purchases') {
-								document
-										.getElementById('raffle-store')
-										.replaceChildren();
-								loadStore('purchases-store', ['defaultCategoryId=137728300', 'views=grid(20,3) list(60) table(60)'])
-
-						} else if (tab == 'raffle') {
-								document
-										.getElementById('purchases-store')
-										.replaceChildren();
-								loadStore('raffle-store', ['defaultProductId=485712291'])
-						}
+						//if (tab == 'purchases') {
+						//		loadStore('purchases-store', ['defaultCategoryId=137728300', 'views=grid(20,3) list(60) table(60)'])
+						//}
 
 						scrollTo('#tabs-top');
 
@@ -1026,13 +1017,13 @@
 						<div class="tabs-container">
 								<div class="row tabs module-title-wrap">
 										<div class="col">
-												<div id="raffle-tab" class="tab active" onclick="openTab('raffle');">
-														<h3>Big prize raffle</h3>
+												<div id="purchases-tab" class="tab active" onclick="openTab('purchases');">
+														<h3>Fundraiser store</h3>
 												</div>
 										</div>
 										<div class="col">
-												<div id="purchases-tab" class="tab" onclick="openTab('purchases');">
-														<h3>Fundraiser store</h3>
+												<div id="raffle-tab" class="tab" onclick="openTab('raffle');">
+														<h3>Big prize raffle</h3>
 												</div>
 										</div>
 										<div class="col">
@@ -1049,26 +1040,33 @@
 
 		<div style="min-height: 1000px;">
 
-				<div class="t3-section-wrap tab-content" id="raffle">
+				<div class="t3-section-wrap tab-content" id="purchases">
+
+						<div class="section">
+
+								<div class="module-title-wrap" style="margin-top:30px; margin-bottom:30px;">
+										<p style="margin-bottom:0; font-size:100%;" class="ja-animate" data-animation="move-from-bottom" data-delay="800">Your purchases build trails!</p>
+								</div>
+
+								<div>
+										<div id="purchases-store"></div>
+								</div>
+
+						</div>
+
+				</div>
+
+				<div class="t3-section-wrap tab-content" id="raffle" style="display:none;">
 
 						<div class="section acm-features style-2 prizes">
 								<div style="max-width:750px; margin: 0 auto;">
-										<div class="col col-sm-12 col-md-8">
-												<div class="module-title-wrap" style="margin-top:40px; margin-bottom:30px;">
-														<p style="font-size:100%;" class="ja-animate" data-animation="move-from-left" data-delay="400">
-																Every ticket pays for 2 meters of trail and a chance to win the below prizes. Everyone is a winner since we all get kilometres of world class trails to ride for
-																<strong>FREE</strong>!</p>
-												</div>
-										</div>
-										<div class="col col-sm-12 col-md-4">
-												<div class="module-title-wrap" style="margin-top:50px; margin-bottom:30px;">
-
-														<div class="action ja-animate" data-animation="move-from-right" data-delay="600">
-																<a href="#raffle-store" class="btn btn-primary to-raffle">Enter here</a>
-														</div>
-												</div>
+										<div class="module-title-wrap" style="margin-top:40px; margin-bottom:30px;">
+												<p style="font-size:150%;" class="ja-animate" data-animation="move-from-left" data-delay="400">
+														Thanks everyone who bought raffle tickets. We will draw the raffle at the end of October, and announce the winning names soon after, contacting each winner by email. Good luck everyone and thanks for helping build trails in Niseko!</p>
 										</div>
 								</div>
+
+								
 
 								<div class="row" data-animation="move-from-bottom" data-delay="1800">
 										<div class="col col-sm-12 col-md-12">
@@ -1092,9 +1090,7 @@
 																		<p class="gold">Shimano Deore M6100 Drivetrain</p>
 																		<p class="gold">Bosch Performance CX Motor</p>
 																		<p class="gold">Bosch PowerTube 625 Battery</p>
-																		<a class="btn action to-raffle" href="#raffle-store">
-																				<span>Enter here</span>
-																		</a>
+																		
 																		<p class="small">Exact model, specs and colour may differ. Available for pickup in Niseko, postage in Japan, or storage until your next visit. We will try to supply the most appropriate size possible to the lucky winner.</p>
 																</div>
 																<div class="col col-sm-12 col-md-8">
@@ -1182,9 +1178,7 @@
 														<p class="gold">3 night stay in Suiboku 2 bedroom apartment by Niseko Wow</p>
 														<p class="gold">3 day 4WD van rental from Holiday Niseko</p>
 														<p class="gold">Dinner for two at Temporada</p>
-														<a class="btn action to-raffle" href="#raffle-store">
-																<span>Enter here</span>
-														</a>
+														
 														<div class="sponsors">
 																<a href="https://hokkaidobackcountryclub.com" target="_blank">
 																		<img src="/images/company/higuma/hbc.png" alt="Hokkaido Backcountry Club">
@@ -1227,9 +1221,7 @@
 														<p class="gold">3 days e-mountainbike rental for two from NOASC</p>
 														<p class="gold">Half day guided e-mountainbike tour for two from NOASC</p>
 														<p class="gold">1 day rafting/Ducky trip for two by NOASC</p>
-														<a class="btn action to-raffle" href="#raffle-store">
-																<span>Enter here</span>
-														</a>
+														
 														<div class="sponsors">
 																<a href="https://holidayniseko.com" target="_blank">
 																		<img src="/images/company/higuma/holiday-niseko.2.png" alt="Holiday Niseko"/>
@@ -1263,9 +1255,7 @@
 														<p style="font-size:125%;">A value of
 																<strong>¥193,000</strong>
 														</p>
-														<a class="btn action to-raffle" href="#raffle-store">
-																<span>Enter here</span>
-														</a>
+														
 														<div class="sponsors">
 																<a href="https://hokkaidobackcountryclub.com" target="_blank">
 																		<img src="/images/company/higuma/hbc.png" alt="Hokkaido Backcountry Club"/>
@@ -1290,9 +1280,7 @@
 														<p style="font-size:125%;">A value of
 																<strong>¥160,000</strong>
 														</p>
-														<a class="btn action to-raffle" href="#raffle-store">
-																<span>Enter here</span>
-														</a>
+														
 														<div class="sponsors">
 																<a href="https://hokkaidobackcountryclub.com" target="_blank">
 																		<img src="/images/company/higuma/hbc.png" alt="Hokkaido Backcountry Club"/>
@@ -1317,9 +1305,7 @@
 														<p style="font-size:125%;">A value of
 																<strong>¥92,400</strong>
 														</p>
-														<a class="btn action to-raffle" href="#raffle-store">
-																<span>Enter here</span>
-														</a>
+														
 														<div class="sponsors">
 																<a href="https://www.burton.com/" target="_blank">
 																		<img src="/images/company/tanuki/burton.png" alt="Burton"/>
@@ -1333,34 +1319,7 @@
 
 						</div>
 
-						<div class="t3-section">
-
-								<div class="module-title-wrap">
-										<p style="font-size:150%;" class="ja-animate" data-animation="move-from-bottom" data-delay="400">
-												Plus more prizes to come!</p>
-								</div>
-
-								<div class="module-title-wrap"></div>
-
-								<div id="raffle-store"></div>
-
-						</div>
-
-				</div>
-
-				<div class="t3-section-wrap tab-content" id="purchases" style="display:none;">
-
-						<div class="section">
-
-								<div class="module-title-wrap" style="margin-top:30px; margin-bottom:30px;">
-										<p style="margin-bottom:0; font-size:100%;" class="ja-animate" data-animation="move-from-bottom" data-delay="800">Your purchases build trails!</p>
-								</div>
-
-								<div>
-										<div id="purchases-store"></div>
-								</div>
-
-						</div>
+						
 
 				</div>
 
@@ -1458,6 +1417,10 @@
 
 		</div>
 
+		
+
+		
+
 		<script type="text/javascript">
 				window.ec = window.ec || Object();
 				window.ec.config = window.ec.config || Object();
@@ -1476,34 +1439,14 @@
 				currentTab = (params.get("t") === null)
 						? currentTab
 						: params.get("t");
-				if (currentTab === "purchases") {
-						xProductBrowser("defaultCategoryId=137728300", "categoriesPerRow=3", "views=grid(20,3) list(60) table(60)", "categoryView=grid", "searchView=list", "id=purchases-store");
-				} else {
-						xProductBrowser("defaultProductId=485712291", "categoriesPerRow=3", "views=grid(20,3) list(60) table(60)", "categoryView=grid", "searchView=list", "id=raffle-store");
-				}
+				xProductBrowser("defaultCategoryId=137728300", "categoriesPerRow=3", "views=grid(20,3) list(60) table(60)", "categoryView=grid", "searchView=list", "id=purchases-store");
 
 				window.ecwid_script_defer = true;
 				window.ecwid_dynamic_widgets = true;
 
-				Ecwid
-						.OnPageSwitch
-						.add(function (page) {
-								if (currentTab === "raffle" && page.type === "CATEGORY") {
-										window.location.hash = '#!/Raffle-Ticket/p/485712291';
-										return false;
-								}
-						});
-
 				$(document).ready(function () {
 
-						$('a[href^="#raffle-store"]').click(function (event) {
-								if (currentTab !== 'raffle') 
-										openTab('raffle');
-								scrollTo('#raffle-store');
-								event.preventDefault();
-						});
-
-						if (currentTab !== "raffle") {
+						if (currentTab !== "purchases") {
 								openTab(currentTab, false);
 						}
 
@@ -1551,9 +1494,9 @@
   <div class="module-inner">
     <div class="module-ct">
       <div id="acm-cliens-104" class="acm-cliens style-1 img-grayscale higuma">
-        <div class="row" style="width: 114.28571428571428%;">
+        <div class="row" style="width: 100%;">
           
-            <div class="col-xs-12 client-item" style="width:12.5%;" data-animation="pop-up" data-delay="item-0">
+            <div class="col-xs-12 client-item" style="width:10%;" data-animation="pop-up" data-delay="item-0">
               <div class="client-img">
                 <a href="https://coinmetro.com" target="_blank">
                   <img class="img-responsive" src="/images/company/higuma/coinmetro.png">
@@ -1561,7 +1504,7 @@
               </div>
             </div>
           
-            <div class="col-xs-12 client-item" style="width:12.5%;" data-animation="pop-up" data-delay="item-1">
+            <div class="col-xs-12 client-item" style="width:10%;" data-animation="pop-up" data-delay="item-1">
               <div class="client-img">
                 <a href="https://www.h2group.com" target="_blank">
                   <img class="img-responsive" src="/images/company/higuma/h2.png">
@@ -1569,7 +1512,7 @@
               </div>
             </div>
           
-            <div class="col-xs-12 client-item" style="width:12.5%;" data-animation="pop-up" data-delay="item-2">
+            <div class="col-xs-12 client-item" style="width:10%;" data-animation="pop-up" data-delay="item-2">
               <div class="client-img">
                 <a href="https://www.hokkaidobackcountryclub.com" target="_blank">
                   <img class="img-responsive" src="/images/company/higuma/hbc.png">
@@ -1577,7 +1520,7 @@
               </div>
             </div>
           
-            <div class="col-xs-12 client-item" style="width:12.5%;" data-animation="pop-up" data-delay="item-3">
+            <div class="col-xs-12 client-item" style="width:10%;" data-animation="pop-up" data-delay="item-3">
               <div class="client-img">
                 <a href="https://holidayniseko.com" target="_blank">
                   <img class="img-responsive" src="/images/company/higuma/holiday-niseko.png">
@@ -1585,7 +1528,15 @@
               </div>
             </div>
           
-            <div class="col-xs-12 client-item" style="width:12.5%;" data-animation="pop-up" data-delay="item-4">
+            <div class="col-xs-12 client-item" style="width:10%;" data-animation="pop-up" data-delay="item-4">
+              <div class="client-img">
+                <a href="https://www.niseko-wow.com" target="_blank">
+                  <img class="img-responsive" src="/images/company/higuma/niseko-wow.png">
+                </a>
+              </div>
+            </div>
+          
+            <div class="col-xs-12 client-item" style="width:10%;" data-animation="pop-up" data-delay="item-5">
               <div class="client-img">
                 <a href="https://nisekorealestate.com" target="_blank">
                   <img class="img-responsive" src="/images/company/higuma/nre.png">
@@ -1593,7 +1544,7 @@
               </div>
             </div>
           
-            <div class="col-xs-12 client-item" style="width:12.5%;" data-animation="pop-up" data-delay="item-5">
+            <div class="col-xs-12 client-item" style="width:10%;" data-animation="pop-up" data-delay="item-6">
               <div class="client-img">
                 <a href="https://www.odinhills.com" target="_blank">
                   <img class="img-responsive" src="/images/company/higuma/odin-hills.png">
@@ -1601,7 +1552,15 @@
               </div>
             </div>
           
-            <div class="col-xs-12 client-item" style="width:12.5%;" data-animation="pop-up" data-delay="item-6">
+            <div class="col-xs-12 client-item" style="width:10%;" data-animation="pop-up" data-delay="item-7">
+              <div class="client-img">
+                <a href="https://www.panoramaniseko.com" target="_blank">
+                  <img class="img-responsive" src="/images/company/higuma/panorama-niseko.png">
+                </a>
+              </div>
+            </div>
+          
+            <div class="col-xs-12 client-item" style="width:10%;" data-animation="pop-up" data-delay="item-8">
               <div class="client-img">
                 <a href="https://www.scglobal.com.sg" target="_blank">
                   <img class="img-responsive" src="/images/company/higuma/sc-global.png">
@@ -1609,7 +1568,7 @@
               </div>
             </div>
           
-            <div class="col-xs-12 client-item" style="width:12.5%;" data-animation="pop-up" data-delay="item-7">
+            <div class="col-xs-12 client-item" style="width:10%;" data-animation="pop-up" data-delay="item-9">
               <div class="client-img">
                 <a href="https://www.zekkeicollection.com" target="_blank">
                   <img class="img-responsive" src="/images/company/higuma/zekkei.png">
