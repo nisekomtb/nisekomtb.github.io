@@ -1,0 +1,37 @@
+- path: ''
+  en: Home
+  ja: ホーム
+
+- path: proposal
+  en: Our Proposal
+  ja: 私たちの理念
+
+- path: projects
+  en: Projects
+  ja: プロジェクト
+  sub:
+
+  - path: twin-peaks
+    en: Twin Peaks
+    ja: ツイン・ピーク
+
+- path: get-involved
+  en: Get Involved
+  ja: プロジェクトに参加する
+  sub:
+
+  - path: crowdfund
+    en: Crowdfund
+    ja: クラファン
+
+  - path: join
+    en: Join Us
+    ja: 仲間になろう
+
+  - path: partner
+    en: Become a Partner
+    ja: 協賛のご案内
+
+  - path: donate
+    en: Donate
+    ja: 寄付のお願い

@@ -1,0 +1,284 @@
+{% assign path = page.path | remove: "ja/" | remove: "index.html" %}
+<!DOCTYPE html>
+<html prefix="og: https://ogp.me/ns#" lang="{{ page.lang }}" dir="ltr" class='com_content view-article itemid-126 j39 mm-hover'>
+  <head>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-XWZ6MXLBEJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-XWZ6MXLBEJ');
+    </script>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>{{- page.title -}} - NAMTBA</title>
+    {% if page.description %}<meta name="description" content="{{ page.description }}"/>{% endif %}
+    <meta property="og:title" content="{{ page.title }}"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="https://namtba.com{{ page.og.image }}"/>
+    <meta property="og:image:url" content="https://namtba.com{{ page.og.image }}"/>
+    <meta property="og:image:secure_url" content="https://namtba.com{{ page.og.image }}"/>
+    <meta property="og:url" content="https://namtba.com/{% if page.lang == 'ja' %}ja/{% endif %}{{ path }}"/>
+    {% if page.description %}<meta property="og:description" content="{{ page.description }}"/>{% endif %}
+    {% if page.lang == 'en' %}<meta property="og:locale" content="en_JP"/>
+      <meta property="og:site_name" content="Niseko Area Mountain Bike Association"/>
+      <meta property="og:locale:alternate" content="ja_JP"/>
+    {% else %}<meta property="og:locale" content="ja_JP"/>
+      <meta property="og:site_name" content="ニセコエリアマウンテンバイク 協会"/>
+      <meta property="og:locale:alternate" content="en_JP"/>
+    {% endif %}
+    <link rel="alternate" hreflang="{% if page.lang == 'en' %}ja{% else %}en{% endif %}" href="/{% if page.lang == 'en' %}ja/{% endif %}{{ path }}"/>
+    {% assign build = site.time %}<link href="/assets/images/ico/favicon.ico?d={{ build }}" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+    <link href="/assets/css/bootstrap.css?d={{ build }}" rel="stylesheet" type="text/css"/>
+    <link href="/assets/css/legacy-grid.css?d={{ build }}" rel="stylesheet" type="text/css"/>
+    <link href="/assets/css/font-awesome.min.css?d={{ build }}" rel="stylesheet" type="text/css"/>
+    <link href="/assets/css/template.css?d={{ build }}" rel="stylesheet" type="text/css"/>
+    <link href="/assets/css/megamenu.css?d={{ build }}" rel="stylesheet" type="text/css"/>
+    <link href="/assets/css/off-canvas.css?d={{ build }}" rel="stylesheet" type="text/css"/>
+    <link href="/assets/fonts/font-awesome/css/font-awesome.min.css?d={{ build }}" rel="stylesheet" type="text/css"/>
+    <link href="/assets/fonts/metropolis/stylesheet.css?d={{ build }}" rel="stylesheet" type="text/css"/>
+    <link href="/assets/fonts/ionicons/css/ionicons.css?d={{ build }}" rel="stylesheet" type="text/css"/>
+    <link href="/assets/js/owl-carousel/owl.carousel.min.css?d={{ build }}" rel="stylesheet" type="text/css"/>
+    <link href="/assets/css/masthead.css?d={{ build }}" rel="stylesheet" type="text/css"/>
+    <!-- block links endblock -->
+    <script src="/assets/js/jquery.min.js?d={{ build }}" type="text/javascript"></script>
+    <script src="/assets/js/jquery-noconflict.min.js?d={{ build }}" type="text/javascript"></script>
+    <script src="/assets/js/jquery-migrate.min.js?d={{ build }}" type="text/javascript"></script>
+    <script src="/assets/js/caption.js?d={{ build }}" type="text/javascript"></script>
+    <script src="/assets/js/bootstrap.js?d={{ build }}" type="text/javascript"></script>
+    <script src="/assets/js/jquery.tap.min.js?d={{ build }}" type="text/javascript"></script>
+    <script src="/assets/js/off-canvas.js?d={{ build }}" type="text/javascript"></script>
+    <script src="/assets/js/t3.js?d={{ build }}" type="text/javascript"></script>
+    <script src="/assets/js/menu.js?d={{ build }}" type="text/javascript"></script>
+    <script src="/assets/js/owl-carousel/owl.carousel.min.js?d={{ build }}" type="text/javascript"></script>
+    <script src="/assets/js/inview.js?d={{ build }}" type="text/javascript"></script>
+    <script src="/assets/js/script.js?d={{ build }}" type="text/javascript"></script>
+    <script src="/assets/js/acm/script.js?d={{ build }}" type="text/javascript"></script>
+    <script type="text/javascript">
+      jQuery(window).on('load', function () {
+        new JCaption('img.caption');
+      });
+    </script>
+    <!-- block scripts endblock -->
+
+    <!-- META FOR IOS & HANDHELD -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <style type="text/stylesheet">
+      @-webkit-viewport {
+        width: device-width;
+      }
+      @-moz-viewport {
+        width: device-width;
+      }
+      @-ms-viewport {
+        width: device-width;
+      }
+      @-o-viewport {
+        width: device-width;
+      }
+      @viewport {
+        width: device-width;
+      }
+    </style>
+    <script type="text/javascript">
+      //<![CDATA[
+      if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+        var msViewportStyle = document.createElement("style");
+        msViewportStyle.appendChild(document.createTextNode("@-ms-viewport{width:auto!important}"));
+        document
+          .getElementsByTagName("head")[0]
+          .appendChild(msViewportStyle);
+      }
+
+      //]]>
+    </script>
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="apple-mobile-web-app-capable" content="YES"/>
+    <!-- //META FOR IOS & HANDHELD -->
+
+    <style>
+      .ja-decor-1 path {
+        fill: url("#gradient-1");
+      }
+
+      .ja-decor-2 path {
+        fill: url("#gradient-2");
+      }
+
+      .ja-decor-3 path {
+        fill: url("#gradient-3");
+      }
+
+      .ja-decor-4 path {
+        fill: url("#gradient-4");
+      }
+
+      .ja-decor-5 path {
+        fill: url("#gradient-5");
+      }
+
+      .ja-decor-6 path {
+        fill: url("#gradient-6");
+      }
+    </style>
+
+    <!-- Le HTML5 shim and media query for IE8 support -->
+    <!--[if lt IE 9]> <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script> <script type="text/javascript" src="/assets/js/respond.min.js"></script> <![endif]-->
+
+    <script>
+      !function (f, b, e, v, n, t, s) {
+        if (f.fbq)
+          return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n
+              .callMethod
+              .apply(n, arguments)
+            : n
+              .queue
+              .push(arguments)
+        };
+        if (!f._fbq)
+          f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = '2.0';
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s
+          .parentNode
+          .insertBefore(t, s)
+      }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '820064485670206');
+      fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=820064485670206&ev=PageView&noscript=1"/></noscript>
+
+  </head>
+
+  <body>
+
+    <div class="t3-wrapper enable-effect">
+
+      <header id="t3-header" class="t3-header">
+        {% include nav.html %}
+      </header>
+
+      {% case path %}
+        {% when '' %}
+        {% include hero.html %}
+        {% when 'get-involved/crowdfund/' %}
+        {% include masthead-crowdfund.html %}
+        {% else %}
+        {% include masthead.html %}
+      {% endcase %}
+
+      <div id="t3-mainbody" class="container t3-mainbody">
+        <div class="row">
+
+          <!-- MAIN CONTENT -->
+          <div id="t3-content" class="t3-content col-xs-12">
+            {{ content }}
+          </div>
+        </div>
+        <!-- //MAIN CONTENT -->
+
+      </div>
+    </div>
+
+    <div id="t3-section-bottom" class="t3-section-wrap wrap">
+
+      {% if path == '' %}
+        <div class="module-title-wrap">
+            <h3 class="module-title" style="color: #cccccc;">{% if page.lang == "en" %}Our Higuma sponsors{% else %}羆スポンサー{% endif %}</h3>
+            <div class="features-desc">
+                <img style="width:50px;" alt="Higuma" src="/assets/images/ico/higuma.500.png"/>
+            </div>
+        </div>
+        {% endif %}
+
+        {% include sponsors.html sponsors=site.data.sponsors.higuma.sponsors width=site.data.sponsors.higuma.width class="higuma" %}
+
+        {% if path == '' %}
+        <div class="module-title-wrap"></div>
+
+        <div class="module-title-wrap">
+            <h3 class="module-title" style="color: #cccccc;">{% if page.lang == "en" %}Our Shika sponsors{% else %}鹿スポンサー{% endif %}</h3>
+            <div class="features-desc">
+                <img style="width:50px;" alt="Shika" src="/assets/images/ico/shika.500.png"/>
+            </div>
+        </div>
+
+        {% include sponsors.html sponsors=site.data.sponsors.shika.sponsors width=site.data.sponsors.shika.width class="shika" %}
+
+        <div class="module-title-wrap"></div>
+
+        <div class="module-title-wrap">
+            <h3 class="module-title" style="color: #cccccc;">{% if page.lang == "en" %}Our Tanuki sponsors{% else %}狸スポンサー{% endif %}</h3>
+            <div class="features-desc">
+                <img style="width:50px;" alt="Tanuki" src="/assets/images/ico/tanuki.500.png"/>
+            </div>
+        </div>
+
+      {% include sponsors.html sponsors=site.data.sponsors.tanuki.sponsors width=site.data.sponsors.tanuki.width class="tanuki" %}
+
+      {% endif %}
+
+      <div class="module-title-wrap"></div>
+    </div>
+
+    <!-- BACK TOP TOP BUTTON -->
+    <div id="back-to-top" data-spy="affix" data-offset-top="200" class="back-to-top hidden-xs hidden-sm affix-top">
+      <button class="btn btn-primary" title="Back to Top">
+        <span class="icon ion-ios-arrow-up"></span></button>
+    </div>
+
+    <script type="text/javascript">
+      (function ($) {
+        // Back to top
+        $('#back-to-top').on('click', function () {
+          $("html, body").animate({
+            scrollTop: 0
+          }, 500);
+          return false;
+        });
+      })(jQuery);
+    </script>
+    <!-- BACK TO TOP BUTTON -->
+
+    <!-- FOOTER -->
+    <footer id="t3-footer" class="wrap t3-footer">
+      <div class="container">
+        <div class="t3-copyright">
+          <div class="row">
+            <div class="col-md-12 copyright ">
+              <div class="mod-custom custom">
+                <div class="social">
+                  <a href="https://www.instagram.com/nisekomtb/">
+                    <img src="/assets/images/logos/social.insta.png" alt="Instagram" loading="lazy" data-path="local-images:/logos/social.insta.png"/>
+                  </a>
+                  <a href="https://www.facebook.com/nisekoareamtbassociation">
+                    <img src="/assets/images/logos/social.facebook.png" alt="Facebook" loading="lazy" data-path="local-images:/logos/social.facebook.png"/>
+                  </a>
+                </div>
+              </div>
+              <div class="mod-footer">
+                <div class="footer1">&#169; 2023 NAMTBA</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- //FOOTER -->
+
+    </div>
+
+  </body>
+
+</html>

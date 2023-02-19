@@ -1,0 +1,87 @@
+higuma:
+  width: 10
+  sponsors:
+    - image: /assets/images/company/higuma/coinmetro.png
+      url: https://coinmetro.com
+    - image: /assets/images/company/higuma/h2.png
+      url: https://www.h2group.com
+      ja:
+        url: https://www.h2group.com/jp/
+    - image: /assets/images/company/higuma/hbc.png
+      url: https://www.hokkaidobackcountryclub.com/en/homepage/
+      ja:
+        url: https://www.hokkaidobackcountryclub.com/ja/homepage-2/
+    - image: /assets/images/company/higuma/holiday-niseko.png
+      url: https://holidayniseko.com
+      ja:
+        url: https://holidayniseko.jp
+    - image: /assets/images/company/higuma/niseko-wow.png
+      url: https://www.niseko-wow.com
+    - image: /assets/images/company/higuma/nre.png
+      url: https://nisekorealestate.com
+      ja:
+        url: https://nisekorealestate.com/ja/
+    - image: /assets/images/company/higuma/odin-hills.png
+      url: https://www.odinhills.com
+    - image: /assets/images/company/higuma/panorama-niseko.png
+      url: https://www.panoramaniseko.com
+      ja:
+        url: https://www.panoramaniseko.com/ja
+    - image: /assets/images/company/higuma/sc-global.png
+      url: https://www.scglobal.com.sg
+    - image: /assets/images/company/higuma/zekkei.png
+      url: https://www.zekkeicollection.com/en
+      ja:
+        url: https://www.zekkeicollection.com/
+shika:
+  width: 12
+  sponsors:
+    - image: /assets/images/company/shika/mtnsea.png
+      url: https://www.mtnsea.co
+    - image: /assets/images/company/shika/niseko-central.png
+      url: https://www.nisekocentral.com
+      ja:
+        url: https://www.nisekocentral.com/ja/
+    - image: /assets/images/company/shika/noasc.png
+      url: https://noasc.com/en/
+      ja:
+        url: https://noasc.com/ja/
+    - image: /assets/images/company/shika/oyuki.png
+      url: https://oyuki.com
+    - image: /assets/images/company/shika/rhythm.png
+      url: https://www.rhythmjapan.com
+      ja:
+        url: https://www.rhythmjapan.com/ja/
+    - image: /assets/images/company/shika/sme.png
+      url: https://www.smejapan.com
+    - image: /assets/images/company/shika/suiboku.png
+      url: https://www.suibokuhirafu.com
+      ja:
+        url: https://www.suibokuhirafu.com/ja/
+tanuki:
+  width: 14
+  sponsors:
+    - image: /assets/images/company/tanuki/burton.png
+      url: https://www.burton.com/jp/en
+      ja:
+        url: https://www.burton.com/jp/ja
+    - image: /assets/images/company/tanuki/explore-niseko.png
+      url: https://www.explore-niseko.com
+      ja:
+        url: https://www.explore-niseko.com/ja/
+    - image: /assets/images/company/tanuki/mnk.png
+      url: https://www.mnkniseko.com/en
+      ja:
+        url: https://www.mnkniseko.com/ja
+    - image: /assets/images/company/tanuki/niseko-portfolio.png
+      url: https://nisekoportfolio.com
+      ja:
+        url: https://nisekoportfolio.com/ja/
+    - image: /assets/images/company/tanuki/odin.png
+      url: https://www.odin-property.com
+    - image: /assets/images/company/tanuki/peak-car-rentals.png
+      url: https://www.nisekocarrental.com
+    - image: /assets/images/company/tanuki/powderlife.png
+      url: https://www.powderlife.com
+    - image: /assets/images/company/tanuki/seasons.png
+      url: https://www.seasons-niseko.co
