@@ -1,0 +1,46 @@
+<!-- MASTHEAD -->
+<div class="wrap t3-masthead t3-section-wrap">
+  <div class="ja-masthead" style="background-image: url('/assets/images/bg/bg-header-twinpeaks.jpg')">
+    <div class="ja-masthead-detail">
+      {% if page.lang == "en" %}
+        <h3 class="ja-masthead-title">Twin Peaks Crowdfunding</h3>
+        <div class="ja-masthead-description">Win prizes, buy merch and help fund Twin Peaks; Niseko's first world class, free-to-use, community bike park.</div>
+      {% else %}
+        <h3 class="ja-masthead-title">
+          <span class="ja">ツインピークス<wbr>クラウドファンディング</span>
+        </h3>
+        <div class="ja-masthead-description">
+          <span class="ja">ニセコ初、<wbr>世界クラスの<wbr>無料コミュニティサイクリングパーク：ツインピークスへの<wbr>募金に<wbr>参加し、<wbr>豪華賞品や<wbr>グッズを<wbr>獲得しましょう。</span>
+        </div>
+      {% endif %}
+      <div class="fund-progress">
+        <div class="outer">
+          <div
+            class="inner ja-animate"
+            data-animation="move-from-left"
+            data-delay="200"></div>
+        </div>
+      </div>
+      <div class="fund-progress">
+        <div class="labels">
+          <div class="left">
+            <small>0km</small>
+          </div>
+          <div class="right">
+            <small>8km</small>
+          </div>
+          <div>
+            <small>4km</small>
+          </div>
+        </div>
+      </div>
+      <small>
+        {% if page.lang == "en" %}Phase 1 trail kilometers funded.
+        {% else %}
+          <span class="ja">フェーズ 1：回収資金で<wbr>どれだけの<wbr>トレイルを<wbr>造成できるか(kmで<wbr>表示)</span>
+        {% endif %}
+      </small>
+    </div>
+  </div>
+</div>
+<!-- //MASTHEAD -->

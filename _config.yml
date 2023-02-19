@@ -1,0 +1,38 @@
+title: Niseko Area Mountain Bike Association
+description: |
+  The Niseko Area Mountain Bike Association (NAMTBA) is a nonprofit organization based in Niseko,
+  Japan. This volunteer-based, grassroots organization is focused on the building of trails and
+  community and is working towards transforming Niseko into Asia's premier mountain bike
+  destination. Learn more about us, our trails and the future of mountain biking in Japan at
+  NAMTBA.com
+baseurl: ""
+url: https://namtba.com
+github_username:  namtba
+
+strict_front_matter: true
+
+liquid:
+  error_mode: strict
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+      lang: en
+      og:
+        image: /assets/images/og/hero.jpg
+  - scope:
+      path: ja
+    values:
+      lang: ja
+  - scope:
+      path: projects/twin-peaks
+    values:
+      og:
+        image: /assets/images/og/twinpeaks.jpg
+  - scope:
+      path: ja/projects/twin-peaks
+    values:
+      og:
+        image: /assets/images/og/twinpeaks.jpg

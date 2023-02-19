@@ -1,0 +1,169 @@
+- image: /assets/images/team/andy.jpg
+  name: Andy Meadows
+  title: Rhythm Japan Head of Operations
+  ja:
+    name: メドーズ・アンディー
+    title: リズムジャパン オペレーション部門長
+
+- image: /assets/images/team/tom.jpg
+  name: Tom Mortiboy
+  title: Software Engineer
+  ja:
+    name: モーティーボーイ・トーマス
+    title: ソフトウエアエンジニア
+
+- image: /assets/images/team/miles.jpg
+  name: Miles Zeorlin
+  title: Niseko Real Estate Sales Consultant
+  ja:
+    name: ゼオリン・マイルズ
+    title: 株式会社ニセコリアルエステート・営業部
+
+- image: /assets/images/team/ashley.jpg
+  name: Ashley Nicholls
+  title: Holiday Niseko KK Managing Director / Owner
+  sub_title: Niseko Tourism Director
+  ja:
+    name: ニコルズ・アシュリー
+    title: ホリデーニセコ株式会社 常務取締役・オーナー
+    sub_title: ニセコツーリズム理事
+
+- image: /assets/images/team/chie.jpg
+  name: Chie Seino (Administration Officer)
+  title: Kaba Niseko Property Manager
+  ja:
+    name: 清野 千絵 (事務局長)
+    title: 樺ニセコ プロパティーマネージャー
+
+- image: /assets/images/team/angharad.jpg
+  name: Angharad Mortiboy
+  title: Nutritional & Lifestyle Coach
+  ja:
+    name: モーティーボーイ・アンバラード
+    title: 栄養とライフスタイルのコーチ
+
+- image: /assets/images/team/mayumi.jpg
+  name: Mayumi Honda
+  title: Niseko Black General Manager
+  ja:
+    name: 本多 真弓
+    title: ニセコブラック ジェネラルマネージャー
+
+- image: /assets/images/team/sachi.jpg
+  name: Sachi Yelle
+  title: EZObase / ezobike Owner
+  ja:
+    name: イェル 紗知
+    title: EZObase / ezobike 代表
+
+- image: /assets/images/team/masaya.jpg
+  name: Masaya Yoshimura
+  sub_title: Niseko Moiwa Ski Resort General Manager
+  ja:
+    name: 吉村 政哉
+    title: ニセコモイワスキーリゾート総支配人
+
+- image: /assets/images/team/yukihiro.jpg
+  name: Yukihiro Tochigi
+  title: Chitose Ringyo Forestry President
+  sub_title: (Large-scale forest owners in Hokkaido)
+  ja:
+    name: 栃木 幸広
+    title: 千歳林業㈱ 代表取締役社長
+    sub_title: 北海道の大規模森林所有者
+
+- image: /assets/images/team/chika.jpg
+  name: Chika Lund
+  title: Niseko Powderlife Magazine Director
+  ja:
+    name: ランド 千佳
+    title: ニセコパウダーライフマガジン ディレクター
+
+- image: /assets/images/team/paul.jpg
+  name: Paul Butkovich
+  title: H2 Group Director of Real Estate Sales
+  ja:
+    name: ブトゥビッチ・ポール
+    title: H2グループ 不動産部門ディレクター
+
+- image: /assets/images/team/ben.jpg
+  name: Ben Kerr
+  title: Niseko Tourism & Kutchan Tourism Association Director
+  sub_title: Niseko Real Estate Founder / Owner
+  ja:
+    name: ベン・カー
+    title: 倶知安町及びニセコ町観光協会理事
+    sub_title: ニセコリアルエステート 創業者／オーナー
+
+- image: /assets/images/team/yui.jpg
+  name: Yui Spragg
+  title: Rising Sun Guides General Affairs
+  ja:
+    name: スプラグ 結
+    title: ライジングサンガイド 総務
+
+- image: /assets/images/team/namikata.jpg
+  name: Makoto Namikata
+  title: Kutchan Council Member
+  sub_title: North Sled Snowmobiles Owner
+  ja:
+    name: 波方 誠
+    title: 倶知安町議会議員
+    sub_title: ノーススレッドスノーモービル オーナー
+
+- image: /assets/images/team/kazue.jpg
+  name: Kazue Iijima
+  title: Accountant
+  ja:
+    name: 飯島 和恵
+    title: 会計士
+
+- image: /assets/images/team/mizuno.jpg
+  name: Manabu Mizuno
+  title: Mizuno Bikes Owner
+  ja:
+    name: 水野 学
+    title: 水野自転車店 オーナー
+
+- image: /assets/images/team/yoshihito.jpg
+  name: Yoshihito Tanaka
+  title: Kutchan Council Member. Kutchan Tourism Association Director
+  sub_title: Niseko Resort Service Founder
+  ja:
+    name: 田中 義人
+    title: 倶知安町議会議員. 倶知安町観光協会理事
+    sub_title: ニセコリゾートサービス 創業者／オーナー
+
+- image: /assets/images/team/shinji.jpg
+  name: Shinji Furuya
+  title: Kutchan Council Member
+  sub_title: Niseko Environment Management Office Manager
+  ja:
+    name: 古谷 真司
+    title: 倶知安町議会議員
+    sub_title: ニセコ環境㈱ 管理室長
+
+- image: /assets/images/team/riccardo.jpg
+  name: Riccardo Tossani
+  title: Riccardo Tossani Architecture Founder / Owner
+  ja:
+    name: トッサーニ・リカルド
+    title: リカルド・トッサーニ建築事務所 創業者／オーナー
+
+- image: /assets/images/team/hiroshi.jpg
+  name: Hiroshi Yamada
+  title: Kutchan Tourism Association Vice President
+  sub_title: North Design KK Founder / Owner
+  ja:
+    name: 山田 洋
+    title: 倶知安町観光協会副会長
+    sub_title: North Design 株式会社 創業者／オーナー
+
+- image: /assets/images/team/satoshi.jpg
+  name: Satoshi Yoshida (Auditor)
+  title: Kutchan Tourism Association President
+  sub_title: Mina-Kamuy Legal Services Founder / Owner
+  ja:
+    name: 吉田 聡 (監事)
+    title: 倶知安町観光協会会長
+    sub_title: 司法書士法人ミナカムイ 創業者／オーナー

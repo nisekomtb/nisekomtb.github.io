@@ -1,0 +1,32 @@
+{% assign width = include.width | default: 10 | times: 1.0 %}
+{% assign sponsors_size = include.sponsors.size | times: 1.0 %}
+{% assign width = sponsors_size | divided_by: width | times: 100 %}
+
+<div class="module-inner">
+  <div class="module-ct">
+    <div id="acm-cliens-104" class="acm-cliens style-1 img-grayscale {{ include.class }}">
+      <div class="row" style="width: {{ width }}%;">
+        {% for sponsor in include.sponsors %}
+          <div
+            class="col-xs-12 client-item ja-animate"
+            style="width:{{ 100 | divided_by: sponsors_size }}%;"
+            data-animation="pop-up"
+            data-delay="item-{{ forloop.index0 }}">
+            <div class="client-img">
+              <a href="{% if sponsor.ja and page.lang == "ja" %}{{ sponsor.ja.url }}{% else %}{{ sponsor.url }}{% endif %}" target="_blank">
+                <img class="img-responsive" src="{{ sponsor.image }}">
+              </a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    <script>
+      (function($) {
+        $(document).ready(function() {
+          $('#acm-cliens-104 .client-img img.img-responsive').css({'filter': 'alpha(opacity=30)', 'zoom': '1', 'opacity': '0.3'});
+        });
+      })(jQuery);
+    </script>
+  </div>
+</div>

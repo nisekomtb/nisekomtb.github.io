@@ -1,0 +1,76 @@
+<!-- HERO -->
+<div class="wrap t3-hero ">
+  <div class="t3-module module " id="Mod98">
+    <div class="acm-features style-1" style="background-image: url('/assets/images/bg/bg-hero.jpg');">
+      <div class="container">
+        <div class="features-item">
+          <h1
+            class="ja-animate"
+            data-animation="move-from-bottom"
+            data-delay="200">
+            {% if page.lang == "en" %}Niseko Area Mountain Bike Association
+            {% else %}
+              <span class="ja">ニセコ<wbr>エリア<wbr>マウンテンバイク<wbr>協会</span>
+            {% endif %}
+          </h1>
+
+          <p
+            class="lead ja-animate"
+            data-animation="move-from-bottom"
+            data-delay="600"><img
+              class="metal"
+              src="/assets/images/logos/favicon.png"
+              title="🤘" /></p>
+
+          <p
+            class="lead ja-animate"
+            style="margin-top: 30px;"
+            data-animation="move-from-bottom"
+            data-delay="800">
+            {% if page.lang == "en" %}Building trails and community.
+            {% else %}
+              <span class="ja">トレイルと<wbr>コミュニティーの<wbr>構築</span>
+            {% endif %}
+          </p>
+
+          {% comment %} <p class="lead ja-animate" style="margin-top: 80px;" data-animation="move-from-bottom" data-delay="1000">
+          Proudly supported by<br/><img src="/assets/images/company/trek.png" style="width: 300px;"/>
+          </p> {% endcomment %}
+
+          {% comment %}<div class="btn-action ja-animate" data-animation="move-from-bottom" data-delay="1200">
+          <a class="btn btn-primary" href="/get-involved/crowdfund/">Enter Raffle!<br/>Win a Trek e-MTB!
+          </a>
+          </div> {% endcomment %}
+        </div>
+      </div>
+
+      <!-- Arrow -->
+      <span
+        id="next-section"
+        class="icon-bottom ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="1600"></span>
+    </div>
+
+    <div style="float: left; margin-left: 20px; margin-top: -9px; opacity: 0.2;">
+      <small>📷
+        <a href="https://www.rhythmjapan.com">@rhythm</a>
+      </small>
+    </div>
+
+    <script>
+      (function($) {
+        $posNext = $('#next-section').offset().top + 72;
+
+        $('#next-section').on('click', function() {
+          $("html, body").animate({
+            scrollTop: $posNext
+          }, 900);
+          return false;
+        });
+      })(jQuery);
+    </script>
+    <!-- BACK TO TOP BUTTON -->
+  </div>
+</div>
+<!-- //SLIDESHOW -->
