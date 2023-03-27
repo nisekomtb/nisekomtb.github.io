@@ -36,7 +36,7 @@
     en: Donate
     ja: 寄付のお願い
 
-# - path: jobs
-#   isAction: true
-#   en: ⚒️ We're hiring!
-#   ja: ⚒️ 求人募集
+- path: jobs
+  isAction: true
+  en: ⚒️ We're hiring!
+  ja: ⚒️ 求人募集
