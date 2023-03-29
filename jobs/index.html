@@ -12,26 +12,7 @@ description: NAMTBA Trail Builder Job Description
     </div>
   </div>
 </div>
-<div id="jd" style="width:100%;"></div>
-<script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
-<script>
-  document.addEventListener("adobe_dc_view_sdk.ready", function() {
-    var adobeDCView = new AdobeDC.View({clientId: "f0f1f4f9e60e4b1aaa94d2564aa3349f", divId: "jd", backgroundColor: "#000000"});
-    adobeDCView.previewFile({
-      content: {
-        location: {
-          url: "/assets/pdfs/NAMTBA.2023.TrailBuilder-Job-Description.en.pdf"
-        }
-      },
-      metaData: {
-        fileName: "NAMTBA.2023.TrailBuilder.Job.Description.pdf"
-      }
-    }, {
-      embedMode: "IN_LINE",
-      showPrintPDF: false
-    });
-  });
-</script>
+{% include pdf.html path = "/assets/pdfs/NAMTBA.2023.TrailBuilder-Job-Description.en.pdf" name = "NAMTBA.2023.TrailBuilder.Job.Description.pdf" %}
 <div class="ja-inview">
   <div class="module-title-wrap">
     <div class="action">

@@ -1,0 +1,20 @@
+<div id="pdf" style="width:100%;"></div>
+<script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+<script>
+  document.addEventListener("adobe_dc_view_sdk.ready", function() {
+    var adobeDCView = new AdobeDC.View({clientId: "f0f1f4f9e60e4b1aaa94d2564aa3349f", divId: "pdf", backgroundColor: "#000000"});
+    adobeDCView.previewFile({
+      content: {
+        location: {
+          url: "{{ include.path }}"
+        }
+      },
+      metaData: {
+        fileName: "{{ include.name }}"
+      }
+    }, {
+      embedMode: "IN_LINE",
+      showPrintPDF: false
+    });
+  });
+</script>
