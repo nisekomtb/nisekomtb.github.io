@@ -36,6 +36,8 @@ higuma:
 shika:
   width: 12
   sponsors:
+    - image: /assets/images/company/shika/midori.png
+      url: https://midoriinvestors.com
     - image: /assets/images/company/shika/mtnsea.png
       url: https://www.mtnsea.co
     - image: /assets/images/company/shika/niseko-central.png
@@ -65,6 +67,8 @@ tanuki:
       url: https://www.burton.com/jp/en
       ja:
         url: https://www.burton.com/jp/ja
+    - image: /assets/images/company/tanuki/clintvosloo.png
+      url: https://www.clintvosloo.com
     - image: /assets/images/company/tanuki/explore-niseko.png
       url: https://www.explore-niseko.com
       ja:
