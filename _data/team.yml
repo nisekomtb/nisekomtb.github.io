@@ -19,6 +19,13 @@
     name: ゼオリン・マイルズ
     title: 株式会社ニセコリアルエステート・営業部
 
+- image: /assets/images/team/angharad.jpg
+  name: Angharad Mortiboy
+  title: Nutritional & Lifestyle Coach
+  ja:
+    name: モーティーボーイ・アンバラード
+    title: 栄養とライフスタイルのコーチ
+
 - image: /assets/images/team/ashley.jpg
   name: Ashley Nicholls
   title: Holiday Niseko KK Managing Director / Owner
@@ -35,19 +42,13 @@
     name: 清野 千絵 (事務局長)
     title: 樺ニセコ プロパティーマネージャー
 
-- image: /assets/images/team/angharad.jpg
-  name: Angharad Mortiboy
-  title: Nutritional & Lifestyle Coach
-  ja:
-    name: モーティーボーイ・アンバラード
-    title: 栄養とライフスタイルのコーチ
-
 - image: /assets/images/team/mayumi.jpg
   name: Mayumi Honda
-  title: Niseko Black General Manager
+  title: H2 Group Office Manager & Executive Project Manager
   ja:
     name: 本多 真弓
-    title: ニセコブラック ジェネラルマネージャー
+    title: H2グループ オフィス マネージャー
+    sub_title: エグゼクティブプロジェクト マネージャー
 
 - image: /assets/images/team/sachi.jpg
   name: Sachi Yelle
@@ -62,22 +63,6 @@
   ja:
     name: 吉村 政哉
     title: ニセコモイワスキーリゾート総支配人
-
-- image: /assets/images/team/yukihiro.jpg
-  name: Yukihiro Tochigi
-  title: Chitose Ringyo Forestry President
-  sub_title: (Large-scale forest owners in Hokkaido)
-  ja:
-    name: 栃木 幸広
-    title: 千歳林業㈱ 代表取締役社長
-    sub_title: 北海道の大規模森林所有者
-
-- image: /assets/images/team/chika.jpg
-  name: Chika Lund
-  title: Niseko Powderlife Magazine Director
-  ja:
-    name: ランド 千佳
-    title: ニセコパウダーライフマガジン ディレクター
 
 - image: /assets/images/team/paul.jpg
   name: Paul Butkovich
@@ -94,6 +79,22 @@
     name: ベン・カー
     title: 倶知安町及びニセコ町観光協会理事
     sub_title: ニセコリアルエステート 創業者／オーナー
+
+- image: /assets/images/team/yukihiro.jpg
+  name: Yukihiro Tochigi
+  title: Chitose Ringyo Forestry President
+  sub_title: (Large-scale forest owners in Hokkaido)
+  ja:
+    name: 栃木 幸広
+    title: 千歳林業㈱ 代表取締役社長
+    sub_title: 北海道の大規模森林所有者
+
+- image: /assets/images/team/chika.jpg
+  name: Chika Lund
+  title: Niseko Powderlife Magazine Director
+  ja:
+    name: ランド 千佳
+    title: ニセコパウダーライフマガジン ディレクター
 
 - image: /assets/images/team/yui.jpg
   name: Yui Spragg
