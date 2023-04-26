@@ -1,8 +1,12 @@
 higuma:
-  width: 10
+  width: 11
   sponsors:
     - image: /assets/images/company/higuma/coinmetro.png
       url: https://coinmetro.com
+    - image: /assets/images/company/higuma/hanazono.png
+      url: https://hanazononiseko.com/en
+      ja:
+        url: https://hanazononiseko.com/ja
     - image: /assets/images/company/higuma/h2.png
       url: https://www.h2group.com
       ja:
