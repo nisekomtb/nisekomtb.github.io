@@ -14,7 +14,7 @@
             data-delay="item-{{ forloop.index0 }}">
             <div class="client-img">
               <a href="{% if sponsor.ja and page.lang == "ja" %}{{ sponsor.ja.url }}{% else %}{{ sponsor.url }}{% endif %}" target="_blank">
-                <img class="img-responsive" src="{{ sponsor.image }}">
+                <img class="img-responsive" src="{{ sponsor.image }}?d={{ site.time | date: "%s" }}">
               </a>
             </div>
           </div>

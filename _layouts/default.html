@@ -31,7 +31,7 @@
       <meta property="og:locale:alternate" content="en_JP"/>
     {% endif %}
     <link rel="alternate" hreflang="{% if page.lang == 'en' %}ja{% else %}en{% endif %}" href="/{% if page.lang == 'en' %}ja/{% endif %}{{ path }}"/>
-    {% assign build = site.time %}<link href="/assets/images/ico/favicon.ico?d={{ build }}" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+    {% assign build = site.time | date: "%s" %}<link href="/assets/images/ico/favicon.ico?d={{ build }}" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
     <link href="/assets/css/bootstrap.css?d={{ build }}" rel="stylesheet" type="text/css"/>
     <link href="/assets/css/legacy-grid.css?d={{ build }}" rel="stylesheet" type="text/css"/>
     <link href="/assets/css/font-awesome.min.css?d={{ build }}" rel="stylesheet" type="text/css"/>
