@@ -58,12 +58,20 @@ shika:
       url: https://www.rhythmjapan.com
       ja:
         url: https://www.rhythmjapan.com/ja/
+    - image: /assets/images/company/shika/setsu.png
+      url: https://setsuniseko.com/en
+      ja:
+        url: https://setsuniseko.com/ja
     - image: /assets/images/company/shika/sme.png
       url: https://www.smejapan.com
     - image: /assets/images/company/shika/suiboku.png
       url: https://www.suibokuhirafu.com
       ja:
         url: https://www.suibokuhirafu.com/ja/
+    - image: /assets/images/company/shika/vacation-niseko.png
+      url: https://vacationniseko.com/en
+      ja:
+        url: https://vacationniseko.com/ja
 tanuki:
   width: 14
   sponsors:

@@ -15,7 +15,7 @@
     href="{{ langPrefix }}"
     title="{% if page.lang == 'en' %}{{ site.data.nav.first.en }}{% else %}{{ site.data.nav.first.ja }}{% endif %}"
     style="">
-    <img src="/assets/images/logos/logo.svg" />
+    <img src="/assets/images/logos/logo.svg?d={{ site.time | date: "%s" }}" />
   </a>
   <!--div style="position:absolute; width: 125px; right:0; bottom: -27px; text-align: right; font-size:10px; color:#ececec;">
   <img style="width:75px;" src="/assets/images/company/trek.png" />
@@ -206,7 +206,7 @@
         const exdays = 365;
         d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
         document.cookie = "lang=" + lang + "; expires=" + d.toUTCString() + "; path=/";
-        window.location = "/  {%- if page.lang == 'en' -%} ja/{%- endif -%}{{ path }}";
+        window.location = "/ {%- if page.lang == 'en' -%} ja/{%- endif -%}{{ path }}";
       }
 
       function getNavigatorLang() {
