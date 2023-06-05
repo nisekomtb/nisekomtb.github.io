@@ -85,6 +85,8 @@ tanuki:
       url: https://www.explore-niseko.com
       ja:
         url: https://www.explore-niseko.com/ja/
+    - image: /assets/images/company/tanuki/gentemstick.png
+      url: https://gentemstick.com
     - image: /assets/images/company/tanuki/mnk.png
       url: https://www.mnkniseko.com/en
       ja:
