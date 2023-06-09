@@ -14,13 +14,13 @@
     </script>
     <meta charset="utf-8">
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-    <title>{{- page.title -}} - NAMBA</title>
+    <title>{{- page.title }} - NAMBA</title>
     {% if page.description %}<meta name="description" content="{{ page.description }}"/>{% endif %}
     <meta property="og:title" content="{{ page.title }}"/>
     <meta property="og:type" content="website"/>
-    <meta property="og:image" content="https://namba.ngo{{ page.og.image }}"/>
-    <meta property="og:image:url" content="https://namba.ngo{{ page.og.image }}"/>
-    <meta property="og:image:secure_url" content="https://namba.ngo{{ page.og.image }}"/>
+    <meta property="og:image" content="https://namba.ngo{{ page.og.image }}?d={{ site.time | date: "%s" }}"/>
+    <meta property="og:image:url" content="https://namba.ngo{{ page.og.image }}?d={{ site.time | date: "%s" }}"/>
+    <meta property="og:image:secure_url" content="https://namba.ngo{{ page.og.image }}?d={{ site.time | date: "%s" }}"/>
     <meta property="og:url" content="https://namba.ngo/{% if page.lang == 'ja' %}ja/{% endif %}{{ path }}"/>
     {% if page.description %}<meta property="og:description" content="{{ page.description }}"/>{% endif %}
     {% if page.lang == 'en' %}<meta property="og:locale" content="en_JP"/>
@@ -260,11 +260,11 @@
             <div class="col-md-12 copyright ">
               <div class="mod-custom custom">
                 <div class="social">
-                  <a href="https://www.instagram.com/nisekomtb/">
-                    <img src="/assets/images/logos/social.insta.png" alt="Instagram" loading="lazy" data-path="local-images:/logos/social.insta.png"/>
+                  <a class="font-icon" href="https://www.instagram.com/nisekomtb/">
+                    <span class="icon ion-logo-instagram"></span>
                   </a>
-                  <a href="https://www.facebook.com/nisekoareamtbassociation">
-                    <img src="/assets/images/logos/social.facebook.png" alt="Facebook" loading="lazy" data-path="local-images:/logos/social.facebook.png"/>
+                  <a class="font-icon" href="https://www.facebook.com/nisekoareamtbassociation">
+                    <span class="icon ion-logo-facebook"></span>
                   </a>
                 </div>
               </div>

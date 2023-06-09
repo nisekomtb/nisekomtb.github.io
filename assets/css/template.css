@@ -6612,11 +6612,24 @@ div.t3-wrapper {
 
 .t3-copyright .copyright .social a {
   border: 0;
-  opacity: 0.3;
+  opacity: 0.5;
 }
 
 .t3-copyright .copyright .social a img {
   width: 40px;
+}
+
+.t3-copyright .copyright .social a.font-icon span:before {
+  color: #fd7d57;
+  font-size: 40px;
+  background: linear-gradient(135deg, #fd7d57, #f55d59);
+  background-clip: text;
+  display: inline-block;
+  -webkit-background-clip: text;
+  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+  font-weight: 400;
+  text-indent: 1px;
 }
 
 .t3-copyright .copyright .social a:hover {
@@ -6625,27 +6638,6 @@ div.t3-wrapper {
 
 .t3-copyright .copyright .social a:first-child {
   margin-right: 10px;
-}
-
-.poweredby {
-  margin-top: 24px;
-  text-align: center;
-}
-
-.poweredby:before,
-.poweredby:after {
-  display: table;
-  content: " ";
-}
-
-.poweredby:after {
-  clear: both;
-}
-
-.poweredby .t3-logo,
-.poweredby .t3-logo-small {
-  opacity: .3;
-  display: inline-block;
 }
 
 .ec-grid .grid-product .grid-product__wrap-inner {
