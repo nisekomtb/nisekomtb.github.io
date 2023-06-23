@@ -1,46 +1,57 @@
 - image: /assets/images/team/andy.jpg
   name: Andy Meadows
-  title: Rhythm Japan Head of Operations
+  title: Co-founder & Head of Trail Building
+  sub_title: Rhythm Japan Head of Operations
   ja:
     name: メドーズ・アンディー
-    title: リズムジャパン オペレーション部門長
+    title: 共同設立者・トレイル造成責任者
+    sub_title: リズムジャパン オペレーション部門長
 
 - image: /assets/images/team/tom.jpg
   name: Tom Mortiboy
-  title: Software Engineer
+  title: Co-founder & Head of Communications & Technology
+  sub_title: Software Engineer
+
   ja:
     name: モーティーボーイ・トーマス
-    title: ソフトウエアエンジニア
+    title: 共同設立者・コミュニケーション兼テクノロジー責任者
+    sub_title: ソフトウエアエンジニア
 
 - image: /assets/images/team/miles.jpg
   name: Miles Zeorlin
-  title: Niseko Real Estate Sales Consultant
+  title: Co-founder & Head of Marketing
+  sub_title: Niseko Real Estate Sales Consultant
   ja:
     name: ゼオリン・マイルズ
-    title: 株式会社ニセコリアルエステート・営業部
+    title: 共同設立者・マーケティング責任者
+    sub_title: 株式会社ニセコリアルエステート・営業部
 
 - image: /assets/images/team/angharad.jpg
   name: Angharad Mortiboy
-  title: Nutritional & Lifestyle Coach
+  title: Co-founder & Head of Events, Competitions & Races
+  sub_title: Nutritional & Lifestyle Coach
   ja:
     name: モーティーボーイ・アンバラード
-    title: 栄養とライフスタイルのコーチ
+    title: 共同設立者・イベント・大会・レース責任者
+    sub_title: 栄養とライフスタイルのコーチ
 
 - image: /assets/images/team/ashley.jpg
   name: Ashley Nicholls
-  title: Holiday Niseko KK Managing Director / Owner
-  sub_title: Niseko Tourism Director
+  title: Co-founder & Head of Administration & Funding
+  sub_title: Holiday Niseko KK Managing Director / Owner & Niseko Tourism Director
   ja:
     name: ニコルズ・アシュリー
-    title: ホリデーニセコ株式会社 常務取締役・オーナー
-    sub_title: ニセコツーリズム理事
+    title: 共同設立者・事務・資金調達責任者
+    sub_title: ホリデーニセコ株式会社 常務取締役・オーナー & ニセコツーリズム理事
 
 - image: /assets/images/team/chie.jpg
-  name: Chie Seino (Administration Officer)
-  title: Kaba Niseko Property Manager
+  name: Chie Seino
+  title: Administration Officer
+  sub_title: Kaba Niseko Property Manager
   ja:
-    name: 清野 千絵 (事務局長)
-    title: 樺ニセコ プロパティーマネージャー
+    name: 清野 千絵
+    title: 事務局長
+    sub_title: 樺ニセコ プロパティーマネージャー
 
 - image: /assets/images/team/mayumi.jpg
   name: Mayumi Honda
