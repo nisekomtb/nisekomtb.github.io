@@ -35,3 +35,8 @@
   - path: donate
     en: Donate
     ja: 寄付のお願い
+
+- url: https://docs.google.com/forms/d/e/1FAIpQLSfYgc1n05YZbAEgg91FgCN54Y0V6_pyOWMluViI8KXqn7tLHg/viewform
+  isAction: true
+  en: ⚒️ We're hiring!
+  ja: ⚒️ 求人募集
