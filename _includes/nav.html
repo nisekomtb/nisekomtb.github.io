@@ -166,7 +166,14 @@
                       <ul class="dropdown-menu">
                         {% for subNav in nav.sub %}
                           <li class="{% if path1 == subNav.path %}current active {% endif %}item-{{ navId }}{{ forloop.index }}">
-                            <a href="{{ langPrefix | append: nav.path | append: '/' | append: subNav.path }}" class="">
+                            <a
+                              {% if subNav.url %}
+                              href="{{ subNav.url }}"
+                              target="_blank"
+                              {% else %}
+                              href="{{ langPrefix | append: nav.path | append: '/' | append: subNav.path }}"
+                              {% endif %}
+                              class="">
                               {% if page.lang == 'en' %}
                                 {{- subNav.en -}}
                               {% else %}
@@ -177,7 +184,14 @@
                         {% endfor %}
                       </ul>
                     {% else %}
-                      <a href="{{ langPrefix | append: nav.path }}" class="">
+                      <a
+                        {% if nav.url %}
+                        href="{{ nav.url }}"
+                        target="_blank"
+                        {% else %}
+                        href="{{ langPrefix | append: nav.path }}"
+                        {% endif %}
+                        class="">
                         {% if page.lang == 'en' %}
                           {{- nav.en -}}
                         {% else %}
