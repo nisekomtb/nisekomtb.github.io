@@ -68,6 +68,10 @@ shika:
       url: https://www.suibokuhirafu.com
       ja:
         url: https://www.suibokuhirafu.com/ja/
+    - image: /assets/images/company/shika/taiga.png
+      url: https://www.taigaprojects.com
+      ja:
+        url: https://www.taigaprojects.com/ja/
     - image: /assets/images/company/shika/vacation-niseko.png
       url: https://vacationniseko.com/en
       ja:
