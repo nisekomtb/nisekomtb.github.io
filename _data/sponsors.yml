@@ -95,6 +95,10 @@ tanuki:
       url: https://www.mnkniseko.com/en
       ja:
         url: https://www.mnkniseko.com/ja
+    - image: /assets/images/company/tanuki/nikota.png
+      url: https://www.nikotacapital.com
+      ja:
+        url: https://www.nikotacapital.com/ja/
     - image: /assets/images/company/tanuki/niseko-portfolio.png
       url: https://nisekoportfolio.com
       ja:
