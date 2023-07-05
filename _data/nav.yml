@@ -20,10 +20,6 @@
   ja: プロジェクトに参加する
   sub:
 
-  - path: crowdfund
-    en: Crowdfund
-    ja: クラファン
-
   - path: join
     en: Join Us
     ja: 仲間になろう
