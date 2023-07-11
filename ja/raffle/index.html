@@ -1,0 +1,506 @@
+---
+title: Specialized Soil Searching Raffle
+titleHtml: Specialized <img src='/assets/images/company/other/soil-searching.png' style='height:1em; margin-bottom:10px;' alt='Soil Searching'/> Raffle
+description: Support mountain biking in Japan and win an awesome limited edition, fully custom painted Specialized Soil Searching Stumpjumper Evo Expert! Enter to win today!
+og:
+  image: /assets/images/og/raffle.jpg
+---
+<style>
+  .carousel .hero {
+    border: 1px #ccc solid;
+    border radius: 5px;
+  }
+
+  .carousel .thumbs {
+    display: flex;
+    flex-flow: row wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+    margin-top: 5px;
+  }
+
+  .carousel .thumbwrap {
+    width: 20%;
+  }
+
+  @media(max-width: 1199px) {
+    .carousel .thumbwrap {
+      width: 33.333333333%;
+    }
+  }
+
+  @media(max-width: 992px) {
+    .carousel .thumbwrap {
+      width: 25%;
+    }
+  }
+
+  @media(max-width: 480px) {
+    .carousel .thumbwrap {
+      width: 33.333333333%;
+    }
+  }
+
+  .carousel .thumb {
+    margin: 5px;
+    cursor: pointer;
+    border: 1px #ccc solid;
+    border radius: 5px;
+  }
+
+  .carousel .thumb:hover {
+    opacity: 0.8;
+  }
+
+  /* Go from zero to full opacity */
+  @keyframes fadeEffect {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  .prizes .num {
+    color: #0e0e0e;
+    font-size: 200%;
+    position: absolute;
+    margin-left: -47px;
+    font-weight: bold;
+    margin-top: 7px;
+  }
+
+  .prizes .features-item:not(.no-hover):hover .num {
+    color: #fd7d57;
+  }
+
+  .prizes .features-item a.action:hover {
+    background-color: #fd7d57;
+    background: linear-gradient(135deg, #fd7d57, #f55d59);
+    border-color: #fd7d57;
+  }
+
+  .gold {
+    color: #ffd97b;
+    font-size: 12px !important;
+    font-family: "Metropolis", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    margin-top: 30px;
+  }
+
+  .prizes .features-item {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+  }
+
+  .features-item .sponsors {
+    margin: 30px auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+
+  .features-item .sponsors a {
+    margin: 0 5px;
+  }
+
+  .features-item .sponsors img {
+    margin-bottom: 10px;
+    height: 50px;
+  }
+
+  .features-item .products {
+    margin: 30px auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+
+  .features-item .products .prodwrap {
+    width: 50%;
+  }
+
+  @media(max-width: 480px) {
+    .features-item .products .prodwrap {
+      width: 100%;
+    }
+  }
+
+  .features-item .products .prodwrap.full {
+    width: 100%;
+  }
+
+  @media(max-width: 991px) {
+    .features-item .products .prodwrap.full {
+      width: auto;
+    }
+  }
+
+  .features-item .products .prod {
+    margin: 0 5px 10px;
+    border: 1px #ccc solid;
+    border radius: 5px;
+  }
+
+  .features-item .small > div {
+    position: relative;
+  }
+
+  .features-item .action {
+    font-size: 125%;
+    border: 1px #ffffff solid;
+    display: inline-block !important;
+  }
+
+  .features-item .small {
+    font-style: italic;
+    font-size: 75%;
+    margin-top: 30px;
+  }
+
+  .ec-grid {
+    display: block !important;
+  }
+
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .details-gallery__images-spacer {
+    margin-top: 35px;
+  }
+
+  .product-details__navigation {
+    display: none !important;
+  }
+
+  #ProductBrowser-1 {
+    min-height: auto !important;
+  }
+
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .label--notice {
+    background-color: #fd7d57;
+  }
+
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .label--notice::before {
+    color: #fd7d57;
+  }
+
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .label--notice::after {
+    color: #fd7d57;
+  }
+
+  .ec-form__row--continue .form-control--done {
+    text-align: left !important;
+  }
+
+  .form-control button.form-control__button {
+    color: #ffffff !important;
+    background-color: #fd7d57 !important;
+    border-color: transparent !important;
+    background: linear-gradient(135deg, #fd7d57, #f55d59) !important;
+
+    border: 0 !important;
+    border-radius: 30px !important;
+    font-weight: 500 !important;
+    padding-left: 36px !important;
+    padding-right: 36px !important;
+
+    width: auto !important;
+    font-size: 14px !important;
+  }
+
+  .form-control button.form-control__button:hover {
+    background: #fd7d57 !important;
+    background: linear-gradient(155deg, #fd7d57, #fd7d57) !important;
+  }
+
+  img.ecwid-PaymentMethodsBlockSvg {
+    background: #fff !important;
+  }
+
+  .ec-cart__button--apple-pay {
+    text-align: center !important;
+    text-align: -moz-center !important;
+    text-align: -webkit-center !important;
+  }
+
+  .ec-cart__button--apple-pay .form-control--button {
+    border: 1px #fff solid !important;
+    padding-left: 36px !important;
+    padding-right: 36px !important;
+    border-radius: 30px !important;
+    width: 170px !important;
+    margin: 0 auto !important;
+    position: relative !important;
+  }
+
+  a.breadcrumbs__link--last {
+    font-size: 0 !important;
+  }
+
+  a.breadcrumbs__link--last:after {
+    content: '✕';
+    font-size: 20px;
+    font-weight: bold;
+    float: right;
+  }
+
+  html#ecwid_html body#ecwid_body #raffle-store .ec-size .ec-store .details-gallery__images-spacer {
+    margin-top: 0;
+  }
+
+  #raffle-store a.breadcrumbs__link--last {
+    display: none;
+  }
+
+  html#ecwid_html body#ecwid_body #raffle-store .ec-confirmation__continue {
+    display: none;
+  }
+</style>
+
+<script
+  id="ecwid-script"
+  data-cfasync="false"
+  type="text/javascript"
+  src="https://app.ecwid.com/script.js?71386768&lang=en-GB&data_platform=code&data_date=2022-08-27"
+  charset="utf-8"></script>
+<div>
+
+  <div class="t3-section-wrap">
+
+    <div class="section acm-features style-2 prizes">
+      <div
+        class="row"
+        data-animation="move-from-bottom"
+        data-delay="1800">
+        <div class="col col-sm-12 col-md-12">
+          <div
+            class="features-item no-hover ja-animate"
+            data-animation="move-from-bottom"
+            data-delay="item-0">
+
+            <div class="pull-left item-image">
+              <img
+                src="/assets/images/prizes/stumpjumper-1.jpeg"
+                style="border: 1px #ccc solid;"
+                alt=""
+                itemprop="image">
+            </div>
+
+            <div class="row">
+              <div class="col col-sm-12 col-md-4">
+                <div class="font-icon">
+                  <span class="icon ion-ios-trophy">
+                    <span class="num">1</span>
+                  </span>
+                </div>
+                <h4>Soil Searching Stumpjumper Evo Expert</h4>
+                <div class="sponsors">
+                  <a href="https://www.specialized-onlinestore.jp/" target="_blank">
+                    <img
+                      src="/assets/images/company/other/specialized-s.png"
+                      alt="Specialized Bicycles"
+                      style="width: 50px; height: auto;" />
+                  </a>
+                </div>
+                <p style="font-size:125%;">
+                  <strong>NEVER FOR SALE</strong>
+                </p>
+                <p class="gold" style="margin-top:30px;">Fully custom limited edition paint job</p>
+                <p class="gold">Rockshox Lyrik fork</p>
+                <p class="gold">Super Deluxe shock</p>
+                <p class="gold">Roval Traverse 29" wheels</p>
+                <p class="gold">Specialized Soil Searching tires</p>
+                <p class="gold">SRAM Eagle drive train</p>
+                <p class="gold">SRAM Code brakes</p>
+                <p class="gold">Carbon frame</p>
+                <p class="gold">S2 size</p>
+                <a class="btn action to-raffle" href="#raffle-store">
+                  <span>Enter to win here</span>
+                </a>
+                <p class="small">Exact model, specs and colour may differ. The bike is available for immediate collection in Niseko, or for postage within Japan. Should a winner be unable to collect the bicycle immediately, storage for up to 6 months is available in Niseko.</p>
+              </div>
+              <div class="col col-sm-12 col-md-8">
+                <div class="sponsors" style="margin-top:0px;">
+                  <a href="https://www.specialized-onlinestore.jp/" target="_blank">
+                    <img
+                      src="/assets/images/company/other/specialized-wordmark-white.svg"
+                      alt="Specialized Bicycles"
+                      style="width: 200px; height: auto;" />
+                  </a>
+                </div>
+                <p style="margin-bottom:15px;">
+                  <strong style="color:#fff;">ULTRA LIMITED.</strong>
+                  Up for raffle is an ultra limited edition Specialized Stumpjumper Evo Expert. This limited edition build sports a custom, a hand painted Soil Searching branded livery and a special Soil Searching edition parts list. How rare is it? Extremely: it is one of a handful of these bikes available world-wide.
+                </p>
+                <p style="margin-bottom:15px;">
+                  <strong style="color:#fff;">NEVER FOR SALE.</strong>
+                  Specialized's Soil Searching edition bikes are never for sale - they cannot be purchased or custom ordered. This presents an exceptional opportunity to own a truly one-of-a-kind and rare bicycle.
+                </p>
+                <p style="margin-bottom:15px;">
+                  <strong style="color:#fff;">YOURS TO WIN.</strong>
+                  Raffle tickets are just ¥500, each ticket you buy secures you another chance to win this epic bike, and the other prizes on offer. It also supports a good cause: all proceeds go towards building free and public mountain biking trails.</p>
+                <div class="carousel">
+                  <div class="hero">
+                    <img id="carousel-hero" src="/assets/images/prizes/stumpjumper-2.png" />
+                  </div>
+                </div>
+                <p class="gold" style="margin-bottom:15px;">About Specialized Soil Searching</p>
+                <p style="margin-bottom:15px;">Specialized Soil Searching is a movement to recognize, celebrate, and support the trail builders who help shape our sport and our stoke.
+                </p>
+                <p style="margin-bottom:15px;">NAMBA is thankful to have our association's trail building team sponsored by Specialized through their Soil SearchiProgram, and to be raffling off this limited edition Stumpjumper. We are also excited to announce that
+                  <strong style="color:#fff;">all raffle ticket proceeds benefit the free-to-ride Twin Peaks Bike Park.</strong>
+                </p>
+                <p style="margin-bottom:15px;">This exceptional bike cannot be bought anywhere, making it truly unique and highly coveted. It was built by Specialized to continue to show their love and support for those developing and maintaining the trail systems that are the lifeblood of our sport.</p>
+                <p style="margin-bottom:15px;">With its custom paint job, this Specialized Stumpjumper Evo Expert stands out on the trails, showcasing your distinct style and setting you apart as a NAMBA supporter and fortunate winner of this extraordinary prize. A true masterpiece, every detail of the design has been meticulously crafted to create a bike that exudes individuality and exclusivity.</p>
+                <p style="margin-bottom:15px;">Not only is this bike a feast for the eyes, it is a beast on the trails offering
+                  <a href="https://www.pinkbike.com/news/2020-pinkbike-awards-mountain-bike-of-the-year-winner.html" target="_blank">award-winning performance capabilities</a>
+                  and exceptional control. The Stumpjumper Evo Expert, instant rowdy.
+                </p>
+                <a class="btn action to-raffle" href="#raffle-store">
+                  <span>Enter to win here</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="section acm-features style-2 prizes">
+
+      <div
+        class="row equal-height equal-height-child"
+        data-animation="move-from-bottom"
+        data-delay="200">
+        <div class="col col-sm-12 col-md-6">
+          <div
+            class="features-item no-hover ja-animate"
+            data-animation="move-from-bottom"
+            data-delay="item-0">
+            <div class="font-icon">
+              <span class="icon ion-ios-trophy">
+                <span class="num">2</span>
+              </span>
+            </div>
+            <h4>Skye Niseko 1 night summer stay for 4 with breakfast included</h4>
+            <div class="products">
+              <div class="prodwrap">
+                <div class="prod">
+                  <img src="/assets/images/prizes/skye-1.jpg" alt="Skye Niseko" />
+                </div>
+              </div>
+              <div class="prodwrap">
+                <div class="prod">
+                  <img src="/assets/images/prizes/skye-2.jpg" alt="Breakfast at Skye Niseko" />
+                </div>
+              </div>
+            </div>
+            <p style="font-size:125%;">A value of
+              <strong>¥55,000</strong>
+            </p>
+            <p class="gold" style="margin-top:30px; margin-bottom:15px;">The New Level of Alpine Luxury in Niseko</p>
+            <p style="margin-bottom:15px;">
+              Your entry to win the Soil Searching Edition Stumpjumper Evo Expert also gives you the chance to win a 1 night stay for 4 guests in sumptuous
+              <a href="https://www.skyeniseko.com" target="_blank">Skye Niseko</a>. Fuel up for a day of mountain biking with breakfast, included as part of this awesome prize!
+            </p>
+            <a class="btn action to-raffle" href="#raffle-store">
+              <span>Enter to win here</span>
+            </a>
+            <div class="sponsors">
+              <a href="https://www.nisekocentral.com" target="_blank">
+                <img src="/assets/images/company/shika/niseko-central.png" alt="Niseko Central">
+              </a>
+            </div>
+            <p class="small">Valid summer 2023 or 2024, excluding blackout dates</p>
+          </div>
+        </div>
+        <div class="col col-sm-12 col-md-6">
+          <div
+            class="features-item no-hover ja-animate"
+            data-animation="move-from-bottom"
+            data-delay="item-1">
+            <div class="font-icon">
+              <span class="icon ion-ios-trophy">
+                <span class="num">3</span>
+              </span>
+            </div>
+            <h4>
+              Ki Niseko 2 night summer stay for 2 with breakfast included</h4>
+            <div class="products">
+              <div class="prodwrap">
+                <div class="prod">
+                  <img src="/assets/images/prizes/ki-1.jpg" alt="Ki Niseko Exterior" />
+                </div>
+              </div>
+              <div class="prodwrap">
+                <div class="prod">
+                  <img src="/assets/images/prizes/ki-2.jpg" alt="Example Ki Niseko room" />
+                </div>
+              </div>
+            </div>
+            <p style="font-size:125%;">A value of
+              <strong>¥55,000</strong>
+            </p>
+            <p class="gold" style="margin-top:30px; margin-bottom:15px;">The World's Best Boutique Ski Hotel</p>
+            <p style="margin-bottom:15px;">By entering to win the Soil Searching Evo Expert, you're also getting the chance to win a luxurious one-night stay at
+              <a href="https://www.kiniseko.com" traget="_blank">Ki Niseko</a>
+              hotel for two! This stay includes a delightful breakfast meaning you and your loved one, or your favourite riding buddy, can fuel up and kickstart your day of mountain biking adventures.</p>
+            <a class="btn action to-raffle" href="#raffle-store">
+              <span>Enter to win here</span>
+            </a>
+            <div class="sponsors">
+              <a href="https://www.nisekocentral.com" target="_blank">
+                <img src="/assets/images/company/shika/niseko-central.png" alt="Niseko Central">
+              </a>
+            </div>
+            <p class="small">Valid summer 2023 or 2024, excluding blackout dates</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="t3-section">
+
+      <div class="module-title-wrap"></div>
+
+      <div id="raffle-store"></div>
+
+    </div>
+  </div>
+
+
+</div>
+<script>
+
+  (function($) {
+    $("a[href$='#raffle-store']").on('click', function() {
+      $("html, body").animate({
+        scrollTop: $("#raffle-store").offset().top
+      }, 500);
+      return false;
+    });
+  })(jQuery);
+
+  window.ec = window.ec || Object();
+  window.ec.config = window.ec.config || Object();
+  window.ec.config.custom_redirect_after_purchase = 'https://www.namba.ngo/get-involved/thanks';
+  window.ec.config.navigation_scrolling = "DISABLED";
+  window.ec.storefront = window.ec.storefront || Object();
+  window.ec.storefront.product_details_show_share_buttons = false;
+  window.ec.storefront.product_details_show_qty = true;
+  window.ec.storefront.product_details_show_in_stock_label = true;
+  window.ec.storefront.show_breadcrumbs = true;
+  window.ec.storefront.product_details_show_breadcrumbs = true;
+  window.ec.storefront.product_details_position_breadcrumbs = 25;
+  window.ec.storefront.breadcrumbs_separator = "";
+
+  xProductBrowser("defaultProductId=568683531", "categoriesPerRow=3", "views=grid(20,3) list(60) table(60)", "categoryView=grid", "searchView=list", "id=raffle-store");
+
+  window.ecwid_script_defer = true;
+  window.ecwid_dynamic_widgets = true;
+</script>
