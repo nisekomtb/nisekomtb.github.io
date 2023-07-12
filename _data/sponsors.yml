@@ -109,5 +109,9 @@ tanuki:
       url: https://www.nisekocarrental.com
     - image: /assets/images/company/tanuki/powderlife.png
       url: https://www.powderlife.com
+    - image: /assets/images/company/tanuki/roomboss.png
+      url: https://roomboss.com
+      ja:
+        url: https://roomboss.com/ja/
     - image: /assets/images/company/tanuki/seasons.png
       url: https://www.seasons-niseko.com
