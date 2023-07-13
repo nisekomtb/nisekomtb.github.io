@@ -33,7 +33,9 @@
             {% endif %}
           </p>
 
-          {% comment %}<div
+          {% comment %}
+          {% if page.lang == "en" %}
+          <div
           class="btn-action ja-animate"
           data-animation="move-from-bottom"
           data-delay="1200">
@@ -45,7 +47,23 @@
           alt='Specialized' /><br/>
           Soil Searching Stumpjumper Evo Expert!
           </a>
-          </div>{% endcomment %}
+          </div>
+          {% else %}
+          <div
+          class="btn-action ja-animate"
+          data-animation="move-from-bottom"
+          data-delay="1200">
+          <a class="btn btn-primary" href="/ja/raffle/">
+          <span class="ja" style="font-size:1.5em;">ここを<wbr>クリックして<wbr>応募</span><br/>
+          <img
+          src="/assets/images/company/other/specialized-wordmark-white.svg"
+          style='height:3em;'
+          alt='スペシャライズド' /><br/>
+          Soil Searching Stumpjumper Evo Expertを当てよう!
+          </a>
+          </div>
+          {% endif %}
+          {% endcomment %}
         </div>
       </div>
 
