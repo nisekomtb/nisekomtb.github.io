@@ -36,3 +36,6 @@ defaults:
     values:
       og:
         image: /assets/images/og/twinpeaks.jpg
+
+include:
+  - .well-known
