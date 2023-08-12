@@ -6122,7 +6122,8 @@ div.t3-wrapper {
 
   .t3-header+.t3-masthead .ja-masthead,
   .t3-header+.t3-hero .ja-masthead {
-    padding-top: 108px;
+    padding-top: 138px;
+    padding-bottom: 8px;
   }
 }
 
