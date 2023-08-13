@@ -2,9 +2,9 @@
   en: Home
   ja: ホーム
 
-- path: proposal
-  en: Our Proposal
-  ja: 私たちの理念
+# - path: proposal
+#   en: Our Proposal
+#   ja: 私たちの理念
 
 - path: projects
   en: Projects
@@ -31,6 +31,15 @@
   - path: donate
     en: Donate
     ja: 寄付のお願い
+
+- path:
+  en: Events
+  ja: イベント
+  sub:
+
+  - path: soil-searching
+    en: Soil Searching
+    ja: ソイル・サーチング
 
 - path: raffle
   isAction: true
