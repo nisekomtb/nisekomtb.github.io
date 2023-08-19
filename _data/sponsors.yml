@@ -103,6 +103,8 @@ tanuki:
       url: https://nisekoportfolio.com
       ja:
         url: https://nisekoportfolio.com/ja/
+    - image: /assets/images/company/tanuki/niseko-zen.png
+      url: https://www.nisekozen.com
     - image: /assets/images/company/tanuki/odin.png
       url: https://www.odin-property.com
     - image: /assets/images/company/tanuki/peak-car-rentals.png
