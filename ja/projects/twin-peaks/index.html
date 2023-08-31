@@ -174,8 +174,27 @@ masthead:
   </div>
 
   <div class="section">
+    <div class="module-inner">
+      <div class="module-title-wrap container">
+        <h3
+          class="module-title ja-animate "
+          data-animation="move-from-bottom"
+          data-delay="200">
+          <span class="ja">トレイルに<wbr>つてお知らせ</span>
+        </h3>
+        <div
+          class="sub-heading ja-animate"
+          data-animation="move-from-bottom"
+          data-delay="400">
+          <span class="ja">トレイル造成工事は<wbr>8月16日に<wbr>正式に<wbr>開始しました。</span>
+        </div>
+      </div>
+      <div class="module-ct">
+        {% include carousel.html images=site.data.twin-peaks.updates.images items=3 nav = 'false' %}
+      </div>
 
-    {% include carousel.html title = '<span class="ja">トレイルに<wbr>つてお知らせ</span>' subheading = '<span class="ja">トレイル造成工事は<wbr>8月16日に<wbr>正式に<wbr>開始しました。</span>' images=site.data.twin-peaks.updates.images %}
+      <div class="module-title-wrap"></div>
+    </div>
 
   </div>
 

@@ -45,3 +45,8 @@
   isAction: true
   en: 🎟 Enter Raffle
   ja: 🎟 抽選に参加する
+
+# - path: auction
+#   isAction: true
+#   en: 🙋 Bike Auction
+#   ja: 🙋 抽選に参加する

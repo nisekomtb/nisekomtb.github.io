@@ -168,8 +168,25 @@ masthead:
   </div>
 
   <div class="section">
+    <div class="module-inner">
+      <div class="module-title-wrap container">
+        <h3
+          class="module-title ja-animate "
+          data-animation="move-from-bottom"
+          data-delay="200">Trail updates</h3>
+        <div
+          class="sub-heading ja-animate"
+          data-animation="move-from-bottom"
+          data-delay="400">
+          <span>Official trail building began on August 16th.</span>
+        </div>
+      </div>
+      <div class="module-ct">
+        {% include carousel.html images=site.data.twin-peaks.updates.images items=3 nav = 'false' %}
+      </div>
 
-    {% include carousel.html title = "Trail updates" subheading = "Official trail building began on August 16th." images=site.data.twin-peaks.updates.images %}
+      <div class="module-title-wrap"></div>
+    </div>
 
   </div>
 

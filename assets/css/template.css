@@ -2581,7 +2581,8 @@ ul.latestnews>li+li {
 }
 
 .latest-project .intro-image:before {
-  background: linear-gradient(135deg, #fd7d57, #f55d59);
+  /* background: linear-gradient(135deg, #fd7d57, #f55d59);*/
+  background: linear-gradient(135deg, #000, #111);
   border-radius: 3px;
   content: "";
   position: absolute;
@@ -2624,8 +2625,8 @@ ul.latestnews>li+li {
 }
 
 .latest-project .intro-image:hover:before {
-  filter: alpha(opacity=80);
-  opacity: 0.8;
+  filter: alpha(opacity=40);
+  opacity: 0.4;
 }
 
 .latest-project .intro-image:hover span {
