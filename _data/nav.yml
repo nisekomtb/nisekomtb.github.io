@@ -41,12 +41,7 @@
     en: Soil Searching
     ja: ソイル・サーチング
 
-- path: raffle
+- path: auction
   isAction: true
-  en: 🎟 Enter Raffle
-  ja: 🎟 抽選に参加する
-
-# - path: auction
-#   isAction: true
-#   en: 🙋 Bike Auction
-#   ja: 🙋 オークション
+  en: 🙋 Bike Auction
+  ja: 🙋 オークション
