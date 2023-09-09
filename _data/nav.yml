@@ -32,10 +32,14 @@
     en: Donate
     ja: 寄付のお願い
 
-- path:
+- path: events
   en: Events
   ja: イベント
   sub:
+
+  - path: grand-opening
+    en: Grand Opening
+    ja: Grand Opening
 
   - path: soil-searching
     en: Soil Searching
