@@ -1,0 +1,149 @@
+---
+title: ショップ
+description: 皆様のご購入によりトレイルは成長します。
+---
+<style>
+  .ec-grid {
+    display: block !important;
+  }
+
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .details-gallery__images-spacer {
+    margin-top: 35px;
+  }
+
+  .product-details__navigation {
+    display: none !important;
+  }
+
+  #ProductBrowser-1 {
+    min-height: auto !important;
+  }
+
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .label--notice {
+    background-color: #fd7d57;
+  }
+
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .label--notice::before {
+    color: #fd7d57;
+  }
+
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .label--notice::after {
+    color: #fd7d57;
+  }
+
+  .ec-form__row--continue .form-control--done {
+    text-align: left !important;
+  }
+
+  .form-control button.form-control__button {
+    color: #ffffff !important;
+    background-color: #fd7d57 !important;
+    border-color: transparent !important;
+    background: linear-gradient(135deg, #fd7d57, #f55d59) !important;
+
+    border: 0 !important;
+    border-radius: 30px !important;
+    font-weight: 500 !important;
+    padding-left: 36px !important;
+    padding-right: 36px !important;
+
+    width: auto !important;
+    font-size: 14px !important;
+  }
+
+  .form-control button.form-control__button:hover {
+    background: #fd7d57 !important;
+    background: linear-gradient(155deg, #fd7d57, #fd7d57) !important;
+  }
+
+  img.ecwid-PaymentMethodsBlockSvg {
+    background: #fff !important;
+  }
+
+  .ec-cart__button--apple-pay {
+    text-align: center !important;
+    text-align: -moz-center !important;
+    text-align: -webkit-center !important;
+  }
+
+  .ec-cart__button--apple-pay .form-control--button {
+    border: 1px #fff solid !important;
+    padding-left: 36px !important;
+    padding-right: 36px !important;
+    border-radius: 30px !important;
+    width: 170px !important;
+    margin: 0 auto !important;
+    position: relative !important;
+  }
+
+  a.breadcrumbs__link--last {
+    font-size: 0 !important;
+  }
+
+  a.breadcrumbs__link--last:after {
+    content: '✕';
+    font-size: 20px;
+    font-weight: bold;
+    float: right;
+  }
+
+  html#ecwid_html body#ecwid_body #raffle-store .ec-size .ec-store .details-gallery__images-spacer {
+    margin-top: 0;
+  }
+
+  #raffle-store a.breadcrumbs__link--last {
+    display: none;
+  }
+</style>
+
+<script
+  id="ecwid-script"
+  data-cfasync="false"
+  type="text/javascript"
+  src="https://app.ecwid.com/script.js?71386768&lang=ja-JP&data_platform=code&data_date=2022-08-27"
+  charset="utf-8"></script>
+<div>
+
+  <div class="t3-section-wrap tab-content">
+
+    <div class="section">
+
+      <div class="module-title-wrap" style="margin-bottom:30px;">
+        <p
+          style="margin-bottom:0; font-size:100%;"
+          class="ja-animate"
+          data-animation="move-from-bottom"
+          data-delay="800">
+          <span class="ja">皆様の<wbr>ご購入に<wbr>より<wbr>トレイルは<wbr>成長します。</span>
+        </p>
+      </div>
+
+      <div>
+        <div id="store"></div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+<script>
+  window.ec = window.ec || Object();
+  window.ec.config = window.ec.config || Object();
+
+/*window.ec.config.custom_redirect_after_purchase = 'https://www.namba.ngo/get-involved/thanks';*/
+  window.ec.config.navigation_scrolling = "DISABLED";
+  window.ec.storefront = window.ec.storefront || Object();
+  window.ec.storefront.product_details_show_share_buttons = false;
+  window.ec.storefront.product_details_show_qty = true;
+  window.ec.storefront.product_details_show_in_stock_label = true;
+  window.ec.storefront.show_breadcrumbs = true;
+  window.ec.storefront.product_details_show_breadcrumbs = true;
+  window.ec.storefront.product_details_position_breadcrumbs = 25;
+  window.ec.storefront.breadcrumbs_separator = "";
+
+  xProductBrowser("defaultCategoryId=156223501", "categoriesPerRow=3", "views=grid(20,3) list(60) table(60)", "categoryView=grid", "searchView=list", "id=store");
+
+  window.ecwid_script_defer = true;
+  window.ecwid_dynamic_widgets = true;
+</script>
