@@ -45,6 +45,10 @@
     en: Soil Searching
     ja: ソイル・サーチング
 
+- path: shop
+  en: Shop
+  ja: オンラインショップ
+
 - path: auction
   isAction: true
   en: 🙋 Bike Auction
