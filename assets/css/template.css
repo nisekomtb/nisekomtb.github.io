@@ -7190,7 +7190,7 @@ div.t3-wrapper {
   max-height: 108px;
 }
 
-.acm-cliens.img-grayscale .client-item span {
+.acm-cliens.img-grayscale .client-item .client-img span {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -7198,8 +7198,15 @@ div.t3-wrapper {
   -webkit-transform: translate(-50%, -50%);
 }
 
+.acm-cliens .client-item .client-label {
+  display: block;
+  text-align: center;
+  height: 2em;
+  margin-top: 5px;
+}
+
 @media (max-width: 1199px) {
-  .acm-cliens.img-grayscale .client-item span {
+  .acm-cliens.img-grayscale .client-item .client-img span {
     width: 100% !important;
   }
 }

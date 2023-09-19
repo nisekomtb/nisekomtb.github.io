@@ -1,42 +1,115 @@
+special:
+  width: 10
+  sponsors:
+    - name: allegra
+      image: /assets/images/company/special/allegra.png
+      url: https://helloallegra.com
+      label: Trail building partner
+      ja:
+        label: トレイルビルド パートナー
+    - name: nisade
+      image: /assets/images/company/special/nisade.png
+      url: https://nisade.com
+      label: Headline sponsor
+      ja:
+        url: https://nisade.com/ja/
+        label: ヘッドライン スポンサー
+    - name: rhythm
+      image: /assets/images/company/special/rhythm.png
+      url: https://rhythmjapan.com
+      label: Maintenance sponsor
+      ja:
+        url: https://www.rhythmjapan.com/ja/
+        label: メンテナンス スポンサー
+    - name: specialized
+      image: /assets/images/company/special/specialized.png
+      url: https://www.specialized-onlinestore.jp/
+      label: Trail building team partner
+      ja:
+        label: トレイルビルドチーム スポンサー
+    - name: holiday niseko
+      image: /assets/images/company/special/holiday-niseko.png
+      url: https://holidayniseko.com
+      label: Trail sponsor
+      ja:
+        url: https://holidayniseko.jp
+        label: トレイル スポンサー
+    - name: niseko realty
+      image: /assets/images/company/special/niseko-realty.png
+      url: https://www.nisekorealty.com
+      label: Trail sponsor
+      ja:
+        label: トレイル スポンサー
+    - name: nrs
+      image: /assets/images/company/special/nrs.png
+      url: http://www.nisekorealtysales.com
+      label: Trail sponsor
+      ja:
+        label: トレイル スポンサー
+    - name: santa cruz
+      image: /assets/images/company/special/santa-cruz.png
+      url: https://www.santacruzbicycles.com/
+      label: Trail sponsor
+      ja:
+        label: トレイル スポンサー
+    - name: taki
+      image: /assets/images/company/special/taki.png
+      label: Trail sponsor
+      url: javascript:void();
+      ja:
+        label: トレイル スポンサー
+
 higuma:
   width: 11
   sponsors:
-    - image: /assets/images/company/higuma/coinmetro.png
+    - name: coin metro
+      image: /assets/images/company/higuma/coinmetro.png
       url: https://coinmetro.com
-    - image: /assets/images/company/higuma/hanazono.png
+    - name: hanazono
+      image: /assets/images/company/higuma/hanazono.png
       url: https://hanazononiseko.com/en
       ja:
         url: https://hanazononiseko.com/ja
-    - image: /assets/images/company/higuma/h2.png
+    - name: h2
+      image: /assets/images/company/higuma/h2.png
       url: https://www.h2group.com
       ja:
         url: https://www.h2group.com/jp/
-    - image: /assets/images/company/higuma/hbc.png
+    - name: hbc
+      image: /assets/images/company/higuma/hbc.png
       url: https://www.hokkaidobackcountryclub.com/en/homepage/
       ja:
         url: https://www.hokkaidobackcountryclub.com/ja/homepage-2/
-    - image: /assets/images/company/higuma/holiday-niseko.png
+    - name: holiday niseko
+      image: /assets/images/company/higuma/holiday-niseko.png
       url: https://holidayniseko.com
       ja:
         url: https://holidayniseko.jp
-    - image: /assets/images/company/higuma/niseko-wow.png
+    - name: niseko wow
+      image: /assets/images/company/higuma/niseko-wow.png
       url: https://www.niseko-wow.com
-    - image: /assets/images/company/higuma/nre.png
+    - name: nre
+      image: /assets/images/company/higuma/nre.png
       url: https://nisekorealestate.com
       ja:
         url: https://nisekorealestate.com/ja/
-    - image: /assets/images/company/higuma/odin-hills.png
+    - name: odin hills
+      image: /assets/images/company/higuma/odin-hills.png
       url: https://www.odinhills.com
-    - image: /assets/images/company/higuma/panorama-niseko.png
+    - name: panorama niseko
+      image: /assets/images/company/higuma/panorama-niseko.png
       url: https://www.panoramaniseko.com
       ja:
         url: https://www.panoramaniseko.com/ja
-    - image: /assets/images/company/higuma/sc-global.png
+    - name: sc global
+      image: /assets/images/company/higuma/sc-global.png
       url: https://www.scglobal.com.sg
-    - image: /assets/images/company/higuma/zekkei.png
+    - name: zekkei
+      image: /assets/images/company/higuma/zekkei.png
       url: https://www.zekkeicollection.com/en
       ja:
         url: https://www.zekkeicollection.com/
+
 shika:
   width: 12
   sponsors:
@@ -76,6 +149,7 @@ shika:
       url: https://vacationniseko.com/en
       ja:
         url: https://vacationniseko.com/ja
+
 tanuki:
   width: 14
   sponsors:

@@ -9,14 +9,21 @@
         {% for sponsor in include.sponsors %}
           <div
             class="col-xs-12 client-item ja-animate"
-            style="width:{{ 100 | divided_by: sponsors_size }}%;"
+            style="width:{{ 100 | divided_by: sponsors_size }}%;{% if sponsor.label and include.class == "special" %}padding-bottom:20px;{% endif %}"
             data-animation="pop-up"
             data-delay="item-{{ forloop.index0 }}">
             <div class="client-img">
-              <a href="{% if sponsor.ja and page.lang == "ja" %}{{ sponsor.ja.url }}{% else %}{{ sponsor.url }}{% endif %}" target="_blank">
+              <a href="{% if sponsor.ja.url and page.lang == "ja" %}{{ sponsor.ja.url }}{% else %}{{ sponsor.url }}{% endif %}" target="_blank">
                 <img class="img-responsive" src="{{ sponsor.image }}?d={{ site.time | date: "%s" }}">
               </a>
             </div>
+            {% if sponsor.label and include.class == "special" %}
+              {% if sponsor.ja.label and page.lang == "ja" %}
+                <span class="client-label ja">{{ sponsor.ja.label }}</span>
+              {% else %}
+                <span class="client-label">{{ sponsor.label }}</span>
+              {% endif %}
+            {% endif %}
           </div>
         {% endfor %}
       </div>
