@@ -13,9 +13,13 @@
             data-animation="pop-up"
             data-delay="item-{{ forloop.index0 }}">
             <div class="client-img">
-              <a href="{% if sponsor.ja.url and page.lang == "ja" %}{{ sponsor.ja.url }}{% else %}{{ sponsor.url }}{% endif %}" target="_blank">
+              {% if sponsor.url %}
+                <a href="{% if sponsor.ja.url and page.lang == "ja" %}{{ sponsor.ja.url }}{% else %}{{ sponsor.url }}{% endif %}" target="_blank">
+                  <img class="img-responsive" src="{{ sponsor.image }}?d={{ site.time | date: "%s" }}">
+                </a>
+              {% else %}
                 <img class="img-responsive" src="{{ sponsor.image }}?d={{ site.time | date: "%s" }}">
-              </a>
+              {% endif %}
             </div>
             {% if sponsor.label and include.class == "special" %}
               {% if sponsor.ja.label and page.lang == "ja" %}

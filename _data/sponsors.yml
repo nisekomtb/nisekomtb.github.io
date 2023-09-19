@@ -55,7 +55,6 @@ special:
     - name: taki
       image: /assets/images/company/special/taki.png
       label: Trail sponsor
-      url: javascript:void();
       ja:
         label: トレイル スポンサー
 
