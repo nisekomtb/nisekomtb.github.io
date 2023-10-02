@@ -124,6 +124,10 @@ shika:
       url: https://noasc.com/en/
       ja:
         url: https://noasc.com/ja/
+    - image: /assets/images/company/shika/npb.png
+      url: https://nisekotourism.com
+      ja:
+        url: https://nisekotourism.com/ja
     - image: /assets/images/company/shika/oyuki.png
       url: https://oyuki.com
     - image: /assets/images/company/shika/rhythm.png
