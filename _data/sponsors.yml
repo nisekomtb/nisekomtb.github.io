@@ -130,10 +130,6 @@ shika:
         url: https://nisekotourism.com/ja
     - image: /assets/images/company/shika/oyuki.png
       url: https://oyuki.com
-    - image: /assets/images/company/shika/rhythm.png
-      url: https://www.rhythmjapan.com
-      ja:
-        url: https://www.rhythmjapan.com/ja/
     - image: /assets/images/company/shika/setsu.png
       url: https://setsuniseko.com/en
       ja:
