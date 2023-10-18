@@ -1,5 +1,4 @@
 ---
-draft: true
 layout: event
 categories: events
 title: Twin Peaks Closing Weekend
@@ -45,7 +44,7 @@ itinerary:
             url: https://maps.app.goo.gl/aiAYzLWHJH3WmUDA8
             name: Midtown Niseko
         - time: 3:30pm
-          name: Strava competition ends
+          name: Strava challenge ends
           location: Twin Peaks
         - time: 4:00pm
           name: Strava challenge winners announced
