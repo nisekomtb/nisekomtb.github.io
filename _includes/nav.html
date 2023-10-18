@@ -1,4 +1,4 @@
-{% assign path = page.path | remove: "ja/" | remove: "index.html" %}
+{% assign path = page.url | remove_first: "/" | remove: "ja/" | remove: "index.html" %}
 {% assign pathSegments = path | split: "/" %}
 {% assign path0 = pathSegments.first | default: '' %}
 {% assign path1 = pathSegments[1] %}
@@ -224,13 +224,13 @@
       }
 
       function getNavigatorLang() {
-        if (/^en\b/.test(navigator.language)) 
+        if (/^en\b/.test(navigator.language))
           return 'en';
-         else if (/^ja\b/.test(navigator.language)) 
+         else if (/^ja\b/.test(navigator.language))
           return 'ja';
-         else 
+         else
           return '{{ page.lang }}';
-        
+
 
 
 
@@ -241,11 +241,11 @@
           document.cookie
         }`;
         const parts = value.split(`; lang=`);
-        if (parts.length === 2) 
+        if (parts.length === 2)
           return parts.pop().split(';').shift();
-         else 
+         else
           return getNavigatorLang();
-        
+
 
 
 

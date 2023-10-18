@@ -3,7 +3,7 @@
   <div class="ja-masthead" style="background-image: url('{{ page.masthead.img | default: '/assets/images/bg/bg-header.jpg' }}')">
     <div class="ja-masthead-detail">
       <h3 class="ja-masthead-title">{{ page.titleHtml | default: page.title }}</h3>
-      <!--div class="ja-masthead-description"></div-->
+      {% if page.subtitle %}<div class="ja-masthead-description">{{ page.subtitle }}</div>{% endif %}
     </div>
   </div>
 </div>

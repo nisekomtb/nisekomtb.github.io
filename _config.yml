@@ -10,6 +10,7 @@ url: https://namba.ngo
 github_username:  namtba
 
 strict_front_matter: true
+permalink: /:categories/:title-:year/
 
 liquid:
   error_mode: strict

@@ -35,21 +35,12 @@
 - path: events
   en: Events
   ja: イベント
-  sub:
-
-  - path: grand-opening
-    en: Grand Opening
-    ja: グランド・オープン
-
-  - path: soil-searching
-    en: Soil Searching
-    ja: ソイル・サーチング
 
 - path: shop
   en: Shop
   ja: オンラインショップ
 
-- path: auction
-  isAction: true
-  en: 🙋 Bike Auction
-  ja: 🙋 オークション
+# - path: auction
+#   isAction: true
+#   en: 🙋 Bike Auction
+#   ja: 🙋 オークション

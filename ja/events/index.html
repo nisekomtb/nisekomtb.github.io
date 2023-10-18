@@ -1,0 +1,82 @@
+---
+title: イベント
+# subtitle: Come ride some bikes
+# description: Something something
+---
+<div
+  class="blog style-1 project-view"
+  itemscope=""
+  itemtype="https://schema.org/Blog">
+
+  {% assign posts = site.categories.events | where: "lang", "ja" | where: "draft", "false" %}
+  {% for post in posts %}
+
+    {% assign indexModulo3 = forloop.index0 | modulo: 3 %}
+    {% if indexModulo3 == 0 %}
+      <div class="items-row cols-3 row-{{- forloop.index0 | divided_by: 3 }} row equal-height equal-height-child">
+      {% endif %}
+
+
+      <div class="col-md-4 col">
+        <div
+          class="item column-1"
+          itemprop="blogPost"
+          itemscope=""
+          itemtype="https://schema.org/BlogPosting"
+          style="min-height: 529px;">
+
+
+          <!-- Article -->
+          <article class="view-project">
+            <div class="image-wrap">
+              <div class="pull-left item-image">
+                <a href="{{ post.url }}"><img
+                    src="{{ post.thumbnail }}"
+                    alt=""
+                    itemprop="thumbnailUrl"></a>
+              </div>
+            </div>
+
+            <div class="intro-wrap">
+
+              <header class="article-header clearfix">
+                <h2 class="article-title" itemprop="headline">
+                  <a
+                    href="{{ post.url }}"
+                    itemprop="url"
+                    title="{{ post.title }}">
+                    {{ post.title }}</a>
+                </h2>
+
+              </header>
+              <span class="project-type">{{ post.startDate | date: "%Y年%m月%d日" }}</span>
+              <br />
+              {% comment %} <span class="project-type">{{ post.excerpt | strip_html | slice: 0, 100 }} ...</span> {% endcomment %}
+
+
+            <!-- Aside -->
+              <!-- //Aside -->
+
+
+              <!-- footer -->
+              <!-- //footer -->
+
+
+            </div>
+          </article>
+          <!-- //Article -->
+
+
+
+        </div>
+        <!-- end item -->
+      </div>
+
+      {% if indexModulo3 == 2 or forloop.last %}
+      </div>
+      <!-- end row -->
+    {% endif %}
+
+  {% endfor %}
+
+</div>

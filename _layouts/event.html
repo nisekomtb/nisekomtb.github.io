@@ -1,0 +1,297 @@
+---
+layout: default
+---
+<style>
+  h3 small { font-size: 50%; vertical-align: middle;}
+  .download {
+    margin: 30px auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+
+  .download a {
+    margin: 0 10px;
+  }
+
+  .download img {
+    margin-bottom: 10px;
+    height: 50px;
+  }
+
+  .project-info .partners {
+    margin: 10px auto;
+  }
+
+  .project-info .partners a {
+    margin-right: 10px;
+    height: 50px;
+  }
+
+  .project-info .partners img {
+    margin-bottom: 10px;
+    max-height: 50px;
+    max-width: 50px;
+  }
+
+  table.timetable {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  table.timetable th,
+  table.levels td {
+    border: 4px solid #000;
+    vertical-align: middle;
+  }
+
+  table.timetable th {
+    color: #ffd97b;
+    font-size: 12px;
+    font-family: "Metropolis", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    padding: 12px 10px 12px 0;
+  }
+
+  table.timetable th.fst {
+    text-align: right;
+    display: none;
+  }
+
+  table.timetable th.row {
+    text-align: center;
+  }
+
+  table.timetable td {
+    background-color: #0e0e0e;
+    text-align: center;
+    padding: 10px 15px;
+    font-weight: 700;
+  }
+
+  @media(min-width: 600px) {
+    table.timetable td {
+      padding: 10px 15px;
+    }
+  }
+
+  @media(min-width: 768px) {
+    table.timetable td {
+      padding: 10px 30px;
+    }
+  }
+
+  @media(min-width: 992px) {
+    table.timetable td {
+      padding: 10px 50px;
+    }
+  }
+</style>
+
+<div class="item-page view-project ">
+
+  <!-- Article -->
+  <article>
+
+    <div class="pull-left item-image">
+      <img src="{{ page.img }}" alt="" itemprop="image">
+    </div>
+
+    <div class="article-detail">
+      <!-- Aside -->
+      <div class="project-info">
+        <h4>{% if page.lang == "en" %}Event Details{% else %}イベント詳細{% endif %}</h4>
+        <div class="list-group">
+          <h4 class="list-group-item-heading">{% if page.lang == "en" %}Dates{% else %}日程{% endif %}</h4>
+          <p class="list-group-item-text">
+            {% for i in (1..page.days) %}
+              {% assign days = i | minus: 1 | times: 24 | times: 60 | times: 60 %}
+              {% if page.lang == "en" %}
+                {{ page.startDate | date: "%s" | plus: days | date: "%A %d %B %Y" }}
+              {% else %}
+                {{ page.startDate | date: "%s" | plus: days | date: "%Y年%m月%d日" }}
+              {% endif %}
+              <br />
+            {% endfor %}
+          </p>
+        </div>
+
+        <div class="list-group">
+          <h4 class="list-group-item-heading">{% if page.lang == "en" %}Location{% else %}場所{% endif %}</h4>
+          <p class="list-group-item-text">{{ page.location }}</p>
+        </div>
+
+        <div class="list-group">
+          <h4 class="list-group-item-heading">{% if page.lang == "en" %}Price{% else %}料金{% endif %}</h4>
+          <p class="list-group-item-text">
+            {% if page.price == 0 and page.lang == "en" %}
+              Free
+            {% else if page.price == 0 %}
+              無料
+            {% else %}
+              {{ page.price }}</p>
+            {% endif %}
+        </div>
+
+        <div class="list-group">
+          <h4 class="list-group-item-heading">{% if page.lang == "en" %}Events Partners{% else %}イベントパートナー{% endif %}</h4>
+          <p class="list-group-item-text partners">
+            {% for partner in page.partners %}
+              <a href="{{- partner.url -}}" target="_blank">
+                <img src="/assets/images/company{{- partner.img -}}" alt="{{- partner.name -}}">
+              </a>
+            {% endfor %}
+          </p>
+        </div>
+
+        {% if page.moreInfo %}
+        <div class="list-group">
+          <h4 class="list-group-item-heading">{% if page.lang == "en" %}More Info{% else %}詳しくは{% endif %}</h4>
+          {% for info in page.moreInfo %}
+          <p>{{ info }}</p>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+      <!-- // Aside -->
+
+      <section class="article-content clearfix" itemprop="articleBody">
+        {{ content }}
+
+        {% if page.itinerary %}
+        <h4>{% if page.lang == "en" %}Itinerary{% else %}行程{% endif %}</h4>
+        {% for day in page.itinerary.days %}
+
+          {% if page.days != 1 %}
+          <p>
+            <strong>{% if page.lang == "en" %}Day {{ forloop.index }} itinerary:{% else %}{{- forloop.index -}}日目の行程{% endif %}</strong>
+          </p>
+          {% endif %}
+          <p>
+          <table class="timetable">
+            {% for event in day.events %}
+            <tr>
+              <td>{{ event.time | default: '~' }}</td>
+              <td>{{ event.name }}</td>
+              {% if day.hasLocations %}
+              <td style="min-width:200px;">
+                {% if event.location.url %}
+                  <a href="{{ event.location.url }}" target="_blank">{{event.location.name}}</a>
+                {% else %}
+                  {{ event.location }}
+                {% endif %}
+              </td>
+              {% endif %}
+            </tr>
+            {% endfor %}
+          </table>
+          </p>
+        {% endfor %}
+        {% endif %}
+
+        {{ afterItinerary }}
+
+        {% if page.parking %}
+          {% if page.lang == "en" %}
+          <h4>Parking location</h4>
+          <p>Parking at the trailhead is strictly prohibited – please use one of the below parking locations:</p>
+          <p>
+          <ul>
+            <li><a href="https://www.trailforks.com/poi/123003/" target="_blank">Hirafu Gondola Parking</a></li>
+            <li><a href="https://www.trailforks.com/poi/123004/" target="_blank">Hirafu Welcome Center Parking</a></li>
+            <li><a href="https://www.trailforks.com/poi/123002/" target="_blank">Sunsports Land Parking</a></li>
+          </ul>
+          </p>
+          {% else %}
+          <h4>駐車場所</h4>
+          <p>登山口への駐車は固くお断りいたします：</p>
+          <p>
+          <ul>
+            <li><a href="https://www.trailforks.com/poi/123003/" target="_blank">ひらふゴンドラ駐車場</a></li>
+            <li><a href="https://www.trailforks.com/poi/123004/" target="_blank">ひらふウェルカムセンター駐車場</a></li>
+            <li><a href="https://www.trailforks.com/poi/123002/" target="_blank">サンスポーツランド駐車場</a></li>
+          </ul>
+          </p>
+          {% endif %}
+
+          <p><img src="/assets/images/events/parking-map.jpg" alt="" /></p>
+        {% endif  %}
+
+        {% if page.about %}
+          {% if page.lang == "en" %}
+          <h4>About NAMBA</h4>
+          <p>
+            <strong>Building trails and community</strong>
+          </p>
+
+          <p>NAMBA (Niseko Area Mountain Bike Association) is a registered nonprofit organization uniting the Niseko area towards
+            the common mission of creating a world class sustainable mountain bike community, and off-road biking ecosystem.</p>
+          <p>The organization is well underway on their first project, the Twin Peaks Bike Park – this is a professionally built
+            and maintained, free-to-ride trail network located in the resort area of Niseko, Japan. Once all phases of the project
+            are completed, the park is expected to be home to some 30 kms of trails, making it Japan’s largest community bike
+            park.</p>
+          <p>Beyond Twin Peaks, NAMBA’s masterplan for the area seeks to create an interconnected web of trails encompassing
+            everything from beginner skills areas, to 50+ km backcountry epic trails, to lift accessed bike parks and everything
+            in between.</p>
+          <p>We invite you to register to join our nonprofit, and hope to see you out on the trails soon!</p>
+          {% else %}
+          <h4>NAMBAについて</h4>
+          <p>
+            <strong>トレイルとコミュニティの形成</strong>
+          </p>
+
+          <p>NAMBA (Niseko Area Mountain Bike
+            Association)は、世界クラスの持続可能なマウンテンバイクコミュニティとオフロードバイクのシステムを創造するという共通のミッションに向けて、ニセコエリアを結束させる非営利団体です。</p>
+          <p>
+            ツインピークス・バイクパークは、ニセコのリゾートエリアに位置し、プロによって設計から造成、そして維持管理までされ、フリーライドが可能なトレイルネットワークです。プロジェクトの全段階が完了すれば、約30kmのトレイルが整備され、日本最大のコミュニティ・バイクパークとなる予定。
+          </p>
+          <p>
+            ツインピークスの先にあるNAMBAのマスタープランでは、初心者向けのスキルエリアから、50kmを超えるバックカントリー・エピックコトレイル、リフトでアクセスできるバイクパーク、そしてその間にあるあらゆるものを網羅する、相互につながったトレイルシステムをを作り上げることです。
+          </p>
+          <p>私たち非営利団体の活動に是非ご応募いただき、皆様にトレイルでお会いできることを楽しみにしております。</p>
+          {% endif %}
+        {% endif %}
+
+
+        <!-- // Item tags -->
+      </section>
+
+      <!-- Footer -->
+      <!-- // Footer -->
+
+    </div>
+</article>
+<!-- //Article -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "headline": "{{ page.title }}",
+  "inLanguage": "{{ page.lang }}",
+  "author": "NAMBA",
+  "datePublished": "{{ page.date }}",
+  "mainEntityOfPage": "WebPage",
+  "articleBody": "{{ content | strip_html | strip_newlines }}",
+  "image":
+  {
+    "@type": "imageObject",
+    "url": "https://namba.ngo{{ page.img }}",
+    "height": "auto",
+    "width": "auto"
+  },
+  "publisher":
+  {
+    "@type": "Organization",
+    "name": "NAMBA",
+    "logo":
+    {
+      "@type": "imageObject",
+      "url": "https://namba.ngo/assets/images/logos/logo.png"
+    }
+  }
+}
+</script>
+
