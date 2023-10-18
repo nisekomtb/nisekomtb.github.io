@@ -95,7 +95,7 @@ With Halloween right around the corner, let's make mountain biking spooktacular!
 
 Show off your creativity and come dressed in your most jaw-dropping costumes. The best-dressed mountain bikers will receive prizes, so get ready to bring your Halloween spirit to the trails!
 
-**TODO** insert picture of pumpking sticker here
+![](/assets/images/events/2023/closing-weekend/pumpkin.jpg)
 
 ### The Dirty Dames - Women Only Group Ride: <small>(weather permitting)</small>
 Calling all the adventurous ladies!
