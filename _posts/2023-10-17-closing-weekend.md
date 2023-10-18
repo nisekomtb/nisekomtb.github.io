@@ -3,7 +3,7 @@ draft: true
 layout: event
 categories: events
 title: Twin Peaks Closing Weekend
-description: hello
+description: Autumn has arrived, and as the leaves change so too do the seasons. With Niseko soon to be blanketed with snow, the time has now come for us to close the trails for the year.To celebrate an amazing season, we're hosting a closing weekend celebration, and all are invited to join in on the fun!
 startDate: 2023-10-28 09:00:00 +0900
 days: 2
 location: Twin Peaks Bike Park, Niseko
@@ -18,9 +18,6 @@ partners:
   - name: Pow Bar
     img: /powbar.png
     url: https://thepowbar.com
-# moreInfo:
-#   - Blind auction for a Turbo Levo SL LTD Soil Searching edition will be drawn on the 16th at the afterparty at Rhythm Japan Base
-#   - <a class="btn btn-sm btn-primary" href="/auction">More info</a>
 img: /assets/images/events/2023/closing-weekend/header.jpg
 thumbnail: /assets/images/events/2023/closing-weekend/thumb.jpg
 og:
