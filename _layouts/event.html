@@ -2,7 +2,16 @@
 layout: default
 ---
 <style>
-  h3 small { font-size: 50%; vertical-align: middle;}
+  .credit {
+    float:right;
+    font-size: 90%;
+  }
+
+  h3 small {
+    font-size: 50%;
+    vertical-align: middle;
+  }
+
   .download {
     margin: 30px auto;
     display: flex;
@@ -97,6 +106,7 @@ layout: default
 
     <div class="pull-left item-image">
       <img src="{{ page.img }}" alt="" itemprop="image">
+      {% if page.imgCredit %}<span class="credit"><a href="{{ page.imgCredit.url }}" target="_blank"> 📸 {{ page.imgCredit.name }}</a></span>{% endif %}
     </div>
 
     <div class="article-detail">
@@ -135,6 +145,7 @@ layout: default
             {% endif %}
         </div>
 
+        {% if page.partners %}
         <div class="list-group">
           <h4 class="list-group-item-heading">{% if page.lang == "en" %}Events Partners{% else %}イベントパートナー{% endif %}</h4>
           <p class="list-group-item-text partners">
@@ -145,6 +156,7 @@ layout: default
             {% endfor %}
           </p>
         </div>
+        {% endif %}
 
         {% if page.moreInfo %}
         <div class="list-group">

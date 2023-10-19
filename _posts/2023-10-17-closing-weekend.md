@@ -19,6 +19,9 @@ partners:
     url: https://thepowbar.com
 img: /assets/images/events/2023/closing-weekend/header.jpg
 thumbnail: /assets/images/events/2023/closing-weekend/thumb.jpg
+imgCredit:
+  name: Liam Larnach
+  url: https://www.liamlarnach.com
 og:
   image: /assets/images/og/twinpeaks.jpg
 itinerary:
