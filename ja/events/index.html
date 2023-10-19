@@ -31,7 +31,7 @@ title: イベント
             <div class="image-wrap" style="margin-top:10px;">
               <div class="pull-left item-image">
                 <a href="{{ post.url }}"><img
-                    src="{{ post.thumbnail }}"
+                    src="{{ post.thumbnail }}?d={{ site.time | date: '%s' }}"
                     alt=""
                     itemprop="thumbnailUrl"></a>
               </div>
