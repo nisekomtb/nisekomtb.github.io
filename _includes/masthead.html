@@ -2,7 +2,7 @@
 <div class="wrap t3-masthead">
   <div class="ja-masthead" style="background-image: url('{{ page.masthead.img | default: '/assets/images/bg/bg-header.jpg' }}')">
     <div class="ja-masthead-detail">
-      <h3 class="ja-masthead-title">{{ page.titleHtml | default: page.title }}</h3>
+      <h3 class="ja-masthead-title">{% if page.lang == "en" %}{{ page.titleHtml | default: page.title }}{% else %}<span class="ja">{{ page.titleHtml | default: page.title }}</span>{% endif %}</h3>
       {% if page.subtitle %}<div class="ja-masthead-description">{{ page.subtitle }}</div>{% endif %}
     </div>
   </div>

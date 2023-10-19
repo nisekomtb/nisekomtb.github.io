@@ -28,7 +28,7 @@ title: イベント
 
           <!-- Article -->
           <article class="view-project">
-            <div class="image-wrap">
+            <div class="image-wrap" style="margin-top:10px;">
               <div class="pull-left item-image">
                 <a href="{{ post.url }}"><img
                     src="{{ post.thumbnail }}"
@@ -45,7 +45,7 @@ title: イベント
                     href="{{ post.url }}"
                     itemprop="url"
                     title="{{ post.title }}">
-                    {{ post.title }}</a>
+                    <span class="ja">{{ post.titleHtml | default: post.title }}</span></a>
                 </h2>
 
               </header>
@@ -63,6 +63,15 @@ title: イベント
 
 
             </div>
+            {% assign days = post.days | times: 24 | times: 60 | times: 60 %}
+            {% assign endDate = post.startDate | date: "%s" | plus: days | date: "%F" %}
+            {% assign today = "today" | date: "%F" %}
+            {% if endDate > today %}
+            <div class="ribbon ribbon-top-left" style="display:none;" name="ended" data-end-date="{{- endDate -}}">
+              <span>終了</span></div>
+            {% else %}
+            <div class="ribbon ribbon-top-left"><span>終了</span></div>
+            {% endif %}
           </article>
           <!-- //Article -->
 
@@ -80,3 +89,16 @@ title: イベント
   {% endfor %}
 
 </div>
+
+<script type="text/javascript">
+  (function ($) {
+    // Add ended ribbon
+    $('div[name="ended"]').each(function () {
+      var endDate = new Date($(this).data("end-date"));
+      var now = new Date();
+      if (endDate.getTime() < now.getTime()) {
+        $(this).show();
+      }
+    });
+  })(jQuery);
+</script>

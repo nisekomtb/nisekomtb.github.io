@@ -2,6 +2,7 @@
 layout: event
 categories: events
 title: ニセコでソイル・サーチング
+titleHtml: ニセコでソイル・<wbr>サーチング
 description: 9月2日、3日の2日間、北海道ニセコのツインピークス・バイクパークにて、スペシャライズドとNAMBAの共同イベント「Soil Searching in Niseko」が開催されます。
 startDate: 2023-09-02 09:00:00 +0900
 days: 2

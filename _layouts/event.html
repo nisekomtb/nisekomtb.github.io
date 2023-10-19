@@ -120,7 +120,7 @@ layout: default
 
         <div class="list-group">
           <h4 class="list-group-item-heading">{% if page.lang == "en" %}Location{% else %}場所{% endif %}</h4>
-          <p class="list-group-item-text">{{ page.location }}</p>
+          <p class="list-group-item-text{% if page.lang == "ja" %} ja{% endif %}">{{ page.location }}</p>
         </div>
 
         <div class="list-group">
@@ -150,7 +150,7 @@ layout: default
         <div class="list-group">
           <h4 class="list-group-item-heading">{% if page.lang == "en" %}More Info{% else %}詳しくは{% endif %}</h4>
           {% for info in page.moreInfo %}
-          <p>{{ info }}</p>
+          <p{% if page.lang == "ja" %} class="ja"{% endif %}>{{ info }}</p>
           {% endfor %}
         </div>
         {% endif %}
@@ -174,13 +174,29 @@ layout: default
             {% for event in day.events %}
             <tr>
               <td>{{ event.time | default: '~' }}</td>
-              <td>{{ event.name }}</td>
-              {% if day.hasLocations %}
-              <td style="min-width:200px;">
-                {% if event.location.url %}
-                  <a href="{{ event.location.url }}" target="_blank">{{event.location.name}}</a>
+              <td>
+                {% if page.lang == "en" %}
+                {{ event.name }}
                 {% else %}
+                <span class="ja">{{ event.name }}</span>
+                {% endif %}
+              </td>
+              {% if day.hasLocations %}
+              <td>
+                {% if event.location.url %}
+                  <a href="{{ event.location.url }}" target="_blank">
+                    {% if page.lang == "en" %}
+                    {{event.location.name}}
+                    {% else %}
+                    <span class="ja">{{event.location.name}}</span>
+                    {% endif %}
+                  </a>
+                {% else %}
+                  {% if page.lang == "en" %}
                   {{ event.location }}
+                  {% else %}
+                  <span class="ja">{{ event.location }}</span>
+                  {% endif %}
                 {% endif %}
               </td>
               {% endif %}
@@ -190,8 +206,6 @@ layout: default
           </p>
         {% endfor %}
         {% endif %}
-
-        {{ afterItinerary }}
 
         {% if page.parking %}
           {% if page.lang == "en" %}
@@ -205,13 +219,13 @@ layout: default
           </ul>
           </p>
           {% else %}
-          <h4>駐車場所</h4>
-          <p>登山口への駐車は固くお断りいたします：</p>
+          <h4><span class="ja">駐車場所</span></h4>
+          <p class="ja">登山口への<wbr>駐車は<wbr>固く<wbr>お断りいたします<wbr>：</p>
           <p>
           <ul>
-            <li><a href="https://www.trailforks.com/poi/123003/" target="_blank">ひらふゴンドラ駐車場</a></li>
-            <li><a href="https://www.trailforks.com/poi/123004/" target="_blank">ひらふウェルカムセンター駐車場</a></li>
-            <li><a href="https://www.trailforks.com/poi/123002/" target="_blank">サンスポーツランド駐車場</a></li>
+            <li><a href="https://www.trailforks.com/poi/123003/" target="_blank"><span class="ja">ひらふゴンドラ駐車場</span></a></li>
+            <li><a href="https://www.trailforks.com/poi/123004/" target="_blank"><span class="ja">ひらふウェルカムセンター駐車場</span></a></li>
+            <li><a href="https://www.trailforks.com/poi/123002/" target="_blank"><span class="ja">サンスポーツランド駐車場</span></a></li>
           </ul>
           </p>
           {% endif %}
@@ -237,20 +251,20 @@ layout: default
             in between.</p>
           <p>We invite you to register to join our nonprofit, and hope to see you out on the trails soon!</p>
           {% else %}
-          <h4>NAMBAについて</h4>
+          <h4><span class="ja">NAMBAに<wbr>ついて</span></h4>
           <p>
-            <strong>トレイルとコミュニティの形成</strong>
+            <strong><span class="ja">トレイルと<wbr>コミュニティの<wbr>形成</span></strong>
           </p>
 
-          <p>NAMBA (Niseko Area Mountain Bike
-            Association)は、世界クラスの持続可能なマウンテンバイクコミュニティとオフロードバイクのシステムを創造するという共通のミッションに向けて、ニセコエリアを結束させる非営利団体です。</p>
-          <p>
-            ツインピークス・バイクパークは、ニセコのリゾートエリアに位置し、プロによって設計から造成、そして維持管理までされ、フリーライドが可能なトレイルネットワークです。プロジェクトの全段階が完了すれば、約30kmのトレイルが整備され、日本最大のコミュニティ・バイクパークとなる予定。
+          <p class="ja">NAMBA (Niseko Area Mountain Bike
+          Association)は、<wbr>世界クラスの<wbr>持続可能な<wbr>マウンテンバイクコミュニティと<wbr>オフロードバイクの<wbr>システムを<wbr>創造すると<wbr>いう<wbr>共通の<wbr>ミッションに<wbr>向けて、<wbr>ニセコエリアを<wbr>結束させる<wbr>非営利団体です。</p>
+          <p class="ja">
+            インピークス・バイクパークは、<wbr>ニセコの<wbr>リゾートエリアに<wbr>位置し、<wbr>プロに<wbr>よって<wbr>設計から<wbr>造成、<wbr>そして<wbr>維持管理まで<wbr>され、<wbr>フリーライドが<wbr>可能な<wbr>トレイルネットワークです。<wbr>プロジェクトの<wbr>全段階が<wbr>完了すれば、<wbr>約30kmの<wbr>トレイルが<wbr>整備され、<wbr>日本最大の<wbr>コミュニティ・バイクパークと<wbr>なる<wbr>予定。
           </p>
-          <p>
-            ツインピークスの先にあるNAMBAのマスタープランでは、初心者向けのスキルエリアから、50kmを超えるバックカントリー・エピックコトレイル、リフトでアクセスできるバイクパーク、そしてその間にあるあらゆるものを網羅する、相互につながったトレイルシステムをを作り上げることです。
+          <p class="ja">
+            ツインピークスの<wbr>先に<wbr>ある<wbr>NAMBAの<wbr>マスタープランでは、<wbr>初心者向けの<wbr>スキルエリアから、<wbr>50kmを<wbr>超える<wbr>バックカントリー・<wbr>エピックコトレイル、<wbr>リフトで<wbr>アクセスできる<wbr>バイクパーク、<wbr>そして<wbr>その間に<wbr>ある<wbr>あら<wbr>ゆる<wbr>ものを<wbr>網羅する、<wbr>相互に<wbr>つながった<wbr>トレイルシステムをを<wbr>作り上げる<wbr>ことです。
           </p>
-          <p>私たち非営利団体の活動に是非ご応募いただき、皆様にトレイルでお会いできることを楽しみにしております。</p>
+          <p class="ja">私たち非営利団体の<wbr>活動に<wbr>是非ご応募いただき、<wbr>皆様に<wbr>トレイルで<wbr>お会いできる<wbr>ことを<wbr>楽しみに<wbr>しております。</p>
           {% endif %}
         {% endif %}
 

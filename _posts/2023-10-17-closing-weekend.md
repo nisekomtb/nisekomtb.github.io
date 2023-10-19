@@ -28,11 +28,6 @@ itinerary:
         - time: 9:00am
           name: Strava challenge begins
           location: Twin Peaks
-        - time: 9:30am
-          name: Costume winner announced
-          location:
-            url: https://goo.gl/maps/yKza3NA7yfx5VQRx8
-            name: Twin Peaks Trail Head
         - time: 10:00am
           name: Dirty Dames women's group ride
           location:
@@ -46,8 +41,11 @@ itinerary:
         - time: 3:30pm
           name: Strava challenge ends
           location: Twin Peaks
-        - time: 4:00pm
-          name: Strava challenge winners announced
+        - name: Costume winner announced
+          location:
+            url: https://goo.gl/maps/yKza3NA7yfx5VQRx8
+            name: Twin Peaks Trail Head
+        - name: Strava challenge winners announced
           location: Twin Peaks
         - time: 4:15pm
           name: Event ends
@@ -70,7 +68,7 @@ What's a Strava Segment Challenge?
 
 Strava is a GPS app that allows us to run a self timed, semi-virtual race right here in the Twin Peaks Bike Park! On the day, we'll let you know the specific “Segment” (or trail section) of our trails to race on. Your time will be recorded using a GPS device or your smartphone. The fastest riders will be featured on our leaderboard, and with prizes up for grabs make sure to bring your A-game!
 
-The competition is open to all riders (excluding NAMBA’s staff), and there will be categories for men, women, boys and girls!
+The competition is open to all riders (excluding NAMBA crew), and there will be categories for men, women, boys and girls!
 
 Participation is easy:
 
