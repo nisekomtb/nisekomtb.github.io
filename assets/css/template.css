@@ -7734,6 +7734,15 @@ joomla-field-custom.field-custom-wrapper .input-group .input-group-btn .btn span
   text-align: center;
 }
 
+.ribbon.cancelled span {
+  background-color: #cc0000;
+}
+
+.ribbon.cancelled::before,
+.ribbon.cancelled::after {
+  border: 5px solid #fc0000;
+}
+
 /* top left*/
 .ribbon-top-left {
   top: -10px;

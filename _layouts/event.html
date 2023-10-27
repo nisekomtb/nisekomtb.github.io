@@ -12,6 +12,12 @@ layout: default
     vertical-align: middle;
   }
 
+  span.cancelled {
+    color: #fc0000;
+    font-size: 150%;
+    font-weight: bold;
+  }
+
   .download {
     margin: 30px auto;
     display: flex;
@@ -73,6 +79,11 @@ layout: default
     text-align: center;
   }
 
+  table.timetable tr.cancelled {
+    text-decoration: line-through;
+    opacity: 0.5;
+  }
+
   table.timetable td {
     background-color: #0e0e0e;
     text-align: center;
@@ -127,6 +138,13 @@ layout: default
             {% endfor %}
           </p>
         </div>
+
+        {% if page.cancelled %}
+        <div class="list-group">
+          <h4 class="list-group-item-heading">{% if page.lang == "en" %}Status{% else %}状況{% endif %}</h4>
+          <p class="list-group-item-text{% if page.lang == " ja" %} ja{% endif %}">{% if page.lang == "en" %}Cancelled{% else %}キャンセル{% endif %}</p>
+        </div>
+          {% endif %}
 
         <div class="list-group">
           <h4 class="list-group-item-heading">{% if page.lang == "en" %}Location{% else %}場所{% endif %}</h4>
@@ -184,7 +202,7 @@ layout: default
           <p>
           <table class="timetable">
             {% for event in day.events %}
-            <tr>
+            <tr {% if event.cancelled %} class="cancelled" {% endif %}>
               <td>{{ event.time | default: '~' }}</td>
               <td>
                 {% if page.lang == "en" %}

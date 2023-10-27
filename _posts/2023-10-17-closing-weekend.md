@@ -7,6 +7,7 @@ startDate: 2023-10-28 09:00:00 +0900
 days: 2
 location: Twin Peaks Bike Park, Niseko
 price: 0
+cancelled: true
 partners:
   - name: Fox
     img: /fox.png
@@ -31,11 +32,13 @@ itinerary:
         - time: 9:00am
           name: Strava challenge begins
           location: Twin Peaks
+          cancelled: true
         - time: 10:00am
           name: Dirty Dames women's group ride
           location:
             url: https://goo.gl/maps/yKza3NA7yfx5VQRx8
             name: Twin Peaks Trail Head
+          cancelled: true
         - time: 1:00pm
           name: NAMBA Open House Event
           location:
@@ -44,21 +47,27 @@ itinerary:
         - time: 3:30pm
           name: Strava challenge ends
           location: Twin Peaks
+          cancelled: true
         - name: Costume winner announced
           location:
             url: https://goo.gl/maps/yKza3NA7yfx5VQRx8
             name: Twin Peaks Trail Head
+          cancelled: true
         - name: Strava challenge winners announced
           location: Twin Peaks
+          cancelled: true
         - time: 4:15pm
           name: Event ends
+          cancelled: true
     - hasLocations: true
       events:
         - time: 9:00am
           name: Free ride – a chance to ride the trails at your leisure
           location: Twin Peaks
+          cancelled: true
         - time: 4:30pm
           name: Twin Peaks closes for the season - see you next year!
+          cancelled: true
 parking: true
 about: true
 ---
@@ -67,6 +76,9 @@ Autumn has arrived, and as the leaves change so too do the seasons. With Niseko 
 We have a host of events lined up for the closing weekend:
 
 ### Strava Segment Challenge: <small>(weather permitting)</small>
+
+<span class="cancelled">⛈️ Cancelled due to weather ⛈️</span>
+
 What's a Strava Segment Challenge?
 
 Strava is a GPS app that allows us to run a self timed, semi-virtual race right here in the Twin Peaks Bike Park! On the day, we'll let you know the specific “Segment” (or trail section) of our trails to race on. Your time will be recorded using a GPS device or your smartphone. The fastest riders will be featured on our leaderboard, and with prizes up for grabs make sure to bring your A-game!
@@ -88,6 +100,8 @@ Participation is easy:
 
 ### Costume Competition: <small>(weather permitting)</small>
 
+<span class="cancelled">⛈️ Cancelled due to weather ⛈️</span>
+
 With Halloween right around the corner, let's make mountain biking spooktacular!
 
 Show off your creativity and come dressed in your most jaw-dropping costumes. The best-dressed mountain bikers will receive prizes, so get ready to bring your Halloween spirit to the trails!
@@ -95,6 +109,9 @@ Show off your creativity and come dressed in your most jaw-dropping costumes. Th
 ![](/assets/images/events/2023/closing-weekend/pumpkin.jpg)
 
 ### The Dirty Dames - Women Only Group Ride: <small>(weather permitting)</small>
+
+<span class="cancelled">⛈️ Cancelled due to weather ⛈️</span>
+
 Calling all the adventurous ladies!
 
 Join us for our first-ever "Dirty Dames" women-only group ride. It's an opportunity to connect with fellow female riders, share your passion for biking, and explore the trails together in a supportive and fun environment. All skill levels are welcome, from beginners to seasoned pros.

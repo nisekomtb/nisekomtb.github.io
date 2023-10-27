@@ -7,6 +7,7 @@ startDate: 2023-10-28 09:00:00 +0900
 days: 2
 location: ツインピークス・バイクパーク、<wbr>ニセコ
 price: 0
+cancelled: true
 partners:
   - name: Fox
     img: /fox.png
@@ -31,11 +32,13 @@ itinerary:
         - time: 9:00am
           name: Strava チャレンジ開始
           location: ツインピークス バイクパーク
+          cancelled: true
         - time: 10:00am
           name: Dirty Dames 女性限定グループライド
           location:
             url: https://goo.gl/maps/yKza3NA7yfx5VQRx8
             name: ツインピークス バイクパーク トレイルヘッド
+          cancelled: true
         - time: 1:00pm
           name: NAMBA オープンハウスイベント
           location:
@@ -44,21 +47,27 @@ itinerary:
         - time: 3:30pm
           name: Stravaチャレンジ終了
           location: ツインピークス バイクパーク
+          cancelled: true
         - name: コスチューム<wbr>優勝者発表
           location:
             url: https://goo.gl/maps/yKza3NA7yfx5VQRx8
             name: ツインピークス バイクパーク トレイルヘッド
+          cancelled: true
         - name: Stravaチャレンジ<wbr>優勝者発表
           location: ツインピークス バイクパーク
+          cancelled: true
         - time: 4:15pm
           name: イベント終了
+          cancelled: true
     - hasLocations: true
       events:
         - time: 9:00am
           name: フリーライド - 自由にトレイルを走れます
           location: ツインピークス バイクパーク
+          cancelled: true
         - time: 4:30pm
           name: ツインピークス、<wbr>今シーズンの営業を終了！
+          cancelled: true
 parking: true
 about: true
 ---
@@ -67,6 +76,9 @@ about: true
 <p class="ja">クロージング・ウイークエンドは<wbr>イベントが<wbr>盛りだくさん<wbr>：</p>
 
 ### <span class="ja">ストラバ・<wbr>セグメント・チャレンジ： <small>(お天気次第...)</small></span>
+
+<span class="cancelled">⛈️ 天候の影響により中止 ⛈️</span>
+
 <p class="ja">ストラバ・<wbr>セグメント・チャレンジとは？</p>
 
 <p class="ja">Stravaは<wbr>GPSアプリです。<wbr>ここツインピークス・バイクパークで<wbr>セルフタイムの<wbr>半バーチャルレースを<wbr>行います！<wbr>当日、<wbr>レースで<wbr>使う<wbr>トレイルの<wbr>「セグメント」<wbr>（トレイル区間）を<wbr>お知らせします。<wbr>タイムは<wbr>GPSデバイスまたは<wbr>スマートフォンを<wbr>使って<wbr>記録されます。<wbr>最速ライダーは<wbr>リーダーボードに<wbr>掲載され、<wbr>賞品も<wbr>用意されているので、<wbr>楽しみつつ全力で<wbr>挑んでください！！</p>
@@ -89,6 +101,8 @@ about: true
 
 ### <span class="ja">コスチューム・コンペティション： <small>(お天気次第...)</small></span>
 
+<span class="cancelled">⛈️ 天候の影響により中止 ⛈️</span>
+
 <p class="ja">ハロウィーンを<wbr>目前に<wbr>控え、<wbr>マウンテンバイクを<wbr>不気味に<wbr>盛り上げましょう！</p>
 
 <p class="ja">あなたの<wbr>創造力を<wbr>発揮して、と<wbr>びっきりの<wbr>コスチュームで<wbr>参加してください。ベスト・ドレッサーには<wbr>賞品が<wbr>贈られるので、<wbr>トレイルに<wbr>ハロウィーン・スピリットを<wbr>持ち込む<wbr>準備を<wbr>しよう！</p>
@@ -96,6 +110,8 @@ about: true
 ![](/assets/images/events/2023/closing-weekend/pumpkin.jpg)
 
 ### <span class="ja">Dirty Dames-女性限定グループライド： <small>(お天気次第...)</small></span>
+
+<span class="cancelled">⛈️ 天候の影響により中止 ⛈️</span>
 
 <p class="ja">冒険派女子集合！</p>
 

@@ -66,6 +66,9 @@ title: Events
             {% assign endDate = post.startDate | date: "%s" | plus: days | date: "%F" %}
             {% assign today = "today" | date: "%F" %}
             {% if endDate > today %}
+              {% if post.cancelled %}
+              <div class="ribbon ribbon-top-left cancelled" name="cancelled" data-end-date="{{- endDate -}}"><span>Cancelled</span></div>
+              {% endif %}
             <div class="ribbon ribbon-top-left" style="display:none;" name="ended" data-end-date="{{- endDate -}}"><span>Ended</span></div>
             {% else %}
             <div class="ribbon ribbon-top-left"><span>Ended</span></div>
@@ -96,6 +99,13 @@ title: Events
       var now = new Date();
       if (endDate.getTime() < now.getTime()) {
         $(this).show();
+      }
+    });
+    $('div[name="cancelled"]').each(function () {
+      var endDate = new Date($(this).data("end-date"));
+      var now = new Date();
+      if (endDate.getTime() < now.getTime()) {
+        $(this).hide();
       }
     });
   })(jQuery);
