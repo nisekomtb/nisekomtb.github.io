@@ -15,6 +15,9 @@ partners:
   - name: Rhythm Japan
     img: /special/rhythm.png
     url: https://rhythmjapan.com
+  - name: Ichi Ichi
+    img: /ichi-ichi.png
+    url: https://ichiichikitchen.com
   - name: Kikos
     img: /kikos.jpg
     url: https://instagram.com/kikoz.kimobetsu
