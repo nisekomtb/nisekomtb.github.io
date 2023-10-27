@@ -150,7 +150,7 @@ shika:
         url: https://vacationniseko.com/ja
 
 tanuki:
-  width: 14
+  width: 15
   sponsors:
     - image: /assets/images/company/tanuki/burton.png
       url: https://www.burton.com/jp/en
@@ -182,6 +182,8 @@ tanuki:
       url: https://www.odin-property.com
     - image: /assets/images/company/tanuki/peak-car-rentals.png
       url: https://www.nisekocarrental.com
+    - image: /assets/images/company/powbar.png
+      url: https://www.thepowbar.com
     - image: /assets/images/company/tanuki/powderlife.png
       url: https://www.powderlife.com
     - image: /assets/images/company/tanuki/roomboss.png
