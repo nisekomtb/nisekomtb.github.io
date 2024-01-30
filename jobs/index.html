@@ -4,9 +4,7 @@ baseCss: view-category
 ---
 
 <div class="t3-section-wrap">
-
   <div class="section">
-
     <div class="module-title-wrap">
       <div class="features-desc" data-animation="move-from-bottom" data-delay="600">
         <div style="font-size:130%;">
@@ -20,9 +18,12 @@ baseCss: view-category
   </div>
 </div>
 
-<div class="blog style-1 project-view" itemscope="" itemtype="https://schema.org/Blog">
+<h3 style="text-align:center; margin-bottom:48px;">Open positions</h3>
 
-  {% assign posts = site.categories.jobs | where: "lang", "en" | where: "draft", "false" %}
+<div class="blog acm-features style-2" itemscope="" itemtype="https://schema.org/Blog">
+
+  {% assign posts = site.categories.jobs | where: "lang", "en" %}
+  {% assign totalPostsSize = posts | size %}
   {% for post in posts %}
 
   {% assign indexModulo3 = forloop.index0 | modulo: 3 %}
@@ -31,45 +32,39 @@ baseCss: view-category
     {% endif %}
 
 
-    <div class="col-md-4 col">
-      <div class="item column-1" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting"
-        style="min-height: 529px;">
+    <div class="col-md-4 col" {% if totalPostsSize == 1 %}style="float:none; margin:0 auto;"{% endif %}>
+      <div class="item column-1" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
 
         <!-- Article -->
-        <article class="view-project">
-          <div class="image-wrap" style="margin-top:10px;">
-            <div class="pull-left item-image">
-              <a href="{{ post.url }}"><img src="{{ post.thumbnail }}?d={{ site.time | date: '%s' }}" alt=""
-                  itemprop="thumbnailUrl"></a>
-            </div>
+        <article class="features-item" style="background-color: #0e0e0e; text-align:center; padding: 72px 54px;">
+
+          <div class="font-icon">
+            <span class="icon {{ post.icon }}"></span>
           </div>
 
-          <div class="intro-wrap">
+          <header class="article-header">
+            <h2 class="article-title" itemprop="headline">
+              {% comment %} <a href="{{ post.url }}" itemprop="url" title="{{ post.title }}">
+              </a> {% endcomment %}
+                {{ post.title }}
+            </h2>
 
-            <header class="article-header clearfix">
-              <h2 class="article-title" itemprop="headline">
-                <a href="{{ post.url }}" itemprop="url" title="{{ post.title }}">
-                  {{ post.title }}</a>
-              </h2>
-
-            </header>
-            <span class="project-type">{{ post.job_type }}</span>
-            <br />
-            <span class="project-type">{{ post.excerpt | strip_html | slice: 0, 100 }}</span>
-
-
-            <!-- Aside -->
-            <!-- //Aside -->
-
-
-            <!-- footer -->
-            <!-- //footer -->
+          </header>
+          <br />
+          <span class="project-type">{{ post.excerpt | strip_html | slice: 0, 100 }}</span>
+          <br />
+          <a class="action" href="{{- post.url -}}">
+            Learn more
+            <span class="icon ion-ios-arrow-round-forward"></span>
+          </a>
 
 
-          </div>
-          {% if post.filled %}
-            <div class="ribbon ribbon-top-left"><span>Filled</span></div>
-          {% endif %}
+          <!-- Aside -->
+          <!-- //Aside -->
+
+
+          <!-- footer -->
+          <!-- //footer -->
         </article>
         <!-- //Article -->
 
@@ -88,24 +83,21 @@ baseCss: view-category
 
 </div>
 
+{% assign totalVolunteerPostsSize = site.categories.jobs | where: "lang", "en" | where: "pay", "0" | size %}
 
-{% comment %} ---
-title: We're hiring!
-description: NAMBA Trail Builder Job Description
----
-<div class="ja-inview">
-  <div class="module-title-wrap">
-    <div class="action">
-      <a class="btn btn-primary" target="_blank" href="https://forms.gle/hb2MTckmQVUgD8DM9">Apply here</a>
+{% if totalPostsSize == totalVolunteerPostsSize %}
+<h3 style="text-align:center; margin-bottom:48px;">Paid positions</h3>
+
+<div class="t3-section-wrap">
+  <div class="section">
+    <div class="module-title-wrap">
+      <div class="features-desc" data-animation="move-from-bottom" data-delay="600">
+        <div style="font-size:130%;">
+          <p>Currently there are no open paid positions, but watch this space, and <a href="https://www.instagram.com/nisekomtb/"
+            target="_blank">follow us</a> on social media for updates!</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-{% include pdf.html path = "/assets/pdfs/NAMBA.2023.TrailBuilder-Job-Description.en.pdf" name =
-"NAMBA.2023.TrailBuilder.Job.Description.pdf" %}
-<div class="ja-inview">
-  <div class="module-title-wrap">
-    <div class="action">
-      <a class="btn btn-primary" target="_blank" href="https://forms.gle/hb2MTckmQVUgD8DM9">Apply here</a>
-    </div>
-  </div>
-</div> {% endcomment %}
+{% endif %}

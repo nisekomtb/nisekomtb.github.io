@@ -31,7 +31,7 @@ baseCss: view-article
       <div class="project-info">
         <h4>{% if page.lang == "en" %}Position Details{% else %}Position Details{% endif %}</h4>
         <div class="list-group">
-          <h4 class="list-group-item-heading">{% if page.lang == "en" %}Start & end dates{% else %}Start & end dates{% endif %}</h4>
+          <h4 class="list-group-item-heading">{% if page.lang == "en" %}Term{% else %}Term{% endif %}</h4>
           <p class="list-group-item-text">
             {% if page.startDate %}
               {% if page.lang == "en" %}
@@ -87,7 +87,7 @@ baseCss: view-article
         </div>
         {% endif %}
 
-        {% if page.applyUrl %}
+        {% if page.applyUrl and page.status == "Open" %}
         <div class="list-group">
           {% if page.lang == "ja" %}
             <p class="ja">

@@ -3,8 +3,8 @@ layout: job
 categories: jobs
 title: Subcommittee Volunteer
 description: Join our volunteer subcommittee teams! Volunteers are the backbone of NAMBA ...they are our arms, legs, brain, heart – basically everything that keeps us alive and running! Our team of volunteers runs all of our subcommittees, from access to marketing to trails to admin, and everything in between. NAMBA is growing, and we are in need of more volunteers on our subcommittees to help us expand! We are in particular need of members to join our Access and Admin subcommittees.
-thumbnail: /assets/images/jobs/2024/volunteer.jpg
-status: Actively recruiting
+icon: ion-ios-chatbubbles
+status: Open
 location: Niseko
 pay: 0
 applyUrl: https://forms.gle/NRj87z7N2KjW4uSP9
@@ -28,9 +28,11 @@ Join our team, improve Niseko, and have a good time doing it by participating in
 - <strong>Admin subcommittee:</strong>
   At the core of our operations, the Admin Subcommittee ensures the smooth functioning of NAMBA. From accounting and grant applications to overseeing essential administrative processes, this committee plays a pivotal role in facilitating the behind-the-scenes workings of our organization.
 
-<div style="text-align:center; margin:50px 0;">
-  <a class="btn btn-primary" href="{{- page.applyUrl -}}" target="_blank">Register your interest here!</a>
-</div>
+{% if page.status == "Open" %}
+  <div style="text-align:center; margin:50px 0;">
+    <a class="btn btn-primary" href="{{- page.applyUrl -}}" target="_blank">Register your interest here!</a>
+  </div>
+{% endif %}
 
 ### Work with us!
 
