@@ -1,0 +1,153 @@
+---
+layout: default
+baseCss: view-article
+---
+<style>
+  .credit {
+    float:right;
+    font-size: 90%;
+  }
+
+  h3 small {
+    font-size: 50%;
+    vertical-align: middle;
+  }
+</style>
+
+<div class="item-page view-project ">
+
+  <!-- Article -->
+  <article>
+
+    {% if page.img %}
+    <div class="pull-left item-image">
+      <img src="{{ page.img }}" alt="" itemprop="image">
+      {% if page.imgCredit %}<span class="credit"><a href="{{ page.imgCredit.url }}" target="_blank"> 📸 {{ page.imgCredit.name }}</a></span>{% endif %}
+    </div>
+    {% endif %}
+
+    <div class="article-detail">
+      <!-- Aside -->
+      <div class="project-info">
+        <h4>{% if page.lang == "en" %}Position Details{% else %}Position Details{% endif %}</h4>
+        <div class="list-group">
+          <h4 class="list-group-item-heading">{% if page.lang == "en" %}Start & end dates{% else %}Start & end dates{% endif %}</h4>
+          <p class="list-group-item-text">
+            {% if page.startDate %}
+              {% if page.lang == "en" %}
+                Start: {{ page.startDate | date: "%s" | plus: days | date: "%A %d %B %Y" }}
+              {% else %}
+                Start: {{ page.startDate | date: "%s" | plus: days | date: "%Y年%m月%d日" }}
+              {% endif %}
+
+              {% if page.endDate %}
+                {% if page.lang == "en" %}
+                  End: {{ page.endDate | date: "%s" | plus: days | date: "%A %d %B %Y" }}
+                {% else %}
+                  End: {{ page.endDate | date: "%s" | plus: days | date: "%Y年%m月%d日" }}
+                {% endif %}
+              {% else %}
+                No fixed term
+              {% endif %}
+            {% else %}
+              No fixed term
+            {% endif %}
+          </p>
+        </div>
+
+        <div class="list-group">
+          <h4 class="list-group-item-heading">{% if page.lang == "en" %}Status{% else %}状況{% endif %}</h4>
+          <p class="list-group-item-text{% if page.lang == " ja" %} ja{% endif %}">{{ page.status }}
+          </p>
+        </div>
+
+        <div class="list-group">
+          <h4 class="list-group-item-heading">{% if page.lang == "en" %}Location{% else %}場所{% endif %}</h4>
+          <p class="list-group-item-text{% if page.lang == "ja" %} ja{% endif %}">{{ page.location }}</p>
+        </div>
+
+        <div class="list-group">
+          <h4 class="list-group-item-heading">{% if page.lang == "en" %}Remuneration{% else %}{% endif %}</h4>
+          <p class="list-group-item-text">
+            {% if page.pay == 0 and page.lang == "en" %}
+              Volunteer position
+            {% else if page.pay == 0 %}
+              Volunteer position
+            {% else %}
+              {{ page.pay }}</p>
+            {% endif %}
+        </div>
+
+        {% if page.moreInfo %}
+        <div class="list-group">
+          <h4 class="list-group-item-heading">{% if page.lang == "en" %}More Info{% else %}詳しくは{% endif %}</h4>
+          {% for info in page.moreInfo %}
+          <p{% if page.lang == "ja" %} class="ja"{% endif %}>{{ info }}</p>
+          {% endfor %}
+        </div>
+        {% endif %}
+
+        {% if page.applyUrl %}
+        <div class="list-group">
+          {% if page.lang == "ja" %}
+            <p class="ja">
+              <a class="btn btn-sm btn-primary"
+                href="{{- page.applyUrl -}}"
+                target="_blank">Click here to apply</a>
+            </p>
+          {% else %}
+            <p>
+              <a class="btn btn-sm btn-primary"
+                href="{{- page.applyUrl -}}"
+                target="_blank">Click here to apply</a>
+            </p>
+          {% endif %}
+        </div>
+        {% endif %}
+      </div>
+      <!-- // Aside -->
+
+      <section class="article-content clearfix" itemprop="articleBody">
+        {{ content }}
+        <!-- // Item tags -->
+      </section>
+
+      <!-- Footer -->
+      <!-- // Footer -->
+
+    </div>
+</article>
+<!-- //Article -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "JobPosting",
+  "headline": "{{ page.title }}",
+  "inLanguage": "{{ page.lang }}",
+  "author": "NAMBA",
+  "datePublished": "{{ page.date }}",
+  "mainEntityOfPage": "WebPage",
+  "articleBody": "{{ content | strip_html | strip_newlines }}",
+  {% if page.img %}
+  "image":
+  {
+    "@type": "imageObject",
+    "url": "https://namba.ngo{{ page.img }}",
+    "height": "auto",
+    "width": "auto"
+  },
+  {% endif %}
+  "publisher":
+  {
+    "@type": "Organization",
+    "name": "NAMBA",
+    "logo":
+    {
+      "@type": "imageObject",
+      "url": "https://namba.ngo/assets/images/logos/logo.png"
+    }
+  }
+}
+</script>
+
