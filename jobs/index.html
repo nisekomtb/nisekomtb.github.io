@@ -2,7 +2,29 @@
 title: Join our team
 baseCss: view-category
 ---
+<style>
+  .action span {
+    margin-left: 8px;
+    position: relative;
+    top: 1px;
+    letter-spacing: -1px;
+    -webkit-transition: all 500ms;
+    -o-transition: all 500ms;
+    transition: all 500ms;
+  }
 
+  .action:hover span,
+  .action:focus span,
+  .action:active span {
+    color: #ffffff;
+  }
+
+  .action:hover span,
+  .action:focus span,
+  .action:active span {
+    margin-left: 14px;
+  }
+</style>
 <div class="t3-section-wrap">
   <div class="section">
     <div class="module-title-wrap">
@@ -11,7 +33,7 @@ baseCss: view-category
           <p>Join the NAMBA team!</p>
           <p>Our volunteer subcommittee positions, and paid summer seasonal positions, are shaping trails and
           shaping the future of our community.</p>
-          <p>Have skills you can bring to the table, or to the trails? Awesome, learn more about our opportunities below!</p>
+          <p>Have skills you can bring to the table, or to the trails? Learn more about our opportunities below!</p>
         </div>
       </div>
     </div>
@@ -20,67 +42,28 @@ baseCss: view-category
 
 <h3 style="text-align:center; margin-bottom:48px;">Open positions</h3>
 
-<div class="blog acm-features style-2" itemscope="" itemtype="https://schema.org/Blog">
+<div class="blog" style="margin-bottom:96px;" itemscope="" itemtype="https://schema.org/Blog">
 
   {% assign posts = site.categories.jobs | where: "lang", "en" %}
   {% assign totalPostsSize = posts | size %}
-  {% for post in posts %}
 
-  {% assign indexModulo3 = forloop.index0 | modulo: 3 %}
-  {% if indexModulo3 == 0 %}
-  <div class="items-row cols-3 row-{{- forloop.index0 | divided_by: 3 }} row equal-height equal-height-child">
-    {% endif %}
-
-
-    <div class="col-md-4 col" {% if totalPostsSize == 1 %}style="float:none; margin:0 auto;"{% endif %}>
-      <div class="item column-1" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-
-        <!-- Article -->
-        <article class="features-item" style="background-color: #0e0e0e; text-align:center; padding: 72px 54px;">
-
-          <div class="font-icon">
-            <span class="icon {{ post.icon }}"></span>
-          </div>
-
-          <header class="article-header">
-            <h2 class="article-title" itemprop="headline">
-              {% comment %} <a href="{{ post.url }}" itemprop="url" title="{{ post.title }}">
-              </a> {% endcomment %}
-                {{ post.title }}
-            </h2>
-
-          </header>
-          <br />
-          <span class="project-type">{{ post.excerpt | strip_html | slice: 0, 100 }}</span>
-          <br />
-          <a class="action" href="{{- post.url -}}">
-            Learn more
-            <span class="icon ion-ios-arrow-round-forward"></span>
-          </a>
-
-
-          <!-- Aside -->
-          <!-- //Aside -->
-
-
-          <!-- footer -->
-          <!-- //footer -->
-        </article>
-        <!-- //Article -->
-
-
-
-      </div>
-      <!-- end item -->
-    </div>
-
-    {% if indexModulo3 == 2 or forloop.last %}
+  <div>
+    <ul style="text-align:center; list-style:none; padding-inline-start:0;">
+      {% for post in posts %}
+        <li>
+          <article>
+            <a class="action" href="{{- post.url -}}">
+              <header class="article-header" style="display:inline;">
+                <strong style="font-size:150%;" itemprop="headline">{{ post.title }}</strong>
+              </header>
+              {{ post.excerpt | strip_html | slice: 0, 100 }}
+              <span class="icon ion-ios-arrow-round-forward"></span>
+            </a>
+          </article>
+        </li>
+      {% endfor %}
+    </ul>
   </div>
-  <!-- end row -->
-  {% endif %}
-
-  {% endfor %}
-
 </div>
 
 {% assign totalVolunteerPostsSize = site.categories.jobs | where: "lang", "en" | where: "pay", "0" | size %}
