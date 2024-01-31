@@ -3,8 +3,6 @@ layout: job
 categories: jobs
 title: Subcommittee Volunteer
 description: Join our volunteer subcommittee teams! Volunteers are the backbone of NAMBA ...they are our arms, legs, brain, heart – basically everything that keeps us alive and running! Our team of volunteers runs all of our subcommittees, from access to marketing to trails to admin, and everything in between. NAMBA is growing, and we are in need of more volunteers on our subcommittees to help us expand! We are in particular need of members to join our Access and Admin subcommittees.
-icon: ion-ios-chatbubbles
-type: Volunteer
 status: Open
 location: Niseko
 pay: 0

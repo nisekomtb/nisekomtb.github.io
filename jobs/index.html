@@ -3,6 +3,32 @@ title: Join our team
 baseCss: view-category
 ---
 <style>
+  h3 {
+    text-align:center;
+    margin-bottom:48px;
+  }
+
+  .jobs {
+    margin-bottom:96px;
+  }
+
+  .jobs ul {
+    text-align:center;
+    list-style:none;
+    padding-inline-start:0;
+  }
+
+  header.article-header {
+    display: inline;
+    font-size: 150%;
+  }
+
+  @media (max-width: 767px) {
+    header.article-header {
+      display: block;
+    }
+  }
+
   .action span {
     margin-left: 8px;
     position: relative;
@@ -40,21 +66,21 @@ baseCss: view-category
   </div>
 </div>
 
-<h3 style="text-align:center; margin-bottom:48px;">Open positions</h3>
+<h3>Open positions</h3>
 
-<div class="blog" style="margin-bottom:96px;" itemscope="" itemtype="https://schema.org/Blog">
+<div class="blog jobs" itemscope="" itemtype="https://schema.org/Blog">
 
   {% assign posts = site.categories.jobs | where: "lang", "en" %}
   {% assign totalPostsSize = posts | size %}
 
   <div>
-    <ul style="text-align:center; list-style:none; padding-inline-start:0;">
+    <ul>
       {% for post in posts %}
         <li>
           <article>
             <a class="action" href="{{- post.url -}}">
-              <header class="article-header" style="display:inline;">
-                <strong style="font-size:150%;" itemprop="headline">{{ post.title }}</strong>
+              <header class="article-header">
+                <strong itemprop="headline">{{ post.title }}</strong>
               </header>
               {{ post.excerpt | strip_html | slice: 0, 100 }}
               <span class="icon ion-ios-arrow-round-forward"></span>
@@ -69,7 +95,7 @@ baseCss: view-category
 {% assign totalVolunteerPostsSize = site.categories.jobs | where: "lang", "en" | where: "pay", "0" | size %}
 
 {% if totalPostsSize == totalVolunteerPostsSize %}
-<h3 style="text-align:center; margin-bottom:48px;">Paid positions</h3>
+<h3>Paid positions</h3>
 
 <div class="t3-section-wrap">
   <div class="section">
