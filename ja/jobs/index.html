@@ -1,27 +1,112 @@
 ---
-title: 求人募集
-description: NAMBAトレイルビルダー業務内容
+title: Join our team
+baseCss: view-category
 ---
-<div class="ja-inview">
-  <div class="module-title-wrap">
-    <div class="action">
-      <a
-        class="btn btn-primary"
-        target="_blank"
-        href="https://forms.gle/hb2MTckmQVUgD8DM9">応募する</a>
+<style>
+  h3 {
+    text-align:center;
+    margin-bottom:48px;
+  }
+
+  .jobs {
+    margin-bottom:96px;
+  }
+
+  .jobs ul {
+    text-align:center;
+    list-style:none;
+    padding-inline-start:0;
+  }
+
+  header.article-header {
+    display: inline;
+    font-size: 150%;
+  }
+
+  @media (max-width: 767px) {
+    header.article-header {
+      display: block;
+    }
+  }
+
+  .action span {
+    margin-left: 8px;
+    position: relative;
+    top: 1px;
+    letter-spacing: -1px;
+    -webkit-transition: all 500ms;
+    -o-transition: all 500ms;
+    transition: all 500ms;
+  }
+
+  .action:hover span,
+  .action:focus span,
+  .action:active span {
+    color: #ffffff;
+  }
+
+  .action:hover span,
+  .action:focus span,
+  .action:active span {
+    margin-left: 14px;
+  }
+</style>
+<div class="t3-section-wrap">
+  <div class="section">
+    <div class="module-title-wrap">
+      <div class="features-desc" data-animation="move-from-bottom" data-delay="600">
+        <div style="font-size:130%;">
+          <p>Join the NAMBA team!</p>
+          <p>Our volunteer subcommittee positions, and paid summer seasonal positions, are shaping trails and
+          shaping the future of our community.</p>
+          <p>Have skills you can bring to the table, or to the trails? Learn more about our opportunities below!</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-<div id="jd" style="width:100%;"></div>
-<script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
-{% include pdf.html path = "/assets/pdfs/NAMBA.2023.TrailBuilder-Job-Description.ja.pdf" name = "NAMBA.2023.TrailBuilder.Job.Description.pdf" %}
-<div class="ja-inview">
-  <div class="module-title-wrap">
-    <div class="action">
-      <a
-        class="btn btn-primary"
-        target="_blank"
-        href="https://forms.gle/hb2MTckmQVUgD8DM9">応募する</a>
+
+<h3>Open positions</h3>
+
+<div class="blog jobs" itemscope="" itemtype="https://schema.org/Blog">
+
+  {% assign posts = site.categories.jobs | where: "lang", "ja" %}
+  {% assign totalPostsSize = posts | size %}
+
+  <div>
+    <ul>
+      {% for post in posts %}
+        <li>
+          <article>
+            <a class="action" href="{{- post.url -}}">
+              <header class="article-header">
+                <strong itemprop="headline">{{ post.title }}</strong>
+              </header>
+              {{ post.excerpt | strip_html | slice: 0, 100 }}
+              <span class="icon ion-ios-arrow-round-forward"></span>
+            </a>
+          </article>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+
+{% assign totalVolunteerPostsSize = site.categories.jobs | where: "lang", "ja" | where: "pay", "0" | size %}
+
+{% if totalPostsSize == totalVolunteerPostsSize %}
+<h3>Paid positions</h3>
+
+<div class="t3-section-wrap">
+  <div class="section">
+    <div class="module-title-wrap">
+      <div class="features-desc" data-animation="move-from-bottom" data-delay="600">
+        <div style="font-size:130%;">
+          <p>Currently there are no open paid positions, but watch this space, and <a href="https://www.instagram.com/nisekomtb/"
+            target="_blank">follow us</a> on social media for updates!</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+{% endif %}
