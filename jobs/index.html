@@ -70,7 +70,7 @@ baseCss: view-category
 
 <div class="blog jobs" itemscope="" itemtype="https://schema.org/Blog">
 
-  {% assign posts = site.categories.jobs | where: "lang", "en" %}
+  {% assign posts = site.categories.jobs | where: "lang", "en" | where: "isOpen", "true" %}
   {% assign totalPostsSize = posts | size %}
 
   <div>
@@ -92,7 +92,7 @@ baseCss: view-category
   </div>
 </div>
 
-{% assign totalVolunteerPostsSize = site.categories.jobs | where: "lang", "en" | where: "pay", "0" | size %}
+{% assign totalVolunteerPostsSize = site.categories.jobs | where: "lang", "en" | where: "isOpen", "true" | where: "pay", "0" | size %}
 
 {% if totalPostsSize == totalVolunteerPostsSize %}
 <h3>Paid positions</h3>

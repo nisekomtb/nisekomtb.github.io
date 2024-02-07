@@ -31,9 +31,9 @@ baseCss: view-article
     <div class="article-detail">
       <!-- Aside -->
       <div class="project-info">
-        <h4>{% if page.lang == "en" %}Position Details{% else %}Position Details{% endif %}</h4>
+        <h4>{% if page.lang == "en" %}Position Details{% else %}ポジション詳細{% endif %}</h4>
         <div class="list-group">
-          <h4 class="list-group-item-heading">{% if page.lang == "en" %}Term{% else %}Term{% endif %}</h4>
+          <h4 class="list-group-item-heading">{% if page.lang == "en" %}Term{% else %}雇用期間{% endif %}</h4>
           <p class="list-group-item-text">
             {% if page.startDate %}
               {% if page.lang == "en" %}
@@ -49,17 +49,32 @@ baseCss: view-article
                   End: {{ page.endDate | date: "%s" | plus: days | date: "%Y年%m月%d日" }}
                 {% endif %}
               {% else %}
+                {% if page.lang == "en" %}
                 No fixed term
+                {% else %}
+                <span style="word-break: keep-all; overflow-wrap: break-word;">雇用期間の<wbr>定めなし</span>
+                {% endif %}
               {% endif %}
             {% else %}
+              {% if page.lang == "en" %}
               No fixed term
+              {% else %}
+              <span style="word-break: keep-all; overflow-wrap: break-word;">雇用期間の<wbr>定めなし</span>
+              {% endif %}
             {% endif %}
           </p>
         </div>
 
         <div class="list-group">
-          <h4 class="list-group-item-heading">{% if page.lang == "en" %}Status{% else %}状況{% endif %}</h4>
-          <p class="list-group-item-text{% if page.lang == " ja" %} ja{% endif %}">{{ page.status }}
+          <h4 class="list-group-item-heading">{% if page.lang == "en" %}Status{% else %}<span style="word-break: keep-all; overflow-wrap: break-word;">ポジションの<wbr>空き</span>{% endif %}</h4>
+          <p class="list-group-item-text{% if page.lang == " ja" %} ja{% endif %}">
+            {% if page.isOpen and page.lang == "ja" %}
+              募集中
+            {%  elsif page.isOpen %}
+              Open
+            {%  else %}
+              Closed
+            {% endif %}
           </p>
         </div>
 
@@ -69,12 +84,12 @@ baseCss: view-article
         </div>
 
         <div class="list-group">
-          <h4 class="list-group-item-heading">{% if page.lang == "en" %}Remuneration{% else %}{% endif %}</h4>
+          <h4 class="list-group-item-heading">{% if page.lang == "en" %}Remuneration{% else %}報酬について{% endif %}</h4>
           <p class="list-group-item-text">
             {% if page.pay == 0 and page.lang == "en" %}
               Volunteer position
             {% else if page.pay == 0 %}
-              Volunteer position
+              ボランティアワーク
             {% else %}
               {{ page.pay }}</p>
             {% endif %}
@@ -89,13 +104,13 @@ baseCss: view-article
         </div>
         {% endif %}
 
-        {% if page.applyUrl and page.status == "Open" %}
+        {% if page.applyUrl and page.isOpen %}
         <div class="list-group">
           {% if page.lang == "ja" %}
             <p class="ja">
               <a class="btn btn-sm btn-primary"
                 href="{{- page.applyUrl -}}"
-                target="_blank">Click here to apply</a>
+                target="_blank">申し込みはこちらをクリック</a>
             </p>
           {% else %}
             <p>

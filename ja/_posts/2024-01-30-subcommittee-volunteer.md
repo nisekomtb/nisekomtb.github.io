@@ -1,40 +1,44 @@
 ---
 layout: job
 categories: jobs
-title: Subcommittee Volunteer
-description: Join our volunteer subcommittee teams! Volunteers are the backbone of NAMBA ...they are our arms, legs, brain, heart – basically everything that keeps us alive and running! Our team of volunteers runs all of our subcommittees, from access to marketing to trails to admin, and everything in between. NAMBA is growing, and we are in need of more volunteers on our subcommittees to help us expand! We are in particular need of members to join our Access and Admin subcommittees.
-status: Open
-location: Niseko
+title: ボランティア委員スタッフ
+description: ボランティア委員スタッフとしてチームに参加しませんか？ ボランテイアスタッフはNAMBAの活動を継続していく為に重要な役割を担っています。委員会は、アクセス部、マーケティング部、トレイル部、アドミン部と構成されいて、すべてボランティア委員スタッフにより運営されてます。
+isOpen: true
+location: ニセコ
 pay: 0
 applyUrl: https://forms.gle/NRj87z7N2KjW4uSP9
 ---
-<h2 style="margin-top:0;" id="join-our-volunteer-subcommittee-teams">Join our volunteer subcommittee teams!</h2>
+<h2 style="margin-top:0;" id="join-our-volunteer-subcommittee-teams"><span class="ja">ボランティア委員スタッフと<wbr>して<wbr>チームに<wbr>参加しませんか？</span></h2>
 
-Volunteers are the backbone of NAMBA ...they are our arms, legs, brain, heart – basically everything that keeps us alive and running! Our team of volunteers runs all of our subcommittees, from access to marketing to trails to admin, and everything in between.
+<span class="ja">ボランテイアスタッフは<wbr>NAMBAの<wbr>活動を<wbr>継続していく<wbr>為に<wbr>重要な<wbr>役割を<wbr>担っています。<wbr>委員会は、<wbr>アクセス部、<wbr>マーケティング部、<wbr>トレイル部、<wbr>アドミン部と<wbr>構成されいて、<wbr>すべて<wbr>ボランティア委員スタッフに<wbr>より<wbr>運営されてます。</span>
 
-<strong>NAMBA is growing, and we are in need of more volunteers on our subcommittees to help us expand!</strong> We are in particular need of members to join our Access and Admin subcommittees.
+<strong><span class="ja">NAMBAの<wbr>活動は<wbr>拡大中で、<wbr>活動を<wbr>継続させる<wbr>為には<wbr>ボランティア委員の<wbr>協力が<wbr>不可欠です。</span></strong> <span class="ja">現在は<wbr>アクセス部門、<wbr>アドミン部門での<wbr>ボランティアに<wbr>参加してくれる<wbr>メンバーを<wbr>募集しています。</span>
 
-Join our team, improve Niseko, and have a good time doing it by participating in one of the following subcommittees:
+<span class="ja">私たちチームに<wbr>入り、<wbr>ニセコを<wbr>より<wbr>ワクワクする<wbr>場所に<wbr>しませんか？</span>
 
-- <h4>Trails Subcommittee:</h4>
-  <div class="desc">The Trails Subcommittee is at the forefront of everything related to trails! From planning, design, building and maintenance – this team oversees it all. Due to the nature of our current projects, members of the Trails Subcommittee will work very closely with members of the Access Subcommittee.</div>
-- <h4>Access Subcommittee:</h4>
-  <div class="desc">The Access Subcommittee is instrumental in building, strengthening and maintaining relationships with local landholders and area stakeholders, both private and public. Without access to local lands, we have nowhere to build awesome trails! This team works closely with the Trails Subcommittee to plan, design, apply for, and maintain compliance of trails built by NAMBA.</div>
-- <h4>Events Subcommittee:</h4>
-  <div class="desc">From group rides and casual community races, to fundraisers and demo days, the Events Subcommittee is responsible for planning and executing awesome events. Members of this subcommittee work closely with our internal Communications & Marketing Subcommittee, and with external sponsors and partners, to create events that not only bring the party but also promote community engagement and encourage both new and seasoned riders to explore the trails!</div>
-- <h4>Communications & Marketing Subcommittee:</h4>
-  <div class="desc">The Communications & Marketing Subcommittee is the creative force behind the NAMBA brand. This team produces and publishes marketing content, runs fundraisers, manages our website, and integrates our trails with platforms like Trailforks. Their efforts focus on promoting the brand and the trails, and on improving rider experience!</div>
-- <h4>Admin subcommittee:</h4>
-  <div class="desc">At the core of our operations, the Admin Subcommittee ensures the smooth functioning of NAMBA. From accounting and grant applications to overseeing essential administrative processes, this committee plays a pivotal role in facilitating the behind-the-scenes workings of our organization.</div>
+- <h4>トレール部門</h4>
+  <div class="desc"><span class="ja">トレイル部門チームは、<wbr>トレイルに<wbr>関連する<wbr>すべての<wbr>事柄の<wbr>最前線に<wbr>います！<wbr>計画から<wbr>デザイン、<wbr>構築、<wbr>メインテナンスまで、<wbr>すべてを<wbr>ディレクションしてます。<wbr>現在継続中である<wbr>プロジェクとは<wbr>アクセス部門との<wbr>密接な<wbr>連携しながら<wbr>協働してます。</span></div>
+- <h4>アクセス部門</h4>
+  <div class="desc"><span class="ja">アクセス部門チームは、<wbr>現地での<wbr>土地所<wbr>有者や<wbr>エリアの<wbr>ステークホルダー<wbr>（個人<wbr>および公共）との<wbr>関係<wbr>構築、<wbr>強化、<wbr>維持するのに<wbr>不可欠な<wbr>役割を<wbr>担ってます。<wbr>アクセス部門は<wbr>トレイル部門との<wbr>密接な<wbr>連帯を<wbr>通して、<wbr>NAMBAが<wbr>建設した<wbr>トレイルの<wbr>計画、<wbr>デザイン、<wbr>申請、<wbr>および遵守の<wbr>維持を<wbr>行います。</span></div>
+- <h4>イベント部門</h4>
+  <div class="desc"><span class="ja">イベント部門では<wbr>グループライドや<wbr>カジュアルな<wbr>コミュニティーレースから<wbr>募金活動、<wbr>デモデーまで、<wbr>イベント部門スタッフは<wbr>様々な<wbr>イベントを<wbr>計画し実行します。<wbr>コミュニケーション＆マーケティング部門と<wbr>連携し、<wbr>外部の<wbr>スポンサーや<wbr>パートナーとも<wbr>協力して、<wbr>パーテイーの<wbr>開催だけではなく、<wbr>コミュニティーの<wbr>参加を<wbr>促進します。<wbr>また<wbr>様々な<wbr>レベルの<wbr>ライダーに<wbr>適した<wbr>トレイルを<wbr>推奨する<wbr>イベントを<wbr>作り上げます！</span></div>
+- <h4>コミュニケーション＆マーケティング部門</h4>
+  <span class="ja">コミュニケーション＆マーケティング部門は、<wbr>NAMBAブランドの<wbr>創造的な<wbr>発信源です。<wbr>チームは<wbr>マーケティングコンテンツの<wbr>制作と<wbr>公開、<wbr>募金活動の<wbr>運営、<wbr>ウェブサイトの<wbr>管理、<wbr>およびTrailforksなどの<wbr
+- <h4>アドミン部門委員</h4>
+  <div class="desc"><span class="ja">NAMBAの<wbr>運営に<wbr>とって<wbr>中核と<wbr>なる<wbr>アドミン部門では、<wbr>NAMBAの<wbr>スムーズな<wbr>運営機能に<wbr>重要な<wbr>役割を<wbr>担ってます。<wbr>会計や<wbr>助成金の<wbr>申請、<wbr>重要な<wbr>行政関係との<wbr>プロセスの<wbr>監視まで、<wbr>NAMBAの<wbr>活動作業を<wbr>円滑に<wbr>進める<wbr>上で<wbr>中心的な<wbr>役割を<wbr>果たしています。</span></div>
 
-{% if page.status == "Open" %}
+<span class="ja">現在、<wbr>アクセス部門と<wbr>アドミン部門で<wbr>貢献して<wbr>頂ける<wbr>人員を<wbr>募集しています！<wbr>NAMBAボランティア委員に<wbr>参加する<wbr>ことで、<wbr>今後の<wbr>活動を<wbr>円滑に<wbr>機能させ、<wbr>ネットワークの<wbr>成長拡大の<wbr>手助けと<wbr>なります。</span>
+
+<span class="ja">NAMBAの<wbr>成長に<wbr>おいて<wbr>主導的な<wbr>役割を<wbr>果たし、<wbr>ニセコの<wbr>アウトドアコミュニティに<wbr>貢献する<wbr>絶好の<wbr>機会を<wbr>お見逃しなく！</span>
+
+{% if page.isOpen %}
 <div style="text-align:center; margin:50px 0;">
-  <a class="btn btn-primary" href="{{- page.applyUrl -}}" target="_blank">Register your interest here!</a>
+  <a class="btn btn-primary" href="{{- page.applyUrl -}}" target="_blank"><span class="ja">協力いただける<wbr>方は<wbr>こちらで<wbr>登録！</span></a>
 </div>
 {% endif %}
 
-### Work with us!
+### <span class="ja">私たちの<wbr>チームに<wbr>加わりませんか？</span>
 
-Want to shape trails, and shape the future of Niseko? NAMBA will soon open recruitment for summer seasonal hand crew and operations positions.
+<span class="ja">トレイルを<wbr>整備し、<wbr>ニセコの<wbr>マウンテンバイクパークの<wbr>未来を<wbr>築きたいですか？<wbr> NAMBAは、<wbr>夏季の<wbr>季節労働者および運営ポジションの<wbr>募集を<wbr>まも<wbr>なく<wbr>開始します。</span>
 
-Watch this space, and <a href="https://www.instagram.com/nisekomtb/" target="_blank">follow us</a> on social media for updates!
+募集の空きについては<a href="https://www.instagram.com/nisekomtb/" target="_blank">SNSをフォローして</a>、最新情報をチェック！
