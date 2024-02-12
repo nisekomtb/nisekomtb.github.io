@@ -6,7 +6,7 @@ description: ボランティア委員スタッフとしてチームに参加し�
 isOpen: true
 location: ニセコ
 pay: 0
-applyUrl: https://forms.gle/NRj87z7N2KjW4uSP9
+applyUrl: https://forms.gle/qMPEXrZqRNCdVB8C8
 ---
 <h2 style="margin-top:0;" id="join-our-volunteer-subcommittee-teams"><span class="ja">ボランティア委員スタッフと<wbr>して<wbr>チームに<wbr>参加しませんか？</span></h2>
 

@@ -15,20 +15,24 @@
     en: Twin Peaks
     ja: ツイン・ピーク
 
-- path: get-involved
+- path: ""
   en: Get Involved
   ja: プロジェクトに参加する
   sub:
 
-  - path: join
+  - path: get-involved/join
     en: Join Us
     ja: 仲間になろう
 
-  - path: partner
+  - path: jobs
+    en: Join our Team
+    ja: 私たちチームと働きませんか？
+
+  - path: get-involved/partner
     en: Become a Partner
     ja: 協賛のご案内
 
-  - path: donate
+  - path: get-involved/donate
     en: Donate
     ja: 寄付のお願い
 
