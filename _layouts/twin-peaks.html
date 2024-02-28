@@ -1,0 +1,471 @@
+---
+layout: base
+baseCss: hidden-masthead-info
+---
+{% assign path = page.url | remove_first: "/" | remove: "ja/" | remove: "index.html" %}
+{% assign pathSegments = path | split: "/" %}
+{% assign path0 = pathSegments.first | default: '' %}
+{% assign path1 = pathSegments[1] %}
+
+{% include masthead.html %}
+
+<style>
+  .t3-sidebar .action span {
+    margin-left: 8px;
+    position: relative;
+    top: 1px;
+    letter-spacing: -1px;
+    -webkit-transition: all 500ms;
+    -o-transition: all 500ms;
+    transition: all 500ms;
+  }
+
+  .t3-sidebar .action:hover span,
+  .t3-sidebar .action:focus span,
+  .t3-sidebar .action:active span {
+    margin-left: 14px;
+  }
+
+  .t3-sidebar .partners {
+    margin: 10px auto;
+  }
+
+  .t3-sidebar .partners ul {
+    list-style-type:none;
+    margin: 0;
+    padding: 0;
+  }
+
+
+  .t3-sidebar .partners li {
+    display: inline;
+  }
+
+  .t3-sidebar .partners a {
+    margin-right: 10px;
+    height: 50px;
+    line-height: 50px;
+  }
+
+  .t3-sidebar .partners img {
+    margin-bottom: 10px;
+    max-height: 50px;
+    max-width: 50px;
+  }
+</style>
+
+<div id="t3-mainbody" class="container t3-mainbody">
+  <div class="row equal-height">
+
+  <!-- SIDEBAR LEFT -->
+  <div class="t3-sidebar t3-sidebar-left col col-xs-12 col-sm-4 col-md-3">
+    <div class="t3-module module">
+      <div class="module-inner">
+        <h3 class="module-title" style="font-size:12px;"><span>Twin Peaks Bike Park</span></h3>
+        <div class="module-ct">
+          <ul class="categories-module mod-list">
+            <li><h4><a class="action" {% unless path1 %}style="font-weight:bold;"{% endunless %} href="/twin-peaks/">Trail Map & Status <span class="icon ion-ios-arrow-round-forward"></span></a></h4></li>
+            {% comment %} <li><h4><a class="action" {% if path1 == 'trails' %}style="font-weight:bold;"{% endif %} href="/twin-peaks/trails">Trail Map & Status <span class="icon ion-ios-arrow-round-forward"></span></a></h4></li> {% endcomment %}
+            <li><h4><a class="action" {% if path1 == 'access' %}style="font-weight:bold;"{% endif %} href="/twin-peaks/access">Access & Facilities <span class="icon ion-ios-arrow-round-forward"></span></a></h4></li>
+            <li><h4><a class="action" {% if path1 == 'guides' %}style="font-weight:bold;"{% endif %} href="/twin-peaks/guides">Guides & Tour operators <span class="icon ion-ios-arrow-round-forward"></span></a></h4></li>
+            <li><h4><a class="action" {% if path1 == 'trail-building' %}style="font-weight:bold;"{% endif %} href="/twin-peaks/phases">Trail building <span class="icon ion-ios-arrow-round-forward"></span></a></h4></li>
+            <li><h4><a class="action" {% if path1 == 'rules' %}style="font-weight:bold;"{% endif %} href="/twin-peaks/rules">Rules <span class="icon ion-ios-arrow-round-forward"></span></a></h4></li>
+            <li><h4><a class="action" {% if path1 == 'wet-trails' %}style="font-weight:bold;"{% endif %} href="/twin-peaks/wet-trails">Wet Trails <span class="icon ion-ios-arrow-round-forward"></span></a></h4></li>
+            <li><h4><a class="action" {% if path1 == 'commercial-pass' %}style="font-weight:bold;"{% endif %} href="/twin-peaks/commercial-pass">Commercial Pass <span class="icon ion-ios-arrow-round-forward"></span></a></h4></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="t3-module module">
+      <div class="module-inner">
+        <h3 class="module-title" style="font-size:12px;"><span>Key stats</span></h3>
+        <div class="module-ct">
+          <ul class="categories-module mod-list">
+            <li>
+              <h4>Cost:</h4> Free
+            </li>
+            <li>
+              <h4>Location:</h4> Hirafu
+            </li>
+            <li>
+              <h4>Trail stats:</h4>
+                <p style="margin:0;">9 trails</p>
+                <p style="margin:0;">Green, Blue, and Black IMBA ratings</p>
+                <p style="margin:0;">Total Distance: 13km</p>
+                <p style="margin:0;">Longest Trail: trailname xxkm</p>
+                <p style="margin:0;">Total Descent: XX,XXXm</p>
+                <p style="margin:0;">Longest Descent: trailname XX,XXXm</p>
+            </li>
+            <li>
+              <h4>Bike Park status: </h4>
+              <div class="TrailforksWidgetRegionStatus" data-w="100px" data-h="15px" data-rid="58775" data-activitytype="1"
+                data-status="1" data-st="1" data-ct="0" data-date="0"></div>
+            </li>
+            <li>
+              <h4>Opening dates & times:</h4>
+              <p style="margin:0;">June - End October</p>
+              <p style="margin:0;">7am - 7pm</p>
+            </li>
+            <li>
+              <h4>Built and managed by:</h4> Niseko Area Mountain Bike Association
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="t3-module module">
+      <div class="module-inner">
+        <h3 class="module-title" style="font-size:12px;"><span>Bike park partners</span></h3>
+        <div class="module-ct partners">
+          <ul>
+            <li>
+              <a href="https://helloallegra.com" target="_blank">
+                <img src="/assets/images/company/special/allegra.png" alt="{% if page.lang == 'en' %}Trail building partner{% else %}トレイルビルド パートナー{% endif %}">
+              </a>
+            </li>
+            <li>
+              <a href="{% if page.lang == 'en' %}https://rhythmjapan.com{% else %}https://www.rhythmjapan.com/ja/{% endif %}" target="_blank">
+                <img src="/assets/images/company/special/rhythm.png" alt="{% if page.lang == 'en' %}Maintenance sponsor{% else %}メンテナンス スポンサー{% endif %}">
+              </a>
+            </li>
+            <li>
+              <a href="https://www.specialized-onlinestore.jp/" target="_blank">
+                <img src="/assets/images/company/special/specialized.png" alt="{% if page.lang == 'en' %}Trail building team partner{% else %}トレイルビルドチーム スポンサー{% endif %}">
+              </a>
+            </li>
+            <li>
+              <a href="{% if page.lang == 'en' %}https://holidayniseko.com{% else %}https://holidayniseko.jp{% endif %}" target="_blank">
+                <img src="/assets/images/company/special/holiday-niseko.png" alt="{% if page.lang == 'en' %}Trail sponsor{% else %}トレイル スポンサー{% endif %}">
+              </a>
+            </li>
+            <li>
+              <a href="https://www.nisekorealty.com" target="_blank">
+                <img src="/assets/images/company/special/niseko-realty.png" alt="{% if page.lang == 'en' %}Trail sponsor{% else %}トレイル スポンサー{% endif %}">
+              </a>
+            </li>
+            <li>
+              <a href="http://www.nisekorealtysales.com" target="_blank">
+                <img src="/assets/images/company/special/nrs.png" alt="{% if page.lang == 'en' %}Trail sponsor{% else %}トレイル スポンサー{% endif %}">
+              </a>
+            </li>
+          <li>
+            <a href="https://www.santacruzbicycles.com/" target="_blank">
+              <img src="/assets/images/company/special/santa-cruz.png" alt="{% if page.lang == 'en' %}Trail sponsor{% else %}トレイル スポンサー{% endif %}">
+            </a>
+          </li>
+          <li>
+            <img src="/assets/images/company/special/taki.png" alt="{% if page.lang == 'en' %}Trail sponsor{% else %}トレイル スポンサー{% endif %}">
+          </li>
+        </ul>
+
+          {% comment %} <ul class="categories-module mod-list">
+            <li>
+              <h4>Cost:</h4> Free
+            </li>
+            <li>
+              <h4>Location:</h4> Hirafu
+            </li>
+            <li>
+              <h4>Total trails length:</h4> 13km
+            </li>
+            <li>
+              <h4>Bike Park status: </h4>
+              <div class="TrailforksWidgetRegionStatus" data-w="100px" data-h="15px" data-rid="58775" data-activitytype="1"
+                data-status="1" data-st="1" data-ct="0" data-date="0"></div>
+            </li>
+            <li>
+              <h4>Opening dates & times:</h4>
+              <p style="margin:0;">June - End October</p>
+              <p style="margin:0;">7am - 7pm</p>
+            </li>
+          </ul> {% endcomment %}
+        </div>
+      </div>
+    </div>
+
+
+
+    {% comment %} <div class="list-group">
+      <h4 class="list-group-item-heading">{% if page.lang == "en" %}Events Partners{% else %}イベントパートナー{% endif %}</h4>
+      <p class="list-group-item-text partners">
+        {% for partner in page.partners %}
+        <a href="{{- partner.url -}}" target="_blank">
+          <img src="/assets/images/company{{- partner.img -}}" alt="{{- partner.name -}}">
+        </a>
+        {% endfor %}
+      </p>
+    </div> {% endcomment %}
+
+    {% comment %} <div class="TrailforksTrailList" data-w="100%" data-h="600px" data-rid="58775" data-displaytype="list"
+      data-activitytype="1" data-season="0" data-unsanctioned="0" data-query=""></div> {% endcomment %}
+
+    {% comment %} <div class="t3-module module " id="Mod95">
+      <div class="module-inner">
+        <h3 class="module-title "><span>Login</span></h3>
+        <div class="module-ct">
+          <form action="/index.php/our-blog" method="post" id="login-form">
+            <fieldset class="userdata">
+              <div id="form-login-username" class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon">
+                    <span class="fa fa-user tip" title="Username"></span>
+                  </span>
+                  <input id="modlgn-username" type="text" name="username" class="input form-control" tabindex="0"
+                    size="18" placeholder="Username" aria-label="username">
+                </div>
+              </div>
+              <div id="form-login-password" class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon">
+                    <span class="fa fa-lock tip" title="Password"></span>
+                  </span>
+                  <input id="modlgn-passwd" type="password" name="password" class="input form-control" tabindex="0"
+                    size="18" placeholder="Password" aria-label="password">
+                </div>
+              </div>
+
+              <div id="form-login-remember" class="form-group">
+                <input id="modlgn-remember" type="checkbox" name="remember" class="input" value="yes"
+                  aria-label="remember"> Remember Me
+              </div>
+              <div class="control-group">
+                <input type="submit" name="Submit" class="btn btn-primary" value="Log in">
+              </div>
+
+              <ul class="unstyled">
+                <li>
+                  <a href="/index.php/pages/j-pages/registration">
+                    Create an account <span class="fa fa-arrow-right"></span></a>
+                </li>
+                <li>
+                  <a href="/index.php/pages/j-pages/user-profile?view=remind">
+                    Forgot your username?</a>
+                </li>
+                <li>
+                  <a href="/index.php/pages/j-pages/user-profile?view=reset">Forgot your password?</a>
+                </li>
+              </ul>
+
+              <input type="hidden" name="option" value="com_users">
+              <input type="hidden" name="task" value="user.login">
+              <input type="hidden" name="return"
+                value="aHR0cHM6Ly9qYS1zcGFjZS5kZW1vLmpvb21sYXJ0LmNvbS9pbmRleC5waHAvb3VyLWJsb2cvOS1tYXJrZXRpbmctYmFzaWNzLzItc2hvdWxkLXlvdXItc2Vjb25kYXJ5LWJyYW5kLWhhdmUtYS1kaWZmZXJlbnQtd2Vic2l0ZQ==">
+              <input type="hidden" name="f843bc6ed10be6a0c086e47b434c1de1" value="1">
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="t3-module module " id="Mod90">
+      <div class="module-inner">
+        <h3 class="module-title "><span>Latest Articles</span></h3>
+        <div class="module-ct">
+          <ul class="latestnews mod-list">
+            <li>
+              <a href="/index.php/our-blog/9-marketing-basics/2-should-your-secondary-brand-have-a-different-website">
+                <span itemprop="name">
+                  Should Your Secondary Brand Have a Different Website? </span>
+              </a>
+            </li>
+            <li>
+              <a href="/index.php/our-blog/9-marketing-basics/3-21-award-winning-website-designs-what-they-did-right">
+                <span itemprop="name">
+                  21 Award-Winning Website Designs &amp; What They Did Right </span>
+              </a>
+            </li>
+            <li>
+              <a href="/index.php/our-blog/9-marketing-basics/4-21-award-winning-website-designs-what-they-did-right-2">
+                <span itemprop="name">
+                  How to Choose the Right Visual Content for Your Goal </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="/index.php/our-blog/10-attract-engage/5-secrets-to-creating-top-class-blog-graphics-for-non-designers">
+                <span itemprop="name">
+                  Secrets to Creating Top-Class Blog Graphics for Non-Designers </span>
+              </a>
+            </li>
+            <li>
+              <a href="/index.php/our-blog/11-web-design/6-the-unfair-design-advantage-is-ux-actually-important">
+                <span itemprop="name">
+                  The Unfair Design Advantage: is UX Actually Important? </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div> {% endcomment %}
+  </div>
+  <!-- //SIDEBAR LEFT -->
+
+    <!-- MAIN CONTENT -->
+    <div id="t3-content" class="t3-content col col-xs-12 col-sm-8 col-md-9">
+      <div class="item-page hidden-masthead-info">
+        <!-- Article -->
+        <article>
+          {{ content }}
+        </article>
+        <!-- //Article -->
+      </div>
+    </div>
+    <!-- //MAIN CONTENT -->
+  </div>
+
+</div>
+
+<script type="text/javascript">
+  var script = document.createElement("script"); script.setAttribute("src", "https://es.pinkbike.org/ttl-86400/sprt/j/trailforks/widget.js?units=metric"); document.getElementsByTagName("head")[0].appendChild(script); var widgetCheck = false;
+</script>
+
+
+{% comment %} <div class="row equal-height">
+
+  <!-- MAIN CONTENT -->
+  <div id="t3-content" class="t3-content col col-xs-12 col-sm-8 col-md-9" style="min-height: 2629px;">
+
+    <!-- Page header -->
+    <!-- // Page header -->
+
+    <div class="item-page   hidden-masthead-info">
+
+      <!-- Article -->
+      <article>
+
+
+        <div class="pull-left item-image"> <img src="/images/joomlart/blog/item-2.jpg" alt="" itemprop="image"> </div>
+
+
+        <header class="article-header clearfix">
+          <h1 class="article-title" itemprop="headline">
+            <a href="/index.php/our-blog/9-marketing-basics/2-should-your-secondary-brand-have-a-different-website"
+              itemprop="url" title="Should Your Secondary Brand Have a Different Website?">
+              Should Your Secondary Brand Have a Different Website?</a>
+          </h1>
+
+        </header>
+
+
+
+        <!-- Aside -->
+        <aside class="article-aside clearfix">
+          <dl class="article-info  muted">
+
+
+            <dt class="article-info-term">
+              Details </dt>
+
+
+
+            <dd class="category-name hasTooltip" title="" data-original-title="Category: ">
+              <i class="fa fa-folder-open"></i>
+              <a href="/index.php/our-blog/9-marketing-basics"><span itemprop="genre">Marketing Basics</span></a>
+            </dd>
+
+
+
+            <dd class="hits">
+              <i class="fa fa-eye"></i>
+              <meta itemprop="interactionCount" content="UserPageVisits:3">
+              Hits: 3
+            </dd>
+          </dl>
+
+        </aside>
+        <!-- // Aside -->
+
+
+
+
+
+        <div class="article-detail">
+
+          <section class="article-content clearfix" itemprop="articleBody">
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the
+              blind texts.</p>
+
+            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a
+              paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+
+            <h3>
+              Leave for the far World of Grammar
+            </h3>
+            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life
+              One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World
+              of Grammar.</p>
+
+            <p>The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks
+              and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her
+              initial into the belt and made herself on the way.</p>
+            <p>
+              <img src="/images/joomlart/our-projects/detail-2.jpg" alt="">
+            </p>
+
+            <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her
+              hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane.
+              Pityful a rethoric question ran over her cheek, then she continued her way. On her way she met a copy.</p>
+
+            <p>The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand
+              times and everything that was left from its origin would be the word "and" and the Little Blind Text
+              should turn around and return to its own, safe country.</p>
+            <blockquote>
+              <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+              <small>Quote's author in <cite title="Source Title">Ja Space</cite></small>
+            </blockquote>
+            <p>But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy
+              Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they
+              abused her for their projects again and again. And if she hasn’t been rewritten, then they are still using
+              her.</p>
+
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the
+              blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language
+              ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is
+              a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+            <h3>
+              She packed her seven versalia
+            </h3>
+            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life
+              One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World
+              of Grammar. The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild
+              Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven
+              versalia, put her initial into the belt and made herself on the way. When she reached the first hills of
+              the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline
+              of Alphabet Village and the subline</p>
+            <!-- Item tags -->
+            <div class="tags">
+              <span class="tag-2 tag-list0" itemprop="keywords">
+                <a href="/index.php/pages/joomla-content/tagged-items/joomla" class="label label-info">
+                  Joomla </a>
+              </span>
+              <span class="tag-4 tag-list1" itemprop="keywords">
+                <a href="/index.php/pages/joomla-content/tagged-items/typography" class="label label-info">
+                  typography </a>
+              </span>
+            </div>
+            <!-- // Item tags -->
+          </section>
+
+          <!-- Footer -->
+          <!-- // Footer -->
+
+
+
+        </div>
+      </article>
+      <!-- //Article -->
+
+
+
+
+
+    </div>
+
+
+  </div>
+  <!-- //MAIN CONTENT -->
+
+
+
+</div> {% endcomment %}

@@ -1,0 +1,108 @@
+twinpeaks:
+  - name: Jinja Ninja
+    difficulty: green
+    distance: 188
+    climb: 4
+    descent: -3
+    bike: one-way
+    multi_use: true
+    trailforks_id: 657442
+  - name: Ezo Shika
+    difficulty: green
+    distance: "3,521"
+    climb: 216
+    descent: -10
+    bike: up-only
+    multi_use: true
+    sponsor: nrs
+    trailforks_id: 611923
+  - name: Mana Skills Park
+    difficulty: green
+    distance: 260
+    climb: 17
+    descent: 0
+    bike: two-way
+    multi_use: true
+    sponsor: niseko-realty
+    trailforks_id: 680884
+  - name: Mana Skills Loop
+    difficulty: green
+    distance: 783
+    climb: 11
+    descent: -11
+    bike: one-way
+    multi_use: true
+    sponsor: niseko-realty
+    trailforks_id: 657445
+  - name: Mana Pump
+    difficulty: blue
+    distance: 120
+    climb: 0
+    descent: 5
+    bike: down-only
+    multi_use: true
+    sponsor: niseko-realty
+    trailforks_id: 657444
+  - name: Mana Berms
+    difficulty: blue
+    distance: 80
+    climb: 0
+    descent: -2
+    bike: down-only
+    multi_use: true
+    sponsor: niseko-realty
+    trailforks_id: 657446
+  - name: Mana Jumps
+    difficulty: blue
+    distance: 220
+    climb: 1
+    descent: -13
+    bike: down-only
+    multi_use: true
+    sponsor: niseko-realty
+    trailforks_id: 657447
+  - name: Easy Ryder
+    difficulty: blue
+    distance: "2,383"
+    climb: 4
+    descent: -180
+    bike: down-only
+    multi_use: false
+    sponsor: holiday-niseko
+    trailforks_id: 657973
+  - name: Rise 'n' Ryder
+    difficulty: blue
+    distance: 556
+    climb: 0
+    descent: -7
+    bike: one-way
+    multi_use: false
+    sponsor: holiday-niseko
+    trailforks_id: 680500
+  - name: Air Ryder
+    difficulty: blue
+    distance: 457
+    climb: 2
+    descent: -22
+    bike: down-only
+    multi_use: false
+    sponsor: holiday-niseko
+    trailforks_id: 680498
+  - name: Shogun Syndicate
+    difficulty: black
+    distance: "2,323"
+    climb: 3
+    descent: -171
+    bike: down-only
+    multi_use: false
+    sponsor: santa-cruz
+    trailforks_id: 657436
+  - name: Taki Trail
+    difficulty: black
+    distance: "2,158"
+    climb: 1
+    descent: -159
+    bike: down-only
+    multi_use: false
+    sponsor: taki
+    trailforks_id: 657437

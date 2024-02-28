@@ -1,0 +1,68 @@
+---
+layout: twin-peaks
+title: 'Twin Peaks Bike Park: Parking & Access'
+---
+<style>
+  ul.guides {
+    margin-top: 40px;
+    list-style-type:none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+
+
+  ul.guides li {
+    display: inline-block;
+  }
+
+  ul.guides a {
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 150px;
+    line-height: 150px;
+  }
+
+  ul.guides img {
+    display: inline-block;
+    margin-bottom: 40px;
+    max-height: 150px;
+    max-width: 150px;
+  }
+</style>
+<div class="pull-left item-image"><img src="/assets/images/twinpeaks/guides.jpg" alt="" itemprop="image"></div>
+
+<header class="article-header clearfix">
+  <h1 class="article-title" itemprop="headline">Twin Peaks Bike Park: Guides & Tour operators
+  </h1>
+</header>
+
+<div class="article-detail">
+
+  <section class="article-content clearfix" itemprop="articleBody">
+
+    <h3>Authorised companies</h3>
+
+    <p>The following companies are authorized to guide or give tours of the Twin Peaks Bike Park. These companies have contributed to the building of the park.</p>
+
+    <ul class="guides">
+      {% for guide in site.data.guides["twinpeaks"] %}
+        <li>
+          {% if guide.url %}
+          <a href="{% if guide.ja.url and page.lang == " ja" %}{{ guide.ja.url }}{% else %}{{ guide.url }}{% endif %}"
+            target="_blank">
+            <img class="img-responsive" src="{{ guide.image }}?d={{ site.time | date: " %s" }}">
+          </a>
+          {% else %}
+          <img class="img-responsive" src="{{ guide.image }}?d={{ site.time | date: " %s" }}">
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+
+    <h4>Want to see your company listed here?</h4>
+    <p>For more information on how to obatin commercial passes for your business, see our <a href="/twin-peaks/commercial-pass/">commercial pass</a> page.</p>
+
+  </section>
+</div>
+

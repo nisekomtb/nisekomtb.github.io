@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'trailforks';
+    src: url(trailforks.eot?v=2);
+    src: url(trailforks.eot?v=2#iefix) format('embedded-opentype'), url(trailforks.woff?v=2) format('woff'), url(trailforks.ttf?v=2) format('truetype'), url(trailforks.svg?v=2#trailforks) format('svg');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap
+}
+
+[data-tf-icon]:before {
+    font-family: 'trailforks';
+    content: attr(data-tf-icon);
+    speak: none;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased
+}
