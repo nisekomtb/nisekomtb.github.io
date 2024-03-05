@@ -2,7 +2,7 @@
 <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
 <script>
   document.addEventListener("adobe_dc_view_sdk.ready", function() {
-    var adobeDCView = new AdobeDC.View({clientId: "3460e57b21a947a592d48dc6b1dea83b", divId: "pdf", backgroundColor: "#000000"});
+    var adobeDCView = new AdobeDC.View({clientId: "3460e57b21a947a592d48dc6b1dea83b", divId: "pdf", {% if page.lang == "ja" %}locale: "ja-JP",{% endif %} backgroundColor: "#000000"});
     adobeDCView.previewFile({
       content: {
         location: {
