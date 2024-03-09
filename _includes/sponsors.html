@@ -18,7 +18,9 @@
                   <img class="img-responsive" src="{{ sponsor.image }}?d={{ site.time | date: "%s" }}">
                 </a>
               {% else %}
-                <img class="img-responsive" src="{{ sponsor.image }}?d={{ site.time | date: "%s" }}">
+                  <a>
+                    <img class="img-responsive" src="{{ sponsor.image }}?d={{ site.time | date: "%s" }}">
+                  </a>
               {% endif %}
             </div>
             {% if sponsor.label and include.class == "special" %}
