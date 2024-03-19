@@ -3,6 +3,13 @@ title: Join our team
 baseCss: view-category
 ---
 <style>
+  .credit {
+    float:right;
+    font-size: 90%;
+  }
+
+  .credit a { color: #9e9e9e; }
+
   h3 {
     text-align:center;
     margin-bottom:48px;
@@ -51,12 +58,18 @@ baseCss: view-category
     margin-left: 14px;
   }
 </style>
+
+<div class="pull-left item-image">
+  <img src="/assets/images/jobs/join-our-team.jpg" alt="Join our team" itemprop="image">
+  <span class="credit"><a href="https://instagram.com/jingypsy" target="_blank"> 📸 Jinya Nishiwaki</a></span>
+</div>
+
 <div class="t3-section-wrap">
   <div class="section">
     <div class="module-title-wrap">
       <div class="features-desc" data-animation="move-from-bottom" data-delay="600">
         <div style="font-size:130%;">
-          <p>Join the NAMBA team!</p>
+          <h3>Join the NAMBA team!</h3>
           <p>Our volunteer subcommittee positions, and paid summer seasonal positions, are shaping trails and
           shaping the future of our community.</p>
           <p>Have skills you can bring to the table, or to the trails? Learn more about our opportunities below!</p>
@@ -82,7 +95,7 @@ baseCss: view-category
               <header class="article-header">
                 <strong itemprop="headline">{{ post.title }}</strong>
               </header>
-              {{ post.excerpt | strip_html | slice: 0, 100 }}
+              {% comment %} {{ post.excerpt | strip_html | slice: 0, 100 }} {% endcomment %}
               <span class="icon ion-ios-arrow-round-forward"></span>
             </a>
           </article>

@@ -5,7 +5,8 @@ title: ボランティア委員スタッフ
 description: ボランティア委員スタッフとしてチームに参加しませんか？ ボランテイアスタッフはNAMBAの活動を継続していく為に重要な役割を担っています。委員会は、アクセス部、マーケティング部、トレイル部、アドミン部と構成されいて、すべてボランティア委員スタッフにより運営されてます。
 isOpen: true
 location: ニセコ
-pay: 0
+term: 雇用期間の定めなし
+pay: ボランティアワーク
 applyUrl: https://forms.gle/qMPEXrZqRNCdVB8C8
 ---
 <h2 style="margin-top:0;" id="join-our-volunteer-subcommittee-teams"><span class="ja">ボランティア委員スタッフと<wbr>して<wbr>チームに<wbr>参加しませんか？</span></h2>
