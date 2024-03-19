@@ -1,7 +1,8 @@
 ---
 layout: job
 categories: jobs
-title: <span class="ja">オペレーション<wbr>マネージャー</span>
+title: オペレーションマネージャー
+titleHtml: オペレーション<wbr>マネージャー
 description: オペレーションマネージャーとして、ツインピークスバイクパークおよびその他の重要なNAMBAプロジェクトの日常業務を監督する中心的な役割を担います。当組織の重要なリーダーとして、バイクパークのスムーズで効率的な機能が運営できるように努め、ライダーに格別のマウンテンバイキング体験を提供します
 isOpen: true
 location: <span class="ja">ニセコ、<wbr>または<wbr>ニセコ周辺地域</span>
