@@ -3,7 +3,7 @@ twinpeaks:
     difficulty: green
     distance: 188
     climb: 4
-    descent: -3
+    descent: -4
     bike: one-way
     multi_use: true
     trailforks_id: 657442
@@ -38,7 +38,7 @@ twinpeaks:
     difficulty: blue
     distance: 120
     climb: 0
-    descent: 5
+    descent: -5
     bike: down-only
     multi_use: true
     sponsor: niseko-realty
