@@ -59,6 +59,7 @@
     <script src="/assets/js/inview.js?d={{ build }}" type="text/javascript"></script>
     <script src="/assets/js/script.js?d={{ build }}" type="text/javascript"></script>
     <script src="/assets/js/acm/script.js?d={{ build }}" type="text/javascript"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <script type="text/javascript">
       jQuery(window).on('load', function () {
         new JCaption('img.caption');
@@ -222,6 +223,13 @@
             scrollTop: 0
           }, 500);
           return false;
+        });
+        jQuery('a[href^=#]').on('click', function (e) {
+          e.preventDefault();
+          var href = $(this).attr('href');
+          $('html, body').animate({
+            scrollTop: $(href).offset().top
+          }, 500);
         });
       })(jQuery);
     </script>

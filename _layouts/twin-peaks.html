@@ -92,6 +92,13 @@ baseCss: hidden-masthead-info
     max-height: 50px;
     max-width: 50px;
   }
+
+  .credit {
+    float:right;
+    font-size: 90%;
+  }
+
+  .credit a { color: #9e9e9e; }
 </style>
 
 <div id="t3-mainbody" class="container t3-mainbody">
@@ -125,35 +132,65 @@ baseCss: hidden-masthead-info
               <h4>Cost:</h4> Free
             </li>
             <li>
-              <h4>Uplift type:</h4> None - Pedal power only
+              {% comment %} <h4>Uplift type:</h4> None - Pedal power only {% endcomment %}
+              <h4>Uplift type:</h4>
+              <p style="margin: 2px 0 0 0;">Lift access: <strong>No</strong></p>
+              <p style="margin:0;">Shuttle access: <strong>No</strong></p>
+              <p style="margin:0;">Pedal access: <strong>Yes</strong></p>
             </li>
             <li>
               <h4>Location:</h4> Hirafu
             </li>
             <li>
               <h4>Trail stats:</h4>
+                {% assign greenTrailCount = 0 %}
+                {% assign blueTrailCount = 0 %}
+                {% assign blackTrailCount = 0 %}
+                {% assign doubleBlackTrailCount = 0 %}
+                {% assign trailCount = 0 %}
+                {% assign totalDistance = 0 %}
+                {% assign totalDescent = 0 %}
+                {% assign totalClimb = 0 %}
+
+                {% for trail in site.data.trails["twinpeaks"] %}
+                  {% assign trailCount = trailCount | plus: 1 %}
+                  {% case trail.difficulty %}
+                    {% when 'green' %}
+                      {% assign greenTrailCount = greenTrailCount | plus: 1 %}
+                    {% when 'blue' %}
+                      {% assign blueTrailCount = blueTrailCount | plus: 1 %}
+                    {% when 'black' %}
+                      {% assign blackTrailCount = blackTrailCount | plus: 1 %}
+                    {% when 'double-black' %}
+                      {% assign doubleBlackTrailCount = doubleBlackTrailCount | plus: 1 %}
+                  {% endcase %}
+                  {% assign distance = trail.distance | remove: "," %}
+                  {% assign totalDistance = totalDistance | plus: distance %}
+                  {% assign totalDescent = totalDescent | plus: trail.descent %}
+                  {% assign totalClimb = totalClimb | plus: trail.climb %}
+                {% endfor %}
                 <ul style="padding:0;">
                   <li class="stat">
                     <span aria-hidden="true" data-tf-icon="" class="dicon_small dgreen tip" title="Green"></span>
-                    <span class="stat-count">4</span>
+                    <span class="stat-count">{{ greenTrailCount }}</span>
                   </li>
                   <li class="stat">
                     <span aria-hidden="true" data-tf-icon="" class="dicon_small dblue tip" title="Blue"></span>
-                    <span class="stat-count">6</span>
+                    <span class="stat-count">{{ blueTrailCount }}</span>
                   </li>
                   <li class="stat">
                     <span aria-hidden="true" data-tf-icon="" class="dicon_small dblack tip" title="Black"></span>
-                    <span class="stat-count">2</span>
+                    <span class="stat-count">{{ blackTrailCount }}</span>
                   </li>
                   <li class="stat">
                     <span aria-hidden="true" data-tf-icon="" class="dicon_small dblack tip" title="Double Black Diamond"></span>
-                    <span class="stat-count">0</span>
+                    <span class="stat-count">{{ doubleBlackTrailCount }}</span>
                   </li>
                 </ul>
-                <p style="margin:0;"><strong>12</strong> trails</p>
-                <p style="margin:0;">Total distance: <strong>13km</strong> <span class="fa fa-ruler-horizontal" title="Distance"></span></p>
-                <p style="margin:0;">Total descent: <strong>584m</strong> <span class="fa fa-arrow-down" title="Descent"></span></p>
-                <p style="margin:0;">Total climb: <strong>259m</strong> <span class="fa fa-arrow-up" title="Climb"></span></p>
+                <p style="margin:0;"><strong>{{ trailCount }}</strong> trails</p>
+                <p style="margin:0;">Total distance: <strong>{{ totalDistance | divided_by: 1000 }}km</strong> <span class="fa fa-ruler-horizontal" title="Distance"></span></p>
+                <p style="margin:0;">Total descent: <strong>{{ totalDescent }}m</strong> <span class="fa fa-arrow-down" title="Descent"></span></p>
+                <p style="margin:0;">Total climb: <strong>{{ totalClimb }}m</strong> <span class="fa fa-arrow-up" title="Climb"></span></p>
                 {% comment %} <p style="margin:0;">Longest Trail: Ezo Shika 3.5km</p>
                 <p style="margin:0;">Longest Descent: trailname XX,XXXm</p> {% endcomment %}
             </li>

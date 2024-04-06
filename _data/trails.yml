@@ -3,7 +3,7 @@ twinpeaks:
     difficulty: green
     distance: 188
     climb: 4
-    descent: -4
+    descent: 4
     bike: one-way
     multi_use: true
     trailforks_id: 657442
@@ -11,7 +11,7 @@ twinpeaks:
     difficulty: green
     distance: "3,521"
     climb: 216
-    descent: -10
+    descent: 10
     bike: up-only
     multi_use: true
     sponsor: nrs
@@ -29,7 +29,7 @@ twinpeaks:
     difficulty: green
     distance: 783
     climb: 11
-    descent: -11
+    descent: 11
     bike: one-way
     multi_use: true
     sponsor: niseko-realty
@@ -38,7 +38,7 @@ twinpeaks:
     difficulty: blue
     distance: 120
     climb: 0
-    descent: -5
+    descent: 5
     bike: down-only
     multi_use: true
     sponsor: niseko-realty
@@ -47,7 +47,7 @@ twinpeaks:
     difficulty: blue
     distance: 80
     climb: 0
-    descent: -2
+    descent: 2
     bike: down-only
     multi_use: true
     sponsor: niseko-realty
@@ -56,7 +56,7 @@ twinpeaks:
     difficulty: blue
     distance: 220
     climb: 1
-    descent: -13
+    descent: 13
     bike: down-only
     multi_use: true
     sponsor: niseko-realty
@@ -65,7 +65,7 @@ twinpeaks:
     difficulty: blue
     distance: "2,383"
     climb: 4
-    descent: -180
+    descent: 180
     bike: down-only
     multi_use: false
     sponsor: holiday-niseko
@@ -74,7 +74,7 @@ twinpeaks:
     difficulty: blue
     distance: 556
     climb: 0
-    descent: -7
+    descent: 7
     bike: one-way
     multi_use: false
     sponsor: holiday-niseko
@@ -83,7 +83,7 @@ twinpeaks:
     difficulty: blue
     distance: 457
     climb: 2
-    descent: -22
+    descent: 22
     bike: down-only
     multi_use: false
     sponsor: holiday-niseko
@@ -92,7 +92,7 @@ twinpeaks:
     difficulty: black
     distance: "2,323"
     climb: 3
-    descent: -171
+    descent: 171
     bike: down-only
     multi_use: false
     sponsor: santa-cruz
@@ -101,7 +101,7 @@ twinpeaks:
     difficulty: black
     distance: "2,158"
     climb: 1
-    descent: -159
+    descent: 159
     bike: down-only
     multi_use: false
     sponsor: taki

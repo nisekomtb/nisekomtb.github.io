@@ -3,10 +3,121 @@ layout: twin-peaks
 title: 'Twin Peaks Bike Park: Parking & Access'
 ---
 
-<div class="TrailforksWidgetMap" data-w="920px" data-h="505px" data-rid="58775" data-activitytype="1" data-maptype="osm"
-  data-trailstyle="difficulty" data-controls="1" data-list="0" data-dml="1" data-layers="" data-z="14.451969731646"
-  data-lat="42.86069809741102" data-lon="140.70644956062904" data-hideunsanctioned="1">
+<div class="pull-left item-image">
+  <div style="width:100%; height:600px;" id="map"></div>
 </div>
+
+<script>(g => { var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window; b = b[c] || (b[c] = {}); var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => { await (a = m.createElement("script")); e.set("libraries", [...r] + ""); for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]); e.set("callback", c + ".maps." + q); a.src = `https://maps.${c}apis.com/maps/api/js?` + e; d[q] = f; a.onerror = () => h = n(Error(p + " could not load.")); a.nonce = m.querySelector("script[nonce]")?.nonce || ""; m.head.append(a) })); d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)) })
+    ({ key: "AIzaSyCet6Eys-EOTnAbs402oGLPbJWuvlH5E0s", v: "weekly" });</script>
+    {% comment %} , language: "ja", region: "JP" {% endcomment %}
+
+<script type="text/javascript">
+
+  async function initMap() {
+    const { Map, InfoWindow } = await google.maps.importLibrary("maps");
+    const { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary("marker");
+    const map = new Map(document.getElementById("map"), {
+      zoom: 15,
+      center: { lat: 42.861, lng: 140.707 },
+      mapId: "bfcc0961204fb2ec",
+      markers: [],
+    });
+    const pois = [
+      {
+        position: { lat: 42.86743, lng: 140.70957 },
+        title: "Twin Peaks Bike Park",
+        icon: "fa-person-biking",
+        background: "#000"
+      },
+      {
+        position: { lat: 42.86422, lng: 140.71127 },
+        title: "Twin Peaks Bike Park's Entrance",
+        icon: "fa-torii-gate",
+        background: "#ff5252"
+      },
+      {
+        position: { lat: 42.86319, lng: 140.70246 },
+        title: "Hirafu Gondola Parking Public Toilet",
+        icon: "fa-restroom",
+        background: "#47A06C",
+        link: "toilets-1"
+      },
+      {
+        position: { lat: 42.85623, lng: 140.70379 },
+        title: "Sunsports Land Public Toilet",
+        icon: "fa-restroom",
+        background: "#47A06C",
+        link: "toilets-2"
+      },
+      {
+        position: { lat: 42.86332, lng: 140.70215 },
+        title: "Hirafu Gondola Parking",
+        icon: "fa-square-parking",
+        background: "#59B0E2",
+        link: "parking-1"
+      },
+      {
+        position: { lat: 42.86114, lng: 140.70061 },
+        title: "Hirafu Welcome Center Parking",
+        icon: "fa-square-parking",
+        background: "#59B0E2",
+        link: "parking-2"
+      },
+      {
+        position: { lat: 42.85638, lng: 140.70352 },
+        title: "Sunsports Land Parking",
+        icon: "fa-square-parking",
+        background: "#59B0E2",
+        link: "parking-3"
+      },
+    ];
+
+    // Create an info window to share between markers.
+    const infoWindow = new InfoWindow();
+
+    // Create the markers.
+    pois.forEach(({ position, title, icon, background, link }, i) => {
+      const glyph = document.createElement("div");
+
+      glyph.innerHTML = `<i class="fa ${icon} fa-lg"></i>`;
+
+      const faPin = new PinElement({
+        glyph,
+        glyphColor: "#fff",
+        background,
+        borderColor: "#fff",
+        scale: 1.1,
+      });
+
+      const marker = new AdvancedMarkerElement({
+        position,
+        map,
+        title,
+        content: faPin.element,
+      });
+
+      map.markers.push(marker);
+
+      function clickMarker() {
+        infoWindow.close();
+        infoWindow.setContent(marker.title);
+        infoWindow.open(marker.map, marker);
+        map.markers.forEach(marker => marker.zIndex = 0);
+        marker.zIndex = 1;
+      }
+
+      // Add a click listener for each marker, and set up the info window.
+      marker.addListener("click", clickMarker);
+
+      if (link) {
+        // If there is a link on the page, add the click event to that too.
+        document.getElementById(link).addEventListener('click', clickMarker)
+      }
+    });
+  }
+
+  initMap();
+</script>
 
 <header class="article-header clearfix">
   <h1 class="article-title" itemprop="headline">Twin Peaks Bike Park: Access & Parking
@@ -19,9 +130,9 @@ title: 'Twin Peaks Bike Park: Parking & Access'
     <p>Parking at the trailhead is strictly prohibited – please use one of the below parking locations:</p>
     <p>
       <ul>
-        <li><a href="https://www.trailforks.com/poi/123003/" target="_blank">Hirafu Gondola Parking</a></li>
-        <li><a href="https://www.trailforks.com/poi/123004/" target="_blank">Hirafu Welcome Center Parking</a></li>
-        <li><a href="https://www.trailforks.com/poi/123002/" target="_blank">Sunsports Land Parking</a></li>
+        <li><a id="parking-1" href="#map">Hirafu Gondola Parking</a></li>
+        <li><a id="parking-2" href="#map">Hirafu Welcome Center Parking</a></li>
+        <li><a id="parking-3" href="#map">Sunsports Land Parking</a></li>
       </ul>
     </p>
   </section>
@@ -31,8 +142,8 @@ title: 'Twin Peaks Bike Park: Parking & Access'
     <p>There are no toilets at the bike park. The nearest public toilets are:</p>
     <p>
     <ul>
-      <li><a href="https://www.trailforks.com/poi/128081/" target="_blank">Hirafu Gondola Parking Public Toilet</a></li>
-      <li><a href="https://www.trailforks.com/poi/123006/" target="_blank">Sunsports Land Public Toilet</a></li>
+      <li><a id="toilets-1" href="#map">Hirafu Gondola Parking Public Toilet</a></li>
+      <li><a id="toilets-2" href="#map">Sunsports Land Public Toilet</a></li>
     </ul>
     </p>
   </section>
