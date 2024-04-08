@@ -24,21 +24,24 @@ title: 'Twin Peaks Bike Park: Parking & Access'
     });
     const pois = [
       {
-        position: { lat: 42.86743, lng: 140.70957 },
+        position: { lat: 42.86593, lng: 140.70957 },
         title: "Twin Peaks Bike Park",
-        icon: "fa-person-biking",
+        img: "/assets/images/logos/twin-peaks.svg",
+        scale: 2.2,
         background: "#000"
       },
       {
         position: { lat: 42.86422, lng: 140.71127 },
         title: "Twin Peaks Bike Park's Entrance",
         icon: "fa-torii-gate",
+        scale: 1.1,
         background: "#ff5252"
       },
       {
         position: { lat: 42.86319, lng: 140.70246 },
         title: "Hirafu Gondola Parking Public Toilet",
         icon: "fa-restroom",
+        scale: 1.1,
         background: "#47A06C",
         link: "toilets-1"
       },
@@ -46,6 +49,7 @@ title: 'Twin Peaks Bike Park: Parking & Access'
         position: { lat: 42.85623, lng: 140.70379 },
         title: "Sunsports Land Public Toilet",
         icon: "fa-restroom",
+        scale: 1.1,
         background: "#47A06C",
         link: "toilets-2"
       },
@@ -53,6 +57,7 @@ title: 'Twin Peaks Bike Park: Parking & Access'
         position: { lat: 42.86332, lng: 140.70215 },
         title: "Hirafu Gondola Parking",
         icon: "fa-square-parking",
+        scale: 1.1,
         background: "#59B0E2",
         link: "parking-1"
       },
@@ -60,6 +65,7 @@ title: 'Twin Peaks Bike Park: Parking & Access'
         position: { lat: 42.86114, lng: 140.70061 },
         title: "Hirafu Welcome Center Parking",
         icon: "fa-square-parking",
+        scale: 1.1,
         background: "#59B0E2",
         link: "parking-2"
       },
@@ -67,6 +73,7 @@ title: 'Twin Peaks Bike Park: Parking & Access'
         position: { lat: 42.85638, lng: 140.70352 },
         title: "Sunsports Land Parking",
         icon: "fa-square-parking",
+        scale: 1.1,
         background: "#59B0E2",
         link: "parking-3"
       },
@@ -76,24 +83,30 @@ title: 'Twin Peaks Bike Park: Parking & Access'
     const infoWindow = new InfoWindow();
 
     // Create the markers.
-    pois.forEach(({ position, title, icon, background, link }, i) => {
-      const glyph = document.createElement("div");
+    pois.forEach(({ position, title, icon, img, scale, background, link }, i) => {
+      let glyph;
 
-      glyph.innerHTML = `<i class="fa ${icon} fa-lg"></i>`;
+      if (icon) {
+        glyph = document.createElement("div");
+        glyph.innerHTML = `<i class="fa ${icon} fa-lg"></i>`;
+      } else if (img) {
+        glyph = document.createElement("img");
+        glyph.src = img;
+      }
 
-      const faPin = new PinElement({
+      const pin = new PinElement({
         glyph,
         glyphColor: "#fff",
         background,
         borderColor: "#fff",
-        scale: 1.1,
+        scale,
       });
 
       const marker = new AdvancedMarkerElement({
         position,
         map,
         title,
-        content: faPin.element,
+        content: pin.element,
       });
 
       map.markers.push(marker);
