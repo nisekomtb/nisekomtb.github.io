@@ -167,7 +167,25 @@ title: Twin Peaks Bike Park
     font-weight: 500;
     padding-left:3px;
     padding-right:3px;
-    display: block;
+    display: none;
+  }
+
+  table.trails td.climb-descent {
+    display: table-cell;
+  }
+
+  table.trails td.climb, table.trails td.descent {
+    display: none;
+  }
+
+  @media(min-width: 500px) {
+    table.trails td.climb-descent {
+      display: none;
+    }
+
+    table.trails td.climb, table.trails td.descent {
+      display: table-cell;
+    }
   }
 
   @media(min-width: 600px) {
@@ -306,8 +324,9 @@ title: Twin Peaks Bike Park
           <img class="access restrict" src="/assets/images/trails/bikes-only.png" title="Bikes only (no hiking or trail running)" />
         {% endif %}
       </td>
-      <td class="right">{% unless trail.climb == 0 %}{{ trail.climb -}}m <span class="fa fa-arrow-up" title="Climb"></span>{% endunless %}</td>
-      <td class="right">{% unless trail.descent == 0 %}{{ trail.descent -}}m <span class="fa fa-arrow-down" title="Descent"></span>{% endunless %}</td>
+      <td class="right climb">{% unless trail.climb == 0 %}{{ trail.climb -}}m <span class="fa fa-arrow-up" title="Climb"></span>{% endunless %}</td>
+      <td class="right descent">{% unless trail.descent == 0 %}{{ trail.descent -}}m <span class="fa fa-arrow-down" title="Descent"></span>{% endunless %}</td>
+      <td class="right climb-descent">{% if trail.climb == trail.descent %}{{ trail.descent -}}m <span class="fa-solid fa-up-down" title="Loop"></span>{% elsif trail.climb > trail.descent %}{{ trail.climb -}}m <span class="fa fa-arrow-up" title="Climb"></span>{% else %}{{ trail.descent -}}m <span class="fa fa-arrow-down" title="Descent"></span>{% endif %}</td>
       <td class="right">{{ trail.distance -}}m <span class="fa fa-ruler-horizontal" title="Distance"></span></td>
       {% comment %} <td>{% if trail.sponsor %}<img class="sponsor" src="/assets/images/company/special/{{- trail.sponsor -}}.png" />{% endif %}</td> {% endcomment %}
       {% comment %} <td><a href="javascript:document.getElementById('trail-{{- trail.trailforks_id -}}').style.display='table-row';"><span style="font-size: 150%; margin-top:2px;" class="fa fa-ellipsis-h"></span></a></td> {% endcomment %}
