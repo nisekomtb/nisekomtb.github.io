@@ -178,6 +178,24 @@ title: Twin Peaks Bike Park
     display: none;
   }
 
+  table.trails td.bike, table.trails td.hike {
+    display: none;
+  }
+
+  .trails-key .key-access {
+    display: none;
+  }
+
+  @media(min-width: 430px) {
+    table.trails td.bike, table.trails td.hike {
+      display: table-cell;
+    }
+
+    .trails-key .key-access {
+      display: block;
+    }
+  }
+
   @media(min-width: 500px) {
     table.trails td.climb-descent {
       display: none;
@@ -272,7 +290,7 @@ title: Twin Peaks Bike Park
   {% comment %} </div>
   <div class="trails-key">
     <h4>Trail access key</h4> {% endcomment %}
-    <ul>
+    <ul class="key-access">
       <li><div><img class="access" src="/assets/images/trails/one-way.png" />&nbsp;One way traffic</div></li>
       <li><div><img class="access" src="/assets/images/trails/two-way.png" />&nbsp;Two way traffic</div></li>
       <li><div><img class="access" src="/assets/images/trails/down-only.png" />&nbsp;Downhill only</div></li>
@@ -302,7 +320,7 @@ title: Twin Peaks Bike Park
           data-status="1" data-st="0" data-condition="0" data-ct="0" data-date="0" data-description="0"></div>
       </td>
       <td class="left">{{ trail.name }}</td>
-      <td>
+      <td class="bike">
         {% case trail.bike %}
         {% when "one-way" %}
           {% assign bikeToolTip = "One way traffic" %}
@@ -317,7 +335,7 @@ title: Twin Peaks Bike Park
         {% endcase %}
         <img class="access" src="/assets/images/trails/{{- trail.bike -}}.png" title="{{ bikeToolTip }}" />
       </td>
-      <td>
+      <td class="hike">
         {% if trail.multi_use %}
           <img class="access" src="/assets/images/trails/multiuse.png" title="Multi use (hiking & trail running allowed)" />
         {% else %}
