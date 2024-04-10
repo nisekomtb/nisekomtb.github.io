@@ -3,6 +3,17 @@ layout: twin-peaks
 title: Twin Peaks Bike Park
 ---
 <style>
+
+  section.intro {
+    display:block;
+  }
+
+  @media (min-width: 768px) {
+    section.intro {
+      display:none;
+    }
+  }
+
   .trails-key {
     margin-top:30px;
     background-color: rgb(14,14,14);
@@ -247,7 +258,15 @@ title: Twin Peaks Bike Park
   }
 </style>
 
-{% comment %} <div class="pull-left item-image" style="height: 300px; overflow:hidden;"><img src="/assets/images/twinpeaks/header.jpg" alt="" itemprop="image"></div> {% endcomment %}
+<section class="intro">
+  <img style="width:150px; margin:0 auto; margin-bottom:24px; display: flex;"
+    src="/assets/images/logos/twin-peaks.svg?d={{ site.time | date: " %s" }}" />
+  <p style="text-align:center;">A free-to-use, pedal access, community bike park located in the heart of the Niseko Area.</p>
+  <p style="text-align:center;"><strong>Bike Park status:</strong>
+    <span class="TrailforksWidgetRegionStatus" data-w="100px" data-h="15px" data-rid="58775" data-activitytype="1" data-status="1" data-st="1" data-ct="0" data-date="0"></span>
+  </p>
+</section>
+
 
 <div class="pull-left item-image">
   <div class="TrailforksWidgetMap" data-w="100%" data-h="600px" data-rid="58775" data-activitytype="1"

@@ -14,44 +14,8 @@ baseCss: hidden-masthead-info
     margin-top: 24px;
   }
 
-  .t3-sidebar .module-title {
-    position:relative;
-  }
-
   .t3-sidebar h3 {
     font-size:12px;
-  }
-
-  .t3-sidebar h3 i {
-    position:absolute;
-    width:100%;
-    height:100%;
-    top:0;
-    left:0;
-    text-align:right;
-    cursor:pointer;
-  }
-
-  .t3-sidebar #key-stats {
-    display:none;
-  }
-
-  .t3-sidebar #partners {
-    display:none;
-  }
-
-  @media (min-width: 768px) {
-    .t3-sidebar h3 i {
-      display: none;
-    }
-
-    .t3-sidebar #key-stats {
-      display:block;
-    }
-
-    .t3-sidebar #partners {
-      display:block;
-    }
   }
 
   .t3-sidebar .action span {
@@ -145,37 +109,59 @@ baseCss: hidden-masthead-info
   .credit a { color: #9e9e9e; }
 </style>
 
-<script>
-  function sideBarToggle(key) {
-    (function ($) {
-      if ($(`#${key}`).is(":visible")) {
-        $(`#${key}`).slideUp();
-        $(`#${key}-toggle`).addClass("fa-square-caret-down").removeClass("fa-square-caret-up");
-      } else {
-        $(`#${key}`).slideDown();
-        $(`#${key}-toggle`).addClass("fa-square-caret-up").removeClass("fa-square-caret-down");
-      }
-    })(jQuery);
-  }
-</script>
-
 <div id="t3-mainbody" class="container t3-mainbody">
   <div class="row equal-height">
 
-    <!-- SIDEBAR LEFT -->
-    <div class="t3-sidebar t3-sidebar-left col col-xs-12 col-sm-4 col-md-3">
+    <!-- MAIN CONTENT -->
+    <div id="t3-content" class="t3-content col col-xs-12 col-sm-8 col-md-9">
+      <div class="item-page hidden-masthead-info">
+        <!-- Article -->
+        <article>
+          {{ content }}
+        </article>
+        <!-- //Article -->
+      </div>
+    </div>
+    <!-- //MAIN CONTENT -->
+
+    <!-- SIDEBAR RIGHT -->
+    <div class="t3-sidebar t3-sidebar-right col col-xs-12 col-sm-4 col-md-3">
+      <img style="width:150px; margin:0 auto; margin-bottom:24px; display: flex;" src="/assets/images/logos/twin-peaks.svg?d={{ site.time | date: " %s" }}" />
       <div class="t3-module module">
         <div class="module-inner">
-          <h3 class="module-title"><span>Twin Peaks Bike Park</span> <i onclick="sideBarToggle('menu')" id="menu-toggle" class="fa-solid fa-square-caret-up"></i></h3>
-          <div id="menu" class="module-ct">
+          <div class="module-ct">
             <ul class="categories-module mod-list">
-              <li><h4><a class="action" {% unless path1 %}style="font-weight:bold;"{% endunless %} href="/twin-peaks/">Trail Map & Status <span class="icon ion-ios-arrow-round-forward"></span></a></h4></li>
-              <li><h4><a class="action" {% if path1 == 'access' %}style="font-weight:bold;"{% endif %} href="/twin-peaks/access">Access & Facilities <span class="icon ion-ios-arrow-round-forward"></span></a></h4></li>
-              <li><h4><a class="action" {% if path1 == 'guides' %}style="font-weight:bold;"{% endif %} href="/twin-peaks/guides">Guides & Tour operators <span class="icon ion-ios-arrow-round-forward"></span></a></h4></li>
-              {% comment %} <li><h4><a class="action" {% if path1 == 'trail-building' %}style="font-weight:bold;"{% endif %} href="/twin-peaks/phases">Trail building <span class="icon ion-ios-arrow-round-forward"></span></a></h4></li> {% endcomment %}
-              <li><h4><a class="action" {% if path1 == 'rules' %}style="font-weight:bold;"{% endif %} href="/twin-peaks/rules">Rules <span class="icon ion-ios-arrow-round-forward"></span></a></h4></li>
-              <li><h4><a class="action" {% if path1 == 'wet-trails' %}style="font-weight:bold;"{% endif %} href="/twin-peaks/wet-trails">Wet Trails <span class="icon ion-ios-arrow-round-forward"></span></a></h4></li>
-              <li><h4><a class="action" {% if path1 == 'commercial-pass' %}style="font-weight:bold;"{% endif %} href="/twin-peaks/commercial-pass">Commercial Pass <span class="icon ion-ios-arrow-round-forward"></span></a></h4></li>
+              <li>
+                <h4><a class="action" {% unless path1 %}style="font-weight:bold;" {% endunless %} href="/twin-peaks/">Trail
+                    Map & Status <span class="icon ion-ios-arrow-round-forward"></span></a></h4>
+              </li>
+              <li>
+                <h4><a class="action" {% if path1=='access' %}style="font-weight:bold;" {% endif %}
+                    href="/twin-peaks/access">Access & Facilities <span class="icon ion-ios-arrow-round-forward"></span></a>
+                </h4>
+              </li>
+              <li>
+                <h4><a class="action" {% if path1=='guides' %}style="font-weight:bold;" {% endif %}
+                    href="/twin-peaks/guides">Guides & Tour operators <span
+                      class="icon ion-ios-arrow-round-forward"></span></a></h4>
+              </li>
+              {% comment %} <li>
+                <h4><a class="action" {% if path1=='trail-building' %}style="font-weight:bold;" {% endif %}
+                    href="/twin-peaks/phases">Trail building <span class="icon ion-ios-arrow-round-forward"></span></a></h4>
+              </li> {% endcomment %}
+              <li>
+                <h4><a class="action" {% if path1=='rules' %}style="font-weight:bold;" {% endif %}
+                    href="/twin-peaks/rules">Rules <span class="icon ion-ios-arrow-round-forward"></span></a></h4>
+              </li>
+              <li>
+                <h4><a class="action" {% if path1=='wet-trails' %}style="font-weight:bold;" {% endif %}
+                    href="/twin-peaks/wet-trails">Wet Trails <span class="icon ion-ios-arrow-round-forward"></span></a></h4>
+              </li>
+              <li>
+                <h4><a class="action" {% if path1=='commercial-pass' %}style="font-weight:bold;" {% endif %}
+                    href="/twin-peaks/commercial-pass">Commercial Pass <span
+                      class="icon ion-ios-arrow-round-forward"></span></a></h4>
+              </li>
             </ul>
           </div>
         </div>
@@ -183,8 +169,8 @@ baseCss: hidden-masthead-info
 
       <div class="t3-module module">
         <div class="module-inner">
-          <h3 class="module-title"><span>Key stats</span> <i onclick="sideBarToggle('key-stats')" id="key-stats-toggle" class="fa-solid fa-square-caret-down"></i></h3>
-          <div id="key-stats" class="module-ct">
+          <h3 class="module-title"><span>Key stats</span></h3>
+          <div class="module-ct">
             <ul class="categories-module mod-list">
               <li>
                 <h4>Cost:</h4> Free
@@ -201,59 +187,63 @@ baseCss: hidden-masthead-info
               </li>
               <li>
                 <h4>Trail stats:</h4>
-                  {% assign greenTrailCount = 0 %}
-                  {% assign blueTrailCount = 0 %}
-                  {% assign blackTrailCount = 0 %}
-                  {% assign doubleBlackTrailCount = 0 %}
-                  {% assign trailCount = 0 %}
-                  {% assign totalDistance = 0 %}
-                  {% assign totalDescent = 0 %}
-                  {% assign totalClimb = 0 %}
+                {% assign greenTrailCount = 0 %}
+                {% assign blueTrailCount = 0 %}
+                {% assign blackTrailCount = 0 %}
+                {% assign doubleBlackTrailCount = 0 %}
+                {% assign trailCount = 0 %}
+                {% assign totalDistance = 0 %}
+                {% assign totalDescent = 0 %}
+                {% assign totalClimb = 0 %}
 
-                  {% for trail in site.data.trails["twinpeaks"] %}
-                    {% assign trailCount = trailCount | plus: 1 %}
-                    {% case trail.difficulty %}
-                      {% when 'green' %}
-                        {% assign greenTrailCount = greenTrailCount | plus: 1 %}
-                      {% when 'blue' %}
-                        {% assign blueTrailCount = blueTrailCount | plus: 1 %}
-                      {% when 'black' %}
-                        {% assign blackTrailCount = blackTrailCount | plus: 1 %}
-                      {% when 'double-black' %}
-                        {% assign doubleBlackTrailCount = doubleBlackTrailCount | plus: 1 %}
-                    {% endcase %}
-                    {% assign distance = trail.distance | remove: "," %}
-                    {% assign totalDistance = totalDistance | plus: distance %}
-                    {% assign totalDescent = totalDescent | plus: trail.descent %}
-                    {% assign totalClimb = totalClimb | plus: trail.climb %}
-                  {% endfor %}
-                  <ul style="padding:0;">
-                    <li class="stat">
-                      <span aria-hidden="true" data-tf-icon="" class="dicon_small dgreen tip" title="Green"></span>
-                      <span class="stat-count">{{ greenTrailCount }}</span>
-                    </li>
-                    <li class="stat">
-                      <span aria-hidden="true" data-tf-icon="" class="dicon_small dblue tip" title="Blue"></span>
-                      <span class="stat-count">{{ blueTrailCount }}</span>
-                    </li>
-                    <li class="stat">
-                      <span aria-hidden="true" data-tf-icon="" class="dicon_small dblack tip" title="Black"></span>
-                      <span class="stat-count">{{ blackTrailCount }}</span>
-                    </li>
-                    <li class="stat">
-                      <span aria-hidden="true" data-tf-icon="" class="dicon_small dblack tip" title="Double Black Diamond"></span>
-                      <span class="stat-count">{{ doubleBlackTrailCount }}</span>
-                    </li>
-                  </ul>
-                  <p style="margin:0;"><strong>{{ trailCount }}</strong> trails</p>
-                  <p style="margin:0;">Total distance: <strong>{{ totalDistance | divided_by: 1000 }}km</strong> <span class="fa fa-ruler-horizontal" title="Distance"></span></p>
-                  <p style="margin:0;">Total descent: <strong>{{ totalDescent }}m</strong> <span class="fa fa-arrow-down" title="Descent"></span></p>
-                  <p style="margin:0;">Total climb: <strong>{{ totalClimb }}m</strong> <span class="fa fa-arrow-up" title="Climb"></span></p>
+                {% for trail in site.data.trails["twinpeaks"] %}
+                {% assign trailCount = trailCount | plus: 1 %}
+                {% case trail.difficulty %}
+                {% when 'green' %}
+                {% assign greenTrailCount = greenTrailCount | plus: 1 %}
+                {% when 'blue' %}
+                {% assign blueTrailCount = blueTrailCount | plus: 1 %}
+                {% when 'black' %}
+                {% assign blackTrailCount = blackTrailCount | plus: 1 %}
+                {% when 'double-black' %}
+                {% assign doubleBlackTrailCount = doubleBlackTrailCount | plus: 1 %}
+                {% endcase %}
+                {% assign distance = trail.distance | remove: "," %}
+                {% assign totalDistance = totalDistance | plus: distance %}
+                {% assign totalDescent = totalDescent | plus: trail.descent %}
+                {% assign totalClimb = totalClimb | plus: trail.climb %}
+                {% endfor %}
+                <ul style="padding:0;">
+                  <li class="stat">
+                    <span aria-hidden="true" data-tf-icon="" class="dicon_small dgreen tip" title="Green"></span>
+                    <span class="stat-count">{{ greenTrailCount }}</span>
+                  </li>
+                  <li class="stat">
+                    <span aria-hidden="true" data-tf-icon="" class="dicon_small dblue tip" title="Blue"></span>
+                    <span class="stat-count">{{ blueTrailCount }}</span>
+                  </li>
+                  <li class="stat">
+                    <span aria-hidden="true" data-tf-icon="" class="dicon_small dblack tip" title="Black"></span>
+                    <span class="stat-count">{{ blackTrailCount }}</span>
+                  </li>
+                  <li class="stat">
+                    <span aria-hidden="true" data-tf-icon="" class="dicon_small dblack tip"
+                      title="Double Black Diamond"></span>
+                    <span class="stat-count">{{ doubleBlackTrailCount }}</span>
+                  </li>
+                </ul>
+                <p style="margin:0;"><strong>{{ trailCount }}</strong> trails</p>
+                <p style="margin:0;">Total distance: <strong>{{ totalDistance | divided_by: 1000 }}km</strong> <span
+                    class="fa fa-ruler-horizontal" title="Distance"></span></p>
+                <p style="margin:0;">Total descent: <strong>{{ totalDescent }}m</strong> <span class="fa fa-arrow-down"
+                    title="Descent"></span></p>
+                <p style="margin:0;">Total climb: <strong>{{ totalClimb }}m</strong> <span class="fa fa-arrow-up"
+                    title="Climb"></span></p>
               </li>
               <li>
                 <h4>Bike Park status: </h4>
-                <div style="margin-top:3px;" class="TrailforksWidgetRegionStatus" data-w="100px" data-h="15px" data-rid="58775" data-activitytype="1"
-                  data-status="1" data-st="1" data-ct="0" data-date="0"></div>
+                <div style="margin-top:3px;" class="TrailforksWidgetRegionStatus" data-w="100px" data-h="15px"
+                  data-rid="58775" data-activitytype="1" data-status="1" data-st="1" data-ct="0" data-date="0"></div>
               </li>
               <li>
                 <h4>Opening dates & times:</h4>
@@ -270,48 +260,58 @@ baseCss: hidden-masthead-info
 
       <div class="t3-module module">
         <div class="module-inner">
-          <h3 class="module-title"><span>Bike park partners</span> <i onclick="sideBarToggle('partners')" id="partners-toggle" class="fa-solid fa-square-caret-down"></i></h3>
-          <div id="partners" class="module-ct partners">
+          <h3 class="module-title"><span>Bike park partners</span></h3>
+          <div class="module-ct partners">
             <ul>
               <li>
                 <a href="https://helloallegra.com" target="_blank">
-                  <img src="/assets/images/company/special/allegra.png" alt="{% if page.lang == 'en' %}Trail building partner{% else %}トレイルビルド パートナー{% endif %}">
+                  <img src="/assets/images/company/special/allegra.png"
+                    alt="{% if page.lang == 'en' %}Trail building partner{% else %}トレイルビルド パートナー{% endif %}">
                 </a>
               </li>
               <li>
-                <a href="{% if page.lang == 'en' %}https://rhythmjapan.com{% else %}https://www.rhythmjapan.com/ja/{% endif %}" target="_blank">
-                  <img src="/assets/images/company/special/rhythm.png" alt="{% if page.lang == 'en' %}Maintenance sponsor{% else %}メンテナンス スポンサー{% endif %}">
+                <a href="{% if page.lang == 'en' %}https://rhythmjapan.com{% else %}https://www.rhythmjapan.com/ja/{% endif %}"
+                  target="_blank">
+                  <img src="/assets/images/company/special/rhythm.png"
+                    alt="{% if page.lang == 'en' %}Maintenance sponsor{% else %}メンテナンス スポンサー{% endif %}">
                 </a>
               </li>
               <li>
                 <a href="https://www.specialized-onlinestore.jp/" target="_blank">
-                  <img src="/assets/images/company/special/specialized.png" alt="{% if page.lang == 'en' %}Trail building team partner{% else %}トレイルビルドチーム スポンサー{% endif %}">
+                  <img src="/assets/images/company/special/specialized.png"
+                    alt="{% if page.lang == 'en' %}Trail building team partner{% else %}トレイルビルドチーム スポンサー{% endif %}">
                 </a>
               </li>
               <li>
-                <a href="{% if page.lang == 'en' %}https://holidayniseko.com{% else %}https://holidayniseko.jp{% endif %}" target="_blank">
-                  <img src="/assets/images/company/special/holiday-niseko.png" alt="{% if page.lang == 'en' %}Trail sponsor{% else %}トレイル スポンサー{% endif %}">
+                <a href="{% if page.lang == 'en' %}https://holidayniseko.com{% else %}https://holidayniseko.jp{% endif %}"
+                  target="_blank">
+                  <img src="/assets/images/company/special/holiday-niseko.png"
+                    alt="{% if page.lang == 'en' %}Trail sponsor{% else %}トレイル スポンサー{% endif %}">
                 </a>
               </li>
               <li>
                 <a href="https://www.nisekorealty.com" target="_blank">
-                  <img src="/assets/images/company/special/niseko-realty.png" alt="{% if page.lang == 'en' %}Trail sponsor{% else %}トレイル スポンサー{% endif %}">
+                  <img src="/assets/images/company/special/niseko-realty.png"
+                    alt="{% if page.lang == 'en' %}Trail sponsor{% else %}トレイル スポンサー{% endif %}">
                 </a>
               </li>
               <li>
                 <a href="http://www.nisekorealtysales.com" target="_blank">
-                  <img src="/assets/images/company/special/nrs.png" alt="{% if page.lang == 'en' %}Trail sponsor{% else %}トレイル スポンサー{% endif %}">
+                  <img src="/assets/images/company/special/nrs.png"
+                    alt="{% if page.lang == 'en' %}Trail sponsor{% else %}トレイル スポンサー{% endif %}">
                 </a>
               </li>
-            <li>
-              <a href="https://www.santacruzbicycles.com/" target="_blank">
-                <img src="/assets/images/company/special/santa-cruz.png" alt="{% if page.lang == 'en' %}Trail sponsor{% else %}トレイル スポンサー{% endif %}">
-              </a>
-            </li>
-            <li>
-              <img src="/assets/images/company/special/taki.png" alt="{% if page.lang == 'en' %}Trail sponsor{% else %}トレイル スポンサー{% endif %}">
-            </li>
-          </ul>
+              <li>
+                <a href="https://www.santacruzbicycles.com/" target="_blank">
+                  <img src="/assets/images/company/special/santa-cruz.png"
+                    alt="{% if page.lang == 'en' %}Trail sponsor{% else %}トレイル スポンサー{% endif %}">
+                </a>
+              </li>
+              <li>
+                <img src="/assets/images/company/special/taki.png"
+                  alt="{% if page.lang == 'en' %}Trail sponsor{% else %}トレイル スポンサー{% endif %}">
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -415,19 +415,7 @@ baseCss: hidden-masthead-info
         </div>
       </div> {% endcomment %}
     </div>
-    <!-- //SIDEBAR LEFT -->
-
-    <!-- MAIN CONTENT -->
-    <div id="t3-content" class="t3-content col col-xs-12 col-sm-8 col-md-9">
-      <div class="item-page hidden-masthead-info">
-        <!-- Article -->
-        <article>
-          {{ content }}
-        </article>
-        <!-- //Article -->
-      </div>
-    </div>
-    <!-- //MAIN CONTENT -->
+    <!-- //SIDEBAR RIGHT -->
   </div>
 
 </div>
