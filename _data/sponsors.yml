@@ -110,7 +110,7 @@ higuma:
         url: https://www.zekkeicollection.com/
 
 shika:
-  width: 12
+  width: 13
   sponsors:
     - image: /assets/images/company/shika/midori.png
       url: https://midoriinvestors.com
@@ -132,6 +132,8 @@ shika:
         url: https://nisekotourism.com/ja
     - image: /assets/images/company/shika/oyuki.png
       url: https://oyuki.com
+    - image: /assets/images/company/shika/peak-car-rentals.png
+      url: https://www.nisekocarrental.com
     - image: /assets/images/company/shika/setsu.png
       url: https://setsuniseko.com/en
       ja:
@@ -152,7 +154,7 @@ shika:
         url: https://vacationniseko.com/ja
 
 tanuki:
-  width: 15
+  width: 14
   sponsors:
     - image: /assets/images/company/tanuki/burton.png
       url: https://www.burton.com/jp/en
@@ -182,8 +184,6 @@ tanuki:
       url: https://www.nisekozen.com
     - image: /assets/images/company/tanuki/odin.png
       url: https://www.odin-property.com
-    - image: /assets/images/company/tanuki/peak-car-rentals.png
-      url: https://www.nisekocarrental.com
     - image: /assets/images/company/powbar.png
       url: https://www.thepowbar.com
     - image: /assets/images/company/tanuki/powderlife.png
