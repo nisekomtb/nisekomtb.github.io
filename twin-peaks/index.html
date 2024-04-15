@@ -334,6 +334,26 @@ title: Twin Peaks Bike Park
     background-position: 15% -100px;
   }
 
+  .trail-sign div.fst{
+    box-shadow: 0px 0px 50px 80px rgba(0,0,0,.6) inset;
+  }
+
+  .trail-sign div.snd {
+    background-color: rgba(0,0,0,.6);
+  }
+
+  .trail-sign.pos-0 div.fst {
+    box-shadow: none;
+  }
+
+  .trail-sign.pos-0 div.snd {
+    background-color:unset;
+  }
+
+  .trail-sign.pos-0 div:first-child {
+
+  }
+
   .trail-sign.pos-1 {
     background-position: 22% -300px;
   }
@@ -617,12 +637,12 @@ title: Twin Peaks Bike Park
 
 <section>
   <h3>Navigating around the bike park</h3>
-  <div id="trail-sign" class="row clearfix trail-sign pos-0" style="">
-    <div class="col col-sm-12 col-md-6" style=""></div>
-    <div class="col col-sm-12 col-md-6 clearfix" style="">
+  <div id="trail-sign" class="row clearfix trail-sign pos-0">
+    <div class="col col-sm-12 col-md-6 fst"></div>
+    <div class="col col-sm-12 col-md-6 snd clearfix">
       <div id="carousel-trail-sign" class="latest-project">
-        <div class="container" style="">
-          <div class="owl-carousel" style="">
+        <div class="container">
+          <div class="owl-carousel">
             <div class="item">
               <h4>Trail markers:</h4>
               <p>These signposts are located at all trailheads throughout the Twin Peaks Bike Park. Each signpost provides essential
