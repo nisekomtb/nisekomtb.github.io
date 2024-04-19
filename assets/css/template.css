@@ -156,12 +156,12 @@ span.highlight {
   color: #ffffff;
 }
 
-span.ja {
-  word-break: keep-all;
-  overflow-wrap: break-word;
-}
-
-p.ja {
+span.ja,
+p.ja,
+h1.ja,
+h2.ja,
+h3.ja,
+h4.ja {
   word-break: keep-all;
   overflow-wrap: break-word;
 }

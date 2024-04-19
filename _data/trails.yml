@@ -1,5 +1,7 @@
 twinpeaks:
   - name: Jinja Ninja
+    ja:
+      name: ジンジャニンジャ
     difficulty: green
     distance: 188
     climb: 4
@@ -8,6 +10,8 @@ twinpeaks:
     multi_use: true
     trailforks_id: 657442
   - name: Ezo Shika
+    ja:
+      name: エゾシカ
     difficulty: green
     distance: "3,521"
     climb: 216
@@ -17,6 +21,8 @@ twinpeaks:
     sponsor: nrs
     trailforks_id: 611923
   - name: Mana Skills Park
+    ja:
+      name: マナスキルズパーク
     difficulty: green
     distance: 260
     climb: 17
@@ -26,6 +32,8 @@ twinpeaks:
     sponsor: niseko-realty
     trailforks_id: 680884
   - name: Mana Skills Loop
+    ja:
+      name: マナスキルループ
     difficulty: green
     distance: 783
     climb: 11
@@ -35,6 +43,8 @@ twinpeaks:
     sponsor: niseko-realty
     trailforks_id: 657445
   - name: Mana Pump
+    ja:
+      name: マナポンプ
     difficulty: blue
     distance: 120
     climb: 0
@@ -44,6 +54,8 @@ twinpeaks:
     sponsor: niseko-realty
     trailforks_id: 657444
   - name: Mana Berms
+    ja:
+      name: マナバーム
     difficulty: blue
     distance: 80
     climb: 0
@@ -53,6 +65,8 @@ twinpeaks:
     sponsor: niseko-realty
     trailforks_id: 657446
   - name: Mana Jumps
+    ja:
+      name: マナジャンプ
     difficulty: blue
     distance: 220
     climb: 1
@@ -62,6 +76,8 @@ twinpeaks:
     sponsor: niseko-realty
     trailforks_id: 657447
   - name: Easy Ryder
+    ja:
+      name: イージーライダー
     difficulty: blue
     distance: "2,383"
     climb: 4
@@ -71,6 +87,8 @@ twinpeaks:
     sponsor: holiday-niseko
     trailforks_id: 657973
   - name: Rise 'n' Ryder
+    ja:
+      name: ライズ・ン・ライダー
     difficulty: blue
     distance: 556
     climb: 0
@@ -80,6 +98,8 @@ twinpeaks:
     sponsor: holiday-niseko
     trailforks_id: 680500
   - name: Air Ryder
+    ja:
+      name: エアライダー
     difficulty: blue
     distance: 457
     climb: 2
@@ -89,6 +109,8 @@ twinpeaks:
     sponsor: holiday-niseko
     trailforks_id: 680498
   - name: Shogun Syndicate
+    ja:
+      name: ショウグンシンジケート
     difficulty: black
     distance: "2,323"
     climb: 3
@@ -98,6 +120,8 @@ twinpeaks:
     sponsor: santa-cruz
     trailforks_id: 657436
   - name: Taki Trail
+    ja:
+      name: タキトレイル
     difficulty: black
     distance: "2,158"
     climb: 1

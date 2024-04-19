@@ -26,11 +26,11 @@ twinpeaks:
     url: https://noasc.com/en/
     ja:
       url: https://noasc.com/ja/
-  # - name: rhythm
-  #   image: /assets/images/company/special/rhythm.png
-  #   url: https://rhythmjapan.com
-  #   ja:
-  #     url: https://www.rhythmjapan.com/ja/
+  - name: rhythm
+    image: /assets/images/company/special/rhythm.png
+    url: https://rhythmjapan.com
+    ja:
+      url: https://www.rhythmjapan.com/ja/
   # - name: santa cruz
   #   image: /assets/images/company/special/santa-cruz.png
   #   url: https://www.santacruzbicycles.com/

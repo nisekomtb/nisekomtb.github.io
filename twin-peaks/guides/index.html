@@ -1,6 +1,7 @@
 ---
 layout: twin-peaks
-title: 'Twin Peaks Bike Park: Parking & Access'
+title: 'Twin Peaks Bike Park: Guides & Tour Operators'
+description: Twin Peaks Bike Park is free to the general public, but businesses operating within the park must possess commercial passes in order to provide instruction, tours, or other such services within the Twin Peaks Bike Park.
 ---
 <style>
   ul.guides {
@@ -37,7 +38,7 @@ title: 'Twin Peaks Bike Park: Parking & Access'
 </div>
 
 <header class="article-header clearfix">
-  <h1 class="article-title" itemprop="headline">Twin Peaks Bike Park: Guides & Tour operators
+  <h1 class="article-title" itemprop="headline">Twin Peaks Bike Park: Guides & Tour Operators
   </h1>
 </header>
 
@@ -58,7 +59,7 @@ title: 'Twin Peaks Bike Park: Parking & Access'
       {% for guide in site.data.guides["twinpeaks"] %}
         <li>
           {% if guide.url %}
-          <a href="{% if guide.ja.url and page.lang == " ja" %}{{ guide.ja.url }}{% else %}{{ guide.url }}{% endif %}"
+          <a href="{{ guide.url }}"
             target="_blank">
             <img class="img-responsive" src="{{ guide.image }}?d={{ site.time | date: " %s" }}">
           </a>

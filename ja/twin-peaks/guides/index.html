@@ -1,0 +1,76 @@
+---
+layout: twin-peaks
+title: 'ツインピークスバイクパーク：ガイド＆ツアーオペレーションについて'
+description: ツイン ピークス バイク パークは一般の人々は無料で利用できますが、ツイン ピークス バイク パーク内で指導、ツアーなど、その他の金銭的授受を伴うサービスを提供する行為を行う場合、その個人または企業は、商業事業者パスを所有する必要があります
+---
+<style>
+  ul.guides {
+    margin-top: 40px;
+    list-style-type:none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+
+
+  ul.guides li {
+    display: inline-block;
+  }
+
+  ul.guides a {
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 150px;
+    line-height: 150px;
+  }
+
+  ul.guides img {
+    display: inline-block;
+    margin-bottom: 40px;
+    max-height: 150px;
+    max-width: 150px;
+    cursor: pointer;
+  }
+</style>
+<div class="pull-left item-image">
+  <img src="/assets/images/twinpeaks/guides.jpg" alt="" itemprop="image">
+  <span class="credit"><a href="https://instagram.com/jingypsy" target="_blank"> 📸 Jinya Nishiwaki</a></span>
+</div>
+
+<header class="article-header clearfix">
+  <h1 class="article-title ja" itemprop="headline">ツイン<wbr>ピークス<wbr>バイクパーク：<wbr>ガイド<wbr>＆<wbr>ツアーオペレーションに<wbr>ついて</h1>
+</header>
+
+<div class="article-detail">
+
+  <section class="article-content clearfix" itemprop="articleBody">
+
+    <p class="ja">ツイン ピークス バイク パークは<wbr>一般の<wbr>人々は<wbr>無料で<wbr>利用できますが、<wbr>ツイン ピークス バイク パーク内で<wbr>指導、<wbr>ツアーなど、<wbr>その<wbr>他の<wbr>金銭的授受を<wbr>伴う<wbr>サービスを<wbr>提供する<wbr>行為を<wbr>行う<wbr>場合、<wbr>その<wbr>個人または<wbr>企業は、<wbr>商業事業者パスを<wbr>所有する<wbr>必要が<wbr>あります。<wbr>詳しくは<wbr><a href="/twin-peaks/commercial-pass/">商業事業者パス</a>の<wbr>ページを<wbr>ご確認ください。</p>
+
+    <h3>認定企業</h3>
+
+    <p class="ja">ツインピークスバイクパーク開設に<wbr>伴い、<wbr>多大なる<wbr>貢献を<wbr>してくれた<wbr>以下の<wbr>会社は、<wbr>ツイン ピークス バイク パークの<wbr>ガイドまたは<wbr>ツアーを<wbr>許可されています。</p>
+
+    <ul class="guides">
+      {% for guide in site.data.guides["twinpeaks"] %}
+        <li>
+          {% if guide.url %}
+          <a href="{% if guide.ja.url %}{{ guide.ja.url }}{% else %}{{ guide.url }}{% endif %}"
+            target="_blank">
+            <img class="img-responsive" src="{{ guide.image }}?d={{ site.time | date: " %s" }}">
+          </a>
+          {% else %}
+          <img class="img-responsive" src="{{ guide.image }}?d={{ site.time | date: " %s" }}">
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+
+    <h4 class="ja">あなたの<wbr>会社の<wbr>ロゴも<wbr>認定企業と<wbr>しての<wbr>せませんか？</h4>
+    <p class="ja">
+      商業事業者パスの取得方法・詳細については、<a href="/ja/twin-peaks/commercial-pass/">商業事業者パス</a> ページをご参照ください。
+    </p>
+
+  </section>
+</div>
+

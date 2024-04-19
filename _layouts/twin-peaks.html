@@ -126,41 +126,59 @@ baseCss: hidden-masthead-info
 
     <!-- SIDEBAR RIGHT -->
     <div class="t3-sidebar t3-sidebar-right col col-xs-12 col-sm-4 col-md-3">
-      <img style="width:150px; margin:0 auto; margin-bottom:24px; display: flex;" src="/assets/images/logos/twin-peaks.svg?d={{ site.time | date: " %s" }}" />
+      <img style="width:150px; margin:0 auto; margin-bottom:24px; display: flex;" src="/assets/images/logos/twin-peaks.svg?d={{ site.time | date: " %s" }}" alt="{% if page.lang == 'ja' %}ツインピークスバイクパーク{% else %}Twin Peaks Bike Park{% endif %}" />
       <div class="t3-module module">
         <div class="module-inner">
           <div class="module-ct">
             <ul class="categories-module mod-list">
               <li>
-                <h4><a class="action" {% unless path1 %}style="font-weight:bold;" {% endunless %} href="/twin-peaks/">Trail
-                    Map & Status <span class="icon ion-ios-arrow-round-forward"></span></a></h4>
-              </li>
-              <li>
-                <h4><a class="action" {% if path1=='access' %}style="font-weight:bold;" {% endif %}
-                    href="/twin-peaks/access">Access & Facilities <span class="icon ion-ios-arrow-round-forward"></span></a>
+                <h4>
+                  <a class="action" {% unless path1 %}style="font-weight:bold;" {% endunless %} href="/twin-peaks/">
+                    {% if page.lang == "ja" %}トレイルマップ＆状況{% else %}Trail Map & Status{% endif %} <span class="icon ion-ios-arrow-round-forward"></span>
+                  </a>
                 </h4>
               </li>
               <li>
-                <h4><a class="action" {% if path1=='guides' %}style="font-weight:bold;" {% endif %}
-                    href="/twin-peaks/guides">Guides & Tour operators <span
-                      class="icon ion-ios-arrow-round-forward"></span></a></h4>
+                <h4>
+                  <a class="action" {% if path1 == 'access' %}style="font-weight:bold;" {% endif %}href="/twin-peaks/access">
+                    {% if page.lang == "ja" %}アクセス＆設備{% else %}Access & Facilities{% endif %} <span class="icon ion-ios-arrow-round-forward"></span>
+                  </a>
+                </h4>
+              </li>
+              <li>
+                <h4>
+                  <a class="action" {% if path1 == 'guides' %}style="font-weight:bold;" {% endif %}href="/twin-peaks/guides">
+                    {% if page.lang == "ja" %}ガイド＆ツアーオペレーション{% else %}Guides & Tour operators{% endif %} <span class="icon ion-ios-arrow-round-forward"></span>
+                  </a>
+                </h4>
               </li>
               {% comment %} <li>
-                <h4><a class="action" {% if path1=='trail-building' %}style="font-weight:bold;" {% endif %}
-                    href="/twin-peaks/phases">Trail building <span class="icon ion-ios-arrow-round-forward"></span></a></h4>
+                <h4>
+                  <a class="action" {% if path1=='trail-building' %}style="font-weight:bold;" {% endif %} href="/twin-peaks/phases">
+                    {% if page.lang == "ja" %}トレイルビルディング{% else %}Trail building{% endif %} <span class="icon ion-ios-arrow-round-forward"></span>
+                  </a>
+                </h4>
               </li> {% endcomment %}
               <li>
-                <h4><a class="action" {% if path1=='rules' %}style="font-weight:bold;" {% endif %}
-                    href="/twin-peaks/rules">Rules <span class="icon ion-ios-arrow-round-forward"></span></a></h4>
+                <h4>
+                  <a class="action" {% if path1 == 'rules' %}style="font-weight:bold;" {% endif %} href="/twin-peaks/rules">
+                    {% if page.lang == "ja" %}ルール{% else %}Rules{% endif %} <span class="icon ion-ios-arrow-round-forward"></span>
+                  </a>
+                </h4>
               </li>
               <li>
-                <h4><a class="action" {% if path1=='wet-trails' %}style="font-weight:bold;" {% endif %}
-                    href="/twin-peaks/wet-trails">Wet Trails <span class="icon ion-ios-arrow-round-forward"></span></a></h4>
+                <h4>
+                  <a class="action" {% if path1 == 'wet-trails' %}style="font-weight:bold;" {% endif %} href="/twin-peaks/wet-trails">
+                    {% if page.lang == "ja" %}ぬれたトレイル{% else %}Wet Trails{% endif %} <span class="icon ion-ios-arrow-round-forward"></span>
+                  </a>
+                </h4>
               </li>
               <li>
-                <h4><a class="action" {% if path1=='commercial-pass' %}style="font-weight:bold;" {% endif %}
-                    href="/twin-peaks/commercial-pass">Commercial Pass <span
-                      class="icon ion-ios-arrow-round-forward"></span></a></h4>
+                <h4>
+                  <a class="action" {% if path1 == 'commercial-pass' %}style="font-weight:bold;" {% endif %} href="/twin-peaks/commercial-pass">
+                    {% if page.lang == "ja" %}商業事業者パス{% else %}Commercial Pass{% endif %} <span class="icon ion-ios-arrow-round-forward"></span>
+                  </a>
+                </h4>
               </li>
             </ul>
           </div>
@@ -314,105 +332,6 @@ baseCss: hidden-masthead-info
           </div>
         </div>
       </div>
-
-
-      {% comment %} <div class="t3-module module " id="Mod95">
-        <div class="module-inner">
-          <h3 class="module-title "><span>Login</span></h3>
-          <div class="module-ct">
-            <form action="/index.php/our-blog" method="post" id="login-form">
-              <fieldset class="userdata">
-                <div id="form-login-username" class="form-group">
-                  <div class="input-group">
-                    <span class="input-group-addon">
-                      <span class="fa fa-user tip" title="Username"></span>
-                    </span>
-                    <input id="modlgn-username" type="text" name="username" class="input form-control" tabindex="0"
-                      size="18" placeholder="Username" aria-label="username">
-                  </div>
-                </div>
-                <div id="form-login-password" class="form-group">
-                  <div class="input-group">
-                    <span class="input-group-addon">
-                      <span class="fa fa-lock tip" title="Password"></span>
-                    </span>
-                    <input id="modlgn-passwd" type="password" name="password" class="input form-control" tabindex="0"
-                      size="18" placeholder="Password" aria-label="password">
-                  </div>
-                </div>
-
-                <div id="form-login-remember" class="form-group">
-                  <input id="modlgn-remember" type="checkbox" name="remember" class="input" value="yes"
-                    aria-label="remember"> Remember Me
-                </div>
-                <div class="control-group">
-                  <input type="submit" name="Submit" class="btn btn-primary" value="Log in">
-                </div>
-
-                <ul class="unstyled">
-                  <li>
-                    <a href="/index.php/pages/j-pages/registration">
-                      Create an account <span class="fa fa-arrow-right"></span></a>
-                  </li>
-                  <li>
-                    <a href="/index.php/pages/j-pages/user-profile?view=remind">
-                      Forgot your username?</a>
-                  </li>
-                  <li>
-                    <a href="/index.php/pages/j-pages/user-profile?view=reset">Forgot your password?</a>
-                  </li>
-                </ul>
-
-                <input type="hidden" name="option" value="com_users">
-                <input type="hidden" name="task" value="user.login">
-                <input type="hidden" name="return"
-                  value="aHR0cHM6Ly9qYS1zcGFjZS5kZW1vLmpvb21sYXJ0LmNvbS9pbmRleC5waHAvb3VyLWJsb2cvOS1tYXJrZXRpbmctYmFzaWNzLzItc2hvdWxkLXlvdXItc2Vjb25kYXJ5LWJyYW5kLWhhdmUtYS1kaWZmZXJlbnQtd2Vic2l0ZQ==">
-                <input type="hidden" name="f843bc6ed10be6a0c086e47b434c1de1" value="1">
-              </fieldset>
-            </form>
-          </div>
-        </div>
-      </div>
-      <div class="t3-module module " id="Mod90">
-        <div class="module-inner">
-          <h3 class="module-title "><span>Latest Articles</span></h3>
-          <div class="module-ct">
-            <ul class="latestnews mod-list">
-              <li>
-                <a href="/index.php/our-blog/9-marketing-basics/2-should-your-secondary-brand-have-a-different-website">
-                  <span itemprop="name">
-                    Should Your Secondary Brand Have a Different Website? </span>
-                </a>
-              </li>
-              <li>
-                <a href="/index.php/our-blog/9-marketing-basics/3-21-award-winning-website-designs-what-they-did-right">
-                  <span itemprop="name">
-                    21 Award-Winning Website Designs &amp; What They Did Right </span>
-                </a>
-              </li>
-              <li>
-                <a href="/index.php/our-blog/9-marketing-basics/4-21-award-winning-website-designs-what-they-did-right-2">
-                  <span itemprop="name">
-                    How to Choose the Right Visual Content for Your Goal </span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/index.php/our-blog/10-attract-engage/5-secrets-to-creating-top-class-blog-graphics-for-non-designers">
-                  <span itemprop="name">
-                    Secrets to Creating Top-Class Blog Graphics for Non-Designers </span>
-                </a>
-              </li>
-              <li>
-                <a href="/index.php/our-blog/11-web-design/6-the-unfair-design-advantage-is-ux-actually-important">
-                  <span itemprop="name">
-                    The Unfair Design Advantage: is UX Actually Important? </span>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div> {% endcomment %}
     </div>
     <!-- //SIDEBAR RIGHT -->
   </div>

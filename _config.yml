@@ -37,6 +37,16 @@ defaults:
     values:
       og:
         image: /assets/images/og/twinpeaks.jpg
+  - scope:
+      path: twin-peaks
+    values:
+      og:
+        image: /assets/images/og/twinpeaks-2024.jpg
+  - scope:
+      path: ja/twin-peaks
+    values:
+      og:
+        image: /assets/images/og/twinpeaks-2024.jpg
 
 include:
   - .well-known
