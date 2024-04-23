@@ -45,6 +45,18 @@ description: 日本のニセコにあるツイン ピークス バイク パー�
     white-space:nowrap;
   }
 
+  .trails-key .cond li {
+    display: block;
+    white-space:unset;
+  }
+
+  @media(min-width: 1200px) {
+    .trails-key .cond li {
+      display: inline;
+      white-space:nowrap;
+    }
+  }
+
   .trails-key li:last-child {
     margin-right:0;
   }
@@ -563,7 +575,7 @@ description: 日本のニセコにあるツイン ピークス バイク パー�
   <h3 class="ja">トレイル</h3>
   <div class="trails-key">
     <h4 class="ja">トレイルでの<wbr>キー言語</h4>
-    <ul>
+    <ul class="cond">
       <li><span aria-hidden="true" data-tf-icon="" class="sicon_small sgreen hovertip" title="オールクリア（障害になるものは何もありません）"
         style="color: #225f06;"></span> <span class="ja">オールクリア<wbr>（障害に<wbr>なる<wbr>ものは<wbr>何も<wbr>ありません）</span></li>
       <li><span aria-hidden="true" data-tf-icon="" class="sicon_small syellow hovertip" title="小さな障害有（行けなくはないが、確実に問題・障害はある）"

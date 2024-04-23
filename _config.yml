@@ -7,7 +7,7 @@ description: |
   NAMBA.ngo
 baseurl: ""
 url: https://namba.ngo
-github_username:  namtba
+github_username:  nisekomtb
 
 strict_front_matter: true
 permalink: /:categories/:title-:year/
