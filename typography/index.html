@@ -1,0 +1,574 @@
+---
+layout: default
+baseCss: view-article
+title: Typography
+---
+<div class="item-page  ">
+
+  <!-- Article -->
+  <article>
+
+
+
+
+
+
+    <!-- Aside -->
+    <aside class="article-aside clearfix">
+      <dl class="article-info  muted">
+
+
+        <dt class="article-info-term">
+        </dt>
+
+
+
+
+
+
+
+        <dd class="hits">
+          <i class="fa fa-eye"></i>
+          <meta itemprop="interactionCount" content="UserPageVisits:0">
+          Hits: 0
+        </dd>
+      </dl>
+
+    </aside>
+    <!-- // Aside -->
+
+
+
+
+
+    <div class="article-detail">
+
+      <section class="article-content clearfix" itemprop="articleBody">
+        <!-- CORE TYPOGRAPHY
+	=======================================================-->
+        <div class="docs-section"><!-- Headings -->
+          <div class="row example-row example-type">
+            <div class="col-lg-7">
+              <h3 class="sub-title">Heading Text</h3>
+              <h1>h1. Heading <small>Secondary text</small></h1>
+              <h2>h2. Heading <small>Secondary text</small></h2>
+              <h3>h3. Heading <small>Secondary text</small></h3>
+              <h4>h4. Heading <small>Secondary text</small></h4>
+              <h5>h5. Heading <small>Secondary text</small></h5>
+              <h6>h6. Heading <small>Secondary text</small></h6>
+              <div class="alert alert-warning">
+                <p><strong>TIPS:</strong> Create lighter, secondary text in any heading with a generic
+                  <code>&lt;small&gt;</code> tag or the <code>.small</code> class.</p>
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <h3 class="sub-title">Example body text</h3>
+              <p class="lead">This is a <strong>lead paragraph</strong>. <br>Make a paragraph stand out by adding
+                <code>.lead</code>.</p>
+              <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at
+                eget metus.</p>
+              <p>Nullam quis risus eget <a href="#">urna mollis ornare</a> vel eu leo. Cum sociis natoque penatibus et
+                magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
+              <p>The following snippet of text is <strong>rendered as bold text</strong>.</p>
+              <p>The following snippet of text is <em>rendered as italicized text</em>.</p>
+              <p>An abbreviation of the word attribute is <abbr title="attribute">attr</abbr>.</p>
+            </div>
+          </div>
+          <!-- //Headings -->
+          <p> </p>
+          <!-- Address & Emphasis -->
+          <div class="row example-row example-type">
+            <div class="col-lg-4">
+              <h3 class="sub-title">Address</h3>
+              <address><strong>Company Name</strong><br> 795 Folsom Ave, Suite 600<br> San Francisco, CA 94107<br> <abbr
+                  title="Phone">P:</abbr> (123) 456-7890</address>
+              <address><strong>Full Name</strong><br> <abbr title="Phone">P:</abbr> (123) 456-7890<br> <span
+                  id="cloak91fbbed52d60beeb05e2f40229cb0a79"><a
+                    href="mailto:first.last@example.com">first.last@example.com</a></span>
+                <script type="text/javascript">
+                  document.getElementById('cloak91fbbed52d60beeb05e2f40229cb0a79').innerHTML = '';
+                  var prefix = '&#109;a' + 'i&#108;' + '&#116;o';
+                  var path = 'hr' + 'ef' + '=';
+                  var addy91fbbed52d60beeb05e2f40229cb0a79 = 'f&#105;rst.l&#97;st' + '&#64;';
+                  addy91fbbed52d60beeb05e2f40229cb0a79 = addy91fbbed52d60beeb05e2f40229cb0a79 + '&#101;x&#97;mpl&#101;' + '&#46;' + 'c&#111;m';
+                  var addy_text91fbbed52d60beeb05e2f40229cb0a79 = 'f&#105;rst.l&#97;st' + '&#64;' + '&#101;x&#97;mpl&#101;' + '&#46;' + 'c&#111;m'; document.getElementById('cloak91fbbed52d60beeb05e2f40229cb0a79').innerHTML += '<a ' + path + '\'' + prefix + ':' + addy91fbbed52d60beeb05e2f40229cb0a79 + '\'>' + addy_text91fbbed52d60beeb05e2f40229cb0a79 + '<\/a>';
+                </script>
+              </address>
+            </div>
+            <div class="col-lg-4">
+              <h3 class="sub-title">Emphasis classes</h3>
+              <p class="text-muted">This is a <code>.mute</code> paragraph.</p>
+              <p class="text-primary">This is a <code>.text-primary</code> paragraph.</p>
+              <p class="text-warning">This is a <code>.text-warning</code> paragraph.</p>
+              <p class="text-danger">This is a <code>.text-danger</code> paragraph.</p>
+              <p class="text-success">This is a <code>.text-success</code> paragraph.</p>
+              <p class="text-info">This is a <code>.text-info</code> paragraph.</p>
+            </div>
+            <div class="col-lg-4">
+              <h3 class="sub-title">Alignment classes</h3>
+              <p class="text-left">This is a left aligned text <code>.text-left</code></p>
+              <p class="text-center">This is a center aligned text <code>.text-center</code></p>
+              <p class="text-right">This is a right aligned text <code>.text-right</code></p>
+              <p class="text-justify">This is a justify aligned text which is often used in Book Design, Magazine or
+                special Typo Pages. Create a justify aligned text with <code>.text-justify</code> class.</p>
+            </div>
+          </div>
+          <!-- //Address & Emphasis -->
+        </div>
+        <!-- //CORE TYPOGRAPHY -->
+        <p> </p>
+        <!-- Blockquotes -->
+        <div class="docs-section">
+          <h3 id="example-colors">Blockquotes</h3>
+          <div class="row example-row example-type">
+            <div class="col-lg-6">
+              <blockquote>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                <small>Quote's author in <cite title="Source Title">Source Title</cite></small>
+              </blockquote>
+            </div>
+            <div class="col-lg-6">
+              <blockquote class="pull-right">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                <small>Quote's author in <cite title="Source Title">Source Title</cite></small>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+        <!-- //Blockquotes -->
+        <p> </p>
+        <!-- TAGS
+	=======================================================-->
+        <div class="docs-section">
+          <h3 id="example-colors">Tags</h3>
+          <div class="tags"><span class="tag"><a class="label label-info" href="#">hotel</a></span> <span class="tag"><a
+                class="label label-info" href="#">booking</a></span> <span class="tag"><a class="label label-info"
+                href="#">discount</a></span> <span class="tag"><a class="label label-info" href="#">location</a></span>
+            <span class="tag"><a class="label label-info" href="#">map</a></span> <span class="tag"><a
+                class="label label-info" href="#">travel</a></span></div>
+        </div>
+        <!-- //TAGS -->
+        <p> </p>
+        <!-- COLOR SWATCHES
+	=======================================================-->
+        <div class="docs-section">
+          <h3 id="example-color">Color Swatches</h3>
+          <!-- Brand Colors -->
+          <h3 class="sub-title">Brand Colors</h3>
+          <div class="row example-row example-colors">
+            <div class="col-xs-12 col-sm-4">
+              <div class="swatch-item color-brand-primary">
+                <dl>
+                  <dt>#fd7d57</dt>
+                  <dd>Brand Primary</dd>
+                </dl>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+              <div class="swatch-item color-brand-secondary">
+                <dl>
+                  <dt>#428bca</dt>
+                  <dd>Brand Secondary</dd>
+                </dl>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+              <div class="swatch-item color-brand-warning">
+                <dl>
+                  <dt>#f0ad4e</dt>
+                  <dd>Brand Warning</dd>
+                </dl>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+              <div class="swatch-item color-brand-danger">
+                <dl>
+                  <dt>#d9534f</dt>
+                  <dd>Brand Danger</dd>
+                </dl>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+              <div class="swatch-item color-brand-info">
+                <dl>
+                  <dt>#5bc0de</dt>
+                  <dd>Brand Info</dd>
+                </dl>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+              <div class="swatch-item color-brand-success">
+                <dl>
+                  <dt>#5cb85c</dt>
+                  <dd>Brand Success</dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+          <!-- Brand Colors -->
+          <p> </p>
+          <!-- Grayscale -->
+          <h3 class="sub-title">Grayscale Levels</h3>
+          <div class="row example-row example-colors">
+            <div class="col-xs-12 col-sm-4">
+              <div class="swatch-item color-gray-darker">
+                <dl>
+                  <dt>#0e0e0e</dt>
+                  <dd>Gray Darker</dd>
+                </dl>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+              <div class="swatch-item color-gray-dark">
+                <dl>
+                  <dt>#252525</dt>
+                  <dd>Gray Dark</dd>
+                </dl>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+              <div class="swatch-item color-gray">
+                <dl>
+                  <dt>#555555</dt>
+                  <dd>Gray</dd>
+                </dl>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+              <div class="swatch-item color-gray-light">
+                <dl>
+                  <dt>#888888</dt>
+                  <dd>Gray Light</dd>
+                </dl>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+              <div class="swatch-item color-gray-lighter">
+                <dl>
+                  <dt>#eeeeee</dt>
+                  <dd>Gray Lighter</dd>
+                </dl>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+              <div class="swatch-item color-gray-lightest">
+                <dl>
+                  <dt>#f7f7f7</dt>
+                  <dd>Gray Lightest</dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+          <!-- //Grayscale -->
+        </div>
+        <!-- //COLOR SWATCHES -->
+        <p> </p>
+        <!-- BUTTON
+	=======================================================-->
+        <div class="docs-section">
+          <h3 id="example-colors">Buttons</h3>
+          <div class="row example-row example-type">
+            <div class="col-md-12"><!-- Button -->
+              <div class="example-button clearfix">
+                <a class="btn btn-default" href="#">Normal Button</a>
+                <a class="btn btn-primary" href="#">Primary Button</a>
+                <a class="btn btn-success" href="#">Success Button</a>
+                <a class="btn btn-warning" href="#">Warning Button</a>
+                <a class="btn btn-danger" href="#">Danger Button</a>
+                <a class="btn btn-info" href="#">Info Button</a>
+              </div>
+              <!-- //Button -->
+            </div>
+          </div>
+        </div>
+        <!-- //BUTTON -->
+        <br>
+        <!-- NAVIGATIONS
+	================================================== -->
+        <div class="docs-section">
+          <h3 id="example-navigation">Navigations</h3>
+          <!-- Tabs & Vertical Menus -->
+          <div class="row example-row example-navigation"><!-- Tabs -->
+            <div class="col-lg-8">
+              <h3 class="sub-title">Tabs</h3>
+              <ul class="nav nav-tabs">
+                <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
+                <li class=""><a href="#profile" data-toggle="tab">Profile</a></li>
+                <li class="disabled"><a>Disabled</a></li>
+                <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown"> Dropdown </a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#dropdown1" data-toggle="tab">Action</a></li>
+                    <li><a href="#dropdown2" data-toggle="tab">Another action</a></li>
+                    <li><a href="#dropdown2" data-toggle="tab">Another action</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <div id="myTabContent" class="tab-content">
+                <div id="home" class="tab-pane fade active in">
+                  <p>In the area of graphical user interfaces (GUI), a <strong>tabbed document interface</strong> (TDI)
+                    or a Tab is one that allows multiple documents to be contained within a single window, using tabs as
+                    a navigational widget for switching between sets of documents. It is an interface style most
+                    commonly associated with web browsers, web applications, text editors, and preference panes.</p>
+                  <p>GUI tabs are modeled after traditional card tabs inserted in paper files or card indexes (in
+                    keeping with the desktop metaphor).</p>
+                </div>
+                <div id="profile" class="tab-pane fade">
+                  <p>In the area of graphical user interfaces (GUI), a <strong>tabbed document interface</strong> (TDI)
+                    or a Tab is one that allows multiple documents to be contained within a single window, using tabs as
+                    a navigational widget for switching between sets of documents. It is an interface style most
+                    commonly associated with web browsers, web applications, text editors, and preference panes.</p>
+                  <p>GUI tabs are modeled after traditional card tabs inserted in paper files or card indexes (in
+                    keeping with the desktop metaphor).</p>
+                </div>
+                <div id="dropdown1" class="tab-pane fade">
+                  <p>In the area of graphical user interfaces (GUI), a <strong>tabbed document interface</strong> (TDI)
+                    or a Tab is one that allows multiple documents to be contained within a single window, using tabs as
+                    a navigational widget for switching between sets of documents. It is an interface style most
+                    commonly associated with web browsers, web applications, text editors, and preference panes.</p>
+                  <p>GUI tabs are modeled after traditional card tabs inserted in paper files or card indexes (in
+                    keeping with the desktop metaphor).</p>
+                </div>
+                <div id="dropdown2" class="tab-pane fade">
+                  <p>In the area of graphical user interfaces (GUI), a <strong>tabbed document interface</strong> (TDI)
+                    or a Tab is one that allows multiple documents to be contained within a single window, using tabs as
+                    a navigational widget for switching between sets of documents. It is an interface style most
+                    commonly associated with web browsers, web applications, text editors, and preference panes.</p>
+                  <p>GUI tabs are modeled after traditional card tabs inserted in paper files or card indexes (in
+                    keeping with the desktop metaphor).</p>
+                </div>
+              </div>
+            </div>
+            <!-- //Tabs --> <!-- Vertical Menus -->
+            <div class="col-lg-4">
+              <h3 class="sub-title">Vertical Menus</h3>
+              <ul class="nav nav-pills nav-stacked">
+                <li class="active"><a href="#">Active Menu Item</a></li>
+                <li class=""><a href="#">Menu Item</a></li>
+                <li class=""><a href="#">Menu Item</a></li>
+                <li class="disabled"><a href="#">Disabled Menu Item</a></li>
+                <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown"> Dropdown </a>
+                  <ul class="dropdown-menu">
+                    <li class=""><a href="#">Action</a></li>
+                    <li class=""><a href="#">Another action</a></li>
+                    <li class=""><a href="#">Something else here</a></li>
+                    <li class=""><a href="#">Separated link</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <!-- Vertical Menus -->
+          </div>
+          <!-- Tabs & Vertical Menus -->
+        </div>
+        <!-- //NAVIGATIONS -->
+        <p> </p>
+        <!-- FORMS
+	================================================== -->
+        <div class="docs-section">
+          <div class="page-header">
+            <h3 id="example-typo">Inputs</h3>
+          </div>
+          <!-- Inputs -->
+          <div class="row example-row example-forms example-inputs">
+            <div class="col-md-3">
+              <div class="form-group has-success"><label class="control-label" for="inputSuccess">Input success</label>
+                <input id="inputSuccess" class="form-control" type="text"></div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group has-error"><label class="control-label" for="inputError">Input error</label> <input
+                  id="inputError" class="form-control" type="text"></div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group has-warning"><label class="control-label" for="inputWarning">Input warning</label>
+                <input id="inputWarning" class="form-control" type="text"></div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group"><label class="control-label" for="disabledInput">Disabled input</label> <input
+                  id="disabledInput" class="form-control" disabled="disabled" type="text"></div>
+            </div>
+          </div>
+          <!-- //Inputs -->
+        </div>
+        <!-- //FORMS -->
+        <p> </p>
+        <!-- INDICATORS
+	================================================== -->
+        <div class="docs-section">
+          <h3 id="example-indicators">Indicators</h3>
+          <!-- Alerts -->
+          <h3 class="sub-title">Alerts and Notifications</h3>
+          <div class="row example-row example-indicators">
+            <div class="col-lg-6">
+              <div class="alert  alert-danger">
+                <h4>Error Message Title</h4>
+                <p>Donec eget purus nec tellus tincidunt lacinia et sed lorem. Cras ac dignissim mauris. Duis odio diam,
+                  rutrum ut est at, scelerisque malesuada risus.</p>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="alert  alert-success">
+                <h4>Sussess Message Title</h4>
+                <p>Donec eget purus nec tellus tincidunt lacinia et sed lorem. Cras ac dignissim mauris. Duis odio diam,
+                  rutrum ut est at, scelerisque malesuada risus.</p>
+              </div>
+            </div>
+          </div>
+          <div class="row example-row example-indicators">
+            <div class="col-lg-6">
+              <div class="alert  alert-info">
+                <h4>Info Message Title</h4>
+                <p>Donec eget purus nec tellus tincidunt lacinia et sed lorem. Cras ac dignissim mauris. Duis odio diam,
+                  rutrum ut est at, scelerisque malesuada risus.</p>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="alert  alert-warning">
+                <h4>Warning Message Title</h4>
+                <p>Donec eget purus nec tellus tincidunt lacinia et sed lorem. Cras ac dignissim mauris. Duis odio diam,
+                  rutrum ut est at, scelerisque malesuada risus.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Alerts -->
+          <p> </p>
+          <!-- Labels & Badges -->
+          <div class="row example-row example-indicators">
+            <div class="col-lg-6">
+              <h3 class="sub-title">Badges</h3>
+              <div class="example">
+                <ul class="nav nav-pills">
+                  <li class="active"><a href="#">Home <span class="badge">42</span></a></li>
+                  <li><a href="#">Profile </a></li>
+                  <li><a href="#">Messages <span class="badge">25</span></a></li>
+                  <li><a href="#">Notices <span class="badge">2</span></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <h3 class="sub-title">Labels</h3>
+              <div class="example"><span class="label label-default">Default</span> <span
+                  class="label label-primary">Primary</span> <span class="label label-success">Success</span> <span
+                  class="label label-info">Info</span> <span class="label label-warning">Warning</span> <span
+                  class="label label-danger">Danger</span></div>
+            </div>
+          </div>
+          <!-- Labels & Badges -->
+        </div>
+        <!-- //INDICATORS -->
+        <p> </p>
+        <!-- MISC
+	================================================== -->
+        <div class="docs-section">
+          <h3 id="example-misc">Misc</h3>
+          <!-- List Groups -->
+          <h3 class="sub-title">List groups</h3>
+          <div class="row example-row example-misc">
+            <div class="col-lg-4">
+              <ul class="list-group">
+                <li class="list-group-item"><span class="badge">14</span> Cras justo odio</li>
+                <li class="list-group-item"><span class="badge">2</span> Dapibus ac facilisis in</li>
+                <li class="list-group-item">Morbi leo risus</li>
+                <li class="list-group-item"><span class="badge">1</span> Morbi leo risus</li>
+                <li class="list-group-item"><span class="badge">2</span> Dapibus ac facilisis in</li>
+              </ul>
+            </div>
+            <div class="col-lg-4">
+              <div class="list-group"><a class="list-group-item active" href="#"><span class="badge">9</span> Cras justo
+                  odio</a> <a class="list-group-item" href="#">Dapibus ac facilisis in</a> <a class="list-group-item"
+                  href="#">Morbi leo risus</a> <a class="list-group-item" href="#">Porta ac consectetur ac</a> <a
+                  class="list-group-item" href="#">Vestibulum at eros</a></div>
+            </div>
+            <div class="col-lg-4">
+              <div class="list-group">
+                <h4 class="list-group-item-heading">List group item heading</h4>
+                <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus risus varius blandit.
+                </p>
+              </div>
+
+              <div class="list-group">
+                <h4 class="list-group-item-heading">List group item heading</h4>
+                <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus.</p>
+              </div>
+
+              <div class="list-group">
+                <h4 class="list-group-item-heading">List group item heading</h4>
+                <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //List Groups -->
+        <p> </p>
+        <!-- Panels -->
+        <h3 class="sub-title">Panels</h3>
+        <div class="row example-row example-misc">
+          <div class="col-lg-4">
+            <div class="panel panel-default">
+              <div class="panel-heading">Panel heading</div>
+              <div class="panel-body">Panel content</div>
+            </div>
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title">Panel primary</h3>
+              </div>
+              <div class="panel-body">Panel content</div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="panel panel-success">
+              <div class="panel-heading">
+                <h3 class="panel-title">Panel success</h3>
+              </div>
+              <div class="panel-body">Panel content</div>
+            </div>
+            <div class="panel panel-warning">
+              <div class="panel-heading">
+                <h3 class="panel-title">Panel warning</h3>
+              </div>
+              <div class="panel-body">Panel content</div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="panel panel-danger">
+              <div class="panel-heading">
+                <h3 class="panel-title">Panel danger</h3>
+              </div>
+              <div class="panel-body">Panel content</div>
+            </div>
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <h3 class="panel-title">Panel info</h3>
+              </div>
+              <div class="panel-body">Panel content</div>
+            </div>
+          </div>
+        </div>
+        <!-- //Panels -->
+        <p> </p>
+        <!-- Wells -->
+        <h3 class="sub-title">Wells</h3>
+        <div class="row example-row example-misc">
+          <div class="col-lg-4">
+            <div class="well well-sm">Look, I'm in a small well!</div>
+          </div>
+          <div class="col-lg-4">
+            <div class="well">Look, I'm in a well!</div>
+          </div>
+          <div class="col-lg-4">
+            <div class="well well-lg">Look, I'm in a large well!</div>
+          </div>
+        </div>
+        <!-- //Wells -->
+        <!-- Item tags -->
+        <!-- // Item tags -->
+      </section>
+
+      <!-- Footer -->
+      <!-- // Footer -->
+
+
+
+    </div>
+  </article>
+  <!-- //Article -->
+</div>
