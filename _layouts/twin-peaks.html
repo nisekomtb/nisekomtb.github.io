@@ -178,7 +178,11 @@ baseCss: hidden-masthead-info
 
       <div class="t3-module module">
         <div class="module-inner">
+          {% if page.lang == "ja" %}
+          <h3 class="module-title"><span>基本データ</span></h3>
+          {% else %}
           <h3 class="module-title"><span>Key stats</span></h3>
+          {% endif %}
           <div class="module-ct">
             <ul class="categories-module mod-list">
               <li>
