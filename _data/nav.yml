@@ -6,14 +6,18 @@
 #   en: Our Proposal
 #   ja: 私たちの理念
 
-- path: projects
-  en: Projects
-  ja: プロジェクト
-  sub:
+# - path: projects
+#   en: Projects
+#   ja: プロジェクト
+#   sub:
 
-  - path: twin-peaks
-    en: Twin Peaks
-    ja: ツイン・ピーク
+#   - path: twin-peaks
+#     en: Twin Peaks
+#     ja: ツイン・ピーク
+
+- path: twin-peaks
+  en: Twin Peaks
+  ja: ツイン・ピークス
 
 - path: ""
   en: Get Involved

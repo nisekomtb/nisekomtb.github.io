@@ -31,6 +31,12 @@
       <meta property="og:locale:alternate" content="en_JP"/>
     {% endif %}
     <link rel="alternate" hreflang="{% if page.lang == 'en' %}ja{% else %}en{% endif %}" href="/{% if page.lang == 'en' %}ja/{% endif %}{{ path }}"/>
+    {% if page.canonical %}
+      <link rel="canonical" href="https://namba.ngo/{{- page.canonical -}}">
+      {% if page.redirect %}
+      <meta http-equiv="refresh" content="0;URL='http://namba.ngo/{{- page.canonical -}}'" />
+      {% endif %}
+    {% endif %}
     {% assign build = site.time | date: "%s" %}<link href="/assets/images/ico/favicon.ico?d={{ build }}" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
     <link href="/assets/css/bootstrap.css?d={{ build }}" rel="stylesheet" type="text/css"/>
     <link href="/assets/css/legacy-grid.css?d={{ build }}" rel="stylesheet" type="text/css"/>
