@@ -22,6 +22,20 @@ description: 北海道ニセコエリアに位置する,ツイン ピークス �
     }
   }
 
+  .widget {
+    position:relative;
+  }
+
+  .widget .widget-cover {
+    position:absolute; width: 100%; height:100%;
+  }
+
+  @media (min-width: 768px) {
+    .widget .widget-cover {
+      display: none;
+    }
+  }
+
   .trails-key {
     background-color: rgb(14,14,14);
     border:1px solid rgb(25,25,25);
@@ -551,10 +565,12 @@ description: 北海道ニセコエリアに位置する,ツイン ピークス �
 
 
 <div class="pull-left item-image">
-  <div class="TrailforksWidgetMap" data-w="100%" data-h="600px" data-rid="58775" data-activitytype="1"
+  <div class="widget TrailforksWidgetMap" data-w="100%" data-h="600px" data-rid="58775" data-activitytype="1"
     data-maptype="trailforks" data-trailstyle="difficulty" data-controls="1" data-list="0" data-dml="1"
     data-layers="labels,poi,polygon,directory,region" data-z="14.664296754902944" data-lat="42.869698363944394"
-    data-lon="140.70963367125432" data-hideunsanctioned="1"></div>
+    data-lon="140.70963367125432" data-hideunsanctioned="1">
+    <div class="widget-cover"></div>
+  </div>
 </div>
 
 <header class="article-header clearfix">
@@ -742,6 +758,11 @@ description: 北海道ニセコエリアに位置する,ツイン ピークス �
         autoplayHoverPause: true,
         onChanged: onChanged
       });
+
+      $('.widget-cover').on("click", function () {
+        $('.widget-cover').hide();
+      });
+
     });
   })(jQuery);
 </script>
