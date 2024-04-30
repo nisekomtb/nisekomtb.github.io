@@ -26,12 +26,12 @@ itinerary:
             url: https://goo.gl/maps/yKza3NA7yfx5VQRx8
             name: ツインピークス バイクパーク トレイルヘッド
         - time: 9:00am
-          name: ダーティーデイムズ プレライド コーヒー
+          name: Dirty Dames プレライド コーヒー
           location:
             url: https://goo.gl/maps/yKza3NA7yfx5VQRx8
             name: Rhythm Base
         - time: 10:00am
-          name: ダーティーデイムズ 女性限定グループライド
+          name: Dirty Dames 女性限定グループライド
           location:
             url: https://goo.gl/maps/yKza3NA7yfx5VQRx8
             name: ツインピークス バイクパーク トレイルヘッド
@@ -55,9 +55,9 @@ about: false
 ---
 <span class="ja">この<wbr>夏の<wbr>始まりを<wbr>忘れられない<wbr>ものに<wbr>する<wbr>ために、<wbr>ツインピークスバイクパークの<wbr>オープニング週末に<wbr>ニセコエリアマウンテンバイク協会<wbr>（NAMBA）と<wbr>一緒に<wbr>準備を<wbr>しましょう！<wbr>これは<wbr>私たちの<wbr>初めての<wbr>フルサマーオペレーションとなり、<wbr>この<wbr>機会を<wbr>祝う<wbr>ための<wbr>アクション満載の<wbr>スケジュールが<wbr>用意されています。</span>
 
-### <span class="ja">ザ・ダーティーデイムズ - 女性のみの<wbr>グループライド: <small >(天候に<wbr>よる<wbr>)</small></span>
+### <span class="ja">The Dirty Dames - 女性のみの<wbr>グループライド: <small >(天候に<wbr>よる<wbr>)</small></span>
 
-<span class="ja">昨年延期された<wbr>「ダーティーデイムズ」女性グループライドの<wbr>デビューを<wbr>お見逃しなく。<wbr>Rhythmでの<wbr>フレンドリーな<wbr>ミーティングと<wbr>コーヒーの<wbr>後、<wbr>午前10時から<wbr>11時まで<wbr>ライドが<wbr>行われます。</span>
+<span class="ja">昨年延期された<wbr>「Dirty Dames」女性グループライドの<wbr>デビューを<wbr>お見逃しなく。<wbr>Rhythmでの<wbr>フレンドリーな<wbr>ミーティングと<wbr>コーヒーの<wbr>後、<wbr>午前10時から<wbr>11時まで<wbr>ライドが<wbr>行われます。</span>
 
 <span class="ja">同じ<wbr>趣味を<wbr>持つ<wbr>女性ライダーとの<wbr>交流や、<wbr>マウンテンバイクへの<wbr>情熱を<wbr>共有し、<wbr>サポートと<wbr>楽しさに<wbr>満ちた<wbr>環境で<wbr>一緒に<wbr>トレイルを<wbr>探索する<wbr>機会です。<wbr>初心者から<wbr>経験豊富な<wbr>プロまで、<wbr>全ての<wbr>スキルレベルの<wbr>参加者を<wbr>歓迎します。</span>
 
