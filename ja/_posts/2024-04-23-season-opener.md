@@ -2,7 +2,7 @@
 draft: true
 layout: event
 categories: events
-title: ツイン・ピークスス シーズンオープナー
+title: ツイン・ピークス シーズンオープナー
 description:
 startDate: 2024-06-01 09:00:00 +0900
 days: 2
