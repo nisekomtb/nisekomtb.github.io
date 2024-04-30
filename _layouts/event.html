@@ -131,7 +131,7 @@ baseCss: view-article
             {% for i in (1..page.days) %}
               {% assign days = i | minus: 1 | times: 24 | times: 60 | times: 60 %}
               {% if page.lang == "en" %}
-                {{ page.startDate | date: "%s" | plus: days | date: "%A %d %B %Y" }}
+                {{ page.startDate | date: "%s" | plus: days | date: "%A %e %B %Y" }}
               {% else %}
                 {{ page.startDate | date: "%s" | plus: days | date: "%Y年%m月%d日" }}
               {% endif %}

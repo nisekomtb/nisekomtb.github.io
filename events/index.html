@@ -49,7 +49,7 @@ baseCss: view-category
                 </h2>
 
               </header>
-              <span class="project-type">{{ post.startDate | date: "%A %d %B %Y" }}</span>
+              <span class="project-type"><i class="fa-regular fa-calendar"></i> {{ post.startDate | date: "%A %e %B %Y" }}</span>
               <br />
               {% comment %} <span class="project-type">{{ post.excerpt | strip_html | slice: 0, 100 }} ...</span> {% endcomment %}
 
