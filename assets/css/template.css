@@ -2889,7 +2889,7 @@ div.ja-masthead .ja-masthead-detail .ja-masthead-description {
   position: absolute;
   padding: 24px 12px;
   bottom: 0;
-  text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
   width: 100%;
   -webkit-transition: all 700ms;
   -o-transition: all 700ms;
@@ -2920,6 +2920,7 @@ div.ja-masthead .ja-masthead-detail .ja-masthead-description {
   text-transform: uppercase;
   font-size: 12px;
   letter-spacing: 1px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
 }
 
 @media (min-width: 1200px) {

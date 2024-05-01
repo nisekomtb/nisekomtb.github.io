@@ -1,5 +1,4 @@
 ---
-draft: true
 layout: event
 categories: events
 title: ツイン・ピークス　今シーズンのオープン情報
