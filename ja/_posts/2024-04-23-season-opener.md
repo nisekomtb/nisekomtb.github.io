@@ -2,7 +2,7 @@
 draft: true
 layout: event
 categories: events
-title: ツイン・ピークス シーズンオープナー
+title: ツイン・ピークス　今シーズンのオープン情報
 description:
 startDate: 2024-06-01 09:00:00 +0900
 days: 2
@@ -21,12 +21,12 @@ itinerary:
     - hasLocations: true
       events:
         - time: 9:00am
-          name: ツインピークスバイクパークが<wbr>オープンします
+          name: ツインピークスバイクパーク　オープン
           location:
             url: https://goo.gl/maps/yKza3NA7yfx5VQRx8
             name: ツインピークス バイクパーク トレイルヘッド
         - time: 9:00am
-          name: Dirty Dames プレライド コーヒー
+          name: Dirty Dames グループライド前の<wbr> コーヒータイム
           location:
             url: https://goo.gl/maps/yKza3NA7yfx5VQRx8
             name: Rhythm Base
@@ -35,7 +35,7 @@ itinerary:
           location:
             url: https://goo.gl/maps/yKza3NA7yfx5VQRx8
             name: ツインピークス バイクパーク トレイルヘッド
-        - name: Rhythm BBQ ＆ アクティビティハブ
+        - name: Rhythm BBQ ＆ 無料アクティビティ
           location:
             url: https://goo.gl/maps/yKza3NA7yfx5VQRx8
             name: Rhythm Base
@@ -53,7 +53,7 @@ itinerary:
 parking: true
 about: false
 ---
-<span class="ja">この<wbr>夏の<wbr>始まりを<wbr>忘れられない<wbr>ものに<wbr>する<wbr>ために、<wbr>ツインピークスバイクパークの<wbr>オープニング週末に<wbr>ニセコエリアマウンテンバイク協会<wbr>（NAMBA）と<wbr>一緒に<wbr>準備を<wbr>しましょう！<wbr>これは<wbr>私たちの<wbr>初めての<wbr>フルサマーオペレーションとなり、<wbr>この<wbr>機会を<wbr>祝う<wbr>ための<wbr>アクション満載の<wbr>スケジュールが<wbr>用意されています。</span>
+<span class="ja">ツインピークスバイクパークの<wbr>オープニング週末を<wbr>NAMBAと<wbr>一緒に<wbr>盛り上げましょう！<wbr>NAMBAに<wbr>とって<wbr>今年が<wbr>初めての<wbr>フルサマーオペレーションと<wbr>なります！<wbr>皆様が<wbr>楽しめる<wbr>イベントを<wbr>用意してますので、<wbr>ぜひご参加ください！</span>
 
 ### <span class="ja">The Dirty Dames - 女性のみの<wbr>グループライド: <small >(天候に<wbr>よる<wbr>)</small></span>
 
@@ -86,16 +86,16 @@ about: false
 
 ### Rhythm オープニングパーティー
 
-<span class="ja">より<wbr>楽しい<wbr>週末を<wbr>過ごすために、<wbr>Rhythmと<wbr>協力しています。<wbr>Rhythmが<wbr>夏に<wbr>再開するのに<wbr>合わせて、<wbr>次の<wbr>ことを<wbr>楽しんでください<wbr>：</span>
+<span class="ja">Rhythmの<wbr>オープニングパーティーに<wbr>参加して、<wbr>より<wbr>楽しい<wbr>週末を<wbr>過ごしましょう！<wbr>Rhythmの<wbr>サマーシーズンオープニングでは<wbr>こんな<wbr>事が<wbr>楽しめます！</span>
 
-- <span class="ja"><strong >ライブミュージック：</strong>ライブバンドの<wbr>アップビートな<wbr>曲を<wbr>楽しみます。</span>
-- <span class="ja"><strong >BBQディライト：</strong>各¥1,500で<wbr>提供される<wbr>美味しい<wbr>BBQプレートを<wbr>堪能します。</span>
-- <span class="ja"><strong >無料アクティビティハブ：</strong>Rhythmで<wbr>無料で<wbr>アクティビティハブを<wbr>試すチャンスを<wbr>利用してください。<wbr>キルターボード、<wbr>ボルダリングウォール、<wbr>ポンプトラック、<wbr>スケートパークなどが<wbr>あります！</span>
-- <span class="ja"><strong >バイクレンタル割引：</strong>その<wbr>日の<wbr>バイクレンタルを<wbr>50%割引で<wbr>利用できます。</span>
-- <span class="ja"><strong >冬物クリアランスセール：</strong>冬物商品を<wbr>最大50%オフで<wbr>ゲットしましょう。</span>
+- <span class="ja"><strong>ライブミュージック：</strong>アップビートな<wbr>曲を<wbr>ライブバンドが<wbr>披露！</span>
+- <span class="ja"><strong>BBQディライト：</strong>¥1,500で<wbr>提供される<wbr>美味しい<wbr>BBQプレートを<wbr>お楽しみください。</span>
+- <span class="ja"><strong>無料アクティビティ：</strong>Rhythmで<wbr>無料で<wbr>アクティビティを<wbr>試すチャンスです！<wbr>キルターボード、<wbr>ボルダリングウォール、<wbr>パンプトラック、<wbr>スケートパークなどが<wbr>あります。</span>
+- <span class="ja"><strong>バイクレンタル割引：</strong>当日の<wbr>バイクレンタルを<wbr>50%割引で<wbr>利用できます。</span>
+- <span class="ja"><strong>冬物クリアランスセール：</strong>冬物商品を<wbr>最大50%オフで<wbr>お買い<wbr>求めいただけます。</span>
 
 ![](/assets/images/events/2024/season-opener/rhythm.jpg)
 
 ### <span class="ja">皆さんの<wbr>ご参加を<wbr>お待ちしています！</span>
 
-<span class="ja">ツインピークスで<wbr>トレイルで<wbr>スリリングな<wbr>思い出を<wbr>作り、<wbr>コミュニティーに<wbr>満ちた<wbr>週末を<wbr>楽しみましょう。<wbr>競争を<wbr>楽しむか、<wbr>つながりを<wbr>深めるか、<wbr>または<wbr>ニセコの<wbr>美しい<wbr>アウトドアを<wbr>単に<wbr>楽しむか、<wbr>夏に<wbr>向けて<wbr>活動を<wbr>開始するのに<wbr>これ以上ない<wbr>場所です！</span>
+<span class="ja">ツインピークスの<wbr>トレイルで<wbr>スリリングな<wbr>思い出を<wbr>作り、<wbr>コミュニティー作りの<wbr>楽しい<wbr>週末を<wbr>過ごしましょう！<wbr>競争を<wbr>楽しむのも<wbr>よし、<wbr>コミュニティーの<wbr>つながりを<wbr>深めるるのも<wbr>よし、<wbr>または<wbr>ニセコの<wbr>美しい<wbr>アウトドアを<wbr>単に<wbr>楽しむのも<wbr>いいですね！<wbr>夏に<wbr>向けて<wbr>活動を<wbr>開始するのに<wbr>これ以上ない<wbr>場所です！</span>
