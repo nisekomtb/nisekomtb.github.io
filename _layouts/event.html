@@ -27,7 +27,14 @@ baseCss: view-article
     "name": "{{ page.location }}"
   },
   "inLanguage": "{{ page.lang }}",
-  "isAccessibleForFree": {% if page.price == 0 %}True{% else %}False{% endif %},
+  "isAccessibleForFree": {% if page.price == 0 %}true{% else %}false{% endif %},
+  "offers": {
+    "@type": "Offer",
+    "url": "{{ page.url }}",
+    "price": "{{ page.price }}",
+    "priceCurrency": "JPY",
+    "availability": "https://schema.org/InStock"
+  },
   "image": [
     "https://namba.ngo{{ page.img }}"
   ],
