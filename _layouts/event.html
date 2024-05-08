@@ -2,6 +2,43 @@
 layout: default
 baseCss: view-article
 ---
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "url": "https://namba.ngo{{ page.url }}",
+  {% if page.lang == "ja" %}
+  "sameAs": "https://namba.ngo{{ page.url | replace: "/ja/", "/" }}",
+  {% endif %}
+  "name": "{{ page.title }}",
+  "startDate": "{{ page.startDate | date: "%FT%T%z"}}",
+  {% assign days = page.days | minus: 1 | times: 24 | times: 60 | times: 60 %}
+  "endDate": "{{ page.startDate | date: "%s" | plus: days | date: "%F" }}",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "location": {
+    "@type": "Place",
+    {% if page.address %}
+    "address": {
+      "@type": "PostalAddress",
+      "name": "{{ page.address }}"
+    },
+    {% endif %}
+    "name": "{{ page.location }}",
+  },
+  "inLanguage": "{{ page.lang }}",
+  "isAccessibleForFree": {% if page.price == 0 %}True{% else %}False{% endif %},
+  "image": [
+    "https://namba.ngo{{ page.img }}"
+  ],
+  "description": "{{ page.description }}",
+  "organizer": {
+    "@type": "Organization",
+    "name": "NAMBA",
+    "url": "https://namba.ngo"
+  }
+}
+</script>
 <style>
   .credit {
     float:right;
@@ -309,34 +346,3 @@ baseCss: view-article
     </div>
 </article>
 <!-- //Article -->
-
-<script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "Article",
-  "headline": "{{ page.title }}",
-  "inLanguage": "{{ page.lang }}",
-  "author": "NAMBA",
-  "datePublished": "{{ page.date }}",
-  "mainEntityOfPage": "WebPage",
-  "articleBody": "{{ content | strip_html | strip_newlines }}",
-  "image":
-  {
-    "@type": "imageObject",
-    "url": "https://namba.ngo{{ page.img }}",
-    "height": "auto",
-    "width": "auto"
-  },
-  "publisher":
-  {
-    "@type": "Organization",
-    "name": "NAMBA",
-    "logo":
-    {
-      "@type": "imageObject",
-      "url": "https://namba.ngo/assets/images/logos/logo.png"
-    }
-  }
-}
-</script>
-

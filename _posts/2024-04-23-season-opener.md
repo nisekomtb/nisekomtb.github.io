@@ -2,10 +2,11 @@
 layout: event
 categories: events
 title: Twin Peaks Season Opener
-description:
+description: Get ready for an unforgettable start to the summer with the Niseko Area Mountain Bike Association (NAMBA) at the Twin Peaks Bike Park opening weekend! This marks our first full summer of operation, and we have an action-packed schedule to celebrate the occasion.
 startDate: 2024-06-01 09:00:00 +0900
 days: 2
 location: Twin Peaks Bike Park, Niseko
+address: 150, 2 Aza-150-1 Yamada, Kutchan, Abuta District, Hokkaido 044-0081
 price: 0
 partners:
   - name: Rhythm

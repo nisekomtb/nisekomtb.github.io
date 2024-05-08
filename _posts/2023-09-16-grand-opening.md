@@ -6,6 +6,7 @@ description: After years of work, we are incredibly stoked to announce that TWIN
 startDate: 2023-09-16 09:00:00 +0900
 days: 2
 location: Twin Peaks Bike Park, Niseko
+address: 150, 2 Aza-150-1 Yamada, Kutchan, Abuta District, Hokkaido 044-0081
 price: 0
 partners:
   - name: Santa Cruz

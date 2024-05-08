@@ -7,6 +7,7 @@ description: お待たせいたしました！！ツインピークス・バイ�
 startDate: 2023-09-16 09:00:00 +0900
 days: 2
 location: ツインピークス・バイクパーク、ニセコ
+address: 150, 2 Aza-150-1 Yamada, Kutchan, Abuta District, Hokkaido 044-0081
 price: 0
 partners:
   - name: Santa Cruz

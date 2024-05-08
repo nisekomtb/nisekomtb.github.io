@@ -6,6 +6,7 @@ description: 秋も本格的になり、紅葉の季節がやってきました�
 startDate: 2023-10-28 09:00:00 +0900
 days: 2
 location: ツインピークス・バイクパーク、<wbr>ニセコ
+address: 150, 2 Aza-150-1 Yamada, Kutchan, Abuta District, Hokkaido 044-0081
 price: 0
 cancelled: true
 partners:

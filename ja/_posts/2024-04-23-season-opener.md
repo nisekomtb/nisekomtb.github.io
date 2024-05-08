@@ -2,10 +2,11 @@
 layout: event
 categories: events
 title: ツイン・ピークス　今シーズンのオープン情報
-description:
+description: ツインピークスバイクパークのオープニング週末をNAMBAと一緒に盛り上げましょう！NAMBAにとって今年が初めてのフルサマーオペレーションとなります！皆様が楽しめるイベントを用意してますので、ぜひご参加ください！
 startDate: 2024-06-01 09:00:00 +0900
 days: 2
 location: ツインピークス・バイクパーク、<wbr>ニセコ
+address: 150, 2 Aza-150-1 Yamada, Kutchan, Abuta District, Hokkaido 044-0081
 price: 0
 partners:
   - name: Rhythm

@@ -7,6 +7,7 @@ description: 9月2日、3日の2日間、北海道ニセコのツインピーク
 startDate: 2023-09-02 09:00:00 +0900
 days: 2
 location: ツインピークス・バイクパーク、ニセコ
+address: 150, 2 Aza-150-1 Yamada, Kutchan, Abuta District, Hokkaido 044-0081
 price: 0
 partners:
   - name: Specialized

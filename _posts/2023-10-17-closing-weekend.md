@@ -6,6 +6,7 @@ description: Autumn has arrived, and as the leaves change so too do the seasons.
 startDate: 2023-10-28 09:00:00 +0900
 days: 2
 location: Twin Peaks Bike Park, Niseko
+address: 150, 2 Aza-150-1 Yamada, Kutchan, Abuta District, Hokkaido 044-0081
 price: 0
 cancelled: true
 partners:
