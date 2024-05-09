@@ -181,6 +181,7 @@ baseCss: view-article
               {% endif %}
               <br />
             {% endfor %}
+          {% if page.time %} {{ page.time }}{% endif %}
           </p>
         </div>
 
@@ -207,6 +208,17 @@ baseCss: view-article
               {{ page.price }}</p>
             {% endif %}
         </div>
+
+        {% if page.host %}
+        <div class="list-group">
+          <h4 class="list-group-item-heading">{% if page.lang == "en" %}Host{% else %}イベント主催者{% endif %}</h4>
+          <p class="list-group-item-text partners">
+            <a href="{{- page.host.url -}}" target="_blank">
+              <img src="/assets/images/company{{- page.host.img -}}" alt="{{- page.host.name -}}">
+            </a>
+          </p>
+        </div>
+        {% endif %}
 
         {% if page.partners %}
         <div class="list-group">

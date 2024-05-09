@@ -68,6 +68,63 @@
     name: イェル 紗知
     title: EZObase / ezobike 代表
 
+- image: /assets/images/team/chika.jpg
+  name: Chika Lund
+  title: Niseko Powderlife Magazine Director
+  ja:
+    name: ランド 千佳
+    title: ニセコパウダーライフマガジン ディレクター
+
+# - image: /assets/images/team/kobe.jpg
+#   name: Satoshi Kobayashi
+#   title: Winkler Sports
+#   ja:
+#     name: 小林 聡
+#     title:
+
+- image: /assets/images/team/yukihiro.jpg
+  name: Yukihiro Tochigi
+  title: Chitose Ringyo Forestry President
+  sub_title: (Large-scale forest owners in Hokkaido)
+  ja:
+    name: 栃木 幸広
+    title: 千歳林業㈱ 代表取締役社長
+    sub_title: 北海道の大規模森林所有者
+
+- image: /assets/images/team/shinji.jpg
+  name: Shinji Furuya
+  title: Kutchan Council Member
+  sub_title: Niseko Environment Management Office Manager
+  ja:
+    name: 古谷 真司
+    title: 倶知安町議会議員
+    sub_title: ニセコ環境㈱ 管理室長
+
+- image: /assets/images/team/yui.jpg
+  name: Yui Spragg
+  title: Rising Sun Guides General Affairs
+  ja:
+    name: スプラグ 結
+    title: ライジングサンガイド 総務
+
+- image: /assets/images/team/ben.jpg
+  name: Ben Kerr
+  title: Niseko Tourism & Kutchan Tourism Association Director
+  sub_title: Niseko Real Estate Founder / Owner
+  ja:
+    name: ベン・カー
+    title: 倶知安町及びニセコ町観光協会理事
+    sub_title: ニセコリアルエステート 創業者／オーナー
+
+- image: /assets/images/team/namikata.jpg
+  name: Makoto Namikata
+  title: Kutchan Council Member
+  sub_title: North Sled Snowmobiles Owner
+  ja:
+    name: 波方 誠
+    title: 倶知安町議会議員
+    sub_title: ノーススレッドスノーモービル オーナー
+
 - image: /assets/images/team/masaya.jpg
   name: Masaya Yoshimura
   sub_title: Niseko Moiwa Ski Resort General Manager
@@ -82,54 +139,6 @@
     name: ブトゥビッチ・ポール
     title: H2グループ 不動産部門ディレクター
 
-- image: /assets/images/team/ben.jpg
-  name: Ben Kerr
-  title: Niseko Tourism & Kutchan Tourism Association Director
-  sub_title: Niseko Real Estate Founder / Owner
-  ja:
-    name: ベン・カー
-    title: 倶知安町及びニセコ町観光協会理事
-    sub_title: ニセコリアルエステート 創業者／オーナー
-
-- image: /assets/images/team/yukihiro.jpg
-  name: Yukihiro Tochigi
-  title: Chitose Ringyo Forestry President
-  sub_title: (Large-scale forest owners in Hokkaido)
-  ja:
-    name: 栃木 幸広
-    title: 千歳林業㈱ 代表取締役社長
-    sub_title: 北海道の大規模森林所有者
-
-- image: /assets/images/team/chika.jpg
-  name: Chika Lund
-  title: Niseko Powderlife Magazine Director
-  ja:
-    name: ランド 千佳
-    title: ニセコパウダーライフマガジン ディレクター
-
-- image: /assets/images/team/yui.jpg
-  name: Yui Spragg
-  title: Rising Sun Guides General Affairs
-  ja:
-    name: スプラグ 結
-    title: ライジングサンガイド 総務
-
-- image: /assets/images/team/namikata.jpg
-  name: Makoto Namikata
-  title: Kutchan Council Member
-  sub_title: North Sled Snowmobiles Owner
-  ja:
-    name: 波方 誠
-    title: 倶知安町議会議員
-    sub_title: ノーススレッドスノーモービル オーナー
-
-- image: /assets/images/team/mizuno.jpg
-  name: Manabu Mizuno
-  title: Mizuno Bikes Owner
-  ja:
-    name: 水野 学
-    title: 水野自転車店 オーナー
-
 - image: /assets/images/team/yoshihito.jpg
   name: Yoshihito Tanaka
   title: Kutchan Council Member. Kutchan Tourism Association Director
@@ -138,15 +147,6 @@
     name: 田中 義人
     title: 倶知安町議会議員. 倶知安町観光協会理事
     sub_title: ニセコリゾートサービス 創業者／オーナー
-
-- image: /assets/images/team/shinji.jpg
-  name: Shinji Furuya
-  title: Kutchan Council Member
-  sub_title: Niseko Environment Management Office Manager
-  ja:
-    name: 古谷 真司
-    title: 倶知安町議会議員
-    sub_title: ニセコ環境㈱ 管理室長
 
 - image: /assets/images/team/riccardo.jpg
   name: Riccardo Tossani
@@ -163,6 +163,13 @@
     name: 山田 洋
     title: 倶知安町観光協会副会長
     sub_title: North Design 株式会社 創業者／オーナー
+
+- image: /assets/images/team/mizuno.jpg
+  name: Manabu Mizuno
+  title: Mizuno Bikes Owner
+  ja:
+    name: 水野 学
+    title: 水野自転車店 オーナー
 
 - image: /assets/images/team/satoshi.jpg
   name: Satoshi Yoshida (Auditor)
