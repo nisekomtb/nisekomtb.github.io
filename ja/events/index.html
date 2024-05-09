@@ -31,7 +31,7 @@ baseCss: view-category
           <article class="view-project">
             <div class="image-wrap" style="margin-top:10px;">
               <div class="pull-left item-image">
-                <a href="{{ post.url }}"><img
+                <a href="{{ post.override_url | default: post.url }}" {% if post.override_url %}target="_blank"{% endif %}><img
                     src="{{ post.thumbnail }}?d={{ site.time | date: '%s' }}"
                     alt=""
                     itemprop="thumbnailUrl"></a>
@@ -43,9 +43,10 @@ baseCss: view-category
               <header class="article-header clearfix">
                 <h2 class="article-title" itemprop="headline">
                   <a
-                    href="{{ post.url }}"
+                    href="{{ post.override_url | default: post.url }}"
                     itemprop="url"
-                    title="{{ post.title }}">
+                    title="{{ post.title }}"
+                    {% if post.override_url %}target="_blank"{% endif %}>
                     <span class="ja">{{ post.titleHtml | default: post.title }}</span></a>
                 </h2>
 
