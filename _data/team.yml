@@ -75,12 +75,12 @@
     name: ランド 千佳
     title: ニセコパウダーライフマガジン ディレクター
 
-# - image: /assets/images/team/kobe.jpg
-#   name: Satoshi Kobayashi
-#   title: Winkler Sports
-#   ja:
-#     name: 小林 聡
-#     title:
+- image: /assets/images/team/kobe.jpg
+  name: Satoshi Kobayashi
+  title: Winkler Sales/Brand Manager
+  ja:
+    name: 小林 聡
+    title: ウインクレル セールス/ブランドマネージャー
 
 - image: /assets/images/team/yukihiro.jpg
   name: Yukihiro Tochigi
