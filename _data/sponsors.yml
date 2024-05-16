@@ -59,7 +59,7 @@ special:
         label: トレイル スポンサー
 
 higuma:
-  width: 10
+  width: 11
   sponsors:
     - name: coin metro
       image: /assets/images/company/higuma/coinmetro.png
@@ -100,6 +100,11 @@ higuma:
       url: https://www.panoramaniseko.com
       ja:
         url: https://www.panoramaniseko.com/ja
+    - name: rising sun
+      image: /assets/images/company/higuma/rising-sun.png
+      url: https://risingsunguides.com
+      ja:
+        url: https://risingsunguides.com/ja/
     - name: zekkei
       image: /assets/images/company/higuma/zekkei.png
       url: https://www.zekkeicollection.com/en
