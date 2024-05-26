@@ -83,6 +83,15 @@ baseCss: view-article
     margin: 10px auto;
   }
 
+  .project-info .price ul {
+    padding-inline-start: 0;
+    list-style: none;
+  }
+
+  .project-info .price li {
+    margin-bottom: 5px
+  }
+
   .project-info .partners a {
     margin-right: 10px;
     height: 50px;
@@ -197,16 +206,36 @@ baseCss: view-article
           <p class="list-group-item-text{% if page.lang == "ja" %} ja{% endif %}">{{ page.location }}</p>
         </div>
 
-        <div class="list-group">
+        <div class="list-group price">
           <h4 class="list-group-item-heading">{% if page.lang == "en" %}Price{% else %}料金{% endif %}</h4>
-          <p class="list-group-item-text">
-            {% if page.price == 0 and page.lang == "en" %}
-              Free
-            {% else if page.price == 0 %}
-              無料
+            {% if page.price[0] %}
+              <ul>
+              {% for price in page.price %}
+                {% if price.adult and price.child %}
+                  {% if page.lang == "en" %}
+                  <li><strong>{{ price.name }}</strong><br />Adult: {{ price.adult }}<br />Child: {{ price.child }}</li>
+                  {% else %}
+                  <li><strong>{{ price.name }}</strong><br />大人: {{ price.adult }}<br />子供: {{ price.child }}</li>
+                  {% endif %}
+                {% else %}
+                  <li><strong>{{ price.name }}</strong>: {{ price.adult }}</li>
+                {% endif %}
+              {% endfor %}
+              </ul>
+            {% elsif page.price == 0 %}
+              <p class="list-group-item-text">
+                {% if page.lang == "en" %}
+                Free
+                {% else %}
+                無料
+                {% endif %}
+              </p>
             {% else %}
-              {{ page.price }}</p>
+              <p class="list-group-item-text">
+                {{ page.price }}
+              </p>
             {% endif %}
+          </p>
         </div>
 
         {% if page.host %}

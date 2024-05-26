@@ -2858,7 +2858,8 @@ div.ja-masthead .ja-masthead-detail .ja-masthead-description {
 }
 
 .project-view .view-project .image-wrap a:before {
-  background: linear-gradient(45deg, #fd7d57, #f55d59);
+  /* background: linear-gradient(45deg, #fd7d57, #f55d59); */
+  background: linear-gradient(45deg, #000, #0e0e0e);
   border-radius: 3px;
   content: "";
   position: absolute;
@@ -2923,10 +2924,14 @@ div.ja-masthead .ja-masthead-detail .ja-masthead-description {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
 }
 
+.project-view .view-project.disabled .image-wrap a:before {
+  opacity: 0.6;
+}
+
 @media (min-width: 1200px) {
   .project-view .view-project:hover .image-wrap a:before {
-    filter: alpha(opacity=90);
-    opacity: 0.9;
+    filter: alpha(opacity=60);
+    opacity: 0.6;
   }
 
   .project-view .view-project:hover .intro-wrap {

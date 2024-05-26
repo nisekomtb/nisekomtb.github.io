@@ -1,7 +1,5 @@
 ---
 title: イベント
-# subtitle: Come ride some bikes
-# description: Something something
 baseCss: view-category
 ---
 <div
@@ -9,16 +7,33 @@ baseCss: view-category
   itemscope=""
   itemtype="https://schema.org/Blog">
 
-  {% assign posts = site.categories.events | where: "lang", "ja" | where: "draft", "false" %}
-  {% for post in posts %}
+  {% assign events = site.categories.events | where: "lang", "ja" | where: "draft", "false" %}
+  {% assign eventsSize = events | size %}
+  {% assign firstPastEventIndex = nil %}
+  {% for event in events %}
+  {% assign days = event.days | times: 24 | times: 60 | times: 60 %}
+  {% assign endDate = event.startDate | date: "%s" | plus: days | date: "%F" %}
+  {% assign today = "today" | date: "%F" %}
+  {% if endDate > today %}
+  {% continue %}
+  {% else %}
+  {% assign firstPastEventIndex = forloop.index0 %}
+  {% break %}
+  {% endif %}
+  {% endfor %}
 
-    {% assign indexModulo3 = forloop.index0 | modulo: 3 %}
-    {% if indexModulo3 == 0 %}
-      <div class="items-row cols-3 row-{{- forloop.index0 | divided_by: 3 }} row equal-height equal-height-child">
+  {% assign pastEvents = events | slice: firstPastEventIndex, eventsSize %}
+  {% assign sliceStart = eventsSize | minus: firstPastEventIndex %}
+  {% assign events = events | reverse | concat: pastEvents | slice: sliceStart, eventsSize %}
+  {% for event in events %}
+
+    {% assign indexModulo4 = forloop.index0 | modulo: 4 %}
+    {% if indexModulo4 == 0 %}
+      <div class="items-row cols-4 row-{{- forloop.index0 | divided_by: 4 }} row equal-height equal-height-child">
       {% endif %}
 
 
-      <div class="col-md-4 col">
+      <div class="col-md-3 col">
         <div
           class="item column-1"
           itemprop="blogPost"
@@ -28,11 +43,11 @@ baseCss: view-category
 
 
           <!-- Article -->
-          <article class="view-project">
+          <article class="view-project {% if forloop.index0 >= firstPastEventIndex or event.cancelled %}disabled{% endif %}">
             <div class="image-wrap" style="margin-top:10px;">
               <div class="pull-left item-image">
-                <a href="{{ post.override_url | default: post.url }}" {% if post.override_url %}target="_blank"{% endif %}><img
-                    src="{{ post.thumbnail }}?d={{ site.time | date: '%s' }}"
+                <a href="{{ event.override_url | default: event.url }}" {% if event.override_url %}target="_blank"{% endif %}><img
+                    src="{{ event.thumbnail }}?d={{ site.time | date: '%s' }}"
                     alt=""
                     itemprop="thumbnailUrl"></a>
               </div>
@@ -43,17 +58,17 @@ baseCss: view-category
               <header class="article-header clearfix">
                 <h2 class="article-title" itemprop="headline">
                   <a
-                    href="{{ post.override_url | default: post.url }}"
+                    href="{{ event.override_url | default: event.url }}"
                     itemprop="url"
-                    title="{{ post.title }}"
-                    {% if post.override_url %}target="_blank"{% endif %}>
-                    <span class="ja">{{ post.titleHtml | default: post.title }}</span></a>
+                    title="{{ event.title }}"
+                    {% if event.override_url %}target="_blank"{% endif %}>
+                    <span class="ja">{{ event.titleHtml | default: event.title }}</span></a>
                 </h2>
 
               </header>
-              <span class="project-type"><i class="fa-regular fa-calendar"></i> {{ post.startDate | date: "%Y年%m月%d日" }}</span>
+              <span class="project-type"><i class="fa-regular fa-calendar"></i> {{ event.startDate | date: "%Y年%m月%d日" }}</span>
               <br />
-              {% comment %} <span class="project-type">{{ post.excerpt | strip_html | slice: 0, 100 }} ...</span> {% endcomment %}
+              {% comment %} <span class="project-type">{{ event.excerpt | strip_html | slice: 0, 100 }} ...</span> {% endcomment %}
 
 
             <!-- Aside -->
@@ -65,11 +80,11 @@ baseCss: view-category
 
 
             </div>
-            {% assign days = post.days | times: 24 | times: 60 | times: 60 %}
-            {% assign endDate = post.startDate | date: "%s" | plus: days | date: "%F" %}
+            {% assign days = event.days | times: 24 | times: 60 | times: 60 %}
+            {% assign endDate = event.startDate | date: "%s" | plus: days | date: "%F" %}
             {% assign today = "today" | date: "%F" %}
-            {% if endDate > today %}
-              {% if post.cancelled %}
+            {% if forloop.index0 < firstPastEventIndex %}
+              {% if event.cancelled %}
               <div class="ribbon ribbon-top-left cancelled" name="cancelled" data-end-date="{{- endDate -}}"><span>キャンセル</span></div>
               {% endif %}
             <div class="ribbon ribbon-top-left" style="display:none;" name="ended" data-end-date="{{- endDate -}}">
@@ -86,7 +101,7 @@ baseCss: view-category
         <!-- end item -->
       </div>
 
-      {% if indexModulo3 == 2 or forloop.last %}
+      {% if indexModulo4 == 3 or forloop.last %}
       </div>
       <!-- end row -->
     {% endif %}
