@@ -7,6 +7,13 @@ special:
       label: Trail building partner
       ja:
         label: トレイルビルド パートナー
+    - name: mnk
+      image: /assets/images/company/special/mnk.png
+      url: https://www.mnkniseko.com/en
+      label: Trail sponsor
+      ja:
+        url: https://www.mnkniseko.com/ja
+        label: トレイル スポンサー
     - name: nisade
       image: /assets/images/company/special/nisade.png
       url: https://nisade.com
@@ -156,7 +163,7 @@ shika:
         url: https://vacationniseko.com/ja
 
 tanuki:
-  width: 14
+  width: 13
   sponsors:
     - image: /assets/images/company/tanuki/burton.png
       url: https://www.burton.com/jp/en
@@ -170,10 +177,6 @@ tanuki:
         url: https://www.explore-niseko.com/ja/
     - image: /assets/images/company/tanuki/gentemstick.png
       url: https://gentemstick.com
-    - image: /assets/images/company/tanuki/mnk.png
-      url: https://www.mnkniseko.com/en
-      ja:
-        url: https://www.mnkniseko.com/ja
     - image: /assets/images/company/tanuki/nikota.png
       url: http://www.nikotarealty.com
       ja:
