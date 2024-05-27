@@ -66,7 +66,7 @@ special:
         label: トレイル スポンサー
 
 higuma:
-  width: 11
+  width: 12
   sponsors:
     - name: coin metro
       image: /assets/images/company/higuma/coinmetro.png
@@ -107,6 +107,9 @@ higuma:
       url: https://www.panoramaniseko.com
       ja:
         url: https://www.panoramaniseko.com/ja
+    - name: park hyatt
+      image: /assets/images/company/higuma/park-hyatt.png
+      url: http://parkhyattniseko.com
     - name: rising sun
       image: /assets/images/company/higuma/rising-sun.png
       url: https://risingsunguides.com
