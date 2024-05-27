@@ -2911,6 +2911,10 @@ div.ja-masthead .ja-masthead-detail .ja-masthead-description {
   color: #ffffff;
 }
 
+.project-view .view-project.disabled .intro-wrap .article-title a {
+  color: #999;
+}
+
 .project-view .view-project .intro-wrap .article-intro p {
   margin-bottom: 0;
   margin-top: 24px;
@@ -2922,6 +2926,10 @@ div.ja-masthead .ja-masthead-detail .ja-masthead-description {
   font-size: 12px;
   letter-spacing: 1px;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+}
+
+.project-view .view-project.disabled .project-type {
+  color: #999;
 }
 
 .project-view .view-project.disabled .image-wrap a:before {
