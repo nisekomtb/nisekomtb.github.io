@@ -5,6 +5,7 @@ title: Akaigawa Pump Track Reopens
 description:
 startDate: 2024-06-01 10:00:00 +0900
 days: 1
+time: 10:00am - 5:00pm
 location: Akaigawa Tomo Playpark
 address: Meiji 56 Akaigawa-mura Yoichi-gun Hokkaido, 046-0552
 price:

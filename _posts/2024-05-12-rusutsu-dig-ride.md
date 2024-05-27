@@ -5,7 +5,7 @@ title: Rusutsu Dig & Ride Event
 description: Join the Yotei MTB Club for their first course maintenance and riding session of the season at the Rusutsu Flow Trail! This year, we're kicking things off early thanks to an unusually warm spring, so come help us prep the trail for a fantastic riding season.
 startDate: 2024-05-12 09:00:00 +0900
 days: 1
-time: 9:00am - 15:00pm
+time: 9:00am - 3:00pm
 location: Rusutsu Furusato Park
 address: 127-4 Rusutsu, Abuta District, Hokkaido 048-1731
 price: 0

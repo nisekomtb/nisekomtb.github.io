@@ -68,6 +68,13 @@ baseCss: view-category
               </header>
               <span class="project-type"><i class="fa-regular fa-calendar"></i> {{ event.startDate | date: "%A %e %B %Y" }}</span>
               <br />
+              <span class="project-type"><i class="fa-regular fa-clock"></i> {% if event.days == 1 %}{{ event.time }}{% else %}{{ event.days }} Days{% endif %}</span>
+              <br />
+              {% comment %} {% if event.price[0] or event.price != 0 %}
+                <span class="project-type"><i class="fa-solid fa-yen-sign"></i></span>
+              {% else %}
+                <span class="project-type"><i class="fa-brands fa-creative-commons-nc-jp"></i></span>
+              {% endif %} {% endcomment %}
               {% comment %} <span class="project-type">{{ event.excerpt | strip_html | slice: 0, 100 }} ...</span> {% endcomment %}
 
 

@@ -68,6 +68,8 @@ baseCss: view-category
               </header>
               <span class="project-type"><i class="fa-regular fa-calendar"></i> {{ event.startDate | date: "%Y年%m月%d日" }}</span>
               <br />
+              <span class="project-type"><i class="fa-regular fa-clock"></i> {% if event.days == 1 %}{{ event.time }}{% else %}{{ event.days }}日間{% endif %}</span>
+              <br />
               {% comment %} <span class="project-type">{{ event.excerpt | strip_html | slice: 0, 100 }} ...</span> {% endcomment %}
 
 

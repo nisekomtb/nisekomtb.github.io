@@ -5,6 +5,7 @@ title: ニセコ東急-グラン・ヒラフの<wbr>バイクパーク開園
 description:
 startDate: 2024-07-13 09:00:00 +0900
 days: 1
+time: 9:00am - 4:00pm
 location: ニセコ東急-グラン・ヒラフの<wbr>バイクパーク, <wbr>ニセコ
 address: 2-9-1, Niseko Hirafu 1-jo, Kucchan-cho, Abuta-gun, Hokkaido 044-0080
 price:

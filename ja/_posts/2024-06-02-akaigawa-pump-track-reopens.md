@@ -5,6 +5,7 @@ title: 赤井川ポ<wbr>ンプトラック<wbr>再オープン
 description:
 startDate: 2024-06-01 10:00:00 +0900
 days: 1
+time: 10:00am - 5:00pm
 location: アカイガワ・トモ・プレイパーク
 address: 〒046-0552 北海道余市郡⾚井川村明治56
 price:
