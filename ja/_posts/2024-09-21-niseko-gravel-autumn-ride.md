@@ -5,6 +5,10 @@ title: NISEKO GRAVEL Autumn Ride
 startDate: 2024-09-21
 days: 2
 location: ニセコ
+host:
+  name: Niseko Gravel
+  img: /niseko-gravel.png
+  url: https://nisekogravel.com/
 img: /assets/images/events/2024/niseko-gravel-autumn-ride/header.jpg
 thumbnail: /assets/images/events/2024/niseko-gravel-autumn-ride/thumb.jpg
 og:
