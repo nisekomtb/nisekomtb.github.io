@@ -24,6 +24,10 @@
   ja: プロジェクトに参加する
   sub:
 
+  - path: strava-contest-2024
+    en: <i class="fa-solid fa-crown"></i> Strava Contest
+    ja: <i class="fa-solid fa-crown"></i> ストラバ コンテスト
+
   - path: get-involved/join
     en: Become a Member
     ja: 仲間になろう

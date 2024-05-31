@@ -77,6 +77,10 @@ about: false
 1. <span class="ja">ストラヴァで<wbr>ライドを<wbr>記録し、<wbr>プライバシーを<wbr>「公開」に<wbr>設定します。</span>
 1. <span class="ja">成果を<wbr>共有し、<wbr>他の<wbr>ライダーと<wbr>どのように<wbr>比較されるかを<wbr>確認します。</span>
 
+<div style="text-align:center; margin:50px 0;">
+  <a class="btn btn-primary" href="/ja/strava-contest-2024/">詳しくは</a>
+</div>
+
 <div class="download">
   <a href="https://apps.apple.com/jp/app/strava-ランニング-ライド-ハイキング/id426826309"><img src="/assets/images/apps/app-store.ja.svg" /></a>
   <a href="https://play.google.com/store/apps/details?id=com.strava"><img src="/assets/images/apps/google-play.ja.png" /></a>

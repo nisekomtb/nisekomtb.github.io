@@ -77,6 +77,10 @@ The competition is open to all riders (excluding NAMBA crew) and participation i
 1. Record your ride on Strava, and set the privacy as “public”
 1. Share your achievements and see how you stack up against fellow riders.
 
+<div style="text-align:center; margin:50px 0;">
+  <a class="btn btn-primary" href="/strava-contest-2024/">More Info</a>
+</div>
+
 <div class="download">
   <a href="https://apps.apple.com/jp/app/strava-ランニング-ライド-ハイキング/id426826309"><img src="/assets/images/apps/app-store.en.svg" /></a>
   <a href="https://play.google.com/store/apps/details?id=com.strava"><img src="/assets/images/apps/google-play.en.png" /></a>

@@ -1,0 +1,227 @@
+---
+layout: default
+baseCss: view-article
+---
+{% comment %} <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "url": "https://namba.ngo{{ page.url }}",
+  {% if page.lang == "ja" %}
+  "sameAs": "https://namba.ngo{{ page.url | replace: "/ja/", "/" }}",
+  {% endif %}
+  "name": "{{ page.title }}",
+  "startDate": "{{ page.startDate | date: "%FT%T%z"}}",
+  {% assign days = page.days | minus: 1 | times: 24 | times: 60 | times: 60 %}
+  "endDate": "{{ page.startDate | date: "%s" | plus: days | date: "%F" }}",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "location": {
+    "@type": "Place",
+    {% if page.address %}
+    "address": {
+      "@type": "PostalAddress",
+      "name": "{{ page.address }}"
+    },
+    {% endif %}
+    "name": "{{ page.location }}"
+  },
+  "inLanguage": "{{ page.lang }}",
+  "isAccessibleForFree": {% if page.price == 0 %}true{% else %}false{% endif %},
+  "offers": {
+    "@type": "Offer",
+    "url": "{{ page.url }}",
+    "price": "{{ page.price }}",
+    "priceCurrency": "JPY",
+    "availability": "https://schema.org/InStock"
+  },
+  "image": [
+    "https://namba.ngo{{ page.img }}"
+  ],
+  "description": "{{ page.description }}",
+  "organizer": {
+    "@type": "Organization",
+    "name": "NAMBA",
+    "url": "https://namba.ngo"
+  }
+}
+</script> {% endcomment %}
+<style>
+  .credit {
+    float:right;
+    font-size: 90%;
+  }
+
+  .credit a {
+    color: #9e9e9e;
+  }
+
+  .article-content h2:first-child {
+    margin-top:0;
+  }
+
+  h3 small {
+    font-size: 50%;
+    vertical-align: middle;
+  }
+
+  span.cancelled {
+    color: #fc0000;
+    font-size: 150%;
+    font-weight: bold;
+  }
+
+  .download {
+    margin: 30px auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+
+  .download a {
+    margin: 0 10px;
+  }
+
+  .download img {
+    margin-bottom: 10px;
+    height: 50px;
+  }
+
+  .project-info .partners {
+    margin: 10px auto;
+  }
+
+  .project-info .price ul {
+    padding-inline-start: 0;
+    list-style: none;
+  }
+
+  .project-info .price li {
+    margin-bottom: 5px
+  }
+
+  .project-info .partners a {
+    margin-right: 10px;
+    height: 50px;
+  }
+
+  .project-info .partners img {
+    margin-bottom: 10px;
+    max-height: 50px;
+    max-width: 50px;
+  }
+</style>
+
+<div class="item-page view-project ">
+
+  <!-- Article -->
+  <article>
+
+    <div class="pull-left item-image">
+      <img src="{{ page.img }}" alt="" itemprop="image">
+      {% if page.imgCredit %}<span class="credit"><a href="{{ page.imgCredit.url }}" target="_blank"> 📸 {{ page.imgCredit.name }}</a></span>{% endif %}
+    </div>
+
+    <div class="article-detail">
+      <!-- Aside -->
+      <div class="project-info">
+        <h4>{% if page.lang == "en" %}Competition Details{% else %}コンペティションの詳細{% endif %}</h4>
+
+        <div class="list-group">
+          <h4 class="list-group-item-heading">{% if page.lang == "en" %}Start date{% else %}開始日{% endif %}</h4>
+          <p class="list-group-item-text">
+            {% if page.lang == "en" %}
+            {{ page.startDate | date: "%A %e %B %Y" }}
+            {% else %}
+            {{ page.startDate | date: "%Y年%m月%d日" }}
+            {% endif %}
+            <br />
+          </p>
+        </div>
+
+        <div class="list-group">
+          <h4 class="list-group-item-heading">{% if page.lang == "en" %}End date{% else %}終了日{% endif %}</h4>
+          <p class="list-group-item-text">
+            {% if page.lang == "en" %}
+            {{ page.endDate | date: "%A %e %B %Y" }}
+            {% else %}
+            {{ page.endDate | date: "%Y年%m月%d日" }}
+            {% endif %}
+            <br />
+          </p>
+        </div>
+
+        <div class="list-group">
+          <h4 class="list-group-item-heading">{% if page.lang == "en" %}Location{% else %}場所{% endif %}</h4>
+          <p class="list-group-item-text{% if page.lang == "ja" %} ja{% endif %}">{{ page.location }}</p>
+        </div>
+
+        {% if page.price %}
+        <div class="list-group price">
+          <h4 class="list-group-item-heading">{% if page.lang == "en" %}Price{% else %}料金{% endif %}</h4>
+            {% if page.price[0] %}
+              <ul>
+              {% for price in page.price %}
+                {% if price.adult and price.child %}
+                  {% if page.lang == "en" %}
+                  <li>{% if price.name %}<strong>{{ price.name }}</strong><br />{% endif %}Adult: {{ price.adult }}<br />Child: {{ price.child }}</li>
+                  {% else %}
+                  <li>{% if price.name %}<strong>{{ price.name }}</strong><br />{% endif %}大人: {{ price.adult }}<br />子供: {{ price.child }}</li>
+                  {% endif %}
+                {% else %}
+                  <li><strong>{{ price.name }}</strong>: {{ price.adult }}</li>
+                {% endif %}
+              {% endfor %}
+              </ul>
+            {% elsif page.price == 0 %}
+              <p class="list-group-item-text">
+                {% if page.lang == "en" %}
+                Free
+                {% else %}
+                無料
+                {% endif %}
+              </p>
+            {% else %}
+              <p class="list-group-item-text">
+                {{ page.price }}
+              </p>
+            {% endif %}
+          </p>
+        </div>
+        {% endif %}
+
+        {% if page.partners %}
+        <div class="list-group">
+          <h4 class="list-group-item-heading">{% if page.lang == "en" %}Competition Partners{% else %}コンペティションのパートナー{% endif %}</h4>
+          <p class="list-group-item-text partners">
+            {% for partner in page.partners %}
+              <a href="{{- partner.url -}}" target="_blank">
+                <img src="/assets/images/company{{- partner.img -}}" alt="{{- partner.name -}}">
+              </a>
+            {% endfor %}
+          </p>
+        </div>
+        {% endif %}
+
+        {% if page.moreInfo %}
+        <div class="list-group">
+          <h4 class="list-group-item-heading">{% if page.lang == "en" %}More Info{% else %}詳しくは{% endif %}</h4>
+          {% for info in page.moreInfo %}
+          <p{% if page.lang == "ja" %} class="ja"{% endif %}>{{ info }}</p>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+      <!-- // Aside -->
+
+      <section class="article-content clearfix" itemprop="articleBody">
+        {{ content }}
+        <!-- // Item tags -->
+      </section>
+
+      <!-- Footer -->
+      <!-- // Footer -->
+
+    </div>
+</article>
+<!-- //Article -->
