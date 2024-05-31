@@ -214,9 +214,9 @@ baseCss: view-article
               {% for price in page.price %}
                 {% if price.adult and price.child %}
                   {% if page.lang == "en" %}
-                  <li><strong>{{ price.name }}</strong><br />Adult: {{ price.adult }}<br />Child: {{ price.child }}</li>
+                  <li>{% if price.name %}<strong>{{ price.name }}</strong><br />{% endif %}Adult: {{ price.adult }}<br />Child: {{ price.child }}</li>
                   {% else %}
-                  <li><strong>{{ price.name }}</strong><br />大人: {{ price.adult }}<br />子供: {{ price.child }}</li>
+                  <li>{% if price.name %}<strong>{{ price.name }}</strong><br />{% endif %}大人: {{ price.adult }}<br />子供: {{ price.child }}</li>
                   {% endif %}
                 {% else %}
                   <li><strong>{{ price.name }}</strong>: {{ price.adult }}</li>
