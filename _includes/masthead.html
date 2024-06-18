@@ -5,6 +5,9 @@
       <h3 class="ja-masthead-title">{% if page.lang == "en" %}{{ page.titleHtml | default: page.title }}{% else %}<span class="ja">{{ page.titleHtml | default: page.title }}</span>{% endif %}</h3>
       {% if page.subtitle %}<div class="ja-masthead-description">{{ page.subtitle }}</div>{% endif %}
     </div>
+    {% if page.masthead.credit %}
+      <a class="ja-masthead-credit" href="{{ page.masthead.credit.url }}" target="_blank"> 📸 {{ page.masthead.credit.name }}</a>
+    {% endif %}
   </div>
 </div>
 <!-- //MASTHEAD -->

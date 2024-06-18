@@ -25,7 +25,8 @@ host:
   name: Niseko Tokyu Grand HIRAFU
   img: /grand-hirafu.png
   url: https://www.grand-hirafu.jp/
-img: /assets/images/events/2024/hirafu-bike-park-opens/header.jpg
+masthead:
+  img: /assets/images/events/2024/hirafu-bike-park-opens/header.jpg
 thumbnail: /assets/images/events/2024/hirafu-bike-park-opens/thumb.jpg
 og:
   image: /assets/images/events/2024/hirafu-bike-park-opens/header.jpg
@@ -34,16 +35,14 @@ about: false
 ---
 Get ready for thrilling mountain bike adventures as Grand HIRAFU Bike Park reopens on July 13th for the first time since 2020! With exciting new developments, including a newly constructed top-to-bottom flow trail, this summer promises an awesome riding experience.
 
+![](/assets/images/events/2024/hirafu-bike-park-opens/gondola.jpg)
+
 ### What's New:
 
 - <strong>Top-to-Bottom Flow Trail</strong>: Dive into the excitement with their new trail, designed to excite riders from the first pedal to the last. Perfect for all skill levels, this trail offers a continuous, thrilling ride.
 - <strong>Enhanced Lift System</strong>: With the old Center 4 lift removed, the operation has shifted to the Gondola.
 - <strong>Skill-Up Area for Beginners</strong>: Whether you're a beginner or looking to refine your skills, their skill-up area provides a supportive environment to learn and improve. It features a variety of curves and gentle slopes ideal for mastering new techniques.
 - <strong>Premium Bike Rentals</strong>: Don't have a bike? No problem! Full suspension bikes are available for rent, ensuring you have a top-quality ride.
-
-<br />
-
-![](/assets/images/events/2024/hirafu-bike-park-opens/gondola.jpg)
 
 NAMBA will be there to celebrate this new beginning, and we invite you to take advantage of the great value season passes to enjoy the enhanced mountain bike trails. Stay tuned as we finalize details of the new course and expect big announcements on opening day that you won't want to miss.
 

@@ -52,6 +52,10 @@ baseCss: view-article
     font-size: 90%;
   }
 
+  .article-content h2:first-child, .article-content h3:first-child {
+    margin-top: 0;
+  }
+
   h3 small {
     font-size: 50%;
     vertical-align: middle;
@@ -169,226 +173,232 @@ baseCss: view-article
   <!-- Article -->
   <article>
 
+    {% if page.img %}
     <div class="pull-left item-image">
       <img src="{{ page.img }}" alt="" itemprop="image">
       {% if page.imgCredit %}<span class="credit"><a href="{{ page.imgCredit.url }}" target="_blank"> 📸 {{ page.imgCredit.name }}</a></span>{% endif %}
     </div>
+    {% endif %}
 
-    <div class="article-detail">
+    <div class="article-detail t3-section-wrap">
       <!-- Aside -->
-      <div class="project-info">
-        <h4>{% if page.lang == "en" %}Event Details{% else %}イベント詳細{% endif %}</h4>
-        <div class="list-group">
-          <h4 class="list-group-item-heading">{% if page.lang == "en" %}Dates{% else %}日程{% endif %}</h4>
-          <p class="list-group-item-text">
-            {% for i in (1..page.days) %}
-              {% assign days = i | minus: 1 | times: 24 | times: 60 | times: 60 %}
-              {% if page.lang == "en" %}
-                {{ page.startDate | date: "%s" | plus: days | date: "%A %e %B %Y" }}
-              {% else %}
-                {{ page.startDate | date: "%s" | plus: days | date: "%Y年%m月%d日" }}
-              {% endif %}
-              <br />
-            {% endfor %}
-          {% if page.time %} {{ page.time }}{% endif %}
-          </p>
-        </div>
+      <div class="section">
+        <div class="project-info ja-animate" data-animation="move-from-right" data-delay="200">
+          <h4>{% if page.lang == "en" %}Event Details{% else %}イベント詳細{% endif %}</h4>
+          <div class="list-group">
+            <h4 class="list-group-item-heading">{% if page.lang == "en" %}Dates{% else %}日程{% endif %}</h4>
+            <p class="list-group-item-text">
+              {% for i in (1..page.days) %}
+                {% assign days = i | minus: 1 | times: 24 | times: 60 | times: 60 %}
+                {% if page.lang == "en" %}
+                  {{ page.startDate | date: "%s" | plus: days | date: "%A %e %B %Y" }}
+                {% else %}
+                  {{ page.startDate | date: "%s" | plus: days | date: "%Y年%m月%d日" }}
+                {% endif %}
+                <br />
+              {% endfor %}
+            {% if page.time %} {{ page.time }}{% endif %}
+            </p>
+          </div>
 
-        {% if page.cancelled %}
-        <div class="list-group">
-          <h4 class="list-group-item-heading">{% if page.lang == "en" %}Status{% else %}状況{% endif %}</h4>
-          <p class="list-group-item-text{% if page.lang == " ja" %} ja{% endif %}">{% if page.lang == "en" %}Cancelled{% else %}キャンセル{% endif %}</p>
-        </div>
+          {% if page.cancelled %}
+          <div class="list-group">
+            <h4 class="list-group-item-heading">{% if page.lang == "en" %}Status{% else %}状況{% endif %}</h4>
+            <p class="list-group-item-text{% if page.lang == " ja" %} ja{% endif %}">{% if page.lang == "en" %}Cancelled{% else %}キャンセル{% endif %}</p>
+          </div>
+            {% endif %}
+
+          <div class="list-group">
+            <h4 class="list-group-item-heading">{% if page.lang == "en" %}Location{% else %}場所{% endif %}</h4>
+            <p class="list-group-item-text{% if page.lang == "ja" %} ja{% endif %}">{{ page.location }}</p>
+          </div>
+
+          {% if page.price %}
+          <div class="list-group price">
+            <h4 class="list-group-item-heading">{% if page.lang == "en" %}Price{% else %}料金{% endif %}</h4>
+              {% if page.price[0] %}
+                <ul>
+                {% for price in page.price %}
+                  {% if price.adult and price.child %}
+                    {% if page.lang == "en" %}
+                    <li>{% if price.name %}<strong>{{ price.name }}</strong><br />{% endif %}Adult: {{ price.adult }}<br />Child: {{ price.child }}</li>
+                    {% else %}
+                    <li>{% if price.name %}<strong>{{ price.name }}</strong><br />{% endif %}大人: {{ price.adult }}<br />子供: {{ price.child }}</li>
+                    {% endif %}
+                  {% else %}
+                    <li><strong>{{ price.name }}</strong>: {{ price.adult }}</li>
+                  {% endif %}
+                {% endfor %}
+                </ul>
+              {% elsif page.price == 0 %}
+                <p class="list-group-item-text">
+                  {% if page.lang == "en" %}
+                  Free
+                  {% else %}
+                  無料
+                  {% endif %}
+                </p>
+              {% else %}
+                <p class="list-group-item-text">
+                  {{ page.price }}
+                </p>
+              {% endif %}
+            </p>
+          </div>
           {% endif %}
 
-        <div class="list-group">
-          <h4 class="list-group-item-heading">{% if page.lang == "en" %}Location{% else %}場所{% endif %}</h4>
-          <p class="list-group-item-text{% if page.lang == "ja" %} ja{% endif %}">{{ page.location }}</p>
-        </div>
-
-        {% if page.price %}
-        <div class="list-group price">
-          <h4 class="list-group-item-heading">{% if page.lang == "en" %}Price{% else %}料金{% endif %}</h4>
-            {% if page.price[0] %}
-              <ul>
-              {% for price in page.price %}
-                {% if price.adult and price.child %}
-                  {% if page.lang == "en" %}
-                  <li>{% if price.name %}<strong>{{ price.name }}</strong><br />{% endif %}Adult: {{ price.adult }}<br />Child: {{ price.child }}</li>
-                  {% else %}
-                  <li>{% if price.name %}<strong>{{ price.name }}</strong><br />{% endif %}大人: {{ price.adult }}<br />子供: {{ price.child }}</li>
-                  {% endif %}
-                {% else %}
-                  <li><strong>{{ price.name }}</strong>: {{ price.adult }}</li>
-                {% endif %}
-              {% endfor %}
-              </ul>
-            {% elsif page.price == 0 %}
-              <p class="list-group-item-text">
-                {% if page.lang == "en" %}
-                Free
-                {% else %}
-                無料
-                {% endif %}
-              </p>
-            {% else %}
-              <p class="list-group-item-text">
-                {{ page.price }}
-              </p>
-            {% endif %}
-          </p>
-        </div>
-        {% endif %}
-
-        {% if page.host %}
-        <div class="list-group">
-          <h4 class="list-group-item-heading">{% if page.lang == "en" %}Host{% else %}イベント主催者{% endif %}</h4>
-          <p class="list-group-item-text partners">
-            <a href="{{- page.host.url -}}" target="_blank">
-              <img src="/assets/images/company{{- page.host.img -}}" alt="{{- page.host.name -}}">
-            </a>
-          </p>
-        </div>
-        {% endif %}
-
-        {% if page.partners %}
-        <div class="list-group">
-          <h4 class="list-group-item-heading">{% if page.lang == "en" %}Events Partners{% else %}イベントパートナー{% endif %}</h4>
-          <p class="list-group-item-text partners">
-            {% for partner in page.partners %}
-              <a href="{{- partner.url -}}" target="_blank">
-                <img src="/assets/images/company{{- partner.img -}}" alt="{{- partner.name -}}">
+          {% if page.host %}
+          <div class="list-group">
+            <h4 class="list-group-item-heading">{% if page.lang == "en" %}Host{% else %}イベント主催者{% endif %}</h4>
+            <p class="list-group-item-text partners">
+              <a href="{{- page.host.url -}}" target="_blank">
+                <img src="/assets/images/company{{- page.host.img -}}" alt="{{- page.host.name -}}">
               </a>
-            {% endfor %}
-          </p>
-        </div>
-        {% endif %}
+            </p>
+          </div>
+          {% endif %}
 
-        {% if page.moreInfo %}
-        <div class="list-group">
-          <h4 class="list-group-item-heading">{% if page.lang == "en" %}More Info{% else %}詳しくは{% endif %}</h4>
-          {% for info in page.moreInfo %}
-          <p{% if page.lang == "ja" %} class="ja"{% endif %}>{{ info }}</p>
-          {% endfor %}
+          {% if page.partners %}
+          <div class="list-group">
+            <h4 class="list-group-item-heading">{% if page.lang == "en" %}Events Partners{% else %}イベントパートナー{% endif %}</h4>
+            <p class="list-group-item-text partners">
+              {% for partner in page.partners %}
+                <a href="{{- partner.url -}}" target="_blank">
+                  <img src="/assets/images/company{{- partner.img -}}" alt="{{- partner.name -}}">
+                </a>
+              {% endfor %}
+            </p>
+          </div>
+          {% endif %}
+
+          {% if page.moreInfo %}
+          <div class="list-group">
+            <h4 class="list-group-item-heading">{% if page.lang == "en" %}More Info{% else %}詳しくは{% endif %}</h4>
+            {% for info in page.moreInfo %}
+            <p{% if page.lang == "ja" %} class="ja"{% endif %}>{{ info }}</p>
+            {% endfor %}
+          </div>
+          {% endif %}
         </div>
-        {% endif %}
       </div>
       <!-- // Aside -->
 
-      <section class="article-content clearfix" itemprop="articleBody">
-        {{ content }}
+      <div class="section">
+        <section class="article-content clearfix ja-animate" data-animation="move-from-right" data-delay="400"  itemprop="articleBody">
+          {{ content }}
 
-        {% if page.itinerary %}
-        <h4>{% if page.lang == "en" %}Itinerary{% else %}行程{% endif %}</h4>
-        {% for day in page.itinerary.days %}
+          {% if page.itinerary %}
+          <h4>{% if page.lang == "en" %}Itinerary{% else %}行程{% endif %}</h4>
+          {% for day in page.itinerary.days %}
 
-          {% if page.days != 1 %}
-          <p>
-            <strong>{% if page.lang == "en" %}Day {{ forloop.index }} itinerary:{% else %}{{- forloop.index -}}日目の行程{% endif %}</strong>
-          </p>
-          {% endif %}
-          <p>
-          <table class="timetable">
-            {% for event in day.events %}
-            <tr {% if event.cancelled %} class="cancelled" {% endif %}>
-              <td>{{ event.time | default: '~' }}</td>
-              <td>
-                {% if page.lang == "en" %}
-                {{ event.name }}
-                {% else %}
-                <span class="ja">{{ event.name }}</span>
-                {% endif %}
-              </td>
-              {% if day.hasLocations %}
-              <td>
-                {% if event.location.url %}
-                  <a href="{{ event.location.url }}" target="_blank">
-                    {% if page.lang == "en" %}
-                    {{event.location.name}}
-                    {% else %}
-                    <span class="ja">{{event.location.name}}</span>
-                    {% endif %}
-                  </a>
-                {% else %}
+            {% if page.days != 1 %}
+            <p>
+              <strong>{% if page.lang == "en" %}Day {{ forloop.index }} itinerary:{% else %}{{- forloop.index -}}日目の行程{% endif %}</strong>
+            </p>
+            {% endif %}
+            <p>
+            <table class="timetable">
+              {% for event in day.events %}
+              <tr {% if event.cancelled %} class="cancelled" {% endif %}>
+                <td>{{ event.time | default: '~' }}</td>
+                <td>
                   {% if page.lang == "en" %}
-                  {{ event.location }}
+                  {{ event.name }}
                   {% else %}
-                  <span class="ja">{{ event.location }}</span>
+                  <span class="ja">{{ event.name }}</span>
                   {% endif %}
+                </td>
+                {% if day.hasLocations %}
+                <td>
+                  {% if event.location.url %}
+                    <a href="{{ event.location.url }}" target="_blank">
+                      {% if page.lang == "en" %}
+                      {{event.location.name}}
+                      {% else %}
+                      <span class="ja">{{event.location.name}}</span>
+                      {% endif %}
+                    </a>
+                  {% else %}
+                    {% if page.lang == "en" %}
+                    {{ event.location }}
+                    {% else %}
+                    <span class="ja">{{ event.location }}</span>
+                    {% endif %}
+                  {% endif %}
+                </td>
                 {% endif %}
-              </td>
-              {% endif %}
-            </tr>
-            {% endfor %}
-          </table>
-          </p>
-        {% endfor %}
-        {% endif %}
-
-        {% if page.parking %}
-          {% if page.lang == "en" %}
-          <h4>Parking location</h4>
-          <p>Parking at the trailhead is strictly prohibited – please use one of the below parking locations:</p>
-          <p>
-          <ul>
-            <li><a href="https://www.trailforks.com/poi/123003/" target="_blank">Hirafu Gondola Parking</a></li>
-            <li><a href="https://www.trailforks.com/poi/123004/" target="_blank">Hirafu Welcome Center Parking</a></li>
-            <li><a href="https://www.trailforks.com/poi/123002/" target="_blank">Sunsports Land Parking</a></li>
-          </ul>
-          </p>
-          {% else %}
-          <h4><span class="ja">駐車場所</span></h4>
-          <p class="ja">登山口への<wbr>駐車は<wbr>固く<wbr>お断りいたします<wbr>：</p>
-          <p>
-          <ul>
-            <li><a href="https://www.trailforks.com/poi/123003/" target="_blank"><span class="ja">ひらふゴンドラ駐車場</span></a></li>
-            <li><a href="https://www.trailforks.com/poi/123004/" target="_blank"><span class="ja">ひらふウェルカムセンター駐車場</span></a></li>
-            <li><a href="https://www.trailforks.com/poi/123002/" target="_blank"><span class="ja">サンスポーツランド駐車場</span></a></li>
-          </ul>
-          </p>
+              </tr>
+              {% endfor %}
+            </table>
+            </p>
+          {% endfor %}
           {% endif %}
 
-          <p><img src="/assets/images/events/parking-map.jpg" alt="" /></p>
-        {% endif  %}
+          {% if page.parking %}
+            {% if page.lang == "en" %}
+            <h4>Parking location</h4>
+            <p>Parking at the trailhead is strictly prohibited – please use one of the below parking locations:</p>
+            <p>
+            <ul>
+              <li><a href="https://www.trailforks.com/poi/123003/" target="_blank">Hirafu Gondola Parking</a></li>
+              <li><a href="https://www.trailforks.com/poi/123004/" target="_blank">Hirafu Welcome Center Parking</a></li>
+              <li><a href="https://www.trailforks.com/poi/123002/" target="_blank">Sunsports Land Parking</a></li>
+            </ul>
+            </p>
+            {% else %}
+            <h4><span class="ja">駐車場所</span></h4>
+            <p class="ja">登山口への<wbr>駐車は<wbr>固く<wbr>お断りいたします<wbr>：</p>
+            <p>
+            <ul>
+              <li><a href="https://www.trailforks.com/poi/123003/" target="_blank"><span class="ja">ひらふゴンドラ駐車場</span></a></li>
+              <li><a href="https://www.trailforks.com/poi/123004/" target="_blank"><span class="ja">ひらふウェルカムセンター駐車場</span></a></li>
+              <li><a href="https://www.trailforks.com/poi/123002/" target="_blank"><span class="ja">サンスポーツランド駐車場</span></a></li>
+            </ul>
+            </p>
+            {% endif %}
 
-        {% if page.about %}
-          {% if page.lang == "en" %}
-          <h4>About NAMBA</h4>
-          <p>
-            <strong>Building trails and community</strong>
-          </p>
+            <p><img src="/assets/images/events/parking-map.jpg" alt="" /></p>
+          {% endif  %}
 
-          <p>NAMBA (Niseko Area Mountain Bike Association) is a registered nonprofit organization uniting the Niseko area towards
-            the common mission of creating a world class sustainable mountain bike community, and off-road biking ecosystem.</p>
-          <p>The organization is well underway on their first project, the Twin Peaks Bike Park – this is a professionally built
-            and maintained, free-to-ride trail network located in the resort area of Niseko, Japan. Once all phases of the project
-            are completed, the park is expected to be home to some 30 kms of trails, making it Japan’s largest community bike
-            park.</p>
-          <p>Beyond Twin Peaks, NAMBA’s masterplan for the area seeks to create an interconnected web of trails encompassing
-            everything from beginner skills areas, to 50+ km backcountry epic trails, to lift accessed bike parks and everything
-            in between.</p>
-          <p>We invite you to register to join our nonprofit, and hope to see you out on the trails soon!</p>
-          {% else %}
-          <h4><span class="ja">NAMBAに<wbr>ついて</span></h4>
-          <p>
-            <strong><span class="ja">トレイルと<wbr>コミュニティの<wbr>形成</span></strong>
-          </p>
+          {% if page.about %}
+            {% if page.lang == "en" %}
+            <h4>About NAMBA</h4>
+            <p>
+              <strong>Building trails and community</strong>
+            </p>
 
-          <p class="ja">NAMBA (Niseko Area Mountain Bike
-          Association)は、<wbr>世界クラスの<wbr>持続可能な<wbr>マウンテンバイクコミュニティと<wbr>オフロードバイクの<wbr>システムを<wbr>創造すると<wbr>いう<wbr>共通の<wbr>ミッションに<wbr>向けて、<wbr>ニセコエリアを<wbr>結束させる<wbr>非営利団体です。</p>
-          <p class="ja">
-            インピークス・バイクパークは、<wbr>ニセコの<wbr>リゾートエリアに<wbr>位置し、<wbr>プロに<wbr>よって<wbr>設計から<wbr>造成、<wbr>そして<wbr>維持管理まで<wbr>され、<wbr>フリーライドが<wbr>可能な<wbr>トレイルネットワークです。<wbr>プロジェクトの<wbr>全段階が<wbr>完了すれば、<wbr>約30kmの<wbr>トレイルが<wbr>整備され、<wbr>日本最大の<wbr>コミュニティ・バイクパークと<wbr>なる<wbr>予定。
-          </p>
-          <p class="ja">
-            ツインピークスの<wbr>先に<wbr>ある<wbr>NAMBAの<wbr>マスタープランでは、<wbr>初心者向けの<wbr>スキルエリアから、<wbr>50kmを<wbr>超える<wbr>バックカントリー・<wbr>エピックコトレイル、<wbr>リフトで<wbr>アクセスできる<wbr>バイクパーク、<wbr>そして<wbr>その間に<wbr>ある<wbr>あら<wbr>ゆる<wbr>ものを<wbr>網羅する、<wbr>相互に<wbr>つながった<wbr>トレイルシステムをを<wbr>作り上げる<wbr>ことです。
-          </p>
-          <p class="ja">私たち非営利団体の<wbr>活動に<wbr>是非ご応募いただき、<wbr>皆様に<wbr>トレイルで<wbr>お会いできる<wbr>ことを<wbr>楽しみに<wbr>しております。</p>
+            <p>NAMBA (Niseko Area Mountain Bike Association) is a registered nonprofit organization uniting the Niseko area towards
+              the common mission of creating a world class sustainable mountain bike community, and off-road biking ecosystem.</p>
+            <p>The organization is well underway on their first project, the Twin Peaks Bike Park – this is a professionally built
+              and maintained, free-to-ride trail network located in the resort area of Niseko, Japan. Once all phases of the project
+              are completed, the park is expected to be home to some 30 kms of trails, making it Japan’s largest community bike
+              park.</p>
+            <p>Beyond Twin Peaks, NAMBA’s masterplan for the area seeks to create an interconnected web of trails encompassing
+              everything from beginner skills areas, to 50+ km backcountry epic trails, to lift accessed bike parks and everything
+              in between.</p>
+            <p>We invite you to register to join our nonprofit, and hope to see you out on the trails soon!</p>
+            {% else %}
+            <h4><span class="ja">NAMBAに<wbr>ついて</span></h4>
+            <p>
+              <strong><span class="ja">トレイルと<wbr>コミュニティの<wbr>形成</span></strong>
+            </p>
+
+            <p class="ja">NAMBA (Niseko Area Mountain Bike
+            Association)は、<wbr>世界クラスの<wbr>持続可能な<wbr>マウンテンバイクコミュニティと<wbr>オフロードバイクの<wbr>システムを<wbr>創造すると<wbr>いう<wbr>共通の<wbr>ミッションに<wbr>向けて、<wbr>ニセコエリアを<wbr>結束させる<wbr>非営利団体です。</p>
+            <p class="ja">
+              インピークス・バイクパークは、<wbr>ニセコの<wbr>リゾートエリアに<wbr>位置し、<wbr>プロに<wbr>よって<wbr>設計から<wbr>造成、<wbr>そして<wbr>維持管理まで<wbr>され、<wbr>フリーライドが<wbr>可能な<wbr>トレイルネットワークです。<wbr>プロジェクトの<wbr>全段階が<wbr>完了すれば、<wbr>約30kmの<wbr>トレイルが<wbr>整備され、<wbr>日本最大の<wbr>コミュニティ・バイクパークと<wbr>なる<wbr>予定。
+            </p>
+            <p class="ja">
+              ツインピークスの<wbr>先に<wbr>ある<wbr>NAMBAの<wbr>マスタープランでは、<wbr>初心者向けの<wbr>スキルエリアから、<wbr>50kmを<wbr>超える<wbr>バックカントリー・<wbr>エピックコトレイル、<wbr>リフトで<wbr>アクセスできる<wbr>バイクパーク、<wbr>そして<wbr>その間に<wbr>ある<wbr>あら<wbr>ゆる<wbr>ものを<wbr>網羅する、<wbr>相互に<wbr>つながった<wbr>トレイルシステムをを<wbr>作り上げる<wbr>ことです。
+            </p>
+            <p class="ja">私たち非営利団体の<wbr>活動に<wbr>是非ご応募いただき、<wbr>皆様に<wbr>トレイルで<wbr>お会いできる<wbr>ことを<wbr>楽しみに<wbr>しております。</p>
+            {% endif %}
           {% endif %}
-        {% endif %}
 
 
-        <!-- // Item tags -->
-      </section>
+          <!-- // Item tags -->
+        </section>
+      </div>
 
       <!-- Footer -->
       <!-- // Footer -->

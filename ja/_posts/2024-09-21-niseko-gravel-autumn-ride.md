@@ -9,13 +9,16 @@ host:
   name: Niseko Gravel
   img: /niseko-gravel.png
   url: https://nisekogravel.com/
-img: /assets/images/events/2024/niseko-gravel-autumn-ride/header.jpg
+masthead:
+  img: /assets/images/events/2024/niseko-gravel-autumn-ride/header.jpg
 thumbnail: /assets/images/events/2024/niseko-gravel-autumn-ride/thumb.jpg
 og:
   image: /assets/images/events/2024/niseko-gravel-autumn-ride/header.jpg
 parking: false
 about: false
 ---
+## <span class="ja">ニセコの<wbr>MTBトレイルだけでなく、<wbr>もっと<wbr>発見しよう：2024秋の<wbr>グラベルライド</span>
+
 <span class="ja">わく<wbr>わく<wbr>する<wbr>ニセコグラベルオータムライドに<wbr>参加しましょう。<wbr>この<wbr>記憶に<wbr>残る<wbr>サイクリングイベントは、<wbr>ニセコの<wbr>秋の<wbr>色彩が<wbr>鮮やかな<wbr>背景と<wbr>なっています。<wbr>2024年9月21日<wbr>（土）から<wbr>22日<wbr>（日）に<wbr>かけての<wbr>2日間の<wbr>冒険で、<wbr>ライダーは<wbr>舗装された<wbr>道路と<wbr>未舗装の<wbr>道路を<wbr>通じて、<wbr>挑戦的でありながらも<wbr>絵のように<wbr>美しい<wbr>旅を<wbr>体験する<wbr>ことができます。</span>
 
 ### イベントのハイライト：

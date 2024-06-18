@@ -2,6 +2,11 @@
 title: 私たちチームと働きませんか？
 desxcription: NAMBAチームに入り、一緒に働きませんか？通年ボランティア委員スタッフと夏雇用スタッフ（有給）が、トレイルと地域の未来を形作っています。
 baseCss: view-category
+masthead:
+  img: /assets/images/jobs/join-our-team.jpg
+  credit:
+    name: Jinya Nishiwaki
+    url: https://instagram.com/jingypsy
 ---
 <style>
   .credit {
@@ -60,15 +65,10 @@ baseCss: view-category
   }
 </style>
 
-<div class="pull-left item-image">
-  <img src="/assets/images/jobs/join-our-team.jpg" alt="Join our team" itemprop="image">
-  <span class="credit"><a href="https://instagram.com/jingypsy" target="_blank"> 📸 Jinya Nishiwaki</a></span>
-</div>
-
 <div class="t3-section-wrap">
   <div class="section">
     <div class="module-title-wrap">
-      <div class="features-desc" data-animation="move-from-bottom" data-delay="600">
+      <div class="ja-animate features-desc" data-animation="move-from-bottom" data-delay="200">
         <div style="font-size:130%;">
           <h3>私たちチームと働きませんか？</h3>
           <p class="ja">NAMBAチームに<wbr>入り、<wbr>一緒に<wbr>働きませんか？<wbr>通年ボランティア委員スタッフと<wbr>夏雇用スタッフ（有給）が、<wbr>トレイルと<wbr>地域の<wbr>未来を<wbr>形作っています。</p>
@@ -77,48 +77,49 @@ baseCss: view-category
       </div>
     </div>
   </div>
-</div>
 
-<h3>募集内容</h3>
 
-<div class="blog jobs" itemscope="" itemtype="https://schema.org/Blog">
-
-  {% assign posts = site.categories.jobs | where: "lang", "ja" %}
-  {% assign totalPostsSize = posts | size %}
-
-  <div>
-    <ul>
-      {% for post in posts %}
-        <li>
-          <article>
-            <a class="action" href="{{- post.url -}}">
-              <header class="article-header">
-                <strong itemprop="headline">{{ post.title }}</strong>
-              </header>
-              {% comment %} {{ post.excerpt | strip_html | slice: 0, 100 }} {% endcomment %}
-              <span class="icon ion-ios-arrow-round-forward"></span>
-            </a>
-          </article>
-        </li>
-      {% endfor %}
-    </ul>
-  </div>
-</div>
-
-{% assign totalVolunteerPostsSize = site.categories.jobs | where: "lang", "ja" | where: "pay", "0" | size %}
-
-{% if totalPostsSize == totalVolunteerPostsSize %}
-<h3><span class="ja">有給スタッフ募集に<wbr>ついて</span></h3>
-
-<div class="t3-section-wrap">
   <div class="section">
-    <div class="module-title-wrap">
-      <div class="features-desc" data-animation="move-from-bottom" data-delay="600">
-        <div style="font-size:130%;">
-          <p class="ja">現在、<wbr>有給スタッフの<wbr>募集は<wbr>ありません。<wbr>最新の<wbr>雇用情報を<wbr>確認するには、<wbr><a href="https://www.instagram.com/nisekomtb/" target="_blank">NAMBAの<wbr>SNSアカウント</a>を<wbr>フォローしてください！</p>
+    <div class="ja-animate" data-animation="move-from-bottom" data-delay="600">
+      <h3>募集内容</h3>
+
+      <div class="blog jobs" itemscope="" itemtype="https://schema.org/Job">
+
+        {% assign jobs = site.categories.jobs | where: "lang", "ja" | where: "isOpen", "true" %}
+        {% assign totalJobsSize = jobs | size %}
+
+        <div>
+          <ul>
+            {% for job in jobs %}
+              <li>
+                <article>
+                  <a class="action" href="{{- job.url -}}">
+                    <header class="article-header">
+                      <strong itemprop="headline">{{ job.title }}</strong>
+                    </header>
+                    <span class="icon ion-ios-arrow-round-forward"></span>
+                  </a>
+                </article>
+              </li>
+            {% endfor %}
+          </ul>
         </div>
       </div>
     </div>
+
+    {% assign totalVolunteerJobsSize = jobs | where: "pay", "ボランティアワーク" | size %}
+
+    {% if totalJobsSize == totalVolunteerJobsSize %}
+    <div class="section">
+      <div class="module-title-wrap ja-animate" data-animation="move-from-bottom" data-delay="1000">
+        <h3><span class="ja">有給スタッフ募集に<wbr>ついて</span></h3>
+        <div class="features-desc">
+          <div style="font-size:130%;">
+            <p class="ja">現在、<wbr>有給スタッフの<wbr>募集は<wbr>ありません。<wbr>最新の<wbr>雇用情報を<wbr>確認するには、<wbr><a href="https://www.instagram.com/nisekomtb/" target="_blank">NAMBAの<wbr>SNSアカウント</a>を<wbr>フォローしてください！</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
   </div>
 </div>
-{% endif %}

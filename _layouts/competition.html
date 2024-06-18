@@ -110,118 +110,479 @@ baseCss: view-article
     max-height: 50px;
     max-width: 50px;
   }
+
+  .prizes {
+    margin-top: 36px;
+  }
+
+  .prizes .num {
+    color: #0e0e0e;
+    font-size: 200%;
+    position: absolute;
+    margin-left: -47px;
+    font-weight: bold;
+    margin-top: 7px;
+  }
+
+  .prizes .features-item:not(.no-hover):hover .num {
+    color: #fd7d57;
+  }
+
+  .prizes .features-item a.action:hover {
+    background-color: #fd7d57;
+    background: linear-gradient(135deg, #fd7d57, #f55d59);
+    border-color: #fd7d57;
+  }
+
+  .gold {
+    color: #ffd97b;
+    font-size: 12px !important;
+    font-family: "Metropolis", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    margin-top: 30px;
+  }
+
+  .prizes .features-item {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+  }
+
+  .features-item .sponsors {
+    margin: 30px auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+
+  .features-item .sponsors a {
+    margin: 0 5px;
+  }
+
+  .features-item .sponsors img {
+    margin-bottom: 10px;
+    height: 50px;
+  }
+
+  .features-item .products {
+    margin: 30px auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+
+  .features-item .products .prodwrap {
+    /* width: 50%; */
+  }
+
+  @media(max-width: 480px) {
+    .features-item .products .prodwrap {
+      width: 100%;
+    }
+  }
+
+  .features-item .products .prodwrap.full {
+    width: 100%;
+  }
+
+  @media(max-width: 991px) {
+    .features-item .products .prodwrap.full {
+      width: auto;
+    }
+  }
+
+  .features-item .products .prod {
+    margin: 0 5px 10px;
+    border: 1px #ccc solid;
+    border radius: 5px;
+  }
+
+  .features-item .small > div {
+    position: relative;
+  }
+
+  .features-item .action {
+    font-size: 125%;
+    border: 1px #ffffff solid;
+    display: inline-block !important;
+  }
+
+  @media (max-width: 1199px) and (min-width: 991px) {
+    .features-item .action {
+      font-size: 100%;
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+  }
+
+  .features-item .small {
+    font-style: italic;
+    font-size: 75%;
+    margin-top: 30px;
+  }
+
+  .owl-carousel {
+    margin-top: 36px;
+  }
+
+  .owl-nav button span {
+    opacity: 0.5;
+  }
+
+  .owl-nav button span:before {
+    color: #fd7d57;
+    font-size: 35px;
+    background: linear-gradient(135deg, #fd7d57, #f55d59);
+    background-clip: text;
+    display: inline-block;
+    -webkit-background-clip: text;
+    text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+    font-weight: 400;
+    text-indent: 1px;
+  }
+
+  .owl-nav button span:hover {
+    opacity: 0.8;
+  }
+
+  .owl-nav {
+    text-align: center;
+    margin-top: 15px;
+  }
+
+  .owl-nav .owl-next {
+    margin-left: 15px;
+    /*float: right;*/
+  }
+
+  .ec-grid {
+    display: block !important;
+  }
+
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .details-gallery__images-spacer {
+    margin-top: 35px;
+  }
+
+  .product-details__navigation {
+    display: none !important;
+  }
+
+  #ProductBrowser-1 {
+    min-height: auto !important;
+  }
+
+  /* .form-control {
+    text-align: center !important;
+    text-align: -moz-center !important;
+    text-align: -webkit-center !important;
+  } */
+
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .label--notice {
+    background-color: #fd7d57;
+  }
+
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .label--notice::before {
+    color: #fd7d57;
+  }
+
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .label--notice::after {
+    color: #fd7d57;
+  }
+
+  .ec-form__row--continue .form-control--done {
+    text-align: left !important;
+  }
+
+  .form-control button.form-control__button {
+    color: #ffffff !important;
+    background-color: #fd7d57 !important;
+    border-color: transparent !important;
+    background: linear-gradient(135deg, #fd7d57, #f55d59) !important;
+
+    border: 0 !important;
+    border-radius: 30px !important;
+    font-weight: 500 !important;
+    padding-left: 36px !important;
+    padding-right: 36px !important;
+
+    width: auto !important;
+    font-size: 14px !important;
+  }
+
+  .form-control button.form-control__button:hover {
+    background: #fd7d57 !important;
+    background: linear-gradient(155deg, #fd7d57, #fd7d57) !important;
+  }
+
+  img.ecwid-PaymentMethodsBlockSvg {
+    background: #fff !important;
+  }
+
+  html#ecwid_html body#ecwid_body .ec-cart__button .paypal-button {
+    width: 200px;
+    margin: 0 auto;
+  }
+
+  .ec-cart__button--apple-pay {
+    text-align: center !important;
+    text-align: -moz-center !important;
+    text-align: -webkit-center !important;
+  }
+
+  .ec-cart__button--apple-pay .form-control--button {
+    border: 1px #fff solid !important;
+    padding-left: 36px !important;
+    padding-right: 36px !important;
+    border-radius: 30px !important;
+    width: 170px !important;
+    margin: 0 auto !important;
+    position: relative !important;
+  }
+
+  a.breadcrumbs__link--last {
+    font-size: 0 !important;
+  }
+
+  /* a.breadcrumbs__link--last:after {
+    content: '✕';
+    font-size: 20px;
+    font-weight: bold;
+    float: right;
+  } */
+
+  html#ecwid_html body#ecwid_body #raffle-store .ec-size .ec-store .details-gallery__images-spacer {
+    margin-top: 0;
+  }
+
+  #raffle-store a.breadcrumbs__link--last {
+    display: none;
+  }
+
+  html#ecwid_html body#ecwid_body #raffle-store .ec-confirmation__continue {
+    display: none;
+  }
 </style>
 
-<div class="item-page view-project ">
-
+<div class="item-page view-project">
   <!-- Article -->
   <article>
 
-    <div class="pull-left item-image">
+    {% if page.img %}<div class="pull-left item-image">
       <img src="{{ page.img }}" alt="" itemprop="image">
       {% if page.imgCredit %}<span class="credit"><a href="{{ page.imgCredit.url }}" target="_blank"> 📸 {{ page.imgCredit.name }}</a></span>{% endif %}
-    </div>
+    </div>{% endif %}
 
-    <div class="article-detail">
+    <div class="article-detail t3-section-wrap">
+
       <!-- Aside -->
-      <div class="project-info">
-        <h4>{% if page.lang == "en" %}Competition Details{% else %}コンペティションの詳細{% endif %}</h4>
+      <div class="section">
+        <div class="project-info ja-animate" data-animation="move-from-right" data-delay="200">
+          <h4>{% if page.lang == "en" %}Competition Details{% else %}コンペティションの詳細{% endif %}</h4>
 
-        <div class="list-group">
-          <h4 class="list-group-item-heading">{% if page.lang == "en" %}Start date{% else %}開始日{% endif %}</h4>
-          <p class="list-group-item-text">
-            {% if page.lang == "en" %}
-            {{ page.startDate | date: "%A %e %B %Y" }}
-            {% else %}
-            {{ page.startDate | date: "%Y年%m月%d日" }}
-            {% endif %}
-            <br />
-          </p>
-        </div>
+          <div class="list-group">
+            <h4 class="list-group-item-heading">{% if page.lang == "en" %}Start date{% else %}開始日{% endif %}</h4>
+            <p class="list-group-item-text">
+              {% if page.lang == "en" %}
+              {{ page.startDate | date: "%A %e %B %Y" }}
+              {% else %}
+              {{ page.startDate | date: "%Y年%m月%d日" }}
+              {% endif %}
+              <br />
+            </p>
+          </div>
 
-        <div class="list-group">
-          <h4 class="list-group-item-heading">{% if page.lang == "en" %}End date{% else %}終了日{% endif %}</h4>
-          <p class="list-group-item-text">
-            {% if page.lang == "en" %}
-            {{ page.endDate | date: "%A %e %B %Y" }}
-            {% else %}
-            {{ page.endDate | date: "%Y年%m月%d日" }}
-            {% endif %}
-            <br />
-          </p>
-        </div>
+          <div class="list-group">
+            <h4 class="list-group-item-heading">{% if page.lang == "en" %}End date{% else %}終了日{% endif %}</h4>
+            <p class="list-group-item-text">
+              {% if page.lang == "en" %}
+              {{ page.endDate | date: "%A %e %B %Y" }}
+              {% else %}
+              {{ page.endDate | date: "%Y年%m月%d日" }}
+              {% endif %}
+              <br />
+            </p>
+          </div>
 
-        <div class="list-group">
-          <h4 class="list-group-item-heading">{% if page.lang == "en" %}Location{% else %}場所{% endif %}</h4>
-          <p class="list-group-item-text{% if page.lang == "ja" %} ja{% endif %}">{{ page.location }}</p>
-        </div>
+          {% if page.location %}
+          <div class="list-group">
+            <h4 class="list-group-item-heading">{% if page.lang == "en" %}Location{% else %}場所{% endif %}</h4>
+            <p class="list-group-item-text{% if page.lang == "ja" %} ja{% endif %}">{{ page.location }}</p>
+          </div>
+          {% endif %}
 
-        {% if page.price %}
-        <div class="list-group price">
-          <h4 class="list-group-item-heading">{% if page.lang == "en" %}Price{% else %}料金{% endif %}</h4>
-            {% if page.price[0] %}
-              <ul>
-              {% for price in page.price %}
-                {% if price.adult and price.child %}
-                  {% if page.lang == "en" %}
-                  <li>{% if price.name %}<strong>{{ price.name }}</strong><br />{% endif %}Adult: {{ price.adult }}<br />Child: {{ price.child }}</li>
+          {% if page.price %}
+          <div class="list-group price">
+            <h4 class="list-group-item-heading">{% if page.lang == "en" %}Price{% else %}料金{% endif %}</h4>
+              {% if page.price[0] %}
+                <ul>
+                {% for price in page.price %}
+                  {% if price.adult and price.child %}
+                    {% if page.lang == "en" %}
+                    <li>{% if price.name %}<strong>{{ price.name }}</strong><br />{% endif %}Adult: {{ price.adult }}<br />Child: {{ price.child }}</li>
+                    {% else %}
+                    <li>{% if price.name %}<strong>{{ price.name }}</strong><br />{% endif %}大人: {{ price.adult }}<br />子供: {{ price.child }}</li>
+                    {% endif %}
                   {% else %}
-                  <li>{% if price.name %}<strong>{{ price.name }}</strong><br />{% endif %}大人: {{ price.adult }}<br />子供: {{ price.child }}</li>
+                    <li><strong>{{ price.name }}</strong>: {{ price.adult }}</li>
                   {% endif %}
-                {% else %}
-                  <li><strong>{{ price.name }}</strong>: {{ price.adult }}</li>
-                {% endif %}
+                {% endfor %}
+                </ul>
+              {% elsif page.price == 0 %}
+                <p class="list-group-item-text">
+                  {% if page.lang == "en" %}
+                  Free
+                  {% else %}
+                  無料
+                  {% endif %}
+                </p>
+              {% else %}
+                <p class="list-group-item-text">
+                  {{ page.price }}
+                </p>
+              {% endif %}
+            </p>
+          </div>
+          {% endif %}
+
+          {% if page.partners %}
+          <div class="list-group">
+            <h4 class="list-group-item-heading">{% if page.lang == "en" %}Competition Partners{% else %}コンペティションのパートナー{% endif %}</h4>
+            <p class="list-group-item-text partners">
+              {% for partner in page.partners %}
+                <a href="{{- partner.url -}}" target="_blank">
+                  <img src="/assets/images/company{{- partner.img -}}" alt="{{- partner.name -}}">
+                </a>
               {% endfor %}
-              </ul>
-            {% elsif page.price == 0 %}
-              <p class="list-group-item-text">
-                {% if page.lang == "en" %}
-                Free
-                {% else %}
-                無料
-                {% endif %}
-              </p>
-            {% else %}
-              <p class="list-group-item-text">
-                {{ page.price }}
-              </p>
-            {% endif %}
-          </p>
-        </div>
-        {% endif %}
+            </p>
+          </div>
+          {% endif %}
 
-        {% if page.partners %}
-        <div class="list-group">
-          <h4 class="list-group-item-heading">{% if page.lang == "en" %}Competition Partners{% else %}コンペティションのパートナー{% endif %}</h4>
-          <p class="list-group-item-text partners">
-            {% for partner in page.partners %}
-              <a href="{{- partner.url -}}" target="_blank">
-                <img src="/assets/images/company{{- partner.img -}}" alt="{{- partner.name -}}">
-              </a>
+          {% if page.moreInfo %}
+          <div class="list-group">
+            <h4 class="list-group-item-heading">{% if page.lang == "en" %}More Info{% else %}詳しくは{% endif %}</h4>
+            {% for info in page.moreInfo %}
+            <p{% if page.lang == "ja" %} class="ja"{% endif %}>{{ info }}</p>
             {% endfor %}
-          </p>
+          </div>
+          {% endif %}
         </div>
-        {% endif %}
-
-        {% if page.moreInfo %}
-        <div class="list-group">
-          <h4 class="list-group-item-heading">{% if page.lang == "en" %}More Info{% else %}詳しくは{% endif %}</h4>
-          {% for info in page.moreInfo %}
-          <p{% if page.lang == "ja" %} class="ja"{% endif %}>{{ info }}</p>
-          {% endfor %}
-        </div>
-        {% endif %}
       </div>
       <!-- // Aside -->
 
-      <section class="article-content clearfix" itemprop="articleBody">
-        {{ content }}
-        <!-- // Item tags -->
-      </section>
+      <div class="section">
+        <section class="article-content clearfix ja-animate" data-animation="move-from-right" data-delay="400" itemprop="articleBody">
+          {{ content }}
+          <!-- // Item tags -->
+        </section>
+      </div>
+
+      {% if page.prizes %}
+      <div class="section acm-features style-2 prizes">
+        <div class="row equal-height equal-height-child">
+
+        {% for prize in page.prizes %}
+          <div class="col col-sm-12 col-md-4">
+            <div class="features-item no-hover ja-animate" data-animation="move-from-bottom" data-delay="item-{{ forloop.index0 }}">
+              <div class="font-icon">
+                <span class="icon ion-ios-trophy">
+                  <span class="num">{{ forloop.index }}</span>
+                </span>
+              </div>
+              <h4>{{ prize.title }}</h4>
+              <div class="products">
+                {% for imgSrc in prize.imgs %}
+                <div class="prodwrap">
+                  <div class="prod">
+                    <img src="{{ imgSrc }}" />
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+              <p style="font-size:125%;">
+                {% if page.lang == 'ja' %}
+                <strong>{{ prize.value }}</strong>相当
+                {% else %}
+                A value of <strong>{{ prize.value }}</strong>
+                {% endif %}
+              </p>
+              {% if prize.subtitle %}<p class="gold" style="margin-top:30px; margin-bottom:15px;">{{ prize.subtitle }}</p>{% endif %}
+              {% if prize.desc %}<p style="margin-bottom:15px;">{{ prize.desc }}</p>{% endif %}
+              {% if page.storeProductId %}
+              <a class="btn action" href="#competition-store">
+                {% if page.lang == 'ja' %}
+                <span class="ja">応募は<wbr>こちらから</span>
+                {% else %}
+                <span>Enter to win here</span>
+                {% endif %}
+              </a>
+              {% endif %}
+              {% if prize.sponsors %}
+              <div class="sponsors">
+                {% for sponsor in prize.sponsors %}
+                <a href="{{ sponsor.url }}" target="_blank">
+                  <img src="{{ sponsor.img }}" alt="{{ sponsor.name }}">
+                </a>
+                {% endfor %}
+              </div>
+              {% endif %}
+            {% if prize.validity %} <p class="small">{{ prize.validity }}</p>{% endif %}
+            </div>
+          </div>
+        {% endfor %}
+        </div>
+
+      </div>
+      {% endif %}
+
+      {% if page.storeProductId %}
+      <div class="t3-section">
+
+        <div class="module-title-wrap"></div>
+
+        <div id="competition-store"></div>
+
+      </div>
+
+      <script id="ecwid-script" data-cfasync="false" type="text/javascript"
+        src="https://app.ecwid.com/script.js?71386768&lang=en-GB&data_platform=code&data_date=2022-08-27"
+        charset="utf-8"></script>
+      <script>
+
+        // (function ($) {
+        //   $("a[href$='#raffle-store']").on('click', function () {
+        //     $("html, body").animate({
+        //       scrollTop: $("#raffle-store").offset().top
+        //     }, 500);
+        //     return false;
+        //   });
+        // })(jQuery);
+
+        window.ec = window.ec || Object();
+        window.ec.config = window.ec.config || Object();
+        window.ec.config.custom_redirect_after_purchase = 'https://www.namba.ngo/get-involved/thanks';
+        window.ec.config.navigation_scrolling = "DISABLED";
+        window.ec.storefront = window.ec.storefront || Object();
+        window.ec.storefront.product_details_show_share_buttons = false;
+        window.ec.storefront.product_details_show_qty = true;
+        window.ec.storefront.product_details_show_in_stock_label = true;
+        window.ec.storefront.show_breadcrumbs = true;
+        window.ec.storefront.product_details_show_breadcrumbs = true;
+        window.ec.storefront.product_details_position_breadcrumbs = 25;
+        window.ec.storefront.breadcrumbs_separator = "";
+
+        xProductBrowser("defaultProductId={{ page.storeProductId }}", "categoriesPerRow=3", "views=grid(20,3) list(60) table(60)", "categoryView=grid", "searchView=list", "id=competition-store");
+
+        window.ecwid_script_defer = true;
+        window.ecwid_dynamic_widgets = true;
+      </script>
+      {% endif %}
 
       <!-- Footer -->
       <!-- // Footer -->
 
     </div>
-</article>
-<!-- //Article -->
+  </article>
+  <!-- //Article -->
+</div>

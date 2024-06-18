@@ -10,17 +10,14 @@
 {% endif %}
 
 <!-- LOGO -->
-<div class="logo logo-image" style="position:relative;">
+<div class="logo logo-image">
   <a
     href="{{ langPrefix }}"
     title="{% if page.lang == 'en' %}{{ site.data.nav.first.en }}{% else %}{{ site.data.nav.first.ja }}{% endif %}"
     style="">
     <img src="/assets/images/logos/logo.svg?d={{ site.time | date: "%s" }}" />
   </a>
-  <!--div style="position:absolute; width: 125px; right:0; bottom: -27px; text-align: right; font-size:10px; color:#ececec;">
-  <img style="width:75px;" src="/assets/images/company/trek.png" />
-  <small style="display:block; font-size:7px; float: left; margin-top: 4px; margin-right:1px;">supported by</small>
-  </div--></div>
+</div>
 <!-- // LOGO -->
 
 <!-- MAIN NAVIGATION -->
@@ -37,9 +34,28 @@
 
         {% for nav in site.data.nav %}
           {% assign navId = forloop.index %}
-            <li
+
+          {% assign navSelected = false %}
+          {% if nav.sub %}
+
+            {% for subNav in nav.sub %}
+
+              {% assign navPath = nav.path | append: "/" | append: subNav.path | append: "/" %}
+              {% assign subNavPath = subNav.path | append: "/" %}
+              {% if nav.path == "" and path == subNavPath %}
+                {% assign navSelected = true %}
+              {% elsif path == navPath %}
+                {% assign navSelected = true %}
+              {% endif %}
+
+            {% endfor %}
+          {% elsif path0 == nav.path %}
+            {% assign navSelected = true %}
+          {% endif %}
+
+          <li
             itemprop='name'
-            class="{% if path0 == nav.path %}current active {% endif %}{% if nav.sub %}dropdown {% endif %}mega{% if nav.isAction %} action{% endif %}"
+            class="{% if navSelected %}current active {% endif %}{% if nav.sub %}dropdown {% endif %}mega{% if nav.isAction %} action{% endif %}"
             data-id="{{ navId }}0"
             data-level="1">
             {% comment %} <a itemprop='url' class="dropdown-toggle" href="{{ langPrefix }}projects" data-target="#" data-toggle="dropdown">Projects <em class="caret"></em></a>{% endcomment %}
@@ -65,9 +81,10 @@
                           itemtype="http://www.schema.org/SiteNavigationElement"
                           class="mega-nav level1">
                           {% for subNav in nav.sub %}
+                            {% assign subNavPath = subNav.path | append: "/" %}
                             <li
                               itemprop='name'
-                              class="{% if path1 == subNav.path %}current active{% endif %}{% if subNav.isAction %} action{% endif %}"
+                              class="{% if path == subNavPath or path1 == subNav.path %}current active{% endif %}{% if subNav.isAction %} action{% endif %}"
                               data-id="{{ navId }}{{ forloop.index }}"
                               data-level="2">
                               <a
@@ -120,6 +137,50 @@
 </nav>
 <!-- //MAIN NAVIGATION -->
 
+<div class="languageswitcherload" style="">
+  <script>
+    function changeLang(e, lang) {
+      e.preventDefault();
+      const d = new Date();
+      const exdays = 365;
+      d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+      document.cookie = "lang=" + lang + "; expires=" + d.toUTCString() + "; path=/";
+      window.location = "/  {%- if page.lang == 'en' -%} ja/{%- endif -%}{{ path }}";
+    }
+
+    function getNavigatorLang() {
+      if (/^en\b/.test(navigator.language))
+        return 'en';
+      else if (/^ja\b/.test(navigator.language))
+        return 'ja';
+      else
+        return '{{ page.lang }}';
+    }
+
+    function getLang() {
+      const value = `; ${document.cookie
+        }`;
+      const parts = value.split(`; lang=`);
+      if (parts.length === 2)
+        return parts.pop().split(';').shift();
+      else
+        return getNavigatorLang();
+    }
+
+    const lang = getLang();
+    if (lang != "{{ page.lang }}") {
+      const langPrefix = lang === 'en'
+        ? '/'
+        : `/${lang}/`;
+      window.location = langPrefix + "{{ path }}";
+    }
+  </script>
+  <a href="/{% if page.lang == 'en' %}ja/{% endif %}{{ path }}"
+    onclick="changeLang(event, `{% if page.lang == 'en' %}ja{% else %}en{% endif %}`)">
+    {% if page.lang == 'en' %}日本語{% else %}English{% endif %}
+  </a>
+</div>
+
 <!-- HEADRIGHT -->
 <div class="headright">
   <!-- Brand and toggle get grouped for better mobile display -->
@@ -155,7 +216,24 @@
               <ul class="nav nav-pills nav-stacked menu">
                 {% for nav in site.data.nav %}
                   {% assign navId = forloop.index %}
-                  <li class="{% if path0 == nav.path %}current active {% endif %}item-{{ navId }}0{% if nav.sub %} dropdown-submenu parent{% endif %}">
+                  {% assign navSelected = false %}
+                  {% if nav.sub %}
+
+                    {% for subNav in nav.sub %}
+
+                      {% assign navPath = nav.path | append: "/" | append: subNav.path | append: "/" %}
+                      {% assign subNavPath = subNav.path | append: "/" %}
+                      {% if nav.path == "" and path == subNavPath %}
+                        {% assign navSelected = true %}
+                      {% elsif path == navPath %}
+                        {% assign navSelected = true %}
+                      {% endif %}
+
+                    {% endfor %}
+                  {% elsif path0 == nav.path %}
+                    {% assign navSelected = true %}
+                  {% endif %}
+                  <li class="{% if navSelected %}current active {% endif %}item-{{ navId }}0{% if nav.sub %} dropdown-submenu parent{% endif %}">
                     {% if nav.sub %}
                       <span class="nav-header ">
                         {% if page.lang == 'en' %}
@@ -165,7 +243,8 @@
                       </span>
                       <ul class="dropdown-menu">
                         {% for subNav in nav.sub %}
-                          <li class="{% if path1 == subNav.path %}current active {% endif %}item-{{ navId }}{{ forloop.index }}">
+                          {% assign subNavPath = subNav.path | append: "/" %}
+                          <li class="{% if path == subNavPath or path1 == subNav.path %}current active {% endif %}item-{{ navId }}{{ forloop.index }}">
                             <a
                               {% if subNav.url %}
                               href="{{ subNav.url }}"
@@ -212,58 +291,5 @@
 
   </div>
 
-  <div class="languageswitcherload">
-    <script>
-      function changeLang(e, lang) {
-        e.preventDefault();
-        const d = new Date();
-        const exdays = 365;
-        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-        document.cookie = "lang=" + lang + "; expires=" + d.toUTCString() + "; path=/";
-        window.location = "/  {%- if page.lang == 'en' -%} ja/{%- endif -%}{{ path }}";
-      }
 
-      function getNavigatorLang() {
-        if (/^en\b/.test(navigator.language))
-          return 'en';
-         else if (/^ja\b/.test(navigator.language))
-          return 'ja';
-         else
-          return '{{ page.lang }}';
-
-
-
-
-      }
-
-      function getLang() {
-        const value = `; ${
-          document.cookie
-        }`;
-        const parts = value.split(`; lang=`);
-        if (parts.length === 2)
-          return parts.pop().split(';').shift();
-         else
-          return getNavigatorLang();
-
-
-
-
-      }
-
-      const lang = getLang();
-      if (lang != "{{ page.lang }}") {
-        const langPrefix = lang === 'en'
-          ? '/'
-          : `/${lang}/`;
-        window.location = langPrefix + "{{ path }}";
-      }
-    </script>
-    <a
-      style="margin-right:34px;"
-      href="/{% if page.lang == 'en' %}ja/{% endif %}{{ path }}"
-      onclick="changeLang(event, `{% if page.lang == 'en' %}ja{% else %}en{% endif %}`)">
-      {% if page.lang == 'en' %}日本語{% else %}English{% endif %}
-    </a>
-  </div>
 </div>

@@ -3,7 +3,7 @@ layout: job
 categories: jobs
 title: Operations Manager
 description: As the Operations Manager, you will play a pivotal role in overseeing the day-to-day operations of the Twin Peaks Bike Park and other essential NAMBA projects. You will be a key leader in our organization, responsible for ensuring the smooth and efficient functioning of the park to provide visitors with an exceptional mountain biking experience.
-isOpen: true
+isOpen: false
 location: Niseko, Japan and surrounding areas
 startDate: 1 May 2024
 endDate: 31 October 2024

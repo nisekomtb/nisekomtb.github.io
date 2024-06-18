@@ -9,14 +9,19 @@ host:
   name: Niseko Gravel
   img: /niseko-gravel.png
   url: https://nisekogravel.com/en/
-img: /assets/images/events/2024/niseko-gravel-autumn-ride/header.jpg
+masthead:
+  img: /assets/images/events/2024/niseko-gravel-autumn-ride/header.jpg
 thumbnail: /assets/images/events/2024/niseko-gravel-autumn-ride/thumb.jpg
 og:
   image: /assets/images/events/2024/niseko-gravel-autumn-ride/header.jpg
 parking: false
 about: false
 ---
+## Discover More Than Just MTB Trails in Niseko: Autumn Gravel Ride 2024
+
 Join us for the exhilarating Niseko Gravel Autumn Ride, a memorable cycling event set against the stunning backdrop of Niseko's autumn colors. This two-day adventure, happening from September 21st to 22nd, 2024, invites riders to experience a challenging yet picturesque journey through both paved and unpaved roads.
+
+![](/assets/images/events/2024/niseko-gravel-autumn-ride/view.jpg)
 
 ### Event Highlights:
 
@@ -25,8 +30,6 @@ Join us for the exhilarating Niseko Gravel Autumn Ride, a memorable cycling even
 - <strong>Visual Feast</strong>: Enjoy the breathtaking views of vibrant reds, yellows, and greens as the season paints a perfect setting for your ride.
 
 Prepare to be amazed by nature’s beauty and the thrill of gravel riding. This event promises not only a physical challenge but also an awe-inspiring visual experience as you traverse the landscape adorned with the rich colors of fall.
-
-![](/assets/images/events/2024/niseko-gravel-autumn-ride/view.jpg)
 
 ### Additional Information:
 

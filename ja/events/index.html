@@ -1,9 +1,14 @@
 ---
 title: イベント
 baseCss: view-category
+masthead:
+  img: /assets/images/events/header.jpg
+  credit:
+    url: https://www.liamlarnach.com
+    name: Liam Larnach
 ---
 <div
-  class="blog style-1 project-view"
+  class="blog style-1 project-view t3-section-wrap"
   itemscope=""
   itemtype="https://schema.org/Blog">
 
@@ -25,6 +30,8 @@ baseCss: view-category
   {% assign pastEvents = events | slice: firstPastEventIndex, eventsSize %}
   {% assign sliceStart = eventsSize | minus: firstPastEventIndex %}
   {% assign events = events | reverse | concat: pastEvents | slice: sliceStart, eventsSize %}
+
+  <div class="section">
   {% for event in events %}
 
     {% assign indexModulo4 = forloop.index0 | modulo: 4 %}
@@ -35,8 +42,10 @@ baseCss: view-category
 
       <div class="col-md-3 col">
         <div
-          class="item column-1"
+          class="item column-{{ indexModulo4 }} ja-animate"
           itemprop="blogPost"
+          data-animation="move-from-bottom"
+          data-delay="item-{{ forloop.index0 }}"
           itemscope=""
           itemtype="https://schema.org/BlogPosting"
           style="min-height: 529px;">
@@ -109,6 +118,7 @@ baseCss: view-category
     {% endif %}
 
   {% endfor %}
+  </div>
 
 </div>
 

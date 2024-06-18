@@ -28,7 +28,7 @@ baseCss: view-article
     </div>
     {% endif %}
 
-    <div class="article-detail">
+    <div class="article-detail ja-animate" data-animation="move-from-right" data-delay="200">
       <!-- Aside -->
       <div class="project-info">
         <h4>{% if page.lang == "en" %}Position Details{% else %}ポジション詳細{% endif %}</h4>
@@ -150,7 +150,7 @@ baseCss: view-article
       </div>
       <!-- // Aside -->
 
-      <section class="article-content clearfix" itemprop="articleBody">
+      <section class="article-content clearfix ja-animate" data-animation="move-from-right" data-delay="400"  itemprop="articleBody">
         {{ content }}
         <!-- // Item tags -->
       </section>

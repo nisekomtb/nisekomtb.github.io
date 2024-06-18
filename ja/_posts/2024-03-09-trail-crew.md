@@ -3,7 +3,12 @@ layout: job
 categories: jobs
 title: トレイルクルー
 description: トレイルクルーとして働くと、ローカルの間でヒーローのような存在になります。バーやバイクショップ、トレイルの入口などで、私たちNAMBAチームから愛されることでしょう。私たちは一緒になって、トレイルやコミュニティをより良くするために頑張っています。
-isOpen: true
+masthead:
+  img: /assets/images/jobs/trail-crew.jpg
+  credit:
+    name: Sea and Summit Media
+    url: https://seaandsummitmedia.com
+isOpen: false
 location: <span class="ja">ニセコ、<wbr>または<wbr>ニセコ周辺地域</span>
 term: 夏季シーズン
 workingHours: 一日８時間 / 週5日勤務

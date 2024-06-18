@@ -15,10 +15,11 @@ partners:
   - name: Fox
     img: /fox.png
     url: https://www.ridefox.com
-img: /assets/images/competitions/2024/strava-contest/header.jpg
-imgCredit:
-  name: Jinya Nishiwaki
-  url: https://instagram.com/jingypsy
+masthead:
+  img: /assets/images/competitions/2024/strava-contest/header.jpg
+  credit:
+    name: Jinya Nishiwaki
+    url: https://instagram.com/jingypsy
 thumbnail: /assets/images/competitions/2024/strava-contest/thumb.jpg
 og:
   image: /assets/images/competitions/2024/strava-contest/header.jpg

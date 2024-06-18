@@ -158,6 +158,7 @@ span.highlight {
 
 span.ja,
 p.ja,
+li.ja,
 h1.ja,
 h2.ja,
 h3.ja,
@@ -2153,6 +2154,8 @@ input.invalid {
 
 .navbar-nav {
   margin: 3px -18px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
 }
 
 @media (min-width: 991px) {
@@ -2746,6 +2749,7 @@ ul.latestusers li {
 
 div.ja-masthead {
   background: url('/assets/images/bg/bg-header.jpg');
+  background-position: center;
   background-size: cover;
   text-align: center;
   padding: 36px 36px 100px;
@@ -5510,14 +5514,29 @@ div.modal.fade.in {
   margin: 0 5px 0 0;
 }
 
-@media (min-width: 768px) {
-  .languageswitcherload {
-    float: right;
-    width: 100%;
-  }
+.languageswitcherload {
+  height: 36px;
+  line-height: 36px;
+  width: auto;
+  position: absolute;
+  right: 72px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+}
 
-  .languageswitcherload .mod-languages {
-    text-align: right;
+.languageswitcherload a {
+  padding: 0 18px;
+}
+
+@media (max-width: 1199px) {
+  .languageswitcherload {
+    right: 36px;
+  }
+}
+
+@media (max-width: 991px) {
+  .languageswitcherload {
+    right: 78px;
   }
 }
 
@@ -6136,6 +6155,7 @@ div.t3-wrapper {
 .t3-header+.t3-masthead .ja-masthead,
 .t3-header+.t3-hero .ja-masthead {
   padding-top: 180px;
+  padding-bottom: 180px;
 }
 
 @media (max-width: 767px) {
@@ -6143,11 +6163,13 @@ div.t3-wrapper {
   .t3-header+.t3-masthead .ja-masthead,
   .t3-header+.t3-hero .ja-masthead {
     padding-top: 138px;
-    padding-bottom: 8px;
+    /* padding-bottom: 8px; */
+    padding-bottom: 138px;
   }
 }
 
 .logo {
+  position: absolute;
   height: 36px;
 }
 
@@ -6216,6 +6238,10 @@ div.t3-wrapper {
 .headright .menu {
   display: flex;
   flex-wrap: nowrap;
+}
+
+.t3-mainnav {
+  margin: 0 auto;
 }
 
 .nav li.action>a {
@@ -6424,7 +6450,7 @@ div.t3-wrapper {
 
 @media (max-width: 767px) {
   .t3-mainbody {
-    padding-top: 36px;
+    /* padding-top: 36px; */
     padding-bottom: 36px;
   }
 }

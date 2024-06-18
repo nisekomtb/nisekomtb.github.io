@@ -3,7 +3,12 @@ layout: job
 categories: jobs
 title: Trail Crew
 description: As part of the Trail Crew, you will be a local legend –  beloved at the bar & the bike shop, at the trailhead, and by all of us at NAMBA. These folks are the ones out there shaping trails and the community!
-isOpen: true
+masthead:
+  img: /assets/images/jobs/trail-crew.jpg
+  credit:
+    name: Sea and Summit Media
+    url: https://seaandsummitmedia.com
+isOpen: false
 location: Niseko, Japan and surrounding areas
 term: Summer season
 workingHours: 8 hrs a day / 5 days a week

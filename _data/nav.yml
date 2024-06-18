@@ -1,6 +1,6 @@
-- path: ''
-  en: Home
-  ja: ホーム
+# - path: ''
+#   en: Home
+#   ja: ホーム
 
 # - path: proposal
 #   en: Our Proposal
@@ -14,6 +14,10 @@
 #   - path: twin-peaks
 #     en: Twin Peaks
 #     ja: ツイン・ピーク
+
+# - path: #
+#   en: 日本語
+#   ja: English
 
 - path: twin-peaks
   en: Twin Peaks

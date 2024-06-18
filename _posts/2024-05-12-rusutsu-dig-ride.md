@@ -13,8 +13,8 @@ host:
   name: Yotei MTB Club
   img: /yotei-mtb-club.jpg
   url: https://www.facebook.com/profile.php?id=100070237548701
-
-img: /assets/images/events/2024/rusutsu-dig-ride/header.jpg
+masthead:
+  img: /assets/images/events/2024/rusutsu-dig-ride/header.jpg
 thumbnail: /assets/images/events/2024/rusutsu-dig-ride/thumb.jpg
 og:
   image: /assets/images/events/2024/rusutsu-dig-ride/header.jpg

@@ -40,11 +40,21 @@ defaults:
   - scope:
       path: twin-peaks
     values:
+      masthead:
+        img: /assets/images/twinpeaks/header.jpg
+        credit:
+          url: https://www.liamlarnach.com
+          name: Liam Larnach
       og:
         image: /assets/images/og/twinpeaks-2024.jpg
   - scope:
       path: ja/twin-peaks
     values:
+      masthead:
+        img: /assets/images/twinpeaks/header.jpg
+        credit:
+          url: https://www.liamlarnach.com
+          name: Liam Larnach
       og:
         image: /assets/images/og/twinpeaks-2024.jpg
 

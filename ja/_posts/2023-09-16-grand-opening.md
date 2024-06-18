@@ -28,7 +28,8 @@ partners:
 moreInfo:
   - スペシャライズド・ターボレボ SL LTDソイル・サーチング・エディションのオークションも行います！
   - <a class="btn btn-sm btn-primary" href="/ja/auction">詳細はこちら</a>
-img: /assets/images/events/2023/grand-opening/header.jpg
+masthead:
+  img: /assets/images/events/2023/grand-opening/header.jpg
 thumbnail: /assets/images/events/2023/grand-opening/thumb.jpg
 og:
   image: /assets/images/og/twinpeaks.jpg

@@ -19,7 +19,8 @@ host:
   name: Tomo Playpark
   img: /tomo-playpark.jpg
   url: https://playpark.akaigawa-tomo.com/ja/
-img: /assets/images/events/2024/akaigawa-pump-track-reopens/header.jpg
+masthead:
+  img: /assets/images/events/2024/akaigawa-pump-track-reopens/header.jpg
 thumbnail: /assets/images/events/2024/akaigawa-pump-track-reopens/thumb.jpg
 og:
   image: /assets/images/events/2024/akaigawa-pump-track-reopens/header.jpg

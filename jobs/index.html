@@ -1,6 +1,11 @@
 ---
 title: Join our team
 baseCss: view-category
+masthead:
+  img: /assets/images/jobs/join-our-team.jpg
+  credit:
+    name: Jinya Nishiwaki
+    url: https://instagram.com/jingypsy
 ---
 <style>
   .credit {
@@ -59,15 +64,10 @@ baseCss: view-category
   }
 </style>
 
-<div class="pull-left item-image">
-  <img src="/assets/images/jobs/join-our-team.jpg" alt="Join our team" itemprop="image">
-  <span class="credit"><a href="https://instagram.com/jingypsy" target="_blank"> 📸 Jinya Nishiwaki</a></span>
-</div>
-
 <div class="t3-section-wrap">
   <div class="section">
     <div class="module-title-wrap">
-      <div class="features-desc" data-animation="move-from-bottom" data-delay="600">
+      <div class="ja-animate features-desc" data-animation="move-from-bottom" data-delay="200">
         <div style="font-size:130%;">
           <h3>Join the NAMBA team!</h3>
           <p>Our volunteer subcommittee positions, and paid summer seasonal positions, are shaping trails and
@@ -77,43 +77,44 @@ baseCss: view-category
       </div>
     </div>
   </div>
-</div>
 
-<h3>Open positions</h3>
 
-<div class="blog jobs" itemscope="" itemtype="https://schema.org/Blog">
-
-  {% assign posts = site.categories.jobs | where: "lang", "en" | where: "isOpen", "true" %}
-  {% assign totalPostsSize = posts | size %}
-
-  <div>
-    <ul>
-      {% for post in posts %}
-        <li>
-          <article>
-            <a class="action" href="{{- post.url -}}">
-              <header class="article-header">
-                <strong itemprop="headline">{{ post.title }}</strong>
-              </header>
-              {% comment %} {{ post.excerpt | strip_html | slice: 0, 100 }} {% endcomment %}
-              <span class="icon ion-ios-arrow-round-forward"></span>
-            </a>
-          </article>
-        </li>
-      {% endfor %}
-    </ul>
-  </div>
-</div>
-
-{% assign totalVolunteerPostsSize = site.categories.jobs | where: "lang", "en" | where: "isOpen", "true" | where: "pay", "0" | size %}
-
-{% if totalPostsSize == totalVolunteerPostsSize %}
-<h3>Paid positions</h3>
-
-<div class="t3-section-wrap">
   <div class="section">
-    <div class="module-title-wrap">
-      <div class="features-desc" data-animation="move-from-bottom" data-delay="600">
+    <div class="ja-animate" data-animation="move-from-bottom" data-delay="600">
+      <h3>Open positions</h3>
+
+      <div class="blog jobs" itemscope="" itemtype="https://schema.org/Job">
+
+        {% assign jobs = site.categories.jobs | where: "lang", "en" | where: "isOpen", "true" %}
+        {% assign totalJobsSize = jobs | size %}
+
+        <div>
+          <ul>
+            {% for job in jobs %}
+              <li>
+                <article>
+                  <a class="action" href="{{- job.url -}}">
+                    <header class="article-header">
+                      <strong itemprop="headline">{{ job.title }}</strong>
+                    </header>
+                    <span class="icon ion-ios-arrow-round-forward"></span>
+                  </a>
+                </article>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  {% assign totalVolunteerJobsSize = jobs | where: "pay", "Volunteer position" | size %}
+
+  {% if totalJobsSize == totalVolunteerJobsSize %}
+  <div class="section">
+    <div class="module-title-wrap ja-animate" data-animation="move-from-bottom" data-delay="1000">
+      <h3>Paid positions</h3>
+      <div class="features-desc">
         <div style="font-size:130%;">
           <p>Currently there are no open paid positions, but watch this space, and <a href="https://www.instagram.com/nisekomtb/"
             target="_blank">follow us</a> on social media for updates!</p>
@@ -121,5 +122,5 @@ baseCss: view-category
       </div>
     </div>
   </div>
+  {% endif %}
 </div>
-{% endif %}

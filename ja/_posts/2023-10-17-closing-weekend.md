@@ -19,11 +19,12 @@ partners:
   - name: Pow Bar
     img: /powbar.png
     url: https://thepowbar.com
-img: /assets/images/events/2023/closing-weekend/header.jpg
+masthead:
+  img: /assets/images/events/2023/closing-weekend/header.jpg
+  credit:
+    name: Liam Larnach
+    url: https://www.liamlarnach.com
 thumbnail: /assets/images/events/2023/closing-weekend/thumb.jpg
-imgCredit:
-  name: Liam Larnach
-  url: https://www.liamlarnach.com
 og:
   image: /assets/images/og/twinpeaks.jpg
 itinerary:

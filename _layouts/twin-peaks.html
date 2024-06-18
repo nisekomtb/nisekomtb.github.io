@@ -1,6 +1,6 @@
 ---
 layout: base
-baseCss: hidden-masthead-info
+# baseCss: hidden-masthead-info
 ---
 {% assign path = page.url | remove_first: "/" | remove: "ja/" | remove: "index.html" %}
 {% assign pathSegments = path | split: "/" %}
@@ -10,9 +10,9 @@ baseCss: hidden-masthead-info
 {% include masthead.html %}
 
 <style>
-  .t3-mainbody {
+  /* .t3-mainbody {
     margin-top: 24px;
-  }
+  } */
 
   .t3-sidebar .tp-logo {
     width:150px; margin:0 auto; margin-bottom:24px; display: flex;
@@ -311,6 +311,13 @@ baseCss: hidden-masthead-info
                 <a href="https://helloallegra.com" target="_blank">
                   <img src="/assets/images/company/special/allegra.png"
                     alt="{% if page.lang == 'en' %}Trail building partner{% else %}トレイルビルド パートナー{% endif %}">
+                </a>
+              </li>
+              <li>
+                <a href="{% if page.lang == 'en' %}https://www.mnkniseko.com/en{% else %}https://www.mnkniseko.com/ja{% endif %}"
+                  target="_blank">
+                  <img src="/assets/images/company/special/mnk.png"
+                    alt="{% if page.lang == 'en' %}Trail sponsor{% else %}トレイル スポンサー{% endif %}">
                 </a>
               </li>
               <li>

@@ -12,7 +12,8 @@ partners:
   - name: Rhythm
     img: /special/rhythm.png
     url: https://rhythmjapan.com
-img: /assets/images/events/2024/season-opener/header.jpg
+masthead:
+  img: /assets/images/events/2024/season-opener/header.jpg
 thumbnail: /assets/images/events/2024/season-opener/thumb.jpg
 og:
   image: /assets/images/events/2024/season-opener/header.jpg

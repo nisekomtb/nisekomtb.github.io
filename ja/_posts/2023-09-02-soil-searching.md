@@ -27,11 +27,12 @@ partners:
     url: https://thepowbar.com
 moreInfo:
   - 申し込みは8月27日まで。参加者多数の場合は抽選となります。
-  - <a class="btn btn-sm btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSc7ha_h4zmwTOB9m2Gu9uv4VHG6JfIl3Fcnfmej8twFftU5cQ/viewform" target="_blank">お申し込みはこちら</a>
-img: /assets/images/events/2023/soil-searching/ss01.jpg
+  - <a class="btn btn-sm btn-primary" disabled="disabled" target="_blank">お申し込みはこちら</a>
+masthead:
+  img: /assets/images/events/2023/soil-searching/header.jpg
 thumbnail: /assets/images/events/2023/soil-searching/thumb.jpg
 og:
-  image: /assets/images/events/2023/soil-searching/ss01.jpg
+  image: /assets/images/events/2023/soil-searching/og.jpg
 itinerary:
   days:
     - hasLocations: false
@@ -60,22 +61,22 @@ about: true
 ---
 <p style="font-size:150%;">9月2日、3日の2日間、北海道ニセコのツインピークス・バイクパークにて、スペシャライズドとNAMBAの共同イベント「Soil Searching in Niseko」が開催されます。</p>
 
-<h3>イベント内容</h3>
-<p>この2日間のイベントでは、ニセコエリアマウンテンバイク協会(NAMBA)とスペシャライズドのチームそしてライダーがボランティアとして参加し、バイクパークのグランドオープンを前にトレイルの整備を行います！トレイルはまだ一般公開されていませんので、オープンを待ちきれない方このボランティアプロジェクトに参加するのは絶好のチャンスです。</p>
+<img src="/assets/images/events/2023/soil-searching/soil-searching.png" style="width:200px; margin: auto;" />
 
+### イベント内容
 
-<p><img src="/assets/images/events/2023/soil-searching/ss02.jpg" alt="" /></p>
+この2日間のイベントでは、ニセコエリアマウンテンバイク協会(NAMBA)とスペシャライズドのチームそしてライダーがボランティアとして参加し、バイクパークのグランドオープンを前にトレイルの整備を行います！トレイルはまだ一般公開されていませんので、オープンを待ちきれない方このボランティアプロジェクトに参加するのは絶好のチャンスです。
 
-<h3>ソイル・サーチングについて</h3>
+![](/assets/images/events/2023/soil-searching/ss02.jpg)
 
-<p>
-  <strong>アスリートのようなトレイルビルダーのスポンサーをしませんか？</strong>
-</p>
+### ソイル・サーチングについて
 
-<p>スペシャライズドは彼らの味方です。ソイル・サーチングは、トレイルビルダー、つまりマウンテンバイクの縁の下の力持ちであり、私たちのスポーツを築き、形成している人たちを認識し、称え、支援する運動です。</p>
-<p>ソイル・サーチングはNAMBAのトレイルビルダーをサポートし、ツイン・ピークス・バイク・パークのトレイルを掘る（そして走る！）のに必要なバイクやウェアを提供することを誇りに思っています。</p>
-<p>ニセコでのソイル・サーチングのようなディグ・デイは、コミュニティを作り、知識を与え、あらゆる年齢や能力のライダーをこのスポーツに迎え入レることができます。これらの成果は、ニセコで素晴らしいライディング・プレイスを創造し、向上させ、維持し、保護するというNAMBAの使命と一致しています。</p>
+<strong>アスリートのようなトレイルビルダーのスポンサーをしませんか？</strong>
 
+スペシャライズドは彼らの味方です。ソイル・サーチングは、トレイルビルダー、つまりマウンテンバイクの縁の下の力持ちであり、私たちのスポーツを築き、形成している人たちを認識し、称え、支援する運動です。
 
+ソイル・サーチングはNAMBAのトレイルビルダーをサポートし、ツイン・ピークス・バイク・パークのトレイルを掘る（そして走る！）のに必要なバイクやウェアを提供することを誇りに思っています。
 
-<p><img src="/assets/images/events/2023/soil-searching/ss03.jpg" alt="" /></p>
+ニセコでのソイル・サーチングのようなディグ・デイは、コミュニティを作り、知識を与え、あらゆる年齢や能力のライダーをこのスポーツに迎え入レることができます。これらの成果は、ニセコで素晴らしいライディング・プレイスを創造し、向上させ、維持し、保護するというNAMBAの使命と一致しています。
+
+![](/assets/images/events/2023/soil-searching/ss03.jpg)

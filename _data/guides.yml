@@ -22,6 +22,11 @@ twinpeaks:
     url: https://holidayniseko.com
     ja:
       url: https://holidayniseko.jp
+  - name: mnk
+    image: /assets/images/company/special/mnk.png
+    url: https://www.mnkniseko.com/en
+    ja:
+      url: https://www.mnkniseko.com/ja
   - image: /assets/images/company/shika/noasc.png
     url: https://noasc.com/en/
     ja:

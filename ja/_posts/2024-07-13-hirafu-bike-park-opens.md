@@ -25,7 +25,8 @@ host:
   name: ニセコ東急-グラン・ヒラフ
   img: /grand-hirafu.png
   url: https://www.grand-hirafu.jp/
-img: /assets/images/events/2024/hirafu-bike-park-opens/header.jpg
+masthead:
+  img: /assets/images/events/2024/hirafu-bike-park-opens/header.jpg
 thumbnail: /assets/images/events/2024/hirafu-bike-park-opens/thumb.jpg
 og:
   image: /assets/images/events/2024/hirafu-bike-park-opens/header.jpg

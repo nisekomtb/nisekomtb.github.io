@@ -19,13 +19,16 @@ host:
   name: Tomo Playpark
   img: /tomo-playpark.jpg
   url: https://playpark.akaigawa-tomo.com/en/
-img: /assets/images/events/2024/akaigawa-pump-track-reopens/header.jpg
+masthead:
+  img: /assets/images/events/2024/akaigawa-pump-track-reopens/header.jpg
 thumbnail: /assets/images/events/2024/akaigawa-pump-track-reopens/thumb.jpg
 og:
   image: /assets/images/events/2024/akaigawa-pump-track-reopens/header.jpg
 parking: false
 about: false
 ---
+## Pump Up The Jam: Akaigawa Pump Track's Grand Reopening
+
 Get ready to pump up your ride! Join the excitement at Akaigawa Tomo Playpark on June 1st, 2024, as they celebrate the thrilling reopening of the Velosolutions Pump track! After several years, the park is delighted to welcome you back to this favorite spot, now featuring a revamped, asphalt pump track perfect for BMX, mountain bikes, skateboards, and kickboards.
 
 Additionally, to celebrate the reopening, we are excited to announce a grand opening race event on the Sunday. Join them for an exhilarating competition and showcase your skills!
