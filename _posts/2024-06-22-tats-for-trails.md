@@ -7,8 +7,6 @@ description:
 startDate: 2024-06-22 09:00:00 +0900
 endDate: 2024-07-21 23:59:59 +0900
 drawDate: 2024-07-28 18:00:00 +0900
-# location: Lower Section of the Easy Ryder Trail, Niseko
-# address: 150, 2 Aza-150-1 Yamada, Kutchan, Abuta District, Hokkaido 044-0081
 price: ¥500
 partners:
   - name: 59 Niseko
@@ -70,19 +68,22 @@ storeProductId: 671804108
 ---
 ## Get Inked to Support Trail Building in Niseko
 
-Unleash your creativity and support trail building in Niseko with the "Tats for Trails" competition, presented by NAMBA. Whether you're dreaming of your next tattoo or simply want to contribute to a great cause, this is your chance to get involved.
+Unleash your creativity and support trail building in Niseko with the “Tats for Trails” competition, presented by NAMBA. Whether you’re dreaming of your next tattoo or simply want to contribute to a great cause, this is your chance to get involved.
 
 ### How It Works:
 
-The skilled artists at 59 Niseko are offering a **total of ¥90,000 worth of tattoo time** for the creators of the three best designs. You don't need to be a tattoo enthusiast to participate; even if you're not looking to get inked, your entry can still support trail development efforts.
+It's simple: just submit your tattoo idea down for a chance to win!
 
-### Entry Details:
+The skilled artists at 59 Niseko are offering a **total of ¥90,000 worth of tattoo time** for the creators of the three best designs. You don’t need to be a tattoo enthusiast to participate; even if you’re not looking to get inked, your entry can still support trail development efforts.
 
-- **Entry Fee:** A minimum of ¥500 per submission. Entrants are encouraged to "Pay What They Want," allowing you to donate more towards trail building if desired.
-- **Design Submission:** Describe your tattoo idea in 20-30 words. Be concise but creative in expressing your vision.
-- **Unlimited Entries:** Submit as many designs as you wish to increase your chances of winning.
-- **Social Media Requirement:** To enter, you must follow both <a href="https://instagram.com/nisekomtb" target="_blank">@nisekomtb</a> and <a href="https://instagram.com/59niseko" target="_blank">@59niseko</a> on Instagram.
-- **Open Themes:** Designs do not need to be related to mountain biking. Creativity and originality in any theme are encouraged!
+### How to Enter:
+
+- **Pay your entry fee:** Contribute a minimum of ¥500 to the trails per submission. 100% of all proceeds go to trail building, and entrants are encouraged to “Pay What They Want,” allowing you to donate more towards trail building if desired.
+- **Submit your design idea:** Write Describe your tattoo idea, describing it in 20-30 words or less. Be concise but creative in expressing your vision.
+The theme is open, and does not have to be related to mountain biking. Creativity and originality in any theme are encouraged!
+- **Follow on Instagram:** To be eligible to win, you must follow both <a href="https://instagram.com/nisekomtb" target="_blank">@nisekomtb</a> and <a href="https://instagram.com/59niseko" target="_blank">@59niseko</a> on Instagram.
+- **Enter again!** There is no limit on the number of entries you can submit – you can enter as many designs as you want and increase your chances of winning! Entries must be submitted separately, and each entry requires a minimum contribution of ¥500.
+- **Win???** All ideas will be anonymously judged, and the top three designs will receive vouchers to help make their idea a reality!
 
 {% include carousel.html images=page.imgs items=2 id=1 %}
 
@@ -98,6 +99,7 @@ The skilled artists at 59 Niseko are offering a **total of ¥90,000 worth of tat
 
 ### Why Enter?
 
-This competition offers a way to get a lasting piece of art while contributing to trail development in Niseko. Even if you aren't interested in receiving a tattoo, your participation helps support the trails. It’s an excellent opportunity for both locals and non-locals to engage with the community and showcase their artistic talent.
+This competition offers a way to get a lasting piece of art while contributing to trail development in Niseko. Even if you aren’t interested in receiving a tattoo, your participation helps support the trails. It’s an excellent opportunity for both locals and non-locals to engage with the community and showcase their artistic talent.
 
 Take part in this unique initiative to combine your artistic flair with your passion for outdoor activities. Submit your designs, support trail building, and you might just win some incredible tattoo time at 59 Niseko!
+
