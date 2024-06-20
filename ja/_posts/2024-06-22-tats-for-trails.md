@@ -80,7 +80,7 @@ storeProductId: 671804108
 
 - <span class="ja">**参加費を<wbr>払う<wbr>：**1回の<wbr>応募に<wbr>つき、<wbr>最低500円を<wbr>トレイル建設に<wbr>寄付してください。<wbr>寄付金は<wbr>全て<wbr>トレイル建設に<wbr>役立てられ、<wbr>希望に<wbr>応じてより<wbr>多く<wbr>寄付する<wbr>ことも<wbr>可能です。</span>
 
-- <span class="ja">**デザインアイデアを<wbr>提出する<wbr>：** あなたのタトゥーアイデアを<wbr>20-30ワードで<wbr>説明してください。<wbr>ビジョンを<wbr>簡潔かつクリエイティブに<wbr>表現してください。<wbr>テーマは<wbr>自由で、<wbr>マウンテンバイクに<wbr>関連する<wbr>必要は<wbr>ありません。<wbr>どんな<wbr>テーマでも<wbr>創造性と<wbr>オリジナリティを<wbr>奨励します！</span>
+- <span class="ja">**デザインアイデアを<wbr>提出する<wbr>：** あなたのタトゥーアイデアを<wbr>40-90文字相当で<wbr>説明してください。<wbr>ビジョンを<wbr>簡潔かつクリエイティブに<wbr>表現してください。<wbr>テーマは<wbr>自由で、<wbr>マウンテンバイクに<wbr>関連する<wbr>必要は<wbr>ありません。<wbr>どんな<wbr>テーマでも<wbr>創造性と<wbr>オリジナリティを<wbr>奨励します！</span>
 
 - <span class="ja">**Instagramで<wbr>フォローする<wbr>：**受賞の<wbr>対象と<wbr>なる<wbr>ためには、<wbr>Instagramで<wbr><a href="https://instagram.com/nisekomtb" target="_blank">@nisekomtb</a>と<wbr><a href="https://instagram.com/59niseko" target="_blank">@59niseko</a>の<wbr>両方を<wbr>フォローする<wbr>必要が<wbr>あります。</span>
 

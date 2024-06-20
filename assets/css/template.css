@@ -2205,6 +2205,14 @@ input.invalid {
   margin: 0 18px;
 }
 
+@media (max-width: 1199px) {
+
+  .navbar-default .navbar-nav>li>a,
+  .navbar-default .navbar-nav>li>span {
+    margin: 0 9px;
+  }
+}
+
 @media (max-width: 991px) {
 
   .navbar-default .navbar-nav>li>a,
