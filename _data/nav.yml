@@ -28,10 +28,6 @@
   ja: プロジェクトに参加する
   sub:
 
-  - path: strava-contest-2024
-    en: <i class="fa-solid fa-crown"></i> Strava Contest
-    ja: <i class="fa-solid fa-crown"></i> ストラバ コンテスト
-
   - path: get-involved/join
     en: Become a Member
     ja: 仲間になろう
@@ -52,11 +48,20 @@
   en: Events
   ja: イベント
 
+- path: ""
+  en: Win
+  ja: 勝つ
+  sub:
+
+  - path: strava-contest-2024
+    en: Strava Contest
+    ja: ストラバ コンテスト
+
+  # - path: tats-for-trails-2024
+  #   en: Tats for Trails
+  #   ja: Tats for Trails
+
 - path: shop
   en: Shop
   ja: オンラインショップ
 
-# - path: auction
-#   isAction: true
-#   en: 🙋 Bike Auction
-#   ja: 🙋 オークション

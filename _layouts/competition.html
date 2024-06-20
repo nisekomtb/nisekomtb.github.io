@@ -546,18 +546,9 @@ baseCss: view-article
       </div>
 
       <script id="ecwid-script" data-cfasync="false" type="text/javascript"
-        src="https://app.ecwid.com/script.js?71386768&lang=en-GB&data_platform=code&data_date=2022-08-27"
+      src="https://app.ecwid.com/script.js?71386768&lang={% if page.lang == 'ja' %}ja-JP{% else %}en-GB{% endif %}&data_platform=code&data_date=2022-08-27"
         charset="utf-8"></script>
       <script>
-
-        // (function ($) {
-        //   $("a[href$='#raffle-store']").on('click', function () {
-        //     $("html, body").animate({
-        //       scrollTop: $("#raffle-store").offset().top
-        //     }, 500);
-        //     return false;
-        //   });
-        // })(jQuery);
 
         window.ec = window.ec || Object();
         window.ec.config = window.ec.config || Object();

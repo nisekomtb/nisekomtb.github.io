@@ -6190,6 +6190,13 @@ div.t3-wrapper {
   width: 125px;
 }
 
+@media (max-width: 1199px) and (min-width: 991px) {
+  .logo-image a {
+    margin-top: -16px;
+    width: 100px;
+  }
+}
+
 .logo-image img {}
 
 .logo-text a {

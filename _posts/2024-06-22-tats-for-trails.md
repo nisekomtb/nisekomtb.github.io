@@ -7,7 +7,7 @@ description:
 startDate: 2024-06-22 09:00:00 +0900
 endDate: 2024-07-21 23:59:59 +0900
 drawDate: 2024-07-28 18:00:00 +0900
-price: ¥500
+price: ¥500+
 partners:
   - name: 59 Niseko
     img: /59niseko.png
@@ -72,20 +72,19 @@ Unleash your creativity and support trail building in Niseko with the “Tats fo
 
 ### How It Works:
 
-It's simple: just submit your tattoo idea down for a chance to win!
+It's simple: just submit your tattoo idea for a chance to win!
 
 The skilled artists at 59 Niseko are offering a **total of ¥90,000 worth of tattoo time** for the creators of the three best designs. You don’t need to be a tattoo enthusiast to participate; even if you’re not looking to get inked, your entry can still support trail development efforts.
 
 ### How to Enter:
 
 - **Pay your entry fee:** Contribute a minimum of ¥500 to the trails per submission. 100% of all proceeds go to trail building, and entrants are encouraged to “Pay What They Want,” allowing you to donate more towards trail building if desired.
-- **Submit your design idea:** Write Describe your tattoo idea, describing it in 20-30 words or less. Be concise but creative in expressing your vision.
-The theme is open, and does not have to be related to mountain biking. Creativity and originality in any theme are encouraged!
+- **Submit your design idea:** Describe your tattoo idea, describing it in 20-30 words or less. Be concise but creative in expressing your vision.<br/>The theme is open, and does not have to be related to mountain biking. Creativity and originality in any theme are encouraged!
 - **Follow on Instagram:** To be eligible to win, you must follow both <a href="https://instagram.com/nisekomtb" target="_blank">@nisekomtb</a> and <a href="https://instagram.com/59niseko" target="_blank">@59niseko</a> on Instagram.
 - **Enter again!** There is no limit on the number of entries you can submit – you can enter as many designs as you want and increase your chances of winning! Entries must be submitted separately, and each entry requires a minimum contribution of ¥500.
-- **Win???** All ideas will be anonymously judged, and the top three designs will receive vouchers to help make their idea a reality!
+- **Win???** All ideas will be anonymously judged, and the top three designs will receive vouchers to help make their idea become a reality!
 
-{% include carousel.html images=page.imgs items=2 id=1 %}
+{% include carousel.html images=page.imgs %}
 
 ### Eligibility and Conditions:
 
