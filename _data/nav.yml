@@ -57,9 +57,9 @@
     en: Strava Contest
     ja: ストラバ コンテスト
 
-  # - path: tats-for-trails-2024
-  #   en: Tats for Trails
-  #   ja: Tats for Trails
+  - path: tats-for-trails-2024
+    en: Tats for Trails
+    ja: トレイルの ための タトゥーコンペ
 
 - path: shop
   en: Shop
