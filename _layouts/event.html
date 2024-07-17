@@ -166,6 +166,113 @@ baseCss: view-article
       padding: 10px 50px;
     }
   }
+
+.ec-grid {
+    display: block !important;
+  }
+
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .details-gallery__images-spacer {
+    margin-top: 35px;
+  }
+
+  .product-details__navigation {
+    display: none !important;
+  }
+
+  #ProductBrowser-1 {
+    min-height: auto !important;
+  }
+
+  /* .form-control {
+    text-align: center !important;
+    text-align: -moz-center !important;
+    text-align: -webkit-center !important;
+  } */
+
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .label--notice {
+    background-color: #fd7d57;
+  }
+
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .label--notice::before {
+    color: #fd7d57;
+  }
+
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .label--notice::after {
+    color: #fd7d57;
+  }
+
+  .ec-form__row--continue .form-control--done {
+    text-align: left !important;
+  }
+
+  .form-control button.form-control__button {
+    color: #ffffff !important;
+    background-color: #fd7d57 !important;
+    border-color: transparent !important;
+    background: linear-gradient(135deg, #fd7d57, #f55d59) !important;
+
+    border: 0 !important;
+    border-radius: 30px !important;
+    font-weight: 500 !important;
+    padding-left: 36px !important;
+    padding-right: 36px !important;
+
+    width: auto !important;
+    font-size: 14px !important;
+  }
+
+  .form-control button.form-control__button:hover {
+    background: #fd7d57 !important;
+    background: linear-gradient(155deg, #fd7d57, #fd7d57) !important;
+  }
+
+  img.ecwid-PaymentMethodsBlockSvg {
+    background: #fff !important;
+  }
+
+  html#ecwid_html body#ecwid_body .ec-cart__button .paypal-button {
+    width: 200px;
+    margin: 0 auto;
+  }
+
+  .ec-cart__button--apple-pay {
+    text-align: center !important;
+    text-align: -moz-center !important;
+    text-align: -webkit-center !important;
+  }
+
+  .ec-cart__button--apple-pay .form-control--button {
+    border: 1px #fff solid !important;
+    padding-left: 36px !important;
+    padding-right: 36px !important;
+    border-radius: 30px !important;
+    width: 170px !important;
+    margin: 0 auto !important;
+    position: relative !important;
+  }
+
+  a.breadcrumbs__link--last {
+    font-size: 0 !important;
+  }
+
+  /* a.breadcrumbs__link--last:after {
+    content: '✕';
+    font-size: 20px;
+    font-weight: bold;
+    float: right;
+  } */
+
+  html#ecwid_html body#ecwid_body #raffle-store .ec-size .ec-store .details-gallery__images-spacer {
+    margin-top: 0;
+  }
+
+  #raffle-store a.breadcrumbs__link--last {
+    display: none;
+  }
+
+  html#ecwid_html body#ecwid_body #raffle-store .ec-confirmation__continue {
+    display: none;
+  }
 </style>
 
 <div class="item-page view-project ">
@@ -399,6 +506,38 @@ baseCss: view-article
           <!-- // Item tags -->
         </section>
       </div>
+
+      {% if page.storeProductId %}
+      <div class="t3-section">
+
+        <div id="event-store"></div>
+
+      </div>
+
+      <script id="ecwid-script" data-cfasync="false" type="text/javascript"
+        src="https://app.ecwid.com/script.js?71386768&lang={% if page.lang == 'ja' %}ja-JP{% else %}en-GB{% endif %}&data_platform=code&data_date=2022-08-27"
+        charset="utf-8"></script>
+      <script>
+
+        window.ec = window.ec || Object();
+        window.ec.config = window.ec.config || Object();
+        window.ec.config.custom_redirect_after_purchase = 'https://www.namba.ngo/get-involved/thanks';
+        window.ec.config.navigation_scrolling = "DISABLED";
+        window.ec.storefront = window.ec.storefront || Object();
+        window.ec.storefront.product_details_show_share_buttons = false;
+        window.ec.storefront.product_details_show_qty = true;
+        window.ec.storefront.product_details_show_in_stock_label = true;
+        window.ec.storefront.show_breadcrumbs = true;
+        window.ec.storefront.product_details_show_breadcrumbs = true;
+        window.ec.storefront.product_details_position_breadcrumbs = 25;
+        window.ec.storefront.breadcrumbs_separator = "";
+
+        xProductBrowser("defaultProductId={{ page.storeProductId }}", "categoriesPerRow=3", "views=grid(20,3) list(60) table(60)", "categoryView=grid", "searchView=list", "id=event-store");
+
+        window.ecwid_script_defer = true;
+        window.ecwid_dynamic_widgets = true;
+      </script>
+      {% endif %}
 
       <!-- Footer -->
       <!-- // Footer -->
