@@ -166,7 +166,7 @@ shika:
         url: https://vacationniseko.com/ja
 
 tanuki:
-  width: 13
+  width: 14
   sponsors:
     - image: /assets/images/company/tanuki/burton.png
       url: https://www.burton.com/jp/en
@@ -202,3 +202,4 @@ tanuki:
         url: https://roomboss.com/ja/
     - image: /assets/images/company/tanuki/seasons.png
       url: https://www.seasons-niseko.com
+    - image: /assets/images/company/tanuki/whiteroom-property.png
