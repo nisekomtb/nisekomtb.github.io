@@ -102,7 +102,3 @@ Join us in Niseko for a weekend of creativity, community, and cycling. Whether y
 Mark your calendars for September 14-15, 2024, and be part of this enriching event that goes beyond the ride. Bring your family, meet new friends, and create lasting memories at Soil Searching Niseko 2024.
 
 ![](/assets/images/events/2024/soil-searching/tools.jpg)
-
-### Event Waiver Agreement
-
-All participants are required to agree to our event waiver. For complete details and to view the waiver, please <a href="/soil-searching/waver/" target="_blank">click here</a>.

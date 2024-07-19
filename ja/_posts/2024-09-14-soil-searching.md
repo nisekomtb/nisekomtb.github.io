@@ -40,15 +40,15 @@ itinerary:
         - time: 9:00am
           name: <a href="https://goo.gl/maps/78nX9Sryy9c5qXmM8" target="_blank">Rhythm Hirafu</a>にて受付
         - time: 10:00am
-          name: イントロダクション・トーク：プロジェクトと<wbr>専門家に<wbr>よる<wbr>ソイルサーチングプログラムに<wbr>ついて<wbr>学ぶ
+          name: イントロダクション・トーク：プロジェクトと<wbr>専門家に<wbr>よる<wbr>Soil Searching Program に<wbr>ついて<wbr>学ぶ
         - time: 10:30am
-          name: トレイル作り - NAMBAと<wbr>スペシャライズドの<wbr>協力のもと、<wbr>バイクパーク内の<wbr>トレイル造成を<wbr>体験。
+          name: トレイル作り - NAMBAと<wbr>Specializedの<wbr>協力のもと、<wbr>バイクパーク内の<wbr>トレイル造成を<wbr>体験。
         - time: 12:30pm
-          name: 昼食 - NAMBAから<wbr>参加者全員に<wbr>お弁当を<wbr>配布
+          name: 昼食 - NAMBAから<wbr>参加者全員に<wbr>ランチを<wbr>配布
         - time: 1:30pm
-          name: トレイル作り - NAMBAと<wbr>スペシャライズドの<wbr>協力のもと、<wbr>バイクパーク内の<wbr>トレイル造成を<wbr>体験。
+          name: トレイル作り - NAMBAと<wbr>Specializedの<wbr>協力のもと、<wbr>バイクパーク内の<wbr>トレイル造成を<wbr>体験。
         - time: 4:00pm
-          name: パックダウン - アフターパーティーの<wbr>前に<wbr>シャワーを<wbr>浴びて<wbr>仮眠するのに<wbr>良い<wbr>時間です！
+          name: パックダウン - アフターパーティーの<wbr>前に<wbr>シャワーを<wbr>浴びたり、<wbr>昼寝を<wbr>したりする<wbr>良い<wbr>時間です！
         - time: 5:00pm
           name: アフターパーティー<wbr>（Rhythm Hirafuにて）<wbr> - Rhythm Hirafuにてビールと<wbr>軽食を<wbr>お楽しみください！
         - time: 8:00pm
@@ -58,9 +58,9 @@ itinerary:
         - time: 9:00am
           name: Rhythm Hirafuで<wbr>プレライドコーヒーを<wbr>楽しもう
         - time: 9:30am
-          name: Specializedプロライダーに<wbr>よる<wbr>MTBトリックショーと<wbr>質疑応答
+          name: Specializedの<wbr>プロライダーに<wbr>よる<wbr>MTBトリックショーと<wbr>Q
         - time: 10:00am
-          name: グループライド - スペシャライズドの<wbr>プロと<wbr>ツインピークス・バイクパークを<wbr>作る<wbr>チームに<wbr>よる<wbr>オーガナイズドライド
+          name: グループライド - Specializedの<wbr>プロと<wbr>ツインピークス・バイクパークを<wbr>作る<wbr>チームに<wbr>よる<wbr>オーガナイズドライド
         - time: 11:00am
           name: フリーライド - 自由に<wbr>トレイルを<wbr>走る<wbr>チャンス
         - time: 4:00pm
@@ -71,38 +71,36 @@ storeProductId: 679581277
 ---
 ## <span class="ja">Soil Searching Niseko 2024: トレイルと<wbr>コミュニティの<wbr>構築</span>
 
-<span class="ja">Specializedは<wbr>昨年の<wbr>成功を<wbr>受けて、<wbr>二年連続で<wbr>ニセコの<wbr>Soil Searchingイベントを<wbr>開催します。<wbr>今年の<wbr>版は、<wbr>バイクパークの<wbr>準備から、<wbr>参加者の<wbr>スキルと<wbr>経験の<wbr>向上に<wbr>焦点を<wbr>移し、<wbr>実際の<wbr>トレイル作り、<wbr>機能作り、<wbr>メンテナンスを<wbr>通じて<wbr>行います。</span>
+<span class="ja">Specializedは、<wbr>昨年の<wbr>成功を<wbr>受けて、<wbr>今年も<wbr>Nisekoで<wbr>Soil Searchingイベントを<wbr>開催します。<wbr>今年の<wbr>イベントは、<wbr>バイクパークの<wbr>準備から、<wbr>参加者の<wbr>スキルと<wbr>経験を<wbr>向上させる<wbr>ための<wbr>実践的な<wbr>トレイル構築、<wbr>特徴作り、<wbr>メンテナンスに<wbr>焦点を<wbr>移します。</span>
 
 ![](/assets/images/events/2024/soil-searching/learn.jpg)
 
 ### 参加者特典:
 
-- <span class="ja"><strong >限定ギア</strong>：この<wbr>イベントでのみ入手可能な<wbr>限定版Soil Searching Tシャツを<wbr>受け取れます。</span>
-- <span class="ja"><strong >バイクアクセス</strong>：Specializedの<wbr>レンタルバイクを<wbr>先着順で<wbr>利用可能です。</span>
-- <span class="ja"><strong >教育的体験</strong>：トレイル作りに<wbr>関する<wbr>貴重な<wbr>洞察と<wbr>実践スキルを<wbr>習得し、<wbr>直接トレイルの<wbr>建設と<wbr>メンテナンスに<wbr>貢献できます。</span>
-- <span class="ja"><strong >食事と<wbr>ドリンク</strong>：初日に<wbr>無料の<wbr>ランチ、<wbr>Pow Barからの<wbr>エネルギーバー、<wbr>ステッカー、<wbr>夕方の<wbr>お祝いで<wbr>ビール*を<wbr>楽しめます。<wbr>*ビールは<wbr>成人のみです。</span>
+- <span class="ja"><strong >限定ギア:</strong> この<wbr>イベントでしか<wbr>手に<wbr>入らない<wbr>特別な<wbr>Soil Searching Tシャツが<wbr>もらえます。</span>
+- <span class="ja"><strong >バイクアクセス:</strong> 先着順で<wbr>Specializedレンタルバイクを<wbr>利用できます。</span>
+- <span class="ja"><strong >教育的体験：</strong>トレイル構築に<wbr>関する<wbr>貴重な<wbr>洞察と<wbr>実践的な<wbr>スキルを<wbr>学び、<wbr>直接トレイル建設や<wbr>メンテナンスに<wbr>貢献できるようになります。</span>
+- <span class="ja"><strong >食事と<wbr>ドリンク：</strong>初日に<wbr>無料の<wbr>ランチ、<wbr>Pow Barからの<wbr>エネルギーバー、<wbr>ステッカー、<wbr>夕方の<wbr>お祝いで<wbr>ビールを<wbr>楽しめます。<wbr>ビールは<wbr>成人のみです。</span>
 
 ### イベントスケジュール:
-- <span class="ja"><strong >1日目：建設と<wbr>掘削</strong><br ></br>トレイルと<wbr>機能の<wbr>建設に<wbr>没頭します。<wbr>ランチが<wbr>提供され、<wbr>エネルギーを<wbr>補給し、<wbr>夕方の<wbr>パーティーで<wbr>リラックスして<wbr>交流が<wbr>できます。<wbr>子供を<wbr>連れてくる<wbr>人の<wbr>ための<wbr>家族向けの<wbr>アクティビティも<wbr>あります。</span>
 
-- <span class="ja"><strong >2日目：ライドデイ</strong><br ></br>自分たちで<wbr>建設した<wbr>トレイルと<wbr>機能を<wbr>体験する<wbr>スリルを<wbr>味わいましょう。<wbr>経験豊富な<wbr>ライダーから<wbr>家族まで、<wbr>誰に<wbr>とっても<wbr>完璧な<wbr>一日です！</span>
 
-### 特別機能:
+- <span class="ja"><strong >1日目：建設と<wbr>掘削</strong><br ></br>トレイルと<wbr>特徴作りに<wbr>取り組む<wbr>一日です。<wbr>ランチが<wbr>提供されるので、<wbr>元気を<wbr>保ちながら<wbr>作業できます。<wbr>夕方には<wbr>リラックスして<wbr>飲み物を<wbr>楽しみながら<wbr>交流する<wbr>パーティーも<wbr>あります。<wbr>子供を<wbr>連れて<wbr>来る<wbr>方には、<wbr>家族向けの<wbr>楽しい<wbr>アクティビティも<wbr>用意されています。</span>
 
-- <span class="ja"><strong >プロと<wbr>一緒に<wbr>ライド</strong>：Specializedの<wbr>アンバサダーが<wbr>参加し、<wbr>熟練の<wbr>プロと<wbr>一緒に<wbr>ライドする<wbr>素晴らしい<wbr>機会を<wbr>提供します。
-- <span class="ja"><strong >コミュニティ形成</strong>：この<wbr>イベントは<wbr>トレイル作りだけでなく、<wbr>マウンテンバイカーの<wbr>間の<wbr>コミュニティを<wbr>育成する<wbr>ことも<wbr>目指しています。</span>
+- <span class="ja"><strong >2日目：ライドデー</strong><br ></br>自分たちで<wbr>建設した<wbr>トレイルを<wbr>体験して<wbr>スリルを<wbr>味わいましょう。<wbr>経験豊富な<wbr>ライダーから<wbr>家族連れまで、<wbr>誰でも<wbr>楽しめる<wbr>完璧な<wbr>一日です！</span>
+
+### おすすめポイント:
+
+- <span class="ja"><strong >プロと<wbr>一緒に<wbr>ライド：</strong>Specializedの<wbr>アンバサダーが<wbr>参加し、<wbr>熟練の<wbr>プロと<wbr>一緒に<wbr>ライドする<wbr>素晴らしい<wbr>機会を<wbr>提供します。</span>
+- <span class="ja"><strong >コミュニティ構築：</strong>この<wbr>イベントは、<wbr>トレイル構築だけでなく、<wbr>マウンテンバイカー間の<wbr>コミュニティの<wbr>育成も<wbr>目的と<wbr>しています。</span>
 
 <br />
 ![](/assets/images/events/2024/soil-searching/riders.jpg)
 
 ### 追加情報:
 
-<span class="ja">創造性、<wbr>コミュニティ、<wbr>サイクリングの<wbr>週末を<wbr>ニセコで<wbr>一緒に<wbr>楽しみましょう。<wbr>トレイル作りの<wbr>スキルを<wbr>向上させたい、<wbr>または<wbr>ユニークな<wbr>バイキング体験を<wbr>楽しみたい<wbr>場合でも、<wbr>Soil Searching Nisekoは<wbr>皆に<wbr>何かを<wbr>提供します。</span>
+<span class="ja">創造性、<wbr>コミュニティ、<wbr>サイクリングの<wbr>週末を<wbr>ニセコで<wbr>一緒に<wbr>楽しみましょう。<wbr>トレイル作りの<wbr>スキルを<wbr>磨きたい<wbr>方も、<wbr>特別な<wbr>サイクリング体験を<wbr>楽しみたい<wbr>方も、<wbr>Soil Searching Nisekoには<wbr>誰もが<wbr>楽しめる<wbr>内容が<wbr>用意されています。</span>
 
-<span class="ja">2024年9月14日から<wbr>15日に<wbr>カレンダーを<wbr>マークして、<wbr>この<wbr>ライドを<wbr>超えた<wbr>豊かな<wbr>イベントの<wbr>一部と<wbr>なりましょう。<wbr>家族と<wbr>一緒に<wbr>参加し、<wbr>新しい<wbr>友達を<wbr>作り、<wbr>Soil Searching Niseko 2024で<wbr>忘れられない<wbr>思い出を<wbr>作りましょう。</span>
+<span class="ja">2024年9月14日と<wbr>15日を<wbr>カレンダーに<wbr>マークしてください。<wbr>この<wbr>イベントは、<wbr>ただの<wbr>サイクリングイベントを<wbr>超えた<wbr>充実した<wbr>体験を<wbr>提供します。<wbr>家族を<wbr>連れてきたり、<wbr>新しい<wbr>友達と<wbr>出会ったり、<wbr>Soil Searching Niseko 2024で<wbr>素晴らしい<wbr>思い出を<wbr>作りましょう。</span>
 
 ![](/assets/images/events/2024/soil-searching/tools.jpg)
-
-### <span class="ja">イベント免責事項に<wbr>同意</span>
-
-<span class="ja">すべての<wbr>参加者は、<wbr>当社の<wbr>イベント免責事項に<wbr>同意する<wbr>必要が<wbr>あります。<wbr>免責事項の<wbr>完全な<wbr>詳細および<wbr>閲覧に<wbr>ついては、<wbr>[こちらを<wbr>クリックしてください<wbr>](/soil-searching/waver/)。</span>
