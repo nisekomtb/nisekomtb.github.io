@@ -58,7 +58,7 @@ itinerary:
         - time: 9:00am
           name: Rhythm Hirafuで<wbr>プレライドコーヒーを<wbr>楽しもう
         - time: 9:30am
-          name: Specializedの<wbr>プロライダーに<wbr>よる<wbr>MTBトリックショーと<wbr>Q
+          name: Specializedの<wbr>プロライダー、<a href="https://www.instagram.com/yuki_kishi_/" target="_blank">Yuki Kishi</a>に<wbr>よる<wbr>MTBトリックショーと<wbr>Q&A
         - time: 10:00am
           name: グループライド - Specializedの<wbr>プロと<wbr>ツインピークス・バイクパークを<wbr>作る<wbr>チームに<wbr>よる<wbr>オーガナイズドライド
         - time: 11:00am

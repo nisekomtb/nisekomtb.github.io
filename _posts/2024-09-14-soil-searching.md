@@ -58,7 +58,7 @@ itinerary:
         - time: 9:00am
           name: Come grab a pre ride coffee at Rhythm Hirafu
         - time: 9:30am
-          name: MTB trick show by Specialized Pro rider and Q&A
+          name: MTB trick show by Specialized Pro rider <a href="https://www.instagram.com/yuki_kishi_/" target="_blank">Yuki Kishi</a> and Q&A
         - time: 10:00am
           name: Group rides – organized rides with Specialized’s pros and the team building the Twin Peaks Bike Park
         - time: 11:00am
