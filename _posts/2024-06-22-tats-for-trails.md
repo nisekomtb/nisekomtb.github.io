@@ -5,8 +5,8 @@ title: Tats for Trails
 permalink: /tats-for-trails-2024/
 description:
 startDate: 2024-06-22 09:00:00 +0900
-endDate: 2024-07-21 23:59:59 +0900
-drawDate: 2024-07-28 18:00:00 +0900
+endDate: 2024-07-28 23:59:59 +0900
+drawDate: 2024-08-04 18:00:00 +0900
 price: ¥500+
 partners:
   - name: 59 Niseko
