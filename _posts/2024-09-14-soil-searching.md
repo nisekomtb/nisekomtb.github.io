@@ -1,6 +1,5 @@
 ---
 layout: event
-draft: true
 categories: events
 title: Soil Searching
 description: Join Specialized and NAMBA for “Soil Searching”, an exclusive (registration only!) 2 day dig & ride event in the Twin Peaks Bike Park in Niseko, Hokkaido on 14th & 15th September.
