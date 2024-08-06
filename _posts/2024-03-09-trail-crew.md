@@ -8,6 +8,8 @@ masthead:
   credit:
     name: Sea and Summit Media
     url: https://seaandsummitmedia.com
+og:
+  image: /assets/images/jobs/trail-crew.jpg
 isOpen: true
 location: Niseko, Japan and surrounding areas
 term: Summer season

@@ -8,6 +8,8 @@ masthead:
   credit:
     name: Sea and Summit Media
     url: https://seaandsummitmedia.com
+og:
+  image: /assets/images/jobs/trail-crew.jpg
 isOpen: true
 location: <span class="ja">ニセコ、<wbr>または<wbr>ニセコ周辺地域</span>
 term: 夏季シーズン
