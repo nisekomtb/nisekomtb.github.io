@@ -8,7 +8,7 @@ masthead:
   credit:
     name: Sea and Summit Media
     url: https://seaandsummitmedia.com
-isOpen: false
+isOpen: true
 location: <span class="ja">ニセコ、<wbr>または<wbr>ニセコ周辺地域</span>
 term: 夏季シーズン
 workingHours: 一日８時間 / 週5日勤務
@@ -44,7 +44,7 @@ applyUrl: https://forms.gle/oazKN1uK9Jh6Huzw7
 - <span class="ja">アジアの<wbr>中でも<wbr>急成長を<wbr>遂げた<wbr>バイクパークを<wbr>造成した<wbr>NAMBAチームの<wbr>中で、<wbr>あなたの<wbr>ポジテイブな<wbr>行動が<wbr>さらに<wbr>良い<wbr>方向へ<wbr>導く<wbr>事が<wbr>できる</span>
 - <span class="ja">「やるべき<wbr>ことを<wbr>やって<wbr>楽しむ」 NAMBAチームは<wbr>勤務中は<wbr>一生懸命<wbr>働きますが、<wbr>クルーグループライド、<wbr>チームBBQ、<wbr>その<wbr>他の<wbr>週末は<wbr>思いっきりチームで<wbr>楽しみます</span>
 - <span class="ja">Specialized Japanが<wbr>提供する<wbr>NAMBAの<wbr>トレイルクルーバイクへの<wbr>アクセス</span>
-- <span class="ja">NAMBAおよびスポンサーからの<wbr>素敵な<wbr>グッズ</span>
+<!-- - <span class="ja">NAMBAおよびスポンサーからの<wbr>素敵な<wbr>グッズ</span> -->
 - <span class="ja">コミュニティイベント、<wbr>ライドデイ — コミュニティの<wbr>一員であるだけでなく、<wbr>イベント作りにも<wbr>関われます！</span>
 - <span class="ja">必要に<wbr>応じて<wbr>トレイル近くの<wbr>リーズナブルな<wbr>価格の<wbr>宿泊施設への<wbr>滞在</span>
 - <span class="ja">買い物や<wbr>地域の<wbr>レクリエーション施設を<wbr>知る<wbr>ために<wbr>NAMBAの<wbr>車両を<wbr>使用する<wbr>可能性あり</span>

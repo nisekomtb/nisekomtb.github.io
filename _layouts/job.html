@@ -28,132 +28,136 @@ baseCss: view-article
     </div>
     {% endif %}
 
-    <div class="article-detail ja-animate" data-animation="move-from-right" data-delay="200">
+    <div class="article-detail t3-section-wrap">
       <!-- Aside -->
-      <div class="project-info">
-        <h4>{% if page.lang == "en" %}Position Details{% else %}ポジション詳細{% endif %}</h4>
+      <div class="section">
+        <div class="project-info ja-animate" data-animation="move-from-right" data-delay="200">
+          <h4>{% if page.lang == "en" %}Position Details{% else %}ポジション詳細{% endif %}</h4>
 
-        {% if page.startDate %}
-        <div class="list-group">
-          <h4 class="list-group-item-heading">{% if page.lang == "en" %}Start date{% else %}開始日{% endif %}</h4>
-          <p class="list-group-item-text">
-            {% if page.lang == "en" %}
-            {{ page.startDate | date: "%s" | plus: days | date: "%A %d %B %Y" }}
-            {% else %}
-            {{ page.startDate | date: "%s" | plus: days | date: "%Y年%m月%d日" }}
-            {% endif %}
-          </p>
-        </div>
-        {% endif %}
+          {% if page.startDate %}
+          <div class="list-group">
+            <h4 class="list-group-item-heading">{% if page.lang == "en" %}Start date{% else %}開始日{% endif %}</h4>
+            <p class="list-group-item-text">
+              {% if page.lang == "en" %}
+              {{ page.startDate | date: "%s" | plus: days | date: "%A %d %B %Y" }}
+              {% else %}
+              {{ page.startDate | date: "%s" | plus: days | date: "%Y年%m月%d日" }}
+              {% endif %}
+            </p>
+          </div>
+          {% endif %}
 
-        {% if page.endDate %}
-        <div class="list-group">
-          <h4 class="list-group-item-heading">{% if page.lang == "en" %}End date{% else %}終了日{% endif %}</h4>
-          <p class="list-group-item-text">
-            {% if page.lang == "en" %}
-            {{ page.endDate | date: "%s" | plus: days | date: "%A %d %B %Y" }}
-            {% else %}
-            {{ page.endDate | date: "%s" | plus: days | date: "%Y年%m月%d日" }}
-            {% endif %}
-          </p>
-        </div>
-        {% endif %}
+          {% if page.endDate %}
+          <div class="list-group">
+            <h4 class="list-group-item-heading">{% if page.lang == "en" %}End date{% else %}終了日{% endif %}</h4>
+            <p class="list-group-item-text">
+              {% if page.lang == "en" %}
+              {{ page.endDate | date: "%s" | plus: days | date: "%A %d %B %Y" }}
+              {% else %}
+              {{ page.endDate | date: "%s" | plus: days | date: "%Y年%m月%d日" }}
+              {% endif %}
+            </p>
+          </div>
+          {% endif %}
 
-        {% unless page.startDate and page.endDate %}
-        <div class="list-group">
-          <h4 class="list-group-item-heading">{% if page.lang == "en" %}Term{% else %}雇用期間{% endif %}</h4>
-          <p class="list-group-item-text">
-            {{ page.term }}
-          </p>
-        </div>
-          {% endunless %}
+          {% unless page.startDate and page.endDate %}
+          <div class="list-group">
+            <h4 class="list-group-item-heading">{% if page.lang == "en" %}Term{% else %}雇用期間{% endif %}</h4>
+            <p class="list-group-item-text">
+              {{ page.term }}
+            </p>
+          </div>
+            {% endunless %}
 
-        {% if page.workingHours %}
-        <div class="list-group">
-          <h4 class="list-group-item-heading">{% if page.lang == "en" %}Working hours{% else %}<span
-              class="ja">労働時間</span>{% endif %}</h4>
-          <p class="list-group-item-text{% if page.lang == " ja" %} ja{% endif %}">
-            {{ page.workingHours }}
-          </p>
-        </div>
-        {% endif %}
+          {% if page.workingHours %}
+          <div class="list-group">
+            <h4 class="list-group-item-heading">{% if page.lang == "en" %}Working hours{% else %}<span
+                class="ja">労働時間</span>{% endif %}</h4>
+            <p class="list-group-item-text{% if page.lang == " ja" %} ja{% endif %}">
+              {{ page.workingHours }}
+            </p>
+          </div>
+          {% endif %}
 
-        <div class="list-group">
-          <h4 class="list-group-item-heading">{% if page.lang == "en" %}Status{% else %}<span class="ja">ポジションの<wbr>空き</span>{% endif %}</h4>
-          <p class="list-group-item-text{% if page.lang == " ja" %} ja{% endif %}">
-            {% if page.isOpen and page.lang == "ja" %}
-              募集中
-            {%  elsif page.isOpen %}
-              Open
-            {%  else %}
-              Closed
-            {% endif %}
-          </p>
-        </div>
+          <div class="list-group">
+            <h4 class="list-group-item-heading">{% if page.lang == "en" %}Status{% else %}<span class="ja">ポジションの<wbr>空き</span>{% endif %}</h4>
+            <p class="list-group-item-text{% if page.lang == " ja" %} ja{% endif %}">
+              {% if page.isOpen and page.lang == "ja" %}
+                募集中
+              {%  elsif page.isOpen %}
+                Open
+              {%  else %}
+                Closed
+              {% endif %}
+            </p>
+          </div>
 
-        <div class="list-group">
-          <h4 class="list-group-item-heading">{% if page.lang == "en" %}Location{% else %}場所{% endif %}</h4>
-          <p class="list-group-item-text{% if page.lang == "ja" %} ja{% endif %}">{{ page.location }}</p>
-        </div>
+          <div class="list-group">
+            <h4 class="list-group-item-heading">{% if page.lang == "en" %}Location{% else %}場所{% endif %}</h4>
+            <p class="list-group-item-text{% if page.lang == "ja" %} ja{% endif %}">{{ page.location }}</p>
+          </div>
 
-        <div class="list-group">
-          <h4 class="list-group-item-heading">{% if page.lang == "en" %}Remuneration{% else %}報酬について{% endif %}</h4>
-          <p class="list-group-item-text{% if page.lang=="ja" %} ja{% endif %}">
-            {{ page.pay }}
-          </p>
-        </div>
+          <div class="list-group">
+            <h4 class="list-group-item-heading">{% if page.lang == "en" %}Remuneration{% else %}報酬について{% endif %}</h4>
+            <p class="list-group-item-text{% if page.lang=="ja" %} ja{% endif %}">
+              {{ page.pay }}
+            </p>
+          </div>
 
-        {% if page.bonus %}
-        <div class="list-group">
-          <h4 class="list-group-item-heading">{% if page.lang == "en" %}Performance Bonus{% else %}成果報酬{% endif %}</h4>
-          <p class="list-group-item-text{% if page.lang==" ja" %} ja{% endif %}">
-            {{ page.bonus }}
-          </p>
-        </div>
-        {% endif %}
+          {% if page.bonus %}
+          <div class="list-group">
+            <h4 class="list-group-item-heading">{% if page.lang == "en" %}Performance Bonus{% else %}成果報酬{% endif %}</h4>
+            <p class="list-group-item-text{% if page.lang==" ja" %} ja{% endif %}">
+              {{ page.bonus }}
+            </p>
+          </div>
+          {% endif %}
 
-        {% for perk in page.perks %}
-        <div class="list-group">
-          <h4 class="list-group-item-heading">{{ perk.title }}</h4>
-          <p class="list-group-item-text{% if page.lang==" ja" %} ja{% endif %}">
-            {{ perk.perk }}
-          </p>
-        </div>
-        {% endfor %}
-
-        {% if page.moreInfo %}
-        <div class="list-group">
-          <h4 class="list-group-item-heading">{% if page.lang == "en" %}More Info{% else %}詳しくは{% endif %}</h4>
-          {% for info in page.moreInfo %}
-          <p{% if page.lang == "ja" %} class="ja"{% endif %}>{{ info }}</p>
+          {% for perk in page.perks %}
+          <div class="list-group">
+            <h4 class="list-group-item-heading">{{ perk.title }}</h4>
+            <p class="list-group-item-text{% if page.lang==" ja" %} ja{% endif %}">
+              {{ perk.perk }}
+            </p>
+          </div>
           {% endfor %}
-        </div>
-        {% endif %}
 
-        {% if page.applyUrl and page.isOpen %}
-        <div class="list-group">
-          {% if page.lang == "ja" %}
-            <p class="ja">
-              <a class="btn btn-sm btn-primary"
-                href="{{- page.applyUrl -}}"
-                target="_blank">申し込みはこちらをクリック</a>
-            </p>
-          {% else %}
-            <p>
-              <a class="btn btn-sm btn-primary"
-                href="{{- page.applyUrl -}}"
-                target="_blank">Click here to apply</a>
-            </p>
+          {% if page.moreInfo %}
+          <div class="list-group">
+            <h4 class="list-group-item-heading">{% if page.lang == "en" %}More Info{% else %}詳しくは{% endif %}</h4>
+            {% for info in page.moreInfo %}
+            <p{% if page.lang == "ja" %} class="ja"{% endif %}>{{ info }}</p>
+            {% endfor %}
+          </div>
+          {% endif %}
+
+          {% if page.applyUrl and page.isOpen %}
+          <div class="list-group">
+            {% if page.lang == "ja" %}
+              <p class="ja">
+                <a class="btn btn-sm btn-primary"
+                  href="{{- page.applyUrl -}}"
+                  target="_blank">申し込みはこちらをクリック</a>
+              </p>
+            {% else %}
+              <p>
+                <a class="btn btn-sm btn-primary"
+                  href="{{- page.applyUrl -}}"
+                  target="_blank">Click here to apply</a>
+              </p>
+            {% endif %}
+          </div>
           {% endif %}
         </div>
-        {% endif %}
       </div>
       <!-- // Aside -->
 
-      <section class="article-content clearfix ja-animate" data-animation="move-from-right" data-delay="400"  itemprop="articleBody">
-        {{ content }}
-        <!-- // Item tags -->
-      </section>
+      <div class="section">
+        <section class="article-content clearfix ja-animate" data-animation="move-from-right" data-delay="400" itemprop="articleBody">
+          {{ content }}
+          <!-- // Item tags -->
+        </section>
+      </div>
 
       <!-- Footer -->
       <!-- // Footer -->

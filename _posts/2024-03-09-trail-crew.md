@@ -8,7 +8,7 @@ masthead:
   credit:
     name: Sea and Summit Media
     url: https://seaandsummitmedia.com
-isOpen: false
+isOpen: true
 location: Niseko, Japan and surrounding areas
 term: Summer season
 workingHours: 8 hrs a day / 5 days a week
@@ -44,7 +44,7 @@ NAMBA Trail Crew members are to report to their Machine Operator, NAMBA Trail Cr
 - Chance to leave your positive mark on Japan’s leading trails association, and Asia’s fastest growing bike park
 - Be a part of a “get shit done and have fun” culture – the NAMBA team works hard, but we are known for crew group rides, team BBQs and other weekend shenanigans
 - Access to NAMBA’s Trail Crew bikes, sponsored by Specialized Japan
-- Sick merch from NAMBA, and our sponsors
+<!-- - Sick merch from NAMBA, and our sponsors -->
 - Community events, ride days – don’t just be a part of the community, you get to help shape it!
 - Reasonably priced accommodation nearby the trails if required
 - Possibility to use NAMBA vehicles for grocery runs, and to familiarize yourself with the region’s recreational offerings
