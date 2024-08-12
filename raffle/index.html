@@ -1,14 +1,111 @@
 ---
-title: Specialized Soil Searching Raffle
-titleHtml: Specialized <img src='/assets/images/company/other/soil-searching.png' style='height:1em; margin-bottom:10px;' alt='Soil Searching'/> Raffle
+title: Raffle
+subtitle: Our biggest raffle to date!
 description: Support mountain biking in Japan and win an awesome limited edition, fully custom painted Specialized Soil Searching Stumpjumper Evo Expert! Enter to win today!
+masthead:
+  img: /assets/images/og/ss-stumpjumper.jpg
 og:
-  image: /assets/images/og/raffle.jpg
+  image: /assets/images/og/ss-stumpjumper.jpg
+storeProductId: 688070324
+otherPrizes:
+  - row:
+    - title: Fox Float Rhythm 29" Forks
+      quantity: 2
+      desc: Boost your ride with these high-performance suspension forks. Designed for smooth, reliable, and precise handling on any trail, perfect for enhancing your mountain biking experience.
+      images:
+        - /assets/images/prizes/2024/forks-01.jpg
+        - /assets/images/prizes/2024/forks-02.jpg
+      sponsors:
+        - name: Fox
+          img: /assets/images/company/fox.png
+          url: https://ridefox.com
+      note: Product must be collected on raffle draw night. If you cannot attend in person or have a representative present, the prize will be re-drawn.
+
+    - title: Race Face bar and stem set
+      quantity: 5
+      desc: Upgrade your cockpit with this robust and stylish bar and stem combo. Engineered for strength and control, it's the perfect setup for tackling any trail with confidence.
+      images:
+        - /assets/images/prizes/2024/bar-01.jpg
+        - /assets/images/prizes/2024/bar-02.jpg
+      sponsors:
+        - name: Race Face
+          img: /assets/images/company/raceface.svg
+          url: https://www.raceface.com
+      note: Product must be collected on raffle draw night. If you cannot attend in person or have a representative present, the prize will be re-drawn.
+
+  - row:
+    - title: Race Face Chester pedals
+      quantity: 5
+      desc: Lightweight yet durable, these pedals offer superior grip and performance. Perfect for riders looking for reliable traction and a confident ride on any terrain.
+      images:
+        - /assets/images/prizes/2024/pedals.jpg
+      sponsors:
+        - name: Race Face
+          img: /assets/images/company/raceface.svg
+          url: https://www.raceface.com
+      note: Product must be collected on raffle draw night. If you cannot attend in person or have a representative present, the prize will be re-drawn.
+
+    - title: Race Face "Getta grip" grips
+      quantity: 5
+      desc: Experience comfort and control with these ergonomic grips. Designed for a secure hold, they ensure a comfortable and confident ride on every trail.
+      images:
+        - /assets/images/prizes/2024/grips.jpg
+      sponsors:
+        - name: Race Face
+          img: /assets/images/company/raceface.svg
+          url: https://www.raceface.com
+      note: Product must be collected on raffle draw night. If you cannot attend in person or have a representative present, the prize will be re-drawn.
+
+    - title: Fox trucker baseball caps
+      quantity: 12
+      desc: Stay cool and stylish with these classic trucker caps. Perfect for any adventure, they offer breathable comfort and a versatile look, on or off the trail.
+      images:
+        - /assets/images/prizes/2024/baseball-01.jpg
+      sponsors:
+        - name: Fox
+          img: /assets/images/company/fox.png
+          url: https://ridefox.com
+      note: Product must be collected on raffle draw night. If you cannot attend in person or have a representative present, the prize will be re-drawn.
+
+  - row:
+    - title: Specialized t-shirts
+      quantity: 5
+      desc: Show off your passion for riding with these high-quality, comfortable t-shirts. Perfect for everyday wear, whether you're on the bike or just hanging out.
+      images:
+        - /assets/images/prizes/2024/tshits-01.jpg
+      sponsors:
+        - name: Specialized
+          img: /assets/images/company/special/specialized.png
+          url: http://specialized-onlinestore.jp/
+      note: Product must be collected on raffle draw night. If you cannot attend in person or have a representative present, the prize will be re-drawn.
+
+    - title: Fox bottle openers
+      quantity: 3
+      desc: Crack open a cold one with these unique bottle openers, shaped like rear shocks. Magnetic design ensures they stick to your fridge, blending functionality with a cool, bike-inspired look.
+      images:
+        - /assets/images/prizes/2024/bottle-opener.jpg
+      sponsors:
+        - name: Fox
+          img: /assets/images/company/fox.png
+          url: https://ridefox.com
+      note: Product must be collected on raffle draw night. If you cannot attend in person or have a representative present, the prize will be re-drawn.
+
+    - title: Fox key ring
+      quantity: 6
+      desc: Convenient and stylish, these key rings double as bottle openers, making them the perfect accessory for any biker. Always ready to pop a bottle on the go.
+      images:
+        - /assets/images/prizes/2024/key-ring.jpg
+      sponsors:
+        - name: Fox
+          img: /assets/images/company/fox.png
+          url: https://ridefox.com
+      note: Product must be collected on raffle draw night. If you cannot attend in person or have a representative present, the prize will be re-drawn.
 ---
+
 <style>
   .carousel .hero {
-    border: 1px #ccc solid;
-    border radius: 5px;
+    border: 1px #cccccc solid;
+    border-radius: 5px;
   }
 
   .carousel .thumbs {
@@ -85,7 +182,10 @@ og:
   .gold {
     color: #ffd97b;
     font-size: 12px !important;
-    font-family: "Metropolis", Helvetica, Arial, sans-serif;
+    font-family: "Metropolis"
+    , Helvetica
+    , Arial
+    , sans-serif;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0;
@@ -110,7 +210,8 @@ og:
 
   .features-item .sponsors img {
     margin-bottom: 10px;
-    height: 50px;
+    max-height: 50px;
+    max-width: 150px;
   }
 
   .features-item .products {
@@ -118,10 +219,6 @@ og:
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-  }
-
-  .features-item .products .prodwrap {
-    width: 50%;
   }
 
   @media(max-width: 480px) {
@@ -160,6 +257,41 @@ og:
     font-style: italic;
     font-size: 75%;
     margin-top: 30px;
+  }
+
+  .owl-carousel {
+    margin-top: 15px;
+  }
+
+  .owl-nav button span {
+    opacity: 0.5;
+  }
+
+  .owl-nav button span:before {
+    color: #fd7d57;
+    font-size: 35px;
+    background: linear-gradient(135deg, #fd7d57, #f55d59);
+    background-clip: text;
+    display: inline-block;
+    -webkit-background-clip: text;
+    text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+    font-weight: 400;
+    text-indent: 1px;
+  }
+
+  .owl-nav button span:hover {
+    opacity: 0.8;
+  }
+
+  .owl-nav {
+    text-align: center;
+    margin-top: 15px;
+  }
+
+  .owl-nav .owl-next {
+    margin-left: 15px;
+    /*float: right;*/
   }
 
   .ec-grid {
@@ -284,7 +416,7 @@ og:
       <p
         class="ja-animate"
         data-animation="move-from-bottom"
-        data-delay="800">Entry is open from July 13th, 2023 until 11:59 PM August 31st, 2023.
+        data-delay="800">Entry is open from 13th August 2024 until 6:00pm 14th September 2024.
       </p>
     </div>
 
@@ -299,14 +431,6 @@ og:
             data-animation="move-from-bottom"
             data-delay="item-0">
 
-            <div class="pull-left item-image">
-              <img
-                src="/assets/images/prizes/stumpjumper-1.jpg"
-                style="border: 1px #ccc solid;"
-                alt=""
-                itemprop="image">
-            </div>
-
             <div class="row">
               <div class="col col-sm-12 col-md-4">
                 <div class="font-icon">
@@ -317,10 +441,7 @@ og:
                 <h4>Soil Searching Stumpjumper Evo Expert</h4>
                 <div class="sponsors">
                   <a href="https://www.specialized-onlinestore.jp/" target="_blank">
-                    <img
-                      src="/assets/images/company/other/specialized-s.png"
-                      alt="Specialized Bicycles"
-                      style="width: 50px; height: auto;" />
+                    <img src="/assets/images/company/special/specialized.png" alt="Specialized Bicycles" />
                   </a>
                 </div>
                 <p style="font-size:125%;">
@@ -334,22 +455,30 @@ og:
                 <p class="gold">SRAM Eagle drive train</p>
                 <p class="gold">SRAM Code brakes</p>
                 <p class="gold">Carbon frame</p>
-                <p class="gold">S2 size</p>
+                <p class="gold">S3 size</p>
                 <a class="btn action to-raffle" href="#raffle-store">
                   <span>Enter to win here</span>
                 </a>
-                <p class="small">Exact model, specs and colour may differ. The bike is available for immediate collection in Niseko, or for postage within Japan. Should a winner be unable to collect the bicycle immediately, storage for up to 6 months is available in Niseko.</p>
+                <p class="small">The bike is available for immediate collection in Niseko, or for postage within Japan. Should a winner be unable to collect the bicycle immediately, storage for up to 6 months is available in Niseko.</p>
               </div>
               <div class="col col-sm-12 col-md-8">
-                <div class="sponsors" style="margin-top:0px;">
-                  <a href="https://www.specialized-onlinestore.jp/" target="_blank">
-                    <img
-                      src="/assets/images/company/other/specialized-wordmark-white.svg"
-                      alt="Specialized Bicycles"
-                      style="width: 200px; height: auto;" />
-                  </a>
+
+                <div class="carousel">
+                  <div class="hero">
+                    <img id="carousel-hero" src="/assets/images/prizes/2024/stumpjumper-0.jpeg" />
+                  </div>
+                  <div class="thumbs">
+                    {% for i in (0..9) -%}
+                      <div class="thumbwrap">
+                        <div class="thumb {% if i == 0 %}active{% endif %}" onclick="changeHero(this, '/assets/images/prizes/2024/stumpjumper-{{ i }}.jpeg');">
+                          <img src="/assets/images/prizes/2024/stumpjumper-{{ i }}.jpeg" />
+                        </div>
+                      </div>
+                    {%- endfor %}
+                  </div>
                 </div>
-                <p style="margin-bottom:15px;">
+
+                <p style="margin-top:15px; margin-bottom:15px;">
                   <strong style="color:#fff;">ULTRA LIMITED.</strong>
                   Up for raffle is an ultra limited edition Specialized Stumpjumper Evo Expert. This limited edition build sports a custom, a hand painted Soil Searching branded livery and a special Soil Searching edition parts list. How rare is it? Extremely: it is one of a handful of these bikes available world-wide.
                 </p>
@@ -360,15 +489,15 @@ og:
                 <p style="margin-bottom:15px;">
                   <strong style="color:#fff;">YOURS TO WIN.</strong>
                   Raffle tickets are just ¥500, each ticket you buy secures you another chance to win this epic bike, and the other prizes on offer. It also supports a good cause: all proceeds go towards building free and public mountain biking trails.</p>
-                <div class="carousel">
-                  <div class="hero">
-                    <img id="carousel-hero" src="/assets/images/prizes/stumpjumper-2.jpg" />
-                  </div>
-                </div>
+
+                <p class="gold" style="margin-bottom:15px;">The Mountain Guardian; 山守人</p>
+                <p>Fully custom limited edition paint job. Never for sale.</p>
+                {% include carousel.html images=site.data.prizes.levo.paint.images items=2 autoplay='false' id=2 %}
+
                 <p class="gold" style="margin-bottom:15px;">About Specialized Soil Searching</p>
                 <p style="margin-bottom:15px;">Specialized Soil Searching is a movement to recognize, celebrate, and support the trail builders who help shape our sport and our stoke.
                 </p>
-                <p style="margin-bottom:15px;">NAMBA is thankful to have our association's trail building team sponsored by Specialized through their Soil SearchiProgram, and to be raffling off this limited edition Stumpjumper. We are also excited to announce that
+                <p style="margin-bottom:15px;">NAMBA is thankful to have our association's trail building team sponsored by Specialized through their Soil Searching Program, and to be raffling off this limited edition Stumpjumper. We are also excited to announce that
                   <strong style="color:#fff;">all raffle ticket proceeds benefit the free-to-ride Twin Peaks Bike Park.</strong>
                 </p>
                 <p style="margin-bottom:15px;">This exceptional bike cannot be bought anywhere, making it truly unique and highly coveted. It was built by Specialized to continue to show their love and support for those developing and maintaining the trail systems that are the lifeblood of our sport.</p>
@@ -391,95 +520,76 @@ og:
 
     <div class="section acm-features style-2 prizes">
 
-      <div
-        class="row equal-height equal-height-child"
-        data-animation="move-from-bottom"
-        data-delay="200">
-        <div class="col col-sm-12 col-md-6">
-          <div
-            class="features-item no-hover ja-animate"
-            data-animation="move-from-bottom"
-            data-delay="item-0">
-            <div class="font-icon">
-              <span class="icon ion-ios-trophy">
-                <span class="num">2</span>
-              </span>
-            </div>
-            <h4>Skye Niseko 1 night summer stay for 4 with breakfast included</h4>
-            <div class="products">
-              <div class="prodwrap">
-                <div class="prod">
-                  <img src="/assets/images/prizes/skye-1.jpg" alt="Skye Niseko" />
+      {% assign prizeNumber = 1 %}
+      {% for prizeRow in page.otherPrizes %}
+        <div
+          class="row equal-height equal-height-child"
+          data-animation="move-from-bottom"
+          data-delay="200">
+
+          {% assign prizeRowSize = prizeRow.row | size %}
+          {% for prize in prizeRow.row %}
+            {% assign prizeNumber = prizeNumber | plus: 1 %}
+            <div class="col col-sm-12 {% if prizeRowSize == 2 %}col-md-6{% elsif prizeRowSize == 3 %}col-md-4{% elsif prizeRowSize == 4 %}col-md-3{% endif %}">
+              <div
+                class="features-item no-hover ja-animate"
+                data-animation="move-from-bottom"
+                data-delay="item-0">
+                <div class="font-icon">
+                  <span class="icon ion-ios-trophy">
+                    <span class="num">{{ prizeNumber }}</span>
+                  </span>
                 </div>
-              </div>
-              <div class="prodwrap">
-                <div class="prod">
-                  <img src="/assets/images/prizes/skye-2.jpg" alt="Breakfast at Skye Niseko" />
+                <h4>{{ prize.title }}</h4>
+                <div class="products">
+                  {% for image in prize.images %}
+                    <div
+                      class="prodwrap"
+                      {% if prizeRowSize < 3 %}
+                      style="width:50%"
+                      {% endif %}>
+                      <div class="prod">
+                        <img src="{{ image }}" />
+                      </div>
+                    </div>
+                  {% endfor %}
                 </div>
+                {% if prize.quantity %}
+                  <div>
+                    <strong class="gold" style="font-size:125%;">
+                      <span style="font-size:200%;">{{ prize.quantity }}</span>
+                      prizes available</strong>
+                  </div>
+                {% endif %}
+                {% if prize.value %}
+                  <p style="font-size:125%;">A value of
+                    <strong>{{ prize.value }}</strong>
+                  </p>
+                {% endif %}
+                {% if prize.subtitle %}
+                  <p class="gold" style="margin-top:30px; margin-bottom:15px;">{{ prize.subtitle }}</p>
+                {% endif %}
+                {% if prize.desc %}
+                  <p style="margin-bottom:15px;">{{ prize.desc }}</p>
+                {% endif %}
+                <a class="btn action to-raffle" href="#raffle-store">
+                  <span>Enter to win here</span>
+                </a>
+                <div class="sponsors">
+                  {% for sponsor in prize.sponsors %}
+                    <a href="{{ sponsor.url }}" target="_blank">
+                      <img src="{{ sponsor.img }}" alt="{{ sponsor.name }}">
+                    </a>
+                  {% endfor %}
+                </div>
+                {% if prize.note %}
+                  <p class="small">{{ prize.note }}</p>
+                {% endif %}
               </div>
             </div>
-            <p style="font-size:125%;">A value of
-              <strong>¥55,000</strong>
-            </p>
-            <p class="gold" style="margin-top:30px; margin-bottom:15px;">The New Level of Alpine Luxury in Niseko</p>
-            <p style="margin-bottom:15px;">
-              Your entry to win the Soil Searching Edition Stumpjumper Evo Expert also gives you the chance to win a 1 night stay for 4 guests in sumptuous
-              <a href="https://www.skyeniseko.com" target="_blank">Skye Niseko</a>. Fuel up for a day of mountain biking with breakfast, included as part of this awesome prize!
-            </p>
-            <a class="btn action to-raffle" href="#raffle-store">
-              <span>Enter to win here</span>
-            </a>
-            <div class="sponsors">
-              <a href="https://www.nisekocentral.com" target="_blank">
-                <img src="/assets/images/company/shika/niseko-central.png" alt="Niseko Central">
-              </a>
-            </div>
-            <p class="small">Valid summer 2023 or 2024, excluding blackout dates</p>
-          </div>
+          {% endfor %}
         </div>
-        <div class="col col-sm-12 col-md-6">
-          <div
-            class="features-item no-hover ja-animate"
-            data-animation="move-from-bottom"
-            data-delay="item-1">
-            <div class="font-icon">
-              <span class="icon ion-ios-trophy">
-                <span class="num">3</span>
-              </span>
-            </div>
-            <h4>
-              Ki Niseko 2 night summer stay for 2 with breakfast included</h4>
-            <div class="products">
-              <div class="prodwrap">
-                <div class="prod">
-                  <img src="/assets/images/prizes/ki-1.jpg" alt="Ki Niseko Exterior" />
-                </div>
-              </div>
-              <div class="prodwrap">
-                <div class="prod">
-                  <img src="/assets/images/prizes/ki-2.jpg" alt="Example Ki Niseko room" />
-                </div>
-              </div>
-            </div>
-            <p style="font-size:125%;">A value of
-              <strong>¥55,000</strong>
-            </p>
-            <p class="gold" style="margin-top:30px; margin-bottom:15px;">The World's Best Boutique Ski Hotel</p>
-            <p style="margin-bottom:15px;">By entering to win the Soil Searching Evo Expert, you're also getting the chance to win a luxurious one-night stay at
-              <a href="https://www.kiniseko.com" traget="_blank">Ki Niseko</a>
-              hotel for two! This stay includes a delightful breakfast meaning you and your loved one, or your favourite riding buddy, can fuel up and kickstart your day of mountain biking adventures.</p>
-            <a class="btn action to-raffle" href="#raffle-store">
-              <span>Enter to win here</span>
-            </a>
-            <div class="sponsors">
-              <a href="https://www.nisekocentral.com" target="_blank">
-                <img src="/assets/images/company/shika/niseko-central.png" alt="Niseko Central">
-              </a>
-            </div>
-            <p class="small">Valid summer 2023 or 2024, excluding blackout dates</p>
-          </div>
-        </div>
-      </div>
+      {% endfor %}
 
     </div>
 
@@ -518,8 +628,20 @@ og:
   window.ec.storefront.product_details_position_breadcrumbs = 25;
   window.ec.storefront.breadcrumbs_separator = "";
 
-  xProductBrowser("defaultProductId=568683531", "categoriesPerRow=3", "views=grid(20,3) list(60) table(60)", "categoryView=grid", "searchView=list", "id=raffle-store");
+  xProductBrowser("defaultProductId={{page.storeProductId}}", "categoriesPerRow=3", "views=grid(20,3) list(60) table(60)", "categoryView=grid", "searchView=list", "id=raffle-store");
 
   window.ecwid_script_defer = true;
   window.ecwid_dynamic_widgets = true;
+
+  function changeHero(source, img) {
+    document.getElementById('carousel-hero').src = img;
+
+    const thumbs = document.getElementsByClassName("thumb");
+    for (i = 0; i < thumbs.length; i++) {
+      thumbs[i].className = thumbs[i].className.replace(" active", "");
+    }
+
+    source.className += " active"
+
+  }
 </script>
