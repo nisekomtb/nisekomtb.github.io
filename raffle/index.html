@@ -10,6 +10,7 @@ storeProductId: 688070324
 otherPrizes:
   - row:
     - title: Fox Float Rhythm 29" Forks
+      hidePrizeNumber: true
       quantity: 2
       desc: Boost your ride with these high-performance suspension forks. Designed for smooth, reliable, and precise handling on any trail, perfect for enhancing your mountain biking experience.
       images:
@@ -22,6 +23,7 @@ otherPrizes:
       note: Product must be collected on raffle draw night. If you cannot attend in person or have a representative present, the prize will be re-drawn.
 
     - title: Race Face bar and stem set
+      hidePrizeNumber: true
       quantity: 5
       desc: Upgrade your cockpit with this robust and stylish bar and stem combo. Engineered for strength and control, it's the perfect setup for tackling any trail with confidence.
       images:
@@ -35,6 +37,7 @@ otherPrizes:
 
   - row:
     - title: Race Face Chester pedals
+      hidePrizeNumber: true
       quantity: 5
       desc: Lightweight yet durable, these pedals offer superior grip and performance. Perfect for riders looking for reliable traction and a confident ride on any terrain.
       images:
@@ -46,6 +49,7 @@ otherPrizes:
       note: Product must be collected on raffle draw night. If you cannot attend in person or have a representative present, the prize will be re-drawn.
 
     - title: Race Face "Getta grip" grips
+      hidePrizeNumber: true
       quantity: 5
       desc: Experience comfort and control with these ergonomic grips. Designed for a secure hold, they ensure a comfortable and confident ride on every trail.
       images:
@@ -57,6 +61,7 @@ otherPrizes:
       note: Product must be collected on raffle draw night. If you cannot attend in person or have a representative present, the prize will be re-drawn.
 
     - title: Fox trucker baseball caps
+      hidePrizeNumber: true
       quantity: 12
       desc: Stay cool and stylish with these classic trucker caps. Perfect for any adventure, they offer breathable comfort and a versatile look, on or off the trail.
       images:
@@ -69,6 +74,7 @@ otherPrizes:
 
   - row:
     - title: Specialized t-shirts
+      hidePrizeNumber: true
       quantity: 5
       desc: Show off your passion for riding with these high-quality, comfortable t-shirts. Perfect for everyday wear, whether you're on the bike or just hanging out.
       images:
@@ -80,6 +86,7 @@ otherPrizes:
       note: Product must be collected on raffle draw night. If you cannot attend in person or have a representative present, the prize will be re-drawn.
 
     - title: Fox bottle openers
+      hidePrizeNumber: true
       quantity: 3
       desc: Crack open a cold one with these unique bottle openers, shaped like rear shocks. Magnetic design ensures they stick to your fridge, blending functionality with a cool, bike-inspired look.
       images:
@@ -91,6 +98,7 @@ otherPrizes:
       note: Product must be collected on raffle draw night. If you cannot attend in person or have a representative present, the prize will be re-drawn.
 
     - title: Fox key ring
+      hidePrizeNumber: true
       quantity: 6
       desc: Convenient and stylish, these key rings double as bottle openers, making them the perfect accessory for any biker. Always ready to pop a bottle on the go.
       images:
@@ -488,7 +496,7 @@ otherPrizes:
                 </p>
                 <p style="margin-bottom:15px;">
                   <strong style="color:#fff;">YOURS TO WIN.</strong>
-                  Raffle tickets are just ¥500, each ticket you buy secures you another chance to win this epic bike, and the other prizes on offer. It also supports a good cause: all proceeds go towards building free and public mountain biking trails.</p>
+                  Each raffle ticket you buy secures you another chance to win this epic bike, and the other prizes on offer. It also supports a good cause: all proceeds go towards building free and public mountain biking trails.</p>
 
                 <p class="gold" style="margin-bottom:15px;">The Mountain Guardian; 山守人</p>
                 <p>Fully custom limited edition paint job. Never for sale.</p>
@@ -497,14 +505,7 @@ otherPrizes:
                 <p class="gold" style="margin-bottom:15px;">About Specialized Soil Searching</p>
                 <p style="margin-bottom:15px;">Specialized Soil Searching is a movement to recognize, celebrate, and support the trail builders who help shape our sport and our stoke.
                 </p>
-                <p style="margin-bottom:15px;">NAMBA is thankful to have our association's trail building team sponsored by Specialized through their Soil Searching Program, and to be raffling off this limited edition Stumpjumper. We are also excited to announce that
-                  <strong style="color:#fff;">all raffle ticket proceeds benefit the free-to-ride Twin Peaks Bike Park.</strong>
-                </p>
-                <p style="margin-bottom:15px;">This exceptional bike cannot be bought anywhere, making it truly unique and highly coveted. It was built by Specialized to continue to show their love and support for those developing and maintaining the trail systems that are the lifeblood of our sport.</p>
-                <p style="margin-bottom:15px;">With its custom paint job, this Specialized Stumpjumper Evo Expert stands out on the trails, showcasing your distinct style and setting you apart as a NAMBA supporter and fortunate winner of this extraordinary prize. A true masterpiece, every detail of the design has been meticulously crafted to create a bike that exudes individuality and exclusivity.</p>
-                <p style="margin-bottom:15px;">Not only is this bike a feast for the eyes, it is a beast on the trails offering
-                  <a href="https://www.pinkbike.com/news/2020-pinkbike-awards-mountain-bike-of-the-year-winner.html" target="_blank">award-winning performance capabilities</a>
-                  and exceptional control. The Stumpjumper Evo Expert, instant rowdy.
+                <p style="margin-bottom:15px;">NAMBA is thankful to have our association's trail building team sponsored by Specialized through their Soil Searching Program, and to be raffling off this limited edition Stumpjumper.
                 </p>
                 <a class="btn action to-raffle" href="#raffle-store">
                   <span>Enter to win here</span>
@@ -534,10 +535,12 @@ otherPrizes:
               <div
                 class="features-item no-hover ja-animate"
                 data-animation="move-from-bottom"
-                data-delay="item-0">
+                data-delay="item-{{ prizeNumber }}">
                 <div class="font-icon">
                   <span class="icon ion-ios-trophy">
-                    <span class="num">{{ prizeNumber }}</span>
+                    {% if hidePrizeNumber %}
+                      <span class="num">{{ prizeNumber }}</span>
+                    {% endif %}
                   </span>
                 </div>
                 <h4>{{ prize.title }}</h4>
@@ -594,6 +597,13 @@ otherPrizes:
     </div>
 
     <div class="t3-section">
+      <h2
+        style="text-align: center;"
+        data-animation="move-from-bottom"
+        data-delay="400">More prizes coming soon, so check back for updates!</h2>
+    </div>
+
+    <div class="t3-section">
 
       <div class="module-title-wrap"></div>
 
@@ -605,16 +615,6 @@ otherPrizes:
 
 </div>
 <script>
-
-  (function($) {
-    $("a[href$='#raffle-store']").on('click', function() {
-      $("html, body").animate({
-        scrollTop: $("#raffle-store").offset().top
-      }, 500);
-      return false;
-    });
-  })(jQuery);
-
   window.ec = window.ec || Object();
   window.ec.config = window.ec.config || Object();
   window.ec.config.custom_redirect_after_purchase = 'https://www.namba.ngo/get-involved/thanks';
