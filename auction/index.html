@@ -1,6 +1,8 @@
 ---
 title: Turbo Levo SL LTD Blind Auction
 description: Here is your chance to get your hands on this 1 of 50 Soil Searching edition Specialized Turbo Levo SL LTD, and to support the Niseko Area Mountain Bike Association (NAMBA). Win a bike and support trails!
+masthead:
+  img: /assets/images/prizes/levo-01.jpg
 og:
   image: /assets/images/prizes/levo-01.jpg
 ---
@@ -36,7 +38,10 @@ og:
   .gold {
     color: #ffd97b;
     font-size: 12px !important;
-    font-family: "Metropolis", Helvetica, Arial, sans-serif;
+    font-family: "Metropolis"
+    , Helvetica
+    , Arial
+    , sans-serif;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0;
@@ -80,12 +85,14 @@ og:
 
   <!-- Article -->
   <article>
-    <div class="pull-left item-image">
+    {%  comment  %}
+      <div class="pull-left item-image">
       <img
-        src="/assets/images/prizes/levo-01.jpg"
-        alt=""
-        itemprop="image" />
-    </div>
+      src="/assets/images/prizes/levo-01.jpg"
+      alt=""
+      itemprop="image" />
+      </div>
+    {% endcomment %}
 
     <!-- Aside -->
     <div class="article-detail">
@@ -255,7 +262,7 @@ og:
 
     </div>
   </article>
-  <!-- //Article -->
+<!-- //Article -->
 </div>
 
 <script>

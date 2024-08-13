@@ -9,9 +9,56 @@ og:
 storeProductId: 688070324
 otherPrizes:
   - row:
+    - title: Park Hyatt luxury mountain biking getaway for 2
+      desc: This luxurious one-night stay at The Park Hyatt Niseko hotel includes a delightful buffet breakfast meaning you and your loved one, or your favourite riding buddy, can fuel up and kickstart your day of mountain biking adventures.
+      inclusions:
+        - 1 night stay for 2 at Park Hyatt Niseko in View King
+        - Park Hyatt breakfast for 2
+        - Mountain bike rental for 2 from Rhythm Hirafu
+      images:
+        - /assets/images/prizes/2024/hyatt-01.jpg
+        - /assets/images/prizes/2024/rhythm-01.jpg
+      sponsors:
+        - name: Park Hyatt
+          img: /assets/images/company/higuma/park-hyatt.png
+          url: https://www.hyatt.com/en-US/hotel/japan/park-hyatt-niseko-hanazono/ctsph
+        - name: Rhythm Hirafu
+          img: /assets/images/company/special/rhythm.png
+          url: https://www.rhythmjapan.com
+      note: Valid for summer 2025. Blackout dates apply.
+
+    - title: Rhythm Hirafu activity hub season pass
+      desc: Enjoy unlimited access to an action-packed season at Rhythm Hirafu. With many activities included, this pass is perfect for thrill-seekers looking to make the most of every adventure.
+      inclusions:
+        - Kilter board & Bouldering wall
+        - Pump track & Skate park & Indoor mini ramp
+        - Trampoline & slackline
+      images:
+        - /assets/images/prizes/2024/rhythm-02.jpg
+        - /assets/images/prizes/2024/rhythm-03.jpg
+      sponsors:
+        - name: Rhythm Hirafu
+          img: /assets/images/company/special/rhythm.png
+          url: https://www.rhythmjapan.com
+      note: Valid for summer 2025.
+
+  - row:
+    - title: Mountain bike rental
+      hidePrizeNumber: true
+      quantity: 1
+      desc: Gear up for an epic ride with top-quality mountain bike rentals. Whether you're hitting the trails at Twin Peaks or Grand Hirafu, Rhythm Hirafu has you covered with a range of bikes to suit every rider.
+      images:
+      - /assets/images/prizes/2024/rhythm-01.jpg
+      - /assets/images/prizes/2024/rhythm-04.jpg
+      sponsors:
+        - name: Rhythm Hirafu
+          img: /assets/images/company/special/rhythm.png
+          url: https://www.rhythmjapan.com
+      note: Valid for summer 2025.
+
     - title: Fox Float Rhythm 29" Forks
       hidePrizeNumber: true
-      quantity: 2
+      quantity: 4
       desc: Boost your ride with these high-performance suspension forks. Designed for smooth, reliable, and precise handling on any trail, perfect for enhancing your mountain biking experience.
       images:
         - /assets/images/prizes/2024/forks-01.jpg
@@ -502,8 +549,7 @@ otherPrizes:
                 {% include carousel.html images=site.data.prizes.levo.paint.images items=2 autoplay='false' id=2 %}
 
                 <p class="gold" style="margin-bottom:15px;">About Specialized Soil Searching</p>
-                <p style="margin-bottom:15px;">Specialized Soil Searching is a movement to recognize, celebrate, and support the trail builders who help shape our sport and our stoke.
-                </p>
+                <p style="margin-bottom:15px;">Specialized Soil Searching is a movement to recognize, celebrate, and support the trail builders who help shape our sport and our stoke.</p>
                 <p style="margin-bottom:15px;">NAMBA is thankful to have our association's trail building team sponsored by Specialized through their Soil Searching Program, and to be raffling off this limited edition Stumpjumper.
                 </p>
                 <a class="btn action to-raffle" href="#raffle-store">
@@ -525,7 +571,7 @@ otherPrizes:
         <div
           class="row equal-height equal-height-child"
           data-animation="move-from-bottom"
-          data-delay="200">
+          data-delay="0">
 
           {% assign prizeRowSize = prizeRow.row | size %}
           {% for prize in prizeRow.row %}
@@ -537,9 +583,9 @@ otherPrizes:
                 data-delay="item-{{ prizeNumber }}">
                 <div class="font-icon">
                   <span class="icon ion-ios-trophy">
-                    {% if hidePrizeNumber %}
+                    {% unless prize.hidePrizeNumber %}
                       <span class="num">{{ prizeNumber }}</span>
-                    {% endif %}
+                    {% endunless %}
                   </span>
                 </div>
                 <h4>{{ prize.title }}</h4>
@@ -560,7 +606,8 @@ otherPrizes:
                   <div>
                     <strong class="gold" style="font-size:125%;">
                       <span style="font-size:200%;">{{ prize.quantity }}</span>
-                      prizes available</strong>
+                      {% if prize.quantity == 1 %}prize available{% else %}prizes available{% endif %}
+                    </strong>
                   </div>
                 {% endif %}
                 {% if prize.value %}
@@ -574,6 +621,13 @@ otherPrizes:
                 {% if prize.desc %}
                   <p style="margin-bottom:15px;">{{ prize.desc }}</p>
                 {% endif %}
+                {% for inclusion in prize.inclusions %}
+                  <p
+                    class="gold"
+                    {% if forloop.index0 == 0 %}
+                    style="margin-top:30px"
+                    {% endif %}>{{ inclusion }}</p>
+                {% endfor %}
                 <a class="btn action to-raffle" href="#raffle-store">
                   <span>Enter to win here</span>
                 </a>
