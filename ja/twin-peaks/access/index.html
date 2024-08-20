@@ -1,6 +1,7 @@
 ---
 layout: twin-peaks
-title: ツインピークス<wbr>バイクパーク
+title: ツインピークスバイクパーク
+titleHtml: ツインピークス<wbr>バイクパーク
 subtitle: アクセス＆設備
 ---
 
@@ -8,8 +9,10 @@ subtitle: アクセス＆設備
   <div style="width:100%; height:600px;" id="map"></div>
 </div>
 
-<script>(g => { var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window; b = b[c] || (b[c] = {}); var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => { await (a = m.createElement("script")); e.set("libraries", [...r] + ""); for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]); e.set("callback", c + ".maps." + q); a.src = `https://maps.${c}apis.com/maps/api/js?` + e; d[q] = f; a.onerror = () => h = n(Error(p + " could not load.")); a.nonce = m.querySelector("script[nonce]")?.nonce || ""; m.head.append(a) })); d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)) })
-    ({ key: "AIzaSyCet6Eys-EOTnAbs402oGLPbJWuvlH5E0s", v: "weekly", language: "ja", region: "JP" });</script>
+<script>
+  (g => { var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window; b = b[c] || (b[c] = {}); var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => { await (a = m.createElement("script")); e.set("libraries", [...r] + ""); for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]); e.set("callback", c + ".maps." + q); a.src = `https://maps.${c}apis.com/maps/api/js?` + e; d[q] = f; a.onerror = () => h = n(Error(p + " could not load.")); a.nonce = m.querySelector("script[nonce]")?.nonce || ""; m.head.append(a) })); d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)) })
+    ({ key: "AIzaSyCet6Eys-EOTnAbs402oGLPbJWuvlH5E0s", v: "weekly", language: "ja", region: "JP" });
+</script>
 
 <script type="text/javascript">
 
@@ -153,10 +156,10 @@ subtitle: アクセス＆設備
     <h3>トイレ</h3>
     <p class="ja">バイクパーク施設内には<wbr>トイレは<wbr>ございません。<wbr>最寄りの<wbr>公衆トイレは<wbr>以下の<wbr>通りです。</p>
     <p class="ja">
-    <ul>
-      <li><a id="toilets-1" href="#map">ヒラフゴンドラ　駐車場　公衆トイレ</a></li>
-      <li><a id="toilets-2" href="#map">サンスポーツランド　公衆トイレ</a></li>
-    </ul>
+      <ul>
+        <li><a id="toilets-1" href="#map">ヒラフゴンドラ　駐車場　公衆トイレ</a></li>
+        <li><a id="toilets-2" href="#map">サンスポーツランド　公衆トイレ</a></li>
+      </ul>
     </p>
   </section>
 
@@ -169,10 +172,14 @@ subtitle: アクセス＆設備
     <h4 class="ja">アクセスパス：</h4>
     <p class="ja">鳥居の<wbr>目の前に<wbr>続く<wbr>参道は、<wbr>神への<wbr>道であり、<wbr>トレイルの<wbr>ための<wbr>道では<wbr>ありません。<wbr>参道の<wbr>すぐ<wbr>隣に<wbr>砂利で<wbr>整備された<wbr>細い道が<wbr>あります。<wbr>伝統的な<wbr>参道ではなく、<wbr>その<wbr>細い<wbr>砂利道を<wbr>敬意を<wbr>もって<wbr>進んでください。</p>
     <p class="ja">⚠️ 自転車に<wbr>乗ったままでの<wbr>鳥居く<wbr>ぐりや、<wbr>参道を<wbr>利用した<wbr>登山道への<wbr>出入りは<wbr>固く<wbr>禁止されております。</p>
-    <p class="ja">⚠️ <strong>バイカーは<wbr>参道に<wbr>隣接する<wbr>砂利の<wbr>アクセスパスを<wbr>使用してください。</strong>.</p>
+    <p class="ja">⚠️
+      <strong>バイカーは<wbr>参道に<wbr>隣接する<wbr>砂利の<wbr>アクセスパスを<wbr>使用してください。</strong>.</p>
     <h4 class="ja">ツインピークスバイクパークを<wbr>楽しむ<wbr>ために<wbr>：</h4>
     <p class="ja">自身と<wbr>他の<wbr>人の<wbr>安全の<wbr>ために、<wbr>公園の<wbr>すべての<wbr>ルールと<wbr>規制に<wbr>従ってください。</p>
-    <div class="pull-left item-image" style="margin-top:24px;"><img src="/assets/images/twinpeaks/access.jpg" alt="" itemprop="image"></div>
-    <p class="ja">山田神社地域の<wbr ><wbr>文化的、<wbr ><wbr>宗教的意義を<wbr ><wbr>尊重する<wbr ><wbr>ため、<wbr ><wbr>ご協力を<wbr ><wbr>お願いいたします。</p>
+    <div class="pull-left item-image" style="margin-top:24px;"><img
+        src="/assets/images/twinpeaks/access.jpg"
+        alt=""
+        itemprop="image"></div>
+    <p class="ja">山田神社地域の<wbr><wbr>文化的、<wbr><wbr>宗教的意義を<wbr><wbr>尊重する<wbr><wbr>ため、<wbr><wbr>ご協力を<wbr><wbr>お願いいたします。</p>
   </section>
 </div>

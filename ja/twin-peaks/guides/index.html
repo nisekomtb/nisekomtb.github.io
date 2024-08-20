@@ -1,15 +1,15 @@
 ---
 layout: twin-peaks
-title: ツインピークス<wbr>バイクパーク
+title: ツインピークスバイクパーク
+titleHtml: ツインピークス<wbr>バイクパーク
 subtitle: ガイド＆ツアーオペレーションについて
 description: ツイン ピークス バイク パークは一般の人々は無料で利用できますが、ツイン ピークス バイク パーク内で指導、ツアーなど、その他の金銭的授受を伴うサービスを提供する行為を行う場合、その個人または企業は、商業事業者パスを所有する必要があります
 ---
 <style>
   ul.guides {
-    margin-top: 40px;
-    list-style-type:none;
-    text-align: center;
     margin: 0;
+    list-style-type: none;
+    text-align: center;
     padding: 0;
   }
 
@@ -34,8 +34,14 @@ description: ツイン ピークス バイク パークは一般の人々は無�
   }
 </style>
 <div class="pull-left item-image">
-  <img src="/assets/images/twinpeaks/guides.jpg" alt="" itemprop="image">
-  <span class="credit"><a href="https://instagram.com/jingypsy" target="_blank"> 📸 Jinya Nishiwaki</a></span>
+  <img
+    src="/assets/images/twinpeaks/guides.jpg"
+    alt=""
+    itemprop="image">
+  <span class="credit">
+    <a href="https://instagram.com/jingypsy" target="_blank">
+      📸 Jinya Nishiwaki</a>
+  </span>
 </div>
 
 <header class="article-header clearfix">
@@ -56,12 +62,11 @@ description: ツイン ピークス バイク パークは一般の人々は無�
       {% for guide in site.data.guides["twinpeaks"] %}
         <li>
           {% if guide.url %}
-          <a href="{% if guide.ja.url %}{{ guide.ja.url }}{% else %}{{ guide.url }}{% endif %}"
-            target="_blank">
-            <img class="img-responsive" src="{{ guide.image }}?d={{ site.time | date: " %s" }}">
-          </a>
+            <a href="{% if guide.ja.url %}{{ guide.ja.url }}{% else %}{{ guide.url }}{% endif %}" target="_blank">
+              <img class="img-responsive" src="{{ guide.image }}?d={{ site.time | date: " %s" }}">
+            </a>
           {% else %}
-          <img class="img-responsive" src="{{ guide.image }}?d={{ site.time | date: " %s" }}">
+            <img class="img-responsive" src="{{ guide.image }}?d={{ site.time | date: " %s" }}">
           {% endif %}
         </li>
       {% endfor %}
@@ -69,9 +74,9 @@ description: ツイン ピークス バイク パークは一般の人々は無�
 
     <h4 class="ja">あなたの<wbr>会社の<wbr>ロゴも<wbr>認定企業と<wbr>しての<wbr>せませんか？</h4>
     <p class="ja">
-      商業事業者パスの取得方法・詳細については、<a href="/ja/twin-peaks/commercial-pass/">商業事業者パス</a> ページをご参照ください。
+      商業事業者パスの取得方法・詳細については、<a href="/ja/twin-peaks/commercial-pass/">商業事業者パス</a>
+      ページをご参照ください。
     </p>
 
   </section>
 </div>
-

@@ -1,34 +1,37 @@
 ---
 layout: twin-peaks
-title: ツインピークス<wbr>バイクパーク
+title: ツインピークスバイクパーク
+titleHtml: ツインピークス<wbr>バイクパーク
 subtitle: トレイルマップ＆状況
 description: 北海道ニセコエリアに位置する,ツイン ピークス バイク パークは、世界的に有名なスイスのトレイル建設会社アレグラ ツーリズムとの協働で設計された世界クラスのマウンテン バイクトレイルを楽しめる場所です。バイクパークは一般に開放されており、あらゆる年齢層や能力に合わせたトレイルを無料で利用できます。
 ---
 <style>
   .t3-content h1 {
-    margin-bottom:0;
+    margin-bottom: 0;
   }
 
   .t3-content h3 {
-    margin: 54px 0 54px;
+    margin: 54px 0;
   }
 
   section.intro {
-    display:block;
+    display: block;
   }
 
   @media (min-width: 768px) {
     section.intro {
-      display:none;
+      display: none;
     }
   }
 
   .widget {
-    position:relative;
+    position: relative;
   }
 
   .widget .widget-cover {
-    position:absolute; width: 100%; height:100%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
   }
 
   @media (min-width: 768px) {
@@ -38,9 +41,9 @@ description: 北海道ニセコエリアに位置する,ツイン ピークス �
   }
 
   .trails-key {
-    background-color: rgb(14,14,14);
-    border:1px solid rgb(25,25,25);
-    display:inline-block;
+    background-color: rgb(14, 14, 14);
+    border: 1px solid rgb(25, 25, 25);
+    display: inline-block;
   }
 
   .trails-key h4 {
@@ -49,45 +52,45 @@ description: 北海道ニセコエリアに位置する,ツイン ピークス �
   }
 
   .trails-key ul {
-    padding-inline-start:0;
-    float:left;
-    margin:10px 20px;
+    padding-inline-start: 0;
+    float: left;
+    margin: 10px 20px;
   }
 
   .trails-key li {
-    display:inline;
-    margin-right:20px;
-    white-space:nowrap;
+    display: inline;
+    margin-right: 20px;
+    white-space: nowrap;
   }
 
   .trails-key .cond li {
     display: block;
-    white-space:unset;
+    white-space: unset;
   }
 
   @media(min-width: 1200px) {
     .trails-key .cond li {
       display: inline;
-      white-space:nowrap;
+      white-space: nowrap;
     }
   }
 
   .trails-key li:last-child {
-    margin-right:0;
+    margin-right: 0;
   }
 
   .trails-key li div {
     /* float:left; */
     display: inline-block;
-    white-space:nowrap;
+    white-space: nowrap;
     margin-bottom: 5px;
   }
 
   .trails-key img.access {
     width: 20px;
     padding: 2px 1px 1px 2px;
-    display:inline;
-    opacity:0.8;
+    display: inline;
+    opacity: 0.8;
   }
 
   .trails-key img.access.restrict {
@@ -96,7 +99,7 @@ description: 北海道ニセコエリアに位置する,ツイン ピークス �
   }
 
   table.trails {
-    margin-top:30px;
+    margin-top: 30px;
     /* margin-left: auto; */
     /* margin-right: auto; */
     width: 100%;
@@ -111,7 +114,10 @@ description: 北海道ニセコエリアに位置する,ツイン ピークス �
   table.trails th {
     color: #ffd97b;
     font-size: 12px;
-    font-family: "Metropolis", Helvetica, Arial, sans-serif;
+    font-family: "Metropolis"
+    , Helvetica
+    , Arial
+    , sans-serif;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0;
@@ -146,430 +152,479 @@ description: 北海道ニセコエリアに位置する,ツイン ピークス �
 
   @media(min-width: 600px) {
     table.trails td {
-      /* padding: 10px 15px; */
-    }
+    ;
+    /* padding: 10px 15px; */
   }
+}
 
-  @media(min-width: 768px) {
-    table.trails td {
-      /* padding: 10px 30px; */
-    }
-  }
+@media(min-width: 768px) {
+  table.trails td {
+  ;
+  /* padding: 10px 30px; */
+}
+}
 
-  @media(min-width: 992px) {
-    table.trails td {
-      /* padding: 10px 50px; */
-    }
-  }
+@media(min-width: 992px) {
+  table.trails td {
+  ;
+  /* padding: 10px 50px; */
+}
+}
 
-  table.trails td:first-child {
-    padding-left: 20px;
-  }
+table.trails td:first-child {
+  padding-left: 20px;
+}
 
-  table.trails td:last-child {
-    padding-right: 20px;
-  }
+table.trails td:last-child {
+  padding-right: 20px;
+}
 
-  table.trails td.difficulty {
-    /* display: table-cell; */
-    /* display: inline; */
-    /* padding-left: 20px; */
-  }
+table.trails td.difficulty {
+;
+/* display: table-cell; */
+/* display: inline; */
+/* padding-left: 20px; */
+}
 
-  table.trails td.difficulty span {
-    border-radius: 3px;
-  }
+table.trails td.difficulty span {
+  border-radius: 3px;
+}
 
-  table.trails td.difficulty .dgreen {
-    color: #46b414;
-  }
+table.trails td.difficulty .dgreen {
+  color: #46b414;
+}
 
-  table.trails td.difficulty .dblue {
-    color: #148cf0;
-  }
+table.trails td.difficulty .dblue {
+  color: #148cf0;
+}
 
-  table.trails td.difficulty .dblack {
-    color: #000;
-    background-color: #9e9e9e;
-  }
+table.trails td.difficulty .dblack {
+  color: #000;
+  background-color: #9e9e9e;
+}
 
-  table.trails td.difficulty .ddblblack {
-    color: #be0014;
-  }
+table.trails td.difficulty .ddblblack {
+  color: #be0014;
+}
 
-  table.trails td .TrailforksWidgetTrailStatus {
-    overflow: hidden;
-    width: 15px;
-    height: 19px;
-  }
+table.trails td .TrailforksWidgetTrailStatus {
+  overflow: hidden;
+  width: 15px;
+  height: 19px;
+}
 
-  table.trails td .TrailforksWidgetTrailStatus iframe {
-    overflow: hidden;
-    vertical-align: middle;
-  }
+table.trails td .TrailforksWidgetTrailStatus iframe {
+  overflow: hidden;
+  vertical-align: middle;
+}
 
-  table.trails td .ddesc {
-    font-weight: 500;
-    padding-left:3px;
-    padding-right:3px;
-    display: none;
-  }
+table.trails td .ddesc {
+  font-weight: 500;
+  padding-left: 3px;
+  padding-right: 3px;
+  display: none;
+}
 
-  table.trails td.climb-descent {
+table.trails td.climb-descent {
+  display: table-cell;
+}
+
+table.trails td.climb,
+table.trails td.descent {
+  display: none;
+}
+
+table.trails td.bike,
+table.trails td.hike {
+  display: none;
+}
+
+.trails-key .key-access {
+  display: none;
+}
+
+@media(min-width: 430px) {
+  table.trails td.bike,
+  table.trails td.hike {
     display: table-cell;
   }
 
-  table.trails td.climb, table.trails td.descent {
-    display: none;
-  }
-
-  table.trails td.bike, table.trails td.hike {
-    display: none;
-  }
-
   .trails-key .key-access {
+    display: block;
+  }
+}
+
+@media(min-width: 500px) {
+  table.trails td.climb-descent {
     display: none;
   }
 
-  @media(min-width: 430px) {
-    table.trails td.bike, table.trails td.hike {
-      display: table-cell;
-    }
+  table.trails td.climb,
+  table.trails td.descent {
+    display: table-cell;
+  }
+}
 
-    .trails-key .key-access {
-      display: block;
-    }
+@media(min-width: 600px) {
+  table.trails td .ddesc {
+    display: inline;
+  }
+}
+
+@media(min-width: 768px) {
+  table.trails td .ddesc {
+    display: none;
   }
 
-  @media(min-width: 500px) {
-    table.trails td.climb-descent {
-      display: none;
-    }
-
-    table.trails td.climb, table.trails td.descent {
-      display: table-cell;
-    }
+  table.trails td.cond {
+    padding-left: 10px;
+    padding-right: 10px;
   }
+}
 
-  @media(min-width: 600px) {
-    table.trails td .ddesc {
-      display: inline;
-    }
+@media(min-width: 992px) {
+  table.trails td .ddesc {
+    display: inline;
   }
+}
 
-  @media(min-width: 768px) {
-    table.trails td .ddesc {
-      display: none;
-    }
+table.trails td img.access {
+  width: 20px;
+  padding: 2px 1px 1px 2px;
+  display: inline;
+  opacity: 0.8;
+}
 
-    table.trails td.cond {
-      padding-left:10px;
-      padding-right:10px;
-    }
+table.trails td img.access.restrict {
+  width: 23px;
+  padding: 0;
+}
+
+table.trails td img.sponsor {
+  width: 20px;
+  display: inline;
+}
+
+.trail-sign {
+  background-image: url('/assets/images/twinpeaks/trailsign.jpg');
+  background-repeat: no-repeat;
+  border-radius: 3px;
+  margin-left: 0;
+  margin-right: 0;
+  overflow: auto;
+}
+
+.trail-sign .col {
+  padding: 0;
+}
+
+.trail-sign .col:first-child {
+  height: 200px;
+}
+
+.trail-sign .owl-carousel {
+  background: #0e0e0e;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.trail-sign .owl-carousel .item {
+  margin: 40px;
+}
+
+.trail-sign .owl-carousel .item p {
+  margin: 0;
+}
+
+.trail-sign .owl-nav button span {
+  opacity: 0.5;
+}
+
+.trail-sign .owl-nav button span:before {
+  color: #fd7d57;
+  font-size: 35px;
+  background: linear-gradient(135deg, #fd7d57, #f55d59);
+  background-clip: text;
+  display: inline-block;
+  -webkit-background-clip: text;
+  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+  font-weight: 400;
+  text-indent: 1px;
+}
+
+.trail-sign .owl-nav button span:hover {
+  opacity: 0.8;
+}
+
+.trail-sign .owl-nav button.disabled span {
+  opacity: 0.1;
+}
+
+.trail-sign .owl-nav {
+  text-align: center;
+  padding-bottom: 15px;
+}
+
+.trail-sign .owl-nav .owl-next {
+  margin-left: 15px;
+}
+
+.trail-sign.pos-0,
+.trail-sign.pos-1,
+.trail-sign.pos-2,
+.trail-sign.pos-3,
+.trail-sign.pos-4,
+.trail-sign.pos-5,
+.trail-sign.pos-6,
+.trail-sign.pos-7,
+.trail-sign.pos-8 {
+  background-image: url('/assets/images/twinpeaks/trailsign-zoom-1.jpg');
+  background-position-x: center;
+  background-size: auto;
+  transition: all 0.25s linear;
+}
+
+.trail-sign.pos-0 {
+  background-image: url('/assets/images/twinpeaks/trailsign.jpg');
+  background-size: cover;
+  background-position: 15% -80px;
+}
+
+.trail-sign div.fst {
+  box-shadow: 0 0 50px 20px rgba(0, 0, 0, .6) inset;
+}
+
+.trail-sign.pos-0 div.fst {
+  box-shadow: none;
+}
+
+.trail-sign div.snd {
+  background-color: rgba(0, 0, 0, .6);
+}
+
+.trail-sign.pos-0 div.snd {
+  background-color: unset;
+}
+
+.trail-sign.pos-0 div:first-child {}
+
+.trail-sign.pos-1 {
+  background-position-y: -120px;
+}
+
+.trail-sign.pos-2 {
+  background-position-y: -250px;
+}
+
+.trail-sign.pos-3 {
+  background-position-y: -410px;
+}
+
+.trail-sign.pos-4 {
+  background-position-y: -590px;
+}
+
+.trail-sign.pos-5 {
+  background-position-y: -730px;
+}
+
+.trail-sign.pos-6 {
+  background-position-y: -870px;
+}
+
+.trail-sign.pos-7 {
+  background-position-y: -1010px;
+}
+
+.trail-sign.pos-8 {
+  background-position-y: -1150px;
+}
+
+@media (min-width: 455px) {
+  .trail-sign.pos-0 {
+    background-position: 5% -80px;
   }
+}
 
-  @media(min-width: 992px) {
-    table.trails td .ddesc {
-      display: inline;
-    }
-  }
+@media (min-width: 768px) {}
 
-  table.trails td img.access {
-    width: 20px;
-    padding: 2px 1px 1px 2px;
-    display:inline;
-    opacity:0.8;
-  }
-
-  table.trails td img.access.restrict {
-    width: 23px;
-    padding: 0;
-  }
-
-  table.trails td img.sponsor {
-    width: 20px;
-    display:inline;
-  }
-
+@media(min-width: 992px) {
   .trail-sign {
-    background-image: url('/assets/images/twinpeaks/trailsign.jpg');
-    background-repeat: no-repeat;
-    border-radius: 3px;
-    margin-left:0;
-    margin-right:0;
-    overflow: auto;
+    height: 381px;
   }
 
   .trail-sign .col {
-    padding:0px;
+    padding: 20px;
   }
 
   .trail-sign .col:first-child {
-    height:200px;
+    height: 381px;
   }
 
-  .trail-sign .owl-carousel {
-    background: #0e0e0e;
-    border-radius: 3px;
-    text-align: center;
-  }
-
-  .trail-sign .owl-carousel .item {
-    margin:40px;
-  }
-
-  .trail-sign .owl-carousel .item p {
-    margin:0;
-  }
-
-  .trail-sign .owl-nav button span {
-    opacity: 0.5;
-  }
-
-  .trail-sign .owl-nav button span:before {
-    color: #fd7d57;
-    font-size: 35px;
-    background: linear-gradient(135deg, #fd7d57, #f55d59);
-    background-clip: text;
-    display: inline-block;
-    -webkit-background-clip: text;
-    text-fill-color: transparent;
-    -webkit-text-fill-color: transparent;
-    font-weight: 400;
-    text-indent: 1px;
-  }
-
-  .trail-sign .owl-nav button span:hover {
-    opacity: 0.8;
-  }
-
-  .trail-sign .owl-nav button.disabled span {
-    opacity: 0.1;
-  }
-
-  .trail-sign .owl-nav {
-    text-align: center;
-    padding-bottom: 15px;
-  }
-
-  .trail-sign .owl-nav .owl-next {
-    margin-left: 15px;
-  }
-
-  .trail-sign.pos-0, .trail-sign.pos-1, .trail-sign.pos-2, .trail-sign.pos-3, .trail-sign.pos-4, .trail-sign.pos-5, .trail-sign.pos-6, .trail-sign.pos-7, .trail-sign.pos-8 {
-    background-image: url('/assets/images/twinpeaks/trailsign-zoom-1.jpg');
-    background-position-x: center;
-    background-size:auto;
-    transition: all 0.25s linear;
-  }
-
-  .trail-sign.pos-0 {
-    background-image: url('/assets/images/twinpeaks/trailsign.jpg');
-    background-size:cover;
-    background-position: 15% -80px;
-  }
-
-  .trail-sign div.fst{
-    box-shadow: 0px 0px 50px 20px rgba(0,0,0,.6) inset;
+  .trail-sign div.fst {
+    box-shadow: 0 0 50px 80px rgba(0, 0, 0, .6) inset;
   }
 
   .trail-sign.pos-0 div.fst {
     box-shadow: none;
   }
 
-  .trail-sign div.snd {
-    background-color: rgba(0,0,0,.6);
+  .trail-sign .owl-carousel {
+    height: 341px;
   }
 
-  .trail-sign.pos-0 div.snd {
-    background-color:unset;
+  .trail-sign .owl-carousel .item {
+    margin: 34px 34px 24px;
   }
 
-  .trail-sign.pos-0 div:first-child {
+  .trail-sign.pos-0 {
+    background-position: 0 0;
+  }
 
+  .trail-sign.pos-1,
+  .trail-sign.pos-2,
+  .trail-sign.pos-3,
+  .trail-sign.pos-4,
+  .trail-sign.pos-5,
+  .trail-sign.pos-6,
+  .trail-sign.pos-7,
+  .trail-sign.pos-8 {
+    background-image: url('/assets/images/twinpeaks/trailsign-zoom-2.jpg');
+    background-size: cover;
   }
 
   .trail-sign.pos-1 {
-    background-position-y: -120px;
+    background-position-y: 0;
   }
 
   .trail-sign.pos-2 {
-    background-position-y: -250px;
+    background-position-y: -95px;
   }
 
   .trail-sign.pos-3 {
-    background-position-y: -410px;
+    background-position-y: -205px;
   }
 
   .trail-sign.pos-4 {
-    background-position-y: -590px;
+    background-position-y: -325px;
   }
 
   .trail-sign.pos-5 {
-    background-position-y: -730px;
+    background-position-y: -430px;
   }
 
   .trail-sign.pos-6 {
-    background-position-y: -870px;
+    background-position-y: -525px;
   }
 
   .trail-sign.pos-7 {
-    background-position-y: -1010px;
+    background-position-y: -625px;
   }
 
   .trail-sign.pos-8 {
-    background-position-y: -1150px;
+    background-position-y: -725px;
   }
 
-  @media (min-width: 455px) {
-    .trail-sign.pos-0 {
-      background-position: 5% -80px;
-    }
+}
+
+@media(min-width: 1200px) {
+  .trail-sign .owl-carousel .item {
+    margin: 54px 54px 34px;
   }
 
-  @media (min-width: 768px) {
-
+  .trail-sign.pos-0 {
+    background-position-y: 50%;
   }
 
-  @media(min-width: 992px) {
-    .trail-sign {
-      height:381px;
-    }
-
-    .trail-sign .col {
-      padding:20px;
-    }
-
-    .trail-sign .col:first-child {
-      height:381px;
-    }
-
-    .trail-sign div.fst{
-      box-shadow: 0px 0px 50px 80px rgba(0,0,0,.6) inset;
-    }
-
-    .trail-sign.pos-0 div.fst {
-      box-shadow: none;
-    }
-
-    .trail-sign .owl-carousel {
-      height: 341px;
-    }
-
-    .trail-sign .owl-carousel .item {
-      margin:34px 34px 24px;
-    }
-
-    .trail-sign.pos-0 {
-      background-position: 0 0;
-    }
-
-    .trail-sign.pos-1, .trail-sign.pos-2, .trail-sign.pos-3, .trail-sign.pos-4, .trail-sign.pos-5, .trail-sign.pos-6, .trail-sign.pos-7, .trail-sign.pos-8 {
-      background-image: url('/assets/images/twinpeaks/trailsign-zoom-2.jpg');
-      background-size:cover;
-    }
-
-    .trail-sign.pos-1 {
-      background-position-y: 0px;
-    }
-
-    .trail-sign.pos-2 {
-      background-position-y: -95px;
-    }
-
-    .trail-sign.pos-3 {
-      background-position-y: -205px;
-    }
-
-    .trail-sign.pos-4 {
-      background-position-y: -325px;
-    }
-
-    .trail-sign.pos-5 {
-      background-position-y: -430px;
-    }
-
-    .trail-sign.pos-6 {
-      background-position-y: -525px;
-    }
-
-    .trail-sign.pos-7 {
-      background-position-y: -625px;
-    }
-
-    .trail-sign.pos-8 {
-      background-position-y: -725px;
-    }
-
+  .trail-sign.pos-1,
+  .trail-sign.pos-2,
+  .trail-sign.pos-3,
+  .trail-sign.pos-4,
+  .trail-sign.pos-5,
+  .trail-sign.pos-6,
+  .trail-sign.pos-7,
+  .trail-sign.pos-8 {
+    background-size: auto;
   }
 
-  @media(min-width: 1200px) {
-    .trail-sign .owl-carousel .item {
-      margin:54px 54px 34px;
-    }
-
-    .trail-sign.pos-0 {
-      background-position-y: 50%;
-    }
-
-    .trail-sign.pos-1, .trail-sign.pos-2, .trail-sign.pos-3, .trail-sign.pos-4, .trail-sign.pos-5, .trail-sign.pos-6, .trail-sign.pos-7, .trail-sign.pos-8 {
-      background-size:auto;
-    }
-
-    .trail-sign.pos-1 {
-      background-position-y: -75px;
-    }
-
-    .trail-sign.pos-2 {
-      background-position-y: -205px;
-    }
-
-    .trail-sign.pos-3 {
-      background-position-y: -360px;
-    }
-
-    .trail-sign.pos-4 {
-      background-position-y: -540px;
-    }
-
-    .trail-sign.pos-5 {
-      background-position-y: -690px;
-    }
-
-    .trail-sign.pos-6 {
-      background-position-y: -830px;
-    }
-
-    .trail-sign.pos-7 {
-      background-position-y: -960px;
-    }
-
-    .trail-sign.pos-8 {
-      background-position-y: -1100px;
-    }
+  .trail-sign.pos-1 {
+    background-position-y: -75px;
   }
 
-  body:after {
-    content: url('/assets/images/twinpeaks/trailsign-zoom-1.jpg') url('/assets/images/twinpeaks/trailsign-zoom-2.jpg');
-    display: none;
+  .trail-sign.pos-2 {
+    background-position-y: -205px;
   }
+
+  .trail-sign.pos-3 {
+    background-position-y: -360px;
+  }
+
+  .trail-sign.pos-4 {
+    background-position-y: -540px;
+  }
+
+  .trail-sign.pos-5 {
+    background-position-y: -690px;
+  }
+
+  .trail-sign.pos-6 {
+    background-position-y: -830px;
+  }
+
+  .trail-sign.pos-7 {
+    background-position-y: -960px;
+  }
+
+  .trail-sign.pos-8 {
+    background-position-y: -1100px;
+  }
+}
+
+body:after {
+  content: url('/assets/images/twinpeaks/trailsign-zoom-1.jpg') url('/assets/images/twinpeaks/trailsign-zoom-2.jpg');
+  display: none;
+}
 </style>
 
 <section class="intro">
-  <img style="width:150px; margin:0 auto; margin-bottom:24px; display: flex;"
-    src="/assets/images/logos/twin-peaks.svg?d={{ site.time | date: " %s" }}" />
+  <img style="width:150px; margin:0 auto; margin-bottom:24px; display: flex;" src="/assets/images/logos/twin-peaks.svg?d={{ site.time | date: " %s" }}" />
   <p class="ja" style="text-align:center;">ニセコエリアの<wbr>中心部に<wbr>ある、<wbr>無料で<wbr>利用できる<wbr>ペダルアクセスの<wbr>コミュニティバイクパークです</p>
-  <p style="text-align:center;"><strong>バイクパーク詳細：</strong>
-    <span class="TrailforksWidgetRegionStatus" data-w="100px" data-h="15px" data-rid="58775" data-activitytype="1" data-status="1" data-st="1" data-ct="0" data-date="0"></span>
+  <p style="text-align:center;">
+    <strong>バイクパーク詳細：</strong>
+    <span
+      class="TrailforksWidgetRegionStatus"
+      data-w="100px"
+      data-h="15px"
+      data-rid="58775"
+      data-activitytype="1"
+      data-status="1"
+      data-st="1"
+      data-ct="0"
+      data-date="0"></span>
   </p>
 </section>
 
 
 <div class="pull-left item-image">
-  <div class="widget TrailforksWidgetMap" data-w="100%" data-h="600px" data-rid="58775" data-activitytype="1"
-    data-maptype="trailforks" data-trailstyle="difficulty" data-controls="1" data-list="0" data-dml="1"
-    data-layers="labels,poi,polygon,directory,region" data-z="14.664296754902944" data-lat="42.869698363944394"
-    data-lon="140.70963367125432" data-hideunsanctioned="1"  data-basicmap="1" style="position:relative;">
+  <div
+    class="widget TrailforksWidgetMap"
+    data-w="100%"
+    data-h="600px"
+    data-rid="58775"
+    data-activitytype="1"
+    data-maptype="trailforks"
+    data-trailstyle="difficulty"
+    data-controls="1"
+    data-list="0"
+    data-dml="1"
+    data-layers="labels,poi,polygon,directory,region"
+    data-z="14.664296754902944"
+    data-lat="42.869698363944394"
+    data-lon="140.70963367125432"
+    data-hideunsanctioned="1"
+    data-basicmap="1"
+    style="position:relative;">
     <div class="widget-cover"></div>
   </div>
 </div>
@@ -585,146 +640,247 @@ description: 北海道ニセコエリアに位置する,ツイン ピークス �
   </p>
   <p class="ja">
     ツインピークスバイクパークは<wbr>一般の<wbr>方々に<wbr>無料で<wbr>開放されています。<wbr>ツインピークスバイクパーク内で<wbr>指導、<wbr>ツアー、<wbr>または<wbr>その<wbr>他の<wbr>サービスを<wbr>提供する<wbr>事業者は、<wbr>まず<wbr>NAMBAに<wbr>連絡する<wbr>必要が<wbr>あります。
-    <wbr>詳細は <a href="/ja/twin-peaks/commercial-pass/">こちら</a> をクリックしてください。
+    <wbr>詳細は
+    <a href="/ja/twin-peaks/commercial-pass/">こちら</a>
+    をクリックしてください。
   </p>
 </section>
 
 <section class="article-content" itemprop="articleBody"></section>
-  <h3 class="ja">トレイル</h3>
-  <div class="trails-key">
-    <h4 class="ja">トレイルでの<wbr>キー言語</h4>
-    <ul class="cond">
-      <li><span aria-hidden="true" data-tf-icon="" class="sicon_small sgreen hovertip" title="オールクリア（障害になるものは何もありません）"
-        style="color: #225f06;"></span> <span class="ja">オールクリア<wbr>（障害に<wbr>なる<wbr>ものは<wbr>何も<wbr>ありません）</span></li>
-      <li><span aria-hidden="true" data-tf-icon="" class="sicon_small syellow hovertip" title="小さな障害有（行けなくはないが、確実に問題・障害はある）"
-        style="color: #fc0;"></span> <span
-          class="ja">小さな<wbr>障害有<wbr>（行けなくは<wbr>ないが、<wbr>確実に<wbr>問題・<wbr>障害は<wbr>ある）</span></li>
-      <li><span aria-hidden="true" data-tf-icon="" class="sicon_small samber hovertip" title="大きな障害有（行こうと思えば行けるが、かなりの問題・障害がある）"
-        style="color: #ff8500;"></span> <span
-          class="ja">大きな<wbr>障害有<wbr>（行こうと<wbr>思えば<wbr>行けるが、<wbr>かなりの<wbr>問題・<wbr>障害が<wbr>ある）</span></li>
-      <li><span aria-hidden="true" data-tf-icon="" class="sicon_small sred hovertip" title="クローズ（通行止）"
-        style="color: #be0014;"></span> <span class="ja">クローズ<wbr>（通行止）</span></li>
-    </ul>
-    <ul class="key-access">
-      <li><div><img class="access" src="/assets/images/trails/one-way.png" />&nbsp;一方通行</div></li>
-      <li><div><img class="access" src="/assets/images/trails/two-way.png" />&nbsp;対面通行です</div></li>
-      <li><div><img class="access" src="/assets/images/trails/down-only.png" />&nbsp;下り専用</div></li>
-      <li><div><img class="access" src="/assets/images/trails/up-only.png" />&nbsp;登り専用</div></li>
-      <li><div><img class="access" src="/assets/images/trails/multiuse.png" />&nbsp;共用部</div></li>
-      <li><div><img class="access restrict" src="/assets/images/trails/bikes-only.png" />&nbsp;バイク専用</div></li>
-    </ul>
-  </div>
-  <table class="trails">
-    {% for trail in site.data.trails["twinpeaks"] %}
+<h3 class="ja">トレイル</h3>
+<div class="trails-key">
+  <h4 class="ja">トレイルでの<wbr>キー言語</h4>
+  <ul class="cond">
+    <li>
+      <span
+        aria-hidden="true"
+        data-tf-icon=""
+        class="sicon_small sgreen hovertip"
+        title="オールクリア（障害になるものは何もありません）"
+        style="color: #225f06;"></span>
+      <span class="ja">オールクリア<wbr>（障害に<wbr>なる<wbr>ものは<wbr>何も<wbr>ありません）</span>
+    </li>
+    <li>
+      <span
+        aria-hidden="true"
+        data-tf-icon=""
+        class="sicon_small syellow hovertip"
+        title="小さな障害有（行けなくはないが、確実に問題・障害はある）"
+        style="color: #fc0;"></span>
+      <span class="ja">小さな<wbr>障害有<wbr>（行けなくは<wbr>ないが、<wbr>確実に<wbr>問題・<wbr>障害は<wbr>ある）</span>
+    </li>
+    <li>
+      <span
+        aria-hidden="true"
+        data-tf-icon=""
+        class="sicon_small samber hovertip"
+        title="大きな障害有（行こうと思えば行けるが、かなりの問題・障害がある）"
+        style="color: #ff8500;"></span>
+      <span class="ja">大きな<wbr>障害有<wbr>（行こうと<wbr>思えば<wbr>行けるが、<wbr>かなりの<wbr>問題・<wbr>障害が<wbr>ある）</span>
+    </li>
+    <li>
+      <span
+        aria-hidden="true"
+        data-tf-icon=""
+        class="sicon_small sred hovertip"
+        title="クローズ（通行止）"
+        style="color: #be0014;"></span>
+      <span class="ja">クローズ<wbr>（通行止）</span>
+    </li>
+  </ul>
+  <ul class="key-access">
+    <li>
+      <div><img class="access" src="/assets/images/trails/one-way.png" />&nbsp;一方通行</div>
+    </li>
+    <li>
+      <div><img class="access" src="/assets/images/trails/two-way.png" />&nbsp;対面通行です</div>
+    </li>
+    <li>
+      <div><img class="access" src="/assets/images/trails/down-only.png" />&nbsp;下り専用</div>
+    </li>
+    <li>
+      <div><img class="access" src="/assets/images/trails/up-only.png" />&nbsp;登り専用</div>
+    </li>
+    <li>
+      <div><img class="access" src="/assets/images/trails/multiuse.png" />&nbsp;共用部</div>
+    </li>
+    <li>
+      <div><img class="access restrict" src="/assets/images/trails/bikes-only.png" />&nbsp;バイク専用</div>
+    </li>
+  </ul>
+</div>
+<table class="trails">
+  {% for trail in site.data.trails["twinpeaks"] %}
     <tr>
       <td class="difficulty left">
         {% case trail.difficulty %}
           {% when 'green' %}
-            <span aria-hidden="true" data-tf-icon="" class="dicon_small dgreen tip" title="初級"></span> <span class="ddesc dgreen">初級</span>
+            <span
+              aria-hidden="true"
+              data-tf-icon=""
+              class="dicon_small dgreen tip"
+              title="初級"></span>
+            <span class="ddesc dgreen">初級</span>
           {% when 'blue' %}
-            <span aria-hidden="true" data-tf-icon="" class="dicon_small dblue tip" title="中級"></span> <span class="ddesc dblue">中級</span>
+            <span
+              aria-hidden="true"
+              data-tf-icon=""
+              class="dicon_small dblue tip"
+              title="中級"></span>
+            <span class="ddesc dblue">中級</span>
           {% when 'black' %}
-            <span aria-hidden="true" data-tf-icon="" class="dicon_small dblack tip" title="上級"></span> <span class="ddesc dblack">上級</span>
+            <span
+              aria-hidden="true"
+              data-tf-icon=""
+              class="dicon_small dblack tip"
+              title="上級"></span>
+            <span class="ddesc dblack">上級</span>
           {% when 'double-black' %}
-            <span aria-hidden="true" data-tf-icon="" class="dicon_small dblack" title="超上級"></span> <span class="ddesc ddblblack">超上級</span>
+            <span
+              aria-hidden="true"
+              data-tf-icon=""
+              class="dicon_small dblack"
+              title="超上級"></span>
+            <span class="ddesc ddblblack">超上級</span>
         {% endcase %}
       </td>
       <td class="cond">
-        <div class="TrailforksWidgetTrailStatus" data-w="15px" data-h="19px" data-trailid="{{- trail.trailforks_id -}}"
-          data-status="1" data-st="0" data-condition="0" data-ct="0" data-date="0" data-description="0"></div>
+        <div
+          class="TrailforksWidgetTrailStatus"
+          data-w="15px"
+          data-h="19px"
+          data-trailid="{{- trail.trailforks_id -}}"
+          data-status="1"
+          data-st="0"
+          data-condition="0"
+          data-ct="0"
+          data-date="0"
+          data-description="0"></div>
       </td>
       <td class="left">{{ trail.ja.name | default: trail.name }}</td>
       <td class="bike">
         {% case trail.bike %}
-        {% when "one-way" %}
-          {% assign bikeToolTip = "一方通行" %}
-        {% when "two-way" %}
-          {% assign bikeToolTip = "対面通行です" %}
-        {% when "down-only" %}
-          {% assign bikeToolTip = "下り専用" %}
-        {% when "up-only" %}
-          {% assign bikeToolTip = "登り専用" %}
-        {% else %}
-          {% assign bikeToolTip = "" %}
+          {% when "one-way" %}
+            {% assign bikeToolTip = "一方通行" %}
+          {% when "two-way" %}
+            {% assign bikeToolTip = "対面通行です" %}
+          {% when "down-only" %}
+            {% assign bikeToolTip = "下り専用" %}
+          {% when "up-only" %}
+            {% assign bikeToolTip = "登り専用" %}
+          {% else %}
+            {% assign bikeToolTip = "" %}
         {% endcase %}
-        <img class="access" src="/assets/images/trails/{{- trail.bike -}}.png" title="{{ bikeToolTip }}" />
+        <img
+          class="access"
+          src="/assets/images/trails/{{- trail.bike -}}.png"
+          title="{{ bikeToolTip }}" />
       </td>
       <td class="hike">
         {% if trail.multi_use %}
-          <img class="access" src="/assets/images/trails/multiuse.png" title="多用途（ハイキングやトレイルランニングも可）" />
+          <img
+            class="access"
+            src="/assets/images/trails/multiuse.png"
+            title="多用途（ハイキングやトレイルランニングも可）" />
         {% else %}
-          <img class="access restrict" src="/assets/images/trails/bikes-only.png" title="バイク専用（ハイキング・トレイルランニング不可）" />
+          <img
+            class="access restrict"
+            src="/assets/images/trails/bikes-only.png"
+            title="バイク専用（ハイキング・トレイルランニング不可）" />
         {% endif %}
       </td>
-      <td class="right climb">{% unless trail.climb == 0 %}{{ trail.climb -}}m <span class="fa fa-arrow-up" title="登り"></span>{% endunless %}</td>
-      <td class="right descent">{% unless trail.descent == 0 %}{{ trail.descent -}}m <span class="fa fa-arrow-down" title="下り"></span>{% endunless %}</td>
-      <td class="right climb-descent">{% if trail.climb == trail.descent %}{{ trail.descent -}}m <span class="fa-solid fa-up-down" title="ループ"></span>{% elsif trail.climb > trail.descent %}{{ trail.climb -}}m <span class="fa fa-arrow-up" title="登り"></span>{% else %}{{ trail.descent -}}m <span class="fa fa-arrow-down" title="下り"></span>{% endif %}</td>
-      <td class="right">{{ trail.distance -}}m <span class="fa fa-ruler-horizontal" title="距離"></span></td>
-      {% comment %} <td><a href="javascript:document.getElementById('trail-{{- trail.trailforks_id -}}').style.display='table-row';"><span style="font-size: 150%; margin-top:2px;" class="fa fa-ellipsis-h"></span></a></td> {% endcomment %}
+      <td class="right climb">
+        {% unless trail.climb == 0 %}
+          {{ trail.climb -}}m
+          <span class="fa fa-arrow-up" title="登り"></span>
+        {% endunless %}
+      </td>
+      <td class="right descent">
+        {% unless trail.descent == 0 %}
+          {{ trail.descent -}}m
+          <span class="fa fa-arrow-down" title="下り"></span>
+        {% endunless %}
+      </td>
+      <td class="right climb-descent">
+        {% if trail.climb == trail.descent %}
+          {{ trail.descent -}}m
+          <span class="fa-solid fa-up-down" title="ループ"></span>
+        {% elsif trail.climb > trail.descent %}
+          {{ trail.climb -}}m
+          <span class="fa fa-arrow-up" title="登り"></span>
+        {% else %}
+          {{ trail.descent -}}m
+          <span class="fa fa-arrow-down" title="下り"></span>
+        {% endif %}
+      </td>
+      <td class="right">{{ trail.distance -}}m
+        <span class="fa fa-ruler-horizontal" title="距離"></span>
+      </td>
+    {% comment %} <td><a href="javascript:document.getElementById('trail-{{- trail.trailforks_id -}}').style.display='table-row';"><span style="font-size: 150%; margin-top:2px;" class="fa fa-ellipsis-h"></span></a></td> {% endcomment %}
     </tr>
-    {% endfor %}
-  </table>
-</section>
-
-<section>
-  <h3 class="ja">バイクパーク内での<wbr>ナビ情報</h3>
-  <div id="trail-sign" class="row clearfix trail-sign pos-0">
-    <div class="col col-sm-12 col-md-6 fst"></div>
-    <div class="col col-sm-12 col-md-6 snd clearfix">
-      <div id="carousel-trail-sign" class="latest-project">
-        <div class="container">
-          <div class="owl-carousel">
-            <div class="item">
-              <h4 class="ja">トレイル マーカー<wbr>（道標）<wbr>:</h4>
-              <p class="ja">これらの<wbr>道標は、<wbr>ツイン ピークス バイク パーク内の<wbr>すべての<wbr>トレイルの<wbr>始まり<wbr>地点に<wbr>あります。<wbr>各標識には、<wbr>安全で<wbr>楽しい<wbr>サイクリングの<wbr>計画に<wbr>役立つ重要な<wbr>トレイル情報が<wbr>記載されています。</p>
-            </div>
-            <div class="item">
-              <h4 class="ja">トレイルの<wbr>名前：</h4>
-              <p class="ja">トレイル名が<wbr>表示されています。</p>
-            </div>
-            <div class="item">
-              <h4 class="ja">トレイルの<wbr>難易度:</h4>
-              <p class="ja">
-                <a style="cursor:pointer;"
-                  href="https://www.imba.com/sites/default/files/content/resources/2018-10/IMBATrailDifficultRatingSystem.jpg"
-                  target="_blank">IMBA：<wbr>（国際マウンテンバイク協会）<wbr> の<wbr>難易度<wbr></a> に<wbr>従って<wbr>ランク付けされた<wbr>トレイルの<wbr>難易度が<wbr>表示されています。
-              </p>
-            </div>
-            <div class="item">
-              <h4 class="ja">スポンサー:</h4>
-              <p class="ja">この<wbr>トレイルの<wbr>建設を<wbr>サポートしてくださった<wbr>スポンサー名が<wbr>記載されています。</p>
-            </div>
-            <div class="item">
-              <h4 class="ja">位置情報:</h4>
-              <p class="ja">バイクパーク内には、<wbr>それぞれの<wbr>位置情報と<wbr>して<wbr>英数字が<wbr>使われている<wbr>ため、<wbr>その<wbr>英数字を<wbr>確認し、<wbr> 自分の<wbr>場所を<wbr>特定し、<wbr>公園内での<wbr>移動に<wbr>役立てることが<wbr>可能です。<wbr>友人と<wbr>待ち合わせを<wbr>したり、<wbr>緊急対応の<wbr>際に<wbr>自分の<wbr>場所を<wbr>知らせたりするのに<wbr>役立ちます。</p>
-            </div>
-            <div class="item">
-              <h4 class="ja">トレイルの<wbr>方向:</h4>
-              <p class="ja">トレイルの<wbr>方向 (上り専用、<wbr>下り専用、<wbr>一方通行など<wbr>) を<wbr>示します。</p>
-            </div>
-            <div class="item">
-              <h4 class="ja">トレイル利用者:</h4>
-              <p class="ja">トレイルを<wbr>許可される<wbr>利用者を<wbr>指定します</p>
-              <p class="ja">(MTB のみ、<wbr>マルチユース)</p>
-            </div>
-            <div class="item">
-              <h4 class="ja">トレイル情報:</h4>
-              <p class="ja">
-                <a style="cursor:pointer;" href="http://trailforks.com/region/twin-peaks-bike-park/" target="_blank">Trailforks</a> を<wbr>活用する<wbr>ことで、<wbr>トレイルに<wbr>関する<wbr>詳細情報が<wbr>わかる<wbr> QR コードや<wbr>インタラクティブな<wbr>地図などが<wbr>すぐに<wbr>閲覧可能です。
-              </p>
-            </div>
-            <div class="item">
-              <h4 class="ja">NAMBA:</h4>
-              <p class="ja">ニセコエリアマウンテンバイク協会の<wbr>略。<wbr>非営利の<wbr>マウンテン バイク協会、<wbr>バイク パークの<wbr>管理、<wbr>およびニセコ地域の<wbr>トレイル ネットワークの<wbr>管理と<wbr>維持を<wbr>担当する<wbr>擁護団体。</p>
-            </div>
+  {% endfor %}
+</table></section><section>
+<h3 class="ja">バイクパーク内での<wbr>ナビ情報</h3>
+<div id="trail-sign" class="row clearfix trail-sign pos-0">
+  <div class="col col-sm-12 col-md-6 fst"></div>
+  <div class="col col-sm-12 col-md-6 snd clearfix">
+    <div id="carousel-trail-sign" class="latest-project">
+      <div class="container">
+        <div class="owl-carousel">
+          <div class="item">
+            <h4 class="ja">トレイル マーカー<wbr>（道標）<wbr>:</h4>
+            <p class="ja">これらの<wbr>道標は、<wbr>ツイン ピークス バイク パーク内の<wbr>すべての<wbr>トレイルの<wbr>始まり<wbr>地点に<wbr>あります。<wbr>各標識には、<wbr>安全で<wbr>楽しい<wbr>サイクリングの<wbr>計画に<wbr>役立つ重要な<wbr>トレイル情報が<wbr>記載されています。</p>
+          </div>
+          <div class="item">
+            <h4 class="ja">トレイルの<wbr>名前：</h4>
+            <p class="ja">トレイル名が<wbr>表示されています。</p>
+          </div>
+          <div class="item">
+            <h4 class="ja">トレイルの<wbr>難易度:</h4>
+            <p class="ja">
+              <a
+                style="cursor:pointer;"
+                href="https://www.imba.com/sites/default/files/content/resources/2018-10/IMBATrailDifficultRatingSystem.jpg"
+                target="_blank">IMBA：<wbr>（国際マウンテンバイク協会）<wbr> の<wbr>難易度<wbr></a>
+              に<wbr>従って<wbr>ランク付けされた<wbr>トレイルの<wbr>難易度が<wbr>表示されています。
+            </p>
+          </div>
+          <div class="item">
+            <h4 class="ja">スポンサー:</h4>
+            <p class="ja">この<wbr>トレイルの<wbr>建設を<wbr>サポートしてくださった<wbr>スポンサー名が<wbr>記載されています。</p>
+          </div>
+          <div class="item">
+            <h4 class="ja">位置情報:</h4>
+            <p class="ja">バイクパーク内には、<wbr>それぞれの<wbr>位置情報と<wbr>して<wbr>英数字が<wbr>使われている<wbr>ため、<wbr>その<wbr>英数字を<wbr>確認し、<wbr> 自分の<wbr>場所を<wbr>特定し、<wbr>公園内での<wbr>移動に<wbr>役立てることが<wbr>可能です。<wbr>友人と<wbr>待ち合わせを<wbr>したり、<wbr>緊急対応の<wbr>際に<wbr>自分の<wbr>場所を<wbr>知らせたりするのに<wbr>役立ちます。</p>
+          </div>
+          <div class="item">
+            <h4 class="ja">トレイルの<wbr>方向:</h4>
+            <p class="ja">トレイルの<wbr>方向 (上り専用、<wbr>下り専用、<wbr>一方通行など<wbr>) を<wbr>示します。</p>
+          </div>
+          <div class="item">
+            <h4 class="ja">トレイル利用者:</h4>
+            <p class="ja">トレイルを<wbr>許可される<wbr>利用者を<wbr>指定します</p>
+            <p class="ja">(MTB のみ、<wbr>マルチユース)</p>
+          </div>
+          <div class="item">
+            <h4 class="ja">トレイル情報:</h4>
+            <p class="ja">
+              <a
+                style="cursor:pointer;"
+                href="http://trailforks.com/region/twin-peaks-bike-park/"
+                target="_blank">Trailforks</a>
+              を<wbr>活用する<wbr>ことで、<wbr>トレイルに<wbr>関する<wbr>詳細情報が<wbr>わかる<wbr> QR コードや<wbr>インタラクティブな<wbr>地図などが<wbr>すぐに<wbr>閲覧可能です。
+            </p>
+          </div>
+          <div class="item">
+            <h4 class="ja">NAMBA:</h4>
+            <p class="ja">ニセコエリアマウンテンバイク協会の<wbr>略。<wbr>非営利の<wbr>マウンテン バイク協会、<wbr>バイク パークの<wbr>管理、<wbr>およびニセコ地域の<wbr>トレイル ネットワークの<wbr>管理と<wbr>維持を<wbr>担当する<wbr>擁護団体。</p>
           </div>
         </div>
       </div>
     </div>
   </div>
-</section>
-
-<script>
+</div></section><script>
   (function($) {
     jQuery(document).ready(function($) {
 
@@ -768,4 +924,3 @@ description: 北海道ニセコエリアに位置する,ツイン ピークス �
     });
   })(jQuery);
 </script>
-
