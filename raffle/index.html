@@ -716,7 +716,7 @@ otherPrizes:
               <div
                 class="features-item no-hover ja-animate"
                 data-animation="move-from-bottom"
-                data-delay="item-{{ prizeNumber }}">
+                data-delay="item-{{ prizeNumber | minus: 2 }}">
                 <div class="font-icon">
                   <span class="icon ion-ios-trophy">
                     {% unless prize.hidePrizeNumber %}
