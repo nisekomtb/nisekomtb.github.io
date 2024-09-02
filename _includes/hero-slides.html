@@ -1,0 +1,267 @@
+<!-- HERO -->
+<div class="wrap t3-hero">
+
+  <style>
+    .t3-hero {
+      height: 100vh;
+    }
+    .carousel,
+    .carousel-inner,
+    .carousel-inner .item {
+      height: 100%;
+    }
+    .item {
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+    .carousel-inner .item:before {
+      background: linear-gradient(to top, #000000, transparent);
+      bottom: 0;
+      left: 0;
+      content: "";
+      position: absolute;
+      height: 30%;
+      width: 100%;
+    }
+
+    .item h1 {
+      background: linear-gradient(135deg, #ffffff, #cccccc);
+      background-clip: text;
+      -webkit-background-clip: text;
+      text-fill-color: transparent;
+      -webkit-text-fill-color: transparent;
+      font-weight: 700;
+
+      display: inline-block;
+      margin-bottom: 36px;
+      letter-spacing: -4px;
+      position: relative;
+    }
+
+    @media screen and (-ms-high-contrast: active),
+    (-ms-high-contrast: none) {
+      .item h1 {
+        background: transparent;
+        color: #ffffff;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .item h1 {
+        font-size: 36px;
+        letter-spacing: -2px;
+      }
+    }
+
+    .item h1 span {
+      color: #428bca;
+    }
+
+    .item img.metal {
+      width: 80px;
+    }
+
+    @media (max-width: 767px) {
+      .item img.metal {
+        width: 50px;
+      }
+    }
+
+    .item .lead {
+      color: #ffffff;
+      margin: auto;
+      max-width: 612px;
+    }
+
+    .carousel-caption {
+      padding-top: 108px;
+      padding-bottom: 108px;
+    }
+
+    .carousel-caption .item-left,
+    .carousel-caption .item-right {
+      width: 40%;
+      padding-left: 5%;
+      padding-right: 5%;
+    }
+
+    .carousel-caption .item-left {
+      text-align: left;
+    }
+
+    .carousel-caption .item-right {
+      text-align: right;
+      float: right;
+    }
+
+    @media (max-width: 1199px) {
+      .carousel-caption .item-left,
+      .carousel-caption .item-right {
+        width: 50%;
+      }
+    }
+
+    @media (max-width: 990px) {
+      .carousel-caption .item-left,
+      .carousel-caption .item-right {
+        width: 100%;
+      }
+    }
+
+    .carousel-caption .item-left h2,
+    .carousel-caption .item-right h2 {
+      font-weight: 500;
+    }
+
+    .carousel-caption .item-left h2,
+    .carousel-caption .item-left p,
+    .carousel-caption .item-right h2,
+    .carousel-caption .item-right p {
+      text-shadow: 0 4px 2px rgba(0, 0, 0, 0.6);
+    }
+
+    .carousel-caption .item-left p,
+    .carousel-caption .item-left a,
+    .carousel-caption .item-right p,
+    .carousel-caption .item-right a {
+      font-size: 120%;
+      font-weight: 500;
+    }
+
+    .item.left-grad .grad,
+    .item.right-grad .grad {
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      z-index: 1;
+      filter: alpha(opacity=50);
+      opacity: 0.5;
+    }
+
+    .item.left-grad .grad {
+      background: linear-gradient(to right, #000000, transparent);
+    }
+
+    .item.right-grad .grad {
+      background: linear-gradient(to left, #000000, transparent);
+    }
+  </style>
+
+  <div
+    id="hero"
+    class="carousel slide carousel-fade"
+    data-ride="carousel"
+    data-bs-ride="carousel">
+
+    <ol class="carousel-indicators">
+      <li
+        data-target="#hero"
+        data-slide-to="0"
+        class="active"></li>
+      {% for slide in site.data.hero %}
+        <li data-target="#hero" data-slide-to="{{ forloop.index }}"></li>
+      {% endfor %}
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active" style="background-image: url('/assets/images/bg/bg-hero.jpg');">
+        <div class="carousel-caption container">
+          <h1
+            class="ja-animate"
+            data-animation="move-from-bottom"
+            data-delay="200">
+            {% if page.lang == "en" %}Niseko Area Mountain Bike Association
+            {% else %}
+              <span class="ja">ニセコ<wbr>エリア<wbr>マウンテンバイク<wbr>協会</span>
+            {% endif %}
+          </h1>
+
+          <p
+            class="lead ja-animate"
+            data-animation="move-from-bottom"
+            data-delay="600"><img
+              class="metal"
+              src="/assets/images/logos/favicon.png"
+              title="🤘" /></p>
+
+          <p
+            class="lead ja-animate"
+            style="margin-top: 30px;"
+            data-animation="move-from-bottom"
+            data-delay="800">
+            {% if page.lang == "en" %}Building trails and community.
+            {% else %}
+              <span class="ja">トレイルと<wbr>コミュニティーの<wbr>構築</span>
+            {% endif %}
+          </p>
+        </div>
+      </div>
+      {% for slide in site.data.hero %}
+        <div class="item {% if slide.align == 'left' %}left-grad{% else if slide.align == 'right' %}right-grad{% endif %}" style="background-image: url('{{ slide.img }}');">
+          <div class="grad"></div>
+          <div class="carousel-caption container">
+            <div class="{% if slide.align == 'left' %}item-left{% else if slide.align == 'right' %}item-right{% endif %}">
+              <h2
+                class="ja-animate"
+                data-animation="{{ slide.animation }}"
+                data-delay="200">
+                {% if page.lang == "en" %}
+                  {{ slide.title }}
+                {% else %}
+                  <span class="ja">{{ slide.ja.title }}</span>
+                {% endif %}
+              </h2>
+              <p
+                class="ja-animate"
+                data-animation="{{ slide.animation }}"
+                data-delay="400">
+                {% if page.lang == "en" %}
+                  {{ slide.desc }}
+                {% else %}
+                  <span class="ja">{{ slide.ja.desc }}</span>
+                {% endif %}
+              </p>
+              <a
+                class="btn btn-success ja-animate"
+                data-animation="{{ slide.animation }}"
+                data-delay="600"
+                href="{% if page.lang == "en" %}{{ slide.action.url }}{% else %}{{ slide.action.ja.url }}{% endif %}">
+                {% if page.lang == "en" %}
+                  {{ slide.action.text }}
+                {% else %}
+                  <span class="ja">{{ slide.action.ja.text }}</span>
+                {% endif %}
+              </a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <!-- Controls -->
+    <a
+      class="left carousel-control"
+      href="#hero"
+      role="button"
+      data-slide="prev">
+      <span class="fa-solid fa-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a
+      class="right carousel-control"
+      href="#hero"
+      role="button"
+      data-slide="next">
+      <span class="fa-solid fa-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+<!-- //HERO -->

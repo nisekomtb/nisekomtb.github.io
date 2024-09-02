@@ -4,9 +4,9 @@ layout: base
 {% assign path = page.path | remove: "ja/" | remove: "index.html" %}
 {% case path %}
   {% when '' %}
-  {% include hero.html %}
+    {% include hero-slides.html %}
   {% else %}
-  {% include masthead.html %}
+    {% include masthead.html %}
 {% endcase %}
 
 <div id="t3-mainbody" class="container t3-mainbody">
@@ -16,7 +16,7 @@ layout: base
     <div id="t3-content" class="t3-content col-xs-12">
       {{ content }}
     </div>
-    <!-- //MAIN CONTENT -->
+  <!-- //MAIN CONTENT -->
   </div>
 
 </div>

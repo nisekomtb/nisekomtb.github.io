@@ -1,0 +1,60 @@
+- img: /assets/images/og/ss-stumpjumper.jpg
+  align: left
+  animation: move-from-bottom
+  title: Enter to win a limited edition Soil Searching Stumpjumper Evo
+  desc: |
+    Plus another <strong>57</strong> prizes up for grabs!
+    <br/>
+    All proceeds go towards building free and public mountain biking trails.
+    <br/>
+    Grab yourself a ticket for our biggest raffle yet!
+  ja:
+    title: 限定版ソイルサーチング・スタンプジャンパー・<wbr>エボを<wbr>当てる<wbr>チャンスです
+    desc: |
+      さらに<strong ><wbr>57</strong>個の<wbr>賞品が<wbr>当たる<wbr>チャンス！<wbr>
+      <br/>
+      すべての<wbr>収益は<wbr>無料で<wbr>公共の<wbr>マウンテンバイクトレイルの<wbr>建設に<wbr>向けられます。<wbr>
+      <br/>
+      これまでで<wbr>最大の<wbr>ラッフルに<wbr>ぜひチケットを<wbr>手に<wbr>入れてください！
+  action:
+    url: /raffle/
+    text: Enter here
+    ja:
+      url: /ja/raffle/
+      text: 応募は<wbr>こちらから
+
+- img: /assets/images/events/2024/soil-searching/header.jpg
+  align: left
+  animation: move-from-right
+  title: "Soil Searching Niseko 2024: Building Trails and Community"
+  desc: Specialized brings back the Soil Searching event to Niseko for its second consecutive year following last year’s succes.
+  ja:
+    title: "Soil Searching Niseko 2024: トレイルと<wbr>コミュニティの<wbr>構築"
+    desc: Specializedは、<wbr>昨年の<wbr>成功を<wbr>受けて、<wbr>今年も<wbr>Nisekoで<wbr>Soil Searchingイベントを<wbr>開催します。
+  action:
+    url: /events/soil-searching-2024/
+    text: Learn more
+    ja:
+      url: /ja/events/soil-searching-2024/
+      text: 詳細を<wbr>学ぶ
+
+- img: /assets/images/twinpeaks/header.jpg
+  align: right
+  animation: move-from-left
+  title: Twin Peaks Bike Park
+  desc: |
+    NAMBA's <strong>free-to-use</strong> community bike park located right in the heart of the Niseko Area.
+    <br/>
+    Now with an impressive <strong>13km of trail</strong>, with more coming soon!
+  ja:
+    title: ツインピークス<wbr>バイクパーク
+    desc: |
+      NAMBAの<strong ><wbr>無料で<wbr>利用可能な</strong><wbr>コミュニティバイクパークは、<wbr>ニセコエリアの<wbr>中心に<wbr>位置しています。<wbr>
+      <br/>
+      現在、<wbr>印象的な<strong ><wbr>13kmの<wbr>トレイル</strong>が<wbr>あり、<wbr>さらに<wbr>拡張予定です！
+  action:
+    url: /twin-peaks/
+    text: Learn more
+    ja:
+      url: /ja/twin-peaks/
+      text: 詳細を<wbr>学ぶ
