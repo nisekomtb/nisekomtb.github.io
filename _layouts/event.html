@@ -39,6 +39,7 @@ baseCss: view-article
               "price": {{ price.adult | replace: "¥", "" | replace: "円", "" | replace: ",", ""}},
               "priceCurrency": "JPY",
               "availability": "https://schema.org/InStock",
+              "validFrom": "{{ page.date | date: "%Y" }}-01-01",
               "category": "Adult"{% if price.name %},
               "description": "{{ price.name }}"{% endif %}
             },
@@ -48,6 +49,7 @@ baseCss: view-article
               "price": {{ price.child | replace: "¥", "" | replace: "円", "" | replace: ",", "" }},
               "priceCurrency": "JPY",
               "availability": "https://schema.org/InStock",
+              "validFrom": "{{ page.date | date: "%Y" }}-01-01",
               "category": "Child"{% if price.name %},
               "description": "{{ price.name }}"{% endif %}
             }
@@ -58,6 +60,7 @@ baseCss: view-article
               "price": {{ price.adult | replace: "¥", "" | replace: "円", "" | replace: ",", "" }},
               "priceCurrency": "JPY",
               "availability": "https://schema.org/InStock",
+              "validFrom": "{{ page.date | date: "%Y" }}-01-01",
               "description": "{{ price.name }}"
             }
           {% endif %}
@@ -70,7 +73,8 @@ baseCss: view-article
           "url": "https://namba.ngo{{ page.url }}",
           "price": {{ page.price | replace: "¥", "" | replace: "円", "" | replace: ",", "" }},
           "priceCurrency": "JPY",
-          "availability": "https://schema.org/InStock"
+          "availability": "https://schema.org/InStock",
+          "validFrom": "{{ page.date | date: "%Y" }}-01-01"
         },
       {% endif %}
   {% else %}
@@ -79,7 +83,8 @@ baseCss: view-article
       "url": "https://namba.ngo{{ page.url }}",
       "price": "",
       "priceCurrency": "JPY",
-      "availability": "https://schema.org/InStock"
+      "availability": "https://schema.org/InStock",
+      "validFrom": "{{ page.date | date: "%Y" }}-01-01"
     },
   {% endif %}
   "performer": {
