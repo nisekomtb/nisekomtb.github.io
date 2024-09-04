@@ -2,6 +2,7 @@
 layout: event
 categories: events
 title: Niseko Gravel Autumn Ride
+description: Join us for the exhilarating Niseko Gravel Autumn Ride, a memorable cycling event set against the stunning backdrop of Niseko's autumn colors. This two-day adventure, happening from September 21st to 22nd, 2024, invites riders to experience a challenging yet picturesque journey through both paved and unpaved roads.
 startDate: 2024-09-21
 days: 2
 location: Niseko

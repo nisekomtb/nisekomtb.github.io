@@ -2,6 +2,7 @@
 layout: event
 categories: events
 title: NISEKO GRAVEL Autumn Ride
+description: わくわくするニセコグラベルオータムライドに参加しましょう。この記憶に残るサイクリングイベントは、ニセコの秋の色彩が鮮やかな背景となっています。2024年9月21日（土）から22日（日）にかけての2日間の冒険で、ライダーは舗装された道路と未舗装の道路を通じて、挑戦的でありながらも絵のように美しい旅を体験することができます。
 startDate: 2024-09-21
 days: 2
 location: ニセコ
