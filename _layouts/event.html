@@ -28,13 +28,60 @@ baseCss: view-article
   },
   "inLanguage": "{{ page.lang }}",
   "isAccessibleForFree": {% if page.price == 0 %}true{% else %}false{% endif %},
-  "offers": {
-    "@type": "Offer",
-    "url": "{{ page.url }}",
-    "price": "{{ page.price }}",
-    "priceCurrency": "JPY",
-    "availability": "https://schema.org/InStock"
-  },
+  {% if page.price %}
+    {% if page.price[0] %}
+      "offers": [
+        {% for price in page.price %}
+          {% if price.adult and price.child %}
+            {
+              "@type": "Offer",
+              "url": "https://namba.ngo{{ page.url }}",
+              "price": {{ price.adult | replace: "¥", "" | replace: "円", "" | replace: ",", ""}},
+              "priceCurrency": "JPY",
+              "availability": "https://schema.org/InStock",
+              "category": "Adult"{% if price.name %},
+              "description": "{{ price.name }}"{% endif %}
+            },
+            {
+              "@type": "Offer",
+              "url": "https://namba.ngo{{ page.url }}",
+              "price": {{ price.child | replace: "¥", "" | replace: "円", "" | replace: ",", "" }},
+              "priceCurrency": "JPY",
+              "availability": "https://schema.org/InStock",
+              "category": "Child"{% if price.name %},
+              "description": "{{ price.name }}"{% endif %}
+            }
+          {% else %}
+            {
+              "@type": "Offer",
+              "url": "https://namba.ngo{{ page.url }}",
+              "price": {{ price.adult | replace: "¥", "" | replace: "円", "" | replace: ",", "" }},
+              "priceCurrency": "JPY",
+              "availability": "https://schema.org/InStock",
+              "description": "{{ price.name }}"
+            }
+          {% endif %}
+          {% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ],
+      {% else %}
+        "offers": {
+          "@type": "Offer",
+          "url": "https://namba.ngo{{ page.url }}",
+          "price": {{ page.price | replace: "¥", "" | replace: "円", "" | replace: ",", "" }},
+          "priceCurrency": "JPY",
+          "availability": "https://schema.org/InStock"
+        },
+      {% endif %}
+  {% else %}
+    "offers": {
+      "@type": "Offer",
+      "url": "https://namba.ngo{{ page.url }}",
+      "price": "",
+      "priceCurrency": "JPY",
+      "availability": "https://schema.org/InStock"
+    },
+  {% endif %}
   "image": [
     "https://namba.ngo{{ page.img }}"
   ],
