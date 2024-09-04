@@ -6,6 +6,15 @@ description: わくわくするニセコグラベルオータムライドに参�
 startDate: 2024-09-21
 days: 2
 location: ニセコ
+price:
+  - name: XL：PAS Ex Long Course
+    adult: 16,000円
+  - name: L：SHIMANO GRX Long Course
+    adult: 12,500円
+  - name: M：IKEUCHI GROUP Middle Course
+    adult: 8,000円
+  - name: S：Ride Tour Course
+    adult: 5,000円
 host:
   name: Niseko Gravel
   img: /niseko-gravel.png

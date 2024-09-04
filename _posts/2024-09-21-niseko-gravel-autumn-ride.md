@@ -6,6 +6,15 @@ description: Join us for the exhilarating Niseko Gravel Autumn Ride, a memorable
 startDate: 2024-09-21
 days: 2
 location: Niseko
+price:
+  - name: XL：PAS Ex Long Course
+    adult: ¥16,000
+  - name: L：SHIMANO GRX Long Course
+    adult: ¥12,500
+  - name: M：IKEUCHI GROUP Middle Course
+    adult: ¥8,000
+  - name: S：Ride Tour Course
+    adult: ¥5,000
 host:
   name: Niseko Gravel
   img: /niseko-gravel.png
