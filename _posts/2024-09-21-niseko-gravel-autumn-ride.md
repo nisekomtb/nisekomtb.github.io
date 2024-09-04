@@ -6,6 +6,7 @@ description: Join us for the exhilarating Niseko Gravel Autumn Ride, a memorable
 startDate: 2024-09-21
 days: 2
 location: Niseko
+address: 13 Chuodori, Niseko, Abuta District, Hokkaido 048-1512
 price:
   - name: XL：PAS Ex Long Course
     adult: ¥16,000

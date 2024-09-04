@@ -6,6 +6,7 @@ description: わくわくするニセコグラベルオータムライドに参�
 startDate: 2024-09-21
 days: 2
 location: ニセコ
+address: 13 Chuodori, Niseko, Abuta District, Hokkaido 048-1512
 price:
   - name: XL：PAS Ex Long Course
     adult: 16,000円
