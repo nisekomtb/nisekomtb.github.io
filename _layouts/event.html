@@ -82,6 +82,10 @@ baseCss: view-article
       "availability": "https://schema.org/InStock"
     },
   {% endif %}
+  "performer": {
+    "@type": "PerformingGroup",
+    "name": "{{ page.host.name | default: "NAMBA" }}"
+  },
   "image": [
     "https://namba.ngo{{ page.img }}"
   ],
