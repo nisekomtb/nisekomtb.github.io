@@ -94,7 +94,7 @@
                                 href="{{ subNav.url }}"
                                 target="_blank"
                                 {% else %}
-                                href="{{ langPrefix | append: nav.path | append: '/' | append: subNav.path | replace: "//", "/" }}"
+                                href="{{ langPrefix | append: nav.path | append: '/' | append: subNav.path | append: '/' | replace: "//", "/" }}"
                                 {% endif %}
                                 data-target="#">
                                 {% if page.lang == 'en' %}
@@ -118,7 +118,7 @@
                 href="{{ nav.url }}"
                 target="_blank"
                 {% else %}
-                href="{{ langPrefix | append: nav.path }}"
+                href="{{ langPrefix | append: nav.path | append: '/' }}"
                 {% endif %}
                 data-target="#">
                 {% if page.lang == 'en' %}
@@ -129,7 +129,7 @@
             {% endif %}
           </li>
         {% endfor %}
-        {% comment %}<li itemprop='name' data-id="150" data-level="1"> <a itemprop='url' class="{% if path0 == 'contact-us' %}current active {% endif %} href="{{ langPrefix }}contact-us" data-target="#">{% if page.lang == 'en' %}Contact Us{% else %}Contact Us{% endif %}</a> </li>{% endcomment %}
+      {% comment %}<li itemprop='name' data-id="150" data-level="1"> <a itemprop='url' class="{% if path0 == 'contact-us' %}current active {% endif %} href="{{ langPrefix }}contact-us" data-target="#">{% if page.lang == 'en' %}Contact Us{% else %}Contact Us{% endif %}</a> </li>{% endcomment %}
       </ul>
     </div>
 
@@ -175,8 +175,7 @@
       window.location = langPrefix + "{{ path }}";
     }
   </script>
-  <a href="/{% if page.lang == 'en' %}ja/{% endif %}{{ path }}"
-    onclick="changeLang(event, `{% if page.lang == 'en' %}ja{% else %}en{% endif %}`)">
+  <a href="/{% if page.lang == 'en' %}ja/{% endif %}{{ path }}" onclick="changeLang(event, `{% if page.lang == 'en' %}ja{% else %}en{% endif %}`)">
     {% if page.lang == 'en' %}日本語{% else %}English{% endif %}
   </a>
 </div>
@@ -250,7 +249,7 @@
                               href="{{ subNav.url }}"
                               target="_blank"
                               {% else %}
-                              href="{{ langPrefix | append: nav.path | append: '/' | append: subNav.path | replace: "//", "/" }}"
+                              href="{{ langPrefix | append: nav.path | append: '/' | append: subNav.path | append: '/' | replace: "//", "/" }}"
                               {% endif %}
                               class="">
                               {% if page.lang == 'en' %}
@@ -268,7 +267,7 @@
                         href="{{ nav.url }}"
                         target="_blank"
                         {% else %}
-                        href="{{ langPrefix | append: nav.path }}"
+                        href="{{ langPrefix | append: nav.path | append: '/' }}"
                         {% endif %}
                         class="">
                         {% if page.lang == 'en' %}
@@ -287,7 +286,7 @@
       </div>
 
     </div>
-    <!-- //OFF-CANVAS SIDEBAR -->
+  <!-- //OFF-CANVAS SIDEBAR -->
 
   </div>
 
