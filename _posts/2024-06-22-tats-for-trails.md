@@ -2,6 +2,7 @@
 layout: competition
 categories: competitions
 title: Tats for Trails
+noindex: true
 permalink: /tats-for-trails-2024/
 description:
 startDate: 2024-06-22 09:00:00 +0900
