@@ -1,4 +1,4 @@
-{% assign path = page.path | remove: "ja/" | remove: "index.html" %}
+{% assign path = page.url | remove: "ja/" %}
 <!DOCTYPE html>
 <html prefix="og: https://ogp.me/ns#" lang="{{ page.lang }}" dir="ltr" class='com_content mm-hover no-touch {{ layout.baseCss }} {{ page.baseCss }}'>
   <head>
@@ -21,7 +21,7 @@
     <meta property="og:image" content="https://namba.ngo{{ page.og.image }}?d={{ site.time | date: "%s" }}"/>
     <meta property="og:image:url" content="https://namba.ngo{{ page.og.image }}?d={{ site.time | date: "%s" }}"/>
     <meta property="og:image:secure_url" content="https://namba.ngo{{ page.og.image }}?d={{ site.time | date: "%s" }}"/>
-    <meta property="og:url" content="https://namba.ngo/{% if page.lang == 'ja' %}ja/{% endif %}{{ path }}"/>
+    <meta property="og:url" content="https://namba.ngo{% if page.lang == 'ja' %}/ja{% endif %}{{ path }}"/>
     {% if page.description %}<meta property="og:description" content="{{ page.description }}"/>{% endif %}
     {% if page.lang == 'en' %}<meta property="og:locale" content="en_JP"/>
       <meta property="og:site_name" content="Niseko Area Mountain Bike Association"/>
@@ -30,7 +30,7 @@
       <meta property="og:site_name" content="ニセコエリアマウンテンバイク 協会"/>
       <meta property="og:locale:alternate" content="en_JP"/>
     {% endif %}
-    <link rel="alternate" hreflang="{% if page.lang == 'en' %}ja{% else %}en{% endif %}" href="/{% if page.lang == 'en' %}ja/{% endif %}{{ path }}"/>
+    <link rel="alternate" hreflang="{% if page.lang == 'en' %}ja{% else %}en{% endif %}" href="{% if page.lang == 'en' %}/ja{% endif %}{{ path }}"/>
     {% if page.canonical %}
       <link rel="canonical" href="https://namba.ngo/{{- page.canonical -}}">
       {% if page.redirect %}
@@ -170,7 +170,7 @@
 
     <div id="t3-section-bottom" class="t3-section-wrap wrap">
 
-      {% if path == '' %}
+      {% if path == '/' %}
         {% include sponsors.html sponsors=site.data.sponsors.special.sponsors width=site.data.sponsors.special.width class="special" %}
 
         <div class="module-title-wrap"></div>
