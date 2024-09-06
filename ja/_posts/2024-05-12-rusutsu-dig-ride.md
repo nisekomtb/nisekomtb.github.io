@@ -21,30 +21,30 @@ og:
 parking: false
 about: false
 ---
-<span class="ja">羊蹄MTBクラブに<wbr>参加して、<wbr>ルスツフロートレイルでの<wbr>今シーズン初の<wbr>コースメンテナンスと<wbr>ライディングセッションに<wbr>ご協力ください！<wbr>今年は<wbr>例年より<wbr>暖かい春の<wbr>おかげで<wbr>早くも<wbr>始動できるので、<wbr>素晴らしい<wbr>ライディングシーズンの<wbr>準備の<wbr>ために<wbr>トレイルの<wbr>整備を<wbr>手伝いに<wbr>来てください。</span>
+羊蹄MTBクラブに<wbr>参加して、<wbr>ルスツフロートレイルでの<wbr>今シーズン初の<wbr>コースメンテナンスと<wbr>ライディングセッションに<wbr>ご協力ください！<wbr>今年は<wbr>例年より<wbr>暖かい春の<wbr>おかげで<wbr>早くも<wbr>始動できるので、<wbr>素晴らしい<wbr>ライディングシーズンの<wbr>準備の<wbr>ために<wbr>トレイルの<wbr>整備を<wbr>手伝いに<wbr>来てください。
 
 <div class="TrailforksWidgetTrail" data-w="100%" data-h="350px" data-trailid="450955" data-activitytype="1" data-map="1" data-basemap="trailforks" data-elevation="1" data-photos="0" data-title="1" data-info="1" data-trail_opacity="25" data-v="2" data-basicmap="1"></div>
 
 ### イベント詳細
 
-<span class="ja">トレイルから<wbr>雪が<wbr>すでに<wbr>なくなっており、<wbr>掘り起こす<wbr>準備が<wbr>できています！<wbr>私たちは<wbr>トレイルを<wbr>完璧な<wbr>状態に<wbr>する<wbr>ための<wbr>メンテナンスに<wbr>焦点を<wbr>当てます。<wbr>トレイルの<wbr>整備が<wbr>終わった<wbr>後は、<wbr>ライディングの<wbr>時間で<wbr>お祝いしましょう。<wbr>トレイルに<wbr>恩返しを<wbr>して、<wbr>その<wbr>成果を<wbr>楽しむ<wbr>絶好の<wbr>機会です。</span>
+トレイルから<wbr>雪が<wbr>すでに<wbr>なくなっており、<wbr>掘り起こす<wbr>準備が<wbr>できています！<wbr>私たちは<wbr>トレイルを<wbr>完璧な<wbr>状態に<wbr>する<wbr>ための<wbr>メンテナンスに<wbr>焦点を<wbr>当てます。<wbr>トレイルの<wbr>整備が<wbr>終わった<wbr>後は、<wbr>ライディングの<wbr>時間で<wbr>お祝いしましょう。<wbr>トレイルに<wbr>恩返しを<wbr>して、<wbr>その<wbr>成果を<wbr>楽しむ<wbr>絶好の<wbr>機会です。
 
 ### 持ち物
 
-- <span class="ja">メンテナンスツール<wbr>（シャベル推奨；クラブには<wbr>限りが<wbr>あるので、<wbr>可能な<wbr>限り<wbr>ご持参ください）</span>
-- <span class="ja">メンテナンス後の<wbr>ライディング用に<wbr>自転車と<wbr>ヘルメット</span>
+- メンテナンスツール<wbr>（シャベル推奨；クラブには<wbr>限りが<wbr>あるので、<wbr>可能な<wbr>限り<wbr>ご持参ください）
+- メンテナンス後の<wbr>ライディング用に<wbr>自転車と<wbr>ヘルメット
 
 ![](/assets/images/events/2024/rusutsu-dig-ride/dig.jpg)
 
 ### 天候について
 
-<span class="ja">小雨の<wbr>場合も<wbr>イベントは<wbr>実施されますので、<wbr>その<wbr>点を<wbr>考慮して<wbr>服装を<wbr>ご準備ください。</span>
+小雨の<wbr>場合も<wbr>イベントは<wbr>実施されますので、<wbr>その<wbr>点を<wbr>考慮して<wbr>服装を<wbr>ご準備ください。
 
 ### 注意
 
-<span class="ja">時間は<wbr>柔軟に<wbr>対応しますので、<wbr>遅れて<wbr>参加したり<wbr>早めに<wbr>帰ることも<wbr>可能です。<wbr>この<wbr>イベントは<wbr>ゴールデンウィーク外で<wbr>行われる<wbr>ため、<wbr>参加できるかどうか<wbr>心配されている<wbr>方も<wbr>ご安心ください。</span>
+時間は<wbr>柔軟に<wbr>対応しますので、<wbr>遅れて<wbr>参加したり<wbr>早めに<wbr>帰ることも<wbr>可能です。<wbr>この<wbr>イベントは<wbr>ゴールデンウィーク外で<wbr>行われる<wbr>ため、<wbr>参加できるかどうか<wbr>心配されている<wbr>方も<wbr>ご安心ください。
 
-<span class="ja">掘って、<wbr>乗って、<wbr>自転車愛好家の<wbr>仲間たちとの<wbr>交流を<wbr>楽しみましょう。<wbr>今シーズン初の<wbr>ライドを<wbr>思い出に<wbr>残る<wbr>ものにしましょう！</span>
+掘って、<wbr>乗って、<wbr>自転車愛好家の<wbr>仲間たちとの<wbr>交流を<wbr>楽しみましょう。<wbr>今シーズン初の<wbr>ライドを<wbr>思い出に<wbr>残る<wbr>ものにしましょう！
 
 <div style="text-align:center; margin:50px 0;">
   <a class="btn btn-primary" href="https://www.facebook.com/events/757779523146644" target="_blank">イベント詳細</a>

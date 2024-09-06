@@ -408,7 +408,7 @@ baseCss: view-article
           {% if page.location %}
           <div class="list-group">
             <h4 class="list-group-item-heading">{% if page.lang == "en" %}Location{% else %}場所{% endif %}</h4>
-            <p class="list-group-item-text{% if page.lang == "ja" %} ja{% endif %}">{{ page.location }}</p>
+            <p class="list-group-item-text">{{ page.location }}</p>
           </div>
           {% endif %}
 
@@ -463,7 +463,7 @@ baseCss: view-article
           <div class="list-group">
             <h4 class="list-group-item-heading">{% if page.lang == "en" %}More Info{% else %}詳しくは{% endif %}</h4>
             {% for info in page.moreInfo %}
-            <p{% if page.lang == "ja" %} class="ja"{% endif %}>{{ info }}</p>
+            <p>{{ info }}</p>
             {% endfor %}
           </div>
           {% endif %}
@@ -512,7 +512,7 @@ baseCss: view-article
               {% if page.storeProductId %}
               <a class="btn action" href="#competition-store">
                 {% if page.lang == 'ja' %}
-                <span class="ja">応募は<wbr>こちらから</span>
+                <span>応募は<wbr>こちらから</span>
                 {% else %}
                 <span>Enter to win here</span>
                 {% endif %}

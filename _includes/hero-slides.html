@@ -216,7 +216,7 @@
                 {% if page.lang == "en" %}
                   {{ slide.title }}
                 {% else %}
-                  <span class="ja">{{ slide.ja.title }}</span>
+                  {{ slide.ja.title }}
                 {% endif %}
               </h2>
               <p
@@ -226,7 +226,7 @@
                 {% if page.lang == "en" %}
                   {{ slide.desc }}
                 {% else %}
-                  <span class="ja">{{ slide.ja.desc }}</span>
+                  {{ slide.ja.desc }}
                 {% endif %}
               </p>
               <a
@@ -237,7 +237,7 @@
                 {% if page.lang == "en" %}
                   {{ slide.action.text }}
                 {% else %}
-                  <span class="ja">{{ slide.action.ja.text }}</span>
+                  {{ slide.action.ja.text }}
                 {% endif %}
               </a>
             </div>

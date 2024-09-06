@@ -18,17 +18,19 @@
                   <img class="img-responsive" src="{{ sponsor.image }}?d={{ site.time | date: "%s" }}">
                 </a>
               {% else %}
-                  <a>
-                    <img class="img-responsive" src="{{ sponsor.image }}?d={{ site.time | date: "%s" }}">
-                  </a>
+                <a>
+                  <img class="img-responsive" src="{{ sponsor.image }}?d={{ site.time | date: "%s" }}">
+                </a>
               {% endif %}
             </div>
             {% if sponsor.label and include.class == "special" %}
-              {% if sponsor.ja.label and page.lang == "ja" %}
-                <span class="client-label ja">{{ sponsor.ja.label }}</span>
-              {% else %}
-                <span class="client-label">{{ sponsor.label }}</span>
-              {% endif %}
+              <span class="client-label">
+                {% if sponsor.ja.label and page.lang == "ja" %}
+                  {{ sponsor.ja.label }}
+                {% else %}
+                  {{ sponsor.label }}
+                {% endif %}
+              </span>
             {% endif %}
           </div>
         {% endfor %}

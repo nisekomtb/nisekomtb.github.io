@@ -16,15 +16,15 @@ masthead:
   {% assign eventsSize = events | size %}
   {% assign firstPastEventIndex = nil %}
   {% for event in events %}
-  {% assign days = event.days | times: 24 | times: 60 | times: 60 %}
-  {% assign endDate = event.startDate | date: "%s" | plus: days | date: "%F" %}
-  {% assign today = "today" | date: "%F" %}
-  {% if endDate > today %}
-  {% continue %}
-  {% else %}
-  {% assign firstPastEventIndex = forloop.index0 %}
-  {% break %}
-  {% endif %}
+    {% assign days = event.days | times: 24 | times: 60 | times: 60 %}
+    {% assign endDate = event.startDate | date: "%s" | plus: days | date: "%F" %}
+    {% assign today = "today" | date: "%F" %}
+    {% if endDate > today %}
+      {% continue %}
+    {% else %}
+      {% assign firstPastEventIndex = forloop.index0 %}
+      {% break %}
+    {% endif %}
   {% endfor %}
 
   {% assign pastEvents = events | slice: firstPastEventIndex, eventsSize %}
@@ -32,11 +32,11 @@ masthead:
   {% assign events = events | reverse | concat: pastEvents | slice: sliceStart, eventsSize %}
 
   <div class="section">
-  {% for event in events %}
+    {% for event in events %}
 
-    {% assign indexModulo4 = forloop.index0 | modulo: 4 %}
-    {% if indexModulo4 == 0 %}
-      <div class="items-row cols-4 row-{{- forloop.index0 | divided_by: 4 }} row equal-height equal-height-child">
+      {% assign indexModulo4 = forloop.index0 | modulo: 4 %}
+      {% if indexModulo4 == 0 %}
+        <div class="items-row cols-4 row-{{- forloop.index0 | divided_by: 4 }} row equal-height equal-height-child">
       {% endif %}
 
 
@@ -55,7 +55,11 @@ masthead:
           <article class="view-project {% if forloop.index0 >= firstPastEventIndex or event.cancelled %}disabled{% endif %}">
             <div class="image-wrap" style="margin-top:10px;">
               <div class="pull-left item-image">
-                <a href="{{ event.override_url | default: event.url }}" {% if event.override_url %}target="_blank"{% endif %}><img
+                <a
+                  href="{{ event.override_url | default: event.url }}"
+                  {% if event.override_url %}
+                  target="_blank"
+                  {% endif %}><img
                     src="{{ event.thumbnail }}?d={{ site.time | date: '%s' }}"
                     alt=""
                     itemprop="thumbnailUrl"></a>
@@ -70,24 +74,34 @@ masthead:
                     href="{{ event.override_url | default: event.url }}"
                     itemprop="url"
                     title="{{ event.title }}"
-                    {% if event.override_url %}target="_blank"{% endif %}>
-                    <span class="ja">{{ event.titleHtml | default: event.title }}</span></a>
+                    {% if event.override_url %}
+                    target="_blank"
+                    {% endif %}>
+                    {{ event.titleHtml | default: event.title }}</a>
                 </h2>
 
               </header>
-              <span class="project-type"><i class="fa-regular fa-calendar"></i> {{ event.startDate | date: "%Y年%m月%d日" }}</span>
-              <br />
-              <span class="project-type"><i class="fa-regular fa-clock"></i> {% if event.days == 1 %}{{ event.time }}{% else %}{{ event.days }}日間{% endif %}</span>
-              <br />
-              {% comment %} <span class="project-type">{{ event.excerpt | strip_html | slice: 0, 100 }} ...</span> {% endcomment %}
+              <span class="project-type">
+                <i class="fa-regular fa-calendar"></i>
+                {{ event.startDate | date: "%Y年%m月%d日" }}</span>
+              <br/>
+              <span class="project-type">
+                <i class="fa-regular fa-clock"></i>
+                {% if event.days == 1 %}
+                  {{ event.time }}
+                {% else %}
+                  {{ event.days }}日間{% endif %}
+              </span>
+              <br/>
+            {% comment %} <span class="project-type">{{ event.excerpt | strip_html | slice: 0, 100 }} ...</span> {% endcomment %}
 
 
             <!-- Aside -->
-              <!-- //Aside -->
+            <!-- //Aside -->
 
 
-              <!-- footer -->
-              <!-- //footer -->
+            <!-- footer -->
+            <!-- //footer -->
 
 
             </div>
@@ -96,28 +110,39 @@ masthead:
             {% assign today = "today" | date: "%F" %}
             {% if forloop.index0 < firstPastEventIndex %}
               {% if event.cancelled %}
-              <div class="ribbon ribbon-top-left cancelled" name="cancelled" data-end-date="{{- endDate -}}"><span>キャンセル</span></div>
+                <div
+                  class="ribbon ribbon-top-left cancelled"
+                  name="cancelled"
+                  data-end-date="{{- endDate -}}">
+                  <span>キャンセル</span>
+                </div>
               {% endif %}
-            <div class="ribbon ribbon-top-left" style="display:none;" name="ended" data-end-date="{{- endDate -}}">
-              <span>終了</span></div>
+              <div
+                class="ribbon ribbon-top-left"
+                style="display:none;"
+                name="ended"
+                data-end-date="{{- endDate -}}">
+                <span>終了</span>
+              </div>
             {% else %}
-            <div class="ribbon ribbon-top-left"><span>終了</span></div>
+              <div class="ribbon ribbon-top-left">
+                <span>終了</span>
+              </div>
             {% endif %}
           </article>
-          <!-- //Article -->
-
+        <!-- //Article -->
 
 
         </div>
-        <!-- end item -->
+      <!-- end item -->
       </div>
 
       {% if indexModulo4 == 3 or forloop.last %}
-      </div>
-      <!-- end row -->
-    {% endif %}
+        </div>
+        <!-- end row -->
+      {% endif %}
 
-  {% endfor %}
+    {% endfor %}
   </div>
 
 </div>

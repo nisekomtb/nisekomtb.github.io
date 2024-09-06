@@ -10,25 +10,27 @@ masthead:
 ---
 <style>
   .credit {
-    float:right;
+    float: right;
     font-size: 90%;
   }
 
-  .credit a { color: #9e9e9e; }
+  .credit a {
+    color: #9e9e9e;
+  }
 
   h3 {
-    text-align:center;
-    margin-bottom:48px;
+    text-align: center;
+    margin-bottom: 48px;
   }
 
   .jobs {
-    margin-bottom:96px;
+    margin-bottom: 96px;
   }
 
   .jobs ul {
-    text-align:center;
-    list-style:none;
-    padding-inline-start:0;
+    text-align: center;
+    list-style: none;
+    padding-inline-start: 0;
   }
 
   header.article-header {
@@ -68,11 +70,14 @@ masthead:
 <div class="t3-section-wrap">
   <div class="section">
     <div class="module-title-wrap">
-      <div class="ja-animate features-desc" data-animation="move-from-bottom" data-delay="200">
+      <div
+        class="ja-animate features-desc"
+        data-animation="move-from-bottom"
+        data-delay="200">
         <div style="font-size:130%;">
           <h3>私たちチームと働きませんか？</h3>
-          <p class="ja">NAMBAチームに<wbr>入り、<wbr>一緒に<wbr>働きませんか？<wbr>通年ボランティア委員スタッフと<wbr>夏雇用スタッフ（有給）が、<wbr>トレイルと<wbr>地域の<wbr>未来を<wbr>形作っています。</p>
-          <p class="ja">マウンテンバイクが<wbr>好きな<wbr>方、<wbr>トレイル造成に<wbr>貢献できる<wbr>スキルが<wbr>ある<wbr>方は<wbr>いますか？<wbr>募集している<wbr>ポジションの<wbr>詳細は<wbr>こちら！</p>
+          <p>NAMBAチームに<wbr>入り、<wbr>一緒に<wbr>働きませんか？<wbr>通年ボランティア委員スタッフと<wbr>夏雇用スタッフ（有給）が、<wbr>トレイルと<wbr>地域の<wbr>未来を<wbr>形作っています。</p>
+          <p>マウンテンバイクが<wbr>好きな<wbr>方、<wbr>トレイル造成に<wbr>貢献できる<wbr>スキルが<wbr>ある<wbr>方は<wbr>いますか？<wbr>募集している<wbr>ポジションの<wbr>詳細は<wbr>こちら！</p>
         </div>
       </div>
     </div>
@@ -80,10 +85,16 @@ masthead:
 
 
   <div class="section">
-    <div class="ja-animate" data-animation="move-from-bottom" data-delay="600">
+    <div
+      class="ja-animate"
+      data-animation="move-from-bottom"
+      data-delay="600">
       <h3>募集内容</h3>
 
-      <div class="blog jobs" itemscope="" itemtype="https://schema.org/Job">
+      <div
+        class="blog jobs"
+        itemscope=""
+        itemtype="https://schema.org/Job">
 
         {% assign jobs = site.categories.jobs | where: "lang", "ja" | where: "isOpen", "true" %}
         {% assign totalJobsSize = jobs | size %}
@@ -110,16 +121,19 @@ masthead:
     {% assign totalVolunteerJobsSize = jobs | where: "pay", "ボランティアワーク" | size %}
 
     {% if totalJobsSize == totalVolunteerJobsSize %}
-    <div class="section">
-      <div class="module-title-wrap ja-animate" data-animation="move-from-bottom" data-delay="1000">
-        <h3><span class="ja">有給スタッフ募集に<wbr>ついて</span></h3>
-        <div class="features-desc">
-          <div style="font-size:130%;">
-            <p class="ja">現在、<wbr>有給スタッフの<wbr>募集は<wbr>ありません。<wbr>最新の<wbr>雇用情報を<wbr>確認するには、<wbr><a href="https://www.instagram.com/nisekomtb/" target="_blank">NAMBAの<wbr>SNSアカウント</a>を<wbr>フォローしてください！</p>
+      <div class="section">
+        <div
+          class="module-title-wrap ja-animate"
+          data-animation="move-from-bottom"
+          data-delay="1000">
+          <h3>有給スタッフ募集に<wbr>ついて</h3>
+          <div class="features-desc">
+            <div style="font-size:130%;">
+              <p>現在、<wbr>有給スタッフの<wbr>募集は<wbr>ありません。<wbr>最新の<wbr>雇用情報を<wbr>確認するには、<wbr><a href="https://www.instagram.com/nisekomtb/" target="_blank">NAMBAの<wbr>SNSアカウント</a>を<wbr>フォローしてください！</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
     {% endif %}
   </div>
 </div>

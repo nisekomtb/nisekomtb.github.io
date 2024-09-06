@@ -71,9 +71,8 @@ baseCss: view-article
 
           {% if page.workingHours %}
           <div class="list-group">
-            <h4 class="list-group-item-heading">{% if page.lang == "en" %}Working hours{% else %}<span
-                class="ja">労働時間</span>{% endif %}</h4>
-            <p class="list-group-item-text{% if page.lang == " ja" %} ja{% endif %}">
+            <h4 class="list-group-item-heading">{% if page.lang == "en" %}Working hours{% else %}労働時間{% endif %}</h4>
+            <p class="list-group-item-text">
               {{ page.workingHours }}
             </p>
           </div>
@@ -81,7 +80,7 @@ baseCss: view-article
 
           <div class="list-group">
             <h4 class="list-group-item-heading">{% if page.lang == "en" %}Status{% else %}<span class="ja">ポジションの<wbr>空き</span>{% endif %}</h4>
-            <p class="list-group-item-text{% if page.lang == " ja" %} ja{% endif %}">
+            <p class="list-group-item-text">
               {% if page.isOpen and page.lang == "ja" %}
                 募集中
               {%  elsif page.isOpen %}
@@ -94,12 +93,12 @@ baseCss: view-article
 
           <div class="list-group">
             <h4 class="list-group-item-heading">{% if page.lang == "en" %}Location{% else %}場所{% endif %}</h4>
-            <p class="list-group-item-text{% if page.lang == "ja" %} ja{% endif %}">{{ page.location }}</p>
+            <p class="list-group-item-text">{{ page.location }}</p>
           </div>
 
           <div class="list-group">
             <h4 class="list-group-item-heading">{% if page.lang == "en" %}Remuneration{% else %}報酬について{% endif %}</h4>
-            <p class="list-group-item-text{% if page.lang=="ja" %} ja{% endif %}">
+            <p class="list-group-item-text">
               {{ page.pay }}
             </p>
           </div>
@@ -107,7 +106,7 @@ baseCss: view-article
           {% if page.bonus %}
           <div class="list-group">
             <h4 class="list-group-item-heading">{% if page.lang == "en" %}Performance Bonus{% else %}成果報酬{% endif %}</h4>
-            <p class="list-group-item-text{% if page.lang==" ja" %} ja{% endif %}">
+            <p class="list-group-item-text">
               {{ page.bonus }}
             </p>
           </div>
@@ -116,7 +115,7 @@ baseCss: view-article
           {% for perk in page.perks %}
           <div class="list-group">
             <h4 class="list-group-item-heading">{{ perk.title }}</h4>
-            <p class="list-group-item-text{% if page.lang==" ja" %} ja{% endif %}">
+            <p class="list-group-item-text">
               {{ perk.perk }}
             </p>
           </div>
@@ -126,7 +125,7 @@ baseCss: view-article
           <div class="list-group">
             <h4 class="list-group-item-heading">{% if page.lang == "en" %}More Info{% else %}詳しくは{% endif %}</h4>
             {% for info in page.moreInfo %}
-            <p{% if page.lang == "ja" %} class="ja"{% endif %}>{{ info }}</p>
+            <p>{{ info }}</p>
             {% endfor %}
           </div>
           {% endif %}
@@ -134,7 +133,7 @@ baseCss: view-article
           {% if page.applyUrl and page.isOpen %}
           <div class="list-group">
             {% if page.lang == "ja" %}
-              <p class="ja">
+              <p>
                 <a class="btn btn-sm btn-primary"
                   href="{{- page.applyUrl -}}"
                   target="_blank">申し込みはこちらをクリック</a>
