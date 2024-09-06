@@ -10,16 +10,22 @@ layout: base
 {% include masthead.html %}
 
 <style>
-  /* .t3-mainbody {
-    margin-top: 24px;
-  } */
+
+
+  /*
+   .t3-mainbody {
+   margin-top: 24px;
+   }
+*/
 
   .t3-sidebar .tp-logo {
-    width:150px; margin:0 auto; margin-bottom:24px; display: flex;
+    width: 150px;
+    margin: 0 auto 24px;
+    display: flex;
   }
 
   .t3-sidebar h3 {
-    font-size:12px;
+    font-size: 12px;
   }
 
   .t3-sidebar .action span {
@@ -44,7 +50,7 @@ layout: base
     padding: 7px;
     text-align: center;
     list-style: none;
-    border:0;
+    border: 0;
   }
 
   .t3-sidebar .stat span.dicon_small {
@@ -84,7 +90,7 @@ layout: base
   }
 
   .t3-sidebar .partners ul {
-    list-style-type:none;
+    list-style-type: none;
     margin: 0;
     padding: 0;
   }
@@ -106,11 +112,13 @@ layout: base
   }
 
   .credit {
-    float:right;
+    float: right;
     font-size: 90%;
   }
 
-  .credit a { color: #9e9e9e; }
+  .credit a {
+    color: #9e9e9e;
+  }
 </style>
 
 <div id="t3-mainbody" class="container t3-mainbody">
@@ -123,54 +131,82 @@ layout: base
         <article>
           {{ content }}
         </article>
-        <!-- //Article -->
+      <!-- //Article -->
       </div>
     </div>
     <!-- //MAIN CONTENT -->
 
     <!-- SIDEBAR RIGHT -->
     <div class="t3-sidebar t3-sidebar-right col col-xs-12 col-sm-4 col-md-3">
-      <img class="tp-logo" src="/assets/images/logos/twin-peaks.svg?d={{ site.time | date: " %s" }}" alt="{% if page.lang == 'ja' %}ツインピークスバイクパーク{% else %}Twin Peaks Bike Park{% endif %}" />
+      <img
+        class="tp-logo"
+        src="/assets/images/logos/twin-peaks.svg?d={{ site.time | date: " %s" }}"
+        alt="{% if page.lang == 'ja' %}ツインピークスバイクパーク{% else %}Twin Peaks Bike Park{% endif %}" />
       <div class="t3-module module">
         <div class="module-inner">
           <div class="module-ct">
             <ul class="nav nav-pills nav-stacked">
-              <li {% unless path1 %}class="active"{% endunless %} >
-                  <a href="/twin-peaks/">
-                    {% if page.lang == "ja" %}<span class="ja">トレイルマップ<wbr>＆<wbr>状況</span>{% else %}Trail Map & Status{% endif %}
-                  </a>
+              <li
+                {% unless path1 %}
+                class="active"
+                {% endunless %}>
+                <a href="/twin-peaks/">
+                  {% if page.lang == "ja" %}トレイルマップ<wbr>＆<wbr>状況{% else %}Trail Map & Status{% endif %}
+                </a>
               </li>
-              <li {% if path1=='access' %}class="active"{% endif %}>
-                  <a href="/twin-peaks/access">
-                    {% if page.lang == "ja" %}<span class="ja">アクセス<wbr>＆<wbr>設備</span>{% else %}Access & Facilities{% endif %}
-                  </a>
+              <li
+                {% if path1=='access' %}
+                class="active"
+                {% endif %}>
+                <a href="/twin-peaks/access">
+                  {% if page.lang == "ja" %}アクセス<wbr>＆<wbr>設備{% else %}Access & Facilities{% endif %}
+                </a>
               </li>
-              <li {% if path1=='guides' %}class="active"{% endif %}>
-                  <a href="/twin-peaks/guides">
-                    {% if page.lang == "ja" %}<span class="ja">ガイド<wbr>＆<wbr>ツアーオペレーション</span>{% else %}Guides & Tour operators{% endif %}
-                  </a>
+              <li
+                {% if path1=='guides' %}
+                class="active"
+                {% endif %}>
+                <a href="/twin-peaks/guides">
+                  {% if page.lang == "ja" %}ガイド<wbr>＆<wbr>ツアーオペレーション{% else %}Guides & Tour operators{% endif %}
+                </a>
               </li>
               {% comment %} <li {% if path1=='trail-building' %}class="active"{% endif %}>
-                  <a href="/twin-peaks/phases">
-                    {% if page.lang == "ja" %}トレイルビルディング{% else %}Trail building{% endif %} <span
-                  </a>
-              </li> {% endcomment %}
-              <li {% if path1=='rules' %}class="active"{% endif %}>
-                  <a href="/twin-peaks/rules">
-                    {% if page.lang == "ja" %}<span class="ja">ルール</span>{% else %}Rules{% endif %}
-                  </a>
+                                                  <a href="/twin-peaks/phases">
+                                                    {% if page.lang == "ja" %}トレイルビルディング{% else %}Trail building{% endif %} <span
+                                                  </a>
+                                          </li> {% endcomment %}
+              <li
+                {% if path1=='rules' %}
+                class="active"
+                {% endif %}>
+                <a href="/twin-peaks/rules">
+                  {% if page.lang == "ja" %}ルール{% else %}Rules{% endif %}
+                </a>
               </li>
-              <li {% if path1=='wet-trails' %}class="active"{% endif %}>
-                  <a href="/twin-peaks/wet-trails">
-                    {% if page.lang == "ja" %}<span class="ja">ぬれた<wbr>トレイル</span>{% else %}Wet Trails{% endif %}
-                  </a>
+              <li
+                {% if path1=='wet-trails' %}
+                class="active"
+                {% endif %}>
+                <a href="/twin-peaks/wet-trails">
+                  {% if page.lang == "ja" %}ぬれた<wbr>トレイル{% else %}Wet Trails{% endif %}
+                </a>
               </li>
-              <li {% if path1=='commercial-pass' %}class="active"{% endif %}>
-                  <a href="/twin-peaks/commercial-pass">
-                    {% if page.lang == "ja" %}<span class="ja">商業事業者<wbr>パス</span>{% else %}Commercial Pass{% endif %}
-                  </a>
+              <li
+                {% if path1=='commercial-pass' %}
+                class="active"
+                {% endif %}>
+                <a href="/twin-peaks/commercial-pass">
+                  {% if page.lang == "ja" %}商業事業者<wbr>パス{% else %}Commercial Pass{% endif %}
+                </a>
               </li>
-
+              <li
+                {% if path1=='emergency' %}
+                class="active"
+                {% endif %}>
+                <a href="/twin-peaks/emergency">
+                  {% if page.lang == "ja" %}緊急対応計画{% else %}Emergency Procedure{% endif %}
+                </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -179,44 +215,65 @@ layout: base
       <div class="t3-module module">
         <div class="module-inner">
           {% if page.lang == "ja" %}
-          <h3 class="module-title"><span>基本データ</span></h3>
+            <h3 class="module-title">
+              <span>基本データ</span>
+            </h3>
           {% else %}
-          <h3 class="module-title"><span>Key stats</span></h3>
+            <h3 class="module-title">
+              <span>Key stats</span>
+            </h3>
           {% endif %}
           <div class="module-ct">
             <ul class="categories-module mod-list">
               <li>
                 {% if page.lang == "ja" %}
-                  <h4>コスト：</h4> 一般無料開放
+                  <h4>コスト：</h4>
+                  一般無料開放
                 {% else %}
-                  <h4>Cost:</h4> <strong>Free</strong> to the general public
+                  <h4>Cost:</h4>
+                  <strong>Free</strong>
+                  to the general public
                 {% endif %}
               </li>
               <li>
                 {% if page.lang == "ja" %}
                   <h4>上りのタイプ：</h4>
-                  <p style="margin: 2px 0 0 0;">リフトアクセス： <strong>無</strong></p>
-                  <p style="margin:0;">シャトルアクセス： <strong>無</strong></p>
-                  <p style="margin:0;">パドルでのアクセス： <strong>有</strong></p>
+                  <p style="margin: 2px 0 0 0;">リフトアクセス：
+                    <strong>無</strong>
+                  </p>
+                  <p style="margin:0;">シャトルアクセス：
+                    <strong>無</strong>
+                  </p>
+                  <p style="margin:0;">パドルでのアクセス：
+                    <strong>有</strong>
+                  </p>
                 {% else %}
                   <h4>Uplift type:</h4>
-                  <p style="margin: 2px 0 0 0;">Lift access: <strong>No</strong></p>
-                  <p style="margin:0;">Shuttle access: <strong>No</strong></p>
-                  <p style="margin:0;">Pedal access: <strong>Yes</strong></p>
+                  <p style="margin: 2px 0 0 0;">Lift access:
+                    <strong>No</strong>
+                  </p>
+                  <p style="margin:0;">Shuttle access:
+                    <strong>No</strong>
+                  </p>
+                  <p style="margin:0;">Pedal access:
+                    <strong>Yes</strong>
+                  </p>
                 {% endif %}
               </li>
               <li>
                 {% if page.lang == "ja" %}
-                  <h4>ロケーション：</h4> ひらふ
+                  <h4>ロケーション：</h4>
+                  ひらふ
                 {% else %}
-                  <h4>Location:</h4> Hirafu
-                {% endif  %}
+                  <h4>Location:</h4>
+                  Hirafu
+                {% endif %}
               </li>
               <li>
                 {% if page.lang == "ja" %}
-                <h4>トレイルステイタス：</h4>
+                  <h4>トレイルステイタス：</h4>
                 {% else %}
-                <h4>Trail stats:</h4>
+                  <h4>Trail stats:</h4>
                 {% endif %}
                 {% assign greenTrailCount = 0 %}
                 {% assign blueTrailCount = 0 %}
@@ -228,69 +285,112 @@ layout: base
                 {% assign totalClimb = 0 %}
 
                 {% for trail in site.data.trails["twinpeaks"] %}
-                {% assign trailCount = trailCount | plus: 1 %}
-                {% case trail.difficulty %}
-                {% when 'green' %}
-                {% assign greenTrailCount = greenTrailCount | plus: 1 %}
-                {% when 'blue' %}
-                {% assign blueTrailCount = blueTrailCount | plus: 1 %}
-                {% when 'black' %}
-                {% assign blackTrailCount = blackTrailCount | plus: 1 %}
-                {% when 'double-black' %}
-                {% assign doubleBlackTrailCount = doubleBlackTrailCount | plus: 1 %}
-                {% endcase %}
-                {% assign distance = trail.distance | remove: "," %}
-                {% assign totalDistance = totalDistance | plus: distance %}
-                {% assign totalDescent = totalDescent | plus: trail.descent %}
-                {% assign totalClimb = totalClimb | plus: trail.climb %}
+                  {% assign trailCount = trailCount | plus: 1 %}
+                  {% case trail.difficulty %}
+                    {% when 'green' %}
+                      {% assign greenTrailCount = greenTrailCount | plus: 1 %}
+                    {% when 'blue' %}
+                      {% assign blueTrailCount = blueTrailCount | plus: 1 %}
+                    {% when 'black' %}
+                      {% assign blackTrailCount = blackTrailCount | plus: 1 %}
+                    {% when 'double-black' %}
+                      {% assign doubleBlackTrailCount = doubleBlackTrailCount | plus: 1 %}
+                  {% endcase %}
+                  {% assign distance = trail.distance | remove: "," %}
+                  {% assign totalDistance = totalDistance | plus: distance %}
+                  {% assign totalDescent = totalDescent | plus: trail.descent %}
+                  {% assign totalClimb = totalClimb | plus: trail.climb %}
                 {% endfor %}
                 <ul style="padding:0;">
                   <li class="stat">
-              <span aria-hidden="true" data-tf-icon="" class="dicon_small dgreen tip" title="{% if page.lang == 'ja' %}グリーン{% else %}Green{% endif %}"></span>
+                    <span
+                      aria-hidden="true"
+                      data-tf-icon=""
+                      class="dicon_small dgreen tip"
+                      title="{% if page.lang == 'ja' %}グリーン{% else %}Green{% endif %}"></span>
                     <span class="stat-count">{{ greenTrailCount }}</span>
                   </li>
                   <li class="stat">
-                    <span aria-hidden="true" data-tf-icon="" class="dicon_small dblue tip" title="{% if page.lang == 'ja' %}ブルー{% else %}Blue{% endif %}"></span>
+                    <span
+                      aria-hidden="true"
+                      data-tf-icon=""
+                      class="dicon_small dblue tip"
+                      title="{% if page.lang == 'ja' %}ブルー{% else %}Blue{% endif %}"></span>
                     <span class="stat-count">{{ blueTrailCount }}</span>
                   </li>
                   <li class="stat">
-                    <span aria-hidden="true" data-tf-icon="" class="dicon_small dblack tip" title="{% if page.lang == 'ja' %}ブラック{% else %}Black{% endif %}"></span>
+                    <span
+                      aria-hidden="true"
+                      data-tf-icon=""
+                      class="dicon_small dblack tip"
+                      title="{% if page.lang == 'ja' %}ブラック{% else %}Black{% endif %}"></span>
                     <span class="stat-count">{{ blackTrailCount }}</span>
                   </li>
                   <li class="stat">
-                    <span aria-hidden="true" data-tf-icon="" class="dicon_small dblack tip" title="{% if page.lang == 'ja' %}ダブルブラック{% else %}Double Black{% endif %}"></span>
+                    <span
+                      aria-hidden="true"
+                      data-tf-icon=""
+                      class="dicon_small dblack tip"
+                      title="{% if page.lang == 'ja' %}ダブルブラック{% else %}Double Black{% endif %}"></span>
                     <span class="stat-count">{{ doubleBlackTrailCount }}</span>
                   </li>
                 </ul>
-                <p style="margin:0;"><strong>{{ trailCount }}</strong>{% if page.lang == 'ja' %}つのトレイル{% else %} trails{% endif %}</p>
-                <p style="margin:0;">{% if page.lang == 'ja' %}総距離：{% else %}Total distance:{% endif %} <strong>{{ totalDistance | divided_by: 1000 }}km</strong> <span
-                    class="fa fa-ruler-horizontal" title="{% if page.lang == 'ja' %}距離{% else %}Distance{% endif %}"></span></p>
-                <p style="margin:0;">{% if page.lang == 'ja' %}下りの総距離：{% else %}Total descent:{% endif %} <strong>{{ totalDescent }}m</strong> <span class="fa fa-arrow-down"
-                    title="{% if page.lang == 'ja' %}下り{% else %}Descent{% endif %}"></span></p>
-                <p style="margin:0;">{% if page.lang == 'ja' %}上りの総距離：{% else %}Total climb:{% endif %} <strong>{{ totalClimb }}m</strong> <span class="fa fa-arrow-up"
-                    title="{% if page.lang == 'ja' %}登り{% else %}Climb{% endif %}"></span></p>
+                <p style="margin:0;">
+                  <strong>{{ trailCount }}</strong>
+                  {% if page.lang == 'ja' %}つのトレイル
+                  {% else %}
+                    trails{% endif %}
+                </p>
+                <p style="margin:0;">
+                  {% if page.lang == 'ja' %}総距離：{% else %}Total distance:{% endif %}
+                  <strong>{{ totalDistance | divided_by: 1000 }}km</strong>
+                  <span class="fa fa-ruler-horizontal" title="{% if page.lang == 'ja' %}距離{% else %}Distance{% endif %}"></span>
+                </p>
+                <p style="margin:0;">
+                  {% if page.lang == 'ja' %}下りの総距離：{% else %}Total descent:{% endif %}
+                  <strong>{{ totalDescent }}m</strong>
+                  <span class="fa fa-arrow-down" title="{% if page.lang == 'ja' %}下り{% else %}Descent{% endif %}"></span>
+                </p>
+                <p style="margin:0;">
+                  {% if page.lang == 'ja' %}上りの総距離：{% else %}Total climb:{% endif %}
+                  <strong>{{ totalClimb }}m</strong>
+                  <span class="fa fa-arrow-up" title="{% if page.lang == 'ja' %}登り{% else %}Climb{% endif %}"></span>
+                </p>
               </li>
               <li>
-                <h4>{% if page.lang == 'ja' %}バイクパークステイタス：{% else %}Bike Park status:{% endif %} </h4>
-                <div style="margin-top:3px;" class="TrailforksWidgetRegionStatus" data-w="100px" data-h="15px"
-                  data-rid="58775" data-activitytype="1" data-status="1" data-st="1" data-ct="0" data-date="0"></div>
+                <h4>
+                  {% if page.lang == 'ja' %}バイクパークステイタス：{% else %}Bike Park status:{% endif %}
+                </h4>
+                <div
+                  style="margin-top:3px;"
+                  class="TrailforksWidgetRegionStatus"
+                  data-w="100px"
+                  data-h="15px"
+                  data-rid="58775"
+                  data-activitytype="1"
+                  data-status="1"
+                  data-st="1"
+                  data-ct="0"
+                  data-date="0"></div>
               </li>
               <li>
                 {% if page.lang == "ja" %}
-                <h4>開放日＆時間：</h4>
-                <p style="margin:0;">6月- 10月後半まで</p>
-                <p style="margin:0;">7am - 7pm</p>
+                  <h4>開放日＆時間：</h4>
+                  <p style="margin:0;">6月- 10月後半まで</p>
+                  <p style="margin:0;">7am - 7pm</p>
                 {% else %}
-                <h4>Opening dates & times:</h4>
-                <p style="margin:0;">June - End October</p>
-                <p style="margin:0;">7am - 7pm</p>
+                  <h4>Opening dates & times:</h4>
+                  <p style="margin:0;">June - End October</p>
+                  <p style="margin:0;">7am - 7pm</p>
                 {% endif %}
               </li>
               <li>
                 {% if page.lang == "ja" %}
-                <h4>建設と管理：</h4> <span class="ja">ニセコ<wbr>エリア<wbr>マウンテンバイク<wbr>協会</span>
+                  <h4>建設と管理：</h4>
+                  ニセコ<wbr>エリア<wbr>マウンテンバイク<wbr>協会
                 {% else %}
-                <h4>Built and managed by:</h4> Niseko Area Mountain Bike Association
+                  <h4>Built and managed by:</h4>
+                  Niseko Area Mountain Bike Association
                 {% endif %}
               </li>
             </ul>
@@ -301,73 +401,65 @@ layout: base
       <div class="t3-module module">
         <div class="module-inner">
           {% if page.lang == "ja" %}
-          <h3 class="module-title"><span>バイクパーク　パートナー</span></h3>
+            <h3 class="module-title">
+              <span>バイクパーク　パートナー</span>
+            </h3>
           {% else %}
-          <h3 class="module-title"><span>Bike park partners</span></h3>
+            <h3 class="module-title">
+              <span>Bike park partners</span>
+            </h3>
           {% endif %}
           <div class="module-ct partners">
             <ul>
               <li>
                 <a href="https://helloallegra.com" target="_blank">
-                  <img src="/assets/images/company/special/allegra.png"
-                    alt="{% if page.lang == 'en' %}Trail building partner{% else %}トレイルビルド パートナー{% endif %}">
+                  <img src="/assets/images/company/special/allegra.png" alt="{% if page.lang == 'en' %}Trail building partner{% else %}トレイルビルド パートナー{% endif %}">
                 </a>
               </li>
               <li>
-                <a href="{% if page.lang == 'en' %}https://www.mnkniseko.com/en{% else %}https://www.mnkniseko.com/ja{% endif %}"
-                  target="_blank">
-                  <img src="/assets/images/company/special/mnk.png"
-                    alt="{% if page.lang == 'en' %}Trail sponsor{% else %}トレイル スポンサー{% endif %}">
+                <a href="{% if page.lang == 'en' %}https://www.mnkniseko.com/en{% else %}https://www.mnkniseko.com/ja{% endif %}" target="_blank">
+                  <img src="/assets/images/company/special/mnk.png" alt="{% if page.lang == 'en' %}Trail sponsor{% else %}トレイル スポンサー{% endif %}">
                 </a>
               </li>
               <li>
-                <a href="{% if page.lang == 'en' %}https://rhythmjapan.com{% else %}https://www.rhythmjapan.com/ja/{% endif %}"
-                  target="_blank">
-                  <img src="/assets/images/company/special/rhythm.png"
-                    alt="{% if page.lang == 'en' %}Maintenance sponsor{% else %}メンテナンス スポンサー{% endif %}">
+                <a href="{% if page.lang == 'en' %}https://rhythmjapan.com{% else %}https://www.rhythmjapan.com/ja/{% endif %}" target="_blank">
+                  <img src="/assets/images/company/special/rhythm.png" alt="{% if page.lang == 'en' %}Maintenance sponsor{% else %}メンテナンス スポンサー{% endif %}">
                 </a>
               </li>
               <li>
                 <a href="https://www.specialized-onlinestore.jp/" target="_blank">
-                  <img src="/assets/images/company/special/specialized.png"
-                    alt="{% if page.lang == 'en' %}Trail building team partner{% else %}トレイルビルドチーム スポンサー{% endif %}">
+                  <img src="/assets/images/company/special/specialized.png" alt="{% if page.lang == 'en' %}Trail building team partner{% else %}トレイルビルドチーム スポンサー{% endif %}">
                 </a>
               </li>
               <li>
-                <a href="{% if page.lang == 'en' %}https://holidayniseko.com{% else %}https://holidayniseko.jp{% endif %}"
-                  target="_blank">
-                  <img src="/assets/images/company/special/holiday-niseko.png"
-                    alt="{% if page.lang == 'en' %}Trail sponsor{% else %}トレイル スポンサー{% endif %}">
+                <a href="{% if page.lang == 'en' %}https://holidayniseko.com{% else %}https://holidayniseko.jp{% endif %}" target="_blank">
+                  <img src="/assets/images/company/special/holiday-niseko.png" alt="{% if page.lang == 'en' %}Trail sponsor{% else %}トレイル スポンサー{% endif %}">
                 </a>
               </li>
               <li>
                 <a href="https://www.nisekorealty.com" target="_blank">
-                  <img src="/assets/images/company/special/niseko-realty.png"
-                    alt="{% if page.lang == 'en' %}Trail sponsor{% else %}トレイル スポンサー{% endif %}">
+                  <img src="/assets/images/company/special/niseko-realty.png" alt="{% if page.lang == 'en' %}Trail sponsor{% else %}トレイル スポンサー{% endif %}">
                 </a>
               </li>
               <li>
                 <a href="http://www.nisekorealtysales.com" target="_blank">
-                  <img src="/assets/images/company/special/nrs.png"
-                    alt="{% if page.lang == 'en' %}Trail sponsor{% else %}トレイル スポンサー{% endif %}">
+                  <img src="/assets/images/company/special/nrs.png" alt="{% if page.lang == 'en' %}Trail sponsor{% else %}トレイル スポンサー{% endif %}">
                 </a>
               </li>
               <li>
                 <a href="https://www.santacruzbicycles.com/" target="_blank">
-                  <img src="/assets/images/company/special/santa-cruz.png"
-                    alt="{% if page.lang == 'en' %}Trail sponsor{% else %}トレイル スポンサー{% endif %}">
+                  <img src="/assets/images/company/special/santa-cruz.png" alt="{% if page.lang == 'en' %}Trail sponsor{% else %}トレイル スポンサー{% endif %}">
                 </a>
               </li>
               <li>
-                <img src="/assets/images/company/special/taki.png"
-                  alt="{% if page.lang == 'en' %}Trail sponsor{% else %}トレイル スポンサー{% endif %}">
+                <img src="/assets/images/company/special/taki.png" alt="{% if page.lang == 'en' %}Trail sponsor{% else %}トレイル スポンサー{% endif %}">
               </li>
             </ul>
           </div>
         </div>
       </div>
     </div>
-    <!-- //SIDEBAR RIGHT -->
+  <!-- //SIDEBAR RIGHT -->
   </div>
 
 </div>

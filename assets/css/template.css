@@ -156,6 +156,13 @@ span.highlight {
   color: #ffffff;
 }
 
+html[lang="ja"] span,
+html[lang="ja"] p,
+html[lang="ja"] li,
+html[lang="ja"] h1,
+html[lang="ja"] h2,
+html[lang="ja"] h3,
+html[lang="ja"] h4,
 span.ja,
 p.ja,
 li.ja,
