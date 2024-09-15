@@ -62,4 +62,4 @@ include:
   - .well-known
 
 future: true
-incremental: true
+# incremental: true

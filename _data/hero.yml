@@ -1,41 +1,16 @@
-- img: /assets/images/og/ss-stumpjumper.jpg
+- img: /assets/images/competitions/2024/strava-contest/header.jpg
   align: left
   animation: move-from-bottom
-  title: Enter to Win a Limited Edition Soil Searching Stumpjumper Evo
-  desc: |
-    Plus another <strong>57</strong> prizes up for grabs!
-    <br/>
-    All proceeds go towards building free and public mountain biking trails.
-    <br/>
-    Grab yourself a ticket for our biggest raffle yet!
+  title: "NAMBA Strava Competition: Race for the Title of King and Queen of the Mountain"
+  desc: Join us for an exhilarating season-long Strava contest at Twin Peaks Bike Park, where you can compete to earn the prestigious titles of King of the Mountain and Queen of the Mountain.
   ja:
-    title: 限定版ソイルサーチング・スタンプジャンパー・<wbr>エボを<wbr>当てる<wbr>チャンスです
-    desc: |
-      さらに<strong ><wbr>57</strong>個の<wbr>賞品が<wbr>当たる<wbr>チャンス！<wbr>
-      <br/>
-      すべての<wbr>収益は<wbr>無料で<wbr>公共の<wbr>マウンテンバイクトレイルの<wbr>建設に<wbr>向けられます。<wbr>
-      <br/>
-      これまでで<wbr>最大の<wbr>ラッフルに<wbr>ぜひチケットを<wbr>手に<wbr>入れてください！
+    title: "NAMBAストラバコンペティション：マウンテンキングと<wbr>クイーンの<wbr>タイトルを<wbr>競う<wbr>レース"
+    desc: ツインピークスバイクパークで<wbr>開催される<wbr>シーズンを<wbr>通じた<wbr>エキサイティングな<wbr>ストラバコンテストに<wbr>参加しましょう。<wbr>ここでは、<wbr>マウンテンキング<wbr>（KOM）と<wbr>マウンテンクイーン<wbr>（QOM）の<wbr>名誉ある<wbr>タイトルを<wbr>獲得する<wbr>ために<wbr>競い合うことができます。
   action:
-    url: /raffle/
-    text: Enter here
-    ja:
-      url: /ja/raffle/
-      text: 応募は<wbr>こちらから
-
-- img: /assets/images/events/2024/soil-searching/header.jpg
-  align: left
-  animation: move-from-right
-  title: "Soil Searching Niseko 2024: Building Trails and Community"
-  desc: Specialized brings back the Soil Searching event to Niseko for its second consecutive year following last year’s succes.
-  ja:
-    title: "Soil Searching Niseko 2024: トレイルと<wbr>コミュニティの<wbr>構築"
-    desc: Specializedは、<wbr>昨年の<wbr>成功を<wbr>受けて、<wbr>今年も<wbr>Nisekoで<wbr>Soil Searchingイベントを<wbr>開催します。
-  action:
-    url: /events/soil-searching-2024/
+    url: /strava-contest-2024/
     text: Learn more
     ja:
-      url: /ja/events/soil-searching-2024/
+      url: /ja/strava-contest-2024/
       text: 詳細を<wbr>学ぶ
 
 - img: /assets/images/twinpeaks/header.jpg
