@@ -89,7 +89,7 @@ The Cruz Control trail, upon full completion, will stretch 2.8 km. This opening 
 
 <script type="application/javascript" src="https://es.pinkbike.org/326/sprt/j/trailforks/iframeResizer.min.js"></script>
 <script type="text/javascript">
-var script = document.createElement("script"); script.setAttribute("src", "https://es.pinkbike.org/ttl-86400/sprt/j/trailforks/widget.js"); document.getElementsByTagName("head")[0].appendChild(script); var widgetCheck = false;
+var script = document.createElement("script"); script.setAttribute("src", "https://es.pinkbike.org/ttl-86400/sprt/j/trailforks/widget.js?units=metric"); document.getElementsByTagName("head")[0].appendChild(script); var widgetCheck = false;
 </script>
 <!-- TRAILFORKS WIDGET END -->
 
