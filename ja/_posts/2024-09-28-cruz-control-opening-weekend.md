@@ -97,7 +97,7 @@ var script = document.createElement("script"); script.setAttribute("src", "https
 
 - <strong >サンタクルーズ・バイクデモ:</strong> サンタクルーズは<wbr>毎日<wbr>午前9時から<wbr>午後3時まで、<wbr>リズムの<wbr>外で<wbr>デモバイクを<wbr>提供します。<wbr>マウンテンバイキングを<wbr>初めて<wbr>試す方も、<wbr>最新の<wbr>サンタクルーズモデルを<wbr>テストしたい<wbr>経験豊富な<wbr>ライダーも、<wbr>当イベントで<wbr>カバーされます。<wbr>
 - <strong >コーヒーと<wbr>チル:</strong> リズム内で<wbr>新鮮な<wbr>コーヒーで<wbr>朝を<wbr>スタートし、<wbr>トレイルに<wbr>出る<wbr>前に<wbr>最適な<wbr>準備を<wbr>整えましょう。<wbr>
-- <strong >プロライダーツアー:</strong> サンタクルーズは、<wbr>今井一、<wbr>久島勇樹、<wbr>金子大作プロライダーを<wbr>招いて<wbr>両日に<wbr>わたりツアーを<wbr>リードします。<wbr>これらの<wbr>プロと<wbr>一緒に<wbr>ライドし、<wbr>エキスパートの<wbr>ティップスを<wbr>得る<wbr>チャンスを<wbr>お見逃しなく。<wbr>
+- <strong >プロライダーツアー:</strong> サンタクルーズは、<wbr><a href="https://www.instagram.com/hajimeeeee/" target="_blank">今井一</a>、<wbr><a href="https://www.instagram.com/yukikushima/" target="_blank">久島勇樹</a><wbr>プロライダーを<wbr>招いて<wbr>両日に<wbr>わたりツアーを<wbr>リードします。<wbr>これらの<wbr>プロと<wbr>一緒に<wbr>ライドし、<wbr>エキスパートの<wbr>ティップスを<wbr>得る<wbr>チャンスを<wbr>お見逃しなく。<wbr>
 - <strong >ダーティダムズグループライド：</strong>土曜日は、<wbr>サンタクルーズの<wbr>プロライダーが<wbr>リードする<wbr>女性専用の<wbr>ダーティダムズグループライドが<wbr>行われます。<wbr>この<wbr>イベントは、<wbr>女性ライダーを<wbr>力づけ、<wbr>支援的な<wbr>コミュニティの<wbr>雰囲気を<wbr>育む<wbr>ことを<wbr>目的と<wbr>して<wbr>設計されています。
 - <strong >リズムでの<wbr>アフターパーティー:</strong> 日中の<wbr>興奮を<wbr>リズムで<wbr>開催される<wbr>アフターパーティーで<wbr>落ち着かせましょう。<wbr>この<wbr>夕べは、<wbr>無料の<wbr>食べ物、<wbr>活気の<wbr>ある<wbr>ビートを<wbr>奏でる<wbr>DJ、<wbr>ギブアウェイ、<wbr>プロの<wbr>ライダーたちとの<wbr>交流の<wbr>機会が<wbr>提供されます。<wbr>トレイルの<wbr>ストーリーを<wbr>共有し、<wbr>リラックスするのに<wbr>最適な<wbr>方法です。
 

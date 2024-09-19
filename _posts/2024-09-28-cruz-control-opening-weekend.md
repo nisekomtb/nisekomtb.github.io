@@ -97,7 +97,7 @@ var script = document.createElement("script"); script.setAttribute("src", "https
 
 - <strong>Santa Cruz Bike Demos:</strong> Santa Cruz will provide demo bikes from 9:00am to 3:00pm each day, available outside Rhythm. Whether you're trying out mountain biking for the first time or are an experienced rider looking to test the latest Santa Cruz models, we’ve got you covered.
 - <strong>Coffee and Chill:</strong> Start your morning with a fresh coffee inside Rhythm, setting you up perfectly before hitting the trails.
-- <strong>Pro Rider Tours:</strong> Santa Cruz is bringing in professional riders Imoto Hajime, Kushima Yuuki, and Kaneko Daisaku to lead tours on both days. Don't miss the chance to ride alongside these pros and pick up some expert tips.
+- <strong>Pro Rider Tours:</strong> Santa Cruz is bringing in professional riders <a href="https://www.instagram.com/hajimeeeee/" target="_blank">Hajime Imoto</a> and <a href="https://www.instagram.com/yukikushima/" target="_blank">Yuki Kushima</a> to lead tours on both days. Don't miss the chance to ride alongside these pros and pick up some expert tips.
 - <strong>Dirty Dames Group Ride:</strong> Saturday features the Dirty Dames group ride, a women's ride led by a Santa Cruz pro rider. This event is designed to empower female riders and foster a supportive community atmosphere.
 - <strong>After Party at Rhythm:</strong> Wind down from the day’s excitement with an after party hosted at Rhythm. The evening will feature free food, a DJ spinning lively beats, giveaways, and opportunities to chat with some pro riders. It's a perfect way to relax and share stories from the trails.
 
