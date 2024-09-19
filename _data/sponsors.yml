@@ -1,5 +1,5 @@
 special:
-  width: 10
+  width: 11
   sponsors:
     - name: allegra
       image: /assets/images/company/special/allegra.png
@@ -64,6 +64,12 @@ special:
       label: Trail sponsor
       ja:
         label: トレイル スポンサー
+    - name: fox trail trust
+      image: /assets/images/company/special/fox-trail-trust.png
+      url: https://trailtrust.com
+      label: Benefactor
+      ja:
+        label: 恩人
 
 higuma:
   width: 12
