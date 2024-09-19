@@ -1,3 +1,18 @@
+- img: /assets/images/events/2024/cruz-control-opening-weekend/header.jpg
+  align: right
+  animation: move-from-right
+  title: Cruz Control Opening Weekend
+  desc: Join us for the exciting opening weekend of the new trail "Cruz Control," co-hosted by NAMBA and Santa Cruz. This event celebrates the completion of the first 1.1 km of the trail, promising thrilling rides and great company.
+  ja:
+    title: クルーズ・コントロール オープニングウィークエンド
+    desc: 新しい<wbr>トレイル<wbr>「クルーズ・コントロール」の<wbr>オープニングウィークエンドに、<wbr>NAMBAと<wbr>サンタクルーズの<wbr>共催で<wbr>ぜひご参加ください。<wbr>この<wbr>イベントは、<wbr>トレイルの<wbr>最初の<wbr>1.1kmが<wbr>完成を<wbr>祝い、<wbr>スリリングな<wbr>ライドと<wbr>素晴らしい<wbr>仲間との<wbr>時間を<wbr>約束します。
+  action:
+    url: /events/cruz-control-opening-weekend-2024/
+    text: Learn more
+    ja:
+      url: /ja/events/cruz-control-opening-weekend-2024/
+      text: 詳細を<wbr>学ぶ
+
 - img: /assets/images/competitions/2024/strava-contest/header.jpg
   align: left
   animation: move-from-bottom
