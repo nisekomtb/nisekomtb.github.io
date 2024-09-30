@@ -108,6 +108,19 @@ twinpeaks:
     multi_use: false
     sponsor: holiday-niseko
     trailforks_id: 680498
+
+  - name: Cruz Control
+    ja:
+      name: クルーズコントロール
+    difficulty: blue
+    distance: "1,100"
+    climb: 4
+    descent: 68
+    bike: down-only
+    multi_use: false
+    sponsor: santa-cruz
+    trailforks_id: 753804
+
   - name: Shogun Syndicate
     ja:
       name: ショウグンシンジケート
@@ -123,10 +136,21 @@ twinpeaks:
     ja:
       name: タキトレイル
     difficulty: black
-    distance: "2,158"
-    climb: 1
-    descent: 159
+    distance: "1,274"
+    climb: 11
+    descent: 128
     bike: down-only
     multi_use: false
     sponsor: taki
     trailforks_id: 657437
+  - name: Taki Tech
+    ja:
+      name: タキテック
+    difficulty: double-black
+    distance: 632
+    climb: 8
+    descent: 55
+    bike: down-only
+    multi_use: false
+    sponsor: taki
+    trailforks_id: 766461
