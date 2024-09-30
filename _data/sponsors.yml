@@ -64,7 +64,7 @@ special:
       label: Trail sponsor
       ja:
         label: トレイル スポンサー
-    - name: fox trail trust
+    - name: trail trust fox
       image: /assets/images/company/special/fox-trail-trust.png
       url: https://trailtrust.com
       label: Benefactor
@@ -198,6 +198,8 @@ tanuki:
       url: https://www.nisekozen.com
     - image: /assets/images/company/tanuki/odin.png
       url: https://www.odin-property.com
+    - image: /assets/images/company/brand/peatys.png
+      url: https://peatys.co.uk/
     - image: /assets/images/company/powbar.png
       url: https://www.thepowbar.com
     - image: /assets/images/company/tanuki/powderlife.png
