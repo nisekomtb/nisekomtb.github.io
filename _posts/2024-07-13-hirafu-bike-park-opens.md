@@ -2,7 +2,7 @@
 layout: event
 categories: events
 title: Grand HIRAFU Bike Park opens
-description:
+description: Get ready for thrilling mountain bike adventures as Grand HIRAFU Bike Park reopens on July 13th for the first time since 2020! With exciting new developments, including a newly constructed top-to-bottom flow trail, this summer promises an awesome riding experience.
 startDate: 2024-07-13 09:00:00 +0900
 days: 1
 time: 9:00am - 4:00pm
