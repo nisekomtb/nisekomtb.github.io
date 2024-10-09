@@ -53,10 +53,6 @@
   ja: コンテスト
   sub:
 
-  - path: raffle
-    en: 🎟️ Raffle
-    ja: 🎟️ 抽選会
-
   - path: strava-contest-2024
     en: Strava Contest
     ja: ストラバ コンテスト
