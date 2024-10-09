@@ -85,24 +85,24 @@ about: true
   <strong>TWIN PEAKS BIKE PARK IS OPENING TO THE PUBLIC!</strong>
 </p>
 
-<p>Join us on the trails here in Niseko on the weekend of the 16th and 17th of September where we'll have:</p>
-<p>
-  <ul>
-    <li>An opening ceremony</li>
-    <li>Demo bikes from Santa Cruz</li>
-    <li>Booths from your favorite brands like ION, Reserve Wheels, Peaty's and more</li>
-    <li>A chance to win giveaways and free merch</li>
-  </ul>
-</p>
+Join us on the trails here in Niseko on the weekend of the 16th and 17th of September where we'll have:
 
-<h3>The event</h3>
+- An opening ceremony
 
-<p>Santa Cruz is setting up a booth at Rhythm Japan Base and bringing a fleet of demo bikes, including the Megatower, Hightower, Tallboy, Nomad, Bronson, 5010, Blur and Stigmata – this is an awesome chance to try some sick bikes here in Japan’s newest bike park!</p>
+- Demo bikes from Santa Cruz
 
-<p>We’ll also have two UCI Mountain Bike World Series downhill racers as guest riders, Hajime Imoto and Yuki Kushima!</p>
+- Booths from your favorite brands like ION, Reserve Wheels, Peaty's and more
 
-<p>Yuki and Hajime are accomplished riders, representing Japan and their sponsor Santa Cruz in the UCI Mountain Bike World Series. Can't wait to ride with both Yuki and Hajime, and to see the speed and style they bring to the trails here in Niseko!</p>
+- A chance to win giveaways and free merch
 
-<p>Thanks to Allegra who have supported NAMBA and spearheaded the design and building of this park, and thanks to our sponsors, our supporters and our community for helping us create a free and open trail network!</p>
+### The event
 
-<p><img src="/assets/images/events/2023/grand-opening/riders.jpg" alt="" /></p>
+Santa Cruz is setting up a booth at Rhythm Japan Base and bringing a fleet of demo bikes, including the Megatower, Hightower, Tallboy, Nomad, Bronson, 5010, Blur and Stigmata – this is an awesome chance to try some sick bikes here in Japan’s newest bike park!
+
+We’ll also have two UCI Mountain Bike World Series downhill racers as guest riders, Hajime Imoto and Yuki Kushima!
+
+Yuki and Hajime are accomplished riders, representing Japan and their sponsor Santa Cruz in the UCI Mountain Bike World Series. Can't wait to ride with both Yuki and Hajime, and to see the speed and style they bring to the trails here in Niseko!
+
+Thanks to Allegra who have supported NAMBA and spearheaded the design and building of this park, and thanks to our sponsors, our supporters and our community for helping us create a free and open trail network!
+
+![](/assets/images/events/2023/grand-opening/riders.jpg)

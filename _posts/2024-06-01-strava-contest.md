@@ -44,6 +44,7 @@ Strava is a popular GPS tracking app that enables cyclists to participate in a s
 ### Competition Details:
 
 - <strong>Eligibility</strong>: The competition is open to all riders except for NAMBA staff and members of the affiliated trail team.
+
 - <strong>How to Participate</strong>:
   - Download the Strava app onto your GPS device (smartphone, smartwatch, etc.).
   - Record your rides on the Easy Ryder trail segment.
@@ -63,6 +64,7 @@ Get ready for some incredible rewards! Thanks to our sponsors, Fox and Race Face
 ### Prize Collection:
 
 - <strong>Prize Retrieval</strong>: Winners must collect their prizes in person at the closing event. Attendance at the closing event is essential to claim your prize.
+
 - <strong>Proxy Collection</strong>: If you are unable to attend the closing event, you must nominate a delegate to collect your prize on your behalf. Please inform us in advance about your delegate to facilitate smooth prize distribution.
 
 ### Prize Announcement:

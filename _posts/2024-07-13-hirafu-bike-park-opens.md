@@ -40,8 +40,11 @@ Get ready for thrilling mountain bike adventures as Grand HIRAFU Bike Park reope
 ### What's New:
 
 - <strong>Top-to-Bottom Flow Trail</strong>: Dive into the excitement with their new trail, designed to excite riders from the first pedal to the last. Perfect for all skill levels, this trail offers a continuous, thrilling ride.
+
 - <strong>Enhanced Lift System</strong>: With the old Center 4 lift removed, the operation has shifted to the Gondola.
+
 - <strong>Skill-Up Area for Beginners</strong>: Whether you're a beginner or looking to refine your skills, their skill-up area provides a supportive environment to learn and improve. It features a variety of curves and gentle slopes ideal for mastering new techniques.
+
 - <strong>Premium Bike Rentals</strong>: Don't have a bike? No problem! Full suspension bikes are available for rent, ensuring you have a top-quality ride.
 
 NAMBA will be there to celebrate this new beginning, and we invite you to take advantage of the great value season passes to enjoy the enhanced mountain bike trails. Stay tuned as we finalize details of the new course and expect big announcements on opening day that you won't want to miss.

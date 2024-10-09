@@ -77,11 +77,15 @@ Specialized brings back the Soil Searching event to Niseko for its second consec
 ### Participant Perks:
 
 - <strong>Exclusive Gear</strong>: Receive a limited edition Soil Searching t-shirt, only available at this event.
+
 - <strong>Bike Access</strong>: Utilize Specialized Rental Bikes on a first-come, first-served basis.
+
 - <strong>Educational Experience</strong>: Gain valuable insights and practical skills in trail building, allowing you to contribute to trail construction and maintenance directly.
+
 - <strong>Food and Drinks</strong>: Enjoy a complimentary lunch on the first day, energy bar from the Pow Bar, stickers, and a beer* at the evening celebration. * Beer is for adults only.
 
 ### Event Schedule:
+
 - <strong>Day 1: Build and Dig</strong><br />Dive into a day of trail and feature building. Lunch is provided to keep you energized, culminating in an evening party where participants can relax and socialize over drinks. There will be family-friendly activities available for those bringing children.
 
 - <strong>Day 2: Ride Day</strong><br />Experience the thrill of riding the trails and features you've built. It’s a perfect day for everyone, from seasoned riders to families!
@@ -89,6 +93,7 @@ Specialized brings back the Soil Searching event to Niseko for its second consec
 ### Special Features:
 
 - <strong>Ride with Pros</strong>: Specialized ambassadors will be present, providing a fantastic opportunity to ride alongside seasoned professionals.
+
 - <strong>Community Building</strong>: This event is not just about trail building but also fostering a community among mountain bikers.
 
 <br />

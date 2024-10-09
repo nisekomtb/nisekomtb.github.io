@@ -19,12 +19,16 @@ Join our team, improve Niseko, and have a good time doing it by participating in
 
 - <h4>Trails Subcommittee:</h4>
   <div class="desc">The Trails Subcommittee is at the forefront of everything related to trails! From planning, design, building and maintenance – this team oversees it all. Due to the nature of our current projects, members of the Trails Subcommittee will work very closely with members of the Access Subcommittee.</div>
+
 - <h4>Access Subcommittee:</h4>
   <div class="desc">The Access Subcommittee is instrumental in building, strengthening and maintaining relationships with local landholders and area stakeholders, both private and public. Without access to local lands, we have nowhere to build awesome trails! This team works closely with the Trails Subcommittee to plan, design, apply for, and maintain compliance of trails built by NAMBA.</div>
+
 - <h4>Events Subcommittee:</h4>
   <div class="desc">From group rides and casual community races, to fundraisers and demo days, the Events Subcommittee is responsible for planning and executing awesome events. Members of this subcommittee work closely with our internal Communications & Marketing Subcommittee, and with external sponsors and partners, to create events that not only bring the party but also promote community engagement and encourage both new and seasoned riders to explore the trails!</div>
+
 - <h4>Communications & Marketing Subcommittee:</h4>
   <div class="desc">The Communications & Marketing Subcommittee is the creative force behind the NAMBA brand. This team produces and publishes marketing content, runs fundraisers, manages our website, and integrates our trails with platforms like Trailforks. Their efforts focus on promoting the brand and the trails, and on improving rider experience!</div>
+
 - <h4>Admin subcommittee:</h4>
   <div class="desc">At the core of our operations, the Admin Subcommittee ensures the smooth functioning of NAMBA. From accounting and grant applications to overseeing essential administrative processes, this committee plays a pivotal role in facilitating the behind-the-scenes workings of our organization.</div>
 

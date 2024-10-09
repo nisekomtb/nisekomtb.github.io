@@ -32,6 +32,7 @@ With the snow already cleared from the trails, we're ready to dig in! We will fo
 ### What to Bring
 
 - Maintenance tools (shovels preferred; the club has a limited number of spares, so bring your own if possible)
+
 - Your bike and helmet for riding after maintenance
 
 ![](/assets/images/events/2024/rusutsu-dig-ride/dig.jpg)

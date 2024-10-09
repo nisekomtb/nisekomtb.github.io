@@ -96,9 +96,13 @@ Partnering with Rhythm for More Fun:
 To enhance your weekend experience, we’ve teamed up with Rhythm as they reopen for the summer. Join us there for:
 
 - <strong>Live music:</strong> Enjoy the upbeat tunes of a live band.
+
 - <strong>BBQ delight:</strong> Savor delicious BBQ plates available for ¥1,500 each.
+
 - <strong>Free activity hub:</strong> Take this chance to try out the activity hub at Rhythm for free; kilter board, bouldering wall, pump track, skate park and more!
+
 - <strong>Bike rental discount:</strong> Take advantage of a 50% discount on bike rentals for the day.
+
 - <strong>Winter clearance sale:</strong> Gear up with up to 50% off winter merchandise.
 
 ![](/assets/images/events/2024/season-opener/rhythm.jpg)

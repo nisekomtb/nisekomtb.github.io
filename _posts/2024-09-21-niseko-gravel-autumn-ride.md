@@ -37,7 +37,9 @@ Join us for the exhilarating Niseko Gravel Autumn Ride, a memorable cycling even
 ### Event Highlights:
 
 - <strong>Challenging Terrain</strong>: Tackle gravel inclines and achieve impressive elevation gains.
+
 - <strong>Scenic Routes</strong>: Ride through a mix of paved and unpaved roads, surrounded by the spectacular autumn foliage of Niseko.
+
 - <strong>Visual Feast</strong>: Enjoy the breathtaking views of vibrant reds, yellows, and greens as the season paints a perfect setting for your ride.
 
 Prepare to be amazed by nature’s beauty and the thrill of gravel riding. This event promises not only a physical challenge but also an awe-inspiring visual experience as you traverse the landscape adorned with the rich colors of fall.
