@@ -20,6 +20,9 @@ form:
   height: 1200
 masthead:
   img: /assets/images/events/2024/allegra-monitor-tour/header.jpg
+  credit:
+    name: Jinya Nishiwaki
+    url: https://instagram.com/jingypsy
 thumbnail: /assets/images/events/2024/allegra-monitor-tour/thumb.jpg
 og:
   image: /assets/images/events/2024/allegra-monitor-tour/header.jpg
