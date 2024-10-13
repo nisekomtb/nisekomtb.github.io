@@ -1,16 +1,16 @@
-- img: /assets/images/events/2024/allegra-monitor-tour/header.jpg
+- img: /assets/images/events/2024/monitor-tour/header.jpg
   align: right
   animation: move-from-right
-  title: Allegra Monitor Tour
-  desc: Join us at Twin Peaks Bike Park for a special monitor tour event, hosted by Allegra, on Tuesday, October 15th, and Wednesday, October 16th. This is a unique opportunity to ride the trails, learn about their development, and contribute to the future of mountain biking in Niseko.
+  title: Monitor Tour
+  desc: Join us at Twin Peaks Bike Park for a special monitor tour event, on Tuesday, October 15th, and Wednesday, October 16th. This is a unique opportunity to ride the trails, learn about their development, and contribute to the future of mountain biking in Niseko.
   ja:
-    title: アレグラ・モニターツアー
-    desc: 2024年10月15日<wbr>（火）と<wbr>16日<wbr>（水）の<wbr>2日間、<wbr>ツインピークス・バイクパークで<wbr>アレグラが<wbr>主催する<wbr>特別な<wbr>モニターツアーに<wbr>参加しましょう。<wbr>この<wbr>イベントは、<wbr>トレイルの<wbr>開発を<wbr>学び、<wbr>ニセコの<wbr>マウンテンバイクの<wbr>未来に<wbr>貢献する<wbr>絶好の<wbr>機会です。
+    title: モニターツアー
+    desc: 10月15日<wbr>（火曜日）と<wbr>16日<wbr>（水曜日）に<wbr>ツインピークスバイクパークで<wbr>特別な<wbr>モニターツアーイベントを<wbr>開催します。<wbr>この<wbr>ユニークな<wbr>機会に、<wbr>トレイルを<wbr>走り、<wbr>その<wbr>開発に<wbr>ついて<wbr>学び、<wbr>ニセコの<wbr>マウンテンバイクの<wbr>未来に<wbr>貢献しましょう。
   action:
-    url: /events/allegra-monitor-tour-2024/
+    url: /events/monitor-tour-2024/
     text: Learn more
     ja:
-      url: /ja/events/allegra-monitor-tour-2024/
+      url: /ja/events/monitor-tour-2024/
       text: 詳細を<wbr>学ぶ
 
 - img: /assets/images/competitions/2024/strava-contest/header.jpg
