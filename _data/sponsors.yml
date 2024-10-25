@@ -53,6 +53,12 @@ special:
       label: Trail sponsor
       ja:
         label: トレイル スポンサー
+    # - name: paydirt
+    #   image: /assets/images/company/special/paydirt.png
+    #   url: https://paydirt.earth
+    #   label: Benefactor
+    #   ja:
+    #     label: 恩人
     - name: santa cruz
       image: /assets/images/company/special/santa-cruz.png
       url: https://sports-w.com/brands/santa-cruz/
