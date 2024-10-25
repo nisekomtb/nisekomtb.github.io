@@ -128,7 +128,7 @@ higuma:
         url: https://www.zekkeicollection.com/
 
 shika:
-  width: 13
+  width: 14
   sponsors:
     - image: /assets/images/company/shika/midori.png
       url: https://midoriinvestors.com
@@ -158,6 +158,8 @@ shika:
         url: https://setsuniseko.com/ja
     - image: /assets/images/company/shika/sme.png
       url: https://www.smejapan.com
+    - image: /assets/images/company/brand/smith.png
+      url: https://smithjapan.co.jp
     - image: /assets/images/company/shika/suiboku.png
       url: https://www.suibokuhirafu.com
       ja:
