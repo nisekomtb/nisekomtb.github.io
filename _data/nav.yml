@@ -48,14 +48,10 @@
   en: Events
   ja: イベント
 
-- path: ""
-  en: Win
-  ja: コンテスト
-  sub:
-
-  - path: strava-contest-2024
-    en: Strava Contest
-    ja: ストラバ コンテスト
+# - path: ""
+#   en: Win
+#   ja: コンテスト
+#   sub:
 
 - path: shop
   en: Shop

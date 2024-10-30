@@ -1,18 +1,3 @@
-- img: /assets/images/competitions/2024/strava-contest/header.jpg
-  align: left
-  animation: move-from-bottom
-  title: "NAMBA Strava Competition: Race for the Title of King and Queen of the Mountain"
-  desc: Join us for an exhilarating season-long Strava contest at Twin Peaks Bike Park, where you can compete to earn the prestigious titles of King of the Mountain and Queen of the Mountain.
-  ja:
-    title: "NAMBAストラバコンペティション：マウンテンキングと<wbr>クイーンの<wbr>タイトルを<wbr>競う<wbr>レース"
-    desc: ツインピークスバイクパークで<wbr>開催される<wbr>シーズンを<wbr>通じた<wbr>エキサイティングな<wbr>ストラバコンテストに<wbr>参加しましょう。<wbr>ここでは、<wbr>マウンテンキング<wbr>（KOM）と<wbr>マウンテンクイーン<wbr>（QOM）の<wbr>名誉ある<wbr>タイトルを<wbr>獲得する<wbr>ために<wbr>競い合うことができます。
-  action:
-    url: /strava-contest-2024/
-    text: Learn more
-    ja:
-      url: /ja/strava-contest-2024/
-      text: 詳細を<wbr>学ぶ
-
 - img: /assets/images/twinpeaks/header.jpg
   align: right
   animation: move-from-left
