@@ -180,7 +180,7 @@ shika:
         url: https://vacationniseko.com/ja
 
 tanuki:
-  width: 14
+  width: 15
   sponsors:
     - image: /assets/images/company/tanuki/burton.png
       url: https://www.burton.com/jp/en
@@ -204,6 +204,8 @@ tanuki:
         url: https://nisekoportfolio.com/ja/
     - image: /assets/images/company/tanuki/niseko-zen.png
       url: https://www.nisekozen.com
+    - image: /assets/images/company/tanuki/north-bicycle.png
+      url: https://northbicycle.co.jp
     - image: /assets/images/company/tanuki/odin.png
       url: https://www.odin-property.com
     - image: /assets/images/company/brand/peatys.png
