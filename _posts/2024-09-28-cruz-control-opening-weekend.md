@@ -2,7 +2,7 @@
 layout: event
 categories: events
 title: Cruz Control Opening Weekend
-description: Join us for the exciting opening weekend of the new trail "Cruz Control," co-hosted by NAMBA and Santa Cruz. This event celebrates the completion of the first 1.1 km of the trail, promising thrilling rides and great company.
+description: Join us for the exciting opening weekend of the new trail “Cruz Control”, co-hosted by NAMBA and Santa Cruz. This event celebrates the completion of the first 1.1 km of the trail, promising thrilling rides and great company.
 startDate: 2024-09-28 09:00:00 +0900
 days: 2
 location: Twin Peaks Bike Park, Niseko
