@@ -8,11 +8,15 @@
       {% endif %}
     </div>
     {% if page.masthead.credit %}
-      <a
-        class="ja-masthead-credit"
-        href="{{ page.masthead.credit.url }}"
-        target="_blank">
-        📸 {{ page.masthead.credit.name }}</a>
+      {% if page.masthead.credit.url %}
+        <a
+          class="ja-masthead-credit"
+          href="{{ page.masthead.credit.url }}"
+          target="_blank">
+          📸 {{ page.masthead.credit.name }}</a>
+      {% else %}
+        <span class="ja-masthead-credit">📸 {{ page.masthead.credit.name }}</span>
+      {% endif %}
     {% endif %}
   </div>
 </div>

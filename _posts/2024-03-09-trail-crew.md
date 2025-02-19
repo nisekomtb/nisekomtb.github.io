@@ -10,7 +10,7 @@ masthead:
     url: https://seaandsummitmedia.com
 og:
   image: /assets/images/jobs/trail-crew.jpg
-isOpen: true
+isOpen: false
 location: Niseko, Japan and surrounding areas
 term: Summer season
 workingHours: 8 hrs a day / 5 days a week

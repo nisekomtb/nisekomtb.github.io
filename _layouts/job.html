@@ -24,7 +24,7 @@ baseCss: view-article
     {% if page.img %}
     <div class="pull-left item-image">
       <img src="{{ page.img }}" alt="" itemprop="image">
-      {% if page.imgCredit %}<span class="credit"><a href="{{ page.imgCredit.url }}" target="_blank"> 📸 {{ page.imgCredit.name }}</a></span>{% endif %}
+      {% if page.imgCredit %}<span class="credit">{% if page.imgCredit.url %}<a href="{{ page.imgCredit.url }}" target="_blank"> 📸 {{ page.imgCredit.name }}</a>{% else %}📸 {{ page.imgCredit.name }}{% endif %}</span>{% endif %}
     </div>
     {% endif %}
 
