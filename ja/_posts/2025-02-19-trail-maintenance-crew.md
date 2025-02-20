@@ -9,6 +9,10 @@ masthead:
     name: Agustin Villalba
 og:
   image: /assets/images/jobs/trail-maintenance-crew.jpg
+  startDate: 2025-05-01
+  employmentType: TEMPORARY
+  pay: 1800
+  payUnit: HOUR
 isOpen: true
 location: ニセコ、<wbr>または<wbr>ニセコ周辺地域
 term: 5月1日 ～ 10月31日

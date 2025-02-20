@@ -169,29 +169,60 @@ baseCss: view-article
 {
   "@context": "http://schema.org",
   "@type": "JobPosting",
-  "headline": "{{ page.title }}",
+  "url": "https://namba.ngo{{ page.url }}",
+  {% if page.lang == "ja" %}
+  "sameAs": "https://namba.ngo{{ page.url | replace: "/ja/", "/" }}",
+  {% endif %}
+  "identifier": {
+    "@type": "PropertyValue",
+    "name": "{{ page.title }}",
+    "value": "{{ page.url | replace: "/ja/", "/" | replace: "/jobs/", "/" | replace: "/", "" }}"
+  }
   "inLanguage": "{{ page.lang }}",
-  "author": "NAMBA",
-  "datePublished": "{{ page.date }}",
-  "mainEntityOfPage": "WebPage",
-  "articleBody": "{{ content | strip_html | strip_newlines }}",
-  {% if page.img %}
+  "title": "{{ page.title }}",
+  "description": "{{ page.description }}",
+    {% if page.masthead.img %}
   "image":
   {
     "@type": "imageObject",
-    "url": "https://namba.ngo{{ page.img }}",
+    "url": "https://namba.ngo{{ page.masthead.img }}",
     "height": "auto",
     "width": "auto"
   },
   {% endif %}
-  "publisher":
-  {
+  "datePosted": "{{ page.date }}",
+  {% if page.og.startDate %}"jobStartDate": "{{ page.og.startDate }}", {% endif %}
+  {% if page.workingHours %}"workHours": "{{ page.workingHours }}", {% endif %}
+  {% unless page.isOpen %}
+  "validThrough" : "{{ site.time }}",
+  {% endunless %}
+  "applicantLocationRequirements": {
+    "@type": "Country",
+    "name": "Japan"
+  },
+  {% if page.og.allowRemote %}"jobLocationType": "TELECOMMUTE", {% endif %}
+  "jobLocation": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Niseko",
+      "addressRegion": "Hokkaido",
+      "addressCountry": "Japan"
+    }
+  },
+  "employmentType": "{{ page.og.employmentType }}",
+  "hiringOrganization" : {
     "@type": "Organization",
     "name": "NAMBA",
-    "logo":
-    {
-      "@type": "imageObject",
-      "url": "https://namba.ngo/assets/images/logos/logo.png"
+    "sameAs": "https://namba.ngo"
+  },
+  "baseSalary": {
+    "@type": "MonetaryAmount",
+    "currency": "JPY",
+    "value": {
+      "@type": "QuantitativeValue",
+      "value": {{ page.og.pay | default: 0 }},
+      "unitText": "{{ page.og.payUnit | default: "HOUR" }}"
     }
   }
 }
