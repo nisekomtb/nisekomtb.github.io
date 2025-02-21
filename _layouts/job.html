@@ -177,13 +177,12 @@ baseCss: view-article
     "@type": "PropertyValue",
     "name": "{{ page.title }}",
     "value": "{{ page.url | replace: "/ja/", "/" | replace: "/jobs/", "/" | replace: "/", "" }}"
-  }
+  },
   "inLanguage": "{{ page.lang }}",
   "title": "{{ page.title }}",
   "description": "{{ page.description }}",
     {% if page.masthead.img %}
-  "image":
-  {
+  "image": {
     "@type": "imageObject",
     "url": "https://namba.ngo{{ page.masthead.img }}",
     "height": "auto",
@@ -193,9 +192,7 @@ baseCss: view-article
   "datePosted": "{{ page.date }}",
   {% if page.og.startDate %}"jobStartDate": "{{ page.og.startDate }}", {% endif %}
   {% if page.workingHours %}"workHours": "{{ page.workingHours }}", {% endif %}
-  {% unless page.isOpen %}
-  "validThrough" : "{{ site.time }}",
-  {% endunless %}
+  {% unless page.isOpen %}"validThrough" : "{{ site.time }}",{% endunless %}
   "applicantLocationRequirements": {
     "@type": "Country",
     "name": "Japan"
@@ -214,7 +211,8 @@ baseCss: view-article
   "hiringOrganization" : {
     "@type": "Organization",
     "name": "NAMBA",
-    "sameAs": "https://namba.ngo"
+    "sameAs": "https://namba.ngo",
+    "logo" : "https://namba.ngo/assets/images/logos/circle-logo.jpg"
   },
   "baseSalary": {
     "@type": "MonetaryAmount",
