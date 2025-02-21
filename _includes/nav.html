@@ -145,7 +145,7 @@
       const exdays = 365;
       d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
       document.cookie = "lang=" + lang + "; expires=" + d.toUTCString() + "; path=/";
-      window.location = "/  {%- if page.lang == 'en' -%} ja/{%- endif -%}{{ path }}";
+      window.location = "/{%- if page.lang == 'en' -%}ja/{%- endif -%}{{ path }}";
     }
 
     function getNavigatorLang() {
@@ -167,12 +167,16 @@
         return getNavigatorLang();
     }
 
-    const lang = getLang();
-    if (lang != "{{ page.lang }}") {
-      const langPrefix = lang === 'en'
-        ? '/'
-        : `/${lang}/`;
-      window.location = langPrefix + "{{ path }}";
+    if (! /bot|google|baidu|bing|msn|teoma|slurp|yandex/i.test(navigator.userAgent)) {
+      // Not a crawler or bot
+
+      const lang = getLang();
+      if (lang != "{{ page.lang }}") {
+        const langPrefix = lang === 'en'
+          ? '/'
+          : `/${lang}/`;
+        window.location = langPrefix + "{{ path }}";
+      }
     }
   </script>
   <a href="/{% if page.lang == 'en' %}ja/{% endif %}{{ path }}" onclick="changeLang(event, `{% if page.lang == 'en' %}ja{% else %}en{% endif %}`)">
