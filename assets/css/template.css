@@ -1350,16 +1350,82 @@ samp {
     animation-delay: 2000ms;
   }
 
-  .enable-effect .ja-inview .ja-animate[data-delay="item-15"],
-  .enable-effect .ja-inview .ja-animate.dl-item-15 {
+  .enable-effect .ja-inview .ja-animate[data-delay="item-14"],
+  .enable-effect .ja-inview .ja-animate.dl-item-14 {
     -webkit-animation-delay: 2100ms;
     animation-delay: 2100ms;
   }
 
-  .enable-effect .ja-inview .ja-animate[data-delay="item-16"],
-  .enable-effect .ja-inview .ja-animate.dl-item-16 {
+  .enable-effect .ja-inview .ja-animate[data-delay="item-15"],
+  .enable-effect .ja-inview .ja-animate.dl-item-15 {
     -webkit-animation-delay: 2200ms;
     animation-delay: 2200ms;
+  }
+
+  .enable-effect .ja-inview .ja-animate[data-delay="item-16"],
+  .enable-effect .ja-inview .ja-animate.dl-item-16 {
+    -webkit-animation-delay: 2300ms;
+    animation-delay: 2300ms;
+  }
+
+  .enable-effect .ja-inview .ja-animate[data-delay="item-17"],
+  .enable-effect .ja-inview .ja-animate.dl-item-17 {
+    -webkit-animation-delay: 2400ms;
+    animation-delay: 2400ms;
+  }
+
+  .enable-effect .ja-inview .ja-animate[data-delay="item-18"],
+  .enable-effect .ja-inview .ja-animate.dl-item-18 {
+    -webkit-animation-delay: 2500ms;
+    animation-delay: 2500ms;
+  }
+
+  .enable-effect .ja-inview .ja-animate[data-delay="item-19"],
+  .enable-effect .ja-inview .ja-animate.dl-item-19 {
+    -webkit-animation-delay: 2600ms;
+    animation-delay: 2600ms;
+  }
+
+  .enable-effect .ja-inview .ja-animate[data-delay="item-20"],
+  .enable-effect .ja-inview .ja-animate.dl-item-20 {
+    -webkit-animation-delay: 2700ms;
+    animation-delay: 2700ms;
+  }
+
+  .enable-effect .ja-inview .ja-animate[data-delay="item-21"],
+  .enable-effect .ja-inview .ja-animate.dl-item-21 {
+    -webkit-animation-delay: 2800ms;
+    animation-delay: 2800ms;
+  }
+
+  .enable-effect .ja-inview .ja-animate[data-delay="item-22"],
+  .enable-effect .ja-inview .ja-animate.dl-item-22 {
+    -webkit-animation-delay: 2900ms;
+    animation-delay: 2900ms;
+  }
+
+  .enable-effect .ja-inview .ja-animate[data-delay="item-23"],
+  .enable-effect .ja-inview .ja-animate.dl-item-23 {
+    -webkit-animation-delay: 3000ms;
+    animation-delay: 3000ms;
+  }
+
+  .enable-effect .ja-inview .ja-animate[data-delay="item-24"],
+  .enable-effect .ja-inview .ja-animate.dl-item-24 {
+    -webkit-animation-delay: 3100ms;
+    animation-delay: 3100ms;
+  }
+
+  .enable-effect .ja-inview .ja-animate[data-delay="item-25"],
+  .enable-effect .ja-inview .ja-animate.dl-item-25 {
+    -webkit-animation-delay: 3200ms;
+    animation-delay: 3200ms;
+  }
+
+  .enable-effect .ja-inview .ja-animate[data-delay="item-26"],
+  .enable-effect .ja-inview .ja-animate.dl-item-26 {
+    -webkit-animation-delay: 3300ms;
+    animation-delay: 3300ms;
   }
 
   .enable-effect .ja-inview .ja-animate[data-delay="200"],
