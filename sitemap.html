@@ -3,8 +3,8 @@ noindex: true
 permalink: /sitemap.xml
 layout: blank
 ---
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<? xml version="1.0" encoding="UTF-8" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   {% for page in site.pages -%}
 
     {%- assign index = false -%}
@@ -22,6 +22,14 @@ layout: blank
     {%- if index %}
       <url>
         <loc>https://namba.ngo{{ page.url }}</loc>
+        <xhtml:link
+          rel="alternate"
+          hreflang="en"
+          href="https://namba.ngo{{ page.url }}" />
+        <xhtml:link
+          rel="alternate"
+          hreflang="ja"
+          href="https://namba.ngo/ja{{ page.url }}" />
       </url>
     {% endif -%}
   {%- endfor -%}
@@ -45,6 +53,14 @@ layout: blank
     {%- if index %}
       <url>
         <loc>https://namba.ngo{{ page.url }}</loc>
+        <xhtml:link
+          rel="alternate"
+          hreflang="en"
+          href="https://namba.ngo{{ page.url }}" />
+        <xhtml:link
+          rel="alternate"
+          hreflang="ja"
+          href="https://namba.ngo/ja{{ page.url }}" />
       </url>
     {% endif -%}
   {%- endfor %}

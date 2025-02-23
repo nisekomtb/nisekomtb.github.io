@@ -30,7 +30,9 @@
       <meta property="og:site_name" content="ニセコエリアマウンテンバイク 協会"/>
       <meta property="og:locale:alternate" content="en_JP"/>
     {% endif %}
-    <link rel="alternate" hreflang="{% if page.lang == 'en' %}ja{% else %}en{% endif %}" href="{% if page.lang == 'en' %}/ja{% endif %}{{ path }}"/>
+    <link rel="alternate" hreflang="{% if page.lang == 'en' %}ja{% else %}en{% endif %}" href="https://namba.ngo{% if page.lang == 'en' %}/ja{% endif %}{{ path }}"/>
+    {% if page.lang == 'ja' %}<link rel="alternate" hreflang="x-default" href="https://namba.ngo{{ path }}"/>{% endif %}
+    <link rel="alternate" hreflang="{% if page.lang == 'en' %}ja{% else %}en{% endif %}" href="https://namba.ngo{% if page.lang == 'en' %}/ja{% endif %}{{ path }}"/>
     {% if page.canonical %}
       <link rel="canonical" href="https://namba.ngo/{{- page.canonical -}}">
       {% if page.redirect %}
