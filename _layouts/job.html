@@ -179,7 +179,7 @@ baseCss: view-article
     "value": "{{ page.url | replace: "/ja/", "/" | replace: "/jobs/", "/" | replace: "/", "" }}"
   },
   "title": "{{ page.title }}",
-  "description": "{{ page.description }}",
+  "description": "{{ page.content | strip_html | newline_to_br }}",
     {% if page.masthead.img %}
   "image": {
     "@type": "imageObject",
@@ -201,9 +201,14 @@ baseCss: view-article
     "@type": "Place",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Niseko",
-      "addressRegion": "Hokkaido",
-      "addressCountry": "Japan"
+      "postalCode": "044-0077",
+      {% if page.lang == 'en' %}"addressRegion": "Hokkaido",
+      "addressLocality": "Abuta-gun, Kutchan-cho",
+      "streetAddress": "Niseko Hirafu",
+      {% else %}"addressRegion": "北海道",
+      "addressLocality": "虻田郡倶知安町",
+      "streetAddress": "ニセコひらふ",{% endif %}
+      "addressCountry": "JP"
     }
   },
   "employmentType": "{{ page.og.employmentType }}",
