@@ -3,7 +3,7 @@ layout: event
 categories: events
 title: 赤井川ポンプトラック再オープン
 titleHtml: 赤井川ポ<wbr>ンプトラック<wbr>再オープン
-description:
+description: ライドをアップグレードしよう！2024年6月1日、赤井川トモプレイパークでVelosolutionsポンプトラックのワクワクするような再オープンを祝いましょう！数年の時を経て、この人気スポットが新たにアスファルトで整備されたポンプトラックと共に皆様を歓迎いたします。BMX、マウンテンバイク、スケートボード、キックボードに最適です。
 startDate: 2024-06-01 10:00:00 +0900
 days: 1
 time: 10:00am - 5:00pm
