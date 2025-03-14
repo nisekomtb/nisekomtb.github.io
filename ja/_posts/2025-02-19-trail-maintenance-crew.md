@@ -13,7 +13,7 @@ og:
   employmentType: TEMPORARY
   pay: 1800
   payUnit: HOUR
-isOpen: true
+isOpen: false
 location: ニセコ、<wbr>または<wbr>ニセコ周辺地域
 term: 5月1日 ～ 10月31日
 workingHours: 一1日8時間 / 週4～5日

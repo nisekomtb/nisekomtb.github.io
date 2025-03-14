@@ -13,7 +13,7 @@ og:
   employmentType: TEMPORARY
   pay: 1800
   payUnit: HOUR
-isOpen: true
+isOpen: false
 location: Niseko, Japan and surrounding areas
 term: 1st May - 31st October
 workingHours: 8 hrs a day / 4-5 days a week

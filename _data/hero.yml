@@ -1,17 +1,3 @@
-- img: /assets/images/jobs/trail-maintenance-crew.jpg
-  align: left
-  animation: move-from-right
-  title: Join our Trail Maintenance Crew
-  desc: As part of the Trail Maintenance Crew, you will be a local legend –  beloved at the bar & the bike shop, at the trailhead, and by all of us at NAMBA. These folks are the ones out there shaping trails and the community!
-  ja:
-    title: トレイル整備クルーに<wbr>参加しよう！
-    desc: トレイル整備クルーと<wbr>して<wbr>働くと、<wbr>ローカルの<wbr>間で<wbr>ヒーローのような<wbr>存在に<wbr>なります。<wbr>バーや<wbr>バイクショップ、<wbr>トレイルの<wbr>入口などで、<wbr>私たちNAMBAチームから<wbr>愛される<wbr>ことでしょう。<wbr>私たちは<wbr>一緒に<wbr>なって、<wbr>トレイルや<wbr>コミュニティを<wbr>より<wbr>良く<wbr>する<wbr>ために<wbr>頑張っています。
-  action:
-    url: /jobs/trail-maintenance-crew-2025/
-    text: Learn more
-    ja:
-      url: /ja/jobs/trail-maintenance-crew-2025/
-      text: 詳細を<wbr>学ぶ
 - img: /assets/images/twinpeaks/header.jpg
   align: right
   animation: move-from-left
