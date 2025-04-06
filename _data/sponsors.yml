@@ -140,8 +140,6 @@ shika:
       url: https://midoriinvestors.com
     - image: /assets/images/company/shika/mori-no-takumi.png
       url: https://www.nisekocustomwoodwork.com/
-    - image: /assets/images/company/shika/mtnsea.png
-      url: https://www.mtnsea.co
     - image: /assets/images/company/shika/niseko-central.png
       url: https://www.nisekocentral.com
       ja:
@@ -158,6 +156,8 @@ shika:
       url: https://oyuki.com
     - image: /assets/images/company/shika/peak-car-rentals.png
       url: https://www.nisekocarrental.com
+    - image: /assets/images/company/shika/sandls-designs.png
+      url: http://www.sandlsdesign.com
     - image: /assets/images/company/shika/setsu.png
       url: https://setsuniseko.com/en
       ja:
