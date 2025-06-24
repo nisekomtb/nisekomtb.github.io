@@ -141,7 +141,7 @@ higuma:
         url: https://www.zekkeicollection.com/
 
 shika:
-  width: 15
+  width: 17
   sponsors:
     - image: /assets/images/company/shika/midori.png
       url: https://midoriinvestors.com
@@ -163,6 +163,10 @@ shika:
       url: https://oyuki.com
     - image: /assets/images/company/shika/peak-car-rentals.png
       url: https://www.nisekocarrental.com
+    - image: /assets/images/company/shika/the-niseko-company.png
+      url: https://thenisekocompany.com
+      ja:
+        url: https://thenisekocompany.com/ja/
     - image: /assets/images/company/shika/sandls-designs.png
       url: http://www.sandlsdesign.com
     - image: /assets/images/company/shika/sango.png
@@ -187,6 +191,8 @@ shika:
       url: https://vacationniseko.com/en
       ja:
         url: https://vacationniseko.com/ja
+    - image: /assets/images/company/shika/west-canada-homes.png
+      url: https://westcanadahomes.com
 
 tanuki:
   width: 15
