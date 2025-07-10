@@ -66,10 +66,6 @@ Join us for an exclusive **group ride and meet & greet** with one of the greates
 
 Loic is more than a racer; he’s a true ambassador of the sport and a fan favorite around the globe.
 
-### Who's Riding
-
-Here’s the updated version of the **“Who’s Riding”** section, rewritten as a paragraph with embedded Instagram profile links:
-
 ### Who’s Riding
 
 Loic Bruni won’t be riding alone—he’ll be joined by an all-star crew of guest riders including <a href="https:instagram.com/vinknico" target="blank">Nico Vink</a>, freeride legend and trail builder; <a href="https:instagram.com/hajimeeeee" target="blank">Hajime Imoto</a>, one of Japan’s fastest downhill racers; <a href="https:instagram.com/yukikushima" target="blank">Yuki Kushima</a>, an up-and-coming DH athlete making waves on the international circuit; and <a href="https:instagram.com/juunnya" target="blank">Junya Nagata</a>, a local powerhouse known for his style and speed.
