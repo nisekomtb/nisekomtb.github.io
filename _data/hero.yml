@@ -1,3 +1,18 @@
+- img: /assets/images/events/2025/loic-bruni-in-niseko/header.jpg
+  align: left
+  animation: move-from-right
+  title: Loic Bruni in Niseko
+  desc: Ride with downhill mountain bike legend Loic Bruni in Niseko, Japan on July 25!
+  ja:
+    title: ロイック・<wbr>ブルーニ、<wbr>ニセコに登場
+    desc: ダウンヒルマウンテンバイク界の​レジェンド、​ロイック・ブルーニと​一緒に、​7月25日に​日本・​ニセコで​ライドしよう
+  action:
+    url: /events/loic-bruni-in-niseko/
+    text: Learn more
+    ja:
+      url: /ja/events/loic-bruni-in-niseko/
+      text: 詳細を<wbr>学ぶ
+
 - img: /assets/images/twinpeaks/header.jpg
   align: right
   animation: move-from-left
