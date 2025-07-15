@@ -3,9 +3,9 @@ twinpeaks:
     ja:
       name: ジンジャニンジャ
     difficulty: green
-    distance: 188
-    climb: 4
-    descent: 4
+    distance: 178
+    climb: 5
+    descent: 5
     bike: one-way
     multi_use: true
     trailforks_id: 657442
@@ -13,20 +13,31 @@ twinpeaks:
     ja:
       name: エゾシカ
     difficulty: green
-    distance: "3,521"
-    climb: 216
-    descent: 10
+    distance: "3,483"
+    climb: 240
+    descent: 33
     bike: up-only
     multi_use: true
     sponsor: nrs
     trailforks_id: 611923
+  # - name: Repeat Offender
+  #   ja:
+  #     name: リピートオフェンダー
+  #   difficulty: green
+  #   distance: 660
+  #   climb: 22
+  #   descent: 2
+  #   bike: up-only
+  #   multi_use: false
+  #   sponsor: santa-cruz
+  #   trailforks_id: 753819
   - name: Mana Skills Park
     ja:
       name: マナスキルズパーク
     difficulty: green
-    distance: 260
-    climb: 17
-    descent: 0
+    distance: 315
+    climb: 21
+    descent: 3
     bike: two-way
     multi_use: true
     sponsor: niseko-realty
@@ -35,9 +46,9 @@ twinpeaks:
     ja:
       name: マナスキルループ
     difficulty: green
-    distance: 783
-    climb: 11
-    descent: 11
+    distance: 697
+    climb: 16
+    descent: 16
     bike: one-way
     multi_use: true
     sponsor: niseko-realty
@@ -46,9 +57,9 @@ twinpeaks:
     ja:
       name: マナポンプ
     difficulty: blue
-    distance: 120
-    climb: 0
-    descent: 5
+    distance: 122
+    climb: 3
+    descent: 1
     bike: down-only
     multi_use: true
     sponsor: niseko-realty
@@ -57,9 +68,9 @@ twinpeaks:
     ja:
       name: マナバーム
     difficulty: blue
-    distance: 80
+    distance: 79
     climb: 0
-    descent: 2
+    descent: 4
     bike: down-only
     multi_use: true
     sponsor: niseko-realty
@@ -68,9 +79,9 @@ twinpeaks:
     ja:
       name: マナジャンプ
     difficulty: blue
-    distance: 220
+    distance: 222
     climb: 1
-    descent: 13
+    descent: 14
     bike: down-only
     multi_use: true
     sponsor: niseko-realty
@@ -79,9 +90,9 @@ twinpeaks:
     ja:
       name: イージーライダー
     difficulty: blue
-    distance: "2,383"
-    climb: 4
-    descent: 180
+    distance: "2,186"
+    climb: 16
+    descent: 193
     bike: down-only
     multi_use: false
     sponsor: holiday-niseko
@@ -90,9 +101,9 @@ twinpeaks:
     ja:
       name: ライズ・ン・ライダー
     difficulty: blue
-    distance: 556
-    climb: 0
-    descent: 7
+    distance: 581
+    climb: 7
+    descent: 14
     bike: one-way
     multi_use: false
     sponsor: holiday-niseko
@@ -101,42 +112,106 @@ twinpeaks:
     ja:
       name: エアライダー
     difficulty: blue
-    distance: 457
-    climb: 2
+    distance: 427
+    climb: 1
     descent: 22
     bike: down-only
     multi_use: false
     sponsor: holiday-niseko
     trailforks_id: 680498
-
+  - name: Chon Mage
+    ja:
+      name: チョンマゲ
+    difficulty: blue
+    distance: 938
+    climb: 7
+    descent: 41
+    bike: one-way
+    multi_use: false
+    sponsor: grand-hirafu
+    trailforks_id: 753826
+  - name: Chon Mage Link
+    ja:
+      name: チョンマゲリンク
+    difficulty: blue
+    distance: 153
+    climb: 3
+    descent: 1
+    bike: two-way
+    multi_use: false
+    sponsor: grand-hirafu
+    trailforks_id: 793071
+  # - name: Creek 'n' Peak
+  #   ja:
+  #     name: クリークンピーク
+  #   difficulty: blue
+  #   distance: 546
+  #   climb: 5
+  #   descent: 46
+  #   bike: two-way
+  #   multi_use: false
+  #   sponsor: grand-hirafu
+  #   trailforks_id: 753825
   - name: Cruz Control
     ja:
       name: クルーズコントロール
     difficulty: blue
-    distance: "1,100"
-    climb: 4
-    descent: 68
+    distance: "2,765"
+    climb: 15
+    descent: 185
     bike: down-only
     multi_use: false
     sponsor: santa-cruz
     trailforks_id: 753804
-
+  # - name: Launch Control
+  #   ja:
+  #     name: ローンチコントロール
+  #   difficulty: blue
+  #   distance: "686"
+  #   climb: 11
+  #   descent: 35
+  #   bike: down-only
+  #   multi_use: false
+  #   sponsor: santa-cruz
+  #   trailforks_id: 753818
+  - name: Mana Taki
+    ja:
+      name: マナタキ
+    difficulty: black
+    distance: 189
+    climb: 11
+    descent: 0
+    bike: up-only
+    multi_use: false
+    sponsor: soil-searching
+    trailforks_id: 777417
   - name: Shogun Syndicate
     ja:
       name: ショウグンシンジケート
     difficulty: black
-    distance: "2,323"
-    climb: 3
-    descent: 171
+    distance: "2,138"
+    climb: 14
+    descent: 182
     bike: down-only
     multi_use: false
     sponsor: santa-cruz
     trailforks_id: 657436
+  - name: Taki Shogun
+    ja:
+      name: タキショーグン
+    difficulty: black
+    distance: 83
+    climb: 0
+    descent: 4
+    bike: one-way
+    multi_use: false
+    sponsor: santa-cruz
+    trailforks_id: 789336
   - name: Taki Trail
     ja:
       name: タキトレイル
     difficulty: black
-    distance: "1,274"
+    distance: "1,276"
     climb: 11
     descent: 128
     bike: down-only
@@ -147,9 +222,9 @@ twinpeaks:
     ja:
       name: タキテック
     difficulty: double-black
-    distance: 632
+    distance: 641
     climb: 8
-    descent: 55
+    descent: 54
     bike: down-only
     multi_use: false
     sponsor: taki
