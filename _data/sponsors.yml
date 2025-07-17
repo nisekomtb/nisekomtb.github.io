@@ -1,5 +1,5 @@
 special:
-  width: 13
+  width: 14
   sponsors:
     - name: allegra
       image: /assets/images/company/special/allegra.png
@@ -14,6 +14,13 @@ special:
       ja:
         url: https://holidayniseko.jp
         label: トレイル スポンサー
+    - name: kta
+      image: /assets/images/company/special/kta.png
+      url: https://niseko.co.jp/en/
+      label: Benefactor
+      ja:
+        url: https://niseko.co.jp
+        label: 恩人
     - name: mnk
       image: /assets/images/company/special/mnk.png
       url: https://www.mnkniseko.com/en
@@ -85,11 +92,11 @@ special:
         label: 恩人
 
 higuma:
-  width: 12
+  width: 9
   sponsors:
-    - name: coin metro
-      image: /assets/images/company/higuma/coinmetro.png
-      url: https://coinmetro.com
+    # - name: coin metro
+    #   image: /assets/images/company/higuma/coinmetro.png
+    #   url: https://coinmetro.com
     - name: hanazono
       image: /assets/images/company/higuma/hanazono.png
       url: https://hanazononiseko.com/en
@@ -129,16 +136,16 @@ higuma:
     - name: park hyatt
       image: /assets/images/company/higuma/park-hyatt.png
       url: http://parkhyattniseko.com
-    - name: rising sun
-      image: /assets/images/company/higuma/rising-sun.png
-      url: https://risingsunguides.com
-      ja:
-        url: https://risingsunguides.com/ja/
-    - name: zekkei
-      image: /assets/images/company/higuma/zekkei.png
-      url: https://www.zekkeicollection.com/en
-      ja:
-        url: https://www.zekkeicollection.com/
+    # - name: rising sun
+    #   image: /assets/images/company/higuma/rising-sun.png
+    #   url: https://risingsunguides.com
+    #   ja:
+    #     url: https://risingsunguides.com/ja/
+    # - name: zekkei
+    #   image: /assets/images/company/higuma/zekkei.png
+    #   url: https://www.zekkeicollection.com/en
+    #   ja:
+    #     url: https://www.zekkeicollection.com/
 
 shika:
   width: 17
@@ -236,3 +243,24 @@ tanuki:
     - image: /assets/images/company/tanuki/seasons.png
       url: https://www.seasons-niseko.com
     - image: /assets/images/company/tanuki/whiteroom-property.png
+
+artists:
+  width: 15
+  sponsors:
+    - image: /assets/images/artists/aikawa-mitsugu.png
+      url: https://aikawamitsugu.com
+      # label: Aikawa Mitsugu
+    - image: /assets/images/artists/59niseko.png
+      url: https://www.59niseko.com
+      # label: 59 Niseko
+    - image: /assets/images/artists/froglet-paintings.png
+      url: https://www.frogletpaintings.com
+      # label: Froglet Paintings
+    - image: /assets/images/artists/joekkaido.png
+      url: https://instagram.com/joekkaido
+      # label: Joekkaido
+    - image: /assets/images/artists/mtnsea.png
+      url: https://www.instagram.com/mtn_sea
+      # label: Luke Sand
+    - image: /assets/images/artists/rainbow-captain.png
+      url: https://www.instagram.com/therainbowcaptain
