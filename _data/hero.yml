@@ -13,6 +13,21 @@
       url: /ja/events/loic-bruni-in-niseko-2025/
       text: 詳細を<wbr>学ぶ
 
+- img: /assets/images/events/2025/niseko-twin-trail-ride/header.jpg
+  align: right
+  animation: move-from-right
+  title: Niseko Twin Trail Ride
+  desc: Let's ride through Niseko in summer on MTB! Improve your skills on the vast trails of nature with top riders from Hokkaido who are active in the All-Japan MTB
+  ja:
+    title: ニセコ・<wbr>ツイン・<wbr>トレイルライド
+    desc: 夏のニセコをMTBで駆け抜けよう！全日本MTBで活躍する北海道のトップライダーと一緒に、雄大な自然のトレイルでスキルアップしよう。
+  action:
+    url: /events/niseko-twin-trail-ride-2025/
+    text: Learn more
+    ja:
+      url: /ja/events/niseko-twin-trail-ride-2025/
+      text: 詳細を<wbr>学ぶ
+
 - img: /assets/images/twinpeaks/header.jpg
   align: right
   animation: move-from-left
