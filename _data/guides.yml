@@ -27,7 +27,13 @@ twinpeaks:
     url: https://www.mnkniseko.com/en
     ja:
       url: https://www.mnkniseko.com/ja
-  - image: /assets/images/company/shika/noasc.png
+  - name: nac
+    image: /assets/images/company/nac.png
+    url: https://nacadventures.jp/en/summer-e/mountain-biking-tours/
+    ja:
+      url: https://nacadventures.jp/summer-e/mountain-biking-tours/
+  - name: noasc
+    image: /assets/images/company/shika/noasc.png
     url: https://noasc.com/en/
     ja:
       url: https://noasc.com/ja/
