@@ -9,16 +9,16 @@ masthead:
     name: Agustin Villalba
 og:
   image: /assets/images/jobs/trail-maintenance-crew.jpg
-  startDate: 2025-05-01
+  startDate: 2025-09-01
   employmentType: TEMPORARY
   pay: 1800
   payUnit: HOUR
-isOpen: false
+isOpen: true
 location: ニセコ、<wbr>または<wbr>ニセコ周辺地域
-term: 5月1日 ～ 10月31日
+term: 9月1日 ～ 10月31日
 workingHours: 一1日8時間 / 週4～5日
 pay: 時給1,800円
-bonus: 契約を<wbr>満了し、<wbr>満足の<wbr>いく<wbr>成果を<wbr>達成した<wbr>場合、<wbr>円50,000の<wbr>成果ボーナス支給
+# bonus: 契約を<wbr>満了し、<wbr>満足の<wbr>いく<wbr>成果を<wbr>達成した<wbr>場合、<wbr>円50,000の<wbr>成果ボーナス支給
 perks:
   - title: スタッフバイク
     perk: NAMBAの<wbr>バイクを<wbr>無料で<wbr>利用できます

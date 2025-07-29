@@ -9,16 +9,16 @@ masthead:
     name: Agustin Villalba
 og:
   image: /assets/images/jobs/trail-maintenance-crew.jpg
-  startDate: 2025-05-01
+  startDate: 2025-09-01
   employmentType: TEMPORARY
   pay: 1800
   payUnit: HOUR
-isOpen: false
+isOpen: true
 location: Niseko, Japan and surrounding areas
-term: 1st May - 31st October
+term: 1st September - 31st October
 workingHours: 8 hrs a day / 4-5 days a week
 pay: ¥1,800 per hour
-bonus: ¥50,000 performance bonus upon a satisfactory completion of the contract period
+# bonus: ¥50,000 performance bonus upon a satisfactory completion of the contract period
 perks:
   - title: Staff bike
     perk: Free use NAMBA's staff bikes
