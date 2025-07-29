@@ -1,6 +1,12 @@
 ---
 title: Artist Series
 subtitle: Your purchases build trails!
+work:
+  - /assets/images/artists/joekkaido/DAISETSUZAN.png
+  - /assets/images/artists/joekkaido/RISHIRI.png
+  - /assets/images/artists/joekkaido/TEINE.png
+  - /assets/images/artists/joekkaido/TOKACHI.png
+  - /assets/images/artists/joekkaido/YOTEI.png
 ---
 <style>
   .ec-grid {
@@ -94,17 +100,153 @@ subtitle: Your purchases build trails!
   #raffle-store a.breadcrumbs__link--last {
     display: none;
   }
+
+  .artists-profile .header {
+    position: relative;
+    background: url('/assets/images/bg/bg-header.jpg');
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    /* padding: 36px 36px 150px; */
+    padding-top: 300px;
+
+    /* width: calc(100vw); */
+    /* margin-left: -27%; */
+    /* padding: 20px 15px; */
+  }
+
+  .artists-profile .header h2 {
+    position: relative;
+    text-align: center;
+    z-index: 20;
+    background: linear-gradient(135deg, #ffffff, #cccccc);
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    display: inline-block;
+    font-size: 40px;
+    letter-spacing: -3px;
+    margin: 0;
+  }
+
+  .artists-profile div.header:before {
+    background: linear-gradient(to top, #000000, transparent);
+    opacity: 1;
+    /* background-color: #000; */
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    /* opacity: 0.3; */
+    height: 100%;
+    width: 100%;
+    z-index: 3;
+  }
+
+  .artists-profile p {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+
+  .artists-profile .card, .artists-profile .bio, .artists-profile .carousel {
+    float:left;
+    padding: 30px;
+  }
+
+  .artists-profile .card {
+    padding: 0 15px;
+    width: 30%;
+  }
+
+  .artists-profile .card .card-inner {
+    background: #0e0e0e;
+    padding: 30px;
+    text-align: center;
+  }
+
+  .artists-profile .card h2 {
+    font-weight: 700;
+  }
+
+  .artists-profile .card img {
+    max-width: 150px;
+    border-radius: 50%;
+    border:#fff 2px solid;
+  }
+
+  .artists-profile .bio {
+    width: 70%;
+    padding: 0 15px;
+  }
+
+  .artists-profile .carousel {
+    width: 100%;
+  }
+
+  .artists-profile .carousel .owl-item .item {
+    border:#fff 2px solid;
+  }
+
+  .artists-profile:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 </style>
 
-<script
+
+<div class="artists-profile">
+  <div class="header" style="background-image: url('/assets/images/artists/joekkaido/header.png');">
+    {% comment %} <h2>Joe Scott</h2> {% endcomment %}
+  </div>
+  <div class="card">
+    <div class="card-inner">
+
+      <img src="/assets/images/artists/joekkaido/avatar.png" />
+      <h2>Joe Scott</h2>
+      <p>Designer and Illustrator</p>
+
+      <a class="font-icon" href="https://instagram.com/joekkaido" target="_blank">
+      <span class="icon ion-logo-instagram"></span> @joekkaido
+      </a>
+    </div>
+  </div>
+  <div class="bio">
+    <p>Born and raised in Birmingham, England, but made in Sapporo.</p>
+
+    <p>Despite being an avid sketcher as a kid, I left art behind as a teenager with school and University leading me
+    elsewhere. In my early 20s, I discovered vector art and suddenly my own limitations with a pencil were quickly forgotten
+    and I’d entered a new world that I’d never leave. Influenced by travel posters and national parks illustrations, I
+    became enamoured with the idea of using art and design as a means of exploration, creating countless badges and posters
+    for worlds that don’t exist, or ones that were just of reach. But living in Hokkaido, the world I was most interested in
+    was just outside my window. </p>
+
+    <p>Moving to Sapporo fresh out of University was bound to be a life-altering experience but I could never have anticipated
+    the extent to which it’s affected me. Now my permanent home, Hokkaido serves as endless inspiration for my artwork and
+    designs while working with local businesses on their branding and identity, or creating a set of National Parks style
+    designs for Hokkaido’s Mountains and other notable landmarks.</p>
+  </div>
+
+  <div class="carousel">
+
+    {% include carousel.html images=page.work items=4 autoplay='true' id=1 %}
+  </div>
+
+</div>
+
+
+{% comment %} <script
   id="ecwid-script"
   data-cfasync="false"
   type="text/javascript"
   src="https://app.ecwid.com/script.js?71386768&lang=en-GB&data_platform=code&data_date=2022-08-27"
   charset="utf-8"></script>
-<div>
+<div> {% endcomment %}
 
-  <div class="t3-section-wrap">
+  {% comment %} <div class="t3-section-wrap">
 
     <div class="section">
 
@@ -116,8 +258,8 @@ subtitle: Your purchases build trails!
 
   </div>
 
-</div>
-<script>
+</div> {% endcomment %}
+{% comment %} <script>
   window.ec = window.ec || Object();
   window.ec.config = window.ec.config || Object();
 
@@ -136,4 +278,4 @@ subtitle: Your purchases build trails!
 
   window.ecwid_script_defer = true;
   window.ecwid_dynamic_widgets = true;
-</script>
+</script> {% endcomment %}
