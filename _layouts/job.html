@@ -38,7 +38,9 @@ baseCss: view-article
           <div class="list-group">
             <h4 class="list-group-item-heading">{% if page.lang == "en" %}Start date{% else %}開始日{% endif %}</h4>
             <p class="list-group-item-text">
-              {% if page.lang == "en" %}
+              {% if page.startDate == "IMMEDIATE" %}
+                {% if page.lang == "en" %}Immediate{% else %}即日{% endif %}
+              {% elsif page.lang == "en" %}
               {{ page.startDate | date: "%s" | plus: days | date: "%A %d %B %Y" }}
               {% else %}
               {{ page.startDate | date: "%s" | plus: days | date: "%Y年%m月%d日" }}
