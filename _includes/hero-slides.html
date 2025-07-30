@@ -160,14 +160,27 @@
     data-bs-ride="carousel"
     data-interval="3000">
 
+    {% assign events = site.categories.events | where: "lang", page.lang %}
+    {% assign today = "today" | date: "%F" %}
+
     <ol class="carousel-indicators">
       <li
         data-target="#hero"
         data-slide-to="0"
         class="active"></li>
-      {% for slide in site.data.hero %}
-        <li data-target="#hero" data-slide-to="{{ forloop.index }}"></li>
-      {% endfor %}
+        {% for slide in site.data.hero %}
+          <li data-target="#hero" data-slide-to="{{ forloop.index }}"></li>
+        {% endfor%}
+
+        {% assign heroSlidesSize = site.data.hero | size %}
+        {% for event in events %}
+
+          {% assign days = event.days | times: 24 | times: 60 | times: 60 %}
+          {% assign endDate = event.startDate | date: "%s" | plus: days | date: "%F" %}
+          {% if endDate < today or event.draft or event.cancelled %} {% break %} {% endif %}
+          <li data-target="#hero" data-slide-to="{{ heroSlidesSize | plus: forloop.index }}"></li>
+        {% endfor %}
+
     </ol>
 
     <!-- Wrapper for slides -->
@@ -204,7 +217,44 @@
           </p>
         </div>
       </div>
+
+      {% assign slidesCount = 1 %}
+
+      {% for event in events %}
+
+        {% assign days = event.days | times: 24 | times: 60 | times: 60 %}
+        {% assign endDate = event.startDate | date: "%s" | plus: days | date: "%F" %}
+        {% if endDate < today or event.draft or event.cancelled %}
+          {% break %}
+        {% endif %}
+
+        {% assign slidesCount = slidesCount | plus: 1 %}
+
+        {% assign indexModulo2 = forloop.index0 | modulo: 2 %}
+
+        <div class="item {% if indexModulo2 == 0 %}left-grad{% else %}right-grad{% endif %}"
+          style="background-image: url('{{ event.masthead.img }}');">
+          <div class="grad"></div>
+          <div class="carousel-caption container">
+            <div class="{% if indexModulo2 == 0 %}item-left{% else %}item-right{% endif %}">
+              <h2 class="ja-animate" data-animation="{% if indexModulo2 == 0 %}move-from-right{% else %}move-from-left{% endif %}" data-delay="200">
+                {{ event.title }}
+              </h2>
+              <p class="ja-animate" data-animation="{% if indexModulo2 == 0 %}move-from-right{% else %}move-from-left{% endif %}" data-delay="400">
+                {{ event.description }}
+              </p>
+              <a class="btn btn-success ja-animate" data-animation="{% if indexModulo2 == 0 %}move-from-right{% else %}move-from-left{% endif %}" data-delay="600"
+                href="{{ event.override_url | default: event.url }}" {% if event.override_url %}target="_blank"{% endif %}>
+                {% if page.lang == "en" %}Learn more{% else %}詳細を<wbr>学ぶ{% endif %}
+              </a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+
       {% for slide in site.data.hero %}
+        {% assign slidesCount = slidesCount | plus: 1 %}
+
         <div class="item {% if slide.align == 'left' %}left-grad{% else if slide.align == 'right' %}right-grad{% endif %}" style="background-image: url('{{ slide.img }}');">
           <div class="grad"></div>
           <div class="carousel-caption container">
