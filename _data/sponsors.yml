@@ -154,10 +154,10 @@ shika:
       url: https://midoriinvestors.com
     - image: /assets/images/company/shika/mori-no-takumi.png
       url: https://www.nisekocustomwoodwork.com/
-    - image: /assets/images/company/shika/niseko-central.png
-      url: https://www.nisekocentral.com
-      ja:
-        url: https://www.nisekocentral.com/ja/
+    # - image: /assets/images/company/shika/niseko-central.png
+    #   url: https://www.nisekocentral.com
+    #   ja:
+    #     url: https://www.nisekocentral.com/ja/
     - image: /assets/images/company/shika/noasc.png
       url: https://noasc.com/en/
       ja:
