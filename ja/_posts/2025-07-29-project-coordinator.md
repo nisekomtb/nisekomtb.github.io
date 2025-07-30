@@ -10,7 +10,7 @@ og:
   employmentType: TEMPORARY
   pay: 2000
   payUnit: HOUR
-isOpen: false
+isOpen: true
 startDate: IMMEDIATE
 location: 日本・ニセコエリア（リモートおよび対面勤務）
 term: 初回契約期間は3ヶ月

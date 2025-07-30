@@ -1,3 +1,33 @@
+- img: /assets/images/jobs/project-coordinator.jpg
+  align: right
+  animation: move-from-left
+  title: 'Jobs: Project Coordinator'
+  desc: We are seeking a highly organized and proactive Project Coordinator to support NAMBA’s committee heads and strategic initiatives.
+  ja:
+    title: 求人：プロジェクト コーディネーター
+    desc: 私たちは、<wbr>NAMBAの<wbr>委員会責任者や<wbr>戦略的イニシアチブを<wbr>支援する、<wbr>非常に<wbr>整理整頓された<wbr>積極的な<wbr>プロジェクトコーディネーターを<wbr>募集しています。
+  action:
+    url: /jobs/project-coordinator-2025/
+    text: Learn more
+    ja:
+      url: /ja/jobs/project-coordinator-2025/
+      text: 詳細を<wbr>学ぶ
+
+- img: /assets/images/jobs/trail-maintenance-crew.jpg
+  align: left
+  animation: move-from-right
+  title: 'Jobs: Trail Maintenance Crew'
+  desc: As part of the Trail Maintenance Crew, you will be a local legend –  beloved at the bar & the bike shop, at the trailhead, and by all of us at NAMBA.
+  ja:
+    title: 求人：トレイル整備クルー
+    desc: トレイル整備クルーの<wbr>一員と<wbr>して、<wbr>あなたは<wbr>地元の<wbr>伝説的存在に<wbr>なります！<wbr>バーや<wbr>バイクショップ、<wbr>トレイルヘッド、<wbr>そして<wbr>私たちNAMBAの<wbr>仲間からも<wbr>愛される<wbr>存在です。
+  action:
+    url: /jobs/trail-maintenance-crew-2025/
+    text: Learn more
+    ja:
+      url: /ja/jobs/trail-maintenance-crew-2025/
+      text: 詳細を<wbr>学ぶ
+
 - img: /assets/images/twinpeaks/header.jpg
   align: right
   animation: move-from-left
