@@ -1,3 +1,18 @@
+- img: /assets/images/jobs/project-trail-application-assistant.jpg
+  align: left
+  animation: move-from-right
+  title: 'Jobs: Project & Trail Application Assistant'
+  desc: We are looking for a reliable and detail-oriented Part-Time Assistant to help with trail development and permit application work in the Niseko region.
+  ja:
+    title: 求人：プロジェクト & トレイル申請アシスタント
+    desc: 本ポジションでは、<wbr>ニセコ地域での<wbr>トレイル開発および<wbr>許認可申請業務を<wbr>サポートしていただく、<wbr>信頼性が<wbr>高く<wbr>細部に<wbr>注意を<wbr>払える<wbr>パートタイムアシスタントを<wbr>募集します。
+  action:
+    url: /jobs/project-trail-application-assistant-2025/
+    text: Learn more
+    ja:
+      url: /ja/jobs/project-trail-application-assistant-2025/
+      text: 詳細を<wbr>学ぶ
+
 - img: /assets/images/jobs/project-coordinator.jpg
   align: right
   animation: move-from-left
