@@ -389,7 +389,7 @@ baseCss: view-article
                     <li>{% if price.name %}<strong>{{ price.name }}</strong><br />{% endif %}大人: {{ price.adult }}<br />子供: {{ price.child }}</li>
                     {% endif %}
                   {% else %}
-                    <li><strong>{{ price.name }}</strong>: {{ price.adult }}</li>
+                  <li><strong>{{ price.name }}</strong>: {% if price.adult == 0 and page.lang == "en" %}Free{% elsif price.adult == 0 %}無料{% else %}{{ price.adult }}{% endif %}</li>
                   {% endif %}
                 {% endfor %}
                 </ul>
