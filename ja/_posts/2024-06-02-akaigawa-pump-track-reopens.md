@@ -18,7 +18,7 @@ price:
     child: 1,200円
 host:
   name: Tomo Playpark
-  img: /tomo-playpark.jpg
+  img: /tomo-playpark.png
   url: https://playpark.akaigawa-tomo.com/ja/
 masthead:
   img: /assets/images/events/2024/akaigawa-pump-track-reopens/header.jpg
