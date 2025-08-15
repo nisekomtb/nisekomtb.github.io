@@ -24,6 +24,9 @@ partners:
   - name: Rhythm Japan
     img: /special/rhythm.png
     url: https://rhythmjapan.com
+  - name: Dirty Dames
+    img: /../logos/dirty-dames.png
+    url: https://www.instagram.com/dirtydamesniseko/
   - name: Hajime Bike Club
     img: /hajime-bike-club.png
     url: https://www.hajimebike.club
