@@ -170,6 +170,8 @@ shika:
       url: https://oyuki.com
     - image: /assets/images/company/shika/peak-car-rentals.png
       url: https://www.nisekocarrental.com
+    - image: /assets/images/company/brand/peatys.png
+      url: https://sports-w.com/brands/peatys/
     - image: /assets/images/company/shika/the-niseko-company.png
       url: https://thenisekocompany.com
       ja:
@@ -202,7 +204,7 @@ shika:
       url: http://westcanadaproperties.com
 
 tanuki:
-  width: 15
+  width: 16
   sponsors:
     - image: /assets/images/company/tanuki/burton.png
       url: https://www.burton.com/jp/en
@@ -226,12 +228,12 @@ tanuki:
         url: https://nisekoportfolio.com/ja/
     - image: /assets/images/company/tanuki/niseko-zen.png
       url: https://www.nisekozen.com
+    - image: /assets/images/company/tanuki/nomad-wellness.png
+      url: https://nomadwellnessniseko.com
     - image: /assets/images/company/tanuki/north-bicycle.png
       url: https://northbicycle.co.jp
     - image: /assets/images/company/tanuki/odin.png
       url: https://www.odin-property.com
-    - image: /assets/images/company/brand/peatys.png
-      url: https://sports-w.com/brands/peatys/
     - image: /assets/images/company/powbar.png
       url: https://www.thepowbar.com
     - image: /assets/images/company/tanuki/powderlife.png
@@ -243,6 +245,8 @@ tanuki:
     - image: /assets/images/company/tanuki/seasons.png
       url: https://www.seasons-niseko.com
     - image: /assets/images/company/tanuki/whiteroom-property.png
+    - image: /assets/images/company/tanuki/yotei-brewing.png
+      url: https://yotei.beer/
 
 artists:
   width: 15
