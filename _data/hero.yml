@@ -1,10 +1,10 @@
 - img: /assets/images/competitions/2025/raffle/header.jpg
   align: right
   animation: move-from-left
-  title: 🎟️ Summer Raffle 2025 🎟️
+  title: 🎟️ Summer Raffle 2025
   desc: Win a Specialized Status 2 170 and many other prizes! It's our biggest prizes ever, all to support Niseko's mountain biking future.
   ja:
-    title: 🎟️ サマー ラッフル 2025 🎟️
+    title: 🎟️ サマー ラッフル 2025
     desc: スペシャライズド Status 2 170 を<wbr>はじめ、<wbr>多くの<wbr>賞品を<wbr>手に<wbr>入れよう！史上<wbr>最大の<wbr>豪華賞品が<wbr>勢ぞろい。<wbr>すべては<wbr>ニセコの<wbr>マウンテンバイクの<wbr>未来を<wbr>支える<wbr>ために。
   action:
     url: /raffle/
