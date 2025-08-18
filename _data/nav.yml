@@ -48,12 +48,11 @@
   en: Events
   ja: イベント
 
-# - path: ""
-#   en: Win
-#   ja: コンテスト
-#   sub:
 
 - path: shop
   en: Shop
   ja: オンラインショップ
 
+- path: raffle
+  en: 🎟️ Summer Raffle
+  ja: 🎟️ サマー ラッフル
