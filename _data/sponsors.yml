@@ -204,8 +204,12 @@ shika:
       url: http://westcanadaproperties.com
 
 tanuki:
-  width: 16
+  width: 17
   sponsors:
+    - image: /assets/images/company/annupuri.png
+      url: https://annupuri.info/en/
+      ja:
+        url: https://annupuri.info
     - image: /assets/images/company/tanuki/burton.png
       url: https://www.burton.com/jp/en
       ja:
