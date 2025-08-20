@@ -10,7 +10,7 @@ og:
   employmentType: TEMPORARY
   pay: 2000
   payUnit: HOUR
-isOpen: true
+isOpen: false
 startDate: IMMEDIATE
 location: Niseko, Japan and surrounding areas (Remote & In-person)
 term: Initial 3 months contract
