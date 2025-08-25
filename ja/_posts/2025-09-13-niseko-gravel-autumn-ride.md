@@ -3,7 +3,7 @@ layout: event
 categories: events
 title: ニセコ グラベル オータムライド
 description: 雄大な羊蹄山を望むニセコの自然を舞台に、森林のトレイルや舗装路を組み合わせた多彩なコースを走るサイクリングイベント。初級から上級まで楽しめる3つのルートに加え、初心者向けのレッスンも予定されています。会場ではアクティビティや出店もあり、ライダーだけでなく家族や仲間と一緒に楽しめる秋の一日です。
-startDate: 2025-09-28 09:00:00 +0900
+startDate: 2025-09-13 09:00:00 +0900
 days: 2
 location: ニセコ中央倉庫群
 address: 048-1512 60-2 Chuo-dori, Niseko, Abuta-gun, Hokkaido, Japan
