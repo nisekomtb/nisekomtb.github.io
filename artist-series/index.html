@@ -221,7 +221,96 @@ artists:
 
 ---
 <style>
-  .ec-grid {
+
+  #artists {
+    height: 100vh;
+  }
+
+    .carousel,
+    .carousel-inner,
+    .carousel-inner .item {
+      height: 100%;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+
+    .carousel-inner .item:before {
+      /* background: linear-gradient(to top, #000000, transparent);
+      bottom: 0;
+      left: 0;
+      content: "";
+      position: absolute;
+      height: 30%;
+      width: 100%; */
+      display:none;
+    }
+
+.carousel-indicators {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  z-index: 15;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  list-style: none;
+  margin-bottom: 40px;
+}
+
+.carousel-indicators li {
+  position: relative;
+  display: inline-block;
+  width: 100px !important;
+  height: 100px !important;
+  margin: 20px 10px !important;
+  text-indent: 0;
+  cursor: pointer;
+  background-color: transparent !important;
+  border: none;
+  border-radius: 0;
+}
+
+.carousel-indicators li:hover {
+  width: 120px !important;
+  height: 120px !important;
+  margin:0 !important
+}
+
+.carousel-indicators li img {
+  /* max-width: 150px; */
+  border-radius: 50%;
+  border:#ccc 2px solid;
+}
+
+/* .carousel-indicators .active {
+  width: 100px;
+  height: 100px;
+  margin: 0;
+  background-color: transparent;
+} */
+
+.carousel-indicators li.active img {
+  border:#fff 2px solid;
+}
+
+.carousel-indicators li div {
+  border:transparent 10px solid;
+  position:absolute;
+  bottom:-20px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width:20px;
+  height: 20px;
+}
+
+.carousel-indicators li.active div {
+  border-bottom-color: #fff;
+}
+
+  /* .ec-grid {
     display: block !important;
   }
 
@@ -311,14 +400,14 @@ artists:
 
   #raffle-store a.breadcrumbs__link--last {
     display: none;
-  }
+  } */
 
   .artists-profile .header {
-    position: relative;
-    background: url('/assets/images/bg/bg-header.jpg');
-    background-position: center;
-    background-size: cover;
-    text-align: center;
+    /* position: relative; */
+    /* background: url('/assets/images/bg/bg-header.jpg'); */
+    /* background-position: center; */
+    /* background-size: cover; */
+    /* text-align: center; */
     /* padding: 36px 36px 150px; */
     padding-top: 300px;
 
@@ -327,7 +416,7 @@ artists:
     /* padding: 20px 15px; */
   }
 
-  .artists-profile .header h2 {
+  /* .artists-profile .header h2 {
     position: relative;
     text-align: center;
     z-index: 20;
@@ -341,22 +430,22 @@ artists:
     font-size: 40px;
     letter-spacing: -3px;
     margin: 0;
-  }
+  } */
 
-  .artists-profile div.header:before {
+  /* .artists-profile div.header:before {
     background: linear-gradient(to top, #000000, transparent);
     opacity: 1;
-    /* background-color: #000; */
+    /* background-color: #000; *
     content: "";
     display: block;
     position: absolute;
     left: 0;
     top: 0;
-    /* opacity: 0.3; */
+    /* opacity: 0.3; *
     height: 100%;
     width: 100%;
     z-index: 3;
-  }
+  } */
 
   .artists-profile p {
     font-size: 16px;
@@ -408,74 +497,67 @@ artists:
     clear: both;
   }
 </style>
-<div style="position: relative;">
-<nav style="position:fixed; top:0px;" id="navbar-example2" class="navbar navbar-light bg-light px-3">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <ul class="nav nav-pills">
-    <li class="nav-item">
-      <a class="nav-link" href="#scrollspyHeading1">First</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#scrollspyHeading2">Second</a>
-    </li>
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
-        aria-expanded="false">Dropdown</a>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#scrollspyHeading3">Third</a></li>
-        <li><a class="dropdown-item" href="#scrollspyHeading4">Fourth</a></li>
-        <li>
-          <hr class="dropdown-divider">
-        </li>
-        <li><a class="dropdown-item" href="#scrollspyHeading5">Fifth</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-<div style="" data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0">
-  <h4 id="scrollspyHeading1">First heading</h4>
-  <p>This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.</p>
-  <h4 id="scrollspyHeading2">Second heading</h4>
-  <p>This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.</p>
-  <h4 id="scrollspyHeading3">Third heading</h4>
-  <p>This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.</p>
-  <h4 id="scrollspyHeading4">Fourth heading</h4>
-  <p>This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.</p>
-  <h4 id="scrollspyHeading5">Fifth heading</h4>
-  <p>This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.</p>
-</div>
-</div>
 
-{% comment %} <div class="artists-profile">
-  {% for artist in page.artists %}
-  <div class="card">
-    <div class="card-inner">
+  <div id="artists" class="carousel slide carousel-fade" data-ride="carousel" data-bs-ride="carousel" data-interval="false">
 
-      <img src="{{ artist.img }}" />
-      <h2>{{ artist.name }}</h2>
-      <p>{{ artist.title }}</p>
-
-      {% for handle in artist.instagram %}
-      <a class="font-icon" href="https://instagram.com/{{ handle }}" target="_blank">
-        <span class="icon ion-logo-instagram"></span> @{{ handle }}
-      </a><br />
+    <ol class="carousel-indicators">
+      {% for artist in page.artists %}
+      <li data-target="#artists" data-slide-to="{{ forloop.index0 }}" class="{% if forloop.index0 == 0 %}active{% endif %}">
+        <a href="#artists"><img src="{{ artist.img }}" /></a>
+        <div></div>
+      </li>
       {% endfor %}
-      {% for url in artist.links %}
-      <a class="font-icon" href="{{ url }}" target="_blank">
-        {% comment %} <span class="icon ion-logo-instagram"></span>{% endcomment %}
-        {{ url }}
-      </a><br />
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+
+      {% for artist in page.artists %}
+      <div class="item {% if forloop.index0 == 0 %}active{% endif %}" style="background-image: url('{{ artist.header }}');">
+        <div class="carousel-caption container">
+          <div class="artists-profile">
+            <div class="header" style="background-image: url('{{ artist.header }}');">
+              {% comment %} <h2>Joe Scott</h2> {% endcomment %}
+            </div>
+            <div class="card">
+              <div class="card-inner">
+
+                <img src="{{ artist.img }}" />
+                <h2>{{ artist.name }}</h2>
+                <p>{{ artist.title }}</p>
+
+                {% for handle in artist.instagram %}
+                <a class="font-icon" href="https://instagram.com/{{ handle }}" target="_blank">
+                  <span class="icon ion-logo-instagram"></span> @{{ handle }}
+                </a><br />
+                {% endfor %}
+                {% for url in artist.links %}
+                <a class="font-icon" href="{{ url }}" target="_blank">
+                  {% comment %} <span class="icon ion-logo-instagram"></span>{% endcomment %}
+                  {{ url }}
+                </a><br />
+                {% endfor %}
+              </div>
+            </div>
+            <div class="bio">
+              {{ artist.bio }}
+            </div>
+
+            <div class="carousel">
+              {% include carousel.html images=artist.work items=4 autoplay='true' id=forloop.index %}
+            </div>
+
+          </div>
+        </div>
+
+      </div>
       {% endfor %}
     </div>
   </div>
 
-{% endfor %}
-</div> {% endcomment %}
-
-{% for artist in page.artists %}
+{% comment %} {% for artist in page.artists %}
 <div class="artists-profile">
   <div class="header" style="background-image: url('{{ artist.header }}');">
-    {% comment %} <h2>Joe Scott</h2> {% endcomment %}
   </div>
   <div class="card">
     <div class="card-inner">
@@ -491,7 +573,6 @@ artists:
       {% endfor %}
       {% for url in artist.links %}
       <a class="font-icon" href="{{ url }}" target="_blank">
-        {% comment %} <span class="icon ion-logo-instagram"></span>{% endcomment %}
         {{ url }}
       </a><br />
       {% endfor %}
@@ -506,47 +587,4 @@ artists:
   </div>
 
 </div>
-{% endfor %}
-
-
-{% comment %} <script
-  id="ecwid-script"
-  data-cfasync="false"
-  type="text/javascript"
-  src="https://app.ecwid.com/script.js?71386768&lang=en-GB&data_platform=code&data_date=2022-08-27"
-  charset="utf-8"></script>
-<div> {% endcomment %}
-
-  {% comment %} <div class="t3-section-wrap">
-
-    <div class="section">
-
-      <div>
-        <div id="store"></div>
-      </div>
-
-    </div>
-
-  </div>
-
-</div> {% endcomment %}
-{% comment %} <script>
-  window.ec = window.ec || Object();
-  window.ec.config = window.ec.config || Object();
-
-/*window.ec.config.custom_redirect_after_purchase = 'https://www.namba.ngo/get-involved/thanks';*/
-  window.ec.config.navigation_scrolling = "DISABLED";
-  window.ec.storefront = window.ec.storefront || Object();
-  window.ec.storefront.product_details_show_share_buttons = false;
-  window.ec.storefront.product_details_show_qty = true;
-  window.ec.storefront.product_details_show_in_stock_label = true;
-  window.ec.storefront.show_breadcrumbs = true;
-  window.ec.storefront.product_details_show_breadcrumbs = true;
-  window.ec.storefront.product_details_position_breadcrumbs = 25;
-  window.ec.storefront.breadcrumbs_separator = "";
-
-  xProductBrowser("defaultCategoryId=156223501", "categoriesPerRow=3", "views=grid(20,3) list(60) table(60)", "categoryView=grid", "searchView=list", "id=store");
-
-  window.ecwid_script_defer = true;
-  window.ecwid_dynamic_widgets = true;
-</script> {% endcomment %}
+{% endfor %} {% endcomment %}
