@@ -116,6 +116,5 @@ Trail Daysが<wbr>北海道に<wbr>やってくる！<wbr>Specialized Japanが<w
 
 参加登録を<wbr>して、<wbr>ライドして、<wbr>学んで、<wbr>笑って、<wbr>そしても<wbr>しかしたら<wbr>新しい<wbr>バイクを<wbr>手に<wbr>入れるかもしれません。
 
-翻訳文は<wbr>読みやすい<wbr>流れを<wbr>意識しましたが、<wbr>もっと<wbr>カジュアルに<wbr>したいですか？<wbr>それとも<wbr>イベントページ用に<wbr>少し<wbr>フォーマル寄りに<wbr>した方が<wbr>いいですか？
 
 ![](/assets/images/events/2025/niseko-trail-days/levo-kids.jpg)
