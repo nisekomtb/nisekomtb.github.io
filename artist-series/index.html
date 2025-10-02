@@ -45,7 +45,7 @@ artists:
       illustrations.</p>
 
   - name: Frances Treveil
-    title: Paintings and Clothing Repairs
+    title: Paintings & Clothing Repairs
     img: /assets/images/artists/frances-treveil/avatar.png
     header: /assets/images/artists/frances-treveil/header.jpg
     instagram: frogletpaintings
@@ -76,7 +76,7 @@ artists:
 
 
   - name: Joe Scott
-    title: Designer and Illustrator
+    title: Designer & Illustrator
     img: /assets/images/artists/joe-scott/avatar.png
     header: /assets/images/artists/joe-scott/header.png
     instagram: joekkaido
@@ -101,7 +101,7 @@ artists:
       Park–style artwork celebrating Hokkaido’s mountains and landmarks.</p>
 
   - name: Luke Sandalls
-    title: Designer and Illustrator
+    title: Designer & Illustrator
     img: /assets/images/artists/luke-sandalls/avatar.jpg
     header: /assets/images/artists/luke-sandalls/header.png
     instagram:
@@ -301,11 +301,6 @@ artists:
     margin-bottom: 30px;
   }
 
-  .artists-profile .card, .artists-profile .bio, .artists-profile .carousel {
-    float:left;
-    padding: 30px;
-  }
-
   .artists-profile .card {
     padding: 0 15px;
     width: 100%;
@@ -356,6 +351,10 @@ artists:
       right: 0;
       margin: 0 auto;
     }
+  }
+
+  .artists-profile .list-group-item-heading {
+    margin-bottom: 20px;
   }
 
   .artists-profile .side {
@@ -491,7 +490,6 @@ artists:
           {{ artist.bio }}
           <h4 class="list-group-item-heading">Collaboration design: {{ artist.design.name }}</h4>
 
-          <p></p>
           <img src="{{ artist.design.img }}" />
 
           <div style="text-align:center; margin:50px 0;">
