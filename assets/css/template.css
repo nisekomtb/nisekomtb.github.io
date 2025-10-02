@@ -6200,7 +6200,7 @@ body {
 }
 
 div.t3-wrapper {
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 .t3-header {
