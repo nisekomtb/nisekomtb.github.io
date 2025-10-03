@@ -20,17 +20,17 @@ twinpeaks:
     multi_use: true
     sponsor: nrs
     trailforks_id: 611923
-  # - name: Repeat Offender
-  #   ja:
-  #     name: リピートオフェンダー
-  #   difficulty: green
-  #   distance: 660
-  #   climb: 22
-  #   descent: 2
-  #   bike: up-only
-  #   multi_use: false
-  #   sponsor: santa-cruz
-  #   trailforks_id: 753819
+  - name: Repeat Offender
+    ja:
+      name: リピートオフェンダー
+    difficulty: green
+    distance: 664
+    climb: 23
+    descent: 2
+    bike: up-only
+    multi_use: false
+    sponsor: santa-cruz
+    trailforks_id: 753819
   - name: Mana Skills Park
     ja:
       name: マナスキルズパーク
@@ -163,17 +163,17 @@ twinpeaks:
     multi_use: false
     sponsor: santa-cruz
     trailforks_id: 753804
-  # - name: Launch Control
-  #   ja:
-  #     name: ローンチコントロール
-  #   difficulty: blue
-  #   distance: "686"
-  #   climb: 11
-  #   descent: 35
-  #   bike: down-only
-  #   multi_use: false
-  #   sponsor: santa-cruz
-  #   trailforks_id: 753818
+  - name: Launch Control
+    ja:
+      name: ローンチコントロール
+    difficulty: blue
+    distance: 686
+    climb: 11
+    descent: 35
+    bike: down-only
+    multi_use: false
+    sponsor: santa-cruz
+    trailforks_id: 753818
   - name: Mana Taki
     ja:
       name: マナタキ
