@@ -13,6 +13,21 @@
 #       url: /ja/raffle/
 #       text: ここから応募する
 
+- img: /assets/images/artists/header.jpg
+  align: right
+  animation: move-from-left
+  title: Artist Series
+  desc: We’ve teamed up with local artists to create unique merchandise that celebrates the spirit of riding in Niseko.
+  ja:
+    title: アーティストシリーズ
+    desc: 私たちは<wbr>地元アーティストと<wbr>協力し、<wbr>ニセコでの<wbr>ライディングの<wbr>精神を<wbr>称える<wbr>ユニークな<wbr>グッズを<wbr>制作しています。
+  action:
+    url: /artist-series/
+    text: Learn more
+    ja:
+      url: /ja/artist-series/
+      text: 詳細を<wbr>学ぶ
+
 - img: /assets/images/jobs/project-trail-application-assistant.jpg
   align: left
   animation: move-from-right
