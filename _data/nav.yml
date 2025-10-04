@@ -49,9 +49,16 @@
   ja: イベント
 
 
-- path: shop
+- path: ""
   en: Shop
   ja: オンラインショップ
+  sub:
+    - path: artist-series
+      en: Artist Series
+      ja: アーティストシリーズ
+    - path: shop
+      en: Shop
+      ja: オンラインショップ
 
 # - path: raffle
 #   en: 🎟️ Summer Raffle
