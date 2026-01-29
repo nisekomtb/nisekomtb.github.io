@@ -92,7 +92,7 @@ special:
         label: 恩人
 
 higuma:
-  width: 9
+  width: 10
   sponsors:
     # - name: coin metro
     #   image: /assets/images/company/higuma/coinmetro.png
@@ -120,6 +120,8 @@ higuma:
     - name: niseko wow
       image: /assets/images/company/higuma/niseko-wow.png
       url: https://www.niseko-wow.com
+    - name: north build
+      image: /assets/images/company/higuma/northbuild.png
     - name: nre
       image: /assets/images/company/higuma/nre.png
       url: https://nisekorealestate.com
