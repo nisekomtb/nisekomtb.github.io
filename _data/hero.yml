@@ -28,6 +28,21 @@
       url: /ja/artist-series/
       text: 詳細を<wbr>学ぶ
 
+- img: /assets/images/jobs/2026-trail-crew.jpg
+  align: left
+  animation: move-from-right
+  title: 'Jobs: Trail Crew'
+  desc: As part of the Trail Crew, you will be a local legend – beloved at the bar & the bike shop, at the trailhead, and by all of us at NAMBA.
+  ja:
+    title: 求人：トレイルクルー
+    desc: トレイルクルーの<wbr>一員と<wbr>して、<wbr>あなたは<wbr>地元の<wbr>伝説的存在に<wbr>なります！<wbr>バーや<wbr>バイクショップ、<wbr>トレイルヘッド、<wbr>そして<wbr>私たちNAMBAの<wbr>仲間からも<wbr>愛される<wbr>存在です。
+  action:
+    url: /jobs/trail-crew-2026/
+    text: Learn more
+    ja:
+      url: /ja/jobs/trail-crew-2026/
+      text: 詳細を<wbr>学ぶ
+
 - img: /assets/images/jobs/project-trail-application-assistant.jpg
   align: left
   animation: move-from-right
