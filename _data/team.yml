@@ -77,10 +77,10 @@
 
 - image: /assets/images/team/kobe.jpg
   name: Satoshi Kobayashi
-  title: Winkler Sales/Brand Manager
+  title: DT Swiss Country Manager
   ja:
     name: 小林 聡
-    title: ウインクレル セールス/ブランドマネージャー
+    title: DT Swiss カントリーマネージャー
 
 - image: /assets/images/team/yukihiro.jpg
   name: Yukihiro Tochigi
@@ -139,15 +139,6 @@
     name: ブトゥビッチ・ポール
     title: H2グループ 不動産部門ディレクター
 
-- image: /assets/images/team/yoshihito.jpg
-  name: Yoshihito Tanaka
-  title: Kutchan Council Member. Kutchan Tourism Association Director
-  sub_title: Niseko Resort Service Founder
-  ja:
-    name: 田中 義人
-    title: 倶知安町議会議員. 倶知安町観光協会理事
-    sub_title: ニセコリゾートサービス 創業者／オーナー
-
 - image: /assets/images/team/riccardo.jpg
   name: Riccardo Tossani
   title: Riccardo Tossani Architecture Founder / Owner
@@ -163,6 +154,15 @@
     name: 山田 洋
     title: 倶知安町観光協会副会長
     sub_title: North Design 株式会社 創業者／オーナー
+
+- image: /assets/images/team/yoshihito.jpg
+  name: Yoshihito Tanaka
+  title: Kutchan Council Member. Kutchan Tourism Association Director
+  sub_title: Niseko Resort Service Founder
+  ja:
+    name: 田中 義人
+    title: 倶知安町議会議員. 倶知安町観光協会理事
+    sub_title: ニセコリゾートサービス 創業者／オーナー
 
 - image: /assets/images/team/mizuno.jpg
   name: Manabu Mizuno
