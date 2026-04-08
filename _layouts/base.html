@@ -17,7 +17,7 @@
     <title>{{- page.title }} - NAMBA</title>
     {% if page.description %}<meta name="description" content="{{ page.description }}"/>{% endif %}
     <meta property="og:title" content="{{ page.title }}"/>
-    <meta property="og:type" content="website"/>
+    <meta property="og:type" content="{% if page.layout == 'event' or page.layout == 'competition' %}event{% else %}website{% endif %}"/>
     <meta property="og:image" content="https://namba.ngo{{ page.og.image }}?d={{ site.time | date: "%s" }}"/>
     <meta property="og:image:url" content="https://namba.ngo{{ page.og.image }}?d={{ site.time | date: "%s" }}"/>
     <meta property="og:image:secure_url" content="https://namba.ngo{{ page.og.image }}?d={{ site.time | date: "%s" }}"/>
@@ -30,14 +30,16 @@
       <meta property="og:site_name" content="ニセコエリアマウンテンバイク 協会"/>
       <meta property="og:locale:alternate" content="en_JP"/>
     {% endif %}
-    <link rel="alternate" hreflang="{% if page.lang == 'en' %}ja{% else %}en{% endif %}" href="https://namba.ngo{% if page.lang == 'en' %}/ja{% endif %}{{ path }}"/>
-    {% if page.lang == 'ja' %}<link rel="alternate" hreflang="x-default" href="https://namba.ngo{{ path }}"/>{% endif %}
-    <link rel="alternate" hreflang="{% if page.lang == 'en' %}ja{% else %}en{% endif %}" href="https://namba.ngo{% if page.lang == 'en' %}/ja{% endif %}{{ path }}"/>
+    <link rel="alternate" hreflang="en" href="https://namba.ngo{{ path }}"/>
+    <link rel="alternate" hreflang="ja" href="https://namba.ngo/ja{{ path }}"/>
+    <link rel="alternate" hreflang="x-default" href="https://namba.ngo{{ path }}"/>
     {% if page.canonical %}
       <link rel="canonical" href="https://namba.ngo/{{- page.canonical -}}">
       {% if page.redirect %}
       <meta http-equiv="refresh" content="0;URL='http://namba.ngo/{{- page.canonical -}}'" />
       {% endif %}
+    {% else %}
+      <link rel="canonical" href="https://namba.ngo{% if page.lang == 'ja' %}/ja{% endif %}{{ path }}"/>
     {% endif %}
     {% assign build = site.time | date: "%s" %}<link href="/assets/images/ico/favicon.ico?d={{ build }}" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
 
