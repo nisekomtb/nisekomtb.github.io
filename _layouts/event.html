@@ -434,6 +434,14 @@ baseCss: view-article
           </div>
           {% endif %}
 
+          {% if page.signup %}
+          <div class="list-group">
+            <h4 class="list-group-item-heading">{% if page.lang == "en" %}Sign Up{% else %}申し込み{% endif %}</h4>
+            <p>{% if page.lang == "en" %}To attend, please sign up below.{% else %}参加するには<wbr>以下から<wbr>お申し込みください。{% endif %}</p>
+            <p><a class="btn btn-sm btn-primary" href="{{ page.signup }}" target="_blank">{% if page.lang == "en" %}Sign up here{% else %}申し込みは<wbr>こちら{% endif %}</a></p>
+          </div>
+          {% endif %}
+
           {% if page.moreInfo %}
           <div class="list-group">
             <h4 class="list-group-item-heading">{% if page.lang == "en" %}More Info{% else %}詳しくは{% endif %}</h4>
@@ -546,6 +554,14 @@ baseCss: view-article
 
           {% if page.form %}
             <iframe id="form" src="{{ page.form.url }}" style="width:100%; height: {{ page.form.height }}px !important;" width="100%" height="{{ page.form.height }}px" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+          {% endif %}
+
+          {% if page.signup %}
+          <p style="text-align:center; margin-top:50px;">
+            <a class="btn btn-primary" href="{{ page.signup }}" target="_blank">
+              {% if page.lang == "en" %}Sign up here{% else %}申し込みは<wbr>こちら{% endif %}
+            </a>
+          </p>
           {% endif %}
 
 

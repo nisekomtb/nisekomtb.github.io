@@ -29,9 +29,7 @@ itinerary:
           name: Afternoon session begins
         - time: "4:00pm"
           name: Event ends
-moreInfo:
-  - To sign up, complete the form below.
-  - <a class="btn btn-sm btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSd9HMXa2vyQuFpN4XVVFr6XOlzwcR1ZbWlXEmEE9GFcxyi5sg/viewform" target="_blank">Sign up here</a>
+signup: https://docs.google.com/forms/d/e/1FAIpQLSd9HMXa2vyQuFpN4XVVFr6XOlzwcR1ZbWlXEmEE9GFcxyi5sg/viewform
 parking: false
 about: false
 ---
@@ -62,4 +60,3 @@ Wear clothes and footwear you don't mind getting dirty. Gloves are recommended. 
 ### Under 12s
 
 Children under 12 are welcome but must be accompanied by an adult at all times.
-
