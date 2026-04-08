@@ -58,6 +58,10 @@ defaults:
       og:
         image: /assets/images/og/twinpeaks-2024.jpg
 
+exclude:
+  - CLAUDE.md
+  - .claude
+
 include:
   - .well-known
 
