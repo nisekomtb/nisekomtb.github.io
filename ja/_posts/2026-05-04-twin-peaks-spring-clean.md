@@ -2,11 +2,12 @@
 layout: event
 categories: events
 title: ツインピークス・スプリングクリーン
+titleHtml: ツインピークス・<wbr>スプリングクリーン
 description: ツインピークス・バイクパークでボランティア・トレイルデーに参加しよう！冬の間に積もった倒木や落ち葉を片付け、シーズンに向けてトレイルを整備します。午前・午後の2セッション、どちらか、または両方参加可能。
 startDate: 2026-05-04 09:00:00 +0900
 days: 1
 time: "9:00am - 4:00pm"
-location: ツインピークス・バイクパーク、ニセコ
+location: ツインピークス・<wbr>バイクパーク、<wbr>ニセコ
 address: 150, 2 Aza-150-1 Yamada, Kutchan, Abuta District, Hokkaido 044-0081
 price: 0
 masthead:

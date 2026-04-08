@@ -35,6 +35,22 @@ Do not manually add `lang:` to front matter unless you need to override this.
 - Run JA text through BudouX CLI to insert zero-width spaces at word boundaries
 - See `@_docs/bilingual.md` for the full BudouX workflow and data file conventions
 
+## Japanese front matter tokenisation
+
+Japanese text in front matter must also be tokenised with `<wbr>` tags for proper
+wrapping. This applies to all JA front matter fields that render as visible text:
+
+- `titleHtml` — tokenised version of `title` (keep `title` as plain text for meta/SEO)
+- `location` — displayed in event/competition sidebars
+- Itinerary `name` values — displayed in timetables
+- `moreInfo` items — displayed in event sidebars
+- Price `name` values — displayed in price lists
+
+Fields that should NOT be tokenised (plain text only):
+- `title` — used in `<title>` tag, OG tags, Schema.org `name`
+- `description` — meta description, used in OG tags and Schema.org
+- `address` — postal address, not displayed with JA line-breaking
+
 ## Output format
 
 When producing bilingual page content, always structure output as:
