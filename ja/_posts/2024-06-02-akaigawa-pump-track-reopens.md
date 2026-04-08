@@ -34,13 +34,13 @@ about: false
 
 この<wbr>イベントは、<wbr>ツインピークスバイクパークオープニングと<wbr>同じ<wbr>週末に<wbr>行われます。<wbr>両会場を<wbr>楽しむ<wbr>絶好の<wbr>機会です。<wbr>ツインピークスの<wbr>シーズンオープナーに<wbr>参加される<wbr>方は、<wbr>赤井川トモプレイパークでの<wbr>キャンプを<wbr>検討し、<wbr>宿泊先で<wbr>新しく<wbr>リニューアルされた<wbr>トラックを<wbr>楽しむことができます。
 
-![](/assets/images/events/2024/akaigawa-pump-track-reopens/riders.jpg)
+![新しく舗装された赤井川パンプトラックを走るライダーたち](/assets/images/events/2024/akaigawa-pump-track-reopens/riders.jpg)
 
 :ポンプトラックは<wbr>滑らかな<wbr>アスファルト仕上げで<wbr>再設計され、<wbr>体験を<wbr>向上させ、<wbr>迅速で<wbr>スリリングな<wbr>ライドを<wbr>保証します。<wbr>2021年のように<wbr>連続して<wbr>コースを<wbr>周回する<wbr>ことは<wbr>できなくなりましたので、<wbr>ゴールに<wbr>到達した<wbr>後、<wbr>ライダーは<wbr>スタート地点まで<wbr>歩いて<wbr>戻る<wbr>必要が<wbr>あります。<wbr>利用指示を<wbr>よく<wbr>読み、<wbr>必要な<wbr>利用同意書を<wbr>記入し、<wbr>受付で<wbr>リストバンドを<wbr>受け取ってから<wbr>ライドを<wbr>開始してください。<wbr>この<wbr>リストバンドは<wbr>ライド開始前に<wbr>必ず<wbr>着用してください。
 
 2024年シーズンは<wbr>レンタルバイクの<wbr>提供が<wbr>ありませんので、<wbr>ご注意ください。
 
-![](/assets/images/events/2024/akaigawa-pump-track-reopens/map.jpg)
+![赤井川トモプレイパークのパンプトラックレイアウト図](/assets/images/events/2024/akaigawa-pump-track-reopens/map.jpg)
 
 #### 開場時間：
 平日は<strong ><wbr>11:30から<wbr>17:00</strong>、<wbr>週末及び祝日は<strong ><wbr>10:00から<wbr>17:00</strong>です。

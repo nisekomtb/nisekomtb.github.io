@@ -62,7 +62,7 @@ Don’t miss the debut of our "Dirty Dames" women's group ride, a special event 
 
 It's an opportunity to connect with fellow female riders, share your passion for biking, and explore the trails together in a supportive and fun environment. All skill levels are welcome, from beginners to seasoned pros.
 
-![](/assets/images/events/2024/season-opener/dirtydames.jpg)
+![Dirty Dames women's group ride at the Twin Peaks season opener](/assets/images/events/2024/season-opener/dirtydames.jpg)
 
 ### Strava Contest Launch:
 
@@ -87,7 +87,7 @@ The competition is open to all riders (excluding NAMBA crew) and participation i
   <a href="https://play.google.com/store/apps/details?id=com.strava"><img src="/assets/images/apps/google-play.en.png" /></a>
 </div>
 
-![](/assets/images/events/2024/season-opener/strava.jpg)
+![Riders racing a Strava segment at Twin Peaks Bike Park](/assets/images/events/2024/season-opener/strava.jpg)
 
 ### Rhythm Opening Party
 
@@ -105,7 +105,7 @@ To enhance your weekend experience, we’ve teamed up with Rhythm as they reopen
 
 - <strong>Winter clearance sale:</strong> Gear up with up to 50% off winter merchandise.
 
-![](/assets/images/events/2024/season-opener/rhythm.jpg)
+![Rhythm summer opening party with live music and BBQ](/assets/images/events/2024/season-opener/rhythm.jpg)
 
 ### We can't wait to see you there!
 

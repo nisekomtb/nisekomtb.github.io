@@ -72,7 +72,7 @@ storeProductId: 679581277
 
 Specializedは、<wbr>昨年の<wbr>成功を<wbr>受けて、<wbr>今年も<wbr>Nisekoで<wbr>Soil Searchingイベントを<wbr>開催します。<wbr>今年の<wbr>イベントは、<wbr>バイクパークの<wbr>準備から、<wbr>参加者の<wbr>スキルと<wbr>経験を<wbr>向上させる<wbr>ための<wbr>実践的な<wbr>トレイル構築、<wbr>特徴作り、<wbr>メンテナンスに<wbr>焦点を<wbr>移します。
 
-![](/assets/images/events/2024/soil-searching/learn.jpg)
+![Soil Searching Niseko 2024でトレイル構築を学ぶ参加者たち](/assets/images/events/2024/soil-searching/learn.jpg)
 
 ### 参加者特典:
 
@@ -94,7 +94,7 @@ Specializedは、<wbr>昨年の<wbr>成功を<wbr>受けて、<wbr>今年も<wbr
 - <strong >コミュニティ構築：</strong>この<wbr>イベントは、<wbr>トレイル構築だけでなく、<wbr>マウンテンバイカー間の<wbr>コミュニティの<wbr>育成も<wbr>目的と<wbr>しています。
 
 <br />
-![](/assets/images/events/2024/soil-searching/riders.jpg)
+![Soil Searching Niseko 2024でトレイルを楽しむライダーたち](/assets/images/events/2024/soil-searching/riders.jpg)
 
 ### 追加情報:
 
@@ -102,4 +102,4 @@ Specializedは、<wbr>昨年の<wbr>成功を<wbr>受けて、<wbr>今年も<wbr
 
 2024年9月14日と<wbr>15日を<wbr>カレンダーに<wbr>マークしてください。<wbr>この<wbr>イベントは、<wbr>ただの<wbr>サイクリングイベントを<wbr>超えた<wbr>充実した<wbr>体験を<wbr>提供します。<wbr>家族を<wbr>連れてきたり、<wbr>新しい<wbr>友達と<wbr>出会ったり、<wbr>Soil Searching Niseko 2024で<wbr>素晴らしい<wbr>思い出を<wbr>作りましょう。
 
-![](/assets/images/events/2024/soil-searching/tools.jpg)
+![Soil Searchingイベントで使用されるトレイル構築ツール](/assets/images/events/2024/soil-searching/tools.jpg)

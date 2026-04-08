@@ -35,13 +35,13 @@ Additionally, to celebrate the reopening, we are excited to announce a grand ope
 
 This event coincides with the same weekend as the Twin Peaks Bike Park opening. It's a fantastic opportunity for riders to enjoy both venues. If you're attending Twin Peaks Season Opener, consider extending your adventure by camping at Akaigawa Tomo Playpark, and enjoy the newly refurbished track right where you're staying.
 
-![](/assets/images/events/2024/akaigawa-pump-track-reopens/riders.jpg)
+![Riders on the newly resurfaced Akaigawa pump track](/assets/images/events/2024/akaigawa-pump-track-reopens/riders.jpg)
 
 The pump track has been redesigned with a smooth asphalt finish, enhancing the experience and ensuring fast, exhilarating rides. Please note that unlike in 2021, the course can no longer be lapped continuously. Riders must walk back to the starting point after reaching the finish. Remember to inform yourself of the usage instructions, complete the necessary usage agreement form, and obtain a wristband at reception, which must be worn before starting your ride.
 
 Please note that there are no rental bikes available for the 2024 season.
 
-![](/assets/images/events/2024/akaigawa-pump-track-reopens/map.jpg)
+![Map of the Akaigawa Tomo Playpark pump track layout](/assets/images/events/2024/akaigawa-pump-track-reopens/map.jpg)
 
 #### Opening Hours:
 Open weekdays from <strong>11:30am to 5:00pm</strong> and weekends and holidays from <strong>10:00am to 5:00pm</strong>.

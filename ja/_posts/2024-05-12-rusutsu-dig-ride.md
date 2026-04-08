@@ -34,7 +34,7 @@ about: false
 - メンテナンスツール<wbr>（シャベル推奨；クラブには<wbr>限りが<wbr>あるので、<wbr>可能な<wbr>限り<wbr>ご持参ください）
 - メンテナンス後の<wbr>ライディング用に<wbr>自転車と<wbr>ヘルメット
 
-![](/assets/images/events/2024/rusutsu-dig-ride/dig.jpg)
+![ルスツでトレイル整備を行うボランティアたち](/assets/images/events/2024/rusutsu-dig-ride/dig.jpg)
 
 ### 天候について
 

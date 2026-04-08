@@ -45,7 +45,7 @@ about: false
 
 <br />
 
-![](/assets/images/events/2024/hirafu-bike-park-opens/gondola.jpg)
+![バイクパークのトレイルへライダーを運ぶグラン・ヒラフのゴンドラ](/assets/images/events/2024/hirafu-bike-park-opens/gondola.jpg)
 
 NAMBAは<wbr>この<wbr>新しい<wbr>スタートを<wbr>祝う<wbr>ために<wbr>参加し、<wbr>充実した<wbr>マウンテンバイクトレイルを<wbr>楽しむ<wbr>ために、<wbr>お得な<wbr>シーズンパスを<wbr>活用する<wbr>ことを<wbr>お勧めします。<wbr>新しい<wbr>コースの<wbr>詳細が<wbr>確定次第、<wbr>更新情報を<wbr>お届けしますので、<wbr>オープニングデイの<wbr>大発表も<wbr>お見逃しなく。
 

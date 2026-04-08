@@ -106,4 +106,4 @@ Don’t miss his clinic — this is your chance to ride alongside, learn from, a
 
 This is the only Trail Days event in Hokkaido—don’t sleep on it! Reserve your spot, ride, learn, laugh, and maybe go home with an epic bike.
 
-![](/assets/images/events/2025/niseko-trail-days/levo-kids.jpg)
+![Kids riding Specialized Levo electric mountain bikes at Niseko Trail Days](/assets/images/events/2025/niseko-trail-days/levo-kids.jpg)

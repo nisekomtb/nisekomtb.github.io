@@ -67,7 +67,7 @@ about: true
 
 この2日間のイベントでは、ニセコエリアマウンテンバイク協会(NAMBA)とスペシャライズドのチームそしてライダーがボランティアとして参加し、バイクパークのグランドオープンを前にトレイルの整備を行います！トレイルはまだ一般公開されていませんので、オープンを待ちきれない方このボランティアプロジェクトに参加するのは絶好のチャンスです。
 
-![](/assets/images/events/2023/soil-searching/ss02.jpg)
+![Soil Searchingニセコでトレイル建設に取り組むボランティアたち](/assets/images/events/2023/soil-searching/ss02.jpg)
 
 ### ソイル・サーチングについて
 
@@ -79,4 +79,4 @@ about: true
 
 ニセコでのソイル・サーチングのようなディグ・デイは、コミュニティを作り、知識を与え、あらゆる年齢や能力のライダーをこのスポーツに迎え入レることができます。これらの成果は、ニセコで素晴らしいライディング・プレイスを創造し、向上させ、維持し、保護するというNAMBAの使命と一致しています。
 
-![](/assets/images/events/2023/soil-searching/ss03.jpg)
+![ツインピークスバイクパークでトレイルを整備するSpecialized Soil Searchingチーム](/assets/images/events/2023/soil-searching/ss03.jpg)

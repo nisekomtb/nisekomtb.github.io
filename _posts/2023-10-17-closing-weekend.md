@@ -98,7 +98,7 @@ Participation is easy:
   <a href="https://play.google.com/store/apps/details?id=com.strava"><img src="/assets/images/apps/google-play.en.png" /></a>
 </div>
 
-![](/assets/images/events/2023/closing-weekend/strava.jpg)
+![Riders competing in the Strava segment challenge at Twin Peaks](/assets/images/events/2023/closing-weekend/strava.jpg)
 
 ### Costume Competition: <small>(weather permitting)</small>
 
@@ -108,7 +108,7 @@ With Halloween right around the corner, let's make mountain biking spooktacular!
 
 Show off your creativity and come dressed in your most jaw-dropping costumes. The best-dressed mountain bikers will receive prizes, so get ready to bring your Halloween spirit to the trails!
 
-![](/assets/images/events/2023/closing-weekend/pumpkin.jpg)
+![Halloween pumpkin decoration for the costume competition](/assets/images/events/2023/closing-weekend/pumpkin.jpg)
 
 ### The Dirty Dames - Women Only Group Ride: <small>(weather permitting)</small>
 
@@ -118,7 +118,7 @@ Calling all the adventurous ladies!
 
 Join us for our first-ever "Dirty Dames" women-only group ride. It's an opportunity to connect with fellow female riders, share your passion for biking, and explore the trails together in a supportive and fun environment. All skill levels are welcome, from beginners to seasoned pros.
 
-![](/assets/images/events/2023/closing-weekend/dirtydames.jpg)
+![Dirty Dames women-only group ride at the closing weekend](/assets/images/events/2023/closing-weekend/dirtydames.jpg)
 
 ### NAMBA Open House Event:
 In addition to all of the action happening out on the trails, NAMBA is also hosting an Open House Event – we’ll be meeting with members of the media and government to provide more information about Twin Peaks and about NAMBA’s vision for the Niseko area.

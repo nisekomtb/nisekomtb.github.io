@@ -72,7 +72,7 @@ storeProductId: 679581277
 
 Specialized brings back the Soil Searching event to Niseko for its second consecutive year following last year's success. This year’s edition shifts the focus from preparing bike parks to enhancing the skills and experience of participants through hands-on trail building, feature crafting, and maintenance.
 
-![](/assets/images/events/2024/soil-searching/learn.jpg)
+![Participants learning trail building techniques at Soil Searching Niseko 2024](/assets/images/events/2024/soil-searching/learn.jpg)
 
 ### Participant Perks:
 
@@ -97,7 +97,7 @@ Specialized brings back the Soil Searching event to Niseko for its second consec
 - <strong>Community Building</strong>: This event is not just about trail building but also fostering a community among mountain bikers.
 
 <br />
-![](/assets/images/events/2024/soil-searching/riders.jpg)
+![Riders enjoying the trails at Soil Searching Niseko 2024](/assets/images/events/2024/soil-searching/riders.jpg)
 
 ### Additional Information:
 
@@ -105,4 +105,4 @@ Join us in Niseko for a weekend of creativity, community, and cycling. Whether y
 
 Mark your calendars for September 14-15, 2024, and be part of this enriching event that goes beyond the ride. Bring your family, meet new friends, and create lasting memories at Soil Searching Niseko 2024.
 
-![](/assets/images/events/2024/soil-searching/tools.jpg)
+![Trail building tools laid out at the Soil Searching event](/assets/images/events/2024/soil-searching/tools.jpg)
