@@ -30,6 +30,9 @@ itinerary:
           name: 午後セッション開始
         - time: "4:00pm"
           name: イベント終了
+moreInfo:
+  - 以下の<wbr>フォームから<wbr>お申し込みください。
+  - <a class="btn btn-sm btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfXA5L5YXMhfN4-zqfDgVCjgYGEv4gg1GK-n42iSY8phR0SrQ/viewform" target="_blank">申し込みは<wbr>こちら</a>
 parking: false
 about: false
 ---
@@ -59,6 +62,3 @@ about: false
 
 12歳未満の<wbr>お子様の<wbr>参加は<wbr>歓迎しますが、<wbr>必ず<wbr>保護者の<wbr>同伴が<wbr>必要です。
 
-### 申し込み
-
-申し込みの<wbr>詳細は<wbr>近日公開予定です。
