@@ -63,6 +63,7 @@ Partner `img` paths are relative to `/assets/images/company/`.
 
 | Field | Type | Description |
 |---|---|---|
+| `signup` | String | External sign-up URL — renders a centred primary button after content, before itinerary. Button text is bilingual ("Sign up here" / "申し込みはこちら") |
 | `form` | Object | Embedded form — `url` (Google Form embed URL), `height` (px) |
 | `storeProductId` | Integer | Ecwid product ID for ticket/merchandise sales |
 
