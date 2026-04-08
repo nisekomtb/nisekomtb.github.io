@@ -105,4 +105,4 @@ Yuki and Hajime are accomplished riders, representing Japan and their sponsor Sa
 
 Thanks to Allegra who have supported NAMBA and spearheaded the design and building of this park, and thanks to our sponsors, our supporters and our community for helping us create a free and open trail network!
 
-![](/assets/images/events/2023/grand-opening/riders.jpg)
+![Riders at the Twin Peaks Bike Park grand opening celebration](/assets/images/events/2023/grand-opening/riders.jpg)

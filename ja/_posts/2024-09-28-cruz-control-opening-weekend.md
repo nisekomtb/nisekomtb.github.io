@@ -102,7 +102,7 @@ var script = document.createElement("script"); script.setAttribute("src", "https
 - <strong >リズムでの<wbr>アフターパーティー:</strong> 日中の<wbr>興奮を<wbr>リズムで<wbr>開催される<wbr>アフターパーティーで<wbr>落ち着かせましょう。<wbr>この<wbr>夕べは、<wbr>無料の<wbr>食べ物、<wbr>活気の<wbr>ある<wbr>ビートを<wbr>奏でる<wbr>DJ、<wbr>ギブアウェイ、<wbr>プロの<wbr>ライダーたちとの<wbr>交流の<wbr>機会が<wbr>提供されます。<wbr>トレイルの<wbr>ストーリーを<wbr>共有し、<wbr>リラックスするのに<wbr>最適な<wbr>方法です。
 
 <br />
-![](/assets/images/events/2024/cruz-control-opening-weekend/riders.jpg)
+![ツインピークスの新しいクルーズ・コントロールトレイルを走るライダーたち](/assets/images/events/2024/cruz-control-opening-weekend/riders.jpg)
 
 ## お祝いに<wbr>ご参加ください<wbr>:
 

@@ -40,7 +40,7 @@ about: false
 
 自然の<wbr>美しさと<wbr>グラベルライドの<wbr>スリルに<wbr>驚かされる<wbr>準備を<wbr>してください。<wbr>この<wbr>イベントは、<wbr>身体的な<wbr>挑戦だけでなく、<wbr>秋の<wbr>豊かな<wbr>色彩で<wbr>飾られた<wbr>風景を<wbr>横断する<wbr>際の<wbr>感動的な<wbr>視覚体験も<wbr>約束します。
 
-![](/assets/images/events/2024/niseko-gravel-autumn-ride/view.jpg)
+![グラベルライドのルートから望むニセコの色鮮やかな秋の風景](/assets/images/events/2024/niseko-gravel-autumn-ride/view.jpg)
 
 ### 追加情報：
 

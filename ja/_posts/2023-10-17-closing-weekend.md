@@ -99,7 +99,7 @@ Stravaは<wbr>GPSアプリです。<wbr>ここツインピークス・バイク�
   <a href="https://play.google.com/store/apps/details?id=com.strava"><img src="/assets/images/apps/google-play.ja.png" /></a>
 </div>
 
-![](/assets/images/events/2023/closing-weekend/strava.jpg)
+![ツインピークスでStravaセグメントチャレンジに挑むライダーたち](/assets/images/events/2023/closing-weekend/strava.jpg)
 
 ### コスチューム・コンペティション： <small>(お天気次第...)</small>
 
@@ -109,7 +109,7 @@ Stravaは<wbr>GPSアプリです。<wbr>ここツインピークス・バイク�
 
 あなたの<wbr>創造力を<wbr>発揮して、と<wbr>びっきりの<wbr>コスチュームで<wbr>参加してください。ベスト・ドレッサーには<wbr>賞品が<wbr>贈られるので、<wbr>トレイルに<wbr>ハロウィーン・スピリットを<wbr>持ち込む<wbr>準備を<wbr>しよう！
 
-![](/assets/images/events/2023/closing-weekend/pumpkin.jpg)
+![コスチュームコンペティション用のハロウィンかぼちゃの装飾](/assets/images/events/2023/closing-weekend/pumpkin.jpg)
 
 ### Dirty Dames-女性限定グループライド： <small>(お天気次第...)</small>
 
@@ -119,7 +119,7 @@ Stravaは<wbr>GPSアプリです。<wbr>ここツインピークス・バイク�
 
 初の<wbr>女性限定グループライド<wbr>「Dirty Dames」に<wbr>参加しませんか？<wbr>女性ライダー仲間と<wbr>交流を<wbr>深め、<wbr>バイクや<wbr>世間話に<wbr>花を<wbr>咲かせ日本語と<wbr>英語の<wbr>飛び交う<wbr>ニセコらしい<wbr>愉快な<wbr>環境で<wbr>一緒に<wbr>冒険しましょう<wbr>!初心者から<wbr>プロまで、<wbr>スキルレベルは<wbr>問いません。
 
-![](/assets/images/events/2023/closing-weekend/dirtydames.jpg)
+![クロージングウィークエンドでのDirty Dames女性限定グループライド](/assets/images/events/2023/closing-weekend/dirtydames.jpg)
 
 ### NAMBAオープンハウス・イベント
 

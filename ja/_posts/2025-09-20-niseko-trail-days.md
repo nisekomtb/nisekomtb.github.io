@@ -117,4 +117,4 @@ Trail Daysが<wbr>北海道に<wbr>やってくる！<wbr>Specialized Japanが<w
 参加登録を<wbr>して、<wbr>ライドして、<wbr>学んで、<wbr>笑って、<wbr>そしても<wbr>しかしたら<wbr>新しい<wbr>バイクを<wbr>手に<wbr>入れるかもしれません。
 
 
-![](/assets/images/events/2025/niseko-trail-days/levo-kids.jpg)
+![ニセコトレイルデイズでSpecialized Levo電動マウンテンバイクに乗る子どもたち](/assets/images/events/2025/niseko-trail-days/levo-kids.jpg)

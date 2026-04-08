@@ -106,7 +106,7 @@ var script = document.createElement("script"); script.setAttribute("src", "https
 - <strong>After Party at Rhythm:</strong> Wind down from the day’s excitement with an after party hosted at Rhythm. The evening will feature free food, a DJ spinning lively beats, giveaways, and opportunities to chat with some pro riders. It's a perfect way to relax and share stories from the trails.
 
 <br />
-![](/assets/images/events/2024/cruz-control-opening-weekend/riders.jpg)
+![Mountain bikers riding the new Cruz Control trail at Twin Peaks](/assets/images/events/2024/cruz-control-opening-weekend/riders.jpg)
 
 ## Join the Celebration:
 

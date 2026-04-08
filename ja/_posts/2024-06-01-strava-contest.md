@@ -59,7 +59,7 @@ var script = document.createElement("script"); script.setAttribute("src", "https
 
 素晴らしい<wbr>報酬が<wbr>待っています！<wbr> スポンサーである<wbr>Foxと<wbr>Race Faceの<wbr>おかげで、<wbr>高品質な<wbr>フォークや<wbr>コックピットパッケージを<wbr>含む、<wbr>素晴らしい<wbr>賞品が<wbr>用意されています。<wbr> 賞品の<wbr>詳細は<wbr>まも<wbr>なく<wbr>発表されるので、<wbr>この<wbr>ページを<wbr>注目してください。
 
-![](/assets/images/competitions/2024/strava-contest/leaderboard.jpg)
+![Stravaセグメントのリーダーボードに表示されるトップライダーのタイム](/assets/images/competitions/2024/strava-contest/leaderboard.jpg)
 
 ### 賞品の<wbr>受け取り:
 

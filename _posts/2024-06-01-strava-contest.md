@@ -59,7 +59,7 @@ Strava is a popular GPS tracking app that enables cyclists to participate in a s
 
 Get ready for some incredible rewards! Thanks to our sponsors, Fox and Race Face, we have fantastic prizes lined up, including high-quality forks and cockpit packages. More details about the prizes will be announced soon, so keep an eye on this page.
 
-![](/assets/images/competitions/2024/strava-contest/leaderboard.jpg)
+![Strava segment leaderboard showing top rider times](/assets/images/competitions/2024/strava-contest/leaderboard.jpg)
 
 ### Prize Collection:
 

@@ -62,7 +62,7 @@ about: false
 
 同じ<wbr>趣味を<wbr>持つ<wbr>女性ライダーとの<wbr>交流や、<wbr>マウンテンバイクへの<wbr>情熱を<wbr>共有し、<wbr>サポートと<wbr>楽しさに<wbr>満ちた<wbr>環境で<wbr>一緒に<wbr>トレイルを<wbr>探索する<wbr>機会です。<wbr>初心者から<wbr>経験豊富な<wbr>プロまで、<wbr>全ての<wbr>スキルレベルの<wbr>参加者を<wbr>歓迎します。
 
-![](/assets/images/events/2024/season-opener/dirtydames.jpg)
+![ツインピークスシーズンオープナーでのDirty Dames女性グループライド](/assets/images/events/2024/season-opener/dirtydames.jpg)
 
 ### Stravaコンテスト開始:
 
@@ -87,7 +87,7 @@ Stravaセグメントチャレンジとは<wbr>何ですか？
   <a href="https://play.google.com/store/apps/details?id=com.strava"><img src="/assets/images/apps/google-play.ja.png" /></a>
 </div>
 
-![](/assets/images/events/2024/season-opener/strava.jpg)
+![ツインピークスバイクパークでStravaセグメントを競うライダーたち](/assets/images/events/2024/season-opener/strava.jpg)
 
 ### Rhythm オープニングパーティー
 
@@ -99,7 +99,7 @@ Rhythmの<wbr>オープニングパーティーに<wbr>参加して、<wbr>よ�
 - <strong>バイクレンタル割引：</strong>当日の<wbr>バイクレンタルを<wbr>50%割引で<wbr>利用できます。
 - <strong>冬物クリアランスセール：</strong>冬物商品を<wbr>最大50%オフで<wbr>お買い<wbr>求めいただけます。
 
-![](/assets/images/events/2024/season-opener/rhythm.jpg)
+![ライブミュージックとBBQが楽しめるRhythmサマーオープニングパーティー](/assets/images/events/2024/season-opener/rhythm.jpg)
 
 ### 皆さんの<wbr>ご参加を<wbr>お待ちしています！
 

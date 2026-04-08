@@ -35,7 +35,7 @@ With the snow already cleared from the trails, we're ready to dig in! We will fo
 
 - Your bike and helmet for riding after maintenance
 
-![](/assets/images/events/2024/rusutsu-dig-ride/dig.jpg)
+![Volunteers digging and maintaining trails at Rusutsu](/assets/images/events/2024/rusutsu-dig-ride/dig.jpg)
 
 ### Weather Consideration
 
