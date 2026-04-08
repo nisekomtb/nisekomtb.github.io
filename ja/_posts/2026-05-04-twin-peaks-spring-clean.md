@@ -9,7 +9,6 @@ time: "9:00am - 4:00pm"
 location: ツインピークス・バイクパーク、ニセコ
 address: 150, 2 Aza-150-1 Yamada, Kutchan, Abuta District, Hokkaido 044-0081
 price: 0
-img: /assets/images/events/2026/twin-peaks-spring-clean/header.jpg
 masthead:
   img: /assets/images/events/2026/twin-peaks-spring-clean/header.jpg
   credit:

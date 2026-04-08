@@ -92,7 +92,7 @@ baseCss: view-article
     "name": "{{ page.host.name | default: "NAMBA" }}"
   },
   "image": [
-    "https://namba.ngo{{ page.img }}"
+    "https://namba.ngo{{ page.img | default: page.masthead.img }}"
   ],
   "description": "{{ page.description }}",
   "organizer": {
