@@ -9,6 +9,7 @@ time: "9:00am - 4:00pm"
 location: Twin Peaks Bike Park, Niseko
 address: 150, 2 Aza-150-1 Yamada, Kutchan, Abuta District, Hokkaido 044-0081
 price: 0
+img: /assets/images/events/2026/twin-peaks-spring-clean/header.jpg
 masthead:
   img: /assets/images/events/2026/twin-peaks-spring-clean/header.jpg
   credit:
@@ -33,11 +34,13 @@ parking: false
 about: false
 ---
 
-## Twin Peaks Spring Clean
+## Help us get the trails ready for summer
 
-After a long winter buried under snow, our trails need some love before the season kicks off. Join us on **Greenery Day** (4th May) for a volunteer trail day at Twin Peaks Bike Park — a fitting public holiday to spend working outdoors in nature.
+After a long winter buried under snow, our trails need some love before the season kicks off. Join us on **Greenery Day** (4th May) for a volunteer trail day at Twin Peaks Bike Park — a fitting public holiday to be outdoors working in nature.
 
-We need your help to clear fallen debris, rake the trails, and get everything in shape for opening day. No experience needed — just enthusiasm and a willingness to get your hands dirty.
+We need your help to clear fallen branches and leaves, rake out the trails, and get everything in shape for the season. No experience needed — just enthusiasm and a willingness to get your hands dirty.
+
+It's a great chance to meet the NAMBA crew, be among the first to walk the trails after the snow melts, and help shape the riding for the summer ahead.
 
 ### Two sessions
 
@@ -50,9 +53,9 @@ You're welcome to come for one session, both, or as much as you can manage. **Pl
 
 ### What to bring
 
-All tools will be provided. If you have your own rake, it could be helpful to bring it along. There's no need to bring a bike — the trails won't be open for riding until the official season opening.
+All tools will be provided. If you have your own rake, feel free to bring it along. There's no need to bring a bike — the trails won't be open for riding until the official season opening.
 
-Wear clothes and footwear you don't mind getting dirty. Bring water and sun protection.
+Wear clothes and footwear you don't mind getting dirty. Gloves are recommended. Bring water and sun protection.
 
 ### Under 12s
 
