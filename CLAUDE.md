@@ -16,6 +16,7 @@ community in Hokkaido, Japan, with the goal of making Niseko Asia's premier MTB 
 @.claude/rules/bilingual.md
 @.claude/rules/images.md
 @.claude/rules/posts.md
+@.claude/rules/copy.md
 
 ---
 
