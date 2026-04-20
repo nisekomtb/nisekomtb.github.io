@@ -313,18 +313,16 @@ description: ニセコのマウンテンバイク協会、NAMBAのメンバー�
         return false;
       }
 
-      Ecwid.OnPageSwitch.add(function(page) {
-        if (page.type === "CATEGORY") {
-          scrollTo('#Section99');
-          const cart = document.querySelector('.ec-cart--empty');
-          if (cart)
-            cart.style["display"] = "none";
-
-
-
-
-          return false;
-        }
+      Ecwid.OnAPILoaded.add(function() {
+        Ecwid.OnPageSwitch.add(function(page) {
+          if (page.type === "CATEGORY") {
+            scrollTo('#Section99');
+            const cart = document.querySelector('.ec-cart--empty');
+            if (cart)
+              cart.style["display"] = "none";
+            return false;
+          }
+        });
       });
 
       xProductBrowser("defaultCategoryId=127408307");
