@@ -1,66 +1,42 @@
-/**
- * ------------------------------------------------------------------------
- * Uber Template
- * ------------------------------------------------------------------------
- * Copyright (C) 2004-2011 J.O.O.M Solutions Co., Ltd. All Rights Reserved.
- * @license - Copyrighted Commercial Software
- * Author: J.O.O.M Solutions Co., Ltd
- * Websites:  http://www.joomlart.com -  http://www.joomlancers.com
- * This file may not be redistributed in whole or significant part.
- * ------------------------------------------------------------------------
- */
+(function () {
+  'use strict';
 
-(function ($) {
+  // Add grayscale image for partners
+  window.addEventListener('load', function () {
+    document.querySelectorAll('.img-grayscale img').forEach(function (img) {
+      var span = document.createElement('span');
+      span.style.display = 'inline-block';
+      span.style.width = img.width + 'px';
+      span.style.height = img.height + 'px';
 
-	//Add grayscale image for partners
-	$(window).on('load', function () {
-		$('.img-grayscale img').each(function () {
-			$(this).wrap('<span style="display:inline-block;width:' + this.width + 'px;height:' + this.height + 'px;">').clone().addClass('gotcolors').css({ 'position': 'absolute', 'opacity': 0, 'z-index': 10 }).insertBefore(this);
-			// this.src = grayscale(this.src);
-			this.src = this.src.replace('.png', '.g.png');
-		}).animate({ opacity: 0.5 }, 500);
-	});
+      img.parentNode.insertBefore(span, img);
+      span.appendChild(img);
 
-	$(document).ready(function () {
-		$(".img-grayscale .client-item").hover(
-			function () {
-				$(this).find('.gotcolors').stop().animate({ opacity: 1 }, 200);
-			}
-			,
-			function () {
-				$(this).find('.gotcolors').stop().animate({ opacity: 0 }, 500);
-			}
-		);
+      var clone = img.cloneNode(true);
+      clone.classList.add('gotcolors');
+      clone.style.position = 'absolute';
+      clone.style.opacity = '0';
+      clone.style.zIndex = '10';
+      clone.style.transition = 'opacity 0.2s';
+      span.insertBefore(clone, img);
 
-	});
+      // Replace with grayscale version
+      img.src = img.src.replace('.png', '.g.png');
+      img.style.transition = 'opacity 0.5s';
+      img.style.opacity = '0.5';
+    });
+  });
 
-	function grayscale(src) {
-		var supportsCanvas = !!document.createElement('canvas').getContext;
-		if (supportsCanvas) {
-			var canvas = document.createElement('canvas'),
-				context = canvas.getContext('2d'),
-				imageData, px, length, i = 0, gray,
-				img = new Image();
-
-			img.src = src;
-			canvas.width = img.width;
-			canvas.height = img.height;
-			context.drawImage(img, 0, 0);
-
-			imageData = context.getImageData(0, 0, canvas.width, canvas.height);
-			px = imageData.data;
-			length = px.length;
-
-			for (; i < length; i += 4) {
-				//gray = px[i] * .3 + px[i + 1] * .59 + px[i + 2] * .11;
-				//px[i] = px[i + 1] = px[i + 2] = gray;
-				px[i] = px[i + 1] = px[i + 2] = (px[i] + px[i + 1] + px[i + 2]) / 3;
-			}
-
-			context.putImageData(imageData, 0, 0);
-			return canvas.toDataURL();
-		} else {
-			return src;
-		}
-	}
-})(jQuery);
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.img-grayscale .client-item').forEach(function (item) {
+      item.addEventListener('mouseenter', function () {
+        var color = item.querySelector('.gotcolors');
+        if (color) color.style.opacity = '1';
+      });
+      item.addEventListener('mouseleave', function () {
+        var color = item.querySelector('.gotcolors');
+        if (color) color.style.opacity = '0';
+      });
+    });
+  });
+})();
