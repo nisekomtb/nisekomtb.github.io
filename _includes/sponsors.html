@@ -8,18 +8,18 @@
       <div class="row" style="width: {{ width }}%;">
         {% for sponsor in include.sponsors %}
           <div
-            class="col-xs-12 client-item ja-animate"
+            class="col-12 client-item ja-animate"
             style="width:{{ 100 | divided_by: sponsors_size }}%;{% if sponsor.label and include.class == "special" %}padding-bottom:20px;{% endif %}"
             data-animation="pop-up"
             data-delay="item-{{ forloop.index0 }}">
             <div class="client-img">
               {% if sponsor.url %}
                 <a href="{% if sponsor.ja.url and page.lang == "ja" %}{{ sponsor.ja.url }}{% else %}{{ sponsor.url }}{% endif %}" target="_blank">
-                  <img class="img-responsive" src="{{ sponsor.image }}?d={{ site.time | date: "%s" }}">
+                  <img class="img-fluid" src="{{ sponsor.image }}?d={{ site.time | date: "%s" }}">
                 </a>
               {% else %}
                 <a>
-                  <img class="img-responsive" src="{{ sponsor.image }}?d={{ site.time | date: "%s" }}">
+                  <img class="img-fluid" src="{{ sponsor.image }}?d={{ site.time | date: "%s" }}">
                 </a>
               {% endif %}
             </div>
@@ -36,12 +36,8 @@
         {% endfor %}
       </div>
     </div>
-    <script>
-      (function($) {
-        $(document).ready(function() {
-          $('#acm-cliens-104 .client-img img.img-responsive').css({'filter': 'alpha(opacity=30)', 'zoom': '1', 'opacity': '0.3'});
-        });
-      })(jQuery);
-    </script>
+    <style>
+      #acm-cliens-104 .client-img img.img-fluid { opacity: 0.3; }
+    </style>
   </div>
 </div>

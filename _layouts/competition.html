@@ -222,39 +222,22 @@ baseCss: view-article
     margin-top: 30px;
   }
 
-  .owl-carousel {
+  .splide {
     margin-top: 36px;
   }
 
-  .owl-nav button span {
+  .splide__arrows button {
     opacity: 0.5;
+    background: none;
   }
 
-  .owl-nav button span:before {
-    color: #fd7d57;
-    font-size: 35px;
-    background: linear-gradient(135deg, #fd7d57, #f55d59);
-    background-clip: text;
-    display: inline-block;
-    -webkit-background-clip: text;
-    text-fill-color: transparent;
-    -webkit-text-fill-color: transparent;
-    font-weight: 400;
-    text-indent: 1px;
-  }
-
-  .owl-nav button span:hover {
+  .splide__arrows button:hover {
     opacity: 0.8;
   }
 
-  .owl-nav {
+  .splide__arrows {
     text-align: center;
     margin-top: 15px;
-  }
-
-  .owl-nav .owl-next {
-    margin-left: 15px;
-    /*float: right;*/
   }
 
   .ec-grid {
@@ -369,7 +352,7 @@ baseCss: view-article
   <!-- Article -->
   <article>
 
-    {% if page.img %}<div class="pull-left item-image">
+    {% if page.img %}<div class="float-start item-image">
       <img src="{{ page.img }}" alt="" itemprop="image">
       {% if page.imgCredit %}<span class="credit"><a href="{{ page.imgCredit.url }}" target="_blank"> 📸 {{ page.imgCredit.name }}</a></span>{% endif %}
     </div>{% endif %}
@@ -483,10 +466,10 @@ baseCss: view-article
         <div class="row equal-height equal-height-child">
 
         {% for prize in page.prizes %}
-          <div class="col col-sm-12 col-md-4">
+          <div class="col col-md-12 col-lg-4">
             <div class="features-item no-hover ja-animate" data-animation="move-from-bottom" data-delay="item-{{ forloop.index0 }}">
               <div class="font-icon">
-                <span class="icon ion-ios-trophy">
+                <span class="fa-solid fa-trophy">
                   <span class="num">{{ forloop.index }}</span>
                 </span>
               </div>

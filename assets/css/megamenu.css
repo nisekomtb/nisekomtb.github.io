@@ -326,7 +326,7 @@
   .t3-megamenu .row [class*="col-lg-"],
   .t3-megamenu .row [class*="col-md-"],
   .t3-megamenu .row [class*="col-sm-"],
-  .t3-megamenu .row [class*="col-xs-"] {
+  .t3-megamenu .row [class*="col-"] {
     width: 100% !important;
     min-width: 100% !important;
     left: 0 !important;
@@ -350,7 +350,7 @@
   html[dir="rtl"] .t3-megamenu .row [class*="col-lg-"],
   html[dir="rtl"] .t3-megamenu .row [class*="col-md-"],
   html[dir="rtl"] .t3-megamenu .row [class*="col-sm-"],
-  html[dir="rtl"] .t3-megamenu .row [class*="col-xs-"] {
+  html[dir="rtl"] .t3-megamenu .row [class*="col-"] {
     left: auto;
     right: 0 !important;
     margin-right: 0 !important;

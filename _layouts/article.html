@@ -32,33 +32,25 @@
     {% endif %}
     <link rel="alternate" hreflang="{% if page.lang == 'en' %}ja{% else %}en{% endif %}" href="/{% if page.lang == 'en' %}ja/{% endif %}{{ path }}"/>
     {% assign build = site.time %}<link href="/assets/images/ico/favicon.ico?d={{ build }}" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
-    <link href="/assets/css/bootstrap.css?d={{ build }}" rel="stylesheet" type="text/css"/>
-    <link href="/assets/css/legacy-grid.css?d={{ build }}" rel="stylesheet" type="text/css"/>
-    <link href="/assets/css/font-awesome.min.css?d={{ build }}" rel="stylesheet" type="text/css"/>
+    <link href="/assets/css/bootstrap.min.css?d={{ build }}" rel="stylesheet" type="text/css"/>
+    <link href="/assets/css/bs3-compat.css?d={{ build }}" rel="stylesheet" type="text/css"/>
     <link href="/assets/css/template.css?d={{ build }}" rel="stylesheet" type="text/css"/>
     <link href="/assets/css/megamenu.css?d={{ build }}" rel="stylesheet" type="text/css"/>
     <link href="/assets/css/off-canvas.css?d={{ build }}" rel="stylesheet" type="text/css"/>
-    <link href="/assets/fonts/font-awesome/css/font-awesome.min.css?d={{ build }}" rel="stylesheet" type="text/css"/>
     <link href="/assets/fonts/metropolis/stylesheet.css?d={{ build }}" rel="stylesheet" type="text/css"/>
-    <link href="/assets/fonts/ionicons/css/ionicons.css?d={{ build }}" rel="stylesheet" type="text/css"/>
-    <link href="/assets/js/owl-carousel/owl.carousel.min.css?d={{ build }}" rel="stylesheet" type="text/css"/>
+    <link href="/assets/js/splide/splide.min.css?d={{ build }}" rel="stylesheet" type="text/css"/>
     <link href="/assets/css/masthead.css?d={{ build }}" rel="stylesheet" type="text/css"/>
     <!-- block links endblock -->
-    <script src="/assets/js/jquery.min.js?d={{ build }}" type="text/javascript"></script>
-    <script src="/assets/js/jquery-noconflict.min.js?d={{ build }}" type="text/javascript"></script>
-    <script src="/assets/js/jquery-migrate.min.js?d={{ build }}" type="text/javascript"></script>
     <script src="/assets/js/caption.js?d={{ build }}" type="text/javascript"></script>
-    <script src="/assets/js/bootstrap.js?d={{ build }}" type="text/javascript"></script>
-    <script src="/assets/js/jquery.tap.min.js?d={{ build }}" type="text/javascript"></script>
-    <script src="/assets/js/off-canvas.js?d={{ build }}" type="text/javascript"></script>
+    <script src="/assets/js/bootstrap.bundle.min.js?d={{ build }}" type="text/javascript"></script>
     <script src="/assets/js/t3.js?d={{ build }}" type="text/javascript"></script>
+    <script src="/assets/js/off-canvas.js?d={{ build }}" type="text/javascript"></script>
     <script src="/assets/js/menu.js?d={{ build }}" type="text/javascript"></script>
-    <script src="/assets/js/owl-carousel/owl.carousel.min.js?d={{ build }}" type="text/javascript"></script>
-    <script src="/assets/js/inview.js?d={{ build }}" type="text/javascript"></script>
+    <script src="/assets/js/splide/splide.min.js?d={{ build }}" type="text/javascript"></script>
     <script src="/assets/js/script.js?d={{ build }}" type="text/javascript"></script>
     <script src="/assets/js/acm/script.js?d={{ build }}" type="text/javascript"></script>
     <script type="text/javascript">
-      jQuery(window).on('load', function () {
+      window.addEventListener('load', function () {
         new JCaption('img.caption');
       });
     </script>
@@ -66,35 +58,6 @@
 
     <!-- META FOR IOS & HANDHELD -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-    <style type="text/stylesheet">
-      @-webkit-viewport {
-        width: device-width;
-      }
-      @-moz-viewport {
-        width: device-width;
-      }
-      @-ms-viewport {
-        width: device-width;
-      }
-      @-o-viewport {
-        width: device-width;
-      }
-      @viewport {
-        width: device-width;
-      }
-    </style>
-    <script type="text/javascript">
-      //<![CDATA[
-      if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
-        var msViewportStyle = document.createElement("style");
-        msViewportStyle.appendChild(document.createTextNode("@-ms-viewport{width:auto!important}"));
-        document
-          .getElementsByTagName("head")[0]
-          .appendChild(msViewportStyle);
-      }
-
-      //]]>
-    </script>
     <meta name="HandheldFriendly" content="true"/>
     <meta name="apple-mobile-web-app-capable" content="YES"/>
     <!-- //META FOR IOS & HANDHELD -->
@@ -124,9 +87,6 @@
         fill: url("#gradient-6");
       }
     </style>
-
-    <!-- Le HTML5 shim and media query for IE8 support -->
-    <!--[if lt IE 9]> <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script> <script type="text/javascript" src="/assets/js/respond.min.js"></script> <![endif]-->
 
     <script>
       !function (f, b, e, v, n, t, s) {
@@ -183,14 +143,14 @@
         <div class="row">
 
           <!-- MAIN CONTENT -->
-          <div id="t3-content" class="t3-content col-xs-12">
+          <div id="t3-content" class="t3-content col-12">
 
             <div class="item-page view-project ">
 
               <!-- Article -->
               <article>
 
-                <div class="pull-left item-image">
+                <div class="float-start item-image">
                   <img src="{{ page.img }}" alt="" itemprop="image">
                 </div>
 
@@ -313,21 +273,28 @@
     </div>
 
     <!-- BACK TOP TOP BUTTON -->
-    <div id="back-to-top" data-spy="affix" data-offset-top="200" class="back-to-top hidden-xs hidden-sm affix-top">
+    <div id="back-to-top" class="back-to-top">
       <button class="btn btn-primary" title="Back to Top">
-        <span class="icon ion-ios-arrow-up"></span></button>
+        <span class="fa-solid fa-arrow-up"></span></button>
     </div>
 
     <script type="text/javascript">
-      (function ($) {
-        // Back to top
-        $('#back-to-top').on('click', function () {
-          $("html, body").animate({
-            scrollTop: 0
-          }, 500);
-          return false;
-        });
-      })(jQuery);
+      (function () {
+        var backToTop = document.getElementById('back-to-top');
+        if (backToTop) {
+          window.addEventListener('scroll', function () {
+            if (window.pageYOffset > 200) {
+              backToTop.classList.add('affix');
+            } else {
+              backToTop.classList.remove('affix');
+            }
+          });
+          backToTop.addEventListener('click', function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            return false;
+          });
+        }
+      })();
     </script>
     <!-- BACK TO TOP BUTTON -->
 
@@ -336,7 +303,7 @@
       <div class="container">
         <div class="t3-copyright">
           <div class="row">
-            <div class="col-md-12 copyright ">
+            <div class="col-lg-12 copyright ">
               <div class="mod-custom custom">
                 <div class="social">
                   <a href="https://www.facebook.com/nisekoareamtbassociation">

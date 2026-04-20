@@ -1,63 +1,39 @@
 <div id="carousel-{{ include.id | default: 1 }}" class="latest-project">
   <div class="container">
-    <div class="owl-carousel">
-      {% for image in include.images %}
-
-        <div
-          class="item"
-          data-animation="move-from-bottom"
-          data-delay="item-{{ forloop.index0 }}">
-
-          <!--a href="/index.php/our-projects/12-little-blind-text"-->
-          <div class="intro-image">
-            <img src="{{ image }}" />
-
-          <!--span>Text</span-->
-          </div>
-          <!--/a-->
-        </div>
-      {% endfor %}
-
+    <div class="splide" id="splide-{{ include.id | default: 1 }}">
+      <div class="splide__track">
+        <ul class="splide__list">
+          {% for image in include.images %}
+          <li class="splide__slide"
+            data-animation="move-from-bottom"
+            data-delay="item-{{ forloop.index0 }}">
+            <div class="intro-image">
+              <img src="{{ image }}" alt="" />
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- // JA DECOR 4 -->
 <script>
-  (function($) {
-    jQuery(document).ready(function($) {
-      $("#carousel-{{- include.id | default: 1 }} .owl-carousel").owlCarousel({
-        addClassActive: true,
-        items: 1,
-        margin: 36,
-        responsive: {
-          0: {
-            items: 1
-          },
-
-          768: {
-            items: 1
-          },
-
-          979: {
-            items: 1
-          },
-
-          1199: {
-            items: {{ include.items | default: 2 }}
-          }
-        },
-        loop: true,
-        nav: {{ include.nav | default: 'true' }},
-        navText: [
-          "<span class='icon ion-ios-arrow-dropleft-circle'></span>", "<span class='icon ion-ios-arrow-dropright-circle'></span>"
-        ],
-        dots: false,
-        autoplay: {{ include.autoplay | default: 'true' }},
-        slideTransition: 'linear',
-        autoplaySpeed: 2000,
-        autoplayHoverPause: true
-      });
-    });
-  })(jQuery);
+  document.addEventListener('DOMContentLoaded', function () {
+    new Splide('#splide-{{ include.id | default: 1 }}', {
+      type: 'loop',
+      perPage: {{ include.items | default: 2 }},
+      gap: '36px',
+      arrows: {{ include.nav | default: 'true' }},
+      pagination: false,
+      autoplay: {{ include.autoplay | default: 'true' }},
+      interval: 2000,
+      pauseOnHover: true,
+      breakpoints: {
+        1199: { perPage: 1 },
+        979: { perPage: 1 },
+        768: { perPage: 1 }
+      }
+    }).mount();
+  });
 </script>
