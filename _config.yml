@@ -61,6 +61,7 @@ defaults:
 exclude:
   - CLAUDE.md
   - .claude
+  - chrome
 
 include:
   - .well-known
