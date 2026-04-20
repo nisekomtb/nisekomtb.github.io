@@ -318,56 +318,51 @@ table.trails td img.sponsor {
   padding: 0;
 }
 
-.trail-sign .col:first-child {
+.trail-sign .col.fst {
   height: 200px;
 }
 
-.trail-sign .owl-carousel {
+@media (max-width: 991px) {
+  .trail-sign .col.fst {
+    flex: 0 0 100%;
+  }
+}
+
+.trail-sign .splide {
   background: #0e0e0e;
   border-radius: 3px;
   text-align: center;
 }
 
-.trail-sign .owl-carousel .item {
-  margin: 40px;
+.trail-sign .splide__slide {
+  padding: 40px;
+  box-sizing: border-box;
 }
 
-.trail-sign .owl-carousel .item p {
+.trail-sign .splide__slide p {
   margin: 0;
 }
 
-.trail-sign .owl-nav button span {
+.trail-sign .splide__arrows button {
   opacity: 0.5;
+  background: none;
 }
 
-.trail-sign .owl-nav button span:before {
-  color: #fd7d57;
-  font-size: 35px;
-  background: linear-gradient(135deg, #fd7d57, #f55d59);
-  background-clip: text;
-  display: inline-block;
-  -webkit-background-clip: text;
-  text-fill-color: transparent;
-  -webkit-text-fill-color: transparent;
-  font-weight: 400;
-  text-indent: 1px;
+.trail-sign .splide__arrows button svg {
+  fill: #ffffff;
 }
 
-.trail-sign .owl-nav button span:hover {
+.trail-sign .splide__arrows button:hover {
   opacity: 0.8;
 }
 
-.trail-sign .owl-nav button.disabled span {
+.trail-sign .splide__arrows button:disabled {
   opacity: 0.1;
 }
 
-.trail-sign .owl-nav {
+.trail-sign .splide__arrows {
   text-align: center;
   padding-bottom: 15px;
-}
-
-.trail-sign .owl-nav .owl-next {
-  margin-left: 15px;
 }
 
 .trail-sign.pos-0,
@@ -458,7 +453,7 @@ table.trails td img.sponsor {
     padding: 20px;
   }
 
-  .trail-sign .col:first-child {
+  .trail-sign .col.fst {
     height: 381px;
   }
 
@@ -470,12 +465,13 @@ table.trails td img.sponsor {
     box-shadow: none;
   }
 
-  .trail-sign .owl-carousel {
+  .trail-sign .splide {
     height: 341px;
   }
 
-  .trail-sign .owl-carousel .item {
-    margin: 34px 34px 24px;
+  .trail-sign .splide__slide {
+    padding: 34px 34px 24px;
+    box-sizing: border-box;
   }
 
   .trail-sign.pos-0 {
@@ -529,8 +525,9 @@ table.trails td img.sponsor {
 }
 
 @media(min-width: 1200px) {
-  .trail-sign .owl-carousel .item {
-    margin: 54px 54px 34px;
+  .trail-sign .splide__slide {
+    padding: 54px 54px 34px;
+    box-sizing: border-box;
   }
 
   .trail-sign.pos-0 {
@@ -606,7 +603,7 @@ body:after {
 </section>
 
 
-<div class="pull-left item-image">
+<div class="float-start item-image">
   <div
     class="widget TrailforksWidgetMap"
     data-w="100%"
@@ -822,105 +819,93 @@ body:after {
 </table></section><section>
 <h3>バイクパーク内での<wbr>ナビ情報</h3>
 <div id="trail-sign" class="row clearfix trail-sign pos-0">
-  <div class="col col-sm-12 col-md-6 fst"></div>
-  <div class="col col-sm-12 col-md-6 snd clearfix">
+  <div class="col col-md-12 col-lg-6 fst"></div>
+  <div class="col col-md-12 col-lg-6 snd clearfix">
     <div id="carousel-trail-sign" class="latest-project">
       <div class="container">
-        <div class="owl-carousel">
-          <div class="item">
-            <h4>トレイル マーカー<wbr>（道標）<wbr>:</h4>
-            <p>これらの<wbr>道標は、<wbr>ツイン ピークス バイク パーク内の<wbr>すべての<wbr>トレイルの<wbr>始まり<wbr>地点に<wbr>あります。<wbr>各標識には、<wbr>安全で<wbr>楽しい<wbr>サイクリングの<wbr>計画に<wbr>役立つ重要な<wbr>トレイル情報が<wbr>記載されています。</p>
-          </div>
-          <div class="item">
-            <h4>トレイルの<wbr>名前：</h4>
-            <p>トレイル名が<wbr>表示されています。</p>
-          </div>
-          <div class="item">
-            <h4>トレイルの<wbr>難易度:</h4>
-            <p>
-              <a
-                style="cursor:pointer;"
-                href="https://www.imba.com/sites/default/files/content/resources/2018-10/IMBATrailDifficultRatingSystem.jpg"
-                target="_blank">IMBA：<wbr>（国際マウンテンバイク協会）<wbr> の<wbr>難易度<wbr></a>
-              に<wbr>従って<wbr>ランク付けされた<wbr>トレイルの<wbr>難易度が<wbr>表示されています。
-            </p>
-          </div>
-          <div class="item">
-            <h4>スポンサー:</h4>
-            <p>この<wbr>トレイルの<wbr>建設を<wbr>サポートしてくださった<wbr>スポンサー名が<wbr>記載されています。</p>
-          </div>
-          <div class="item">
-            <h4>位置情報:</h4>
-            <p>バイクパーク内には、<wbr>それぞれの<wbr>位置情報と<wbr>して<wbr>英数字が<wbr>使われている<wbr>ため、<wbr>その<wbr>英数字を<wbr>確認し、<wbr> 自分の<wbr>場所を<wbr>特定し、<wbr>公園内での<wbr>移動に<wbr>役立てることが<wbr>可能です。<wbr>友人と<wbr>待ち合わせを<wbr>したり、<wbr>緊急対応の<wbr>際に<wbr>自分の<wbr>場所を<wbr>知らせたりするのに<wbr>役立ちます。</p>
-          </div>
-          <div class="item">
-            <h4>トレイルの<wbr>方向:</h4>
-            <p>トレイルの<wbr>方向 (上り専用、<wbr>下り専用、<wbr>一方通行など<wbr>) を<wbr>示します。</p>
-          </div>
-          <div class="item">
-            <h4>トレイル利用者:</h4>
-            <p>トレイルを<wbr>許可される<wbr>利用者を<wbr>指定します</p>
-            <p>(MTB のみ、<wbr>マルチユース)</p>
-          </div>
-          <div class="item">
-            <h4>トレイル情報:</h4>
-            <p>
-              <a
-                style="cursor:pointer;"
-                href="http://trailforks.com/region/twin-peaks-bike-park/"
-                target="_blank">Trailforks</a>
-              を<wbr>活用する<wbr>ことで、<wbr>トレイルに<wbr>関する<wbr>詳細情報が<wbr>わかる<wbr> QR コードや<wbr>インタラクティブな<wbr>地図などが<wbr>すぐに<wbr>閲覧可能です。
-            </p>
-          </div>
-          <div class="item">
-            <h4>NAMBA:</h4>
-            <p>ニセコエリアマウンテンバイク協会の<wbr>略。<wbr>非営利の<wbr>マウンテン バイク協会、<wbr>バイク パークの<wbr>管理、<wbr>およびニセコ地域の<wbr>トレイル ネットワークの<wbr>管理と<wbr>維持を<wbr>担当する<wbr>擁護団体。</p>
+        <div class="splide" id="trail-signs-carousel">
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="splide__slide">
+                <h4>トレイル マーカー<wbr>（道標）<wbr>:</h4>
+                <p>これらの<wbr>道標は、<wbr>ツイン ピークス バイク パーク内の<wbr>すべての<wbr>トレイルの<wbr>始まり<wbr>地点に<wbr>あります。<wbr>各標識には、<wbr>安全で<wbr>楽しい<wbr>サイクリングの<wbr>計画に<wbr>役立つ重要な<wbr>トレイル情報が<wbr>記載されています。</p>
+              </li>
+              <li class="splide__slide">
+                <h4>トレイルの<wbr>名前：</h4>
+                <p>トレイル名が<wbr>表示されています。</p>
+              </li>
+              <li class="splide__slide">
+                <h4>トレイルの<wbr>難易度:</h4>
+                <p>
+                  <a
+                    style="cursor:pointer;"
+                    href="https://www.imba.com/sites/default/files/content/resources/2018-10/IMBATrailDifficultRatingSystem.jpg"
+                    target="_blank">IMBA：<wbr>（国際マウンテンバイク協会）<wbr> の<wbr>難易度<wbr></a>
+                  に<wbr>従って<wbr>ランク付けされた<wbr>トレイルの<wbr>難易度が<wbr>表示されています。
+                </p>
+              </li>
+              <li class="splide__slide">
+                <h4>スポンサー:</h4>
+                <p>この<wbr>トレイルの<wbr>建設を<wbr>サポートしてくださった<wbr>スポンサー名が<wbr>記載されています。</p>
+              </li>
+              <li class="splide__slide">
+                <h4>位置情報:</h4>
+                <p>バイクパーク内には、<wbr>それぞれの<wbr>位置情報と<wbr>して<wbr>英数字が<wbr>使われている<wbr>ため、<wbr>その<wbr>英数字を<wbr>確認し、<wbr> 自分の<wbr>場所を<wbr>特定し、<wbr>公園内での<wbr>移動に<wbr>役立てることが<wbr>可能です。<wbr>友人と<wbr>待ち合わせを<wbr>したり、<wbr>緊急対応の<wbr>際に<wbr>自分の<wbr>場所を<wbr>知らせたりするのに<wbr>役立ちます。</p>
+              </li>
+              <li class="splide__slide">
+                <h4>トレイルの<wbr>方向:</h4>
+                <p>トレイルの<wbr>方向 (上り専用、<wbr>下り専用、<wbr>一方通行など<wbr>) を<wbr>示します。</p>
+              </li>
+              <li class="splide__slide">
+                <h4>トレイル利用者:</h4>
+                <p>トレイルを<wbr>許可される<wbr>利用者を<wbr>指定します</p>
+                <p>(MTB のみ、<wbr>マルチユース)</p>
+              </li>
+              <li class="splide__slide">
+                <h4>トレイル情報:</h4>
+                <p>
+                  <a
+                    style="cursor:pointer;"
+                    href="http://trailforks.com/region/twin-peaks-bike-park/"
+                    target="_blank">Trailforks</a>
+                  を<wbr>活用する<wbr>ことで、<wbr>トレイルに<wbr>関する<wbr>詳細情報が<wbr>わかる<wbr> QR コードや<wbr>インタラクティブな<wbr>地図などが<wbr>すぐに<wbr>閲覧可能です。
+                </p>
+              </li>
+              <li class="splide__slide">
+                <h4>NAMBA:</h4>
+                <p>ニセコエリアマウンテンバイク協会の<wbr>略。<wbr>非営利の<wbr>マウンテン バイク協会、<wbr>バイク パークの<wbr>管理、<wbr>およびニセコ地域の<wbr>トレイル ネットワークの<wbr>管理と<wbr>維持を<wbr>担当する<wbr>擁護団体。</p>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div></section><script>
-  (function($) {
-    jQuery(document).ready(function($) {
-
-      function onChanged(event) {
-        $('#trail-sign')
-          .removeClass("pos-0")
-          .removeClass("pos-1")
-          .removeClass("pos-2")
-          .removeClass("pos-3")
-          .removeClass("pos-4")
-          .removeClass("pos-5")
-          .removeClass("pos-6")
-          .removeClass("pos-7")
-          .removeClass("pos-8")
-          .addClass(`pos-${event.item.index}`);
-      }
-
-      $("#carousel-trail-sign .owl-carousel").owlCarousel({
-        addClassActive: true,
-        items: 1,
-        margin: 36,
-        loop: false,
-        nav: true,
-        mouseDrag: false,
-        navText: [
-          "<span class='icon ion-ios-arrow-dropleft-circle'></span>",
-          "<span class='icon ion-ios-arrow-dropright-circle'></span>"
-        ],
-        dots: false,
-        autoplay: false,
-        slideTransition: 'linear',
-        autoplaySpeed: 2000,
-        autoplayHoverPause: true,
-        onChanged: onChanged
-      });
-
-      $('.widget-cover').on("click", function () {
-        $('.widget-cover').hide();
-      });
-
+  document.addEventListener('DOMContentLoaded', function () {
+    var trailSign = document.getElementById('trail-sign');
+    var splide = new Splide('#trail-signs-carousel', {
+      type: 'slide',
+      perPage: 1,
+      gap: '36px',
+      drag: false,
+      arrows: true,
+      pagination: false,
+      autoplay: false
     });
-  })(jQuery);
+
+    splide.on('moved', function (newIndex) {
+      trailSign.className = trailSign.className.replace(/pos-\d/g, '');
+      trailSign.classList.add('pos-' + newIndex);
+    });
+
+    splide.mount();
+
+    var covers = document.querySelectorAll('.widget-cover');
+    covers.forEach(function (cover) {
+      cover.addEventListener('click', function () {
+        cover.style.display = 'none';
+      });
+    });
+  });
 </script>
