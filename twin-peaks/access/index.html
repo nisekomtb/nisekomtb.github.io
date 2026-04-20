@@ -86,28 +86,30 @@ subtitle: Access & Parking
 
     // Create the markers.
     pois.forEach(({ position, title, icon, img, scale, background, link }, i) => {
-      const pinOptions = {
-        glyphColor: "#fff",
-        background,
-        borderColor: "#fff",
-        scale,
-      };
+      let content;
 
       if (icon) {
-        const glyphEl = document.createElement("div");
-        glyphEl.innerHTML = `<i class="fa ${icon} fa-lg"></i>`;
-        pinOptions.glyph = glyphEl;
-      } else if (img) {
-        pinOptions.glyphSrc = img;
+        // Custom HTML marker for FA icons (avoids deprecated glyph property)
+        const el = document.createElement("div");
+        el.innerHTML = `<i class="fa ${icon}" style="color:#fff; font-size:14px;"></i>`;
+        el.style.cssText = `display:flex; align-items:center; justify-content:center; width:${scale ? 40 * scale : 40}px; height:${scale ? 40 * scale : 40}px; background:${background}; border:2px solid #fff; border-radius:50%; cursor:pointer;`;
+        content = el;
+      } else {
+        const pin = new PinElement({
+          glyphColor: "#fff",
+          background,
+          borderColor: "#fff",
+          scale,
+        });
+        if (img) pin.glyphSrc = img;
+        content = pin;
       }
-
-      const pin = new PinElement(pinOptions);
 
       const marker = new AdvancedMarkerElement({
         position,
         map,
         title,
-        content: pin,
+        content,
       });
 
       map.markers.push(marker);
