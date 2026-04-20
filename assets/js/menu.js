@@ -1,643 +1,505 @@
-/**
- * ------------------------------------------------------------------------------
- * 
- * @package T3 Framework for Joomla!
- *          ------------------------------------------------------------------------------
- * @copyright Copyright (C) 2004-2013 JoomlArt.com. All Rights Reserved.
- * @license GNU General Public License version 2 or later; see LICENSE.txt
- * @authors JoomlArt, JoomlaBamboo, (contribute to this project at github &
- *          Google group to become co-author)
- * @Google group: https://groups.google.com/forum/#!forum/t3fw
- * @Link: http://t3-framework.org
- *        ------------------------------------------------------------------------------
- */
-
-;
-(function($) {
-
-	var T3Menu = function(elm, options) {
-		this.$menu = $(elm);
-		if (!this.$menu.length) {
-			return;
-		}
-
-		this.options = $.extend({}, $.fn.t3menu.defaults, options);
-		this.child_open = [];
-		this.loaded = false;
-
-		this.start();
-	};
-
-	T3Menu.prototype = {
-		constructor : T3Menu,
-
-		start : function() {
-			// init once
-			if (this.loaded) {
-				return;
-			}
-			this.loaded = true;
-
-			// start
-			var self = this, options = this.options, $menu = this.$menu;
-
-			this.$items = $menu.find('li');
-			this.$items
-					.each(function(idx, li) {
-
-						var $item = $(this), $child = $item
-								.children('.dropdown-menu'), $link = $item
-								.children('a'), item = {
-							$item : $item,
-							child : $child.length,
-							link : $link.length,
-							clickable : !($link.length && $child.length),
-							mega : $item.hasClass('mega'),
-							status : 'close',
-							timer : null,
-							atimer : null
-						};
-
-						// store
-						$item.data('t3menu.item', item);
-
-						// click action
-						if ($child.length && !options.hover) {
-							$item.on('click', function(e) {
-								e.stopPropagation();
-
-								if ($item.hasClass('group')) {
-									return;
-								}
-
-								if (item.status == 'close') {
-									e.preventDefault();
-									self.show(item);
-								}
-							});
-						} else {
-
-							// stop if click on menu item - prevent bubble event
-							$item.on('click', function(e) {
-								// ignore if this is toggle button
-								if ($(e.target).data('toggle')) return;
-								e.stopPropagation()
-							});
-						}
-
-						// click on caret, no action on link
-						$item.find('a > .caret').on('click tap', function(e) {
-							item.clickable = false;
-						});
-
-						if (options.hover) {
-							$item.on('mouseover', function(e) {
-								if ($item.hasClass('group'))
-									return;
-
-								// check and handle only once - replace for
-								// stopPropagation
-								var $target = $(e.target);
-								if ($target.data('show-processed'))
-									return;
-								$target.data('show-processed', true);
-								setTimeout(function() {
-									$target.data('show-processed', false);
-								}, 10);
-
-								self.show(item);
-
-							}).on('mouseleave', function(e) {
-								if ($item.hasClass('group'))
-									return;
-
-								// check and handle only once - replace for
-								// stopPropagation
-								var $target = $(e.target);
-								if ($target.data('hide-processed'))
-									return;
-								$target.data('hide-processed', true);
-								setTimeout(function() {
-									$target.data('hide-processed', false);
-								}, 10);
-
-								self.hide(item, $target);
-							});
-
-							// if has child, don't goto link before open child -
-							// fix for touch screen
-							if ($link.length && $child.length) {
-								$link.on('click', function(e) {
-									if (item.clickable) {
-										e.stopPropagation();
-									}
-									return item.clickable;
-								});
-							}
-						}
-
-					});
-
-			$(document.body)
-					.on(
-							'tap hideall.t3menu',
-							function(e) {
-								clearTimeout(self.timer);
-								self.timer = setTimeout($.proxy(self.hide_alls,
-										self), e.type == 'tap' ? 500
-										: self.options.hidedelay);
-							});
-
-			// ignore click on direct child
-			$menu.find('.mega-dropdown-menu').on('hideall.t3menu', function(e) {
-				e.stopPropagation();
-				e.preventDefault();
-				return false;
-			});
-
-			// prevent close menu if click on form element
-			$menu.find('input, select, textarea, label').on('click tap',
-					function(e) {
-						e.stopPropagation();
-					});
-
-			// update mega-tab height
-			var $megatab = $menu.find('.mega-tab');
-			if ($megatab.length) {
-				$megatab.each(function() {
-					var $tabul = $(this).find('>div>ul'), 
-						$tabItems = $tabul.children('.dropdown-submenu'),
-						$tabs = $tabul.find('>li>.dropdown-menu'), 
-						tabheight = 0,
-						$parentItem = $(this).closest('li');
-					// mark item as tab-item
-					$tabItems.data('mega-tab-item', 1);
-					// add this tabs to parent item
-					var megatabs = $parentItem.data('mega-tabs') ? $parentItem.data('mega-tabs') : [];
-					megatabs.push($tabul);
-					$parentItem.data('mega-tabs', megatabs);
-
-					// default active the first
-					// $tabul.data('mega-tab', 0);
-					$tabItems.first().data('mega-tab-active', true).addClass('open');
-					// make all parent visible to get height
-					var $p = $tabul.parents('.dropdown-menu');
-					$p.each(function() {
-						var $this = $(this);
-						$this.data('prev-style', $this.attr('style')).css({
-							visibility : "visible",
-							display : "block"
-						});
-					})
-					$tabs.each(function() {
-						var $this = $(this), thisstyle = $this.attr('style');
-						$this.css({
-							visibility : "hidden",
-							display : "block"
-						});
-						tabheight = Math.max(tabheight, $this.children()
-								.innerHeight());
-						// restore style
-						if (thisstyle) {
-							$this.attr('style', thisstyle);
-						} else {
-							$this.removeAttr('style');
-						}
-					});
-					$tabul.css('min-height', tabheight);
-					// restore
-					$p.each(function() {
-						var $this = $(this);
-						if ($this.data('prev-style'))
-							$this.attr('style', $this.data('prev-style'));
-						else
-							$this.removeAttr('style');
-						$this.removeData('prev-style');
-					})
-				})
-			}
-			// fix for modal in menu
-			$menu.find('.modal').appendTo('body');
-		},
-
-		show : function(item) {
-			// check if current item is mega-tab
-			if (item.$item.data('mega-tab-item')) {
-				item.$item.parent().children().removeClass('open').data('mega-tab-active', false);
-				item.$item.addClass('open').data('mega-tab-active', true);
-			}			
-			// hide all others menu of this instance
-			if ($.inArray(item, this.child_open) < this.child_open.length - 1) {
-				this.hide_others(item);
-			}
-
-			// hide all for other instances as well
-			$(document.body).trigger('hideall.t3menu', [ this ]);
-
-			clearTimeout(this.timer); // hide alls
-			clearTimeout(item.timer); // hide this item
-			clearTimeout(item.ftimer); // on hidden
-			clearTimeout(item.ctimer); // on hidden
-
-			if (item.status != 'open' || !item.$item.hasClass('open')
-					|| !this.child_open.length) {
-				if (item.mega) {
-					// remove timer
-					clearTimeout(item.astimer); // animate
-					clearTimeout(item.atimer); // animate
-
-					// place menu
-					this.position(item.$item);
-
-					// add class animate
-					item.astimer = setTimeout(function() {
-						item.$item.addClass('animating')
-					}, 10);
-					item.atimer = setTimeout(function() {
-						item.$item.removeClass('animating')
-					}, this.options.duration + 50);
-					item.timer = setTimeout(function() {
-						item.$item.addClass('open');
-					}, 100);
-				} else {
-					item.$item.addClass('open');
-				}
-
-				item.status = 'open';
-				if (item.child && $.inArray(item, this.child_open) == -1) {
-					this.child_open.push(item);
-				}
-			}
-
-			item.ctimer = setTimeout($.proxy(this.clickable, this, item), 300);
-
-		},
-
-		hide : function(item, $target) {
-			clearTimeout(this.timer); // hide alls
-			clearTimeout(item.timer); // hide this item
-			clearTimeout(item.astimer); // animate timer
-			clearTimeout(item.atimer); // animate timer
-			clearTimeout(item.ftimer); // on hidden
-
-			// cancel hide if still in menu
-			if ($target && $target.is('input', item.$item)) {
-				return;
-			}
-
-			if (item.mega) {
-				// animate out
-				item.$item.addClass('animating');
-				item.atimer = setTimeout(function() {
-					item.$item.removeClass('animating')
-				}, this.options.duration);
-				item.timer = setTimeout(function() {
-					if (!item.$item.data('mega-tab-active'))
-						item.$item.removeClass('open')
-				}, 100);
-			} else {
-				item.timer = setTimeout(function() {
-					if (!item.$item.data('mega-tab-active'))
-						item.$item.removeClass('open');
-				}, 100);
-			}
-
-			item.status = 'close';
-			for (var i = this.child_open.length; i--;) {
-				if (this.child_open[i] === item) {
-					this.child_open.splice(i, 1);
-				}
-			}
-
-			item.ftimer = setTimeout($.proxy(this.hidden, this, item),
-					this.options.duration);
-			this.timer = setTimeout($.proxy(this.hide_alls, this),
-					this.options.hidedelay);
-		},
-
-		hidden : function(item) {
-			// hide done
-			if (item.status == 'close') {
-				item.clickable = false;
-			}
-		},
-
-		hide_others : function(item) {
-			var self = this;
-			$
-					.each(this.child_open.slice(),
-							function(idx, open) {
-								if (!item
-										|| (open != item && !open.$item
-												.has(item.$item).length)) {
-									self.hide(open);
-								}
-							});
-		},
-
-		hide_alls : function(e, inst) {
-			if (!e || e.type == 'tap' || (e.type == 'hideall' && this != inst)) {
-				var self = this;
-				$.each(this.child_open.slice(), function(idx, item) {
-					item && self.hide(item);
-				});
-			}
-		},
-
-		clickable : function(item) {
-			item.clickable = true;
-		},
-
-		position : function($item) {
-			var sub = $item.children('.mega-dropdown-menu'), is_show = sub
-					.is(':visible');
-
-			if (!is_show) {
-				sub.show();
-			}
-
-			var offset = $item.offset(), width = $item.outerWidth(), screen_width = $(
-					window).width()
-					- this.options.sb_width, sub_width = sub.outerWidth(), level = $item
-					.data('level');
-
-			if (!is_show) {
-				sub.css('display', '');
-			}
-
-			// reset custom align
-			sub.css({
-				left : '',
-				right : ''
-			});
-
-			if (level == 1) {
-
-				var align = $item.data('alignsub'), align_offset = 0, align_delta = 0, align_trans = 0;
-
-				if (align == 'justify') {
-					return; // do nothing
-				}
-
-				if (!align) {
-					align = 'left';
-				}
-
-				if (align == 'center') {
-					align_offset = offset.left + (width / 2);
-
-					if (!$.support.t3transform) {
-						align_trans = -sub_width / 2;
-						sub.css(this.options.rtl ? 'right' : 'left',
-								align_trans + width / 2);
-					}
-
-				} else {
-					align_offset = offset.left
-							+ ((align == 'left' && this.options.rtl || align == 'right'
-									&& !this.options.rtl) ? width : 0);
-				}
-
-				if (this.options.rtl) {
-
-					if (align == 'right') {
-						if (align_offset + sub_width > screen_width) {
-							align_delta = screen_width - align_offset
-									- sub_width;
-							sub.css('left', align_delta);
-
-							if (screen_width < sub_width) {
-								sub.css('left', align_delta + sub_width
-										- screen_width);
-							}
-						}
-					} else {
-						if (align_offset < (align == 'center' ? sub_width / 2
-								: sub_width)) {
-							align_delta = align_offset
-									- (align == 'center' ? sub_width / 2
-											: sub_width);
-							sub.css('right', align_delta + align_trans);
-						}
-
-						if (align_offset
-								+ (align == 'center' ? sub_width / 2 : 0)
-								- align_delta > screen_width) {
-							sub
-									.css(
-											'right',
-											align_offset
-													+ (align == 'center' ? (sub_width + width) / 2
-															: 0) + align_trans
-													- screen_width);
-						}
-					}
-
-				} else {
-
-					if (align == 'right') {
-						if (align_offset < sub_width) {
-							align_delta = align_offset - sub_width;
-							sub.css('right', align_delta);
-
-							if (sub_width > screen_width) {
-								sub.css('right', sub_width - screen_width
-										+ align_delta);
-							}
-						}
-					} else {
-
-						if (align_offset
-								+ (align == 'center' ? sub_width / 2
-										: sub_width) > screen_width) {
-							align_delta = screen_width
-									- align_offset
-									- (align == 'center' ? sub_width / 2
-											: sub_width);
-							sub.css('left', align_delta + align_trans);
-						}
-
-						if (align_offset
-								- (align == 'center' ? sub_width / 2 : 0)
-								+ align_delta < 0) {
-							sub
-									.css(
-											'left',
-											(align == 'center' ? (sub_width + width) / 2
-													: 0)
-													+ align_trans
-													- align_offset);
-						}
-					}
-				}
-			} else {
-
-				if (this.options.rtl) {
-					if ($item.closest('.mega-dropdown-menu').parent().hasClass(
-							'mega-align-right')) {
-
-						// should be align to the right as parent
-						// $item.removeClass('mega-align-left').addClass('mega-align-right');
-
-						// check if not able => revert the direction
-						if (offset.left + width + sub_width > screen_width) {
-							$item.removeClass('mega-align-right'); // should we
-							// add align
-							// left ? it
-							// is th
-							// default
-							// now
-
-							if (offset.left - sub_width < 0) {
-								sub.css('right', offset.left + width
-										- sub_width);
-							}
-						}
-					} else {
-						if (offset.left - sub_width < 0) {
-							$item.removeClass('mega-align-left').addClass(
-									'mega-align-right');
-
-							if (offset.left + width + sub_width > screen_width) {
-								sub.css('left', screen_width - offset.left
-										- sub_width);
-							}
-						}
-					}
-				} else {
-
-					if ($item.closest('.mega-dropdown-menu').parent().hasClass(
-							'mega-align-right')) {
-						// should be align to the right as parent
-						// $item.removeClass('mega-align-left').addClass('mega-align-right');
-
-						// check if not able => revert the direction
-						if (offset.left - sub_width < 0) {
-							$item.removeClass('mega-align-right'); // should we
-							// add align
-							// left ? it
-							// is th
-							// default
-							// now
-
-							if (offset.left + width + sub_width > screen_width) {
-								sub.css('left', screen_width - offset.left
-										- sub_width);
-							}
-						}
-					} else {
-
-						if (offset.left + width + sub_width > screen_width) {
-							$item.removeClass('mega-align-left').addClass(
-									'mega-align-right');
-
-							if (offset.left - sub_width < 0) {
-								sub.css('right', offset.left + width
-										- sub_width);
-							}
-						}
-					}
-				}
-			}
-		}
-	};
-
-	$.fn.t3menu = function(option) {
-		return this
-				.each(function() {
-					var $this = $(this), data = $this.data('megamenu'), options = typeof option == 'object'
-							&& option;
-
-					// Ignore off-canvas navigation
-					if ($this.parents('#off-canvas-nav').length)
-						return;
-					if ($this.parents('#t3-off-canvas').length)
-						return;
-
-					if (!data) {
-						$this.data('megamenu',
-								(data = new T3Menu(this, options)));
-
-					} else {
-						if (typeof option == 'string' && data[option]) {
-							data[option]()
-						}
-					}
-				})
-	};
-
-	$.fn.t3menu.defaults = {
-		duration : 400,
-		timeout : 100,
-		hidedelay : 200,
-		hover : true,
-		sb_width : 20
-	};
-
-	// apply script
-	$(document)
-			.ready(
-					function() {
-
-						// detect settings
-						var mm_duration = $('.t3-megamenu').data('duration') || 0;
-						if (mm_duration) {
-
-							$(
-									'<style type="text/css">'
-											+ '.t3-megamenu.animate .animating > .mega-dropdown-menu,'
-											+ '.t3-megamenu.animate.slide .animating > .mega-dropdown-menu > div {'
-											+ 'transition-duration: '
-											+ mm_duration + 'ms !important;'
-											+ '-webkit-transition-duration: '
-											+ mm_duration + 'ms !important;'
-											+ '}' + '</style>')
-									.appendTo('head');
-						}
-
-						var mm_timeout = mm_duration ? 100 + mm_duration : 500, mm_rtl = $(
-								document.documentElement).attr('dir') == 'rtl', mm_trigger = $(
-								document.documentElement).hasClass('mm-hover'), sb_width = (function() {
-							var parent = $(
-									'<div style="width:50px;height:50px;overflow:auto"><div/></div>')
-									.appendTo('body'), child = parent
-									.children(), width = child.innerWidth()
-									- child.height(100).innerWidth();
-
-							parent.remove();
-
-							return width;
-						})();
-
-						// lt IE 10
-						if (!$.support.transition) {
-							// it is not support animate
-							$('.t3-megamenu').removeClass('animate');
-
-							mm_timeout = 100;
-						}
-
-						// get ready
-						$('ul.nav').has('.dropdown-menu').t3menu({
-							duration : mm_duration,
-							timeout : mm_timeout,
-							rtl : mm_rtl,
-							sb_width : sb_width,
-							hover : mm_trigger
-						});
-
-						$(window).load(function() {
-
-							// check we miss any nav
-							$('ul.nav').has('.dropdown-menu').t3menu({
-								duration : mm_duration,
-								timeout : mm_timeout,
-								rtl : mm_rtl,
-								sb_width : sb_width,
-								hover : mm_trigger
-							});
-
-						});
-					});
-
-})(jQuery);
+(function () {
+  'use strict';
+
+  var T3Menu = function (elm, options) {
+    this.menu = elm;
+    if (!this.menu) return;
+
+    this.options = Object.assign({}, T3Menu.defaults, options);
+    this.child_open = [];
+    this.loaded = false;
+
+    this.start();
+  };
+
+  T3Menu.defaults = {
+    duration: 400,
+    timeout: 100,
+    hidedelay: 200,
+    hover: true,
+    sb_width: 20,
+    rtl: false
+  };
+
+  T3Menu.prototype = {
+    constructor: T3Menu,
+
+    start: function () {
+      if (this.loaded) return;
+      this.loaded = true;
+
+      var self = this;
+      var options = this.options;
+      var menu = this.menu;
+
+      this.items = menu.querySelectorAll('li');
+      this.items.forEach(function (li) {
+        var child = li.querySelector(':scope > .dropdown-menu');
+        var link = li.querySelector(':scope > a');
+        var item = {
+          el: li,
+          child: !!child,
+          link: !!link,
+          clickable: !(link && child),
+          mega: li.classList.contains('mega'),
+          status: 'close',
+          timer: null,
+          atimer: null,
+          astimer: null,
+          ftimer: null,
+          ctimer: null
+        };
+
+        // Store item data on the element
+        li._t3menuItem = item;
+
+        // Click action
+        if (child && !options.hover) {
+          li.addEventListener('click', function (e) {
+            e.stopPropagation();
+            if (li.classList.contains('group')) return;
+            if (item.status === 'close') {
+              e.preventDefault();
+              self.show(item);
+            }
+          });
+        } else {
+          li.addEventListener('click', function (e) {
+            if (e.target.dataset && e.target.dataset.toggle) return;
+            e.stopPropagation();
+          });
+        }
+
+        // Click on caret, no action on link
+        li.querySelectorAll('a > .caret').forEach(function (caret) {
+          caret.addEventListener('click', function () {
+            item.clickable = false;
+          });
+        });
+
+        if (options.hover) {
+          li.addEventListener('mouseover', function (e) {
+            if (li.classList.contains('group')) return;
+
+            // Check and handle only once
+            if (e.target._showProcessed) return;
+            e.target._showProcessed = true;
+            setTimeout(function () { e.target._showProcessed = false; }, 10);
+
+            self.show(item);
+          });
+
+          li.addEventListener('mouseleave', function (e) {
+            if (li.classList.contains('group')) return;
+
+            if (e.target._hideProcessed) return;
+            e.target._hideProcessed = true;
+            setTimeout(function () { e.target._hideProcessed = false; }, 10);
+
+            self.hide(item, e.target);
+          });
+
+          // If has child, don't go to link before open child - fix for touch
+          if (link && child) {
+            link.addEventListener('click', function (e) {
+              if (item.clickable) {
+                e.stopPropagation();
+              }
+              return item.clickable;
+            });
+          }
+        }
+      });
+
+      // Hide all on body click/tap
+      document.body.addEventListener('click', function (e) {
+        clearTimeout(self.timer);
+        self.timer = setTimeout(self.hide_alls.bind(self), 500);
+      });
+
+      document.body.addEventListener('hideall.t3menu', function (e) {
+        clearTimeout(self.timer);
+        self.timer = setTimeout(self.hide_alls.bind(self, e), self.options.hidedelay);
+      });
+
+      // Ignore click on direct child
+      menu.querySelectorAll('.mega-dropdown-menu').forEach(function (el) {
+        el.addEventListener('hideall.t3menu', function (e) {
+          e.stopPropagation();
+          e.preventDefault();
+          return false;
+        });
+      });
+
+      // Prevent close menu if click on form element
+      menu.querySelectorAll('input, select, textarea, label').forEach(function (el) {
+        el.addEventListener('click', function (e) { e.stopPropagation(); });
+      });
+
+      // Update mega-tab height
+      var megatabs = menu.querySelectorAll('.mega-tab');
+      megatabs.forEach(function (megatab) {
+        var tabul = megatab.querySelector(':scope > div > ul');
+        if (!tabul) return;
+        var tabItems = Array.from(tabul.children).filter(function (c) {
+          return c.classList.contains('dropdown-submenu');
+        });
+        var tabs = tabul.querySelectorAll(':scope > li > .dropdown-menu');
+        var tabheight = 0;
+        var parentItem = megatab.closest('li');
+
+        // Mark items as tab-items
+        tabItems.forEach(function (ti) { ti._megaTabItem = true; });
+
+        // Add tabs to parent item
+        if (!parentItem._megaTabs) parentItem._megaTabs = [];
+        parentItem._megaTabs.push(tabul);
+
+        // Default active the first
+        if (tabItems.length) {
+          tabItems[0]._megaTabActive = true;
+          tabItems[0].classList.add('open');
+        }
+
+        // Make all parents visible to get height
+        var parents = [];
+        var p = tabul.closest('.dropdown-menu');
+        while (p) {
+          parents.push({ el: p, prevStyle: p.getAttribute('style') });
+          p.style.visibility = 'visible';
+          p.style.display = 'block';
+          p = p.parentElement ? p.parentElement.closest('.dropdown-menu') : null;
+        }
+
+        tabs.forEach(function (tab) {
+          var prevStyle = tab.getAttribute('style');
+          tab.style.visibility = 'hidden';
+          tab.style.display = 'block';
+          var firstChild = tab.children[0];
+          if (firstChild) {
+            tabheight = Math.max(tabheight, firstChild.getBoundingClientRect().height);
+          }
+          if (prevStyle) tab.setAttribute('style', prevStyle);
+          else tab.removeAttribute('style');
+        });
+
+        tabul.style.minHeight = tabheight + 'px';
+
+        // Restore parents
+        parents.forEach(function (obj) {
+          if (obj.prevStyle) obj.el.setAttribute('style', obj.prevStyle);
+          else obj.el.removeAttribute('style');
+        });
+      });
+
+      // Fix for modal in menu
+      menu.querySelectorAll('.modal').forEach(function (modal) {
+        document.body.appendChild(modal);
+      });
+    },
+
+    show: function (item) {
+      var self = this;
+
+      // Check if current item is mega-tab
+      if (item.el._megaTabItem) {
+        Array.from(item.el.parentNode.children).forEach(function (sibling) {
+          sibling.classList.remove('open');
+          sibling._megaTabActive = false;
+        });
+        item.el.classList.add('open');
+        item.el._megaTabActive = true;
+      }
+
+      // Hide all others menu of this instance
+      if (this.child_open.indexOf(item) < this.child_open.length - 1) {
+        this.hide_others(item);
+      }
+
+      // Hide all for other instances
+      var event = new CustomEvent('hideall.t3menu', { bubbles: true, detail: { instance: this } });
+      document.body.dispatchEvent(event);
+
+      clearTimeout(this.timer);
+      clearTimeout(item.timer);
+      clearTimeout(item.ftimer);
+      clearTimeout(item.ctimer);
+
+      if (item.status !== 'open' || !item.el.classList.contains('open') || !this.child_open.length) {
+        if (item.mega) {
+          clearTimeout(item.astimer);
+          clearTimeout(item.atimer);
+
+          this.position(item.el);
+
+          item.astimer = setTimeout(function () {
+            item.el.classList.add('animating');
+          }, 10);
+          item.atimer = setTimeout(function () {
+            item.el.classList.remove('animating');
+          }, this.options.duration + 50);
+          item.timer = setTimeout(function () {
+            item.el.classList.add('open');
+          }, 100);
+        } else {
+          item.el.classList.add('open');
+        }
+
+        item.status = 'open';
+        if (item.child && this.child_open.indexOf(item) === -1) {
+          this.child_open.push(item);
+        }
+      }
+
+      item.ctimer = setTimeout(this.clickable.bind(this, item), 300);
+    },
+
+    hide: function (item, target) {
+      clearTimeout(this.timer);
+      clearTimeout(item.timer);
+      clearTimeout(item.astimer);
+      clearTimeout(item.atimer);
+      clearTimeout(item.ftimer);
+
+      if (target && target.matches && target.matches('input')) return;
+
+      if (item.mega) {
+        item.el.classList.add('animating');
+        item.atimer = setTimeout(function () {
+          item.el.classList.remove('animating');
+        }, this.options.duration);
+        item.timer = setTimeout(function () {
+          if (!item.el._megaTabActive) item.el.classList.remove('open');
+        }, 100);
+      } else {
+        item.timer = setTimeout(function () {
+          if (!item.el._megaTabActive) item.el.classList.remove('open');
+        }, 100);
+      }
+
+      item.status = 'close';
+      for (var i = this.child_open.length; i--;) {
+        if (this.child_open[i] === item) {
+          this.child_open.splice(i, 1);
+        }
+      }
+
+      item.ftimer = setTimeout(this.hidden.bind(this, item), this.options.duration);
+      this.timer = setTimeout(this.hide_alls.bind(this), this.options.hidedelay);
+    },
+
+    hidden: function (item) {
+      if (item.status === 'close') {
+        item.clickable = false;
+      }
+    },
+
+    hide_others: function (item) {
+      var self = this;
+      this.child_open.slice().forEach(function (open) {
+        if (!item || (open !== item && !open.el.contains(item.el))) {
+          self.hide(open);
+        }
+      });
+    },
+
+    hide_alls: function (e) {
+      if (!e || e.type === 'click' || (e.type === 'hideall' && e.detail && e.detail.instance !== this)) {
+        var self = this;
+        this.child_open.slice().forEach(function (item) {
+          if (item) self.hide(item);
+        });
+      }
+    },
+
+    clickable: function (item) {
+      item.clickable = true;
+    },
+
+    position: function (itemEl) {
+      var sub = itemEl.querySelector(':scope > .mega-dropdown-menu');
+      if (!sub) return;
+
+      var is_show = sub.offsetParent !== null;
+
+      if (!is_show) sub.style.display = 'block';
+
+      var rect = itemEl.getBoundingClientRect();
+      var offset = { left: rect.left + window.pageXOffset, top: rect.top + window.pageYOffset };
+      var width = itemEl.offsetWidth;
+      var screen_width = window.innerWidth - this.options.sb_width;
+      var sub_width = sub.offsetWidth;
+      var level = itemEl.dataset.level;
+
+      if (!is_show) sub.style.display = '';
+
+      // Reset custom align
+      sub.style.left = '';
+      sub.style.right = '';
+
+      if (level == 1) {
+        var align = itemEl.dataset.alignsub;
+        var align_offset = 0;
+        var align_delta = 0;
+        var align_trans = 0;
+
+        if (align === 'justify') return;
+        if (!align) align = 'left';
+
+        if (align === 'center') {
+          align_offset = offset.left + (width / 2);
+          if (!window.T3Support || !window.T3Support.t3transform) {
+            align_trans = -sub_width / 2;
+            sub.style[this.options.rtl ? 'right' : 'left'] = (align_trans + width / 2) + 'px';
+          }
+        } else {
+          align_offset = offset.left + ((align === 'left' && this.options.rtl || align === 'right' && !this.options.rtl) ? width : 0);
+        }
+
+        if (this.options.rtl) {
+          if (align === 'right') {
+            if (align_offset + sub_width > screen_width) {
+              align_delta = screen_width - align_offset - sub_width;
+              sub.style.left = align_delta + 'px';
+              if (screen_width < sub_width) {
+                sub.style.left = (align_delta + sub_width - screen_width) + 'px';
+              }
+            }
+          } else {
+            if (align_offset < (align === 'center' ? sub_width / 2 : sub_width)) {
+              align_delta = align_offset - (align === 'center' ? sub_width / 2 : sub_width);
+              sub.style.right = (align_delta + align_trans) + 'px';
+            }
+            if (align_offset + (align === 'center' ? sub_width / 2 : 0) - align_delta > screen_width) {
+              sub.style.right = (align_offset + (align === 'center' ? (sub_width + width) / 2 : 0) + align_trans - screen_width) + 'px';
+            }
+          }
+        } else {
+          if (align === 'right') {
+            if (align_offset < sub_width) {
+              align_delta = align_offset - sub_width;
+              sub.style.right = align_delta + 'px';
+              if (sub_width > screen_width) {
+                sub.style.right = (sub_width - screen_width + align_delta) + 'px';
+              }
+            }
+          } else {
+            if (align_offset + (align === 'center' ? sub_width / 2 : sub_width) > screen_width) {
+              align_delta = screen_width - align_offset - (align === 'center' ? sub_width / 2 : sub_width);
+              sub.style.left = (align_delta + align_trans) + 'px';
+            }
+            if (align_offset - (align === 'center' ? sub_width / 2 : 0) + align_delta < 0) {
+              sub.style.left = ((align === 'center' ? (sub_width + width) / 2 : 0) + align_trans - align_offset) + 'px';
+            }
+          }
+        }
+      } else {
+        // Sub-level positioning
+        if (this.options.rtl) {
+          var parentMenu = itemEl.closest('.mega-dropdown-menu');
+          if (parentMenu && parentMenu.parentElement && parentMenu.parentElement.classList.contains('mega-align-right')) {
+            if (offset.left + width + sub_width > screen_width) {
+              itemEl.classList.remove('mega-align-right');
+              if (offset.left - sub_width < 0) {
+                sub.style.right = (offset.left + width - sub_width) + 'px';
+              }
+            }
+          } else {
+            if (offset.left - sub_width < 0) {
+              itemEl.classList.remove('mega-align-left');
+              itemEl.classList.add('mega-align-right');
+              if (offset.left + width + sub_width > screen_width) {
+                sub.style.left = (screen_width - offset.left - sub_width) + 'px';
+              }
+            }
+          }
+        } else {
+          var parentMenu = itemEl.closest('.mega-dropdown-menu');
+          if (parentMenu && parentMenu.parentElement && parentMenu.parentElement.classList.contains('mega-align-right')) {
+            if (offset.left - sub_width < 0) {
+              itemEl.classList.remove('mega-align-right');
+              if (offset.left + width + sub_width > screen_width) {
+                sub.style.left = (screen_width - offset.left - sub_width) + 'px';
+              }
+            }
+          } else {
+            if (offset.left + width + sub_width > screen_width) {
+              itemEl.classList.remove('mega-align-left');
+              itemEl.classList.add('mega-align-right');
+              if (offset.left - sub_width < 0) {
+                sub.style.right = (offset.left + width - sub_width) + 'px';
+              }
+            }
+          }
+        }
+      }
+    }
+  };
+
+  // Init function for a nav element
+  function initT3Menu(el, options) {
+    // Ignore off-canvas navigation
+    if (el.closest('#off-canvas-nav') || el.closest('#t3-off-canvas')) return;
+    if (el._t3menuData) return;
+    el._t3menuData = new T3Menu(el, options);
+  }
+
+  // Apply script
+  document.addEventListener('DOMContentLoaded', function () {
+    // Detect settings
+    var megamenu = document.querySelector('.t3-megamenu');
+    var mm_duration = megamenu ? (parseInt(megamenu.dataset.duration, 10) || 0) : 0;
+
+    if (mm_duration) {
+      var style = document.createElement('style');
+      style.textContent =
+        '.t3-megamenu.animate .animating > .mega-dropdown-menu,' +
+        '.t3-megamenu.animate.slide .animating > .mega-dropdown-menu > div {' +
+        'transition-duration: ' + mm_duration + 'ms !important;' +
+        '-webkit-transition-duration: ' + mm_duration + 'ms !important;' +
+        '}';
+      document.head.appendChild(style);
+    }
+
+    var mm_timeout = mm_duration ? 100 + mm_duration : 500;
+    var mm_rtl = document.documentElement.getAttribute('dir') === 'rtl';
+    var mm_trigger = document.documentElement.classList.contains('mm-hover');
+
+    // Calculate scrollbar width
+    var sb_width = (function () {
+      var parent = document.createElement('div');
+      parent.style.cssText = 'width:50px;height:50px;overflow:auto';
+      var child = document.createElement('div');
+      parent.appendChild(child);
+      document.body.appendChild(parent);
+      var w1 = child.offsetWidth;
+      child.style.height = '100px';
+      var w2 = child.offsetWidth;
+      var width = w1 - w2;
+      document.body.removeChild(parent);
+      return width;
+    })();
+
+    var menuOptions = {
+      duration: mm_duration,
+      timeout: mm_timeout,
+      rtl: mm_rtl,
+      sb_width: sb_width,
+      hover: mm_trigger
+    };
+
+    document.querySelectorAll('ul.nav').forEach(function (nav) {
+      if (nav.querySelector('.dropdown-menu')) {
+        initT3Menu(nav, menuOptions);
+      }
+    });
+
+    window.addEventListener('load', function () {
+      document.querySelectorAll('ul.nav').forEach(function (nav) {
+        if (nav.querySelector('.dropdown-menu')) {
+          initT3Menu(nav, menuOptions);
+        }
+      });
+    });
+  });
+})();

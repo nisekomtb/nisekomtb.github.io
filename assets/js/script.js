@@ -1,90 +1,114 @@
-/**
- *------------------------------------------------------------------------------
- * @package       T3 Framework for Joomla!
- *------------------------------------------------------------------------------
- * @copyright     Copyright (C) 2004-2013 JoomlArt.com. All Rights Reserved.
- * @license       GNU General Public License version 2 or later; see LICENSE.txt
- * @authors       JoomlArt, JoomlaBamboo, (contribute to this project at github
- *                & Google group to become co-author)
- * @Google group: https://groups.google.com/forum/#!forum/t3fw
- * @Link:         http://t3-framework.org
- *------------------------------------------------------------------------------
- */
+(function () {
+  'use strict';
 
-(function ($) {
-  $(document).ready(function () {
+  // Equal-height columns
+  document.addEventListener('DOMContentLoaded', function () {
+    var ehArray = [];
+    var ehArray2 = [];
 
-    ////////////////////////////////
-    // equalheight for col
-    ////////////////////////////////
-    var ehArray = ehArray2 = [],
-      i = 0;
-
-    $('.equal-height').each(function () {
-      var $ehc = $(this);
-      if ($ehc.has('.equal-height')) {
-        ehArray2[ehArray2.length] = $ehc;
+    document.querySelectorAll('.equal-height').forEach(function (el) {
+      if (el.querySelector('.equal-height')) {
+        ehArray2.push(el);
       } else {
-        ehArray[ehArray.length] = $ehc;
+        ehArray.push(el);
       }
     });
 
-    for (i = ehArray2.length - 1; i >= 0; i--) {
-      ehArray[ehArray.length] = ehArray2[i];
+    for (var i = ehArray2.length - 1; i >= 0; i--) {
+      ehArray.push(ehArray2[i]);
     }
 
     var equalHeight = function () {
-      for (i = 0; i < ehArray.length; i++) {
-        var $cols = ehArray[i].children().filter('.col'),
-          maxHeight = 0,
-          equalChildHeight = ehArray[i].hasClass('equal-height-child');
+      for (var i = 0; i < ehArray.length; i++) {
+        var container = ehArray[i];
+        var cols = Array.from(container.children).filter(function (child) {
+          return child.classList.contains('col');
+        });
+        var maxHeight = 0;
+        var equalChildHeight = container.classList.contains('equal-height-child');
 
         // reset min-height
-        if (equalChildHeight) {
-          $cols.each(function () { $(this).children().first().css('min-height', 0) });
-        } else {
-          $cols.css('min-height', 0);
-        }
-        $cols.each(function () {
-          maxHeight = Math.max(maxHeight, equalChildHeight ? $(this).children().first().innerHeight() : $(this).innerHeight());
+        cols.forEach(function (col) {
+          if (equalChildHeight) {
+            var firstChild = col.children[0];
+            if (firstChild) firstChild.style.minHeight = '0px';
+          } else {
+            col.style.minHeight = '0px';
+          }
         });
-        if (equalChildHeight) {
-          $cols.each(function () { $(this).children().first().css('min-height', maxHeight + 1) });
-        } else {
-          $cols.css('min-height', maxHeight + 1);
-        }
+
+        cols.forEach(function (col) {
+          var h;
+          if (equalChildHeight) {
+            var firstChild = col.children[0];
+            h = firstChild ? firstChild.getBoundingClientRect().height : 0;
+          } else {
+            h = col.getBoundingClientRect().height;
+          }
+          if (h > maxHeight) maxHeight = h;
+        });
+
+        cols.forEach(function (col) {
+          if (equalChildHeight) {
+            var firstChild = col.children[0];
+            if (firstChild) firstChild.style.minHeight = (maxHeight + 1) + 'px';
+          } else {
+            col.style.minHeight = (maxHeight + 1) + 'px';
+          }
+        });
       }
-      // store current size
-      $('.equal-height > .col').each(function () {
-        var $col = $(this);
-        $col.data('old-width', $col.width()).data('old-height', $col.innerHeight());
-      });
     };
 
     equalHeight();
 
-    // monitor col width and fire equalHeight
-    setInterval(function () {
-      $('.equal-height > .col').each(function () {
-        var $col = $(this);
-        if (($col.data('old-width') && $col.data('old-width') != $col.width()) ||
-          ($col.data('old-height') && $col.data('old-height') != $col.innerHeight())) {
+    // Use ResizeObserver if available, otherwise fall back to setInterval
+    if (typeof ResizeObserver !== 'undefined') {
+      var ro = new ResizeObserver(function () {
+        equalHeight();
+      });
+      document.querySelectorAll('.equal-height > .col').forEach(function (col) {
+        ro.observe(col);
+      });
+    } else {
+      // Fallback: monitor column size changes
+      var colSizes = new Map();
+      document.querySelectorAll('.equal-height > .col').forEach(function (col) {
+        colSizes.set(col, { width: col.offsetWidth, height: col.getBoundingClientRect().height });
+      });
+      setInterval(function () {
+        var changed = false;
+        colSizes.forEach(function (size, col) {
+          var w = col.offsetWidth;
+          var h = col.getBoundingClientRect().height;
+          if (size.width !== w || size.height !== h) {
+            changed = true;
+          }
+        });
+        if (changed) {
           equalHeight();
-          // break each loop
-          return false;
+          colSizes.forEach(function (size, col) {
+            size.width = col.offsetWidth;
+            size.height = col.getBoundingClientRect().height;
+          });
         }
-      });
-    }, 500);
-  });
-
-  // Add Inview
-  $(document).ready(function () {
-    if ($('.enable-effect').length > 0) {
-      $('.t3-section-wrap > div,.t3-hero').bind('inview', function (event, visible) {
-        if (visible) {
-          $(this).addClass('ja-inview');
-        }
-      });
+      }, 500);
     }
   });
-})(jQuery);
+
+  // Inview animations via IntersectionObserver
+  document.addEventListener('DOMContentLoaded', function () {
+    if (!document.querySelector('.enable-effect')) return;
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('ja-inview');
+        }
+      });
+    }, { threshold: 0 });
+
+    document.querySelectorAll('.t3-section-wrap > div, .t3-hero').forEach(function (el) {
+      observer.observe(el);
+    });
+  });
+})();

@@ -1,220 +1,210 @@
-/**
- *------------------------------------------------------------------------------
- * @package       T3 Framework for Joomla!
- *------------------------------------------------------------------------------
- * @copyright     Copyright (C) 2004-2013 JoomlArt.com. All Rights Reserved.
- * @license       GNU General Public License version 2 or later; see LICENSE.txt
- * @authors       JoomlArt, JoomlaBamboo, (contribute to this project at github
- *                & Google group to become co-author)
- * @Google group: https://groups.google.com/forum/#!forum/t3fw
- * @Link:         http://t3-framework.org
- *------------------------------------------------------------------------------
- */
-jQuery (document).ready(function($){
-    function getAndroidVersion(ua) {
-        var ua = ua || navigator.userAgent;
-        var match = ua.match(/Android\s([0-9\.]*)/);
-        return match ? match[1] : false;
-    };
+(function () {
+  'use strict';
 
-    if (parseInt(getAndroidVersion()) == 4) {
-        $('#t3-mainnav').addClass('t3-mainnav-android');
-    }
+  document.addEventListener('DOMContentLoaded', function () {
+    var html = document.documentElement;
+    var wrapper = document.body;
+    var inner = document.querySelector('.t3-wrapper');
+    var toggles = document.querySelectorAll('.off-canvas-toggle');
+    var offcanvas = document.querySelector('.t3-off-canvas');
+    var closeButtons = document.querySelectorAll('.t3-off-canvas .close');
+    var btn = null;
+    var nav = null;
+    var direction = 'left';
+    var fixed = null;
     var JA_isLoading = false;
-    // fix for old ie
-    if (/MSIE\s([\d.]+)/.test(navigator.userAgent) ? new Number(RegExp.$1) < 10 : false) {
-        $('html').addClass ('old-ie');
-    } else if(/constructor/i.test(window.HTMLElement)){
-        $('html').addClass('safari');
-    }
 
-    var $wrapper = $('body'),
-        $inner = $('.t3-wrapper'),
-        $toggles = $('.off-canvas-toggle'),
-        $offcanvas = $('.t3-off-canvas'),
-        $close = $('.t3-off-canvas .close'),
-        $btn=null,
-        $nav=null,
-        direction = 'left',
-        $fixed = null;
-    // no wrapper, just exit
-    if (!$wrapper.length) return ;
+    if (!wrapper) return;
 
-    // add effect class for nav
-    $toggles.each (function () {
-        var $this = $(this),
-            $nav = $($this.data('nav')),
-            effect = $this.data('effect'),
-            direction = ($('html').attr('dir') == 'rtl' && $this.data('pos')!='right') || ($('html').attr('dir') != 'rtl' && $this.data('pos')=='right')  ? 'right':'left';
-        $nav.addClass (effect).addClass ('off-canvas-'+direction);
+    // Add effect class for nav
+    toggles.forEach(function (toggle) {
+      var navSelector = toggle.dataset.nav;
+      var navEl = navSelector ? document.querySelector(navSelector) : null;
+      var effect = toggle.dataset.effect;
+      var isRtl = html.getAttribute('dir') === 'rtl';
+      var pos = toggle.dataset.pos;
+      var dir = (isRtl && pos !== 'right') || (!isRtl && pos === 'right') ? 'right' : 'left';
 
-        // move to outside wrapper-content
-        var inside_effect = ['off-canvas-effect-3','off-canvas-effect-16','off-canvas-effect-7','off-canvas-effect-8','off-canvas-effect-14'];
-        if ($.inArray(effect, inside_effect) == -1) {
-            $inner.before($nav);
+      if (navEl) {
+        navEl.classList.add(effect);
+        navEl.classList.add('off-canvas-' + dir);
+
+        // Move to outside wrapper-content
+        var insideEffects = ['off-canvas-effect-3', 'off-canvas-effect-16', 'off-canvas-effect-7', 'off-canvas-effect-8', 'off-canvas-effect-14'];
+        if (insideEffects.indexOf(effect) === -1) {
+          inner.parentNode.insertBefore(navEl, inner);
         } else {
-            $inner.prepend($nav);
+          inner.insertBefore(navEl, inner.firstChild);
         }
+      }
     });
 
-    $toggles.on('tap', function(e){
-        // detect direction
+    function stopBubble(e) {
+      e.stopPropagation();
+    }
 
-        stopBubble (e);
+    function oc_show() {
+      if (JA_isLoading) return;
+      JA_isLoading = true;
+      wrapper.classList.add('off-canvas-open');
+      inner.addEventListener('click', oc_hide);
+      closeButtons.forEach(function (btn) { btn.addEventListener('click', oc_hide); });
+      if (offcanvas) offcanvas.addEventListener('click', handleClick);
 
-        if ($wrapper.hasClass ('off-canvas-open')) {
-            oc_hide (e);
-            return false;
+      setTimeout(function () { JA_isLoading = false; }, 200);
+    }
+
+    function oc_hide() {
+      if (JA_isLoading) return;
+      JA_isLoading = true;
+
+      // Remove events
+      inner.removeEventListener('click', oc_hide);
+      closeButtons.forEach(function (b) { b.removeEventListener('click', oc_hide); });
+      if (offcanvas) offcanvas.removeEventListener('click', handleClick);
+
+      // Delay for click action
+      setTimeout(function () {
+        wrapper.classList.remove('off-canvas-open');
+      }, 100);
+
+      setTimeout(function () {
+        if (btn) {
+          var effect = btn.dataset.effect;
+          if (effect) wrapper.classList.remove(effect);
+        }
+        wrapper.classList.remove('off-canvas-' + direction);
+        wrapper.scrollTop = 0;
+
+        // Enable scroll
+        html.classList.remove('noscroll');
+        html.style.top = '';
+        var savedTop = parseInt(html.dataset.top || '0', 10);
+        window.scrollTo(0, savedTop);
+
+        if (nav) nav.classList.remove('off-canvas-current');
+
+        // Restore fixed elements
+        if (fixed) {
+          fixed.forEach(function (el) {
+            el.style.position = '';
+            el.style.marginTop = '';
+          });
         }
 
-        $btn = $(this);
-        $nav = $($btn.data('nav'));
-        if (!$fixed) $fixed = $inner.find('*').filter (function() {return $(this).css("position") === 'fixed';});
-        else $fixed = $fixed.filter (function() {return $(this).css("position") === 'fixed';}).add($inner.find('.affix'));
+        JA_isLoading = false;
+      }, 700);
+    }
 
-        $nav.addClass ('off-canvas-current');
+    function handleClick(e) {
+      var link = e.target.closest('a');
+      if (link) {
+        if (!e.target.href) return;
+        // Handle anchor link
+        var arr1 = e.target.href.split('#');
+        var arr2 = location.href.split('#');
+        if (arr1[0] === arr2[0] && arr1.length > 1 && arr1[1].length) {
+          oc_hide();
+          setTimeout(function () {
+            var anchor = document.querySelector('a[name="' + arr1[1] + '"]');
+            if (!anchor) anchor = document.getElementById(arr1[1]);
+            if (anchor) {
+              anchor.scrollIntoView({ behavior: 'smooth' });
+            }
+          }, 1000);
+        }
+        // Prevent only if anchor same page
+        if (e.target.href.search('#') !== -1) return;
+      }
+      stopBubble(e);
+      return true;
+    }
 
-        direction = ($('html').attr('dir') == 'rtl' && $btn.data('pos')!='right') || ($('html').attr('dir') != 'rtl' && $btn.data('pos')=='right')  ? 'right':'left';
+    // Find fixed-position elements inside inner
+    function findFixed() {
+      var all = inner.querySelectorAll('*');
+      var result = [];
+      all.forEach(function (el) {
+        if (getComputedStyle(el).position === 'fixed') {
+          result.push(el);
+        }
+      });
+      // Also include .affix elements
+      inner.querySelectorAll('.affix').forEach(function (el) {
+        if (result.indexOf(el) === -1) result.push(el);
+      });
+      return result;
+    }
 
-        // add direction class to body
-        // $('html').removeClass ('off-canvas-left off-canvas-right').addClass ('off-canvas-' + direction);
+    toggles.forEach(function (toggle) {
+      toggle.addEventListener('click', function (e) {
+        stopBubble(e);
 
-        $offcanvas.height($(window).height());
+        if (wrapper.classList.contains('off-canvas-open')) {
+          oc_hide(e);
+          return false;
+        }
 
-        // disable scroll event
-        var events = $(window).data('events');
-        if (events && events.scroll && events.scroll.length) {
-          // store current handler for scroll
-          var handlers = [];
-          for (var i=0; i<events.scroll.length; i++){
-            handlers[i] = events.scroll[i].handler;
+        btn = toggle;
+        nav = btn.dataset.nav ? document.querySelector(btn.dataset.nav) : null;
+
+        if (!fixed) fixed = findFixed();
+        else {
+          // Refresh: keep only currently fixed + .affix elements
+          fixed = fixed.filter(function (el) {
+            return getComputedStyle(el).position === 'fixed';
+          });
+          inner.querySelectorAll('.affix').forEach(function (el) {
+            if (fixed.indexOf(el) === -1) fixed.push(el);
+          });
+        }
+
+        if (nav) nav.classList.add('off-canvas-current');
+
+        var isRtl = html.getAttribute('dir') === 'rtl';
+        var pos = btn.dataset.pos;
+        direction = (isRtl && pos !== 'right') || (!isRtl && pos === 'right') ? 'right' : 'left';
+
+        if (offcanvas) offcanvas.style.height = window.innerHeight + 'px';
+
+        // Disable scroll on page
+        var scrollTop = html.scrollTop || document.body.scrollTop;
+        html.classList.add('noscroll');
+        html.style.top = -scrollTop + 'px';
+        html.dataset.top = scrollTop;
+        if (offcanvas) offcanvas.style.top = scrollTop + 'px';
+
+        // Make fixed elements become absolute
+        fixed.forEach(function (el) {
+          var parent = el.parentElement;
+          while (parent !== inner && getComputedStyle(parent).position === 'static') {
+            parent = parent.parentElement;
           }
-          $(window).data('scroll-events', handlers);
-          $(window).off ('scroll');
-        }
-        // disable scroll on page
-        var scrollTop = ($('html').scrollTop()) ? $('html').scrollTop() : $('body').scrollTop(); // Works for Chrome, Firefox, IE...
-        $('html').addClass('noscroll').css('top',-scrollTop).data('top', scrollTop);
-        $('.t3-off-canvas').css('top',scrollTop);
-
-        // make the fixed element become absolute
-        $fixed.each (function () {
-            var $this = $(this),
-                $parent = $this.parent(),
-                mtop = 0;
-            // find none static parent
-            while (!$parent.is($inner) && $parent.css("position") === 'static') $parent = $parent.parent();
-            mtop = -$parent.offset().top;
-            $this.css ({'position': 'absolute', 'margin-top': mtop});
+          var mtop = -parent.getBoundingClientRect().top - window.pageYOffset + (parent.getBoundingClientRect().top + window.pageYOffset) * 0;
+          // Calculate offset from parent
+          var parentRect = parent.getBoundingClientRect();
+          mtop = -(parentRect.top + window.pageYOffset);
+          el.style.position = 'absolute';
+          el.style.marginTop = mtop + 'px';
         });
 
-        $wrapper.scrollTop (scrollTop);
-        // update effect class
-        $wrapper[0].className = $.trim($wrapper[0].className.replace (/\s*off\-canvas\-effect\-\d+\s*/g, ' ')) +
-            ' ' + $btn.data('effect') + ' ' + 'off-canvas-' + direction;
+        wrapper.scrollTop = scrollTop;
+
+        // Update effect class - remove old off-canvas-effect-* classes
+        wrapper.className = wrapper.className.replace(/\s*off-canvas-effect-\d+\s*/g, ' ').trim() +
+          ' ' + btn.dataset.effect + ' ' + 'off-canvas-' + direction;
 
         setTimeout(oc_show, 50);
 
         return false;
+      });
     });
-    var oc_show = function () {
-        if (JA_isLoading == true) {
-            return;
-        }
-        JA_isLoading=true;
-        $wrapper.addClass ('off-canvas-open');
-        $inner.on ('click', oc_hide);
-        $close.on ('click', oc_hide);
-        $offcanvas.on ('click', handleClick);
 
-        // fix for old ie
-        if ($.browser.msie && $.browser.version < 10) {
-            var p1 = {}, p2 = {};
-            p1['padding-'+direction] = $('.t3-off-canvas').width();
-            p2[direction] = 0;
-            $inner.animate (p1);
-            $nav.animate (p2);
-        }
-        setTimeout (function (){JA_isLoading=false;}, 200);
-    };
-
-    var oc_hide = function () {
-        if (JA_isLoading == true) {
-            return;
-        }
-        JA_isLoading=true;
-
-        //remove events
-        $inner.off ('click', oc_hide);
-        $close.off ('click', oc_hide);
-        $offcanvas.off ('click', handleClick);
-
-        //delay for click action
-        setTimeout(function(){
-            $wrapper.removeClass ('off-canvas-open');
-        }, 100);
-
-        setTimeout (function (){
-            $wrapper.removeClass ($btn.data('effect')).removeClass ('off-canvas-'+direction);
-            $wrapper.scrollTop (0);
-            // enable scroll
-            $('html').removeClass ('noscroll').css('top', '');
-            $('html,body').scrollTop ($('html').data('top'));
-            $nav.removeClass ('off-canvas-current');
-            // restore fixed elements
-            $fixed.css ({'position': '', 'margin-top': ''});
-            // re-enable scroll
-            if ($(window).data('scroll-events')) {
-              var handlers = $(window).data('scroll-events');
-              for (var i=0; i<handlers.length; i++) {
-                $(window).on ('scroll', handlers[i]);
-              }
-              $(window).data('scroll-events', null);
-            }
-            JA_isLoading=false;
-        }, 700);
-
-        // fix for old ie
-        if ($('html').hasClass ('old-ie')) {
-            var p1 = {}, p2 = {};
-            p1['padding-'+direction] = 0;
-            p2[direction] = -$('.t3-off-canvas').width();
-            $inner.animate (p1);
-            $nav.animate (p2);
-        }
-
-    };
-
-    var handleClick = function (e) {        
-        if ($(e.target).closest('a').length) {
-            if (!e.target.href) return;
-            // handle the anchor link
-            var arr1 = e.target.href.split('#'),
-                arr2 = location.href.split('#');
-            if (arr1[0] == arr2[0] && arr1.length > 1 && arr1[1].length) {
-                oc_hide();
-                setTimeout(function(){
-                    var anchor = $("a[name='"+ arr1[1] +"']");
-                    if (!anchor.length) anchor = $('#' + arr1[1]);
-                    if (anchor.length) 
-                        $('html,body').animate({scrollTop: anchor.offset().top},'slow');
-                }, 1000);
-            }
-            // prevent only if anchor same page.
-            if (e.target.href.search('#') !== -1) return;
-        }
-        stopBubble(e);
-        return true;
-    }
-
-    var stopBubble = function (e) {
-        e.stopPropagation();
-    }
-
-    // preload fixed items
-    $(window).load(function() {
-      setTimeout(function(){
-        $fixed = $inner.find('*').filter (function() {return $(this).css("position") === 'fixed';});
+    // Preload fixed items
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        fixed = findFixed();
       }, 100);
     });
-})
+  });
+})();
