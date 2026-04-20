@@ -33,7 +33,7 @@ description: Twin Peaks Bike Park is free to the general public, but businesses 
     cursor: pointer;
   }
 </style>
-<div class="pull-left item-image">
+<div class="float-start item-image">
   <img src="/assets/images/twinpeaks/guides.jpg" alt="" itemprop="image">
   <span class="credit"><a href="https://instagram.com/jingypsy" target="_blank"> 📸 Jinya Nishiwaki</a></span>
 </div>
@@ -67,10 +67,10 @@ description: Twin Peaks Bike Park is free to the general public, but businesses 
           {% if guide.url %}
           <a href="{{ guide.url }}"
             target="_blank">
-            <img class="img-responsive" src="{{ guide.image }}?d={{ site.time | date: " %s" }}">
+            <img class="img-fluid" src="{{ guide.image }}?d={{ site.time | date: " %s" }}">
           </a>
           {% else %}
-          <img class="img-responsive" src="{{ guide.image }}?d={{ site.time | date: " %s" }}">
+          <img class="img-fluid" src="{{ guide.image }}?d={{ site.time | date: " %s" }}">
           {% endif %}
         </li>
       {% endfor %}

@@ -5,7 +5,7 @@ description: How to get to Twin Peaks Bike Park in Niseko — directions, parkin
 subtitle: Access & Parking
 ---
 
-<div class="pull-left item-image">
+<div class="float-start item-image">
   <div style="width:100%; height:600px;" id="map"></div>
 </div>
 
@@ -86,29 +86,30 @@ subtitle: Access & Parking
 
     // Create the markers.
     pois.forEach(({ position, title, icon, img, scale, background, link }, i) => {
-      let glyph;
+      let content;
 
       if (icon) {
-        glyph = document.createElement("div");
-        glyph.innerHTML = `<i class="fa ${icon} fa-lg"></i>`;
-      } else if (img) {
-        glyph = document.createElement("img");
-        glyph.src = img;
+        // Custom HTML marker for FA icons (avoids deprecated glyph property)
+        const el = document.createElement("div");
+        el.innerHTML = `<i class="fa ${icon}" style="color:#fff; font-size:14px;"></i>`;
+        el.style.cssText = `display:flex; align-items:center; justify-content:center; width:${scale ? 40 * scale : 40}px; height:${scale ? 40 * scale : 40}px; background:${background}; border:2px solid #fff; border-radius:50%; cursor:pointer;`;
+        content = el;
+      } else {
+        const pin = new PinElement({
+          glyphColor: "#fff",
+          background,
+          borderColor: "#fff",
+          scale,
+        });
+        if (img) pin.glyphSrc = img;
+        content = pin;
       }
-
-      const pin = new PinElement({
-        glyph,
-        glyphColor: "#fff",
-        background,
-        borderColor: "#fff",
-        scale,
-      });
 
       const marker = new AdvancedMarkerElement({
         position,
         map,
         title,
-        content: pin.element,
+        content,
       });
 
       map.markers.push(marker);
@@ -122,7 +123,7 @@ subtitle: Access & Parking
       }
 
       // Add a click listener for each marker, and set up the info window.
-      marker.addListener("click", clickMarker);
+      marker.addEventListener("gmp-click", clickMarker);
 
       if (link) {
         // If there is a link on the page, add the click event to that too.
@@ -179,7 +180,7 @@ subtitle: Access & Parking
     <p>⚠️ Instead, <strong>bikers must use the gravel access path located adjacent to the sando</strong>.</p>
     <h4>Enjoy the Twin Peaks Bike Park:</h4>
     <p>Please adhere to all park rules and regulations for your safety and the safety of others.</p>
-    <div class="pull-left item-image" style="margin-top:24px;"><img src="/assets/images/twinpeaks/access.jpg" alt="" itemprop="image"></div>
+    <div class="float-start item-image" style="margin-top:24px;"><img src="/assets/images/twinpeaks/access.jpg" alt="" itemprop="image"></div>
     <p>Thank you for your cooperation in respecting the cultural and religious significance of the Yamada Jinja Shrine area. Enjoy your ride at Twin Peaks Bike Park!</p>
   </section>
 </div>

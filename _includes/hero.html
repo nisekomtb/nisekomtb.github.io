@@ -81,16 +81,16 @@
     </div>
 
     <script>
-      (function($) {
-        $posNext = $('#next-section').offset().top + 72;
-
-        $('#next-section').on('click', function() {
-          $("html, body").animate({
-            scrollTop: $posNext
-          }, 900);
-          return false;
-        });
-      })(jQuery);
+      (function () {
+        var nextSection = document.getElementById('next-section');
+        if (nextSection) {
+          nextSection.addEventListener('click', function () {
+            var posNext = nextSection.getBoundingClientRect().top + window.pageYOffset + 72;
+            window.scrollTo({ top: posNext, behavior: 'smooth' });
+            return false;
+          });
+        }
+      })();
     </script>
   <!-- BACK TO TOP BUTTON -->
   </div>

@@ -8,6 +8,13 @@ masthead:
     url: https://www.liamlarnach.com
     name: Liam Larnach
 ---
+<style>
+  @media (max-width: 991px) {
+    .items-row .item {
+      min-height: auto !important;
+    }
+  }
+</style>
 <div
   class="blog style-1 project-view t3-section-wrap"
   itemscope=""
@@ -41,7 +48,7 @@ masthead:
       {% endif %}
 
 
-      <div class="col-md-3 col">
+      <div class="col-12 col-md-6 col-lg-3">
         <div
           class="item column-{{ indexModulo4 }} ja-animate"
           itemprop="blogPost"
@@ -49,13 +56,13 @@ masthead:
           data-delay="item-{{ forloop.index0 }}"
           itemscope=""
           itemtype="https://schema.org/BlogPosting"
-          style="min-height: 529px;">
+          >
 
 
           <!-- Article -->
           <article class="view-project {% if forloop.index0 >= firstPastEventIndex or event.cancelled %}disabled{% endif %}">
             <div class="image-wrap" style="margin-top:10px;">
-              <div class="pull-left item-image">
+              <div class="float-start item-image">
                 <a
                   href="{{ event.override_url | default: event.url }}"
                   {% if event.override_url %}
@@ -149,21 +156,19 @@ masthead:
 </div>
 
 <script type="text/javascript">
-  (function ($) {
-    // Add ended ribbon
-    $('div[name="ended"]').each(function () {
-      var endDate = new Date($(this).data("end-date"));
-      var now = new Date();
+  (function () {
+    var now = new Date();
+    document.querySelectorAll('div[name="ended"]').forEach(function (el) {
+      var endDate = new Date(el.dataset.endDate);
       if (endDate.getTime() < now.getTime()) {
-        $(this).show();
+        el.style.display = '';
       }
     });
-    $('div[name="cancelled"]').each(function () {
-      var endDate = new Date($(this).data("end-date"));
-      var now = new Date();
+    document.querySelectorAll('div[name="cancelled"]').forEach(function (el) {
+      var endDate = new Date(el.dataset.endDate);
       if (endDate.getTime() < now.getTime()) {
-        $(this).hide();
+        el.style.display = 'none';
       }
     });
-  })(jQuery);
+  })();
 </script>

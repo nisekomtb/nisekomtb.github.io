@@ -33,7 +33,7 @@ description: ツイン ピークス バイク パークは一般の人々は無�
     cursor: pointer;
   }
 </style>
-<div class="pull-left item-image">
+<div class="float-start item-image">
   <img
     src="/assets/images/twinpeaks/guides.jpg"
     alt=""
@@ -63,10 +63,10 @@ description: ツイン ピークス バイク パークは一般の人々は無�
         <li>
           {% if guide.url %}
             <a href="{% if guide.ja.url %}{{ guide.ja.url }}{% else %}{{ guide.url }}{% endif %}" target="_blank">
-              <img class="img-responsive" src="{{ guide.image }}?d={{ site.time | date: " %s" }}">
+              <img class="img-fluid" src="{{ guide.image }}?d={{ site.time | date: " %s" }}">
             </a>
           {% else %}
-            <img class="img-responsive" src="{{ guide.image }}?d={{ site.time | date: " %s" }}">
+            <img class="img-fluid" src="{{ guide.image }}?d={{ site.time | date: " %s" }}">
           {% endif %}
         </li>
       {% endfor %}

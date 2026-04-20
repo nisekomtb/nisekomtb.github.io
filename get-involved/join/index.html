@@ -164,14 +164,14 @@ description: Become a member of NAMBA, Niseko's premier mountain bike associatio
           data-delay="200">Become an annual member</h3>
       </div>
       <div class="row equal-height equal-height-child benefits">
-        <div class="col col-sm-12 col-md-3 col-md-3">
+        <div class="col col-12 col-md-6 col-lg-3">
           <div
             class="features-item ja-animate"
             data-animation="move-from-bottom"
             data-delay="item-0"
-            style="min-height: 696px;">
+            style="">
             <div class="font-icon">
-              <span class="icon ion-ios-beer"></span>
+              <span class="fa-solid fa-person-biking"></span>
             </div>
             <h4>Adult</h4>
             <p>
@@ -187,18 +187,18 @@ description: Become a member of NAMBA, Niseko's premier mountain bike associatio
             <p style="margin-top:10px;">Ages: 19+</p>
             <a class="action" href="#!/p/439543752">
               Join now
-              <span class="icon ion-ios-arrow-round-forward"></span>
+              <span class="fa-solid fa-circle-arrow-right"></span>
             </a>
           </div>
         </div>
-        <div class="col col-sm-12 col-md-3">
+        <div class="col col-12 col-md-6 col-lg-3">
           <div
             class="features-item ja-animate"
             data-animation="move-from-bottom"
             data-delay="item-1"
-            style="min-height: 696px;">
+            style="">
             <div class="font-icon">
-              <span class="icon ion-ios-pizza"></span>
+              <span class="fa-solid fa-person"></span>
             </div>
             <h4>Youth</h4>
             <p>
@@ -214,18 +214,18 @@ description: Become a member of NAMBA, Niseko's premier mountain bike associatio
             <p style="margin-top:10px;">Ages: 18 - 13</p>
             <a class="action" href="#!/p/439535154">
               Join now
-              <span class="icon ion-ios-arrow-round-forward"></span>
+              <span class="fa-solid fa-circle-arrow-right"></span>
             </a>
           </div>
         </div>
-        <div class="col col-sm-12 col-md-3">
+        <div class="col col-12 col-md-6 col-lg-3">
           <div
             class="features-item ja-animate"
             data-animation="move-from-bottom"
             data-delay="item-2"
-            style="min-height: 696px;">
+            style="">
             <div class="font-icon">
-              <span class="icon ion-ios-ice-cream"></span>
+              <span class="fa-solid fa-child-reaching"></span>
             </div>
             <h4>Child</h4>
             <p>
@@ -242,18 +242,18 @@ description: Become a member of NAMBA, Niseko's premier mountain bike associatio
 
             <a class="action" href="#!/p/439535632">
               Join now
-              <span class="icon ion-ios-arrow-round-forward"></span>
+              <span class="fa-solid fa-circle-arrow-right"></span>
             </a>
           </div>
         </div>
-        <div class="col col-sm-12 col-md-3">
+        <div class="col col-12 col-md-6 col-lg-3">
           <div
             class="features-item ja-animate"
             data-animation="move-from-bottom"
             data-delay="item-3"
-            style="min-height: 696px;">
+            style="">
             <div class="font-icon">
-              <span class="icon ion-ios-restaurant"></span>
+              <span class="fa-solid fa-people-group"></span>
             </div>
             <h4>Family</h4>
             <p>
@@ -270,7 +270,7 @@ description: Become a member of NAMBA, Niseko's premier mountain bike associatio
 
             <a class="action" href="#!/p/439535633">
               Join now
-              <span class="icon ion-ios-arrow-round-forward"></span>
+              <span class="fa-solid fa-circle-arrow-right"></span>
             </a>
           </div>
         </div>
@@ -301,18 +301,16 @@ description: Become a member of NAMBA, Niseko's premier mountain bike associatio
         return false;
       }
 
-      Ecwid.OnPageSwitch.add(function(page) {
-        if (page.type === "CATEGORY") {
-          scrollTo('#Section99');
-          const cart = document.querySelector('.ec-cart--empty');
-          if (cart)
-            cart.style["display"] = "none";
-
-
-
-
-          return false;
-        }
+      Ecwid.OnAPILoaded.add(function() {
+        Ecwid.OnPageSwitch.add(function(page) {
+          if (page.type === "CATEGORY") {
+            scrollTo('#Section99');
+            const cart = document.querySelector('.ec-cart--empty');
+            if (cart)
+              cart.style["display"] = "none";
+            return false;
+          }
+        });
       });
 
       xProductBrowser("defaultCategoryId=127408307");

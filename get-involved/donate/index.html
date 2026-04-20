@@ -67,14 +67,14 @@ description: Support NAMBA, help fund building of Hokkaido mountain biking trail
 
   <div class="t3-section acm-features style-2">
     <div class="row equal-height equal-height-child benefits">
-      <div class="col col-sm-12 col-md-3 col-md-3">
+      <div class="col col-12 col-md-6 col-lg-3">
         <div
           class="features-item ja-animate"
           data-animation="move-from-bottom"
           data-delay="item-0"
-          style="min-height: 696px;">
+          style="">
           <div class="font-icon">
-            <span class="icon ion-logo-yen"></span>
+            <span class="fa-solid fa-yen-sign"></span>
           </div>
           <h4></h4>
           <p>
@@ -89,18 +89,18 @@ description: Support NAMBA, help fund building of Hokkaido mountain biking trail
           </p>
           <a class="action" href="javascript:ad(10000);">
             Donate now
-            <span class="icon ion-ios-arrow-round-forward"></span>
+            <span class="fa-solid fa-circle-arrow-right"></span>
           </a>
         </div>
       </div>
-      <div class="col col-sm-12 col-md-3">
+      <div class="col col-12 col-md-6 col-lg-3">
         <div
           class="features-item ja-animate"
           data-animation="move-from-bottom"
           data-delay="item-1"
-          style="min-height: 696px;">
+          style="">
           <div class="font-icon">
-            <span class="icon ion-logo-yen"></span>
+            <span class="fa-solid fa-yen-sign"></span>
           </div>
           <h4></h4>
           <p>
@@ -115,18 +115,18 @@ description: Support NAMBA, help fund building of Hokkaido mountain biking trail
           </p>
           <a class="action" href="javascript:ad(50000);">
             Donate now
-            <span class="icon ion-ios-arrow-round-forward"></span>
+            <span class="fa-solid fa-circle-arrow-right"></span>
           </a>
         </div>
       </div>
-      <div class="col col-sm-12 col-md-3">
+      <div class="col col-12 col-md-6 col-lg-3">
         <div
           class="features-item ja-animate"
           data-animation="move-from-bottom"
           data-delay="item-2"
-          style="min-height: 696px;">
+          style="">
           <div class="font-icon">
-            <span class="icon ion-logo-yen"></span>
+            <span class="fa-solid fa-yen-sign"></span>
           </div>
           <h4></h4>
           <p>
@@ -141,18 +141,18 @@ description: Support NAMBA, help fund building of Hokkaido mountain biking trail
           </p>
           <a class="action" href="javascript:ad(100000);">
             Donate now
-            <span class="icon ion-ios-arrow-round-forward"></span>
+            <span class="fa-solid fa-circle-arrow-right"></span>
           </a>
         </div>
       </div>
-      <div class="col col-sm-12 col-md-3">
+      <div class="col col-12 col-md-6 col-lg-3">
         <div
           class="features-item ja-animate"
           data-animation="move-from-bottom"
           data-delay="item-3"
-          style="min-height: 696px;">
+          style="">
           <div class="font-icon">
-            <span class="icon ion-logo-yen"></span>
+            <span class="fa-solid fa-yen-sign"></span>
           </div>
           <h4></h4>
           <p><input
@@ -197,7 +197,7 @@ description: Support NAMBA, help fund building of Hokkaido mountain biking trail
           </script>
           <a class="action" href="javascript:acd();">
             Donate now
-            <span class="icon ion-ios-arrow-round-forward"></span>
+            <span class="fa-solid fa-circle-arrow-right"></span>
           </a>
         </div>
       </div>
@@ -235,21 +235,19 @@ description: Support NAMBA, help fund building of Hokkaido mountain biking trail
           return false;
         }
 
-        Ecwid.OnPageSwitch.add(function(page) {
-          if (page.type === "CATEGORY") {
-            scrollTo('#Section151');
-            const cart = document.querySelector('.ec-cart--empty');
-            if (cart)
-              cart.style["display"] = "none";
+        Ecwid.OnAPILoaded.add(function() {
+          Ecwid.OnPageSwitch.add(function(page) {
+            if (page.type === "CATEGORY") {
+              scrollTo('#Section151');
+              const cart = document.querySelector('.ec-cart--empty');
+              if (cart)
+                cart.style["display"] = "none";
+              return false;
+            }
+          });
 
-
-
-
-            return false;
-          }
+          Ecwid.refreshConfig();
         });
-
-        Ecwid.refreshConfig();
       </script>
       <style>
         .product-details__navigation {

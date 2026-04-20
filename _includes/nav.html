@@ -21,7 +21,7 @@
 <!-- // LOGO -->
 
 <!-- MAIN NAVIGATION -->
-<nav id="t3-mainnav" class="wrap navbar navbar-default t3-mainnav">
+<nav id="t3-mainnav" class="wrap navbar navbar-expand-lg navbar-default t3-mainnav">
   <div class="t3-navbar navbar-collapse collapse">
     <div
       class="t3-megamenu animate elastic"
@@ -58,23 +58,22 @@
             class="{% if navSelected %}current active {% endif %}{% if nav.sub %}dropdown {% endif %}mega{% if nav.isAction %} action{% endif %}"
             data-id="{{ navId }}0"
             data-level="1">
-            {% comment %} <a itemprop='url' class="dropdown-toggle" href="{{ langPrefix }}projects" data-target="#" data-toggle="dropdown">Projects <em class="caret"></em></a>{% endcomment %}
+            {% comment %} <a itemprop='url' class="dropdown-toggle" href="{{ langPrefix }}projects" data-bs-target="#" data-bs-toggle="dropdown">Projects <em class="caret"></em></a>{% endcomment %}
             {% if nav.sub %}
               <span
                 class=" dropdown-toggle separator"
-                data-target="#"
-                data-toggle="dropdown">
+                data-bs-target="#"
+                data-bs-toggle="dropdown">
                 {% if page.lang == 'en' %}
                   {{- nav.en -}}
                 {% else %}
                   {{- nav.ja -}}{% endif %}
-                <em class="caret"></em>
               </span>
 
               <div class="nav-child dropdown-menu mega-dropdown-menu">
                 <div class="mega-dropdown-inner">
                   <div class="row">
-                    <div class="col-xs-12 mega-col-nav" data-width="12">
+                    <div class="col-12 mega-col-nav" data-width="12">
                       <div class="mega-inner">
                         <ul
                           itemscope="itemscope"
@@ -96,7 +95,7 @@
                                 {% else %}
                                 href="{{ langPrefix | append: nav.path | append: '/' | append: subNav.path | append: '/' | replace: "//", "/" }}"
                                 {% endif %}
-                                data-target="#">
+                                data-bs-target="#">
                                 {% if page.lang == 'en' %}
                                   {{- subNav.en -}}
                                 {% else %}
@@ -120,7 +119,7 @@
                 {% else %}
                 href="{{ langPrefix | append: nav.path | append: '/' }}"
                 {% endif %}
-                data-target="#">
+                data-bs-target="#">
                 {% if page.lang == 'en' %}
                   {{- nav.en -}}
                 {% else %}
@@ -190,7 +189,7 @@
   <div class="navbar-header">
 
     <button
-      class="btn btn-primary off-canvas-toggle  hidden-lg hidden-md"
+      class="btn btn-primary off-canvas-toggle  d-lg-none"
       type="button"
       data-pos="right"
       data-nav="#t3-off-canvas"
@@ -201,14 +200,14 @@
     </button>
 
     <!-- OFF-CANVAS SIDEBAR -->
-    <div id="t3-off-canvas" class="t3-off-canvas  hidden-lg hidden-md">
+    <div id="t3-off-canvas" class="t3-off-canvas  d-lg-none">
 
       <div class="t3-off-canvas-header">
         <h2 class="t3-off-canvas-header-title"></h2>
         <button
           type="button"
           class="close"
-          data-dismiss="modal"
+          data-bs-dismiss="modal"
           aria-hidden="true">&times;</button>
       </div>
 
@@ -216,7 +215,7 @@
         <div class="t3-module module " id="Mod109">
           <div class="module-inner">
             <div class="module-ct">
-              <ul class="nav nav-pills nav-stacked menu">
+              <ul class="nav nav-pills flex-column menu">
                 {% for nav in site.data.nav %}
                   {% assign navId = forloop.index %}
                   {% assign navSelected = false %}

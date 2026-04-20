@@ -1,0 +1,963 @@
+/**
+ * Bootstrap 3 → 5 compatibility shim
+ *
+ * Restores Bootstrap 3 default values and class aliases that template.css
+ * depends on. Loaded after bootstrap.min.css and before template.css.
+ *
+ * This avoids rewriting the 8000-line template.css while keeping
+ * Bootstrap 5 functionality.
+ */
+
+/* ==========================================================================
+   1. BODY & TYPOGRAPHY DEFAULTS
+   Bootstrap 3: font-size 14px, color #333, font-family Helvetica stack
+   Bootstrap 5: font-size 16px (1rem), color #212529, system-ui stack
+   ========================================================================== */
+
+body {
+  font-family: "Metropolis", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.72;
+  color: #9e9e9e;
+  background-color: #000000;
+  --bs-body-bg: #000000;
+  --bs-body-bg-rgb: 0, 0, 0;
+  --bs-body-color: #9e9e9e;
+  --bs-body-color-rgb: 158, 158, 158;
+}
+
+/* ==========================================================================
+   2. NAVBAR CLASS ALIASES
+   BS3 .navbar-default → BS5 equivalent
+   template.css uses .navbar-default extensively for nav styling
+   ========================================================================== */
+
+/* Make .navbar-default an alias — template.css targets this class */
+.navbar-default {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+/* BS5 adds 0.5rem vertical padding to .navbar — BS3 had none */
+.navbar {
+  --bs-navbar-padding-y: 0;
+  --bs-navbar-padding-x: 0;
+  padding: 0;
+}
+
+/* BS5 .navbar-nav uses display:flex which breaks template.css's
+   text-align:center + inline-block centering approach. Revert to
+   block display so the existing styles work. */
+.navbar-default .navbar-nav {
+  display: block;
+}
+
+/* BS5 .dropdown-toggle::after adds a CSS caret — keep it but style
+   it to match the site's aesthetic */
+.navbar-default .navbar-nav .dropdown-toggle::after {
+  border-top-color: rgba(255, 255, 255, 0.8);
+  vertical-align: middle;
+  margin-left: 4px;
+}
+
+.navbar-default .navbar-nav .dropdown-toggle:hover::after {
+  border-top-color: #ffffff;
+}
+
+/* BS5 .navbar-collapse uses flex layout — override for the custom
+   megamenu system that expects block layout */
+.navbar-expand-lg .navbar-collapse {
+  display: block !important;
+}
+
+/* BS5 removes .navbar-collapse.collapse display at desktop.
+   The site handles visibility via its own CSS. */
+@media (max-width: 991px) {
+  .navbar-expand-lg .navbar-collapse {
+    display: none !important;
+  }
+}
+
+/* ==========================================================================
+   3. CONTAINER WIDTHS & PADDING
+   Prod's customised BS3 used fixed widths (756/976/1296px) with 18px
+   gutters, then template.css overrode with max-width:100% making
+   containers nearly fluid. BS5 uses smaller fixed max-widths (540/720/
+   960/1140/1320px) with 12px gutters. Match prod's fluid behavior.
+   ========================================================================== */
+
+.container {
+  max-width: 100%;
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 756px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 976px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1296px;
+  }
+}
+
+/* ==========================================================================
+   4. LINK DEFAULTS
+   BS3: color #428bca, no underline on hover
+   BS5: color #0d6efd, text-decoration: underline on hover
+   ========================================================================== */
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: #fd7d57;
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   5. TABLE DEFAULTS
+   BS5 adds border-color and changes table styling defaults
+   ========================================================================== */
+
+table {
+  border-collapse: collapse;
+}
+
+/* BS5 .table adds borders and background that conflict with dark theme */
+.table {
+  --bs-table-bg: transparent;
+  --bs-table-color: inherit;
+  --bs-table-border-color: #191919;
+}
+
+/* ==========================================================================
+   6. FORM DEFAULTS
+   BS5 changes form-control sizing and focus styles
+   ========================================================================== */
+
+.form-control,
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="url"],
+textarea,
+select {
+  background-color: #252525;
+  border: 1px solid #191919;
+  color: #9e9e9e;
+  color-scheme: dark;
+  padding: 15px;
+}
+
+.form-control:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+textarea:focus,
+select:focus {
+  background-color: #252525;
+  border-color: #fd7d57;
+  color: #9e9e9e;
+  box-shadow: none;
+}
+
+/* ==========================================================================
+   7. BUTTON FIXES
+   BS5 removed .btn-default, changed button padding/sizing
+   ========================================================================== */
+
+.btn-default {
+  color: #ffffff;
+  background-color: #252525;
+  border-color: #191919;
+}
+
+.btn-default:hover,
+.btn-default:focus {
+  color: #ffffff;
+  background-color: #191919;
+  border-color: #0e0e0e;
+}
+
+/* BS5 .btn uses CSS variables for bg/hover/active colours. Override
+   them so the BS5 transition doesn't flash blue before template.css
+   hover rules apply. */
+.btn-primary {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #fd7d57;
+  --bs-btn-border-color: transparent;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #fd7d57;
+  --bs-btn-hover-border-color: transparent;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #fd7d57;
+  --bs-btn-active-border-color: transparent;
+  --bs-btn-focus-shadow-rgb: 253, 125, 87;
+  background-color: #fd7d57;
+  transition: none;
+}
+
+.btn-success {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #5cb85c;
+  --bs-btn-border-color: #5cb85c;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #449d44;
+  --bs-btn-hover-border-color: #419641;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #398439;
+  --bs-btn-active-border-color: #357935;
+  --bs-btn-focus-shadow-rgb: 92, 184, 92;
+}
+
+/* ==========================================================================
+   8. DROPDOWN FIXES
+   BS5 changed dropdown styling defaults (white bg, shadows)
+   ========================================================================== */
+
+.dropdown-menu {
+  background-color: #0e0e0e;
+  border: 1px solid #0e0e0e;
+  border-radius: 1px;
+  color: #9e9e9e;
+  font-size: 14px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  --bs-dropdown-bg: #0e0e0e;
+  --bs-dropdown-border-color: #0e0e0e;
+  --bs-dropdown-border-radius: 1px;
+  --bs-dropdown-font-size: 14px;
+  --bs-dropdown-link-color: #9e9e9e;
+  --bs-dropdown-link-hover-color: #fd7d57;
+  --bs-dropdown-link-hover-bg: transparent;
+}
+
+.dropdown-menu > li > a,
+.dropdown-menu .dropdown-item {
+  color: #9e9e9e;
+  padding: 3px 20px;
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item:focus {
+  color: #fd7d57;
+  background-color: transparent;
+}
+
+/* ==========================================================================
+   9. NAV PILLS FIXES
+   BS5 changed nav-pills styling (adds background-color on active)
+   ========================================================================== */
+
+/* BS3 nav-pills: li>a with padding, border-radius 1px, active on <li>.
+   BS5 nav-pills: .nav-link with different padding, active on <a>. */
+.nav-pills > li > a,
+.nav-pills .nav-link {
+  color: #ffffff;
+  background-color: transparent;
+  border-radius: 1px;
+  padding: 10px 15px;
+  display: block;
+}
+
+.nav-pills > li > a:hover,
+.nav-pills .nav-link:hover {
+  color: #fd7d57;
+  background-color: transparent;
+}
+
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus,
+.nav-pills .nav-link.active {
+  color: #ffffff;
+  background-color: #0e0e0e;
+}
+
+/* BS3 nav-stacked (now flex-column): remove left margins, add top margins */
+.nav-pills.flex-column > li + li {
+  margin-top: 2px;
+  margin-left: 0;
+}
+
+/* Disabled nav-pills item */
+.nav-pills > li.disabled > a,
+.nav-pills .nav-link.disabled {
+  color: #888888;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Vertical menu dropdown on hover */
+.nav-pills .dropdown:hover > .dropdown-menu {
+  display: block;
+}
+
+.nav-pills .dropdown > .dropdown-menu {
+  font-size: 14px;
+}
+
+/* Muted text */
+.text-muted {
+  color: #888 !important;
+}
+
+/* ==========================================================================
+   10. CAROUSEL CONTROL FIXES
+   BS5 changed carousel control positioning and styling
+   ========================================================================== */
+
+
+/* Prod had a customised Bootstrap 3 with carousel-caption using
+   top:50%/left:50%/transform:translate(-50%,-50%) for true centering.
+   Replicate that here instead of BS5's default bottom:1.25rem. */
+.carousel-caption {
+  top: 50%;
+  bottom: auto;
+  left: 50%;
+  right: auto;
+  transform: translate(-50%, -50%);
+  padding-left: 50px;
+  padding-right: 50px;
+  width: 100%;
+  color: #fff;
+  z-index: 10;
+}
+
+/* Neutralise .container behavior on the caption so BS5's container
+   max-width/padding don't interfere with the absolute centering. */
+.carousel-caption.container {
+  max-width: none;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+/* BS3 .carousel-control: width 10%, opacity 0.5, dark gradient bg,
+   opacity 0.9 on hover. BS5 defaults are different. */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 10%;
+  opacity: 0.5;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-prev:focus,
+.carousel-control-next:hover,
+.carousel-control-next:focus {
+  opacity: 0.9;
+}
+
+.carousel-control-prev {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.carousel-control-next {
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.carousel-control-prev .fa-solid,
+.carousel-control-next .fa-solid {
+  font-size: 30px;
+}
+
+/* ==========================================================================
+   11. LIST-GROUP FIXES
+   BS5 list-group has different backgrounds and borders
+   ========================================================================== */
+
+/* BS5 .list-group is display:flex with padding/border on items.
+   The event/job/competition layouts use .list-group as a plain
+   wrapper div (not with .list-group-item children). Reset to
+   block layout matching BS3's simple margin-bottom approach. */
+.project-info .list-group {
+  display: block;
+  padding-left: 0;
+  margin-bottom: 24px;
+  border-radius: 0;
+}
+
+.project-info .list-group-item-heading {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.project-info .list-group-item-text {
+  margin-bottom: 0;
+}
+
+.list-group-item {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-color: #191919;
+  color: #9e9e9e;
+}
+
+/* Alert danger — BS5 uses different shade than BS3 */
+.alert-danger {
+  color: #b94a48;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+
+/* ==========================================================================
+   12. CARD / PANEL COMPAT
+   BS5 .card has white background by default — override for dark theme
+   ========================================================================== */
+
+.card {
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  color: #9e9e9e;
+  --bs-card-bg: transparent;
+  --bs-card-border-color: transparent;
+  --bs-card-border-radius: 0;
+}
+
+/* ==========================================================================
+   13. IMAGE AND FIGURE FIXES
+   BS5 changed img defaults and added figure styling
+   ========================================================================== */
+
+/* Prevent BS5 from adding bottom margin to figures */
+figure {
+  margin: 0;
+}
+
+/* ==========================================================================
+   14. CLOSE BUTTON COMPAT
+   BS5 renamed .close to .btn-close with different styling
+   ========================================================================== */
+
+.close {
+  float: right;
+  font-size: 21px;
+  font-weight: bold;
+  line-height: 1;
+  color: #ffffff;
+  text-shadow: none;
+  opacity: 0.5;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #ffffff;
+  opacity: 1;
+}
+
+/* ==========================================================================
+   15. MODAL COMPAT
+   BS5 uses .show instead of .in for visibility
+   ========================================================================== */
+
+.modal.fade.in {
+  opacity: 1;
+}
+
+.modal-backdrop.in {
+  opacity: 0.5;
+}
+
+/* ==========================================================================
+   16. SPONSOR / PARTNER IMAGE SECTIONS
+   Ensure no white backgrounds leak through on dark theme
+   ========================================================================== */
+
+.acm-cliens {
+  background-color: transparent;
+}
+
+.acm-cliens .client-item {
+  background-color: transparent;
+}
+
+.acm-cliens .client-img {
+  background-color: transparent;
+}
+
+.acm-cliens .client-img a {
+  background-color: transparent;
+}
+
+/* ==========================================================================
+   17. HR FIXES
+   BS5 changed hr to use border-top with opacity
+   ========================================================================== */
+
+hr {
+  border-top: 1px solid #191919;
+  opacity: 1;
+}
+
+/* ==========================================================================
+   18. ACCORDION COMPAT
+   BS5 completely changed accordion markup
+   ========================================================================== */
+
+.accordion-toggle {
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   19. BADGE COMPAT
+   BS5 changed badge from .badge.badge-* to .badge.bg-*
+   ========================================================================== */
+
+.badge {
+  font-size: 75%;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   20. BREADCRUMB COMPAT
+   ========================================================================== */
+
+.breadcrumb {
+  background-color: transparent;
+  padding: 8px 15px;
+  --bs-breadcrumb-bg: transparent;
+}
+
+/* ==========================================================================
+   21. OFF-CANVAS DROPDOWN OVERRIDES
+   BS5 dropdown styles bleed into the off-canvas nav. Reset them so
+   the off-canvas.css rules work as intended.
+   ========================================================================== */
+
+#t3-off-canvas .dropdown-menu {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  --bs-dropdown-bg: transparent;
+  --bs-dropdown-border-color: transparent;
+  --bs-dropdown-padding-y: 0;
+  font-size: 14px;
+}
+
+/* ==========================================================================
+   22. BUTTON BASE
+   BS3: padding 15px 15px, font-size 14px, border-radius 1px
+   BS5: padding 6px 12px, font-size 16px, border-radius 0.375rem
+   ========================================================================== */
+
+.btn {
+  padding: 15px 15px;
+  font-size: 14px;
+  line-height: 1.72;
+  border-radius: 1px;
+  transition: none;
+}
+
+.btn-sm {
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 1px;
+}
+
+.btn-lg {
+  padding: 18px 27px;
+  font-size: 18px;
+  line-height: 1.72;
+  border-radius: 3px;
+}
+
+.btn-warning {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #f0ad4e;
+  --bs-btn-border-color: #f0ad4e;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #ec971f;
+  --bs-btn-hover-border-color: #eb9316;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #d58512;
+  --bs-btn-active-border-color: #c77c11;
+}
+
+.btn-danger {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #d9534f;
+  --bs-btn-border-color: #d9534f;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #c9302c;
+  --bs-btn-hover-border-color: #c12e2a;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #ac2925;
+  --bs-btn-active-border-color: #a02622;
+}
+
+.btn-info {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #5bc0de;
+  --bs-btn-border-color: #5bc0de;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #31b0d5;
+  --bs-btn-hover-border-color: #2aabd2;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #269abc;
+  --bs-btn-active-border-color: #2494b2;
+}
+
+/* ==========================================================================
+   23. PANELS (BS3 component, removed in BS5)
+   ========================================================================== */
+
+.panel {
+  margin-bottom: 24px;
+  background-color: #0e0e0e;
+  border: 1px solid transparent;
+  border-radius: 1px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.panel-heading {
+  padding: 10px 15px;
+  border-bottom: 1px solid transparent;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.panel-body {
+  padding: 15px;
+}
+
+.panel-default {
+  border-color: #ddd;
+}
+
+.panel-default > .panel-heading {
+  color: #0e0e0e;
+  background-color: #f5f5f5;
+  border-color: #ddd;
+}
+
+.panel-primary {
+  border-color: #fd7d57;
+}
+
+.panel-primary > .panel-heading {
+  color: #fff;
+  background-color: #fd7d57;
+  border-color: #fd7d57;
+}
+
+.panel-success {
+  border-color: #d6e9c6;
+}
+
+.panel-success > .panel-heading {
+  color: #468847;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+
+.panel-info {
+  border-color: #bce8f1;
+}
+
+.panel-info > .panel-heading {
+  color: #3a87ad;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+
+.panel-warning {
+  border-color: #faebcc;
+}
+
+.panel-warning > .panel-heading {
+  color: #c09853;
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+}
+
+.panel-danger {
+  border-color: #ebccd1;
+}
+
+.panel-danger > .panel-heading {
+  color: #b94a48;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+
+/* ==========================================================================
+   24. WELLS (BS3 component, removed in BS5)
+   ========================================================================== */
+
+.well {
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: #0e0e0e;
+  border: 1px solid #000;
+  border-radius: 1px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.well-sm {
+  padding: 9px;
+  border-radius: 0;
+}
+
+.well-lg {
+  padding: 24px;
+  border-radius: 3px;
+}
+
+/* ==========================================================================
+   25. LABELS (BS3 styling)
+   ========================================================================== */
+
+.label {
+  display: inline;
+  padding: .2em .6em .3em;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25em;
+}
+
+.label-default { background-color: #888; }
+.label-primary { background-color: #fd7d57; }
+.label-success { background-color: #5cb85c; }
+.label-info { background-color: #5bc0de; }
+.label-warning { background-color: #f0ad4e; }
+.label-danger { background-color: #d9534f; }
+
+/* ==========================================================================
+   26. INLINE CODE
+   ========================================================================== */
+
+code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border-radius: 1px;
+}
+
+/* ==========================================================================
+   27. FORM VALIDATION STATES (BS3 .has-* classes)
+   ========================================================================== */
+
+.has-success .form-control {
+  border-color: #468847;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.has-error .form-control {
+  border-color: #b94a48;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.has-warning .form-control {
+  border-color: #c09853;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.has-success .control-label { color: #468847; }
+.has-error .control-label { color: #b94a48; }
+.has-warning .control-label { color: #c09853; }
+
+/* Disabled inputs */
+.form-control[disabled],
+.form-control[readonly],
+fieldset[disabled] .form-control {
+  background-color: #0e0e0e;
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* ==========================================================================
+   28. LIST GROUP ACTIVE STATE
+   ========================================================================== */
+
+.list-group-item.active,
+.list-group-item.active:hover,
+.list-group-item.active:focus {
+  color: #fff;
+  background-color: #fd7d57;
+  border-color: #fd7d57;
+}
+
+/* ==========================================================================
+   29. TAB CONTENT (BS3 .in → BS5 .show)
+   ========================================================================== */
+
+.tab-pane.active.in,
+.tab-pane.active.show {
+  display: block;
+}
+
+.tab-pane.fade.in,
+.tab-pane.fade.show {
+  opacity: 1;
+}
+
+/* ==========================================================================
+   30. BLOCKQUOTE REVERSE
+   BS3 used blockquote.pull-right; we renamed to .float-end
+   ========================================================================== */
+
+.blockquote-reverse,
+blockquote.pull-right,
+blockquote.float-end {
+  padding-right: 15px;
+  padding-left: 0;
+  border-right: 5px solid #555;
+  border-left: 0;
+  text-align: right;
+}
+
+/* ==========================================================================
+   31. NAV TABS (BS5 overrides)
+   BS5 adds borders/backgrounds to .nav-tabs .nav-link that conflict
+   with template.css's li>a styling.
+   ========================================================================== */
+
+.nav-tabs {
+  border-bottom: 1px solid transparent;
+  --bs-nav-tabs-border-color: transparent;
+}
+
+.nav-tabs .nav-link,
+.nav-tabs > li > a {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  border-radius: 0;
+  color: #ffffff;
+  --bs-nav-tabs-link-active-bg: transparent;
+  --bs-nav-tabs-link-active-border-color: transparent;
+  --bs-nav-link-hover-color: #fd7d57;
+}
+
+.nav-tabs .nav-link:hover,
+.nav-tabs .nav-link:focus,
+.nav-tabs > li > a:hover,
+.nav-tabs > li > a:focus {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  color: #fd7d57;
+}
+
+.nav-tabs .nav-link.active,
+.nav-tabs > li.active > a {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #fd7d57;
+  color: #ffffff;
+}
+
+.nav-tabs .nav-link.disabled,
+.nav-tabs > li.disabled > a {
+  color: #888888;
+  cursor: not-allowed;
+}
+
+/* Tab dropdown font-size — BS5 uses 1rem (16px), BS3 used 14px */
+.nav-tabs .dropdown > .dropdown-menu {
+  font-size: 14px;
+}
+
+/* BS3 dropdowns opened on hover; BS5 requires click.
+   Restore hover behavior for dropdowns inside nav-tabs.
+   Override BS5's .show class so it's purely hover-driven. */
+.nav-tabs .dropdown > .dropdown-menu {
+  display: none;
+}
+
+.nav-tabs .dropdown:hover > .dropdown-menu {
+  display: block;
+}
+
+.nav-tabs .dropdown > .dropdown-menu.show {
+  display: none;
+}
+
+.nav-tabs .dropdown:hover > .dropdown-menu.show {
+  display: block;
+}
+
+/* ==========================================================================
+   32. BADGES (BS3 styling)
+   ========================================================================== */
+
+.badge {
+  display: inline-block;
+  min-width: 10px;
+  padding: 3px 7px;
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.nav-pills > .active > a > .badge,
+.list-group-item.active > .badge {
+  color: #0e0e0e;
+  background-color: #fff;
+}
+
+/* ==========================================================================
+   33. LIST GROUP ITEM HEADING
+   ========================================================================== */
+
+.list-group-item-heading {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.list-group-item-text {
+  margin-bottom: 0;
+  line-height: 1.3;
+}
+
+/* ==========================================================================
+   33. PANEL TITLE SIZE
+   Panels use h3/h4 elements — override to 16px as in BS3
+   ========================================================================== */
+
+.panel-title,
+.panel-heading h3,
+.panel-heading h4 {
+  font-size: 16px;
+  margin: 0;
+  color: inherit;
+}
+

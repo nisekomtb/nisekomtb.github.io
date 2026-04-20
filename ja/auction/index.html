@@ -83,7 +83,7 @@ og:
 
   <!-- Article -->
   <article>
-    <div class="pull-left item-image">
+    <div class="float-start item-image">
       <img
         src="/assets/images/prizes/levo-01.jpg"
         alt=""
@@ -169,7 +169,7 @@ og:
         <p>ソイル・サーチングはNAMBAのトレイルビルダーをサポートし、ツイン・ピークス・バイク・パークのトレイルを掘る（そして走る！）のに必要なバイクやウェアを提供することを誇りに思っています。</p>
         <p>ニセコでのソイル・サーチングのようなディグ・デイは、コミュニティを作り、知識を与え、あらゆる年齢や能力のライダーをこのスポーツに迎え入レることができます。これらの成果は、ニセコで素晴らしいライディング・プレイスを創造し、向上させ、維持し、保護するというNAMBAの使命と一致しています。</p>
 
-        <p><img src="/assets/images/events/soil-searching/ss03.jpg" alt="" /></p>
+        <p><img src="/assets/images/events/2023/soil-searching/ss03.jpg" alt="" /></p>
 
         <h3>山守人</h3>
 
@@ -265,12 +265,16 @@ og:
 
 <script>
 
-  (function($) {
-    $("a[href$='#qa']").on('click', function() {
-      $("html, body").animate({
-        scrollTop: $("#qa").offset().top
-      }, 500);
-      return false;
+  (function () {
+    document.querySelectorAll("a[href$='#qa']").forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        var target = document.getElementById('qa');
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+        return false;
+      });
     });
-  })(jQuery);
+  })();
 </script>

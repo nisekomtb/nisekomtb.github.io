@@ -337,7 +337,7 @@ baseCss: view-article
   <article>
 
     {% if page.img %}
-    <div class="pull-left item-image">
+    <div class="float-start item-image">
       <img src="{{ page.img }}" alt="{{ page.title }}" itemprop="image">
       {% if page.imgCredit %}<span class="credit"><a href="{{ page.imgCredit.url }}" target="_blank"> 📸 {{ page.imgCredit.name }}</a></span>{% endif %}
     </div>

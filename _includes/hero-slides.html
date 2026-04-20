@@ -7,15 +7,15 @@
     }
     .carousel,
     .carousel-inner,
-    .carousel-inner .item {
+    .carousel-inner .carousel-item {
       height: 100%;
     }
-    .item {
+    .carousel-item {
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
     }
-    .carousel-inner .item:before {
+    .carousel-inner .carousel-item:before {
       background: linear-gradient(to top, #000000, transparent);
       bottom: 0;
       left: 0;
@@ -25,7 +25,7 @@
       width: 100%;
     }
 
-    .item h1 {
+    .carousel-item h1 {
       background: linear-gradient(135deg, #ffffff, #cccccc);
       background-clip: text;
       -webkit-background-clip: text;
@@ -39,36 +39,28 @@
       position: relative;
     }
 
-    @media screen and (-ms-high-contrast: active),
-    (-ms-high-contrast: none) {
-      .item h1 {
-        background: transparent;
-        color: #ffffff;
-      }
-    }
-
     @media (max-width: 767px) {
-      .item h1 {
+      .carousel-item h1 {
         font-size: 36px;
         letter-spacing: -2px;
       }
     }
 
-    .item h1 span {
+    .carousel-item h1 span {
       color: #428bca;
     }
 
-    .item img.metal {
+    .carousel-item img.metal {
       width: 80px;
     }
 
     @media (max-width: 767px) {
-      .item img.metal {
+      .carousel-item img.metal {
         width: 50px;
       }
     }
 
-    .item .lead {
+    .carousel-item .lead {
       color: #ffffff;
       margin: auto;
       max-width: 612px;
@@ -102,7 +94,7 @@
       }
     }
 
-    @media (max-width: 990px) {
+    @media (max-width: 991px) {
       .carousel-caption .item-left,
       .carousel-caption .item-right {
         width: 100%;
@@ -129,8 +121,8 @@
       font-weight: 500;
     }
 
-    .item.left-grad .grad,
-    .item.right-grad .grad {
+    .carousel-item.left-grad .grad,
+    .carousel-item.right-grad .grad {
       left: 0;
       right: 0;
       top: 0;
@@ -144,11 +136,11 @@
       opacity: 0.5;
     }
 
-    .item.left-grad .grad {
+    .carousel-item.left-grad .grad {
       background: linear-gradient(to right, #000000, transparent);
     }
 
-    .item.right-grad .grad {
+    .carousel-item.right-grad .grad {
       background: linear-gradient(to left, #000000, transparent);
     }
   </style>
@@ -156,20 +148,21 @@
   <div
     id="hero"
     class="carousel slide carousel-fade"
-    data-ride="carousel"
     data-bs-ride="carousel"
-    data-interval="3000">
+    data-bs-interval="3000">
 
     {% assign events = site.categories.events | where: "lang", page.lang %}
     {% assign today = "today" | date: "%F" %}
 
-    <ol class="carousel-indicators">
-      <li
-        data-target="#hero"
-        data-slide-to="0"
-        class="active"></li>
+    <div class="carousel-indicators">
+      <button type="button"
+        data-bs-target="#hero"
+        data-bs-slide-to="0"
+        class="active"
+        aria-current="true"
+        aria-label="Slide 1"></button>
         {% for slide in site.data.hero %}
-          <li data-target="#hero" data-slide-to="{{ forloop.index }}"></li>
+          <button type="button" data-bs-target="#hero" data-bs-slide-to="{{ forloop.index }}" aria-label="Slide {{ forloop.index | plus: 1 }}"></button>
         {% endfor%}
 
         {% assign heroSlidesSize = site.data.hero | size %}
@@ -178,14 +171,14 @@
           {% assign days = event.days | times: 24 | times: 60 | times: 60 %}
           {% assign endDate = event.startDate | date: "%s" | plus: days | date: "%F" %}
           {% if endDate < today or event.draft or event.cancelled %} {% break %} {% endif %}
-          <li data-target="#hero" data-slide-to="{{ heroSlidesSize | plus: forloop.index }}"></li>
+          <button type="button" data-bs-target="#hero" data-bs-slide-to="{{ heroSlidesSize | plus: forloop.index }}" aria-label="Slide {{ heroSlidesSize | plus: forloop.index | plus: 1 }}"></button>
         {% endfor %}
 
-    </ol>
+    </div>
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
-      <div class="item active" style="background-image: url('/assets/images/bg/bg-hero.jpg');">
+      <div class="carousel-item active" style="background-image: url('/assets/images/bg/bg-hero.jpg');">
         <div class="carousel-caption container">
           <h1
             class="ja-animate"
@@ -232,7 +225,7 @@
 
         {% assign indexModulo2 = forloop.index0 | modulo: 2 %}
 
-        <div class="item {% if indexModulo2 == 0 %}left-grad{% else %}right-grad{% endif %}"
+        <div class="carousel-item {% if indexModulo2 == 0 %}left-grad{% else %}right-grad{% endif %}"
           style="background-image: url('{{ event.masthead.img }}');">
           <div class="grad"></div>
           <div class="carousel-caption container">
@@ -255,7 +248,7 @@
       {% for slide in site.data.hero %}
         {% assign slidesCount = slidesCount | plus: 1 %}
 
-        <div class="item {% if slide.align == 'left' %}left-grad{% else if slide.align == 'right' %}right-grad{% endif %}" style="background-image: url('{{ slide.img }}');">
+        <div class="carousel-item {% if slide.align == 'left' %}left-grad{% else if slide.align == 'right' %}right-grad{% endif %}" style="background-image: url('{{ slide.img }}');">
           <div class="grad"></div>
           <div class="carousel-caption container">
             <div class="{% if slide.align == 'left' %}item-left{% else if slide.align == 'right' %}item-right{% endif %}">
@@ -297,22 +290,22 @@
     </div>
 
     <!-- Controls -->
-    <a
-      class="left carousel-control"
-      href="#hero"
-      role="button"
-      data-slide="prev">
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#hero"
+      data-bs-slide="prev">
       <span class="fa-solid fa-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a
-      class="right carousel-control"
-      href="#hero"
-      role="button"
-      data-slide="next">
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#hero"
+      data-bs-slide="next">
       <span class="fa-solid fa-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
 </div>
 <!-- //HERO -->

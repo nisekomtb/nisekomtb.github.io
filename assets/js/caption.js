@@ -1,4 +1,23 @@
-/*
-        GNU General Public License version 2 or later; see LICENSE.txt
-*/
-var JCaption=function(c){var e,b,a=function(f){e=jQuery.noConflict();b=f;e(b).each(function(g,h){d(h)})},d=function(i){var h=e(i),f=h.attr("title"),j=h.attr("width")||i.width,l=h.attr("align")||h.css("float")||i.style.styleFloat||"none",g=e("<p/>",{text:f,"class":b.replace(".","_")}),k=e("<div/>",{"class":b.replace(".","_")+" "+l,css:{"float":l,width:j}});h.before(k);k.append(h);if(f!==""){k.append(g)}};a(c)};
+var JCaption = function (selector) {
+  document.querySelectorAll(selector).forEach(function (img) {
+    var title = img.getAttribute('title');
+    var width = img.getAttribute('width') || img.width;
+    var align = img.getAttribute('align') || getComputedStyle(img).float || 'none';
+    var className = selector.replace('.', '_');
+
+    var wrapper = document.createElement('div');
+    wrapper.className = className + ' ' + align;
+    wrapper.style.cssFloat = align;
+    wrapper.style.width = width + 'px';
+
+    img.parentNode.insertBefore(wrapper, img);
+    wrapper.appendChild(img);
+
+    if (title) {
+      var caption = document.createElement('p');
+      caption.className = className;
+      caption.textContent = title;
+      wrapper.appendChild(caption);
+    }
+  });
+};
