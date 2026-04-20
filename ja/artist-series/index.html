@@ -229,7 +229,7 @@ artists:
     }
   }
 
-  @media (max-width: 990px) {
+  @media (max-width: 991px) {
     .avatars ol li {
       width: 50px;
       height: 50px;
@@ -334,7 +334,7 @@ artists:
     margin-bottom:30px;
   }
 
-  @media (max-width: 990px) {
+  @media (max-width: 991px) {
     .artists-profile .side {
       padding: 0 15px;
     }
@@ -344,7 +344,8 @@ artists:
     white-space: nowrap;
   }
 
-  .artists-profile .side .font-icon .icon {
+  .artists-profile .side .font-icon .icon,
+  .artists-profile .side .font-icon [class*="fa-"] {
     margin-right: 5px;
     color: #fd7d57;
   }
@@ -366,7 +367,7 @@ artists:
     padding-bottom: 5px;
   }
 
-  @media (max-width: 990px) {
+  @media (max-width: 991px) {
     .artists-profile .other-work .image-wrapper {
       width: 33%;
     }
@@ -427,7 +428,7 @@ artists:
       </div>
       <h2>{{ artist.name }} <small>{{ artist.title }}</small></h2>
       <div class="row clearfix" style="padding-top:30px;">
-        <div class="side col-md-4">
+        <div class="side col-lg-4">
 
           <div class="list-group">
             <h4 class="list-group-item-heading">リンク</h4>
@@ -435,14 +436,14 @@ artists:
               {% for handle in artist.instagram %}
               <li>
                 <a class="font-icon" href="https://instagram.com/{{ handle }}" target="_blank">
-                  <span class="icon ion-logo-instagram"></span> @{{ handle }}
+                  <span class="fa-brands fa-instagram"></span> @{{ handle }}
                 </a>
               </li>
               {% endfor %}
               {% for url in artist.links %}
               <li>
                 <a class="font-icon" href="{{ url.scheme }}://{{ url.domain }}" target="_blank">
-                  <span class="icon ion-md-globe"></span> {{ url.domain }}
+                  <span class="fa-solid fa-globe"></span> {{ url.domain }}
                 </a>
               </li>
               {% endfor %}
@@ -458,7 +459,7 @@ artists:
           </div>
 
         </div>
-        <div class="bio col-md-8">
+        <div class="bio col-lg-8">
           <h4 class="list-group-item-heading">概要</h4>
           {{ artist.bio }}
           <h4 class="list-group-item-heading">コラボレーションデザイン： {{ artist.design.name }}</h4>

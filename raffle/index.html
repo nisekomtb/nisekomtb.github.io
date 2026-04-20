@@ -770,39 +770,22 @@ otherPrizes:
     margin-top: 30px;
   }
 
-  .owl-carousel {
+  .splide {
     margin-top: 15px;
   }
 
-  .owl-nav button span {
+  .splide__arrows button {
     opacity: 0.5;
+    background: none;
   }
 
-  .owl-nav button span:before {
-    color: #fd7d57;
-    font-size: 35px;
-    background: linear-gradient(135deg, #fd7d57, #f55d59);
-    background-clip: text;
-    display: inline-block;
-    -webkit-background-clip: text;
-    text-fill-color: transparent;
-    -webkit-text-fill-color: transparent;
-    font-weight: 400;
-    text-indent: 1px;
-  }
-
-  .owl-nav button span:hover {
+  .splide__arrows button:hover {
     opacity: 0.8;
   }
 
-  .owl-nav {
+  .splide__arrows {
     text-align: center;
     margin-top: 15px;
-  }
-
-  .owl-nav .owl-next {
-    margin-left: 15px;
-    /*float: right;*/
   }
 </style>
 
@@ -826,16 +809,16 @@ otherPrizes:
         class="row"
         data-animation="move-from-bottom"
         data-delay="1800">
-        <div class="col col-sm-12 col-md-12">
+        <div class="col col-md-12 col-lg-12">
           <div
             class="features-item no-hover ja-animate"
             data-animation="move-from-bottom"
             data-delay="item-0">
 
             <div class="row">
-              <div class="col col-sm-12 col-md-4">
+              <div class="col col-md-12 col-lg-4">
                 <div class="font-icon">
-                  <span class="icon ion-ios-trophy">
+                  <span class="fa-solid fa-trophy">
                     <span class="num">1</span>
                   </span>
                 </div>
@@ -859,7 +842,7 @@ otherPrizes:
                 </a>
                 <p class="small">The bike is available for immediate collection in Niseko, or for postage within Japan. Should a winner be unable to collect the bicycle immediately, storage for up to 6 months is available in Niseko.</p>
               </div>
-              <div class="col col-sm-12 col-md-8">
+              <div class="col col-md-12 col-lg-8">
 
                 <div class="carousel">
                   <div class="hero">
@@ -919,13 +902,13 @@ otherPrizes:
           {% assign prizeRowSize = prizeRow.row | size %}
           {% for prize in prizeRow.row %}
             {% assign prizeNumber = prizeNumber | plus: 1 %}
-            <div class="col col-sm-12 {% if prizeRowSize == 2 %}col-md-6{% elsif prizeRowSize == 3 %}col-md-4{% elsif prizeRowSize == 4 %}col-md-3{% endif %}">
+            <div class="col col-md-12 {% if prizeRowSize == 2 %}col-lg-6{% elsif prizeRowSize == 3 %}col-lg-4{% elsif prizeRowSize == 4 %}col-lg-3{% endif %}">
               <div
                 class="features-item no-hover ja-animate"
                 data-animation="move-from-bottom"
                 data-delay="item-{{ prizeNumber | minus: 2 }}">
                 <div class="font-icon">
-                  <span class="icon ion-ios-trophy">
+                  <span class="fa-solid fa-trophy">
                     {% unless prize.hidePrizeNumber %}
                       <span class="num">{{ prizeNumber }}</span>
                     {% endunless %}

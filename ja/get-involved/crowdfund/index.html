@@ -490,11 +490,7 @@ og:
     const elemRect = elem.getBoundingClientRect();
     const offset = elemRect.top - bodyRect.top;
 
-    (function($) {
-      $('html, body').animate({
-        scrollTop: offset
-      }, 500);
-    })(jQuery);
+    window.scrollTo({ top: offset, behavior: 'smooth' });
 
     return false;
   }
@@ -553,10 +549,13 @@ og:
 
   var lastScroll = 0;
   function checkTabsPosition(offset) {
-    if (jQuery(window).scrollTop() > lastScroll && jQuery(window).scrollTop() > offset) {
-      jQuery('.tabs-container').addClass('fixed-tabs');
-    } else if (jQuery(window).scrollTop() < lastScroll && jQuery(window).scrollTop() < offset) {
-      jQuery('.tabs-container').removeClass('fixed-tabs');
+    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    var tabsContainer = document.querySelector('.tabs-container');
+    if (!tabsContainer) return;
+    if (scrollTop > lastScroll && scrollTop > offset) {
+      tabsContainer.classList.add('fixed-tabs');
+    } else if (scrollTop < lastScroll && scrollTop < offset) {
+      tabsContainer.classList.remove('fixed-tabs');
     }
   }
 
@@ -694,7 +693,7 @@ og:
 
       {% comment %}
       <div style="max-width:750px; margin: 0 auto;">
-      <div class="col col-sm-12 col-md-8">
+      <div class="col col-md-12 col-lg-8">
       <div class="module-title-wrap" style="margin-top:40px; margin-bottom:30px;">
       <p
       style="font-size:100%;"
@@ -704,7 +703,7 @@ og:
       皆様からの抽選券ご購入による収益は、2メートルのトレイル造成と以下の賞品を獲得するチャンスに対して支払われます。 が！世界クラスのトレイルを何キロも<strong>無料</strong>で走れるので、皆、勝者です！</p>
       </div>
       </div>
-      <div class="col col-sm-12 col-md-4">
+      <div class="col col-md-12 col-lg-4">
       <div class="module-title-wrap" style="margin-top:50px; margin-bottom:30px;">
 
       <div
@@ -722,16 +721,16 @@ og:
         class="row"
         data-animation="move-from-bottom"
         data-delay="1800">
-        <div class="col col-sm-12 col-md-12">
+        <div class="col col-md-12 col-lg-12">
           <div
             class="features-item ja-animate"
             data-animation="move-from-bottom"
             data-delay="item-0">
 
             <div class="row">
-              <div class="col col-sm-12 col-md-4">
+              <div class="col col-md-12 col-lg-4">
                 <div class="font-icon">
-                  <span class="icon ion-ios-trophy">
+                  <span class="fa-solid fa-trophy">
                     <span class="num">1</span>
                   </span>
                 </div>
@@ -762,7 +761,7 @@ og:
                   <span class="ja">実際の<wbr>モデル、<wbr>仕様、<wbr>色は<wbr>異なる<wbr>場合が<wbr>あります。<wbr>ニセコでの<wbr>受け取り、<wbr>日本国内での<wbr>郵送、<wbr>または<wbr>次回訪問まで<wbr>保管可能です。<wbr>当選された<wbr>方には、<wbr>可能な<wbr>限り<wbr>最適な<wbr>サイズを<wbr>お届けします。</span>
                 </p>
               </div>
-              <div class="col col-sm-12 col-md-8">
+              <div class="col col-md-12 col-lg-8">
                 <div class="carousel">
                   <div class="hero">
                     <img id="carousel-hero" src="/assets/images/prizes/rail-0.jpeg" />
@@ -792,13 +791,13 @@ og:
         class="row equal-height equal-height-child"
         data-animation="move-from-bottom"
         data-delay="200">
-        <div class="col col-sm-12 col-md-6">
+        <div class="col col-md-12 col-lg-6">
           <div
             class="features-item ja-animate"
             data-animation="move-from-bottom"
             data-delay="item-0">
             <div class="font-icon">
-              <span class="icon ion-ios-trophy">
+              <span class="fa-solid fa-trophy">
                 <span class="num">2</span>
               </span>
             </div>
@@ -845,13 +844,13 @@ og:
             </p>
           </div>
         </div>
-        <div class="col col-sm-12 col-md-6">
+        <div class="col col-md-12 col-lg-6">
           <div
             class="features-item ja-animate"
             data-animation="move-from-bottom"
             data-delay="item-1">
             <div class="font-icon">
-              <span class="icon ion-ios-trophy">
+              <span class="fa-solid fa-trophy">
                 <span class="num">3</span>
               </span>
             </div>
@@ -903,13 +902,13 @@ og:
         data-animation="move-from-bottom"
         data-delay="200">
 
-        <div class="col col-sm-12 col-md-4">
+        <div class="col col-md-12 col-lg-4">
           <div
             class="features-item ja-animate"
             data-animation="move-from-bottom"
             data-delay="item-0">
             <div class="font-icon">
-              <span class="icon ion-ios-trophy">
+              <span class="fa-solid fa-trophy">
                 <span class="num">4</span>
               </span>
             </div>
@@ -937,13 +936,13 @@ og:
           </div>
         </div>
 
-        <div class="col col-sm-12 col-md-4">
+        <div class="col col-md-12 col-lg-4">
           <div
             class="features-item ja-animate"
             data-animation="move-from-bottom"
             data-delay="item-1">
             <div class="font-icon">
-              <span class="icon ion-ios-trophy">
+              <span class="fa-solid fa-trophy">
                 <span class="num">5</span>
               </span>
             </div>
@@ -971,13 +970,13 @@ og:
           </div>
         </div>
 
-        <div class="col col-sm-12 col-md-4">
+        <div class="col col-md-12 col-lg-4">
           <div
             class="features-item ja-animate"
             data-animation="move-from-bottom"
             data-delay="item-2">
             <div class="font-icon">
-              <span class="icon ion-ios-trophy">
+              <span class="fa-solid fa-trophy">
                 <span class="num">6</span>
               </span>
             </div>
@@ -1192,21 +1191,24 @@ og:
   window.ecwid_script_defer = true;
   window.ecwid_dynamic_widgets = true;
 
-  $(document).ready(function() {
+  document.addEventListener('DOMContentLoaded', function() {
 
     if (currentTab !== "purchases") {
       openTab(currentTab, false);
     }
 
-    let offset = (jQuery('.tabs-container').offset().top + jQuery('.tabs-container').height() - 85);
+    var tabsContainer = document.querySelector('.tabs-container');
+    var offset = tabsContainer ? (tabsContainer.getBoundingClientRect().top + window.pageYOffset + tabsContainer.offsetHeight - 85) : 0;
 
-    $(window).scroll(() => {
+    window.addEventListener('scroll', function () {
       checkTabsPosition(offset);
-      lastScroll = jQuery(window).scrollTop();
+      lastScroll = window.pageYOffset || document.documentElement.scrollTop;
     });
 
-    $(window).resize(() => {
-      offset = (jQuery('.tabs-container').offset().top + jQuery('.tabs-container').height() - 85);
+    window.addEventListener('resize', function () {
+      if (tabsContainer) {
+        offset = tabsContainer.getBoundingClientRect().top + window.pageYOffset + tabsContainer.offsetHeight - 85;
+      }
     });
   });
 </script>
