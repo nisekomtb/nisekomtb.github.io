@@ -12,8 +12,8 @@ price:
     adult: 0
   - name: グループライド
     adult: 0
-  - name: DHシリーズレース
-    adult: 9,000円 + ゴンドラ料金
+  - name: DHシリーズレース（ゴンドラ料金別）
+    adult: 9000
 partners:
   - name: Santa Cruz
     img: /special/santa-cruz.png

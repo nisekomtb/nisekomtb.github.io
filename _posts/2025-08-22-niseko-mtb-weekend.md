@@ -12,8 +12,8 @@ price:
     adult: 0
   - name: Group Rides
     adult: 0
-  - name: DH Series Race
-    adult: ¥9,000 + Gondola Fee
+  - name: DH Series Race (excluding Gondola fee)
+    adult: 9000
 partners:
   - name: Santa Cruz
     img: /special/santa-cruz.png
