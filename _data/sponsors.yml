@@ -206,12 +206,16 @@ shika:
       url: http://westcanadaproperties.com
 
 tanuki:
-  width: 17
+  width: 18
   sponsors:
     - image: /assets/images/company/annupuri.png
       url: https://annupuri.info/en/
       ja:
         url: https://annupuri.info
+    - image: /assets/images/company/tanuki/blowhard.png
+      url: https://www.blowhard-all-year.com/
+      ja:
+        url: https://www.blowhard-all-year.com/ja
     - image: /assets/images/company/tanuki/burton.png
       url: https://www.burton.com/jp/en
       ja:
