@@ -178,6 +178,15 @@ h4.ja {
   overflow-wrap: break-word;
 }
 
+html[lang="ja"] h1,
+h1.ja {
+  letter-spacing: -8px;
+}
+
+html[lang="ja"] .carousel-item h1 {
+  letter-spacing: -1.5px;
+}
+
 a {
   color: #ffffff;
   text-decoration: none;
@@ -408,7 +417,11 @@ h6 .small,
 
 h1,
 .h1 {
+  font-family: "Fruit Viesta", "Zen Maru Gothic", "Metropolis", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
   font-size: 80px;
+  padding-right: 0.15em;
 }
 
 @media (max-width: 767px) {
@@ -2691,11 +2704,10 @@ div.ja-masthead .ja-masthead-detail .ja-masthead-title {
   -webkit-background-clip: text;
   text-fill-color: transparent;
   -webkit-text-fill-color: transparent;
-  font-weight: 700;
+  font-weight: 500;
 
   display: inline-block;
   font-size: 80px;
-  letter-spacing: -3px;
   margin: 0;
 }
 
@@ -2710,7 +2722,6 @@ div.ja-masthead .ja-masthead-detail .ja-masthead-title {
 @media (max-width: 767px) {
   div.ja-masthead .ja-masthead-detail .ja-masthead-title {
     font-size: 36px;
-    letter-spacing: -1px;
   }
 }
 
@@ -3617,7 +3628,7 @@ article aside .btn-group>.dropdown-toggle .caret {
 
 .login-wrap .page-header h1 {
   font-size: 36px;
-  font-weight: 700;
+  font-weight: 500;
   color: #ffffff;
 }
 
@@ -5164,7 +5175,7 @@ div.calendar {
   color: #ffffff;
   margin: 0 0 24px 0;
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .leading .article-title,
@@ -6033,11 +6044,10 @@ div.t3-wrapper {
   -webkit-background-clip: text;
   text-fill-color: transparent;
   -webkit-text-fill-color: transparent;
-  font-weight: 700;
+  font-weight: 500;
 
   display: inline-block;
   margin-bottom: 36px;
-  letter-spacing: -4px;
   position: relative;
 }
 
@@ -6052,7 +6062,6 @@ div.t3-wrapper {
 @media (max-width: 767px) {
   .acm-features.style-1 h1 {
     font-size: 36px;
-    letter-spacing: -2px;
   }
 }
 
