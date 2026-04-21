@@ -1,0 +1,72 @@
+---
+title: Stories
+description: Trail stories, trip guides, event recaps, and news from the Niseko Area Mountain Bike Association.
+permalink: /stories/
+masthead:
+  img: /assets/images/bg/bg-header-twinpeaks.jpg
+---
+<div class="t3-section-wrap">
+
+  <div class="section">
+
+    <div class="module-title-wrap" style="max-width:900px;">
+      <h3
+        class="module-title ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="200">Stories from the trails</h3>
+      <div
+        class="features-desc ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="400">
+        <p>Trail guides, trip reports, community news, and behind-the-scenes stories from NAMBA and the Niseko MTB community.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section">
+
+    {% assign stories = site.posts | where: "categories", "stories" %}
+    {% assign has_stories = false %}
+    {% for post in stories %}
+      {% assign is_ja = post.path | slice: 0, 3 %}
+      {% if is_ja != "ja/" %}
+        {% assign has_stories = true %}
+        <div
+          class="module-title-wrap ja-animate"
+          style="max-width:900px;"
+          data-animation="move-from-bottom"
+          data-delay="200">
+          {% if post.thumbnail %}
+            <div style="margin-bottom:20px;">
+              <a href="{{ post.url }}">
+                <img src="{{ post.thumbnail }}" alt="{{ post.title }}" style="width:100%; border-radius:3px;">
+              </a>
+            </div>
+          {% endif %}
+          <h3 class="module-title">
+            <a href="{{ post.url }}">{{ post.title }}</a>
+          </h3>
+          <p style="color:#999;">{{ post.date | date: "%-d %B %Y" }}</p>
+          {% if post.description %}
+            <div class="features-desc">
+              <p>{{ post.description }}</p>
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+    {% endfor %}
+    {% unless has_stories %}
+      <div class="module-title-wrap" style="max-width:900px;">
+        <div
+          class="features-desc ja-animate"
+          data-animation="move-from-bottom"
+          data-delay="200">
+          <p>Stories coming soon — check back when the season opens!</p>
+        </div>
+      </div>
+    {% endunless %}
+
+  </div>
+
+</div>
