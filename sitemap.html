@@ -22,14 +22,15 @@ layout: blank
     {%- if index %}
       <url>
         <loc>https://namba.ngo{{ page.url }}</loc>
-        <xhtml:link
-          rel="alternate"
-          hreflang="en"
-          href="https://namba.ngo{{ page.url }}" />
-        <xhtml:link
-          rel="alternate"
-          hreflang="ja"
-          href="https://namba.ngo/ja{{ page.url }}" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://namba.ngo{{ page.url }}" />
+        <xhtml:link rel="alternate" hreflang="ja" href="https://namba.ngo/ja{{ page.url }}" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://namba.ngo{{ page.url }}" />
+      </url>
+      <url>
+        <loc>https://namba.ngo/ja{{ page.url }}</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://namba.ngo{{ page.url }}" />
+        <xhtml:link rel="alternate" hreflang="ja" href="https://namba.ngo/ja{{ page.url }}" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://namba.ngo{{ page.url }}" />
       </url>
     {% endif -%}
   {%- endfor -%}
@@ -53,14 +54,15 @@ layout: blank
     {%- if index %}
       <url>
         <loc>https://namba.ngo{{ page.url }}</loc>
-        <xhtml:link
-          rel="alternate"
-          hreflang="en"
-          href="https://namba.ngo{{ page.url }}" />
-        <xhtml:link
-          rel="alternate"
-          hreflang="ja"
-          href="https://namba.ngo/ja{{ page.url }}" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://namba.ngo{{ page.url }}" />
+        <xhtml:link rel="alternate" hreflang="ja" href="https://namba.ngo/ja{{ page.url }}" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://namba.ngo{{ page.url }}" />
+      </url>
+      <url>
+        <loc>https://namba.ngo/ja{{ page.url }}</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://namba.ngo{{ page.url }}" />
+        <xhtml:link rel="alternate" hreflang="ja" href="https://namba.ngo/ja{{ page.url }}" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://namba.ngo{{ page.url }}" />
       </url>
     {% endif -%}
   {%- endfor %}
