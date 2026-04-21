@@ -1,0 +1,9 @@
+{% comment %}
+  Usage: {% include image.html src="/assets/images/path/image.jpg" alt="Description" %}
+  If a .webp version exists at the same path, it will be served to supporting browsers.
+{% endcomment %}
+{% assign webp_src = include.src | replace: ".jpg", ".webp" | replace: ".png", ".webp" | replace: ".jpeg", ".webp" %}
+<picture>
+  <source srcset="{{ webp_src }}" type="image/webp">
+  <img src="{{ include.src }}" alt="{{ include.alt }}"{% if include.class %} class="{{ include.class }}"{% endif %}{% if include.style %} style="{{ include.style }}"{% endif %} />
+</picture>
