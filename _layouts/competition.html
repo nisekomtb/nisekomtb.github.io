@@ -53,7 +53,7 @@ baseCss: view-article
   }
 
   .credit a {
-    color: #9e9e9e;
+    color: var(--color-text);
   }
 
   .article-content h2:first-child {
@@ -116,7 +116,7 @@ baseCss: view-article
   }
 
   .prizes .num {
-    color: #0e0e0e;
+    color: var(--color-bg-panel);
     font-size: 200%;
     position: absolute;
     margin-left: -47px;
@@ -125,17 +125,17 @@ baseCss: view-article
   }
 
   .prizes .features-item:not(.no-hover):hover .num {
-    color: #fd7d57;
+    color: var(--color-primary);
   }
 
   .prizes .features-item a.action:hover {
-    background-color: #fd7d57;
-    background: linear-gradient(135deg, #fd7d57, #f55d59);
-    border-color: #fd7d57;
+    background-color: var(--color-primary);
+    background: var(--color-primary);
+    border-color: var(--color-primary);
   }
 
   .gold {
-    color: #ffd97b;
+    color: var(--color-accent);
     font-size: 12px !important;
     font-family: "Metropolis", Helvetica, Arial, sans-serif;
     font-weight: 700;
@@ -263,15 +263,15 @@ baseCss: view-article
   } */
 
   html#ecwid_html body#ecwid_body .ec-size .ec-store .label--notice {
-    background-color: #fd7d57;
+    background-color: var(--color-primary);
   }
 
   html#ecwid_html body#ecwid_body .ec-size .ec-store .label--notice::before {
-    color: #fd7d57;
+    color: var(--color-primary);
   }
 
   html#ecwid_html body#ecwid_body .ec-size .ec-store .label--notice::after {
-    color: #fd7d57;
+    color: var(--color-primary);
   }
 
   .ec-form__row--continue .form-control--done {
@@ -280,23 +280,23 @@ baseCss: view-article
 
   .form-control button.form-control__button {
     color: #ffffff !important;
-    background-color: #fd7d57 !important;
+    background-color: var(--color-primary) !important;
     border-color: transparent !important;
-    background: linear-gradient(135deg, #fd7d57, #f55d59) !important;
+    background: var(--color-primary) !important;
 
     border: 0 !important;
-    border-radius: 30px !important;
+    border-radius: 4px !important;
     font-weight: 500 !important;
-    padding-left: 36px !important;
-    padding-right: 36px !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
 
     width: auto !important;
     font-size: 14px !important;
   }
 
   .form-control button.form-control__button:hover {
-    background: #fd7d57 !important;
-    background: linear-gradient(155deg, #fd7d57, #fd7d57) !important;
+    background: var(--color-primary) !important;
+    background: var(--color-primary-hover) !important;
   }
 
   img.ecwid-PaymentMethodsBlockSvg {
@@ -316,9 +316,9 @@ baseCss: view-article
 
   .ec-cart__button--apple-pay .form-control--button {
     border: 1px #fff solid !important;
-    padding-left: 36px !important;
-    padding-right: 36px !important;
-    border-radius: 30px !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+    border-radius: 4px !important;
     width: 170px !important;
     margin: 0 auto !important;
     position: relative !important;
