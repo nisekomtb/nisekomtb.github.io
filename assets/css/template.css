@@ -226,9 +226,6 @@ img {
   z-index: 3;
 }
 
-.img-recolor-secondary {
-  filter: brightness(0) saturate(100%) invert(39%) sepia(20%) saturate(700%) hue-rotate(100deg) brightness(92%) contrast(90%);
-}
 
 .img-fade-top img,
 .img-fade-bottom img,
