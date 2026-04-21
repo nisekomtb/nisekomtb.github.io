@@ -18,7 +18,7 @@
 }
 
 .ja-masthead:before {
-  background-color: #000;
+  background-color: var(--color-bg);
   content: "";
   display: block;
   position: absolute;
@@ -54,7 +54,7 @@
 }
 
 /* .ja-masthead-credit:hover a {
-  color: #fd7d57;
+  color: var(--color-primary);
 } */
 
 /* Video background */

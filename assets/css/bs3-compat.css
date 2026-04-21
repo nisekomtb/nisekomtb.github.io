@@ -9,6 +9,34 @@
  */
 
 /* ==========================================================================
+   0. BRAND COLOUR PALETTE
+   Single source of truth — change colours here, everything follows.
+   ========================================================================== */
+
+:root {
+  /* Backgrounds */
+  --color-bg:            #1a1a1a;  /* dark charcoal — page background */
+  --color-bg-panel:      #242220;  /* warm charcoal — panels, sections */
+  --color-bg-border:     #2e2b28;  /* bark grey — borders, dividers */
+  --color-bg-input:      #302d2a;  /* deep earth — form inputs */
+
+  /* Brand */
+  --color-primary:       #b34f24;  /* rust orange — primary accent */
+  --color-primary-hover: #a84b25;  /* darker rust — hover state */
+  --color-primary-active:#933f1e;  /* darkest rust — active state */
+  --color-secondary:     #35965d;  /* forest green — secondary accent */
+  --color-secondary-hover:#2d7f4f; /* darker green — hover state */
+  --color-secondary-active:#277045;/* darkest green — active state */
+  --color-accent:        #d4a843;  /* golden sun — section headers */
+
+  /* Text */
+  --color-text:          #9a9590;  /* stone grey — body text */
+  --color-text-muted:    #888888;  /* muted grey — captions, disabled */
+  --color-text-light:    #cccccc;  /* light grey — subheadings, labels */
+  --color-text-heading:  #ffffff;  /* white — headings */
+}
+
+/* ==========================================================================
    1. BODY & TYPOGRAPHY DEFAULTS
    Bootstrap 3: font-size 14px, color #333, font-family Helvetica stack
    Bootstrap 5: font-size 16px (1rem), color #212529, system-ui stack
@@ -18,12 +46,12 @@ body {
   font-family: "Metropolis", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.72;
-  color: #9e9e9e;
-  background-color: #000000;
-  --bs-body-bg: #000000;
-  --bs-body-bg-rgb: 0, 0, 0;
-  --bs-body-color: #9e9e9e;
-  --bs-body-color-rgb: 158, 158, 158;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  --bs-body-bg: var(--color-bg);
+  --bs-body-bg-rgb: 26, 26, 26;
+  --bs-body-color: var(--color-text);
+  --bs-body-color-rgb: 154, 149, 144;
 }
 
 /* ==========================================================================
@@ -123,7 +151,7 @@ a {
 
 a:hover,
 a:focus {
-  color: #fd7d57;
+  color: var(--color-primary);
   text-decoration: none;
 }
 
@@ -140,7 +168,7 @@ table {
 .table {
   --bs-table-bg: transparent;
   --bs-table-color: inherit;
-  --bs-table-border-color: #191919;
+  --bs-table-border-color: var(--color-bg-border);
 }
 
 /* ==========================================================================
@@ -158,9 +186,9 @@ input[type="tel"],
 input[type="url"],
 textarea,
 select {
-  background-color: #252525;
-  border: 1px solid #191919;
-  color: #9e9e9e;
+  background-color: var(--color-bg-input);
+  border: 1px solid var(--color-bg-border);
+  color: var(--color-text);
   color-scheme: dark;
   padding: 15px;
 }
@@ -175,9 +203,9 @@ input[type="tel"]:focus,
 input[type="url"]:focus,
 textarea:focus,
 select:focus {
-  background-color: #252525;
-  border-color: #fd7d57;
-  color: #9e9e9e;
+  background-color: var(--color-bg-input);
+  border-color: var(--color-primary);
+  color: var(--color-text);
   box-shadow: none;
 }
 
@@ -187,16 +215,16 @@ select:focus {
    ========================================================================== */
 
 .btn-default {
-  color: #ffffff;
-  background-color: #252525;
-  border-color: #191919;
+  color: var(--color-text-heading);
+  background-color: var(--color-bg-input);
+  border-color: var(--color-bg-border);
 }
 
 .btn-default:hover,
 .btn-default:focus {
-  color: #ffffff;
-  background-color: #191919;
-  border-color: #0e0e0e;
+  color: var(--color-text-heading);
+  background-color: var(--color-bg-border);
+  border-color: var(--color-bg-panel);
 }
 
 /* BS5 .btn uses CSS variables for bg/hover/active colours. Override
@@ -204,30 +232,43 @@ select:focus {
    hover rules apply. */
 .btn-primary {
   --bs-btn-color: #fff;
-  --bs-btn-bg: #fd7d57;
+  --bs-btn-bg: var(--color-primary);
   --bs-btn-border-color: transparent;
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #fd7d57;
+  --bs-btn-hover-bg: var(--color-primary-hover);
   --bs-btn-hover-border-color: transparent;
   --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #fd7d57;
+  --bs-btn-active-bg: var(--color-primary-active);
   --bs-btn-active-border-color: transparent;
-  --bs-btn-focus-shadow-rgb: 253, 125, 87;
-  background-color: #fd7d57;
-  transition: none;
+  --bs-btn-focus-shadow-rgb: 196, 90, 45;
+  background-color: var(--color-primary);
+}
+
+.btn-secondary {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--color-secondary);
+  --bs-btn-border-color: transparent;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--color-secondary-hover);
+  --bs-btn-hover-border-color: transparent;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: var(--color-secondary-active);
+  --bs-btn-active-border-color: transparent;
+  --bs-btn-focus-shadow-rgb: 74, 124, 89;
+  background-color: var(--color-secondary);
 }
 
 .btn-success {
   --bs-btn-color: #fff;
-  --bs-btn-bg: #5cb85c;
-  --bs-btn-border-color: #5cb85c;
+  --bs-btn-bg: var(--color-secondary);
+  --bs-btn-border-color: var(--color-secondary);
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #449d44;
-  --bs-btn-hover-border-color: #419641;
+  --bs-btn-hover-bg: var(--color-secondary-hover);
+  --bs-btn-hover-border-color: var(--color-secondary-hover);
   --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #398439;
-  --bs-btn-active-border-color: #357935;
-  --bs-btn-focus-shadow-rgb: 92, 184, 92;
+  --bs-btn-active-bg: var(--color-secondary-active);
+  --bs-btn-active-border-color: var(--color-secondary-active);
+  --bs-btn-focus-shadow-rgb: 74, 124, 89;
 }
 
 /* ==========================================================================
@@ -236,24 +277,24 @@ select:focus {
    ========================================================================== */
 
 .dropdown-menu {
-  background-color: #0e0e0e;
-  border: 1px solid #0e0e0e;
+  background-color: var(--color-bg-panel);
+  border: 1px solid var(--color-bg-panel);
   border-radius: 1px;
-  color: #9e9e9e;
+  color: var(--color-text);
   font-size: 14px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-  --bs-dropdown-bg: #0e0e0e;
-  --bs-dropdown-border-color: #0e0e0e;
+  --bs-dropdown-bg: var(--color-bg-panel);
+  --bs-dropdown-border-color: var(--color-bg-panel);
   --bs-dropdown-border-radius: 1px;
   --bs-dropdown-font-size: 14px;
-  --bs-dropdown-link-color: #9e9e9e;
-  --bs-dropdown-link-hover-color: #fd7d57;
+  --bs-dropdown-link-color: var(--color-text);
+  --bs-dropdown-link-hover-color: var(--color-primary);
   --bs-dropdown-link-hover-bg: transparent;
 }
 
 .dropdown-menu > li > a,
 .dropdown-menu .dropdown-item {
-  color: #9e9e9e;
+  color: var(--color-text);
   padding: 3px 20px;
 }
 
@@ -261,7 +302,7 @@ select:focus {
 .dropdown-menu > li > a:focus,
 .dropdown-menu .dropdown-item:hover,
 .dropdown-menu .dropdown-item:focus {
-  color: #fd7d57;
+  color: var(--color-primary);
   background-color: transparent;
 }
 
@@ -283,7 +324,7 @@ select:focus {
 
 .nav-pills > li > a:hover,
 .nav-pills .nav-link:hover {
-  color: #fd7d57;
+  color: var(--color-primary);
   background-color: transparent;
 }
 
@@ -292,7 +333,7 @@ select:focus {
 .nav-pills > li.active > a:focus,
 .nav-pills .nav-link.active {
   color: #ffffff;
-  background-color: #0e0e0e;
+  background-color: var(--color-bg-panel);
 }
 
 /* BS3 nav-stacked (now flex-column): remove left margins, add top margins */
@@ -408,8 +449,8 @@ select:focus {
 
 .list-group-item {
   background-color: rgba(0, 0, 0, 0.3);
-  border-color: #191919;
-  color: #9e9e9e;
+  border-color: var(--color-bg-border);
+  color: var(--color-text);
 }
 
 /* Alert danger — BS5 uses different shade than BS3 */
@@ -428,7 +469,7 @@ select:focus {
   background-color: transparent;
   border: 0;
   border-radius: 0;
-  color: #9e9e9e;
+  color: var(--color-text);
   --bs-card-bg: transparent;
   --bs-card-border-color: transparent;
   --bs-card-border-radius: 0;
@@ -509,7 +550,7 @@ figure {
    ========================================================================== */
 
 hr {
-  border-top: 1px solid #191919;
+  border-top: 1px solid var(--color-bg-border);
   opacity: 1;
 }
 
@@ -628,7 +669,7 @@ hr {
 
 .panel {
   margin-bottom: 24px;
-  background-color: #0e0e0e;
+  background-color: var(--color-bg-panel);
   border: 1px solid transparent;
   border-radius: 1px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
@@ -650,19 +691,19 @@ hr {
 }
 
 .panel-default > .panel-heading {
-  color: #0e0e0e;
+  color: var(--color-bg-panel);
   background-color: #f5f5f5;
   border-color: #ddd;
 }
 
 .panel-primary {
-  border-color: #fd7d57;
+  border-color: var(--color-primary);
 }
 
 .panel-primary > .panel-heading {
   color: #fff;
-  background-color: #fd7d57;
-  border-color: #fd7d57;
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
 }
 
 .panel-success {
@@ -713,8 +754,8 @@ hr {
   min-height: 20px;
   padding: 19px;
   margin-bottom: 20px;
-  background-color: #0e0e0e;
-  border: 1px solid #000;
+  background-color: var(--color-bg-panel);
+  border: 1px solid var(--color-bg);
   border-radius: 1px;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
 }
@@ -747,8 +788,8 @@ hr {
 }
 
 .label-default { background-color: #888; }
-.label-primary { background-color: #fd7d57; }
-.label-success { background-color: #5cb85c; }
+.label-primary { background-color: var(--color-primary); }
+.label-success { background-color: var(--color-secondary); }
 .label-info { background-color: #5bc0de; }
 .label-warning { background-color: #f0ad4e; }
 .label-danger { background-color: #d9534f; }
@@ -792,7 +833,7 @@ code {
 .form-control[disabled],
 .form-control[readonly],
 fieldset[disabled] .form-control {
-  background-color: #0e0e0e;
+  background-color: var(--color-bg-panel);
   opacity: 0.7;
   cursor: not-allowed;
 }
@@ -805,8 +846,8 @@ fieldset[disabled] .form-control {
 .list-group-item.active:hover,
 .list-group-item.active:focus {
   color: #fff;
-  background-color: #fd7d57;
-  border-color: #fd7d57;
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
 }
 
 /* ==========================================================================
@@ -858,7 +899,7 @@ blockquote.float-end {
   color: #ffffff;
   --bs-nav-tabs-link-active-bg: transparent;
   --bs-nav-tabs-link-active-border-color: transparent;
-  --bs-nav-link-hover-color: #fd7d57;
+  --bs-nav-link-hover-color: var(--color-primary);
 }
 
 .nav-tabs .nav-link:hover,
@@ -868,14 +909,14 @@ blockquote.float-end {
   background: transparent;
   border: 0;
   border-bottom: 1px solid transparent;
-  color: #fd7d57;
+  color: var(--color-primary);
 }
 
 .nav-tabs .nav-link.active,
 .nav-tabs > li.active > a {
   background: transparent;
   border: 0;
-  border-bottom: 1px solid #fd7d57;
+  border-bottom: 1px solid var(--color-primary);
   color: #ffffff;
 }
 
@@ -930,7 +971,7 @@ blockquote.float-end {
 
 .nav-pills > .active > a > .badge,
 .list-group-item.active > .badge {
-  color: #0e0e0e;
+  color: var(--color-bg-panel);
   background-color: #fff;
 }
 

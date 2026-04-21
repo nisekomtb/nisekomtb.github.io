@@ -121,12 +121,12 @@ og:
   }
 
   .tabs {
-    border: 1px #8e8e8e solid;
+    border: 1px var(--color-text) solid;
     border-radius: 15px;
     margin-top: inherit !important;
     margin-bottom: inherit !important;
     max-width: 900px;
-    background-color: #000000;
+    background-color: var(--color-bg);
   }
 
   .tabs .col {
@@ -153,7 +153,7 @@ og:
     padding: 10px;
     border-radius: 10px;
     text-align: center;
-    background-color: #0e0e0e;
+    background-color: var(--color-bg-panel);
   }
 
   .tabs {
@@ -186,7 +186,7 @@ og:
   }
 
   .tabs .active {
-    background-color: #fd7d57 !important;
+    background-color: var(--color-primary) !important;
   }
 
   .tabs .active h3 {
@@ -194,10 +194,10 @@ og:
   }
 
   .tabs .tab:hover {
-    background-color: #2e2e2e !important;
+    background-color: var(--color-bg-border) !important;
   }
   .tabs .tab.active:hover {
-    background-color: #fd7d57 !important;
+    background-color: var(--color-primary) !important;
     cursor: auto;
   }
 
@@ -264,7 +264,7 @@ og:
   }
 
   .prizes .num {
-    color: #0e0e0e;
+    color: var(--color-bg-panel);
     font-size: 200%;
     position: absolute;
     margin-left: -47px;
@@ -273,11 +273,11 @@ og:
   }
 
   .prizes .features-item:hover .num {
-    color: #fd7d57;
+    color: var(--color-primary);
   }
 
   .gold {
-    color: #ffd97b;
+    color: var(--color-accent);
     font-size: 12px !important;
     font-family: "Metropolis", Helvetica, Arial, sans-serif;
     font-weight: 700;
@@ -381,20 +381,20 @@ og:
 
   html#ecwid_html body#ecwid_body .ec-size .ec-store .label--notice .label__text {
     ;
-    /*color: #000;*/
+    /*color: var(--color-bg);*/
   }
 
   html#ecwid_html body#ecwid_body .ec-size .ec-store .label--notice {
-    /*background-color: #ffd97b;*/
-    background-color: #fd7d57;
+    /*background-color: var(--color-accent);*/
+    background-color: var(--color-primary);
   }
 
   html#ecwid_html body#ecwid_body .ec-size .ec-store .label--notice::before {
-    color: #fd7d57;
+    color: var(--color-primary);
   }
 
   html#ecwid_html body#ecwid_body .ec-size .ec-store .label--notice::after {
-    color: #fd7d57;
+    color: var(--color-primary);
   }
 
   .form-control {
@@ -410,23 +410,22 @@ og:
 
   .form-control button.form-control__button {
     color: #ffffff !important;
-    background-color: #fd7d57 !important;
+    background-color: var(--color-primary) !important;
     border-color: transparent !important;
-    background: linear-gradient(135deg, #fd7d57, #f55d59) !important;
+    background: var(--color-primary) !important;
 
     border: 0 !important;
-    border-radius: 30px !important;
+    border-radius: 4px !important;
     font-weight: 500 !important;
-    padding-left: 36px !important;
-    padding-right: 36px !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
 
-    width: auto !important;
     font-size: 14px !important;
   }
 
   .form-control button.form-control__button:hover {
-    background: #fd7d57 !important;
-    background: linear-gradient(155deg, #fd7d57, #fd7d57) !important;
+    background: var(--color-primary) !important;
+    background: var(--color-primary-hover) !important;
   }
 
   img.ecwid-PaymentMethodsBlockSvg {
@@ -441,9 +440,9 @@ og:
 
   .ec-cart__button--apple-pay .form-control--button {
     border: 1px #fff solid !important;
-    padding-left: 36px !important;
-    padding-right: 36px !important;
-    border-radius: 30px !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+    border-radius: 4px !important;
     width: 170px !important;
     margin: 0 auto !important;
     position: relative !important;

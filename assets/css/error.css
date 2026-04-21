@@ -19,7 +19,7 @@
 }
 
 body {
-  background: #000;
+  background: var(--color-bg);
   color: #fff;
   font-size: 14px;
   margin: 0;
@@ -88,7 +88,7 @@ body {
 
 
 #errorboxbody p {
-	color: #9e9e9e;
+	color: var(--color-text);
 	display: block;
 	margin: 0 0 30px;
 	z-index: 3;
@@ -98,9 +98,9 @@ body {
 
 /* Button Home */
 .button-home {
-  background: linear-gradient(145deg,#fd7d57,#f55d59);
+  background: linear-gradient(145deg,var(--color-primary),var(--color-primary-hover));
   border: 0;
-  border-radius: 50px;
+  border-radius: 4px;
   color: #fff;
   cursor: pointer;
   display: inline-block;
@@ -114,7 +114,7 @@ body {
 .button-home:hover,
 .button-home:focus,
 .button-home:active {
-  background: linear-gradient(145deg,#f55d59,#f55d59);
+  background: linear-gradient(145deg,var(--color-primary-hover),var(--color-primary-hover));
   color: #fff;
 }
 
