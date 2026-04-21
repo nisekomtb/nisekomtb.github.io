@@ -1,57 +1,73 @@
-# - path: ''
-#   en: Home
-#   ja: ホーム
-
-# - path: proposal
-#   en: Our Proposal
-#   ja: 私たちの理念
-
-# - path: projects
-#   en: Projects
-#   ja: プロジェクト
-#   sub:
-
-#   - path: twin-peaks
-#     en: Twin Peaks
-#     ja: ツイン・ピーク
-
-# - path: #
-#   en: 日本語
-#   ja: English
-
-- path: twin-peaks
-  en: Twin Peaks
-  ja: ツイン・ピークス
+- path: ""
+  en: Where to Ride
+  ja: ライドスポット
+  sub:
+    - path: twin-peaks
+      en: Twin Peaks
+      ja: ツイン・ピークス
+    - path: where-to-ride/grand-hirafu
+      en: Grand Hirafu
+      ja: グランヒラフ
+    - path: where-to-ride/hanazono
+      en: Hanazono
+      ja: 花園
+    - path: where-to-ride/gravel
+      en: Gravel
+      ja: グラベル
+    - path: where-to-ride/skills-parks
+      en: Skills Parks
+      ja: スキルパーク
+    - path: plan-your-trip
+      en: Plan Your Trip
+      ja: 旅行の計画
 
 - path: ""
-  en: Get Involved
-  ja: プロジェクトに参加する
+  en: About
+  ja: NAMBAについて
   sub:
-
-  - path: get-involved/join
-    en: Become a Member
-    ja: 仲間になろう
-
-  - path: jobs
-    en: Jobs
-    ja: 求人
-
-  - path: get-involved/partner
-    en: Become a Partner
-    ja: 協賛のご案内
-
-  - path: get-involved/donate
-    en: Donate
-    ja: 寄付のお願い
+    - path: about
+      en: About NAMBA
+      ja: NAMBAについて
+    - path: projects
+      en: Our Projects
+      ja: プロジェクト
+    - path: team
+      en: Our Team
+      ja: チーム
+    - path: impact
+      en: Our Impact
+      ja: 実績
+    - path: press
+      en: Press & Media
+      ja: プレス・メディア
+    - path: stories
+      en: Stories
+      ja: ストーリー
 
 - path: events
   en: Events
   ja: イベント
 
+- path: ""
+  en: Partner
+  ja: パートナー
+  sub:
+    - path: partner
+      en: Partner with Us
+      ja: 協賛のご案内
+    - path: join
+      en: Join NAMBA
+      ja: 仲間になろう
+    - path: donate
+      en: Donate
+      ja: 寄付のお願い
+    - path: jobs
+      en: Jobs
+      ja: 求人
 
 - path: ""
   en: Shop
-  ja: オンラインショップ
+  ja: ショップ
   sub:
     - path: artist-series
       en: Artist Series
@@ -59,7 +75,3 @@
     - path: shop
       en: Shop
       ja: オンラインショップ
-
-# - path: raffle
-#   en: 🎟️ Summer Raffle
-#   ja: 🎟️ サマー ラッフル
