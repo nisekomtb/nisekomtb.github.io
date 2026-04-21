@@ -52,12 +52,10 @@ subtitle: 皆様のご購入によりトレイルは成長します。
     padding-left: 24px !important;
     padding-right: 24px !important;
 
-    width: auto !important;
     font-size: 14px !important;
   }
 
   .form-control button.form-control__button:hover {
-    background: var(--color-primary) !important;
     background: var(--color-primary-hover) !important;
   }
 
@@ -98,6 +96,36 @@ subtitle: 皆様のご購入によりトレイルは成長します。
 
   #raffle-store a.breadcrumbs__link--last {
     display: none;
+  }
+
+  /* Size option buttons */
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .form-control--checkbox-button .form-control__inline-label label,
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .form-control--checkbox-button .form-control__checkbox:checked~.form-control__inline-label label:active,
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .form-control--checkbox-button .form-control__radio:checked~.form-control__inline-label label:active {
+    background-color: var(--color-bg-panel) !important;
+  }
+
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .form-control--checkbox-button .form-control__inline-label label:hover,
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .form-control--checkbox-button .form-control__radio:checked~.form-control__inline-label label {
+    background-color: var(--color-bg-border) !important;
+    border-color: var(--color-primary) !important;
+  }
+
+  /* Colour swatch hover/selected outline */
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .product-details-options__swatches .options-swatches-item__color:hover,
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .product-details-options__swatches .options-swatches-item__color:focus {
+    outline-color: var(--color-primary) !important;
+    border-color: var(--color-primary) !important;
+  }
+
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .product-details-options__swatches .options-swatches-item__color--selected,
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .product-details-options__swatches .options-swatches-item__color--selected-disabled {
+    outline-color: var(--color-primary) !important;
+    border-color: var(--color-primary) !important;
+  }
+
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .product-details-options__swatches .options-swatches-item__color:has(> .options-swatches-item__color--selected) {
+    border-color: transparent !important;
   }
 </style>
 
