@@ -319,7 +319,6 @@ layout: base
       {% endif %}
       {% if park_data.trailforks_map_rid %}
       <section>
-        <h3>{% if page.lang == "ja" %}トレイルマップ{% else %}Trail Map{% endif %}</h3>
         <div style="max-width:100%; overflow:hidden;">
           <iframe style="width:100%; height:500px; border:0;" src="https://www.trailforks.com/widgets/region_map/?rid={{ park_data.trailforks_map_rid }}&w=100%25&h=500&activitytype=1&maptype=trailforks" allowfullscreen></iframe>
         </div>
