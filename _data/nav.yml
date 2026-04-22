@@ -20,6 +20,9 @@
     - path: where-to-ride/skills-parks
       en: Skills Parks
       ja: スキルパーク
+    - path: where-to-ride/signage
+      en: Trail Signage
+      ja: トレイル標識
     - path: plan-your-trip
       en: Plan Your Trip
       ja: 旅行の計画
@@ -46,6 +49,9 @@
     - path: stories
       en: Stories
       ja: ストーリー
+    - path: dirty-dames
+      en: Dirty Dames
+      ja: ダーティーデイムズ
 
 - path: events
   en: Events
