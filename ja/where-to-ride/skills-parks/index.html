@@ -7,67 +7,163 @@ masthead:
 
 <div class="t3-section-wrap">
 
-  <!-- 概要 -->
+  <!-- Overview -->
   <div class="section">
 
     <div class="module-title-wrap" style="max-width:900px;">
       <h3
         class="module-title ja-animate"
         data-animation="move-from-bottom"
-        data-delay="200">スキルパーク・<wbr>パンプトラック</h3>
+        data-delay="200">{% if page.lang == "ja" %}スキルパーク・パンプトラック{% else %}Skills Parks &amp; Pump Tracks{% endif %}</h3>
       <div
         class="features-desc ja-animate"
         data-animation="move-from-bottom"
         data-delay="400">
-        <div style="font-size:130%;"><span>自信を<wbr>つけたい<wbr>初心者、<wbr>お子様に<wbr>ライディングを<wbr>紹介したい<wbr>保護者、<wbr>スキルを<wbr>磨きたい<wbr>経験者、<wbr>ニセコの<wbr>スキルパークと<wbr>パンプトラックは<wbr>すべての<wbr>人の<wbr>ためにあります。</span></div>
+        <div style="font-size:130%;"><span>{% if page.lang == "ja" %}初心者が自信をつけたい、子どもにライディングを体験させたい、経験豊富なライダーがスキルを磨きたい。ニセコエリアのスキルパークとパンプトラックは、すべての人のための場所です。{% else %}Whether you're a beginner building confidence, a parent introducing kids to riding, or an experienced rider sharpening skills, Niseko's skills parks and pump tracks are for everyone.{% endif %}</span></div>
       </div>
     </div>
 
   </div>
 
-  <!-- 施設 -->
+  <!-- Twin Peaks Skills Centre -->
   <div class="section">
 
     <div class="module-title-wrap" style="max-width:900px;">
       <h3
         class="module-title ja-animate"
         data-animation="move-from-bottom"
-        data-delay="200">施設</h3>
-    </div>
-
-    <div class="module-title-wrap" style="max-width:900px;">
+        data-delay="200">{% if page.lang == "ja" %}ツインピークス スキルセンター{% else %}Twin Peaks Skills Centre{% endif %}</h3>
       <div
         class="features-desc ja-animate"
         data-animation="move-from-bottom"
         data-delay="400">
-        <h4>ツインピークス<wbr>スキルセンター</h4>
         <ul style="list-style:none; line-height:2.2; font-size:130%; padding-left:0;">
-          <li><strong>場所</strong>：<wbr>ツインピークス<wbr>バイクパークの<wbr>ベースエリア。</li>
-          <li><strong>施設内容</strong>：<wbr>スキルフィーチャー、<wbr>最年少ライダー向けの<wbr>バランスバイク<wbr>ループ、<wbr>トレイルに<wbr>出る<wbr>前の<wbr>最適な<wbr>スタート地点。</li>
-          <li><strong>対象</strong>：<wbr>すべての<wbr>年齢と<wbr>レベル。<wbr>バランスバイク<wbr>ループは<wbr>2歳のお子様から<wbr>楽しめます。</li>
+          <li><strong>{% if page.lang == "ja" %}場所{% else %}Location{% endif %}</strong>: {% if page.lang == "ja" %}ツインピークスバイクパークの入口付近{% else %}At the base of Twin Peaks Bike Park{% endif %}</li>
+          <li><strong>{% if page.lang == "ja" %}料金{% else %}Cost{% endif %}</strong>: {% if page.lang == "ja" %}無料{% else %}Free{% endif %}</li>
+          <li><strong>{% if page.lang == "ja" %}内容{% else %}What's there{% endif %}</strong>: {% if page.lang == "ja" %}トレイルライディングの基礎を学べるスキルエリア。2025年のトレイルデイズイベントで追加された木製フィーチャーを含む。最年少のライダー向けのバランスバイクループも。{% else %}A skills area focused on learning to ride trails, with wooden features added during the 2025 Trail Days event. Includes a balance bike loop for the youngest riders.{% endif %}</li>
+          <li><strong>{% if page.lang == "ja" %}対象{% else %}Suitability{% endif %}</strong>: {% if page.lang == "ja" %}全年齢・全レベル。バランスバイクループは2歳からOK。{% else %}All ages and levels. The balance bike loop is perfect for children as young as 2.{% endif %}</li>
         </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Tomo Playpark Pump Track -->
+  <div class="section">
+
+    <div class="module-title-wrap" style="max-width:900px;">
+      <h3
+        class="module-title ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="200">{% if page.lang == "ja" %}赤井川TOMO プレイパーク パンプトラック{% else %}Tomo Playpark Pump Track{% endif %}</h3>
+      <div
+        class="features-desc ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="400">
+        <ul style="list-style:none; line-height:2.2; font-size:130%; padding-left:0;">
+          <li><strong>{% if page.lang == "ja" %}場所{% else %}Location{% endif %}</strong>: {% if page.lang == "ja" %}赤井川村（ニセコエリアから車で約30分）{% else %}Akaigawa village (approximately 30 minutes drive from Niseko){% endif %}</li>
+          <li><strong>{% if page.lang == "ja" %}料金{% else %}Cost{% endif %}</strong>: {% if page.lang == "ja" %}大人（中学生以上）¥1,200（2時間）/ ¥1,600（1日）、小学生 ¥900 / ¥1,200、ヘルメットレンタル ¥500{% else %}Adults ¥1,200 (2 hours) / ¥1,600 (full day), elementary ¥900 / ¥1,200, helmet rental ¥500{% endif %}</li>
+          <li><strong>{% if page.lang == "ja" %}内容{% else %}What's there{% endif %}</strong>: {% if page.lang == "ja" %}Velosolutions製の本格的なパンプトラック。BMX、ダートジャンプ、MTB、スケートボードに対応した長いコース。キャンプ場も併設。{% else %}A proper Velosolutions pump track with a long course. Suitable for BMX, dirt jumpers, MTB, and skateboarders. Camping facilities available on site.{% endif %}</li>
+          <li><strong>{% if page.lang == "ja" %}対象{% else %}Suitability{% endif %}</strong>: {% if page.lang == "ja" %}7歳以上。ヘルメット必須（レンタルあり）。自分のバイクを持参してください。{% else %}Ages 7+. Helmet mandatory (rental available). Bring your own bike.{% endif %}</li>
+          <li><strong>{% if page.lang == "ja" %}シーズン{% else %}Season{% endif %}</strong>: {% if page.lang == "ja" %}5月〜10月{% else %}May to October{% endif %}</li>
+          <li><strong>{% if page.lang == "ja" %}詳細{% else %}More info{% endif %}</strong>: <a href="https://playpark.akaigawa-tomo.com/en/activities/pumptrack/" target="_blank">playpark.akaigawa-tomo.com</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Grand Hirafu Skills Area -->
+  <div class="section">
+
+    <div class="module-title-wrap" style="max-width:900px;">
+      <h3
+        class="module-title ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="200">{% if page.lang == "ja" %}グランヒラフ スキルアップエリア{% else %}Grand Hirafu Skill-up Area{% endif %}</h3>
+      <div
+        class="features-desc ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="400">
+        <ul style="list-style:none; line-height:2.2; font-size:130%; padding-left:0;">
+          <li><strong>{% if page.lang == "ja" %}場所{% else %}Location{% endif %}</strong>: {% if page.lang == "ja" %}グランヒラフベースエリア{% else %}Grand Hirafu base area{% endif %}</li>
+          <li><strong>{% if page.lang == "ja" %}料金{% else %}Cost{% endif %}</strong>: {% if page.lang == "ja" %}無料{% else %}Free{% endif %}</li>
+          <li><strong>{% if page.lang == "ja" %}内容{% else %}What's there{% endif %}</strong>: {% if page.lang == "ja" %}初心者・中級者向けの練習コース。羊蹄山を正面に望みながらライディングを学べます。スタッフのサポートあり。{% else %}A practice course for beginners and intermediate riders, with Mt Yotei views. Staff support available for those new to the sport.{% endif %}</li>
+          <li><strong>{% if page.lang == "ja" %}対象{% else %}Suitability{% endif %}</strong>: {% if page.lang == "ja" %}子ども・初心者歓迎{% else %}Children and first-timers welcome{% endif %}</li>
+          <li><strong>{% if page.lang == "ja" %}詳細{% else %}More info{% endif %}</strong>: <a href="https://www.grand-hirafu.jp/en/activities/mtb-bike-park/" target="_blank">grand-hirafu.jp</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Rusutsu Flow Trail -->
+  <div class="section">
+
+    <div class="module-title-wrap" style="max-width:900px;">
+      <h3
+        class="module-title ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="200">{% if page.lang == "ja" %}ルスツ パンプトラック{% else %}Rusutsu Pump Track{% endif %}</h3>
+      <div
+        class="features-desc ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="400">
+        <ul style="list-style:none; line-height:2.2; font-size:130%; padding-left:0;">
+          <li><strong>{% if page.lang == "ja" %}場所{% else %}Location{% endif %}</strong>: {% if page.lang == "ja" %}ルスツ（ニセコエリアから車で約30分）{% else %}Rusutsu (approximately 30 minutes drive from Niseko){% endif %}</li>
+          <li><strong>{% if page.lang == "ja" %}内容{% else %}What's there{% endif %}</strong>: {% if page.lang == "ja" %}パンプトラックスタイルのショートフロートレイル。初心者や初めての方に最適。{% else %}A short flow trail in pump track style. Perfect for beginners and first-timers.{% endif %}</li>
+          <li><strong>{% if page.lang == "ja" %}対象{% else %}Suitability{% endif %}</strong>: {% if page.lang == "ja" %}初心者・入門者向け{% else %}Beginners and first-timers{% endif %}</li>
+          <li><strong>{% if page.lang == "ja" %}詳細{% else %}More info{% endif %}</strong>: <a href="https://www.trailforks.com/trails/rusutsu-flow-trail/" target="_blank">Trailforks</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Rhythm Japan (Coming Soon) -->
+  <div class="section">
+
+    <div class="module-title-wrap" style="max-width:900px;">
+      <h3
+        class="module-title ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="200">{% if page.lang == "ja" %}リズムジャパン スキルパーク{% else %}Rhythm Japan Skills Park{% endif %}</h3>
+      <div
+        class="features-desc ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="400">
+        <ul style="list-style:none; line-height:2.2; font-size:130%; padding-left:0;">
+          <li><strong>{% if page.lang == "ja" %}場所{% else %}Location{% endif %}</strong>: {% if page.lang == "ja" %}リズムジャパン本店（ニセコひらふ）{% else %}Rhythm Japan main store, Niseko Hirafu{% endif %}</li>
+          <li><strong>{% if page.lang == "ja" %}料金{% else %}Cost{% endif %}</strong>: {% if page.lang == "ja" %}無料{% else %}Free{% endif %}</li>
+          <li><strong>{% if page.lang == "ja" %}内容{% else %}What's there{% endif %}</strong>: {% if page.lang == "ja" %}モジュラーパンプトラック（現在設置済み）。スキルパークの追加を予定。{% else %}Currently a modular pump track with free usage. A full skills park is being installed.{% endif %}</li>
+          <li><strong>{% if page.lang == "ja" %}対象{% else %}Suitability{% endif %}</strong>: {% if page.lang == "ja" %}全レベル{% else %}All levels{% endif %}</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Hanazono Skills Park -->
+  <div class="section">
+
+    <div class="module-title-wrap" style="max-width:900px;">
+      <h3
+        class="module-title ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="200">{% if page.lang == "ja" %}花園スキルパーク{% else %}Hanazono Skills Park{% endif %}</h3>
+      <div
+        class="ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="300">
+        <div style="display:inline-block; padding:6px 16px; border-radius:4px; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:1px; background:var(--color-accent); color:#fff; margin-bottom:20px;">{% if page.lang == "ja" %}詳細未定{% else %}Details TBC{% endif %}</div>
       </div>
       <div
         class="features-desc ja-animate"
         data-animation="move-from-bottom"
-        data-delay="600">
-        <h4>花園<wbr>スキルパーク</h4>
-        <div style="display:inline-block; padding:6px 16px; border-radius:4px; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:1px; background:var(--color-accent); color:#fff; margin-bottom:20px;">2026年7月<wbr>オープン</div>
+        data-delay="400">
         <ul style="list-style:none; line-height:2.2; font-size:130%; padding-left:0;">
-          <li><strong>場所</strong>：<wbr>花園1リフトの<wbr>ベースエリア。</li>
-          <li><strong>施設内容</strong>：<wbr>新しい<wbr>花園<wbr>トレイル<wbr>プロジェクトの<wbr>一部として<wbr>設計された<wbr>専用<wbr>スキルパーク。<wbr>詳細は<wbr>オープンに<wbr>近づき次第<wbr>発表。</li>
-          <li><strong>対象</strong>：<wbr>すべての<wbr>レベル向けに<wbr>設計。<wbr>初心者にも<wbr>マウンテンバイクを<wbr>身近にする<wbr>ことに<wbr>重点。</li>
-        </ul>
-      </div>
-      <div
-        class="features-desc ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="800">
-        <h4>赤井川<wbr>パンプトラック</h4>
-        <ul style="list-style:none; line-height:2.2; font-size:130%; padding-left:0;">
-          <li><strong>場所</strong>：<wbr>ニセコ<wbr>メインエリアから<wbr>車で<wbr>すぐの<wbr>赤井川村。</li>
-          <li><strong>施設内容</strong>：<wbr>のどかな<wbr>田園風景の<wbr>中にある<wbr>パンプトラック。<wbr>NAMBAは<wbr>ここで<wbr>コミュニティ<wbr>イベントを<wbr>開催しています。</li>
-          <li><strong>対象</strong>：<wbr>すべての<wbr>レベルで<wbr>楽しめます。<wbr>ファミリーや<wbr>違った<wbr>ライディングを<wbr>楽しみたい<wbr>方に<wbr>おすすめの<wbr>サイドトリップ。</li>
+          <li><strong>{% if page.lang == "ja" %}場所{% else %}Location{% endif %}</strong>: {% if page.lang == "ja" %}花園1号リフトベースエリア{% else %}At the base of the Hanazono 1 lift{% endif %}</li>
+          <li><strong>{% if page.lang == "ja" %}内容{% else %}What's there{% endif %}</strong>: {% if page.lang == "ja" %}花園トレイルプロジェクトの一環として設計された専用スキルパーク。詳細は近日公開予定。{% else %}A purpose-built skills park designed as part of the Hanazono trail project. Details to be confirmed.{% endif %}</li>
         </ul>
       </div>
     </div>
@@ -82,7 +178,7 @@ masthead:
         class="t3-section action ja-animate"
         data-animation="move-from-bottom"
         data-delay="200">
-        <a class="btn btn-primary" href="/ja/where-to-ride/">すべての<wbr>ライディング<wbr>エリアに<wbr>戻る</a>
+        <a class="btn btn-primary" href="{% if page.lang == 'ja' %}/ja/where-to-ride/{% else %}/where-to-ride/{% endif %}">{% if page.lang == "ja" %}すべてのライディングエリアに戻る{% else %}Back to all riding areas{% endif %}</a>
       </div>
     </div>
 
