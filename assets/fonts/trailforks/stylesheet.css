@@ -15,3 +15,31 @@
     line-height: 1;
     -webkit-font-smoothing: antialiased
 }
+
+.dicon_small {
+    font-size: 16px;
+    display: inline-block;
+    font-family: 'trailforks';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased
+}
+
+.dicon_small:before {
+    content: "\e600"
+}
+
+.sicon_small {
+    font-size: 10px;
+    display: inline-block;
+    font-family: 'trailforks';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased
+}
+
+.sicon_small:before {
+    content: "\e601"
+}
