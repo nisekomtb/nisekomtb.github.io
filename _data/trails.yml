@@ -1,20 +1,21 @@
 twinpeaks:
   logo: /assets/images/logos/twin-peaks.svg
   name: Twin Peaks Bike Park
-  name_ja: ツインピークスバイクパーク
   cost: Free
-  cost_ja: 一般無料開放
   lift_access: false
   shuttle_access: false
   pedal_access: true
   location: Hirafu
-  location_ja: ひらふ
   season: June - End October
-  season_ja: 6月 - 10月後半まで
   hours: 7am - 7pm
-  hours_ja: 7am - 7pm
   managed_by: Niseko Area Mountain Bike Association
-  managed_by_ja: ニセコエリアマウンテンバイク協会
+  ja:
+    name: ツインピークスバイクパーク
+    cost: 一般無料開放
+    location: ひらふ
+    season: 6月 - 10月後半まで
+    hours: 7am - 7pm
+    managed_by: ニセコエリアマウンテンバイク協会
   trailforks_rid: 58775
   trailforks_map_rid: 58775
   trails:
@@ -252,20 +253,21 @@ twinpeaks:
 grand-hirafu:
   logo: /assets/images/company/grand-hirafu.png
   name: Grand Hirafu Bike Park
-  name_ja: グランヒラフバイクパーク
   cost: Lift pass required
-  cost_ja: リフト券が必要
   lift_access: true
   shuttle_access: false
   pedal_access: false
   location: Hirafu Village
-  location_ja: ヒラフ
   season: June - October
-  season_ja: 6月 - 10月
   hours: Check resort website
-  hours_ja: リゾートウェブサイトをご確認ください
   managed_by: Grand Hirafu Resort
-  managed_by_ja: グランヒラフリゾート
+  ja:
+    name: グランヒラフバイクパーク
+    cost: リフト券が必要
+    location: ヒラフ
+    season: 6月 - 10月
+    hours: リゾートウェブサイトをご確認ください
+    managed_by: グランヒラフリゾート
   trailforks_map_rid: 58780
   trails:
     - name: Hirafu DH Course
@@ -299,20 +301,21 @@ grand-hirafu:
 annupuri:
   logo: /assets/images/company/annupuri.png
   name: Niseko Annupuri
-  name_ja: ニセコアンヌプリ
   cost: "¥1,000-¥5,000 (gondola pass)"
-  cost_ja: "¥1,000〜¥5,000（ゴンドラパス）"
   lift_access: true
   shuttle_access: false
   pedal_access: false
   location: Annupuri
-  location_ja: アンヌプリ
   season: Mid-July - Mid-October
-  season_ja: 7月中旬 - 10月中旬
   hours: 9:00 AM - 4:00 PM
-  hours_ja: 9:00 - 16:00
   managed_by: Niseko Annupuri
-  managed_by_ja: ニセコアンヌプリ
+  ja:
+    name: ニセコアンヌプリ
+    cost: "¥1,000〜¥5,000（ゴンドラパス）"
+    location: アンヌプリ
+    season: 7月中旬 - 10月中旬
+    hours: 9:00 - 16:00
+    managed_by: ニセコアンヌプリ
   trailforks_map_rid: 66231
   trails:
     - name: "A1"
@@ -355,20 +358,21 @@ annupuri:
 hanazono:
   logo: /assets/images/company/higuma/hanazono.png
   name: Hanazono
-  name_ja: 花園
   cost: TBC
-  cost_ja: 未定
   lift_access: true
   shuttle_access: false
   pedal_access: true
   location: Hanazono
-  location_ja: 花園
   season: July 2026 onwards
-  season_ja: 2026年7月以降
   hours: TBC
-  hours_ja: 未定
   managed_by: Hanazono Resort / NAMBA
-  managed_by_ja: 花園リゾート / NAMBA
+  ja:
+    name: 花園
+    cost: 未定
+    location: 花園
+    season: 2026年7月以降
+    hours: 未定
+    managed_by: 花園リゾート / NAMBA
   trailforks_map_rid: 58775
   trails:
     - name: Hanazono Flow Trail

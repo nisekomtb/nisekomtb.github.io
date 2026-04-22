@@ -21,7 +21,7 @@
         <li>
           {% if page.lang == "ja" %}
             <h4>コスト：</h4>
-            {{ park.cost_ja }}
+            {{ park.ja.cost | default: park.cost }}
           {% else %}
             <h4>Cost:</h4>
             {{ park.cost }}
@@ -55,7 +55,7 @@
         <li>
           {% if page.lang == "ja" %}
             <h4>ロケーション：</h4>
-            {{ park.location_ja }}
+            {{ park.ja.location | default: park.location }}
           {% else %}
             <h4>Location:</h4>
             {{ park.location }}
@@ -172,8 +172,8 @@
         <li>
           {% if page.lang == "ja" %}
             <h4>開放日＆時間：</h4>
-            <p style="margin:0;">{{ park.season_ja }}</p>
-            <p style="margin:0;">{{ park.hours_ja }}</p>
+            <p style="margin:0;">{{ park.ja.season | default: park.season }}</p>
+            <p style="margin:0;">{{ park.ja.hours | default: park.hours }}</p>
           {% else %}
             <h4>Opening dates & times:</h4>
             <p style="margin:0;">{{ park.season }}</p>
@@ -184,7 +184,7 @@
         <li>
           {% if page.lang == "ja" %}
             <h4>管理・運営：</h4>
-            {{ park.managed_by_ja }}
+            {{ park.ja.managed_by | default: park.managed_by }}
           {% else %}
             <h4>Managed by:</h4>
             {{ park.managed_by }}

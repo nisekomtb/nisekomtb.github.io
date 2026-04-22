@@ -309,7 +309,7 @@ layout: base
       <img
         class="tp-logo"
         src="{{ park_info.logo }}?d={{ site.time | date: '%s' }}"
-        alt="{% if page.lang == 'ja' and park_info.name_ja %}{{ park_info.name_ja }}{% else %}{{ park_info.name }}{% endif %}" />
+        alt="{% if page.lang == 'ja' %}{{ park_info.ja.name | default: park_info.name }}{% else %}{{ park_info.name }}{% endif %}" />
       {% endif %}
       {% include park-stats.html data_key=page.trail_data_key %}
     </div>
