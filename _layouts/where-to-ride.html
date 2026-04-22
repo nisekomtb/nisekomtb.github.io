@@ -317,6 +317,37 @@ layout: base
         {% endif %}
       </section>
       {% endif %}
+      {% if park_data.gallery and park_data.gallery.size > 0 %}
+      <section>
+        <div class="splide" id="splide-gallery">
+          <div class="splide__track">
+            <ul class="splide__list">
+              {% for image in park_data.gallery %}
+              <li class="splide__slide">
+                <div style="overflow:hidden; border-radius:3px;">
+                  <img src="{{ image }}" alt="{{ park_data.name }}" style="width:100%; height:auto; display:block;" />
+                </div>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+        <script>
+          document.addEventListener('DOMContentLoaded', function () {
+            new Splide('#splide-gallery', {
+              type: 'loop',
+              perPage: 1,
+              gap: '0px',
+              arrows: true,
+              pagination: true,
+              autoplay: true,
+              interval: 4000,
+              pauseOnHover: true,
+            }).mount();
+          });
+        </script>
+      </section>
+      {% endif %}
       {% if park_data.trailforks_map_rid %}
       <section>
         <div style="max-width:100%; overflow:hidden;">
@@ -330,6 +361,20 @@ layout: base
           {{ content }}
         </article>
       </div>
+      {% if park_data.location_lat and park_data.location_lng %}
+      <section>
+        <h3>{% if page.lang == "ja" %}アクセス{% else %}Getting here{% endif %}</h3>
+        <div style="max-width:100%; overflow:hidden; border-radius:3px;">
+          <iframe
+            style="width:100%; height:450px; border:0;"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCet6Eys-EOTnAbs402oGLPbJWuvlH5E0s&q={{ park_data.location_lat }},{{ park_data.location_lng }}&zoom=14">
+          </iframe>
+        </div>
+      </section>
+      {% endif %}
     </div>
     <!-- //MAIN CONTENT -->
 
