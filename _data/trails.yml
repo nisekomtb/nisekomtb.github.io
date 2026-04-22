@@ -275,8 +275,8 @@ grand-hirafu:
     season: 6月 - 10月
     hours: リゾートウェブサイトをご確認ください
     managed_by: グランヒラフリゾート
-  location_lat: 42.863
-  location_lng: 140.702
+  location_lat: 42.861887017044324
+  location_lng: 140.69852125027265
   gallery: []
   trailforks_map_rid: 58866
   # 58780
@@ -327,8 +327,8 @@ annupuri:
     season: 7月中旬 - 10月中旬
     hours: 9:00am - 4:00pm
     managed_by: ニセコアンヌプリ
-  location_lat: 42.871
-  location_lng: 140.659
+  location_lat: 42.847557294449004
+  location_lng: 140.64795548334948
   gallery: []
   trailforks_map_rid: 66231
   trails:
@@ -387,8 +387,8 @@ hanazono:
     season: 2026年7月以降
     hours: 未定
     managed_by: 花園リゾート / NAMBA
-  location_lat: 42.892
-  location_lng: 140.679
+  location_lat: 42.89317852818024
+  location_lng: 140.70017501899656
   gallery: []
   trailforks_map_rid: 58775
   trails:
