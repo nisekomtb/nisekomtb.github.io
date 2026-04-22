@@ -304,6 +304,13 @@ layout: base
 
     <!-- SIDEBAR RIGHT -->
     <div class="t3-sidebar t3-sidebar-right col col-12 col-md-4 col-lg-3">
+      {% assign park_info = site.data.trails[page.trail_data_key] %}
+      {% if park_info.logo %}
+      <img
+        class="tp-logo"
+        src="{{ park_info.logo }}?d={{ site.time | date: '%s' }}"
+        alt="{% if page.lang == 'ja' and park_info.name_ja %}{{ park_info.name_ja }}{% else %}{{ park_info.name }}{% endif %}" />
+      {% endif %}
       {% include park-stats.html data_key=page.trail_data_key %}
     </div>
     <!-- //SIDEBAR RIGHT -->
