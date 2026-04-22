@@ -312,57 +312,39 @@ masthead:
     }
   });
 
-  // --- Trail network growth bar chart ---
+  // --- Trail network growth line chart ---
   var trailYears = impactData.trails.map(function(t) { return t.year; });
   var trailKm = impactData.trails.map(function(t) { return t.km; });
-  var trailCounts = impactData.trails.map(function(t) { return t.count; });
 
   new Chart(document.getElementById('chart-trails'), {
-    type: 'bar',
+    type: 'line',
     data: {
       labels: trailYears,
       datasets: [
         {
-          label: isJa ? 'トレイル距離 (km)' : 'Trail distance (km)',
+          label: isJa ? 'トレイル総距離 (km)' : 'Total trail distance (km)',
           data: trailKm,
-          backgroundColor: colours.primary,
-          borderRadius: 4,
-          yAxisID: 'y',
-        },
-        {
-          label: isJa ? 'トレイル数' : 'Trail count',
-          data: trailCounts,
-          type: 'line',
-          borderColor: colours.accent,
-          backgroundColor: colours.accentLight,
+          borderColor: colours.primary,
+          backgroundColor: colours.primaryLight,
+          fill: true,
           tension: 0.3,
           pointRadius: 5,
+          pointHoverRadius: 8,
           borderWidth: 3,
-          yAxisID: 'y1',
         }
       ],
     },
     options: {
       responsive: true,
       plugins: {
-        legend: { position: 'top' },
+        legend: { display: false },
       },
       scales: {
         y: {
           beginAtZero: true,
-          position: 'left',
           title: {
             display: true,
             text: isJa ? '距離 (km)' : 'Distance (km)',
-          }
-        },
-        y1: {
-          beginAtZero: true,
-          position: 'right',
-          grid: { drawOnChartArea: false },
-          title: {
-            display: true,
-            text: isJa ? 'トレイル数' : 'Trail count',
           }
         }
       }
