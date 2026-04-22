@@ -1,0 +1,22 @@
+{% comment %}
+  Usage: {% include trail-difficulty-counts.html data_key="twinpeaks" %}
+  Renders compact inline difficulty icons with counts for a park.
+{% endcomment %}
+{% assign park_d = site.data.trails[include.data_key] %}
+{% if park_d.trails %}
+{% assign gc = 0 %}{% assign bc = 0 %}{% assign bkc = 0 %}{% assign dbc = 0 %}
+{% for t in park_d.trails %}
+  {% case t.difficulty %}
+    {% when "green" %}{% assign gc = gc | plus: 1 %}
+    {% when "blue" %}{% assign bc = bc | plus: 1 %}
+    {% when "black" %}{% assign bkc = bkc | plus: 1 %}
+    {% when "double-black" %}{% assign dbc = dbc | plus: 1 %}
+  {% endcase %}
+{% endfor %}
+<span style="display:inline-flex; gap:10px; justify-content:center; flex-wrap:wrap; margin:8px 0;">
+  {% if gc > 0 %}<span style="font-size:12px; text-align:center;"><span aria-hidden="true" data-tf-icon="" class="dicon_small dgreen tip" title="Green" style="font-size:18px;"></span> <strong>{{ gc }}</strong></span>{% endif %}
+  {% if bc > 0 %}<span style="font-size:12px; text-align:center;"><span aria-hidden="true" data-tf-icon="" class="dicon_small dblue tip" title="Blue" style="font-size:18px;"></span> <strong>{{ bc }}</strong></span>{% endif %}
+  {% if bkc > 0 %}<span style="font-size:12px; text-align:center;"><span aria-hidden="true" data-tf-icon="" class="dicon_small dblack tip" title="Black" style="font-size:18px;"></span> <strong>{{ bkc }}</strong></span>{% endif %}
+  {% if dbc > 0 %}<span style="font-size:12px; text-align:center;"><span aria-hidden="true" data-tf-icon="" class="dicon_small dblack" title="Double Black" style="font-size:18px;"></span> <strong>{{ dbc }}</strong></span>{% endif %}
+</span>
+{% endif %}
