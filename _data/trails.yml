@@ -229,3 +229,99 @@ twinpeaks:
     multi_use: false
     sponsor: taki
     trailforks_id: 766461
+
+grand-hirafu:
+  - name: Hirafu DH Course
+    ja:
+      name: ヒラフDHコース
+    difficulty: black
+    distance: "1,800"
+    climb: 0
+    descent: 280
+    bike: down-only
+    multi_use: false
+  - name: Hirafu Flow
+    ja:
+      name: ヒラフフロー
+    difficulty: blue
+    distance: "2,200"
+    climb: 10
+    descent: 250
+    bike: down-only
+    multi_use: false
+  - name: Hirafu Skills Area
+    ja:
+      name: ヒラフスキルエリア
+    difficulty: green
+    distance: 400
+    climb: 5
+    descent: 5
+    bike: two-way
+    multi_use: true
+
+annupuri:
+  - name: "A1"
+    ja:
+      name: "A1"
+    difficulty: black
+    distance: 640
+    climb: 0
+    descent: 140
+    bike: down-only
+    multi_use: false
+  - name: "B1"
+    ja:
+      name: "B1"
+    difficulty: black
+    distance: 600
+    climb: 0
+    descent: 130
+    bike: down-only
+    multi_use: false
+  - name: "C1"
+    ja:
+      name: "C1"
+    difficulty: black
+    distance: 600
+    climb: 0
+    descent: 100
+    bike: down-only
+    multi_use: false
+  - name: "D1"
+    ja:
+      name: "D1"
+    difficulty: black
+    distance: 910
+    climb: 0
+    descent: 165
+    bike: down-only
+    multi_use: false
+
+hanazono:
+  - name: Hanazono Flow Trail
+    ja:
+      name: 花園フロートレイル
+    difficulty: blue
+    distance: "4,500"
+    climb: 0
+    descent: 400
+    bike: down-only
+    multi_use: false
+  - name: Hanazono Skills Park
+    ja:
+      name: 花園スキルパーク
+    difficulty: green
+    distance: 300
+    climb: 5
+    descent: 5
+    bike: two-way
+    multi_use: true
+  - name: Hanazono Link Trail
+    ja:
+      name: 花園リンクトレイル
+    difficulty: blue
+    distance: "1,500"
+    climb: 50
+    descent: 80
+    bike: one-way
+    multi_use: true

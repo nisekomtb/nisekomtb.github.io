@@ -1,0 +1,560 @@
+---
+layout: base
+---
+{% include masthead.html %}
+
+<style>
+  .t3-sidebar h3 {
+    font-size: 12px;
+  }
+
+  .t3-sidebar .stat {
+    font-size: 8px;
+    display: inline-block;
+    padding: 7px;
+    text-align: center;
+    list-style: none;
+    border: 0;
+  }
+
+  .t3-sidebar .stat span.dicon_small {
+    font-size: 20px;
+  }
+
+  .t3-sidebar .stat-count {
+    display: block;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .t3-sidebar .stat span {
+    border-radius: 3px;
+    margin-right: 5px;
+  }
+
+  .t3-sidebar .stat .dgreen {
+    color: #46b414;
+  }
+
+  .t3-sidebar .stat .dblue {
+    color: #148cf0;
+  }
+
+  .t3-sidebar .stat .dblack {
+    color: var(--color-bg);
+    background-color: var(--color-text);
+  }
+
+  .t3-sidebar .stat .ddblblack {
+    color: #be0014;
+  }
+
+  .credit {
+    float: right;
+    font-size: 90%;
+  }
+
+  .credit a {
+    color: var(--color-text);
+  }
+
+  .trails-key {
+    background-color: var(--color-bg-panel);
+    border:1px solid var(--color-bg-border);
+    display:inline-block;
+  }
+
+  .trails-key h4 {
+    font-size: 16px;
+    margin-left: 20px;
+  }
+
+  .trails-key ul {
+    padding-inline-start:0;
+    float:left;
+    margin:10px 20px;
+  }
+
+  .trails-key li {
+    display:inline;
+    margin-right:20px;
+    white-space:nowrap;
+  }
+
+  .trails-key li:last-child {
+    margin-right:0;
+  }
+
+  .trails-key li div {
+    display: inline-block;
+    white-space:nowrap;
+    margin-bottom: 5px;
+  }
+
+  .trails-key img.access {
+    width: 20px;
+    padding: 2px 1px 1px 2px;
+    display:inline;
+    opacity:0.8;
+  }
+
+  .trails-key img.access.restrict {
+    width: 23px;
+    padding: 0;
+  }
+
+  table.trails {
+    margin-top:30px;
+    width: 100%;
+  }
+
+  table.trails th,
+  table.levels td {
+    border: 4px solid var(--color-bg);
+    vertical-align: middle;
+  }
+
+  table.trails th {
+    color: var(--color-accent);
+    font-size: 12px;
+    font-family: "Metropolis", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    padding: 12px 10px 12px 0;
+  }
+
+  table.trails th.fst {
+    text-align: right;
+    display: none;
+  }
+
+  table.trails th.row {
+    text-align: center;
+  }
+
+  table.trails td {
+    background-color: var(--color-bg-panel);
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: 700;
+  }
+
+  table.trails td.left {
+    text-align: left;
+  }
+
+  table.trails td.right {
+    text-align: right;
+  }
+
+  table.trails td:first-child {
+    padding-left: 20px;
+  }
+
+  table.trails td:last-child {
+    padding-right: 20px;
+  }
+
+  table.trails td.difficulty span {
+    border-radius: 3px;
+  }
+
+  table.trails td.difficulty .dgreen {
+    color: #46b414;
+  }
+
+  table.trails td.difficulty .dblue {
+    color: #148cf0;
+  }
+
+  table.trails td.difficulty .dblack {
+    color: var(--color-bg);
+    background-color: var(--color-text);
+  }
+
+  table.trails td.difficulty .ddblblack {
+    color: #be0014;
+  }
+
+  table.trails td .TrailforksWidgetTrailStatus {
+    overflow: hidden;
+    width: 15px;
+    height: 19px;
+  }
+
+  table.trails td .TrailforksWidgetTrailStatus iframe {
+    overflow: hidden;
+    vertical-align: middle;
+  }
+
+  table.trails td .ddesc {
+    font-weight: 500;
+    padding-left:3px;
+    padding-right:3px;
+    display: none;
+  }
+
+  table.trails td.climb-descent {
+    display: table-cell;
+  }
+
+  table.trails td.climb, table.trails td.descent {
+    display: none;
+  }
+
+  table.trails td.bike, table.trails td.hike {
+    display: none;
+  }
+
+  .trails-key .key-access {
+    display: none;
+  }
+
+  @media(min-width: 430px) {
+    table.trails td.bike, table.trails td.hike {
+      display: table-cell;
+    }
+
+    .trails-key .key-access {
+      display: block;
+    }
+  }
+
+  @media(min-width: 500px) {
+    table.trails td.climb-descent {
+      display: none;
+    }
+
+    table.trails td.climb, table.trails td.descent {
+      display: table-cell;
+    }
+  }
+
+  @media(min-width: 600px) {
+    table.trails td .ddesc {
+      display: inline;
+    }
+  }
+
+  @media(min-width: 768px) {
+    table.trails td .ddesc {
+      display: none;
+    }
+
+    table.trails td.cond {
+      padding-left:10px;
+      padding-right:10px;
+    }
+  }
+
+  @media(min-width: 992px) {
+    table.trails td .ddesc {
+      display: inline;
+    }
+  }
+
+  table.trails td img.access {
+    width: 20px;
+    padding: 2px 1px 1px 2px;
+    display:inline;
+    opacity:0.8;
+  }
+
+  table.trails td img.access.restrict {
+    width: 23px;
+    padding: 0;
+  }
+
+  table.trails td img.sponsor {
+    width: 20px;
+    display:inline;
+  }
+</style>
+
+<div id="t3-mainbody" class="container t3-mainbody">
+  <div class="row equal-height">
+
+    <!-- MAIN CONTENT -->
+    <div id="t3-content" class="t3-content col col-12 col-md-8 col-lg-9">
+      <div class="item-page hidden-masthead-info">
+        <article>
+          {{ content }}
+        </article>
+      </div>
+
+      {% if page.trail_data_key %}
+      <section>
+        <h3>{% if page.lang == "ja" %}トレイル{% else %}Trails{% endif %}</h3>
+        <div class="trails-key">
+          <h4>{% if page.lang == "ja" %}トレイルキー{% else %}Trail key{% endif %}</h4>
+          <ul class="key-access">
+            <li><div><img class="access" src="/assets/images/trails/one-way.png" />&nbsp;{% if page.lang == "ja" %}一方通行{% else %}One way traffic{% endif %}</div></li>
+            <li><div><img class="access" src="/assets/images/trails/two-way.png" />&nbsp;{% if page.lang == "ja" %}双方向{% else %}Two way traffic{% endif %}</div></li>
+            <li><div><img class="access" src="/assets/images/trails/down-only.png" />&nbsp;{% if page.lang == "ja" %}下りのみ{% else %}Downhill only{% endif %}</div></li>
+            <li><div><img class="access" src="/assets/images/trails/up-only.png" />&nbsp;{% if page.lang == "ja" %}上りのみ{% else %}Uphill only{% endif %}</div></li>
+            <li><div><img class="access" src="/assets/images/trails/multiuse.png" />&nbsp;{% if page.lang == "ja" %}複合利用{% else %}Multi use{% endif %}</div></li>
+            <li><div><img class="access restrict" src="/assets/images/trails/bikes-only.png" />&nbsp;{% if page.lang == "ja" %}自転車専用{% else %}Bikes only{% endif %}</div></li>
+          </ul>
+        </div>
+        <table class="trails">
+          {% for trail in site.data.trails[page.trail_data_key] %}
+          <tr>
+            <td class="difficulty left">
+              {% case trail.difficulty %}
+                {% when 'green' %}
+                  <span aria-hidden="true" data-tf-icon="" class="dicon_small dgreen tip" title="Green"></span> <span class="ddesc dgreen">Easy</span>
+                {% when 'blue' %}
+                  <span aria-hidden="true" data-tf-icon="" class="dicon_small dblue tip" title="Blue"></span> <span class="ddesc dblue">More Difficult</span>
+                {% when 'black' %}
+                  <span aria-hidden="true" data-tf-icon="" class="dicon_small dblack tip" title="Black"></span> <span class="ddesc dblack">Very Difficult</span>
+                {% when 'double-black' %}
+                  <span aria-hidden="true" data-tf-icon="" class="dicon_small dblack" title="Double Black Diamond"></span> <span class="ddesc ddblblack">Extremely Difficult</span>
+              {% endcase %}
+            </td>
+            <td class="left">{% if page.lang == "ja" and trail.ja.name %}{{ trail.ja.name }}{% else %}{{ trail.name }}{% endif %}</td>
+            <td class="bike">
+              {% case trail.bike %}
+              {% when "one-way" %}
+                {% assign bikeToolTip = "One way traffic" %}
+              {% when "two-way" %}
+                {% assign bikeToolTip = "Two way traffic" %}
+              {% when "down-only" %}
+                {% assign bikeToolTip = "Downhill only" %}
+              {% when "up-only" %}
+                {% assign bikeToolTip = "Uphill only" %}
+              {% else %}
+                {% assign bikeToolTip = "" %}
+              {% endcase %}
+              <img class="access" src="/assets/images/trails/{{- trail.bike -}}.png" title="{{ bikeToolTip }}" />
+            </td>
+            <td class="hike">
+              {% if trail.multi_use %}
+                <img class="access" src="/assets/images/trails/multiuse.png" title="Multi use (hiking & trail running allowed)" />
+              {% else %}
+                <img class="access restrict" src="/assets/images/trails/bikes-only.png" title="Bikes only (no hiking or trail running)" />
+              {% endif %}
+            </td>
+            <td class="right climb">{% unless trail.climb == 0 %}{{ trail.climb -}}m <span class="fa fa-arrow-up" title="Climb"></span>{% endunless %}</td>
+            <td class="right descent">{% unless trail.descent == 0 %}{{ trail.descent -}}m <span class="fa fa-arrow-down" title="Descent"></span>{% endunless %}</td>
+            <td class="right climb-descent">{% if trail.climb == trail.descent %}{{ trail.descent -}}m <span class="fa-solid fa-up-down" title="Loop"></span>{% elsif trail.climb > trail.descent %}{{ trail.climb -}}m <span class="fa fa-arrow-up" title="Climb"></span>{% else %}{{ trail.descent -}}m <span class="fa fa-arrow-down" title="Descent"></span>{% endif %}</td>
+            <td class="right">{{ trail.distance -}}m <span class="fa fa-ruler-horizontal" title="Distance"></span></td>
+          </tr>
+          {% endfor %}
+        </table>
+      </section>
+      {% endif %}
+
+      {% if page.park.trailforks_map_rid %}
+      <section>
+        <h3>{% if page.lang == "ja" %}トレイルマップ{% else %}Trail Map{% endif %}</h3>
+        <div style="max-width:100%; overflow:hidden;">
+          <iframe style="width:100%; height:500px; border:0;" src="https://www.trailforks.com/widgets/region_map/?rid={{ page.park.trailforks_map_rid }}&w=100%25&h=500&activitytype=1&maptype=trailforks" allowfullscreen></iframe>
+        </div>
+      </section>
+      {% endif %}
+    </div>
+    <!-- //MAIN CONTENT -->
+
+    <!-- SIDEBAR RIGHT -->
+    <div class="t3-sidebar t3-sidebar-right col col-12 col-md-4 col-lg-3">
+      <div class="t3-module module">
+        <div class="module-inner">
+          {% if page.lang == "ja" %}
+            <h3 class="module-title">
+              <span>基本データ</span>
+            </h3>
+          {% else %}
+            <h3 class="module-title">
+              <span>Key stats</span>
+            </h3>
+          {% endif %}
+          <div class="module-ct">
+            <ul class="categories-module mod-list">
+              <li>
+                {% if page.lang == "ja" %}
+                  <h4>コスト：</h4>
+                  {{ page.park.cost_ja }}
+                {% else %}
+                  <h4>Cost:</h4>
+                  {{ page.park.cost }}
+                {% endif %}
+              </li>
+              <li>
+                {% if page.lang == "ja" %}
+                  <h4>上りのタイプ：</h4>
+                  <p style="margin: 2px 0 0 0;">リフトアクセス：
+                    <strong>{% if page.park.lift_access %}有{% else %}無{% endif %}</strong>
+                  </p>
+                  <p style="margin:0;">シャトルアクセス：
+                    <strong>{% if page.park.shuttle_access %}有{% else %}無{% endif %}</strong>
+                  </p>
+                  <p style="margin:0;">ペダルアクセス：
+                    <strong>{% if page.park.pedal_access %}有{% else %}無{% endif %}</strong>
+                  </p>
+                {% else %}
+                  <h4>Uplift type:</h4>
+                  <p style="margin: 2px 0 0 0;">Lift access:
+                    <strong>{% if page.park.lift_access %}Yes{% else %}No{% endif %}</strong>
+                  </p>
+                  <p style="margin:0;">Shuttle access:
+                    <strong>{% if page.park.shuttle_access %}Yes{% else %}No{% endif %}</strong>
+                  </p>
+                  <p style="margin:0;">Pedal access:
+                    <strong>{% if page.park.pedal_access %}Yes{% else %}No{% endif %}</strong>
+                  </p>
+                {% endif %}
+              </li>
+              <li>
+                {% if page.lang == "ja" %}
+                  <h4>ロケーション：</h4>
+                  {{ page.park.location_ja }}
+                {% else %}
+                  <h4>Location:</h4>
+                  {{ page.park.location }}
+                {% endif %}
+              </li>
+              {% if page.trail_data_key %}
+              <li>
+                {% if page.lang == "ja" %}
+                  <h4>トレイルステータス：</h4>
+                {% else %}
+                  <h4>Trail stats:</h4>
+                {% endif %}
+                {% assign greenTrailCount = 0 %}
+                {% assign blueTrailCount = 0 %}
+                {% assign blackTrailCount = 0 %}
+                {% assign doubleBlackTrailCount = 0 %}
+                {% assign trailCount = 0 %}
+                {% assign totalDistance = 0 %}
+                {% assign totalDescent = 0 %}
+                {% assign totalClimb = 0 %}
+
+                {% for trail in site.data.trails[page.trail_data_key] %}
+                  {% assign trailCount = trailCount | plus: 1 %}
+                  {% case trail.difficulty %}
+                    {% when 'green' %}
+                      {% assign greenTrailCount = greenTrailCount | plus: 1 %}
+                    {% when 'blue' %}
+                      {% assign blueTrailCount = blueTrailCount | plus: 1 %}
+                    {% when 'black' %}
+                      {% assign blackTrailCount = blackTrailCount | plus: 1 %}
+                    {% when 'double-black' %}
+                      {% assign doubleBlackTrailCount = doubleBlackTrailCount | plus: 1 %}
+                  {% endcase %}
+                  {% assign distance = trail.distance | remove: "," %}
+                  {% assign totalDistance = totalDistance | plus: distance %}
+                  {% assign totalDescent = totalDescent | plus: trail.descent %}
+                  {% assign totalClimb = totalClimb | plus: trail.climb %}
+                {% endfor %}
+                <ul style="padding:0;">
+                  <li class="stat">
+                    <span
+                      aria-hidden="true"
+                      data-tf-icon=""
+                      class="dicon_small dgreen tip"
+                      title="{% if page.lang == 'ja' %}グリーン{% else %}Green{% endif %}"></span>
+                    <span class="stat-count">{{ greenTrailCount }}</span>
+                  </li>
+                  <li class="stat">
+                    <span
+                      aria-hidden="true"
+                      data-tf-icon=""
+                      class="dicon_small dblue tip"
+                      title="{% if page.lang == 'ja' %}ブルー{% else %}Blue{% endif %}"></span>
+                    <span class="stat-count">{{ blueTrailCount }}</span>
+                  </li>
+                  <li class="stat">
+                    <span
+                      aria-hidden="true"
+                      data-tf-icon=""
+                      class="dicon_small dblack tip"
+                      title="{% if page.lang == 'ja' %}ブラック{% else %}Black{% endif %}"></span>
+                    <span class="stat-count">{{ blackTrailCount }}</span>
+                  </li>
+                  <li class="stat">
+                    <span
+                      aria-hidden="true"
+                      data-tf-icon=""
+                      class="dicon_small dblack tip"
+                      title="{% if page.lang == 'ja' %}ダブルブラック{% else %}Double Black{% endif %}"></span>
+                    <span class="stat-count">{{ doubleBlackTrailCount }}</span>
+                  </li>
+                </ul>
+                <p style="margin:0;">
+                  <strong>{{ trailCount }}</strong>
+                  {% if page.lang == 'ja' %}つのトレイル
+                  {% else %}
+                    trails{% endif %}
+                </p>
+                <p style="margin:0;">
+                  {% if page.lang == 'ja' %}総距離：{% else %}Total distance:{% endif %}
+                  <strong>{{ totalDistance | divided_by: 1000 }}km</strong>
+                  <span class="fa fa-ruler-horizontal" title="{% if page.lang == 'ja' %}距離{% else %}Distance{% endif %}"></span>
+                </p>
+                <p style="margin:0;">
+                  {% if page.lang == 'ja' %}下りの総距離：{% else %}Total descent:{% endif %}
+                  <strong>{{ totalDescent }}m</strong>
+                  <span class="fa fa-arrow-down" title="{% if page.lang == 'ja' %}下り{% else %}Descent{% endif %}"></span>
+                </p>
+                <p style="margin:0;">
+                  {% if page.lang == 'ja' %}上りの総距離：{% else %}Total climb:{% endif %}
+                  <strong>{{ totalClimb }}m</strong>
+                  <span class="fa fa-arrow-up" title="{% if page.lang == 'ja' %}登り{% else %}Climb{% endif %}"></span>
+                </p>
+              </li>
+              {% endif %}
+              {% if page.park.trailforks_rid %}
+              <li>
+                <h4>
+                  {% if page.lang == 'ja' %}バイクパークステータス：{% else %}Bike Park status:{% endif %}
+                </h4>
+                <div
+                  style="margin-top:3px;"
+                  class="TrailforksWidgetRegionStatus"
+                  data-w="100px"
+                  data-h="15px"
+                  data-rid="{{ page.park.trailforks_rid }}"
+                  data-activitytype="1"
+                  data-status="1"
+                  data-st="1"
+                  data-ct="0"
+                  data-date="0"></div>
+              </li>
+              {% endif %}
+              <li>
+                {% if page.lang == "ja" %}
+                  <h4>開放日＆時間：</h4>
+                  <p style="margin:0;">{{ page.park.season_ja }}</p>
+                  <p style="margin:0;">{{ page.park.hours_ja }}</p>
+                {% else %}
+                  <h4>Opening dates & times:</h4>
+                  <p style="margin:0;">{{ page.park.season }}</p>
+                  <p style="margin:0;">{{ page.park.hours }}</p>
+                {% endif %}
+              </li>
+              {% if page.park.managed_by %}
+              <li>
+                {% if page.lang == "ja" %}
+                  <h4>管理・運営：</h4>
+                  {{ page.park.managed_by_ja }}
+                {% else %}
+                  <h4>Managed by:</h4>
+                  {{ page.park.managed_by }}
+                {% endif %}
+              </li>
+              {% endif %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //SIDEBAR RIGHT -->
+  </div>
+
+</div>
+
+<script type="text/javascript">
+  var script = document.createElement("script"); script.setAttribute("src", "https://es.pinkbike.org/ttl-86400/sprt/j/trailforks/widget.js?units=metric"); document.getElementsByTagName("head")[0].appendChild(script);
+</script>
