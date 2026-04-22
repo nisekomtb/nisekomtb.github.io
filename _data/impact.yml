@@ -35,6 +35,28 @@ trails:
     niseko_km: 27
 
 funding:
+  # TODO: Replace estimated income figures with actual data from tax returns
+  income:
+    - year: 2021
+      local_business: 500000
+      industry_sponsors: 0
+      government: 0
+    - year: 2022
+      local_business: 4000000
+      industry_sponsors: 1500000
+      government: 4000000
+    - year: 2023
+      local_business: 8000000
+      industry_sponsors: 3000000
+      government: 1500000
+    - year: 2024
+      local_business: 10000000
+      industry_sponsors: 4000000
+      government: 1000000
+    - year: 2025
+      local_business: 12000000
+      industry_sponsors: 5000000
+      government: 1200000
   sources:
     local_business: 69
     industry_sponsors: 24
