@@ -10,13 +10,13 @@
   <div class="trails-key">
     <h4>{% if page.lang == "ja" %}トレイルキー{% else %}Trail key{% endif %}</h4>
     <ul>
-      <li><span aria-hidden="true" data-tf-icon="" class="sicon_small sgreen hovertip" title="All Clear / Green"
+      <li><span aria-hidden="true" data-tf-icon="" class="sicon_small sgreen hovertip" title="All Clear / Green"
         style="color: #225f06;"></span> {% if page.lang == "ja" %}問題なし{% else %}All Clear{% endif %}</li>
-      <li><span aria-hidden="true" data-tf-icon="" class="sicon_small syellow hovertip" title="Minor Issue / Yellow"
+      <li><span aria-hidden="true" data-tf-icon="" class="sicon_small syellow hovertip" title="Minor Issue / Yellow"
         style="color: #fc0;"></span> {% if page.lang == "ja" %}軽微な問題{% else %}Minor Issue{% endif %}</li>
-      <li><span aria-hidden="true" data-tf-icon="" class="sicon_small samber hovertip" title="Significant Issue / Amber"
+      <li><span aria-hidden="true" data-tf-icon="" class="sicon_small samber hovertip" title="Significant Issue / Amber"
         style="color: #ff8500;"></span> {% if page.lang == "ja" %}重大な問題{% else %}Significant Issue{% endif %}</li>
-      <li><span aria-hidden="true" data-tf-icon="" class="sicon_small sred hovertip" title="Closed / Red"
+      <li><span aria-hidden="true" data-tf-icon="" class="sicon_small sred hovertip" title="Closed / Red"
         style="color: #be0014;"></span> {% if page.lang == "ja" %}クローズ{% else %}Closed{% endif %}</li>
     </ul>
     <ul class="key-access">
@@ -34,13 +34,13 @@
       <td class="difficulty left">
         {% case trail.difficulty %}
           {% when 'green' %}
-            <span aria-hidden="true" data-tf-icon="" class="dicon_small dgreen tip" title="Green"></span> <span class="ddesc dgreen">Easy</span>
+            <span aria-hidden="true" data-tf-icon="" class="dicon_small dgreen tip" title="Green"></span> <span class="ddesc dgreen">Easy</span>
           {% when 'blue' %}
-            <span aria-hidden="true" data-tf-icon="" class="dicon_small dblue tip" title="Blue"></span> <span class="ddesc dblue">More Difficult</span>
+            <span aria-hidden="true" data-tf-icon="" class="dicon_small dblue tip" title="Blue"></span> <span class="ddesc dblue">More Difficult</span>
           {% when 'black' %}
-            <span aria-hidden="true" data-tf-icon="" class="dicon_small dblack tip" title="Black"></span> <span class="ddesc dblack">Very Difficult</span>
+            <span aria-hidden="true" data-tf-icon="" class="dicon_small dblack tip" title="Black"></span> <span class="ddesc dblack">Very Difficult</span>
           {% when 'double-black' %}
-            <span aria-hidden="true" data-tf-icon="" class="dicon_small dblack" title="Double Black Diamond"></span> <span class="ddesc ddblblack">Extremely Difficult</span>
+            <span aria-hidden="true" data-tf-icon="" class="dicon_small dblack" title="Double Black Diamond"></span> <span class="ddesc ddblblack">Extremely Difficult</span>
         {% endcase %}
       </td>
       {% if trail.trailforks_id %}
