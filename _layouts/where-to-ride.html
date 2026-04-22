@@ -4,6 +4,16 @@ layout: base
 {% include masthead.html %}
 
 <style>
+  section.intro {
+    display: block;
+  }
+
+  @media (min-width: 768px) {
+    section.intro {
+      display: none;
+    }
+  }
+
   .t3-sidebar .tp-logo {
     width: 150px;
     margin: 0 auto 24px;
@@ -285,6 +295,28 @@ layout: base
     <!-- MAIN CONTENT -->
     <div id="t3-content" class="t3-content col col-12 col-md-8 col-lg-9">
       {% assign park_data = site.data.trails[page.trail_data_key] %}
+      {% if park_data %}
+      <section class="intro">
+        {% if park_data.logo %}
+        <img style="width:150px; margin:0 auto; margin-bottom:24px; display:flex;"
+          src="{{ park_data.logo }}?d={{ site.time | date: '%s' }}"
+          alt="{% if page.lang == 'ja' %}{{ park_data.ja.name | default: park_data.name }}{% else %}{{ park_data.name }}{% endif %}" />
+        {% endif %}
+        <p style="text-align:center;">
+          <strong>{% if page.lang == 'ja' %}コスト：{% else %}Cost:{% endif %}</strong>
+          {% if page.lang == 'ja' %}{{ park_data.ja.cost | default: park_data.cost }}{% else %}{{ park_data.cost }}{% endif %}
+          &nbsp;|&nbsp;
+          <strong>{% if page.lang == 'ja' %}リフト：{% else %}Lift:{% endif %}</strong>
+          {% if park_data.lift_access %}{% if page.lang == 'ja' %}有{% else %}Yes{% endif %}{% else %}{% if page.lang == 'ja' %}無{% else %}No{% endif %}{% endif %}
+        </p>
+        {% if park_data.trailforks_rid %}
+        <p style="text-align:center;">
+          <strong>{% if page.lang == 'ja' %}ステータス：{% else %}Status:{% endif %}</strong>
+          <span class="TrailforksWidgetRegionStatus" data-w="100px" data-h="15px" data-rid="{{ park_data.trailforks_rid }}" data-activitytype="1" data-status="1" data-st="1" data-ct="0" data-date="0"></span>
+        </p>
+        {% endif %}
+      </section>
+      {% endif %}
       {% if park_data.trailforks_map_rid %}
       <section>
         <h3>{% if page.lang == "ja" %}トレイルマップ{% else %}Trail Map{% endif %}</h3>
