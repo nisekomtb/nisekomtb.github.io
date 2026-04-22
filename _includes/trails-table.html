@@ -1,6 +1,7 @@
 {% comment %}
-  Usage: {% include trails-table.html data_key="grand-hirafu" %}
+  Usage: {% include trails-table.html data_key="twinpeaks" %}
   Renders the trails key legend and trails table for the given data key.
+  Includes Trailforks trail status widgets when trail.trailforks_id exists.
 {% endcomment %}
 {% assign trail_key = include.data_key %}
 {% if trail_key %}
@@ -8,6 +9,16 @@
   <h3>{% if page.lang == "ja" %}トレイル{% else %}Trails{% endif %}</h3>
   <div class="trails-key">
     <h4>{% if page.lang == "ja" %}トレイルキー{% else %}Trail key{% endif %}</h4>
+    <ul>
+      <li><span aria-hidden="true" data-tf-icon="" class="sicon_small sgreen hovertip" title="All Clear / Green"
+        style="color: #225f06;"></span> {% if page.lang == "ja" %}問題なし{% else %}All Clear{% endif %}</li>
+      <li><span aria-hidden="true" data-tf-icon="" class="sicon_small syellow hovertip" title="Minor Issue / Yellow"
+        style="color: #fc0;"></span> {% if page.lang == "ja" %}軽微な問題{% else %}Minor Issue{% endif %}</li>
+      <li><span aria-hidden="true" data-tf-icon="" class="sicon_small samber hovertip" title="Significant Issue / Amber"
+        style="color: #ff8500;"></span> {% if page.lang == "ja" %}重大な問題{% else %}Significant Issue{% endif %}</li>
+      <li><span aria-hidden="true" data-tf-icon="" class="sicon_small sred hovertip" title="Closed / Red"
+        style="color: #be0014;"></span> {% if page.lang == "ja" %}クローズ{% else %}Closed{% endif %}</li>
+    </ul>
     <ul class="key-access">
       <li><div><img class="access" src="/assets/images/trails/one-way.png" />&nbsp;{% if page.lang == "ja" %}一方通行{% else %}One way traffic{% endif %}</div></li>
       <li><div><img class="access" src="/assets/images/trails/two-way.png" />&nbsp;{% if page.lang == "ja" %}双方向{% else %}Two way traffic{% endif %}</div></li>
@@ -32,6 +43,12 @@
             <span aria-hidden="true" data-tf-icon="" class="dicon_small dblack" title="Double Black Diamond"></span> <span class="ddesc ddblblack">Extremely Difficult</span>
         {% endcase %}
       </td>
+      {% if trail.trailforks_id %}
+      <td class="cond">
+        <div class="TrailforksWidgetTrailStatus" data-w="15px" data-h="19px" data-trailid="{{- trail.trailforks_id -}}"
+          data-status="1" data-st="0" data-condition="0" data-ct="0" data-date="0" data-description="0"></div>
+      </td>
+      {% endif %}
       <td class="left">{% if page.lang == "ja" and trail.ja.name %}{{ trail.ja.name }}{% else %}{{ trail.name }}{% endif %}</td>
       <td class="bike">
         {% case trail.bike %}
