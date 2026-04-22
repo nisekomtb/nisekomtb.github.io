@@ -314,7 +314,8 @@ masthead:
 
   // --- Trail network growth line chart ---
   var trailYears = impactData.trails.map(function(t) { return t.year; });
-  var trailKm = impactData.trails.map(function(t) { return t.km; });
+  var nambaKm = impactData.trails.map(function(t) { return t.namba_km; });
+  var nisekoKm = impactData.trails.map(function(t) { return t.niseko_km; });
 
   new Chart(document.getElementById('chart-trails'), {
     type: 'line',
@@ -322,8 +323,19 @@ masthead:
       labels: trailYears,
       datasets: [
         {
-          label: isJa ? 'トレイル総距離 (km)' : 'Total trail distance (km)',
-          data: trailKm,
+          label: isJa ? 'ニセコ全体 (km)' : 'Total Niseko (km)',
+          data: nisekoKm,
+          borderColor: colours.accent,
+          backgroundColor: colours.accentLight,
+          fill: true,
+          tension: 0.3,
+          pointRadius: 5,
+          pointHoverRadius: 8,
+          borderWidth: 3,
+        },
+        {
+          label: isJa ? 'NAMBA建設 (km)' : 'Built by NAMBA (km)',
+          data: nambaKm,
           borderColor: colours.primary,
           backgroundColor: colours.primaryLight,
           fill: true,
@@ -337,7 +349,7 @@ masthead:
     options: {
       responsive: true,
       plugins: {
-        legend: { display: false },
+        legend: { position: 'top' },
       },
       scales: {
         y: {

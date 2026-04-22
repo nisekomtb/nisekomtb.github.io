@@ -22,17 +22,17 @@ visitors:
 
 trails:
   - year: 2022
-    km: 4.7
-    count: 5
+    namba_km: 4.7
+    niseko_km: 5.5
   - year: 2023
-    km: 14.2
-    count: 12
+    namba_km: 14.2
+    niseko_km: 16
   - year: 2024
-    km: 21
-    count: 20
+    namba_km: 21
+    niseko_km: 25
   - year: 2025
-    km: 21
-    count: 21
+    namba_km: 21
+    niseko_km: 27
 
 funding:
   sources:
