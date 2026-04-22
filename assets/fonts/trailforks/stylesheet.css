@@ -15,3 +15,15 @@
     line-height: 1;
     -webkit-font-smoothing: antialiased
 }
+
+.dicon_small { display: inline-block }
+.dicon_small.dgreen { color: #46b414 }
+.dicon_small.dblue { color: #148cf0 }
+.dicon_small.dblack { color: var(--color-bg); background-color: var(--color-text); border-radius: 3px }
+.ddblblack { color: #be0014 }
+
+.sicon_small { display: inline-block }
+.sicon_small.sgreen { color: #225f06 }
+.sicon_small.syellow { color: #fc0 }
+.sicon_small.samber { color: #ff8500 }
+.sicon_small.sred { color: #be0014 }
