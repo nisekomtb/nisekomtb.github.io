@@ -1,0 +1,46 @@
+visitors:
+  twin-peaks:
+    label: Twin Peaks Bike Park
+    label_ja: ツインピークスバイクパーク
+    years:
+      - year: 2024
+        total: 7747
+        months:
+          june: 1878
+          july: 1663
+          august: 985
+          september: 2106
+          october: 1115
+      - year: 2025
+        total: 11500
+        months:
+          june: 2911
+          july: 2500
+          august: 1997
+          september: 2530
+          october: 1568
+
+trails:
+  - year: 2022
+    km: 4.7
+    count: 5
+  - year: 2023
+    km: 14.2
+    count: 12
+  - year: 2024
+    km: 21
+    count: 20
+  - year: 2025
+    km: 21
+    count: 21
+
+funding:
+  sources:
+    local_business: 69
+    industry_sponsors: 24
+    government: 7
+  allocation:
+    trail_building: 92
+    marketing: 3
+    maintenance: 3
+    admin: 2

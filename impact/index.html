@@ -21,16 +21,29 @@ masthead:
     margin-top: 8px;
     color: #aaaaaa;
   }
-  table.impact { margin: 0 auto; border-collapse: collapse; }
-  table.impact th, table.impact td { padding: 10px 20px; border: 4px solid var(--color-bg); }
-  table.impact th { color: var(--color-accent); font-family: "Metropolis", Helvetica, Arial, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 12px; }
-  table.impact td { background-color: var(--color-bg-panel); text-align: center; font-weight: 700; }
-  table.impact tr:last-child td { color: var(--color-accent); }
+  .chart-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .chart-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 36px;
+    justify-content: center;
+  }
+  .chart-row .chart-container {
+    flex: 1 1 350px;
+    max-width: 450px;
+  }
   .funding-stat { margin-bottom: 30px; }
   .funding-stat h4 { color: var(--color-accent); margin-bottom: 5px; }
   .timeline-item { margin-bottom: 20px; font-size: 130%; }
   .timeline-item .year { font-family: "Metropolis", Helvetica, Arial, sans-serif; font-weight: 700; color: var(--color-accent); font-size: 110%; }
 </style>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
 
 <div class="t3-section-wrap">
 
@@ -42,72 +55,54 @@ masthead:
         <h3
           class="module-title ja-animate"
           data-animation="move-from-bottom"
-          data-delay="200">NAMBA by the Numbers</h3>
+          data-delay="200">{% if page.lang == "ja" %}数字で見るNAMBA{% else %}NAMBA by the Numbers{% endif %}</h3>
       </div>
       <div class="row equal-height equal-height-child">
         <div class="col col-12 col-md-6 col-lg-4">
-          <div
-            class="features-item ja-animate"
-            data-animation="move-from-bottom"
-            data-delay="200">
+          <div class="features-item ja-animate" data-animation="move-from-bottom" data-delay="200">
             <div class="stat-card">
               <div class="stat-number">21km+</div>
-              <div class="stat-label">of trail built</div>
+              <div class="stat-label">{% if page.lang == "ja" %}トレイル総延長{% else %}of trail built{% endif %}</div>
             </div>
           </div>
         </div>
         <div class="col col-12 col-md-6 col-lg-4">
-          <div
-            class="features-item ja-animate"
-            data-animation="move-from-bottom"
-            data-delay="400">
+          <div class="features-item ja-animate" data-animation="move-from-bottom" data-delay="400">
             <div class="stat-card">
               <div class="stat-number">11,500+</div>
-              <div class="stat-label">visitors in 2025</div>
+              <div class="stat-label">{% if page.lang == "ja" %}2025年の来場者数{% else %}visitors in 2025{% endif %}</div>
             </div>
           </div>
         </div>
         <div class="col col-12 col-md-6 col-lg-4">
-          <div
-            class="features-item ja-animate"
-            data-animation="move-from-bottom"
-            data-delay="600">
+          <div class="features-item ja-animate" data-animation="move-from-bottom" data-delay="600">
             <div class="stat-card">
               <div class="stat-number">100%</div>
-              <div class="stat-label">trail funding success</div>
+              <div class="stat-label">{% if page.lang == "ja" %}トレイル資金調達成功率{% else %}trail funding success{% endif %}</div>
             </div>
           </div>
         </div>
         <div class="col col-12 col-md-6 col-lg-4">
-          <div
-            class="features-item ja-animate"
-            data-animation="move-from-bottom"
-            data-delay="800">
+          <div class="features-item ja-animate" data-animation="move-from-bottom" data-delay="800">
             <div class="stat-card">
               <div class="stat-number">20,000+</div>
-              <div class="stat-label">volunteer hours</div>
+              <div class="stat-label">{% if page.lang == "ja" %}ボランティア時間{% else %}volunteer hours{% endif %}</div>
             </div>
           </div>
         </div>
         <div class="col col-12 col-md-6 col-lg-4">
-          <div
-            class="features-item ja-animate"
-            data-animation="move-from-bottom"
-            data-delay="1000">
+          <div class="features-item ja-animate" data-animation="move-from-bottom" data-delay="1000">
             <div class="stat-card">
               <div class="stat-number">50+</div>
-              <div class="stat-label">community partners</div>
+              <div class="stat-label">{% if page.lang == "ja" %}コミュニティパートナー{% else %}community partners{% endif %}</div>
             </div>
           </div>
         </div>
         <div class="col col-12 col-md-6 col-lg-4">
-          <div
-            class="features-item ja-animate"
-            data-animation="move-from-bottom"
-            data-delay="1200">
+          <div class="features-item ja-animate" data-animation="move-from-bottom" data-delay="1200">
             <div class="stat-card">
               <div class="stat-number">93%</div>
-              <div class="stat-label">privately funded</div>
+              <div class="stat-label">{% if page.lang == "ja" %}民間資金{% else %}privately funded{% endif %}</div>
             </div>
           </div>
         </div>
@@ -116,176 +111,104 @@ masthead:
 
   </div>
 
-  <!-- Visitor Growth -->
+  <!-- Visitor Growth Chart -->
   <div class="section">
 
     <div class="module-title-wrap" style="max-width:900px;">
       <h3
         class="module-title ja-animate"
         data-animation="move-from-bottom"
-        data-delay="200">Visitor Growth</h3>
+        data-delay="200">{% if page.lang == "ja" %}ツインピークスバイクパーク：来場者数{% else %}Twin Peaks Bike Park: Visitors{% endif %}</h3>
       <div
         class="features-desc ja-animate"
         data-animation="move-from-bottom"
         data-delay="400">
-        <p style="font-size:130%;">From 7,750 visitors in 2024 to an estimated 11,500 in 2025, growth of nearly 50% year-on-year.</p>
+        <p style="font-size:130%;">{% if page.lang == "ja" %}2024年の7,750人から2025年の推定11,500人へ。前年比約48%の成長。{% else %}From 7,750 visitors in 2024 to an estimated 11,500 in 2025. Growth of nearly 50% year-on-year.{% endif %}</p>
       </div>
-      <div
-        class="features-desc ja-animate"
+    </div>
+    <div class="chart-container ja-animate" data-animation="move-from-bottom" data-delay="600">
+      <canvas id="chart-visitors"></canvas>
+    </div>
+
+  </div>
+
+  <!-- Trail Network Growth Chart -->
+  <div class="section">
+
+    <div class="module-title-wrap" style="max-width:900px;">
+      <h3
+        class="module-title ja-animate"
         data-animation="move-from-bottom"
-        data-delay="600">
-        <table class="impact">
-          <thead>
-            <tr>
-              <th>Month</th>
-              <th>2024</th>
-              <th>2025</th>
-              <th>Growth</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>June</td>
-              <td>1,878</td>
-              <td>2,911</td>
-              <td>+55%</td>
-            </tr>
-            <tr>
-              <td>July</td>
-              <td>1,663</td>
-              <td>~2,500</td>
-              <td>+50%</td>
-            </tr>
-            <tr>
-              <td>August</td>
-              <td>985</td>
-              <td>1,997</td>
-              <td>+103%</td>
-            </tr>
-            <tr>
-              <td>September</td>
-              <td>2,106</td>
-              <td>2,530</td>
-              <td>+20%</td>
-            </tr>
-            <tr>
-              <td>October</td>
-              <td>1,115</td>
-              <td>1,568</td>
-              <td>+41%</td>
-            </tr>
-            <tr>
-              <td><strong>Season total</strong></td>
-              <td><strong>7,747</strong></td>
-              <td><strong>~11,500</strong></td>
-              <td><strong>~48%</strong></td>
-            </tr>
-          </tbody>
-        </table>
+        data-delay="200">{% if page.lang == "ja" %}トレイルネットワークの成長{% else %}Trail Network Growth{% endif %}</h3>
+    </div>
+    <div class="chart-container ja-animate" data-animation="move-from-bottom" data-delay="400">
+      <canvas id="chart-trails"></canvas>
+    </div>
+
+  </div>
+
+  <!-- Funding Charts -->
+  <div class="section">
+
+    <div class="module-title-wrap" style="max-width:900px;">
+      <h3
+        class="module-title ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="200">{% if page.lang == "ja" %}資金の透明性{% else %}Funding Transparency{% endif %}</h3>
+    </div>
+    <div class="chart-row ja-animate" data-animation="move-from-bottom" data-delay="400">
+      <div class="chart-container">
+        <canvas id="chart-funding-sources"></canvas>
+      </div>
+      <div class="chart-container">
+        <canvas id="chart-funding-allocation"></canvas>
       </div>
     </div>
 
   </div>
 
-  <!-- Funding Transparency -->
+  <!-- Timeline -->
   <div class="section">
 
     <div class="module-title-wrap" style="max-width:900px;">
       <h3
         class="module-title ja-animate"
         data-animation="move-from-bottom"
-        data-delay="200">Funding Transparency</h3>
-      <div
-        class="features-desc ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="400">
-        <div class="funding-stat">
-          <h4>93% privately funded</h4>
-          <p>Only 7% of NAMBA's funding comes from public or government sources. The rest comes from businesses and individuals who believe in the mission.</p>
-        </div>
-      </div>
-      <div
-        class="features-desc ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="600">
-        <div class="funding-stat">
-          <h4>69% funded by local businesses</h4>
-          <p>The Niseko community funds its own summer transformation.</p>
-        </div>
-      </div>
-      <div
-        class="features-desc ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="800">
-        <div class="funding-stat">
-          <h4>92% goes directly to trail building</h4>
-          <p>Just 3% marketing, 3% maintenance, 2% admin. Your investment builds trails.</p>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- Trail Network Growth -->
-  <div class="section">
-
-    <div class="module-title-wrap" style="max-width:900px;">
-      <h3
-        class="module-title ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="200">Trail Network Growth</h3>
-      <div
-        class="features-desc ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="400">
+        data-delay="200">{% if page.lang == "ja" %}沿革{% else %}Our Journey{% endif %}</h3>
+      <div class="features-desc ja-animate" data-animation="move-from-bottom" data-delay="400">
         <div class="timeline-item">
           <div class="year">2021</div>
-          <p>Founded by 6 mountain bikers in Niseko</p>
+          <p>{% if page.lang == "ja" %}6人のマウンテンバイカーがニセコで設立{% else %}Founded by 6 mountain bikers in Niseko{% endif %}</p>
         </div>
       </div>
-      <div
-        class="features-desc ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="600">
+      <div class="features-desc ja-animate" data-animation="move-from-bottom" data-delay="600">
         <div class="timeline-item">
           <div class="year">2022</div>
-          <p>First summer of building: 4.7km of trail</p>
+          <p>{% if page.lang == "ja" %}初めての建設の夏：4.7kmのトレイル{% else %}First summer of building: 4.7km of trail{% endif %}</p>
         </div>
       </div>
-      <div
-        class="features-desc ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="800">
+      <div class="features-desc ja-animate" data-animation="move-from-bottom" data-delay="800">
         <div class="timeline-item">
           <div class="year">2023</div>
-          <p>Twin Peaks opens to the public: 14.2km, first events</p>
+          <p>{% if page.lang == "ja" %}ツインピークス一般公開：14.2km、初のイベント開催{% else %}Twin Peaks opens to the public: 14.2km, first events{% endif %}</p>
         </div>
       </div>
-      <div
-        class="features-desc ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="1000">
+      <div class="features-desc ja-animate" data-animation="move-from-bottom" data-delay="1000">
         <div class="timeline-item">
           <div class="year">2024</div>
-          <p>7,750+ visitors, Dirty Dames launches, 20+ trails, Loic Bruni visits</p>
+          <p>{% if page.lang == "ja" %}7,750人以上の来場者、Dirty Dames開始、20以上のトレイル、Loic Bruni来訪{% else %}7,750+ visitors, Dirty Dames launches, 20+ trails, Loic Bruni visits{% endif %}</p>
         </div>
       </div>
-      <div
-        class="features-desc ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="1200">
+      <div class="features-desc ja-animate" data-animation="move-from-bottom" data-delay="1200">
         <div class="timeline-item">
           <div class="year">2025</div>
-          <p>11,500+ visitors, Hirafu connection, major expansion, Pinkbike feature</p>
+          <p>{% if page.lang == "ja" %}11,500人以上の来場者、ヒラフ接続、大規模拡張、Pinkbike特集{% else %}11,500+ visitors, Hirafu connection, major expansion, Pinkbike feature{% endif %}</p>
         </div>
       </div>
-      <div
-        class="features-desc ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="1400">
+      <div class="features-desc ja-animate" data-animation="move-from-bottom" data-delay="1400">
         <div class="timeline-item">
           <div class="year">2026</div>
-          <p>Hanazono opens, Green Flow Trail, the network grows</p>
+          <p>{% if page.lang == "ja" %}花園オープン、グリーンフロートレイル、ネットワーク拡大{% else %}Hanazono opens, Green Flow Trail, the network grows{% endif %}</p>
         </div>
       </div>
     </div>
@@ -299,18 +222,214 @@ masthead:
       <h3
         class="module-title ja-animate"
         data-animation="move-from-bottom"
-        data-delay="200">Invest in Niseko's Mountain Bike Future</h3>
+        data-delay="200">{% if page.lang == "ja" %}ニセコのマウンテンバイクの未来に投資{% else %}Invest in Niseko's Mountain Bike Future{% endif %}</h3>
       <div
         class="features-desc ja-animate"
         data-animation="move-from-bottom"
         data-delay="400">
-        <p style="font-size:130%;">Partner with NAMBA and help build Asia's premier mountain bike destination. Every contribution goes directly to trails, events, and community.</p>
+        <p style="font-size:130%;">{% if page.lang == "ja" %}NAMBAと提携して、アジア有数のマウンテンバイクの目的地を一緒に作りましょう。すべての貢献がトレイル、イベント、コミュニティに直接使われます。{% else %}Partner with NAMBA and help build Asia's premier mountain bike destination. Every contribution goes directly to trails, events, and community.{% endif %}</p>
       </div>
       <div class="t3-section action">
-        <a class="btn btn-primary" href="/partner/">Become a Partner</a>
+        <a class="btn btn-primary" href="{% if page.lang == 'ja' %}/ja/partner/{% else %}/partner/{% endif %}">{% if page.lang == "ja" %}パートナーになる{% else %}Become a Partner{% endif %}</a>
       </div>
     </div>
 
   </div>
 
 </div>
+
+<script>
+  // Load impact data from Jekyll
+  const impactData = {{ site.data.impact | jsonify }};
+  const isJa = {{ page.lang | jsonify }} === "ja";
+
+  // Chart.js dark theme defaults
+  Chart.defaults.color = '#aaaaaa';
+  Chart.defaults.borderColor = 'rgba(255,255,255,0.08)';
+  Chart.defaults.font.family = '"Metropolis", Helvetica, Arial, sans-serif';
+
+  // Colour palette
+  const colours = {
+    accent: '#c8a951',
+    primary: '#47A06C',
+    primaryLight: 'rgba(71, 160, 108, 0.3)',
+    accentLight: 'rgba(200, 169, 81, 0.3)',
+    blue: '#148cf0',
+    blueLight: 'rgba(20, 140, 240, 0.3)',
+    red: '#be0014',
+    grey: '#666666',
+  };
+
+  // --- Visitors line chart ---
+  const tpData = impactData.visitors['twin-peaks'];
+  const months = ['June', 'July', 'August', 'September', 'October'];
+  const monthsJa = ['6月', '7月', '8月', '9月', '10月'];
+  const monthLabels = isJa ? monthsJa : months;
+  const monthKeys = ['june', 'july', 'august', 'september', 'october'];
+
+  const visitorDatasets = tpData.years.map(function(yearData, i) {
+    var lineColour = i === 0 ? colours.grey : colours.accent;
+    var fillColour = i === 0 ? 'rgba(102,102,102,0.1)' : colours.accentLight;
+    return {
+      label: yearData.year.toString(),
+      data: monthKeys.map(function(m) { return yearData.months[m]; }),
+      borderColor: lineColour,
+      backgroundColor: fillColour,
+      fill: true,
+      tension: 0.3,
+      pointRadius: 5,
+      pointHoverRadius: 8,
+      borderWidth: 3,
+    };
+  });
+
+  new Chart(document.getElementById('chart-visitors'), {
+    type: 'line',
+    data: {
+      labels: monthLabels,
+      datasets: visitorDatasets,
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { position: 'top' },
+        tooltip: {
+          callbacks: {
+            label: function(ctx) {
+              return ctx.dataset.label + ': ' + ctx.parsed.y.toLocaleString() + (isJa ? '人' : ' visitors');
+            }
+          }
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks: {
+            callback: function(value) { return value.toLocaleString(); }
+          }
+        }
+      }
+    }
+  });
+
+  // --- Trail network growth bar chart ---
+  var trailYears = impactData.trails.map(function(t) { return t.year; });
+  var trailKm = impactData.trails.map(function(t) { return t.km; });
+  var trailCounts = impactData.trails.map(function(t) { return t.count; });
+
+  new Chart(document.getElementById('chart-trails'), {
+    type: 'bar',
+    data: {
+      labels: trailYears,
+      datasets: [
+        {
+          label: isJa ? 'トレイル距離 (km)' : 'Trail distance (km)',
+          data: trailKm,
+          backgroundColor: colours.primary,
+          borderRadius: 4,
+          yAxisID: 'y',
+        },
+        {
+          label: isJa ? 'トレイル数' : 'Trail count',
+          data: trailCounts,
+          type: 'line',
+          borderColor: colours.accent,
+          backgroundColor: colours.accentLight,
+          tension: 0.3,
+          pointRadius: 5,
+          borderWidth: 3,
+          yAxisID: 'y1',
+        }
+      ],
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { position: 'top' },
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          position: 'left',
+          title: {
+            display: true,
+            text: isJa ? '距離 (km)' : 'Distance (km)',
+          }
+        },
+        y1: {
+          beginAtZero: true,
+          position: 'right',
+          grid: { drawOnChartArea: false },
+          title: {
+            display: true,
+            text: isJa ? 'トレイル数' : 'Trail count',
+          }
+        }
+      }
+    }
+  });
+
+  // --- Funding sources doughnut ---
+  var sources = impactData.funding.sources;
+  new Chart(document.getElementById('chart-funding-sources'), {
+    type: 'doughnut',
+    data: {
+      labels: isJa
+        ? ['地元企業', '業界スポンサー', '行政']
+        : ['Local businesses', 'Industry sponsors', 'Government'],
+      datasets: [{
+        data: [sources.local_business, sources.industry_sponsors, sources.government],
+        backgroundColor: [colours.primary, colours.accent, colours.grey],
+        borderWidth: 0,
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        title: {
+          display: true,
+          text: isJa ? '資金源' : 'Funding Sources',
+          font: { size: 16, weight: 700 },
+        },
+        legend: { position: 'bottom' },
+        tooltip: {
+          callbacks: {
+            label: function(ctx) { return ctx.label + ': ' + ctx.parsed + '%'; }
+          }
+        }
+      }
+    }
+  });
+
+  // --- Funding allocation doughnut ---
+  var allocation = impactData.funding.allocation;
+  new Chart(document.getElementById('chart-funding-allocation'), {
+    type: 'doughnut',
+    data: {
+      labels: isJa
+        ? ['トレイル建設', 'マーケティング', 'メンテナンス', '管理']
+        : ['Trail building', 'Marketing', 'Maintenance', 'Admin'],
+      datasets: [{
+        data: [allocation.trail_building, allocation.marketing, allocation.maintenance, allocation.admin],
+        backgroundColor: [colours.primary, colours.accent, colours.blue, colours.grey],
+        borderWidth: 0,
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        title: {
+          display: true,
+          text: isJa ? '資金配分' : 'How Funds Are Spent',
+          font: { size: 16, weight: 700 },
+        },
+        legend: { position: 'bottom' },
+        tooltip: {
+          callbacks: {
+            label: function(ctx) { return ctx.label + ': ' + ctx.parsed + '%'; }
+          }
+        }
+      }
+    }
+  });
+</script>
