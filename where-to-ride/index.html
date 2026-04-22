@@ -64,6 +64,86 @@ masthead:
   </div>
 
   <!-- Riding Areas -->
+  <style>
+    .ride-card {
+      background: var(--color-bg-panel);
+      border-radius: 3px;
+      overflow: hidden;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .ride-card .ride-card-image {
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    .ride-card .ride-card-image::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 80px;
+      background: linear-gradient(to bottom, transparent, var(--color-bg-panel));
+    }
+    .ride-card .ride-card-image .ride-card-logo {
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));
+    }
+    .ride-card .ride-card-image .ride-card-icon {
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+      font-size: 40px;
+      color: var(--color-secondary);
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));
+    }
+    .ride-card .ride-card-body {
+      padding: 36px 24px 24px;
+      text-align: center;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .ride-card .ride-card-body h4 {
+      margin: 0 0 12px;
+    }
+    .ride-card .ride-card-body p {
+      flex: 1;
+    }
+    .ride-card .ride-card-body .action {
+      margin-top: 12px;
+    }
+    .ride-card .ride-card-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      z-index: 1;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      background: var(--color-accent);
+      color: #fff;
+    }
+    .ride-card:hover {
+      background: var(--color-bg-border);
+    }
+  </style>
+
   <div class="section">
 
     <div class="t3-section acm-features style-2">
@@ -71,58 +151,95 @@ masthead:
         <h3
           class="module-title ja-animate"
           data-animation="move-from-bottom"
-          data-delay="200">Riding Areas</h3>
+          data-delay="200">{% if page.lang == "ja" %}ライディングエリア{% else %}Riding Areas{% endif %}</h3>
       </div>
       <div class="row equal-height equal-height-child">
+
+        <!-- Twin Peaks -->
         <div class="col col-12 col-lg-12">
-          <div class="features-item ja-animate" data-animation="move-from-bottom" data-delay="item-0">
-            <div class="font-icon"><span class="fa-solid fa-mountain"></span></div>
-            <h4>Twin Peaks Bike Park</h4>
-            <p>Japan's largest free-access MTB network with 20+ Swiss-designed trails across 21km+. Beginner flow to expert tech. Free, every day, no registration.</p>
-            <a class="action" href="/twin-peaks/">Explore Twin Peaks <span class="fa-solid fa-circle-arrow-right"></span></a>
+          <div class="ride-card ja-animate" data-animation="move-from-bottom" data-delay="item-0">
+            <div class="ride-card-image" style="background-image:url('/assets/images/twinpeaks/header.jpg'); height:280px;">
+              <img class="ride-card-logo" src="/assets/images/logos/twin-peaks.svg" alt="Twin Peaks Bike Park" />
+            </div>
+            <div class="ride-card-body">
+              <h4>Twin Peaks Bike Park</h4>
+              <p>{% if page.lang == "ja" %}日本最大の無料アクセスMTBネットワーク。スイス設計の20以上のトレイルが21km以上。初心者フローからエキスパートテクニカルまで。毎日無料、登録不要。{% else %}Japan's largest free-access MTB network with 20+ Swiss-designed trails across 21km+. Beginner flow to expert tech. Free, every day, no registration.{% endif %}</p>
+              <a class="action" href="{% if page.lang == 'ja' %}/ja/twin-peaks/{% else %}/twin-peaks/{% endif %}">{% if page.lang == "ja" %}ツインピークスを見る{% else %}Explore Twin Peaks{% endif %} <span class="fa-solid fa-circle-arrow-right"></span></a>
+            </div>
           </div>
         </div>
+
+        <!-- Grand Hirafu -->
         <div class="col col-12 col-md-6 col-lg-6">
-          <div class="features-item ja-animate" data-animation="move-from-bottom" data-delay="item-1">
-            <div class="font-icon"><span class="fa-solid fa-mountain-sun"></span></div>
-            <h4>Grand Hirafu</h4>
-            <p>Bike park expansion with lift access in Niseko's largest resort village. Trail building and consulting by NAMBA.</p>
-            <a class="action" href="/where-to-ride/grand-hirafu/">Learn more <span class="fa-solid fa-circle-arrow-right"></span></a>
+          <div class="ride-card ja-animate" data-animation="move-from-bottom" data-delay="item-1">
+            <div class="ride-card-image" style="background-image:url('/assets/images/bg/bg-header-berms.jpg');">
+              <img class="ride-card-logo" src="/assets/images/company/grand-hirafu.png" alt="Grand Hirafu" />
+            </div>
+            <div class="ride-card-body">
+              <h4>{% if page.lang == "ja" %}グランヒラフ{% else %}Grand Hirafu{% endif %}</h4>
+              <p>{% if page.lang == "ja" %}ニセコ最大のリゾート村でリフトアクセス付きバイクパークが拡張中。NAMBAがトレイル設計・建設をコンサルティング。{% else %}Bike park expansion with lift access in Niseko's largest resort village. Trail building and consulting by NAMBA.{% endif %}</p>
+              <a class="action" href="{% if page.lang == 'ja' %}/ja/where-to-ride/grand-hirafu/{% else %}/where-to-ride/grand-hirafu/{% endif %}">{% if page.lang == "ja" %}詳しく見る{% else %}Learn more{% endif %} <span class="fa-solid fa-circle-arrow-right"></span></a>
+            </div>
           </div>
         </div>
+
+        <!-- Hanazono -->
         <div class="col col-12 col-md-6 col-lg-6">
-          <div class="features-item ja-animate" data-animation="move-from-bottom" data-delay="item-2">
-            <div class="font-icon"><span class="fa-solid fa-helmet-safety"></span></div>
-            <div style="display:inline-block; padding:6px 16px; border-radius:4px; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:1px; background:var(--color-accent); color:#fff; margin-bottom:20px;">Opening July 2026</div>
-            <h4>Hanazono</h4>
-            <p>Niseko's first lift-accessed top-to-bottom blue trail featuring a 4,500m flow trail plus skills park. Opening July 2026.</p>
-            <a class="action" href="/where-to-ride/hanazono/">Learn more <span class="fa-solid fa-circle-arrow-right"></span></a>
+          <div class="ride-card ja-animate" data-animation="move-from-bottom" data-delay="item-2">
+            <div class="ride-card-image" style="background-image:url('/assets/images/bg/bg-distance.jpg');">
+              <span class="ride-card-badge">{% if page.lang == "ja" %}2026年7月オープン{% else %}Opening July 2026{% endif %}</span>
+              <img class="ride-card-logo" src="/assets/images/company/higuma/hanazono.png" alt="Hanazono" />
+            </div>
+            <div class="ride-card-body">
+              <h4>{% if page.lang == "ja" %}花園{% else %}Hanazono{% endif %}</h4>
+              <p>{% if page.lang == "ja" %}ニセコ初のリフトアクセストップトゥボトムブルートレイル。4,500mのフロートレイルとスキルパーク。2026年7月オープン。{% else %}Niseko's first lift-accessed top-to-bottom blue trail featuring a 4,500m flow trail plus skills park. Opening July 2026.{% endif %}</p>
+              <a class="action" href="{% if page.lang == 'ja' %}/ja/where-to-ride/hanazono/{% else %}/where-to-ride/hanazono/{% endif %}">{% if page.lang == "ja" %}詳しく見る{% else %}Learn more{% endif %} <span class="fa-solid fa-circle-arrow-right"></span></a>
+            </div>
           </div>
         </div>
+
+        <!-- Annupuri -->
         <div class="col col-12 col-md-6 col-lg-6">
-          <div class="features-item ja-animate" data-animation="move-from-bottom" data-delay="item-3">
-            <div class="font-icon"><span class="fa-solid fa-gauge-high"></span></div>
-            <h4>Niseko Annupuri</h4>
-            <p>Gondola-accessed downhill course. 2,750m of natural terrain with 535m of elevation drop. Intermediate to advanced riders.</p>
-            <a class="action" href="/where-to-ride/annupuri/">Learn more <span class="fa-solid fa-circle-arrow-right"></span></a>
+          <div class="ride-card ja-animate" data-animation="move-from-bottom" data-delay="item-3">
+            <div class="ride-card-image" style="background-image:url('/assets/images/twinpeaks/banner.jpg');">
+              <img class="ride-card-logo" src="/assets/images/company/annupuri.png" alt="Niseko Annupuri" />
+            </div>
+            <div class="ride-card-body">
+              <h4>{% if page.lang == "ja" %}ニセコアンヌプリ{% else %}Niseko Annupuri{% endif %}</h4>
+              <p>{% if page.lang == "ja" %}ゴンドラアクセスのダウンヒルコース。全長2,750m、標高差535mの自然地形。中級者・上級者向け。{% else %}Gondola-accessed downhill course. 2,750m of natural terrain with 535m of elevation drop. Intermediate to advanced riders.{% endif %}</p>
+              <a class="action" href="{% if page.lang == 'ja' %}/ja/where-to-ride/annupuri/{% else %}/where-to-ride/annupuri/{% endif %}">{% if page.lang == "ja" %}詳しく見る{% else %}Learn more{% endif %} <span class="fa-solid fa-circle-arrow-right"></span></a>
+            </div>
           </div>
         </div>
+
+        <!-- Gravel -->
         <div class="col col-12 col-md-6 col-lg-6">
-          <div class="features-item ja-animate" data-animation="move-from-bottom" data-delay="item-4">
-            <div class="font-icon"><span class="fa-solid fa-road"></span></div>
-            <h4>Gravel</h4>
-            <p>Scenic gravel routes through Hokkaido's volcanic landscape. Home of the Niseko Gravel event series.</p>
-            <a class="action" href="/where-to-ride/gravel/">Learn more <span class="fa-solid fa-circle-arrow-right"></span></a>
+          <div class="ride-card ja-animate" data-animation="move-from-bottom" data-delay="item-4">
+            <div class="ride-card-image" style="background-image:url('/assets/images/bg/bg-hero.jpg');">
+              <span class="ride-card-icon fa-solid fa-road"></span>
+            </div>
+            <div class="ride-card-body">
+              <h4>{% if page.lang == "ja" %}グラベル{% else %}Gravel{% endif %}</h4>
+              <p>{% if page.lang == "ja" %}北海道の火山地形を抜ける絶景のグラベルルート。ニセコグラベルイベントシリーズの本拠地。{% else %}Scenic gravel routes through Hokkaido's volcanic landscape. Home of the Niseko Gravel event series.{% endif %}</p>
+              <a class="action" href="{% if page.lang == 'ja' %}/ja/where-to-ride/gravel/{% else %}/where-to-ride/gravel/{% endif %}">{% if page.lang == "ja" %}詳しく見る{% else %}Learn more{% endif %} <span class="fa-solid fa-circle-arrow-right"></span></a>
+            </div>
           </div>
         </div>
+
+        <!-- Skills Parks -->
         <div class="col col-12 col-md-6 col-lg-6">
-          <div class="features-item ja-animate" data-animation="move-from-bottom" data-delay="item-5">
-            <div class="font-icon"><span class="fa-solid fa-arrows-spin"></span></div>
-            <h4>Skills Parks &amp; Pump Tracks</h4>
-            <p>Skills parks and pump tracks across the area, perfect for beginners, families, and levelling up.</p>
-            <a class="action" href="/where-to-ride/skills-parks/">Learn more <span class="fa-solid fa-circle-arrow-right"></span></a>
+          <div class="ride-card ja-animate" data-animation="move-from-bottom" data-delay="item-5">
+            <div class="ride-card-image" style="background-image:url('/assets/images/twinpeaks/twinpeaks-03.jpg');">
+              <span class="ride-card-icon fa-solid fa-arrows-spin"></span>
+            </div>
+            <div class="ride-card-body">
+              <h4>{% if page.lang == "ja" %}スキルパーク・パンプトラック{% else %}Skills Parks &amp; Pump Tracks{% endif %}</h4>
+              <p>{% if page.lang == "ja" %}エリア内のスキルパークとパンプトラック。初心者、ファミリー、スキルアップに最適。{% else %}Skills parks and pump tracks across the area, perfect for beginners, families, and levelling up.{% endif %}</p>
+              <a class="action" href="{% if page.lang == 'ja' %}/ja/where-to-ride/skills-parks/{% else %}/where-to-ride/skills-parks/{% endif %}">{% if page.lang == "ja" %}詳しく見る{% else %}Learn more{% endif %} <span class="fa-solid fa-circle-arrow-right"></span></a>
+            </div>
           </div>
         </div>
+
       </div>
     </div>
 
