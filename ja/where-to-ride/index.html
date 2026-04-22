@@ -54,8 +54,8 @@ masthead:
         <div class="col col-12 col-md-6 col-lg-3">
           <div class="features-item ja-animate" data-animation="move-from-bottom" data-delay="item-3">
             <div class="font-icon"><span class="fa-solid fa-heart"></span></div>
-            <h4>Free to Ride</h4>
-            <p>No fees, no registration.</p>
+            <h4>{% if page.lang == "ja" %}すべてのレベルに{% else %}Every Level{% endif %}</h4>
+            <p>{% if page.lang == "ja" %}初心者フローからエキスパートダウンヒルまで。{% else %}Beginner flow to expert downhill.{% endif %}</p>
           </div>
         </div>
       </div>
