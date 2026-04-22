@@ -14,6 +14,7 @@
   {% endcase %}
 {% endfor %}
 <span style="display:inline-flex; gap:10px; justify-content:center; flex-wrap:wrap; margin:8px 0;">
+  {% if park_d.lifts and park_d.lifts > 0 %}<span style="font-size:12px; text-align:center; display:inline-flex; flex-direction:column; align-items:center;"><span aria-hidden="true" data-tf-icon="" class="dicon_small" title="Lifts" style="font-size:18px; color:#666;"></span> <strong>{{ park_d.lifts }}</strong></span>{% endif %}
   {% if gc > 0 %}<span style="font-size:12px; text-align:center; display:inline-flex; flex-direction:column; align-items:center;"><span aria-hidden="true" data-tf-icon="" class="dicon_small dgreen tip" title="Green" style="font-size:18px;"></span> <strong>{{ gc }}</strong></span>{% endif %}
   {% if bc > 0 %}<span style="font-size:12px; text-align:center; display:inline-flex; flex-direction:column; align-items:center;"><span aria-hidden="true" data-tf-icon="" class="dicon_small dblue tip" title="Blue" style="font-size:18px;"></span> <strong>{{ bc }}</strong></span>{% endif %}
   {% if bkc > 0 %}<span style="font-size:12px; text-align:center; display:inline-flex; flex-direction:column; align-items:center;"><span aria-hidden="true" data-tf-icon="" class="dicon_small dblack tip" title="Black" style="font-size:18px;"></span> <strong>{{ bkc }}</strong></span>{% endif %}

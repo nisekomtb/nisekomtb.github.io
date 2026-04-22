@@ -2,6 +2,7 @@ twinpeaks:
   logo: /assets/images/logos/twin-peaks.svg
   name: Twin Peaks Bike Park
   cost: Free
+  lifts: 0
   lift_access: false
   shuttle_access: false
   pedal_access: true
@@ -261,6 +262,7 @@ grand-hirafu:
   logo: /assets/images/company/grand-hirafu.png
   name: Grand Hirafu Bike Park
   cost: Lift pass required
+  lifts: 1
   lift_access: true
   shuttle_access: false
   pedal_access: false
@@ -281,10 +283,10 @@ grand-hirafu:
   trailforks_map_rid: 58866
   # 58780
   trails:
-    - name: Hirafu DH Course
+    - name: Kamiwaza
       ja:
-        name: ヒラフDHコース
-      difficulty: black
+        name: Kamiwaza
+      difficulty: blue
       distance: "1,800"
       climb: 0
       descent: 280
@@ -313,6 +315,7 @@ annupuri:
   logo: /assets/images/company/annupuri.png
   name: Niseko Annupuri
   cost: "¥1,000-¥5,000 (gondola pass)"
+  lifts: 1
   lift_access: true
   shuttle_access: false
   pedal_access: false
@@ -332,47 +335,22 @@ annupuri:
   gallery: []
   trailforks_map_rid: 66231
   trails:
-    - name: "A1"
-      ja:
-        name: "A1"
-      difficulty: black
-      distance: 640
-      climb: 0
-      descent: 140
-      bike: down-only
-      multi_use: false
-    - name: "B1"
-      ja:
-        name: "B1"
-      difficulty: black
-      distance: 600
-      climb: 0
-      descent: 130
-      bike: down-only
-      multi_use: false
-    - name: "C1"
-      ja:
-        name: "C1"
-      difficulty: black
-      distance: 600
-      climb: 0
-      descent: 100
-      bike: down-only
-      multi_use: false
-    - name: "D1"
-      ja:
-        name: "D1"
-      difficulty: black
-      distance: 910
-      climb: 0
-      descent: 165
-      bike: down-only
-      multi_use: false
+  - name: Downhill course
+    ja:
+      name: Downhill course
+    difficulty: black
+    distance: "3,200"
+    climb: 10
+    descent: 556
+    bike: down-only
+    multi_use: false
+    trailforks_id: 758250
 
 hanazono:
   logo: /assets/images/company/higuma/hanazono.png
   name: Hanazono
   cost: TBC
+  lifts: 1
   lift_access: true
   shuttle_access: false
   pedal_access: true
