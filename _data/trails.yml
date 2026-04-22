@@ -1,4 +1,7 @@
 twinpeaks:
+  logo: /assets/images/logos/twin-peaks.svg
+  name: Twin Peaks Bike Park
+  name_ja: ツインピークスバイクパーク
   cost: Free
   cost_ja: 一般無料開放
   lift_access: false
@@ -247,6 +250,9 @@ twinpeaks:
       trailforks_id: 766461
 
 grand-hirafu:
+  logo: /assets/images/company/grand-hirafu.png
+  name: Grand Hirafu Bike Park
+  name_ja: グランヒラフバイクパーク
   cost: Lift pass required
   cost_ja: リフト券が必要
   lift_access: true
@@ -291,6 +297,9 @@ grand-hirafu:
       multi_use: true
 
 annupuri:
+  logo: /assets/images/company/annupuri.png
+  name: Niseko Annupuri
+  name_ja: ニセコアンヌプリ
   cost: "¥1,000-¥5,000 (gondola pass)"
   cost_ja: "¥1,000〜¥5,000（ゴンドラパス）"
   lift_access: true
@@ -344,6 +353,9 @@ annupuri:
       multi_use: false
 
 hanazono:
+  logo: /assets/images/company/higuma/hanazono.png
+  name: Hanazono
+  name_ja: 花園
   cost: TBC
   cost_ja: 未定
   lift_access: true
