@@ -29,7 +29,7 @@
     </ul>
   </div>
   <table class="trails">
-    {% for trail in site.data.trails[trail_key] %}
+    {% for trail in site.data.trails[trail_key].trails %}
     <tr>
       <td class="difficulty left">
         {% case trail.difficulty %}

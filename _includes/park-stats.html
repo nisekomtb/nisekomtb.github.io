@@ -1,0 +1,198 @@
+{% comment %}
+  Usage: {% include park-stats.html data_key="twinpeaks" %}
+  Renders the Key Stats sidebar module for a bike park.
+  Reads park metadata and trail data from _data/trails.yml.
+{% endcomment %}
+{% assign park = site.data.trails[include.data_key] %}
+{% if park %}
+<div class="t3-module module">
+  <div class="module-inner">
+    {% if page.lang == "ja" %}
+      <h3 class="module-title">
+        <span>基本データ</span>
+      </h3>
+    {% else %}
+      <h3 class="module-title">
+        <span>Key stats</span>
+      </h3>
+    {% endif %}
+    <div class="module-ct">
+      <ul class="categories-module mod-list">
+        <li>
+          {% if page.lang == "ja" %}
+            <h4>コスト：</h4>
+            {{ park.cost_ja }}
+          {% else %}
+            <h4>Cost:</h4>
+            {{ park.cost }}
+          {% endif %}
+        </li>
+        <li>
+          {% if page.lang == "ja" %}
+            <h4>上りのタイプ：</h4>
+            <p style="margin: 2px 0 0 0;">リフトアクセス：
+              <strong>{% if park.lift_access %}有{% else %}無{% endif %}</strong>
+            </p>
+            <p style="margin:0;">シャトルアクセス：
+              <strong>{% if park.shuttle_access %}有{% else %}無{% endif %}</strong>
+            </p>
+            <p style="margin:0;">ペダルアクセス：
+              <strong>{% if park.pedal_access %}有{% else %}無{% endif %}</strong>
+            </p>
+          {% else %}
+            <h4>Uplift type:</h4>
+            <p style="margin: 2px 0 0 0;">Lift access:
+              <strong>{% if park.lift_access %}Yes{% else %}No{% endif %}</strong>
+            </p>
+            <p style="margin:0;">Shuttle access:
+              <strong>{% if park.shuttle_access %}Yes{% else %}No{% endif %}</strong>
+            </p>
+            <p style="margin:0;">Pedal access:
+              <strong>{% if park.pedal_access %}Yes{% else %}No{% endif %}</strong>
+            </p>
+          {% endif %}
+        </li>
+        <li>
+          {% if page.lang == "ja" %}
+            <h4>ロケーション：</h4>
+            {{ park.location_ja }}
+          {% else %}
+            <h4>Location:</h4>
+            {{ park.location }}
+          {% endif %}
+        </li>
+        {% if park.trails %}
+        <li>
+          {% if page.lang == "ja" %}
+            <h4>トレイルステータス：</h4>
+          {% else %}
+            <h4>Trail stats:</h4>
+          {% endif %}
+          {% assign greenTrailCount = 0 %}
+          {% assign blueTrailCount = 0 %}
+          {% assign blackTrailCount = 0 %}
+          {% assign doubleBlackTrailCount = 0 %}
+          {% assign trailCount = 0 %}
+          {% assign totalDistance = 0 %}
+          {% assign totalDescent = 0 %}
+          {% assign totalClimb = 0 %}
+
+          {% for trail in park.trails %}
+            {% assign trailCount = trailCount | plus: 1 %}
+            {% case trail.difficulty %}
+              {% when 'green' %}
+                {% assign greenTrailCount = greenTrailCount | plus: 1 %}
+              {% when 'blue' %}
+                {% assign blueTrailCount = blueTrailCount | plus: 1 %}
+              {% when 'black' %}
+                {% assign blackTrailCount = blackTrailCount | plus: 1 %}
+              {% when 'double-black' %}
+                {% assign doubleBlackTrailCount = doubleBlackTrailCount | plus: 1 %}
+            {% endcase %}
+            {% assign distance = trail.distance | remove: "," %}
+            {% assign totalDistance = totalDistance | plus: distance %}
+            {% assign totalDescent = totalDescent | plus: trail.descent %}
+            {% assign totalClimb = totalClimb | plus: trail.climb %}
+          {% endfor %}
+          <ul style="padding:0;">
+            <li class="stat">
+              <span
+                aria-hidden="true"
+                data-tf-icon=""
+                class="dicon_small dgreen tip"
+                title="{% if page.lang == 'ja' %}グリーン{% else %}Green{% endif %}"></span>
+              <span class="stat-count">{{ greenTrailCount }}</span>
+            </li>
+            <li class="stat">
+              <span
+                aria-hidden="true"
+                data-tf-icon=""
+                class="dicon_small dblue tip"
+                title="{% if page.lang == 'ja' %}ブルー{% else %}Blue{% endif %}"></span>
+              <span class="stat-count">{{ blueTrailCount }}</span>
+            </li>
+            <li class="stat">
+              <span
+                aria-hidden="true"
+                data-tf-icon=""
+                class="dicon_small dblack tip"
+                title="{% if page.lang == 'ja' %}ブラック{% else %}Black{% endif %}"></span>
+              <span class="stat-count">{{ blackTrailCount }}</span>
+            </li>
+            <li class="stat">
+              <span
+                aria-hidden="true"
+                data-tf-icon=""
+                class="dicon_small dblack tip"
+                title="{% if page.lang == 'ja' %}ダブルブラック{% else %}Double Black{% endif %}"></span>
+              <span class="stat-count">{{ doubleBlackTrailCount }}</span>
+            </li>
+          </ul>
+          <p style="margin:0;">
+            <strong>{{ trailCount }}</strong>
+            {% if page.lang == 'ja' %}つのトレイル
+            {% else %}
+              trails{% endif %}
+          </p>
+          <p style="margin:0;">
+            {% if page.lang == 'ja' %}総距離：{% else %}Total distance:{% endif %}
+            <strong>{{ totalDistance | divided_by: 1000 }}km</strong>
+            <span class="fa fa-ruler-horizontal" title="{% if page.lang == 'ja' %}距離{% else %}Distance{% endif %}"></span>
+          </p>
+          <p style="margin:0;">
+            {% if page.lang == 'ja' %}下りの総距離：{% else %}Total descent:{% endif %}
+            <strong>{{ totalDescent }}m</strong>
+            <span class="fa fa-arrow-down" title="{% if page.lang == 'ja' %}下り{% else %}Descent{% endif %}"></span>
+          </p>
+          <p style="margin:0;">
+            {% if page.lang == 'ja' %}上りの総距離：{% else %}Total climb:{% endif %}
+            <strong>{{ totalClimb }}m</strong>
+            <span class="fa fa-arrow-up" title="{% if page.lang == 'ja' %}登り{% else %}Climb{% endif %}"></span>
+          </p>
+        </li>
+        {% endif %}
+        {% if park.trailforks_rid %}
+        <li>
+          <h4>
+            {% if page.lang == 'ja' %}バイクパークステータス：{% else %}Bike Park status:{% endif %}
+          </h4>
+          <div
+            style="margin-top:3px;"
+            class="TrailforksWidgetRegionStatus"
+            data-w="100px"
+            data-h="15px"
+            data-rid="{{ park.trailforks_rid }}"
+            data-activitytype="1"
+            data-status="1"
+            data-st="1"
+            data-ct="0"
+            data-date="0"></div>
+        </li>
+        {% endif %}
+        <li>
+          {% if page.lang == "ja" %}
+            <h4>開放日＆時間：</h4>
+            <p style="margin:0;">{{ park.season_ja }}</p>
+            <p style="margin:0;">{{ park.hours_ja }}</p>
+          {% else %}
+            <h4>Opening dates & times:</h4>
+            <p style="margin:0;">{{ park.season }}</p>
+            <p style="margin:0;">{{ park.hours }}</p>
+          {% endif %}
+        </li>
+        {% if park.managed_by %}
+        <li>
+          {% if page.lang == "ja" %}
+            <h4>管理・運営：</h4>
+            {{ park.managed_by_ja }}
+          {% else %}
+            <h4>Managed by:</h4>
+            {{ park.managed_by }}
+          {% endif %}
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</div>
+{% endif %}

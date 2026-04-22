@@ -1,327 +1,388 @@
 twinpeaks:
-  - name: Jinja Ninja
-    ja:
-      name: ジンジャニンジャ
-    difficulty: green
-    distance: 178
-    climb: 5
-    descent: 5
-    bike: one-way
-    multi_use: true
-    trailforks_id: 657442
-  - name: Ezo Shika
-    ja:
-      name: エゾシカ
-    difficulty: green
-    distance: "3,483"
-    climb: 240
-    descent: 33
-    bike: up-only
-    multi_use: true
-    sponsor: nrs
-    trailforks_id: 611923
-  - name: Repeat Offender
-    ja:
-      name: リピートオフェンダー
-    difficulty: green
-    distance: 664
-    climb: 23
-    descent: 2
-    bike: up-only
-    multi_use: false
-    sponsor: santa-cruz
-    trailforks_id: 753819
-  - name: Mana Skills Park
-    ja:
-      name: マナスキルズパーク
-    difficulty: green
-    distance: 315
-    climb: 21
-    descent: 3
-    bike: two-way
-    multi_use: true
-    sponsor: niseko-realty
-    trailforks_id: 680884
-  - name: Mana Skills Loop
-    ja:
-      name: マナスキルループ
-    difficulty: green
-    distance: 697
-    climb: 16
-    descent: 16
-    bike: one-way
-    multi_use: true
-    sponsor: niseko-realty
-    trailforks_id: 657445
-  - name: Mana Pump
-    ja:
-      name: マナポンプ
-    difficulty: blue
-    distance: 122
-    climb: 3
-    descent: 1
-    bike: down-only
-    multi_use: true
-    sponsor: niseko-realty
-    trailforks_id: 657444
-  - name: Mana Berms
-    ja:
-      name: マナバーム
-    difficulty: blue
-    distance: 79
-    climb: 0
-    descent: 4
-    bike: down-only
-    multi_use: true
-    sponsor: niseko-realty
-    trailforks_id: 657446
-  - name: Mana Jumps
-    ja:
-      name: マナジャンプ
-    difficulty: blue
-    distance: 222
-    climb: 1
-    descent: 14
-    bike: down-only
-    multi_use: true
-    sponsor: niseko-realty
-    trailforks_id: 657447
-  - name: Easy Ryder
-    ja:
-      name: イージーライダー
-    difficulty: blue
-    distance: "2,186"
-    climb: 16
-    descent: 193
-    bike: down-only
-    multi_use: false
-    sponsor: holiday-niseko
-    trailforks_id: 657973
-  - name: Rise 'n' Ryder
-    ja:
-      name: ライズ・ン・ライダー
-    difficulty: blue
-    distance: 581
-    climb: 7
-    descent: 14
-    bike: one-way
-    multi_use: false
-    sponsor: holiday-niseko
-    trailforks_id: 680500
-  - name: Air Ryder
-    ja:
-      name: エアライダー
-    difficulty: blue
-    distance: 427
-    climb: 1
-    descent: 22
-    bike: down-only
-    multi_use: false
-    sponsor: holiday-niseko
-    trailforks_id: 680498
-  - name: Chon Mage
-    ja:
-      name: チョンマゲ
-    difficulty: blue
-    distance: 938
-    climb: 7
-    descent: 41
-    bike: one-way
-    multi_use: false
-    sponsor: grand-hirafu
-    trailforks_id: 753826
-  - name: Chon Mage Link
-    ja:
-      name: チョンマゲリンク
-    difficulty: blue
-    distance: 153
-    climb: 3
-    descent: 1
-    bike: two-way
-    multi_use: false
-    sponsor: grand-hirafu
-    trailforks_id: 793071
-  # - name: Creek 'n' Peak
-  #   ja:
-  #     name: クリークンピーク
-  #   difficulty: blue
-  #   distance: 546
-  #   climb: 5
-  #   descent: 46
-  #   bike: two-way
-  #   multi_use: false
-  #   sponsor: grand-hirafu
-  #   trailforks_id: 753825
-  - name: Cruz Control
-    ja:
-      name: クルーズコントロール
-    difficulty: blue
-    distance: "2,765"
-    climb: 15
-    descent: 185
-    bike: down-only
-    multi_use: false
-    sponsor: santa-cruz
-    trailforks_id: 753804
-  - name: Launch Control
-    ja:
-      name: ローンチコントロール
-    difficulty: blue
-    distance: 686
-    climb: 11
-    descent: 35
-    bike: down-only
-    multi_use: false
-    sponsor: santa-cruz
-    trailforks_id: 753818
-  - name: Mana Taki
-    ja:
-      name: マナタキ
-    difficulty: black
-    distance: 189
-    climb: 11
-    descent: 0
-    bike: up-only
-    multi_use: false
-    sponsor: soil-searching
-    trailforks_id: 777417
-  - name: Shogun Syndicate
-    ja:
-      name: ショウグンシンジケート
-    difficulty: black
-    distance: "2,138"
-    climb: 14
-    descent: 182
-    bike: down-only
-    multi_use: false
-    sponsor: santa-cruz
-    trailforks_id: 657436
-  - name: Taki Shogun
-    ja:
-      name: タキショーグン
-    difficulty: black
-    distance: 83
-    climb: 0
-    descent: 4
-    bike: one-way
-    multi_use: false
-    sponsor: santa-cruz
-    trailforks_id: 789336
-  - name: Taki Trail
-    ja:
-      name: タキトレイル
-    difficulty: black
-    distance: "1,276"
-    climb: 11
-    descent: 128
-    bike: down-only
-    multi_use: false
-    sponsor: taki
-    trailforks_id: 657437
-  - name: Taki Tech
-    ja:
-      name: タキテック
-    difficulty: double-black
-    distance: 641
-    climb: 8
-    descent: 54
-    bike: down-only
-    multi_use: false
-    sponsor: taki
-    trailforks_id: 766461
+  cost: Free
+  cost_ja: 一般無料開放
+  lift_access: false
+  shuttle_access: false
+  pedal_access: true
+  location: Hirafu
+  location_ja: ひらふ
+  season: June - End October
+  season_ja: 6月 - 10月後半まで
+  hours: 7am - 7pm
+  hours_ja: 7am - 7pm
+  managed_by: Niseko Area Mountain Bike Association
+  managed_by_ja: ニセコエリアマウンテンバイク協会
+  trailforks_rid: 58775
+  trailforks_map_rid: 58775
+  trails:
+    - name: Jinja Ninja
+      ja:
+        name: ジンジャニンジャ
+      difficulty: green
+      distance: 178
+      climb: 5
+      descent: 5
+      bike: one-way
+      multi_use: true
+      trailforks_id: 657442
+    - name: Ezo Shika
+      ja:
+        name: エゾシカ
+      difficulty: green
+      distance: "3,483"
+      climb: 240
+      descent: 33
+      bike: up-only
+      multi_use: true
+      sponsor: nrs
+      trailforks_id: 611923
+    - name: Repeat Offender
+      ja:
+        name: リピートオフェンダー
+      difficulty: green
+      distance: 664
+      climb: 23
+      descent: 2
+      bike: up-only
+      multi_use: false
+      sponsor: santa-cruz
+      trailforks_id: 753819
+    - name: Mana Skills Park
+      ja:
+        name: マナスキルズパーク
+      difficulty: green
+      distance: 315
+      climb: 21
+      descent: 3
+      bike: two-way
+      multi_use: true
+      sponsor: niseko-realty
+      trailforks_id: 680884
+    - name: Mana Skills Loop
+      ja:
+        name: マナスキルループ
+      difficulty: green
+      distance: 697
+      climb: 16
+      descent: 16
+      bike: one-way
+      multi_use: true
+      sponsor: niseko-realty
+      trailforks_id: 657445
+    - name: Mana Pump
+      ja:
+        name: マナポンプ
+      difficulty: blue
+      distance: 122
+      climb: 3
+      descent: 1
+      bike: down-only
+      multi_use: true
+      sponsor: niseko-realty
+      trailforks_id: 657444
+    - name: Mana Berms
+      ja:
+        name: マナバーム
+      difficulty: blue
+      distance: 79
+      climb: 0
+      descent: 4
+      bike: down-only
+      multi_use: true
+      sponsor: niseko-realty
+      trailforks_id: 657446
+    - name: Mana Jumps
+      ja:
+        name: マナジャンプ
+      difficulty: blue
+      distance: 222
+      climb: 1
+      descent: 14
+      bike: down-only
+      multi_use: true
+      sponsor: niseko-realty
+      trailforks_id: 657447
+    - name: Easy Ryder
+      ja:
+        name: イージーライダー
+      difficulty: blue
+      distance: "2,186"
+      climb: 16
+      descent: 193
+      bike: down-only
+      multi_use: false
+      sponsor: holiday-niseko
+      trailforks_id: 657973
+    - name: Rise 'n' Ryder
+      ja:
+        name: ライズ・ン・ライダー
+      difficulty: blue
+      distance: 581
+      climb: 7
+      descent: 14
+      bike: one-way
+      multi_use: false
+      sponsor: holiday-niseko
+      trailforks_id: 680500
+    - name: Air Ryder
+      ja:
+        name: エアライダー
+      difficulty: blue
+      distance: 427
+      climb: 1
+      descent: 22
+      bike: down-only
+      multi_use: false
+      sponsor: holiday-niseko
+      trailforks_id: 680498
+    - name: Chon Mage
+      ja:
+        name: チョンマゲ
+      difficulty: blue
+      distance: 938
+      climb: 7
+      descent: 41
+      bike: one-way
+      multi_use: false
+      sponsor: grand-hirafu
+      trailforks_id: 753826
+    - name: Chon Mage Link
+      ja:
+        name: チョンマゲリンク
+      difficulty: blue
+      distance: 153
+      climb: 3
+      descent: 1
+      bike: two-way
+      multi_use: false
+      sponsor: grand-hirafu
+      trailforks_id: 793071
+    # - name: Creek 'n' Peak
+    #   ja:
+    #     name: クリークンピーク
+    #   difficulty: blue
+    #   distance: 546
+    #   climb: 5
+    #   descent: 46
+    #   bike: two-way
+    #   multi_use: false
+    #   sponsor: grand-hirafu
+    #   trailforks_id: 753825
+    - name: Cruise Control
+      ja:
+        name: クルーズコントロール
+      difficulty: blue
+      distance: "2,765"
+      climb: 15
+      descent: 185
+      bike: down-only
+      multi_use: false
+      sponsor: santa-cruz
+      trailforks_id: 753804
+    - name: Launch Control
+      ja:
+        name: ローンチコントロール
+      difficulty: blue
+      distance: 686
+      climb: 11
+      descent: 35
+      bike: down-only
+      multi_use: false
+      sponsor: santa-cruz
+      trailforks_id: 753818
+    - name: Mana Taki
+      ja:
+        name: マナタキ
+      difficulty: black
+      distance: 189
+      climb: 11
+      descent: 0
+      bike: up-only
+      multi_use: false
+      sponsor: soil-searching
+      trailforks_id: 777417
+    - name: Shogun Syndicate
+      ja:
+        name: ショウグンシンジケート
+      difficulty: black
+      distance: "2,138"
+      climb: 14
+      descent: 182
+      bike: down-only
+      multi_use: false
+      sponsor: santa-cruz
+      trailforks_id: 657436
+    - name: Taki Shogun
+      ja:
+        name: タキショーグン
+      difficulty: black
+      distance: 83
+      climb: 0
+      descent: 4
+      bike: one-way
+      multi_use: false
+      sponsor: santa-cruz
+      trailforks_id: 789336
+    - name: Taki Trail
+      ja:
+        name: タキトレイル
+      difficulty: black
+      distance: "1,276"
+      climb: 11
+      descent: 128
+      bike: down-only
+      multi_use: false
+      sponsor: taki
+      trailforks_id: 657437
+    - name: Taki Tech
+      ja:
+        name: タキテック
+      difficulty: double-black
+      distance: 641
+      climb: 8
+      descent: 54
+      bike: down-only
+      multi_use: false
+      sponsor: taki
+      trailforks_id: 766461
 
 grand-hirafu:
-  - name: Hirafu DH Course
-    ja:
-      name: ヒラフDHコース
-    difficulty: black
-    distance: "1,800"
-    climb: 0
-    descent: 280
-    bike: down-only
-    multi_use: false
-  - name: Hirafu Flow
-    ja:
-      name: ヒラフフロー
-    difficulty: blue
-    distance: "2,200"
-    climb: 10
-    descent: 250
-    bike: down-only
-    multi_use: false
-  - name: Hirafu Skills Area
-    ja:
-      name: ヒラフスキルエリア
-    difficulty: green
-    distance: 400
-    climb: 5
-    descent: 5
-    bike: two-way
-    multi_use: true
+  cost: Lift pass required
+  cost_ja: リフト券が必要
+  lift_access: true
+  shuttle_access: false
+  pedal_access: false
+  location: Hirafu Village
+  location_ja: ヒラフ
+  season: June - October
+  season_ja: 6月 - 10月
+  hours: Check resort website
+  hours_ja: リゾートウェブサイトをご確認ください
+  managed_by: Grand Hirafu Resort
+  managed_by_ja: グランヒラフリゾート
+  trailforks_map_rid: 58780
+  trails:
+    - name: Hirafu DH Course
+      ja:
+        name: ヒラフDHコース
+      difficulty: black
+      distance: "1,800"
+      climb: 0
+      descent: 280
+      bike: down-only
+      multi_use: false
+    - name: Hirafu Flow
+      ja:
+        name: ヒラフフロー
+      difficulty: blue
+      distance: "2,200"
+      climb: 10
+      descent: 250
+      bike: down-only
+      multi_use: false
+    - name: Hirafu Skills Area
+      ja:
+        name: ヒラフスキルエリア
+      difficulty: green
+      distance: 400
+      climb: 5
+      descent: 5
+      bike: two-way
+      multi_use: true
 
 annupuri:
-  - name: "A1"
-    ja:
-      name: "A1"
-    difficulty: black
-    distance: 640
-    climb: 0
-    descent: 140
-    bike: down-only
-    multi_use: false
-  - name: "B1"
-    ja:
-      name: "B1"
-    difficulty: black
-    distance: 600
-    climb: 0
-    descent: 130
-    bike: down-only
-    multi_use: false
-  - name: "C1"
-    ja:
-      name: "C1"
-    difficulty: black
-    distance: 600
-    climb: 0
-    descent: 100
-    bike: down-only
-    multi_use: false
-  - name: "D1"
-    ja:
-      name: "D1"
-    difficulty: black
-    distance: 910
-    climb: 0
-    descent: 165
-    bike: down-only
-    multi_use: false
+  cost: "¥1,000-¥5,000 (gondola pass)"
+  cost_ja: "¥1,000〜¥5,000（ゴンドラパス）"
+  lift_access: true
+  shuttle_access: false
+  pedal_access: false
+  location: Annupuri
+  location_ja: アンヌプリ
+  season: Mid-July - Mid-October
+  season_ja: 7月中旬 - 10月中旬
+  hours: 9:00 AM - 4:00 PM
+  hours_ja: 9:00 - 16:00
+  managed_by: Niseko Annupuri
+  managed_by_ja: ニセコアンヌプリ
+  trailforks_map_rid: 66231
+  trails:
+    - name: "A1"
+      ja:
+        name: "A1"
+      difficulty: black
+      distance: 640
+      climb: 0
+      descent: 140
+      bike: down-only
+      multi_use: false
+    - name: "B1"
+      ja:
+        name: "B1"
+      difficulty: black
+      distance: 600
+      climb: 0
+      descent: 130
+      bike: down-only
+      multi_use: false
+    - name: "C1"
+      ja:
+        name: "C1"
+      difficulty: black
+      distance: 600
+      climb: 0
+      descent: 100
+      bike: down-only
+      multi_use: false
+    - name: "D1"
+      ja:
+        name: "D1"
+      difficulty: black
+      distance: 910
+      climb: 0
+      descent: 165
+      bike: down-only
+      multi_use: false
 
 hanazono:
-  - name: Hanazono Flow Trail
-    ja:
-      name: 花園フロートレイル
-    difficulty: blue
-    distance: "4,500"
-    climb: 0
-    descent: 400
-    bike: down-only
-    multi_use: false
-  - name: Hanazono Skills Park
-    ja:
-      name: 花園スキルパーク
-    difficulty: green
-    distance: 300
-    climb: 5
-    descent: 5
-    bike: two-way
-    multi_use: true
-  - name: Hanazono Link Trail
-    ja:
-      name: 花園リンクトレイル
-    difficulty: blue
-    distance: "1,500"
-    climb: 50
-    descent: 80
-    bike: one-way
-    multi_use: true
+  cost: TBC
+  cost_ja: 未定
+  lift_access: true
+  shuttle_access: false
+  pedal_access: true
+  location: Hanazono
+  location_ja: 花園
+  season: July 2026 onwards
+  season_ja: 2026年7月以降
+  hours: TBC
+  hours_ja: 未定
+  managed_by: Hanazono Resort / NAMBA
+  managed_by_ja: 花園リゾート / NAMBA
+  trailforks_map_rid: 58775
+  trails:
+    - name: Hanazono Flow Trail
+      ja:
+        name: 花園フロートレイル
+      difficulty: blue
+      distance: "4,500"
+      climb: 0
+      descent: 400
+      bike: down-only
+      multi_use: false
+    - name: Hanazono Skills Park
+      ja:
+        name: 花園スキルパーク
+      difficulty: green
+      distance: 300
+      climb: 5
+      descent: 5
+      bike: two-way
+      multi_use: true
+    - name: Hanazono Link Trail
+      ja:
+        name: 花園リンクトレイル
+      difficulty: blue
+      distance: "1,500"
+      climb: 50
+      descent: 80
+      bike: one-way
+      multi_use: true
