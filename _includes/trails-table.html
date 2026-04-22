@@ -1,0 +1,66 @@
+{% comment %}
+  Usage: {% include trails-table.html data_key="grand-hirafu" %}
+  Renders the trails key legend and trails table for the given data key.
+{% endcomment %}
+{% assign trail_key = include.data_key %}
+{% if trail_key %}
+<section>
+  <h3>{% if page.lang == "ja" %}トレイル{% else %}Trails{% endif %}</h3>
+  <div class="trails-key">
+    <h4>{% if page.lang == "ja" %}トレイルキー{% else %}Trail key{% endif %}</h4>
+    <ul class="key-access">
+      <li><div><img class="access" src="/assets/images/trails/one-way.png" />&nbsp;{% if page.lang == "ja" %}一方通行{% else %}One way traffic{% endif %}</div></li>
+      <li><div><img class="access" src="/assets/images/trails/two-way.png" />&nbsp;{% if page.lang == "ja" %}双方向{% else %}Two way traffic{% endif %}</div></li>
+      <li><div><img class="access" src="/assets/images/trails/down-only.png" />&nbsp;{% if page.lang == "ja" %}下りのみ{% else %}Downhill only{% endif %}</div></li>
+      <li><div><img class="access" src="/assets/images/trails/up-only.png" />&nbsp;{% if page.lang == "ja" %}上りのみ{% else %}Uphill only{% endif %}</div></li>
+      <li><div><img class="access" src="/assets/images/trails/multiuse.png" />&nbsp;{% if page.lang == "ja" %}複合利用{% else %}Multi use{% endif %}</div></li>
+      <li><div><img class="access restrict" src="/assets/images/trails/bikes-only.png" />&nbsp;{% if page.lang == "ja" %}自転車専用{% else %}Bikes only{% endif %}</div></li>
+    </ul>
+  </div>
+  <table class="trails">
+    {% for trail in site.data.trails[trail_key] %}
+    <tr>
+      <td class="difficulty left">
+        {% case trail.difficulty %}
+          {% when 'green' %}
+            <span aria-hidden="true" data-tf-icon="" class="dicon_small dgreen tip" title="Green"></span> <span class="ddesc dgreen">Easy</span>
+          {% when 'blue' %}
+            <span aria-hidden="true" data-tf-icon="" class="dicon_small dblue tip" title="Blue"></span> <span class="ddesc dblue">More Difficult</span>
+          {% when 'black' %}
+            <span aria-hidden="true" data-tf-icon="" class="dicon_small dblack tip" title="Black"></span> <span class="ddesc dblack">Very Difficult</span>
+          {% when 'double-black' %}
+            <span aria-hidden="true" data-tf-icon="" class="dicon_small dblack" title="Double Black Diamond"></span> <span class="ddesc ddblblack">Extremely Difficult</span>
+        {% endcase %}
+      </td>
+      <td class="left">{% if page.lang == "ja" and trail.ja.name %}{{ trail.ja.name }}{% else %}{{ trail.name }}{% endif %}</td>
+      <td class="bike">
+        {% case trail.bike %}
+        {% when "one-way" %}
+          {% assign bikeToolTip = "One way traffic" %}
+        {% when "two-way" %}
+          {% assign bikeToolTip = "Two way traffic" %}
+        {% when "down-only" %}
+          {% assign bikeToolTip = "Downhill only" %}
+        {% when "up-only" %}
+          {% assign bikeToolTip = "Uphill only" %}
+        {% else %}
+          {% assign bikeToolTip = "" %}
+        {% endcase %}
+        <img class="access" src="/assets/images/trails/{{- trail.bike -}}.png" title="{{ bikeToolTip }}" />
+      </td>
+      <td class="hike">
+        {% if trail.multi_use %}
+          <img class="access" src="/assets/images/trails/multiuse.png" title="Multi use (hiking & trail running allowed)" />
+        {% else %}
+          <img class="access restrict" src="/assets/images/trails/bikes-only.png" title="Bikes only (no hiking or trail running)" />
+        {% endif %}
+      </td>
+      <td class="right climb">{% unless trail.climb == 0 %}{{ trail.climb -}}m <span class="fa fa-arrow-up" title="Climb"></span>{% endunless %}</td>
+      <td class="right descent">{% unless trail.descent == 0 %}{{ trail.descent -}}m <span class="fa fa-arrow-down" title="Descent"></span>{% endunless %}</td>
+      <td class="right climb-descent">{% if trail.climb == trail.descent %}{{ trail.descent -}}m <span class="fa-solid fa-up-down" title="Loop"></span>{% elsif trail.climb > trail.descent %}{{ trail.climb -}}m <span class="fa fa-arrow-up" title="Climb"></span>{% else %}{{ trail.descent -}}m <span class="fa fa-arrow-down" title="Descent"></span>{% endif %}</td>
+      <td class="right">{{ trail.distance -}}m <span class="fa fa-ruler-horizontal" title="Distance"></span></td>
+    </tr>
+    {% endfor %}
+  </table>
+</section>
+{% endif %}
