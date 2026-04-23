@@ -59,121 +59,64 @@ masthead:
     width: 100%;
   }
 
-  .team .member {
-    float: left;
-    width: 50%;
-  }
-
   .team {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
     margin-bottom: 72px;
   }
 
-  .member .inner {
+  .team .board-card {
     background: var(--color-bg-panel);
     border-radius: 3px;
-    margin-right: 9px;
-    margin-bottom: 9px;
-    padding: 15px;
-    position: relative;
-    min-height: 135px;
+    padding: 28px 16px 20px;
+    text-align: center;
+    width: calc(25% - 12px);
+    min-width: 160px;
   }
 
-  .member .inner:hover {
+  .team .board-card:hover {
     background: var(--color-bg-border);
   }
 
-  .leaders .member .inner {
-    padding: 30px;
-    margin-right: 0;
-    margin-bottom: 18px;
+  .team .board-card .board-photo {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--color-bg-border);
+    margin-bottom: 12px;
   }
 
-  .member .img {
-    border: 2px #eeeeee solid;
-    border-radius: 3px;
-    width: 80px;
-    margin: 0;
-    position: absolute;
-    top: 15px;
-    left: 15px;
+  .team .board-card .board-name {
+    font-weight: 700;
+    font-size: 95%;
+    color: #ccc;
+    margin: 0 0 4px;
   }
 
-  .leaders .member .img {
-    width: 170px;
-    top: 35px;
-    left: 25px;
-  }
-
-  .member img {
-    border: 4px var(--color-bg) solid;
-    border-radius: 3px;
-  }
-
-  .leaders .member .desc {
-    margin-left: 185px;
-  }
-
-  .team .member .desc {
-    margin-left: 90px;
-  }
-
-  @media(max-width: 480px) {
-    .leaders .member .img {
-      width: 170px;
-      top: 25px;
-      left: 25px;
-    }
-
-    .leaders .member .desc {
-      margin-left: 0;
-      margin-top: 185px;
-    }
-  }
-
-  .member .desc p {
-    margin: 0 0 3px;
-  }
-
-  .member .desc p:first-child {
-    color: #aaaaaa;
-    font-weight: bold;
-  }
-
-  .leaders .member .desc p:first-child span {
-    font-size: 150%;
-    line-height: 30px;
-  }
-
-  .leaders .member .desc .title {
+  .team .board-card .board-title {
     font-size: 80%;
-    margin-bottom: 10px;
+    color: #888;
+    margin: 0 0 2px;
   }
 
-  .leaders .member .desc em {
-    font-weight: 500;
-    color: #aeaeae;
+  .team .board-card .board-subtitle {
+    font-size: 75%;
+    color: #666;
+    margin: 0;
   }
 
-  .leaders:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-
-  .team:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-
-  @media(max-width: 1199px) {
-    .team .member {
-      width: 100%;
+  @media(max-width: 767px) {
+    .team .board-card {
+      width: calc(50% - 12px);
     }
+  }
 
-    .team .member .inner {
-      margin-right: 0;
-      min-height: 111px;
+  @media(max-width: 400px) {
+    .team .board-card {
+      width: 100%;
     }
   }
 </style>
@@ -247,23 +190,20 @@ masthead:
     <div class="team">
 
       {% for member in site.data.team %}
-        {% assign name = member.name %}
-        {% assign title = member.title %}
-        {% assign sub_title = member.sub_title %}
-        <div
-          class="member ja-animate"
-          data-animation="move-from-right"
-          data-delay="item-{{ forloop.index0 }}">
-          <div class="inner">
-            <div class="img">
-              <img src="{{ member.image }}" alt="{{ name }}" />
-            </div>
-            <div class="desc">
-              <p>{{ name }}</p>
-              <p>{{ title }}</p>
-              <p>{{ sub_title }}</p>
-            </div>
-          </div>
+        {% if page.lang == "ja" %}
+          {% assign name = member.ja.name | default: member.name %}
+          {% assign title = member.ja.title | default: member.title %}
+          {% assign sub_title = member.ja.sub_title | default: member.sub_title %}
+        {% else %}
+          {% assign name = member.name %}
+          {% assign title = member.title %}
+          {% assign sub_title = member.sub_title %}
+        {% endif %}
+        <div class="board-card ja-animate" data-animation="move-from-bottom" data-delay="item-{{ forloop.index0 }}">
+          <img class="board-photo" src="{{ member.image }}" alt="{{ name }}" />
+          <p class="board-name">{{ name }}</p>
+          {% if title %}<p class="board-title">{{ title }}</p>{% endif %}
+          {% if sub_title %}<p class="board-subtitle">{{ sub_title }}</p>{% endif %}
         </div>
       {% endfor %}
 
