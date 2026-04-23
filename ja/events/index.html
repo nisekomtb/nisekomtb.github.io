@@ -14,6 +14,27 @@ masthead:
       min-height: auto !important;
     }
   }
+  .event-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    z-index: 1;
+  }
+  .event-badge.ended {
+    background: rgba(255,255,255,0.15);
+    color: #aaa;
+  }
+  .event-badge.cancelled {
+    background: rgba(190,0,20,0.8);
+    color: #fff;
+  }
 </style>
 <div
   class="blog style-1 project-view t3-section-wrap"
@@ -118,24 +139,11 @@ masthead:
             {% assign today = "today" | date: "%F" %}
             {% if forloop.index0 < firstPastEventIndex %}
               {% if event.cancelled %}
-                <div
-                  class="ribbon ribbon-top-left cancelled"
-                  name="cancelled"
-                  data-end-date="{{- endDate -}}">
-                  <span>キャンセル</span>
-                </div>
+              <div class="event-badge cancelled" name="cancelled" data-end-date="{{- endDate -}}">キャンセル</div>
               {% endif %}
-              <div
-                class="ribbon ribbon-top-left"
-                style="display:none;"
-                name="ended"
-                data-end-date="{{- endDate -}}">
-                <span>終了</span>
-              </div>
+            <div class="event-badge ended" style="display:none;" name="ended" data-end-date="{{- endDate -}}">終了</div>
             {% else %}
-              <div class="ribbon ribbon-top-left">
-                <span>終了</span>
-              </div>
+            <div class="event-badge ended">終了</div>
             {% endif %}
           </article>
         <!-- //Article -->
