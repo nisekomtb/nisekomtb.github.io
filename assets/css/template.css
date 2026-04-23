@@ -2122,13 +2122,6 @@ input.invalid {
 .navbar-default .navbar-nav>li {
   display: inline-block;
   float: none;
-  position: relative;
-}
-
-.navbar-default .navbar-nav>li>.nav-child.dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
 }
 
 .navbar-default .navbar-nav>li>a,
