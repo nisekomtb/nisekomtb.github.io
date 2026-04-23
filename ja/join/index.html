@@ -148,20 +148,48 @@ description: ニセコのマウンテンバイク協会、NAMBAのメンバー�
         data-delay="400">
         <div style="font-size:130%;"><span>{% if page.lang == "ja" %}NAMBAは運営コストを最小限に抑えています。会費はトレイル、イベント、コミュニティに直接使われます。{% else %}NAMBA keeps overheads minimal. Your membership goes directly to trails, events, and community.{% endif %}</span></div>
       </div>
-      <div
-        class="features-desc ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="600">
-        <ul style="list-style:none; line-height:2.2; font-size:130%; padding-left:0;">
-          <li><strong>92%</strong> {% if page.lang == "ja" %}トレイル建設{% else %}trail building{% endif %}</li>
-          <li><strong>3%</strong> {% if page.lang == "ja" %}メンテナンス{% else %}maintenance{% endif %}</li>
-          <li><strong>3%</strong> {% if page.lang == "ja" %}マーケティング{% else %}marketing{% endif %}</li>
-          <li><strong>2%</strong> {% if page.lang == "ja" %}管理{% else %}admin{% endif %}</li>
-        </ul>
-      </div>
+    </div>
+    <div style="position:relative; width:100%; max-width:400px; margin:0 auto;" class="ja-animate" data-animation="move-from-bottom" data-delay="600">
+      <canvas id="chart-membership-allocation"></canvas>
     </div>
 
   </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+  <script>
+    (function() {
+      var isJa = {{ page.lang | jsonify }} === "ja";
+      var allocation = {{ site.data.impact.funding.allocation | jsonify }};
+
+      Chart.defaults.color = '#aaaaaa';
+      Chart.defaults.font.family = '"Metropolis", Helvetica, Arial, sans-serif';
+
+      new Chart(document.getElementById('chart-membership-allocation'), {
+        type: 'doughnut',
+        data: {
+          labels: isJa
+            ? ['トレイル建設', 'マーケティング', 'メンテナンス', '管理']
+            : ['Trail building', 'Marketing', 'Maintenance', 'Admin'],
+          datasets: [{
+            data: [allocation.trail_building, allocation.marketing, allocation.maintenance, allocation.admin],
+            backgroundColor: ['#47A06C', '#c8a951', '#148cf0', '#666666'],
+            borderWidth: 0,
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { position: 'bottom' },
+            tooltip: {
+              callbacks: {
+                label: function(ctx) { return ctx.label + ': ' + ctx.parsed + '%'; }
+              }
+            }
+          }
+        }
+      });
+    })();
+  </script>
 
   <!-- Membership tiers -->
   <div class="section">
