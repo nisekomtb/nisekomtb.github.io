@@ -52,7 +52,7 @@
 <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
   <input type="hidden" name="access_key" value="da8a4950-3779-470d-845f-9b8d0713417f">
   <input type="hidden" name="subject" value="{{ form_subject }}">
-  {% if form_redirect %}<input type="hidden" name="redirect" value="{{ form_redirect }}">{% endif %}
+  {% if form_redirect %}<input type="hidden" name="redirect" value="{{ site.url }}{{ form_redirect }}">{% endif %}
   <input type="checkbox" name="botcheck" class="hidden" style="display:none;">
 
   <div class="form-row">
