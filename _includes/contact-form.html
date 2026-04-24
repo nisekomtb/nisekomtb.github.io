@@ -94,7 +94,10 @@
   <label for="message">{% if page.lang == "ja" %}メッセージ{% else %}Message{% endif %}</label>
   <textarea name="message" id="message" required></textarea>
 
+  <div class="h-captcha" data-captcha="true"></div>
+
   <div style="text-align:center; margin-top:10px;">
     <button type="submit" class="btn btn-primary">{% if page.lang == "ja" %}送信する{% else %}Send message{% endif %}</button>
   </div>
 </form>
+<script src="https://web3forms.com/client/script.js" async defer></script>
