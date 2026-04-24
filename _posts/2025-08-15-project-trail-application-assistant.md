@@ -19,7 +19,7 @@ pay: ¥2,000 per hour
 perks:
   - title: Training
     perk: Training provided at full pay
-applyUrl: mailto:hr@namba.ngo
+applyUrl: /contact/?topic=job-application
 ---
 <h3 style="margin-top:0;" id="about-namba">About NAMBA:</h3>
 
@@ -85,7 +85,7 @@ Transportation expenses covered for work-related field activities
 
 ### How to Apply:
 
-Please send your CV and a short cover email introducing yourself and why you're interested in working with NAMBA to <a href="{{- page.applyUrl -}}">hr@namba.ngo</a>.
+Please apply via our <a href="{{- page.applyUrl -}}">contact form</a>, including a short introduction about yourself and why you're interested in working with NAMBA.
 
 {% if page.isOpen %}
 <div style="text-align:center; margin:50px 0;">

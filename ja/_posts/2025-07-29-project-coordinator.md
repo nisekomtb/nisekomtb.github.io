@@ -23,7 +23,7 @@ perks:
     perk: 研修期間も全額支給
   - title: 補助付き宿泊施設
     perk: ニセコひらふで利用可能
-applyUrl: mailto:hr@namba.ngo
+applyUrl: /ja/contact/?topic=job-application
 ---
 <h3 style="margin-top:0;" id="about-namba">団体概要（NAMBAについて）：</h3>
 
@@ -62,7 +62,7 @@ NAMBA<wbr>（ニセコエリア・マウンテンバイク協会）は、<wbr>�
 
 ### 応募方<wbr>法：
 
-履歴書<wbr>（CV）<wbr>および<wbr>簡単な<wbr>自己紹介文<wbr>（NAMBAで<wbr>働きたい<wbr>理由を<wbr>含む）を<wbr>以下の<wbr>メールアドレスまで<wbr>お送りください<wbr>： <a href="{{- page.applyUrl -}}">hr@namba.ngo</a>
+<a href="{{- page.applyUrl -}}">お問い合わせフォーム</a>から、簡単な自己紹介とNAMBAで働きたい理由をお送りください。
 
 {% if page.isOpen %}
 <div style="text-align:center; margin:50px 0;">

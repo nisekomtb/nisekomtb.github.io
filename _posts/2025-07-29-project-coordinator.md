@@ -23,7 +23,7 @@ perks:
     perk: Training provided at full pay
   - title: Subsidized accommodation
     perk: Available in Niseko Hirafu
-applyUrl: mailto:hr@namba.ngo
+applyUrl: /contact/?topic=job-application
 ---
 <h3 style="margin-top:0;" id="about-namba">About NAMBA:</h3>
 
@@ -62,7 +62,7 @@ We are seeking a highly organized and proactive <strong>Project Coordinator</str
 
 ### How to Apply:
 
-Please send your CV and a short cover email introducing yourself and why you're interested in working with NAMBA to <a href="{{- page.applyUrl -}}">hr@namba.ngo</a>.
+Please apply via our <a href="{{- page.applyUrl -}}">contact form</a>, including a short introduction about yourself and why you're interested in working with NAMBA.
 
 {% if page.isOpen %}
 <div style="text-align:center; margin:50px 0;">
