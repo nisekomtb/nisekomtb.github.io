@@ -1,0 +1,95 @@
+{% comment %}
+  Usage: {% include contact-form.html subject="Partnership Enquiry" %}
+  Optional params: subject (default: "Website Enquiry"), redirect (thank you page URL)
+{% endcomment %}
+{% assign form_subject = include.subject | default: "Website Enquiry" %}
+{% assign form_redirect = include.redirect | default: nil %}
+
+<style>
+  .contact-form { max-width: 600px; margin: 0 auto; }
+  .contact-form label {
+    display: block;
+    font-family: "Metropolis", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-accent);
+    margin-bottom: 6px;
+  }
+  .contact-form input[type="text"],
+  .contact-form input[type="email"],
+  .contact-form select,
+  .contact-form textarea {
+    width: 100%;
+    padding: 12px 16px;
+    background: var(--color-bg-panel);
+    border: 2px solid var(--color-bg-border);
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-family: inherit;
+  }
+  .contact-form input:focus,
+  .contact-form select:focus,
+  .contact-form textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+  }
+  .contact-form textarea { min-height: 150px; resize: vertical; }
+  .contact-form select { appearance: auto; }
+  .contact-form .form-row {
+    display: flex;
+    gap: 16px;
+  }
+  .contact-form .form-row > div { flex: 1; }
+  @media (max-width: 500px) {
+    .contact-form .form-row { flex-direction: column; gap: 0; }
+  }
+</style>
+
+<form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+  <input type="hidden" name="access_key" value="da8a4950-3779-470d-845f-9b8d0713417f">
+  <input type="hidden" name="subject" value="{{ form_subject }}">
+  {% if form_redirect %}<input type="hidden" name="redirect" value="{{ form_redirect }}">{% endif %}
+  <input type="checkbox" name="botcheck" class="hidden" style="display:none;">
+
+  <div class="form-row">
+    <div>
+      <label for="name">{% if page.lang == "ja" %}お名前{% else %}Name{% endif %}</label>
+      <input type="text" name="name" id="name" required>
+    </div>
+    <div>
+      <label for="email">{% if page.lang == "ja" %}メールアドレス{% else %}Email{% endif %}</label>
+      <input type="email" name="email" id="email" required>
+    </div>
+  </div>
+
+  {% if include.show_company %}
+  <div class="form-row">
+    <div>
+      <label for="company">{% if page.lang == "ja" %}会社名{% else %}Company{% endif %}</label>
+      <input type="text" name="company" id="company">
+    </div>
+    <div>
+      <label for="interest">{% if page.lang == "ja" %}ご関心のある内容{% else %}I'm interested in{% endif %}</label>
+      <select name="interest" id="interest">
+        <option value="">{% if page.lang == "ja" %}選択してください{% else %}Select...{% endif %}</option>
+        <option value="Community Partnership">{% if page.lang == "ja" %}コミュニティパートナーシップ{% else %}Community Partnership{% endif %}</option>
+        <option value="Industry Partnership">{% if page.lang == "ja" %}業界パートナーシップ{% else %}Industry Partnership{% endif %}</option>
+        <option value="Trail Sponsorship">{% if page.lang == "ja" %}トレイルスポンサーシップ{% else %}Trail Sponsorship{% endif %}</option>
+        <option value="Custom Partnership">{% if page.lang == "ja" %}カスタムパートナーシップ{% else %}Custom Partnership{% endif %}</option>
+        <option value="Other">{% if page.lang == "ja" %}その他{% else %}Other{% endif %}</option>
+      </select>
+    </div>
+  </div>
+  {% endif %}
+
+  <label for="message">{% if page.lang == "ja" %}メッセージ{% else %}Message{% endif %}</label>
+  <textarea name="message" id="message" required></textarea>
+
+  <div style="text-align:center; margin-top:10px;">
+    <button type="submit" class="btn btn-primary">{% if page.lang == "ja" %}送信する{% else %}Send message{% endif %}</button>
+  </div>
+</form>
