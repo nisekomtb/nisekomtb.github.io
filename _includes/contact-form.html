@@ -3,7 +3,7 @@
   Optional params: subject (default: "Website Enquiry"), redirect (thank you page URL)
 {% endcomment %}
 {% assign form_subject = include.subject | default: "Website Enquiry" %}
-{% assign form_redirect = include.redirect | default: nil %}
+{% assign form_redirect = include.redirect | default: "/thanks/" %}
 
 <style>
   .contact-form { max-width: 600px; margin: 0 auto; }
@@ -80,6 +80,9 @@
         <option value="Industry Partnership">{% if page.lang == "ja" %}業界パートナーシップ{% else %}Industry Partnership{% endif %}</option>
         <option value="Trail Sponsorship">{% if page.lang == "ja" %}トレイルスポンサーシップ{% else %}Trail Sponsorship{% endif %}</option>
         <option value="Custom Partnership">{% if page.lang == "ja" %}カスタムパートナーシップ{% else %}Custom Partnership{% endif %}</option>
+        <option value="Volunteering">{% if page.lang == "ja" %}ボランティア{% else %}Volunteering{% endif %}</option>
+        <option value="Media">{% if page.lang == "ja" %}メディア{% else %}Media / Press{% endif %}</option>
+        <option value="Commercial Operator Pass">{% if page.lang == "ja" %}商業事業者パス{% else %}Commercial Operator Pass{% endif %}</option>
         <option value="Other">{% if page.lang == "ja" %}その他{% else %}Other{% endif %}</option>
       </select>
     </div>

@@ -599,7 +599,7 @@ masthead:
 
   </div>
 
-  <!-- Section 9: Contact Form -->
+  <!-- Section 9: Get in Touch CTA -->
   <div class="section">
 
     <div class="module-title-wrap" style="max-width:900px;">
@@ -611,17 +611,16 @@ masthead:
         class="features-desc ja-animate"
         data-animation="move-from-bottom"
         data-delay="400">
-        <div style="font-size:130%;"><span>{% if page.lang == "ja" %}以下のフォームからお問い合わせいただくか、<a href="mailto:partners@namba.ngo">partners@namba.ngo</a>まで直接メールをお送りください。{% else %}Fill in the form below or email us directly at <a href="mailto:partners@namba.ngo">partners@namba.ngo</a>.{% endif %}</span></div>
+        <div style="font-size:130%;"><span>{% if page.lang == "ja" %}お問い合わせフォームからご連絡いただくか、<a href="mailto:partners@namba.ngo">partners@namba.ngo</a>まで直接メールをお送りください。{% else %}Get in touch via our contact form or email us directly at <a href="mailto:partners@namba.ngo">partners@namba.ngo</a>.{% endif %}</span></div>
       </div>
     </div>
-
-    <div class="ja-animate" data-animation="move-from-bottom" data-delay="600">
-      {% include contact-form.html subject="Partnership Enquiry" show_company=true redirect="/thanks/" %}
-    </div>
-
-    <div class="module-title-wrap" style="margin-top:24px;">
-      <div class="t3-section action ja-animate" data-animation="move-from-bottom" data-delay="800">
-        <a class="btn btn-secondary" href="#">{% if page.lang == "ja" %}ピッチデックをダウンロード{% else %}Download pitch deck{% endif %}</a>
+    <div class="module-title-wrap">
+      <div
+        class="t3-section action ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="600">
+        <a class="btn btn-primary" href="{% if page.lang == 'ja' %}/ja/contact/?topic=community-partnership{% else %}/contact/?topic=community-partnership{% endif %}">{% if page.lang == "ja" %}お問い合わせ{% else %}Get in touch{% endif %}</a>
+        <a class="btn btn-secondary" href="#" style="margin-left: 10px;">{% if page.lang == "ja" %}ピッチデックをダウンロード{% else %}Download pitch deck{% endif %}</a>
       </div>
     </div>
 

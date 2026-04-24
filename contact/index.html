@@ -1,0 +1,68 @@
+---
+title: Contact Us
+description: Get in touch with NAMBA, the Niseko Area Mountain Bike Association. Partnership enquiries, volunteering, media requests, and general questions.
+masthead:
+  img: /assets/images/bg/bg-header-twinpeaks.jpg
+---
+
+<div class="t3-section-wrap">
+
+  <div class="section">
+
+    <div class="module-title-wrap" style="max-width:900px;">
+      <h3
+        class="module-title ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="200">{% if page.lang == "ja" %}お問い合わせ{% else %}Get in touch{% endif %}</h3>
+      <div
+        class="features-desc ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="400">
+        <div style="font-size:130%;"><span>{% if page.lang == "ja" %}パートナーシップ、ボランティア、メディアのお問い合わせ、その他ご質問がありましたらお気軽にどうぞ。{% else %}Whether it's about partnership, volunteering, media, or anything else, we'd love to hear from you.{% endif %}</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section">
+
+    <div class="ja-animate" data-animation="move-from-bottom" data-delay="600">
+      {% include contact-form.html subject="Website Enquiry" show_company=true %}
+    </div>
+
+  </div>
+
+  <div class="section">
+
+    <div class="module-title-wrap" style="max-width:900px;">
+      <div
+        class="features-desc ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="200">
+        <div style="font-size:110%; text-align:center;"><span>{% if page.lang == "ja" %}または直接メール：<a href="mailto:info@namba.ngo">info@namba.ngo</a>{% else %}Or email us directly: <a href="mailto:info@namba.ngo">info@namba.ngo</a>{% endif %}</span></div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+  // Pre-fill topic from URL param
+  (function() {
+    var params = new URLSearchParams(window.location.search);
+    var topic = params.get('topic');
+    if (topic) {
+      var select = document.getElementById('interest');
+      if (select) {
+        for (var i = 0; i < select.options.length; i++) {
+          if (select.options[i].value.toLowerCase().replace(/\s+/g, '-') === topic.toLowerCase() ||
+              select.options[i].value.toLowerCase() === topic.toLowerCase()) {
+            select.selectedIndex = i;
+            break;
+          }
+        }
+      }
+    }
+  })();
+</script>

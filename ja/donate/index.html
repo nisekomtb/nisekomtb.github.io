@@ -191,7 +191,7 @@ masthead:
             <div class="font-icon"><span class="fa-solid fa-laptop-code"></span></div>
             <h4>{% if page.lang == "ja" %}スキルを活かす{% else %}Donate Skills{% endif %}</h4>
             <p>{% if page.lang == "ja" %}写真撮影、映像制作、翻訳、デザイン、法務、会計。プロフェッショナルなスキルでNAMBAの活動を加速させてください。{% else %}Photography, videography, translation, design, legal, accounting. Professional skills accelerate everything NAMBA does.{% endif %}</p>
-            <a class="action" href="mailto:info@namba.ngo">{% if page.lang == "ja" %}お問い合わせ{% else %}Get in touch{% endif %} <span class="fa-solid fa-circle-arrow-right"></span></a>
+            <a class="action" href="{% if page.lang == 'ja' %}/ja/contact/?topic=volunteering{% else %}/contact/?topic=volunteering{% endif %}">{% if page.lang == "ja" %}お問い合わせ{% else %}Get in touch{% endif %} <span class="fa-solid fa-circle-arrow-right"></span></a>
           </div>
         </div>
         <div class="col col-12 col-md-6 col-lg-4">
@@ -215,7 +215,7 @@ masthead:
             <div class="font-icon"><span class="fa-solid fa-mountain-sun"></span></div>
             <h4>{% if page.lang == "ja" %}土地のアクセスを提供する{% else %}Donate Land Access{% endif %}</h4>
             <p>{% if page.lang == "ja" %}土地所有者、林業関係者、リゾート運営者の方へ。あなたの土地にトレイルを開設する可能性についてお話しましょう。{% else %}If you're a landowner, forestry company, or resort operator, talk to us about opening trail access on your land. Every connection expands the network.{% endif %}</p>
-            <a class="action" href="mailto:info@namba.ngo">{% if page.lang == "ja" %}お問い合わせ{% else %}Get in touch{% endif %} <span class="fa-solid fa-circle-arrow-right"></span></a>
+            <a class="action" href="{% if page.lang == 'ja' %}/ja/contact/?topic=other{% else %}/contact/?topic=other{% endif %}">{% if page.lang == "ja" %}お問い合わせ{% else %}Get in touch{% endif %} <span class="fa-solid fa-circle-arrow-right"></span></a>
           </div>
         </div>
       </div>
@@ -236,7 +236,7 @@ masthead:
         class="t3-section action ja-animate"
         data-animation="move-from-right"
         data-delay="800">
-        <a class="btn btn-primary" href="mailto:info@namba.ngo">{% if page.lang == "ja" %}お問い合わせ{% else %}Get in touch{% endif %}</a>
+        <a class="btn btn-primary" href="{% if page.lang == 'ja' %}/ja/contact/{% else %}/contact/{% endif %}">{% if page.lang == "ja" %}お問い合わせ{% else %}Get in touch{% endif %}</a>
       </div>
     </div>
   </div>
