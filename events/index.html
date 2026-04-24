@@ -14,6 +14,59 @@ masthead:
       min-height: auto !important;
     }
   }
+
+  /* Event card redesign */
+  .project-view.style-1 .view-project {
+    background: var(--color-bg-panel);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .project-view.style-1 .view-project:hover {
+    background: var(--color-bg-border);
+  }
+  .project-view.style-1 .view-project .image-wrap {
+    position: relative;
+  }
+  .project-view.style-1 .view-project .image-wrap::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(to bottom, transparent, var(--color-bg-panel));
+    pointer-events: none;
+    transition: background 300ms;
+  }
+  .project-view.style-1 .view-project:hover .image-wrap::after {
+    background: linear-gradient(to bottom, transparent, var(--color-bg-border));
+  }
+  .project-view.style-1 .view-project .image-wrap a:before {
+    display: none;
+  }
+  .project-view.style-1 .view-project .intro-wrap {
+    position: relative;
+    padding: 16px 16px 20px;
+    text-shadow: none;
+    bottom: auto;
+  }
+  .project-view.style-1 .view-project .intro-wrap .article-title {
+    margin-bottom: 8px;
+  }
+  .project-view.style-1 .view-project .intro-wrap .article-title a {
+    font-size: 16px;
+  }
+  /* Remove hover slide-up animation */
+  @media (min-width: 1200px) {
+    .project-view.style-1 .view-project:hover .intro-wrap {
+      transform: none;
+      bottom: auto;
+    }
+    .project-view.style-1 .view-project:hover .image-wrap a:before {
+      display: none;
+    }
+  }
+
   .event-badge {
     display: inline-block;
     padding: 4px 12px;
@@ -81,7 +134,7 @@ masthead:
 
           <!-- Article -->
           <article class="view-project {% if forloop.index0 >= firstPastEventIndex or event.cancelled %}disabled{% endif %}">
-            <div class="image-wrap" style="margin-top:10px;">
+            <div class="image-wrap">
               <div class="float-start item-image">
                 <a href="{{ event.override_url | default: event.url }}" {% if event.override_url %}target="_blank"{% endif %}><img
                     src="{{ event.thumbnail }}?d={{ site.time | date: '%s' }}"
