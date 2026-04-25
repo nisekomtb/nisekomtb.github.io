@@ -167,7 +167,7 @@ masthead:
             <div class="image-wrap">
               <div class="float-start item-image">
                 <a href="{{ event.override_url | default: event.url }}" {% if event.override_url %}target="_blank"{% endif %}><img
-                    src="{{ event.masthead.img | default: event.thumbnail }}?d={{ site.time | date: '%s' }}"
+                    src="{{ event.thumbnail }}?d={{ site.time | date: '%s' }}"
                     alt=""
                     itemprop="thumbnailUrl"></a>
               </div>
