@@ -83,7 +83,13 @@
                             {% assign subNavPath = subNav.path | append: "/" %}
                             <li
                               itemprop='name'
-                              class="{% if path == subNavPath or path1 == subNav.path %}current active{% endif %}{% if subNav.isAction %} action{% endif %}"
+                              {% assign subNavActive = false %}
+                              {% if path == subNavPath or path1 == subNav.path %}
+                                {% assign subNavActive = true %}
+                              {% elsif subNavPath != "/" and subNavPath != "" and path contains subNavPath %}
+                                {% assign subNavActive = true %}
+                              {% endif %}
+                              class="{% if subNavActive %}current active{% endif %}{% if subNav.isAction %} action{% endif %}"
                               data-id="{{ navId }}{{ forloop.index }}"
                               data-level="2">
                               <a
