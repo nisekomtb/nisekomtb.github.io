@@ -279,7 +279,8 @@ select:focus {
 .dropdown-menu {
   background-color: rgba(0, 0, 0, 0.9);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 3px;
+  border-top: none;
+  border-radius: 0 0 3px 3px;
   margin-top: 0;
   color: var(--color-text);
   font-size: 14px;
