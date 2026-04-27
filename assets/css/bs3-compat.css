@@ -277,14 +277,14 @@ select:focus {
    ========================================================================== */
 
 .dropdown-menu {
-  background-color: var(--color-bg-panel);
-  border: 1px solid var(--color-bg-panel);
-  border-radius: 1px;
+  background-color: rgba(0, 0, 0, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
   color: var(--color-text);
   font-size: 14px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-  --bs-dropdown-bg: var(--color-bg-panel);
-  --bs-dropdown-border-color: var(--color-bg-panel);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  --bs-dropdown-bg: rgba(0, 0, 0, 0.9);
+  --bs-dropdown-border-color: rgba(255, 255, 255, 0.1);
   --bs-dropdown-border-radius: 1px;
   --bs-dropdown-font-size: 14px;
   --bs-dropdown-link-color: var(--color-text);
