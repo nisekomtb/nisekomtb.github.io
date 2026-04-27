@@ -1,13 +1,13 @@
 twinpeaks:
   # - name: nisade
-  #   image: /assets/images/company/special/nisade.png
+  #   image: /assets/images/company/nisade.png
   #   url: https://nisade.com
   #   label: Headline sponsor
   #   ja:
   #     url: https://nisade.com/ja/
   #     label: ヘッドライン スポンサー
   # - name: specialized
-  #   image: /assets/images/company/special/specialized.png
+  #   image: /assets/images/company/specialized.png
   #   url: https://www.specialized-onlinestore.jp/
   #   label: Trail building team partner
   #   ja:
@@ -18,12 +18,12 @@ twinpeaks:
     ja:
       url: https://www.rhythmjapan.com/ja/
   - name: holiday niseko
-    image: /assets/images/company/special/holiday-niseko.png
+    image: /assets/images/company/holiday-niseko.png
     url: https://holidayniseko.com
     ja:
       url: https://holidayniseko.jp
   - name: mnk
-    image: /assets/images/company/special/mnk.png
+    image: /assets/images/company/mnk.png
     url: https://www.mnkniseko.com/en
     ja:
       url: https://www.mnkniseko.com/ja
@@ -33,41 +33,41 @@ twinpeaks:
     ja:
       url: https://nacadventures.jp/summer-e/mountain-biking-tours/
   - name: noasc
-    image: /assets/images/company/shika/noasc.png
+    image: /assets/images/company/noasc.png
     url: https://noasc.com/en/
     ja:
       url: https://noasc.com/ja/
   - name: rhythm
-    image: /assets/images/company/special/rhythm.png
+    image: /assets/images/company/rhythm.png
     url: https://rhythmjapan.com
     ja:
       url: https://www.rhythmjapan.com/ja/
   # - name: santa cruz
-  #   image: /assets/images/company/special/santa-cruz.png
+  #   image: /assets/images/company/santa-cruz.png
   #   url: https://www.santacruzbicycles.com/
   # - name: hanazono
-  #   image: /assets/images/company/higuma/hanazono.png
+  #   image: /assets/images/company/hanazono.png
   #   url: https://hanazononiseko.com/en
   #   ja:
   #     url: https://hanazononiseko.com/ja
   # - name: h2
-  #   image: /assets/images/company/higuma/h2.png
+  #   image: /assets/images/company/h2.png
   #   url: https://www.h2group.com
   #   ja:
   #     url: https://www.h2group.com/jp/
   # - name: hbc
-  #   image: /assets/images/company/higuma/hbc.png
+  #   image: /assets/images/company/hbc.png
   #   url: https://www.hokkaidobackcountryclub.com/en/homepage/
   #   ja:
   #     url: https://www.hokkaidobackcountryclub.com/ja/homepage-2/
   # - name: niseko wow
-  #   image: /assets/images/company/higuma/niseko-wow.png
+  #   image: /assets/images/company/niseko-wow.png
   #   url: https://www.niseko-wow.com
   # - name: sc global
-  #   image: /assets/images/company/higuma/sc-global.png
+  #   image: /assets/images/company/sc-global.png
   #   url: https://www.scglobal.com.sg
   # - name: zekkei
-  #   image: /assets/images/company/higuma/zekkei.png
+  #   image: /assets/images/company/zekkei.png
   #   url: https://www.zekkeicollection.com/en
   #   ja:
   #     url: https://www.zekkeicollection.com/
