@@ -63,6 +63,155 @@ masthead:
 
   </div>
 
+  <!-- Interactive Area Map -->
+  <div class="section">
+    <div
+      class="ja-animate"
+      data-animation="move-from-bottom"
+      data-delay="200">
+      <div style="width:100%; height:500px; border-radius:3px; overflow:hidden;" id="area-map"></div>
+    </div>
+  </div>
+
+  <script>(g => { var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window; b = b[c] || (b[c] = {}); var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => { await (a = m.createElement("script")); e.set("libraries", [...r] + ""); for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]); e.set("callback", c + ".maps." + q); a.src = `https://maps.${c}apis.com/maps/api/js?` + e; d[q] = f; a.onerror = () => h = n(Error(p + " could not load.")); a.nonce = m.querySelector("script[nonce]")?.nonce || ""; m.head.append(a) })); d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)) })
+    ({ key: "AIzaSyCet6Eys-EOTnAbs402oGLPbJWuvlH5E0s", v: "weekly" });</script>
+
+  <script type="text/javascript">
+    var isJa = {{ page.lang | jsonify }} === "ja";
+
+    async function initAreaMap() {
+      var { Map, InfoWindow } = await google.maps.importLibrary("maps");
+      var { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary("marker");
+      var map = new Map(document.getElementById("area-map"), {
+        zoom: 12,
+        center: { lat: 42.865, lng: 140.695 },
+        mapId: "bfcc0961204fb2ec",
+      });
+
+      var langPrefix = isJa ? "/ja" : "";
+      var pois = [
+        {
+          position: { lat: 42.866, lng: 140.710 },
+          title: "Twin Peaks Bike Park",
+          titleJa: "ツインピークスバイクパーク",
+          img: "/assets/images/logos/twin-peaks.svg",
+          scale: 2.0,
+          background: "#000",
+          url: langPrefix + "/twin-peaks/"
+        },
+        {
+          position: { lat: 42.861887, lng: 140.698521 },
+          title: "Grand Hirafu Bike Park",
+          titleJa: "グランヒラフバイクパーク",
+          icon: "fa-mountain-sun",
+          scale: 1.3,
+          background: "#47A06C",
+          url: langPrefix + "/where-to-ride/grand-hirafu/"
+        },
+        {
+          position: { lat: 42.893179, lng: 140.700175 },
+          title: "Hanazono",
+          titleJa: "花園",
+          icon: "fa-mountain",
+          scale: 1.3,
+          background: "#c8a951",
+          url: langPrefix + "/where-to-ride/hanazono/"
+        },
+        {
+          position: { lat: 42.847557, lng: 140.647955 },
+          title: "Niseko Annupuri",
+          titleJa: "ニセコアンヌプリ",
+          icon: "fa-gauge-high",
+          scale: 1.3,
+          background: "#47A06C",
+          url: langPrefix + "/where-to-ride/annupuri/"
+        },
+        {
+          position: { lat: 42.866, lng: 140.709 },
+          title: "Twin Peaks Skills Centre",
+          titleJa: "ツインピークス スキルセンター",
+          icon: "fa-diamond-turn-right",
+          scale: 0.9,
+          background: "#666",
+          url: langPrefix + "/where-to-ride/skills-parks/"
+        },
+        {
+          position: { lat: 42.861, lng: 140.699 },
+          title: "Grand Hirafu Skill-up Area",
+          titleJa: "グランヒラフ スキルアップエリア",
+          icon: "fa-diamond-turn-right",
+          scale: 0.9,
+          background: "#666",
+          url: langPrefix + "/where-to-ride/skills-parks/"
+        },
+        {
+          position: { lat: 42.978, lng: 140.709 },
+          title: "Tomo Playpark Pump Track",
+          titleJa: "赤井川TOMO パンプトラック",
+          icon: "fa-diamond-turn-right",
+          scale: 0.9,
+          background: "#666",
+          url: langPrefix + "/where-to-ride/skills-parks/"
+        },
+        {
+          position: { lat: 42.752, lng: 140.578 },
+          title: "Rusutsu Pump Track",
+          titleJa: "ルスツ パンプトラック",
+          icon: "fa-diamond-turn-right",
+          scale: 0.9,
+          background: "#666",
+          url: langPrefix + "/where-to-ride/skills-parks/"
+        },
+        {
+          position: { lat: 42.860, lng: 140.701 },
+          title: "Rhythm Japan Skills Park",
+          titleJa: "リズムジャパン スキルパーク",
+          icon: "fa-diamond-turn-right",
+          scale: 0.9,
+          background: "#666",
+          url: langPrefix + "/where-to-ride/skills-parks/"
+        }
+      ];
+
+      var infoWindow = new InfoWindow();
+
+      pois.forEach(function(poi) {
+        var content;
+        if (poi.icon) {
+          var el = document.createElement("div");
+          el.innerHTML = '<i class="fa ' + poi.icon + '" style="color:#fff; font-size:14px;"></i>';
+          el.style.cssText = 'display:flex; align-items:center; justify-content:center; width:' + (40 * (poi.scale || 1)) + 'px; height:' + (40 * (poi.scale || 1)) + 'px; background:' + poi.background + '; border:2px solid #fff; border-radius:50%; cursor:pointer;';
+          content = el;
+        } else {
+          var pin = new PinElement({
+            glyphColor: "#fff",
+            background: poi.background,
+            borderColor: "#fff",
+            scale: poi.scale || 1,
+          });
+          if (poi.img) pin.glyphSrc = poi.img;
+          content = pin;
+        }
+
+        var marker = new AdvancedMarkerElement({
+          position: poi.position,
+          map: map,
+          title: isJa ? poi.titleJa : poi.title,
+          content: content,
+        });
+
+        marker.addEventListener("gmp-click", function() {
+          var name = isJa ? poi.titleJa : poi.title;
+          infoWindow.close();
+          infoWindow.setContent('<div style="padding:4px 8px;"><strong>' + name + '</strong><br><a href="' + poi.url + '" style="color:#47A06C;">' + (isJa ? '詳しく見る' : 'Learn more') + '</a></div>');
+          infoWindow.open(map, marker);
+        });
+      });
+    }
+
+    initAreaMap();
+  </script>
+
   <!-- Riding Areas -->
   <style>
     .ride-card {
@@ -259,31 +408,7 @@ masthead:
 
   </div>
 
-  <!-- Area Map -->
-  <div class="section">
-
-    <div class="module-title-wrap" style="max-width:900px;">
-      <h3
-        class="module-title ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="200">Trail Map</h3>
-      <div
-        class="features-desc ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="400">
-        <div style="font-size:130%;"><span>Explore the trail network on Trailforks. Zoom in for trail details, difficulty ratings, and conditions.</span></div>
-      </div>
-    </div>
-    <div
-      class="ja-animate"
-      data-animation="move-from-bottom"
-      data-delay="600">
-      <div style="max-width:100%; overflow:hidden;">
-        <iframe style="width:100%; height:500px; border:0;" src="https://www.trailforks.com/widgets/region_map/?rid=66498&w=100%25&h=500&activitytype=1&maptype=trailforks" allowfullscreen></iframe>
-      </div>
-    </div>
-
-  </div>
+  <!-- Area Map removed, replaced with interactive Google Map above Riding Areas -->
 
   <!-- Season Info -->
   <div class="section">
