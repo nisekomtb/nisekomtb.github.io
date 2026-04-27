@@ -626,4 +626,149 @@ masthead:
 
   </div>
 
+  <!-- Current Partners -->
+  <div class="section">
+
+    <div class="module-title-wrap" style="max-width:900px;">
+      <h3
+        class="module-title ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="200">{% if page.lang == "ja" %}現在のパートナー{% else %}Our Current Partners{% endif %}</h3>
+    </div>
+
+    <style>
+      .partner-tier { margin-bottom: 36px; }
+      .partner-tier .tier-heading {
+        text-align: center;
+        margin-bottom: 16px;
+      }
+      .partner-tier .tier-heading img {
+        width: 40px;
+        margin-bottom: 6px;
+      }
+      .partner-tier .tier-heading h4 {
+        font-size: 14px;
+        color: #888;
+        margin: 0;
+      }
+      .partner-tier .tier-logos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 24px;
+        padding: 16px 0;
+        border-top: 1px solid var(--color-bg-border);
+        border-bottom: 1px solid var(--color-bg-border);
+      }
+      .partner-tier .tier-logos a,
+      .partner-tier .tier-logos span {
+        display: inline-block;
+      }
+      .partner-tier .tier-logos img {
+        width: 80px;
+        height: 60px;
+        object-fit: contain;
+        filter: grayscale(100%);
+        opacity: 0.4;
+        transition: all 300ms;
+      }
+      .partner-tier .tier-logos img:hover {
+        filter: grayscale(0%);
+        opacity: 1;
+      }
+      .partner-tier-special .tier-logos img {
+        width: 100px;
+        height: 70px;
+      }
+    </style>
+
+    <!-- Special / Trail Sponsors -->
+    <div
+      class="partner-tier partner-tier-special ja-animate"
+      data-animation="move-from-bottom"
+      data-delay="400">
+      <div class="tier-heading">
+        <h4>{% if page.lang == "ja" %}トレイルスポンサー{% else %}Trail Sponsors{% endif %}</h4>
+      </div>
+      <div class="tier-logos">
+        {% for sponsor in site.data.sponsors.special.sponsors %}
+          {% if sponsor.url %}
+            <a href="{% if sponsor.ja.url and page.lang == 'ja' %}{{ sponsor.ja.url }}{% else %}{{ sponsor.url }}{% endif %}" target="_blank" title="{{ sponsor.name }}{% if sponsor.label %} — {{ sponsor.label }}{% endif %}">
+              <img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name }}" />
+            </a>
+          {% else %}
+            <span title="{{ sponsor.name }}"><img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name }}" /></span>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- Higuma -->
+    <div
+      class="partner-tier ja-animate"
+      data-animation="move-from-bottom"
+      data-delay="600">
+      <div class="tier-heading">
+        <img alt="Higuma" src="/assets/images/ico/higuma.500.png" />
+        <h4>{% if page.lang == "ja" %}羆パートナー{% else %}Higuma Partners{% endif %}</h4>
+      </div>
+      <div class="tier-logos">
+        {% for sponsor in site.data.sponsors.higuma.sponsors %}
+          {% if sponsor.url %}
+            <a href="{% if sponsor.ja.url and page.lang == 'ja' %}{{ sponsor.ja.url }}{% else %}{{ sponsor.url }}{% endif %}" target="_blank" title="{{ sponsor.name }}">
+              <img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name }}" />
+            </a>
+          {% else %}
+            <span title="{{ sponsor.name }}"><img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name }}" /></span>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- Shika -->
+    <div
+      class="partner-tier ja-animate"
+      data-animation="move-from-bottom"
+      data-delay="800">
+      <div class="tier-heading">
+        <img alt="Shika" src="/assets/images/ico/shika.500.png" />
+        <h4>{% if page.lang == "ja" %}鹿パートナー{% else %}Shika Partners{% endif %}</h4>
+      </div>
+      <div class="tier-logos">
+        {% for sponsor in site.data.sponsors.shika.sponsors %}
+          {% if sponsor.url %}
+            <a href="{% if sponsor.ja.url and page.lang == 'ja' %}{{ sponsor.ja.url }}{% else %}{{ sponsor.url }}{% endif %}" target="_blank" title="{{ sponsor.name }}">
+              <img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name }}" />
+            </a>
+          {% else %}
+            <span title="{{ sponsor.name }}"><img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name }}" /></span>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- Tanuki -->
+    <div
+      class="partner-tier ja-animate"
+      data-animation="move-from-bottom"
+      data-delay="1000">
+      <div class="tier-heading">
+        <img alt="Tanuki" src="/assets/images/ico/tanuki.500.png" />
+        <h4>{% if page.lang == "ja" %}狸パートナー{% else %}Tanuki Partners{% endif %}</h4>
+      </div>
+      <div class="tier-logos">
+        {% for sponsor in site.data.sponsors.tanuki.sponsors %}
+          {% if sponsor.url %}
+            <a href="{% if sponsor.ja.url and page.lang == 'ja' %}{{ sponsor.ja.url }}{% else %}{{ sponsor.url }}{% endif %}" target="_blank" title="{{ sponsor.name }}">
+              <img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name }}" />
+            </a>
+          {% else %}
+            <span title="{{ sponsor.name }}"><img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name }}" /></span>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+
+  </div>
+
 </div>
