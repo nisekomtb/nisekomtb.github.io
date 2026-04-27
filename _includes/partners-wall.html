@@ -1,0 +1,120 @@
+{% comment %}
+  Unified partners wall for homepage.
+  Displays all partners in one continuous flex-wrap layout with labels.
+  Logos are greyed out, full colour on hover.
+{% endcomment %}
+
+<style>
+  .partners-wall {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    padding: 0 24px;
+  }
+  .partners-wall .partner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80px;
+    text-align: center;
+  }
+  .partners-wall .partner img {
+    width: 80px;
+    height: 60px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.35;
+    transition: all 300ms;
+  }
+  .partners-wall .partner:hover img {
+    filter: grayscale(0%);
+    opacity: 1;
+  }
+  .partners-wall .partner .partner-label {
+    font-size: 9px;
+    color: #555;
+    margin-top: 6px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-family: "Metropolis", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    transition: color 300ms;
+  }
+  .partners-wall .partner:hover .partner-label {
+    color: #999;
+  }
+</style>
+
+<div class="partners-wall">
+  {% comment %} Special / Trail sponsors {% endcomment %}
+  {% for sponsor in site.data.sponsors.special.sponsors %}
+    <div class="partner">
+      {% if sponsor.url %}
+        <a href="{% if sponsor.ja.url and page.lang == 'ja' %}{{ sponsor.ja.url }}{% else %}{{ sponsor.url }}{% endif %}" target="_blank">
+          <img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name }}" />
+        </a>
+      {% else %}
+        <img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name }}" />
+      {% endif %}
+      <span class="partner-label">{% if page.lang == 'ja' and sponsor.ja.label %}{{ sponsor.ja.label }}{% elsif sponsor.label %}{{ sponsor.label }}{% else %}{% if page.lang == 'ja' %}トレイルスポンサー{% else %}Trail sponsor{% endif %}{% endif %}</span>
+    </div>
+  {% endfor %}
+
+  {% comment %} Higuma sponsors {% endcomment %}
+  {% for sponsor in site.data.sponsors.higuma.sponsors %}
+    <div class="partner">
+      {% if sponsor.url %}
+        <a href="{% if sponsor.ja.url and page.lang == 'ja' %}{{ sponsor.ja.url }}{% else %}{{ sponsor.url }}{% endif %}" target="_blank">
+          <img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name }}" />
+        </a>
+      {% else %}
+        <img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name }}" />
+      {% endif %}
+      <span class="partner-label">{% if page.lang == 'ja' %}羆パートナー{% else %}Higuma partner{% endif %}</span>
+    </div>
+  {% endfor %}
+
+  {% comment %} Shika sponsors {% endcomment %}
+  {% for sponsor in site.data.sponsors.shika.sponsors %}
+    <div class="partner">
+      {% if sponsor.url %}
+        <a href="{% if sponsor.ja.url and page.lang == 'ja' %}{{ sponsor.ja.url }}{% else %}{{ sponsor.url }}{% endif %}" target="_blank">
+          <img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name }}" />
+        </a>
+      {% else %}
+        <img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name }}" />
+      {% endif %}
+      <span class="partner-label">{% if page.lang == 'ja' %}鹿パートナー{% else %}Shika partner{% endif %}</span>
+    </div>
+  {% endfor %}
+
+  {% comment %} Tanuki sponsors {% endcomment %}
+  {% for sponsor in site.data.sponsors.tanuki.sponsors %}
+    <div class="partner">
+      {% if sponsor.url %}
+        <a href="{% if sponsor.ja.url and page.lang == 'ja' %}{{ sponsor.ja.url }}{% else %}{{ sponsor.url }}{% endif %}" target="_blank">
+          <img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name }}" />
+        </a>
+      {% else %}
+        <img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name }}" />
+      {% endif %}
+      <span class="partner-label">{% if page.lang == 'ja' %}狸パートナー{% else %}Tanuki partner{% endif %}</span>
+    </div>
+  {% endfor %}
+
+  {% comment %} Artists {% endcomment %}
+  {% for sponsor in site.data.sponsors.artists.sponsors %}
+    <div class="partner">
+      {% if sponsor.url %}
+        <a href="{{ sponsor.url }}" target="_blank">
+          <img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name }}" />
+        </a>
+      {% else %}
+        <img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name }}" />
+      {% endif %}
+      <span class="partner-label">{% if page.lang == 'ja' %}アーティスト{% else %}Artist{% endif %}</span>
+    </div>
+  {% endfor %}
+</div>
