@@ -1,51 +1,57 @@
 - image: /assets/images/team/ross.jpg
   name: Ross Carty
-  title: Co-founder & Vice President
+  cofounder: true
+  title: Head of Access
   sub_title: NOASC Adventures Founder / Owner
   ja:
     name: カーティ・ロス
-    title: 共同設立者・副理事長
+    title: アクセス責任者
     sub_title: NOASCアドベンチャーズ 創業者／オーナー
 
 - image: /assets/images/team/andy.jpg
   name: Andy Meadows
-  title: Co-founder & Head of Trail Building
+  cofounder: true
+  title: Head of Trail Building
   sub_title: Rhythm Japan Head of Operations
   ja:
     name: メドーズ・アンディー
-    title: 共同設立者・トレイル造成責任者
+    title: トレイル造成責任者
     sub_title: リズムジャパン オペレーション部門長
 
 - image: /assets/images/team/tom.jpg
   name: Tom Mortiboy
-  title: Co-founder & Head of Marketing & Communication
+  cofounder: true
+  title: Head of Marketing & Communication
   sub_title: Software Engineer
   ja:
     name: モーティーボーイ・トーマス
-    title: 共同設立者・マーケティングとコミュニケーション責任者
+    title: マーケティングとコミュニケーション責任者
     sub_title: ソフトウエアエンジニア
 
 - image: /assets/images/team/angharad.jpg
   name: Angharad Mortiboy
-  title: Co-founder & Head of Events, Competitions & Races
+  cofounder: true
+  title: Head of Events, Competitions & Races
   sub_title: Nutrition & Lifestyle Coach
   ja:
     name: モーティーボーイ・アンバラード
-    title: 共同設立者・イベント・大会・レース責任者
+    title: イベント・大会・レース責任者
     sub_title: 栄養とライフスタイルのコーチ
 
 - image: /assets/images/team/miles.jpg
   name: Miles Zeorlin
-  title: Co-founder & Head of Community & Partner Engagement
+  cofounder: true
+  title: Head of Community & Partner Engagement
   sub_title: Niseko Real Estate Sales Consultant
   ja:
     name: ゼオリン・マイルズ
-    title: 共同設立者・コミュニティ＆パートナーエンゲージメント責任者
+    title: コミュニティ＆パートナーエンゲージメント責任者
     sub_title: 株式会社ニセコリアルエステート・営業部
 
 - image: /assets/images/team/ashley.jpg
   name: Ashley Nicholls
-  title: Co-founder & Head of Administration & Funding
+  cofounder: true
+  title: Head of Administration & Funding
   sub_title: Holiday Niseko KK Managing Director / Owner & Niseko Tourism Director
   ja:
     name: ニコルズ・アシュリー

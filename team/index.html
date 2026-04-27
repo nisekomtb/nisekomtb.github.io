@@ -207,7 +207,7 @@ masthead:
     <div class="team founders">
 
       {% for member in site.data.team %}
-        {% unless member.title contains 'Co-founder' %}{% continue %}{% endunless %}
+        {% unless member.cofounder %}{% continue %}{% endunless %}
         {% assign name = member.name %}
         {% assign title = member.title %}
         {% assign sub_title = member.sub_title %}
@@ -235,7 +235,7 @@ masthead:
     <div class="team">
 
       {% for member in site.data.team %}
-        {% if member.title contains 'Co-founder' %}{% continue %}{% endif %}
+        {% if member.cofounder %}{% continue %}{% endif %}
         {% assign name = member.name %}
         {% assign title = member.title %}
         {% assign sub_title = member.sub_title %}
