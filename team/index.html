@@ -76,6 +76,21 @@ masthead:
     min-width: 160px;
   }
 
+  .founders .board-card {
+    width: calc(33.33% - 12px);
+    min-width: 180px;
+  }
+  .founders .board-card .board-photo {
+    width: 110px;
+    height: 110px;
+  }
+
+  @media(max-width: 767px) {
+    .founders .board-card {
+      width: calc(50% - 12px);
+    }
+  }
+
   .team .board-card:hover {
     background: var(--color-bg-border);
   }
@@ -186,17 +201,44 @@ masthead:
       <h3
         class="module-title ja-animate"
         data-animation="move-from-bottom"
+        data-delay="200">Co-founders</h3>
+    </div>
+
+    <div class="team founders">
+
+      {% for member in site.data.team %}
+        {% unless member.title contains 'Co-founder' %}{% continue %}{% endunless %}
+        {% assign name = member.name %}
+        {% assign title = member.title %}
+        {% assign sub_title = member.sub_title %}
+        <div class="board-card ja-animate" data-animation="move-from-bottom" data-delay="item-{{ forloop.index0 }}">
+          <img class="board-photo" src="{{ member.image }}" alt="{{ name }}" />
+          <p class="board-name">{{ name }}</p>
+          {% if title %}<p class="board-title">{{ title }}</p>{% endif %}
+          {% if sub_title %}<p class="board-subtitle">{{ sub_title }}</p>{% endif %}
+        </div>
+      {% endfor %}
+
+    </div>
+
+  </div>
+
+  <div class="section">
+
+    <div class="module-title-wrap" style="max-width:900px;">
+      <h3
+        class="module-title ja-animate"
+        data-animation="move-from-bottom"
         data-delay="200">Our Board</h3>
     </div>
 
     <div class="team">
 
       {% for member in site.data.team %}
-        
-          {% assign name = member.name %}
-          {% assign title = member.title %}
-          {% assign sub_title = member.sub_title %}
-        
+        {% if member.title contains 'Co-founder' %}{% continue %}{% endif %}
+        {% assign name = member.name %}
+        {% assign title = member.title %}
+        {% assign sub_title = member.sub_title %}
         <div class="board-card ja-animate" data-animation="move-from-bottom" data-delay="item-{{ forloop.index0 }}">
           <img class="board-photo" src="{{ member.image }}" alt="{{ name }}" />
           <p class="board-name">{{ name }}</p>
