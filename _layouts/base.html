@@ -143,9 +143,7 @@
         {% include partners-wall.html %}
 
       {% else %}
-        {% assign width = site.data.sponsors.special.width | plus: site.data.sponsors.higuma.width | minus: 1 %}
-        {% assign sponsors = site.data.sponsors.special.sponsors | concat: site.data.sponsors.higuma.sponsors | sort: "name" | uniq: "name" %}
-        {% include sponsors.html sponsors=sponsors width=width class="higuma" %}
+        {% include partners-footer.html %}
       {% endif %}
 
       <div class="module-title-wrap"></div>
