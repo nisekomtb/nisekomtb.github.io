@@ -277,16 +277,16 @@ select:focus {
    ========================================================================== */
 
 .dropdown-menu {
-  background-color: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
   border: none;
   border-radius: 0 0 3px 3px;
   margin-top: 0;
   color: var(--color-text);
   font-size: 14px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-  --bs-dropdown-bg: rgba(0, 0, 0, 0.4);
+  --bs-dropdown-bg: rgba(0, 0, 0, 0.7);
   --bs-dropdown-border-color: transparent;
   --bs-dropdown-border-radius: 1px;
   --bs-dropdown-font-size: 14px;
