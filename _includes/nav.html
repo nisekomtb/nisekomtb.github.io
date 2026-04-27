@@ -44,6 +44,8 @@
               {% assign subNavPath = subNav.path | append: "/" %}
               {% if nav.path == "" and path == subNavPath %}
                 {% assign navSelected = true %}
+              {% elsif nav.path == "" and subNavPath != "/" and path contains subNavPath %}
+                {% assign navSelected = true %}
               {% elsif path == navPath %}
                 {% assign navSelected = true %}
               {% endif %}
