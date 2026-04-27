@@ -245,7 +245,13 @@
                   </a>
                 </div>
               </div>
-              <div class="mod-footer">
+              <div class="mod-footer" style="margin-top:12px;">
+                <div style="font-size:12px; margin-bottom:8px;">
+                  <a href="{% if page.lang == 'ja' %}/ja{% endif %}/contact/" style="color:#888; margin:0 8px;">{% if page.lang == "ja" %}お問い合わせ{% else %}Contact{% endif %}</a>
+                  <a href="{% if page.lang == 'ja' %}/ja{% endif %}/privacy/" style="color:#888; margin:0 8px;">{% if page.lang == "ja" %}プライバシー{% else %}Privacy{% endif %}</a>
+                  <a href="{% if page.lang == 'ja' %}/ja{% endif %}/terms/" style="color:#888; margin:0 8px;">{% if page.lang == "ja" %}利用規約{% else %}Terms{% endif %}</a>
+                  <a href="{% if page.lang == 'ja' %}/ja{% endif %}/code-conduct/" style="color:#888; margin:0 8px;">{% if page.lang == "ja" %}行動規範{% else %}Code of Conduct{% endif %}</a>
+                </div>
                 <div class="footer1">&#169; {{ site.time | date: "%s" | date: "%Y" }} NAMBA</div>
               </div>
             </div>

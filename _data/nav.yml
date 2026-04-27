@@ -1,28 +1,13 @@
 - path: ""
-  en: Where to Ride
-  ja: ライドスポット
+  en: Ride
+  ja: ライド
   sub:
+    - path: where-to-ride
+      en: Where to Ride
+      ja: ライドスポット
     - path: twin-peaks
       en: Twin Peaks
       ja: ツイン・ピークス
-    - path: where-to-ride/grand-hirafu
-      en: Grand Hirafu
-      ja: グランヒラフ
-    - path: where-to-ride/hanazono
-      en: Hanazono
-      ja: 花園
-    - path: where-to-ride/annupuri
-      en: Annupuri
-      ja: アンヌプリ
-    - path: where-to-ride/gravel
-      en: Gravel
-      ja: グラベル
-    - path: where-to-ride/skills-parks
-      en: Skills Parks
-      ja: スキルパーク
-    - path: where-to-ride/signage
-      en: Trail Signage
-      ja: トレイル標識
     - path: plan-your-trip
       en: Plan Your Trip
       ja: 旅行の計画
@@ -34,21 +19,21 @@
     - path: about
       en: About NAMBA
       ja: NAMBAについて
-    - path: projects
-      en: Our Projects
-      ja: プロジェクト
     - path: team
       en: Our Team
       ja: チーム
+    - path: projects
+      en: Our Projects
+      ja: プロジェクト
     - path: impact
       en: Our Impact
       ja: 実績
-    - path: press
-      en: Press & Media
-      ja: プレス・メディア
     - path: stories
       en: Our Stories
       ja: ストーリー
+    - path: press
+      en: Press & Media
+      ja: プレス・メディア
     - path: dirty-dames
       en: Dirty Dames
       ja: ダーティーデイムズ
@@ -58,8 +43,8 @@
   ja: イベント
 
 - path: ""
-  en: Partner
-  ja: パートナー
+  en: Support
+  ja: サポート
   sub:
     - path: partner
       en: Partner with Us
