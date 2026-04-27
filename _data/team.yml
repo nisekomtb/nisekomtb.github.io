@@ -1,3 +1,12 @@
+- image: /assets/images/team/ross.jpg
+  name: Ross Carty
+  title: Co-founder & Vice President
+  sub_title: NOASC Adventures Founder / Owner
+  ja:
+    name: カーティ・ロス
+    title: 共同設立者・副理事長
+    sub_title: NOASCアドベンチャーズ 創業者／オーナー
+
 - image: /assets/images/team/andy.jpg
   name: Andy Meadows
   title: Co-founder & Head of Trail Building
@@ -11,20 +20,10 @@
   name: Tom Mortiboy
   title: Co-founder & Head of Marketing & Communication
   sub_title: Software Engineer
-
   ja:
     name: モーティーボーイ・トーマス
     title: 共同設立者・マーケティングとコミュニケーション責任者
     sub_title: ソフトウエアエンジニア
-
-- image: /assets/images/team/miles.jpg
-  name: Miles Zeorlin
-  title: Co-founder & Head of Marketing
-  sub_title: Niseko Real Estate Sales Consultant
-  ja:
-    name: ゼオリン・マイルズ
-    title: 共同設立者・マーケティング責任者
-    sub_title: 株式会社ニセコリアルエステート・営業部
 
 - image: /assets/images/team/angharad.jpg
   name: Angharad Mortiboy
@@ -34,6 +33,15 @@
     name: モーティーボーイ・アンバラード
     title: 共同設立者・イベント・大会・レース責任者
     sub_title: 栄養とライフスタイルのコーチ
+
+- image: /assets/images/team/miles.jpg
+  name: Miles Zeorlin
+  title: Co-founder & Head of Community & Partner Engagement
+  sub_title: Niseko Real Estate Sales Consultant
+  ja:
+    name: ゼオリン・マイルズ
+    title: 共同設立者・コミュニティ＆パートナーエンゲージメント責任者
+    sub_title: 株式会社ニセコリアルエステート・営業部
 
 - image: /assets/images/team/ashley.jpg
   name: Ashley Nicholls
