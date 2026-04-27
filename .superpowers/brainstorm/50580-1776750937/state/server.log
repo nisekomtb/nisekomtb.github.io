@@ -1,0 +1,4 @@
+{"type":"server-started","port":55435,"host":"127.0.0.1","url_host":"localhost","url":"http://localhost:55435","screen_dir":"/Users/tom/Code/nisekomtb.github.io/.superpowers/brainstorm/50580-1776750937/content","state_dir":"/Users/tom/Code/nisekomtb.github.io/.superpowers/brainstorm/50580-1776750937/state"}
+{"type":"screen-added","file":"/Users/tom/Code/nisekomtb.github.io/.superpowers/brainstorm/50580-1776750937/content/site-architecture.html"}
+{"type":"screen-added","file":"/Users/tom/Code/nisekomtb.github.io/.superpowers/brainstorm/50580-1776750937/content/site-architecture-v2.html"}
+{"type":"server-stopped","reason":"idle timeout"}

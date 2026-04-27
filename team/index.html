@@ -192,15 +192,11 @@ masthead:
     <div class="team">
 
       {% for member in site.data.team %}
-        {% if page.lang == "ja" %}
-          {% assign name = member.ja.name | default: member.name %}
-          {% assign title = member.ja.title | default: member.title %}
-          {% assign sub_title = member.ja.sub_title | default: member.sub_title %}
-        {% else %}
+        
           {% assign name = member.name %}
           {% assign title = member.title %}
           {% assign sub_title = member.sub_title %}
-        {% endif %}
+        
         <div class="board-card ja-animate" data-animation="move-from-bottom" data-delay="item-{{ forloop.index0 }}">
           <img class="board-photo" src="{{ member.image }}" alt="{{ name }}" />
           <p class="board-name">{{ name }}</p>
