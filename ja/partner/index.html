@@ -682,23 +682,28 @@ masthead:
       }
     </style>
 
-    <!-- Special / Trail Sponsors -->
+    <!-- Trail & Strategic Partners -->
     <div
       class="partner-tier partner-tier-special ja-animate"
       data-animation="move-from-bottom"
       data-delay="400">
       <div class="tier-heading">
-        <h4>{% if page.lang == "ja" %}トレイルスポンサー{% else %}Trail Sponsors{% endif %}</h4>
+        <h4>{% if page.lang == "ja" %}トレイル＆戦略パートナー{% else %}Trail &amp; Strategic Partners{% endif %}</h4>
       </div>
       <div class="tier-logos">
         {% for sponsor in site.data.sponsors.special.sponsors %}
-          {% if sponsor.url %}
-            <a href="{% if sponsor.ja.url and page.lang == 'ja' %}{{ sponsor.ja.url }}{% else %}{{ sponsor.url }}{% endif %}" target="_blank" title="{{ sponsor.name }}{% if sponsor.label %} — {{ sponsor.label }}{% endif %}">
+          <div style="display:flex; flex-direction:column; align-items:center; width:100px;">
+            {% if sponsor.url %}
+              <a href="{% if sponsor.ja.url and page.lang == 'ja' %}{{ sponsor.ja.url }}{% else %}{{ sponsor.url }}{% endif %}" target="_blank">
+                <img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name }}" />
+              </a>
+            {% else %}
               <img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name }}" />
-            </a>
-          {% else %}
-            <span title="{{ sponsor.name }}"><img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name }}" /></span>
-          {% endif %}
+            {% endif %}
+            {% if sponsor.label %}
+              <span style="font-size:8px; color:#444; margin-top:8px; text-transform:uppercase; letter-spacing:0.5px; font-family:'Metropolis',Helvetica,Arial,sans-serif; font-weight:500; text-align:center;">{% if page.lang == 'ja' and sponsor.ja.label %}{{ sponsor.ja.label }}{% else %}{{ sponsor.label }}{% endif %}</span>
+            {% endif %}
+          </div>
         {% endfor %}
       </div>
     </div>
