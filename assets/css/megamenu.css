@@ -368,7 +368,7 @@
   border-top: 1px solid var(--color-bg-border);
 }
 .t3-megamenu .mega-dropdown-menu {
-  padding: 24px 12px;
+  padding: 8px 12px;
 }
 .t3-megamenu .mega > .mega-dropdown-menu {
   border-radius: 3px;
