@@ -305,11 +305,28 @@ masthead:
         data-delay="600">
         <div style="font-size:130%;"><span>For detailed seasonal info, transport, bike rentals, and accommodation, see our <a href="/plan-your-trip/">trip planning guide</a>.</span></div>
       </div>
-      <div
-        class="features-desc ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="800">
-        <div style="font-size:130%;"><span>{% if page.lang == "ja" %}トレイルが初めてですか？<a href="{% if page.lang == 'ja' %}/ja{% endif %}/where-to-ride/signage/">トレイル標識ガイド</a>で標識の読み方を確認しましょう。{% else %}New to the trails? Learn how to read our <a href="/where-to-ride/signage/">trail signage guide</a>.{% endif %}</span></div>
+    </div>
+
+  </div>
+
+  <!-- Trail Signage -->
+  <div class="section">
+
+    <div
+      class="ja-animate"
+      data-animation="move-from-bottom"
+      data-delay="200">
+      <div style="background:var(--color-bg-panel); border-radius:3px; overflow:hidden; max-width:900px; margin:0 auto;">
+        <div style="display:flex; flex-wrap:wrap; align-items:center;">
+          <div style="flex:1; min-width:250px;">
+            <img src="/assets/images/twinpeaks/trailsign.jpg" alt="{% if page.lang == 'ja' %}NAMBAトレイル標識{% else %}NAMBA trail signage{% endif %}" style="width:100%; height:100%; object-fit:cover; display:block;" />
+          </div>
+          <div style="flex:1; min-width:250px; padding:32px;">
+            <h3 class="module-title" style="margin-bottom:12px;">{% if page.lang == "ja" %}トレイル標識ガイド{% else %}Trail Signage Guide{% endif %}</h3>
+            <p style="font-size:110%; margin-bottom:20px;">{% if page.lang == "ja" %}ニセコ全域で統一された標識システムの読み方を学びましょう。難易度、方向、位置コードなど、安全で楽しいライドに必要な情報がすべて標識に詰まっています。{% else %}Learn how to read the unified signage system used across all Niseko riding areas. Difficulty ratings, direction, location codes, and everything you need for a safe ride.{% endif %}</p>
+            <a class="btn btn-primary" href="{% if page.lang == 'ja' %}/ja/where-to-ride/signage/{% else %}/where-to-ride/signage/{% endif %}">{% if page.lang == "ja" %}ガイドを見る{% else %}Read the guide{% endif %}</a>
+          </div>
+        </div>
       </div>
     </div>
 
