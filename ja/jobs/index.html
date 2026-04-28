@@ -9,131 +9,160 @@ masthead:
     url: https://instagram.com/jingypsy
 ---
 <style>
-  .credit {
-    float: right;
+  .job-card {
+    background: var(--color-bg-panel);
+    border-radius: 3px;
+    padding: 28px 24px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    transition: background 300ms;
+  }
+  .job-card:hover {
+    background: var(--color-bg-border);
+  }
+  .job-card .job-info {
+    flex: 1;
+    min-width: 200px;
+  }
+  .job-card .job-title {
+    font-size: 120%;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 6px;
+  }
+  .job-card .job-title a {
+    color: #fff;
+  }
+  .job-card .job-title a:hover {
+    color: var(--color-primary);
+  }
+  .job-card .job-meta {
     font-size: 90%;
+    color: #888;
+    margin: 0;
   }
-
-  .credit a {
-    color: var(--color-text);
+  .job-card .job-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-right: 8px;
   }
-
-  h3 {
-    text-align: center;
-    margin-bottom: 48px;
+  .job-badge.paid {
+    background: #46b414;
+    color: #fff;
   }
-
-  .jobs {
-    margin-bottom: 96px;
+  .job-badge.volunteer {
+    background: var(--color-accent);
+    color: #fff;
   }
-
-  .jobs ul {
-    text-align: center;
-    list-style: none;
-    padding-inline-start: 0;
-  }
-
-  header.article-header {
-    display: inline;
-    font-size: 150%;
-  }
-
-  @media (max-width: 767px) {
-    header.article-header {
-      display: inline;
-    }
-  }
-
-  .action span {
-    margin-left: 8px;
-    position: relative;
-    top: 1px;
-    letter-spacing: -1px;
-    -webkit-transition: all 500ms;
-    -o-transition: all 500ms;
-    transition: all 500ms;
-  }
-
-  .action:hover span,
-  .action:focus span,
-  .action:active span {
-    color: #ffffff;
-  }
-
-  .action:hover span,
-  .action:focus span,
-  .action:active span {
-    margin-left: 14px;
+  .job-card .job-cta {
+    flex-shrink: 0;
   }
 </style>
 
 <div class="t3-section-wrap">
+
   <div class="section">
-    <div class="module-title-wrap">
-      <div
-        class="ja-animate features-desc"
+    <div class="module-title-wrap" style="max-width:900px;">
+      <h3
+        class="module-title ja-animate"
         data-animation="move-from-bottom"
-        data-delay="200">
-        <div style="font-size:130%;">
-          <h3>私たちチームと働きませんか？</h3>
-          <p>NAMBAチームに<wbr>入り、<wbr>一緒に<wbr>働きませんか？<wbr>通年ボランティア委員スタッフと<wbr>夏雇用スタッフ（有給）が、<wbr>トレイルと<wbr>地域の<wbr>未来を<wbr>形作っています。</p>
-          <p>マウンテンバイクが<wbr>好きな<wbr>方、<wbr>トレイル造成に<wbr>貢献できる<wbr>スキルが<wbr>ある<wbr>方は<wbr>いますか？<wbr>募集している<wbr>ポジションの<wbr>詳細は<wbr>こちら！</p>
-        </div>
+        data-delay="200">NAMBAチームに<wbr>参加しよう</h3>
+      <div
+        class="features-desc ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="400">
+        <div style="font-size:130%;"><span>NAMBAは<wbr>トレイルと<wbr>コミュニティを<wbr>大切にする<wbr>人々で<wbr>成り立っています。<wbr>夏季の<wbr>有給トレイルクルーから<wbr>サブコミッティの<wbr>ボランティアまで、<wbr>すべての<wbr>役割が<wbr>ニセコの<wbr>マウンテンバイクの<wbr>未来を<wbr>直接<wbr>形作ります。</span></div>
       </div>
     </div>
   </div>
 
-
   <div class="section">
-    <div
-      class="ja-animate"
-      data-animation="move-from-bottom"
-      data-delay="600">
-      <h3>募集内容</h3>
-
-      <div
-        class="blog jobs"
-        itemscope=""
-        itemtype="https://schema.org/Job">
-
-        {% assign jobs = site.categories.jobs | where: "lang", "ja" | where: "isOpen", "true" %}
-        {% assign totalJobsSize = jobs | size %}
-
-        <div>
-          <ul>
-            {% for job in jobs %}
-              <li>
-                <article>
-                  <a class="action" href="{{- job.url -}}">
-                    <header class="article-header">
-                      <strong itemprop="headline">{{ job.title }}</strong>
-                    </header>
-                    <span class="fa-solid fa-circle-arrow-right"></span>
-                  </a>
-                </article>
-              </li>
-            {% endfor %}
-          </ul>
-        </div>
-      </div>
+    <div class="module-title-wrap" style="max-width:900px;">
+      <h3
+        class="module-title ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="200">募集中の<wbr>ポジション</h3>
     </div>
 
-    {% assign totalVolunteerJobsSize = jobs | where: "pay", "ボランティアワーク" | size %}
+    {% assign jobs = site.categories.jobs | where: "lang", "ja" | where: "isOpen", "true" %}
+    {% assign jobCount = jobs | size %}
 
-    {% if totalJobsSize == totalVolunteerJobsSize %}
-      <div class="section">
-        <div
-          class="module-title-wrap ja-animate"
-          data-animation="move-from-bottom"
-          data-delay="1000">
-          <h3>有給スタッフ募集に<wbr>ついて</h3>
-          <div class="features-desc">
-            <div style="font-size:130%;">
-              <p>現在、<wbr>有給スタッフの<wbr>募集は<wbr>ありません。<wbr>最新の<wbr>雇用情報を<wbr>確認するには、<wbr><a href="https://www.instagram.com/nisekomtb/" target="_blank">NAMBAの<wbr>SNSアカウント</a>を<wbr>フォローしてください！</p>
+    {% if jobCount > 0 %}
+      <div style="max-width:900px; margin:0 auto;">
+        {% for job in jobs %}
+          {% assign isPaid = true %}
+          {% if job.pay == "ボランティア" or job.pay == "Volunteer position" %}
+            {% assign isPaid = false %}
+          {% endif %}
+          <div
+            class="job-card ja-animate"
+            data-animation="move-from-bottom"
+            data-delay="item-{{ forloop.index0 }}">
+            <div class="job-info">
+              <p class="job-title"><a href="{{ job.url }}">{{ job.title }}</a></p>
+              <p class="job-meta">
+                {% if isPaid %}
+                  <span class="job-badge paid">有給</span>
+                {% else %}
+                  <span class="job-badge volunteer">ボランティア</span>
+                {% endif %}
+                {% if job.location %}{{ job.location }}{% endif %}
+                {% if job.term %} &middot; {{ job.term }}{% endif %}
+                {% if isPaid and job.pay %} &middot; {{ job.pay }}{% endif %}
+              </p>
+            </div>
+            <div class="job-cta">
+              <a class="action" href="{{ job.url }}">
+                詳しく見る <span class="fa-solid fa-circle-arrow-right"></span>
+              </a>
             </div>
           </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="module-title-wrap" style="max-width:900px;">
+        <div
+          class="features-desc ja-animate"
+          data-animation="move-from-bottom"
+          data-delay="400">
+          <div style="font-size:130%;"><span>現在<wbr>募集中の<wbr>ポジションは<wbr>ありません。<wbr>Instagramの<wbr><a href="https://www.instagram.com/nisekomtb/" target="_blank">@nisekomtb</a>を<wbr>フォローするか、<wbr>定期的に<wbr>チェックしてください。</span></div>
         </div>
       </div>
     {% endif %}
+
   </div>
+
+  <div class="section">
+    <div class="module-title-wrap" style="max-width:900px;">
+      <h3
+        class="module-title ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="200">その他の<wbr>参加方法</h3>
+      <div
+        class="features-desc ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="400">
+        <div style="font-size:130%;"><span>正式な<wbr>ポジションを<wbr>探していなくても、<wbr>貢献する<wbr>方法は<wbr>たくさん<wbr>あります。<wbr>ボランティア<wbr>ディグデイに<wbr>参加したり、<wbr>NAMBAメンバーに<wbr>なったり、<wbr>あなたの<wbr>スキルが<wbr>役立つなら<wbr>お問い合わせください。</span></div>
+      </div>
+    </div>
+    <div class="module-title-wrap">
+      <div
+        class="t3-section action ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="600">
+        <a class="btn btn-primary" href="/ja/join/">NAMBAに参加</a>
+        <a class="btn btn-secondary" href="/ja/donate/" style="margin-left:10px;">ボランティア</a>
+      </div>
+    </div>
+  </div>
+
 </div>

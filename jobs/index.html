@@ -1,6 +1,6 @@
 ---
 title: Join our team
-description: Work with NAMBA — view current volunteer and paid positions building trails in Niseko.
+description: Work with NAMBA. View current volunteer and paid positions building trails and community in Niseko.
 baseCss: view-category
 masthead:
   img: /assets/images/jobs/join-our-team.jpg
@@ -9,119 +9,163 @@ masthead:
     url: https://instagram.com/jingypsy
 ---
 <style>
-  .credit {
-    float:right;
+  .job-card {
+    background: var(--color-bg-panel);
+    border-radius: 3px;
+    padding: 28px 24px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    transition: background 300ms;
+  }
+  .job-card:hover {
+    background: var(--color-bg-border);
+  }
+  .job-card .job-info {
+    flex: 1;
+    min-width: 200px;
+  }
+  .job-card .job-title {
+    font-size: 120%;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 6px;
+  }
+  .job-card .job-title a {
+    color: #fff;
+  }
+  .job-card .job-title a:hover {
+    color: var(--color-primary);
+  }
+  .job-card .job-meta {
     font-size: 90%;
+    color: #888;
+    margin: 0;
   }
-
-  .credit a { color: var(--color-text); }
-
-  h3 {
-    text-align:center;
-    margin-bottom:48px;
+  .job-card .job-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-right: 8px;
   }
-
-  .jobs {
-    margin-bottom:96px;
+  .job-badge.paid {
+    background: #46b414;
+    color: #fff;
   }
-
-  .jobs ul {
-    text-align:center;
-    list-style:none;
-    padding-inline-start:0;
+  .job-badge.volunteer {
+    background: var(--color-accent);
+    color: #fff;
   }
-
-  header.article-header {
-    display: inline;
-    font-size: 150%;
-  }
-
-  @media (max-width: 767px) {
-    header.article-header {
-      display: inline;
-    }
-  }
-
-  .action span {
-    margin-left: 8px;
-    position: relative;
-    top: 1px;
-    letter-spacing: -1px;
-    -webkit-transition: all 500ms;
-    -o-transition: all 500ms;
-    transition: all 500ms;
-  }
-
-  .action:hover span,
-  .action:focus span,
-  .action:active span {
-    color: #ffffff;
-  }
-
-  .action:hover span,
-  .action:focus span,
-  .action:active span {
-    margin-left: 14px;
+  .job-card .job-cta {
+    flex-shrink: 0;
   }
 </style>
 
 <div class="t3-section-wrap">
+
+  <!-- Intro -->
   <div class="section">
+    <div class="module-title-wrap" style="max-width:900px;">
+      <h3
+        class="module-title ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="200">Join the NAMBA team</h3>
+      <div
+        class="features-desc ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="400">
+        <div style="font-size:130%;"><span>NAMBA runs on people who care about trails and community. Whether it's a paid seasonal role on the trail crew or a volunteer position on one of our subcommittees, every role directly shapes the future of mountain biking in Niseko.</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Open Positions -->
+  <div class="section">
+    <div class="module-title-wrap" style="max-width:900px;">
+      <h3
+        class="module-title ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="200">Open positions</h3>
+    </div>
+
+    {% assign jobs = site.categories.jobs | where: "lang", "en" | where: "isOpen", "true" %}
+    {% assign jobCount = jobs | size %}
+
+    {% if jobCount > 0 %}
+      <div style="max-width:900px; margin:0 auto;">
+        {% for job in jobs %}
+          {% assign isPaid = true %}
+          {% if job.pay == "Volunteer position" %}
+            {% assign isPaid = false %}
+          {% endif %}
+          <div
+            class="job-card ja-animate"
+            data-animation="move-from-bottom"
+            data-delay="item-{{ forloop.index0 }}">
+            <div class="job-info">
+              <p class="job-title"><a href="{{ job.url }}">{{ job.title }}</a></p>
+              <p class="job-meta">
+                {% if isPaid %}
+                  <span class="job-badge paid">Paid</span>
+                {% else %}
+                  <span class="job-badge volunteer">Volunteer</span>
+                {% endif %}
+                {% if job.location %}{{ job.location }}{% endif %}
+                {% if job.term %} &middot; {{ job.term }}{% endif %}
+                {% if isPaid and job.pay %} &middot; {{ job.pay }}{% endif %}
+              </p>
+            </div>
+            <div class="job-cta">
+              <a class="action" href="{{ job.url }}">
+                View details <span class="fa-solid fa-circle-arrow-right"></span>
+              </a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="module-title-wrap" style="max-width:900px;">
+        <div
+          class="features-desc ja-animate"
+          data-animation="move-from-bottom"
+          data-delay="400">
+          <div style="font-size:130%;"><span>There are no open positions right now. Follow <a href="https://www.instagram.com/nisekomtb/" target="_blank">@nisekomtb</a> on Instagram or check back for updates.</span></div>
+        </div>
+      </div>
+    {% endif %}
+
+  </div>
+
+  <!-- Other ways to get involved -->
+  <div class="section">
+    <div class="module-title-wrap" style="max-width:900px;">
+      <h3
+        class="module-title ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="200">Other ways to get involved</h3>
+      <div
+        class="features-desc ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="400">
+        <div style="font-size:130%;"><span>Not looking for a formal role? There are plenty of ways to contribute: join a volunteer dig day, become a NAMBA member, or get in touch if you have skills that could help.</span></div>
+      </div>
+    </div>
     <div class="module-title-wrap">
-      <div class="ja-animate features-desc" data-animation="move-from-bottom" data-delay="200">
-        <div style="font-size:130%;">
-          <h3>Join the NAMBA team!</h3>
-          <p>Our volunteer subcommittee positions, and paid summer seasonal positions, are shaping trails and
-          shaping the future of our community.</p>
-          <p>Have skills you can bring to the table, or to the trails? Learn more about our opportunities below!</p>
-        </div>
+      <div
+        class="t3-section action ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="600">
+        <a class="btn btn-primary" href="/join/">Join NAMBA</a>
+        <a class="btn btn-secondary" href="/donate/" style="margin-left:10px;">Volunteer</a>
       </div>
     </div>
   </div>
 
-
-  <div class="section">
-    <div class="ja-animate" data-animation="move-from-bottom" data-delay="600">
-      <h3>Open positions</h3>
-
-      <div class="blog jobs" itemscope="" itemtype="https://schema.org/Job">
-
-        {% assign jobs = site.categories.jobs | where: "lang", "en" | where: "isOpen", "true" %}
-        {% assign totalJobsSize = jobs | size %}
-
-        <div>
-          <ul>
-            {% for job in jobs %}
-              <li>
-                <article>
-                  <a class="action" href="{{- job.url -}}">
-                    <header class="article-header">
-                      <strong itemprop="headline">{{ job.title }}</strong>
-                    </header>
-                    <span class="fa-solid fa-circle-arrow-right"></span>
-                  </a>
-                </article>
-              </li>
-            {% endfor %}
-          </ul>
-        </div>
-      </div>
-    </div>
-
-  </div>
-  {% assign totalVolunteerJobsSize = jobs | where: "pay", "Volunteer position" | size %}
-
-  {% if totalJobsSize == totalVolunteerJobsSize %}
-  <div class="section">
-    <div class="module-title-wrap ja-animate" data-animation="move-from-bottom" data-delay="1000">
-      <h3>Paid positions</h3>
-      <div class="features-desc">
-        <div style="font-size:130%;">
-          <p>Currently there are no open paid positions, but watch this space, and <a href="https://www.instagram.com/nisekomtb/"
-            target="_blank">follow us</a> on social media for updates!</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  {% endif %}
 </div>
