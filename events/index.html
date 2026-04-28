@@ -124,6 +124,17 @@ masthead:
   itemscope=""
   itemtype="https://schema.org/Blog">
 
+  <div class="section">
+    <div class="module-title-wrap" style="max-width:900px;">
+      <div
+        class="features-desc ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="200">
+        <div style="font-size:130%;"><span>From community rides and trail building days to races and gravel events, NAMBA's calendar brings riders together all season long. Want to organise an event with us? <a href="/contact/?topic=other">Get in touch</a>.</span></div>
+      </div>
+    </div>
+  </div>
+
   {% assign events = site.categories.events | where: "lang", "en" | where: "draft", "false" %}
   {% assign eventsSize = events | size %}
   {% assign firstPastEventIndex = nil %}
