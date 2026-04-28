@@ -141,6 +141,60 @@ masthead:
 
   </div>
 
+  {% assign currentYear = site.time | date: "%Y" %}
+  {% assign closedJobs = site.categories.jobs | where: "lang", "ja" | where: "isOpen", "false" %}
+  {% assign closedThisYear = "" | split: "" %}
+  {% for job in closedJobs %}
+    {% assign jobYear = job.date | date: "%Y" %}
+    {% if jobYear == currentYear %}
+      {% assign closedThisYear = closedThisYear | push: job %}
+    {% endif %}
+  {% endfor %}
+  {% assign closedCount = closedThisYear | size %}
+
+  {% if closedCount > 0 %}
+  <div class="section">
+    <div class="module-title-wrap" style="max-width:900px;">
+      <h3
+        class="module-title ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="200">最近<wbr>終了した<wbr>ポジション</h3>
+    </div>
+
+    <div style="max-width:900px; margin:0 auto;">
+      {% for job in closedThisYear %}
+        {% assign isPaid = true %}
+        {% if job.pay == "ボランティア" or job.pay == "Volunteer position" %}
+          {% assign isPaid = false %}
+        {% endif %}
+        <div
+          class="job-card ja-animate"
+          style="opacity:0.6;"
+          data-animation="move-from-bottom"
+          data-delay="item-{{ forloop.index0 }}">
+          <div class="job-info">
+            <p class="job-title"><a href="{{ job.url }}" style="color:#999;">{{ job.title }}</a></p>
+            <p class="job-meta">
+              <span class="job-badge" style="background:rgba(255,255,255,0.1); color:#888;">終了</span>
+              {% if isPaid %}
+                <span class="job-badge paid" style="opacity:0.5;">有給</span>
+              {% else %}
+                <span class="job-badge volunteer" style="opacity:0.5;">ボランティア</span>
+              {% endif %}
+              {% if job.location %}{{ job.location }}{% endif %}
+            </p>
+          </div>
+          <div class="job-cta">
+            <a class="action" href="{{ job.url }}" style="color:#888;">
+              詳しく見る <span class="fa-solid fa-circle-arrow-right"></span>
+            </a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
   <div class="section">
     <div class="module-title-wrap" style="max-width:900px;">
       <h3
