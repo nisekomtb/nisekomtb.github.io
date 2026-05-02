@@ -2,8 +2,8 @@
 layout: event
 categories: events
 title: Twin Peaks Spring Clean
-description: Join us for a volunteer trail day at Twin Peaks Bike Park! Help clear winter debris and rake trails to get everything ready for the season. Two sessions available — morning, afternoon, or both.
-startDate: 2026-05-04 09:00:00 +0900
+description: "Rescheduled to Wednesday 6 May (Constitution Day holiday) due to rain forecast. Join us for a volunteer trail day at Twin Peaks Bike Park: clear winter debris and rake trails ready for the new season. Morning and afternoon sessions available."
+startDate: 2026-05-06 09:00:00 +0900
 days: 1
 time: "9:00am - 4:00pm"
 location: Twin Peaks Bike Park, Niseko
@@ -34,11 +34,13 @@ parking: false
 about: false
 ---
 
+<span class="rescheduled">⛈️ <strong>Rescheduled:</strong> with rain forecast all day on Monday, we've moved this event to <strong>Wednesday 6 May</strong>, which remains a public holiday (Constitution Day substitute). Same trails, same sessions, drier conditions. ⛈️</span>
+
 ## Help us get the trails ready for summer
 
-After a long winter buried under snow, our trails need some love before the season kicks off. Join us on **Greenery Day** (4th May) for a volunteer trail day at Twin Peaks Bike Park — a fitting public holiday to be outdoors working in nature.
+After a long winter buried under snow, our trails need some love before the season kicks off. Join us on **Wednesday 6 May** (Constitution Day holiday) for a volunteer trail day at Twin Peaks Bike Park, a fitting public holiday to be outdoors working in nature.
 
-We need your help to clear fallen branches and leaves, rake out the trails, and get everything in shape for the season. No experience needed — just enthusiasm and a willingness to get your hands dirty.
+We need your help to clear fallen branches and leaves, rake out the trails, and get everything in shape for the season. No experience needed, just enthusiasm and a willingness to get your hands dirty.
 
 It's a great chance to meet the NAMBA crew, be among the first to walk the trails after the snow melts, and help shape the riding for the summer ahead.
 
