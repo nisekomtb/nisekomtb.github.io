@@ -7,7 +7,7 @@ masthead:
 <style>
   .stat-card {
     text-align: center;
-    padding: 30px 15px;
+    padding: 30px 0;
   }
   .stat-card .stat-number {
     font-family: "Metropolis", Helvetica, Arial, sans-serif;
@@ -41,6 +41,11 @@ masthead:
   .funding-stat h4 { color: var(--color-accent); margin-bottom: 5px; }
   .timeline-item { margin-bottom: 20px; font-size: 130%; }
   .timeline-item .year { font-family: "Metropolis", Helvetica, Arial, sans-serif; font-weight: 700; color: var(--color-accent); font-size: 110%; }
+  .chart-glossary { margin: 28px auto 0 auto; font-size: 85%; line-height: 1.6; text-align: left; padding: 0 8px; }
+  .chart-glossary dt { color: var(--color-accent); font-weight: 700; margin-top: 14px; font-family: "Metropolis", Helvetica, Arial, sans-serif; }
+  .chart-glossary dt:first-child { margin-top: 0; }
+  .chart-glossary dd { margin: 4px 0 0 0; color: #cccccc; }
+  .chart-row { align-items: flex-start; }
 </style>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
@@ -69,16 +74,16 @@ masthead:
         <div class="col col-12 col-md-6 col-lg-4">
           <div class="features-item ja-animate" data-animation="move-from-bottom" data-delay="400">
             <div class="stat-card">
-              <div class="stat-number">11,500+</div>
-              <div class="stat-label">ツインピークス来場者数（2025年）</div>
+              <div class="stat-number">19,000+</div>
+              <div class="stat-label">ツインピークス来場者数（2024年以降）</div>
             </div>
           </div>
         </div>
         <div class="col col-12 col-md-6 col-lg-4">
           <div class="features-item ja-animate" data-animation="move-from-bottom" data-delay="600">
             <div class="stat-card">
-              <div class="stat-number">100%</div>
-              <div class="stat-label">トレイル資金調達成功率</div>
+              <div class="stat-number">92%</div>
+              <div class="stat-label">直接トレイルに投資</div>
             </div>
           </div>
         </div>
@@ -101,8 +106,8 @@ masthead:
         <div class="col col-12 col-md-6 col-lg-4">
           <div class="features-item ja-animate" data-animation="move-from-bottom" data-delay="1200">
             <div class="stat-card">
-              <div class="stat-number">93%</div>
-              <div class="stat-label">民間資金</div>
+              <div class="stat-number">¥225M+</div>
+              <div class="stat-label">2023年以降に調達</div>
             </div>
           </div>
         </div>
@@ -173,9 +178,29 @@ masthead:
     <div class="chart-row ja-animate" data-animation="move-from-bottom" data-delay="400">
       <div class="chart-container">
         <canvas id="chart-funding-sources"></canvas>
+        <dl class="chart-glossary ja">
+          <dt>地元パートナーシップ</dt>
+          <dd>主要なリゾートパートナー（グラン・ヒラフ、Hanazono）と地元ニセコの事業者からの資金提供。これらのパートナーは、通年のコミュニティにとってのトレイルの価値を認識しています。</dd>
+          <dt>業界スポンサー</dt>
+          <dd>世界的なマウンテンバイクブランド（Santa Cruz Pay Dirt、Winckler、Specializedなど）からの直接支援。グローバルなバイク業界によるニセコへの投資です。</dd>
+          <dt>助成金・補助金</dt>
+          <dd>地域開発を支援するため、政府機関や観光協会（JTB、NPB、KTAなど）から獲得した競争的資金。</dd>
+          <dt>コミュニティ基金</dt>
+          <dd>「ライダー主導」の収入。Tシャツやキャップの売上、個人寄付、地元のラッフルチケットなどが含まれます。</dd>
+        </dl>
       </div>
       <div class="chart-container">
         <canvas id="chart-funding-allocation"></canvas>
+        <dl class="chart-glossary ja">
+          <dt>トレイル建設</dt>
+          <dd>重労働。世界クラスのトレイル建設業者（Allegra）への支払い、重機のレンタル、新しい地形を作るために必要な専門的なロジスティクスが含まれます。</dd>
+          <dt>トレイル維持・運営</dt>
+          <dd>トレイルをオープンに、安全に、世界クラスの状態に保つこと。プロのトレイルクルーの賃金、土地利用契約（ツインピークスなど）、燃料、保険、必要な工具をカバーします。</dd>
+          <dt>マーケティング・イベント</dt>
+          <dd>ニセコのライディングコミュニティを築くこと。ボランティアの整備日、コミュニティBBQ、トレイル標識、SNSなどに資金を提供し、皆が情報を得て関わり続けられるようにします。</dd>
+          <dt>管理・その他</dt>
+          <dd>協会を合法かつ安定した状態に保つ「縁の下の力持ち」。専門的な会計、銀行手数料、必要な税金（消費税など）が含まれます。</dd>
+        </dl>
       </div>
     </div>
 
@@ -273,6 +298,28 @@ masthead:
     red: '#be0014',
     grey: '#666666',
   };
+
+  const categorySummaries = isJa ? {
+    local_partnerships: 'リゾートパートナーと地元事業者から。',
+    industry_sponsors: 'グローバルなバイクブランドからの投資。',
+    grants_subsidies: '政府・観光協会からの補助金。',
+    community_fund: 'グッズ・寄付・ラッフル収入。',
+    trail_construction: '業者、重機、建設ロジスティクス。',
+    trail_maintenance_operation: 'クルー、賃借、燃料、保険、工具。',
+    marketing_events: '整備日、BBQ、標識、SNS。',
+    admin_other: '会計、銀行手数料、消費税。',
+  } : {
+    local_partnerships: 'From our resort partners and local Niseko businesses.',
+    industry_sponsors: 'Global bike brands invested in Niseko.',
+    grants_subsidies: 'Government and tourism association funding.',
+    community_fund: 'Rider-powered: merch, donations, raffles.',
+    trail_construction: 'Contractors, machinery, build logistics.',
+    trail_maintenance_operation: 'Trail crew, leases, fuel, insurance, tools.',
+    marketing_events: 'Dig days, BBQs, signage, social.',
+    admin_other: 'Accounting, bank fees, JCT.',
+  };
+  const incomeKeys = ['local_partnerships', 'industry_sponsors', 'grants_subsidies', 'community_fund'];
+  const allocationKeys = ['trail_construction', 'trail_maintenance_operation', 'marketing_events', 'admin_other'];
 
   // --- Visitors line chart ---
   const tpData = impactData.visitors['twin-peaks'];
@@ -387,8 +434,8 @@ masthead:
       labels: incomeYears,
       datasets: [
         {
-          label: isJa ? '地元企業' : 'Local businesses',
-          data: incomeData.map(function(d) { return d.local_business; }),
+          label: isJa ? '地元パートナーシップ' : 'Local partnerships',
+          data: incomeData.map(function(d) { return d.local_partnerships; }),
           backgroundColor: colours.primary,
         },
         {
@@ -397,8 +444,13 @@ masthead:
           backgroundColor: colours.accent,
         },
         {
-          label: isJa ? '行政' : 'Government',
-          data: incomeData.map(function(d) { return d.government; }),
+          label: isJa ? '助成金・補助金' : 'Grants & subsidies',
+          data: incomeData.map(function(d) { return d.grants_subsidies; }),
+          backgroundColor: colours.blue,
+        },
+        {
+          label: isJa ? 'コミュニティ基金' : 'Community fund',
+          data: incomeData.map(function(d) { return d.community_fund; }),
           backgroundColor: colours.grey,
         }
       ],
@@ -411,6 +463,9 @@ masthead:
           callbacks: {
             label: function(ctx) {
               return ctx.dataset.label + ': ¥' + ctx.parsed.y.toLocaleString();
+            },
+            afterLabel: function(ctx) {
+              return categorySummaries[incomeKeys[ctx.datasetIndex]];
             }
           }
         }
@@ -438,11 +493,11 @@ masthead:
     type: 'doughnut',
     data: {
       labels: isJa
-        ? ['地元企業', '業界スポンサー', '行政']
-        : ['Local businesses', 'Industry sponsors', 'Government'],
+        ? ['地元パートナーシップ', '業界スポンサー', '助成金・補助金', 'コミュニティ基金']
+        : ['Local partnerships', 'Industry sponsors', 'Grants & subsidies', 'Community fund'],
       datasets: [{
-        data: [sources.local_business, sources.industry_sponsors, sources.government],
-        backgroundColor: [colours.primary, colours.accent, colours.grey],
+        data: [sources.local_partnerships, sources.industry_sponsors, sources.grants_subsidies, sources.community_fund],
+        backgroundColor: [colours.primary, colours.accent, colours.blue, colours.grey],
         borderWidth: 0,
       }]
     },
@@ -457,7 +512,10 @@ masthead:
         legend: { position: 'bottom' },
         tooltip: {
           callbacks: {
-            label: function(ctx) { return ctx.label + ': ' + ctx.parsed + '%'; }
+            label: function(ctx) { return ctx.label + ': ' + ctx.parsed + '%'; },
+            afterLabel: function(ctx) {
+              return categorySummaries[incomeKeys[ctx.dataIndex]];
+            }
           }
         }
       }
@@ -470,10 +528,10 @@ masthead:
     type: 'doughnut',
     data: {
       labels: isJa
-        ? ['トレイル建設', 'マーケティング', 'メンテナンス', '管理']
-        : ['Trail building', 'Marketing', 'Maintenance', 'Admin'],
+        ? ['トレイル建設', 'トレイル維持・運営', 'マーケティング・イベント', '管理・その他']
+        : ['Trail construction', 'Trail maintenance & operation', 'Marketing & events', 'Admin & other'],
       datasets: [{
-        data: [allocation.trail_building, allocation.marketing, allocation.maintenance, allocation.admin],
+        data: [allocation.trail_construction, allocation.trail_maintenance_operation, allocation.marketing_events, allocation.admin_other],
         backgroundColor: [colours.primary, colours.accent, colours.blue, colours.grey],
         borderWidth: 0,
       }]
@@ -489,7 +547,10 @@ masthead:
         legend: { position: 'bottom' },
         tooltip: {
           callbacks: {
-            label: function(ctx) { return ctx.label + ': ' + ctx.parsed + '%'; }
+            label: function(ctx) { return ctx.label + ': ' + ctx.parsed + '%'; },
+            afterLabel: function(ctx) {
+              return categorySummaries[allocationKeys[ctx.dataIndex]];
+            }
           }
         }
       }

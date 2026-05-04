@@ -168,10 +168,10 @@ masthead:
         type: 'doughnut',
         data: {
           labels: isJa
-            ? ['トレイル建設', 'マーケティング', 'メンテナンス', '管理']
-            : ['Trail building', 'Marketing', 'Maintenance', 'Admin'],
+            ? ['トレイル建設', 'トレイル維持・運営', 'マーケティング・イベント', '管理・その他']
+            : ['Trail construction', 'Trail maintenance & operation', 'Marketing & events', 'Admin & other'],
           datasets: [{
-            data: [allocation.trail_building, allocation.marketing, allocation.maintenance, allocation.admin],
+            data: [allocation.trail_construction, allocation.trail_maintenance_operation, allocation.marketing_events, allocation.admin_other],
             backgroundColor: ['#47A06C', '#c8a951', '#148cf0', '#666666'],
             borderWidth: 0,
           }]

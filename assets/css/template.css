@@ -7137,3 +7137,21 @@ joomla-field-custom.field-custom-wrapper .input-group .input-group-btn .btn span
   bottom: 30px;
   transform: rotate(-225deg);
 }
+
+/* ------------------------------------------------------------------
+ * NAMBA additions
+ * ------------------------------------------------------------------ */
+
+/* Vertical rhythm between sibling .section blocks when the section
+ * starts directly with a .module-title-wrap (no inner .t3-section).
+ * Sections that wrap content in .t3-section already get 72px padding,
+ * so this selector deliberately skips them to avoid doubling-up. */
+.section + .section > .module-title-wrap:first-child {
+  margin-top: 72px;
+}
+
+@media (max-width: 767px) {
+  .section + .section > .module-title-wrap:first-child {
+    margin-top: 36px;
+  }
+}

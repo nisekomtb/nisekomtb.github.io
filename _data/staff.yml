@@ -1,0 +1,44 @@
+# NAMBA paid operational staff. Trail crew responsible for Twin Peaks
+# operations and maintenance across Twin Peaks, Grand Hirafu, and Hanazono.
+
+- image: /assets/images/team/pierre.jpg
+  name: Pierre Monnier
+  title: Operations Manager
+  ja:
+    name: ピエール・モニエ
+    title: オペレーションマネージャー
+
+- image: /assets/images/team/dan.jpg
+  name: Dan Graham
+  title: Assistant Operations Manager
+  ja:
+    name: ダン・グラハム
+    title: アシスタントオペレーションマネージャー
+
+- image: /assets/images/team/rj.jpg
+  name: RJ McGechie
+  title: Trail Crew
+  ja:
+    name: RJ・マッギーチ
+    title: トレイルクルー
+
+- image: /assets/images/team/seiko.jpg
+  name: Seiko Doi
+  title: Trail Crew
+  ja:
+    name: 土井 世光
+    title: トレイルクルー
+
+- image: /assets/images/team/danny.jpg
+  name: Danny Sopp
+  title: Trail Crew
+  ja:
+    name: ダニー・ソップ
+    title: トレイルクルー
+
+- image: /assets/images/team/harry.jpg
+  name: Harry Tomkinson
+  title: Trail Crew
+  ja:
+    name: ハリー・トンキンソン
+    title: トレイルクルー

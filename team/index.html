@@ -251,4 +251,36 @@ masthead:
 
   </div>
 
+  <div class="section">
+
+    <div class="module-title-wrap" style="max-width:900px;">
+      <h3
+        class="module-title ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="200">Trail Crew</h3>
+      <div
+        class="features-desc ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="400">
+        <p style="font-size:130%;">Our paid trail crew. While the rest of NAMBA runs on volunteers, prepping new trails and maintaining existing ones is full-time work.</p>
+        <p style="font-size:130%;">Led by Pierre and Dan, the team handles day-to-day operations at Twin Peaks, trail maintenance across Twin Peaks and other resorts, and helps prep new trails for construction.</p>
+      </div>
+    </div>
+
+    <div class="team">
+
+      {% for member in site.data.staff %}
+        {% assign name = member.name %}
+        {% assign title = member.title %}
+        <div class="board-card ja-animate" data-animation="move-from-bottom" data-delay="item-{{ forloop.index0 }}">
+          <img class="board-photo" src="{{ member.image }}" alt="{{ name }}" />
+          <p class="board-name">{{ name }}</p>
+          {% if title %}<p class="board-title">{{ title }}</p>{% endif %}
+        </div>
+      {% endfor %}
+
+    </div>
+
+  </div>
+
 </div>

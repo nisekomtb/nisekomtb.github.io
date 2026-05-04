@@ -21,48 +21,65 @@ visitors:
           october: 1568
 
 trails:
+  # Cumulative km of open trail at end of each year.
   - year: 2022
-    namba_km: 4.7
-    niseko_km: 5.5
+    namba_km: 4.41
+    niseko_km: 5.30
   - year: 2023
-    namba_km: 14.2
-    niseko_km: 16
+    namba_km: 8.48
+    niseko_km: 14.69
   - year: 2024
-    namba_km: 21
-    niseko_km: 25
+    namba_km: 15.53
+    niseko_km: 23.49
   - year: 2025
-    namba_km: 21
-    niseko_km: 27
+    namba_km: 19.52
+    niseko_km: 27.48
+  - year: 2026
+    namba_km: 23.44
+    niseko_km: 31.40
 
 funding:
-  # TODO: Replace estimated income figures with actual data from tax returns
+  # FY2023-FY2025 figures from the NAMBA transparency dashboard.
   income:
-    - year: 2021
-      local_business: 500000
-      industry_sponsors: 0
-      government: 0
-    - year: 2022
-      local_business: 4000000
-      industry_sponsors: 1500000
-      government: 4000000
     - year: 2023
-      local_business: 8000000
-      industry_sponsors: 3000000
-      government: 1500000
+      local_partnerships: 29314660
+      industry_sponsors: 5782500
+      grants_subsidies: 0
+      community_fund: 1310460
     - year: 2024
-      local_business: 10000000
-      industry_sponsors: 4000000
-      government: 1000000
+      local_partnerships: 68188861
+      industry_sponsors: 10229000
+      grants_subsidies: 10500000
+      community_fund: 2005656
     - year: 2025
-      local_business: 12000000
-      industry_sponsors: 5000000
-      government: 1200000
+      local_partnerships: 86975870
+      industry_sponsors: 4729000
+      grants_subsidies: 3300000
+      community_fund: 2335708
+  outgoings:
+    - year: 2023
+      trail_construction: 26539512
+      trail_maintenance_operation: 4006954
+      marketing_events: 0
+      admin_other: 1848820
+    - year: 2024
+      trail_construction: 41223583
+      trail_maintenance_operation: 11190565
+      marketing_events: 798825
+      admin_other: 2105477
+    - year: 2025
+      trail_construction: 44674522
+      trail_maintenance_operation: 13859097
+      marketing_events: 1495324
+      admin_other: 5502341
+  # Aggregate % over FY2023-FY2025. Update if income/outgoings change.
   sources:
-    local_business: 69
-    industry_sponsors: 24
-    government: 7
+    local_partnerships: 82
+    industry_sponsors: 9
+    grants_subsidies: 6
+    community_fund: 3
   allocation:
-    trail_building: 92
-    marketing: 3
-    maintenance: 3
-    admin: 2
+    trail_construction: 73
+    trail_maintenance_operation: 19
+    marketing_events: 2
+    admin_other: 6
