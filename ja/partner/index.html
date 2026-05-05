@@ -128,6 +128,111 @@ masthead:
     letter-spacing: 0;
     margin-top: 30px;
   }
+
+  .trail-card {
+    background: var(--color-bg-panel);
+    border-radius: 3px;
+    padding: 28px 24px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    transition: background 300ms;
+  }
+  .trail-card:hover {
+    background: var(--color-bg-border);
+  }
+  .trail-card .trail-icon {
+    flex-shrink: 0;
+    width: 56px;
+    text-align: center;
+    padding-top: 4px;
+  }
+  .trail-card .trail-icon span {
+    font-size: 40px;
+    color: var(--color-secondary);
+  }
+  .trail-card .trail-info {
+    flex: 1;
+    min-width: 0;
+  }
+  .trail-card .trail-title {
+    font-size: 120%;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 6px;
+  }
+  .trail-card .trail-meta {
+    font-size: 90%;
+    color: #aaa;
+    margin: 0 0 12px;
+  }
+  .trail-card .trail-desc {
+    margin: 0;
+    color: #ccc;
+  }
+  .trail-card .trail-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  .trail-badge.building {
+    background: #46b414;
+    color: #fff;
+  }
+  .trail-badge.planning {
+    background: var(--color-accent);
+    color: #fff;
+  }
+  @media (max-width: 600px) {
+    .trail-card {
+      flex-direction: column;
+      gap: 12px;
+    }
+    .trail-card .trail-icon {
+      width: auto;
+      text-align: left;
+      padding-top: 0;
+    }
+  }
+
+  .benefit-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto 0;
+    max-width: 720px;
+    font-size: 110%;
+  }
+  .benefit-list li {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 14px;
+    padding: 8px 0;
+    line-height: 1.5;
+    text-align: left;
+  }
+  .benefit-list li > i {
+    color: var(--color-accent);
+    font-size: 18px;
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+
+  .content-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid var(--color-bg-border);
+    border-radius: 3px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  }
 </style>
 
 <div class="t3-section-wrap">
@@ -147,7 +252,7 @@ masthead:
           class="features-desc ja-animate"
           data-animation="move-from-bottom"
           data-delay="300">
-          <p style="font-size:130%;">NAMBAは、ニセコを通年のデスティネーションへと変えるインフラを構築しています。パートナーシップは、トレイル建設、イベント支援、そしてあなたのビジネスに来場者をもたらすコミュニティの成長に直接貢献します。</p>
+          <p style="font-size:130%;">NAMBAは、​ニセコを​通年の​デスティネーションへと​変える​インフラを​構築しています。​パートナーシップは、​トレイル建設、​イベント支援、​そしてあなたの​ビジネスに​来場者を​もたらすコミュニティの​成長に​直接貢献します。</p>
         </div>
       </div>
       <div class="row equal-height equal-height-child">
@@ -158,7 +263,7 @@ masthead:
             data-delay="200">
             <div class="stat-card">
               <div class="stat-number">19,000+</div>
-              <div class="stat-label">ツインピークス来場者数（2024年以降）</div>
+              <div class="stat-label">ツインピークス来場者数​（2024年以降）</div>
             </div>
           </div>
         </div>
@@ -169,7 +274,7 @@ masthead:
             data-delay="400">
             <div class="stat-card">
               <div class="stat-number">¥225M+</div>
-              <div class="stat-label">2023年以降の調達額</div>
+              <div class="stat-label">2023年以降の​調達額</div>
             </div>
           </div>
         </div>
@@ -191,7 +296,7 @@ masthead:
             data-delay="800">
             <div class="stat-card">
               <div class="stat-number">92%</div>
-              <div class="stat-label">直接トレイルに投資</div>
+              <div class="stat-label">直接トレイルに​投資</div>
             </div>
           </div>
         </div>
@@ -209,7 +314,7 @@ masthead:
         data-animation="move-from-bottom"
         data-delay="200">
         <div style="background:var(--color-bg-panel); border-left:4px solid var(--color-accent); padding:30px 40px; border-radius:3px; margin:20px 0; max-width:900px;">
-          <p style="font-size:140%; font-style:italic; line-height:1.6; margin-bottom:16px;">「Shogun Syndicateトレイルのスポンサーになれたこと、そして日本に世界クラスのマウンテンバイクデスティネーションを築くというNAMBAのビジョンに参加できていることを誇りに思います。」</p>
+          <p style="font-size:140%; font-style:italic; line-height:1.6; margin-bottom:16px;">「Shogun Syndicateトレイルの​スポンサーに​なれた​こと、​そして​日本に​世界クラスの​マウンテンバイクデスティネーションを​築くと​いう​NAMBAの​ビジョンに​参加できている​ことを​誇りに​思います。」</p>
           <p style="color:var(--color-accent); font-weight:700; margin:0;">Chris Selig</p>
           <p style="color:#aaa; margin:0;">Santa Cruz Japan</p>
         </div>
@@ -225,24 +330,25 @@ masthead:
       <h3
         class="module-title ja-animate"
         data-animation="move-from-bottom"
-        data-delay="200">パークに掲載されるあなたのブランド</h3>
+        data-delay="200">パークに​掲載される​あなたの​ブランド</h3>
       <div
         class="features-desc ja-animate"
         data-animation="move-from-bottom"
         data-delay="400">
-        <p style="font-size:130%;">パートナーロゴは、各トレイル標識、大型トレイルマップボード、トレイル入口の看板に表示されます。すべての標識は視認性の高い場所に戦略的に配置され、パークを訪れるすべての来場者の目に留まります。</p>
+        <p style="font-size:130%;">パートナーロゴは、​各トレイル標識、​大型トレイルマップボード、​トレイル入口の​看板に​表示されます。​すべての​標識は​視認性の​高い​場所に​戦略的に​配置され、​パークを​訪れる​すべての​来場者の​目に​留まります。</p>
       </div>
     </div>
 
-    <!-- IMAGE PLACEHOLDER -->
     <div
       class="ja-animate"
       data-animation="move-from-bottom"
-      data-delay="500">
-      <div style="background:var(--color-bg-panel); padding:40px; text-align:center; border-radius:3px; margin:20px auto; color:#666; max-width:900px;">
-        <span class="fa-solid fa-image" style="font-size:48px; display:block; margin-bottom:12px;"></span>
-        <p style="margin:0;">写真：スポンサーロゴとトレイル情報を示すトレイル標識</p>
-      </div>
+      data-delay="500"
+      style="max-width:900px; margin:20px auto;">
+      <img
+        src="/assets/images/partner/trail-marker-sign.webp"
+        alt="ツインピークスのトレイル標識。スポンサーロゴとトレイル情報が表示されています"
+        loading="lazy"
+        class="content-image" />
     </div>
 
     <div class="module-title-wrap" style="max-width:900px;">
@@ -250,24 +356,24 @@ masthead:
         class="features-desc ja-animate"
         data-animation="move-from-bottom"
         data-delay="600">
-        <ul style="font-size:110%; line-height:2;">
-          <li>各トレイル標識に掲載されるロゴ。すべてのライダーの目に留まります</li>
-          <li>主要な交差点の大型トレイルマップボードに掲載されるロゴ</li>
-          <li>メディア記事（Cyclowiredなど）で定期的に取り上げられる標識の写真</li>
-          <li>ネットワークがグラン・ヒラフ、Hanazonoへと拡大するにつれ、標識露出も拡大します</li>
+        <ul class="benefit-list">
+          <li><i class="fa-solid fa-circle-check"></i><span>各トレイル標識に​掲載される​ロゴ。​すべての​ライダーの​目に​留まります</span></li>
+          <li><i class="fa-solid fa-circle-check"></i><span>主要な​交差点の​大型トレイルマップボードに​掲載される​ロゴ</span></li>
+          <li><i class="fa-solid fa-circle-check"></i><span>メディア記事​（Cyclowiredなど）で​定期的に​取り上げられる​標識の​写真</span></li>
         </ul>
       </div>
     </div>
 
-    <!-- IMAGE PLACEHOLDER -->
     <div
       class="ja-animate"
       data-animation="move-from-bottom"
-      data-delay="700">
-      <div style="background:var(--color-bg-panel); padding:40px; text-align:center; border-radius:3px; margin:20px auto; color:#666; max-width:900px;">
-        <span class="fa-solid fa-image" style="font-size:48px; display:block; margin-bottom:12px;"></span>
-        <p style="margin:0;">写真：ツインピークスのパートナーロゴ付きトレイルマップボード</p>
-      </div>
+      data-delay="700"
+      style="max-width:900px; margin:20px auto;">
+      <img
+        src="/assets/images/partner/trail-map-board.webp"
+        alt="ツインピークスのパートナーロゴが掲載された大型トレイルマップボード"
+        loading="lazy"
+        class="content-image" />
     </div>
 
   </div>
@@ -279,29 +385,30 @@ masthead:
       <h3
         class="module-title ja-animate"
         data-animation="move-from-bottom"
-        data-delay="200">オンライン・印刷物でのブランド露出</h3>
+        data-delay="200">オンライン・印刷物での​ブランド露出</h3>
       <div
         class="features-desc ja-animate"
         data-animation="move-from-bottom"
         data-delay="400">
-        <ul style="font-size:110%; line-height:2;">
-          <li>namba.ngoホームページの専用パートナーセクションに掲載されるロゴ、加えて全ページのフッターバナー</li>
-          <li>Trailforksでのトレイル情報掲載（世界中の数百万人のライダーが利用）</li>
-          <li>印刷マーケティング資料、フライヤー、パンフレット</li>
-          <li>専用のSNS発表投稿に加え、シーズン中継続的な紹介</li>
+        <ul class="benefit-list">
+          <li><i class="fa-solid fa-circle-check"></i><span>namba.ngoウェブサイトの​専用パートナーセクションに​掲載される​ロゴ</span></li>
+          <li><i class="fa-solid fa-circle-check"></i><span>Trailforksでの​トレイル情報掲載​（世界中の​数百万人の​ライダーが​利用）</span></li>
+          <li><i class="fa-solid fa-circle-check"></i><span>印刷マーケティング資料、​フライヤー、​パンフレット</span></li>
+          <li><i class="fa-solid fa-circle-check"></i><span>専用の​SNS発表投稿</span></li>
         </ul>
       </div>
     </div>
 
-    <!-- IMAGE PLACEHOLDER -->
     <div
       class="ja-animate"
       data-animation="move-from-bottom"
-      data-delay="500">
-      <div style="background:var(--color-bg-panel); padding:40px; text-align:center; border-radius:3px; margin:20px auto; color:#666; max-width:900px;">
-        <span class="fa-solid fa-image" style="font-size:48px; display:block; margin-bottom:12px;"></span>
-        <p style="margin:0;">写真：Instagramスポンサー発表投稿例</p>
-      </div>
+      data-delay="500"
+      style="max-width:900px; margin:20px auto;">
+      <img
+        src="/assets/images/partner/instagram-sponsor.webp"
+        alt="新パートナーを発表するNAMBAのInstagram投稿例"
+        loading="lazy"
+        class="content-image" />
     </div>
 
   </div>
@@ -321,7 +428,7 @@ masthead:
           class="features-desc ja-animate"
           data-animation="move-from-bottom"
           data-delay="300">
-          <p style="font-size:130%;">地元企業・団体向けの年間パートナーシップ。すべてのティアで、ニセコの未来に投資する50以上のパートナーネットワークと並んでブランドを掲載できます。</p>
+          <p style="font-size:130%;">地元企業・団体向けの​年間パートナーシップ。​すべての​ティアで、​ニセコの​未来に​投資する​50以上の​パートナーネットワークと​並んで​ブランドを​掲載できます。</p>
         </div>
       </div>
       <div
@@ -510,17 +617,17 @@ masthead:
         class="features-desc ja-animate"
         data-animation="move-from-bottom"
         data-delay="400">
-        <p style="font-size:130%;">マウンテンバイクおよびアウトドア業界ブランド向けに、商品ベースのパートナーシップをご提供しています。機材、アパレル、サービスをご提供いただくことで、コミュニティパートナーと同等の露出メリットを得られます。PeatysやSmithなどのブランドがすでに参加しています。</p>
+        <p style="font-size:130%;">マウンテンバイクおよび​アウトドア業界ブランド向けに、​商品ベースの​パートナーシップを​ご提供しています。​機材、​アパレル、​サービスを​ご提供いただく​ことで、​コミュニティパートナーと​同等の​露出メリットを​得られます。​Specialized、​Peatysや​Smithなどの​ブランドが​すでに​参加しています。</p>
       </div>
       <div
         class="features-desc ja-animate"
         data-animation="move-from-bottom"
         data-delay="600">
-        <ul style="font-size:110%; line-height:2;">
-          <li>コミュニティパートナーと同等の露出メリット</li>
-          <li>現金の代わりに（または加えて）商品の提供</li>
-          <li>コブランドイベントの機会</li>
-          <li>NAMBAイベントでのデモ・テスト機会</li>
+        <ul class="benefit-list">
+          <li><i class="fa-solid fa-circle-check"></i><span>コミュニティパートナーと​同等の​露出メリット</span></li>
+          <li><i class="fa-solid fa-circle-check"></i><span>現金の​代わりに​（または​加えて）​商品の​提供</span></li>
+          <li><i class="fa-solid fa-circle-check"></i><span>コブランドイベントの機会</span></li>
+          <li><i class="fa-solid fa-circle-check"></i><span>NAMBAイベントでの​デモ・テスト機会</span></li>
         </ul>
       </div>
     </div>
@@ -540,7 +647,7 @@ masthead:
           class="features-desc ja-animate"
           data-animation="move-from-bottom"
           data-delay="400">
-          <p style="font-size:130%;">トレイル建設に資金を提供すると、ブランドが永続的に風景の一部になります。トレイルスポンサーは羆レベルのすべてのメリットに加え、広範な標識露出を得られます。トレイルの看板、マップボード、500mごとのトレイル標識にロゴが掲載されます。トレイルスポンサーシップには生涯コマーシャルオペレーターパスも含まれます。</p>
+          <p style="font-size:130%;">トレイル建設に​資金を​提供すると、​ブランドが​永続的に​風景の​一部に​なります。​トレイルスポンサーは​羆レベルの​すべての​メリットに​加え、​広範な​標識露出を​得られます。​トレイルの​看板、​マップボード、​500mごとの​トレイル標識に​ロゴが​掲載されます。​トレイルスポンサーシップには​生涯コマーシャルオペレーターパスも​含まれます。</p>
         </div>
       </div>
       <div class="module-title-wrap">
@@ -549,31 +656,37 @@ masthead:
           data-animation="move-from-bottom"
           data-delay="500">2026年トレイル機会</h4>
       </div>
-      <div class="row equal-height equal-height-child">
-        <div class="col col-md-12 col-lg-6">
-          <div
-            class="features-item ja-animate"
-            data-animation="move-from-bottom"
-            data-delay="item-0">
-            <div class="font-icon">
-              <span class="fa-solid fa-seedling"></span>
-            </div>
-            <h4>Green Flow Trail</h4>
-            <p style="margin-top:10px;">1,500m &middot; &yen;11,000,000</p>
-            <p>ニセコ初の無料ビギナートレイル。ヒラフからツインピークスに入った後、ライダーが最初に出会うトレイルです。</p>
+      <div style="max-width:900px; margin:0 auto;">
+        <div
+          class="trail-card ja-animate"
+          data-animation="move-from-bottom"
+          data-delay="item-0">
+          <div class="trail-icon">
+            <span class="fa-solid fa-link"></span>
+          </div>
+          <div class="trail-info">
+            <h4 class="trail-title">Lower Green Climb</h4>
+            <p class="trail-meta">
+              <span class="trail-badge building">建設中</span>
+              2,000m &middot; &yen;7,000,000
+            </p>
+            <p class="trail-desc">クライムトレイルは​交通量が​緩やか​な​ため、​看板の​スポンサー露出時間が​長く、​ブランド印象が​より​強く​残ります。​Lower Green Climbは​山の​西側への​アクセスを​容易にし、​ビギナーだけでなく、​頂上まで​登りたくない​ライダーに​とっても​人気の​ルートに​なります。</p>
           </div>
         </div>
-        <div class="col col-md-12 col-lg-6">
-          <div
-            class="features-item ja-animate"
-            data-animation="move-from-bottom"
-            data-delay="item-1">
-            <div class="font-icon">
-              <span class="fa-solid fa-link"></span>
-            </div>
-            <h4>Lower Green Climb</h4>
-            <p style="margin-top:10px;">2,000m &middot; &yen;7,000,000</p>
-            <p>頂上へのより楽なルート。ビギナーおよび中級者向けの地形へのアクセスが向上します。</p>
+        <div
+          class="trail-card ja-animate"
+          data-animation="move-from-bottom"
+          data-delay="item-1">
+          <div class="trail-icon">
+            <span class="fa-solid fa-seedling"></span>
+          </div>
+          <div class="trail-info">
+            <h4 class="trail-title">Green Flow Trail</h4>
+            <p class="trail-meta">
+              <span class="trail-badge planning">計画中</span>
+              1,500m &middot; &yen;11,000,000
+            </p>
+            <p class="trail-desc">ニセコ初の​本格的な​ビギナー向けダウンヒルコース。​エリアには​スキルパークや​イージーループは​豊富に​ありますが、​Green Flowは​スキルパークと​中級トレイルの​間の​ギャップを​埋める、​ビギナーに​特化した本格的な​ダウンヒルトレイルです。​2026年に​建設予定。</p>
           </div>
         </div>
       </div>
@@ -588,12 +701,12 @@ masthead:
       <h3
         class="module-title ja-animate"
         data-animation="move-from-bottom"
-        data-delay="200">他にもアイデアはありますか？</h3>
+        data-delay="200">他にも​アイデアは​ありますか？</h3>
       <div
         class="features-desc ja-animate"
         data-animation="move-from-bottom"
         data-delay="400">
-        <p style="font-size:130%;">ビジネスはそれぞれ異なります。サービス、リソース、創造的なコラボレーションなど、ブランドやビジネスがNAMBAをどのように支援できるかアイデアがあれば、ぜひお聞かせください。最高のパートナーシップの多くは、会話から始まりました。</p>
+        <p style="font-size:130%;">ビジネスは​それぞれ異なります。​サービス、​リソース、​創造的な​コラボレーションなど、​ブランドや​ビジネスが​NAMBAを​どのように​支援できるか​アイデアが​あれば、​ぜひ​お聞か​せください。​最高の​パートナーシップの​多くは、​会話から​始まりました。</p>
       </div>
     </div>
 
@@ -606,12 +719,12 @@ masthead:
       <h3
         class="module-title ja-animate"
         data-animation="move-from-bottom"
-        data-delay="200">ニセコの未来を一緒に築きませんか？</h3>
+        data-delay="200">ニセコの​未来を​一緒に​築きませんか？</h3>
       <div
         class="features-desc ja-animate"
         data-animation="move-from-bottom"
         data-delay="400">
-        <div style="font-size:130%;"><span>お問い合わせフォームから、または<a href="mailto:partners@namba.ngo">partners@namba.ngo</a>まで直接メールでご連絡ください。</span></div>
+        <div style="font-size:130%;"><span>お問い​合わせフォームから​ご連絡いただければ、​次の​ステップに​ついて​ご返信いたします。</span></div>
       </div>
     </div>
     <div class="module-title-wrap">
@@ -619,8 +732,8 @@ masthead:
         class="t3-section action ja-animate"
         data-animation="move-from-bottom"
         data-delay="600">
-        <a class="btn btn-primary" href="/contact/?topic=community-partnership">お問い合わせ</a>
-        <a class="btn btn-secondary" href="#" style="margin-left: 10px;">資料をダウンロード</a>
+        <a class="btn btn-primary" href="/contact/?topic=community-partnership">お問い​合わせ</a>
+        <a class="btn btn-secondary" href="#" style="margin-left: 10px;">資料を​ダウンロード</a>
       </div>
     </div>
 
@@ -633,7 +746,7 @@ masthead:
       <h3
         class="module-title ja-animate"
         data-animation="move-from-bottom"
-        data-delay="200">{% if page.lang == "ja" %}現在のパートナー{% else %}Our Current Partners{% endif %}</h3>
+        data-delay="200">{% if page.lang == "ja" %}現在の​パートナー{% else %}Our Current Partners{% endif %}</h3>
     </div>
 
     <style>

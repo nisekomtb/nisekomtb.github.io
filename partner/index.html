@@ -128,6 +128,111 @@ masthead:
     letter-spacing: 0;
     margin-top: 30px;
   }
+
+  .trail-card {
+    background: var(--color-bg-panel);
+    border-radius: 3px;
+    padding: 28px 24px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    transition: background 300ms;
+  }
+  .trail-card:hover {
+    background: var(--color-bg-border);
+  }
+  .trail-card .trail-icon {
+    flex-shrink: 0;
+    width: 56px;
+    text-align: center;
+    padding-top: 4px;
+  }
+  .trail-card .trail-icon span {
+    font-size: 40px;
+    color: var(--color-secondary);
+  }
+  .trail-card .trail-info {
+    flex: 1;
+    min-width: 0;
+  }
+  .trail-card .trail-title {
+    font-size: 120%;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 6px;
+  }
+  .trail-card .trail-meta {
+    font-size: 90%;
+    color: #aaa;
+    margin: 0 0 12px;
+  }
+  .trail-card .trail-desc {
+    margin: 0;
+    color: #ccc;
+  }
+  .trail-card .trail-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  .trail-badge.building {
+    background: #46b414;
+    color: #fff;
+  }
+  .trail-badge.planning {
+    background: var(--color-accent);
+    color: #fff;
+  }
+  @media (max-width: 600px) {
+    .trail-card {
+      flex-direction: column;
+      gap: 12px;
+    }
+    .trail-card .trail-icon {
+      width: auto;
+      text-align: left;
+      padding-top: 0;
+    }
+  }
+
+  .benefit-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto 0;
+    max-width: 720px;
+    font-size: 110%;
+  }
+  .benefit-list li {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 14px;
+    padding: 8px 0;
+    line-height: 1.5;
+    text-align: left;
+  }
+  .benefit-list li > i {
+    color: var(--color-accent);
+    font-size: 18px;
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+
+  .content-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid var(--color-bg-border);
+    border-radius: 3px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  }
 </style>
 
 <div class="t3-section-wrap">
@@ -234,15 +339,16 @@ masthead:
       </div>
     </div>
 
-    <!-- IMAGE PLACEHOLDER -->
     <div
       class="ja-animate"
       data-animation="move-from-bottom"
-      data-delay="500">
-      <div style="background:var(--color-bg-panel); padding:40px; text-align:center; border-radius:3px; margin:20px auto; color:#666; max-width:900px;">
-        <span class="fa-solid fa-image" style="font-size:48px; display:block; margin-bottom:12px;"></span>
-        <p style="margin:0;">Photo: Trail marker sign showing sponsor logo and trail information</p>
-      </div>
+      data-delay="500"
+      style="max-width:900px; margin:20px auto;">
+      <img
+        src="/assets/images/partner/trail-marker-sign.webp"
+        alt="Trail marker sign at Twin Peaks showing sponsor logo and trail information"
+        loading="lazy"
+        class="content-image" />
     </div>
 
     <div class="module-title-wrap" style="max-width:900px;">
@@ -250,24 +356,24 @@ masthead:
         class="features-desc ja-animate"
         data-animation="move-from-bottom"
         data-delay="600">
-        <ul style="font-size:110%; line-height:2;">
-          <li>Your logo on individual trail signs, seen by every rider</li>
-          <li>Your logo on large trail map boards at key intersections</li>
-          <li>Signage photos regularly featured in media coverage (Cyclowired, etc.)</li>
-          <li>As the network expands to Grand Hirafu and Hanazono, signage exposure grows with it</li>
+        <ul class="benefit-list">
+          <li><i class="fa-solid fa-circle-check"></i><span>Your logo on individual trail signs, seen by every rider</span></li>
+          <li><i class="fa-solid fa-circle-check"></i><span>Your logo on large trail map boards at key intersections</span></li>
+          <li><i class="fa-solid fa-circle-check"></i><span>Signage photos regularly featured in media coverage (Cyclowired, etc.)</span></li>
         </ul>
       </div>
     </div>
 
-    <!-- IMAGE PLACEHOLDER -->
     <div
       class="ja-animate"
       data-animation="move-from-bottom"
-      data-delay="700">
-      <div style="background:var(--color-bg-panel); padding:40px; text-align:center; border-radius:3px; margin:20px auto; color:#666; max-width:900px;">
-        <span class="fa-solid fa-image" style="font-size:48px; display:block; margin-bottom:12px;"></span>
-        <p style="margin:0;">Photo: Trail map board with partner logos at Twin Peaks</p>
-      </div>
+      data-delay="700"
+      style="max-width:900px; margin:20px auto;">
+      <img
+        src="/assets/images/partner/trail-map-board.webp"
+        alt="Large trail map board at Twin Peaks displaying partner logos"
+        loading="lazy"
+        class="content-image" />
     </div>
 
   </div>
@@ -284,24 +390,25 @@ masthead:
         class="features-desc ja-animate"
         data-animation="move-from-bottom"
         data-delay="400">
-        <ul style="font-size:110%; line-height:2;">
-          <li>Logo in dedicated partners section on namba.ngo homepage, plus footer banner on every page</li>
-          <li>Trail information on Trailforks (global audience of millions of riders)</li>
-          <li>Printed marketing materials, flyers, and pamphlets</li>
-          <li>Dedicated social media announcement post, plus recurring recognition throughout the season</li>
+        <ul class="benefit-list">
+          <li><i class="fa-solid fa-circle-check"></i><span>Logo in dedicated partners section on namba.ngo website</span></li>
+          <li><i class="fa-solid fa-circle-check"></i><span>Trail information on Trailforks (global audience of millions of riders)</span></li>
+          <li><i class="fa-solid fa-circle-check"></i><span>Printed marketing materials, flyers, and pamphlets</span></li>
+          <li><i class="fa-solid fa-circle-check"></i><span>Dedicated social media announcement post</span></li>
         </ul>
       </div>
     </div>
 
-    <!-- IMAGE PLACEHOLDER -->
     <div
       class="ja-animate"
       data-animation="move-from-bottom"
-      data-delay="500">
-      <div style="background:var(--color-bg-panel); padding:40px; text-align:center; border-radius:3px; margin:20px auto; color:#666; max-width:900px;">
-        <span class="fa-solid fa-image" style="font-size:48px; display:block; margin-bottom:12px;"></span>
-        <p style="margin:0;">Photo: Instagram sponsor announcement post example</p>
-      </div>
+      data-delay="500"
+      style="max-width:900px; margin:20px auto;">
+      <img
+        src="/assets/images/partner/instagram-sponsor.webp"
+        alt="Example NAMBA Instagram post announcing a new partner"
+        loading="lazy"
+        class="content-image" />
     </div>
 
   </div>
@@ -510,17 +617,17 @@ masthead:
         class="features-desc ja-animate"
         data-animation="move-from-bottom"
         data-delay="400">
-        <p style="font-size:130%;">For mountain bike and outdoor industry brands, we offer partnership on a product basis. Provide equipment, apparel, or services in exchange for the same exposure benefits as our community partners. Brands like Peatys and Smith have already joined the network.</p>
+        <p style="font-size:130%;">For mountain bike and outdoor industry brands, we offer partnership on a product basis. Provide equipment, apparel, or services in exchange for the same exposure benefits as our community partners. Brands like Specialized, Peatys and Smith have already joined the network.</p>
       </div>
       <div
         class="features-desc ja-animate"
         data-animation="move-from-bottom"
         data-delay="600">
-        <ul style="font-size:110%; line-height:2;">
-          <li>Same exposure benefits as community partners</li>
-          <li>Product contribution instead of (or alongside) cash</li>
-          <li>Co-branded event opportunities</li>
-          <li>Demo and testing opportunities at NAMBA events</li>
+        <ul class="benefit-list">
+          <li><i class="fa-solid fa-circle-check"></i><span>Same exposure benefits as community partners</span></li>
+          <li><i class="fa-solid fa-circle-check"></i><span>Product contribution instead of (or alongside) cash</span></li>
+          <li><i class="fa-solid fa-circle-check"></i><span>Co-branded event opportunities</span></li>
+          <li><i class="fa-solid fa-circle-check"></i><span>Demo and testing opportunities at NAMBA events</span></li>
         </ul>
       </div>
     </div>
@@ -549,31 +656,37 @@ masthead:
           data-animation="move-from-bottom"
           data-delay="500">2026 Trail Opportunities</h4>
       </div>
-      <div class="row equal-height equal-height-child">
-        <div class="col col-md-12 col-lg-6">
-          <div
-            class="features-item ja-animate"
-            data-animation="move-from-bottom"
-            data-delay="item-0">
-            <div class="font-icon">
-              <span class="fa-solid fa-seedling"></span>
-            </div>
-            <h4>Green Flow Trail</h4>
-            <p style="margin-top:10px;">1,500m &middot; &yen;11,000,000</p>
-            <p>Niseko's first free beginner trail. The first trail riders encounter after entering Twin Peaks from Hirafu.</p>
+      <div style="max-width:900px; margin:0 auto;">
+        <div
+          class="trail-card ja-animate"
+          data-animation="move-from-bottom"
+          data-delay="item-0">
+          <div class="trail-icon">
+            <span class="fa-solid fa-link"></span>
+          </div>
+          <div class="trail-info">
+            <h4 class="trail-title">Lower Green Climb</h4>
+            <p class="trail-meta">
+              <span class="trail-badge building">In construction</span>
+              2,000m &middot; &yen;7,000,000
+            </p>
+            <p class="trail-desc">Climb trails see slower traffic, giving sponsor signage longer dwell time and stronger brand impressions. Lower Green Climb opens easier access to the west side of the mountain, making it a popular route not just for beginners, but for anyone who would rather not ride all the way to the top.</p>
           </div>
         </div>
-        <div class="col col-md-12 col-lg-6">
-          <div
-            class="features-item ja-animate"
-            data-animation="move-from-bottom"
-            data-delay="item-1">
-            <div class="font-icon">
-              <span class="fa-solid fa-link"></span>
-            </div>
-            <h4>Lower Green Climb</h4>
-            <p style="margin-top:10px;">2,000m &middot; &yen;7,000,000</p>
-            <p>An easier route to the top. Better access to the beginner and intermediate terrain.</p>
+        <div
+          class="trail-card ja-animate"
+          data-animation="move-from-bottom"
+          data-delay="item-1">
+          <div class="trail-icon">
+            <span class="fa-solid fa-seedling"></span>
+          </div>
+          <div class="trail-info">
+            <h4 class="trail-title">Green Flow Trail</h4>
+            <p class="trail-meta">
+              <span class="trail-badge planning">In planning</span>
+              1,500m &middot; &yen;11,000,000
+            </p>
+            <p class="trail-desc">Niseko's first proper beginner downhill course. The area has plenty of skills parks and easy loops, but Green Flow bridges the gap between skills park and intermediate terrain, a real downhill trail tailored to beginners. Build planned for 2026.</p>
           </div>
         </div>
       </div>
@@ -611,7 +724,7 @@ masthead:
         class="features-desc ja-animate"
         data-animation="move-from-bottom"
         data-delay="400">
-        <div style="font-size:130%;"><span>Get in touch via our contact form or email us directly at <a href="mailto:partners@namba.ngo">partners@namba.ngo</a>.</span></div>
+        <div style="font-size:130%;"><span>Get in touch via our contact form and we'll be back to you with the next steps.</span></div>
       </div>
     </div>
     <div class="module-title-wrap">
