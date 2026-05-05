@@ -16,13 +16,13 @@ price:
     adult: 9000
 partners:
   - name: Santa Cruz
-    img: /special/santa-cruz.png
+    img: /santa-cruz.png
     url: https://www.santacruzbicycles.com/
   - name: Downhill Series
     img: /dhseries.jpg
     url: https://dhseries.jp/
   - name: Rhythm Japan
-    img: /special/rhythm.png
+    img: /rhythm.png
     url: https://rhythmjapan.com
   - name: Dirty Dames
     img: /../logos/dirty-dames.png

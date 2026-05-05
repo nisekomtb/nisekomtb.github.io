@@ -10,7 +10,7 @@ address: 150, 2 Aza-150-1 Yamada, Kutchan, Abuta District, Hokkaido 044-0081
 price: 0
 partners:
   - name: Rhythm
-    img: /special/rhythm.png
+    img: /rhythm.png
     url: https://rhythmjapan.com
 masthead:
   img: /assets/images/events/2024/season-opener/header.jpg

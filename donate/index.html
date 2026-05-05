@@ -35,7 +35,7 @@ masthead:
             <h4>Fuel the Saw</h4>
             <p><div style="font-size: 24px; padding-bottom:8px;">&yen;500</div></p>
             <p style="margin-top:10px; font-size:90%;">A can of fuel for the chainsaw.</p>
-            <a class="action" href="javascript:addDonation(500);">
+            <a class="action" href="/shop/?donate=500">
               Donate <span class="fa-solid fa-circle-arrow-right"></span>
             </a>
           </div>
@@ -46,7 +46,7 @@ masthead:
             <h4>Keep It Sharp</h4>
             <p><div style="font-size: 24px; padding-bottom:8px;">&yen;1,000</div></p>
             <p style="margin-top:10px; font-size:90%;">A replacement chain for the chainsaw.</p>
-            <a class="action" href="javascript:addDonation(1000);">
+            <a class="action" href="/shop/?donate=1000">
               Donate <span class="fa-solid fa-circle-arrow-right"></span>
             </a>
           </div>
@@ -57,7 +57,7 @@ masthead:
             <h4>Trail TLC</h4>
             <p><div style="font-size: 24px; padding-bottom:8px;">&yen;2,500</div></p>
             <p style="margin-top:10px; font-size:90%;">A day of trail maintenance supplies.</p>
-            <a class="action" href="javascript:addDonation(2500);">
+            <a class="action" href="/shop/?donate=2500">
               Donate <span class="fa-solid fa-circle-arrow-right"></span>
             </a>
           </div>
@@ -68,7 +68,7 @@ masthead:
             <h4>Lay the Foundation</h4>
             <p><div style="font-size: 24px; padding-bottom:8px;">&yen;5,000</div></p>
             <p style="margin-top:10px; font-size:90%;">A load of gravel and drainage material.</p>
-            <a class="action" href="javascript:addDonation(5000);">
+            <a class="action" href="/shop/?donate=5000">
               Donate <span class="fa-solid fa-circle-arrow-right"></span>
             </a>
           </div>
@@ -79,7 +79,7 @@ masthead:
             <h4>Fund the Crew</h4>
             <p><div style="font-size: 24px; padding-bottom:8px;">&yen;10,000</div></p>
             <p style="margin-top:10px; font-size:90%;">A day of professional trail crew wages.</p>
-            <a class="action" href="javascript:addDonation(10000);">
+            <a class="action" href="/shop/?donate=10000">
               Donate <span class="fa-solid fa-circle-arrow-right"></span>
             </a>
           </div>
@@ -90,7 +90,7 @@ masthead:
             <h4>Bridge the Gap</h4>
             <p><div style="font-size: 24px; padding-bottom:8px;">&yen;25,000</div></p>
             <p style="margin-top:10px; font-size:90%;">A new section of boardwalk timber.</p>
-            <a class="action" href="javascript:addDonation(25000);">
+            <a class="action" href="/shop/?donate=25000">
               Donate <span class="fa-solid fa-circle-arrow-right"></span>
             </a>
           </div>
@@ -101,7 +101,7 @@ masthead:
             <h4>Move Mountains</h4>
             <p><div style="font-size: 24px; padding-bottom:8px;">&yen;50,000</div></p>
             <p style="margin-top:10px; font-size:90%;">A day of excavator operation.</p>
-            <a class="action" href="javascript:addDonation(50000);">
+            <a class="action" href="/shop/?donate=50000">
               Donate <span class="fa-solid fa-circle-arrow-right"></span>
             </a>
           </div>
@@ -112,7 +112,7 @@ masthead:
             <h4>Go Big</h4>
             <p><input id="custom-donation" type="number" placeholder="&yen;" min="500" step="500" style="font-size:24px; width:120px; text-align:center; padding:8px; background:var(--color-bg-panel); border:2px solid var(--color-bg-border); color:#fff; border-radius:4px;"></p>
             <p style="margin-top:10px; font-size:90%;">You choose the amount.</p>
-            <a class="action" href="javascript:addCustomDonation();">
+            <a class="action" href="javascript:donateCustom();">
               Donate <span class="fa-solid fa-circle-arrow-right"></span>
             </a>
           </div>
@@ -122,35 +122,13 @@ masthead:
 
   </div>
 
-  <!-- Ecwid Integration -->
-  <div class="section">
-
-    <div id="my-store-71386768"></div>
-    <script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?71386768&lang=en-GB&data_platform=code&data_date=2022-02-02" charset="utf-8"></script>
-    <script>
-      window.ec = window.ec || Object();
-      window.ec.config = window.ec.config || Object();
-      window.ec.config.custom_redirect_after_purchase = 'https://www.namba.ngo/thanks';
-
-      function addDonation(selectedPrice) {
-        Ecwid.Cart.addProduct({
-          id: 484307482,
-          quantity: 1,
-          selectedPrice: selectedPrice,
-          callback: function(success, product, cart) {
-            location.hash = '#!/~/cart';
-          }
-        });
-      }
-
-      function addCustomDonation() {
-        var selectedPrice = parseInt(document.getElementById("custom-donation").value);
-        if (isNaN(selectedPrice) || selectedPrice < 500) return;
-        addDonation(selectedPrice);
-      }
-    </script>
-
-  </div>
+  <script>
+    function donateCustom() {
+      var amount = parseInt(document.getElementById('custom-donation').value, 10);
+      if (isNaN(amount) || amount < 500) return;
+      window.location.href = '/shop/?donate=' + amount;
+    }
+  </script>
 
   <!-- Other ways to contribute -->
   <div class="section">

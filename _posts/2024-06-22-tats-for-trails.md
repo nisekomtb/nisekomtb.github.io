@@ -66,6 +66,7 @@ prizes:
         url: https://www.59niseko.com
     validity: Valid until 15 December 2024
 storeProductId: 671804108
+storeProductSlug: tats-for-trails-entry
 ---
 ## Get Inked to Support Trail Building in Niseko
 

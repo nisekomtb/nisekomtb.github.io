@@ -1,11 +1,41 @@
 ---
 title: オンラインショップ
 description: NAMBAのオンラインショップ。ご購入がニセコのトレイル整備に役立ちます。
-subtitle: 皆様のご購入によりトレイルは成長します。
 ---
+{% include ecwid-styles.html %}
 <style>
   #store {
     min-height: 1166px;
+  }
+
+  /* Shop intro section */
+  .shop-intro { padding-top: 0; }
+  .shop-intro .module-title-wrap { max-width: 780px; margin: 0 auto 10px; text-align: center; }
+  .shop-intro .features-desc p { font-size: 115%; line-height: 1.65; color: #cccccc; }
+  .shop-intro-badges { margin-top: 10px; }
+  .shop-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 16px;
+    text-align: center;
+  }
+  .shop-badge svg {
+    width: 36px;
+    height: 36px;
+    color: var(--color-accent);
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .shop-badge-label {
+    color: #cccccc;
+    font-size: 95%;
+    font-weight: 600;
+    letter-spacing: 0.3px;
   }
 
   .ec-grid {
@@ -14,14 +44,6 @@ subtitle: 皆様のご購入によりトレイルは成長します。
 
   html#ecwid_html body#ecwid_body .ec-size .ec-store .details-gallery__images-spacer {
     margin-top: 35px;
-  }
-
-  .product-details__navigation {
-    display: none !important;
-  }
-
-  #ProductBrowser-1 {
-    min-height: auto !important;
   }
 
   html#ecwid_html body#ecwid_body .ec-size .ec-store .label--notice {
@@ -36,49 +58,6 @@ subtitle: 皆様のご購入によりトレイルは成長します。
     color: var(--color-primary);
   }
 
-  .ec-form__row--continue .form-control--done {
-    text-align: left !important;
-  }
-
-  .form-control button.form-control__button {
-    color: #ffffff !important;
-    background-color: var(--color-primary) !important;
-    border-color: transparent !important;
-    background: var(--color-primary) !important;
-
-    border: 0 !important;
-    border-radius: 4px !important;
-    font-weight: 500 !important;
-    padding-left: 24px !important;
-    padding-right: 24px !important;
-
-    font-size: 14px !important;
-  }
-
-  .form-control button.form-control__button:hover {
-    background: var(--color-primary-hover) !important;
-  }
-
-  img.ecwid-PaymentMethodsBlockSvg {
-    background: #fff !important;
-  }
-
-  .ec-cart__button--apple-pay {
-    text-align: center !important;
-    text-align: -moz-center !important;
-    text-align: -webkit-center !important;
-  }
-
-  .ec-cart__button--apple-pay .form-control--button {
-    border: 1px #fff solid !important;
-    padding-left: 24px !important;
-    padding-right: 24px !important;
-    border-radius: 4px !important;
-    width: 170px !important;
-    margin: 0 auto !important;
-    position: relative !important;
-  }
-
   a.breadcrumbs__link--last {
     font-size: 0 !important;
   }
@@ -88,14 +67,6 @@ subtitle: 皆様のご購入によりトレイルは成長します。
     font-size: 20px;
     font-weight: bold;
     float: right;
-  }
-
-  html#ecwid_html body#ecwid_body #raffle-store .ec-size .ec-store .details-gallery__images-spacer {
-    margin-top: 0;
-  }
-
-  #raffle-store a.breadcrumbs__link--last {
-    display: none;
   }
 
   /* Size option buttons */
@@ -127,6 +98,147 @@ subtitle: 皆様のご購入によりトレイルは成長します。
   html#ecwid_html body#ecwid_body .ec-size .ec-store .product-details-options__swatches .options-swatches-item__color:has(> .options-swatches-item__color--selected) {
     border-color: transparent !important;
   }
+
+  /* Product cards — match event card aesthetic */
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .grid-product__wrap-inner {
+    background: var(--color-bg-panel) !important;
+    border-radius: 3px !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    overflow: hidden !important;
+    transition: background 300ms ease !important;
+  }
+
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .grid-product--has-shadow .grid-product__wrap-inner {
+    box-shadow: none !important;
+  }
+
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .grid-product__wrap-inner:hover {
+    background: var(--color-bg-border) !important;
+  }
+
+  /* Image link gets relative positioning so we can layer the gradient */
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .grid-product__image {
+    position: relative !important;
+    display: block !important;
+  }
+
+  /* Bottom-edge gradient that bleeds the image into the card background */
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .grid-product__image::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(to bottom, transparent, var(--color-bg-panel));
+    pointer-events: none;
+    transition: background 300ms ease;
+    z-index: 2;
+  }
+
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .grid-product__wrap-inner:hover .grid-product__image::after {
+    background: linear-gradient(to bottom, transparent, var(--color-bg-border));
+  }
+
+  /* Disable hover-zoom on product image (keep the second-image swap) */
+  #store img,
+  #store picture,
+  #store [class*="grid-product"][class*="image"],
+  #store [class*="grid-product"][class*="picture"],
+  #store [class*="grid-product"][class*="pic"] {
+    transform: none !important;
+    scale: none !important;
+  }
+
+  /* Card typography — match event-card 16px title */
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .grid-product__title {
+    margin-top: 12px !important;
+    margin-bottom: 4px !important;
+  }
+
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .grid-product__title-inner {
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    line-height: 1.35 !important;
+  }
+
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .grid-product__subtitle,
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .grid-product__subtitle-inner {
+    font-size: 12px !important;
+    color: #aaaaaa !important;
+    margin-top: 0 !important;
+    margin-bottom: 8px !important;
+    line-height: 1.4 !important;
+  }
+
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .grid-product__subtitle-inner::before {
+    content: "\f06c";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 6px;
+  }
+
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .grid-product__price-amount,
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .grid-product__price-value {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    color: var(--color-accent) !important;
+  }
+
+  /* Sort by control — pill-style to match card chrome */
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .grid-sort__item--sortby {
+    background: var(--color-bg-panel) !important;
+    border-radius: 3px !important;
+    padding: 8px 14px !important;
+    transition: background 200ms ease !important;
+  }
+
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .grid-sort__item--sortby:hover {
+    background: var(--color-bg-border) !important;
+  }
+
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .grid-sort__item--sortby .form-control__select {
+    border: 0 !important;
+    background: transparent !important;
+    color: #ffffff !important;
+    padding: 0 !important;
+  }
+
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .grid-sort__item--sortby .form-control__select-text {
+    color: #aaaaaa !important;
+  }
+
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .grid-sort__item--sortby .form-control__arrow {
+    color: var(--color-accent) !important;
+  }
+
+  /* Footer link icons — replace Ecwid SVGs with Font Awesome */
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .ec-footer__link .svg-icon {
+    display: none !important;
+  }
+
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .ec-footer__link::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 22px;
+    display: block;
+    margin-bottom: 8px;
+    line-height: 1;
+  }
+
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .footer__link--my-account::before {
+    content: "\f007";
+  }
+
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .footer__link--track-order::before {
+    content: "\f0d1";
+  }
+
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .footer__link--shopping-cart::before {
+    content: "\f290";
+  }
 </style>
 
 <script
@@ -138,6 +250,58 @@ subtitle: 皆様のご購入によりトレイルは成長します。
 <div>
 
   <div class="t3-section-wrap">
+
+    <div class="section shop-intro" id="shop-intro" hidden>
+      <div class="t3-section">
+        <div class="module-title-wrap">
+          <h3
+            class="module-title ja-animate"
+            data-animation="move-from-bottom"
+            data-delay="200">ご購入の​一つ​ひとつが、​トレイルに​なる。</h3>
+          <div
+            class="features-desc ja-animate"
+            data-animation="move-from-bottom"
+            data-delay="400">
+            <p>NAMBAは​NPO法人。​利益は​すべて、​トレイルの​土へ​還ります。​Tシャツは​オーガニック・リングスパンコットンを​採用。​タイヤの​下の​土と​同じくらい、​コットンが​育つ​土壌も​大切に​したい。​そして、​世界中どこへでも​送料は​無料です。</p>
+          </div>
+        </div>
+        <div
+          class="row shop-intro-badges ja-animate"
+          data-animation="move-from-bottom"
+          data-delay="600">
+          <div class="col col-12 col-md-4">
+            <div class="shop-badge">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M3 12h18"/>
+                <path d="M12 3a14 14 0 0 1 0 18"/>
+                <path d="M12 3a14 14 0 0 0 0 18"/>
+              </svg>
+              <div class="shop-badge-label">世界中​どこでも​送料無料</div>
+            </div>
+          </div>
+          <div class="col col-12 col-md-4">
+            <div class="shop-badge">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M2 22h20"/>
+                <path d="M3 22l5-9 4 5 3-4 6 8"/>
+                <circle cx="9" cy="8" r="1.5"/>
+              </svg>
+              <div class="shop-badge-label">利益は​すべて​トレイルへ</div>
+            </div>
+          </div>
+          <div class="col col-12 col-md-4">
+            <div class="shop-badge">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19.2 2.96A1 1 0 0 1 21 4c0 2.42-.62 5.93-2 8a7 7 0 0 1-8 8z"/>
+                <path d="M2 21c0-3 1.85-5.36 5.08-6"/>
+              </svg>
+              <div class="shop-badge-label">オーガニック・リングスパンコットン</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="section">
 
@@ -164,6 +328,30 @@ subtitle: 皆様のご購入によりトレイルは成長します。
   window.ec.storefront.product_details_show_breadcrumbs = true;
   window.ec.storefront.product_details_position_breadcrumbs = 25;
   window.ec.storefront.breadcrumbs_separator = "";
+
+  Ecwid.OnAPILoaded.add(function() {
+    Ecwid.OnPageLoaded.add(function(page) {
+      var intro = document.getElementById('shop-intro');
+      if (intro) {
+        intro.hidden = page.type !== 'CATEGORY';
+      }
+    });
+
+    var donateAmount = parseInt(new URLSearchParams(window.location.search).get('donate'), 10);
+    if (!isNaN(donateAmount) && donateAmount > 0) {
+      Ecwid.Cart.addProduct({
+        id: 484307482,
+        quantity: 1,
+        selectedPrice: donateAmount,
+        callback: function(success) {
+          if (success) {
+            history.replaceState(null, '', window.location.pathname);
+            location.hash = '#!/~/cart';
+          }
+        }
+      });
+    }
+  });
 
   xProductBrowser("defaultCategoryId=156223501", "categoriesPerRow=3", "views=grid(20,3) list(60) table(60)", "categoryView=grid", "searchView=list", "id=store");
 

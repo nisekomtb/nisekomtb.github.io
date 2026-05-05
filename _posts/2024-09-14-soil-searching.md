@@ -13,13 +13,13 @@ price:
 partners:
 partners:
   - name: Specialized
-    img: /special/specialized.png
+    img: /specialized.png
     url: https://www.specialized-onlinestore.jp/
   - name: Pow Bar
     img: /powbar.png
     url: https://thepowbar.com
   - name: Rhythm Japan
-    img: /special/rhythm.png
+    img: /rhythm.png
     url: https://rhythmjapan.com
 moreInfo:
   - To join the event, complete the application below.
@@ -67,6 +67,7 @@ itinerary:
 parking: true
 about: false
 storeProductId: 679581277
+storeProductSlug: soil-searching-2024
 ---
 ## Soil Searching Niseko 2024: Building Trails and Community
 

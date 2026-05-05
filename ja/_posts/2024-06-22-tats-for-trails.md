@@ -66,6 +66,7 @@ prizes:
         url: https://www.59niseko.com
     validity: 2024年12月15日まで<wbr>有効
 storeProductId: 671804108
+storeProductSlug: tats-for-trails-entry
 ---
 ## トレイル建設を<wbr>支援する<wbr>タトゥーコンペ：Tats for Trails
 

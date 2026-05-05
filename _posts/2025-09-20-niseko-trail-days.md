@@ -15,16 +15,16 @@ price:
     adult: ¥1,000
 partners:
   - name: Specialized
-    img: /special/specialized.png
+    img: /specialized.png
     url: https://www.specialized-onlinestore.jp/
   - name: Pow Bar
     img: /powbar.png
     url: https://thepowbar.com
   - name: Yotei Brewing
-    img: /tanuki/yotei-brewing.png
+    img: /yotei-brewing.png
     url: https://yotei.beer/
   - name: Rhythm Japan
-    img: /special/rhythm.png
+    img: /rhythm.png
     url: https://rhythmjapan.com
   - name: Taco Dake
     img: /tacodake.png
@@ -64,6 +64,7 @@ itinerary:
 parking: false
 about: false
 storeProductId: 780290280
+storeProductSlug: niseko-trail-days-2025
 ---
 <img src="/assets/images/events/2025/niseko-trail-days/logo.png" style="width: 250px; margin: 0 auto;">
 

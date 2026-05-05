@@ -10,7 +10,7 @@ address: 150, 2 Aza-150-1 Yamada, Kutchan, Abuta District, Hokkaido 044-0081
 price: 0
 partners:
   - name: Allegra
-    img: /special/allegra.png
+    img: /allegra.png
     url: https://www.helloallegra.com/
 moreInfo:
   - 申し込みは8月27日まで。参加者多数の場合は抽選となります。

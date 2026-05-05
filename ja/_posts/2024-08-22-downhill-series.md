@@ -15,7 +15,7 @@ partners:
     img: /dhseries.jpg
     url: https://dhseries.jp/
   - name: Rhythm
-    img: /special/rhythm.png
+    img: /rhythm.png
     url: https://rhythmjapan.com
 masthead:
   img: /assets/images/events/2024/downhill-series/header.jpg

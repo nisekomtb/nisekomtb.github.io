@@ -11,13 +11,13 @@ address: 150, 2 Aza-150-1 Yamada, Kutchan, Abuta District, Hokkaido 044-0081
 price: 0
 partners:
   - name: Santa Cruz
-    img: /special/santa-cruz.png
+    img: /santa-cruz.png
     url: https://www.santacruzbicycles.com/
   - name: Rhythm Japan
-    img: /special/rhythm.png
+    img: /rhythm.png
     url: https://rhythmjapan.com
   - name: HakuLife
-    img: /higuma/h2.png
+    img: /h2.png
     url: https://www.h2group.com
   - name: 玉置 彰彦
     img: /tamakiguji.jpg

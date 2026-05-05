@@ -1,7 +1,516 @@
 ---
-layout: default
-baseCss: view-article
+layout: base
 ---
+{% include masthead.html %}
+
+<style>
+  .event-header {
+    text-align: center;
+    margin-bottom: 36px;
+  }
+  .event-header p.lead {
+    font-size: 120%;
+    color: #aaa;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .event-status {
+    display: inline-block;
+    padding: 5px 14px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+  }
+  .event-status.cancelled {
+    background: #c0392b;
+    color: #fff;
+  }
+  .event-signup-top {
+    margin-top: 16px;
+  }
+
+  .event-sidebar {
+    background: var(--color-bg-panel);
+    border-radius: 3px;
+    padding: 24px;
+  }
+  .event-sidebar h3 {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  .event-sidebar .detail-item {
+    margin-bottom: 16px;
+  }
+  .event-sidebar .detail-item h4 {
+    color: var(--color-accent);
+    font-size: 11px;
+    font-family: "Metropolis", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0 0 4px;
+  }
+  .event-sidebar .detail-item p,
+  .event-sidebar .detail-item ul {
+    margin: 0;
+    font-size: 95%;
+  }
+  .event-sidebar .detail-item ul {
+    padding-inline-start: 0;
+    list-style: none;
+  }
+  .event-sidebar .detail-item ul li {
+    margin-bottom: 5px;
+  }
+  .event-sidebar .partners-imgs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-top: 4px;
+  }
+  .event-sidebar .partners-imgs a {
+    display: inline-block;
+  }
+  .event-sidebar .partners-imgs img {
+    margin-bottom: 10px;
+    max-height: 50px;
+    max-width: 50px;
+  }
+
+  .event-content h3 {
+    margin-top: 36px;
+  }
+  .event-content h3:first-child,
+  .event-content h2:first-child {
+    margin-top: 0;
+  }
+
+  span.cancelled {
+    color: #fc0000;
+    font-size: 150%;
+    font-weight: bold;
+  }
+
+  span.rescheduled {
+    display: block;
+    margin: 0 0 24px;
+    padding: 16px 20px;
+    background: #fff4e0;
+    border-left: 4px solid #e08a00;
+    color: #8a4500;
+    font-size: 110%;
+    font-weight: 500;
+  }
+
+  span.rescheduled strong {
+    color: #8a4500;
+  }
+
+  .download {
+    margin: 30px auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+
+  .download a {
+    margin: 0 10px;
+  }
+
+  .download img {
+    margin-bottom: 10px;
+    height: 50px;
+  }
+
+  table.timetable {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  table.timetable th,
+  table.levels td {
+    border: 4px solid var(--color-bg);
+    vertical-align: middle;
+  }
+
+  table.timetable th {
+    color: var(--color-accent);
+    font-size: 12px;
+    font-family: "Metropolis", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    padding: 12px 10px 12px 0;
+  }
+
+  table.timetable th.fst {
+    text-align: right;
+    display: none;
+  }
+
+  table.timetable th.row {
+    text-align: center;
+  }
+
+  table.timetable tr.cancelled {
+    text-decoration: line-through;
+    opacity: 0.5;
+  }
+
+  table.timetable td {
+    background-color: var(--color-bg-panel);
+    text-align: center;
+    padding: 10px 15px;
+    font-weight: 700;
+  }
+
+  @media(min-width: 600px) {
+    table.timetable td {
+      padding: 10px 15px;
+    }
+  }
+
+  @media(min-width: 768px) {
+    table.timetable td {
+      padding: 10px 30px;
+    }
+  }
+
+  @media(min-width: 992px) {
+    table.timetable td {
+      padding: 10px 50px;
+    }
+  }
+
+  .ec-grid {
+    display: block !important;
+  }
+
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .details-gallery__images-spacer {
+    margin-top: 35px;
+  }
+
+  .product-details__navigation {
+    display: none !important;
+  }
+
+  #ProductBrowser-1 {
+    min-height: auto !important;
+  }
+
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .label--notice {
+    background-color: var(--color-primary);
+  }
+
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .label--notice::before {
+    color: var(--color-primary);
+  }
+
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .label--notice::after {
+    color: var(--color-primary);
+  }
+
+  .ec-form__row--continue .form-control--done {
+    text-align: left !important;
+  }
+
+  .form-control button.form-control__button {
+    color: #ffffff !important;
+    background-color: var(--color-primary) !important;
+    border-color: transparent !important;
+    background: var(--color-primary) !important;
+
+    border: 0 !important;
+    border-radius: 4px !important;
+    font-weight: 500 !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+
+    font-size: 14px !important;
+  }
+
+  .form-control button.form-control__button:hover {
+    background: var(--color-primary) !important;
+    background: var(--color-primary-hover) !important;
+  }
+
+  img.ecwid-PaymentMethodsBlockSvg {
+    background: #fff !important;
+  }
+
+  html#ecwid_html body#ecwid_body .ec-cart__button .paypal-button {
+    width: 200px;
+    margin: 0 auto;
+  }
+
+  .ec-cart__button--apple-pay {
+    text-align: center !important;
+    text-align: -moz-center !important;
+    text-align: -webkit-center !important;
+  }
+
+  .ec-cart__button--apple-pay .form-control--button {
+    border: 1px #fff solid !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+    border-radius: 4px !important;
+    width: 170px !important;
+    margin: 0 auto !important;
+    position: relative !important;
+  }
+
+  a.breadcrumbs__link--last {
+    font-size: 0 !important;
+  }
+
+  html#ecwid_html body#ecwid_body #raffle-store .ec-size .ec-store .details-gallery__images-spacer {
+    margin-top: 0;
+  }
+
+  #raffle-store a.breadcrumbs__link--last {
+    display: none;
+  }
+
+  html#ecwid_html body#ecwid_body #raffle-store .ec-confirmation__continue {
+    display: none;
+  }
+</style>
+
+<div class="t3-section-wrap">
+<div id="t3-mainbody" class="container t3-mainbody">
+  <div class="row">
+
+    <div class="col-12">
+
+      <!-- Header with status and signup -->
+      <div class="event-header ja-animate" data-animation="move-from-bottom" data-delay="200">
+        {% if page.cancelled %}
+          <div class="event-status cancelled">{% if page.lang == "ja" %}キャンセル{% else %}Cancelled{% endif %}</div>
+        {% endif %}
+        {% if page.description %}<p class="lead">{{ page.description }}</p>{% endif %}
+        {% if page.signup and page.cancelled != true %}
+          <div class="event-signup-top">
+            <a class="btn btn-primary" href="{{ page.signup }}" target="_blank">{% if page.lang == "ja" %}申し込みは<wbr>こちら{% else %}Sign up here{% endif %}</a>
+          </div>
+        {% endif %}
+        {% if page.storeProductSlug and page.cancelled != true %}
+          <div class="event-signup-top">
+            <a class="btn btn-primary" href="/{% if page.lang == 'ja' %}ja/{% endif %}shop/#!/{{ page.storeProductSlug }}">{% if page.lang == "ja" %}チケットを<wbr>購入{% else %}Buy ticket{% endif %}</a>
+          </div>
+        {% endif %}
+      </div>
+
+    </div>
+
+    <!-- Main content -->
+    <div class="col-12 col-md-8 col-lg-9">
+      <div class="event-content ja-animate" data-animation="move-from-bottom" data-delay="400">
+        {{ content }}
+
+        {% if page.itinerary %}
+        <h3>{% if page.lang == "en" %}Itinerary{% else %}行程{% endif %}</h3>
+        {% for day in page.itinerary.days %}
+
+          {% if page.days != 1 %}
+          <p>
+            <strong>{% if page.lang == "en" %}Day {{ forloop.index }} itinerary:{% else %}{{- forloop.index -}}日目の行程{% endif %}</strong>
+          </p>
+          {% endif %}
+          <table class="timetable">
+            {% for event in day.events %}
+            <tr {% if event.cancelled %} class="cancelled" {% endif %}>
+              <td>{{ event.time | default: '~' }}</td>
+              <td>{{ event.name }}</td>
+              {% if day.hasLocations %}
+              <td>
+                {% if event.location.url %}
+                  <a href="{{ event.location.url }}" target="_blank">
+                    {{ event.location.name }}
+                  </a>
+                {% else %}
+                  {{ event.location }}
+                {% endif %}
+              </td>
+              {% endif %}
+            </tr>
+            {% endfor %}
+          </table>
+        {% endfor %}
+        {% endif %}
+
+        {% if page.parking %}
+          {% if page.lang == "en" %}
+          <h3>Parking location</h3>
+          <p>Parking at the trailhead is strictly prohibited – please use one of the below parking locations:</p>
+          <ul>
+            <li><a href="https://www.trailforks.com/poi/123003/" target="_blank">Hirafu Gondola Parking</a></li>
+            <li><a href="https://www.trailforks.com/poi/123004/" target="_blank">Hirafu Welcome Center Parking</a></li>
+            <li><a href="https://www.trailforks.com/poi/123002/" target="_blank">Sunsports Land Parking</a></li>
+          </ul>
+          {% else %}
+          <h3>駐車場所</h3>
+          <p>登山口への<wbr>駐車は<wbr>固く<wbr>お断りいたします<wbr>：</p>
+          <ul>
+            <li><a href="https://www.trailforks.com/poi/123003/" target="_blank">ひらふゴンドラ駐車場</a></li>
+            <li><a href="https://www.trailforks.com/poi/123004/" target="_blank">ひらふウェルカムセンター駐車場</a></li>
+            <li><a href="https://www.trailforks.com/poi/123002/" target="_blank">サンスポーツランド駐車場</a></li>
+          </ul>
+          {% endif %}
+
+          <p><img src="/assets/images/events/parking-map.jpg" alt="" /></p>
+        {% endif %}
+
+        {% if page.about %}
+          {% if page.lang == "en" %}
+          <h3>About NAMBA</h3>
+          <p>
+            <strong>Building trails and community</strong>
+          </p>
+
+          <p>NAMBA (Niseko Area Mountain Bike Association) is a registered nonprofit organization uniting the Niseko area towards
+            the common mission of creating a world class sustainable mountain bike community, and off-road biking ecosystem.</p>
+          <p>The organization is well underway on their first project, the Twin Peaks Bike Park – this is a professionally built
+            and maintained, free-to-ride trail network located in the resort area of Niseko, Japan. Once all phases of the project
+            are completed, the park is expected to be home to some 30 kms of trails, making it Japan's largest community bike
+            park.</p>
+          <p>Beyond Twin Peaks, NAMBA's masterplan for the area seeks to create an interconnected web of trails encompassing
+            everything from beginner skills areas, to 50+ km backcountry epic trails, to lift accessed bike parks and everything
+            in between.</p>
+          <p>We invite you to register to join our nonprofit, and hope to see you out on the trails soon!</p>
+          {% else %}
+          <h3>NAMBAに<wbr>ついて</h3>
+          <p>
+            <strong>トレイルと<wbr>コミュニティの<wbr>形成</strong>
+          </p>
+
+          <p>NAMBA (Niseko Area Mountain Bike
+          Association)は、<wbr>世界クラスの<wbr>持続可能な<wbr>マウンテンバイクコミュニティと<wbr>オフロードバイクの<wbr>システムを<wbr>創造すると<wbr>いう<wbr>共通の<wbr>ミッションに<wbr>向けて、<wbr>ニセコエリアを<wbr>結束させる<wbr>非営利団体です。</p>
+          <p>
+            インピークス・バイクパークは、<wbr>ニセコの<wbr>リゾートエリアに<wbr>位置し、<wbr>プロに<wbr>よって<wbr>設計から<wbr>造成、<wbr>そして<wbr>維持管理まで<wbr>され、<wbr>フリーライドが<wbr>可能な<wbr>トレイルネットワークです。<wbr>プロジェクトの<wbr>全段階が<wbr>完了すれば、<wbr>約30kmの<wbr>トレイルが<wbr>整備され、<wbr>日本最大の<wbr>コミュニティ・バイクパークと<wbr>なる<wbr>予定。
+          </p>
+          <p>
+            ツインピークスの<wbr>先に<wbr>ある<wbr>NAMBAの<wbr>マスタープランでは、<wbr>初心者向けの<wbr>スキルエリアから、<wbr>50kmを<wbr>超える<wbr>バックカントリー・<wbr>エピックコトレイル、<wbr>リフトで<wbr>アクセスできる<wbr>バイクパーク、<wbr>そして<wbr>その間に<wbr>ある<wbr>あら<wbr>ゆる<wbr>ものを<wbr>網羅する、<wbr>相互に<wbr>つながった<wbr>トレイルシステムをを<wbr>作り上げる<wbr>ことです。
+          </p>
+          <p>私たち非営利団体の<wbr>活動に<wbr>是非ご応募いただき、<wbr>皆様に<wbr>トレイルで<wbr>お会いできる<wbr>ことを<wbr>楽しみに<wbr>しております。</p>
+          {% endif %}
+        {% endif %}
+
+        {% if page.form %}
+          <iframe id="form" src="{{ page.form.url }}" style="width:100%; height: {{ page.form.height }}px !important;" width="100%" height="{{ page.form.height }}px" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        {% endif %}
+      </div>
+
+      <!-- Bottom signup CTA -->
+      {% if page.signup and page.cancelled != true %}
+      <div style="text-align:center; margin:48px 0;" class="ja-animate" data-animation="move-from-bottom" data-delay="800">
+        <a class="btn btn-primary" href="{{ page.signup }}" target="_blank">{% if page.lang == "ja" %}申し込みは<wbr>こちら{% else %}Sign up here{% endif %}</a>
+      </div>
+      {% endif %}
+      {% if page.storeProductSlug and page.cancelled != true %}
+      <div style="text-align:center; margin:48px 0;" class="ja-animate" data-animation="move-from-bottom" data-delay="800">
+        <a class="btn btn-primary" href="/{% if page.lang == 'ja' %}ja/{% endif %}shop/#!/{{ page.storeProductSlug }}">{% if page.lang == "ja" %}チケットを<wbr>購入{% else %}Buy ticket{% endif %}</a>
+      </div>
+      {% endif %}
+    </div>
+
+    <!-- Sidebar -->
+    <div class="col-12 col-md-4 col-lg-3">
+      <div class="event-sidebar ja-animate" data-animation="move-from-bottom" data-delay="400">
+        <h3 class="module-title">{% if page.lang == "ja" %}イベント詳細{% else %}Event Details{% endif %}</h3>
+
+        <div class="detail-item">
+          <h4><span class="fa-solid fa-calendar" style="margin-right:4px;"></span> {% if page.lang == "ja" %}日程{% else %}Dates{% endif %}</h4>
+          <p>
+            {% for i in (1..page.days) %}
+              {% assign days = i | minus: 1 | times: 24 | times: 60 | times: 60 %}
+              {% if page.lang == "en" %}
+                {{ page.startDate | date: "%s" | plus: days | date: "%A %e %B %Y" }}
+              {% else %}
+                {{ page.startDate | date: "%s" | plus: days | date: "%Y年%m月%d日" }}
+              {% endif %}
+              <br />
+            {% endfor %}
+            {% if page.time %}{{ page.time }}{% endif %}
+          </p>
+        </div>
+
+        {% if page.location %}
+        <div class="detail-item">
+          <h4><span class="fa-solid fa-location-dot" style="margin-right:4px;"></span> {% if page.lang == "ja" %}場所{% else %}Location{% endif %}</h4>
+          <p>{{ page.location }}</p>
+        </div>
+        {% endif %}
+
+        {% if page.price or page.price == 0 %}
+        <div class="detail-item">
+          <h4><span class="fa-solid fa-yen-sign" style="margin-right:4px;"></span> {% if page.lang == "ja" %}料金{% else %}Price{% endif %}</h4>
+          {% if page.price[0] %}
+            <ul>
+            {% for price in page.price %}
+              {% if price.adult and price.child %}
+                {% if page.lang == "en" %}
+                <li>{% if price.name %}<strong>{{ price.name }}</strong><br />{% endif %}Adult: {{ price.adult }}<br />Child: {{ price.child }}</li>
+                {% else %}
+                <li>{% if price.name %}<strong>{{ price.name }}</strong><br />{% endif %}大人: {{ price.adult }}<br />子供: {{ price.child }}</li>
+                {% endif %}
+              {% else %}
+              <li><strong>{{ price.name }}</strong>: {% if price.adult == 0 and page.lang == "en" %}Free{% elsif price.adult == 0 %}無料{% else %}{{ price.adult }}{% endif %}</li>
+              {% endif %}
+            {% endfor %}
+            </ul>
+          {% elsif page.price == 0 %}
+            <p>{% if page.lang == "en" %}Free{% else %}無料{% endif %}</p>
+          {% else %}
+            <p>{{ page.price }}</p>
+          {% endif %}
+        </div>
+        {% endif %}
+
+        {% if page.host %}
+        <div class="detail-item">
+          <h4><span class="fa-solid fa-building" style="margin-right:4px;"></span> {% if page.lang == "ja" %}イベント主催者{% else %}Host{% endif %}</h4>
+          <div class="partners-imgs">
+            <a href="{{- page.host.url -}}" target="_blank">
+              <img src="/assets/images/company{{- page.host.img -}}" alt="{{- page.host.name -}}">
+            </a>
+          </div>
+        </div>
+        {% endif %}
+
+        {% if page.partners %}
+        <div class="detail-item">
+          <h4><span class="fa-solid fa-handshake" style="margin-right:4px;"></span> {% if page.lang == "ja" %}イベントパートナー{% else %}Event Partners{% endif %}</h4>
+          <div class="partners-imgs">
+            {% for partner in page.partners %}
+              <a href="{{- partner.url -}}" target="_blank">
+                <img src="/assets/images/company{{- partner.img -}}" alt="{{- partner.name -}}">
+              </a>
+            {% endfor %}
+          </div>
+        </div>
+        {% endif %}
+
+        {% if page.moreInfo %}
+        <div class="detail-item">
+          <h4><span class="fa-solid fa-circle-info" style="margin-right:4px;"></span> {% if page.lang == "ja" %}詳しくは{% else %}More Info{% endif %}</h4>
+          {% for info in page.moreInfo %}
+            <p>{{ info }}</p>
+          {% endfor %}
+        </div>
+        {% endif %}
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
+</div>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -102,522 +611,5 @@ baseCss: view-article
   }
 }
 </script>
-<style>
-  .credit {
-    float:right;
-    font-size: 90%;
-  }
-
-  .article-content h2:first-child, .article-content h3:first-child {
-    margin-top: 0;
-  }
-
-  h3 small {
-    font-size: 50%;
-    vertical-align: middle;
-  }
-
-  span.cancelled {
-    color: #fc0000;
-    font-size: 150%;
-    font-weight: bold;
-  }
-
-  span.rescheduled {
-    display: block;
-    margin: 0 0 24px;
-    padding: 16px 20px;
-    background: #fff4e0;
-    border-left: 4px solid #e08a00;
-    color: #8a4500;
-    font-size: 110%;
-    font-weight: 500;
-  }
-
-  span.rescheduled strong {
-    color: #8a4500;
-  }
-
-  .download {
-    margin: 30px auto;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-  }
-
-  .download a {
-    margin: 0 10px;
-  }
-
-  .download img {
-    margin-bottom: 10px;
-    height: 50px;
-  }
-
-  .project-info .partners {
-    margin: 10px auto;
-  }
-
-  .project-info .price ul {
-    padding-inline-start: 0;
-    list-style: none;
-  }
-
-  .project-info .price li {
-    margin-bottom: 5px
-  }
-
-  .project-info .partners a {
-    margin-right: 10px;
-    height: 50px;
-  }
-
-  .project-info .partners img {
-    margin-bottom: 10px;
-    max-height: 50px;
-    max-width: 50px;
-  }
-
-  table.timetable {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  table.timetable th,
-  table.levels td {
-    border: 4px solid var(--color-bg);
-    vertical-align: middle;
-  }
-
-  table.timetable th {
-    color: var(--color-accent);
-    font-size: 12px;
-    font-family: "Metropolis", Helvetica, Arial, sans-serif;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0;
-    padding: 12px 10px 12px 0;
-  }
-
-  table.timetable th.fst {
-    text-align: right;
-    display: none;
-  }
-
-  table.timetable th.row {
-    text-align: center;
-  }
-
-  table.timetable tr.cancelled {
-    text-decoration: line-through;
-    opacity: 0.5;
-  }
-
-  table.timetable td {
-    background-color: var(--color-bg-panel);
-    text-align: center;
-    padding: 10px 15px;
-    font-weight: 700;
-  }
-
-  @media(min-width: 600px) {
-    table.timetable td {
-      padding: 10px 15px;
-    }
-  }
-
-  @media(min-width: 768px) {
-    table.timetable td {
-      padding: 10px 30px;
-    }
-  }
-
-  @media(min-width: 992px) {
-    table.timetable td {
-      padding: 10px 50px;
-    }
-  }
-
-.ec-grid {
-    display: block !important;
-  }
-
-  html#ecwid_html body#ecwid_body .ec-size .ec-store .details-gallery__images-spacer {
-    margin-top: 35px;
-  }
-
-  .product-details__navigation {
-    display: none !important;
-  }
-
-  #ProductBrowser-1 {
-    min-height: auto !important;
-  }
-
-  /* .form-control {
-    text-align: center !important;
-    text-align: -moz-center !important;
-    text-align: -webkit-center !important;
-  } */
-
-  html#ecwid_html body#ecwid_body .ec-size .ec-store .label--notice {
-    background-color: var(--color-primary);
-  }
-
-  html#ecwid_html body#ecwid_body .ec-size .ec-store .label--notice::before {
-    color: var(--color-primary);
-  }
-
-  html#ecwid_html body#ecwid_body .ec-size .ec-store .label--notice::after {
-    color: var(--color-primary);
-  }
-
-  .ec-form__row--continue .form-control--done {
-    text-align: left !important;
-  }
-
-  .form-control button.form-control__button {
-    color: #ffffff !important;
-    background-color: var(--color-primary) !important;
-    border-color: transparent !important;
-    background: var(--color-primary) !important;
-
-    border: 0 !important;
-    border-radius: 4px !important;
-    font-weight: 500 !important;
-    padding-left: 24px !important;
-    padding-right: 24px !important;
-
-    font-size: 14px !important;
-  }
-
-  .form-control button.form-control__button:hover {
-    background: var(--color-primary) !important;
-    background: var(--color-primary-hover) !important;
-  }
-
-  img.ecwid-PaymentMethodsBlockSvg {
-    background: #fff !important;
-  }
-
-  html#ecwid_html body#ecwid_body .ec-cart__button .paypal-button {
-    width: 200px;
-    margin: 0 auto;
-  }
-
-  .ec-cart__button--apple-pay {
-    text-align: center !important;
-    text-align: -moz-center !important;
-    text-align: -webkit-center !important;
-  }
-
-  .ec-cart__button--apple-pay .form-control--button {
-    border: 1px #fff solid !important;
-    padding-left: 24px !important;
-    padding-right: 24px !important;
-    border-radius: 4px !important;
-    width: 170px !important;
-    margin: 0 auto !important;
-    position: relative !important;
-  }
-
-  a.breadcrumbs__link--last {
-    font-size: 0 !important;
-  }
-
-  /* a.breadcrumbs__link--last:after {
-    content: '✕';
-    font-size: 20px;
-    font-weight: bold;
-    float: right;
-  } */
-
-  html#ecwid_html body#ecwid_body #raffle-store .ec-size .ec-store .details-gallery__images-spacer {
-    margin-top: 0;
-  }
-
-  #raffle-store a.breadcrumbs__link--last {
-    display: none;
-  }
-
-  html#ecwid_html body#ecwid_body #raffle-store .ec-confirmation__continue {
-    display: none;
-  }
-</style>
-
-<div class="item-page view-project ">
-
-  <!-- Article -->
-  <article>
-
-    {% if page.img %}
-    <div class="float-start item-image">
-      <img src="{{ page.img }}" alt="{{ page.title }}" itemprop="image">
-      {% if page.imgCredit %}<span class="credit"><a href="{{ page.imgCredit.url }}" target="_blank"> 📸 {{ page.imgCredit.name }}</a></span>{% endif %}
-    </div>
-    {% endif %}
-
-    <div class="article-detail t3-section-wrap">
-      <!-- Aside -->
-      <div class="section">
-        <div class="project-info ja-animate" data-animation="move-from-right" data-delay="200">
-          <h4>{% if page.lang == "en" %}Event Details{% else %}イベント詳細{% endif %}</h4>
-          <div class="list-group">
-            <h4 class="list-group-item-heading">{% if page.lang == "en" %}Dates{% else %}日程{% endif %}</h4>
-            <p class="list-group-item-text">
-              {% for i in (1..page.days) %}
-                {% assign days = i | minus: 1 | times: 24 | times: 60 | times: 60 %}
-                {% if page.lang == "en" %}
-                  {{ page.startDate | date: "%s" | plus: days | date: "%A %e %B %Y" }}
-                {% else %}
-                  {{ page.startDate | date: "%s" | plus: days | date: "%Y年%m月%d日" }}
-                {% endif %}
-                <br />
-              {% endfor %}
-            {% if page.time %} {{ page.time }}{% endif %}
-            </p>
-          </div>
-
-          {% if page.cancelled %}
-          <div class="list-group">
-            <h4 class="list-group-item-heading">{% if page.lang == "en" %}Status{% else %}状況{% endif %}</h4>
-            <p class="list-group-item-text">{% if page.lang == "en" %}Cancelled{% else %}キャンセル{% endif %}</p>
-          </div>
-            {% endif %}
-
-          <div class="list-group">
-            <h4 class="list-group-item-heading">{% if page.lang == "en" %}Location{% else %}場所{% endif %}</h4>
-            <p class="list-group-item-text">{{ page.location }}</p>
-          </div>
-
-          {% if page.price %}
-          <div class="list-group price">
-            <h4 class="list-group-item-heading">{% if page.lang == "en" %}Price{% else %}料金{% endif %}</h4>
-              {% if page.price[0] %}
-                <ul>
-                {% for price in page.price %}
-                  {% if price.adult and price.child %}
-                    {% if page.lang == "en" %}
-                    <li>{% if price.name %}<strong>{{ price.name }}</strong><br />{% endif %}Adult: {{ price.adult }}<br />Child: {{ price.child }}</li>
-                    {% else %}
-                    <li>{% if price.name %}<strong>{{ price.name }}</strong><br />{% endif %}大人: {{ price.adult }}<br />子供: {{ price.child }}</li>
-                    {% endif %}
-                  {% else %}
-                  <li><strong>{{ price.name }}</strong>: {% if price.adult == 0 and page.lang == "en" %}Free{% elsif price.adult == 0 %}無料{% else %}{{ price.adult }}{% endif %}</li>
-                  {% endif %}
-                {% endfor %}
-                </ul>
-              {% elsif page.price == 0 %}
-                <p class="list-group-item-text">
-                  {% if page.lang == "en" %}
-                  Free
-                  {% else %}
-                  無料
-                  {% endif %}
-                </p>
-              {% else %}
-                <p class="list-group-item-text">
-                  {{ page.price }}
-                </p>
-              {% endif %}
-            </p>
-          </div>
-          {% endif %}
-
-          {% if page.host %}
-          <div class="list-group">
-            <h4 class="list-group-item-heading">{% if page.lang == "en" %}Host{% else %}イベント主催者{% endif %}</h4>
-            <p class="list-group-item-text partners">
-              <a href="{{- page.host.url -}}" target="_blank">
-                <img src="/assets/images/company{{- page.host.img -}}" alt="{{- page.host.name -}}">
-              </a>
-            </p>
-          </div>
-          {% endif %}
-
-          {% if page.partners %}
-          <div class="list-group">
-            <h4 class="list-group-item-heading">{% if page.lang == "en" %}Events Partners{% else %}イベントパートナー{% endif %}</h4>
-            <p class="list-group-item-text partners">
-              {% for partner in page.partners %}
-                <a href="{{- partner.url -}}" target="_blank">
-                  <img src="/assets/images/company{{- partner.img -}}" alt="{{- partner.name -}}">
-                </a>
-              {% endfor %}
-            </p>
-          </div>
-          {% endif %}
-
-          {% if page.signup %}
-          <div class="list-group">
-            <h4 class="list-group-item-heading">{% if page.lang == "en" %}Sign Up{% else %}申し込み{% endif %}</h4>
-            <p>{% if page.lang == "en" %}To attend, please sign up below.{% else %}参加するには<wbr>以下から<wbr>お申し込みください。{% endif %}</p>
-            <p><a class="btn btn-sm btn-primary" href="{{ page.signup }}" target="_blank">{% if page.lang == "en" %}Sign up here{% else %}申し込みは<wbr>こちら{% endif %}</a></p>
-          </div>
-          {% endif %}
-
-          {% if page.moreInfo %}
-          <div class="list-group">
-            <h4 class="list-group-item-heading">{% if page.lang == "en" %}More Info{% else %}詳しくは{% endif %}</h4>
-            {% for info in page.moreInfo %}
-            <p>{{ info }}</p>
-            {% endfor %}
-          </div>
-          {% endif %}
-        </div>
-      </div>
-      <!-- // Aside -->
-
-      <div class="section">
-        <section class="article-content clearfix ja-animate" data-animation="move-from-right" data-delay="400"  itemprop="articleBody">
-          {{ content }}
-
-          {% if page.itinerary %}
-          <h4>{% if page.lang == "en" %}Itinerary{% else %}行程{% endif %}</h4>
-          {% for day in page.itinerary.days %}
-
-            {% if page.days != 1 %}
-            <p>
-              <strong>{% if page.lang == "en" %}Day {{ forloop.index }} itinerary:{% else %}{{- forloop.index -}}日目の行程{% endif %}</strong>
-            </p>
-            {% endif %}
-            <p>
-            <table class="timetable">
-              {% for event in day.events %}
-              <tr {% if event.cancelled %} class="cancelled" {% endif %}>
-                <td>{{ event.time | default: '~' }}</td>
-                <td>{{ event.name }}</td>
-                {% if day.hasLocations %}
-                <td>
-                  {% if event.location.url %}
-                    <a href="{{ event.location.url }}" target="_blank">
-                      {{event.location.name}}
-                    </a>
-                  {% else %}
-                    {{ event.location }}
-                  {% endif %}
-                </td>
-                {% endif %}
-              </tr>
-              {% endfor %}
-            </table>
-            </p>
-          {% endfor %}
-          {% endif %}
-
-          {% if page.parking %}
-            {% if page.lang == "en" %}
-            <h4>Parking location</h4>
-            <p>Parking at the trailhead is strictly prohibited – please use one of the below parking locations:</p>
-            <p>
-            <ul>
-              <li><a href="https://www.trailforks.com/poi/123003/" target="_blank">Hirafu Gondola Parking</a></li>
-              <li><a href="https://www.trailforks.com/poi/123004/" target="_blank">Hirafu Welcome Center Parking</a></li>
-              <li><a href="https://www.trailforks.com/poi/123002/" target="_blank">Sunsports Land Parking</a></li>
-            </ul>
-            </p>
-            {% else %}
-            <h4>駐車場所</h4>
-            <p>登山口への<wbr>駐車は<wbr>固く<wbr>お断りいたします<wbr>：</p>
-            <p>
-            <ul>
-              <li><a href="https://www.trailforks.com/poi/123003/" target="_blank">ひらふゴンドラ駐車場</a></li>
-              <li><a href="https://www.trailforks.com/poi/123004/" target="_blank">ひらふウェルカムセンター駐車場</a></li>
-              <li><a href="https://www.trailforks.com/poi/123002/" target="_blank">サンスポーツランド駐車場</a></li>
-            </ul>
-            </p>
-            {% endif %}
-
-            <p><img src="/assets/images/events/parking-map.jpg" alt="" /></p>
-          {% endif  %}
-
-          {% if page.about %}
-            {% if page.lang == "en" %}
-            <h4>About NAMBA</h4>
-            <p>
-              <strong>Building trails and community</strong>
-            </p>
-
-            <p>NAMBA (Niseko Area Mountain Bike Association) is a registered nonprofit organization uniting the Niseko area towards
-              the common mission of creating a world class sustainable mountain bike community, and off-road biking ecosystem.</p>
-            <p>The organization is well underway on their first project, the Twin Peaks Bike Park – this is a professionally built
-              and maintained, free-to-ride trail network located in the resort area of Niseko, Japan. Once all phases of the project
-              are completed, the park is expected to be home to some 30 kms of trails, making it Japan’s largest community bike
-              park.</p>
-            <p>Beyond Twin Peaks, NAMBA’s masterplan for the area seeks to create an interconnected web of trails encompassing
-              everything from beginner skills areas, to 50+ km backcountry epic trails, to lift accessed bike parks and everything
-              in between.</p>
-            <p>We invite you to register to join our nonprofit, and hope to see you out on the trails soon!</p>
-            {% else %}
-            <h4>NAMBAに<wbr>ついて</h4>
-            <p>
-              <strong>トレイルと<wbr>コミュニティの<wbr>形成</strong>
-            </p>
-
-            <p>NAMBA (Niseko Area Mountain Bike
-            Association)は、<wbr>世界クラスの<wbr>持続可能な<wbr>マウンテンバイクコミュニティと<wbr>オフロードバイクの<wbr>システムを<wbr>創造すると<wbr>いう<wbr>共通の<wbr>ミッションに<wbr>向けて、<wbr>ニセコエリアを<wbr>結束させる<wbr>非営利団体です。</p>
-            <p>
-              インピークス・バイクパークは、<wbr>ニセコの<wbr>リゾートエリアに<wbr>位置し、<wbr>プロに<wbr>よって<wbr>設計から<wbr>造成、<wbr>そして<wbr>維持管理まで<wbr>され、<wbr>フリーライドが<wbr>可能な<wbr>トレイルネットワークです。<wbr>プロジェクトの<wbr>全段階が<wbr>完了すれば、<wbr>約30kmの<wbr>トレイルが<wbr>整備され、<wbr>日本最大の<wbr>コミュニティ・バイクパークと<wbr>なる<wbr>予定。
-            </p>
-            <p>
-              ツインピークスの<wbr>先に<wbr>ある<wbr>NAMBAの<wbr>マスタープランでは、<wbr>初心者向けの<wbr>スキルエリアから、<wbr>50kmを<wbr>超える<wbr>バックカントリー・<wbr>エピックコトレイル、<wbr>リフトで<wbr>アクセスできる<wbr>バイクパーク、<wbr>そして<wbr>その間に<wbr>ある<wbr>あら<wbr>ゆる<wbr>ものを<wbr>網羅する、<wbr>相互に<wbr>つながった<wbr>トレイルシステムをを<wbr>作り上げる<wbr>ことです。
-            </p>
-            <p>私たち非営利団体の<wbr>活動に<wbr>是非ご応募いただき、<wbr>皆様に<wbr>トレイルで<wbr>お会いできる<wbr>ことを<wbr>楽しみに<wbr>しております。</p>
-            {% endif %}
-          {% endif %}
-
-          {% if page.form %}
-            <iframe id="form" src="{{ page.form.url }}" style="width:100%; height: {{ page.form.height }}px !important;" width="100%" height="{{ page.form.height }}px" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-          {% endif %}
-
-          {% if page.signup %}
-          <p style="text-align:center; margin-top:50px;">
-            <a class="btn btn-primary" href="{{ page.signup }}" target="_blank">
-              {% if page.lang == "en" %}Sign up here{% else %}申し込みは<wbr>こちら{% endif %}
-            </a>
-          </p>
-          {% endif %}
-
-
-          <!-- // Item tags -->
-        </section>
-      </div>
-
-      {% if page.storeProductId %}
-      <div class="t3-section">
-
-        <div id="event-store"></div>
-
-      </div>
-
-      <script id="ecwid-script" data-cfasync="false" type="text/javascript"
-        src="https://app.ecwid.com/script.js?71386768&lang={% if page.lang == 'ja' %}ja-JP{% else %}en-GB{% endif %}&data_platform=code&data_date=2022-08-27"
-        charset="utf-8"></script>
-      <script>
-
-        window.ec = window.ec || Object();
-        window.ec.config = window.ec.config || Object();
-        window.ec.config.custom_redirect_after_purchase = 'https://www.namba.ngo/thanks';
-        window.ec.config.navigation_scrolling = "DISABLED";
-        window.ec.storefront = window.ec.storefront || Object();
-        window.ec.storefront.product_details_show_share_buttons = false;
-        window.ec.storefront.product_details_show_qty = true;
-        window.ec.storefront.product_details_show_in_stock_label = true;
-        window.ec.storefront.show_breadcrumbs = true;
-        window.ec.storefront.product_details_show_breadcrumbs = true;
-        window.ec.storefront.product_details_position_breadcrumbs = 25;
-        window.ec.storefront.breadcrumbs_separator = "";
-
-        xProductBrowser("defaultProductId={{ page.storeProductId }}", "categoriesPerRow=3", "views=grid(20,3) list(60) table(60)", "categoryView=grid", "searchView=list", "id=event-store");
-
-        window.ecwid_script_defer = true;
-        window.ecwid_dynamic_widgets = true;
-      </script>
-      {% endif %}
-
-      <!-- Footer -->
-      <!-- // Footer -->
-
-    </div>
-</article>
-<!-- //Article -->
+</content>
+</invoke>

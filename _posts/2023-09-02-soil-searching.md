@@ -10,10 +10,10 @@ address: 150, 2 Aza-150-1 Yamada, Kutchan, Abuta District, Hokkaido 044-0081
 price: 0
 partners:
   - name: Specialized
-    img: /special/specialized.png
+    img: /specialized.png
     url: https://www.specialized-onlinestore.jp/
   - name: Rhythm Japan
-    img: /special/rhythm.png
+    img: /rhythm.png
     url: https://rhythmjapan.com
   - name: Ichi Ichi
     img: /ichi-ichi.png
