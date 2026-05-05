@@ -335,7 +335,7 @@ masthead:
         <div class="journey-card">
           <div class="journey-year">2023</div>
           <div class="journey-head">Twin Peaks opens · ¥36M raised</div>
-          <p class="journey-desc">Twin Peaks opens to the public. 6km built in one summer, the fastest project Allegra had ever seen. Network reaches 8.5km. ¥36.4M raised from sponsors. Hokkaido's first Soil Searching event.</p>
+          <p class="journey-desc">Twin Peaks opens to the public. 6km built in one summer, the fastest project Allegra had ever seen. Network reaches 10.4km. ¥36.4M raised from sponsors. Hokkaido's first Soil Searching event.</p>
         </div>
         <div class="journey-nub"></div>
       </div>
@@ -362,8 +362,8 @@ masthead:
         <div class="journey-nub"></div>
         <div class="journey-card">
           <div class="journey-year">2026</div>
-          <div class="journey-head">Hanazono opens · 31 km network</div>
-          <p class="journey-desc">Hanazono opens in July with 5.6km of new trail. Grand Hirafu activates the new Ace Gondola for bikes, with 2km of new singletrack from the top. NAMBA-built trail crosses 23km, with the total Niseko network reaching 31km.</p>
+          <div class="journey-head">Hanazono opens · 33 km network</div>
+          <p class="journey-desc">Hanazono opens in July with 5.6km of new trail. Grand Hirafu activates the new Ace Gondola for bikes, with 2km of new singletrack from the top. NAMBA-built trail crosses 25km, with the total Niseko network reaching 33km.</p>
         </div>
       </div>
     </div>
@@ -500,7 +500,7 @@ masthead:
       labels: trailYears,
       datasets: [
         {
-          label: isJa ? 'ニセコ全体 (km)' : 'Total Niseko (km)',
+          label: isJa ? 'ニセコ全体' : 'Total Niseko',
           data: nisekoKm,
           borderColor: colours.accent,
           backgroundColor: colours.accentLight,
@@ -511,7 +511,7 @@ masthead:
           borderWidth: 3,
         },
         {
-          label: isJa ? 'NAMBA建設 (km)' : 'Built by NAMBA (km)',
+          label: isJa ? 'NAMBA建設' : 'Built by NAMBA',
           data: nambaKm,
           borderColor: colours.primary,
           backgroundColor: colours.primaryLight,
@@ -527,13 +527,19 @@ masthead:
       responsive: true,
       plugins: {
         legend: { position: 'top' },
+        tooltip: {
+          callbacks: {
+            label: function(ctx) {
+              return ctx.dataset.label + ': ' + ctx.parsed.y + ' km';
+            }
+          }
+        }
       },
       scales: {
         y: {
           beginAtZero: true,
-          title: {
-            display: true,
-            text: isJa ? '距離 (km)' : 'Distance (km)',
+          ticks: {
+            callback: function(value) { return value + ' km'; }
           }
         }
       }

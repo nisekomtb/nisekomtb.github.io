@@ -24,19 +24,19 @@ trails:
   # Cumulative km of open trail at end of each year.
   - year: 2022
     namba_km: 4.41
-    niseko_km: 5.30
+    niseko_km: 5.24
   - year: 2023
-    namba_km: 8.48
-    niseko_km: 14.69
+    namba_km: 10.43
+    niseko_km: 16.58
   - year: 2024
-    namba_km: 15.53
-    niseko_km: 23.49
+    namba_km: 17.48
+    niseko_km: 25.37
   - year: 2025
-    namba_km: 19.52
-    niseko_km: 27.48
+    namba_km: 21.47
+    niseko_km: 29.37
   - year: 2026
-    namba_km: 23.44
-    niseko_km: 31.40
+    namba_km: 25.39
+    niseko_km: 33.29
 
 funding:
   # FY2023-FY2025 figures from the NAMBA transparency dashboard.

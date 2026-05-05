@@ -335,7 +335,7 @@ masthead:
         <div class="journey-card">
           <div class="journey-year">2023</div>
           <div class="journey-head">ツインピークス、​一般​公開</div>
-          <p class="journey-desc">初日から​無料公開。​トレイルネットワークは​8.5kmに​倍増、​初の​イベントが​コミュニティを​集め、​ニセコに​バイクパークが​誕生。</p>
+          <p class="journey-desc">初日から​無料公開。​トレイルネットワークは​10.4kmに​倍増、​初の​イベントが​コミュニティを​集め、​ニセコに​バイクパークが​誕生。</p>
         </div>
         <div class="journey-nub"></div>
       </div>
@@ -500,7 +500,7 @@ masthead:
       labels: trailYears,
       datasets: [
         {
-          label: isJa ? 'ニセコ全体 (km)' : 'Total Niseko (km)',
+          label: isJa ? 'ニセコ全体' : 'Total Niseko',
           data: nisekoKm,
           borderColor: colours.accent,
           backgroundColor: colours.accentLight,
@@ -511,7 +511,7 @@ masthead:
           borderWidth: 3,
         },
         {
-          label: isJa ? 'NAMBA建設 (km)' : 'Built by NAMBA (km)',
+          label: isJa ? 'NAMBA建設' : 'Built by NAMBA',
           data: nambaKm,
           borderColor: colours.primary,
           backgroundColor: colours.primaryLight,
@@ -527,13 +527,19 @@ masthead:
       responsive: true,
       plugins: {
         legend: { position: 'top' },
+        tooltip: {
+          callbacks: {
+            label: function(ctx) {
+              return ctx.dataset.label + ': ' + ctx.parsed.y + ' km';
+            }
+          }
+        }
       },
       scales: {
         y: {
           beginAtZero: true,
-          title: {
-            display: true,
-            text: isJa ? '距離 (km)' : 'Distance (km)',
+          ticks: {
+            callback: function(value) { return value + ' km'; }
           }
         }
       }
