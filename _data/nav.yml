@@ -63,9 +63,17 @@
   en: Shop
   ja: ショップ
   sub:
-    - path: artist-series
-      en: Artist Series
-      ja: アーティストシリーズ
     - path: shop
       en: Shop
       ja: オンラインショップ
+    - path: artist-series
+      en: Artist Series
+      ja: アーティストシリーズ
+    - url: /shop/#!/~/account
+      icon: fa-solid fa-user
+      en: My Account
+      ja: マイアカウント
+    - url: /shop/#!/~/cart
+      icon: fa-solid fa-bag-shopping
+      en: Cart
+      ja: カート

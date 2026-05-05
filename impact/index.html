@@ -39,8 +39,99 @@ masthead:
   }
   .funding-stat { margin-bottom: 30px; }
   .funding-stat h4 { color: var(--color-accent); margin-bottom: 5px; }
-  .timeline-item { margin-bottom: 20px; font-size: 130%; }
-  .timeline-item .year { font-family: "Metropolis", Helvetica, Arial, sans-serif; font-weight: 700; color: var(--color-accent); font-size: 110%; }
+
+  /* Journey timeline — alternating centre-line layout */
+  .journey-timeline { position: relative; max-width: 880px; margin: 0 auto; padding: 16px 0; }
+  .journey-timeline::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, transparent, rgba(200, 169, 81, 0.55) 6%, rgba(200, 169, 81, 0.55) 94%, transparent);
+    transform: translateX(-50%);
+  }
+  .journey-row { display: flex; margin-bottom: 36px; position: relative; }
+  .journey-row:last-child { margin-bottom: 0; }
+  .journey-nub {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 28px;
+    width: 16px;
+    height: 16px;
+    background: var(--color-accent);
+    border-radius: 50%;
+    box-shadow: 0 0 0 5px var(--color-bg), 0 0 0 7px rgba(200, 169, 81, 0.55);
+    z-index: 2;
+  }
+  .journey-card {
+    width: 44%;
+    padding: 20px 22px;
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(200, 169, 81, 0.18);
+    border-radius: 6px;
+  }
+  .journey-row.left { justify-content: flex-start; }
+  .journey-row.right { justify-content: flex-end; }
+  .journey-row.left .journey-card { text-align: right; border-right: 3px solid var(--color-accent); }
+  .journey-row.right .journey-card { text-align: left; border-left: 3px solid var(--color-accent); }
+  .journey-year {
+    color: var(--color-accent);
+    font-weight: 700;
+    font-size: 220%;
+    line-height: 1;
+    margin-bottom: 10px;
+    font-family: "Metropolis", Helvetica, Arial, sans-serif;
+    letter-spacing: -0.5px;
+  }
+  .journey-head { color: #ffffff; font-size: 115%; font-weight: 700; margin-bottom: 8px; line-height: 1.3; }
+  .journey-desc { color: #cccccc; font-size: 95%; line-height: 1.6; margin: 0; }
+
+  /* Current year */
+  .journey-row.now .journey-card {
+    background: rgba(200, 169, 81, 0.08);
+    border-color: rgba(200, 169, 81, 0.45);
+  }
+  .journey-row.now .journey-nub {
+    background: #ffffff;
+    box-shadow: 0 0 0 5px var(--color-bg), 0 0 0 7px var(--color-accent), 0 0 18px rgba(200, 169, 81, 0.8);
+    animation: journey-pulse 2.4s ease-in-out infinite;
+  }
+  .journey-row.now .journey-year::after {
+    content: " · NOW";
+    color: #ffffff;
+    font-size: 50%;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    vertical-align: middle;
+  }
+  @keyframes journey-pulse {
+    0%, 100% { box-shadow: 0 0 0 5px var(--color-bg), 0 0 0 7px var(--color-accent), 0 0 18px rgba(200, 169, 81, 0.8); }
+    50% { box-shadow: 0 0 0 5px var(--color-bg), 0 0 0 7px var(--color-accent), 0 0 30px rgba(200, 169, 81, 1); }
+  }
+
+  /* Mobile: collapse to single column with line on the left */
+  @media (max-width: 768px) {
+    .journey-timeline { padding-left: 8px; }
+    .journey-timeline::before { left: 14px; transform: none; }
+    .journey-row,
+    .journey-row.left,
+    .journey-row.right { justify-content: flex-start; margin-bottom: 28px; }
+    .journey-nub { left: 14px; transform: translateX(-50%); }
+    .journey-card,
+    .journey-row.left .journey-card,
+    .journey-row.right .journey-card {
+      width: calc(100% - 38px);
+      margin-left: 38px;
+      text-align: left;
+      border-left: 3px solid var(--color-accent);
+      border-right: 1px solid rgba(200, 169, 81, 0.18);
+    }
+    .journey-year { font-size: 190%; }
+  }
+
   .chart-glossary { margin: 28px auto 0 auto; font-size: 85%; line-height: 1.5; text-align: left; padding: 0 8px; }
   .chart-glossary dt { color: var(--color-accent); font-weight: 700; margin-top: 14px; font-family: "Metropolis", Helvetica, Arial, sans-serif; }
   .chart-glossary dt:first-child { margin-top: 0; }
@@ -214,40 +305,65 @@ masthead:
         class="module-title ja-animate"
         data-animation="move-from-bottom"
         data-delay="200">Our Journey</h3>
-      <div class="features-desc ja-animate" data-animation="move-from-bottom" data-delay="400">
-        <div class="timeline-item">
-          <div class="year">2021</div>
-          <p>Founded by 6 mountain bikers in Niseko</p>
+      <p
+        class="features-desc ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="400"
+        style="font-size:130%;">From six riders with shovels to Asia's premier mountain bike network.</p>
+    </div>
+
+    <div class="journey-timeline">
+      <div class="journey-row left ja-animate" data-animation="move-from-left" data-delay="200">
+        <div class="journey-card">
+          <div class="journey-year">2021</div>
+          <div class="journey-head">Foundation</div>
+          <p class="journey-desc">Six mountain bikers, saddened by the lack of mountain biking in Niseko, start meeting regularly. An NPO, they realise, is the way to have a voice.</p>
+        </div>
+        <div class="journey-nub"></div>
+      </div>
+
+      <div class="journey-row right ja-animate" data-animation="move-from-right" data-delay="300">
+        <div class="journey-nub"></div>
+        <div class="journey-card">
+          <div class="journey-year">2022</div>
+          <div class="journey-head">4.4 km · NPO formed</div>
+          <p class="journey-desc">NPO officially registered. 17 board members join the founders, bringing the board to 23. Kutchan town approves trail-building rights at Twin Peaks. 4.4km built in a COVID-shortened window, under a 1m width restriction and without cutting down a single tree.</p>
         </div>
       </div>
-      <div class="features-desc ja-animate" data-animation="move-from-bottom" data-delay="600">
-        <div class="timeline-item">
-          <div class="year">2022</div>
-          <p>First summer of building: 4.7km of trail</p>
+
+      <div class="journey-row left ja-animate" data-animation="move-from-left" data-delay="400">
+        <div class="journey-card">
+          <div class="journey-year">2023</div>
+          <div class="journey-head">Twin Peaks opens · ¥36M raised</div>
+          <p class="journey-desc">Twin Peaks opens to the public. 6km built in one summer, the fastest project Allegra had ever seen. Network reaches 8.5km. ¥36.4M raised from sponsors. Hokkaido's first Soil Searching event.</p>
+        </div>
+        <div class="journey-nub"></div>
+      </div>
+
+      <div class="journey-row right ja-animate" data-animation="move-from-right" data-delay="500">
+        <div class="journey-nub"></div>
+        <div class="journey-card">
+          <div class="journey-year">2024</div>
+          <div class="journey-head">7,750 visitors · ¥91M raised</div>
+          <p class="journey-desc">+7km of new trail across two resorts: 3.6km at Grand Hirafu, 3.4km at Twin Peaks (including our first double-black, Taki Tech). 7,750 visitors ride Twin Peaks. Dirty Dames launches with 30+ women at the opening ride. ¥90.9M raised, up 150% on 2023.</p>
         </div>
       </div>
-      <div class="features-desc ja-animate" data-animation="move-from-bottom" data-delay="800">
-        <div class="timeline-item">
-          <div class="year">2023</div>
-          <p>Twin Peaks opens to the public: 14.2km, first events</p>
+
+      <div class="journey-row left ja-animate" data-animation="move-from-left" data-delay="600">
+        <div class="journey-card">
+          <div class="journey-year">2025</div>
+          <div class="journey-head">11,500 visitors · ¥97M raised</div>
+          <p class="journey-desc">Visitors up 48% to 11,500. Twin Peaks' first jump line opens, paired with a dedicated climb trail for hot laps. First 1.5km goes in at Hanazono. ¥97.3M raised in a single year.</p>
         </div>
+        <div class="journey-nub"></div>
       </div>
-      <div class="features-desc ja-animate" data-animation="move-from-bottom" data-delay="1000">
-        <div class="timeline-item">
-          <div class="year">2024</div>
-          <p>7,750+ visitors, Dirty Dames launches, 20+ trails, Loic Bruni visits</p>
-        </div>
-      </div>
-      <div class="features-desc ja-animate" data-animation="move-from-bottom" data-delay="1200">
-        <div class="timeline-item">
-          <div class="year">2025</div>
-          <p>11,500+ visitors, Hirafu connection, major expansion, Pinkbike feature</p>
-        </div>
-      </div>
-      <div class="features-desc ja-animate" data-animation="move-from-bottom" data-delay="1400">
-        <div class="timeline-item">
-          <div class="year">2026</div>
-          <p>Hanazono opens, Green Flow Trail, the network grows</p>
+
+      <div class="journey-row right now ja-animate" data-animation="move-from-right" data-delay="700">
+        <div class="journey-nub"></div>
+        <div class="journey-card">
+          <div class="journey-year">2026</div>
+          <div class="journey-head">Hanazono opens · 31 km network</div>
+          <p class="journey-desc">Hanazono opens in July with 5.6km of new trail. Grand Hirafu activates the new Ace Gondola for bikes, with 2km of new singletrack from the top. NAMBA-built trail crosses 23km, with the total Niseko network reaching 31km.</p>
         </div>
       </div>
     </div>

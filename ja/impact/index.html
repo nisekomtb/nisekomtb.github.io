@@ -39,8 +39,99 @@ masthead:
   }
   .funding-stat { margin-bottom: 30px; }
   .funding-stat h4 { color: var(--color-accent); margin-bottom: 5px; }
-  .timeline-item { margin-bottom: 20px; font-size: 130%; }
-  .timeline-item .year { font-family: "Metropolis", Helvetica, Arial, sans-serif; font-weight: 700; color: var(--color-accent); font-size: 110%; }
+
+  /* Journey timeline — alternating centre-line layout */
+  .journey-timeline { position: relative; max-width: 880px; margin: 0 auto; padding: 16px 0; }
+  .journey-timeline::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, transparent, rgba(200, 169, 81, 0.55) 6%, rgba(200, 169, 81, 0.55) 94%, transparent);
+    transform: translateX(-50%);
+  }
+  .journey-row { display: flex; margin-bottom: 36px; position: relative; }
+  .journey-row:last-child { margin-bottom: 0; }
+  .journey-nub {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 28px;
+    width: 16px;
+    height: 16px;
+    background: var(--color-accent);
+    border-radius: 50%;
+    box-shadow: 0 0 0 5px var(--color-bg), 0 0 0 7px rgba(200, 169, 81, 0.55);
+    z-index: 2;
+  }
+  .journey-card {
+    width: 44%;
+    padding: 20px 22px;
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(200, 169, 81, 0.18);
+    border-radius: 6px;
+  }
+  .journey-row.left { justify-content: flex-start; }
+  .journey-row.right { justify-content: flex-end; }
+  .journey-row.left .journey-card { text-align: right; border-right: 3px solid var(--color-accent); }
+  .journey-row.right .journey-card { text-align: left; border-left: 3px solid var(--color-accent); }
+  .journey-year {
+    color: var(--color-accent);
+    font-weight: 700;
+    font-size: 220%;
+    line-height: 1;
+    margin-bottom: 10px;
+    font-family: "Metropolis", Helvetica, Arial, sans-serif;
+    letter-spacing: -0.5px;
+  }
+  .journey-head { color: #ffffff; font-size: 115%; font-weight: 700; margin-bottom: 8px; line-height: 1.4; }
+  .journey-desc { color: #cccccc; font-size: 95%; line-height: 1.7; margin: 0; }
+
+  /* Current year */
+  .journey-row.now .journey-card {
+    background: rgba(200, 169, 81, 0.08);
+    border-color: rgba(200, 169, 81, 0.45);
+  }
+  .journey-row.now .journey-nub {
+    background: #ffffff;
+    box-shadow: 0 0 0 5px var(--color-bg), 0 0 0 7px var(--color-accent), 0 0 18px rgba(200, 169, 81, 0.8);
+    animation: journey-pulse 2.4s ease-in-out infinite;
+  }
+  .journey-row.now .journey-year::after {
+    content: " · 現在";
+    color: #ffffff;
+    font-size: 50%;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    vertical-align: middle;
+  }
+  @keyframes journey-pulse {
+    0%, 100% { box-shadow: 0 0 0 5px var(--color-bg), 0 0 0 7px var(--color-accent), 0 0 18px rgba(200, 169, 81, 0.8); }
+    50% { box-shadow: 0 0 0 5px var(--color-bg), 0 0 0 7px var(--color-accent), 0 0 30px rgba(200, 169, 81, 1); }
+  }
+
+  /* Mobile: collapse to single column with line on the left */
+  @media (max-width: 768px) {
+    .journey-timeline { padding-left: 8px; }
+    .journey-timeline::before { left: 14px; transform: none; }
+    .journey-row,
+    .journey-row.left,
+    .journey-row.right { justify-content: flex-start; margin-bottom: 28px; }
+    .journey-nub { left: 14px; transform: translateX(-50%); }
+    .journey-card,
+    .journey-row.left .journey-card,
+    .journey-row.right .journey-card {
+      width: calc(100% - 38px);
+      margin-left: 38px;
+      text-align: left;
+      border-left: 3px solid var(--color-accent);
+      border-right: 1px solid rgba(200, 169, 81, 0.18);
+    }
+    .journey-year { font-size: 190%; }
+  }
+
   .chart-glossary { margin: 28px auto 0 auto; font-size: 85%; line-height: 1.6; text-align: left; padding: 0 8px; }
   .chart-glossary dt { color: var(--color-accent); font-weight: 700; margin-top: 14px; font-family: "Metropolis", Helvetica, Arial, sans-serif; }
   .chart-glossary dt:first-child { margin-top: 0; }
@@ -214,40 +305,65 @@ masthead:
         class="module-title ja-animate"
         data-animation="move-from-bottom"
         data-delay="200">沿革</h3>
-      <div class="features-desc ja-animate" data-animation="move-from-bottom" data-delay="400">
-        <div class="timeline-item">
-          <div class="year">2021</div>
-          <p>6人のマウンテンバイカーがニセコで設立</p>
+      <p
+        class="features-desc ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="400"
+        style="font-size:130%;">6人の​ライダーと​シャベルから、​アジア有数の​マウンテンバイクネットワークへ。</p>
+    </div>
+
+    <div class="journey-timeline">
+      <div class="journey-row left ja-animate" data-animation="move-from-left" data-delay="200">
+        <div class="journey-card">
+          <div class="journey-year">2021</div>
+          <div class="journey-head">6人の​ライダー、​1つの​ビジョン</div>
+          <p class="journey-desc">NAMBAが​ニセコで​設立。​マウンテンバイカーに​よる、​マウンテンバイカーの​ための​非営利団体と​して、​北海道を​世界クラスの​目的地に​する​ことを​目指して。</p>
+        </div>
+        <div class="journey-nub"></div>
+      </div>
+
+      <div class="journey-row right ja-animate" data-animation="move-from-right" data-delay="300">
+        <div class="journey-nub"></div>
+        <div class="journey-card">
+          <div class="journey-year">2022</div>
+          <div class="journey-head">最初の​一鍬</div>
+          <p class="journey-desc">ビルドクルーが​本格的に​動き出す。​夏の​終わりまでに​4.4kmの​新しい​シングルトラックが​ニセコの​森に​走る。</p>
         </div>
       </div>
-      <div class="features-desc ja-animate" data-animation="move-from-bottom" data-delay="600">
-        <div class="timeline-item">
-          <div class="year">2022</div>
-          <p>初めての建設の夏：4.7kmのトレイル</p>
+
+      <div class="journey-row left ja-animate" data-animation="move-from-left" data-delay="400">
+        <div class="journey-card">
+          <div class="journey-year">2023</div>
+          <div class="journey-head">ツインピークス、​一般​公開</div>
+          <p class="journey-desc">初日から​無料公開。​トレイルネットワークは​8.5kmに​倍増、​初の​イベントが​コミュニティを​集め、​ニセコに​バイクパークが​誕生。</p>
+        </div>
+        <div class="journey-nub"></div>
+      </div>
+
+      <div class="journey-row right ja-animate" data-animation="move-from-right" data-delay="500">
+        <div class="journey-nub"></div>
+        <div class="journey-card">
+          <div class="journey-year">2024</div>
+          <div class="journey-head">世界が​注目し始める</div>
+          <p class="journey-desc">ツインピークスに​7,750人が​来訪。​Dirty Damesが​始動。​Loic Bruniが​訪問。​トレイル数は​20を​超える。</p>
         </div>
       </div>
-      <div class="features-desc ja-animate" data-animation="move-from-bottom" data-delay="800">
-        <div class="timeline-item">
-          <div class="year">2023</div>
-          <p>ツインピークス一般公開：14.2km、初のイベント開催</p>
+
+      <div class="journey-row left ja-animate" data-animation="move-from-left" data-delay="600">
+        <div class="journey-card">
+          <div class="journey-year">2025</div>
+          <div class="journey-head">飛躍の​年</div>
+          <p class="journey-desc">来場者11,500人超、​48%増。​ヒラフ接続が​実現、​Pinkbikeで​特集、​年間¥97Mを​調達。</p>
         </div>
+        <div class="journey-nub"></div>
       </div>
-      <div class="features-desc ja-animate" data-animation="move-from-bottom" data-delay="1000">
-        <div class="timeline-item">
-          <div class="year">2024</div>
-          <p>7,750人以上の来場者、Dirty Dames開始、20以上のトレイル、Loic Bruni来訪</p>
-        </div>
-      </div>
-      <div class="features-desc ja-animate" data-animation="move-from-bottom" data-delay="1200">
-        <div class="timeline-item">
-          <div class="year">2025</div>
-          <p>11,500人以上の来場者、ヒラフ接続、大規模拡張、Pinkbike特集</p>
-        </div>
-      </div>
-      <div class="features-desc ja-animate" data-animation="move-from-bottom" data-delay="1400">
-        <div class="timeline-item">
-          <div class="year">2026</div>
-          <p>花園オープン、グリーンフロートレイル、ネットワーク拡大</p>
+
+      <div class="journey-row right now ja-animate" data-animation="move-from-right" data-delay="700">
+        <div class="journey-nub"></div>
+        <div class="journey-card">
+          <div class="journey-year">2026</div>
+          <div class="journey-head">花園が​ネットワークに​加わる</div>
+          <p class="journey-desc">新たな​リゾートが​ライダーに​開放され、​グリーンフロートレイルが​完成。​地域全体の​ビジョンが​形に​なり、​ひとつに​つながった​ネットワークが​見えてくる。</p>
         </div>
       </div>
     </div>

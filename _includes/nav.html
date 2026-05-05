@@ -81,14 +81,16 @@
                           class="mega-nav level1">
                           {% for subNav in nav.sub %}
                             {% assign subNavPath = subNav.path | append: "/" %}
-                            <li
-                              itemprop='name'
-                              {% assign subNavActive = false %}
+                            {% assign subNavActive = false %}
+                            {% if subNav.path %}
                               {% if path == subNavPath or path1 == subNav.path %}
                                 {% assign subNavActive = true %}
                               {% elsif subNavPath != "/" and subNavPath != "" and path contains subNavPath %}
                                 {% assign subNavActive = true %}
                               {% endif %}
+                            {% endif %}
+                            <li
+                              itemprop='name'
                               class="{% if subNavActive %}current active{% endif %}{% if subNav.isAction %} action{% endif %}"
                               data-id="{{ navId }}{{ forloop.index }}"
                               data-level="2">
@@ -97,15 +99,12 @@
                                 class=""
                                 {% if subNav.url %}
                                 href="{{ subNav.url }}"
-                                target="_blank"
+                                {% if subNav.url contains "://" %}target="_blank"{% endif %}
                                 {% else %}
                                 href="{{ langPrefix | append: nav.path | append: '/' | append: subNav.path | append: '/' | replace: "//", "/" }}"
                                 {% endif %}
                                 data-bs-target="#">
-                                {% if page.lang == 'en' %}
-                                  {{- subNav.en -}}
-                                {% else %}
-                                  {{- subNav.ja -}}{% endif %}
+                                {% if subNav.icon %}<i class="{{ subNav.icon }}" aria-hidden="true"></i> {% endif %}{% if page.lang == 'en' %}{{- subNav.en -}}{% else %}{{- subNav.ja -}}{% endif %}
                               </a>
                             </li>
                           {% endfor %}
@@ -121,7 +120,7 @@
                 class=""
                 {% if nav.url %}
                 href="{{ nav.url }}"
-                target="_blank"
+                {% if nav.url contains "://" %}target="_blank"{% endif %}
                 {% else %}
                 href="{{ langPrefix | append: nav.path | append: '/' }}"
                 {% endif %}
@@ -252,20 +251,22 @@
                       <ul class="dropdown-menu">
                         {% for subNav in nav.sub %}
                           {% assign subNavPath = subNav.path | append: "/" %}
-                          <li class="{% if path == subNavPath or path1 == subNav.path %}current active {% endif %}item-{{ navId }}{{ forloop.index }}">
+                          {% assign subNavActive = false %}
+                          {% if subNav.path %}
+                            {% if path == subNavPath or path1 == subNav.path %}
+                              {% assign subNavActive = true %}
+                            {% endif %}
+                          {% endif %}
+                          <li class="{% if subNavActive %}current active {% endif %}item-{{ navId }}{{ forloop.index }}">
                             <a
                               {% if subNav.url %}
                               href="{{ subNav.url }}"
-                              target="_blank"
+                              {% if subNav.url contains "://" %}target="_blank"{% endif %}
                               {% else %}
                               href="{{ langPrefix | append: nav.path | append: '/' | append: subNav.path | append: '/' | replace: "//", "/" }}"
                               {% endif %}
                               class="">
-                              {% if page.lang == 'en' %}
-                                {{- subNav.en -}}
-                              {% else %}
-                                {{- subNav.ja -}}
-                              {% endif %}
+                              {% if subNav.icon %}<i class="{{ subNav.icon }}" aria-hidden="true"></i> {% endif %}{% if page.lang == 'en' %}{{- subNav.en -}}{% else %}{{- subNav.ja -}}{% endif %}
                             </a>
                           </li>
                         {% endfor %}
@@ -274,7 +275,7 @@
                       <a
                         {% if nav.url %}
                         href="{{ nav.url }}"
-                        target="_blank"
+                        {% if nav.url contains "://" %}target="_blank"{% endif %}
                         {% else %}
                         href="{{ langPrefix | append: nav.path | append: '/' }}"
                         {% endif %}

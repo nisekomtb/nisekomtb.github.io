@@ -5,8 +5,97 @@ masthead:
   img: /assets/images/bg/bg-header-twinpeaks.jpg
 ---
 <style>
-  .timeline-item { margin-bottom: 20px; font-size: 130%; }
-  .timeline-item .year { font-family: "Metropolis", Helvetica, Arial, sans-serif; font-weight: 700; color: var(--color-accent); font-size: 110%; }
+  /* Journey timeline — alternating centre-line layout (shared with /impact/) */
+  .journey-timeline { position: relative; max-width: 880px; margin: 0 auto; padding: 16px 0; }
+  .journey-timeline::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, transparent, rgba(200, 169, 81, 0.55) 6%, rgba(200, 169, 81, 0.55) 94%, transparent);
+    transform: translateX(-50%);
+  }
+  .journey-row { display: flex; margin-bottom: 36px; position: relative; }
+  .journey-row:last-child { margin-bottom: 0; }
+  .journey-nub {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 28px;
+    width: 16px;
+    height: 16px;
+    background: var(--color-accent);
+    border-radius: 50%;
+    box-shadow: 0 0 0 5px var(--color-bg), 0 0 0 7px rgba(200, 169, 81, 0.55);
+    z-index: 2;
+  }
+  .journey-card {
+    width: 44%;
+    padding: 20px 22px;
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(200, 169, 81, 0.18);
+    border-radius: 6px;
+  }
+  .journey-row.left { justify-content: flex-start; }
+  .journey-row.right { justify-content: flex-end; }
+  .journey-row.left .journey-card { text-align: right; border-right: 3px solid var(--color-accent); }
+  .journey-row.right .journey-card { text-align: left; border-left: 3px solid var(--color-accent); }
+  .journey-year {
+    color: var(--color-accent);
+    font-weight: 700;
+    font-size: 220%;
+    line-height: 1;
+    margin-bottom: 10px;
+    font-family: "Metropolis", Helvetica, Arial, sans-serif;
+    letter-spacing: -0.5px;
+  }
+  .journey-head { color: #ffffff; font-size: 115%; font-weight: 700; margin-bottom: 8px; line-height: 1.3; }
+  .journey-desc { color: #cccccc; font-size: 95%; line-height: 1.6; margin: 0; }
+
+  /* Current year */
+  .journey-row.now .journey-card {
+    background: rgba(200, 169, 81, 0.08);
+    border-color: rgba(200, 169, 81, 0.45);
+  }
+  .journey-row.now .journey-nub {
+    background: #ffffff;
+    box-shadow: 0 0 0 5px var(--color-bg), 0 0 0 7px var(--color-accent), 0 0 18px rgba(200, 169, 81, 0.8);
+    animation: journey-pulse 2.4s ease-in-out infinite;
+  }
+  .journey-row.now .journey-year::after {
+    content: " · NOW";
+    color: #ffffff;
+    font-size: 50%;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    vertical-align: middle;
+  }
+  @keyframes journey-pulse {
+    0%, 100% { box-shadow: 0 0 0 5px var(--color-bg), 0 0 0 7px var(--color-accent), 0 0 18px rgba(200, 169, 81, 0.8); }
+    50% { box-shadow: 0 0 0 5px var(--color-bg), 0 0 0 7px var(--color-accent), 0 0 30px rgba(200, 169, 81, 1); }
+  }
+
+  /* Mobile: collapse to single column with line on the left */
+  @media (max-width: 768px) {
+    .journey-timeline { padding-left: 8px; }
+    .journey-timeline::before { left: 14px; transform: none; }
+    .journey-row,
+    .journey-row.left,
+    .journey-row.right { justify-content: flex-start; margin-bottom: 28px; }
+    .journey-nub { left: 14px; transform: translateX(-50%); }
+    .journey-card,
+    .journey-row.left .journey-card,
+    .journey-row.right .journey-card {
+      width: calc(100% - 38px);
+      margin-left: 38px;
+      text-align: left;
+      border-left: 3px solid var(--color-accent);
+      border-right: 1px solid rgba(200, 169, 81, 0.18);
+    }
+    .journey-year { font-size: 190%; }
+  }
 </style>
 
 <div class="t3-section-wrap">
@@ -46,43 +135,31 @@ masthead:
     <p style="margin:0;">Community group photo: dig day or group ride showing diverse volunteers</p>
   </div>
 
-  <!-- Our Mission -->
+  <!-- Why NAMBA exists -->
   <div class="section">
 
     <div class="module-title-wrap" style="max-width:900px;">
       <h3
         class="module-title ja-animate"
         data-animation="move-from-bottom"
-        data-delay="200">Our Mission</h3>
+        data-delay="200">Why NAMBA exists</h3>
       <div
         class="features-desc ja-animate"
         data-animation="move-from-bottom"
         data-delay="400">
-        <div style="font-size:130%;"><span>To grow and unify the Niseko area mountain bike community towards the common goals of creating, enhancing, maintaining, and protecting great places to ride in Niseko and the surrounding area.</span></div>
+        <div style="font-size:130%;"><span>We're riders who got tired of waiting for someone else to build. When the snow melted, Niseko shut down, so we started.</span></div>
       </div>
       <div
         class="features-desc ja-animate"
         data-animation="move-from-bottom"
         data-delay="600">
-        <div style="font-size:130%;"><span>To seek harmony with the greater Niseko community and with the natural environment of Hokkaido in the Niseko Area Mountain Bike Association's quest to transform Niseko into Asia's premier mountain bike destination.</span></div>
+        <div style="font-size:130%;"><span>Our own bike parks are free, always: Twin Peaks now, Yotei 360 and alpine trails next, no membership and no gates. We also build at resort partners, where trails ride off their lifts.</span></div>
       </div>
-    </div>
-
-  </div>
-
-  <!-- Our Vision -->
-  <div class="section">
-
-    <div class="wrap t3-masthead vision">
       <div
-        class="ja-masthead ja-animate"
-        data-animation="fadeIn"
-        data-delay="600"
-        style="background-image: url('/assets/images/bg/bg-distance.jpg');">
-        <div class="ja-masthead-detail">
-          <h3 class="module-title">Our Vision</h3>
-          <div class="features-desc">A united Niseko area with a common mission to create a world-class sustainable mountain bike community, and off-road biking ecosystem.</div>
-        </div>
+        class="features-desc ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="800">
+        <div style="font-size:130%;"><span>What we're working towards: Asia's premier mountain bike region, park by park, season by season.</span></div>
       </div>
     </div>
 
@@ -119,58 +196,60 @@ masthead:
         class="module-title ja-animate"
         data-animation="move-from-bottom"
         data-delay="200">Growth Timeline</h3>
-      <div
-        class="features-desc ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="400">
-        <div class="timeline-item">
-          <div class="year">2021</div>
-          <p>Founded by 6 passionate mountain bikers in Niseko</p>
+    </div>
+
+    <div class="journey-timeline">
+      <div class="journey-row left ja-animate" data-animation="move-from-left" data-delay="200">
+        <div class="journey-card">
+          <div class="journey-year">2021</div>
+          <div class="journey-head">Six riders with a question</div>
+          <p class="journey-desc">Six mountain bikers in Niseko look at the mountains around them and see year-round potential. They start figuring out how to build a nonprofit from scratch.</p>
+        </div>
+        <div class="journey-nub"></div>
+      </div>
+
+      <div class="journey-row right ja-animate" data-animation="move-from-right" data-delay="300">
+        <div class="journey-nub"></div>
+        <div class="journey-card">
+          <div class="journey-year">2022</div>
+          <div class="journey-head">NAMBA is real</div>
+          <p class="journey-desc">Officially founded as an NPO. The founding board comes together. Trail design goes out to tender, and Allegra win by unanimous vote. Kutchan town grants us permission to rent the land that becomes Twin Peaks. COVID visa lead times for Allegra's crew cut the first build window short, but we still finish Ezo Shika and the upper part of Easy Ryder, all built under a 1m trail-width restriction and without cutting down a single tree.</p>
         </div>
       </div>
-      <div
-        class="features-desc ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="600">
-        <div class="timeline-item">
-          <div class="year">2022</div>
-          <p>First summer of building: 4.7km of trail from nothing</p>
+
+      <div class="journey-row left ja-animate" data-animation="move-from-left" data-delay="400">
+        <div class="journey-card">
+          <div class="journey-year">2023</div>
+          <div class="journey-head">Twin Peaks opens</div>
+          <p class="journey-desc">Our most ambitious build window yet, the fastest-growing project Allegra had ever seen. Sponsorship is tricky, but every trail finds a backer. We learn (the hard way) that every excavation has to be revegetated before opening, so the community shows up: volunteers building bridges, installing signage, hand-seeding grass. On 16 September, Twin Peaks opens to the public. That summer, Hokkaido hosts its first Soil Searching event. At the closing weekend, Grand Hirafu approach us about building at their resort.</p>
+        </div>
+        <div class="journey-nub"></div>
+      </div>
+
+      <div class="journey-row right ja-animate" data-animation="move-from-right" data-delay="500">
+        <div class="journey-nub"></div>
+        <div class="journey-card">
+          <div class="journey-year">2024</div>
+          <div class="journey-head">One park becomes two</div>
+          <p class="journey-desc">Work begins at Grand Hirafu: new trail goes in and the existing Kainkan is reworked, with a future link to Twin Peaks in mind. At Twin Peaks, the rocky upper section we'd been wrestling with the year before becomes Taki Tech, the park's first double-black. Dirty Dames launches with 30+ women at the opening ride.</p>
         </div>
       </div>
-      <div
-        class="features-desc ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="800">
-        <div class="timeline-item">
-          <div class="year">2023</div>
-          <p>Twin Peaks opens to the public: 14.2km of trail, first community events</p>
+
+      <div class="journey-row left ja-animate" data-animation="move-from-left" data-delay="600">
+        <div class="journey-card">
+          <div class="journey-year">2025</div>
+          <div class="journey-head">Riders the world over</div>
+          <p class="journey-desc">Cruise Control opens and instantly becomes one of the park's most-loved trails. So does Twin Peaks' first jump line, paired with a dedicated climb trail for hot laps. Loic Bruni visits to ride and to discuss a new project with NAMBA and Nico Vink. Building begins at Hanazono.</p>
         </div>
+        <div class="journey-nub"></div>
       </div>
-      <div
-        class="features-desc ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="1000">
-        <div class="timeline-item">
-          <div class="year">2024</div>
-          <p>7,750+ visitors, Dirty Dames women's programme launches, 20+ trails, Loic Bruni visits</p>
-        </div>
-      </div>
-      <div
-        class="features-desc ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="1200">
-        <div class="timeline-item">
-          <div class="year">2025</div>
-          <p>11,500+ visitors, Hirafu connection, major expansion, Pinkbike Trail of the Month</p>
-        </div>
-      </div>
-      <div
-        class="features-desc ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="1400">
-        <div class="timeline-item">
-          <div class="year">2026</div>
-          <p>Hanazono opens (July), Green Flow Trail, the network keeps growing</p>
+
+      <div class="journey-row right now ja-animate" data-animation="move-from-right" data-delay="700">
+        <div class="journey-nub"></div>
+        <div class="journey-card">
+          <div class="journey-year">2026</div>
+          <div class="journey-head">A regional network takes shape</div>
+          <p class="journey-desc">Hanazono opens in July, joining the network. Grand Hirafu shifts operations to the new Ace Gondola, with new singletrack going in. The vision the founders sketched in 2021, one connected Niseko riding region, is becoming the map.</p>
         </div>
       </div>
     </div>
