@@ -7155,3 +7155,11 @@ joomla-field-custom.field-custom-wrapper .input-group .input-group-btn .btn span
     margin-top: 36px;
   }
 }
+
+/* Tighten top spacing on the first content section after the masthead.
+ * Pages that wrap their first .section in a .t3-section pick up 72px
+ * of padding-top (.t3-section default), which feels heavy when
+ * sitting directly below the masthead. */
+.t3-section-wrap > .section:first-child > .t3-section:first-child {
+  padding-top: 0;
+}

@@ -91,4 +91,37 @@
     color: #888888 !important;
     opacity: 1 !important;
   }
+
+  /* When an Ecwid notice is showing, lift .t3-mainbody's stacking
+   * context above the site header (z-index 1000) so the popup inside
+   * it can paint above the nav. Uses :has() so this only kicks in
+   * while a notice is visible — preventing the elevated stacking
+   * order from hiding the nav's megamenu dropdowns at other times. */
+  .t3-mainbody:has(.ec-notice) {
+    z-index: 1500 !important;
+  }
+  /* Lift the popup itself above any content inside mainbody. */
+  .ec-notices {
+    z-index: 99999 !important;
+  }
+
+  /* Notice popup: green accent rail + Font Awesome info icon.
+   * Background and radius live on .ec-notice__wrap, so the rail
+   * and flat left edge need to go there too. */
+  .ec-notice--info .ec-notice__wrap {
+    border-left: 4px solid var(--color-secondary) !important;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+  }
+  .ec-notice--info .ec-notice__icon svg {
+    display: none !important;
+  }
+  .ec-notice--info .ec-notice__icon::before {
+    content: "\f05a";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 32px;
+    line-height: 1;
+    color: var(--color-secondary);
+  }
 </style>

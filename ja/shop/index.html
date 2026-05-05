@@ -21,15 +21,10 @@ description: NAMBAのオンラインショップ。ご購入がニセコのト�
     padding: 20px 16px;
     text-align: center;
   }
-  .shop-badge svg {
-    width: 36px;
-    height: 36px;
-    color: var(--color-accent);
-    stroke: currentColor;
-    fill: none;
-    stroke-width: 1.5;
-    stroke-linecap: round;
-    stroke-linejoin: round;
+  .shop-badge .fa-solid {
+    font-size: 32px;
+    color: var(--color-secondary);
+    line-height: 1;
   }
   .shop-badge-label {
     color: #cccccc;
@@ -239,6 +234,80 @@ description: NAMBAのオンラインショップ。ご購入がニセコのト�
   html#ecwid_html body#ecwid_body .ec-size .ec-store .footer__link--shopping-cart::before {
     content: "\f290";
   }
+
+  /* Categories nav — match theme .nav-tabs from typography page */
+  .shop-categories {
+    margin-bottom: 36px;
+  }
+  #shop-categories > div,
+  #shop-categories .ec-store,
+  #shop-categories .ec-store__categories-v2,
+  #shop-categories .horizontal-menu,
+  #shop-categories nav {
+    background: transparent !important;
+    border: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+  }
+
+  #shop-categories {
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    border: 0 !important;
+    border-bottom: 1px solid var(--color-bg-border) !important;
+  }
+
+  #shop-categories ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    border: 0;
+  }
+
+  #shop-categories ul li,
+  #shop-categories .horizontal-menu-item {
+    margin: 0 24px -1px 0;
+    padding: 0;
+    background: transparent !important;
+    border: 0 !important;
+    list-style: none;
+  }
+
+  #shop-categories ul li a,
+  #shop-categories .horizontal-menu-item a,
+  #shop-categories .horizontal-menu-item__link {
+    display: inline-block;
+    padding: 0 0 4px 0;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #ccc !important;
+    text-decoration: none !important;
+    border: 0 !important;
+    border-bottom: 1px solid transparent !important;
+    background: transparent !important;
+    transition: color 200ms, border-color 200ms;
+  }
+
+  #shop-categories ul li a:hover,
+  #shop-categories .horizontal-menu-item a:hover,
+  #shop-categories .horizontal-menu-item__link:hover {
+    color: #fff !important;
+  }
+
+  #shop-categories .horizontal-menu-item--active,
+  #shop-categories .horizontal-menu-item--active a,
+  #shop-categories .horizontal-menu-item--active .horizontal-menu-item__link,
+  #shop-categories a.horizontal-menu-item--active {
+    color: #fff !important;
+    border-bottom: 1px solid var(--color-primary) !important;
+  }
 </style>
 
 <script
@@ -271,36 +340,28 @@ description: NAMBAのオンラインショップ。ご購入がニセコのト�
           data-delay="600">
           <div class="col col-12 col-md-4">
             <div class="shop-badge">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <circle cx="12" cy="12" r="9"/>
-                <path d="M3 12h18"/>
-                <path d="M12 3a14 14 0 0 1 0 18"/>
-                <path d="M12 3a14 14 0 0 0 0 18"/>
-              </svg>
+              <span class="fa-solid fa-earth-asia" aria-hidden="true"></span>
               <div class="shop-badge-label">世界中​どこでも​送料無料</div>
             </div>
           </div>
           <div class="col col-12 col-md-4">
             <div class="shop-badge">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M2 22h20"/>
-                <path d="M3 22l5-9 4 5 3-4 6 8"/>
-                <circle cx="9" cy="8" r="1.5"/>
-              </svg>
+              <span class="fa-solid fa-mountain-sun" aria-hidden="true"></span>
               <div class="shop-badge-label">利益は​すべて​トレイルへ</div>
             </div>
           </div>
           <div class="col col-12 col-md-4">
             <div class="shop-badge">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19.2 2.96A1 1 0 0 1 21 4c0 2.42-.62 5.93-2 8a7 7 0 0 1-8 8z"/>
-                <path d="M2 21c0-3 1.85-5.36 5.08-6"/>
-              </svg>
+              <span class="fa-solid fa-leaf" aria-hidden="true"></span>
               <div class="shop-badge-label">オーガニック・リングスパンコットン</div>
             </div>
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="section shop-categories" id="shop-categories-section" hidden>
+      <div id="shop-categories"></div>
     </div>
 
     <div class="section">
@@ -315,12 +376,17 @@ description: NAMBAのオンラインショップ。ご購入がニセコのト�
 
 </div>
 <script>
-  window.ec = window.ec || Object();
-  window.ec.config = window.ec.config || Object();
+  window.ec = window.ec || {};
+  window.ec.config = window.ec.config || {};
 
 /*window.ec.config.custom_redirect_after_purchase = 'https://www.namba.ngo/get-involved/thanks';*/
+  window.ec.config.baseUrl = '/ja/shop/';
   window.ec.config.navigation_scrolling = "DISABLED";
-  window.ec.storefront = window.ec.storefront || Object();
+
+  window.ec.config.storefrontUrls = window.ec.config.storefrontUrls || {};
+  window.ec.config.storefrontUrls.slugsWithoutIds = true;
+
+  window.ec.storefront = window.ec.storefront || {};
   window.ec.storefront.product_details_show_share_buttons = false;
   window.ec.storefront.product_details_show_qty = true;
   window.ec.storefront.product_details_show_in_stock_label = true;
@@ -331,10 +397,11 @@ description: NAMBAのオンラインショップ。ご購入がニセコのト�
 
   Ecwid.OnAPILoaded.add(function() {
     Ecwid.OnPageLoaded.add(function(page) {
+      var showOnListing = page.type === 'CATEGORY';
       var intro = document.getElementById('shop-intro');
-      if (intro) {
-        intro.hidden = page.type !== 'CATEGORY';
-      }
+      var cats = document.getElementById('shop-categories-section');
+      if (intro) intro.hidden = !showOnListing;
+      if (cats) cats.hidden = !showOnListing;
     });
 
     var donateAmount = parseInt(new URLSearchParams(window.location.search).get('donate'), 10);
@@ -357,4 +424,8 @@ description: NAMBAのオンラインショップ。ご購入がニセコのト�
 
   window.ecwid_script_defer = true;
   window.ecwid_dynamic_widgets = true;
+
+  if (typeof xCategoriesV2 === 'function') {
+    xCategoriesV2("id=shop-categories");
+  }
 </script>
