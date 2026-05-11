@@ -355,14 +355,14 @@ hanazono:
   shuttle_access: false
   pedal_access: true
   location: Hanazono
-  season: July 2026 onwards
+  season: Summer 2026 onwards
   hours: TBC
   managed_by: Hanazono Resort / NAMBA
   ja:
     name: 花園
     cost: 未定
     location: 花園
-    season: 2026年7月以降
+    season: 2026年夏以降
     hours: 未定
     managed_by: 花園リゾート / NAMBA
   location_lat: 42.89317852818024
