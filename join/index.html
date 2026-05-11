@@ -92,7 +92,6 @@ masthead:
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
   <script>
     (function() {
-      var isJa = false;
       var allocation = {{ site.data.impact.funding.allocation | jsonify }};
 
       Chart.defaults.color = '#aaaaaa';
@@ -101,9 +100,7 @@ masthead:
       new Chart(document.getElementById('chart-membership-allocation'), {
         type: 'doughnut',
         data: {
-          labels: isJa
-            ? ['トレイル建設', 'トレイル維持・運営', 'マーケティング・イベント', '管理・その他']
-            : ['Trail construction', 'Trail maintenance & operation', 'Marketing & events', 'Admin & other'],
+          labels: ['Trail construction', 'Trail maintenance & operation', 'Marketing & events', 'Admin & other'],
           datasets: [{
             data: [allocation.trail_construction, allocation.trail_maintenance_operation, allocation.marketing_events, allocation.admin_other],
             backgroundColor: ['#47A06C', '#c8a951', '#148cf0', '#666666'],

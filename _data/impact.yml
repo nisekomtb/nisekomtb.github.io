@@ -38,48 +38,73 @@ trails:
     namba_km: 25.39
     niseko_km: 33.29
 
-funding:
-  # FY2023-FY2025 figures from the NAMBA transparency dashboard.
-  income:
+twin_peaks:
+  # Twin Peaks Bike Park. NAMBA-built cumulative trail km and visitor counts.
+  # Park opened September 2023; trail counters added start of 2023.
+  years:
+    - year: 2022
+      trail_km: 4.41
     - year: 2023
-      local_partnerships: 29314660
+      trail_km: 10.43
+    - year: 2024
+      trail_km: 13.83
+      visitors: 7747
+    - year: 2025
+      trail_km: 17.82
+      visitors: 11500
+
+funding:
+  # FY2022-FY2025 figures from the NAMBA transparency dashboard.
+  income:
+    - year: 2022
+      local_partnerships: 4150000
+      industry_sponsors: 0
+      grants_subsidies: 4670000
+      community_fund: 2535243
+    - year: 2023
+      local_partnerships: 19450000
       industry_sponsors: 5782500
       grants_subsidies: 0
-      community_fund: 1310460
+      community_fund: 3570662
     - year: 2024
-      local_partnerships: 68188861
+      local_partnerships: 47010000
       industry_sponsors: 10229000
-      grants_subsidies: 10500000
-      community_fund: 2005656
+      grants_subsidies: 8300000
+      community_fund: 4022000
     - year: 2025
-      local_partnerships: 86975870
-      industry_sponsors: 4729000
+      local_partnerships: 74350000
+      industry_sponsors: 5229000
       grants_subsidies: 3300000
-      community_fund: 2335708
+      community_fund: 3165000
   outgoings:
-    - year: 2023
-      trail_construction: 26539512
-      trail_maintenance_operation: 4006954
+    - year: 2022
+      trail_construction: 20603385
+      trail_maintenance_operation: 31904
       marketing_events: 0
-      admin_other: 1848820
+      admin_other: 284510
+    - year: 2023
+      trail_construction: 34002359
+      trail_maintenance_operation: 852864
+      marketing_events: 0
+      admin_other: 850246
     - year: 2024
-      trail_construction: 41223583
-      trail_maintenance_operation: 11190565
-      marketing_events: 798825
-      admin_other: 2105477
+      trail_construction: 27550000
+      trail_maintenance_operation: 7821111
+      marketing_events: 1240222
+      admin_other: 921706
     - year: 2025
-      trail_construction: 44674522
-      trail_maintenance_operation: 13859097
-      marketing_events: 1495324
-      admin_other: 5502341
-  # Aggregate % over FY2023-FY2025. Update if income/outgoings change.
+      trail_construction: 46825000
+      trail_maintenance_operation: 12450000
+      marketing_events: 1355000
+      admin_other: 2882345
+  # Aggregate % over FY2022-FY2025. Update if income/outgoings change.
   sources:
-    local_partnerships: 82
-    industry_sponsors: 9
-    grants_subsidies: 6
-    community_fund: 3
+    local_partnerships: 74
+    industry_sponsors: 11
+    grants_subsidies: 8
+    community_fund: 7
   allocation:
-    trail_construction: 73
-    trail_maintenance_operation: 19
+    trail_construction: 82
+    trail_maintenance_operation: 13
     marketing_events: 2
-    admin_other: 6
+    admin_other: 3

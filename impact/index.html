@@ -37,6 +37,13 @@ masthead:
     flex: 1 1 350px;
     max-width: 450px;
   }
+  .chart-row.chart-row-wide {
+    gap: 20px;
+  }
+  .chart-row.chart-row-wide .chart-container {
+    flex: 1 1 420px;
+    max-width: 600px;
+  }
   .funding-stat { margin-bottom: 30px; }
   .funding-stat h4 { color: var(--color-accent); margin-bottom: 5px; }
 
@@ -174,7 +181,7 @@ masthead:
           <div class="features-item ja-animate" data-animation="move-from-bottom" data-delay="600">
             <div class="stat-card">
               <div class="stat-number">92%</div>
-              <div class="stat-label">goes directly into the dirt</div>
+              <div class="stat-label">of funding goes directly into the dirt</div>
             </div>
           </div>
         </div>
@@ -197,8 +204,8 @@ masthead:
         <div class="col col-12 col-md-6 col-lg-4">
           <div class="features-item ja-animate" data-animation="move-from-bottom" data-delay="1200">
             <div class="stat-card">
-              <div class="stat-number">¥225M+</div>
-              <div class="stat-label">raised since 2023</div>
+              <div class="stat-number">¥196M+</div>
+              <div class="stat-label">raised since 2022</div>
             </div>
           </div>
         </div>
@@ -237,8 +244,13 @@ masthead:
         data-animation="move-from-bottom"
         data-delay="200">Trail Network Growth</h3>
     </div>
-    <div class="chart-container ja-animate" data-animation="move-from-bottom" data-delay="400">
-      <canvas id="chart-trails"></canvas>
+    <div class="chart-row chart-row-wide ja-animate" data-animation="move-from-bottom" data-delay="400">
+      <div class="chart-container">
+        <canvas id="chart-twin-peaks"></canvas>
+      </div>
+      <div class="chart-container">
+        <canvas id="chart-trails"></canvas>
+      </div>
     </div>
 
   </div>
@@ -271,26 +283,26 @@ masthead:
         <canvas id="chart-funding-sources"></canvas>
         <dl class="chart-glossary">
           <dt>Local Partnerships</dt>
-          <dd>Funding from our major resort partners (Grand Hirafu, Hanazono) and local Niseko businesses. These partners recognise the value of trails for the year-round community.</dd>
+          <dd>Funding from the regional business community. Major resorts and hospitality providers who see world-class trails as a cornerstone of sustainable, year-round tourism in Niseko.</dd>
           <dt>Industry Sponsors</dt>
-          <dd>Direct support from global mountain bike brands (e.g. Santa Cruz Pay Dirt, Winckler, Specialized). The global bike industry's investment in Niseko.</dd>
+          <dd>Support from global brands in the outdoor and cycling industries. Manufacturers backing trail infrastructure as an investment in the sport's growth.</dd>
           <dt>Grants &amp; Subsidies</dt>
-          <dd>Competitive funding secured from government bodies and tourism associations (e.g. JTB, NPB, KTA) to support regional development.</dd>
+          <dd>Funding from public institutions, tourism boards, and regional development bodies. Often project-specific, designed to accelerate infrastructure and the local economy.</dd>
           <dt>Community Fund</dt>
-          <dd>"Rider-powered" income. Every T-shirt and cap sold, individual donations, and local raffle tickets.</dd>
+          <dd>Grassroots support from riders and supporters. Individual donations, merch sales, and local fundraising that keep the mission moving.</dd>
         </dl>
       </div>
       <div class="chart-container">
         <canvas id="chart-funding-allocation"></canvas>
         <dl class="chart-glossary">
           <dt>Trail Construction</dt>
-          <dd>The heavy lifting. Payments to world-class trail contractors (Allegra), heavy machinery rentals, and the specialised logistics required to build new terrain.</dd>
+          <dd>New trail development. Professional design, heavy machinery, materials, and skilled labour, plus the environmental restoration and site preparation that make trails sustainable for the long term.</dd>
           <dt>Trail Maintenance &amp; Operation</dt>
-          <dd>Keeping trails open, safe, and world-class. Our professional trail crew's wages, land access leases (like Twin Peaks), fuel, insurance, and essential tools.</dd>
+          <dd>Keeping the network safe, accessible, and ride-ready. Our trail crew, maintenance vehicles, tools, and the land access fees that keep trails open to the public.</dd>
           <dt>Marketing &amp; Events</dt>
-          <dd>Building the Niseko riding community. Volunteer dig days, community BBQs, trail signage, and social media to keep everyone informed and engaged.</dd>
+          <dd>Sharing the story and growing the community. Event equipment, content creation, and the outreach that brings riders in and keeps the organisation transparent.</dd>
           <dt>Admin &amp; Other</dt>
-          <dd>The "nuts and bolts" that keep the association legal and stable: professional accounting, bank fees, and required taxes (JCT).</dd>
+          <dd>Essential overhead. Accounting, legal compliance, insurance, and banking that keep the organisation healthy and accountable.</dd>
         </dl>
       </div>
     </div>
@@ -334,8 +346,8 @@ masthead:
       <div class="journey-row left ja-animate" data-animation="move-from-left" data-delay="400">
         <div class="journey-card">
           <div class="journey-year">2023</div>
-          <div class="journey-head">Twin Peaks opens · ¥36M raised</div>
-          <p class="journey-desc">Twin Peaks opens to the public. 6km built in one summer, the fastest project Allegra had ever seen. Network reaches 10.4km. ¥36.4M raised from sponsors. Hokkaido's first Soil Searching event.</p>
+          <div class="journey-head">Twin Peaks opens · ¥29M raised</div>
+          <p class="journey-desc">Twin Peaks opens to the public. 6km built in one summer, the fastest project Allegra had ever seen. Network reaches 10.4km. ¥28.8M raised. Hokkaido's first Soil Searching event.</p>
         </div>
         <div class="journey-nub"></div>
       </div>
@@ -344,16 +356,16 @@ masthead:
         <div class="journey-nub"></div>
         <div class="journey-card">
           <div class="journey-year">2024</div>
-          <div class="journey-head">7,750 visitors · ¥91M raised</div>
-          <p class="journey-desc">+7km of new trail across two resorts: 3.6km at Grand Hirafu, 3.4km at Twin Peaks (including our first double-black, Taki Tech). 7,750 visitors ride Twin Peaks. Dirty Dames launches with 30+ women at the opening ride. ¥90.9M raised, up 150% on 2023.</p>
+          <div class="journey-head">7,750 visitors · ¥70M raised</div>
+          <p class="journey-desc">+7km of new trail across two resorts: 3.6km at Grand Hirafu, 3.4km at Twin Peaks (including our first double-black, Taki Tech). 7,750 visitors ride Twin Peaks. Dirty Dames launches with 30+ women at the opening ride. ¥69.6M raised, up 141% on 2023.</p>
         </div>
       </div>
 
       <div class="journey-row left ja-animate" data-animation="move-from-left" data-delay="600">
         <div class="journey-card">
           <div class="journey-year">2025</div>
-          <div class="journey-head">11,500 visitors · ¥97M raised</div>
-          <p class="journey-desc">Visitors up 48% to 11,500. Twin Peaks' first jump line opens, paired with a dedicated climb trail for hot laps. First 1.5km goes in at Hanazono. ¥97.3M raised in a single year.</p>
+          <div class="journey-head">11,500 visitors · ¥86M raised</div>
+          <p class="journey-desc">Visitors up 48% to 11,500. Twin Peaks' first jump line opens, paired with a dedicated climb trail for hot laps. First 1.5km goes in at Hanazono. ¥86M raised in a single year.</p>
         </div>
         <div class="journey-nub"></div>
       </div>
@@ -396,7 +408,6 @@ masthead:
 <script>
   // Load impact data from Jekyll
   const impactData = {{ site.data.impact | jsonify }};
-  const isJa = false;
 
   // Chart.js dark theme defaults
   Chart.defaults.color = '#aaaaaa';
@@ -415,33 +426,22 @@ masthead:
     grey: '#666666',
   };
 
-  const categorySummaries = isJa ? {
-    local_partnerships: 'リゾートパートナーと地元事業者から。',
-    industry_sponsors: 'グローバルなバイクブランドからの投資。',
-    grants_subsidies: '政府・観光協会からの補助金。',
-    community_fund: 'グッズ・寄付・ラッフル収入。',
-    trail_construction: '業者、重機、建設ロジスティクス。',
-    trail_maintenance_operation: 'クルー、賃借、燃料、保険、工具。',
-    marketing_events: '整備日、BBQ、標識、SNS。',
-    admin_other: '会計、銀行手数料、消費税。',
-  } : {
-    local_partnerships: 'From our resort partners and local Niseko businesses.',
-    industry_sponsors: 'Global bike brands invested in Niseko.',
-    grants_subsidies: 'Government and tourism association funding.',
-    community_fund: 'Rider-powered: merch, donations, raffles.',
-    trail_construction: 'Contractors, machinery, build logistics.',
-    trail_maintenance_operation: 'Trail crew, leases, fuel, insurance, tools.',
-    marketing_events: 'Dig days, BBQs, signage, social.',
-    admin_other: 'Accounting, bank fees, JCT.',
+  const categorySummaries = {
+    local_partnerships: 'Regional resorts and businesses investing in trails for tourism.',
+    industry_sponsors: 'Global outdoor and cycling brands backing trail infrastructure.',
+    grants_subsidies: 'Public institutions, tourism boards, and regional development funds.',
+    community_fund: 'Grassroots: donations, merch, and local fundraising.',
+    trail_construction: 'Design, machinery, materials, labour, and site restoration.',
+    trail_maintenance_operation: 'Trail crew, vehicles, tools, and land access fees.',
+    marketing_events: 'Events, content, and community outreach.',
+    admin_other: 'Accounting, legal, insurance, and banking.',
   };
   const incomeKeys = ['local_partnerships', 'industry_sponsors', 'grants_subsidies', 'community_fund'];
   const allocationKeys = ['trail_construction', 'trail_maintenance_operation', 'marketing_events', 'admin_other'];
 
   // --- Visitors line chart ---
   const tpData = impactData.visitors['twin-peaks'];
-  const months = ['June', 'July', 'August', 'September', 'October'];
-  const monthsJa = ['6月', '7月', '8月', '9月', '10月'];
-  const monthLabels = isJa ? monthsJa : months;
+  const monthLabels = ['June', 'July', 'August', 'September', 'October'];
   const monthKeys = ['june', 'july', 'august', 'september', 'october'];
 
   const visitorDatasets = tpData.years.map(function(yearData, i) {
@@ -473,7 +473,7 @@ masthead:
         tooltip: {
           callbacks: {
             label: function(ctx) {
-              return ctx.dataset.label + ': ' + ctx.parsed.y.toLocaleString() + (isJa ? '人' : ' visitors');
+              return ctx.dataset.label + ': ' + ctx.parsed.y.toLocaleString() + ' visitors';
             }
           }
         }
@@ -500,7 +500,7 @@ masthead:
       labels: trailYears,
       datasets: [
         {
-          label: isJa ? 'ニセコ全体' : 'Total Niseko',
+          label: 'Total Niseko',
           data: nisekoKm,
           borderColor: colours.accent,
           backgroundColor: colours.accentLight,
@@ -511,7 +511,7 @@ masthead:
           borderWidth: 3,
         },
         {
-          label: isJa ? 'NAMBA建設' : 'Built by NAMBA',
+          label: 'Built by NAMBA',
           data: nambaKm,
           borderColor: colours.primary,
           backgroundColor: colours.primaryLight,
@@ -526,6 +526,12 @@ masthead:
     options: {
       responsive: true,
       plugins: {
+        title: {
+          display: true,
+          text: 'Region-wide network',
+          font: { size: 14, weight: '600' },
+          padding: { bottom: 10 }
+        },
         legend: { position: 'top' },
         tooltip: {
           callbacks: {
@@ -546,6 +552,112 @@ masthead:
     }
   });
 
+  // --- Twin Peaks trail + visitors mixed chart ---
+  var tpGrowth = impactData.twin_peaks.years;
+  var tpgYears = tpGrowth.map(function(t) { return t.year; });
+  var tpgTrailKm = tpGrowth.map(function(t) { return t.trail_km; });
+  var tpgVisitors = tpGrowth.map(function(t) { return t.visitors == null ? null : t.visitors; });
+
+  // Plugin: extend the trail line's filled area from the first data point
+  // down to the chart's bottom-left corner, so it visually starts from origin.
+  var fillToOrigin = {
+    id: 'fillToOrigin',
+    beforeDatasetsDraw: function(chart) {
+      var lineIndex = chart.data.datasets.findIndex(function(d) { return d.type === 'line'; });
+      if (lineIndex === -1) return;
+      var lineDataset = chart.data.datasets[lineIndex];
+      var meta = chart.getDatasetMeta(lineIndex);
+      if (!meta.data.length) return;
+      var firstPoint = meta.data[0];
+      var area = chart.chartArea;
+      var ctx = chart.ctx;
+      ctx.save();
+      ctx.beginPath();
+      ctx.moveTo(area.left, area.bottom);
+      ctx.lineTo(firstPoint.x, area.bottom);
+      ctx.lineTo(firstPoint.x, firstPoint.y);
+      ctx.closePath();
+      ctx.fillStyle = lineDataset.backgroundColor;
+      ctx.fill();
+      ctx.beginPath();
+      ctx.moveTo(area.left, area.bottom);
+      ctx.lineTo(firstPoint.x, firstPoint.y);
+      ctx.strokeStyle = lineDataset.borderColor;
+      ctx.lineWidth = lineDataset.borderWidth || 3;
+      ctx.stroke();
+      ctx.restore();
+    }
+  };
+
+  new Chart(document.getElementById('chart-twin-peaks'), {
+    type: 'bar',
+    plugins: [fillToOrigin],
+    data: {
+      labels: tpgYears,
+      datasets: [
+        {
+          type: 'bar',
+          label: 'Twin Peaks Visitors',
+          data: tpgVisitors,
+          backgroundColor: colours.accentLight,
+          borderColor: colours.accent,
+          borderWidth: 1,
+          yAxisID: 'y2',
+          order: 2,
+        },
+        {
+          type: 'line',
+          label: 'Twin Peaks Trails',
+          data: tpgTrailKm,
+          borderColor: colours.primary,
+          backgroundColor: colours.primaryLight,
+          fill: true,
+          tension: 0.3,
+          pointRadius: 5,
+          pointHoverRadius: 8,
+          borderWidth: 3,
+          yAxisID: 'y',
+          order: 1,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        title: {
+          display: true,
+          text: 'Build it and they will come',
+          font: { size: 14, weight: '600' },
+          padding: { bottom: 10 }
+        },
+        legend: { position: 'top' },
+        tooltip: {
+          callbacks: {
+            label: function(ctx) {
+              if (ctx.dataset.yAxisID === 'y') {
+                return ctx.dataset.label + ': ' + ctx.parsed.y + ' km';
+              }
+              return ctx.dataset.label + ': ' + ctx.parsed.y.toLocaleString() + ' visitors';
+            }
+          }
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          position: 'left',
+          ticks: { callback: function(value) { return value + ' km'; } }
+        },
+        y2: {
+          beginAtZero: true,
+          position: 'right',
+          grid: { drawOnChartArea: false },
+          ticks: { callback: function(value) { return value.toLocaleString(); } }
+        }
+      }
+    }
+  });
+
   // --- Annual income stacked bar chart ---
   var incomeData = impactData.funding.income;
   var incomeYears = incomeData.map(function(d) { return d.year; });
@@ -556,22 +668,22 @@ masthead:
       labels: incomeYears,
       datasets: [
         {
-          label: isJa ? '地元パートナーシップ' : 'Local partnerships',
+          label: 'Local partnerships',
           data: incomeData.map(function(d) { return d.local_partnerships; }),
           backgroundColor: colours.primary,
         },
         {
-          label: isJa ? '業界スポンサー' : 'Industry sponsors',
+          label: 'Industry sponsors',
           data: incomeData.map(function(d) { return d.industry_sponsors; }),
           backgroundColor: colours.accent,
         },
         {
-          label: isJa ? '助成金・補助金' : 'Grants & subsidies',
+          label: 'Grants & subsidies',
           data: incomeData.map(function(d) { return d.grants_subsidies; }),
           backgroundColor: colours.blue,
         },
         {
-          label: isJa ? 'コミュニティ基金' : 'Community fund',
+          label: 'Community fund',
           data: incomeData.map(function(d) { return d.community_fund; }),
           backgroundColor: colours.grey,
         }
@@ -602,7 +714,7 @@ masthead:
           },
           title: {
             display: true,
-            text: isJa ? '収入 (円)' : 'Income (¥)',
+            text: 'Income (¥)',
           }
         }
       }
@@ -614,9 +726,7 @@ masthead:
   new Chart(document.getElementById('chart-funding-sources'), {
     type: 'doughnut',
     data: {
-      labels: isJa
-        ? ['地元パートナーシップ', '業界スポンサー', '助成金・補助金', 'コミュニティ基金']
-        : ['Local partnerships', 'Industry sponsors', 'Grants & subsidies', 'Community fund'],
+      labels: ['Local partnerships', 'Industry sponsors', 'Grants & subsidies', 'Community fund'],
       datasets: [{
         data: [sources.local_partnerships, sources.industry_sponsors, sources.grants_subsidies, sources.community_fund],
         backgroundColor: [colours.primary, colours.accent, colours.blue, colours.grey],
@@ -628,7 +738,7 @@ masthead:
       plugins: {
         title: {
           display: true,
-          text: isJa ? '資金源' : 'Funding Sources',
+          text: 'Funding Sources',
           font: { size: 16, weight: 700 },
         },
         legend: { position: 'bottom' },
@@ -649,9 +759,7 @@ masthead:
   new Chart(document.getElementById('chart-funding-allocation'), {
     type: 'doughnut',
     data: {
-      labels: isJa
-        ? ['トレイル建設', 'トレイル維持・運営', 'マーケティング・イベント', '管理・その他']
-        : ['Trail construction', 'Trail maintenance & operation', 'Marketing & events', 'Admin & other'],
+      labels: ['Trail construction', 'Trail maintenance & operation', 'Marketing & events', 'Admin & other'],
       datasets: [{
         data: [allocation.trail_construction, allocation.trail_maintenance_operation, allocation.marketing_events, allocation.admin_other],
         backgroundColor: [colours.primary, colours.accent, colours.blue, colours.grey],
@@ -663,7 +771,7 @@ masthead:
       plugins: {
         title: {
           display: true,
-          text: isJa ? '資金配分' : 'How Funds Are Spent',
+          text: 'How Funds Are Spent',
           font: { size: 16, weight: 700 },
         },
         legend: { position: 'bottom' },

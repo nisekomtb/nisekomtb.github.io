@@ -77,8 +77,6 @@ masthead:
     ({ key: "AIzaSyCet6Eys-EOTnAbs402oGLPbJWuvlH5E0s", v: "weekly" });</script>
 
   <script type="text/javascript">
-    var isJa = true;
-
     async function initAreaMap() {
       var { Map, InfoWindow } = await google.maps.importLibrary("maps");
       var { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary("marker");
@@ -92,7 +90,7 @@ masthead:
         fullscreenControl: false,
       });
 
-      var langPrefix = isJa ? "/ja" : "";
+      var langPrefix = "/ja";
       var parkColour = "#47A06C";
       var skillsColour = "#888";
       var pois = [
@@ -202,14 +200,14 @@ masthead:
         var marker = new AdvancedMarkerElement({
           position: poi.position,
           map: map,
-          title: isJa ? poi.titleJa : poi.title,
+          title: poi.titleJa,
           content: content,
         });
 
         marker.addEventListener("gmp-click", function() {
-          var name = isJa ? poi.titleJa : poi.title;
+          var name = poi.titleJa;
           infoWindow.close();
-          infoWindow.setContent('<div style="padding:4px 8px;"><strong>' + name + '</strong><br><a href="' + poi.url + '" style="color:#47A06C;">' + (isJa ? '詳しく見る' : 'Learn more') + '</a></div>');
+          infoWindow.setContent('<div style="padding:4px 8px;"><strong>' + name + '</strong><br><a href="' + poi.url + '" style="color:#47A06C;">詳しく見る</a></div>');
           infoWindow.open(map, marker);
         });
       });

@@ -37,6 +37,13 @@ masthead:
     flex: 1 1 350px;
     max-width: 450px;
   }
+  .chart-row.chart-row-wide {
+    gap: 20px;
+  }
+  .chart-row.chart-row-wide .chart-container {
+    flex: 1 1 420px;
+    max-width: 600px;
+  }
   .funding-stat { margin-bottom: 30px; }
   .funding-stat h4 { color: var(--color-accent); margin-bottom: 5px; }
 
@@ -174,7 +181,7 @@ masthead:
           <div class="features-item ja-animate" data-animation="move-from-bottom" data-delay="600">
             <div class="stat-card">
               <div class="stat-number">92%</div>
-              <div class="stat-label">直接トレイルに投資</div>
+              <div class="stat-label">の資金が直接トレイルに投資</div>
             </div>
           </div>
         </div>
@@ -197,8 +204,8 @@ masthead:
         <div class="col col-12 col-md-6 col-lg-4">
           <div class="features-item ja-animate" data-animation="move-from-bottom" data-delay="1200">
             <div class="stat-card">
-              <div class="stat-number">¥225M+</div>
-              <div class="stat-label">2023年以降に調達</div>
+              <div class="stat-number">¥196M+</div>
+              <div class="stat-label">2022年以降に調達</div>
             </div>
           </div>
         </div>
@@ -237,8 +244,13 @@ masthead:
         data-animation="move-from-bottom"
         data-delay="200">トレイルネットワークの成長</h3>
     </div>
-    <div class="chart-container ja-animate" data-animation="move-from-bottom" data-delay="400">
-      <canvas id="chart-trails"></canvas>
+    <div class="chart-row chart-row-wide ja-animate" data-animation="move-from-bottom" data-delay="400">
+      <div class="chart-container">
+        <canvas id="chart-twin-peaks"></canvas>
+      </div>
+      <div class="chart-container">
+        <canvas id="chart-trails"></canvas>
+      </div>
     </div>
 
   </div>
@@ -271,26 +283,26 @@ masthead:
         <canvas id="chart-funding-sources"></canvas>
         <dl class="chart-glossary ja">
           <dt>地元パートナーシップ</dt>
-          <dd>主要なリゾートパートナー（グラン・ヒラフ、Hanazono）と地元ニセコの事業者からの資金提供。これらのパートナーは、通年のコミュニティにとってのトレイルの価値を認識しています。</dd>
+          <dd>地域のビジネスコミュニティからの資金提供。主要リゾートやホスピタリティ事業者など、世界クラスのトレイルを持続可能な通年観光の礎と考えるパートナーから。</dd>
           <dt>業界スポンサー</dt>
-          <dd>世界的なマウンテンバイクブランド（Santa Cruz Pay Dirt、Winckler、Specializedなど）からの直接支援。グローバルなバイク業界によるニセコへの投資です。</dd>
+          <dd>アウトドア・サイクリング業界のグローバルブランドからの支援。スポーツの成長への投資として、トレイルインフラを支えるメーカーのパートナーシップです。</dd>
           <dt>助成金・補助金</dt>
-          <dd>地域開発を支援するため、政府機関や観光協会（JTB、NPB、KTAなど）から獲得した競争的資金。</dd>
+          <dd>公的機関、観光協会、地域振興団体からの資金。多くはプロジェクト特化型で、インフラと地域経済の発展を加速させるためのものです。</dd>
           <dt>コミュニティ基金</dt>
-          <dd>「ライダー主導」の収入。Tシャツやキャップの売上、個人寄付、地元のラッフルチケットなどが含まれます。</dd>
+          <dd>ライダーやサポーターによる草の根の支援。個人寄付、グッズ販売、地元の募金活動など、ミッションを支える小さな積み重ねです。</dd>
         </dl>
       </div>
       <div class="chart-container">
         <canvas id="chart-funding-allocation"></canvas>
         <dl class="chart-glossary ja">
           <dt>トレイル建設</dt>
-          <dd>重労働。世界クラスのトレイル建設業者（Allegra）への支払い、重機のレンタル、新しい地形を作るために必要な専門的なロジスティクスが含まれます。</dd>
+          <dd>新たなトレイルの開発投資。プロによる設計、重機、資材、熟練労働力に加え、持続可能性を確保するための環境復元と土地整備も含まれます。</dd>
           <dt>トレイル維持・運営</dt>
-          <dd>トレイルをオープンに、安全に、世界クラスの状態に保つこと。プロのトレイルクルーの賃金、土地利用契約（ツインピークスなど）、燃料、保険、必要な工具をカバーします。</dd>
+          <dd>既存ネットワークを安全・快適に保つための運営。トレイルクルー、整備車両、工具、そしてトレイルを一般公開し続けるための土地利用料に充てられます。</dd>
           <dt>マーケティング・イベント</dt>
-          <dd>ニセコのライディングコミュニティを築くこと。ボランティアの整備日、コミュニティBBQ、トレイル標識、SNSなどに資金を提供し、皆が情報を得て関わり続けられるようにします。</dd>
+          <dd>ストーリーを伝え、コミュニティとつながるための活動。イベント機材、コンテンツ制作、ライダー参加や組織の透明性を高める広報活動に使われます。</dd>
           <dt>管理・その他</dt>
-          <dd>協会を合法かつ安定した状態に保つ「縁の下の力持ち」。専門的な会計、銀行手数料、必要な税金（消費税など）が含まれます。</dd>
+          <dd>組織運営に欠かせないバックオフィス。会計、法令遵守、保険、銀行手続きなど、組織を健全で説明責任のある状態に保つための経費です。</dd>
         </dl>
       </div>
     </div>
@@ -353,7 +365,7 @@ masthead:
         <div class="journey-card">
           <div class="journey-year">2025</div>
           <div class="journey-head">飛躍の​年</div>
-          <p class="journey-desc">来場者11,500人超、​48%増。​ヒラフ接続が​実現、​Pinkbikeで​特集、​年間¥97Mを​調達。</p>
+          <p class="journey-desc">来場者11,500人超、​48%増。​ヒラフ接続が​実現、​Pinkbikeで​特集、​年間¥86Mを​調達。</p>
         </div>
         <div class="journey-nub"></div>
       </div>
@@ -396,7 +408,6 @@ masthead:
 <script>
   // Load impact data from Jekyll
   const impactData = {{ site.data.impact | jsonify }};
-  const isJa = true;
 
   // Chart.js dark theme defaults
   Chart.defaults.color = '#aaaaaa';
@@ -415,33 +426,22 @@ masthead:
     grey: '#666666',
   };
 
-  const categorySummaries = isJa ? {
-    local_partnerships: 'リゾートパートナーと地元事業者から。',
-    industry_sponsors: 'グローバルなバイクブランドからの投資。',
-    grants_subsidies: '政府・観光協会からの補助金。',
-    community_fund: 'グッズ・寄付・ラッフル収入。',
-    trail_construction: '業者、重機、建設ロジスティクス。',
-    trail_maintenance_operation: 'クルー、賃借、燃料、保険、工具。',
-    marketing_events: '整備日、BBQ、標識、SNS。',
-    admin_other: '会計、銀行手数料、消費税。',
-  } : {
-    local_partnerships: 'From our resort partners and local Niseko businesses.',
-    industry_sponsors: 'Global bike brands invested in Niseko.',
-    grants_subsidies: 'Government and tourism association funding.',
-    community_fund: 'Rider-powered: merch, donations, raffles.',
-    trail_construction: 'Contractors, machinery, build logistics.',
-    trail_maintenance_operation: 'Trail crew, leases, fuel, insurance, tools.',
-    marketing_events: 'Dig days, BBQs, signage, social.',
-    admin_other: 'Accounting, bank fees, JCT.',
+  const categorySummaries = {
+    local_partnerships: 'リゾートと地元事業者からのトレイル投資。',
+    industry_sponsors: 'アウトドア・サイクリング業界のグローバルブランドから。',
+    grants_subsidies: '公的機関・観光協会・地域振興団体からの資金。',
+    community_fund: '個人寄付、グッズ、地元の募金活動。',
+    trail_construction: '設計、重機、資材、労働力、現場復元。',
+    trail_maintenance_operation: 'クルー、整備車両、工具、土地利用料。',
+    marketing_events: 'イベント、コンテンツ、コミュニティ広報。',
+    admin_other: '会計、法令遵守、保険、銀行業務。',
   };
   const incomeKeys = ['local_partnerships', 'industry_sponsors', 'grants_subsidies', 'community_fund'];
   const allocationKeys = ['trail_construction', 'trail_maintenance_operation', 'marketing_events', 'admin_other'];
 
   // --- Visitors line chart ---
   const tpData = impactData.visitors['twin-peaks'];
-  const months = ['June', 'July', 'August', 'September', 'October'];
-  const monthsJa = ['6月', '7月', '8月', '9月', '10月'];
-  const monthLabels = isJa ? monthsJa : months;
+  const monthLabels = ['6月', '7月', '8月', '9月', '10月'];
   const monthKeys = ['june', 'july', 'august', 'september', 'october'];
 
   const visitorDatasets = tpData.years.map(function(yearData, i) {
@@ -473,7 +473,7 @@ masthead:
         tooltip: {
           callbacks: {
             label: function(ctx) {
-              return ctx.dataset.label + ': ' + ctx.parsed.y.toLocaleString() + (isJa ? '人' : ' visitors');
+              return ctx.dataset.label + ': ' + ctx.parsed.y.toLocaleString() + '人';
             }
           }
         }
@@ -500,7 +500,7 @@ masthead:
       labels: trailYears,
       datasets: [
         {
-          label: isJa ? 'ニセコ全体' : 'Total Niseko',
+          label: 'ニセコ全体',
           data: nisekoKm,
           borderColor: colours.accent,
           backgroundColor: colours.accentLight,
@@ -511,7 +511,7 @@ masthead:
           borderWidth: 3,
         },
         {
-          label: isJa ? 'NAMBA建設' : 'Built by NAMBA',
+          label: 'NAMBA建設',
           data: nambaKm,
           borderColor: colours.primary,
           backgroundColor: colours.primaryLight,
@@ -526,6 +526,12 @@ masthead:
     options: {
       responsive: true,
       plugins: {
+        title: {
+          display: true,
+          text: 'ニセコ地域全体',
+          font: { size: 14, weight: '600' },
+          padding: { bottom: 10 }
+        },
         legend: { position: 'top' },
         tooltip: {
           callbacks: {
@@ -546,6 +552,112 @@ masthead:
     }
   });
 
+  // --- Twin Peaks trail + visitors mixed chart ---
+  var tpGrowth = impactData.twin_peaks.years;
+  var tpgYears = tpGrowth.map(function(t) { return t.year; });
+  var tpgTrailKm = tpGrowth.map(function(t) { return t.trail_km; });
+  var tpgVisitors = tpGrowth.map(function(t) { return t.visitors == null ? null : t.visitors; });
+
+  // Plugin: extend the trail line's filled area from the first data point
+  // down to the chart's bottom-left corner, so it visually starts from origin.
+  var fillToOrigin = {
+    id: 'fillToOrigin',
+    beforeDatasetsDraw: function(chart) {
+      var lineIndex = chart.data.datasets.findIndex(function(d) { return d.type === 'line'; });
+      if (lineIndex === -1) return;
+      var lineDataset = chart.data.datasets[lineIndex];
+      var meta = chart.getDatasetMeta(lineIndex);
+      if (!meta.data.length) return;
+      var firstPoint = meta.data[0];
+      var area = chart.chartArea;
+      var ctx = chart.ctx;
+      ctx.save();
+      ctx.beginPath();
+      ctx.moveTo(area.left, area.bottom);
+      ctx.lineTo(firstPoint.x, area.bottom);
+      ctx.lineTo(firstPoint.x, firstPoint.y);
+      ctx.closePath();
+      ctx.fillStyle = lineDataset.backgroundColor;
+      ctx.fill();
+      ctx.beginPath();
+      ctx.moveTo(area.left, area.bottom);
+      ctx.lineTo(firstPoint.x, firstPoint.y);
+      ctx.strokeStyle = lineDataset.borderColor;
+      ctx.lineWidth = lineDataset.borderWidth || 3;
+      ctx.stroke();
+      ctx.restore();
+    }
+  };
+
+  new Chart(document.getElementById('chart-twin-peaks'), {
+    type: 'bar',
+    plugins: [fillToOrigin],
+    data: {
+      labels: tpgYears,
+      datasets: [
+        {
+          type: 'bar',
+          label: 'ツインピークス来場者',
+          data: tpgVisitors,
+          backgroundColor: colours.accentLight,
+          borderColor: colours.accent,
+          borderWidth: 1,
+          yAxisID: 'y2',
+          order: 2,
+        },
+        {
+          type: 'line',
+          label: 'ツインピークストレイル',
+          data: tpgTrailKm,
+          borderColor: colours.primary,
+          backgroundColor: colours.primaryLight,
+          fill: true,
+          tension: 0.3,
+          pointRadius: 5,
+          pointHoverRadius: 8,
+          borderWidth: 3,
+          yAxisID: 'y',
+          order: 1,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        title: {
+          display: true,
+          text: 'つくれば、人は集まる',
+          font: { size: 14, weight: '600' },
+          padding: { bottom: 10 }
+        },
+        legend: { position: 'top' },
+        tooltip: {
+          callbacks: {
+            label: function(ctx) {
+              if (ctx.dataset.yAxisID === 'y') {
+                return ctx.dataset.label + ': ' + ctx.parsed.y + ' km';
+              }
+              return ctx.dataset.label + ': ' + ctx.parsed.y.toLocaleString() + '人';
+            }
+          }
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          position: 'left',
+          ticks: { callback: function(value) { return value + ' km'; } }
+        },
+        y2: {
+          beginAtZero: true,
+          position: 'right',
+          grid: { drawOnChartArea: false },
+          ticks: { callback: function(value) { return value.toLocaleString(); } }
+        }
+      }
+    }
+  });
+
   // --- Annual income stacked bar chart ---
   var incomeData = impactData.funding.income;
   var incomeYears = incomeData.map(function(d) { return d.year; });
@@ -556,22 +668,22 @@ masthead:
       labels: incomeYears,
       datasets: [
         {
-          label: isJa ? '地元パートナーシップ' : 'Local partnerships',
+          label: '地元パートナーシップ',
           data: incomeData.map(function(d) { return d.local_partnerships; }),
           backgroundColor: colours.primary,
         },
         {
-          label: isJa ? '業界スポンサー' : 'Industry sponsors',
+          label: '業界スポンサー',
           data: incomeData.map(function(d) { return d.industry_sponsors; }),
           backgroundColor: colours.accent,
         },
         {
-          label: isJa ? '助成金・補助金' : 'Grants & subsidies',
+          label: '助成金・補助金',
           data: incomeData.map(function(d) { return d.grants_subsidies; }),
           backgroundColor: colours.blue,
         },
         {
-          label: isJa ? 'コミュニティ基金' : 'Community fund',
+          label: 'コミュニティ基金',
           data: incomeData.map(function(d) { return d.community_fund; }),
           backgroundColor: colours.grey,
         }
@@ -602,7 +714,7 @@ masthead:
           },
           title: {
             display: true,
-            text: isJa ? '収入 (円)' : 'Income (¥)',
+            text: '収入 (円)',
           }
         }
       }
@@ -614,9 +726,7 @@ masthead:
   new Chart(document.getElementById('chart-funding-sources'), {
     type: 'doughnut',
     data: {
-      labels: isJa
-        ? ['地元パートナーシップ', '業界スポンサー', '助成金・補助金', 'コミュニティ基金']
-        : ['Local partnerships', 'Industry sponsors', 'Grants & subsidies', 'Community fund'],
+      labels: ['地元パートナーシップ', '業界スポンサー', '助成金・補助金', 'コミュニティ基金'],
       datasets: [{
         data: [sources.local_partnerships, sources.industry_sponsors, sources.grants_subsidies, sources.community_fund],
         backgroundColor: [colours.primary, colours.accent, colours.blue, colours.grey],
@@ -628,7 +738,7 @@ masthead:
       plugins: {
         title: {
           display: true,
-          text: isJa ? '資金源' : 'Funding Sources',
+          text: '資金源',
           font: { size: 16, weight: 700 },
         },
         legend: { position: 'bottom' },
@@ -649,9 +759,7 @@ masthead:
   new Chart(document.getElementById('chart-funding-allocation'), {
     type: 'doughnut',
     data: {
-      labels: isJa
-        ? ['トレイル建設', 'トレイル維持・運営', 'マーケティング・イベント', '管理・その他']
-        : ['Trail construction', 'Trail maintenance & operation', 'Marketing & events', 'Admin & other'],
+      labels: ['トレイル建設', 'トレイル維持・運営', 'マーケティング・イベント', '管理・その他'],
       datasets: [{
         data: [allocation.trail_construction, allocation.trail_maintenance_operation, allocation.marketing_events, allocation.admin_other],
         backgroundColor: [colours.primary, colours.accent, colours.blue, colours.grey],
@@ -663,7 +771,7 @@ masthead:
       plugins: {
         title: {
           display: true,
-          text: isJa ? '資金配分' : 'How Funds Are Spent',
+          text: '資金配分',
           font: { size: 16, weight: 700 },
         },
         legend: { position: 'bottom' },
