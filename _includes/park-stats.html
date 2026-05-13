@@ -106,7 +106,7 @@
       <span class="stat-count">{{ doubleBlackTrailCount }}</span>
     </li>
   </ul>
-  <p><strong>{{ trailCount }}</strong> {% if page.lang == 'ja' %}つのトレイル{% else %}trails{% endif %}</p>
+  <p>{% if page.lang == 'ja' %}総トレイル数：{% else %}Total trails:{% endif %} <strong>{{ trailCount }}</strong></p>
   <p>{% if page.lang == 'ja' %}総距離：{% else %}Total distance:{% endif %} <strong>{{ totalDistance | divided_by: 1000 }}km</strong> <span class="fa fa-ruler-horizontal" title="{% if page.lang == 'ja' %}距離{% else %}Distance{% endif %}"></span></p>
   <p>{% if page.lang == 'ja' %}下りの総距離：{% else %}Total descent:{% endif %} <strong>{{ totalDescent }}m</strong> <span class="fa fa-arrow-down" title="{% if page.lang == 'ja' %}下り{% else %}Descent{% endif %}"></span></p>
   <p>{% if page.lang == 'ja' %}上りの総距離：{% else %}Total climb:{% endif %} <strong>{{ totalClimb }}m</strong> <span class="fa fa-arrow-up" title="{% if page.lang == 'ja' %}登り{% else %}Climb{% endif %}"></span></p>
