@@ -202,17 +202,18 @@ Decide: change bg image?
 - Modify: any references elsewhere in the site to "Grand Hirafu" without "Bike Park"
 
 Steps:
-- [ ] Run `grep -rn "Grand Hirafu" --include="*.html" --include="*.md" --include="*.yml"` and identify which references need "Bike Park" appended.
-- [ ] Rename "Grand Hirafu" to "Grand Hirafu Bike Park" everywhere appropriate (page title, nav references, body copy, schema). Mirror in JA.
+- [x] Run `grep -rn "Grand Hirafu" --include="*.html" --include="*.md" --include="*.yml"` and identify which references need "Bike Park" appended.
+- [x] Rename "Grand Hirafu" to "Grand Hirafu Bike Park" — applied to card headings and logo alt text on `/where-to-ride/` and `/projects/` (EN + JA). Body copy, listicles, resort-entity references, and internal docs intentionally left as-is per Bucket A scope (see Notes).
 - [ ] Update the Trailforks embed: confirm current iframe URL/region; update to the correct Grand Hirafu region ID if changed.
 - [ ] Update trail list/specs against current data.
 - [ ] Audit section padding; fix where inconsistent with new reference style.
 - [ ] Add gallery images (Pattern P-IMG).
-- [ ] Mirror EN → JA (Pattern P-EN-JA).
+- [x] Mirror EN → JA (Pattern P-EN-JA) — done for the rename portion. Other A.3 sub-tasks still pending JA mirror.
 - [ ] Visual check.
-- [ ] Pattern P-COMMIT.
+- [ ] Pattern P-COMMIT — partial commit for rename portion only.
 
 Notes:
+Rename scope: Bucket A (headings + alt). Body copy, resort-entity references, park listicles, and internal docs left as-is. Twin Peaks `<h4>` on `/projects/` also gained "Bike Park" for consistency with the other two cards.
 Decide: (none open)
 
 ---
@@ -224,16 +225,17 @@ Decide: (none open)
 - Modify: any references elsewhere to "Hanazono" needing "Bike Park"
 
 Steps:
-- [ ] Run `grep -rn "Hanazono" --include="*.html" --include="*.md" --include="*.yml"`.
-- [ ] Rename "Hanazono" → "Hanazono Bike Park" where appropriate. Mirror in JA.
+- [x] Run `grep -rn "Hanazono" --include="*.html" --include="*.md" --include="*.yml"`.
+- [x] Rename "Hanazono" → "Hanazono Bike Park" — applied to card headings and logo alt text on `/where-to-ride/` and `/projects/` (EN + JA). Body copy and "Park Hyatt Niseko Hanazono" / "Niseko Hanazono" resort-entity references left as-is per Bucket A scope.
 - [ ] Update Trailforks embed for Hanazono.
 - [ ] Update trails + specs against current data.
 - [ ] Add gallery images (Pattern P-IMG).
-- [ ] Mirror EN → JA (Pattern P-EN-JA).
+- [x] Mirror EN → JA (Pattern P-EN-JA) — done for the rename portion. Other A.4 sub-tasks still pending JA mirror.
 - [ ] Visual check.
-- [ ] Pattern P-COMMIT.
+- [ ] Pattern P-COMMIT — partial commit for rename portion only.
 
 Notes:
+Rename scope: same Bucket A approach as A.3.
 Decide: (none open)
 
 ---
