@@ -76,6 +76,11 @@ masthead:
   <script>(g => { var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window; b = b[c] || (b[c] = {}); var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => { await (a = m.createElement("script")); e.set("libraries", [...r] + ""); for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]); e.set("callback", c + ".maps." + q); a.src = `https://maps.${c}apis.com/maps/api/js?` + e; d[q] = f; a.onerror = () => h = n(Error(p + " could not load.")); a.nonce = m.querySelector("script[nonce]")?.nonce || ""; m.head.append(a) })); d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)) })
     ({ key: "AIzaSyCet6Eys-EOTnAbs402oGLPbJWuvlH5E0s", v: "weekly" });</script>
 
+  {%- capture stats_twin_peaks %}{% include trail-difficulty-counts.html data_key="twinpeaks" %}{% endcapture -%}
+  {%- capture stats_grand_hirafu %}{% include trail-difficulty-counts.html data_key="grand-hirafu" %}{% endcapture -%}
+  {%- capture stats_hanazono %}{% include trail-difficulty-counts.html data_key="hanazono" %}{% endcapture -%}
+  {%- capture stats_annupuri %}{% include trail-difficulty-counts.html data_key="annupuri" %}{% endcapture -%}
+
   <script type="text/javascript">
     async function initAreaMap() {
       var { Map, InfoWindow } = await google.maps.importLibrary("maps");
@@ -99,7 +104,8 @@ masthead:
           anchor: "twin-peaks",
           photo: "/assets/images/twinpeaks/header.jpg",
           logo: "/assets/images/logos/twin-peaks.svg",
-          blurb: "20本のトレイル ・ 21km ・ 毎日無料"
+          blurb: "20本のトレイル ・ 21km ・ 毎日無料",
+          stats: {{ stats_twin_peaks | strip_newlines | jsonify }}
         },
         {
           position: { lat: 42.86193535111528, lng: 140.69852802023013 },
@@ -107,7 +113,8 @@ masthead:
           anchor: "grand-hirafu",
           photo: "/assets/images/trails/grand-hirafu/01.jpg",
           logo: "/assets/images/company/grand-hirafu.png",
-          blurb: "3本のトレイル ・ ヒラフ村でリフトアクセス"
+          blurb: "3本のトレイル ・ ヒラフ村でリフトアクセス",
+          stats: {{ stats_grand_hirafu | strip_newlines | jsonify }}
         },
         {
           position: { lat: 42.893118993617485, lng: 140.70017232900975 },
@@ -115,7 +122,8 @@ masthead:
           anchor: "hanazono",
           photo: "/assets/images/trails/hanazono/01.jpg",
           logo: "/assets/images/company/hanazono.png",
-          blurb: "ニセコ初のリフトアクセスフロートレイル ・ 2026年夏オープン"
+          blurb: "ニセコ初のリフトアクセスフロートレイル ・ 2026年夏オープン",
+          stats: {{ stats_hanazono | strip_newlines | jsonify }}
         },
         {
           position: { lat: 42.84748695537465, lng: 140.6480347202528 },
@@ -123,7 +131,8 @@ masthead:
           anchor: "annupuri",
           photo: "/assets/images/trails/annupuri/01.jpg",
           logo: "/assets/images/company/annupuri.png",
-          blurb: "ゴンドラアクセスのダウンヒルコース ・ 3.2km"
+          blurb: "ゴンドラアクセスのダウンヒルコース ・ 3.2km",
+          stats: {{ stats_annupuri | strip_newlines | jsonify }}
         },
         {
           position: { lat: 42.8675451690713, lng: 140.71061419758635 },
@@ -180,6 +189,7 @@ masthead:
           + '</div>'
           + '<div class="map-popup-body">'
           + '<strong class="map-popup-title">' + poi.title + '</strong>'
+          + (poi.stats || '')
           + '<span class="map-popup-blurb">' + poi.blurb + '</span>'
           + '<a href="#ride-' + poi.anchor + '" class="map-popup-action" data-ride-anchor="' + poi.anchor + '">詳細を見る <span class="fa-solid fa-circle-arrow-down"></span></a>'
           + '</div>'
@@ -261,6 +271,7 @@ masthead:
     /* Popup card */
     .map-popup {
       width: 240px;
+      background: var(--color-bg-panel);
     }
     .map-popup-image {
       position: relative;
@@ -315,7 +326,9 @@ masthead:
       font-size: 12px;
       margin-bottom: 12px;
     }
-    .map-popup-action {
+    .map-popup-action,
+    .map-popup-action:hover,
+    .map-popup-action:focus {
       display: inline-block;
       margin-top: 4px;
       color: #fff;
@@ -329,11 +342,6 @@ masthead:
       top: 1px;
       letter-spacing: -1px;
       transition: margin 500ms;
-    }
-    .map-popup-action:hover,
-    .map-popup-action:focus {
-      color: var(--color-primary);
-      text-decoration: none;
     }
     .map-popup-action:hover span,
     .map-popup-action:focus span {
