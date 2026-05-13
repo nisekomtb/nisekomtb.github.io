@@ -167,6 +167,46 @@ layout: base
     object-fit: cover;
     display: block;
   }
+
+  .tp-tabs {
+    margin: 0 0 36px;
+    border-bottom: 1px solid var(--color-bg-border);
+  }
+
+  .tp-tabs ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .tp-tabs li {
+    margin: 0 24px -1px 0;
+  }
+
+  .tp-tabs a {
+    display: inline-block;
+    padding: 0 0 12px;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #ccc;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color 200ms, border-color 200ms;
+  }
+
+  .tp-tabs a:hover,
+  .tp-tabs a:focus {
+    color: #fff;
+  }
+
+  .tp-tabs li.active a {
+    color: #fff;
+    border-bottom-color: var(--color-primary);
+  }
 </style>
 
 <div id="t3-mainbody" class="container t3-mainbody">
@@ -174,6 +214,31 @@ layout: base
 
     <!-- MAIN CONTENT -->
     <div id="t3-content" class="t3-content col col-12 col-md-8 col-lg-9">
+      <nav class="tp-tabs" aria-label="{% if page.lang == 'ja' %}ツインピークス バイクパーク セクションナビ{% else %}Twin Peaks Bike Park section navigation{% endif %}">
+        <ul>
+          <li {% unless path1 %}class="active"{% endunless %}>
+            <a href="/twin-peaks/">{% if page.lang == "ja" %}トレイルマップ{% else %}Trail Map{% endif %}</a>
+          </li>
+          <li {% if path1=='access' %}class="active"{% endif %}>
+            <a href="/twin-peaks/access">{% if page.lang == "ja" %}アクセス{% else %}Access{% endif %}</a>
+          </li>
+          <li {% if path1=='guides' %}class="active"{% endif %}>
+            <a href="/twin-peaks/guides">{% if page.lang == "ja" %}ガイド{% else %}Guides{% endif %}</a>
+          </li>
+          <li {% if path1=='rules' %}class="active"{% endif %}>
+            <a href="/twin-peaks/rules">{% if page.lang == "ja" %}ルール{% else %}Rules{% endif %}</a>
+          </li>
+          <li {% if path1=='wet-trails' %}class="active"{% endif %}>
+            <a href="/twin-peaks/wet-trails">{% if page.lang == "ja" %}ぬれたトレイル{% else %}Wet Trails{% endif %}</a>
+          </li>
+          <li {% if path1=='commercial-pass' %}class="active"{% endif %}>
+            <a href="/twin-peaks/commercial-pass">{% if page.lang == "ja" %}商業事業者パス{% else %}Commercial Pass{% endif %}</a>
+          </li>
+          <li {% if path1=='emergency' %}class="active"{% endif %}>
+            <a href="/twin-peaks/emergency">{% if page.lang == "ja" %}緊急対応{% else %}Emergency{% endif %}</a>
+          </li>
+        </ul>
+      </nav>
       <div class="item-page hidden-masthead-info">
         <!-- Article -->
         <article>
@@ -190,76 +255,6 @@ layout: base
         class="tp-logo"
         src="/assets/images/logos/twin-peaks.svg?d={{ site.time | date: " %s" }}"
         alt="{% if page.lang == 'ja' %}ツインピークスバイクパーク{% else %}Twin Peaks Bike Park{% endif %}" />
-      <div class="t3-module module">
-        <div class="module-inner">
-          <div class="module-ct">
-            <ul class="nav nav-pills flex-column">
-              <li
-                {% unless path1 %}
-                class="active"
-                {% endunless %}>
-                <a href="/twin-peaks/">
-                  {% if page.lang == "ja" %}トレイルマップ<wbr>＆<wbr>状況{% else %}Trail Map & Status{% endif %}
-                </a>
-              </li>
-              <li
-                {% if path1=='access' %}
-                class="active"
-                {% endif %}>
-                <a href="/twin-peaks/access">
-                  {% if page.lang == "ja" %}アクセス<wbr>＆<wbr>設備{% else %}Access & Facilities{% endif %}
-                </a>
-              </li>
-              <li
-                {% if path1=='guides' %}
-                class="active"
-                {% endif %}>
-                <a href="/twin-peaks/guides">
-                  {% if page.lang == "ja" %}ガイド<wbr>＆<wbr>ツアーオペレーション{% else %}Guides & Tour operators{% endif %}
-                </a>
-              </li>
-              {% comment %} <li {% if path1=='trail-building' %}class="active"{% endif %}>
-                                                                  <a href="/twin-peaks/phases">
-                                                                    {% if page.lang == "ja" %}トレイルビルディング{% else %}Trail building{% endif %} <span
-                                                                  </a>
-                                                        </li> {% endcomment %}
-              <li
-                {% if path1=='rules' %}
-                class="active"
-                {% endif %}>
-                <a href="/twin-peaks/rules">
-                  {% if page.lang == "ja" %}ルール{% else %}Rules{% endif %}
-                </a>
-              </li>
-              <li
-                {% if path1=='wet-trails' %}
-                class="active"
-                {% endif %}>
-                <a href="/twin-peaks/wet-trails">
-                  {% if page.lang == "ja" %}ぬれた<wbr>トレイル{% else %}Wet Trails{% endif %}
-                </a>
-              </li>
-              <li
-                {% if path1=='commercial-pass' %}
-                class="active"
-                {% endif %}>
-                <a href="/twin-peaks/commercial-pass">
-                  {% if page.lang == "ja" %}商業事業者<wbr>パス{% else %}Commercial Pass{% endif %}
-                </a>
-              </li>
-              <li
-                {% if path1=='emergency' %}
-                class="active"
-                {% endif %}>
-                <a href="/twin-peaks/emergency">
-                  {% if page.lang == "ja" %}緊急対応計画{% else %}Emergency Procedure{% endif %}
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
       <div class="park-sidebar-panel">
         <h3 class="module-title">{% if page.lang == "ja" %}基本データ{% else %}Key stats{% endif %}</h3>
 
