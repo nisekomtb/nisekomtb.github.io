@@ -17,12 +17,12 @@
 
 <div class="detail-item">
   {% if page.lang == "ja" %}
-    <h4><span class="fa-solid fa-arrow-up" style="margin-right:4px;"></span> 上りのタイプ</h4>
+    <h4><span class="fa-solid fa-cable-car" style="margin-right:4px;"></span> 上りのタイプ</h4>
     <p>リフトアクセス：<strong>{% if park.lift_access %}有{% else %}無{% endif %}</strong></p>
     <p>シャトルアクセス：<strong>{% if park.shuttle_access %}有{% else %}無{% endif %}</strong></p>
     <p>ペダルアクセス：<strong>{% if park.pedal_access %}有{% else %}無{% endif %}</strong></p>
   {% else %}
-    <h4><span class="fa-solid fa-arrow-up" style="margin-right:4px;"></span> Uplift type</h4>
+    <h4><span class="fa-solid fa-cable-car" style="margin-right:4px;"></span> Uplift type</h4>
     <p>Lift access: <strong>{% if park.lift_access %}Yes{% else %}No{% endif %}</strong></p>
     <p>Shuttle access: <strong>{% if park.shuttle_access %}Yes{% else %}No{% endif %}</strong></p>
     <p>Pedal access: <strong>{% if park.pedal_access %}Yes{% else %}No{% endif %}</strong></p>
