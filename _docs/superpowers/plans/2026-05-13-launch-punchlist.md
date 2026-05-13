@@ -135,13 +135,13 @@ Decide: (resolved) hide from nav
 - Modify: `_includes/nav.html` (and any footer/mobile nav variants)
 
 Steps:
-- [ ] Open `_includes/nav.html` and any related nav partials. Locate the current order of Dirty Dames and Press.
-- [ ] Reorder so Dirty Dames sits above Press in the rendered nav.
-- [ ] If JA has a separate nav include, mirror the change (Pattern P-EN-JA, but for structure not text).
-- [ ] Visual check on desktop + mobile.
-- [ ] Pattern P-COMMIT.
+- [x] Open nav source: `_data/nav.yml` (bilingual entries in one file).
+- [x] Reorder so Dirty Dames sits above Press.
+- [x] JA shares the same data file; structural reorder applies to both languages automatically.
+- [ ] Visual check on desktop + mobile. *(Tom to verify.)*
+- [x] Pattern P-COMMIT (commit 7e6cf65).
 
-Notes:
+Notes: Nav is driven by `_data/nav.yml`, not split per-language. One reorder edits both languages.
 Decide: (none open)
 
 ---
