@@ -100,14 +100,14 @@ Decide: (resolved) label rename
 - Modify: relevant CSS file (locate via grep)
 
 Steps:
-- [ ] Locate the language switcher: `grep -rn "lang\|locale\|switcher\|/ja/\|/en/" _includes/nav.html` and inspect markup.
-- [ ] Identify the CSS rule applying the current (mismatched) background colour. Likely in a CSS file under `assets/css/`.
-- [ ] Identify the nav background colour value (the target).
-- [ ] Update the switcher background CSS to match the nav background. Confirm hover/focus states still read correctly.
-- [ ] Visual check at desktop + mobile widths on a representative page.
-- [ ] Pattern P-COMMIT.
+- [x] Locate the language switcher: `<div class="languageswitcherload">` in `_includes/nav.html:144`.
+- [x] Identify the CSS rule: `.languageswitcherload` at `assets/css/template.css:4860`, `background-color: rgba(0, 0, 0, 0.7)`.
+- [x] Identify the target nav value: `rgba(0, 0, 0, 0.9)` (set on `.navbar-nav` and `.dropdown-menu` in commit cf7d8ae on 2026-04-27).
+- [x] Update the switcher background to `rgba(0, 0, 0, 0.9)`. Hover/focus unaffected (no separate rule).
+- [ ] Visual check at desktop + mobile widths. *(Tom to verify.)*
+- [x] Pattern P-COMMIT (commit cdbcde7).
 
-Notes:
+Notes: The nav darkening commit (cf7d8ae, 2026-04-27) updated `.navbar-nav` and `.dropdown-menu` from 0.7 → 0.9 opacity but missed `.languageswitcherload`. One-line fix.
 Decide: (none open)
 
 ---
