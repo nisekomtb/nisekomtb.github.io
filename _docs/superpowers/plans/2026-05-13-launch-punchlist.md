@@ -59,17 +59,17 @@ These patterns are referenced by tasks below. Do not skip steps unless explicitl
 - Add: chosen replacement mark asset
 
 Steps:
-- [ ] Run `grep -rn "horns\|🤘\|🤟" --include="*.html" --include="*.md" --include="*.scss" --include="*.css"` to inventory references.
-- [ ] Open each file and identify the visible horns usage (vs. a code comment).
-- [ ] Discuss with Tom: replacement mark concepts (single icon? Niseko-specific motif? typographic mark?). Tom provides asset to `assets/images/_triage/` once decided.
-- [ ] Generate favicon set: 16x16, 32x32, 96x96, 180x180 (apple-touch-icon), 192x192, 512x512, multi-size .ico. Place in `assets/images/ico/`.
-- [ ] Update favicon `<link>` tags in `_includes/head.html` (or `_layouts/default.html` head section).
-- [ ] Replace inline horns image references site-wide (EN + JA).
-- [ ] Local serve (`bundle exec jekyll serve --baseurl="" --open-url`) and visually verify: nav, footer, header, Home, plus one sub-page.
-- [ ] Pattern P-COMMIT.
+- [x] Run `grep -rn "horns\|🤘\|🤟" --include="*.html" --include="*.md" --include="*.scss" --include="*.css"` to inventory references.
+- [x] Open each file and identify the visible horns usage (vs. a code comment).
+- [x] Discuss with Tom: replacement mark concepts (single icon? Niseko-specific motif? typographic mark?). Tom provides asset to `assets/images/_triage/` once decided.
+- [x] Generate favicon set: 16x16, 32x32, 96x96, 180x180 (apple-touch-icon), 192x192, 512x512, multi-size .ico. Place in `assets/images/ico/`.
+- [x] Update favicon `<link>` tags in `_layouts/base.html` head section.
+- [x] Replace inline horns image references site-wide (`_includes/hero.html`, `_includes/hero-slides.html`). EN + JA share these includes.
+- [ ] Local serve (`bundle exec jekyll serve --baseurl="" --open-url`) and visually verify: nav, footer, header, Home, plus one sub-page. *(Tom to verify in browser.)*
+- [x] Pattern P-COMMIT (commit 6786862).
 
-Notes:
-Decide: replacement mark concept (Tom approval before asset generation)
+Notes: Resolved to torii. Asset is the Shinto Shrine emoji from Noto Emoji (Google, Apache 2.0). Attribution captured at `_docs/attributions.md`. Favicon set includes SVG primary + PNG fallbacks (16/32/96/192/512) + apple-touch-icon (180) + legacy multi-size .ico.
+Decide: (resolved) torii via Noto Emoji
 
 ---
 
