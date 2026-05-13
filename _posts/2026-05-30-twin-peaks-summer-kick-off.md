@@ -70,7 +70,7 @@ Also at 10:00am, our crew will lead an orientation ride for anyone new to Twin P
 
 ### The NAMBA tent and the new trail map
 
-We will be at the trail base all day from 9:00am to 3:00pm. Come and see the updated trail head map showing the full 17km of trail, pick up some new merch, and chat with the team about what is in the pipeline for Twin Peaks and how you can get involved.
+We will be at the trail base all day from 9:00am to 3:00pm. Come and see the updated trailhead map showing the full 17km of trail, pick up some new merch, and chat with the team about what is in the pipeline for Twin Peaks and how you can get involved.
 
 ### Food truck
 
@@ -84,4 +84,4 @@ From 1:30pm at the NAMBA tent, a scavenger hunt for the kids around the trail ba
 
 Showing up without a bike? Rhythm is offering 30% off rentals to everyone on the day, all day. Head there first to grab a rig before rolling up to the trailhead.
 
-See you at the trail head.
+See you at the trailhead.
