@@ -65,7 +65,7 @@ Also at 10:00am, our crew will lead an orientation ride for anyone new to Twin P
 
 ### The NAMBA tent and the new trail map
 
-We will be at the trail base all day from 9:00am to 3:00pm. Come and see the updated trail head map showing the full 17km of trail, pick up some new merch, and chat with the team about what is in the pipeline for Twin Peaks and how you can [get involved](/get-involved/).
+We will be at the trail base all day from 9:00am to 3:00pm. Come and see the updated trail head map showing the full 17km of trail, pick up some new merch, and chat with the team about what is in the pipeline for Twin Peaks and how you can get involved.
 
 ### Food truck
 
