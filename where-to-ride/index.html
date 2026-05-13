@@ -190,7 +190,6 @@ masthead:
           + '<div class="map-popup-body">'
           + '<strong class="map-popup-title">' + poi.title + '</strong>'
           + (poi.stats || '')
-          + '<span class="map-popup-blurb">' + poi.blurb + '</span>'
           + '<a href="#ride-' + poi.anchor + '" class="map-popup-action" data-ride-anchor="' + poi.anchor + '">View details <span class="fa-solid fa-circle-arrow-down"></span></a>'
           + '</div>'
           + '</div>';
@@ -343,8 +342,7 @@ masthead:
       letter-spacing: -1px;
       transition: margin 500ms;
     }
-    .map-popup-action:hover span,
-    .map-popup-action:focus span {
+    .map-popup-action:hover span {
       margin-left: 14px;
     }
 
