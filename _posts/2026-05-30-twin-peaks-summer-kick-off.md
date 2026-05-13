@@ -52,7 +52,7 @@ about: false
 
 The trail crew have been hard at it since the snow melted, and Twin Peaks is back. Every line is open: skills park, flow trails, tech lines, and the popular Launch Control jump line. All 17km, ready to ride.
 
-This year we're keeping things simple. No big schedule, no main stage. Come for a lap, stay for the community, find us at the tent.
+This year we're keeping things simple. Come for a lap, stay for the community, find us at the tent.
 
 ### The Dirty Dames women's skills clinic
 
