@@ -279,264 +279,76 @@ description: The Twin Peaks Bike Park in Niseko, Japan is a world-class mountain
     display:inline;
   }
 
-  .trail-sign {
-    background-image: url('/assets/images/twinpeaks/trailsign.jpg');
-    background-repeat: no-repeat;
-    border-radius: 3px;
-    margin-left:0;
-    margin-right:0;
-    overflow: auto;
+  .signage-link {
+    margin: 24px 0 0;
+    text-align: center;
+    font-size: 14px;
+    color: var(--color-text-muted, #999);
   }
 
-  .trail-sign .col {
-    padding:0px;
+  .signage-link a {
+    color: var(--color-accent);
+    text-decoration: none;
   }
 
-  .trail-sign .col.fst {
-    height:200px;
+  .signage-link a:hover,
+  .signage-link a:focus {
+    text-decoration: underline;
   }
 
-  @media (max-width: 991px) {
-    .trail-sign .col.fst {
-      flex: 0 0 100%;
+  .tp-gallery {
+    margin: 60px 0 20px;
+  }
+
+  .tp-gallery .gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  @media (min-width: 600px) {
+    .tp-gallery .gallery-grid {
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 
-  .trail-sign .splide {
+  @media (min-width: 992px) {
+    .tp-gallery .gallery-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .tp-gallery .gallery-tile {
+    position: relative;
+    aspect-ratio: 3 / 2;
     background: var(--color-bg-panel);
     border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .tp-gallery .gallery-tile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .tp-gallery .gallery-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    padding: 16px;
+    color: #666;
+    font-size: 12px;
   }
 
-  .trail-sign .splide__slide {
-    padding: 40px;
-    box-sizing: border-box;
-  }
-
-  .trail-sign .splide__slide p {
-    margin: 0;
-  }
-
-  .trail-sign .splide__arrows button {
-    opacity: 0.5;
-    background: none;
-  }
-
-  .trail-sign .splide__arrows button svg {
-    fill: #ffffff;
-  }
-
-  .trail-sign .splide__arrows button:hover {
-    opacity: 0.8;
-  }
-
-  .trail-sign .splide__arrows button:disabled {
-    opacity: 0.1;
-  }
-
-  .trail-sign .splide__arrows {
-    text-align: center;
-    padding-bottom: 15px;
-  }
-
-  .trail-sign.pos-0, .trail-sign.pos-1, .trail-sign.pos-2, .trail-sign.pos-3, .trail-sign.pos-4, .trail-sign.pos-5, .trail-sign.pos-6, .trail-sign.pos-7, .trail-sign.pos-8 {
-    background-image: url('/assets/images/twinpeaks/trailsign-zoom-1.jpg');
-    background-position-x: center;
-    background-size:auto;
-    transition: all 0.25s linear;
-  }
-
-  .trail-sign.pos-0 {
-    background-image: url('/assets/images/twinpeaks/trailsign.jpg');
-    background-size:cover;
-    background-position: 15% -80px;
-  }
-
-  .trail-sign div.fst{
-    box-shadow: 0px 0px 50px 20px rgba(0,0,0,.6) inset;
-  }
-
-  .trail-sign.pos-0 div.fst {
-    box-shadow: none;
-  }
-
-  .trail-sign div.snd {
-    background-color: rgba(0,0,0,.6);
-  }
-
-  .trail-sign.pos-0 div.snd {
-    background-color:unset;
-  }
-
-  .trail-sign.pos-0 div:first-child {
-
-  }
-
-  .trail-sign.pos-1 {
-    background-position-y: -120px;
-  }
-
-  .trail-sign.pos-2 {
-    background-position-y: -250px;
-  }
-
-  .trail-sign.pos-3 {
-    background-position-y: -410px;
-  }
-
-  .trail-sign.pos-4 {
-    background-position-y: -590px;
-  }
-
-  .trail-sign.pos-5 {
-    background-position-y: -730px;
-  }
-
-  .trail-sign.pos-6 {
-    background-position-y: -870px;
-  }
-
-  .trail-sign.pos-7 {
-    background-position-y: -1010px;
-  }
-
-  .trail-sign.pos-8 {
-    background-position-y: -1150px;
-  }
-
-  @media (min-width: 455px) {
-    .trail-sign.pos-0 {
-      background-position: 5% -80px;
-    }
-  }
-
-  @media (min-width: 768px) {
-
-  }
-
-  @media(min-width: 992px) {
-    .trail-sign {
-      height:381px;
-    }
-
-    .trail-sign .col {
-      padding:20px;
-    }
-
-    .trail-sign .col.fst {
-      height:381px;
-    }
-
-    .trail-sign div.fst{
-      box-shadow: 0px 0px 50px 80px rgba(0,0,0,.6) inset;
-    }
-
-    .trail-sign.pos-0 div.fst {
-      box-shadow: none;
-    }
-
-    .trail-sign .splide {
-      height: 341px;
-    }
-
-    .trail-sign .splide__slide {
-      padding: 52px 34px 34px;
-      box-sizing: border-box;
-    }
-
-    .trail-sign.pos-0 {
-      background-position: 0 0;
-    }
-
-    .trail-sign.pos-1, .trail-sign.pos-2, .trail-sign.pos-3, .trail-sign.pos-4, .trail-sign.pos-5, .trail-sign.pos-6, .trail-sign.pos-7, .trail-sign.pos-8 {
-      background-image: url('/assets/images/twinpeaks/trailsign-zoom-2.jpg');
-      background-size:cover;
-    }
-
-    .trail-sign.pos-1 {
-      background-position-y: 0px;
-    }
-
-    .trail-sign.pos-2 {
-      background-position-y: -95px;
-    }
-
-    .trail-sign.pos-3 {
-      background-position-y: -205px;
-    }
-
-    .trail-sign.pos-4 {
-      background-position-y: -325px;
-    }
-
-    .trail-sign.pos-5 {
-      background-position-y: -430px;
-    }
-
-    .trail-sign.pos-6 {
-      background-position-y: -525px;
-    }
-
-    .trail-sign.pos-7 {
-      background-position-y: -625px;
-    }
-
-    .trail-sign.pos-8 {
-      background-position-y: -725px;
-    }
-
-  }
-
-  @media(min-width: 1200px) {
-    .trail-sign .splide__slide {
-      padding: 72px 54px 54px;
-      box-sizing: border-box;
-    }
-
-    .trail-sign.pos-0 {
-      background-position-y: 50%;
-    }
-
-    .trail-sign.pos-1, .trail-sign.pos-2, .trail-sign.pos-3, .trail-sign.pos-4, .trail-sign.pos-5, .trail-sign.pos-6, .trail-sign.pos-7, .trail-sign.pos-8 {
-      background-size:auto;
-    }
-
-    .trail-sign.pos-1 {
-      background-position-y: -75px;
-    }
-
-    .trail-sign.pos-2 {
-      background-position-y: -205px;
-    }
-
-    .trail-sign.pos-3 {
-      background-position-y: -360px;
-    }
-
-    .trail-sign.pos-4 {
-      background-position-y: -540px;
-    }
-
-    .trail-sign.pos-5 {
-      background-position-y: -690px;
-    }
-
-    .trail-sign.pos-6 {
-      background-position-y: -830px;
-    }
-
-    .trail-sign.pos-7 {
-      background-position-y: -960px;
-    }
-
-    .trail-sign.pos-8 {
-      background-position-y: -1100px;
-    }
-  }
-
-  body:after {
-    content: url('/assets/images/twinpeaks/trailsign-zoom-1.jpg') url('/assets/images/twinpeaks/trailsign-zoom-2.jpg');
-    display: none;
+  .tp-gallery .gallery-placeholder .fa-solid {
+    font-size: 32px;
+    margin-bottom: 8px;
   }
 </style>
 
@@ -578,60 +390,47 @@ description: The Twin Peaks Bike Park in Niseko, Japan is a world-class mountain
 
 {% include trails-table.html data_key="twinpeaks" %}
 
-<section>
-  <h3>Navigating around the bike park</h3>
-  <div id="trail-sign" class="row clearfix trail-sign pos-0">
-    <div class="col col-md-12 col-lg-6 fst"></div>
-    <div class="col col-md-12 col-lg-6 snd clearfix">
-      <div id="carousel-trail-sign" class="latest-project">
-        <div class="container">
-          <div class="splide" id="trail-signs-carousel">
-            <div class="splide__track">
-              <ul class="splide__list">
-                <li class="splide__slide">
-                  <h4>Trail markers:</h4>
-                  <p>These signposts are located at all trailheads throughout the Twin Peaks Bike Park. Each signpost provides essential
-                  trail information helping you plan a safe and enjoyable ride.</p>
-                </li>
-                <li class="splide__slide">
-                  <h4>Trail name:</h4>
-                  <p>Displays the name of the trail you’re out riding</p>
-                </li>
-                <li class="splide__slide">
-                  <h4>Trail difficulty:</h4>
-                  <p>Shows the difficulty level of the trail, rated according to <a style="cursor:pointer;" href="https://www.imba.com/sites/default/files/content/resources/2018-10/IMBATrailDifficultRatingSystem.jpg" target="_blank">IMBA’s difficulty levels</a>.</p>
-                </li>
-                <li class="splide__slide">
-                  <h4>Sponsor:</h4>
-                  <p>Acknowledges the generous support of the sponsor who supported the building of this trail!</p>
-                </li>
-                <li class="splide__slide">
-                  <h4>Location code:</h4>
-                  <p>An alphanumeric code used for identifying your location, and navigating the park - useful for meeting up
-                    with friends, or for informing emergency responders of your location.</p>
-                </li>
-                <li class="splide__slide">
-                  <h4>Trail direction:</h4>
-                  <p>Indicates the direction of the trail</p><p>(uphill, downhill, one-way, etc.).</p>
-                </li>
-                <li class="splide__slide">
-                  <h4>Trail users:</h4>
-                  <p>Specifies the permitted trail users</p>
-                  <p>(MTB only, multi-use).</p>
-                </li>
-                <li class="splide__slide">
-                  <h4>Trail info:</h4>
-                  <p>A scannable QR code with detailed information on the trail, interactive maps and much more - powered by <a style="cursor:pointer;" href="http://trailforks.com/region/twin-peaks-bike-park/" target="_blank">Trailforks</a>.</p>
-                </li>
-                <li class="splide__slide">
-                  <h4>NAMBA:</h4>
-                  <p>The nonprofit mountain bike association, bike park manager and advocacy group responsible for managing and
-                  maintaining the trail network.</p>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+<p class="signage-link">
+  New to the trail signs? Read the <a href="/where-to-ride/signage/">unified signage guide</a>.
+</p>
+
+<section class="tp-gallery">
+  <h3>Gallery</h3>
+  <div class="gallery-grid">
+    <div class="gallery-tile">
+      <div class="gallery-placeholder">
+        <span class="fa-solid fa-image"></span>
+        <span>Photo: aerial / wide landscape of Twin Peaks Bike Park</span>
+      </div>
+    </div>
+    <div class="gallery-tile">
+      <div class="gallery-placeholder">
+        <span class="fa-solid fa-image"></span>
+        <span>Photo: rider on a flow trail</span>
+      </div>
+    </div>
+    <div class="gallery-tile">
+      <div class="gallery-placeholder">
+        <span class="fa-solid fa-image"></span>
+        <span>Photo: jump line in motion</span>
+      </div>
+    </div>
+    <div class="gallery-tile">
+      <div class="gallery-placeholder">
+        <span class="fa-solid fa-image"></span>
+        <span>Photo: family or beginner riders on a green trail</span>
+      </div>
+    </div>
+    <div class="gallery-tile">
+      <div class="gallery-placeholder">
+        <span class="fa-solid fa-image"></span>
+        <span>Photo: forest singletrack, atmospheric</span>
+      </div>
+    </div>
+    <div class="gallery-tile">
+      <div class="gallery-placeholder">
+        <span class="fa-solid fa-image"></span>
+        <span>Photo: trailhead with NAMBA signage in context</span>
       </div>
     </div>
   </div>
@@ -639,24 +438,6 @@ description: The Twin Peaks Bike Park in Niseko, Japan is a world-class mountain
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    var trailSign = document.getElementById('trail-sign');
-    var splide = new Splide('#trail-signs-carousel', {
-      type: 'slide',
-      perPage: 1,
-      gap: '36px',
-      drag: false,
-      arrows: true,
-      pagination: false,
-      autoplay: false
-    });
-
-    splide.on('moved', function (newIndex) {
-      trailSign.className = trailSign.className.replace(/pos-\d/g, '');
-      trailSign.classList.add('pos-' + newIndex);
-    });
-
-    splide.mount();
-
     var covers = document.querySelectorAll('.widget-cover');
     covers.forEach(function (cover) {
       cover.addEventListener('click', function () {

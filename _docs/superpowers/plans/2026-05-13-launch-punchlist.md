@@ -188,16 +188,17 @@ Brand-rename portion of A.3/A.4/A.7 happened in the same session: card headings,
 - Modify: front matter if `og.image` changes
 
 Steps:
-- [ ] Pattern P-STYLE audit against the new reference style.
-- [ ] Discuss background image change with Tom. If changed, source asset via Pattern P-IMG.
-- [ ] Locate the "navigating around park" section. Remove it. Add a clear link to `/where-to-ride/signage/` in a sensible spot.
-- [ ] Check if gallery markup is already in the layout template. If not, add a gallery section near the bottom of the page; source images via Pattern P-IMG.
-- [ ] Mirror EN → JA (Pattern P-EN-JA).
-- [ ] Visual check.
+- [x] Pattern P-STYLE audit against the new reference style. Sidebar layout retained (functional sub-nav + partners + park stats); no full restructure warranted. Spacing/spot-check passed.
+- [ ] Discuss background image change with Tom. Decision: defer to a cross-page masthead sweep after all Phase A pages are walked (see Task A.28).
+- [x] Locate the "navigating around park" section. Remove it. Add a clear link to `/where-to-ride/signage/` in a sensible spot. Replaced with compact `.signage-link` paragraph directly under the trails table linking to `/where-to-ride/signage/` (EN) and `/ja/where-to-ride/signage/` (JA). Also stripped ~258 lines of `.trail-sign*` CSS, the `body:after` preloader for the trailsign zoom images, and the Splide init script that only served the removed carousel.
+- [x] Check if gallery markup is already in the layout template. If not, add a gallery section near the bottom of the page; source images via Pattern P-IMG. No existing gallery pattern on the site; built one as `.tp-gallery` with `.gallery-grid` (1/2/3 columns at mobile/tablet/desktop), `.gallery-tile` (3:2 aspect-ratio), and `.gallery-placeholder` (fa-image icon + descriptive label). 6 placeholders shipped with category labels (aerial, flow, jumps, beginner, forest singletrack, trailhead signage). Real photos to be dropped into `assets/images/_triage/twin-peaks/` per Pattern P-IMG; placeholders swap to `<img>` tags inside `.gallery-tile`.
+- [x] Mirror EN → JA (Pattern P-EN-JA). JA placeholder labels tokenised with `<wbr>`. Signage link text: 「トレイルサインの読み方は、統一トレイルサインガイドをご覧ください。」 with `<wbr>` markup.
+- [ ] Visual check. *(Tom to verify in browser — pages return 200, build clean, no residual carousel references.)*
 - [ ] Pattern P-COMMIT.
 
 Notes:
-Decide: change bg image?
+Background image deferred to cross-page sweep (Task A.28). Gallery uses placeholders awaiting real images via P-IMG. No JS errors expected: removed Splide init referenced a DOM ID that no longer exists; `.widget-cover` click handler preserved for the Trailforks map.
+Decide: (resolved — bg image deferred; gallery added with placeholders)
 
 ---
 
@@ -662,6 +663,27 @@ Steps:
 Notes:
 External action: Ecwid donation + membership product images (Tom uploads in Ecwid admin)
 Decide: (none open)
+
+---
+
+### Task A.28: Cross-page masthead background image sweep
+
+**Files:**
+- Modify front matter on per-page basis: `where-to-ride/index.html`, `twin-peaks/index.html`, `where-to-ride/grand-hirafu/index.html`, `where-to-ride/hanazono/index.html`, `where-to-ride/gravel/index.html`, `where-to-ride/skills-parks/index.html`, `where-to-ride/annupuri/index.html`, `plan-your-trip/index.html`, `about/index.html`, `team/index.html`, `projects/index.html`, `projects/*/index.html`, `impact/index.html`, `dirty-dames/index.html`, `press/index.html`, `events/index.html`, `partner/index.html`, etc. plus all JA twins.
+- Source assets via Pattern P-IMG into `assets/images/_triage/mastheads/` then process and place per page.
+
+Steps:
+- [ ] Inventory current masthead state per page: which pages set `masthead.img` in front matter vs fall back to `/assets/images/bg/bg-header.jpg`.
+- [ ] Discuss with Tom: one image per page, or share-and-vary across related pages?
+- [ ] Tom drops candidate landscape photos into `assets/images/_triage/mastheads/` grouped by page slug.
+- [ ] Pick + process to masthead-suitable size (likely 1920 wide). Place under `assets/images/mastheads/` or per-page folders (decide convention at sweep time).
+- [ ] Update each page's `masthead.img` (and `masthead.credit` where photographer attribution applies) in EN front matter.
+- [ ] Mirror to JA front matter.
+- [ ] Visual check across all updated pages.
+- [ ] Pattern P-COMMIT (likely per-cluster of related pages).
+
+Notes:
+This task was created to capture the deferred bg-image decisions from A.2 onward. Defer until the rest of Phase A is walked so we know the full set of pages, can see them side-by-side, and apply a consistent visual treatment.
 
 ---
 
