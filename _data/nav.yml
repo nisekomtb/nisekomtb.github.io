@@ -28,9 +28,11 @@
     - path: impact
       en: Our Impact
       ja: 実績
-    - path: stories
-      en: Our Stories
-      ja: ストーリー
+    # Hidden until first story is published (target: 1-2 weeks post-launch).
+    # Page itself is live at /stories/ for direct access.
+    # - path: stories
+    #   en: Our Stories
+    #   ja: ストーリー
     - path: press
       en: Press & Media
       ja: プレス・メディア
