@@ -321,61 +321,6 @@ table.trails td img.sponsor {
 .signage-link a:focus {
   text-decoration: underline;
 }
-
-.tp-gallery {
-  margin: 60px 0 20px;
-}
-
-.tp-gallery .gallery-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 12px;
-}
-
-@media (min-width: 600px) {
-  .tp-gallery .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 992px) {
-  .tp-gallery .gallery-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.tp-gallery .gallery-tile {
-  position: relative;
-  aspect-ratio: 3 / 2;
-  background: var(--color-bg-panel);
-  border-radius: 3px;
-  overflow: hidden;
-}
-
-.tp-gallery .gallery-tile img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.tp-gallery .gallery-placeholder {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 16px;
-  color: #666;
-  font-size: 12px;
-}
-
-.tp-gallery .gallery-placeholder .fa-solid {
-  font-size: 32px;
-  margin-bottom: 8px;
-}
 </style>
 
 <section class="intro">
@@ -442,48 +387,6 @@ table.trails td img.sponsor {
 <p class="signage-link">
   トレイルサインの<wbr>読み方は、<wbr><a href="/ja/where-to-ride/signage/">統一トレイルサインガイド</a>を<wbr>ご覧ください。
 </p>
-
-<section class="tp-gallery">
-  <h3>ギャラリー</h3>
-  <div class="gallery-grid">
-    <div class="gallery-tile">
-      <div class="gallery-placeholder">
-        <span class="fa-solid fa-image"></span>
-        <span>写真：<wbr>ツインピークス<wbr>バイクパークの<wbr>空撮／<wbr>俯瞰風景</span>
-      </div>
-    </div>
-    <div class="gallery-tile">
-      <div class="gallery-placeholder">
-        <span class="fa-solid fa-image"></span>
-        <span>写真：<wbr>フロートレイルを<wbr>走る<wbr>ライダー</span>
-      </div>
-    </div>
-    <div class="gallery-tile">
-      <div class="gallery-placeholder">
-        <span class="fa-solid fa-image"></span>
-        <span>写真：<wbr>ジャンプラインの<wbr>瞬間</span>
-      </div>
-    </div>
-    <div class="gallery-tile">
-      <div class="gallery-placeholder">
-        <span class="fa-solid fa-image"></span>
-        <span>写真：<wbr>初心者・<wbr>家族向けの<wbr>グリーン<wbr>トレイル</span>
-      </div>
-    </div>
-    <div class="gallery-tile">
-      <div class="gallery-placeholder">
-        <span class="fa-solid fa-image"></span>
-        <span>写真：<wbr>森の<wbr>シングルトラックの<wbr>雰囲気</span>
-      </div>
-    </div>
-    <div class="gallery-tile">
-      <div class="gallery-placeholder">
-        <span class="fa-solid fa-image"></span>
-        <span>写真：<wbr>NAMBAの<wbr>サイン<wbr>掲示が<wbr>分かる<wbr>トレイルヘッド</span>
-      </div>
-    </div>
-  </div>
-</section>
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {

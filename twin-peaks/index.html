@@ -295,61 +295,6 @@ description: The Twin Peaks Bike Park in Niseko, Japan is a world-class mountain
   .signage-link a:focus {
     text-decoration: underline;
   }
-
-  .tp-gallery {
-    margin: 60px 0 20px;
-  }
-
-  .tp-gallery .gallery-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  @media (min-width: 600px) {
-    .tp-gallery .gallery-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (min-width: 992px) {
-    .tp-gallery .gallery-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-
-  .tp-gallery .gallery-tile {
-    position: relative;
-    aspect-ratio: 3 / 2;
-    background: var(--color-bg-panel);
-    border-radius: 3px;
-    overflow: hidden;
-  }
-
-  .tp-gallery .gallery-tile img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  .tp-gallery .gallery-placeholder {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 16px;
-    color: #666;
-    font-size: 12px;
-  }
-
-  .tp-gallery .gallery-placeholder .fa-solid {
-    font-size: 32px;
-    margin-bottom: 8px;
-  }
 </style>
 
 <section class="intro">
@@ -393,48 +338,6 @@ description: The Twin Peaks Bike Park in Niseko, Japan is a world-class mountain
 <p class="signage-link">
   New to the trail signs? Read the <a href="/where-to-ride/signage/">unified signage guide</a>.
 </p>
-
-<section class="tp-gallery">
-  <h3>Gallery</h3>
-  <div class="gallery-grid">
-    <div class="gallery-tile">
-      <div class="gallery-placeholder">
-        <span class="fa-solid fa-image"></span>
-        <span>Photo: aerial / wide landscape of Twin Peaks Bike Park</span>
-      </div>
-    </div>
-    <div class="gallery-tile">
-      <div class="gallery-placeholder">
-        <span class="fa-solid fa-image"></span>
-        <span>Photo: rider on a flow trail</span>
-      </div>
-    </div>
-    <div class="gallery-tile">
-      <div class="gallery-placeholder">
-        <span class="fa-solid fa-image"></span>
-        <span>Photo: jump line in motion</span>
-      </div>
-    </div>
-    <div class="gallery-tile">
-      <div class="gallery-placeholder">
-        <span class="fa-solid fa-image"></span>
-        <span>Photo: family or beginner riders on a green trail</span>
-      </div>
-    </div>
-    <div class="gallery-tile">
-      <div class="gallery-placeholder">
-        <span class="fa-solid fa-image"></span>
-        <span>Photo: forest singletrack, atmospheric</span>
-      </div>
-    </div>
-    <div class="gallery-tile">
-      <div class="gallery-placeholder">
-        <span class="fa-solid fa-image"></span>
-        <span>Photo: trailhead with NAMBA signage in context</span>
-      </div>
-    </div>
-  </div>
-</section>
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
