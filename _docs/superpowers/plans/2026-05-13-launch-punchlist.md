@@ -118,17 +118,14 @@ Decide: (none open)
 - Modify (depending on decision): `_includes/nav.html`, `stories/index.html`, possibly delete `stories/` and `ja/stories/`
 
 Steps:
-- [ ] Discuss with Tom: keep with placeholder, hide from nav (route stays but no nav link), or remove route entirely.
-- [ ] Record decision in this task's `Notes:` line.
-- [ ] Implement chosen path:
-  - **Keep with placeholder:** ensure `stories/index.html` (and `ja/stories/index.html`) has a sensible empty state ("First stories coming soon"). Nav unchanged.
-  - **Hide from nav:** remove the Stories link from `_includes/nav.html` and any footer nav include. Leave the page accessible by direct URL.
-  - **Remove route:** delete `stories/` and `ja/stories/`; remove from nav + footer; check sitemap doesn't reference it; add redirect from `/stories/` to a sensible destination if needed.
-- [ ] Verify on served site.
-- [ ] Pattern P-COMMIT.
+- [x] Discuss with Tom: keep with placeholder, hide from nav, or remove route entirely.
+- [x] Record decision in this task's `Notes:` line.
+- [x] Implement: comment out Stories entry in `_data/nav.yml`. Page stays live at `/stories/` and `/ja/stories/` for direct access. No footer nav references existed.
+- [ ] Verify on served site: Stories no longer appears in top nav (EN + JA); `/stories/` direct URL still works. *(Tom to verify.)*
+- [x] Pattern P-COMMIT (commit 2eb2085).
 
-Notes:
-Decide: launch handling
+Notes: Decided to hide from nav. First story expected 1-2 weeks post-launch. Comment includes a hint to restore the entry when content lands.
+Decide: (resolved) hide from nav
 
 ---
 
