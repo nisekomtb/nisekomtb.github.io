@@ -30,6 +30,7 @@
       ja: 実績
     # Hidden until first story is published (target: 1-2 weeks post-launch).
     # Page itself is live at /stories/ for direct access.
+    # Restoration steps: _docs/superpowers/plans/2026-05-13-launch-punchlist.md §R.1
     # - path: stories
     #   en: Our Stories
     #   ja: ストーリー

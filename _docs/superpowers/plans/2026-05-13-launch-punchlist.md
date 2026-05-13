@@ -824,6 +824,28 @@ Notes:
 
 ---
 
+## Post-Launch Restorations
+
+Items intentionally hidden or disabled at launch that need to be re-enabled when their gating condition is met. Add new entries here whenever something gets temporarily switched off.
+
+### R.1: Re-enable `/stories/` in nav
+
+**Gate:** First story published (target: 1-2 weeks post-launch).
+
+**What was changed:**
+- `_data/nav.yml` (Task 0.4, commit 2eb2085) — Stories entry commented out
+
+**What to do to restore:**
+- [ ] Uncomment the Stories entry in `_data/nav.yml` (look for the comment block referencing this task).
+- [ ] Verify the entry sits in the correct position (currently between Impact and Dirty Dames).
+- [ ] Visual check on served site: Stories link appears in nav in both EN and JA.
+
+**Related signals to recheck at restoration time:**
+- `projects/yotei-360/index.html:84` and `ja/projects/yotei-360/index.html:84` already contain a "Follow our stories" CTA pointing to `/stories/`. The link works today (page is live), but the destination is empty until the first story lands. No action needed at restoration; just be aware these CTAs become more meaningful once content exists.
+- `stories/index.html` and `ja/stories/index.html` already have an empty-state message ("Stories coming soon"). Once posts in the `stories` category exist, they will populate the list automatically.
+
+---
+
 ## Success Criteria (from spec §12)
 
 - [ ] All Phase 0 globals applied site-wide
