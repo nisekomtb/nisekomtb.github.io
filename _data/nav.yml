@@ -33,12 +33,12 @@
     # - path: stories
     #   en: Our Stories
     #   ja: ストーリー
-    - path: press
-      en: Press & Media
-      ja: プレス・メディア
     - path: dirty-dames
       en: Dirty Dames
       ja: ダーティーデイムズ
+    - path: press
+      en: Press & Media
+      ja: プレス・メディア
 
 - path: events
   en: Events
