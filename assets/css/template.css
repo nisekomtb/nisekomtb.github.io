@@ -5845,18 +5845,6 @@ div.t3-wrapper {
   }
 }
 
-@media (min-width: 768px) {
-  .t3-mainbody>.row>div.t3-sidebar-right {
-    border-left: 1px solid var(--color-bg-border);
-  }
-}
-
-@media (min-width: 768px) {
-  .t3-mainbody>.row>div.t3-sidebar-left {
-    border-right: 1px solid var(--color-bg-border);
-  }
-}
-
 .modal-open .t3-mainbody {
   position: static;
 }
