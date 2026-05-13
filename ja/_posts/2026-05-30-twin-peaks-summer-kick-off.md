@@ -58,7 +58,11 @@ about: false
 
 9時から​[Rhythm](https://rhythmjapan.com)で​コーヒーを​飲みながら、​ライド前の​集合と​バイクチェックを。​クリニックは​10時から​11時まで​[ツインピークス](/ja/twin-peaks/)の​トレイルヘッドで​開催、​NAMBAと​ザ・ダーティ・デイムズの​共同開催です。​初心者から​経験豊富な​ライダーまで、​すべての​レベルの​方を​歓迎します。
 
-定員制で、​事前申込が​必要です。​申込リンクは​開催日が​近づき次第、​こちらに​掲載します。
+定員制で、​事前申込が​必要です。
+
+<div style="text-align:center; margin:30px 0;">
+  <a class="btn btn-primary" href="https://forms.gle/t3BXUgdrRnoeutrD7" target="_blank" rel="noopener">申し込みは<wbr>こちら</a>
+</div>
 
 ### オリエンテーションライド
 

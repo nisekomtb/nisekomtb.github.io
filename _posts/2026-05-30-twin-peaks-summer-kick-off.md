@@ -57,7 +57,11 @@ This year we're keeping things simple. No big schedule, no main stage. Come for 
 
 Start with coffee at [Rhythm](https://rhythmjapan.com) from 9:00am for a pre-ride catch up and bike check. The clinic itself runs 10:00am to 11:00am at the [Twin Peaks](/twin-peaks/) trailhead, run by The Dirty Dames in partnership with NAMBA. All levels welcome, from first-timers to seasoned riders.
 
-Spaces are limited and signup is required. The signup link will be added here closer to the day.
+Spaces are limited and signup is required.
+
+<div style="text-align:center; margin:30px 0;">
+  <a class="btn btn-primary" href="https://forms.gle/t3BXUgdrRnoeutrD7" target="_blank" rel="noopener">Sign up here</a>
+</div>
 
 ### Orientation ride
 
