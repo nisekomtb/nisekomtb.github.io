@@ -90,15 +90,12 @@ masthead:
         fullscreenControl: false,
       });
 
-      var parkColour = "#47A06C";
-      var skillsColour = "#888";
+      var parkColour = "#b34f24";
+      var skillsColour = "#35965d";
       var pois = [
         {
           position: { lat: 42.86492178269582, lng: 140.71074969770066 },
           title: "ツインピークスバイクパーク",
-          img: "/assets/images/logos/twin-peaks.svg",
-          scale: 1.8,
-          background: parkColour,
           anchor: "twin-peaks",
           photo: "/assets/images/twinpeaks/header.jpg",
           blurb: "20本のトレイル ・ 21km ・ 毎日無料"
@@ -106,9 +103,6 @@ masthead:
         {
           position: { lat: 42.86193535111528, lng: 140.69852802023013 },
           title: "グランヒラフバイクパーク",
-          img: "/assets/images/company/grand-hirafu.png",
-          scale: 1.5,
-          background: parkColour,
           anchor: "grand-hirafu",
           photo: "/assets/images/trails/grand-hirafu/01.jpg",
           blurb: "3本のトレイル ・ ヒラフ村でリフトアクセス"
@@ -116,9 +110,6 @@ masthead:
         {
           position: { lat: 42.893118993617485, lng: 140.70017232900975 },
           title: "花園バイクパーク",
-          img: "/assets/images/company/hanazono.png",
-          scale: 1.5,
-          background: parkColour,
           anchor: "hanazono",
           photo: "/assets/images/trails/hanazono/01.jpg",
           blurb: "ニセコ初のリフトアクセスフロートレイル ・ 2026年夏オープン"
@@ -126,9 +117,6 @@ masthead:
         {
           position: { lat: 42.84748695537465, lng: 140.6480347202528 },
           title: "ニセコアンヌプリ",
-          img: "/assets/images/company/annupuri.png",
-          scale: 1.5,
-          background: parkColour,
           anchor: "annupuri",
           photo: "/assets/images/trails/annupuri/01.jpg",
           blurb: "ゴンドラアクセスのダウンヒルコース ・ 3.2km"
@@ -186,14 +174,14 @@ masthead:
 
       pois.forEach(function(poi) {
         var el = document.createElement("div");
-        if (poi.icon) {
-          el.innerHTML = '<i class="fa-solid ' + poi.icon + '" style="color:#fff; font-size:14px;"></i>';
+        var isSkills = poi.anchor === "skills-parks";
+        var iconClass = poi.icon || (isSkills ? "fa-diamond-turn-right" : "fa-person-biking");
+        if (isSkills) {
+          el.innerHTML = '<i class="fa-solid ' + iconClass + '" style="color:#fff; font-size:14px;"></i>';
           el.style.cssText = 'display:flex; align-items:center; justify-content:center; width:32px; height:32px; background:' + skillsColour + '; border:2px solid #fff; border-radius:50%; box-shadow:0 1px 4px rgba(0,0,0,0.45); cursor:pointer;';
         } else {
-          var size = poi.scale && poi.scale >= 1.8 ? 72 : 60;
-          var inner = Math.round(size * 0.7);
-          el.innerHTML = '<img src="' + poi.img + '" alt="" style="width:' + inner + 'px; height:' + inner + 'px; object-fit:contain;">';
-          el.style.cssText = 'display:flex; align-items:center; justify-content:center; width:' + size + 'px; height:' + size + 'px; background:#fff; border:3px solid ' + parkColour + '; border-radius:50%; box-shadow:0 2px 8px rgba(0,0,0,0.45); cursor:pointer;';
+          el.innerHTML = '<i class="fa-solid ' + iconClass + '" style="color:#fff; font-size:18px;"></i>';
+          el.style.cssText = 'display:flex; align-items:center; justify-content:center; width:44px; height:44px; background:' + parkColour + '; border:2px solid #fff; border-radius:50%; box-shadow:0 2px 6px rgba(0,0,0,0.45); cursor:pointer;';
         }
 
         var marker = new AdvancedMarkerElement({
