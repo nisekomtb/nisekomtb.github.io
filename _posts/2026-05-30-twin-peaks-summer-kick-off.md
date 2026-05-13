@@ -12,6 +12,7 @@ price: 0
 partners:
   - name: The Dirty Dames
     img: /dirty-dames.png
+    url: https://www.instagram.com/dirtydamesniseko/
   - name: The Nuthatch
     img: /nuthatch.png
     url: https://www.instagram.com/thenuthatchkuromatsunai/

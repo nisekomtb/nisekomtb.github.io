@@ -13,6 +13,7 @@ price: 0
 partners:
   - name: ザ・ダーティ・デイムズ
     img: /dirty-dames.png
+    url: https://www.instagram.com/dirtydamesniseko/
   - name: ザ・ナットハッチ
     img: /nuthatch.png
     url: https://www.instagram.com/thenuthatchkuromatsunai/
