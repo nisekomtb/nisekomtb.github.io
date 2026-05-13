@@ -213,7 +213,7 @@ Steps:
 - [ ] Pattern P-COMMIT — partial commit for rename portion only.
 
 Notes:
-Rename scope: Bucket A (headings + alt). Body copy, resort-entity references, park listicles, and internal docs left as-is. Twin Peaks `<h4>` on `/projects/` also gained "Bike Park" for consistency with the other two cards.
+Rename scope: Bucket A (headings + alt + page titles + canonical data names). Body copy, resort-entity references, park listicles, and internal docs left as-is. Twin Peaks `<h4>` on `/projects/` also gained "Bike Park" for consistency with the other two cards. JA-only spelling fix: グランヒラフ → グラン・ヒラフ (with middle dot) applied to UI headings + canonical name only; body copy still uses グランヒラフ.
 Decide: (none open)
 
 ---
@@ -226,7 +226,7 @@ Decide: (none open)
 
 Steps:
 - [x] Run `grep -rn "Hanazono" --include="*.html" --include="*.md" --include="*.yml"`.
-- [x] Rename "Hanazono" → "Hanazono Bike Park" — applied to card headings and logo alt text on `/where-to-ride/` and `/projects/` (EN + JA). Body copy and "Park Hyatt Niseko Hanazono" / "Niseko Hanazono" resort-entity references left as-is per Bucket A scope.
+- [x] Rename "Hanazono" → "Niseko Hanazono Bike Park" (per Tom's brand correction). Applied to card headings, logo alt text, page titles, and canonical `_data/trails.yml` names on `/where-to-ride/` and `/projects/` (EN + JA). JA brand spelling is `ニセコHANAZONOバイクパーク` (Latin "HANAZONO" preserved). Body copy and "Park Hyatt Niseko Hanazono" hotel reference left as-is per Bucket A scope.
 - [ ] Update Trailforks embed for Hanazono.
 - [ ] Update trails + specs against current data.
 - [ ] Add gallery images (Pattern P-IMG).
@@ -285,6 +285,7 @@ Decide: add facility links?
 - Modify: `where-to-ride/annupuri/index.html`, `ja/where-to-ride/annupuri/index.html`
 
 Steps:
+- [x] Rename pass: page title, ride card heading + alt, map POI, and canonical `_data/trails.yml` name updated to "Niseko Annupuri Bike Park" / "ニセコアンヌプリバイクパーク" (EN + JA) alongside A.3/A.4 in the same commit. Old EN page title "Niseko Annupuri Downhill" replaced; JA title was "ニセコアンヌプリ ダウンヒル".
 - [ ] Discuss with Tom: does this page need the same polish pass as siblings, or is it already done? (It was not in the original list.)
 - [ ] If yes: apply Pattern P-STYLE, check text, gallery images via Pattern P-IMG.
 - [ ] If no: tick and skip.
@@ -292,6 +293,7 @@ Steps:
 - [ ] Pattern P-COMMIT (or note "no changes" in commit-less skip).
 
 Notes:
+Rename applied. Polish/skip decision still open.
 Decide: polish or skip
 
 ---

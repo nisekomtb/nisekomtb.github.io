@@ -271,7 +271,7 @@ grand-hirafu:
   hours: Check resort website
   managed_by: Grand Hirafu Resort
   ja:
-    name: グランヒラフバイクパーク
+    name: グラン・ヒラフバイクパーク
     cost: リフト券が必要
     location: ヒラフ
     season: 6月 - 10月
@@ -313,7 +313,7 @@ grand-hirafu:
 
 annupuri:
   logo: /assets/images/company/annupuri.png
-  name: Niseko Annupuri
+  name: Niseko Annupuri Bike Park
   cost: "¥1,000-¥5,000 (gondola pass)"
   lifts: 1
   lift_access: true
@@ -324,7 +324,7 @@ annupuri:
   hours: 9:00am - 4:00pm
   managed_by: Niseko Annupuri
   ja:
-    name: ニセコアンヌプリ
+    name: ニセコアンヌプリバイクパーク
     cost: "¥1,000〜¥5,000（ゴンドラパス）"
     location: アンヌプリ
     season: 7月中旬 - 10月中旬
@@ -348,7 +348,7 @@ annupuri:
 
 hanazono:
   logo: /assets/images/company/hanazono.png
-  name: Hanazono
+  name: Niseko Hanazono Bike Park
   cost: TBC
   lifts: 1
   lift_access: true
@@ -359,7 +359,7 @@ hanazono:
   hours: TBC
   managed_by: Hanazono Resort / NAMBA
   ja:
-    name: 花園
+    name: ニセコHANAZONOバイクパーク
     cost: 未定
     location: 花園
     season: 2026年夏以降
