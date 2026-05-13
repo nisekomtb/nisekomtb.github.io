@@ -164,13 +164,19 @@ Steps:
 - [x] Removed the "3 routes" count from the gravel card; kept the 1,200km+ distance figure.
 - [x] Removed the duplicate inline "trip planning guide" sentence from Season Info; kept the prominent CTA button at the bottom of the page.
 - [x] Mirrored EN → JA, plus caught up missing JA translations on hero copy, stats cards 1–3, Season Info heading + paragraph, and CTA button (link also fixed from `/plan-your-trip/` → `/ja/plan-your-trip/`).
-- [ ] Visual check on served site. *(Tom to verify in browser.)*
+- [x] Visual check on served site (Tom signed off after iterative polish).
 - [x] Pattern P-COMMIT.
 
 Notes:
-Pin interaction resolved: InfoWindow popup with click-to-scroll button (popup → card → user clicks through to park page from the card).
-Card description discrepancy to revisit: Annupuri card body says "2,750m of natural terrain with 535m of elevation drop"; `_data/trails.yml` lists the Downhill course at 3,200m distance / 556m descent. Different measurement boundaries are possible — confirm with the resort before editing.
-"Ride Niseko" hero heading and the "All Abilities" stat were left in their existing state on the JA page (brand-style EN heading + already-translated stat); raise if you want either changed.
+Done after several iterative polish passes beyond the original scope:
+- Map popup redesigned to mirror the `.ride-card` pattern: photo background with gradient fade, centred logo (parks) or icon (skills), title, difficulty-count stats injected via Liquid `{% capture %}`+`jsonify` (stays in sync with `_data/trails.yml`), and a `.action`-style link that scrolls to the matching card.
+- Map pins switched from logo glyphs to PinElement teardrops with a FontAwesome glyph: `fa-person-biking` for parks (scale 1.4, rust orange), `fa-diamond-turn-right` for skills (scale 1.0, forest green). Fixed pre-existing bug: `gmpClickable: true` required.
+- Real photos sourced for 5/5 skills POIs: Twin Peaks Skills Centre, Grand Hirafu Skill-up Area, Tomo Playpark, Rusutsu Pump Track, Rhythm Japan Skills Park (`assets/images/skills/`).
+- Hub stats updated: 21km+ → 30km+, 20+ Trails → 24 Trails (Hanazono excluded — see R.2). "4 Riding Areas" sub-text uses brand-correct short forms: Twin Peaks, Grand Hirafu, Niseko Hanazono, Niseko Annupuri (JA: ツインピークス、グラン・ヒラフ、ニセコHANAZONO、ニセコアンヌプリ).
+- Copy polish across hero, all ride cards, and Riding Season. Annupuri data corrected to 3,200m / 556m (matches `_data/trails.yml`). JA hero heading translated to ニセコを走ろう.
+- CSS fixes: icon-card emblem overlap matched to logo cards (bottom -30, 96px font); gravel/skills stat-icon padding for vertical parity with `dicon` glyphs; ride-card `.action` restored to strong white with arrow margin-shift animation on hover.
+
+Brand-rename portion of A.3/A.4/A.7 happened in the same session: card headings, alt text, page titles, project sub-page titles, map POI titles, and canonical `_data/trails.yml` names updated. JA brand spellings: グランヒラフ → グラン・ヒラフ (middle dot); 花園 → ニセコHANAZONO (Latin); アンヌプリ → ニセコアンヌプリ. See A.3, A.4, A.7 Notes for scope detail.
 
 ---
 
