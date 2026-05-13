@@ -56,7 +56,7 @@ This year we're keeping things simple. No big schedule, no main stage. Come for 
 
 ### The Dirty Dames women's skills clinic
 
-Start with coffee at [Rhythm](https://rhythmjapan.com) from 9:00am for a pre-ride catch up and bike check. The clinic itself runs 10:00am to 11:00am at the [Twin Peaks](/twin-peaks/) trailhead, run by The Dirty Dames in partnership with NAMBA. All levels welcome, from first-timers to seasoned riders.
+Start with coffee at Rhythm from 9:00am for a pre-ride catch up and bike check. The clinic itself runs 10:00am to 11:00am at the Twin Peaks trailhead, run by The Dirty Dames in partnership with NAMBA. All levels welcome, from first-timers to seasoned riders.
 
 Spaces are limited and signup is required.
 
