@@ -387,7 +387,10 @@ layout: base
         src="{{ park_info.logo }}?d={{ site.time | date: '%s' }}"
         alt="{% if page.lang == 'ja' %}{{ park_info.ja.name | default: park_info.name }}{% else %}{{ park_info.name }}{% endif %}" />
       {% endif %}
-      {% include park-stats.html data_key=page.trail_data_key %}
+      <div class="park-sidebar-panel">
+        <h3 class="module-title">{% if page.lang == "ja" %}基本データ{% else %}Key stats{% endif %}</h3>
+        {% include park-stats.html data_key=page.trail_data_key %}
+      </div>
     </div>
     <!-- //SIDEBAR RIGHT -->
   </div>

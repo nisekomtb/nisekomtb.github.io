@@ -278,80 +278,51 @@ layout: base
         </div>
       </div>
 
-      <div class="t3-module module">
-        <div class="module-inner">
-          {% if page.lang == "ja" %}
-          <h3 class="module-title">
-            <span>バイクパーク　パートナー</span>
-          </h3>
-          {% else %}
-          <h3 class="module-title">
-            <span>Bike park partners</span>
-          </h3>
-          {% endif %}
-          <div class="module-ct partners">
-            <ul>
-              <li>
-                <a href="https://helloallegra.com" target="_blank">
-                  <img src="/assets/images/company/allegra.png"
-                    title="{% if page.lang == 'en' %}Trail building partner{% else %}トレイルビルド パートナー{% endif %}">
-                </a>
-              </li>
-              <li>
-                <a href="{% if page.lang == 'en' %}https://www.mnkniseko.com/en{% else %}https://www.mnkniseko.com/ja{% endif %}"
-                  target="_blank">
-                  <img src="/assets/images/company/mnk.png"
-                    title="{% if page.lang == 'en' %}Trail sponsor{% else %}トレイル スポンサー{% endif %}">
-                </a>
-              </li>
-              <li>
-                <a href="{% if page.lang == 'en' %}https://rhythmjapan.com{% else %}https://www.rhythmjapan.com/ja/{% endif %}"
-                  target="_blank">
-                  <img src="/assets/images/company/rhythm.png"
-                    title="{% if page.lang == 'en' %}Maintenance sponsor{% else %}メンテナンス スポンサー{% endif %}">
-                </a>
-              </li>
-              <li>
-                <a href="https://www.specialized-onlinestore.jp/" target="_blank">
-                  <img src="/assets/images/company/specialized.png"
-                    title="{% if page.lang == 'en' %}Trail crew sponsor{% else %}トレイルクルー スポンサー{% endif %}">
-                </a>
-              </li>
-              <li>
-                <a href="{% if page.lang == 'en' %}https://holidayniseko.com{% else %}https://holidayniseko.jp{% endif %}"
-                  target="_blank">
-                  <img src="/assets/images/company/holiday-niseko.png"
-                    title="{% if page.lang == 'en' %}Trail sponsor{% else %}トレイル スポンサー{% endif %}">
-                </a>
-              </li>
-              <li>
-                <a href="https://www.nisekorealty.com" target="_blank">
-                  <img src="/assets/images/company/niseko-realty.png"
-                    title="{% if page.lang == 'en' %}Trail sponsor{% else %}トレイル スポンサー{% endif %}">
-                </a>
-              </li>
-              <li>
-                <a href="http://www.nisekorealtysales.com" target="_blank">
-                  <img src="/assets/images/company/nrs.png"
-                    title="{% if page.lang == 'en' %}Trail sponsor{% else %}トレイル スポンサー{% endif %}">
-                </a>
-              </li>
-              <li>
-                <a href="https://www.santacruzbicycles.com/" target="_blank">
-                  <img src="/assets/images/company/santa-cruz.png"
-                    title="{% if page.lang == 'en' %}Trail sponsor{% else %}トレイル スポンサー{% endif %}">
-                </a>
-              </li>
-              <li>
-                <img src="/assets/images/company/taki.png"
-                  title="{% if page.lang == 'en' %}Trail sponsor{% else %}トレイル スポンサー{% endif %}">
-              </li>
-            </ul>
+      <div class="park-sidebar-panel">
+        <h3 class="module-title">{% if page.lang == "ja" %}基本データ{% else %}Key stats{% endif %}</h3>
+
+        {% include park-stats.html data_key="twinpeaks" %}
+
+        <div class="detail-item">
+          <h4>{% if page.lang == "ja" %}バイクパーク パートナー{% else %}Bike park partners{% endif %}</h4>
+          <div class="partners-imgs">
+            <a href="https://helloallegra.com" target="_blank">
+              <img src="/assets/images/company/allegra.png"
+                title="{% if page.lang == 'en' %}Trail building partner{% else %}トレイルビルド パートナー{% endif %}">
+            </a>
+            <a href="{% if page.lang == 'en' %}https://www.mnkniseko.com/en{% else %}https://www.mnkniseko.com/ja{% endif %}" target="_blank">
+              <img src="/assets/images/company/mnk.png"
+                title="{% if page.lang == 'en' %}Trail sponsor{% else %}トレイル スポンサー{% endif %}">
+            </a>
+            <a href="{% if page.lang == 'en' %}https://rhythmjapan.com{% else %}https://www.rhythmjapan.com/ja/{% endif %}" target="_blank">
+              <img src="/assets/images/company/rhythm.png"
+                title="{% if page.lang == 'en' %}Maintenance sponsor{% else %}メンテナンス スポンサー{% endif %}">
+            </a>
+            <a href="https://www.specialized-onlinestore.jp/" target="_blank">
+              <img src="/assets/images/company/specialized.png"
+                title="{% if page.lang == 'en' %}Trail crew sponsor{% else %}トレイルクルー スポンサー{% endif %}">
+            </a>
+            <a href="{% if page.lang == 'en' %}https://holidayniseko.com{% else %}https://holidayniseko.jp{% endif %}" target="_blank">
+              <img src="/assets/images/company/holiday-niseko.png"
+                title="{% if page.lang == 'en' %}Trail sponsor{% else %}トレイル スポンサー{% endif %}">
+            </a>
+            <a href="https://www.nisekorealty.com" target="_blank">
+              <img src="/assets/images/company/niseko-realty.png"
+                title="{% if page.lang == 'en' %}Trail sponsor{% else %}トレイル スポンサー{% endif %}">
+            </a>
+            <a href="http://www.nisekorealtysales.com" target="_blank">
+              <img src="/assets/images/company/nrs.png"
+                title="{% if page.lang == 'en' %}Trail sponsor{% else %}トレイル スポンサー{% endif %}">
+            </a>
+            <a href="https://www.santacruzbicycles.com/" target="_blank">
+              <img src="/assets/images/company/santa-cruz.png"
+                title="{% if page.lang == 'en' %}Trail sponsor{% else %}トレイル スポンサー{% endif %}">
+            </a>
+            <img src="/assets/images/company/taki.png"
+              title="{% if page.lang == 'en' %}Trail sponsor{% else %}トレイル スポンサー{% endif %}">
           </div>
         </div>
       </div>
-
-      {% include park-stats.html data_key="twinpeaks" %}
 
 
     </div>
@@ -363,9 +334,9 @@ layout: base
     <div class="col col-12">
       <section class="tp-gallery">
         {% if page.lang == "ja" %}
-        <h3>ギャラリー</h3>
+        <h3 class="module-title">ギャラリー</h3>
         {% else %}
-        <h3>Gallery</h3>
+        <h3 class="module-title">Gallery</h3>
         {% endif %}
         <div class="gallery-grid">
           <div class="gallery-tile">

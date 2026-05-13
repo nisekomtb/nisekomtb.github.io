@@ -198,7 +198,11 @@ Steps:
 
 Notes:
 Background image deferred to cross-page sweep (Task A.28). Gallery uses placeholders awaiting real images via P-IMG. No JS errors expected: removed Splide init referenced a DOM ID that no longer exists; `.widget-cover` click handler preserved for the Trailforks map.
-Decide: (resolved — bg image deferred; gallery added with placeholders)
+
+Second polish pass after Tom flagged style issues:
+- **Duplicate H1 sweep**: Twin Peaks main + all 6 sub-pages (Access, Guides, Rules, Wet Trails, Commercial Pass, Emergency) had a redundant `<h1 class="article-title">` in the page body alongside the masthead `<h1 class="ja-masthead-title">`. Removed across all 14 files (7 EN + 7 JA). Pages now have exactly one h1 each, matching the rest of the site.
+- **Heading colour unification**: three white in-content h3s now use `class="module-title"` (gold via `var(--color-accent)`, 18px Metropolis uppercase) to match the About/Impact/Partner/Jobs pattern: "A free community bike park" (intro), "Trails" (shared `_includes/trails-table.html` — also affects Grand Hirafu, Hanazono, Annupuri, Gravel, Skills Parks), "Gallery" (in layout).
+- **Sidebar restructure**: collapsed the old two-module sidebar (separate Partners + Key Stats blocks) into one unified `.park-sidebar-panel` matching the Jobs/Events single-panel style. Logo + sub-nav pills stay above the panel. Inside the panel: "Key stats" module-title at top, then detail-item rows for Cost / Uplift type / Location / Trail stats / Bike Park status / Opening / Managed by, with the bike park partners as the last detail-item containing the logo grid. Each `.detail-item h4` is now a small gold uppercase mini-label (11px Metropolis, 0.5px tracking). Refactored `_includes/park-stats.html` to emit only `.detail-item` divs (no outer panel wrapper), with the panel + h3 owned by the layouts. Also applied the same panel wrapper to `_layouts/where-to-ride.html` so Grand Hirafu, Hanazono, Annupuri, etc. inherit the same sidebar style. New `.park-sidebar-panel` CSS lives in `assets/css/template.css` next to `.module-title` so both layouts share it.
 
 ---
 

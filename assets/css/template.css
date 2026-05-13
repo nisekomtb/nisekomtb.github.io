@@ -2386,6 +2386,77 @@ input.invalid {
   letter-spacing: 0;
 }
 
+.park-sidebar-panel {
+  background: var(--color-bg-panel);
+  border-radius: 3px;
+  padding: 24px;
+}
+
+.park-sidebar-panel > h3.module-title {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.park-sidebar-panel .detail-item {
+  margin-bottom: 16px;
+}
+
+.park-sidebar-panel .detail-item:last-child {
+  margin-bottom: 0;
+}
+
+.park-sidebar-panel .detail-item h4 {
+  color: var(--color-accent);
+  font-size: 11px;
+  font-family: "Metropolis", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 4px;
+}
+
+.park-sidebar-panel .detail-item p {
+  margin: 0;
+  font-size: 95%;
+}
+
+.park-sidebar-panel .detail-item ul.trail-difficulty-counts {
+  list-style: none;
+  padding: 0;
+  margin: 4px 0 8px;
+  display: flex;
+  gap: 4px;
+}
+
+.park-sidebar-panel .detail-item ul.trail-difficulty-counts .stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 6px;
+}
+
+.park-sidebar-panel .detail-item ul.trail-difficulty-counts .stat-count {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.park-sidebar-panel .partners-imgs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.park-sidebar-panel .partners-imgs a {
+  display: inline-block;
+}
+
+.park-sidebar-panel .partners-imgs img {
+  max-height: 48px;
+  max-width: 48px;
+}
+
 .module-ct {
   background: transparent;
   color: var(--color-text);
