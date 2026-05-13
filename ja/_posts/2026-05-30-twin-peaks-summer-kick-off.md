@@ -28,7 +28,8 @@ itinerary:
         - time: "9:00am"
           name: ダーティ・<wbr>デイムズの<wbr>事前コーヒー
           location:
-            name: Rhythm
+            name: Rhythm Hirafu
+            url: https://goo.gl/maps/78nX9Sryy9c5qXmM8
         - time: "10:00am - 11:00am"
           name: ダーティ・<wbr>デイムズ<wbr>女性スキルクリニック
           location:

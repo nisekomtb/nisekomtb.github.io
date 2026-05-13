@@ -27,7 +27,8 @@ itinerary:
         - time: "9:00am"
           name: Dirty Dames pre-ride coffee
           location:
-            name: Rhythm
+            name: Rhythm Hirafu
+            url: https://goo.gl/maps/78nX9Sryy9c5qXmM8
         - time: "10:00am - 11:00am"
           name: Dirty Dames women's skills clinic
           location:
