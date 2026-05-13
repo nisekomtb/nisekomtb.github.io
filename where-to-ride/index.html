@@ -33,14 +33,14 @@ masthead:
         <div class="col col-12 col-md-6 col-lg-3">
           <div class="features-item ja-animate" data-animation="move-from-bottom" data-delay="item-0">
             <div class="font-icon"><span class="fa-solid fa-ruler-horizontal"></span></div>
-            <h4>21km+ of Trail</h4>
+            <h4>30km+ of Trail</h4>
             <p>And growing every season.</p>
           </div>
         </div>
         <div class="col col-12 col-md-6 col-lg-3">
           <div class="features-item ja-animate" data-animation="move-from-bottom" data-delay="item-1">
             <div class="font-icon"><span class="fa-solid fa-signs-post"></span></div>
-            <h4>20+ Trails</h4>
+            <h4>24 Trails</h4>
             <p>Beginner flow to expert tech.</p>
           </div>
         </div>
@@ -90,94 +90,109 @@ masthead:
         fullscreenControl: false,
       });
 
-      var langPrefix = "";
       var parkColour = "#47A06C";
       var skillsColour = "#888";
       var pois = [
         {
-          position: { lat: 42.866, lng: 140.710 },
+          position: { lat: 42.86492178269582, lng: 140.71074969770066 },
           title: "Twin Peaks Bike Park",
-          titleJa: "ツインピークスバイクパーク",
           img: "/assets/images/logos/twin-peaks.svg",
           scale: 1.8,
           background: parkColour,
-          url: langPrefix + "/twin-peaks/"
+          anchor: "twin-peaks",
+          photo: "/assets/images/twinpeaks/header.jpg",
+          blurb: "20 trails &middot; 21km &middot; Free, every day"
         },
         {
-          position: { lat: 42.861887, lng: 140.698521 },
+          position: { lat: 42.86193535111528, lng: 140.69852802023013 },
           title: "Grand Hirafu Bike Park",
-          titleJa: "グランヒラフバイクパーク",
           img: "/assets/images/company/grand-hirafu.png",
           scale: 1.5,
           background: parkColour,
-          url: langPrefix + "/where-to-ride/grand-hirafu/"
+          anchor: "grand-hirafu",
+          photo: "/assets/images/trails/grand-hirafu/01.jpg",
+          blurb: "3 trails &middot; Lift access in Hirafu Village"
         },
         {
-          position: { lat: 42.893179, lng: 140.700175 },
-          title: "Hanazono",
-          titleJa: "花園",
+          position: { lat: 42.893118993617485, lng: 140.70017232900975 },
+          title: "Hanazono Bike Park",
           img: "/assets/images/company/hanazono.png",
           scale: 1.5,
           background: parkColour,
-          url: langPrefix + "/where-to-ride/hanazono/"
+          anchor: "hanazono",
+          photo: "/assets/images/trails/hanazono/01.jpg",
+          blurb: "First lift-access flow trail &middot; Opening Summer 2026"
         },
         {
-          position: { lat: 42.847557, lng: 140.647955 },
+          position: { lat: 42.84748695537465, lng: 140.6480347202528 },
           title: "Niseko Annupuri",
-          titleJa: "ニセコアンヌプリ",
           img: "/assets/images/company/annupuri.png",
           scale: 1.5,
           background: parkColour,
-          url: langPrefix + "/where-to-ride/annupuri/"
+          anchor: "annupuri",
+          photo: "/assets/images/trails/annupuri/01.jpg",
+          blurb: "Gondola-accessed downhill course &middot; 3.2km"
         },
         {
-          position: { lat: 42.866, lng: 140.709 },
+          position: { lat: 42.8675451690713, lng: 140.71061419758635 },
           title: "Twin Peaks Skills Centre",
-          titleJa: "ツインピークス スキルセンター",
           img: "/assets/images/logos/twin-peaks.svg",
           scale: 1.0,
           background: skillsColour,
-          url: langPrefix + "/where-to-ride/skills-parks/"
+          anchor: "skills-parks",
+          blurb: "Beginner trails inside Twin Peaks"
         },
         {
-          position: { lat: 42.861, lng: 140.699 },
+          position: { lat: 42.86180213562858, lng: 140.6979353118335 },
           title: "Grand Hirafu Skill-up Area",
-          titleJa: "グランヒラフ スキルアップエリア",
           img: "/assets/images/company/grand-hirafu.png",
           scale: 1.0,
           background: skillsColour,
-          url: langPrefix + "/where-to-ride/skills-parks/"
+          anchor: "skills-parks",
+          blurb: "Practice area inside Grand Hirafu"
         },
         {
-          position: { lat: 42.978, lng: 140.709 },
+          position: { lat: 43.02780751419581, lng: 140.8674118719359 },
           title: "Tomo Playpark Pump Track",
-          titleJa: "赤井川TOMO パンプトラック",
           img: "/assets/images/company/tomo-playpark.svg",
           scale: 1.0,
           background: skillsColour,
-          url: langPrefix + "/where-to-ride/skills-parks/"
+          anchor: "skills-parks",
+          blurb: "Pump track at Akaigawa Playpark"
         },
         {
-          position: { lat: 42.752, lng: 140.578 },
+          position: { lat: 42.74142018480268, lng: 140.8886271864453 },
           title: "Rusutsu Pump Track",
-          titleJa: "ルスツ パンプトラック",
           icon: "fa-diamond-turn-right",
           scale: 1.0,
           background: skillsColour,
-          url: langPrefix + "/where-to-ride/skills-parks/"
+          anchor: "skills-parks",
+          blurb: "Pump track at Rusutsu Resort"
         },
         {
-          position: { lat: 42.860, lng: 140.701 },
+          position: { lat: 42.861845196481944, lng: 140.70262536427697 },
           title: "Rhythm Japan Skills Park",
-          titleJa: "リズムジャパン スキルパーク",
           img: "/assets/images/company/rhythm.png",
           scale: 1.0,
           background: skillsColour,
-          url: langPrefix + "/where-to-ride/skills-parks/"
+          anchor: "skills-parks",
+          blurb: "Practice area at Rhythm Hirafu"
         }
       ];
 
       var infoWindow = new InfoWindow();
+
+      function popupContent(poi) {
+        var photo = poi.photo
+          ? '<img src="' + poi.photo + '" alt="" style="display:block; width:100%; height:100px; object-fit:cover; border-radius:3px; margin-bottom:10px;">'
+          : '';
+        return '<div style="font-family:inherit; line-height:1.4; min-width:200px; max-width:260px;">'
+          + photo
+          + '<strong style="display:block; color:#222; font-size:14px; margin-bottom:4px;">' + poi.title + '</strong>'
+          + '<span style="display:block; font-size:12px; color:#666; margin-bottom:10px;">' + poi.blurb + '</span>'
+          + '<button type="button" data-ride-anchor="' + poi.anchor + '" style="display:inline-block; padding:6px 12px; background:' + parkColour + '; color:#fff; border:0; border-radius:3px; font-size:12px; font-weight:600; cursor:pointer;">View details &darr;</button>'
+          + '</div>';
+      }
 
       pois.forEach(function(poi) {
         var content;
@@ -205,11 +220,20 @@ masthead:
         });
 
         marker.addEventListener("gmp-click", function() {
-          var name = poi.title;
           infoWindow.close();
-          infoWindow.setContent('<div style="padding:4px 8px;"><strong>' + name + '</strong><br><a href="' + poi.url + '" style="color:#47A06C;">Learn more</a></div>');
+          infoWindow.setContent(popupContent(poi));
           infoWindow.open(map, marker);
         });
+      });
+
+      document.addEventListener("click", function(e) {
+        var btn = e.target.closest && e.target.closest("[data-ride-anchor]");
+        if (!btn) return;
+        var card = document.getElementById("ride-" + btn.getAttribute("data-ride-anchor"));
+        if (!card) return;
+        e.preventDefault();
+        infoWindow.close();
+        card.scrollIntoView({ behavior: "smooth", block: "start" });
       });
     }
 
@@ -313,7 +337,7 @@ masthead:
 
         <!-- Twin Peaks -->
         <div class="col col-12 col-lg-12">
-          <div class="ride-card ja-animate" data-animation="move-from-bottom" data-delay="item-0">
+          <div id="ride-twin-peaks" class="ride-card ja-animate" data-animation="move-from-bottom" data-delay="item-0">
             <div class="ride-card-image" style="background-image:url('/assets/images/twinpeaks/header.jpg'); height:280px;">
               <img class="ride-card-logo" src="/assets/images/logos/twin-peaks.svg" alt="Twin Peaks Bike Park" />
             </div>
@@ -328,7 +352,7 @@ masthead:
 
         <!-- Grand Hirafu -->
         <div class="col col-12 col-md-6 col-lg-6">
-          <div class="ride-card ja-animate" data-animation="move-from-bottom" data-delay="item-1">
+          <div id="ride-grand-hirafu" class="ride-card ja-animate" data-animation="move-from-bottom" data-delay="item-1">
             <div class="ride-card-image" style="background-image:url('/assets/images/trails/grand-hirafu/01.jpg');">
               <img class="ride-card-logo" src="/assets/images/company/grand-hirafu.png" alt="Grand Hirafu" />
             </div>
@@ -343,7 +367,7 @@ masthead:
 
         <!-- Hanazono -->
         <div class="col col-12 col-md-6 col-lg-6">
-          <div class="ride-card ja-animate" data-animation="move-from-bottom" data-delay="item-2">
+          <div id="ride-hanazono" class="ride-card ja-animate" data-animation="move-from-bottom" data-delay="item-2">
             <div class="ride-card-image" style="background-image:url('/assets/images/trails/hanazono/01.jpg');">
               <span class="ride-card-badge">Opening Summer 2026</span>
               <img class="ride-card-logo" src="/assets/images/company/hanazono.png" alt="Hanazono" />
@@ -359,7 +383,7 @@ masthead:
 
         <!-- Annupuri -->
         <div class="col col-12 col-md-6 col-lg-6">
-          <div class="ride-card ja-animate" data-animation="move-from-bottom" data-delay="item-3">
+          <div id="ride-annupuri" class="ride-card ja-animate" data-animation="move-from-bottom" data-delay="item-3">
             <div class="ride-card-image" style="background-image:url('/assets/images/trails/annupuri/01.jpg');">
               <img class="ride-card-logo" src="/assets/images/company/annupuri.png" alt="Niseko Annupuri" />
             </div>
@@ -374,14 +398,13 @@ masthead:
 
         <!-- Gravel -->
         <div class="col col-12 col-md-6 col-lg-6">
-          <div class="ride-card ja-animate" data-animation="move-from-bottom" data-delay="item-4">
+          <div id="ride-gravel" class="ride-card ja-animate" data-animation="move-from-bottom" data-delay="item-4">
             <div class="ride-card-image" style="background-image:url('/assets/images/events/2025/niseko-gravel-autumn-ride/header.jpg');">
               <span class="ride-card-icon fa-solid fa-road"></span>
             </div>
             <div class="ride-card-body">
               <h4>Gravel</h4>
               <span style="display:inline-flex; gap:10px; justify-content:center; flex-wrap:wrap; margin:8px 0;">
-                <span style="font-size:12px; text-align:center; display:inline-flex; flex-direction:column; align-items:center;"><span class="fa-solid fa-route" style="font-size:18px; color:#aaa;"></span> <strong>3</strong></span>
                 <span style="font-size:12px; text-align:center; display:inline-flex; flex-direction:column; align-items:center;"><span class="fa-solid fa-ruler-horizontal" style="font-size:18px; color:#aaa;"></span> <strong>1,200km+</strong></span>
               </span>
               <p>Agricultural paths, forest roads, and scenic routes through Hokkaido's volcanic landscape. Home of the Niseko Gravel event series.</p>
@@ -392,7 +415,7 @@ masthead:
 
         <!-- Skills Parks -->
         <div class="col col-12 col-md-6 col-lg-6">
-          <div class="ride-card ja-animate" data-animation="move-from-bottom" data-delay="item-5">
+          <div id="ride-skills-parks" class="ride-card ja-animate" data-animation="move-from-bottom" data-delay="item-5">
             <div class="ride-card-image" style="background-image:url('/assets/images/events/2024/akaigawa-pump-track-reopens/header.jpg');">
               <span class="ride-card-icon fa-solid fa-diamond-turn-right"></span>
             </div>
@@ -450,12 +473,6 @@ masthead:
         data-animation="move-from-bottom"
         data-delay="400">
         <div style="font-size:130%;"><span>The riding season runs from late May to late October. Peak months are June and September. All trail status updates are posted on our social channels.</span></div>
-      </div>
-      <div
-        class="features-desc ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="600">
-        <div style="font-size:130%;"><span>For detailed seasonal info, transport, bike rentals, and accommodation, see our <a href="/plan-your-trip/">trip planning guide</a>.</span></div>
       </div>
     </div>
 

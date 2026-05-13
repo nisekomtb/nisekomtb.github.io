@@ -157,18 +157,20 @@ Each page below is one or more tasks. Bilingual parity throughout (Pattern P-EN-
 - Possibly modify: any embedded data partials or related includes
 
 Steps:
-- [ ] Read both files end to end.
-- [ ] Check stats block: verify numbers against current source data (trail counts, km, lift access). Update if stale.
-- [ ] Map section: confirm pin locations match each park's actual coordinates. Make pins interactive (popup or scroll-to-section). Discuss with Tom which interaction.
-- [ ] Read each ride-area description; flag inaccuracies; rewrite if needed.
-- [ ] Remove "routes" content from the gravel section (per Tom's note: routes don't belong here; gravel routes are tracked elsewhere).
-- [ ] Locate the "trip planning guide" link at bottom of the page; if duplicated, remove the duplicate.
-- [ ] Mirror all EN changes to JA file (Pattern P-EN-JA).
-- [ ] Visual check on served site.
-- [ ] Pattern P-COMMIT.
+- [x] Read both files end to end.
+- [x] Check stats block: 21km+ → 30km+ (regional total per `_data/impact.yml`). 20+ Trails → 24 Trails (TP 20 + GH 3 + Annupuri 1; Hanazono deferred per R.2). "4 Riding Areas" and "All Abilities" left as-is.
+- [x] Map section: applied corrected GPS for all 9 POIs (per Tom). Pins now open an InfoWindow with photo (parks) or no photo (skills facilities), title, blurb, and a "View details ↓" button that scrolls to the matching ride card on the page and closes the popup.
+- [x] Ride-area description scan: flagged below in Notes. Did not rewrite copy in this pass; can revisit during Phase B humanize sweep.
+- [x] Removed the "3 routes" count from the gravel card; kept the 1,200km+ distance figure.
+- [x] Removed the duplicate inline "trip planning guide" sentence from Season Info; kept the prominent CTA button at the bottom of the page.
+- [x] Mirrored EN → JA, plus caught up missing JA translations on hero copy, stats cards 1–3, Season Info heading + paragraph, and CTA button (link also fixed from `/plan-your-trip/` → `/ja/plan-your-trip/`).
+- [ ] Visual check on served site. *(Tom to verify in browser.)*
+- [x] Pattern P-COMMIT.
 
 Notes:
-Decide: pin interaction (popup vs scroll-to-section)
+Pin interaction resolved: InfoWindow popup with click-to-scroll button (popup → card → user clicks through to park page from the card).
+Card description discrepancy to revisit: Annupuri card body says "2,750m of natural terrain with 535m of elevation drop"; `_data/trails.yml` lists the Downhill course at 3,200m distance / 556m descent. Different measurement boundaries are possible — confirm with the resort before editing.
+"Ride Niseko" hero heading and the "All Abilities" stat were left in their existing state on the JA page (brand-style EN heading + already-translated stat); raise if you want either changed.
 
 ---
 
@@ -843,6 +845,35 @@ Items intentionally hidden or disabled at launch that need to be re-enabled when
 **Related signals to recheck at restoration time:**
 - `projects/yotei-360/index.html:84` and `ja/projects/yotei-360/index.html:84` already contain a "Follow our stories" CTA pointing to `/stories/`. The link works today (page is live), but the destination is empty until the first story lands. No action needed at restoration; just be aware these CTAs become more meaningful once content exists.
 - `stories/index.html` and `ja/stories/index.html` already have an empty-state message ("Stories coming soon"). Once posts in the `stories` category exist, they will populate the list automatically.
+
+---
+
+### R.2: Include Hanazono trails in the `/where-to-ride/` trail-count stat
+
+**Gate:** Hanazono Bike Park opens (target: Summer 2026).
+
+**What was changed:**
+- `where-to-ride/index.html`, `ja/where-to-ride/index.html` (Task A.1) — the trail-count stat reflects only currently-open parks (Twin Peaks 20 + Grand Hirafu 3 + Annupuri 1 = 24 trails). Hanazono's 3 listed trails in `_data/trails.yml` are excluded from the hub stat at launch.
+
+**What to do to restore:**
+- [ ] Recount trails in `_data/trails.yml` at the time (Hanazono entries, plus any new trails opened in the interim).
+- [ ] Update the trail-count stat number on `/where-to-ride/` and `/ja/where-to-ride/`.
+- [ ] Re-check the regional km stat on the same page against the latest `_data/impact.yml` figure; bump if needed.
+- [ ] Visual check on served site.
+
+---
+
+### R.3: Re-add Creek 'n' Peak to Twin Peaks trail list
+
+**Gate:** Trail opens to the public (construction finished; opening date TBC).
+
+**What was changed:**
+- `_data/trails.yml:172-182` — Creek 'n' Peak entry commented out. Construction is finished but the trail is not yet open.
+
+**What to do to restore:**
+- [ ] Uncomment the Creek 'n' Peak block in `_data/trails.yml`.
+- [ ] Verify difficulty count auto-updates on `/where-to-ride/` and `/twin-peaks/`.
+- [ ] If R.2 has already been restored, bump the trail-count stat on `/where-to-ride/` by one to include Creek 'n' Peak.
 
 ---
 
