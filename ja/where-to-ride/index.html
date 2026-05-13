@@ -79,7 +79,7 @@ masthead:
   <script type="text/javascript">
     async function initAreaMap() {
       var { Map, InfoWindow } = await google.maps.importLibrary("maps");
-      var { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary("marker");
+      var { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
       var map = new Map(document.getElementById("area-map"), {
         zoom: 12,
         center: { lat: 42.865, lng: 140.695 },
@@ -136,27 +136,21 @@ masthead:
         {
           position: { lat: 42.8675451690713, lng: 140.71061419758635 },
           title: "ツインピークス スキルセンター",
-          img: "/assets/images/logos/twin-peaks.svg",
-          scale: 1.0,
-          background: skillsColour,
+          icon: "fa-diamond-turn-right",
           anchor: "skills-parks",
           blurb: "ツインピークス内の初心者向けトレイル"
         },
         {
           position: { lat: 42.86180213562858, lng: 140.6979353118335 },
           title: "グランヒラフ スキルアップエリア",
-          img: "/assets/images/company/grand-hirafu.png",
-          scale: 1.0,
-          background: skillsColour,
+          icon: "fa-diamond-turn-right",
           anchor: "skills-parks",
           blurb: "グランヒラフ内の練習エリア"
         },
         {
           position: { lat: 43.02780751419581, lng: 140.8674118719359 },
           title: "赤井川TOMO パンプトラック",
-          img: "/assets/images/company/tomo-playpark.svg",
-          scale: 1.0,
-          background: skillsColour,
+          icon: "fa-diamond-turn-right",
           anchor: "skills-parks",
           blurb: "赤井川TOMOプレイパークのパンプトラック"
         },
@@ -164,17 +158,13 @@ masthead:
           position: { lat: 42.74142018480268, lng: 140.8886271864453 },
           title: "ルスツ パンプトラック",
           icon: "fa-diamond-turn-right",
-          scale: 1.0,
-          background: skillsColour,
           anchor: "skills-parks",
           blurb: "ルスツリゾートのパンプトラック"
         },
         {
           position: { lat: 42.861845196481944, lng: 140.70262536427697 },
           title: "リズムジャパン スキルパーク",
-          img: "/assets/images/company/rhythm.png",
-          scale: 1.0,
-          background: skillsColour,
+          icon: "fa-diamond-turn-right",
           anchor: "skills-parks",
           blurb: "リズム ヒラフの練習エリア"
         }
@@ -195,28 +185,22 @@ masthead:
       }
 
       pois.forEach(function(poi) {
-        var content;
+        var el = document.createElement("div");
         if (poi.icon) {
-          var el = document.createElement("div");
-          el.innerHTML = '<i class="fa ' + poi.icon + '" style="color:#fff; font-size:14px;"></i>';
-          el.style.cssText = 'display:flex; align-items:center; justify-content:center; width:' + (40 * (poi.scale || 1)) + 'px; height:' + (40 * (poi.scale || 1)) + 'px; background:' + poi.background + '; border:2px solid #fff; border-radius:50%; cursor:pointer;';
-          content = el;
+          el.innerHTML = '<i class="fa-solid ' + poi.icon + '" style="color:#fff; font-size:14px;"></i>';
+          el.style.cssText = 'display:flex; align-items:center; justify-content:center; width:32px; height:32px; background:' + skillsColour + '; border:2px solid #fff; border-radius:50%; box-shadow:0 1px 4px rgba(0,0,0,0.45); cursor:pointer;';
         } else {
-          var pin = new PinElement({
-            glyphColor: "#fff",
-            background: poi.background,
-            borderColor: "#fff",
-            scale: poi.scale || 1,
-          });
-          if (poi.img) pin.glyphSrc = poi.img;
-          content = pin;
+          var size = poi.scale && poi.scale >= 1.8 ? 72 : 60;
+          var inner = Math.round(size * 0.7);
+          el.innerHTML = '<img src="' + poi.img + '" alt="" style="width:' + inner + 'px; height:' + inner + 'px; object-fit:contain;">';
+          el.style.cssText = 'display:flex; align-items:center; justify-content:center; width:' + size + 'px; height:' + size + 'px; background:#fff; border:3px solid ' + parkColour + '; border-radius:50%; box-shadow:0 2px 8px rgba(0,0,0,0.45); cursor:pointer;';
         }
 
         var marker = new AdvancedMarkerElement({
           position: poi.position,
           map: map,
           title: poi.title,
-          content: content,
+          content: el,
           gmpClickable: true,
         });
 
