@@ -403,8 +403,22 @@ masthead:
     .ride-card .ride-card-body p {
       flex: 1;
     }
-    .ride-card .ride-card-body .action {
+    .ride-card .ride-card-body .action,
+    .ride-card .ride-card-body .action:hover,
+    .ride-card .ride-card-body .action:focus {
       margin-top: 12px;
+      color: #fff;
+      text-decoration: none;
+    }
+    .ride-card .ride-card-body .action span {
+      margin-left: 8px;
+      position: relative;
+      top: 1px;
+      letter-spacing: -1px;
+      transition: margin 500ms;
+    }
+    .ride-card .ride-card-body .action:hover span {
+      margin-left: 14px;
     }
     .ride-card .ride-card-badge {
       position: absolute;
