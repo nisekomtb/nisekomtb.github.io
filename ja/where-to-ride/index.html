@@ -98,6 +98,7 @@ masthead:
           title: "ツインピークスバイクパーク",
           anchor: "twin-peaks",
           photo: "/assets/images/twinpeaks/header.jpg",
+          logo: "/assets/images/logos/twin-peaks.svg",
           blurb: "20本のトレイル ・ 21km ・ 毎日無料"
         },
         {
@@ -105,6 +106,7 @@ masthead:
           title: "グランヒラフバイクパーク",
           anchor: "grand-hirafu",
           photo: "/assets/images/trails/grand-hirafu/01.jpg",
+          logo: "/assets/images/company/grand-hirafu.png",
           blurb: "3本のトレイル ・ ヒラフ村でリフトアクセス"
         },
         {
@@ -112,6 +114,7 @@ masthead:
           title: "花園バイクパーク",
           anchor: "hanazono",
           photo: "/assets/images/trails/hanazono/01.jpg",
+          logo: "/assets/images/company/hanazono.png",
           blurb: "ニセコ初のリフトアクセスフロートレイル ・ 2026年夏オープン"
         },
         {
@@ -119,6 +122,7 @@ masthead:
           title: "ニセコアンヌプリ",
           anchor: "annupuri",
           photo: "/assets/images/trails/annupuri/01.jpg",
+          logo: "/assets/images/company/annupuri.png",
           blurb: "ゴンドラアクセスのダウンヒルコース ・ 3.2km"
         },
         {
@@ -126,6 +130,7 @@ masthead:
           title: "ツインピークス スキルセンター",
           icon: "fa-diamond-turn-right",
           anchor: "skills-parks",
+          photo: "/assets/images/events/2024/akaigawa-pump-track-reopens/header.jpg",
           blurb: "ツインピークス内の初心者向けトレイル"
         },
         {
@@ -133,6 +138,7 @@ masthead:
           title: "グランヒラフ スキルアップエリア",
           icon: "fa-diamond-turn-right",
           anchor: "skills-parks",
+          photo: "/assets/images/events/2024/akaigawa-pump-track-reopens/header.jpg",
           blurb: "グランヒラフ内の練習エリア"
         },
         {
@@ -140,6 +146,7 @@ masthead:
           title: "赤井川TOMO パンプトラック",
           icon: "fa-diamond-turn-right",
           anchor: "skills-parks",
+          photo: "/assets/images/events/2024/akaigawa-pump-track-reopens/header.jpg",
           blurb: "赤井川TOMOプレイパークのパンプトラック"
         },
         {
@@ -147,6 +154,7 @@ masthead:
           title: "ルスツ パンプトラック",
           icon: "fa-diamond-turn-right",
           anchor: "skills-parks",
+          photo: "/assets/images/events/2024/akaigawa-pump-track-reopens/header.jpg",
           blurb: "ルスツリゾートのパンプトラック"
         },
         {
@@ -154,6 +162,7 @@ masthead:
           title: "リズムジャパン スキルパーク",
           icon: "fa-diamond-turn-right",
           anchor: "skills-parks",
+          photo: "/assets/images/events/2024/akaigawa-pump-track-reopens/header.jpg",
           blurb: "リズム ヒラフの練習エリア"
         }
       ];
@@ -161,14 +170,19 @@ masthead:
       var infoWindow = new InfoWindow();
 
       function popupContent(poi) {
-        var photo = poi.photo
-          ? '<img src="' + poi.photo + '" alt="" style="display:block; width:100%; height:110px; object-fit:cover; border-radius:3px; margin-bottom:12px;">'
-          : '';
-        return '<div style="font-family:inherit; line-height:1.4; min-width:200px; max-width:260px;">'
-          + photo
-          + '<strong style="display:block; color:#fff; font-size:14px; margin-bottom:4px;">' + poi.title + '</strong>'
-          + '<span style="display:block; font-size:12px; color:#cccccc; margin-bottom:12px;">' + poi.blurb + '</span>'
-          + '<button type="button" data-ride-anchor="' + poi.anchor + '" style="display:inline-block; padding:6px 12px; background:' + parkColour + '; color:#fff; border:0; border-radius:3px; font-size:12px; font-weight:600; cursor:pointer;">詳細を見る &darr;</button>'
+        var isSkills = poi.anchor === "skills-parks";
+        var emblem = poi.logo
+          ? '<img class="map-popup-logo" src="' + poi.logo + '" alt="">'
+          : '<span class="map-popup-icon fa-solid ' + (poi.icon || (isSkills ? "fa-diamond-turn-right" : "fa-person-biking")) + '"></span>';
+        return '<div class="map-popup">'
+          + '<div class="map-popup-image" style="background-image:url(' + poi.photo + ');">'
+          + emblem
+          + '</div>'
+          + '<div class="map-popup-body">'
+          + '<strong class="map-popup-title">' + poi.title + '</strong>'
+          + '<span class="map-popup-blurb">' + poi.blurb + '</span>'
+          + '<button type="button" class="map-popup-button" data-ride-anchor="' + poi.anchor + '">詳細を見る &darr;</button>'
+          + '</div>'
           + '</div>';
       }
 
@@ -222,18 +236,98 @@ masthead:
     /* Themed Google Maps InfoWindow to match site card style */
     .gm-style .gm-style-iw-c {
       background: var(--color-bg-panel) !important;
-      padding: 16px !important;
+      padding: 0 !important;
       box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5) !important;
       border-radius: 6px !important;
+      font-family: "Metropolis", Helvetica, Arial, sans-serif !important;
+      max-width: 280px !important;
     }
     .gm-style .gm-style-iw-d {
       overflow: hidden !important;
+      padding: 0 !important;
+      max-height: none !important;
     }
     .gm-style .gm-style-iw-tc::after {
       background: var(--color-bg-panel) !important;
     }
+    .gm-style .gm-ui-hover-effect {
+      top: 4px !important;
+      right: 4px !important;
+    }
     .gm-style .gm-ui-hover-effect > span {
       background-color: var(--color-text-light) !important;
+    }
+
+    /* Popup card */
+    .map-popup {
+      width: 240px;
+    }
+    .map-popup-image {
+      position: relative;
+      height: 130px;
+      background-size: cover;
+      background-position: center;
+    }
+    .map-popup-image::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 80px;
+      background: linear-gradient(to bottom, transparent, var(--color-bg-panel));
+    }
+    .map-popup-logo {
+      position: absolute;
+      bottom: -22px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+    }
+    .map-popup-icon {
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+      font-size: 36px;
+      color: var(--color-secondary);
+      filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+    }
+    .map-popup-body {
+      padding: 32px 16px 16px;
+      text-align: center;
+    }
+    .map-popup-title {
+      display: block;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .map-popup-blurb {
+      display: block;
+      color: var(--color-text-light);
+      font-size: 12px;
+      margin-bottom: 12px;
+    }
+    .map-popup-button {
+      display: inline-block;
+      padding: 6px 14px;
+      background: var(--color-primary);
+      color: #fff;
+      border: 0;
+      border-radius: 3px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .map-popup-button:hover {
+      background: var(--color-primary-hover);
     }
 
     .ride-card {
