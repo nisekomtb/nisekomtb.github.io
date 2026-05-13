@@ -41,7 +41,12 @@
     {% else %}
       <link rel="canonical" href="https://namba.ngo{% if page.lang == 'ja' %}/ja{% endif %}{{ path }}"/>
     {% endif %}
-    {% assign build = site.time | date: "%s" %}<link href="/assets/images/ico/favicon.ico?d={{ build }}" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+    {% assign build = site.time | date: "%s" %}
+    <link rel="icon" type="image/svg+xml" href="/assets/images/ico/favicon.svg?d={{ build }}"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/ico/favicon-32.png?d={{ build }}"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/ico/favicon-16.png?d={{ build }}"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/ico/apple-touch-icon.png?d={{ build }}"/>
+    <link rel="shortcut icon" href="/assets/images/ico/favicon.ico?d={{ build }}"/>
 
     <link href="/assets/css/bootstrap.min.css?d={{ build }}" rel="stylesheet" type="text/css"/>
     <link href="/assets/css/bs3-compat.css?d={{ build }}" rel="stylesheet" type="text/css"/>
