@@ -181,7 +181,7 @@ masthead:
           + '<div class="map-popup-body">'
           + '<strong class="map-popup-title">' + poi.title + '</strong>'
           + '<span class="map-popup-blurb">' + poi.blurb + '</span>'
-          + '<button type="button" class="map-popup-button" data-ride-anchor="' + poi.anchor + '">View details &darr;</button>'
+          + '<a href="#ride-' + poi.anchor + '" class="map-popup-action" data-ride-anchor="' + poi.anchor + '">View details <span class="fa-solid fa-circle-arrow-down"></span></a>'
           + '</div>'
           + '</div>';
       }
@@ -315,19 +315,29 @@ masthead:
       font-size: 12px;
       margin-bottom: 12px;
     }
-    .map-popup-button {
+    .map-popup-action {
       display: inline-block;
-      padding: 6px 14px;
-      background: var(--color-primary);
+      margin-top: 4px;
       color: #fff;
-      border: 0;
-      border-radius: 3px;
-      font-size: 12px;
-      font-weight: 600;
-      cursor: pointer;
+      font-weight: 500;
+      text-decoration: none;
+      white-space: nowrap;
     }
-    .map-popup-button:hover {
-      background: var(--color-primary-hover);
+    .map-popup-action span {
+      margin-left: 8px;
+      position: relative;
+      top: 1px;
+      letter-spacing: -1px;
+      transition: margin 500ms;
+    }
+    .map-popup-action:hover,
+    .map-popup-action:focus {
+      color: var(--color-primary);
+      text-decoration: none;
+    }
+    .map-popup-action:hover span,
+    .map-popup-action:focus span {
+      margin-left: 14px;
     }
 
     .ride-card {
