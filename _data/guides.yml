@@ -9,9 +9,9 @@ twinpeaks:
   # - name: specialized
   #   image: /assets/images/company/specialized.png
   #   url: https://www.specialized-onlinestore.jp/
-  #   label: Trail building team partner
+  #   label: Trail crew sponsor
   #   ja:
-  #     label: トレイルビルドチーム スポンサー
+  #     label: トレイルクルー スポンサー
   - name: ezo bike
     image: /assets/images/company/other/ezobike.png
     url: https://www.ezobasestudies.com
