@@ -81,15 +81,15 @@ Decide: (resolved) torii via Noto Emoji
 - Modify: `partner/index.html`, `ja/partner/index.html` (if hardcoded)
 
 Steps:
-- [ ] Run `grep -rn "Specialized" --include="*.yml" --include="*.html" --include="*.md"` to find every reference.
-- [ ] Ask Tom what the corrected name should be (Specialized Bicycles? Specialized Japan? other?).
-- [ ] Update canonical source (likely `_data/sponsors.yml` for the sponsor record).
-- [ ] Update any hardcoded mentions on `partner/index.html` and `ja/partner/index.html`.
-- [ ] Verify in served site (`/partner/`).
-- [ ] Pattern P-COMMIT.
+- [x] Run `grep -rn "Specialized" --include="*.yml" --include="*.html" --include="*.md"` to find every reference.
+- [x] Ask Tom what the corrected name should be.
+- [x] Update canonical source: `_data/sponsors.yml` label "Trail building team partner" → "Trail crew sponsor"; JA label トレイルビルドチーム スポンサー → トレイルクルー スポンサー.
+- [x] Update hardcoded copy: `_layouts/twin-peaks.html` sponsor strip title attribute. Commented future entry in `_data/guides.yml` also synced for consistency.
+- [ ] Verify in served site (`/twin-peaks/`, `/partner/`). *(Tom to verify.)*
+- [x] Pattern P-COMMIT (commit c9605d0).
 
-Notes:
-Decide: exact corrected string from Tom
+Notes: Resolved: it was the **label** that needed updating, not the brand name itself. The Specialized brand mentions in body copy and event posts are unchanged.
+Decide: (resolved) label rename
 
 ---
 
