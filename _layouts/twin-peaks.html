@@ -167,24 +167,6 @@ layout: base
     object-fit: cover;
     display: block;
   }
-
-  .tp-gallery .gallery-placeholder {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 16px;
-    color: #666;
-    font-size: 12px;
-  }
-
-  .tp-gallery .gallery-placeholder .fa-solid {
-    font-size: 32px;
-    margin-bottom: 8px;
-  }
 </style>
 
 <div id="t3-mainbody" class="container t3-mainbody">
@@ -340,64 +322,34 @@ layout: base
         {% endif %}
         <div class="gallery-grid">
           <div class="gallery-tile">
-            <div class="gallery-placeholder">
-              <span class="fa-solid fa-image"></span>
-              {% if page.lang == "ja" %}
-              <span>写真：<wbr>ツインピークス<wbr>バイクパークの<wbr>空撮／<wbr>俯瞰風景</span>
-              {% else %}
-              <span>Photo: aerial / wide landscape of Twin Peaks Bike Park</span>
-              {% endif %}
-            </div>
+            <img src="/assets/images/twinpeaks/gallery/aerial-trail-network.webp"
+              alt="{% if page.lang == 'ja' %}ツインピークスバイクパークのトレイルネットワークを上空から望む{% else %}Aerial view across the Twin Peaks Bike Park trail network{% endif %}"
+              loading="lazy">
           </div>
           <div class="gallery-tile">
-            <div class="gallery-placeholder">
-              <span class="fa-solid fa-image"></span>
-              {% if page.lang == "ja" %}
-              <span>写真：<wbr>フロートレイルを<wbr>走る<wbr>ライダー</span>
-              {% else %}
-              <span>Photo: rider on a flow trail</span>
-              {% endif %}
-            </div>
+            <img src="/assets/images/twinpeaks/gallery/riders-flow.webp"
+              alt="{% if page.lang == 'ja' %}ツインピークスのトレイルを下るライダーたち{% else %}Riders flowing down a Twin Peaks trail{% endif %}"
+              loading="lazy">
           </div>
           <div class="gallery-tile">
-            <div class="gallery-placeholder">
-              <span class="fa-solid fa-image"></span>
-              {% if page.lang == "ja" %}
-              <span>写真：<wbr>ジャンプラインの<wbr>瞬間</span>
-              {% else %}
-              <span>Photo: jump line in motion</span>
-              {% endif %}
-            </div>
+            <img src="/assets/images/twinpeaks/gallery/trailhead.webp"
+              alt="{% if page.lang == 'ja' %}ツインピークスバイクパークのトレイルヘッド{% else %}Trailhead entry at Twin Peaks Bike Park{% endif %}"
+              loading="lazy">
           </div>
           <div class="gallery-tile">
-            <div class="gallery-placeholder">
-              <span class="fa-solid fa-image"></span>
-              {% if page.lang == "ja" %}
-              <span>写真：<wbr>初心者・<wbr>家族向けの<wbr>グリーン<wbr>トレイル</span>
-              {% else %}
-              <span>Photo: family or beginner riders on a green trail</span>
-              {% endif %}
-            </div>
+            <img src="/assets/images/twinpeaks/gallery/family-ride.webp"
+              alt="{% if page.lang == 'ja' %}ツインピークスで親子で楽しむライド{% else %}Parent and child sharing a ride at Twin Peaks{% endif %}"
+              loading="lazy">
           </div>
           <div class="gallery-tile">
-            <div class="gallery-placeholder">
-              <span class="fa-solid fa-image"></span>
-              {% if page.lang == "ja" %}
-              <span>写真：<wbr>森の<wbr>シングルトラックの<wbr>雰囲気</span>
-              {% else %}
-              <span>Photo: forest singletrack, atmospheric</span>
-              {% endif %}
-            </div>
+            <img src="/assets/images/twinpeaks/gallery/forest-singletrack.webp"
+              alt="{% if page.lang == 'ja' %}ツインピークスの森を抜けるシングルトラック{% else %}Atmospheric forest singletrack at Twin Peaks{% endif %}"
+              loading="lazy">
           </div>
           <div class="gallery-tile">
-            <div class="gallery-placeholder">
-              <span class="fa-solid fa-image"></span>
-              {% if page.lang == "ja" %}
-              <span>写真：<wbr>NAMBAの<wbr>サイン<wbr>掲示が<wbr>分かる<wbr>トレイルヘッド</span>
-              {% else %}
-              <span>Photo: trailhead with NAMBA signage in context</span>
-              {% endif %}
-            </div>
+            <img src="/assets/images/twinpeaks/gallery/trail-signage.webp"
+              alt="{% if page.lang == 'ja' %}ツインピークスのNAMBAトレイルサイン{% else %}NAMBA trail signage at Twin Peaks{% endif %}"
+              loading="lazy">
           </div>
         </div>
       </section>
