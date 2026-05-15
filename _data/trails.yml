@@ -19,13 +19,109 @@ twinpeaks:
     managed_by: ニセコエリアマウンテンバイク協会
   location_lat: 42.866
   location_lng: 140.710
-  gallery:
-    - /assets/images/twinpeaks/twinpeaks-01.jpg
-    - /assets/images/twinpeaks/twinpeaks-02.jpg
-    - /assets/images/twinpeaks/twinpeaks-03.jpg
-    - /assets/images/twinpeaks/twinpeaks-04.jpg
   trailforks_rid: 58775
-  trailforks_map_rid: 58775
+  map_zoom: 14.664296754902944
+  map_lat: 42.864978907247234
+  map_lon: 140.71076524788
+  url_root: /twin-peaks
+  subnav:
+    - slug: ""
+      label_en: Trail Map
+      label_ja: トレイルマップ
+    - slug: access
+      label_en: Access
+      label_ja: アクセス
+    - slug: guides
+      label_en: Guides
+      label_ja: ガイド
+    - slug: rules
+      label_en: Rules
+      label_ja: ルール
+    - slug: wet-trails
+      label_en: Wet Trails
+      label_ja: ぬれたトレイル
+    - slug: commercial-pass
+      label_en: Commercial Pass
+      label_ja: 商業事業者パス
+    - slug: emergency
+      label_en: Emergency
+      label_ja: 緊急対応
+  partners:
+    - url_en: https://helloallegra.com
+      img: /assets/images/company/allegra.png
+      title_en: Trail building partner
+      title_ja: トレイルビルド パートナー
+    - url_en: https://www.mnkniseko.com/en
+      url_ja: https://www.mnkniseko.com/ja
+      img: /assets/images/company/mnk.png
+      title_en: Trail sponsor
+      title_ja: トレイル スポンサー
+    - url_en: https://rhythmjapan.com
+      url_ja: https://www.rhythmjapan.com/ja/
+      img: /assets/images/company/rhythm.png
+      title_en: Maintenance sponsor
+      title_ja: メンテナンス スポンサー
+    - url_en: https://www.specialized-onlinestore.jp/
+      img: /assets/images/company/specialized.png
+      title_en: Trail crew sponsor
+      title_ja: トレイルクルー スポンサー
+    - url_en: https://holidayniseko.com
+      url_ja: https://holidayniseko.jp
+      img: /assets/images/company/holiday-niseko.png
+      title_en: Trail sponsor
+      title_ja: トレイル スポンサー
+    - url_en: https://www.nisekorealty.com
+      img: /assets/images/company/niseko-realty.png
+      title_en: Trail sponsor
+      title_ja: トレイル スポンサー
+    - url_en: http://www.nisekorealtysales.com
+      img: /assets/images/company/nrs.png
+      title_en: Trail sponsor
+      title_ja: トレイル スポンサー
+    - url_en: https://www.santacruzbicycles.com/
+      img: /assets/images/company/santa-cruz.png
+      title_en: Trail sponsor
+      title_ja: トレイル スポンサー
+    - img: /assets/images/company/taki.png
+      title_en: Trail sponsor
+      title_ja: トレイル スポンサー
+  gallery:
+    - img: /assets/images/twinpeaks/gallery/aerial-trail-network.webp
+      img_large: /assets/images/twinpeaks/gallery/aerial-trail-network-large.webp
+      width: 2000
+      height: 1333
+      alt_en: Aerial view across the Twin Peaks Bike Park trail network
+      alt_ja: ツインピークスバイクパークのトレイルネットワークを上空から望む
+    - img: /assets/images/twinpeaks/gallery/riders-flow.webp
+      img_large: /assets/images/twinpeaks/gallery/riders-flow-large.webp
+      width: 2000
+      height: 1333
+      alt_en: Riders flowing down a Twin Peaks trail
+      alt_ja: ツインピークスのトレイルを下るライダーたち
+    - img: /assets/images/twinpeaks/gallery/trailhead.webp
+      img_large: /assets/images/twinpeaks/gallery/trailhead-large.webp
+      width: 2000
+      height: 1333
+      alt_en: Trailhead entry at Twin Peaks Bike Park
+      alt_ja: ツインピークスバイクパークのトレイルヘッド
+    - img: /assets/images/twinpeaks/gallery/family-ride.webp
+      img_large: /assets/images/twinpeaks/gallery/family-ride-large.webp
+      width: 3000
+      height: 2000
+      alt_en: Parent and child sharing a ride at Twin Peaks
+      alt_ja: ツインピークスで親子で楽しむライド
+    - img: /assets/images/twinpeaks/gallery/forest-singletrack.webp
+      img_large: /assets/images/twinpeaks/gallery/forest-singletrack-large.webp
+      width: 2000
+      height: 1333
+      alt_en: Atmospheric forest singletrack at Twin Peaks
+      alt_ja: ツインピークスの森を抜けるシングルトラック
+    - img: /assets/images/twinpeaks/gallery/trail-signage.webp
+      img_large: /assets/images/twinpeaks/gallery/trail-signage-large.webp
+      width: 3000
+      height: 2000
+      alt_en: NAMBA trail signage at Twin Peaks
+      alt_ja: ツインピークスのNAMBAトレイルサイン
   trails:
     - name: Jinja Ninja
       ja:
@@ -279,8 +375,38 @@ grand-hirafu:
     managed_by: グランヒラフリゾート
   location_lat: 42.861887017044324
   location_lng: 140.69852125027265
-  gallery: []
-  trailforks_map_rid: 58866
+  gallery:
+    - img: /assets/images/trails/grand-hirafu/gallery/riders-berms-yotei.webp
+      width: 2667
+      height: 1778
+      alt_en: Four riders carving berms at Grand Hirafu Bike Park with Mount Yotei rising behind
+      alt_ja: 羊蹄山を背景にグラン・ヒラフバイクパークのバームを駆け抜ける4人のライダー
+    - img: /assets/images/trails/grand-hirafu/gallery/rider-yotei-flow.webp
+      width: 2449
+      height: 1632
+      alt_en: A rider cresting a flow trail at Grand Hirafu Bike Park with Mount Yotei in the distance
+      alt_ja: グラン・ヒラフバイクパークのフロートレイルを駆けるライダー、遠くに羊蹄山
+    - img: /assets/images/trails/grand-hirafu/gallery/gondola-yotei.webp
+      width: 2449
+      height: 1632
+      alt_en: Grand Hirafu gondola cabins suspended over the Niseko valley with Mount Yotei in the distance
+      alt_ja: ニセコの谷を眼下に下るグラン・ヒラフのゴンドラ、遠くに羊蹄山
+    - img: /assets/images/trails/grand-hirafu/gallery/forest-singletrack.webp
+      width: 1280
+      height: 853
+      alt_en: Two riders flowing through green forest singletrack at Grand Hirafu
+      alt_ja: グラン・ヒラフの緑のシングルトラックを走る2人のライダー
+    - img: /assets/images/trails/grand-hirafu/gallery/riders-base-village.webp
+      width: 3000
+      height: 2000
+      alt_en: Riders on the lower jump trails at Grand Hirafu with Hirafu Village in the background
+      alt_ja: ヒラフ村を背景にグラン・ヒラフの下部ジャンプトレイルを走るライダー
+    - img: /assets/images/trails/grand-hirafu/gallery/rider-gondola-top.webp
+      width: 900
+      height: 600
+      alt_en: A rider beside a Grand Hirafu gondola cabin at the mountain-top station with Mount Yotei behind
+      alt_ja: グラン・ヒラフ山頂駅のゴンドラキャビンのそばに立つライダー、奥に羊蹄山
+  trailforks_rid: 58866
   # 58780
   trails:
     - name: Kamiwaza
@@ -333,7 +459,7 @@ annupuri:
   location_lat: 42.847557294449004
   location_lng: 140.64795548334948
   gallery: []
-  trailforks_map_rid: 66231
+  trailforks_rid: 66231
   trails:
   - name: Downhill course
     ja:
@@ -367,9 +493,44 @@ hanazono:
     managed_by: 花園リゾート / NAMBA
   location_lat: 42.89317852818024
   location_lng: 140.70017501899656
-  gallery: []
   trailforks_rid: 74136
-  trailforks_map_rid: 74136
+  gallery:
+    - img: /assets/images/trails/hanazono/gallery/flow-trail-yotei.webp
+      img_large: /assets/images/trails/hanazono/gallery/flow-trail-yotei-large.webp
+      width: 3000
+      height: 2000
+      alt_en: Riders descending a flow trail at Niseko Hanazono Bike Park with Mount Yotei in the distance
+      alt_ja: ニセコHANAZONOバイクパークのフロートレイルを下るライダー、遠くに羊蹄山
+    - img: /assets/images/trails/hanazono/gallery/base-area.webp
+      img_large: /assets/images/trails/hanazono/gallery/base-area-large.webp
+      width: 3000
+      height: 2000
+      alt_en: Trail dropping down toward the Hanazono base area, Park Hyatt Niseko Hanazono behind
+      alt_ja: 花園ベースエリアへ下るトレイル、奥にパーク ハイアット ニセコ HANAZONO
+    - img: /assets/images/trails/hanazono/gallery/airborne-rider.webp
+      img_large: /assets/images/trails/hanazono/gallery/airborne-rider-large.webp
+      width: 2667
+      height: 1778
+      alt_en: Rider airborne off a dirt jump at Niseko Hanazono Bike Park
+      alt_ja: ニセコHANAZONOバイクパークのダートジャンプで宙を舞うライダー
+    - img: /assets/images/trails/hanazono/gallery/forest-singletrack.webp
+      img_large: /assets/images/trails/hanazono/gallery/forest-singletrack-large.webp
+      width: 3000
+      height: 2000
+      alt_en: Two riders flowing through autumn forest singletrack at Niseko Hanazono Bike Park
+      alt_ja: ニセコHANAZONOバイクパークの秋の森のシングルトラックを走る2人のライダー
+    - img: /assets/images/trails/hanazono/gallery/gondola-cabin.webp
+      img_large: /assets/images/trails/hanazono/gallery/gondola-cabin-large.webp
+      width: 2667
+      height: 1778
+      alt_en: Riders on a singletrack trail with the Hanazono gondola cabin overhead
+      alt_ja: 花園ゴンドラのキャビンの下、シングルトラックを走るライダー
+    - img: /assets/images/trails/hanazono/gallery/lift-line-grasses.webp
+      img_large: /assets/images/trails/hanazono/gallery/lift-line-grasses-large.webp
+      width: 3000
+      height: 2000
+      alt_en: A rider on the trail alongside susuki grass and the Hanazono lift line
+      alt_ja: ススキの脇、花園リフト沿いのトレイルを走るライダー
   trails:
     - name: Forest Loop Course
       ja:

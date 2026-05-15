@@ -2485,10 +2485,20 @@ input.invalid {
 
 .park-gallery .gallery-tile {
   position: relative;
+  display: block;
   aspect-ratio: 3 / 2;
   background: var(--color-bg-panel);
   border-radius: 3px;
   overflow: hidden;
+  text-decoration: none;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.park-gallery .gallery-tile:hover,
+.park-gallery .gallery-tile:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+  outline: none;
 }
 
 .park-gallery .gallery-tile img {
@@ -2496,6 +2506,12 @@ input.invalid {
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 400ms ease;
+}
+
+.park-gallery .gallery-tile:hover img,
+.park-gallery .gallery-tile:focus-visible img {
+  transform: scale(1.04);
 }
 
 .module-ct {

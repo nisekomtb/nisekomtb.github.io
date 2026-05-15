@@ -1,6 +1,29 @@
 ---
 layout: base
 ---
+{% assign path = page.url | remove_first: "/" | remove: "ja/" | remove: "index.html" %}
+{% assign pathSegments = path | split: "/" %}
+{% assign path0 = pathSegments.first | default: '' %}
+{% comment %}
+  Default path1 to '' so the sub-nav active-state check (path1 == item.slug)
+  matches the root item (slug: "") on the park root. Ruby's String#split
+  drops trailing empty segments, so without this default, pathSegments[1]
+  is nil on URLs like /twin-peaks/, and nil == '' is false in Liquid.
+{% endcomment %}
+{% assign path1 = pathSegments[1] | default: '' %}
+
+{% assign park_data = site.data.trails[page.trail_data_key] %}
+{% comment %}
+  A park is treated as a "sub-page" only when its data declares sub-nav AND
+  path1 is non-empty. Works for Twin Peaks (only park with sub-pages today).
+  Parks nested under /where-to-ride/<slug>/ would need path2-based detection
+  if they ever gain sub-pages.
+{% endcomment %}
+{% assign is_park_subpage = false %}
+{% if park_data.subnav and path1 != '' %}
+  {% assign is_park_subpage = true %}
+{% endif %}
+
 {% include masthead.html %}
 
 <style>
@@ -10,6 +33,22 @@ layout: base
 
   @media (min-width: 768px) {
     section.intro {
+      display: none;
+    }
+  }
+
+  .widget {
+    position: relative;
+  }
+
+  .widget .widget-cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .widget .widget-cover {
       display: none;
     }
   }
@@ -287,6 +326,46 @@ layout: base
     width: 20px;
     display:inline;
   }
+
+  .tp-tabs {
+    margin: 0 0 36px;
+    border-bottom: 1px solid var(--color-bg-border);
+  }
+
+  .tp-tabs ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .tp-tabs li {
+    margin: 0 24px -1px 0;
+  }
+
+  .tp-tabs a {
+    display: inline-block;
+    padding: 0 0 12px;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #ccc;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color 200ms, border-color 200ms;
+  }
+
+  .tp-tabs a:hover,
+  .tp-tabs a:focus {
+    color: #fff;
+  }
+
+  .tp-tabs li.active a {
+    color: #fff;
+    border-bottom-color: var(--color-primary);
+  }
 </style>
 
 <div id="t3-mainbody" class="container t3-mainbody">
@@ -294,8 +373,20 @@ layout: base
 
     <!-- MAIN CONTENT -->
     <div id="t3-content" class="t3-content col col-12 col-md-8 col-lg-9">
-      {% assign park_data = site.data.trails[page.trail_data_key] %}
-      {% if park_data %}
+      {% if park_data.subnav %}
+      <nav class="tp-tabs" aria-label="{% if page.lang == 'ja' %}{{ park_data.ja.name | default: park_data.name }} セクションナビ{% else %}{{ park_data.name }} section navigation{% endif %}">
+        <ul>
+          {% for item in park_data.subnav %}
+          {% capture href %}{% if page.lang == 'ja' %}/ja{% endif %}{{ park_data.url_root }}{% if item.slug != '' %}/{{ item.slug }}{% endif %}{% endcapture %}
+          <li {% if path1 == item.slug %}class="active"{% endif %}>
+            <a href="{{ href }}">{% if page.lang == 'ja' %}{{ item.label_ja }}{% else %}{{ item.label_en }}{% endif %}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </nav>
+      {% endif %}
+
+      {% if park_data and park_data.subnav == nil %}
       <section class="intro">
         {% if park_data.logo %}
         <img style="width:150px; margin:0 auto; margin-bottom:24px; display:flex;"
@@ -317,86 +408,171 @@ layout: base
         {% endif %}
       </section>
       {% endif %}
-      {% if park_data.gallery and park_data.gallery.size > 0 %}
+
+      {% unless is_park_subpage %}
+      {% if park_data.trailforks_rid %}
       <section>
-        <div class="splide" id="splide-gallery">
-          <div class="splide__track">
-            <ul class="splide__list">
-              {% for image in park_data.gallery %}
-              <li class="splide__slide">
-                <div style="overflow:hidden; border-radius:3px;">
-                  <img src="{{ image }}" alt="{{ park_data.name }}" style="width:100%; height:auto; display:block;" />
-                </div>
-              </li>
-              {% endfor %}
-            </ul>
-          </div>
-        </div>
-        <script>
-          document.addEventListener('DOMContentLoaded', function () {
-            new Splide('#splide-gallery', {
-              type: 'loop',
-              perPage: 1,
-              gap: '0px',
-              arrows: true,
-              pagination: true,
-              autoplay: true,
-              interval: 4000,
-              pauseOnHover: true,
-            }).mount();
-          });
-        </script>
-      </section>
-      {% endif %}
-      {% if park_data.trailforks_map_rid %}
-      <section>
-        <div style="max-width:100%; overflow:hidden;">
-          <iframe style="width:100%; height:500px; border:0;" src="https://www.trailforks.com/widgets/region_map/?rid={{ park_data.trailforks_map_rid }}&w=100%25&h=500&activitytype=1&maptype=trailforks" allowfullscreen></iframe>
+        <div class="widget TrailforksWidgetMap"
+          data-w="100%"
+          data-h="600px"
+          data-rid="{{ park_data.trailforks_rid }}"
+          data-activitytype="1"
+          data-maptype="trailforks"
+          data-trailstyle="difficulty"
+          data-controls="1"
+          data-list="0"
+          data-dml="1"
+          data-layers="labels,poi,polygon,directory,region"
+          data-hideunsanctioned="1"
+          data-basicmap="0"
+          {% if park_data.map_zoom %}data-z="{{ park_data.map_zoom }}"{% endif %}
+          {% if park_data.map_lat %}data-lat="{{ park_data.map_lat }}"{% endif %}
+          {% if park_data.map_lon %}data-lon="{{ park_data.map_lon }}"{% endif %}
+          style="position:relative;">
+          <div class="widget-cover"></div>
         </div>
       </section>
       {% endif %}
+      {% endunless %}
 
       <div class="item-page hidden-masthead-info">
         <article>
           {{ content }}
         </article>
       </div>
-      {% if park_data.location_lat and park_data.location_lng %}
+
+      {% comment %}
+        "Getting here" renders only when the page opts in via front matter
+        (show_getting_here: true). Twin Peaks main suppresses it; the /access
+        sub-page enables it. Other parks (Hanazono, Grand Hirafu, Annupuri)
+        enable it on their main page. Uses Maps JS API with the shared dark
+        mapId so the styling matches /where-to-ride/.
+      {% endcomment %}
+      {% if page.show_getting_here and park_data.location_lat and park_data.location_lng %}
       <section>
         <h3>{% if page.lang == "ja" %}アクセス{% else %}Getting here{% endif %}</h3>
-        <div style="max-width:100%; overflow:hidden; border-radius:3px;">
-          <iframe
-            style="width:100%; height:450px; border:0;"
-            loading="lazy"
-            allowfullscreen
-            referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyCet6Eys-EOTnAbs402oGLPbJWuvlH5E0s&origin=New+Chitose+Airport&destination={{ park_data.location_lat }},{{ park_data.location_lng }}&mode=driving">
-          </iframe>
-        </div>
+        <div id="getting-here-map" style="width:100%; height:450px; border-radius:3px; overflow:hidden;"></div>
       </section>
+      <script>(g => { var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window; b = b[c] || (b[c] = {}); var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => { await (a = m.createElement("script")); e.set("libraries", [...r] + ""); for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]); e.set("callback", c + ".maps." + q); a.src = `https://maps.${c}apis.com/maps/api/js?` + e; d[q] = f; a.onerror = () => h = n(Error(p + " could not load.")); a.nonce = m.querySelector("script[nonce]")?.nonce || ""; m.head.append(a) })); d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)) })
+        ({ key: "AIzaSyCet6Eys-EOTnAbs402oGLPbJWuvlH5E0s", v: "weekly" });</script>
+      <script>
+        (async function initGettingHereMap() {
+          const { Map } = await google.maps.importLibrary("maps");
+          const { DirectionsService, DirectionsRenderer } = await google.maps.importLibrary("routes");
+          const dest = { lat: {{ park_data.location_lat }}, lng: {{ park_data.location_lng }} };
+          const map = new Map(document.getElementById("getting-here-map"), {
+            mapId: "bfcc0961204fb2ec",
+            zoom: 9,
+            center: dest,
+            gestureHandling: "cooperative",
+            streetViewControl: false,
+            mapTypeControl: false,
+            fullscreenControl: false,
+          });
+          const directionsService = new DirectionsService();
+          const directionsRenderer = new DirectionsRenderer({ map: map });
+          try {
+            const result = await directionsService.route({
+              origin: "New Chitose Airport",
+              destination: dest,
+              travelMode: "DRIVING",
+            });
+            directionsRenderer.setDirections(result);
+          } catch (err) {
+            console.warn("Getting Here directions failed:", err);
+          }
+        })();
+      </script>
       {% endif %}
     </div>
     <!-- //MAIN CONTENT -->
 
     <!-- SIDEBAR RIGHT -->
     <div class="t3-sidebar t3-sidebar-right col col-12 col-md-4 col-lg-3">
-      {% assign park_info = site.data.trails[page.trail_data_key] %}
       <div class="park-sidebar-panel">
-        {% if park_info.logo %}
+        {% if park_data.logo %}
         <img
           class="tp-logo"
-          src="{{ park_info.logo }}?d={{ site.time | date: '%s' }}"
-          alt="{% if page.lang == 'ja' %}{{ park_info.ja.name | default: park_info.name }}{% else %}{{ park_info.name }}{% endif %}" />
+          src="{{ park_data.logo }}?d={{ site.time | date: '%s' }}"
+          alt="{% if page.lang == 'ja' %}{{ park_data.ja.name | default: park_data.name }}{% else %}{{ park_data.name }}{% endif %}" />
         {% endif %}
         <h3 class="module-title">{% if page.lang == "ja" %}基本データ{% else %}Key stats{% endif %}</h3>
         {% include park-stats.html data_key=page.trail_data_key %}
+
+        {% if park_data.partners %}
+        <div class="detail-item">
+          <h4><span class="fa-solid fa-handshake" style="margin-right:4px;"></span> {% if page.lang == 'ja' %}バイクパーク パートナー{% else %}Bike park partners{% endif %}</h4>
+          <div class="partners-imgs">
+            {% for p in park_data.partners %}
+              {% if p.url_en %}
+              <a href="{% if page.lang == 'ja' %}{{ p.url_ja | default: p.url_en }}{% else %}{{ p.url_en }}{% endif %}" target="_blank">
+                <img src="{{ p.img }}"
+                  title="{% if page.lang == 'ja' %}{{ p.title_ja | default: p.title_en }}{% else %}{{ p.title_en }}{% endif %}">
+              </a>
+              {% else %}
+              <img src="{{ p.img }}"
+                title="{% if page.lang == 'ja' %}{{ p.title_ja | default: p.title_en }}{% else %}{{ p.title_en }}{% endif %}">
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+        {% endif %}
       </div>
     </div>
     <!-- //SIDEBAR RIGHT -->
   </div>
 
+  {% unless is_park_subpage %}
+  {% if park_data.gallery and park_data.gallery.size > 0 and park_data.gallery.first.img %}
+  <div class="row">
+    <div class="col col-12">
+      <section class="park-gallery">
+        <h3 class="module-title">{% if page.lang == 'ja' %}ギャラリー{% else %}Gallery{% endif %}</h3>
+        <div class="gallery-grid">
+          {% for tile in park_data.gallery %}
+          {% assign pswp_href = tile.img_large | default: tile.img %}
+          {% assign pswp_w = tile.width | default: 1600 %}
+          {% assign pswp_h = tile.height | default: 1067 %}
+          <a class="gallery-tile"
+            href="{{ pswp_href }}"
+            data-pswp-width="{{ pswp_w }}"
+            data-pswp-height="{{ pswp_h }}"
+            target="_blank"
+            rel="noopener">
+            <img src="{{ tile.img }}"
+              alt="{% if page.lang == 'ja' %}{{ tile.alt_ja | default: tile.alt_en }}{% else %}{{ tile.alt_en }}{% endif %}"
+              loading="lazy">
+          </a>
+          {% endfor %}
+        </div>
+      </section>
+    </div>
+  </div>
+  <link rel="stylesheet" href="https://unpkg.com/photoswipe@5.4.4/dist/photoswipe.css">
+  <script type="module">
+    import PhotoSwipeLightbox from 'https://unpkg.com/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.js';
+    const lightbox = new PhotoSwipeLightbox({
+      gallery: '.park-gallery .gallery-grid',
+      children: 'a',
+      pswpModule: () => import('https://unpkg.com/photoswipe@5.4.4/dist/photoswipe.esm.js'),
+    });
+    lightbox.init();
+  </script>
+  {% endif %}
+  {% endunless %}
 </div>
 
 <script type="text/javascript">
   var script = document.createElement("script"); script.setAttribute("src", "https://es.pinkbike.org/ttl-86400/sprt/j/trailforks/widget.js?units=metric"); document.getElementsByTagName("head")[0].appendChild(script);
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var covers = document.querySelectorAll('.widget-cover');
+    covers.forEach(function (cover) {
+      cover.addEventListener('click', function () {
+        cover.style.display = 'none';
+      });
+    });
+  });
 </script>

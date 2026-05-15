@@ -1,5 +1,6 @@
 ---
-layout: twin-peaks
+layout: where-to-ride
+trail_data_key: twinpeaks
 title: Twin Peaks Bike Park
 description: The Twin Peaks Bike Park in Niseko, Japan is a world-class mountain biking destination designed in collaboration with renowned trail building company Allegra of Switzerland. The bike park offers free access to the public, and trails for all ages and abilities.
 ---
@@ -19,20 +20,6 @@ description: The Twin Peaks Bike Park in Niseko, Japan is a world-class mountain
   @media (min-width: 768px) {
     section.intro {
       display:none;
-    }
-  }
-
-  .widget {
-    position:relative;
-  }
-
-  .widget .widget-cover {
-    position:absolute; width: 100%; height:100%;
-  }
-
-  @media (min-width: 768px) {
-    .widget .widget-cover {
-      display: none;
     }
   }
 
@@ -305,15 +292,6 @@ description: The Twin Peaks Bike Park in Niseko, Japan is a world-class mountain
   </p>
 </section>
 
-<div class="float-start item-image">
-  <div class="widget TrailforksWidgetMap" data-w="100%" data-h="600px" data-rid="58775" data-activitytype="1"
-  data-maptype="trailforks" data-trailstyle="difficulty" data-controls="1" data-list="0" data-dml="1"
-  data-layers="labels,poi,polygon,directory,region" data-z="14.664296754902944" data-lat="42.869698363944394"
-  data-lon="140.70963367125432" data-hideunsanctioned="1" data-basicmap="0" style="position:relative;">
-    <div class="widget-cover"></div>
-  </div>
-</div>
-
 <section class="article-content" itemprop="articleBody">
   <h3 class="module-title">A free community bike park</h3>
   <p>
@@ -338,15 +316,4 @@ description: The Twin Peaks Bike Park in Niseko, Japan is a world-class mountain
 <p class="signage-link">
   New to the trail signs? Read the <a href="/where-to-ride/signage/">unified signage guide</a>.
 </p>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    var covers = document.querySelectorAll('.widget-cover');
-    covers.forEach(function (cover) {
-      cover.addEventListener('click', function () {
-        cover.style.display = 'none';
-      });
-    });
-  });
-</script>
 
