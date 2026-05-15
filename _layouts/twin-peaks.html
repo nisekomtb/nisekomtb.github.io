@@ -127,47 +127,6 @@ layout: base
     color: var(--color-text);
   }
 
-  .tp-gallery {
-    margin: 60px 0 40px;
-  }
-
-  .tp-gallery h3 {
-    margin: 0 0 24px;
-  }
-
-  .tp-gallery .gallery-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  @media (min-width: 600px) {
-    .tp-gallery .gallery-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (min-width: 992px) {
-    .tp-gallery .gallery-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-
-  .tp-gallery .gallery-tile {
-    position: relative;
-    aspect-ratio: 3 / 2;
-    background: var(--color-bg-panel);
-    border-radius: 3px;
-    overflow: hidden;
-  }
-
-  .tp-gallery .gallery-tile img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
   .tp-tabs {
     margin: 0 0 36px;
     border-bottom: 1px solid var(--color-bg-border);
@@ -309,7 +268,7 @@ layout: base
   {% unless path1 %}
   <div class="row">
     <div class="col col-12">
-      <section class="tp-gallery">
+      <section class="park-gallery">
         {% if page.lang == "ja" %}
         <h3 class="module-title">ギャラリー</h3>
         {% else %}

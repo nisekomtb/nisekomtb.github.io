@@ -238,16 +238,16 @@ Decide: (none open)
 Steps:
 - [x] Run `grep -rn "Hanazono" --include="*.html" --include="*.md" --include="*.yml"`.
 - [x] Rename "Hanazono" → "Niseko Hanazono Bike Park" (per Tom's brand correction). Applied to card headings, logo alt text, page titles, and canonical `_data/trails.yml` names on `/where-to-ride/` and `/projects/` (EN + JA). JA brand spelling is `ニセコHANAZONOバイクパーク` (Latin "HANAZONO" preserved). Body copy and "Park Hyatt Niseko Hanazono" hotel reference left as-is per Bucket A scope.
-- [ ] Update Trailforks embed for Hanazono.
-- [ ] Update trails + specs against current data.
+- [x] Update Trailforks embed for Hanazono. Region ID `74136` set on both `trailforks_rid` (intro status badge) and `trailforks_map_rid` (region map iframe) in `_data/trails.yml`. Previous placeholder `58775` (Twin Peaks) removed.
+- [x] Update trails + specs against current data. Replaced 3 placeholder trails with the 2 real Trailforks trails: Forest Loop Course (green, 1,360m, 39m climb / 36m descent, one-way, multi-use) and Downhill Course (blue, 4,212m, 0m climb / 347m descent, down-only, bikes only). Order is green-then-blue per difficulty convention. JA names transliterated to katakana (フォレストループコース / ダウンヒルコース) pending official JA names if signage exists. Per-trail status dots not wired yet (need individual trail IDs).
 - [ ] Add gallery images (Pattern P-IMG).
-- [x] Mirror EN → JA (Pattern P-EN-JA) — done for the rename portion. Other A.4 sub-tasks still pending JA mirror.
+- [x] Mirror EN → JA (Pattern P-EN-JA) — done for the rename portion and the trail data (data file is shared, JA names included). Body copy in `where-to-ride/hanazono/index.html` + JA twin still describes the originally-made-up trail set (4,500m flow + skills park + 1,500m link to Twin Peaks) and needs rewriting to match the actual Trailforks data — flagged for next session.
 - [ ] Visual check.
-- [ ] Pattern P-COMMIT — partial commit for rename portion only.
+- [ ] Pattern P-COMMIT — partial commit for rename portion only; trails + region update still uncommitted.
 
 Notes:
-Rename scope: same Bucket A approach as A.3.
-Decide: (none open)
+Rename scope: same Bucket A approach as A.3. Trails + region update done 2026-05-14 from Trailforks CSV export. Remaining gap: page body copy (EN + JA) still references the made-up trails — rewrite + body-copy ↔ data alignment is the next sub-task. Bike direction (one-way) and multi-use (true) on Forest Loop Course are assumptions awaiting confirmation; Downhill Course (down-only, bikes-only) is standard for lift-served downhill.
+Decide: rewrite body copy to match real trails (Downhill Course + Forest Loop Course only) vs keep aspirational mention of skills park + Twin Peaks link as "coming"
 
 ---
 

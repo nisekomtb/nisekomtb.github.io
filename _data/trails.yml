@@ -368,32 +368,24 @@ hanazono:
   location_lat: 42.89317852818024
   location_lng: 140.70017501899656
   gallery: []
-  trailforks_map_rid: 58775
+  trailforks_rid: 74136
+  trailforks_map_rid: 74136
   trails:
-    - name: Hanazono Flow Trail
+    - name: Forest Loop Course
       ja:
-        name: 花園フロートレイル
-      difficulty: blue
-      distance: "4,500"
-      climb: 0
-      descent: 400
-      bike: down-only
-      multi_use: false
-    - name: Hanazono Skills Park
-      ja:
-        name: 花園スキルパーク
+        name: フォレストループコース
       difficulty: green
-      distance: 300
-      climb: 5
-      descent: 5
-      bike: two-way
-      multi_use: true
-    - name: Hanazono Link Trail
-      ja:
-        name: 花園リンクトレイル
-      difficulty: blue
-      distance: "1,500"
-      climb: 50
-      descent: 80
+      distance: "1,360"
+      climb: 39
+      descent: 36
       bike: one-way
       multi_use: true
+    - name: Downhill Course
+      ja:
+        name: ダウンヒルコース
+      difficulty: blue
+      distance: "4,212"
+      climb: 0
+      descent: 347
+      bike: down-only
+      multi_use: false
