@@ -167,7 +167,7 @@ Each event needs a header image and a thumbnail, stored under
 | Image | Size | Notes |
 |---|---|---|
 | Header (`header.jpg`) | 2000px wide | Used as `masthead.img` |
-| Thumbnail (`thumb.jpg`) | 504 x 672px | Used as `thumbnail` for gallery card |
+| Thumbnail (`thumb.jpg`) | 600 x 600px (square) | Used as `thumbnail` for gallery card |
 
 Generate the thumbnail from the centre of the header image. If an image is provided,
 resize it to the appropriate sizes.
@@ -210,9 +210,10 @@ Incoming source images live in `assets/images/_triage/` until processed.
 sips -Z 2000 assets/images/_triage/<source>.jpg \
   --out assets/images/events/<year>/<slug>/header.jpg
 
-# Thumbnail (504x672 centre crop, via height-scale then crop)
-sips --resampleHeight 672 assets/images/_triage/<source>.jpg --out /tmp/thumb-tmp.jpg
-sips -c 672 504 /tmp/thumb-tmp.jpg --out assets/images/events/<year>/<slug>/thumb.jpg
+# Thumbnail (600x600 square centre crop, via height-scale then crop)
+# Assumes a landscape source; for a portrait source, swap to --resampleWidth 600.
+sips --resampleHeight 600 assets/images/_triage/<source>.jpg --out /tmp/thumb-tmp.jpg
+sips -c 600 600 /tmp/thumb-tmp.jpg --out assets/images/events/<year>/<slug>/thumb.jpg
 rm /tmp/thumb-tmp.jpg
 
 # Clear the source from triage
