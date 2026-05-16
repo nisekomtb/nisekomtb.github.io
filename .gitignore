@@ -9,4 +9,5 @@ Gemfile.lock
 chrome
 .claude/projects
 .superpowers/
+_docs/superpowers/
 assets/images/_triage/

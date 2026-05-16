@@ -183,3 +183,105 @@ resize it to the appropriate sizes.
   instead of to the post page.
 - Events with dates in the past automatically show an "Ended" ribbon — handled by JS in
   the layout, not frontmatter.
+
+---
+
+## Creation workflow
+
+The operational arc from "user briefs me on a new event" to "EN and JA posts committed".
+
+### 1. Confirm scope first
+
+Lock these before drafting any content:
+
+- Date, including timezone (use `+0900` for events held in Japan)
+- Location, address, parking flag, about flag
+- Price
+- Partners and host (logos already in `assets/images/company/`?)
+- Drop-in vs registered (does the event-level `signup:` field apply, or is signup only for a sub-activity?)
+- Audience (international riders, locals, families, sponsors)
+
+### 2. Image triage flow
+
+Incoming source images live in `assets/images/_triage/` until processed.
+
+```bash
+# Header (2000px wide, aspect-preserving)
+sips -Z 2000 assets/images/_triage/<source>.jpg \
+  --out assets/images/events/<year>/<slug>/header.jpg
+
+# Thumbnail (504x672 centre crop, via height-scale then crop)
+sips --resampleHeight 672 assets/images/_triage/<source>.jpg --out /tmp/thumb-tmp.jpg
+sips -c 672 504 /tmp/thumb-tmp.jpg --out assets/images/events/<year>/<slug>/thumb.jpg
+rm /tmp/thumb-tmp.jpg
+
+# Clear the source from triage
+rm assets/images/_triage/<source>.jpg
+```
+
+### 3. Partner images
+
+Each partner needs:
+
+- Transparent PNG in `assets/images/company/<slug>.png`
+- Greyscale `.g` variant at `assets/images/company/<slug>.g.png` (rendered initially; colour version shows on hover)
+- High enough resolution to render as a large icon
+
+If a partner's logo is not already in the repo:
+
+1. Block the post on the missing image
+2. Flag back to the briefer with what is needed
+3. Do not scrape third-party sites (Instagram, Facebook, etc.) for logos. Logos are partner-provided assets.
+
+### 4. EN first, JA mirror immediately after
+
+Bilingual parity is non-negotiable. Never commit the EN file without the JA twin in the same change. See `.claude/rules/bilingual.md`.
+
+### 5. JA tokenisation
+
+Body text and front matter follow different tokenisation rules:
+
+| Where | Method | Tool |
+|---|---|---|
+| Body paragraphs | Zero-width U+200B spaces | `budoux --lang ja -s $'​' -d "" "..."` |
+| Front matter `titleHtml`, `location`, itinerary `name`, itinerary `location.name`, `moreInfo` items, price `name` values | `<wbr>` tags | Manual or scripted |
+| Front matter `title`, `description`, `address` | Plain text only | None (used for SEO/Schema/OG) |
+
+See `.claude/rules/bilingual.md` for the full set of rules.
+
+### 6. Verify before commit
+
+- `bundle exec jekyll build` runs clean (no errors mentioning the new posts)
+- EN and JA pages render at `/events/<slug>-<year>/` and `/ja/events/<slug>-<year>/`
+- Event card appears in both `/events/` and `/ja/events/` index pages
+- hreflang alternates link the two language versions
+- No em dashes anywhere in either file (`grep -c "—" <file>` returns `0`)
+- Schema.org JSON-LD block exists in rendered HTML (`grep 'application/ld+json' _site/...`)
+
+---
+
+## Twin Peaks event defaults
+
+Quick-reference block for the recurring fields when an event is held at Twin Peaks Bike Park specifically. Saves looking it up each time.
+
+### EN front matter
+
+```yaml
+location: Twin Peaks Bike Park, Niseko
+address: 150, 2 Aza-150-1 Yamada, Kutchan, Abuta District, Hokkaido 044-0081
+parking: true
+about: false
+```
+
+### JA front matter
+
+```yaml
+location: ツインピークス・<wbr>バイクパーク、<wbr>ニセコ
+address: 150, 2 Aza-150-1 Yamada, Kutchan, Abuta District, Hokkaido 044-0081
+```
+
+### Twin Peaks Trailhead map URL
+
+`https://goo.gl/maps/yKza3NA7yfx5VQRx8`
+
+Used in itinerary `location.url` for any event activity at the trailhead. Already referenced across multiple existing event posts.
