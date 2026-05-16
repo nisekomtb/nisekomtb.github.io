@@ -51,7 +51,7 @@ parking: false
 about: false
 ---
 
-The trail crew have been hard at it since the snow melted, and Twin Peaks is back. Every line will be open: skills park, flow trails, tech lines, and the newest trail from last year, Launch Control. All 17km, ready to ride, for all of summer 2026.
+The trail crew have been hard at it since the snow melted, and Twin Peaks is back. Every line will be open: skills park, flow trails, tech lines, and last year's newest build, Launch Control. All 17km, open for summer.
 
 Come for a lap, stay for the community.
 
@@ -62,14 +62,14 @@ Two rides leave the trailhead at 10:00am.
 The Dirty Dames women's skills clinic, run in partnership with NAMBA, welcomes all levels from first-timers to seasoned riders. Kick off with coffee at Rhythm Hirafu from 9:00am for a pre-ride catch-up and bike check. Spaces are limited and signup is required.
 
 <div style="text-align:center; margin:30px 0;">
-  <a class="btn btn-primary" href="https://forms.gle/t3BXUgdrRnoeutrD7" target="_blank" rel="noopener">Sign up here</a>
+  <a class="btn btn-primary" href="https://forms.gle/t3BXUgdrRnoeutrD7" target="_blank" rel="noopener">Sign up for the clinic</a>
 </div>
 
-Alongside the clinic, our crew will lead a one-hour orientation ride for anyone new to the park. Easy pace, focused on the layout so you can explore on your own afterwards. Just turn up.
+Alongside the clinic, our crew will lead a one-hour orientation ride for anyone new to the park. We keep it easy and show you the layout, so you can ride on your own afterwards. Just turn up.
 
 ### At the trail base
 
-The NAMBA tent will be open from 9:00am to 3:00pm with the new trailhead map showing all 17km of trail, fresh merch, and the team on hand to chat about what's next for Twin Peaks. The Nuthatch food truck will be on site all day for fuel between laps. From 11:30am to 12:30pm we'll run a scavenger hunt for the kids around the base, with sticker prizes for everyone who finishes.
+The NAMBA tent is open 9:00am to 3:00pm. Come check out the new trailhead map, pick up fresh merch, and chat with the team about what's coming next for Twin Peaks. The Nuthatch food truck will be on site all day for fuel between laps. From 11:30am to 12:30pm we'll run a scavenger hunt for the kids around the base, with sticker prizes for everyone who finishes.
 
 ### Need a bike?
 
