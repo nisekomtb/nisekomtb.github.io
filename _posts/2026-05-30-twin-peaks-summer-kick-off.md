@@ -40,49 +40,39 @@ itinerary:
           location:
             name: Twin Peaks Trailhead
             url: https://goo.gl/maps/yKza3NA7yfx5VQRx8
-        - time: "1:30pm - 2:30pm"
+        - time: "11:30am - 12:30pm"
           name: Kids scavenger hunt
           location:
             name: NAMBA tent, trail base
             url: https://goo.gl/maps/yKza3NA7yfx5VQRx8
         - time: "3:00pm"
           name: Event ends
-parking: true
+parking: false
 about: false
 ---
 
-The trail crew have been hard at it since the snow melted, and Twin Peaks is back. Every line is open: skills park, flow trails, tech lines, and the popular Launch Control jump line. All 17km, ready to ride.
+The trail crew have been hard at it since the snow melted, and Twin Peaks is back. Every line will be open: skills park, flow trails, tech lines, and the newest trail from last year, Launch Control. All 17km, ready to ride, for all of summer 2026.
 
-This year we're keeping things simple. Come for a lap, stay for the community, find us at the tent.
+Come for a lap, stay for the community.
 
-### The Dirty Dames women's skills clinic
+### Morning rides
 
-Start with coffee at Rhythm from 9:00am for a pre-ride catch up and bike check. The clinic itself runs 10:00am to 11:00am at the Twin Peaks trailhead, run by The Dirty Dames in partnership with NAMBA. All levels welcome, from first-timers to seasoned riders.
+Two rides leave the trailhead at 10:00am.
 
-Spaces are limited and signup is required.
+The Dirty Dames women's skills clinic, run in partnership with NAMBA, welcomes all levels from first-timers to seasoned riders. Kick off with coffee at Rhythm Hirafu from 9:00am for a pre-ride catch-up and bike check. Spaces are limited and signup is required.
 
 <div style="text-align:center; margin:30px 0;">
   <a class="btn btn-primary" href="https://forms.gle/t3BXUgdrRnoeutrD7" target="_blank" rel="noopener">Sign up here</a>
 </div>
 
-### Orientation ride
+Alongside the clinic, our crew will lead a one-hour orientation ride for anyone new to the park. Easy pace, focused on the layout so you can explore on your own afterwards. Just turn up.
 
-Also at 10:00am, our crew will lead an orientation ride for anyone new to Twin Peaks, or anyone who has only ridden the park a couple of times. One hour, easy pace, focused on showing you the layout so you can explore on your own afterwards. Just turn up at the trailhead.
+### At the trail base
 
-### The NAMBA tent and the new trail map
+The NAMBA tent will be open from 9:00am to 3:00pm with the new trailhead map showing all 17km of trail, fresh merch, and the team on hand to chat about what's next for Twin Peaks. The Nuthatch food truck will be on site all day for fuel between laps. From 11:30am to 12:30pm we'll run a scavenger hunt for the kids around the base, with sticker prizes for everyone who finishes.
 
-We will be at the trail base all day from 9:00am to 3:00pm. Come and see the updated trailhead map showing the full 17km of trail, pick up some new merch, and chat with the team about what is in the pipeline for Twin Peaks and how you can get involved.
+### Need a bike?
 
-### Food truck
-
-The Nuthatch will be on site with food and drinks. Quick fuel for a pit stop between laps.
-
-### Kids scavenger hunt
-
-From 1:30pm at the NAMBA tent, a scavenger hunt for the kids around the trail base. Sticker prizes for everyone who finishes.
-
-### 30% off Rhythm rentals all day
-
-Showing up without a bike? Rhythm is offering 30% off rentals to everyone on the day, all day. Head there first to grab a rig before rolling up to the trailhead.
+Rhythm is offering 50% off rentals all day, with a free beginner session included with every rental. Grab a rig there before heading up to the trailhead.
 
 See you at the trailhead.
