@@ -79,9 +79,10 @@ shop link):
 
 ### 5. Quality review
 
-After writing, always run:
+After writing, always run, in this order:
 
 - **`/marketing-skills:copy-editing`** — review for clarity, tone consistency, and polish
+- **`/humanizer`** — final pass on all EN copy to strip AI-writing tells (em dash overuse, rule of three, inflated symbolism, vague attributions, filler phrases). This is non-negotiable for any visible web text. Apply to JA copy only when it has been machine-translated from English and reads stilted.
 
 ## SEO non-negotiables
 
