@@ -189,12 +189,12 @@ Brand-rename portion of A.3/A.4/A.7 happened in the same session: card headings,
 
 Steps:
 - [x] Pattern P-STYLE audit against the new reference style. Sidebar layout retained (functional sub-nav + partners + park stats); no full restructure warranted. Spacing/spot-check passed.
-- [ ] Discuss background image change with Tom. Decision: defer to a cross-page masthead sweep after all Phase A pages are walked (see Task A.28).
+- [x] Discuss background image change with Tom. Decision: defer to a cross-page masthead sweep after all Phase A pages are walked (see Task A.28).
 - [x] Locate the "navigating around park" section. Remove it. Add a clear link to `/where-to-ride/signage/` in a sensible spot. Replaced with compact `.signage-link` paragraph directly under the trails table linking to `/where-to-ride/signage/` (EN) and `/ja/where-to-ride/signage/` (JA). Also stripped ~258 lines of `.trail-sign*` CSS, the `body:after` preloader for the trailsign zoom images, and the Splide init script that only served the removed carousel.
 - [x] Check if gallery markup is already in the layout template. If not, add a gallery section near the bottom of the page; source images via Pattern P-IMG. No existing gallery pattern on the site; built one as `.tp-gallery` with `.gallery-grid` (1/2/3 columns at mobile/tablet/desktop), `.gallery-tile` (3:2 aspect-ratio), and `.gallery-placeholder` (fa-image icon + descriptive label). 6 placeholders shipped with category labels (aerial, flow, jumps, beginner, forest singletrack, trailhead signage). Real photos to be dropped into `assets/images/_triage/twin-peaks/` per Pattern P-IMG; placeholders swap to `<img>` tags inside `.gallery-tile`. **Placement:** gallery markup + CSS lives in `_layouts/twin-peaks.html` (not in the page) so it spans the full container width below the content + sidebar row. Gated with `{% unless path1 %}` so only the main `/twin-peaks/` page renders it, not the sub-pages (Access, Rules, Wet Trails, etc.). Bilingual labels via the layout's existing `{% if page.lang == "ja" %}` pattern.
 - [x] Mirror EN → JA (Pattern P-EN-JA). JA placeholder labels tokenised with `<wbr>`. Signage link text: 「トレイルサインの読み方は、統一トレイルサインガイドをご覧ください。」 with `<wbr>` markup.
 - [ ] Visual check. *(Tom to verify in browser — pages return 200, build clean, no residual carousel references.)*
-- [ ] Pattern P-COMMIT.
+- [x] Pattern P-COMMIT — iterative commits across multiple sessions (888cba9 carousel-drop + signage link + gallery placeholders, 8c6f081 gallery to layout, 5e7281a single-panel sidebar + duplicate-H1 sweep, 74214dc/1cb6657/b0e1fc5 sidebar polish, 679ee9b sub-nav to tabs, eb4aa3b logo in panel, b1faa04 drop masthead subtitles, ebde5bd intro copy expansion, 03cc167 hide Getting-here on access).
 
 Notes:
 Background image deferred to cross-page sweep (Task A.28). Gallery uses placeholders awaiting real images via P-IMG. No JS errors expected: removed Splide init referenced a DOM ID that no longer exists; `.widget-cover` click handler preserved for the Trailforks map.
@@ -215,16 +215,17 @@ Second polish pass after Tom flagged style issues:
 Steps:
 - [x] Run `grep -rn "Grand Hirafu" --include="*.html" --include="*.md" --include="*.yml"` and identify which references need "Bike Park" appended.
 - [x] Rename "Grand Hirafu" to "Grand Hirafu Bike Park" — applied to card headings and logo alt text on `/where-to-ride/` and `/projects/` (EN + JA). Body copy, listicles, resort-entity references, and internal docs intentionally left as-is per Bucket A scope (see Notes).
-- [ ] Update the Trailforks embed: confirm current iframe URL/region; update to the correct Grand Hirafu region ID if changed.
-- [ ] Update trail list/specs against current data.
-- [ ] Audit section padding; fix where inconsistent with new reference style.
-- [ ] Add gallery images (Pattern P-IMG).
-- [x] Mirror EN → JA (Pattern P-EN-JA) — done for the rename portion. Other A.3 sub-tasks still pending JA mirror.
+- [x] Update the Trailforks embed: confirmed `trailforks_rid: 58866` in `_data/trails.yml`; iframe swapped to the shared JS widget via `_layouts/where-to-ride.html` (commit b280d27).
+- [x] Update trail list/specs against current data. Real trails in `_data/trails.yml`: Kamiwaza (blue, 1,800m, 280m descent, down-only), Hirafu Flow (blue, 2,200m, 250m descent, down-only), Hirafu Skills Area (green, 400m, two-way multi-use).
+- [x] Audit section padding; fix where inconsistent with new reference style. Absorbed by the unified where-to-ride layout (b280d27) — all park pages now share spacing.
+- [x] Add gallery images (Pattern P-IMG). 6 webp tiles in `assets/images/trails/grand-hirafu/gallery/` wired via `_data/trails.yml` (b280d27).
+- [x] Mirror EN → JA (Pattern P-EN-JA) — done for the rename portion. JA gallery alts + trail JA names are in the shared data file; pages render from the same layout.
 - [ ] Visual check.
-- [ ] Pattern P-COMMIT — partial commit for rename portion only.
+- [x] Pattern P-COMMIT — rename portion shipped (81b9cee titles + alt; ac1fb83 brand-correct names + JA spelling; f2f09e7 stats card short form). Subsequent embed + trails + gallery work shipped in b280d27.
 
 Notes:
 Rename scope: Bucket A (headings + alt + page titles + canonical data names). Body copy, resort-entity references, park listicles, and internal docs left as-is. Twin Peaks `<h4>` on `/projects/` also gained "Bike Park" for consistency with the other two cards. JA-only spelling fix: グランヒラフ → グラン・ヒラフ (with middle dot) applied to UI headings + canonical name only; body copy still uses グランヒラフ.
+Embed + trails + section padding + gallery all addressed via the unified where-to-ride layout work (b280d27) on 2026-05-15. Only Tom's visual check remains.
 Decide: (none open)
 
 ---
@@ -240,10 +241,10 @@ Steps:
 - [x] Rename "Hanazono" → "Niseko Hanazono Bike Park" (per Tom's brand correction). Applied to card headings, logo alt text, page titles, and canonical `_data/trails.yml` names on `/where-to-ride/` and `/projects/` (EN + JA). JA brand spelling is `ニセコHANAZONOバイクパーク` (Latin "HANAZONO" preserved). Body copy and "Park Hyatt Niseko Hanazono" hotel reference left as-is per Bucket A scope.
 - [x] Update Trailforks embed for Hanazono. Region ID `74136` set on both `trailforks_rid` (intro status badge) and `trailforks_map_rid` (region map iframe) in `_data/trails.yml`. Previous placeholder `58775` (Twin Peaks) removed.
 - [x] Update trails + specs against current data. Replaced 3 placeholder trails with the 2 real Trailforks trails: Forest Loop Course (green, 1,360m, 39m climb / 36m descent, one-way, multi-use) and Downhill Course (blue, 4,212m, 0m climb / 347m descent, down-only, bikes only). Order is green-then-blue per difficulty convention. JA names transliterated to katakana (フォレストループコース / ダウンヒルコース) pending official JA names if signage exists. Per-trail status dots not wired yet (need individual trail IDs).
-- [ ] Add gallery images (Pattern P-IMG).
+- [x] Add gallery images (Pattern P-IMG). 6 webp tiles in `assets/images/trails/hanazono/gallery/` with `-large.webp` lightbox variants, wired via `_data/trails.yml` and the PhotoSwipe lightbox in `_layouts/where-to-ride.html` (c04743a + b280d27).
 - [x] Mirror EN → JA (Pattern P-EN-JA) — done for the rename portion and the trail data (data file is shared, JA names included). Body copy in `where-to-ride/hanazono/index.html` + JA twin still describes the originally-made-up trail set (4,500m flow + skills park + 1,500m link to Twin Peaks) and needs rewriting to match the actual Trailforks data — flagged for next session.
 - [ ] Visual check.
-- [ ] Pattern P-COMMIT — partial commit for rename portion only; trails + region update still uncommitted.
+- [x] Pattern P-COMMIT — rename portion shipped (81b9cee, ac1fb83, f2f09e7); trails + region update + gallery shipped (c04743a; layout share in b280d27). Body-copy rewrite is the remaining outstanding sub-task (see Notes / Decide).
 
 Notes:
 Rename scope: same Bucket A approach as A.3. Trails + region update done 2026-05-14 from Trailforks CSV export. Remaining gap: page body copy (EN + JA) still references the made-up trails — rewrite + body-copy ↔ data alignment is the next sub-task. Bike direction (one-way) and multi-use (true) on Forest Loop Course are assumptions awaiting confirmation; Downhill Course (down-only, bikes-only) is standard for lift-served downhill.
