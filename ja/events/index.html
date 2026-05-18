@@ -18,11 +18,13 @@ masthead:
   /* Event card redesign */
   .project-view.style-1 .view-project {
     background: var(--color-bg-panel);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 3px;
     overflow: hidden;
+    transition: border-color 200ms ease;
   }
-  .project-view.style-1 .view-project:hover {
-    background: var(--color-bg-border);
+  .project-view.style-1 .view-project:has(a):hover {
+    border-color: var(--color-secondary);
   }
   .project-view.style-1 .view-project .image-wrap {
     position: relative;
@@ -60,9 +62,6 @@ masthead:
     background: linear-gradient(to bottom, transparent, var(--color-bg-panel));
     pointer-events: none;
     transition: background 300ms;
-  }
-  .project-view.style-1 .view-project:hover .image-wrap::after {
-    background: linear-gradient(to bottom, transparent, var(--color-bg-border));
   }
   .project-view.style-1 .view-project .image-wrap a:before {
     display: none;

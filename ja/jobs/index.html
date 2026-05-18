@@ -11,6 +11,7 @@ masthead:
 <style>
   .job-card {
     background: var(--color-bg-panel);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 3px;
     padding: 28px 24px;
     margin-bottom: 16px;
@@ -19,10 +20,10 @@ masthead:
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 16px;
-    transition: background 300ms;
+    transition: border-color 200ms ease;
   }
-  .job-card:hover {
-    background: var(--color-bg-border);
+  .job-card:has(a):hover {
+    border-color: var(--color-secondary);
   }
   .job-card .job-info {
     flex: 1;
