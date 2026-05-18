@@ -1,6 +1,6 @@
 ---
-title: Where to Ride
-description: Discover mountain biking across Niseko. Twin Peaks, Grand Hirafu, Hanazono, gravel routes, and skills parks. Free trails, lift-access riding, and more.
+title: Where to Ride in Niseko
+description: "Mountain biking across Niseko: Twin Peaks (Japan's largest free-access network), Grand Hirafu, Hanazono, Annupuri, plus gravel and skills parks."
 masthead:
   img: /assets/images/bg/bg-header-twinpeaks.jpg
 ---
@@ -19,7 +19,7 @@ masthead:
         class="features-desc ja-animate"
         data-animation="move-from-bottom"
         data-delay="400">
-        <div style="font-size:130%;"><span>World-class trails across one of Asia's most beautiful mountain regions. From free pedal-access singletrack to modern high-speed gondola-accessed trails, there's riding for every level across multiple parks.</span></div>
+        <div style="font-size:130%;"><span>Four bike parks. Over 30km of trail, from free pedal-access singletrack to gondola-served downhill. Plus gravel routes and skills parks across Niseko, Hokkaido.</span></div>
       </div>
     </div>
 
@@ -53,9 +53,9 @@ masthead:
         </div>
         <div class="col col-12 col-md-6 col-lg-3">
           <div class="features-item ja-animate" data-animation="move-from-bottom" data-delay="item-3">
-            <div class="font-icon"><span class="fa-solid fa-signal"></span></div>
-            <h4>All Abilities</h4>
-            <p>Beginner flow to expert downhill.</p>
+            <div class="font-icon"><span class="fa-solid fa-calendar-days"></span></div>
+            <h4>May to October</h4>
+            <p>Spring sakura to autumn colours.</p>
           </div>
         </div>
       </div>
@@ -348,11 +348,13 @@ masthead:
 
     .ride-card {
       background: var(--color-bg-panel);
+      border: 1px solid rgba(255, 255, 255, 0.15);
       border-radius: 3px;
       overflow: hidden;
       height: 100%;
       display: flex;
       flex-direction: column;
+      transition: border-color 200ms ease;
     }
     .ride-card .ride-card-image {
       height: 200px;
@@ -434,11 +436,8 @@ masthead:
       background: var(--color-accent);
       color: #fff;
     }
-    .ride-card:hover {
-      background: var(--color-bg-border);
-    }
-    .ride-card:hover .ride-card-image::after {
-      background: linear-gradient(to bottom, transparent, var(--color-bg-border));
+    .ride-card:has(a):hover {
+      border-color: var(--color-secondary);
     }
   </style>
 
@@ -493,7 +492,7 @@ masthead:
             <div class="ride-card-body">
               <h4>Niseko Hanazono Bike Park</h4>
               {% include trail-difficulty-counts.html data_key="hanazono" %}
-              <p>Niseko's newest bike park. Home to the region's first lift-accessed top-to-bottom intermediate trail, 4,500m of flow line plus a skills park.</p>
+              <p>Niseko's newest bike park, opening summer 2026. Two trails: a 4,200m lift-served blue downhill, and a 1,360m forest loop with a short pedal climb.</p>
               <a class="action" href="/where-to-ride/hanazono/">Learn more <span class="fa-solid fa-circle-arrow-right"></span></a>
             </div>
           </div>
@@ -508,7 +507,7 @@ masthead:
             <div class="ride-card-body">
               <h4>Niseko Annupuri Bike Park</h4>
               {% include trail-difficulty-counts.html data_key="annupuri" %}
-              <p>Gondola-accessed downhill course. 3,200m of natural terrain with 556m of elevation drop. Intermediate to advanced riders.</p>
+              <p>Gondola-accessed downhill course. 3,200m, 556m of vertical. Intermediate to advanced riders.</p>
               <a class="action" href="/where-to-ride/annupuri/">Learn more <span class="fa-solid fa-circle-arrow-right"></span></a>
             </div>
           </div>
@@ -525,7 +524,7 @@ masthead:
               <span style="display:inline-flex; gap:10px; justify-content:center; flex-wrap:wrap; margin:8px 0;">
                 <span style="font-size:12px; text-align:center; display:inline-flex; flex-direction:column; align-items:center;"><span class="fa-solid fa-ruler-horizontal" style="font-size:18px; color:#aaa; padding:4px 0;"></span> <strong>1,200km+</strong></span>
               </span>
-              <p>Agricultural paths, forest roads, and scenic routes through Hokkaido's volcanic landscape. Home of the Niseko Gravel event series.</p>
+              <p>Farm roads, forest tracks, and gravel routes through Hokkaido's volcano country. Home of the Niseko Gravel event series.</p>
               <a class="action" href="/where-to-ride/gravel/">Learn more <span class="fa-solid fa-circle-arrow-right"></span></a>
             </div>
           </div>
@@ -542,7 +541,7 @@ masthead:
               <span style="display:inline-flex; gap:10px; justify-content:center; flex-wrap:wrap; margin:8px 0;">
                 <span style="font-size:12px; text-align:center; display:inline-flex; flex-direction:column; align-items:center;"><span class="fa-solid fa-location-dot" style="font-size:18px; color:#aaa; padding:4px 0;"></span> <strong>6</strong></span>
               </span>
-              <p>Skills parks and pump tracks across the area, perfect for beginners, families, and levelling up.</p>
+              <p>Six pump tracks and skills areas across the region. Great for beginners, families, and dialling in technique before hitting the trails.</p>
               <a class="action" href="/where-to-ride/skills-parks/">Learn more <span class="fa-solid fa-circle-arrow-right"></span></a>
             </div>
           </div>
@@ -569,7 +568,7 @@ masthead:
           </div>
           <div style="flex:1; min-width:250px; padding:32px;">
             <h3 class="module-title" style="margin-bottom:12px;">Trail Signage Guide</h3>
-            <p style="font-size:110%; margin-bottom:20px;">Learn how to read the unified signage system used across all Niseko riding areas. Difficulty ratings, direction, location codes, and everything you need for a safe ride.</p>
+            <p style="font-size:110%; margin-bottom:20px;">Learn how to read the unified signage system used across all Niseko riding areas: difficulty ratings, direction codes, location markers.</p>
             <a class="btn btn-primary" href="/where-to-ride/signage/">Read the guide</a>
           </div>
         </div>
@@ -590,7 +589,7 @@ masthead:
         class="features-desc ja-animate"
         data-animation="move-from-bottom"
         data-delay="400">
-        <div style="font-size:130%;"><span>The riding season runs from mid-May to late October. From the spring sakura to spectacular autumn colours, there's a season for everyone. All trail status updates are posted on our social channels.</span></div>
+        <div style="font-size:130%;"><span>The season runs mid-May to late October: spring sakura, summer flow, autumn colours. Trail status updates post to <a href="https://www.instagram.com/nisekomtb/" target="_blank">Instagram</a>.</span></div>
       </div>
     </div>
 

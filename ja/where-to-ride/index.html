@@ -1,6 +1,6 @@
 ---
-title: ライディングエリア
-description: ニセコのマウンテンバイクを発見。ツインピークス、グランヒラフ、花園、グラベルルート、スキルパーク。無料トレイル、リフトアクセスライディングなど。
+title: ニセコのライディングエリア
+description: "ニセコのマウンテンバイク：ツインピークス（日本最大の無料アクセスネットワーク）、グラン・ヒラフ、ニセコHANAZONO、ニセコアンヌプリ、グラベルルートとスキルパーク。"
 masthead:
   img: /assets/images/bg/bg-header-twinpeaks.jpg
 ---
@@ -19,7 +19,7 @@ masthead:
         class="features-desc ja-animate"
         data-animation="move-from-bottom"
         data-delay="400">
-        <div style="font-size:130%;"><span>アジア有数の美しい山岳地帯に広がる、世界水準のトレイル。ペダルアクセスの無料シングルトラックから、最新の高速ゴンドラアクセストレイルまで、複数のパークであらゆるレベルのライドを楽しめます。</span></div>
+        <div style="font-size:130%;"><span>4つのバイクパーク、30km以上のトレイル。無料のペダルアクセス・シングルトラックから、ゴンドラ利用のダウンヒルまで。北海道ニセコのグラベルルートとスキルパークも。</span></div>
       </div>
     </div>
 
@@ -53,9 +53,9 @@ masthead:
         </div>
         <div class="col col-12 col-md-6 col-lg-3">
           <div class="features-item ja-animate" data-animation="move-from-bottom" data-delay="item-3">
-            <div class="font-icon"><span class="fa-solid fa-signal"></span></div>
-            <h4>すべてのレベルに</h4>
-            <p>初心者フローからエキスパートダウンヒルまで。</p>
+            <div class="font-icon"><span class="fa-solid fa-calendar-days"></span></div>
+            <h4>5月〜10月</h4>
+            <p>春の桜から秋の紅葉まで。</p>
           </div>
         </div>
       </div>
@@ -348,11 +348,13 @@ masthead:
 
     .ride-card {
       background: var(--color-bg-panel);
+      border: 1px solid rgba(255, 255, 255, 0.15);
       border-radius: 3px;
       overflow: hidden;
       height: 100%;
       display: flex;
       flex-direction: column;
+      transition: border-color 200ms ease;
     }
     .ride-card .ride-card-image {
       height: 200px;
@@ -434,11 +436,8 @@ masthead:
       background: var(--color-accent);
       color: #fff;
     }
-    .ride-card:hover {
-      background: var(--color-bg-border);
-    }
-    .ride-card:hover .ride-card-image::after {
-      background: linear-gradient(to bottom, transparent, var(--color-bg-border));
+    .ride-card:has(a):hover {
+      border-color: var(--color-secondary);
     }
   </style>
 
@@ -493,7 +492,7 @@ masthead:
             <div class="ride-card-body">
               <h4>ニセコHANAZONOバイクパーク</h4>
               {% include trail-difficulty-counts.html data_key="hanazono" %}
-              <p>ニセコ最新のバイクパーク。地域初のリフトアクセス・トップトゥボトムの中級トレイル、4,500mのフローラインとスキルパークを備えます。</p>
+              <p>ニセコ最新のバイクパーク、2026年夏オープン。2本のトレイル：リフトアクセスの4,200mブルーダウンヒルコースと、短いペダルアップで楽しめる1,360mのフォレストループ。</p>
               <a class="action" href="/ja/where-to-ride/hanazono/">詳しく見る <span class="fa-solid fa-circle-arrow-right"></span></a>
             </div>
           </div>
@@ -508,7 +507,7 @@ masthead:
             <div class="ride-card-body">
               <h4>ニセコアンヌプリバイクパーク</h4>
               {% include trail-difficulty-counts.html data_key="annupuri" %}
-              <p>ゴンドラアクセスのダウンヒルコース。全長3,200m、標高差556mの自然地形。中級者・上級者向け。</p>
+              <p>ゴンドラアクセスのダウンヒルコース。全長3,200m、標高差556m。中級者・上級者向け。</p>
               <a class="action" href="/ja/where-to-ride/annupuri/">詳しく見る <span class="fa-solid fa-circle-arrow-right"></span></a>
             </div>
           </div>
@@ -525,7 +524,7 @@ masthead:
               <span style="display:inline-flex; gap:10px; justify-content:center; flex-wrap:wrap; margin:8px 0;">
                 <span style="font-size:12px; text-align:center; display:inline-flex; flex-direction:column; align-items:center;"><span class="fa-solid fa-ruler-horizontal" style="font-size:18px; color:#aaa; padding:4px 0;"></span> <strong>1,200km+</strong></span>
               </span>
-              <p>農道、林道、北海道の火山地形を走る絶景ルート。ニセコグラベルイベントシリーズの本拠地。</p>
+              <p>農道、林道、北海道の火山地帯を走るグラベルルート。ニセコグラベルイベントシリーズの本拠地。</p>
               <a class="action" href="/ja/where-to-ride/gravel/">詳しく見る <span class="fa-solid fa-circle-arrow-right"></span></a>
             </div>
           </div>
@@ -542,7 +541,7 @@ masthead:
               <span style="display:inline-flex; gap:10px; justify-content:center; flex-wrap:wrap; margin:8px 0;">
                 <span style="font-size:12px; text-align:center; display:inline-flex; flex-direction:column; align-items:center;"><span class="fa-solid fa-location-dot" style="font-size:18px; color:#aaa; padding:4px 0;"></span> <strong>6</strong></span>
               </span>
-              <p>エリア内のスキルパークとパンプトラック。初心者、ファミリー、スキルアップに最適。</p>
+              <p>地域内に6箇所のパンプトラックとスキルエリア。初心者、ファミリー、本格的なトレイルに出る前のスキルアップに。</p>
               <a class="action" href="/ja/where-to-ride/skills-parks/">詳しく見る <span class="fa-solid fa-circle-arrow-right"></span></a>
             </div>
           </div>
@@ -569,7 +568,7 @@ masthead:
           </div>
           <div style="flex:1; min-width:250px; padding:32px;">
             <h3 class="module-title" style="margin-bottom:12px;">トレイル標識ガイド</h3>
-            <p style="font-size:110%; margin-bottom:20px;">ニセコ全域で統一された標識システムの読み方を学びましょう。難易度、方向、位置コードなど、安全で楽しいライドに必要な情報がすべて標識に詰まっています。</p>
+            <p style="font-size:110%; margin-bottom:20px;">ニセコ全域で統一された標識システムの読み方：難易度、方向コード、位置マーカー。</p>
             <a class="btn btn-primary" href="/ja/where-to-ride/signage/">ガイドを見る</a>
           </div>
         </div>
@@ -590,7 +589,7 @@ masthead:
         class="features-desc ja-animate"
         data-animation="move-from-bottom"
         data-delay="400">
-        <div style="font-size:130%;"><span>ライディングシーズンは5月中旬から10月下旬まで。春の桜から秋の鮮やかな紅葉まで、すべての季節に見どころがあります。トレイル状況の最新情報はSNSで配信しています。</span></div>
+        <div style="font-size:130%;"><span>シーズンは5月中旬から10月下旬まで：春の桜、夏のフロー、秋の紅葉。トレイル状況の最新情報は<a href="https://www.instagram.com/nisekomtb/" target="_blank">Instagram</a>で配信。</span></div>
       </div>
     </div>
 
