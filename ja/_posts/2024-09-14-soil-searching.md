@@ -21,9 +21,6 @@ partners:
   - name: Rhythm Japan
     img: /rhythm.png
     url: https://rhythmjapan.com
-moreInfo:
-  - イベントに​参加するには、​以下の​申し込みを​完了してください。
-  - <a class="btn btn-sm btn-primary" href="#event-store" target="_blank">お申し込みはこちら</a>
 masthead:
   img: /assets/images/events/2024/soil-searching/header.jpg
   credit:

@@ -25,6 +25,10 @@ masthead:
 thumbnail: /assets/images/events/2024/niseko-gravel-autumn-ride/thumb.jpg
 og:
   image: /assets/images/events/2024/niseko-gravel-autumn-ride/header.jpg
+link:
+  url: https://nisekogravel.com/autumnride/
+  text: イベント詳細
+  isSignup: false
 parking: false
 about: false
 ---
@@ -47,6 +51,3 @@ about: false
 
 ルートと​参加登録は​下の​リンクから。
 
-<div style="text-align:center; margin:50px 0;">
-  <a class="btn btn-primary" href="https://nisekogravel.com/autumnride/" target="_blank">イベント詳細</a>
-</div>

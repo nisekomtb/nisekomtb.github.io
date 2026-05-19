@@ -18,6 +18,10 @@ masthead:
 thumbnail: /assets/images/events/2025/niseko-twin-trail-ride/thumb.jpg
 og:
   image: /assets/images/events/2025/niseko-twin-trail-ride/header.jpg
+link:
+  url: https://forms.gle/LqNwtHDtW9JxQnCf6
+  text: Sign up here
+  isSignup: true
 parking: false
 about: false
 ---
@@ -47,6 +51,3 @@ Niseko Hirafu Green Park hosts a one-day MTB event across **Grand Hirafu** and *
 
 <small>*Final riding locations depend on weather. Riders will be contacted in case of cancellation.*</small>
 
-<div style="text-align:center; margin:50px 0;">
-  <a class="btn btn-primary" href="https://forms.gle/LqNwtHDtW9JxQnCf6" target="_blank">Spots are limited — sign up here</a>
-</div>

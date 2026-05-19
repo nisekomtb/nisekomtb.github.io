@@ -27,7 +27,10 @@ partners:
     url: https://djtama.komi.io
 moreInfo:
   - スペシャライズド・ターボレボ SL LTDソイル・サーチング・エディションのオークションも行います！
-  - <a class="btn btn-sm btn-primary" href="/ja/auction">詳細はこちら</a>
+link:
+  url: /ja/auction
+  text: オークション詳細
+  isSignup: false
 masthead:
   img: /assets/images/events/2023/grand-opening/header.jpg
 thumbnail: /assets/images/events/2023/grand-opening/thumb.jpg

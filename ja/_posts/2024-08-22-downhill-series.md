@@ -22,6 +22,10 @@ masthead:
 thumbnail: /assets/images/events/2024/downhill-series/thumb.jpg
 og:
   image: /assets/images/events/2024/downhill-series/header.jpg
+link:
+  url: https://dhseries.jp/2024-4-nisekoannupuri/
+  text: イベント詳細
+  isSignup: false
 parking: false
 about: false
 ---
@@ -44,6 +48,3 @@ Rhythm 2階での​DHS参加者限定の​集まり。​軽食と​ドリン
 
 レースウィークエンドを​通じて​会場に​出店。​トレイルの​最新情報、​今後の​イベント、​ニセコの​トレイルへの​関わり方を​お伝えします。
 
-<div style="text-align:center; margin:50px 0;">
-  <a class="btn btn-primary" href="ttps://dhseries.jp/2024-4-nisekoannupuri/" target="_blank">イベント詳細</a>
-</div>

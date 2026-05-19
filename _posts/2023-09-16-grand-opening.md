@@ -26,7 +26,10 @@ partners:
     url: https://djtama.komi.io
 moreInfo:
   - Blind auction for a Turbo Levo SL LTD Soil Searching edition will be drawn on the 16th at the afterparty at Rhythm Japan Base
-  - <a class="btn btn-sm btn-primary" href="/auction">More info</a>
+link:
+  url: /auction
+  text: Auction details
+  isSignup: false
 masthead:
   img: /assets/images/events/2023/grand-opening/header.jpg
 thumbnail: /assets/images/events/2023/grand-opening/thumb.jpg

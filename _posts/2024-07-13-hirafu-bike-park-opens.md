@@ -30,6 +30,10 @@ masthead:
 thumbnail: /assets/images/events/2024/hirafu-bike-park-opens/thumb.jpg
 og:
   image: /assets/images/events/2024/hirafu-bike-park-opens/header.jpg
+link:
+  url: https://www.grand-hirafu.jp/blog/hirafu-news/2024/04/2024-2-12.html
+  text: Event details
+  isSignup: false
 parking: false
 about: false
 ---
@@ -49,6 +53,3 @@ NAMBA will be there for opening day. Season passes are good value if you plan to
 
 13 July (Saturday) to 23 September 2024 (Monday holiday).
 
-<div style="text-align:center; margin:50px 0;">
-  <a class="btn btn-primary" href="https://www.grand-hirafu.jp/blog/hirafu-news/2024/04/2024-2-12.html" target="_blank">Event Details</a>
-</div>

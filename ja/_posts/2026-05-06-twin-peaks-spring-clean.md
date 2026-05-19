@@ -31,7 +31,10 @@ itinerary:
           name: 午後セッション開始
         - time: "4:00pm"
           name: イベント終了
-signup: https://docs.google.com/forms/d/e/1FAIpQLSfXA5L5YXMhfN4-zqfDgVCjgYGEv4gg1GK-n42iSY8phR0SrQ/viewform
+link:
+  url: https://docs.google.com/forms/d/e/1FAIpQLSfXA5L5YXMhfN4-zqfDgVCjgYGEv4gg1GK-n42iSY8phR0SrQ/viewform
+  text: 申し込みはこちら
+  isSignup: true
 parking: false
 about: false
 ---

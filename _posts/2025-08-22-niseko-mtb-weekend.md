@@ -90,6 +90,10 @@ itinerary:
           location:
             url: https://goo.gl/maps/yKza3NA7yfx5VQRx8
             name: Twin Peaks Bike Park
+link:
+  url: https://dhseries.jp/2025-5-niseko_annupuri/
+  text: Event details
+  isSignup: false
 parking: false
 about: false
 ---
@@ -104,6 +108,3 @@ Kids and Dirty Dames women's group rides will be led by one of the pro riders. A
 
 Sign ups and more details about the Downhill Series can be found below;
 
-<div style="text-align:center; margin:50px 0;">
-  <a class="btn btn-primary" href="https://dhseries.jp/2025-5-niseko_annupuri/" target="_blank">Event Details</a>
-</div>

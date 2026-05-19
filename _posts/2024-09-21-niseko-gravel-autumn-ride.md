@@ -25,6 +25,10 @@ masthead:
 thumbnail: /assets/images/events/2024/niseko-gravel-autumn-ride/thumb.jpg
 og:
   image: /assets/images/events/2024/niseko-gravel-autumn-ride/header.jpg
+link:
+  url: https://nisekogravel.com/en/autumnride/
+  text: Event details
+  isSignup: false
 parking: false
 about: false
 ---
@@ -47,6 +51,3 @@ Mix of gravel and paved roads, with substantial climbing on the longer routes.
 
 Full route details and registration via the link below.
 
-<div style="text-align:center; margin:50px 0;">
-  <a class="btn btn-primary" href="https://nisekogravel.com/en/autumnride/" target="_blank">Event Details</a>
-</div>

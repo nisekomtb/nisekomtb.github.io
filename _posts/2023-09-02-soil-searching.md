@@ -26,7 +26,6 @@ partners:
     url: https://thepowbar.com
 moreInfo:
   - Registration application is open until 27th August. Spots are limited and, due to high demand, participants will be selected by lottery.
-  - <a class="btn btn-sm btn-primary" disabled="disabled" target="_blank">Click here to apply</a>
 masthead:
   img: /assets/images/events/2023/soil-searching/header.jpg
 thumbnail: /assets/images/events/2023/soil-searching/thumb.jpg

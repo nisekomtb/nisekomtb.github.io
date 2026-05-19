@@ -10,10 +10,10 @@ address: 150, 2 Aza-150-1 Yamada, Kutchan, Abuta District, Hokkaido 044-0081
 price: 0
 moreInfo:
   - Spots are limited and, due to high demand, participants will be selected by lottery.
-  - <a class="btn btn-sm btn-primary" href="#form">Register your interest here!</a>
-form:
-  url: https://docs.google.com/forms/d/e/1FAIpQLSfMTCuiDi4Vfs3E6ATP3bCREfEJquwWL08vVl0nGjAdbLMEIQ/viewform?embedded=true&hl=en
-  height: 1200
+link:
+  url: https://docs.google.com/forms/d/e/1FAIpQLSfMTCuiDi4Vfs3E6ATP3bCREfEJquwWL08vVl0nGjAdbLMEIQ/viewform?hl=en
+  text: Register your interest
+  isSignup: true
 masthead:
   img: /assets/images/events/2024/monitor-tour/header.jpg
   credit:
@@ -80,8 +80,4 @@ A two-day monitor tour at Twin Peaks Bike Park on Tuesday 15 and Wednesday 16 Oc
 
 ### How to sign up
 
-Spots are limited and selected by lottery. Register interest via the form below.
-
-<div style="text-align:center; margin:50px 0;">
-  <a class="btn btn-primary" href="#form">Register your interest here!</a>
-</div>
+Spots are limited and selected by lottery. Register your interest via the form linked at the top of this page.

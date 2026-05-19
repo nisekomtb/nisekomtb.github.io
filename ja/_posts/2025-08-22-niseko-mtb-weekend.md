@@ -90,6 +90,10 @@ itinerary:
           location:
             url: https://goo.gl/maps/yKza3NA7yfx5VQRx8
             name: ツインピークス・​バイクパーク
+link:
+  url: https://dhseries.jp/2025-5-niseko_annupuri/
+  text: イベント詳細
+  isSignup: false
 parking: false
 about: false
 ---
@@ -105,6 +109,3 @@ about: false
 
 ダウンヒルシリーズの​参加登録や​詳細は​以下を​ご覧ください。
 
-<div style="text-align:center; margin:50px 0;">
-  <a class="btn btn-primary" href="https://dhseries.jp/2025-5-niseko_annupuri/" target="_blank">イベント詳細</a>
-</div>

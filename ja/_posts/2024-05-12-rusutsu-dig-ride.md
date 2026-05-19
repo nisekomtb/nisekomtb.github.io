@@ -18,6 +18,10 @@ masthead:
 thumbnail: /assets/images/events/2024/rusutsu-dig-ride/thumb.jpg
 og:
   image: /assets/images/events/2024/rusutsu-dig-ride/header.jpg
+link:
+  url: https://www.facebook.com/events/757779523146644
+  text: イベント詳細
+  isSignup: false
 parking: false
 about: false
 ---
@@ -41,10 +45,6 @@ about: false
 ### 注意
 
 時間は​柔軟です。​遅れて​参加したり​早めに​帰る​ことも​可能。​ゴールデンウィーク外の​開催で、​スケジュールが​組みやすい​日程です。
-
-<div style="text-align:center; margin:50px 0;">
-  <a class="btn btn-primary" href="https://www.facebook.com/events/757779523146644" target="_blank">イベント詳細</a>
-</div>
 
 <script type="application/javascript" src="https://es.pinkbike.org/326/sprt/j/trailforks/iframeResizer.min.js"></script>
 <script type="text/javascript">

@@ -48,6 +48,10 @@ itinerary:
             url: https://goo.gl/maps/yKza3NA7yfx5VQRx8
         - time: "3:00pm"
           name: イベント終了
+link:
+  url: https://forms.gle/t3BXUgdrRnoeutrD7
+  text: クリニックに​申し込む
+  isSignup: true
 parking: false
 about: false
 ---
@@ -61,10 +65,6 @@ about: false
 10時に、​トレイルヘッドから​2つの​ライドが​出発します。
 
 ダーティ・デイムズ女性スキルクリニックは、​NAMBAとの​共同開催です。​初心者から​経験豊富な​ライダーまで、​すべての​レベルの​方を​歓迎します。​9時から​Rhythm Hirafuで​コーヒーを​飲みながら、​ライド前の​集合と​バイクチェックを。​定員制で、​事前申込が​必要です。
-
-<div style="text-align:center; margin:30px 0;">
-  <a class="btn btn-primary" href="https://forms.gle/t3BXUgdrRnoeutrD7" target="_blank" rel="noopener">クリニックに​申し込む</a>
-</div>
 
 クリニックと​並行して、​NAMBAクルーが​1時間の​オリエンテーションライドを​案内します。​ツインピークスが​初めての​方が​対象です。​ゆったりとした​ペースで、​その​後​ご自身で​楽しめるよう​パークの​レイアウトを​ご紹介します。​トレイルヘッドに​そのまま​お越しください。
 

@@ -29,9 +29,6 @@ partners:
   - name: Taco Dake
     img: /tacodake.png
     url: https://www.instagram.com/tacodake/
-moreInfo:
-  - To join the event, complete the application below.
-  - <a class="btn btn-sm btn-primary" href="#event-store" target="_blank">Click here to apply</a>
 masthead:
   img: /assets/images/events/2025/niseko-trail-days/header.jpg
 thumbnail: /assets/images/events/2025/niseko-trail-days/thumb.jpg

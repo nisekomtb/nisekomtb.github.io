@@ -37,6 +37,10 @@ itinerary:
         - name: 表彰式
         - time: 3:00pm
           name: 全行程 終了予定
+link:
+  url: https://playpark.akaigawa-tomo.com/ja/events/3666/
+  text: イベント詳細
+  isSignup: false
 parking: false
 about: false
 ---
@@ -58,6 +62,3 @@ about: false
 
 各クラス3位まで(設定タイム当ては1名)
 
-<div style="text-align:center; margin:50px 0;">
-  <a class="btn btn-primary" href="https://playpark.akaigawa-tomo.com/ja/events/3666/" target="_blank">イベント詳細</a>
-</div>

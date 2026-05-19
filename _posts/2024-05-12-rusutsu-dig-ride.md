@@ -18,6 +18,10 @@ masthead:
 thumbnail: /assets/images/events/2024/rusutsu-dig-ride/thumb.jpg
 og:
   image: /assets/images/events/2024/rusutsu-dig-ride/header.jpg
+link:
+  url: https://www.facebook.com/events/757779523146644
+  text: Event Details
+  isSignup: false
 parking: false
 about: false
 ---
@@ -42,10 +46,6 @@ The event runs in light rain; dress accordingly.
 ### Note
 
 Timing is loose. Join later or leave earlier if needed. Scheduled outside Golden Week for accessibility.
-
-<div style="text-align:center; margin:50px 0;">
-  <a class="btn btn-primary" href="https://www.facebook.com/events/757779523146644" target="_blank">Event Details</a>
-</div>
 
 <script type="application/javascript" src="https://es.pinkbike.org/326/sprt/j/trailforks/iframeResizer.min.js"></script>
 <script type="text/javascript">

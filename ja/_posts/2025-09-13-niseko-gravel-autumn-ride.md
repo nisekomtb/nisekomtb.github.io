@@ -23,6 +23,10 @@ masthead:
 thumbnail: /assets/images/events/2025/niseko-gravel-autumn-ride/thumb.jpg
 og:
   image: /assets/images/events/2025/niseko-gravel-autumn-ride/header.jpg
+link:
+  url: https://nisekogravel.com/autumnride
+  text: イベント詳細
+  isSignup: false
 parking: false
 about: false
 ---
@@ -49,6 +53,3 @@ about: false
 < シマリスコース(仮称) > 8:30 スタート 13:00 フィニッシュ
 約45km／獲得標高 約900m／走行目安時間2～4時間
 
-<div style="text-align:center; margin:50px 0;">
-  <a class="btn btn-primary" href="https://nisekogravel.com/autumnride" target="_blank">イベント詳細</a>
-</div>

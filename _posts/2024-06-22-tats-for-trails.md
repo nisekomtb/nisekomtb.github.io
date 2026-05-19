@@ -15,7 +15,6 @@ partners:
     url: https://www.59niseko.com
 moreInfo:
   - Fill out the form below to enter
-  - <a class="btn btn-sm btn-primary" href="#competition-store">Enter to win here</a>
 masthead:
   img: /assets/images/competitions/2024/tats-for-trails/header.jpg
 thumbnail: /assets/images/competitions/2024/tats-for-trails/thumb.jpg

@@ -22,6 +22,10 @@ masthead:
 thumbnail: /assets/images/events/2024/downhill-series/thumb.jpg
 og:
   image: /assets/images/events/2024/downhill-series/header.jpg
+link:
+  url: https://dhseries.jp/2024-4-nisekoannupuri/
+  text: Event details
+  isSignup: false
 parking: false
 about: false
 ---
@@ -44,6 +48,3 @@ DHS-only gathering on the second floor of Rhythm. Finger food, drinks, no charge
 
 Find us at the venue across the race weekend. Trail updates, upcoming events, and ways to get involved with the Niseko trails.
 
-<div style="text-align:center; margin:50px 0;">
-  <a class="btn btn-primary" href="https://dhseries.jp/2024-4-nisekoannupuri/" target="_blank">Event Details</a>
-</div>

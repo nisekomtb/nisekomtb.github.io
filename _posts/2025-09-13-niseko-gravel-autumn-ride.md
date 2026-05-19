@@ -23,6 +23,10 @@ masthead:
 thumbnail: /assets/images/events/2025/niseko-gravel-autumn-ride/thumb.jpg
 og:
   image: /assets/images/events/2025/niseko-gravel-autumn-ride/header.jpg
+link:
+  url: https://nisekogravel.com/en/autumnride
+  text: Event details
+  isSignup: false
 parking: false
 about: false
 ---
@@ -47,6 +51,3 @@ approx. 45 km / Elevation gain approx. 900 m / Estimated time: 2–4
 hours
 Gravel surface ratio: approx. 35%
 
-<div style="text-align:center; margin:50px 0;">
-  <a class="btn btn-primary" href="https://nisekogravel.com/en/autumnride" target="_blank">Event Details</a>
-</div>

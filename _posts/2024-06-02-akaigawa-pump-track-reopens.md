@@ -24,6 +24,10 @@ masthead:
 thumbnail: /assets/images/events/2024/akaigawa-pump-track-reopens/thumb.jpg
 og:
   image: /assets/images/events/2024/akaigawa-pump-track-reopens/header.jpg
+link:
+  url: https://playpark.akaigawa-tomo.com/en/activities/pumptrack/
+  text: Pump track details
+  isSignup: false
 parking: false
 about: false
 ---
@@ -45,6 +49,3 @@ No rental bikes for the 2024 season.
 
 Weekdays **11:30am to 5:00pm**, weekends and holidays **10:00am to 5:00pm**. 2-hour or full-day passes available.
 
-<div style="text-align:center; margin:50px 0;">
-  <a class="btn btn-primary" href="https://playpark.akaigawa-tomo.com/en/activities/pumptrack/" target="_blank">Pump track Details</a>
-</div>

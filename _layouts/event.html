@@ -28,8 +28,20 @@ layout: base
     background: #c0392b;
     color: #fff;
   }
+  .event-status.ended {
+    background: rgba(255, 255, 255, 0.12);
+    color: #aaa;
+  }
   .event-signup-top {
     margin-top: 16px;
+  }
+  .btn.disabled,
+  .btn[aria-disabled="true"] {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #888 !important;
+    border-color: transparent !important;
+    pointer-events: none;
+    cursor: not-allowed;
   }
 
   .event-sidebar {
@@ -305,23 +317,35 @@ layout: base
 <div id="t3-mainbody" class="container t3-mainbody">
   <div class="row">
 
+    {% assign event_days = page.days | default: 1 %}
+    {% assign duration_seconds = event_days | times: 86400 %}
+    {% assign start_ts = page.startDate | date: "%s" | plus: 0 %}
+    {% assign end_ts = start_ts | plus: duration_seconds %}
+    {% assign now_ts = site.time | date: "%s" | plus: 0 %}
+    {% assign event_ended = false %}
+    {% if now_ts > end_ts %}{% assign event_ended = true %}{% endif %}
+    {% assign cta_disabled = false %}
+    {% if page.cancelled or event_ended %}{% assign cta_disabled = true %}{% endif %}
+
     <div class="col-12">
 
       <!-- Header with status and signup -->
       <div class="event-header ja-animate" data-animation="move-from-bottom" data-delay="200">
         {% if page.cancelled %}
           <div class="event-status cancelled">{% if page.lang == "ja" %}キャンセル{% else %}Cancelled{% endif %}</div>
+        {% elsif event_ended %}
+          <div class="event-status ended">{% if page.lang == "ja" %}終了{% else %}Event ended{% endif %}</div>
         {% endif %}
         {% if page.rescheduled %}<div class="rescheduled">{{ page.rescheduled | markdownify }}</div>{% endif %}
         {% if page.description %}<p class="lead">{{ page.description }}</p>{% endif %}
-        {% if page.signup and page.cancelled != true %}
+        {% if page.link and page.link.url %}
           <div class="event-signup-top">
-            <a class="btn btn-primary" href="{{ page.signup }}" target="_blank">{% if page.lang == "ja" %}申し込みは<wbr>こちら{% else %}Sign up here{% endif %}</a>
+            <a class="btn btn-{% if page.link.isSignup %}primary{% else %}secondary{% endif %}{% if cta_disabled %} disabled{% endif %}" href="{{ page.link.url }}" target="_blank" rel="noopener"{% if cta_disabled %} aria-disabled="true" tabindex="-1"{% endif %}>{{ page.link.text }}</a>
           </div>
         {% endif %}
-        {% if page.storeProductSlug and page.cancelled != true %}
+        {% if page.storeProductSlug %}
           <div class="event-signup-top">
-            <a class="btn btn-primary" href="/{% if page.lang == 'ja' %}ja/{% endif %}shop/#!/{{ page.storeProductSlug }}">{% if page.lang == "ja" %}チケットを<wbr>購入{% else %}Buy ticket{% endif %}</a>
+            <a class="btn btn-primary{% if cta_disabled %} disabled{% endif %}" href="/{% if page.lang == 'ja' %}ja/{% endif %}shop/#!/{{ page.storeProductSlug }}"{% if cta_disabled %} aria-disabled="true" tabindex="-1"{% endif %}>{% if page.lang == "ja" %}チケットを<wbr>購入{% else %}Buy ticket{% endif %}</a>
           </div>
         {% endif %}
       </div>
@@ -421,23 +445,20 @@ layout: base
           {% endif %}
         {% endif %}
 
-        {% if page.form %}
-          <iframe id="form" src="{{ page.form.url }}" style="width:100%; height: {{ page.form.height }}px !important;" width="100%" height="{{ page.form.height }}px" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-        {% endif %}
       </div>
 
       <!-- Bottom button row -->
-      {% assign has_cta = false %}
-      {% if page.signup and page.cancelled != true %}{% assign has_cta = true %}{% endif %}
-      {% if page.storeProductSlug and page.cancelled != true %}{% assign has_cta = true %}{% endif %}
+      {% assign has_primary_cta = false %}
+      {% if page.link and page.link.url and page.link.isSignup %}{% assign has_primary_cta = true %}{% endif %}
+      {% if page.storeProductSlug %}{% assign has_primary_cta = true %}{% endif %}
       <div style="text-align:center; margin:48px 0;" class="ja-animate" data-animation="move-from-bottom" data-delay="800">
-        {% if page.signup and page.cancelled != true %}
-          <a class="btn btn-primary" href="{{ page.signup }}" target="_blank" style="margin:5px;">{% if page.lang == "ja" %}申し込みはこちら{% else %}Sign up here{% endif %}</a>
+        {% if page.link and page.link.url %}
+          <a class="btn btn-{% if page.link.isSignup %}primary{% else %}secondary{% endif %}{% if cta_disabled %} disabled{% endif %}" href="{{ page.link.url }}" target="_blank" rel="noopener" style="margin:5px;"{% if cta_disabled %} aria-disabled="true" tabindex="-1"{% endif %}>{{ page.link.text }}</a>
         {% endif %}
-        {% if page.storeProductSlug and page.cancelled != true %}
-          <a class="btn btn-primary" href="/{% if page.lang == 'ja' %}ja/{% endif %}shop/#!/{{ page.storeProductSlug }}" style="margin:5px;">{% if page.lang == "ja" %}チケットを購入{% else %}Buy ticket{% endif %}</a>
+        {% if page.storeProductSlug %}
+          <a class="btn btn-primary{% if cta_disabled %} disabled{% endif %}" href="/{% if page.lang == 'ja' %}ja/{% endif %}shop/#!/{{ page.storeProductSlug }}" style="margin:5px;"{% if cta_disabled %} aria-disabled="true" tabindex="-1"{% endif %}>{% if page.lang == "ja" %}チケットを購入{% else %}Buy ticket{% endif %}</a>
         {% endif %}
-        <a class="btn btn-{% if has_cta %}secondary{% else %}primary{% endif %}" href="{% if page.lang == 'ja' %}/ja{% endif %}/events/" style="margin:5px;">{% if page.lang == "ja" %}イベント一覧に戻る{% else %}Back to events{% endif %}</a>
+        <a class="btn btn-{% if has_primary_cta %}secondary{% else %}primary{% endif %}" href="{% if page.lang == 'ja' %}/ja{% endif %}/events/" style="margin:5px;">{% if page.lang == "ja" %}イベント一覧に戻る{% else %}Back to events{% endif %}</a>
       </div>
     </div>
 

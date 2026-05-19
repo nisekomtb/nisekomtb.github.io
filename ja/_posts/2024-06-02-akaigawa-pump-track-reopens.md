@@ -25,6 +25,10 @@ masthead:
 thumbnail: /assets/images/events/2024/akaigawa-pump-track-reopens/thumb.jpg
 og:
   image: /assets/images/events/2024/akaigawa-pump-track-reopens/header.jpg
+link:
+  url: https://playpark.akaigawa-tomo.com/ja/activities/pumptrack/
+  text: ポンプトラックの​詳細
+  isSignup: false
 parking: false
 about: false
 ---
@@ -46,6 +50,3 @@ about: false
 
 平日 **11:30 - 17:00**、​週末・祝日 **10:00 - 17:00**。​2時間券または​1日券が​利用できます。
 
-<div style="text-align:center; margin:50px 0;">
-  <a class="btn btn-primary" href="https://playpark.akaigawa-tomo.com/ja/activities/pumptrack/" target="_blank">ポンプトラックの詳細</a>
-</div>

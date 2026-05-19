@@ -30,7 +30,10 @@ itinerary:
           name: Afternoon session begins
         - time: "4:00pm"
           name: Event ends
-signup: https://docs.google.com/forms/d/e/1FAIpQLSd9HMXa2vyQuFpN4XVVFr6XOlzwcR1ZbWlXEmEE9GFcxyi5sg/viewform
+link:
+  url: https://docs.google.com/forms/d/e/1FAIpQLSd9HMXa2vyQuFpN4XVVFr6XOlzwcR1ZbWlXEmEE9GFcxyi5sg/viewform
+  text: Sign up here
+  isSignup: true
 parking: false
 about: false
 ---

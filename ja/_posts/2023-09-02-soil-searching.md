@@ -27,7 +27,6 @@ partners:
     url: https://thepowbar.com
 moreInfo:
   - 申し込みは8月27日まで。参加者多数の場合は抽選となります。
-  - <a class="btn btn-sm btn-primary" disabled="disabled" target="_blank">お申し込みはこちら</a>
 masthead:
   img: /assets/images/events/2023/soil-searching/header.jpg
 thumbnail: /assets/images/events/2023/soil-searching/thumb.jpg

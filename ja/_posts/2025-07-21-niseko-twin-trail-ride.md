@@ -19,6 +19,10 @@ masthead:
 thumbnail: /assets/images/events/2025/niseko-twin-trail-ride/thumb.jpg
 og:
   image: /assets/images/events/2025/niseko-twin-trail-ride/header.jpg
+link:
+  url: https://forms.gle/LqNwtHDtW9JxQnCf6
+  text: 申し込みはこちら
+  isSignup: true
 parking: false
 about: false
 ---
@@ -47,6 +51,3 @@ about: false
 
 <small>*​最終的な​ライドエリアは​天候に​より​変更となる​場合が​あります。​中止の​場合は​お申し込み時の​連絡先に​ご連絡いたします。​*</small>
 
-<div style="text-align:center; margin:50px 0;">
-  <a class="btn btn-primary" href="https://forms.gle/LqNwtHDtW9JxQnCf6" target="_blank">定員制 — お申し込みはこちら</a>
-</div>

@@ -47,6 +47,10 @@ itinerary:
             url: https://goo.gl/maps/yKza3NA7yfx5VQRx8
         - time: "3:00pm"
           name: Event ends
+link:
+  url: https://forms.gle/t3BXUgdrRnoeutrD7
+  text: Sign up for the clinic
+  isSignup: true
 parking: false
 about: false
 ---
@@ -60,10 +64,6 @@ Come for a lap, stay for the community.
 Two rides leave the trailhead at 10:00am.
 
 The Dirty Dames women's skills clinic, run in partnership with NAMBA, welcomes all levels from first-timers to seasoned riders. Kick off with coffee at Rhythm Hirafu from 9:00am for a pre-ride catch-up and bike check. Spaces are limited and signup is required.
-
-<div style="text-align:center; margin:30px 0;">
-  <a class="btn btn-primary" href="https://forms.gle/t3BXUgdrRnoeutrD7" target="_blank" rel="noopener">Sign up for the clinic</a>
-</div>
 
 Alongside the clinic, our crew will lead a one-hour orientation ride for anyone new to the park. We keep it easy and show you the layout, so you can ride on your own afterwards. Just turn up.
 

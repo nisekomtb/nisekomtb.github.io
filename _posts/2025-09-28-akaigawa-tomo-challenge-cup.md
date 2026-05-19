@@ -37,6 +37,10 @@ itinerary:
         - name: Award ceremony
         - time: 3:00pm
           name: Event ends
+link:
+  url: https://playpark.akaigawa-tomo.com/en/events/3666/
+  text: Event details
+  isSignup: false
 parking: false
 about: false
 ---
@@ -66,6 +70,3 @@ Sign up on the event day at the reception
 
 In case of bad weather, the event will be canceled. Announcements will be made by 7:00 AM on the event day via the website and social media.
 
-<div style="text-align:center; margin:50px 0;">
-  <a class="btn btn-primary" href="https://playpark.akaigawa-tomo.com/en/events/3666/" target="_blank">Event Details</a>
-</div>

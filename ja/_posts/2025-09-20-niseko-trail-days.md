@@ -30,9 +30,6 @@ partners:
   - name: Taco Dake
     img: /tacodake.png
     url: https://www.instagram.com/tacodake/
-moreInfo:
-  - イベントに​参加するには、​以下の​申し込みを​完了してください。
-  - <a class="btn btn-sm btn-primary" href="#event-store" target="_blank">お申し込みはこちら</a>
 masthead:
   img: /assets/images/events/2025/niseko-trail-days/header.jpg
 thumbnail: /assets/images/events/2025/niseko-trail-days/thumb.jpg

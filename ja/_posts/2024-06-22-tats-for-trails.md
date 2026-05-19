@@ -15,7 +15,6 @@ partners:
     url: https://www.59niseko.com
 moreInfo:
   - 以下の<wbr>フォームに<wbr>記入して<wbr>応募してください
-  - <a class="btn btn-sm btn-primary" href="#competition-store">応募はこちらから</a>
 masthead:
   img: /assets/images/competitions/2024/tats-for-trails/header.jpg
 thumbnail: /assets/images/competitions/2024/tats-for-trails/thumb.jpg

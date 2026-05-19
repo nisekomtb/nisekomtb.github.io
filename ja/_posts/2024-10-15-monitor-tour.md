@@ -14,10 +14,10 @@ partners:
     url: https://www.helloallegra.com/
 moreInfo:
   - 申し込みは8月27日まで。参加者多数の場合は抽選となります。
-  - <a class="btn btn-sm btn-primary" href="#form">興味登録はこちら！</a>
-form:
-  url: https://docs.google.com/forms/d/e/1FAIpQLSfUBY3q-p1Tl_yPuqdVi3EBWhkdOJYt7P7Zz5i3pY5c7Mglrg/viewform?embedded=true&hl=jp
-  height: 1200
+link:
+  url: https://docs.google.com/forms/d/e/1FAIpQLSfUBY3q-p1Tl_yPuqdVi3EBWhkdOJYt7P7Zz5i3pY5c7Mglrg/viewform?hl=jp
+  text: 興味登録はこちら
+  isSignup: true
 masthead:
   img: /assets/images/events/2024/monitor-tour/header.jpg
   credit:
@@ -84,8 +84,4 @@ about: false
 
 ### お申し込み
 
-定員が​あり、​応募多数の​場合は​抽選です。​以下の​フォームから​興味登録を​お願いします。
-
-<div style="text-align:center; margin:50px 0;">
-  <a class="btn btn-primary" href="#form">興味登録はこちら！</a>
-</div>
+定員が​あり、​応募多数の​場合は​抽選です。​ページ上部の​リンクから​興味登録を​お願いします。
