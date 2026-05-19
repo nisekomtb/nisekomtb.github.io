@@ -63,16 +63,18 @@ masthead:
   </div>
 
   <!-- Community dig day photo -->
-  <div
-    class="ja-animate"
-    data-animation="move-from-bottom"
-    data-delay="400"
-    style="max-width:900px; margin:20px auto;">
-    <img
-      src="/assets/images/join/dig-day.webp"
-      alt="NAMBAの​ディグデイで、​老若男女が​一緒に​森の​トレイルを​整備して​いる"
-      loading="lazy"
-      style="width:100%; height:auto; border-radius:3px; display:block;" />
+  <div class="section">
+    <div
+      class="ja-animate"
+      data-animation="move-from-bottom"
+      data-delay="400"
+      style="max-width:900px; margin:0 auto;">
+      <img
+        src="/assets/images/join/dig-day.webp"
+        alt="NAMBAの​ディグデイで、​老若男女が​一緒に​森の​トレイルを​整備して​いる"
+        loading="lazy"
+        style="width:100%; height:auto; border-radius:3px; display:block;" />
+    </div>
   </div>
 
   <!-- Where your money goes -->
@@ -90,7 +92,7 @@ masthead:
         <div style="font-size:130%;"><span>NAMBAは​運営コストを​最小限に​抑えています。​会費は​トレイル、​イベント、​コミュニティに​直接​使われます。</span></div>
       </div>
     </div>
-    <div style="position:relative; width:100%; max-width:400px; margin:0 auto;" class="ja-animate" data-animation="move-from-bottom" data-delay="600">
+    <div style="position:relative; width:100%; max-width:400px; height:460px; margin:0 auto;" class="ja-animate" data-animation="move-from-bottom" data-delay="600">
       <canvas id="chart-membership-allocation"></canvas>
     </div>
 
@@ -116,6 +118,7 @@ masthead:
         },
         options: {
           responsive: true,
+          maintainAspectRatio: false,
           plugins: {
             legend: { position: 'bottom' },
             tooltip: {

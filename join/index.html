@@ -63,16 +63,18 @@ masthead:
   </div>
 
   <!-- Community dig day photo -->
-  <div
-    class="ja-animate"
-    data-animation="move-from-bottom"
-    data-delay="400"
-    style="max-width:900px; margin:20px auto;">
-    <img
-      src="/assets/images/join/dig-day.webp"
-      alt="Multi-generational group on a NAMBA dig day, raking and shaping a forest trail together"
-      loading="lazy"
-      style="width:100%; height:auto; border-radius:3px; display:block;" />
+  <div class="section">
+    <div
+      class="ja-animate"
+      data-animation="move-from-bottom"
+      data-delay="400"
+      style="max-width:900px; margin:0 auto;">
+      <img
+        src="/assets/images/join/dig-day.webp"
+        alt="Multi-generational group on a NAMBA dig day, raking and shaping a forest trail together"
+        loading="lazy"
+        style="width:100%; height:auto; border-radius:3px; display:block;" />
+    </div>
   </div>
 
   <!-- Where your money goes -->
@@ -90,7 +92,7 @@ masthead:
         <div style="font-size:130%;"><span>NAMBA keeps overheads minimal. Your membership goes directly to trails, events, and community.</span></div>
       </div>
     </div>
-    <div style="position:relative; width:100%; max-width:400px; margin:0 auto;" class="ja-animate" data-animation="move-from-bottom" data-delay="600">
+    <div style="position:relative; width:100%; max-width:400px; height:460px; margin:0 auto;" class="ja-animate" data-animation="move-from-bottom" data-delay="600">
       <canvas id="chart-membership-allocation"></canvas>
     </div>
 
@@ -107,7 +109,7 @@ masthead:
       new Chart(document.getElementById('chart-membership-allocation'), {
         type: 'doughnut',
         data: {
-          labels: ['Trail construction', 'Trail maintenance & operation', 'Marketing & events', 'Admin & other'],
+          labels: ['Trail construction', 'Trail maintenance', 'Marketing & events', 'Admin & other'],
           datasets: [{
             data: [allocation.trail_construction, allocation.trail_maintenance_operation, allocation.marketing_events, allocation.admin_other],
             backgroundColor: ['#47A06C', '#c8a951', '#148cf0', '#666666'],
@@ -116,6 +118,7 @@ masthead:
         },
         options: {
           responsive: true,
+          maintainAspectRatio: false,
           plugins: {
             legend: { position: 'bottom' },
             tooltip: {
