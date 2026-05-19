@@ -22,8 +22,8 @@ twinpeaks:
   location_lng: 140.710
   trailforks_rid: 58775
   map_zoom: 14.664296754902944
-  map_lat: 42.864978907247234
-  map_lon: 140.71076524788
+  map_lat: 42.869698363944394
+  map_lon: 140.70963367125432
   url_root: /twin-peaks
   subnav:
     - slug: ""
