@@ -62,8 +62,8 @@ parking: false
 about: false
 storeProductId: 780290280
 storeProductSlug: niseko-trail-days-2025
+logo: /assets/images/events/2025/niseko-trail-days/logo.png
 ---
-<img src="/assets/images/events/2025/niseko-trail-days/logo.png" style="width: 250px; margin: 0 auto;">
 
 ### Specialized Trail Days, Niseko edition
 

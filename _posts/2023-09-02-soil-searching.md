@@ -56,8 +56,8 @@ itinerary:
           name: Event ends
 parking: false
 about: false
+logo: /assets/images/events/2023/soil-searching/soil-searching.png
 ---
-<img src="/assets/images/events/2023/soil-searching/soil-searching.png" style="width:200px; margin: auto;" />
 
 ### The event
 

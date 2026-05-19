@@ -14,6 +14,12 @@ layout: base
     max-width: 700px;
     margin: 0 auto;
   }
+  .event-logo {
+    display: block;
+    margin: 0 auto 20px;
+    max-width: 240px;
+    height: auto;
+  }
   .event-status {
     display: inline-block;
     padding: 5px 14px;
@@ -336,6 +342,7 @@ layout: base
         {% elsif event_ended %}
           <div class="event-status ended">{% if page.lang == "ja" %}終了{% else %}Event ended{% endif %}</div>
         {% endif %}
+        {% if page.logo %}<img class="event-logo" src="{{ page.logo }}" alt="{{ page.title }} logo">{% endif %}
         {% if page.rescheduled %}<div class="rescheduled">{{ page.rescheduled | markdownify }}</div>{% endif %}
         {% if page.description %}<p class="lead">{{ page.description }}</p>{% endif %}
         {% if page.link and page.link.url %}
