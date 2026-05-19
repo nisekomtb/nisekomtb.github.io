@@ -24,7 +24,7 @@ thumbnail: /assets/images/events/2025/niseko-gravel-autumn-ride/thumb.jpg
 og:
   image: /assets/images/events/2025/niseko-gravel-autumn-ride/header.jpg
 parking: false
-about: true
+about: false
 ---
 
 ### Course Details

@@ -57,7 +57,7 @@ itinerary:
         - time: 12:00pm
           name: イベント終了
 parking: false
-about: true
+about: false
 ---
 ## ツインピークス・バイクパーク・モニターツアー
 

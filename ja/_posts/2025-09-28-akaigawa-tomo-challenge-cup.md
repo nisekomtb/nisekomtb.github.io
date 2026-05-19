@@ -38,7 +38,7 @@ itinerary:
         - time: 3:00pm
           name: 全行程 終了予定
 parking: false
-about: true
+about: false
 ---
 ### 実施種目：
 

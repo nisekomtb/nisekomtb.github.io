@@ -32,7 +32,7 @@ thumbnail: /assets/images/events/2024/hirafu-bike-park-opens/thumb.jpg
 og:
   image: /assets/images/events/2024/hirafu-bike-park-opens/header.jpg
 parking: false
-about: true
+about: false
 ---
 ### 新着情報
 

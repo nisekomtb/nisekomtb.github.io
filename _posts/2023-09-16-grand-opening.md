@@ -79,7 +79,7 @@ itinerary:
         - time: 4:30pm
           name: Event ends
 parking: false
-about: true
+about: false
 ---
 <p style="font-size:150%;"><strong>Twin Peaks Bike Park opens to the public.</strong></p>
 

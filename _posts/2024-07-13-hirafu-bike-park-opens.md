@@ -31,7 +31,7 @@ thumbnail: /assets/images/events/2024/hirafu-bike-park-opens/thumb.jpg
 og:
   image: /assets/images/events/2024/hirafu-bike-park-opens/header.jpg
 parking: false
-about: true
+about: false
 ---
 
 ![Grand HIRAFU gondola transporting riders to the bike park trails](/assets/images/events/2024/hirafu-bike-park-opens/gondola.jpg)

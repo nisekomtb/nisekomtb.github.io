@@ -38,7 +38,7 @@ itinerary:
         - time: 3:00pm
           name: Event ends
 parking: false
-about: true
+about: false
 ---
 ### Event Categories
 

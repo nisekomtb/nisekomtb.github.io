@@ -19,7 +19,7 @@ thumbnail: /assets/images/events/2024/rusutsu-dig-ride/thumb.jpg
 og:
   image: /assets/images/events/2024/rusutsu-dig-ride/header.jpg
 parking: false
-about: true
+about: false
 ---
 <div class="TrailforksWidgetTrail" data-w="100%" data-h="350px" data-trailid="450955" data-activitytype="1" data-map="1" data-basemap="trailforks" data-elevation="1" data-photos="0" data-title="1" data-info="1" data-trail_opacity="25" data-v="2" data-basicmap="1"></div>
 

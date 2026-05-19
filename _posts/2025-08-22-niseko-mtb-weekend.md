@@ -91,7 +91,7 @@ itinerary:
             url: https://goo.gl/maps/yKza3NA7yfx5VQRx8
             name: Twin Peaks Bike Park
 parking: false
-about: true
+about: false
 ---
 
 Special guest riders: <a href="https:instagram.com/hajimeeeee" target="blank">Hajime Imoto</a> and <a href="https:instagram.com/yukikushima" target="blank">Yuki Kushima</a> from Santa Cruz Bicycles.

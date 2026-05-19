@@ -57,7 +57,7 @@ itinerary:
         - time: 4:00pm
           name: イベント終了
 parking: false
-about: true
+about: false
 ---
 <img src="/assets/images/events/2023/soil-searching/soil-searching.png" style="width:200px; margin: auto;" />
 

@@ -52,7 +52,7 @@ itinerary:
         - time: 5:00pm
           name: Event ends
 parking: false
-about: true
+about: false
 ---
 
 ### The Dirty Dames women's group ride <small>(weather permitting)</small>

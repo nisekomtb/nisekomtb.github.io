@@ -20,7 +20,7 @@ thumbnail: /assets/images/events/2025/niseko-twin-trail-ride/thumb.jpg
 og:
   image: /assets/images/events/2025/niseko-twin-trail-ride/header.jpg
 parking: false
-about: true
+about: false
 ---
 ## MTBワークショップと​ガイド付きライドデー
 

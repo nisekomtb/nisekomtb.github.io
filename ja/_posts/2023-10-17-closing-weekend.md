@@ -71,7 +71,7 @@ itinerary:
           name: ツインピークス、​今シーズンの営業を終了！
           cancelled: true
 parking: false
-about: true
+about: false
 ---
 週末を​通じて​いくつかの​イベントを​開催します：
 

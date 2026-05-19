@@ -32,7 +32,7 @@ itinerary:
           name: Event ends
 signup: https://docs.google.com/forms/d/e/1FAIpQLSd9HMXa2vyQuFpN4XVVFr6XOlzwcR1ZbWlXEmEE9GFcxyi5sg/viewform
 parking: false
-about: true
+about: false
 ---
 
 ## Help us get the trails ready for summer

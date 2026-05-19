@@ -26,7 +26,7 @@ thumbnail: /assets/images/events/2024/akaigawa-pump-track-reopens/thumb.jpg
 og:
   image: /assets/images/events/2024/akaigawa-pump-track-reopens/header.jpg
 parking: false
-about: true
+about: false
 ---
 ## 赤井川パンプトラック再オープン
 

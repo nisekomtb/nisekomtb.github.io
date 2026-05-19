@@ -71,7 +71,7 @@ itinerary:
           name: Twin Peaks closes for the season - see you next year!
           cancelled: true
 parking: false
-about: true
+about: false
 ---
 
 Several events across the weekend:

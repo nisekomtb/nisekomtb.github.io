@@ -53,7 +53,7 @@ itinerary:
         - time: 12:00pm
           name: Event ends
 parking: false
-about: true
+about: false
 ---
 ## Twin Peaks Bike Park monitor tour
 

@@ -26,7 +26,7 @@ thumbnail: /assets/images/events/2024/niseko-gravel-autumn-ride/thumb.jpg
 og:
   image: /assets/images/events/2024/niseko-gravel-autumn-ride/header.jpg
 parking: false
-about: true
+about: false
 ---
 ## Beyond MTB: Niseko Autumn Gravel Ride 2024
 

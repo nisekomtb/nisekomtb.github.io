@@ -65,7 +65,7 @@ itinerary:
         - time: 4:00pm
           name: イベント終了
 parking: false
-about: true
+about: false
 storeProductId: 679581277
 storeProductSlug: soil-searching-2024
 ---

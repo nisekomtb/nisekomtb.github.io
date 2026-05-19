@@ -80,7 +80,7 @@ itinerary:
         - time: 4:30pm
           name: イベント終了
 parking: false
-about: true
+about: false
 ---
 <p style="font-size:150%;"><strong>ツインピークス・バイクパークが一般公開オープン。</strong></p>
 

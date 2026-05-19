@@ -91,7 +91,7 @@ itinerary:
             url: https://goo.gl/maps/yKza3NA7yfx5VQRx8
             name: ツインピークス・​バイクパーク
 parking: false
-about: true
+about: false
 ---
 ニセコマウンテンバイクウィークエンド、​4日間の​MTB祭典！​サンタクルズバイクの​試乗、​プロライダーからの​アドバイス、​そして​ニセコエリアの​MTBトレイルを​お楽しみください！
 

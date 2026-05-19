@@ -52,7 +52,7 @@ itinerary:
         - time: 5:00pm
           name: イベント終了
 parking: false
-about: true
+about: false
 ---
 ### Dirty Dames 女性グループライド <small>(天候に​よる)</small>
 

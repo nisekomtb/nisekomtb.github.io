@@ -23,7 +23,7 @@ thumbnail: /assets/images/events/2024/downhill-series/thumb.jpg
 og:
   image: /assets/images/events/2024/downhill-series/header.jpg
 parking: false
-about: true
+about: false
 ---
 ## 2024年ダウンヒルシリーズの​NAMBA
 

@@ -25,7 +25,7 @@ og:
 moreInfo:
   - No bike needed for this session.
 parking: false
-about: true
+about: false
 ---
 
 Summer's coming and we're getting our act together early. Come hang at Lily Hall on Sunday 24 May, 10am to 12pm.

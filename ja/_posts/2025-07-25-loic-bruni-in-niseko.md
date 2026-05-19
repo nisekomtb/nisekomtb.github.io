@@ -44,7 +44,7 @@ itinerary:
         - time: 6:00pm
           name: イベント終了
 parking: false
-about: true
+about: false
 ---
 
 ## ツインピークスで​Loic Bruniと​ライド

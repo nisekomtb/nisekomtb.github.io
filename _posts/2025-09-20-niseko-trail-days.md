@@ -62,7 +62,7 @@ itinerary:
         - time: 8:30pm
           name: Event ends
 parking: false
-about: true
+about: false
 storeProductId: 780290280
 storeProductSlug: niseko-trail-days-2025
 ---

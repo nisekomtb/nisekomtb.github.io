@@ -33,7 +33,7 @@ itinerary:
           name: イベント終了
 signup: https://docs.google.com/forms/d/e/1FAIpQLSfXA5L5YXMhfN4-zqfDgVCjgYGEv4gg1GK-n42iSY8phR0SrQ/viewform
 parking: false
-about: true
+about: false
 ---
 
 ## 夏に​向けて​トレイル整備に​ご協力ください

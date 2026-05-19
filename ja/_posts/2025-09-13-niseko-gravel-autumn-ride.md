@@ -24,7 +24,7 @@ thumbnail: /assets/images/events/2025/niseko-gravel-autumn-ride/thumb.jpg
 og:
   image: /assets/images/events/2025/niseko-gravel-autumn-ride/header.jpg
 parking: false
-about: true
+about: false
 ---
 
 雄大な​羊蹄山を​望むニセコの​自然を​舞台に、​森林の​トレイルや​舗装路を​組み合わせた​多彩な​コースを​走る​サイクリングイベント。​初級から​上級まで​楽しめる​3つの​ルートに​加え、​初心者向けの​レッスンも​予定されています。​会場では​アクティビティや​出店も​あり、​ライダーだけでなく​家族や​仲間と​一緒に​楽しめる​秋の​一日です。

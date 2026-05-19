@@ -43,7 +43,7 @@ itinerary:
         - time: 6:00pm
           name: Event ends
 parking: false
-about: true
+about: false
 ---
 
 ## Ride with Loic Bruni at Twin Peaks
