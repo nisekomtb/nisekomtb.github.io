@@ -1,6 +1,7 @@
 twinpeaks:
   logo: /assets/images/logos/twin-peaks.svg
   name: Twin Peaks Bike Park
+  project_path: /projects/twin-peaks/
   cost: Free
   lifts: 0
   lift_access: false
@@ -357,6 +358,7 @@ twinpeaks:
 grand-hirafu:
   logo: /assets/images/company/grand-hirafu.png
   name: Grand Hirafu Bike Park
+  project_path: /projects/grand-hirafu/
   cost: Lift pass required
   lifts: 1
   lift_access: true
@@ -409,33 +411,65 @@ grand-hirafu:
   trailforks_rid: 58866
   # 58780
   trails:
-    - name: Kamiwaza
+    # - name: Hirafu Skills Area
+    #   ja:
+    #     name: ヒラフスキルエリア
+    #   difficulty: green
+    #   distance: 400
+    #   climb: 5
+    #   descent: 5
+    #   bike: two-way
+    #   multi_use: true
+    - name: Kings High
       ja:
-        name: Kamiwaza
+        name:
+      difficulty: green
+      distance: 694
+      climb: 26
+      descent: 10
+      bike: up-only
+      multi_use: false
+      trailforks_id: 753823
+    - name: Key Path
+      ja:
+        name:
       difficulty: blue
-      distance: "1,800"
-      climb: 0
-      descent: 280
+      distance: 819
+      climb: 3
+      descent: 52
       bike: down-only
       multi_use: false
+      trailforks_id: 753822
+    - name: Kamiwaza
+      ja:
+        name: カミワザ
+      difficulty: blue
+      distance: "1,218"
+      climb: 13
+      descent: 111
+      bike: down-only
+      multi_use: false
+      trailforks_id: 753803
     - name: Hirafu Flow
       ja:
         name: ヒラフフロー
       difficulty: blue
-      distance: "2,200"
-      climb: 10
-      descent: 250
+      distance: "1,986"
+      climb: 38
+      descent: 170
       bike: down-only
       multi_use: false
-    - name: Hirafu Skills Area
+      trailforks_id: 0
+    - name: Kuro Obi
       ja:
-        name: ヒラフスキルエリア
-      difficulty: green
-      distance: 400
-      climb: 5
-      descent: 5
-      bike: two-way
-      multi_use: true
+        name: クロオビ
+      difficulty: black
+      distance: "2,103"
+      climb: 33
+      descent: 225
+      bike: down-only
+      multi_use: false
+      trailforks_id: 775402
 
 annupuri:
   logo: /assets/images/company/annupuri.png
@@ -475,6 +509,7 @@ annupuri:
 hanazono:
   logo: /assets/images/company/hanazono.png
   name: Niseko Hanazono Bike Park
+  project_path: /projects/hanazono/
   cost: TBC
   lifts: 1
   lift_access: true
@@ -541,6 +576,7 @@ hanazono:
       descent: 36
       bike: one-way
       multi_use: true
+      trailforks_rid: 923207
     - name: Downhill Course
       ja:
         name: ダウンヒルコース
@@ -550,3 +586,4 @@ hanazono:
       descent: 347
       bike: down-only
       multi_use: false
+      trailforks_rid: 923205

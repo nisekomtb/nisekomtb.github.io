@@ -80,4 +80,21 @@
     {% endfor %}
   </table>
 </section>
+
+{% unless include.signage_card == "false" %}
+<section class="article-content">
+  <div style="background:var(--color-bg-panel); border-radius:3px; overflow:hidden;">
+    <div style="display:flex; flex-wrap:wrap; align-items:center;">
+      <div style="flex:1; min-width:250px;">
+        <img src="/assets/images/twinpeaks/trailsign.jpg" alt="{% if page.lang == 'ja' %}NAMBAトレイル標識{% else %}NAMBA trail signage{% endif %}" style="width:100%; height:100%; object-fit:cover; display:block;" />
+      </div>
+      <div style="flex:1; min-width:250px; padding:32px;">
+        <h3 class="module-title" style="margin-bottom:12px;">{% if page.lang == 'ja' %}トレイル標識ガイド{% else %}Trail Signage Guide{% endif %}</h3>
+        <p style="font-size:110%; margin-bottom:20px;">{% if page.lang == 'ja' %}ニセコ全域で統一された標識システムの読み方：難易度、方向コード、位置マーカー。{% else %}Learn how to read the unified signage system used across all Niseko riding areas: difficulty ratings, direction codes, location markers.{% endif %}</p>
+        <a class="btn btn-primary" href="{% if page.lang == 'ja' %}/ja{% endif %}/where-to-ride/signage/">{% if page.lang == 'ja' %}ガイドを見る{% else %}Read the guide{% endif %}</a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endunless %}
 {% endif %}

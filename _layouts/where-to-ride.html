@@ -576,8 +576,11 @@ layout: base
   <div class="row">
     <div class="col col-12">
       <div class="module-title-wrap">
-        <div class="t3-section action ja-animate" data-animation="move-from-bottom" data-delay="200">
-          <a class="btn btn-primary" href="{% if page.lang == 'ja' %}/ja{% endif %}/plan-your-trip/">{% if page.lang == 'ja' %}旅行プランを立てる{% else %}Plan your trip{% endif %}</a>
+        <div class="t3-section action">
+          <a class="btn btn-primary" href="{% if page.lang == 'ja' %}/ja{% endif %}/where-to-ride/">{% if page.lang == 'ja' %}ライディングエリア{% else %}Where to ride{% endif %}</a>
+          {% if park_data.project_path %}
+          <a class="btn btn-secondary" href="{% if page.lang == 'ja' %}/ja{% endif %}{{ park_data.project_path }}" style="margin-left: 10px;">{% if page.lang == 'ja' %}プロジェクトページ{% else %}Project page{% endif %}</a>
+          {% endif %}
         </div>
       </div>
     </div>
