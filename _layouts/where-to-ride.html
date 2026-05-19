@@ -530,7 +530,7 @@ layout: base
   <div class="row">
     <div class="col col-12">
       <section class="park-gallery">
-        <h3 class="module-title">{% if page.lang == 'ja' %}ギャラリー{% else %}Gallery{% endif %}</h3>
+        <h3>{% if page.lang == 'ja' %}ギャラリー{% else %}Gallery{% endif %}</h3>
         <div class="gallery-grid">
           {% for tile in park_data.gallery %}
           {% assign pswp_href = tile.img_large | default: tile.img %}
