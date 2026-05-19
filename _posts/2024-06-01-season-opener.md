@@ -54,7 +54,6 @@ itinerary:
 parking: true
 about: false
 ---
-Get ready for an unforgettable start to the summer with the Niseko Area Mountain Bike Association (NAMBA) at the Twin Peaks Bike Park opening weekend! This marks our first full summer of operation, and we have an action-packed schedule to celebrate the occasion.
 
 ### The Dirty Dames - Women Only Group Ride: <small>(weather permitting)</small>
 

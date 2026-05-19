@@ -73,7 +73,6 @@ itinerary:
 parking: true
 about: true
 ---
-Autumn has arrived, and as the leaves change so too do the seasons. With Niseko soon to be blanketed with snow, the time has now come for us to close the trails for the year.To celebrate an amazing season, we're hosting a closing weekend celebration, and all are invited to join in on the fun!
 
 We have a host of events lined up for the closing weekend:
 

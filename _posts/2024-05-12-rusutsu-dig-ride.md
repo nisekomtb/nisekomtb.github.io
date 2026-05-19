@@ -21,7 +21,6 @@ og:
 parking: false
 about: false
 ---
-Join the Yotei MTB Club for their first course maintenance and riding session of the season at the Rusutsu Flow Trail! This year, we're kicking things off early thanks to an unusually warm spring, so come help us prep the trail for a fantastic riding season.
 
 <div class="TrailforksWidgetTrail" data-w="100%" data-h="350px" data-trailid="450955" data-activitytype="1" data-map="1" data-basemap="trailforks" data-elevation="1" data-photos="0" data-title="1" data-info="1" data-trail_opacity="25" data-v="2" data-basicmap="1"></div>
 

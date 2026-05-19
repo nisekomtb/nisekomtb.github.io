@@ -93,7 +93,6 @@ itinerary:
 parking: false
 about: false
 ---
-Niseko Mountain Bike Weekend, 4-day MTB celebration! Come demo Santa Cruz bikes, get tips from Pro riders and enjoy Niseko Area MTB trails!
 
 Special guest riders: <a href="https:instagram.com/hajimeeeee" target="blank">Hajime Imoto</a> and <a href="https:instagram.com/yukikushima" target="blank">Yuki Kushima</a> from Santa Cruz Bicycles.
 

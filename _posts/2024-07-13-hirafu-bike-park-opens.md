@@ -33,7 +33,6 @@ og:
 parking: false
 about: false
 ---
-Get ready for thrilling mountain bike adventures as Grand HIRAFU Bike Park reopens on July 13th for the first time since 2020! With exciting new developments, including a newly constructed top-to-bottom flow trail, this summer promises an awesome riding experience.
 
 ![Grand HIRAFU gondola transporting riders to the bike park trails](/assets/images/events/2024/hirafu-bike-park-opens/gondola.jpg)
 

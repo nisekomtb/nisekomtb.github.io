@@ -27,8 +27,6 @@ parking: false
 about: false
 ---
 
-Set against the stunning backdrop of Mt. Yotei, this cycling event takes you through a mix of forest trails and paved roads in Niseko’s beautiful autumn scenery. With three routes for different levels and a beginner-friendly lesson, there’s something for everyone. The main venue also offers activities and attractions, making it a fun day out for riders, friends, and families alike.
-
 ### Course Details
 
 September 13 (Sat) 11:00 Start / 15:00 Finish
