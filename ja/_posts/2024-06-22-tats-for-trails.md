@@ -81,13 +81,9 @@ storeProductSlug: tats-for-trails-entry
 ### 参加方法：
 
 - **参加費を<wbr>払う<wbr>：**1回の<wbr>応募に<wbr>つき、<wbr>最低500円を<wbr>トレイル建設に<wbr>寄付してください。<wbr>寄付金は<wbr>全て<wbr>トレイル建設に<wbr>役立てられ、<wbr>希望に<wbr>応じてより<wbr>多く<wbr>寄付する<wbr>ことも<wbr>可能です。
-
 - **デザインアイデアを<wbr>提出する<wbr>：** あなたのタトゥーアイデアを<wbr>40-90文字相当で<wbr>説明してください。<wbr>ビジョンを<wbr>簡潔かつクリエイティブに<wbr>表現してください。<wbr>テーマは<wbr>自由で、<wbr>マウンテンバイクに<wbr>関連する<wbr>必要は<wbr>ありません。<wbr>どんな<wbr>テーマでも<wbr>創造性と<wbr>オリジナリティを<wbr>奨励します！
-
 - **Instagramで<wbr>フォローする<wbr>：**受賞の<wbr>対象と<wbr>なる<wbr>ためには、<wbr>Instagramで<wbr><a href="https://instagram.com/nisekomtb" target="_blank">@nisekomtb</a>と<wbr><a href="https://instagram.com/59niseko" target="_blank">@59niseko</a>の<wbr>両方を<wbr>フォローする<wbr>必要が<wbr>あります。
-
 - **複数エントリー可能：**応募回数に<wbr>制限は<wbr>ありません。<wbr>多くの<wbr>デザインを<wbr>提出して<wbr>当選の<wbr>チャンスを<wbr>広げましょう！<wbr>各エントリーは<wbr>個別に<wbr>提出し、<wbr>最低500円の<wbr>寄付が<wbr>必要です。
-
 - **当選者に<wbr>ついて<wbr>：**全ての<wbr>アイデアは<wbr>匿名で<wbr>審査され、<wbr>最も<wbr>優れた<wbr>3つの<wbr>デザインには、<wbr>その<wbr>デザインを<wbr>タトゥーと<wbr>して<wbr>施すための<wbr>バウチャーが<wbr>贈られます！
 
 {% include carousel.html images=page.imgs %}

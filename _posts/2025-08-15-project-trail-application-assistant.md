@@ -34,47 +34,32 @@ This is a flexible, task-based position ideal for someone with strong digital an
 ### Key Responsibilities:
 
 - Support the creation and submission of trail-related permit applications
-
 - Communicate with Japanese government offices, forestry departments, and municipalities
-
 - Assist in the preparation of maps, diagrams, and layouts using Illustrator, Photoshop, and Google Earth
-
 - Maintain and update Excel-based trackers for application progress and deadlines
-
 - Translate or review Japanese and English documents related to applications and meetings
-
 - Organize project files, drafts, reports, and visual materials for official use
-
 - Attend occasional field visits, agency meetings, and community events in the Kutchan/Niseko area
 
 ### Required Skills & Qualifications:
 
 - Fluency in Japanese written and spoken.
-
 - Proficiency using:
 
   - Microsoft Excel (data entry, formatting, tables)
-
   - Adobe Illustrator & Photoshop (creating and editing documents, maps, diagrams)
-
   - Google Earth / Google Maps (GPS plotting, KML/KMZ editing)
-
   - Google Drive, Docs, Sheets, etc.
 
 - Organized, reliable, and able to manage tasks independently
-
 - Strong communication and interpersonal skills when working with officials and local stakeholders
 
 ### Preferred (but not required):
 
 - English spoken & written
-
 - Experience with permits, planning applications, or government documentation in Japan
-
 - Familiarity with land use regulations, forestry policies, or environmental procedures in Hokkaido
-
 - Background or interest in outdoor recreation (e.g., hiking, biking, trail building)
-
 - Residence in or near the Niseko/Kutchan area
 
 ### Work Schedule & Conditions:
