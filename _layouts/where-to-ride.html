@@ -369,16 +369,6 @@ layout: base
     color: #fff;
     border-bottom-color: var(--color-primary);
   }
-
-  .t3-content section.article-content {
-    margin-top: 54px;
-  }
-
-  @media (max-width: 767px) {
-    .t3-content section.article-content {
-      margin-top: 32px;
-    }
-  }
 </style>
 
 <div id="t3-mainbody" class="container t3-mainbody">
@@ -577,7 +567,7 @@ layout: base
     <div class="col col-12">
       <div class="module-title-wrap">
         <div class="t3-section action">
-          <a class="btn btn-primary" href="{% if page.lang == 'ja' %}/ja{% endif %}/where-to-ride/">{% if page.lang == 'ja' %}ライディングエリア{% else %}Where to ride{% endif %}</a>
+          <a class="btn btn-primary" href="{% if page.lang == 'ja' %}/ja{% endif %}/where-to-ride/">{% if page.lang == 'ja' %}すべてのライディングエリアに戻る{% else %}Back to all riding areas{% endif %}</a>
           {% if park_data.project_path %}
           <a class="btn btn-secondary" href="{% if page.lang == 'ja' %}/ja{% endif %}{{ park_data.project_path }}" style="margin-left: 10px;">{% if page.lang == 'ja' %}プロジェクトページ{% else %}Project page{% endif %}</a>
           {% endif %}

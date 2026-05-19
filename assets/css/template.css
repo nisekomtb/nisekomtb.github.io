@@ -3482,6 +3482,16 @@ div.ja-gallery-list-wrap .splide .splide__pagination li.is-active {
   height: auto;
 }
 
+.t3-content section.article-content {
+  margin-top: 54px;
+}
+
+@media (max-width: 767px) {
+  .t3-content section.article-content {
+    margin-top: 32px;
+  }
+}
+
 .article-intro img[align=left],
 .article-content img[align=left],
 .article-intro .img_caption.left,
