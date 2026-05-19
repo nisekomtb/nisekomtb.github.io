@@ -20,9 +20,12 @@ These patterns are referenced by tasks below. Do not skip steps unless explicitl
 
 1. Make the EN change.
 2. Mirror to the JA twin in the same change (machine translation acceptable; preserve meaning + tone).
-3. For visible JA text in markup, run through BudouX CLI to insert `<wbr>` at word boundaries (see `_docs/bilingual.md`).
-4. For JA front matter that renders as visible text (`titleHtml`, `location`, itinerary `name`, `moreInfo`, price `name`), tokenise with `<wbr>`. Keep `title`, `description`, `address` plain.
-5. Confirm EN + JA file lists in the commit are paired.
+3. **MANDATORY: Run BudouX on the JA twin before commit.** Insert U+200B (zero-width space) at word boundaries on every visible JA string. Without this, Japanese text wraps at random characters mid-word and reads broken. See `_docs/bilingual.md` for the CLI workflow. **Skip files that already contain U+200B** (the existing tokenisation is idempotent but re-running through BudouX's HTML reformatter can decode `&nbsp;` and break self-closing tags — see _includes/trails-table.html incident).
+4. For JA front matter that renders as visible text (`titleHtml`, `location`, itinerary `name`, `moreInfo`, price `name`), tokenise with U+200B too. **Keep `title`, `description`, `address` plain** — these feed meta/OG/Schema and must stay untouched.
+5. **MANDATORY: Confirm the masthead image is appropriate for the page.** If the page still uses the generic `/assets/images/bg/bg-header.jpg` fallback or a stale masthead from a prior incarnation of the page, source a new image via Pattern P-IMG and update `masthead.img` in both EN and JA front matter. Tick the corresponding row in Task A.28.
+6. Confirm EN + JA file lists in the commit are paired. Both language twins go in the same commit, never split.
+
+**If you find yourself about to call `Pattern P-COMMIT` without ticking steps 3 and 5 above, STOP.** These are the two most-skipped items in this workflow — protect them.
 
 ### Pattern P-IMG: Image replacement
 
@@ -149,6 +152,15 @@ Decide: (none open)
 ## Phase A: Per-Page Polish
 
 Each page below is one or more tasks. Bilingual parity throughout (Pattern P-EN-JA).
+
+### Per-Page Defaults (apply before commit on every remaining task)
+
+These two checks must happen on every Phase A task that isn't already ticked. They are **not** listed inside each task's Steps to avoid duplication — treat them as required additions to whatever step list each task already has, and run them before `Pattern P-COMMIT`:
+
+1. **Run BudouX on the JA twin.** Insert U+200B (zero-width space) at word boundaries on every visible JA string in the page body and any tokenisable JA front matter fields (`titleHtml`, `location`, itinerary `name`, `moreInfo`, price `name`). Skip `title`, `description`, `address`. See `_docs/bilingual.md` for the CLI workflow. Skip files that already contain U+200B (re-running on tokenised text is a no-op but waste).
+2. **Update masthead image.** Confirm the page has a masthead photo worth keeping; if not, request a candidate via Pattern P-IMG, process to 2000px wide JPG at quality 82, place under `/assets/images/bg/bg-header-<page-slug>.jpg`, and update `masthead.img` in both EN and JA front matter. Tick the corresponding row in Task A.28's per-page checklist.
+
+Apply to every remaining task from A.2 (twin-peaks remaining bullets) through A.26, except A.27 (Home — its own spec) and tasks that explicitly skip JA/masthead work in their notes.
 
 ### Task A.1: `/where-to-ride/` (hub)
 
@@ -527,11 +539,12 @@ Decide: (none open)
 - Modify: `events/index.html`, `ja/events/index.html`
 
 Steps:
-- [ ] Light polish only. Per spec, splitting upcoming vs past events is out of scope and deferred to a separate future task.
-- [ ] Verify the listing renders correctly with current and past events both present.
-- [ ] Tone/text pass if needed.
-- [ ] Mirror EN → JA (Pattern P-EN-JA).
-- [ ] Pattern P-COMMIT.
+- [x] Light polish only. Per spec, splitting upcoming vs past events is out of scope and deferred to a separate future task.
+- [x] Verify the listing renders correctly with current and past events both present.
+- [x] Tone/text pass if needed. EN intro trimmed: "all season long" → "through the riding season".
+- [x] Mirror EN → JA (Pattern P-EN-JA). JA intro already matched semantically (シーズンを通じて). `<wbr>` tags converted to U+200B zero-width spaces.
+- [x] Update masthead image (per Per-Page Defaults). New `bg-header-events.jpg` (2000×1333), Larnach credit stripped.
+- [x] Pattern P-COMMIT.
 
 Notes:
 Decide: (none open. Upcoming/past split is OOS: see spec §10.)
@@ -545,16 +558,16 @@ Decide: (none open. Upcoming/past split is OOS: see spec §10.)
 - Inspect: every event post in `_posts/` and `ja/_posts/` for description duplication patterns
 
 Steps:
-- [ ] Pattern P-STYLE audit on `_layouts/event.html` against the new reference style.
-- [ ] Inspect 3-4 recent event posts. Identify the duplication pattern: description appears at top (metadata block) AND in the first paragraph of the body.
-- [ ] Decide with Tom: either (a) remove description from front matter `description` for display in body but keep for meta, OR (b) edit each post to remove the body duplicate.
-- [ ] Implement chosen path. If (b), this becomes an editorial sweep across event posts (might warrant a follow-up task per cluster).
-- [ ] Mirror in JA event posts.
-- [ ] Verify on a representative event post.
-- [ ] Pattern P-COMMIT.
+- [x] Pattern P-STYLE audit on `_layouts/event.html` against the new reference style. Layout structure is sound; no changes needed.
+- [x] Inspect 3-4 recent event posts. Identified the duplication: 6 EN posts (2023-10 closing, 2024-05 Rusutsu dig, 2024-06 season opener, 2024-07 Hirafu reopens, 2025-08 NMW, 2025-09 gravel autumn) had body openers that verbatim duplicate the front matter description. The layout already renders description as `<p class="lead">` at the top.
+- [x] Decide with Tom: option (b) — editorial sweep.
+- [x] Implement (b): stripped the duplicate first paragraph from each of the 6 EN posts via a Python regex script.
+- [x] Mirror in JA event posts. **Not needed** — JA posts have no such duplication; they were translated cleanly without copy-paste.
+- [x] Verify on a representative event post. Each post's body now flows naturally from the lead into the next element (h3 header, image, Trailforks widget, or next paragraph).
+- [x] Pattern P-COMMIT.
 
 Notes:
-Decide: layout fix vs editorial sweep
+Decide: (resolved) option (b). 6 EN files touched, 0 JA files. Past events; low-risk editorial change.
 
 ---
 
@@ -701,7 +714,7 @@ Decide: (none open)
 - [ ] `/projects/grand-hirafu/`
 - [ ] `/projects/hanazono/`
 - [ ] `/projects/yotei-360/`
-- [ ] `/events/`
+- [x] `/events/` — `bg-header-events.jpg` (commit cc0ed30)
 - [ ] `/dirty-dames/`
 - [ ] `/partner/`
 - [ ] `/join/`
