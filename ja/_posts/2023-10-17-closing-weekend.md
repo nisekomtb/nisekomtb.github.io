@@ -2,10 +2,10 @@
 layout: event
 categories: events
 title: ツイン・ピークス クロージング ウィークエンド
-description: 秋も本格的になり、紅葉の季節がやってきました。ニセコの雪化粧も、そう遠くないです。そして、今年のトレイルをクローズする時がやってきてしまいました。思い入れの多いこのシーズンを祝して、クローズウィークエンドを開催します！
+description: ツインピークスのクロージング・ウィークエンド、10月28〜29日。Strava セグメントチャレンジ、コスチュームコンペ、Dirty Dames 女性グループライド、そしてミッドタウン・ニセコでのNAMBAオープンハウス。
 startDate: 2023-10-28 09:00:00 +0900
 days: 2
-location: ツインピークス・バイクパーク、<wbr>ニセコ
+location: ツインピークス・バイクパーク、​ニセコ
 address: 150, 2 Aza-150-1 Yamada, Kutchan, Abuta District, Hokkaido 044-0081
 price: 0
 cancelled: true
@@ -50,12 +50,12 @@ itinerary:
           name: Stravaチャレンジ終了
           location: ツインピークス バイクパーク
           cancelled: true
-        - name: コスチューム<wbr>優勝者発表
+        - name: コスチューム​優勝者発表
           location:
             url: https://goo.gl/maps/yKza3NA7yfx5VQRx8
             name: ツインピークス バイクパーク トレイルヘッド
           cancelled: true
-        - name: Stravaチャレンジ<wbr>優勝者発表
+        - name: Stravaチャレンジ​優勝者発表
           location: ツインピークス バイクパーク
           cancelled: true
         - time: 4:15pm
@@ -68,30 +68,26 @@ itinerary:
           location: ツインピークス バイクパーク
           cancelled: true
         - time: 4:30pm
-          name: ツインピークス、<wbr>今シーズンの営業を終了！
+          name: ツインピークス、​今シーズンの営業を終了！
           cancelled: true
-parking: true
+parking: false
 about: true
 ---
-秋も<wbr>本格的に<wbr>なり、<wbr>紅葉の<wbr>季節が<wbr>やってきました。<wbr>ニセコの<wbr>雪化粧も、<wbr>そう<wbr>遠くないです。<wbr>そして、<wbr>今年の<wbr>トレイルを<wbr>クローズする<wbr>時が<wbr>やってきてしまいました。<wbr>思い入れの<wbr>多い<wbr>この<wbr>シーズンを<wbr>祝して、<wbr>クローズウィークエンドを<wbr>開催します！
+週末を​通じて​いくつかの​イベントを​開催します：
 
-クロージング・ウイークエンドは<wbr>イベントが<wbr>盛りだくさん<wbr>：
-
-### ストラバ・<wbr>セグメント・チャレンジ： <small>(お天気次第...)</small>
+### Stravaセグメントチャレンジ <small>(天候による)</small>
 
 <span class="cancelled">⛈️ 天候の影響により中止 ⛈️</span>
 
-ストラバ・<wbr>セグメント・チャレンジとは？
+Stravaはライドを​GPS記録する​アプリです。​当日、​対象の​トレイルセグメントを​アナウンス。​タイムは​リーダーボードに​掲載、​最速ライダーには​賞品。
 
-Stravaは<wbr>GPSアプリです。<wbr>ここツインピークス・バイクパークで<wbr>セルフタイムの<wbr>半バーチャルレースを<wbr>行います！<wbr>当日、<wbr>レースで<wbr>使う<wbr>トレイルの<wbr>「セグメント」<wbr>（トレイル区間）を<wbr>お知らせします。<wbr>タイムは<wbr>GPSデバイスまたは<wbr>スマートフォンを<wbr>使って<wbr>記録されます。<wbr>最速ライダーは<wbr>リーダーボードに<wbr>掲載され、<wbr>賞品も<wbr>用意されているので、<wbr>楽しみつつ全力で<wbr>挑んでください！！
+全ライダー対象（NAMBAクルー除く）。​男性・女性・少年・少女の​カテゴリー別。
 
-この<wbr>レースは<wbr>すべての<wbr>ライダー<wbr>（NAMBAの<wbr>スタッフを<wbr>除く）が<wbr>参加でき、<wbr>男性、<wbr>女性、<wbr>少年、<wbr>少女の<wbr>カテゴリーを<wbr>用意しています！
+3ステップ：
 
-参加方法は<wbr>簡単：
-
-1. GPSデバイス（携帯電話、<wbr>スマートウォッチなど）に<wbr>Stravaアプリを<wbr>ダウンロード。
-1. Stravaで<wbr>ライドを<wbr>記録し、<wbr>プライバシーを<wbr> "公開 "に<wbr>設定。
-1. 結果を<wbr>共有し、<wbr>仲間の<wbr>ライダーとの<wbr>差も<wbr>確認できます！
+1. GPSデバイス（携帯、​スマートウォッチなど）にStravaアプリを​ダウンロード
+1. ライドを​記録し、​プライバシーを​「公開」に​設定
+1. リーダーボードで​タイムを​比較
 
 
 <div class="download">
@@ -101,32 +97,24 @@ Stravaは<wbr>GPSアプリです。<wbr>ここツインピークス・バイク�
 
 ![ツインピークスでStravaセグメントチャレンジに挑むライダーたち](/assets/images/events/2023/closing-weekend/strava.jpg)
 
-### コスチューム・コンペティション： <small>(お天気次第...)</small>
+### コスチュームコンペ <small>(天候による)</small>
 
 <span class="cancelled">⛈️ 天候の影響により中止 ⛈️</span>
 
-ハロウィーンを<wbr>目前に<wbr>控え、<wbr>マウンテンバイクを<wbr>不気味に<wbr>盛り上げましょう！
-
-あなたの<wbr>創造力を<wbr>発揮して、と<wbr>びっきりの<wbr>コスチュームで<wbr>参加してください。ベスト・ドレッサーには<wbr>賞品が<wbr>贈られるので、<wbr>トレイルに<wbr>ハロウィーン・スピリットを<wbr>持ち込む<wbr>準備を<wbr>しよう！
+ハロウィーンの​直前。​コスチュームで​現れて​トレイルを​走り、​ベストドレッサーには​賞品。
 
 ![コスチュームコンペティション用のハロウィンかぼちゃの装飾](/assets/images/events/2023/closing-weekend/pumpkin.jpg)
 
-### Dirty Dames-女性限定グループライド： <small>(お天気次第...)</small>
+### Dirty Dames 女性限定グループライド <small>(天候による)</small>
 
 <span class="cancelled">⛈️ 天候の影響により中止 ⛈️</span>
 
-冒険派女子集合！
-
-初の<wbr>女性限定グループライド<wbr>「Dirty Dames」に<wbr>参加しませんか？<wbr>女性ライダー仲間と<wbr>交流を<wbr>深め、<wbr>バイクや<wbr>世間話に<wbr>花を<wbr>咲かせ日本語と<wbr>英語の<wbr>飛び交う<wbr>ニセコらしい<wbr>愉快な<wbr>環境で<wbr>一緒に<wbr>冒険しましょう<wbr>!初心者から<wbr>プロまで、<wbr>スキルレベルは<wbr>問いません。
+初の​Dirty Dames グループライド。​女性限定、​全スキルレベル歓迎。
 
 ![クロージングウィークエンドでのDirty Dames女性限定グループライド](/assets/images/events/2023/closing-weekend/dirtydames.jpg)
 
-### NAMBAオープンハウス・イベント
+### NAMBAオープンハウス
 
-NAMBAでは、<wbr>トレイルでの<wbr>イベントに<wbr>加え、<wbr>オープンハウスイベントを<wbr>開催します。<wbr>ツインピークスに<wbr>ついて、<wbr>また<wbr>ニセコエリアでの<wbr>NAMBAの<wbr>展望を、<wbr>地域の<wbr>方始めメディアや<wbr>行政の<wbr>方々も<wbr>お招きしより<wbr>詳しい<wbr>情報を<wbr>シェア出来たらと<wbr>思います。
-
-この<wbr>イベントは<wbr>どなたでも<wbr>参加できる<wbr>一般公開です。<wbr>場所は<wbr>トレイルの<wbr>入口から<wbr>すぐの<wbr>ミッドタウン・ニセコで<wbr>開催されます。<wbr>NAMBAの<wbr>ことを<wbr>もっと<wbr>知っていただき、<wbr>この<wbr>地域の<wbr>マウンテンバイクの<wbr>可能性や<wbr>未来を<wbr>垣間<wbr>見る<wbr>絶好の<wbr>機会です！
-
-ツインピークス・バイクパークで<wbr>開催される、<wbr>バイクあり、<wbr>遊びあり、<wbr>学びあり、<wbr>そして<wbr>コミュニティーを<wbr>感じる<wbr>週末を<wbr>お見逃しなく！<wbr>今<wbr>シーズンの<wbr>締めくくりを<wbr>皆さんと<wbr>一緒に<wbr>出来たらと<wbr>思います。<wbr>カレンダーに<wbr>印を<wbr>つけて、<wbr>思い出に<wbr>残るであろう<wbr>一日を<wbr>楽しみに<wbr>していてください。
+NAMBAが​ミッドタウン・ニセコで​オープンハウスを​開催。​トレイルヘッドから​すぐの​場所です。​メディアや​行政関係者も​参加し、​ツインピークスの​進捗と、​NAMBAの​ニセコエリア全体への​取り組みを​共有します。​一般公開、​誰でも​参加可能。
 
 

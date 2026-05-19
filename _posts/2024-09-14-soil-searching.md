@@ -2,7 +2,7 @@
 layout: event
 categories: events
 title: Soil Searching
-description: Join Specialized and NAMBA for “Soil Searching”, an exclusive (registration only!) 2 day dig & ride event in the Twin Peaks Bike Park in Niseko, Hokkaido on 14th & 15th September.
+description: Two-day dig and ride at Twin Peaks Bike Park, 14-15 September, hosted by Specialized and NAMBA. Registration only.
 startDate: 2024-09-14 09:00:00 +0900
 days: 2
 location: Twin Peaks Bike Park, Niseko
@@ -64,46 +64,29 @@ itinerary:
           name: Free ride – a chance to ride the trails at your leisure
         - time: 4:00pm
           name: Event ends
-parking: true
-about: false
+parking: false
+about: true
 storeProductId: 679581277
 storeProductSlug: soil-searching-2024
 ---
-## Soil Searching Niseko 2024: Building Trails and Community
+## Soil Searching Niseko 2024
 
-Specialized brings back the Soil Searching event to Niseko for its second consecutive year following last year's success. This year’s edition shifts the focus from preparing bike parks to enhancing the skills and experience of participants through hands-on trail building, feature crafting, and maintenance.
+Specialized's Soil Searching event returns to Niseko for a second year. This edition shifts focus to hands-on trail building, feature crafting, and maintenance with the NAMBA crew.
 
 ![Participants learning trail building techniques at Soil Searching Niseko 2024](/assets/images/events/2024/soil-searching/learn.jpg)
 
-### Participant Perks:
+### What's included
 
-- <strong>Exclusive Gear</strong>: Receive a limited edition Soil Searching t-shirt, only available at this event.
+- Limited edition Soil Searching t-shirt, only at this event.
+- Specialized rental bikes, first-come, first-served.
+- Trail building instruction from the crew building Twin Peaks.
+- Lunch on Day 1, Pow Bar energy bar, stickers, and a beer at the evening party (adults only).
 
-- <strong>Bike Access</strong>: Utilize Specialized Rental Bikes on a first-come, first-served basis.
+### Schedule
 
-- <strong>Educational Experience</strong>: Gain valuable insights and practical skills in trail building, allowing you to contribute to trail construction and maintenance directly.
+- **Day 1, dig:** trail and feature building, lunch provided, evening party at Rhythm Hirafu. Family-friendly activities for kids.
+- **Day 2, ride:** ride the trails and features built the previous day. Group rides with Specialized ambassadors.
 
-- <strong>Food and Drinks</strong>: Enjoy a complimentary lunch on the first day, energy bar from the Pow Bar, stickers, and a beer* at the evening celebration. * Beer is for adults only.
-
-### Event Schedule:
-
-- <strong>Day 1: Build and Dig</strong><br />Dive into a day of trail and feature building. Lunch is provided to keep you energized, culminating in an evening party where participants can relax and socialize over drinks. There will be family-friendly activities available for those bringing children.
-
-- <strong>Day 2: Ride Day</strong><br />Experience the thrill of riding the trails and features you've built. It’s a perfect day for everyone, from seasoned riders to families!
-
-### Special Features:
-
-- <strong>Ride with Pros</strong>: Specialized ambassadors will be present, providing a fantastic opportunity to ride alongside seasoned professionals.
-
-- <strong>Community Building</strong>: This event is not just about trail building but also fostering a community among mountain bikers.
-
-<br />
 ![Riders enjoying the trails at Soil Searching Niseko 2024](/assets/images/events/2024/soil-searching/riders.jpg)
-
-### Additional Information:
-
-Join us in Niseko for a weekend of creativity, community, and cycling. Whether you're looking to improve your trail building skills or simply enjoy a unique biking experience, Soil Searching Niseko offers something for everyone.
-
-Mark your calendars for September 14-15, 2024, and be part of this enriching event that goes beyond the ride. Bring your family, meet new friends, and create lasting memories at Soil Searching Niseko 2024.
 
 ![Trail building tools laid out at the Soil Searching event](/assets/images/events/2024/soil-searching/tools.jpg)

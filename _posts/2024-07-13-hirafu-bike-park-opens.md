@@ -2,7 +2,7 @@
 layout: event
 categories: events
 title: Grand HIRAFU Bike Park opens
-description: Get ready for thrilling mountain bike adventures as Grand HIRAFU Bike Park reopens on July 13th for the first time since 2020! With exciting new developments, including a newly constructed top-to-bottom flow trail, this summer promises an awesome riding experience.
+description: Grand HIRAFU Bike Park reopens on 13 July, the first time since 2020. New top-to-bottom flow trail, gondola access, and a skill-up area for beginners.
 startDate: 2024-07-13 09:00:00 +0900
 days: 1
 time: 9:00am - 4:00pm
@@ -31,29 +31,23 @@ thumbnail: /assets/images/events/2024/hirafu-bike-park-opens/thumb.jpg
 og:
   image: /assets/images/events/2024/hirafu-bike-park-opens/header.jpg
 parking: false
-about: false
+about: true
 ---
 
 ![Grand HIRAFU gondola transporting riders to the bike park trails](/assets/images/events/2024/hirafu-bike-park-opens/gondola.jpg)
 
-### What's New:
+### What's new
 
-- <strong>Top-to-Bottom Flow Trail</strong>: Dive into the excitement with their new trail, designed to excite riders from the first pedal to the last. Perfect for all skill levels, this trail offers a continuous, thrilling ride.
+- **Top-to-bottom flow trail.** A new flow line designed to ride from gondola top to bike park base.
+- **Gondola access.** The old Center 4 lift has been removed; operation has shifted to the gondola.
+- **Skill-up area for beginners.** Curves and gentle slopes to learn on.
+- **Full-suspension rentals available.**
 
-- <strong>Enhanced Lift System</strong>: With the old Center 4 lift removed, the operation has shifted to the Gondola.
+NAMBA will be there for opening day. Season passes are good value if you plan to ride more than a few times.
 
-- <strong>Skill-Up Area for Beginners</strong>: Whether you're a beginner or looking to refine your skills, their skill-up area provides a supportive environment to learn and improve. It features a variety of curves and gentle slopes ideal for mastering new techniques.
+### Season
 
-- <strong>Premium Bike Rentals</strong>: Don't have a bike? No problem! Full suspension bikes are available for rent, ensuring you have a top-quality ride.
-
-NAMBA will be there to celebrate this new beginning, and we invite you to take advantage of the great value season passes to enjoy the enhanced mountain bike trails. Stay tuned as we finalize details of the new course and expect big announcements on opening day that you won't want to miss.
-
-### Season Duration:
-From July 13 (Saturday) to September 23, 2024 (Monday, holiday)
-
-Grand HIRAFU Bike Park is set to become a premier destination for mountain bikers. Offering a blend of challenging rides for the experienced and accessible options for those new to the sport, it's the perfect place to push your limits and enjoy the great outdoors.
-
-Mark your calendars for July 13th, come to Grand HIRAFU, and be part of this exciting reopening event!
+13 July (Saturday) to 23 September 2024 (Monday holiday).
 
 <div style="text-align:center; margin:50px 0;">
   <a class="btn btn-primary" href="https://www.grand-hirafu.jp/blog/hirafu-news/2024/04/2024-2-12.html" target="_blank">Event Details</a>

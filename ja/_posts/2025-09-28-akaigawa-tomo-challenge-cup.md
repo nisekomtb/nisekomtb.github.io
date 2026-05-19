@@ -2,11 +2,11 @@
 layout: event
 categories: events
 title: 赤井川 トモ チャレンジ カップ
-description: 子どもから大人まで楽しめるMTB・BMXイベント！クラスごとにタイムを競うタイムアタックライド（男子・女子・キッズ）や、指定タイムにどれだけ近づけるかを試すターゲットタイムライドに参加できます。
+description: 子どもから大人まで楽しめるMTB・BMXチャレンジ。クラスごとにタイムを競うタイムアタックライド（男子・女子・キッズ）と、指定タイムへの近さを競うターゲットタイムライド。
 startDate: 2025-09-28 09:00:00 +0900
 days: 1
 time: 9:00am - 3:00pm
-location: アカイガワ・<wbr>トモ・<wbr>プレイパーク
+location: アカイガワ・​トモ・​プレイパーク
 address: Meiji 56 Akaigawa-mura Yoichi-gun Hokkaido, 046-0552
 price:
   - name: メンズ
@@ -38,7 +38,7 @@ itinerary:
         - time: 3:00pm
           name: 全行程 終了予定
 parking: false
-about: false
+about: true
 ---
 ### 実施種目：
 

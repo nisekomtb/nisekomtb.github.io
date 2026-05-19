@@ -2,7 +2,7 @@
 layout: event
 categories: events
 title: Akaigawa Pump Track Reopens
-description: Get ready to pump up your ride! Join the excitement at Akaigawa Tomo Playpark on June 1st, 2024, as they celebrate the thrilling reopening of the Velosolutions Pump track! After several years, the park is delighted to welcome you back to this favorite spot, now featuring a revamped, asphalt pump track perfect for BMX, mountain bikes, skateboards, and kickboards.
+description: Akaigawa Tomo Playpark's Velosolutions pump track reopens on 1 June 2024 after a multi-year closure, with a new asphalt surface for BMX, MTB, skateboards, and kickboards.
 startDate: 2024-06-01 10:00:00 +0900
 days: 1
 time: 10:00am - 5:00pm
@@ -25,32 +25,25 @@ thumbnail: /assets/images/events/2024/akaigawa-pump-track-reopens/thumb.jpg
 og:
   image: /assets/images/events/2024/akaigawa-pump-track-reopens/header.jpg
 parking: false
-about: false
+about: true
 ---
-## Pump Up The Jam: Akaigawa Pump Track's Grand Reopening
+## Akaigawa Pump Track reopens
 
-Get ready to pump up your ride! Join the excitement at Akaigawa Tomo Playpark on June 1st, 2024, as they celebrate the thrilling reopening of the Velosolutions Pump track! After several years, the park is delighted to welcome you back to this favorite spot, now featuring a revamped, asphalt pump track perfect for BMX, mountain bikes, skateboards, and kickboards.
+Akaigawa Tomo Playpark's Velosolutions pump track reopens on Saturday 1 June 2024 after a multi-year closure. New asphalt surface, suitable for BMX, MTB, skateboards, and kickboards.
 
-Additionally, to celebrate the reopening, we are excited to announce a grand opening race event on the Sunday. Join them for an exhilarating competition and showcase your skills!
-
-This event coincides with the same weekend as the Twin Peaks Bike Park opening. It's a fantastic opportunity for riders to enjoy both venues. If you're attending Twin Peaks Season Opener, consider extending your adventure by camping at Akaigawa Tomo Playpark, and enjoy the newly refurbished track right where you're staying.
+A grand opening race event runs on Sunday. The same weekend as Twin Peaks Bike Park's season opener, so it pairs well with a weekend trip; you can camp at Akaigawa Tomo Playpark and ride both venues.
 
 ![Riders on the newly resurfaced Akaigawa pump track](/assets/images/events/2024/akaigawa-pump-track-reopens/riders.jpg)
 
-The pump track has been redesigned with a smooth asphalt finish, enhancing the experience and ensuring fast, exhilarating rides. Please note that unlike in 2021, the course can no longer be lapped continuously. Riders must walk back to the starting point after reaching the finish. Remember to inform yourself of the usage instructions, complete the necessary usage agreement form, and obtain a wristband at reception, which must be worn before starting your ride.
+Unlike the 2021 version, the course can't be lapped continuously: riders walk back to the start after each run. Check the usage instructions, sign the agreement, and pick up a wristband at reception before riding.
 
-Please note that there are no rental bikes available for the 2024 season.
+No rental bikes for the 2024 season.
 
 ![Map of the Akaigawa Tomo Playpark pump track layout](/assets/images/events/2024/akaigawa-pump-track-reopens/map.jpg)
 
-#### Opening Hours:
-Open weekdays from <strong>11:30am to 5:00pm</strong> and weekends and holidays from <strong>10:00am to 5:00pm</strong>.
+### Opening hours
 
-The track is ready for various types of riders, whether you prefer BMX, skateboarding, or using a kickboard. You can choose from a 2-hour session or spend the whole day enjoying the track.
-
-Whether it’s a return visit or your first time, Akaigawa Tomo Playpark promises a memorable day of fun and community spirit. For additional details, please check the 'Activities' section under 'Pump Track' on their website.
-
-Mark your calendar for June 1st, come to Akaigawa, and be part of this exciting reopening event!
+Weekdays **11:30am to 5:00pm**, weekends and holidays **10:00am to 5:00pm**. 2-hour or full-day passes available.
 
 <div style="text-align:center; margin:50px 0;">
   <a class="btn btn-primary" href="https://playpark.akaigawa-tomo.com/en/activities/pumptrack/" target="_blank">Pump track Details</a>

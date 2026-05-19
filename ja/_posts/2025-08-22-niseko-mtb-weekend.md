@@ -2,7 +2,7 @@
 layout: event
 categories: events
 title: ニセコ MTB ウィークエンド
-description: ニセコマウンテンバイクウィークエンド、4日間のMTB祭典！サンタクルズバイクの試乗、プロライダーからのアドバイス、そしてニセコエリアのMTBトレイルをお楽しみください！
+description: ニセコMTBの4日間：Rhythmヒラフでのサンタクルーズ試乗、プロライダーHajime Imoto・Yuki Kushimaとのグループライド、そしてニセコアンヌプリでのダウンヒルシリーズレース。
 startDate: 2025-08-22 09:00:00 +0900
 days: 4
 location: ニセコ
@@ -40,36 +40,36 @@ itinerary:
     - hasLocations: true
       events:
         - time: 9:30am - 3:00pm
-          name: サンタクルズデ<wbr>モバイク
+          name: サンタクルズデ​モバイク
           location:
             url: https://goo.gl/maps/78nX9Sryy9c5qXmM8
             name: Rhythm Hirafu
         - time: 10:00am
-          name: ダーティーデイムス<wbr>女性<wbr>グループライド<wbr>（ハジメバイククラブ）
+          name: ダーティーデイムス​女性​グループライド​（ハジメバイククラブ）
           location:
             url: https://goo.gl/maps/78nX9Sryy9c5qXmM8
             name: Rhythm Hirafu
         - time: 2:00pm
-          name: キッズ<wbr>グループ<wbr>ライド<wbr>（ハジメバイククラブ）
+          name: キッズ​グループ​ライド​（ハジメバイククラブ）
           location:
             url: https://goo.gl/maps/78nX9Sryy9c5qXmM8
             name: Rhythm Hirafu
     - hasLocations: true
       events:
         - time: 9:30am - 3:00pm
-          name: サンタクルズデ<wbr>モバイク
+          name: サンタクルズデ​モバイク
           location:
             url: https://goo.gl/maps/78nX9Sryy9c5qXmM8
             name: Rhythm Hirafu
         - time: 終日
-          name: ダウンヒルシリーズ<wbr>練習＆予選
+          name: ダウンヒルシリーズ​練習＆予選
           location:
             url: https://maps.app.goo.gl/1NzZy5siMUd16hNc9
-            name: ニセコ<wbr>アンヌプリ<wbr>マウンテンバイクパーク
+            name: ニセコ​アンヌプリ​マウンテンバイクパーク
     - hasLocations: true
       events:
         - time: 9:30am - 3:00pm
-          name: サンタクルズデ<wbr>モバイク
+          name: サンタクルズデ​モバイク
           location:
             url: https://goo.gl/maps/78nX9Sryy9c5qXmM8
             name: Rhythm Hirafu
@@ -77,33 +77,33 @@ itinerary:
           name: ダウンヒルシリーズレース
           location:
             url: https://maps.app.goo.gl/1NzZy5siMUd16hNc9
-            name: ニセコ<wbr>アンヌプリ<wbr>マウンテンバイクパーク
+            name: ニセコ​アンヌプリ​マウンテンバイクパーク
     - hasLocations: true
       events:
         - time: 9:30am - 2:00pm
-          name: サンタクルズ<wbr>デモバイク
+          name: サンタクルズ​デモバイク
           location:
             url: https://goo.gl/maps/78nX9Sryy9c5qXmM8
             name: Rhythm Hirafu
         - time: 終日
-          name: フリーライド<wbr>セッション
+          name: フリーライド​セッション
           location:
             url: https://goo.gl/maps/yKza3NA7yfx5VQRx8
-            name: ツインピークス・<wbr>バイクパーク
+            name: ツインピークス・​バイクパーク
 parking: false
-about: false
+about: true
 ---
-ニセコマウンテンバイクウィークエンド、<wbr>4日間の<wbr>MTB祭典！<wbr>サンタクルズバイクの<wbr>試乗、<wbr>プロライダーからの<wbr>アドバイス、<wbr>そして<wbr>ニセコエリアの<wbr>MTBトレイルを<wbr>お楽しみください！
+ニセコマウンテンバイクウィークエンド、​4日間の​MTB祭典！​サンタクルズバイクの​試乗、​プロライダーからの​アドバイス、​そして​ニセコエリアの​MTBトレイルを​お楽しみください！
 
-スペシャルゲストライダー：<a href="https://instagram.com/hajimeeeee" target="blank">​井本​<wbr>はじめ</a> さんと<wbr> <a href="https://instagram.com/yukikushima" target="blank">​櫛間悠樹</a> さん<wbr>（サンタクルズ・バイシクルズ）。
+スペシャルゲストライダー：<a href="https://instagram.com/hajimeeeee" target="blank">​井本​​はじめ</a> さんと​ <a href="https://instagram.com/yukikushima" target="blank">​櫛間悠樹</a> さん​（サンタクルズ・バイシクルズ）。
 
 ### ライド：
 
-キッズライドと<wbr>ダーティーデイム<wbr>ス女性グループライドは、<wbr>プロライダーの<wbr>1人が<wbr>先導します。<wbr>全レベル参加歓迎、<wbr>キッズは<wbr>自転車に<wbr>乗れる<wbr>ことが<wbr>条件です。
+キッズライドと​ダーティーデイム​ス女性グループライドは、​プロライダーの​1人が​先導します。​全レベル参加歓迎、​キッズは​自転車に​乗れる​ことが​条件です。
 
 ### DHシリーズ
 
-ダウンヒルシリーズの<wbr>参加登録や<wbr>詳細は<wbr>以下を<wbr>ご覧ください。
+ダウンヒルシリーズの​参加登録や​詳細は​以下を​ご覧ください。
 
 <div style="text-align:center; margin:50px 0;">
   <a class="btn btn-primary" href="https://dhseries.jp/2025-5-niseko_annupuri/" target="_blank">イベント詳細</a>

@@ -2,8 +2,8 @@
 layout: event
 categories: events
 title: ツイン・ピークス・バイクパーク・グランド・オープン
-titleHtml: ツイン・ピークス<wbr>・バイクパーク<wbr>・グランド<wbr>・オープン
-description: お待たせいたしました！！ツインピークス・バイクパークが9月16日、17日にグランドオープンします！9月16日（土）と17日（日）の週末、ニセコのトレイルで一緒に楽しみませんか
+titleHtml: ツイン・ピークス​・バイクパーク​・グランド​・オープン
+description: ツインピークス・バイクパークが9月16〜17日に一般公開オープン。安全祈願、Santa Cruzの試乗車、ガイド付きライド、DJ Tamaを迎えたRhythmでのアフターパーティー。
 startDate: 2023-09-16 09:00:00 +0900
 days: 2
 location: ツインピークス・バイクパーク、ニセコ
@@ -79,28 +79,26 @@ itinerary:
           location: ツインピークス・バイクパーク
         - time: 4:30pm
           name: イベント終了
-parking: true
+parking: false
 about: true
 ---
-<p style="font-size:150%;">お待たせいたしました！！ツインピークス・バイクパークが9月16日、17日にグランドオープンします！</p>
+<p style="font-size:150%;"><strong>ツインピークス・バイクパークが一般公開オープン。</strong></p>
 
-<p>9月16日（土）と17日（日）の週末、ニセコのトレイルで一緒に楽しみませんか：</p>
-<p>
-  <ul>
-    <li>オープニングセレモニー</li>
-    <li>Santa Cruz のデモバイクがきます</li>
-    <li>ION, Reserve Wheels, Peaty's など、人気ブランドのブースが並びます</li>
-    <li>景品や無料グッズをゲットするチャンス</li>
-  </ul>
-</p>
+<p>9月16〜17日の週末に開催：</p>
+<ul>
+  <li>安全祈願（お寺の住職による）</li>
+  <li>Rhythm Japan BaseでSanta Cruzの試乗車</li>
+  <li>ION、Reserve Wheels、Peaty'sなどのブース</li>
+  <li>景品と無料グッズ</li>
+</ul>
 
 <h3>イベント内容</h3>
 
-<p>Santa Cruzは、Megatower、Hightower、Tallboy、Nomad、Bronson、5010、Blur、Stigmataなどのデモバイクを用意してくれています！</p>
+<p>Santa CruzがRhythm Japan Baseにデモバイク（Megatower、Hightower、Tallboy、Nomad、Bronson、5010、Blur、Stigmata）を持ち込みます。</p>
 
-<p>UCIマウンテンバイク・ワールドシリーズのダウンヒル・レーサー2人もゲストライダーとして参加します： Hajime Imoto と Yuki Kushima です。</p>
+<p>ゲストライダーとして、UCIマウンテンバイク・ワールドシリーズのダウンヒルレーサー、井本はじめと櫛間悠樹（共に日本代表、Santa Cruz所属）も参加します。</p>
 
-<p>NAMBAをサポートし、このバイクぱーくの設計と造成をリードしてくれたAllegraに感謝します。また、自由でオープンなトレイル・ネットワーク作りに協力してくれたスポンサー、サポーター、コミュニティにも心より感謝申し上げます！</p>
+<p>パークの設計と造成をリードしたAllegra、そしてこの自由でオープンなトレイルネットワーク作りを支えてくれたスポンサー、サポーター、コミュニティに感謝します。</p>
 
 <p><img src="/assets/images/events/2023/grand-opening/riders.jpg" alt="" /></p>
 

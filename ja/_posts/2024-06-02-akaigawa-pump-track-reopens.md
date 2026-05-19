@@ -2,8 +2,8 @@
 layout: event
 categories: events
 title: 赤井川ポンプトラック再オープン
-titleHtml: 赤井川ポ<wbr>ンプトラック<wbr>再オープン
-description: ライドをアップグレードしよう！2024年6月1日、赤井川トモプレイパークでVelosolutionsポンプトラックのワクワクするような再オープンを祝いましょう！数年の時を経て、この人気スポットが新たにアスファルトで整備されたポンプトラックと共に皆様を歓迎いたします。BMX、マウンテンバイク、スケートボード、キックボードに最適です。
+titleHtml: 赤井川ポ​ンプトラック​再オープン
+description: 赤井川トモプレイパークのVelosolutionsパンプトラックが、数年間の閉鎖を経て2024年6月1日に再オープン。新しいアスファルト舗装で、BMX、MTB、スケートボード、キックボードに対応。
 startDate: 2024-06-01 10:00:00 +0900
 days: 1
 time: 10:00am - 5:00pm
@@ -26,30 +26,25 @@ thumbnail: /assets/images/events/2024/akaigawa-pump-track-reopens/thumb.jpg
 og:
   image: /assets/images/events/2024/akaigawa-pump-track-reopens/header.jpg
 parking: false
-about: false
+about: true
 ---
-ライドを<wbr>アップグレードしよう！<wbr>2024年6月1日、<wbr>赤井川トモプレイパークで<wbr>Velosolutionsポンプトラックの<wbr>ワクワクするような<wbr>再オープンを<wbr>祝いましょう！<wbr>数年の<wbr>時を<wbr>経て、<wbr>この<wbr>人気スポットが<wbr>新たに<wbr>アスファルトで<wbr>整備された<wbr>ポンプトラックと<wbr>共に<wbr>皆様を<wbr>歓迎いたします。<wbr>BMX、<wbr>マウンテンバイク、<wbr>スケートボード、<wbr>キックボードに<wbr>最適です。
+## 赤井川パンプトラック再オープン
 
-さらに、<wbr>再オープンを<wbr>祝って、<wbr>日曜日に<wbr>グランドオープニングレースイベントを<wbr>開催する<wbr>ことを<wbr>お知らせいたします。<wbr>ぜひ<wbr>参加して、<wbr>スリリングな<wbr>競技を<wbr>楽しみ、<wbr>あなたの<wbr>スキルを<wbr>披露してください！
+赤井川トモプレイパークの​Velosolutionsパンプトラックが、​数年間の​閉鎖を​経て​2024年6月1日​（土）に​再オープンします。​新しい​アスファルト舗装で、​BMX、​MTB、​スケートボード、​キックボードに​対応。
 
-この<wbr>イベントは、<wbr>ツインピークスバイクパークオープニングと<wbr>同じ<wbr>週末に<wbr>行われます。<wbr>両会場を<wbr>楽しむ<wbr>絶好の<wbr>機会です。<wbr>ツインピークスの<wbr>シーズンオープナーに<wbr>参加される<wbr>方は、<wbr>赤井川トモプレイパークでの<wbr>キャンプを<wbr>検討し、<wbr>宿泊先で<wbr>新しく<wbr>リニューアルされた<wbr>トラックを<wbr>楽しむことができます。
+日曜には​グランドオープニングレースイベントも​開催。​ツインピークス・バイクパークの​シーズンオープナーと​同じ​週末です。​赤井川トモプレイパークで​キャンプして、​両方の​会場を​回る​週末トリップにも​向いています。
 
 ![新しく舗装された赤井川パンプトラックを走るライダーたち](/assets/images/events/2024/akaigawa-pump-track-reopens/riders.jpg)
 
-:ポンプトラックは<wbr>滑らかな<wbr>アスファルト仕上げで<wbr>再設計され、<wbr>体験を<wbr>向上させ、<wbr>迅速で<wbr>スリリングな<wbr>ライドを<wbr>保証します。<wbr>2021年のように<wbr>連続して<wbr>コースを<wbr>周回する<wbr>ことは<wbr>できなくなりましたので、<wbr>ゴールに<wbr>到達した<wbr>後、<wbr>ライダーは<wbr>スタート地点まで<wbr>歩いて<wbr>戻る<wbr>必要が<wbr>あります。<wbr>利用指示を<wbr>よく<wbr>読み、<wbr>必要な<wbr>利用同意書を<wbr>記入し、<wbr>受付で<wbr>リストバンドを<wbr>受け取ってから<wbr>ライドを<wbr>開始してください。<wbr>この<wbr>リストバンドは<wbr>ライド開始前に<wbr>必ず<wbr>着用してください。
+2021年版とは​異なり、​コースは​連続して​周回できません。​ゴール後は​スタートまで​歩いて​戻ります。​受付で​利用指示を​読み、​同意書に​記入、​リストバンドを​受け取ってから​スタートしてください。
 
-2024年シーズンは<wbr>レンタルバイクの<wbr>提供が<wbr>ありませんので、<wbr>ご注意ください。
+2024年シーズンは​レンタルバイクの​提供は​ありません。
 
 ![赤井川トモプレイパークのパンプトラックレイアウト図](/assets/images/events/2024/akaigawa-pump-track-reopens/map.jpg)
 
-#### 開場時間：
-平日は<strong ><wbr>11:30から<wbr>17:00</strong>、<wbr>週末及び祝日は<strong ><wbr>10:00から<wbr>17:00</strong>です。
+### 開場時間
 
-トラックは<wbr>BMX、<wbr>スケートボード、<wbr>キックボードなど、<wbr>さまざまな<wbr>タイプの<wbr>ライダーを<wbr>待っています。<wbr>2時間の<wbr>セッションまたは<wbr>1日中トラックを<wbr>楽しむことができます。
-
-再訪問であれ初めてであれ、<wbr>赤井川トモプレイパークは<wbr>楽しい<wbr>一日と<wbr>コミュニティの<wbr>精神を<wbr>約束します。<wbr>詳細は<wbr>ウェブサイトの<wbr>「アクティビティ」セクションの<wbr>「ポンプトラック」を<wbr>ご確認ください。
-
-6月<wbr>1日を<wbr>カレンダーに<wbr>マークし、<wbr>赤井川に<wbr>来て、<wbr>この<wbr>エキサイティングな<wbr>再オープニングイベントの<wbr>一部と<wbr>なりましょう！
+平日 **11:30 - 17:00**、​週末・祝日 **10:00 - 17:00**。​2時間券または​1日券が​利用できます。
 
 <div style="text-align:center; margin:50px 0;">
   <a class="btn btn-primary" href="https://playpark.akaigawa-tomo.com/ja/activities/pumptrack/" target="_blank">ポンプトラックの詳細</a>

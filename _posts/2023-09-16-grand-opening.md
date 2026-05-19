@@ -2,7 +2,7 @@
 layout: event
 categories: events
 title: Twin Peaks Grand Opening
-description: After years of work, we are incredibly stoked to announce that TWIN PEAKS BIKE PARK IS OPENING TO THE PUBLIC! Join us on the trails here in Niseko on the weekend of the 16th and 17th of September!
+description: Twin Peaks Bike Park opens to the public 16-17 September. Monk blessing, Santa Cruz demo bikes, guided rides, and an afterparty at Rhythm with DJ Tama.
 startDate: 2023-09-16 09:00:00 +0900
 days: 2
 location: Twin Peaks Bike Park, Niseko
@@ -78,31 +78,24 @@ itinerary:
           location: Twin Peaks
         - time: 4:30pm
           name: Event ends
-parking: true
+parking: false
 about: true
 ---
-<p style="font-size:150%;">After years of work, we are incredibly stoked to announce that
-  <strong>TWIN PEAKS BIKE PARK IS OPENING TO THE PUBLIC!</strong>
-</p>
+<p style="font-size:150%;"><strong>Twin Peaks Bike Park opens to the public.</strong></p>
 
-Join us on the trails here in Niseko on the weekend of the 16th and 17th of September where we'll have:
+Across the weekend of 16-17 September:
 
-- An opening ceremony
-
-- Demo bikes from Santa Cruz
-
-- Booths from your favorite brands like ION, Reserve Wheels, Peaty's and more
-
-- A chance to win giveaways and free merch
+- Opening ceremony with a monk blessing
+- Santa Cruz demo bikes at Rhythm Japan Base
+- Booths from ION, Reserve Wheels, Peaty's and more
+- Giveaways and free merch
 
 ### The event
 
-Santa Cruz is setting up a booth at Rhythm Japan Base and bringing a fleet of demo bikes, including the Megatower, Hightower, Tallboy, Nomad, Bronson, 5010, Blur and Stigmata – this is an awesome chance to try some sick bikes here in Japan’s newest bike park!
+Santa Cruz brings a fleet of demo bikes to Rhythm Japan Base: Megatower, Hightower, Tallboy, Nomad, Bronson, 5010, Blur, and Stigmata.
 
-We’ll also have two UCI Mountain Bike World Series downhill racers as guest riders, Hajime Imoto and Yuki Kushima!
+Guest riders Hajime Imoto and Yuki Kushima, both UCI Mountain Bike World Series downhill racers representing Japan and Santa Cruz, will be on the trails.
 
-Yuki and Hajime are accomplished riders, representing Japan and their sponsor Santa Cruz in the UCI Mountain Bike World Series. Can't wait to ride with both Yuki and Hajime, and to see the speed and style they bring to the trails here in Niseko!
-
-Thanks to Allegra who have supported NAMBA and spearheaded the design and building of this park, and thanks to our sponsors, our supporters and our community for helping us create a free and open trail network!
+Thanks to Allegra for spearheading the park's design and construction, and to our sponsors, supporters, and community for helping create this free and open trail network.
 
 ![Riders at the Twin Peaks Bike Park grand opening celebration](/assets/images/events/2023/grand-opening/riders.jpg)

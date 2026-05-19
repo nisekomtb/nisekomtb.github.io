@@ -2,7 +2,7 @@
 layout: event
 categories: events
 title: Twin Peaks Closing Weekend
-description: Autumn has arrived, and as the leaves change so too do the seasons. With Niseko soon to be blanketed with snow, the time has now come for us to close the trails for the year.To celebrate an amazing season, we're hosting a closing weekend celebration, and all are invited to join in on the fun!
+description: Twin Peaks closing weekend, 28-29 October. Strava segment challenge, costume comp, Dirty Dames women's group ride, and a NAMBA Open House at Midtown Niseko.
 startDate: 2023-10-28 09:00:00 +0900
 days: 2
 location: Twin Peaks Bike Park, Niseko
@@ -70,27 +70,25 @@ itinerary:
         - time: 4:30pm
           name: Twin Peaks closes for the season - see you next year!
           cancelled: true
-parking: true
+parking: false
 about: true
 ---
 
-We have a host of events lined up for the closing weekend:
+Several events across the weekend:
 
-### Strava Segment Challenge: <small>(weather permitting)</small>
+### Strava segment challenge <small>(weather permitting)</small>
 
 <span class="cancelled">⛈️ Cancelled due to weather ⛈️</span>
 
-What's a Strava Segment Challenge?
+Strava is a GPS app that records your ride. On the day, we'll announce which trail segment to race on. Times are logged on the leaderboard, with prizes for the fastest.
 
-Strava is a GPS app that allows us to run a self timed, semi-virtual race right here in the Twin Peaks Bike Park! On the day, we'll let you know the specific “Segment” (or trail section) of our trails to race on. Your time will be recorded using a GPS device or your smartphone. The fastest riders will be featured on our leaderboard, and with prizes up for grabs make sure to bring your A-game!
+Open to all riders (NAMBA crew excluded), with categories for men, women, boys, and girls.
 
-The competition is open to all riders (excluding NAMBA crew), and there will be categories for men, women, boys and girls!
+Three steps:
 
-Participation is easy:
-
-1. Download the Strava app on to your GPS device (phone, smart watch, etc)
-1. Record your ride on Strava, and set the privacy as “public”
-1. Share your achievements and see how you stack up against fellow riders.
+1. Download the Strava app on a GPS device (phone, smart watch)
+1. Record your ride and set privacy to public
+1. Compare your time on the leaderboard
 
 <div class="download">
   <a href="https://apps.apple.com/jp/app/strava-ランニング-ライド-ハイキング/id426826309"><img src="/assets/images/apps/app-store.en.svg" /></a>
@@ -99,31 +97,24 @@ Participation is easy:
 
 ![Riders competing in the Strava segment challenge at Twin Peaks](/assets/images/events/2023/closing-weekend/strava.jpg)
 
-### Costume Competition: <small>(weather permitting)</small>
+### Costume competition <small>(weather permitting)</small>
 
 <span class="cancelled">⛈️ Cancelled due to weather ⛈️</span>
 
-With Halloween right around the corner, let's make mountain biking spooktacular!
-
-Show off your creativity and come dressed in your most jaw-dropping costumes. The best-dressed mountain bikers will receive prizes, so get ready to bring your Halloween spirit to the trails!
+Halloween is around the corner. Show up in costume, ride the trails, prizes for the best-dressed.
 
 ![Halloween pumpkin decoration for the costume competition](/assets/images/events/2023/closing-weekend/pumpkin.jpg)
 
-### The Dirty Dames - Women Only Group Ride: <small>(weather permitting)</small>
+### The Dirty Dames women-only group ride <small>(weather permitting)</small>
 
 <span class="cancelled">⛈️ Cancelled due to weather ⛈️</span>
 
-Calling all the adventurous ladies!
-
-Join us for our first-ever "Dirty Dames" women-only group ride. It's an opportunity to connect with fellow female riders, share your passion for biking, and explore the trails together in a supportive and fun environment. All skill levels are welcome, from beginners to seasoned pros.
+The first Dirty Dames group ride. Women-only, all skill levels welcome.
 
 ![Dirty Dames women-only group ride at the closing weekend](/assets/images/events/2023/closing-weekend/dirtydames.jpg)
 
-### NAMBA Open House Event:
-In addition to all of the action happening out on the trails, NAMBA is also hosting an Open House Event – we’ll be meeting with members of the media and government to provide more information about Twin Peaks and about NAMBA’s vision for the Niseko area.
+### NAMBA open house
 
-This event is open to the public, and it’ll be happening just down the road from the trailhead at Midtown Niseko. It's an excellent opportunity to learn more about NAMBA to get a glimpse of the future of mountain biking in our region!
-
-Don't miss out on this fantastic weekend of biking, fun, and community at Twin Peaks Bike Park. We can't wait to celebrate with you as we close the season in style. Mark your calendars and get ready for a memorable day!
+NAMBA hosts an open house at Midtown Niseko, just down the road from the trailhead. Members of the media and government will be there for an update on Twin Peaks and NAMBA's plans for the wider Niseko area. Open to the public.
 
 

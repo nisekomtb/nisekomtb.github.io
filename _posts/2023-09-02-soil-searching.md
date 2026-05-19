@@ -2,7 +2,7 @@
 layout: event
 categories: events
 title: Soil Searching in Niseko
-description: Join Specialized and NAMBA for “Soil Searching in Niseko”, an exclusive (registration only!) 2 day dig & ride event in the Twin Peaks Bike Park in Niseko, Hokkaido on 2nd & 3rd September.
+description: Two-day dig and ride at the not-yet-opened Twin Peaks Bike Park, 2-3 September. Hosted by Specialized and NAMBA. Registration only, lottery selection.
 startDate: 2023-09-02 09:00:00 +0900
 days: 2
 location: Twin Peaks Bike Park, Niseko
@@ -55,18 +55,14 @@ itinerary:
           name: Free ride – a chance to ride the trails at your leisure
         - time: 4:00pm
           name: Event ends
-parking: true
+parking: false
 about: true
 ---
-<p style="font-size:150%;">Join Specialized and NAMBA for “Soil Searching in Niseko”, an exclusive
-  <strong>(registration only!)</strong>
-  2 day dig & ride event in the Twin Peaks Bike Park in Niseko, Hokkaido on 2nd & 3rd September.</p>
-
 <img src="/assets/images/events/2023/soil-searching/soil-searching.png" style="width:200px; margin: auto;" />
 
 ### The event
 
-In this 2 day event, volunteers will join the Niseko Area Mountain Bike Association (NAMBA) and Specialized’s teams of builders and riders to work on the trails in the bike park before the bike park’s grand opening! The trails are not yet open to the public making this a great chance to contribute your efforts to this volunteer-driven project, and an exclusive opportunity to ride the trails before the bike park opens.
+Two days of trail work and riding at Twin Peaks Bike Park, before the bike park's grand opening to the public. Volunteers join NAMBA and Specialized's builders and riders to finish the trails. A chance to contribute to the project and ride lines that aren't yet open.
 
 ![Volunteers working together on trail construction at Soil Searching Niseko](/assets/images/events/2023/soil-searching/ss02.jpg)
 

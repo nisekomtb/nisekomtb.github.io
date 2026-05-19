@@ -2,7 +2,7 @@
 layout: event
 categories: events
 title: Niseko Gravel Autumn Ride
-description: Set against the stunning backdrop of Mt. Yotei, this cycling event takes you through a mix of forest trails and paved roads in Niseko’s beautiful autumn scenery. With three routes for different levels and a beginner-friendly lesson, there’s something for everyone. The main venue also offers activities and attractions, making it a fun day out for riders, friends, and families alike.
+description: Two-day gravel ride through Niseko's forest tracks and farm roads under Mt Yotei, with a 45km, 100km, or 120km course for Sunday and a 55km group session on Saturday. Beginner-friendly options included.
 startDate: 2025-09-13 09:00:00 +0900
 days: 2
 location: Niseko Central Warehouse Group
@@ -24,7 +24,7 @@ thumbnail: /assets/images/events/2025/niseko-gravel-autumn-ride/thumb.jpg
 og:
   image: /assets/images/events/2025/niseko-gravel-autumn-ride/header.jpg
 parking: false
-about: false
+about: true
 ---
 
 ### Course Details

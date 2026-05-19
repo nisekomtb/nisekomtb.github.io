@@ -2,7 +2,7 @@
 layout: event
 categories: events
 title: Niseko Twin Trail Ride
-description: Let's ride through Niseko in summer on MTB! Improve your skills on the vast trails of nature with top riders from Hokkaido who are active in the All-Japan MTB
+description: One-day MTB event across Grand Hirafu and Twin Peaks Bike Park, with guided rides, skills work, and maintenance tips. Pro rider Fumiya Kurose leads. Cap of 15 riders.
 startDate: 2025-07-21 09:00:00 +0900
 days: 1
 time: 9:00am - 1:00pm
@@ -19,12 +19,12 @@ thumbnail: /assets/images/events/2025/niseko-twin-trail-ride/thumb.jpg
 og:
   image: /assets/images/events/2025/niseko-twin-trail-ride/header.jpg
 parking: false
-about: false
+about: true
 ---
 
-## MTB Workshop & Guided Ride Day
+## MTB workshop and guided ride day
 
-Join Niseko Hirafu Gren Park for a one-day MTB event packed with riding, learning, and good vibes across **Niseko Tokyu Grand Hirafu** and **Twin Peaks Bike Park**. Ride with **pro rider Fumiya Kurose**, sharpen your skills, and hang out with other mountain bikers in the Niseko community.
+Niseko Hirafu Green Park hosts a one-day MTB event across **Grand Hirafu** and **Twin Peaks Bike Park**. **Pro rider Fumiya Kurose** leads guided sessions, skill workshops, and a setup and maintenance talk.
 
 ---
 

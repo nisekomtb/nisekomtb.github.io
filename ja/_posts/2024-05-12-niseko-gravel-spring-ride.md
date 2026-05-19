@@ -9,7 +9,7 @@ time: 6:30am - 5:00pm
 location: Niseko
 thumbnail: /assets/images/events/2024/niseko-gravel-spring-ride/thumb.jpg
 parking: false
-about: false
+about: true
 override_url: https://nisekogravel.com/springride/
 ---
 

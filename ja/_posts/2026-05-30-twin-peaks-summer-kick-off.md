@@ -2,12 +2,12 @@
 layout: event
 categories: events
 title: ツインピークス・サマーキックオフ
-titleHtml: ツインピークス・<wbr>サマーキックオフ
+titleHtml: ツインピークス・​サマーキックオフ
 description: 2026年シーズン開幕、17kmの全トレイルが再オープン。5月30日土曜日、スキルクリニック、オリエンテーションライド、フードトラック、子供向けのアクティビティで、NAMBAコミュニティと一緒にシーズンの幕開けを祝いましょう。
 startDate: 2026-05-30 09:00:00 +0900
 days: 1
 time: "9:00am - 3:00pm"
-location: ツインピークス・<wbr>バイクパーク、<wbr>ニセコ
+location: ツインピークス・​バイクパーク、​ニセコ
 address: 150, 2 Aza-150-1 Yamada, Kutchan, Abuta District, Hokkaido 044-0081
 price: 0
 partners:
@@ -27,29 +27,29 @@ itinerary:
     - hasLocations: true
       events:
         - time: "9:00am"
-          name: ダーティ・<wbr>デイムズの<wbr>事前コーヒー
+          name: ダーティ・​デイムズの​事前コーヒー
           location:
             name: Rhythm Hirafu
             url: https://goo.gl/maps/78nX9Sryy9c5qXmM8
         - time: "10:00am - 11:00am"
-          name: ダーティ・<wbr>デイムズ<wbr>女性スキルクリニック
+          name: ダーティ・​デイムズ​女性スキルクリニック
           location:
-            name: ツインピークス・<wbr>トレイルヘッド
+            name: ツインピークス・​トレイルヘッド
             url: https://goo.gl/maps/yKza3NA7yfx5VQRx8
         - time: "10:00am - 11:00am"
           name: オリエンテーションライド
           location:
-            name: ツインピークス・<wbr>トレイルヘッド
+            name: ツインピークス・​トレイルヘッド
             url: https://goo.gl/maps/yKza3NA7yfx5VQRx8
         - time: "11:30am - 12:30pm"
-          name: キッズ<wbr>スカベンジャーハント
+          name: キッズ​スカベンジャーハント
           location:
-            name: NAMBAテント、<wbr>トレイル<wbr>ベース
+            name: NAMBAテント、​トレイル​ベース
             url: https://goo.gl/maps/yKza3NA7yfx5VQRx8
         - time: "3:00pm"
           name: イベント終了
 parking: false
-about: false
+about: true
 ---
 
 雪解けから​ずっと、​トレイルクルーが​整備を​続けてきました。​ツインピークスが​帰ってきます。​スキルズパーク、​フロートレイル、​テックライン、​そして​昨年新設の​ローンチコントロールまで、​すべての​ラインが​オープン。​17km全て、​夏の​間オープンです。
@@ -63,7 +63,7 @@ about: false
 ダーティ・デイムズ女性スキルクリニックは、​NAMBAとの​共同開催です。​初心者から​経験豊富な​ライダーまで、​すべての​レベルの​方を​歓迎します。​9時から​Rhythm Hirafuで​コーヒーを​飲みながら、​ライド前の​集合と​バイクチェックを。​定員制で、​事前申込が​必要です。
 
 <div style="text-align:center; margin:30px 0;">
-  <a class="btn btn-primary" href="https://forms.gle/t3BXUgdrRnoeutrD7" target="_blank" rel="noopener">クリニックに<wbr>申し込む</a>
+  <a class="btn btn-primary" href="https://forms.gle/t3BXUgdrRnoeutrD7" target="_blank" rel="noopener">クリニックに​申し込む</a>
 </div>
 
 クリニックと​並行して、​NAMBAクルーが​1時間の​オリエンテーションライドを​案内します。​ツインピークスが​初めての​方が​対象です。​ゆったりとした​ペースで、​その​後​ご自身で​楽しめるよう​パークの​レイアウトを​ご紹介します。​トレイルヘッドに​そのまま​お越しください。

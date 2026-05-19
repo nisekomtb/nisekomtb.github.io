@@ -2,7 +2,7 @@
 layout: event
 categories: events
 title: Niseko MTB Weekend
-description: Niseko Mountain Bike Weekend, 4-day MTB celebration! Come demo Santa Cruz bikes, get tips from Pro riders and enjoy Niseko Area MTB trails!
+description: Four days of Niseko mountain biking: Santa Cruz demo bikes at Rhythm Hirafu, group rides with pros Hajime Imoto and Yuki Kushima, and the Downhill Series race at Niseko Annupuri.
 startDate: 2025-08-22 09:00:00 +0900
 days: 4
 location: Niseko
@@ -91,7 +91,7 @@ itinerary:
             url: https://goo.gl/maps/yKza3NA7yfx5VQRx8
             name: Twin Peaks Bike Park
 parking: false
-about: false
+about: true
 ---
 
 Special guest riders: <a href="https:instagram.com/hajimeeeee" target="blank">Hajime Imoto</a> and <a href="https:instagram.com/yukikushima" target="blank">Yuki Kushima</a> from Santa Cruz Bicycles.

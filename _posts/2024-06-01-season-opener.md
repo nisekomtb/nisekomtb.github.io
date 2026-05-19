@@ -2,7 +2,7 @@
 layout: event
 categories: events
 title: Twin Peaks Season Opener
-description: Get ready for an unforgettable start to the summer with the Niseko Area Mountain Bike Association (NAMBA) at the Twin Peaks Bike Park opening weekend! This marks our first full summer of operation, and we have an action-packed schedule to celebrate the occasion.
+description: Twin Peaks Bike Park's 2024 season opener, NAMBA's first full summer. Dirty Dames women's group ride, season-long Strava competition launch, and the Rhythm summer opening party.
 startDate: 2024-06-01 09:00:00 +0900
 days: 2
 location: Twin Peaks Bike Park, Niseko
@@ -51,27 +51,23 @@ itinerary:
             name: Twin Peaks Trail Head
         - time: 5:00pm
           name: Event ends
-parking: true
-about: false
+parking: false
+about: true
 ---
 
-### The Dirty Dames - Women Only Group Ride: <small>(weather permitting)</small>
+### The Dirty Dames women's group ride <small>(weather permitting)</small>
 
-Don’t miss the debut of our "Dirty Dames" women's group ride, a special event that was postponed last year. Gather for a friendly meet-up with coffee at Rhythm, followed by the ride from 10 AM to 11 AM.
-
-It's an opportunity to connect with fellow female riders, share your passion for biking, and explore the trails together in a supportive and fun environment. All skill levels are welcome, from beginners to seasoned pros.
+The debut of the Dirty Dames women's group ride, postponed from last year. Coffee at Rhythm from 9am, ride from 10am to 11am. All skill levels welcome.
 
 ![Dirty Dames women's group ride at the Twin Peaks season opener](/assets/images/events/2024/season-opener/dirtydames.jpg)
 
-### Strava Contest Launch:
+### Strava contest launch
 
-This weekend also sees the launch of our season-long Strava competition. With categories for both King of the Mountain (KOM) and Queen of the Mountain (QOM) across various age groups, set your sights on ending the season as a champion. Winners will be announced as the season wraps up; you have all season to improve your times.
+The weekend launches our season-long Strava competition: King of the Mountain (KOM) and Queen of the Mountain (QOM) titles across age groups. Winners announced at season close. The whole summer to improve your times.
 
-What's a Strava Segment Challenge?
+Strava is a GPS app that records your ride. On the day, we'll announce the specific trail segment to race. Times are logged on the leaderboard, with prizes for the fastest.
 
-Strava is a GPS app that allows us to run a self timed, semi-virtual race right here in the Twin Peaks Bike Park! On the day, we'll let you know the specific “Segment” (or trail section) of our trails to race on. Your time will be recorded using a GPS device or your smartphone. The fastest riders will be featured on our leader board, and with prizes up for grabs make sure to bring your A-game!
-
-The competition is open to all riders (excluding NAMBA crew) and participation is easy:
+Open to all riders (NAMBA crew excluded). Three steps:
 
 1. Download the Strava app on to your GPS device (phone, smart watch, etc)
 1. Record your ride on Strava, and set the privacy as “public”
@@ -88,24 +84,14 @@ The competition is open to all riders (excluding NAMBA crew) and participation i
 
 ![Riders racing a Strava segment at Twin Peaks Bike Park](/assets/images/events/2024/season-opener/strava.jpg)
 
-### Rhythm Opening Party
+### Rhythm summer opening party
 
-Partnering with Rhythm for More Fun:
+Rhythm reopens for summer the same weekend. Their party includes:
 
-To enhance your weekend experience, we’ve teamed up with Rhythm as they reopen for the summer. Join us there for:
-
-- <strong>Live music:</strong> Enjoy the upbeat tunes of a live band.
-
-- <strong>BBQ delight:</strong> Savor delicious BBQ plates available for ¥1,500 each.
-
-- <strong>Free activity hub:</strong> Take this chance to try out the activity hub at Rhythm for free; kilter board, bouldering wall, pump track, skate park and more!
-
-- <strong>Bike rental discount:</strong> Take advantage of a 50% discount on bike rentals for the day.
-
-- <strong>Winter clearance sale:</strong> Gear up with up to 50% off winter merchandise.
+- Live band
+- BBQ plates, ¥1,500 each
+- Free use of the activity hub: kilter board, bouldering wall, pump track, skate park
+- 50% off bike rentals for the day
+- Up to 50% off winter clearance
 
 ![Rhythm summer opening party with live music and BBQ](/assets/images/events/2024/season-opener/rhythm.jpg)
-
-### We can't wait to see you there!
-
-Prepare to make thrilling memories on the trails and enjoy a community-filled weekend at Twin Peaks. Whether you're looking to compete, connect, or simply enjoy the beautiful outdoors of Niseko, this is the place to be as we swing into summer!

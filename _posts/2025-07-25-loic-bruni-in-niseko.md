@@ -2,7 +2,7 @@
 layout: event
 categories: events
 title: Loic Bruni in Niseko
-description: Ride with downhill mountain bike legend Loic Bruni in Niseko, Japan on July 25. Join a community group ride, meet top pro riders like Nico Vink and Yuki Kushima, and experience the growing MTB scene in Niseko. Don’t miss this exclusive mountain biking event in Japan.
+description: Group ride and meet and greet with 6x UCI Downhill World Champion Loic Bruni at Twin Peaks Bike Park, July 25. Plus guest riders Nico Vink, Hajime Imoto, Yuki Kushima, and Junya Nagata.
 startDate: 2025-07-25 16:30:00 +0900
 days: 1
 time: 2:30pm - 6:00pm
@@ -43,59 +43,27 @@ itinerary:
         - time: 6:00pm
           name: Event ends
 parking: false
-about: false
+about: true
 ---
 
-## Ride with Loic Bruni in Niseko – July 25th
+## Ride with Loic Bruni at Twin Peaks
 
-Get ready for the unmissable event of the summer; **Loic Bruni**, 6x UCI Downhill World Champion and 4x UCI World Cup Overall Champion, is coming to Niseko!
+**Loic Bruni** is in Niseko on 25 July: 6x UCI Downhill World Champion, 4x UCI World Cup Overall Champion, and a fixture on the Specialized Gravity team. He'll lead a group ride at Twin Peaks Bike Park, followed by a meet and greet at Rhythm Hirafu.
 
-Join us for an exclusive **group ride and meet & greet** with one of the greatest downhill riders of all time. Whether you're a die-hard fan or just love being part of the local mountain bike community, this is your chance to ride with an MTB legend.
+Fan or first-timer, this is a community ride: social pace, not a race.
 
-### Who is Loic Bruni?
+### Who's riding
 
-**Loic Bruni** is a dominant force in the world of downhill mountain biking. Hailing from France, Loic has earned global respect not only for his speed and skill but also for his charisma and sportsmanship.
+- <a href="https://instagram.com/vinknico" target="_blank">Nico Vink</a>, freeride rider and trail builder
+- <a href="https://instagram.com/hajimeeeee" target="_blank">Hajime Imoto</a>, one of Japan's fastest downhill racers
+- <a href="https://instagram.com/yukikushima" target="_blank">Yuki Kushima</a>, DH athlete on the international circuit
+- <a href="https://instagram.com/juunnya" target="_blank">Junya Nagata</a>, local rider
 
-- **6x UCI Downhill World Champion** – known for rising to the occasion on the biggest stages
+### Group ride requirements
 
-- **4x UCI World Cup Overall Champion** – proving consistency and dominance across seasons
+- Comfortable on intermediate (blue) trails
+- Able to pedal to the top of Twin Peaks (20–30 min moderate climb)
+- Mountain bike in good order, full suspension recommended
+- Helmet required, other protective gear advised
 
-- A key figure in the **Specialized Gravity** team
-
-- Famous for his explosive riding style, razor-sharp line choices, and high-pressure performances
-
-Loic is more than a racer; he’s a true ambassador of the sport and a fan favorite around the globe.
-
-### Who’s Riding
-
-Loic Bruni won’t be riding alone—he’ll be joined by an all-star crew of guest riders including <a href="https:instagram.com/vinknico" target="blank">Nico Vink</a>, freeride legend and trail builder; <a href="https:instagram.com/hajimeeeee" target="blank">Hajime Imoto</a>, one of Japan’s fastest downhill racers; <a href="https:instagram.com/yukikushima" target="blank">Yuki Kushima</a>, an up-and-coming DH athlete making waves on the international circuit; and <a href="https:instagram.com/juunnya" target="blank">Junya Nagata</a>, a local powerhouse known for his style and speed.
-
-### Group Ride Requirements
-
-To ensure everyone has a great time and stays safe on the trails, participants joining the group ride should meet the following requirements:
-
-- Be comfortable riding intermediate (blue-rated) trails
-
-- Be physically able to pedal to the top of Twin Peaks Bike Park (approx. 20–30 minutes of moderate climbing)
-
-- Have a well-maintained mountain bike suitable for trail riding (full suspension recommended)
-
-- Wear a helmet (mandatory) and other protective gear as desired
-
-- Be ready to ride in a group setting at a social pace—this isn’t a race!
-
-If you're unsure about your skill level or bike setup, swing by Rhythm Niseko ahead of time for advice, rentals, or a quick tune-up.
-
-### This Is One for the Books
-
-Imagine this: you're dropping into Niseko’s world class trails, and Loic Bruni is just ahead of you. After the ride, you’re swapping stories over drinks with some of the biggest names in downhill, right in your backyard.
-
-This is your chance to:
-
-- Share the stoke and ride alongside mountain bike legends
-
-- Connect with fellow riders in a laid-back, friendly vibe
-
-- Grab a drink, hang out, and hear what it's like to race at the highest level
-
-- Be part of a moment that kicks off a whole new chapter for mountain biking in Niseko
+If you're unsure about your level or your bike, swing by Rhythm Niseko ahead of time for advice, rentals, or a tune-up.

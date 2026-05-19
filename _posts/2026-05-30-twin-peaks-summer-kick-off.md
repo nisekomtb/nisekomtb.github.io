@@ -48,7 +48,7 @@ itinerary:
         - time: "3:00pm"
           name: Event ends
 parking: false
-about: false
+about: true
 ---
 
 The trail crew have been hard at it since the snow melted, and Twin Peaks is back. Every line will be open: skills park, flow trails, tech lines, and last year's newest build, Launch Control. All 17km, open for summer.

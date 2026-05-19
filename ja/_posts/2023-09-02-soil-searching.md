@@ -2,8 +2,8 @@
 layout: event
 categories: events
 title: ニセコでソイル・サーチング
-titleHtml: ニセコでソイル・<wbr>サーチング
-description: 9月2日、3日の2日間、北海道ニセコのツインピークス・バイクパークにて、スペシャライズドとNAMBAの共同イベント「Soil Searching in Niseko」が開催されます。
+titleHtml: ニセコでソイル・​サーチング
+description: 9月2〜3日、まだ一般公開前のツインピークス・バイクパークで2日間のDig&Rideイベント。スペシャライズドとNAMBAの共催。事前登録制、抽選選考。
 startDate: 2023-09-02 09:00:00 +0900
 days: 2
 location: ツインピークス・バイクパーク、ニセコ
@@ -56,16 +56,14 @@ itinerary:
           name: フリーライド - 自由にトレイルを走るチャンス
         - time: 4:00pm
           name: イベント終了
-parking: true
+parking: false
 about: true
 ---
-<p style="font-size:150%;">9月2日、3日の2日間、北海道ニセコのツインピークス・バイクパークにて、スペシャライズドとNAMBAの共同イベント「Soil Searching in Niseko」が開催されます。</p>
-
 <img src="/assets/images/events/2023/soil-searching/soil-searching.png" style="width:200px; margin: auto;" />
 
 ### イベント内容
 
-この2日間のイベントでは、ニセコエリアマウンテンバイク協会(NAMBA)とスペシャライズドのチームそしてライダーがボランティアとして参加し、バイクパークのグランドオープンを前にトレイルの整備を行います！トレイルはまだ一般公開されていませんので、オープンを待ちきれない方このボランティアプロジェクトに参加するのは絶好のチャンスです。
+ツインピークス・バイクパークが一般公開される前の2日間、トレイル整備とライドを行います。ボランティアがNAMBAとスペシャライズドのビルダー・ライダーチームと一緒にトレイルを仕上げます。プロジェクトに貢献しつつ、まだ公開されていないラインを走るチャンスです。
 
 ![Soil Searchingニセコでトレイル建設に取り組むボランティアたち](/assets/images/events/2023/soil-searching/ss02.jpg)
 

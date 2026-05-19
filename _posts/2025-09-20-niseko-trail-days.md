@@ -2,7 +2,7 @@
 layout: event
 categories: events
 title: Niseko Trail Days
-description: Trail Days are coming to Hokkaido! Specialized Japan is taking this event all over the country, and we’re stoked to bring the only Hokkaido stop to Twin Peaks Bike Park. Join us for a full day of trail building, riding, demos, clinics, and good times on the mountain.
+description: Specialized's Trail Days series stops at Twin Peaks Bike Park, the only Hokkaido edition. A day of trail work, riding, demos, a jump skills clinic with Ayato Kimura, and an afterparty at Rhythm.
 startDate: 2025-09-20 09:00:00 +0900
 days: 1
 time: 9:00am - 8:30pm
@@ -62,49 +62,41 @@ itinerary:
         - time: 8:30pm
           name: Event ends
 parking: false
-about: false
+about: true
 storeProductId: 780290280
 storeProductSlug: niseko-trail-days-2025
 ---
 <img src="/assets/images/events/2025/niseko-trail-days/logo.png" style="width: 250px; margin: 0 auto;">
 
-## Specialized Trail Days – Niseko Edition
+## Specialized Trail Days, Niseko edition
 
-Trail Days are coming to Hokkaido! Specialized Japan is taking this event all over the country, and we’re stoked to bring the only Hokkaido stop to Twin Peaks Bike Park. Join us for a full day of trail building, riding, demos, clinics, and good times on the mountain.
+Specialized Japan run Trail Days across the country each year. The Hokkaido edition lands at Twin Peaks Bike Park: a full day of trail work, riding, demos, a jump clinic, and an afterparty at Rhythm.
 
-Whether you’re a local rider or traveling in, this is your chance to give back to the trails, ride some laps with friends, and celebrate mountain biking in Niseko.
+Local or visiting, it's a chance to dig alongside the crew, ride laps with the community, and round out the day with food and a beer.
 
-### Participant Perks:
+### What's included
 
-- <strong>Exclusive Gear</strong>: Receive a limited edition Trail Days sticker, only available at this event.
+- Limited edition Trail Days sticker, only at this event.
+- Specialized Turbo Levo demo bikes, first-come, first-served.
+- Hands-on trail building with the NAMBA crew.
+- Jump skills clinic with <a href="https://www.instagram.com/ayato_trials/" target="_blank">Ayato Kimura</a>, Red Bull Japan athlete.
+- Raffle tickets: all-day participants get 5, evening-only get 1. Only participants can win, no tickets sold separately. [Raffle details](/raffle/).
+- Food and drink: a Pow Bar energy bar, a local beer from Niseko Brewery (adults only), and food from <a href="https://www.instagram.com/tacodake/" target="_blank">Tako Dake</a> at the Rhythm afterparty.
 
-- <strong>Turbo Levo Demo Access</strong>: Utilize Specialized Demo Bikes on a first-come, first-served basis.
+### Turbo Levo demos
 
-- <strong>Educational Experience</strong>: Gain valuable insights and practical skills in trail building, allowing you to contribute to trail construction and maintenance directly.
+Specialized are bringing 4 Turbo Levo e-bikes for participants to try out on the trails.
 
-- <strong>Jump Skills Clinic</strong>: Level up your jumping technique, guided by <a href="https://www.instagram.com/ayato_trials/" target="_blank">Ayato Kimura</a>, a Red Bull Japan athlete.
+### Rider spotlight: Ayato Kimura
 
-- <strong>Complementary raffle tickets</strong>: All day participants will receive <strong>5 free tickets</strong>, and afterparty only participants will receive <strong>1 free ticket</strong> into the raffle. Only Trail Days participants can win — no tickets to the raffle will be sold. [Full raffle details here](/raffle/).
+<a href="https://www.instagram.com/ayato_trials/" target="_blank">Ayato Kimura</a>, 20 years old, is one of Japan's standout MTB trials riders. His mix of urban freeride, competition trials, and street tricks has built him a serious following.
 
-- <strong>Food & Drink</strong>: Enjoy a complementary energy bar from The Pow Bar, a local beer* from Niseko Brewery, and drink from Rhythm Japan at the evening afterparty. * Beer is for adults only. Our friends at <a href="https://www.instagram.com/tacodake/" target="_blank">Tako Dake</a> will be serving up food at Rhythm during the afterparty,
+His viral clip *Tropical Vibes – Ayato's Way* features stair-set stunts, big gaps, wall rides, and a front-flip that racked up millions of views.
 
-### Turbo Levo Demos
+He recently joined Red Bull Japan, with Loic Bruni and Brook MacDonald handing him his Red Bull helmet at an event in Nagano.
 
-Specialized will be bringing along 4 Turbo Levos for event participants to Demo. The Specialized Turbo Levo brings powerful, smooth, electrified trail shredding to Niseko’s Twin Peaks.
+### Sign up
 
-
-### Rider Spotlight: Ayato Kimura
-
-We’re beyond excited to have <a href="https://www.instagram.com/ayato_trials/" target="_blank">Ayato Kimura</a>; one of Japan’s most electrifying MTB trials riders — joining us in Niseko! At just 20, Ayato’s fusion of urban freeride, competition trials, and street tricks has made him a standout in the mountain biking world.
-
-- Viral Star: His viral video clips, like Tropical Vibes – Ayato’s Way, showcase stair-set stunts, massive gaps, wall rides, and a front-flip that cemented his creative flair—racking millions of views online.
-
-- Pro Recognition: Ayato recently joined the Red Bull family—where downhill legends Loic Bruni and Brook MacDonald surprised him with a Red Bull helmet during an event in Nagano.
-
-Don’t miss his clinic — this is your chance to ride alongside, learn from, and celebrate a true rising star in MTB Trials.
-
-### Join Us!
-
-This is the only Trail Days event in Hokkaido—don’t sleep on it! Reserve your spot, ride, learn, laugh, and maybe go home with an epic bike.
+Spaces are limited. Reserve a spot via the application above.
 
 ![Kids riding Specialized Levo electric mountain bikes at Niseko Trail Days](/assets/images/events/2025/niseko-trail-days/levo-kids.jpg)
