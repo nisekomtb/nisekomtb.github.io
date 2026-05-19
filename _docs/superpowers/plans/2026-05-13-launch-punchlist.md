@@ -258,15 +258,16 @@ Decide: rewrite body copy to match real trails (Downhill Course + Forest Loop Co
 - Modify: `where-to-ride/gravel/index.html`, `ja/where-to-ride/gravel/index.html`
 
 Steps:
-- [ ] Read both files end to end.
-- [ ] Check text for accuracy and tone (current state vs. NAMBA voice).
-- [ ] Add placeholder gallery images (Pattern P-IMG) ahead of real photos; mark placeholders clearly so they can be swapped later.
-- [ ] If real gravel images become available, replace placeholders.
-- [ ] Mirror EN → JA (Pattern P-EN-JA).
-- [ ] Visual check.
-- [ ] Pattern P-COMMIT.
+- [x] Read both files end to end.
+- [x] Check text for accuracy and tone (current state vs. NAMBA voice).
+- [x] Add placeholder gallery images (Pattern P-IMG) ahead of real photos; mark placeholders clearly so they can be swapped later.
+- [x] If real gravel images become available, replace placeholders.
+- [x] Mirror EN → JA (Pattern P-EN-JA).
+- [x] Visual check.
+- [x] Pattern P-COMMIT.
 
 Notes:
+Page fully rewritten: dropped route-specific Area Highlights in favour of a 1,200km regional gravel showcase. Three interspersed in-body images (sunset-road-mountains, rider-rice-paddies, autumn-tunnel) instead of a gallery grid. Niseko Gravel event attribution corrected (it's hosted at nisekogravel.com, not by NAMBA). Masthead uses the 2025 Niseko Gravel autumn ride header.
 Decide: (none open)
 
 ---
@@ -277,17 +278,18 @@ Decide: (none open)
 - Modify: `where-to-ride/skills-parks/index.html`, `ja/where-to-ride/skills-parks/index.html`
 
 Steps:
-- [ ] Read both files.
-- [ ] Check text accuracy for each listed facility.
-- [ ] Add images per facility (Pattern P-IMG).
-- [ ] Discuss with Tom: add per-facility external links (resort site, location pin)?
-- [ ] Implement decision.
-- [ ] Mirror EN → JA (Pattern P-EN-JA).
-- [ ] Visual check.
-- [ ] Pattern P-COMMIT.
+- [x] Read both files.
+- [x] Check text accuracy for each listed facility.
+- [x] Add images per facility (Pattern P-IMG).
+- [x] Discuss with Tom: add per-facility external links (resort site, location pin)?
+- [x] Implement decision.
+- [x] Mirror EN → JA (Pattern P-EN-JA).
+- [x] Visual check.
+- [x] Pattern P-COMMIT.
 
 Notes:
-Decide: add facility links?
+Page restructured into two groups: bike-park skills areas (Twin Peaks Skills Centre, Grand Hirafu Skill-up Area, Niseko Hanazono Skills Park) and standalone pump tracks (Tomo Playpark, Rhythm Japan, Rusutsu). Inline image after each location paragraph (`/assets/images/skills-parks/*.webp`). External links added where useful: grand-hirafu.jp, playpark.akaigawa-tomo.com, Trailforks for Rusutsu. Tomo Playpark framed as weekend trip with camping mention. Masthead uses Akaigawa pump track event header.
+Decide: (resolved) per-facility external links added where they add value
 
 ---
 
@@ -298,15 +300,14 @@ Decide: add facility links?
 
 Steps:
 - [x] Rename pass: page title, ride card heading + alt, map POI, and canonical `_data/trails.yml` name updated to "Niseko Annupuri Bike Park" / "ニセコアンヌプリバイクパーク" (EN + JA) alongside A.3/A.4 in the same commit. Old EN page title "Niseko Annupuri Downhill" replaced; JA title was "ニセコアンヌプリ ダウンヒル".
-- [ ] Discuss with Tom: does this page need the same polish pass as siblings, or is it already done? (It was not in the original list.)
-- [ ] If yes: apply Pattern P-STYLE, check text, gallery images via Pattern P-IMG.
-- [ ] If no: tick and skip.
-- [ ] Mirror EN → JA (Pattern P-EN-JA) if changes made.
-- [ ] Pattern P-COMMIT (or note "no changes" in commit-less skip).
+- [x] Discuss with Tom: does this page need the same polish pass as siblings, or is it already done? (It was not in the original list.)
+- [x] If yes: apply Pattern P-STYLE, check text, gallery images via Pattern P-IMG.
+- [x] Mirror EN → JA (Pattern P-EN-JA) if changes made.
+- [x] Pattern P-COMMIT.
 
 Notes:
-Rename applied. Polish/skip decision still open.
-Decide: polish or skip
+Decision: polish. Page lean-rewritten with focus on gondola access, Shimizu-supervised course design (past tense — he doesn't have ongoing involvement), Downhill Series Niseko round annual host, raw natural-line trail not for beginners, and the non-NAMBA status (no unified signage). Gallery added (6 images: 5 race day + 1 cropped resort site sunset shot). `signage_card="false"` opt-out passed to the trails-table include so the NAMBA signage card doesn't appear on this non-NAMBA park page.
+Decide: (resolved) polish
 
 ---
 
@@ -316,13 +317,15 @@ Decide: polish or skip
 - Modify: `plan-your-trip/index.html`, `ja/plan-your-trip/index.html`
 
 Steps:
-- [ ] Replace images (Pattern P-IMG).
-- [ ] Check text accuracy + tone.
-- [ ] Mirror EN → JA (Pattern P-EN-JA).
-- [ ] Visual check.
-- [ ] Pattern P-COMMIT.
+- [x] Replace images (Pattern P-IMG).
+- [x] Check text accuracy + tone.
+- [x] Mirror EN → JA (Pattern P-EN-JA).
+- [x] Visual check.
+- [x] Pattern P-COMMIT (commits 78484a1 humanizer + JA body translation, 6b1bc72 copy fixes + real images + directions map + new masthead).
 
 Notes:
+First commit (78484a1): humanizer + factual pass stripped "world-class", "spectacular", "unlike anywhere else" etc, and the JA body got a full translation from English.
+Second commit (6b1bc72) covered: copy fixes (drop Hanazono-opens, mandatory-helmet, Yotei Brewing parentheticals; soften "Biggest events month"; October references first snow on Mt Yotei peak; EZObase → Rhythm Japan and NAC; unlink community partners; walk-in onsen note; expanded activities); real WebP images replacing 4 placeholder boxes (hero-yotei, bike-rental, accommodation, onsen); 4-image seasonal PhotoSwipe gallery (`.seasons-gallery` CSS in template.css); new masthead `bg-header-plan-your-trip.jpg`; dark Google Maps directions widget CTS → Hirafu Welcome Centre with clickable pins opening external Google Maps directions.
 Decide: (none open)
 
 ---
@@ -677,18 +680,47 @@ Decide: (none open)
 - Modify front matter on per-page basis: `where-to-ride/index.html`, `twin-peaks/index.html`, `where-to-ride/grand-hirafu/index.html`, `where-to-ride/hanazono/index.html`, `where-to-ride/gravel/index.html`, `where-to-ride/skills-parks/index.html`, `where-to-ride/annupuri/index.html`, `plan-your-trip/index.html`, `about/index.html`, `team/index.html`, `projects/index.html`, `projects/*/index.html`, `impact/index.html`, `dirty-dames/index.html`, `press/index.html`, `events/index.html`, `partner/index.html`, etc. plus all JA twins.
 - Source assets via Pattern P-IMG into `assets/images/_triage/mastheads/` then process and place per page.
 
-Steps:
-- [ ] Inventory current masthead state per page: which pages set `masthead.img` in front matter vs fall back to `/assets/images/bg/bg-header.jpg`.
-- [ ] Discuss with Tom: one image per page, or share-and-vary across related pages?
-- [ ] Tom drops candidate landscape photos into `assets/images/_triage/mastheads/` grouped by page slug.
-- [ ] Pick + process to masthead-suitable size (likely 1920 wide). Place under `assets/images/mastheads/` or per-page folders (decide convention at sweep time).
-- [ ] Update each page's `masthead.img` (and `masthead.credit` where photographer attribution applies) in EN front matter.
-- [ ] Mirror to JA front matter.
-- [ ] Visual check across all updated pages.
-- [ ] Pattern P-COMMIT (likely per-cluster of related pages).
+**Approach decided:** Audit + replace as each page comes up in Phase A. Where-to-ride sub-pages got their mastheads set during the per-page rewrites (often using `/assets/images/trails/<park>/01.jpg` or an event header). Standalone pages get a bespoke `bg-header-<page>.jpg` at 2000px wide.
+
+**Per-page audit + replace checklist:**
+
+- [x] `/where-to-ride/` (hub) — `bg-header-where-to-ride.jpg` (Toshi Pander shot, swapped in commit c9ce467)
+- [x] `/where-to-ride/gravel/` — Niseko Gravel autumn ride event header
+- [x] `/where-to-ride/skills-parks/` — Akaigawa pump track event header
+- [x] `/where-to-ride/annupuri/` — `/assets/images/trails/annupuri/01.jpg`
+- [x] `/where-to-ride/grand-hirafu/` — `/assets/images/trails/grand-hirafu/01.jpg`
+- [x] `/where-to-ride/hanazono/` — `/assets/images/trails/hanazono/01.jpg`
+- [x] `/plan-your-trip/` — `bg-header-plan-your-trip.jpg` (commit 6b1bc72)
+- [ ] `/` (Home) — defer to Home redesign spec (A.27)
+- [ ] `/about/`
+- [ ] `/team/`
+- [ ] `/impact/`
+- [ ] `/twin-peaks/` (deferred per A.2 — sweep when polish lands)
+- [ ] `/projects/` (hub)
+- [ ] `/projects/twin-peaks/`
+- [ ] `/projects/grand-hirafu/`
+- [ ] `/projects/hanazono/`
+- [ ] `/projects/yotei-360/`
+- [ ] `/events/`
+- [ ] `/dirty-dames/`
+- [ ] `/partner/`
+- [ ] `/join/`
+- [ ] `/donate/`
+- [ ] `/jobs/`
+- [ ] `/contact/`
+- [ ] `/press/`
+- [ ] `/stories/`
+- [ ] `/artist-series/`
+
+Per-page steps when one comes up:
+- [ ] Confirm current `masthead.img` value (or fallback to `/assets/images/bg/bg-header.jpg`).
+- [ ] Tom drops candidate landscape photo into `assets/images/_triage/`.
+- [ ] Process to 2000px wide JPG at quality 82, place at `/assets/images/bg/bg-header-<page-slug>.jpg`.
+- [ ] Update `masthead.img` in both EN and JA front matter (and `masthead.credit` if attribution required).
+- [ ] Tick the entry above + Pattern P-COMMIT.
 
 Notes:
-This task was created to capture the deferred bg-image decisions from A.2 onward. Defer until the rest of Phase A is walked so we know the full set of pages, can see them side-by-side, and apply a consistent visual treatment.
+This task was created to capture the deferred bg-image decisions from A.2 onward. Walked alongside Phase A per-page work rather than as one cross-cutting sweep, so individual sub-pages tick off as their rewrites land.
 
 ---
 
