@@ -2515,6 +2515,54 @@ input.invalid {
   transform: scale(1.04);
 }
 
+.seasons-gallery {
+  max-width: 900px;
+  margin: 20px auto;
+}
+
+.seasons-gallery .gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+@media (min-width: 768px) {
+  .seasons-gallery .gallery-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.seasons-gallery .gallery-tile {
+  position: relative;
+  display: block;
+  aspect-ratio: 3 / 2;
+  background: var(--color-bg-panel);
+  border-radius: 3px;
+  overflow: hidden;
+  text-decoration: none;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.seasons-gallery .gallery-tile:hover,
+.seasons-gallery .gallery-tile:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+  outline: none;
+}
+
+.seasons-gallery .gallery-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 400ms ease;
+}
+
+.seasons-gallery .gallery-tile:hover img,
+.seasons-gallery .gallery-tile:focus-visible img {
+  transform: scale(1.04);
+}
+
 .module-ct {
   background: transparent;
   color: var(--color-text);
