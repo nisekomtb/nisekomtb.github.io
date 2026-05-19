@@ -577,10 +577,11 @@ Decide: (resolved) option (b). 6 EN files touched, 0 JA files. Past events; low-
 - Modify: `partner/index.html`, `ja/partner/index.html`
 
 Steps:
-- [ ] Run `grep -n "Selig" partner/index.html ja/partner/index.html` to locate the Santa Cruz reference.
-- [ ] Update Chris Selig's affiliation: Santa Cruz → Norco. Mirror in JA.
-- [ ] Final text pass on the rest of the page.
-- [ ] Visual check.
+- [x] Run `grep -n "Selig" partner/index.html ja/partner/index.html` to locate the Santa Cruz reference.
+- [x] Update Chris Selig's affiliation: Santa Cruz → Norco. Mirror in JA.
+- [x] Final text pass on the rest of the page. No AI tells / em dashes found. Removed broken "Download pitch deck" CTA (placeholder `href="#"`) from both EN + JA — defer until a real pitch deck PDF is ready.
+- [x] Masthead: new partner-specific image `/assets/images/bg/bg-header-partner.jpg` — builder operating a Yanmar excavator with Mount Yotei in the background. Conveys "this is what your money builds" without locking the page to any current sponsor brand. Sourced via Pattern P-IMG (2000px wide JPEG q82, 1.1MB). EN + JA front matter updated. Also reduced gold table.levels th from font-weight 700 → 500 to match .module-title section headings.
+- [ ] Visual check. *(Tom to verify.)*
 - [ ] Pattern P-COMMIT.
 
 Notes:
@@ -716,7 +717,7 @@ Decide: (none open)
 - [ ] `/projects/yotei-360/`
 - [x] `/events/` — `bg-header-events.jpg` (commit cc0ed30)
 - [ ] `/dirty-dames/`
-- [ ] `/partner/`
+- [x] `/partner/`
 - [ ] `/join/`
 - [ ] `/donate/`
 - [ ] `/jobs/`
