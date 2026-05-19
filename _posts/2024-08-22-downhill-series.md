@@ -2,7 +2,7 @@
 layout: event
 categories: events
 title: Downhill Series
-description: NAMBA hosts side events alongside the 2024 Downhill Series at Niseko Annupuri: skate jam, Twin Peaks fun ride, and welcome party at Rhythm.
+description: "NAMBA hosts side events alongside the 2024 Downhill Series at Niseko Annupuri: skate jam, Twin Peaks fun ride, and welcome party at Rhythm."
 startDate: 2024-08-22 09:00:00 +0900
 days: 4
 location: Niseko

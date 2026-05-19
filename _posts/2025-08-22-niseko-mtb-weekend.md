@@ -2,7 +2,7 @@
 layout: event
 categories: events
 title: Niseko MTB Weekend
-description: Four days of Niseko mountain biking: Santa Cruz demo bikes at Rhythm Hirafu, group rides with pros Hajime Imoto and Yuki Kushima, and the Downhill Series race at Niseko Annupuri.
+description: "Four days of Niseko mountain biking: Santa Cruz demo bikes at Rhythm Hirafu, group rides with pros Hajime Imoto and Yuki Kushima, and the Downhill Series race at Niseko Annupuri."
 startDate: 2025-08-22 09:00:00 +0900
 days: 4
 location: Niseko
