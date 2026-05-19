@@ -492,7 +492,37 @@ annupuri:
     managed_by: ニセコアンヌプリ
   location_lat: 42.847557294449004
   location_lng: 140.64795548334948
-  gallery: []
+  gallery:
+    - img: /assets/images/trails/annupuri/gallery/gondola-yotei.webp
+      width: 1736
+      height: 1157
+      alt_en: Annupuri gondola cabins overhead with Mount Yotei rising in the distance
+      alt_ja: アンヌプリゴンドラの後方に羊蹄山がそびえる景色
+    - img: /assets/images/trails/annupuri/gallery/riders-gondola-valley.webp
+      width: 1920
+      height: 1280
+      alt_en: Two downhill riders on the Annupuri course with a gondola cabin overhead and the Niseko valley below
+      alt_ja: アンヌプリのコースを走るダウンヒルライダー2人、頭上にはゴンドラ、眼下にはニセコの谷
+    - img: /assets/images/trails/annupuri/gallery/rider-cornering-grass.webp
+      width: 1920
+      height: 1280
+      alt_en: A downhill racer carving a corner through tall grass on the Annupuri course
+      alt_ja: アンヌプリのコースで草地のコーナーを攻めるダウンヒルレーサー
+    - img: /assets/images/trails/annupuri/gallery/rider-base-finish.webp
+      width: 1920
+      height: 1280
+      alt_en: A race rider descending the lower section of the Annupuri downhill course toward the base
+      alt_ja: アンヌプリ・ダウンヒルコース下部をベースに向かって駆け下りるレースライダー
+    - img: /assets/images/trails/annupuri/gallery/rider-summit-view.webp
+      width: 1920
+      height: 1280
+      alt_en: A rider taking in the view across the Niseko valley from the top of the Annupuri course
+      alt_ja: アンヌプリコース上部からニセコの谷を望むライダー
+    - img: /assets/images/trails/annupuri/gallery/riders-race-action.webp
+      width: 1920
+      height: 1280
+      alt_en: Two downhill racers in numbered jerseys riding the Annupuri course
+      alt_ja: アンヌプリのコースを走るゼッケン姿のダウンヒルレーサー2人
   trailforks_rid: 66231
   trails:
   - name: Downhill course
