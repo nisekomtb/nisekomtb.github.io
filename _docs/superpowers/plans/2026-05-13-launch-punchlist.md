@@ -592,18 +592,18 @@ Decide: (none open)
 ### Task A.22: `/join/`
 
 **Files:**
-- Modify: `get-involved/join/index.html`, `ja/get-involved/join/index.html` (verify path; may have moved to `/join/` per overhaul)
+- Modify: `join/index.html`, `ja/join/index.html`
 - External: Ecwid admin (no code change)
 
 Steps:
-- [ ] Confirm current URL/path for the Join page. The overhaul moved `/get-involved/join/` → `/join/`. Use whichever is current.
-- [ ] Replace images (Pattern P-IMG).
-- [ ] Check text.
-- [ ] Check graph data: any chart on the page (membership growth, etc.). Verify data accuracy. Update if stale.
-- [ ] Mirror EN → JA (Pattern P-EN-JA).
+- [x] Confirm current URL/path for the Join page. Confirmed `/join/` (overhaul move complete).
+- [x] Replace images (Pattern P-IMG). New masthead `/assets/images/bg/bg-header-join.jpg` (big NAMBA group portrait, 2:1 aspect, 802K). New in-page `/assets/images/join/dig-day.webp` (multi-generational dig day on forest trail, 1800px q82, 317K) replaces the "Photo: Community ride or dig day group shot" placeholder. Both EN + JA updated, alt text bilingual.
+- [x] Check text. Found stale stat: "92% of all funds go directly to trail building and maintenance" — actual allocation from `_data/impact.yml` is 82 (trail_construction) + 13 (trail_maintenance_operation) = **95%**. Fixed in both EN + JA.
+- [x] Check graph data: doughnut chart pulls live from `site.data.impact.funding.allocation` — no stale data, will track the YAML automatically.
+- [x] Mirror EN → JA (Pattern P-EN-JA). Ran BudouX on 13 visible JA text blocks (headers, paragraphs, hero text, CTA caption) — previously zero tokenisation.
 - [ ] Flag external action to Tom: membership products in Ecwid need to be converted to subscription products. This is an Ecwid admin task, not code. Track in Notes.
-- [ ] Visual check.
-- [ ] Pattern P-COMMIT.
+- [ ] Visual check. *(Tom to verify.)*
+- [x] Pattern P-COMMIT.
 
 Notes:
 External action: Ecwid membership → subscription conversion (Tom does in Ecwid admin)
@@ -718,7 +718,7 @@ Decide: (none open)
 - [x] `/events/` — `bg-header-events.jpg` (commit cc0ed30)
 - [ ] `/dirty-dames/`
 - [x] `/partner/`
-- [ ] `/join/`
+- [x] `/join/`
 - [ ] `/donate/`
 - [ ] `/jobs/`
 - [ ] `/contact/`
