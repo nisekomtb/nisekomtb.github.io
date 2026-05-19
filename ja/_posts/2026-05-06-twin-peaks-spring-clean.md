@@ -3,7 +3,8 @@ layout: event
 categories: events
 title: ツインピークス・スプリングクリーン
 titleHtml: ツインピークス・<wbr>スプリングクリーン
-description: 雨予報のため水曜日5月6日（憲法記念日の振替休日）に延期しました。ツインピークス・バイクパークでのボランティア・トレイルデーで、冬の倒木や落ち葉を片付け、シーズンに向けてトレイルを整備しましょう。午前・午後の2セッション、どちらか、または両方参加可能。
+description: ツインピークス・バイクパークでのボランティア・トレイルデーで、冬の倒木や落ち葉を片付け、シーズンに向けてトレイルを整備しましょう。午前・午後の2セッション、どちらか、または両方参加可能。
+rescheduled: "⛈️ <strong>日程変更：</strong>月曜日は​終日​雨予報の​ため、​イベントを​<strong>水曜日5月6日</strong>（​憲法記念日の​振替休日）に​延期しました。​同じ​トレイル、​同じ​セッション、​より​良い​コンディションで​お待ちしています。 ⛈️"
 startDate: 2026-05-06 09:00:00 +0900
 days: 1
 time: "9:00am - 4:00pm"
@@ -34,8 +35,6 @@ signup: https://docs.google.com/forms/d/e/1FAIpQLSfXA5L5YXMhfN4-zqfDgVCjgYGEv4gg
 parking: false
 about: false
 ---
-
-<span class="rescheduled">⛈️ <strong>日程変更：</strong>月曜日は<wbr>終日<wbr>雨予報の<wbr>ため、<wbr>イベントを<wbr><strong>水曜日5月6日</strong>（<wbr>憲法記念日の<wbr>振替休日）に<wbr>延期しました。<wbr>同じ<wbr>トレイル、<wbr>同じ<wbr>セッション、<wbr>より<wbr>良い<wbr>コンディションで<wbr>お待ちしています。 ⛈️</span>
 
 ## 夏に<wbr>向けて<wbr>トレイル整備に<wbr>ご協力ください
 

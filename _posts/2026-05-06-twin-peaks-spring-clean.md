@@ -2,7 +2,8 @@
 layout: event
 categories: events
 title: Twin Peaks Spring Clean
-description: "Rescheduled to Wednesday 6 May (Constitution Day holiday) due to rain forecast. Join us for a volunteer trail day at Twin Peaks Bike Park: clear winter debris and rake trails ready for the new season. Morning and afternoon sessions available."
+description: "Volunteer trail day at Twin Peaks Bike Park: clear winter debris and rake trails ready for the new season. Morning and afternoon sessions available."
+rescheduled: "⛈️ **Rescheduled:** with rain forecast all day on Monday, we've moved this event to **Wednesday 6 May**, which remains a public holiday (Constitution Day substitute). Same trails, same sessions, drier conditions. ⛈️"
 startDate: 2026-05-06 09:00:00 +0900
 days: 1
 time: "9:00am - 4:00pm"
@@ -33,8 +34,6 @@ signup: https://docs.google.com/forms/d/e/1FAIpQLSd9HMXa2vyQuFpN4XVVFr6XOlzwcR1Z
 parking: false
 about: false
 ---
-
-<span class="rescheduled">⛈️ <strong>Rescheduled:</strong> with rain forecast all day on Monday, we've moved this event to <strong>Wednesday 6 May</strong>, which remains a public holiday (Constitution Day substitute). Same trails, same sessions, drier conditions. ⛈️</span>
 
 ## Help us get the trails ready for summer
 

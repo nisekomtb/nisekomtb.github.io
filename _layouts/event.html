@@ -96,6 +96,7 @@ layout: base
     font-weight: bold;
   }
 
+  .rescheduled,
   span.rescheduled {
     display: block;
     margin: 0 0 24px;
@@ -107,6 +108,12 @@ layout: base
     font-weight: 500;
   }
 
+  .rescheduled p {
+    margin: 0;
+    color: #8a4500;
+  }
+
+  .rescheduled strong,
   span.rescheduled strong {
     color: #8a4500;
   }
@@ -292,6 +299,7 @@ layout: base
         {% if page.cancelled %}
           <div class="event-status cancelled">{% if page.lang == "ja" %}キャンセル{% else %}Cancelled{% endif %}</div>
         {% endif %}
+        {% if page.rescheduled %}<div class="rescheduled">{{ page.rescheduled | markdownify }}</div>{% endif %}
         {% if page.description %}<p class="lead">{{ page.description }}</p>{% endif %}
         {% if page.signup and page.cancelled != true %}
           <div class="event-signup-top">
