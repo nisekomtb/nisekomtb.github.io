@@ -47,7 +47,7 @@ parking: false
 about: false
 ---
 
-## ツインピークスで​Loic Bruniと​ライド
+### ツインピークスで​Loic Bruniと​ライド
 
 **Loic Bruni**が​7月25日に​ニセコに​来ます。​UCIダウンヒル世界選手権6回優勝、​UCIワールドカップ年間総合優勝4回、​Specialized Gravityチーム所属の​ライダーです。​ツインピークス・バイクパークでの​グループライドと、​Rhythm Hirafuでの​ミート&グリートを​開催します。
 

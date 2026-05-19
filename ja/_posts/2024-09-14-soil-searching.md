@@ -69,7 +69,7 @@ about: false
 storeProductId: 679581277
 storeProductSlug: soil-searching-2024
 ---
-## Soil Searching Niseko 2024
+### Soil Searching Niseko 2024
 
 Specializedの​Soil Searchingイベントが​ニセコで​2年目の​開催。​今年は​NAMBAクルーと​一緒に​ハンズオンの​トレイル建設、​フィーチャー造成、​メンテナンスに​取り組みます。
 

@@ -35,7 +35,7 @@ parking: false
 about: false
 ---
 
-## Help us get the trails ready for summer
+### Help us get the trails ready for summer
 
 After a long winter buried under snow, our trails need some love before the season kicks off. Join us on **Wednesday 6 May** (Constitution Day holiday) for a volunteer trail day at Twin Peaks Bike Park, a fitting public holiday to be outdoors working in nature.
 

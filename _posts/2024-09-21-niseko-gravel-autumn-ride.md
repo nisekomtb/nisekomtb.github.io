@@ -28,7 +28,7 @@ og:
 parking: false
 about: false
 ---
-## Beyond MTB: Niseko Autumn Gravel Ride 2024
+### Beyond MTB: Niseko Autumn Gravel Ride 2024
 
 A two-day gravel ride through Niseko on 21-22 September, weaving paved and unpaved roads through the area's autumn colour.
 

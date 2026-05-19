@@ -68,7 +68,7 @@ storeProductSlug: niseko-trail-days-2025
 ---
 <img src="/assets/images/events/2025/niseko-trail-days/logo.png" style="width: 250px; margin: 0 auto;">
 
-## Specialized Trail Days, Niseko edition
+### Specialized Trail Days, Niseko edition
 
 Specialized Japan run Trail Days across the country each year. The Hokkaido edition lands at Twin Peaks Bike Park: a full day of trail work, riding, demos, a jump clinic, and an afterparty at Rhythm.
 

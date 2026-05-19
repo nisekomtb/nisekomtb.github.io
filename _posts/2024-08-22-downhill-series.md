@@ -25,7 +25,7 @@ og:
 parking: false
 about: false
 ---
-## NAMBA at the 2024 Downhill Series
+### NAMBA at the 2024 Downhill Series
 
 NAMBA runs three side events alongside the 2024 Downhill Series race weekend at Niseko Annupuri.
 

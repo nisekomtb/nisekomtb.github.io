@@ -55,7 +55,7 @@ itinerary:
 parking: false
 about: false
 ---
-## Twin Peaks Bike Park monitor tour
+### Twin Peaks Bike Park monitor tour
 
 A two-day monitor tour at Twin Peaks Bike Park on Tuesday 15 and Wednesday 16 October. Ride the trails with the people who built them, hear how they were designed, and share feedback that shapes what gets built next.
 

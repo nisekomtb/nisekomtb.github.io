@@ -69,7 +69,7 @@ about: false
 storeProductId: 679581277
 storeProductSlug: soil-searching-2024
 ---
-## Soil Searching Niseko 2024
+### Soil Searching Niseko 2024
 
 Specialized's Soil Searching event returns to Niseko for a second year. This edition shifts focus to hands-on trail building, feature crafting, and maintenance with the NAMBA crew.
 

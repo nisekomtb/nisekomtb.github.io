@@ -46,7 +46,7 @@ parking: false
 about: false
 ---
 
-## Ride with Loic Bruni at Twin Peaks
+### Ride with Loic Bruni at Twin Peaks
 
 **Loic Bruni** is in Niseko on 25 July: 6x UCI Downhill World Champion, 4x UCI World Cup Overall Champion, and a fixture on the Specialized Gravity team. He'll lead a group ride at Twin Peaks Bike Park, followed by a meet and greet at Rhythm Hirafu.
 

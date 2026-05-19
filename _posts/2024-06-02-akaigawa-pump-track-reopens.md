@@ -27,7 +27,7 @@ og:
 parking: false
 about: false
 ---
-## Akaigawa Pump Track reopens
+### Akaigawa Pump Track reopens
 
 Akaigawa Tomo Playpark's Velosolutions pump track reopens on Saturday 1 June 2024 after a multi-year closure. New asphalt surface, suitable for BMX, MTB, skateboards, and kickboards.
 

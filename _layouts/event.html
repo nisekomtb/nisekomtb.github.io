@@ -142,6 +142,11 @@ layout: base
     border-radius: 3px;
   }
 
+  p.day-label {
+    margin-top: 40px;
+    margin-bottom: 12px;
+  }
+
   table.timetable td:first-child {
     width: 120px;
     white-space: nowrap;
@@ -333,7 +338,7 @@ layout: base
         {% for day in page.itinerary.days %}
 
           {% if page.days != 1 %}
-          <p>
+          <p class="day-label">
             <strong>{% if page.lang == "en" %}Day {{ forloop.index }} itinerary:{% else %}{{- forloop.index -}}日目の行程{% endif %}</strong>
           </p>
           {% endif %}
