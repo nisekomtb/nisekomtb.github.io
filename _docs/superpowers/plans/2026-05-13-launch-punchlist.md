@@ -638,20 +638,25 @@ Decide: (none open)
 ### Task A.23: `/donate/`
 
 **Files:**
-- Modify: `donate/index.html`, `ja/donate/index.html` (verify path; may be `/get-involved/donate/`)
+- Modify: `donate/index.html`, `ja/donate/index.html` (canonical path confirmed: `/donate/`; `/get-involved/donate/` is a 6-line redirect stub)
 
 Steps:
-- [ ] Confirm current path for the Donate page.
-- [ ] Discuss with Tom: are there too many cards? Reduce if so.
-- [ ] Discuss with Tom: images instead of icons (or add an image or two alongside icons)?
-- [ ] Implement decisions; source any new images via Pattern P-IMG.
-- [ ] Final text check.
-- [ ] Mirror EN → JA (Pattern P-EN-JA).
-- [ ] Visual check.
+- [x] Confirmed path: canonical `/donate/`, `/ja/donate/`. Sister stub at `/get-involved/donate/` redirects.
+- [x] Reduced donation tiers from 8 → 6 cards. Dropped ¥1,000 "Keep It Sharp" (duplicative with the ¥500 chainsaw-fuel tier) and ¥25,000 "Bridge the Gap" (filler between ¥10k crew day and ¥50k excavator day). Final tiers: ¥500, ¥2,500, ¥5,000, ¥10,000, ¥50,000, Custom. Grid changed from `col-lg-3` (4-col, 2 awkward rows) to `col-lg-4` (clean 3-col × 2 rows).
+- [x] Icons: kept Font Awesome glyphs. Photo upgrade flagged as a future enhancement (see notes).
+- [x] Copy polish: trimmed slogan flourishes on four "More ways" cards (Voice "Your voice moves policy", Skills "accelerate everything NAMBA does", Art "Your creativity supports the mission", Reach "Word of mouth is free and powerful", Land Access "Every connection expands the network").
+- [x] Mirror EN → JA. Translated all donation tier names + descriptions + "Donate" CTAs (previously all English in the JA twin). Translated hero heading "Fund the Dig" → 「トレイル作りを支える」 and hero body. Ran BudouX on all visible JA strings, including the previously-untokenised "More ways" descriptions, intro paragraph, and bottom CTA. Manually corrected one 方 | 法 split in the intro.
+- [x] Fixed "Traiforks" → "Trailforks" typo in the JA Reach card.
+- [x] Masthead replaced. Tom supplied a top-down trail-crew shot (red gloves, stone slab, mid-action). Resized from 3000×2000 to 2000×1333 q82, saved to `/assets/images/bg/bg-header-donate.jpg`. A.28 row ticked.
+- [ ] Visual check on served site. *(Tom to verify.)*
 - [ ] Pattern P-COMMIT.
 
+Follow-ups (out of this task's scope):
+- Promote donation-tier icons to dig-day / tool / material photos once Tom has shots. Stronger CRO than abstract icons since each tier funds a tangible thing.
+- The "Go Big" custom-amount input is inline-styled and a touch clunky UX; works but could be polished later.
+
 Notes:
-Decide: card count? images vs icons?
+Decide: (none open)
 
 ---
 
@@ -661,11 +666,17 @@ Decide: card count? images vs icons?
 - Modify: `jobs/index.html`, `ja/jobs/index.html`
 
 Steps:
-- [ ] Final text pass.
-- [ ] Verify listings reflect current open positions.
-- [ ] Mirror EN → JA (Pattern P-EN-JA).
-- [ ] Visual check.
+- [x] Bug fix: "Volunteer" CTA button linked to `/donate/` in both EN and JA (looks like a copy-paste leak from supporter pages). Repointed to `/contact/?topic=volunteering` and `/ja/contact/?topic=volunteering`, matching the volunteering-skills pattern from /donate/'s Skills card.
+- [x] Copy polish: trimmed the "directly shapes the future of mountain biking in Niseko" slogan flourish from the intro. Rewrote "Other ways" body to drop filler ("There are plenty of ways to contribute"). EN copy now leads with concrete role types ("paid seasonal trail crew", "volunteers across our subcommittees").
+- [x] Mirror EN → JA. Re-translated the intro and "Other ways" body to match the new EN copy. Converted all 8 `<wbr>` tags throughout the JA file to U+200B zero-width spaces (BudouX convention). Manually corrected one 方 | 法 split in 「その他の参加方法」.
+- [x] Listings render via Liquid from `_posts/` with `categories: jobs` + `isOpen: true` — no changes needed.
+- [x] Masthead replaced with `bg-header-jobs.jpg` (3-person working crew shot, mid dig day, 2000×1333 q82, 702KB). EN + JA front matter updated. Old `join-our-team.jpg` (credit Jinya Nishiwaki) decommissioned; new photo's photographer credit pending Tom's confirmation (filename suggests "AJP").
+- [ ] Visual check on served site. *(Tom to verify.)*
 - [ ] Pattern P-COMMIT.
+
+Out of scope for this task:
+- The CSS for `.job-card` is inline-duplicated across both EN and JA files. Phase C territory (CSS audit + promotion), not A.24.
+- The Subcommittee Volunteer EN post description is overlong (50+ words, includes "arms, legs, brain, heart" en-dashed line). Flagged for A.25 (single job post layout fix).
 
 Notes:
 Decide: (none open)
@@ -679,15 +690,16 @@ Decide: (none open)
 - Inspect: recent job posts in `_posts/` and `ja/_posts/`
 
 Steps:
-- [ ] Same approach as A.20 but for jobs.
-- [ ] Pattern P-STYLE audit on `_layouts/job.html`.
-- [ ] Identify the description duplication (top metadata vs first body paragraph). Apply the same fix approach chosen in A.20 for consistency.
-- [ ] Mirror in JA job posts where editorial changes are made.
-- [ ] Visual check on a recent job post.
+- [x] Pattern P-STYLE audit on `_layouts/job.html`. Structure was sound; added the events-style disabled-button CSS and unified the Apply CTA logic.
+- [x] **Mirror the events button logic**: top Apply button now always renders when `applyUrl` is set (greyed out if `!page.isOpen`). New bottom CTA row matches the events pattern: Apply (primary, disabled when closed) + Back to jobs (secondary if apply exists, primary if not). Old `{% if page.applyUrl and page.isOpen %}` gating removed.
+- [x] **Description duplication sweep**: 5 EN posts had their frontmatter description repeated verbatim inside their body under "About the [Role] Role:". Stripped via Python regex (4 posts) + a manual edit for Project & Trail Application Assistant (description was the lead sentence of a multi-sentence paragraph, not its own paragraph block). JA posts all clean — translated without copy-paste, same finding as A.20 for events.
+- [x] **Inline-CSS cleanup**: removed redundant `style="margin-top:0;"` from the opening h2/h3 of all 14 posts (7 EN + 7 JA). Layout's `.job-content h3:first-child { margin-top: 0; }` rule handles spacing.
+- [x] **Subcommittee Volunteer post** tightened: EN description trimmed from 71 words ("arms, legs, brain, heart …") to 25 words leading with the concrete subcommittee list. JA description rewritten and three typos fixed (ボランテイア → ボランティア, 構成されいて → 構成されていて, 運営されてます → 運営されています). Inline Apply CTA inside the post body removed in both EN + JA (now redundant with the layout's two Apply buttons). Opening h2 converted to h3 to match the other 6 posts.
+- [ ] Visual check on a representative job post. *(Tom to verify — open posts: Project & Trail Application Assistant + Subcommittee Volunteer.)*
 - [ ] Pattern P-COMMIT.
 
 Notes:
-Decide: (carry from A.20)
+Decide: (none open)
 
 ---
 
@@ -695,19 +707,22 @@ Decide: (carry from A.20)
 
 **Files:**
 - Modify: `shop/index.html`, `ja/shop/index.html`
-- Modify: `artist-series/index.html`, `ja/artist-series/index.html` (or wherever artist series lives)
+- Modify: `artist-series/index.html`, `ja/artist-series/index.html`
 - External: Ecwid admin (no code change)
 
 Steps:
-- [ ] Final pass on shop page with new reference style (Pattern P-STYLE).
-- [ ] Final pass on artist series page with new reference style.
-- [ ] Mirror EN → JA (Pattern P-EN-JA).
-- [ ] Flag external action to Tom: upload product images for donations and memberships in Ecwid admin.
-- [ ] Visual check on both pages.
+- [x] Pattern P-STYLE audit on `/shop/`. Intro copy is already voicey ("every yen of profit goes straight back into the dirt", "soil our cotton grows in as much as the soil under our tyres"), 3-badge layout is tight, Ecwid theming CSS covers cards/sort/categories nav. No changes needed.
+- [x] JA `/shop/` already mirrored and BudouX-tokenised (ご購入の​一つ​ひとつが、​トレイルに​なる).
+- [x] `/artist-series/` closing CTA humanised. Old version stacked AI flourishes ("creative minds inspired by the outdoors, community, and mountain biking culture", "your chance to showcase your work, support local trails, and be part of something meaningful", "growing community of trail-building creatives"). New version: "Painters, illustrators, designers, photographers: if your work is inspired by the outdoors and mountain biking, get in touch. Your art reaches riders, and a portion of every sale goes back into the trails." Heading also de-titlecased: "Want to Be Part of the Artist Series?" → "Want to be part of the Artist Series?"
+- [x] JA `/artist-series/` closing CTA mirrored with the same humanisation. BudouX-tokenised.
+- [ ] Visual check on both shop + artist-series pages. *(Tom to verify.)*
 - [ ] Pattern P-COMMIT.
 
+Out of scope:
+- Artist bios — these read like the artists' own self-written copy. Kept as-is to preserve their voice.
+
 Notes:
-External action: Ecwid donation + membership product images (Tom uploads in Ecwid admin)
+External action: Ecwid donation + membership product images (Tom uploads in Ecwid admin). Already tracked in A.22 (membership conversion) and A.23 (donation imagery) external action notes.
 Decide: (none open)
 
 ---
@@ -744,8 +759,8 @@ Decide: (none open)
 - [ ] `/dirty-dames/`
 - [x] `/partner/`
 - [x] `/join/`
-- [ ] `/donate/`
-- [ ] `/jobs/`
+- [x] `/donate/` — `bg-header-donate.jpg` (top-down trail crew hands-on stone work, 2000×1333 q82)
+- [x] `/jobs/` — `bg-header-jobs.jpg` (3-person working crew, 2000×1333 q82)
 - [ ] `/contact/`
 - [ ] `/press/`
 - [ ] `/stories/`

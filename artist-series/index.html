@@ -1,7 +1,7 @@
 ---
 title: Artist Series
-subtitle: Celebrating local artists and building trails, one design at a time.
-description: We’ve teamed up with local artists to create unique merchandise that celebrates the spirit of riding in Niseko. Each piece is a limited-edition design, and every purchase supports trail building and maintenance.
+subtitle: Limited-edition gear by local artists. Every sale funds the trails.
+description: We work with local artists on limited-edition gear inspired by riding in Niseko. Every purchase funds trail building and maintenance.
 action:
   name: Shop the Series
   url: /shop/
@@ -202,22 +202,18 @@ artists:
 
 ---
 <style>
-
+  /* Sticky avatar nav */
   .avatars {
-    position:sticky; top:0;
-    background: linear-gradient(to bottom,
-      var(--color-bg) 70%,
-      transparent);
-    opacity: 1;
+    position: sticky;
+    top: 0;
+    background: linear-gradient(to bottom, var(--color-bg) 70%, transparent);
     padding-bottom: 50px;
     margin-bottom: 20px;
-    z-index:9999;
+    z-index: 9999;
   }
 
   .avatars ol {
     position: relative;
-    bottom: 0;
-    left: 0;
     z-index: 15;
     width: 100%;
     padding: 0;
@@ -231,13 +227,10 @@ artists:
     display: inline-block;
     width: 100px;
     height: 100px;
-    /* max-width: 11%; */
     margin: 20px 10px;
-    text-indent: 0;
     cursor: pointer;
     background-color: transparent;
     border: none;
-    border-radius: 0;
   }
 
   .avatars ol li:hover {
@@ -247,186 +240,147 @@ artists:
   }
 
   @media (max-width: 1199px) {
-    .avatars ol li {
-      width: 75px;
-      height: 75px;
-      margin: 20px 10px;
-    }
-
-    .avatars ol li:hover {
-      width: 90px;
-      height: 90px;
-      margin: -5px 2.5px;
-    }
+    .avatars ol li { width: 75px; height: 75px; margin: 20px 10px; }
+    .avatars ol li:hover { width: 90px; height: 90px; margin: -5px 2.5px; }
   }
 
   @media (max-width: 991px) {
-    .avatars ol li {
-      width: 50px;
-      height: 50px;
-      margin: 20px 10px;
-    }
-
-    .avatars ol li:hover {
-      width: 60px;
-      height: 60px;
-      margin: 15px 5px;
-    }
+    .avatars ol li { width: 50px; height: 50px; margin: 20px 10px; }
+    .avatars ol li:hover { width: 60px; height: 60px; margin: 15px 5px; }
   }
-
 
   .avatars ol li img {
     border-radius: 50%;
-    border:#ccc 2px solid;
+    border: 2px solid #ccc;
   }
 
-  .avatars ol li.active img {
-    border:#fff 2px solid;
-  }
+  .avatars ol li.active img { border-color: #fff; }
 
-  .artists-profile {
+  /* Artist card — matches .ride-card pattern from /where-to-ride/ */
+  .artist-card {
+    background: var(--color-bg-panel);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 80px;
     font-size: 16px;
-    margin-bottom: 100px;
   }
 
-  .artists-profile .header {
+  .artist-card .artist-header {
     position: relative;
-    z-index:1;
+    aspect-ratio: 3 / 1;
     background-position: center;
     background-size: cover;
-    padding-top: 250px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
   }
 
-  p {
-    font-size: 16px;
+  .artist-card .artist-header::after {
+    content: '';
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 100px;
+    background: linear-gradient(to bottom, transparent, var(--color-bg-panel));
+    pointer-events: none;
+  }
+
+  .artist-card .artist-avatar {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    bottom: -75px;
+    left: 30px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    z-index: 1;
+    object-fit: cover;
+  }
+
+  .artist-card .artist-title {
+    margin: 30px 30px 0 200px;
+    font-weight: 700;
+  }
+
+  .artist-card .artist-title small { white-space: nowrap; }
+
+  @media (max-width: 550px) {
+    .artist-card .artist-header { aspect-ratio: 2 / 1; }
+    .artist-card .artist-avatar { left: 50%; transform: translateX(-50%); }
+    .artist-card .artist-title {
+      margin: 95px 20px 0;
+      text-align: center;
+    }
+    .artist-card .artist-title small { display: block; }
+  }
+
+  .artist-card .artist-body {
+    padding: 30px;
+  }
+
+  .artist-card .artist-side {
     margin-bottom: 30px;
   }
 
-  .artists-profile .card {
-    padding: 0 15px;
-    width: 100%;
+  .artist-card .artist-side h3,
+  .artist-card .artist-bio h3 {
+    margin: 0 0 16px;
   }
 
-  .artists-profile .card .card-inner {
-    background: var(--color-bg-panel);
-    padding: 30px;
-    border-top-left-radius: 40px;
-    border-top-right-radius: 40px;
-    display: block;
+  .artist-card .artist-side h3:not(:first-child),
+  .artist-card .artist-bio h3:not(:first-child) {
+    margin-top: 30px;
   }
 
-  .artists-profile .card h2 {
-    font-weight: 700;
-    margin-top: 20px;
-    margin-left: 210px;
-  }
-
-  .artists-profile .card h2 small {
-    white-space: nowrap;
-  }
-
-  .artists-profile .card img.avatar {
-    position:absolute;
-    width: 150px;
-    bottom: -75px;
-    left:30px;
-    border-radius: 50%;
-    border:#fff 2px solid;
-  }
-
-  @media (max-width: 550px) {
-    .artists-profile .card h2 {
-      margin-top: 95px;
-      margin-left: 0;
-      text-align: center;
-    }
-
-    .artists-profile .card h2 small {
-      display: block;
-    }
-
-    .artists-profile .card img.avatar {
-      width: 150px;
-      bottom: -75px;
-      left: 0;
-      right: 0;
-      margin: 0 auto;
-    }
-  }
-
-  .artists-profile .list-group-item-heading {
-    margin-bottom: 20px;
-  }
-
-  .artists-profile .side {
-    padding: 0 30px;
-    margin-bottom:30px;
-  }
-
-  @media (max-width: 991px) {
-    .artists-profile .side {
-      padding: 0 15px;
-    }
-  }
-
-  .artists-profile .side .font-icon {
-    white-space: nowrap;
-  }
-
-  .artists-profile .side .font-icon .icon,
-  .artists-profile .side .font-icon [class*="fa-"] {
-    margin-right: 5px;
-    color: var(--color-secondary);
-  }
-
-  .list-group ul {
+  .artist-card .artist-side ul {
     padding-inline-start: 0;
     list-style: none;
   }
 
-  .artists-profile .other-work {
+  .artist-card .artist-side .font-icon { white-space: nowrap; }
+  .artist-card .artist-side .font-icon [class*="fa-"] {
+    margin-right: 5px;
+    color: var(--color-secondary);
+  }
+
+  /* Gallery — matches .park-gallery pattern */
+  .artist-card .artist-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .artist-card .gallery-tile {
     position: relative;
+    display: block;
+    aspect-ratio: 1 / 1;
+    background: var(--color-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    text-decoration: none;
+    transition: transform 200ms ease, box-shadow 200ms ease;
   }
 
-  .artists-profile .other-work .image-wrapper {
-    float:left;
-    width: 50%;
-    aspect-ratio: 1/1;
-    padding-right: 5px;
-    padding-bottom: 5px;
+  .artist-card .gallery-tile:hover,
+  .artist-card .gallery-tile:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+    outline: none;
   }
 
-  @media (max-width: 991px) {
-    .artists-profile .other-work .image-wrapper {
-      width: 33%;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .artists-profile .other-work .image-wrapper {
-      width: 50%;
-    }
-  }
-
-  .artists-profile .other-work .image {
+  .artist-card .gallery-tile img {
     width: 100%;
     height: 100%;
-    background-size: cover;
-    background-position: center;
-    display:block;
-    overflow:hidden;
+    object-fit: cover;
+    display: block;
+    transition: transform 400ms ease;
   }
 
-  .artists-profile .bio {
-    padding: 0 15px;
+  .artist-card .gallery-tile:hover img,
+  .artist-card .gallery-tile:focus-visible img {
+    transform: scale(1.04);
   }
 
-  .artists-profile:after {
-    content: "";
-    display: table;
-    clear: both;
+  .artist-card .design-image {
+    width: 100%;
+    border-radius: 3px;
   }
 </style>
 
@@ -434,8 +388,7 @@ artists:
   <h2>What is the NAMBA Artist Series?</h2>
 </div>
 <div class="module-title-wrap" style="max-width:900px;">
-  <p>We’ve teamed up with local artists to create unique merchandise that celebrates the spirit of riding in
-    Niseko.<br /> Each piece is a limited-edition design, and every purchase supports trail building and maintenance.</p>
+  <p>We work with local artists on limited-edition gear inspired by riding in Niseko. Every purchase funds trail building and maintenance.</p>
 </div>
 
 <div class="avatars">
@@ -449,71 +402,79 @@ artists:
 </div>
 
 {% for artist in page.artists %}
-<div id="artists-{{ forloop.index0 }}" class="artists-profile">
+<div id="artists-{{ forloop.index0 }}" class="artist-card">
+  <div class="artist-header" style="background-image: url('{{ artist.header }}');">
+    <img class="artist-avatar" src="{{ artist.img }}" alt="{{ artist.name }}" />
+  </div>
+  <h2 class="artist-title">{{ artist.name }} <small>{{ artist.title }}</small></h2>
 
-  <div class="card">
-    <div class="card-inner">
-      <div class="header" style="background-image: url('{{ artist.header }}');">
-        <img class="avatar" src="{{ artist.img }}" />
+  <div class="row clearfix artist-body">
+    <div class="artist-side col-lg-4">
+      <h3>Links</h3>
+      <ul>
+        {% for handle in artist.instagram %}
+        <li>
+          <a class="font-icon" href="https://instagram.com/{{ handle }}" target="_blank" rel="noopener">
+            <span class="fa-brands fa-instagram"></span> @{{ handle }}
+          </a>
+        </li>
+        {% endfor %}
+        {% for url in artist.links %}
+        <li>
+          <a class="font-icon" href="{{ url.scheme }}://{{ url.domain }}" target="_blank" rel="noopener">
+            <span class="fa-solid fa-globe"></span> {{ url.domain }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+
+      <h3>Other work</h3>
+      <div class="artist-gallery" id="artist-gallery-{{ forloop.index0 }}">
+        {% for img in artist.work %}
+        <a class="gallery-tile"
+           href="{{ img }}"
+           data-pswp-width="1600"
+           data-pswp-height="1600"
+           target="_blank"
+           rel="noopener">
+          <img src="{{ img }}" alt="{{ artist.name }} artwork {{ forloop.index }}" loading="lazy" />
+        </a>
+        {% endfor %}
       </div>
-      <h2>{{ artist.name }} <small>{{ artist.title }}</small></h2>
-      <div class="row clearfix" style="padding-top:30px;">
-        <div class="side col-lg-4">
+    </div>
 
-          <div class="list-group">
-            <h4 class="list-group-item-heading">Links</h4>
-            <ul>
-              {% for handle in artist.instagram %}
-              <li>
-                <a class="font-icon" href="https://instagram.com/{{ handle }}" target="_blank">
-                  <span class="fa-brands fa-instagram"></span> @{{ handle }}
-                </a>
-              </li>
-              {% endfor %}
-              {% for url in artist.links %}
-              <li>
-                <a class="font-icon" href="{{ url.scheme }}://{{ url.domain }}" target="_blank">
-                  <span class="fa-solid fa-globe"></span> {{ url.domain }}
-                </a>
-              </li>
-              {% endfor %}
-            </ul>
-          </div>
-          <div class="list-group">
-            <h4 class="list-group-item-heading">Other work</h4>
-            <div class="other-work clearfix">
-              {% for img in artist.work %}
-              <div class="image-wrapper"><div class="image" style="background-image: url('{{img}}');"></div></div>
-              {% endfor %}
-            </div>
-          </div>
+    <div class="artist-bio col-lg-8">
+      <h3>About</h3>
+      {{ artist.bio }}
+      <h3>Collaboration design: {{ artist.design.name }}</h3>
+      <img class="design-image" src="{{ artist.design.img }}" alt="{{ artist.design.name }} design by {{ artist.name }}" />
 
-        </div>
-        <div class="bio col-lg-8">
-          <h4 class="list-group-item-heading">About</h4>
-          {{ artist.bio }}
-          <h4 class="list-group-item-heading">Collaboration design: {{ artist.design.name }}</h4>
-
-          <img src="{{ artist.design.img }}" />
-
-          <div style="text-align:center; margin:50px 0;">
-            <a class="btn btn-primary" href="/shop/">Shop the series</a>
-          </div>
-        </div>
+      <div style="text-align:center; margin:50px 0;">
+        <a class="btn btn-primary" href="/shop/">Shop the series</a>
       </div>
     </div>
   </div>
 </div>
 {% endfor %}
 
+<link rel="stylesheet" href="https://unpkg.com/photoswipe@5.4.4/dist/photoswipe.css">
+<script type="module">
+  import PhotoSwipeLightbox from 'https://unpkg.com/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.js';
+  document.querySelectorAll('.artist-gallery').forEach((gallery) => {
+    const lightbox = new PhotoSwipeLightbox({
+      gallery: '#' + gallery.id,
+      children: 'a',
+      pswpModule: () => import('https://unpkg.com/photoswipe@5.4.4/dist/photoswipe.esm.js'),
+    });
+    lightbox.init();
+  });
+</script>
+
 <div class="module-title-wrap">
-  <h2>Want to Be Part of the Artist Series?</h2>
+  <h2>Want to be part of the Artist Series?</h2>
 </div>
 <div class="module-title-wrap" style="max-width:900px;">
-  <p>We're always looking to collaborate with creative minds who are inspired by the outdoors, community, and mountain biking
-  culture. Whether you're a painter, illustrator, designer, or visual storyteller, we'd love to hear from you. The NAMBA
-  Artist Series is your chance to showcase your work, support local trails, and be part of something meaningful. Reach out
-  to join our growing community of trail-building creatives!</p>
+  <p>We're always open to new collaborations. Painters, illustrators, designers, photographers: if your work is inspired by the outdoors and mountain biking, get in touch. Your art reaches riders, and a portion of every sale goes back into the trails.</p>
   <div style="text-align:center; margin:50px 0;">
     <a class="btn btn-primary" href="/contact/?topic=artist-collaboration">Get in touch</a>
   </div>
