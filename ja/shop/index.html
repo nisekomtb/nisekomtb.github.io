@@ -1,6 +1,10 @@
 ---
 title: オンラインショップ
 description: NAMBAのオンラインショップ。ご購入がニセコのトレイル整備に役立ちます。
+masthead:
+  img: /assets/images/bg/bg-header-shop.jpg
+og:
+  image: /assets/images/bg/bg-header-shop.jpg
 ---
 {% include ecwid-styles.html %}
 <style>
@@ -31,6 +35,62 @@ description: NAMBAのオンラインショップ。ご購入がニセコのト�
     font-size: 95%;
     font-weight: 600;
     letter-spacing: 0.3px;
+  }
+
+  /* Shop callouts — same .ride-card pattern */
+  .shop-callouts { margin: 40px 0 0; }
+  .shop-callout {
+    display: block;
+    background: var(--color-bg-panel);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 3px;
+    overflow: hidden;
+    height: 100%;
+    text-decoration: none !important;
+    color: inherit !important;
+    transition: border-color 200ms ease;
+  }
+  .shop-callout:hover {
+    border-color: var(--color-secondary);
+  }
+  .shop-callout-image {
+    position: relative;
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+  }
+  .shop-callout-image::after {
+    content: '';
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 100px;
+    background: linear-gradient(to bottom, transparent, var(--color-bg-panel));
+    pointer-events: none;
+  }
+  .shop-callout-body {
+    padding: 20px 24px 24px;
+    text-align: center;
+  }
+  .shop-callout-body h4 {
+    margin: 0 0 8px;
+  }
+  .shop-callout-body p {
+    margin: 0 0 12px;
+    color: #cccccc;
+    font-size: 95%;
+  }
+  .shop-callout-action {
+    display: inline-block;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  .shop-callout-action span {
+    margin-left: 8px;
+    transition: margin 500ms;
+  }
+  .shop-callout:hover .shop-callout-action span {
+    margin-left: 14px;
   }
 
   .ec-grid {
@@ -355,6 +415,29 @@ description: NAMBAのオンラインショップ。ご購入がニセコのト�
               <span class="fa-solid fa-leaf" aria-hidden="true"></span>
               <div class="shop-badge-label">オーガニック・リングスパンコットン</div>
             </div>
+          </div>
+        </div>
+
+        <div class="row shop-callouts equal-height equal-height-child">
+          <div class="col col-12 col-md-6">
+            <a class="shop-callout" href="/ja/artist-series/">
+              <div class="shop-callout-image" style="background-image:url('/assets/images/artists/header.jpg');"></div>
+              <div class="shop-callout-body">
+                <h4>アーティストたちを<wbr>知る</h4>
+                <p>どの<wbr>デザインにも<wbr>物語が<wbr>あります。<wbr>シリーズを<wbr>手がけた<wbr>アーティストを<wbr>ご覧ください。</p>
+                <span class="shop-callout-action">アーティストシリーズ <span class="fa-solid fa-circle-arrow-right"></span></span>
+              </div>
+            </a>
+          </div>
+          <div class="col col-12 col-md-6">
+            <a class="shop-callout" href="/ja/impact/">
+              <div class="shop-callout-image" style="background-image:url('/assets/images/bg/bg-header-donate.jpg');"></div>
+              <div class="shop-callout-body">
+                <h4>売上の<wbr>使い道</h4>
+                <p>整備した<wbr>トレイル。<wbr>関わった<wbr>ライダー。<wbr>会計は<wbr>すべて<wbr>公開。</p>
+                <span class="shop-callout-action">NAMBAの<wbr>実績 <span class="fa-solid fa-circle-arrow-right"></span></span>
+              </div>
+            </a>
           </div>
         </div>
       </div>
