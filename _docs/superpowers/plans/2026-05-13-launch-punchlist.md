@@ -323,6 +323,30 @@ Decide: (resolved) polish
 
 ---
 
+### Task A.7a: `/where-to-ride/signage/`
+
+**Files:**
+- Modify: `where-to-ride/signage/index.html`, `ja/where-to-ride/signage/index.html`
+
+Steps:
+- [x] Read both files end to end. Initial state: 4-section page (intro, photo placeholder, reading a trail sign, difficulty ratings, "Across the Niseko network", CTA). Difficulty ratings rendered as a flat list. Copy carried AI tells ("creating a cohesive destination experience", duplicate intro/closer).
+- [x] Humanize EN copy across all sections. Dropped the "Across the Niseko network" section since it restated the intro. Tightened the trail-sign reading list (e.g. "Difficulty rating" now points to the cards below; "Direction" replaces "Trail direction"). Intro re-cast as a direct "same signage everywhere we manage" statement.
+- [x] Replace the flat difficulty list with 4 grid cards. Each card: big dicon, colour name, IMBA difficulty label (gold uppercase), short description. Green/Blue use the default panel border; Black gets a 2px white border; Double Black gets a 2px `#be0014` border (the red used on the maps). Responsive grid: 4 columns desktop, 2 columns tablet, 1 column mobile.
+- [x] Mirror EN → JA. Ran BudouX on all visible JA strings (intro paragraph, list items, card descriptions, headings). Manually corrected three bad splits the model produced: 統一ト | レイルサイン → 統一 | トレイルサイン, and 方 | 向 collapsed to 方向 everywhere it appeared.
+- [x] Masthead already on a trail-sign-focused image (`/assets/images/twinpeaks/trailsign.jpg`) — kept. Ticked off the A.28 entry below.
+- [x] Side-by-side "Reading a trail sign" layout shipped: tall trail-sign photo (Tom's Rise 'n' Ryder shot, cropped 1000×2000) on the left, ordered spec list on the right matching the sign top-to-bottom (name → difficulty → sponsor → location → direction → users → QR → riding area). Anchor links in the list jump to the matching detailed sections below.
+- [x] "Your location" callout: recreated the on-sign location box (white tile, red `fa-location-dot` pin, "C30" code) plus the easy-ryder-locations.jpg map showing codes along a real trail.
+- [x] Trail direction (4 cards) and Trail users (3 cards) built using the existing trail-key PNGs. No-bikes icon supplied by Tom and wired in.
+- [x] Full-page copy review. Humanised throughout, added IMBA anchor in Difficulty, dropped "explained" from the heading, parallelised Trail direction descriptions, clarified "NAMBA-managed trail" + "marked sections" in Your location, updated QR copy to Trailforks terminology. JA mirrored with BudouX.
+- [x] Closing section decision: leaving the CTA as the closer. The intro now covers the "same signs everywhere" framing the old "Across the Niseko network" section repeated.
+- [x] Visual check on served site (Tom signed off).
+- [x] Pattern P-COMMIT.
+
+Notes:
+Page was missing from the original A.1-A.26 listing. Slotted here as A.7a since it's still a `/where-to-ride/` sub-page. Linked from `/twin-peaks/` and from every park page's trail-table via the unified signage card.
+
+---
+
 ### Task A.8: `/plan-your-trip/`
 
 **Files:**
@@ -702,6 +726,7 @@ Decide: (none open)
 - [x] `/where-to-ride/gravel/` — Niseko Gravel autumn ride event header
 - [x] `/where-to-ride/skills-parks/` — Akaigawa pump track event header
 - [x] `/where-to-ride/annupuri/` — `/assets/images/trails/annupuri/01.jpg`
+- [x] `/where-to-ride/signage/` — `/assets/images/twinpeaks/trailsign.jpg` (kept; already trail-sign focused)
 - [x] `/where-to-ride/grand-hirafu/` — `/assets/images/trails/grand-hirafu/01.jpg`
 - [x] `/where-to-ride/hanazono/` — `/assets/images/trails/hanazono/01.jpg`
 - [x] `/plan-your-trip/` — `bg-header-plan-your-trip.jpg` (commit 6b1bc72)

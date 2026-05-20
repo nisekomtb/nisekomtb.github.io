@@ -5,6 +5,304 @@ masthead:
   img: /assets/images/twinpeaks/trailsign.jpg
 ---
 
+<style>
+  .difficulty-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin: 30px auto 0;
+    max-width: 1100px;
+  }
+  @media (max-width: 991px) {
+    .difficulty-cards { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .difficulty-cards { grid-template-columns: 1fr; }
+  }
+  .difficulty-card {
+    background: var(--color-bg-panel);
+    border-radius: 4px;
+    padding: 32px 22px 28px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+  }
+  .difficulty-card-icon {
+    width: 88px;
+    height: 88px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 18px;
+    flex-shrink: 0;
+  }
+  .difficulty-card-icon .dicon_small {
+    font-size: 52px;
+    line-height: 1;
+    display: block;
+  }
+  .difficulty-card.is-black .difficulty-card-icon .dicon_small,
+  .difficulty-card.is-double-black .difficulty-card-icon .dicon_small {
+    background-color: transparent;
+    border-radius: 0;
+  }
+  .difficulty-card.is-black .difficulty-card-icon .dicon_small {
+    text-shadow:
+       2.0px  0    0 #ffffff,  1.8px  0.8px 0 #ffffff,
+       1.4px  1.4px 0 #ffffff, 0.8px  1.8px 0 #ffffff,
+       0     2.0px 0 #ffffff, -0.8px  1.8px 0 #ffffff,
+      -1.4px  1.4px 0 #ffffff,-1.8px  0.8px 0 #ffffff,
+      -2.0px  0    0 #ffffff,-1.8px -0.8px 0 #ffffff,
+      -1.4px -1.4px 0 #ffffff,-0.8px -1.8px 0 #ffffff,
+       0    -2.0px 0 #ffffff, 0.8px -1.8px 0 #ffffff,
+       1.4px -1.4px 0 #ffffff, 1.8px -0.8px 0 #ffffff;
+  }
+  .difficulty-card.is-double-black .difficulty-card-icon .dicon_small {
+    text-shadow:
+       2.0px  0    0 #be0014,  1.8px  0.8px 0 #be0014,
+       1.4px  1.4px 0 #be0014, 0.8px  1.8px 0 #be0014,
+       0     2.0px 0 #be0014, -0.8px  1.8px 0 #be0014,
+      -1.4px  1.4px 0 #be0014,-1.8px  0.8px 0 #be0014,
+      -2.0px  0    0 #be0014,-1.8px -0.8px 0 #be0014,
+      -1.4px -1.4px 0 #be0014,-0.8px -1.8px 0 #be0014,
+       0    -2.0px 0 #be0014, 0.8px -1.8px 0 #be0014,
+       1.4px -1.4px 0 #be0014, 1.8px -0.8px 0 #be0014;
+  }
+  .difficulty-card .difficulty-card-name {
+    color: var(--color-text-heading);
+    font-family: 'Metropolis', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    margin: 0 0 4px;
+    letter-spacing: 0.3px;
+  }
+  .difficulty-card .difficulty-card-label {
+    color: var(--color-accent);
+    font-family: 'Metropolis', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0 14px;
+  }
+  .difficulty-card p:not(.difficulty-card-label) {
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+    color: var(--color-text);
+  }
+
+  .spec-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin: 30px auto 0;
+    max-width: 1100px;
+  }
+  .spec-cards.spec-cards-3 {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 820px;
+  }
+  @media (max-width: 991px) {
+    .spec-cards { grid-template-columns: repeat(2, 1fr); }
+    .spec-cards.spec-cards-3 { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .spec-cards { grid-template-columns: 1fr; }
+    .spec-cards.spec-cards-3 { grid-template-columns: 1fr; }
+  }
+  .spec-card-icon-placeholder {
+    border: 2px dashed rgba(255, 255, 255, 0.18);
+    border-radius: 50%;
+    color: rgba(255, 255, 255, 0.35);
+    width: 100%;
+    height: 100%;
+  }
+  .spec-card {
+    background: var(--color-bg-panel);
+    border-radius: 4px;
+    padding: 28px 20px 24px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+  }
+  .spec-card-icon {
+    width: 88px;
+    height: 88px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 14px;
+    flex-shrink: 0;
+  }
+  .spec-card-icon img {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    opacity: 0.9;
+  }
+  .spec-card-name {
+    color: var(--color-text-heading);
+    font-family: 'Metropolis', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    margin: 0 0 6px;
+    letter-spacing: 0.3px;
+  }
+  .spec-card-sub {
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 0;
+    color: var(--color-text);
+  }
+
+  .location-block {
+    display: grid;
+    grid-template-columns: minmax(0, 320px) minmax(0, 1fr);
+    gap: 40px;
+    align-items: center;
+    margin: 30px auto 0;
+    max-width: 1100px;
+  }
+  @media (max-width: 767px) {
+    .location-block { grid-template-columns: 1fr; gap: 24px; }
+  }
+  .location-tile-wrap {
+    text-align: center;
+  }
+  .location-tile {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    border-radius: 14px;
+    width: 180px;
+    height: 180px;
+    padding: 20px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  }
+  .location-tile-pin {
+    color: #be0014;
+    font-size: 72px;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .location-tile-code {
+    color: #1a1a1a;
+    font-family: 'Metropolis', sans-serif;
+    font-weight: 700;
+    font-size: 52px;
+    letter-spacing: 0.5px;
+    line-height: 1;
+  }
+  .location-text {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--color-text);
+    margin: 0;
+  }
+  .location-map {
+    grid-column: 1 / -1;
+    margin-top: 8px;
+  }
+  .location-map img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    display: block;
+  }
+  .location-map figcaption {
+    font-size: 12px;
+    color: var(--color-text-muted);
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .sign-reading {
+    display: grid;
+    grid-template-columns: minmax(0, 320px) minmax(0, 1fr);
+    gap: 48px;
+    align-items: stretch;
+    margin: 30px auto 0;
+    max-width: 1000px;
+  }
+  @media (max-width: 767px) {
+    .sign-reading {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+    .sign-reading-image {
+      max-width: 260px;
+      margin: 0 auto;
+    }
+    .sign-reading-image img {
+      height: auto !important;
+      object-fit: contain;
+    }
+  }
+  .sign-reading-image {
+    align-self: stretch;
+    overflow: hidden;
+    border-radius: 4px;
+  }
+  .sign-reading-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+  .sign-reading-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  .sign-reading-list ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .sign-reading-list ul li:last-child {
+    border-bottom: none;
+  }
+  .sign-reading-list ul li strong {
+    display: block;
+    color: var(--color-text-heading);
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+  .sign-reading-list ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  .sign-reading-list ul li a:hover,
+  .sign-reading-list ul li a:focus {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+  .sign-reading-list ul li a .arrow {
+    display: inline-block;
+    margin-left: 6px;
+    font-size: 14px;
+    vertical-align: -1px;
+    transition: transform 200ms ease;
+  }
+  .sign-reading-list ul li a:hover .arrow {
+    transform: translateY(2px);
+  }
+</style>
+
 <div class="t3-section-wrap">
 
   <!-- Intro -->
@@ -14,51 +312,48 @@ masthead:
       <h3
         class="module-title ja-animate"
         data-animation="move-from-bottom"
-        data-delay="200">A unified trail signage system</h3>
+        data-delay="200">One signage system across every park</h3>
       <div
         class="features-desc ja-animate"
         data-animation="move-from-bottom"
         data-delay="400">
-        <div style="font-size:130%;"><span>NAMBA designs and installs a unified trail signage system across all Niseko riding areas. Whether you're riding Twin Peaks, Grand Hirafu, or Hanazono, the signs work the same way. This consistent wayfinding means you can move between parks and always know where you are, how difficult the trail is, and where it goes.</span></div>
+        <div style="font-size:130%;"><span>Every NAMBA-managed park uses the same trail signs. The icons, colours, and layout match at Twin Peaks, Grand Hirafu, and Niseko Hanazono, so once you can read one, you can read them all. Below, we break down what each part of the sign means.</span></div>
       </div>
     </div>
 
   </div>
 
-  <div style="background:var(--color-bg-panel); padding:40px; text-align:center; border-radius:3px; margin:20px auto; color:#666; max-width:900px;">
-    <span class="fa-solid fa-image" style="font-size:48px; display:block; margin-bottom:12px;"></span>
-    <p style="margin:0;">Photo: Close-up of a NAMBA trail sign post showing all elements (trail name, difficulty, sponsor, QR code, direction)</p>
-  </div>
-
   <!-- Reading a trail sign -->
   <div class="section">
 
-    <div class="module-title-wrap" style="max-width:900px;">
+    <div class="module-title-wrap" style="max-width:1000px;">
       <h3
         class="module-title ja-animate"
         data-animation="move-from-bottom"
         data-delay="200">Reading a trail sign</h3>
+
       <div
-        class="features-desc ja-animate"
+        class="sign-reading ja-animate"
         data-animation="move-from-bottom"
         data-delay="400">
-        <ul style="list-style:none; line-height:2.2; font-size:130%; padding-left:0;">
-          <li><strong>Trail name</strong>: The name of the trail you're on.</li>
-          <li><strong>Trail difficulty</strong>: Rated according to IMBA's international trail difficulty system:
-            <ul style="list-style:none; padding-left:1em; line-height:2.2;">
-              <li><span aria-hidden="true" data-tf-icon="" class="dicon_small dgreen tip" style="font-size:22px;"></span> <strong>Green circle (Easy)</strong>: Suitable for beginners.</li>
-              <li><span aria-hidden="true" data-tf-icon="" class="dicon_small dblue tip" style="font-size:22px;"></span> <strong>Blue square (More Difficult)</strong>: Suitable for intermediate riders.</li>
-              <li><span aria-hidden="true" data-tf-icon="" class="dicon_small dblack tip" style="font-size:22px;"></span> <strong>Black diamond (Very Difficult)</strong>: For experienced riders.</li>
-              <li><span aria-hidden="true" data-tf-icon="" class="dicon_small dblack" style="font-size:22px;"></span> <strong>Double black diamond (Extremely Difficult)</strong>: Expert riders only.</li>
-            </ul>
-          </li>
-          <li><strong>Trail direction</strong>: Indicates whether the trail is one-way, two-way, downhill only, or uphill only. Always follow the indicated direction.</li>
-          <li><strong>Trail users</strong>: Shows whether the trail is bikes-only or multi-use (shared with hikers and trail runners). On multi-use trails, give way to walkers and announce your approach.</li>
-          <li><strong>Location code</strong>: An alphanumeric code identifying your position on the trail. Useful for meeting friends or communicating your location to emergency services.</li>
-          <li><strong>QR code</strong>: Scan for detailed trail information, interactive maps, and live conditions via Trailforks.</li>
-          <li><strong>Sponsor</strong>: Acknowledges the partner who funded the building of the trail.</li>
-          <li><strong>NAMBA</strong>: Identifies NAMBA as the organisation responsible for managing and maintaining the trail network.</li>
-        </ul>
+
+        <div class="sign-reading-image">
+          <img src="/assets/images/twinpeaks/trailsign-tall.jpg" alt="Close-up of a NAMBA trail sign for Rise 'n' Ryder showing trail name, difficulty, sponsor, location code, direction, trail users, QR code, and NAMBA logo" />
+        </div>
+
+        <div class="sign-reading-list">
+          <ul>
+            <li><strong>Trail name</strong>The name of the trail you're on.</li>
+            <li><strong>Difficulty rating</strong>How technical the trail is. <a href="#difficulty-ratings">See the ratings<span class="fa-solid fa-circle-arrow-down arrow" aria-hidden="true"></span></a></li>
+            <li><strong>Sponsor</strong>The partner who funded the build of the trail.</li>
+            <li><strong>Location code</strong>Where you are on the trail, for meeting friends or contacting emergency services. <a href="#your-location">See "Your location"<span class="fa-solid fa-circle-arrow-down arrow" aria-hidden="true"></span></a></li>
+            <li><strong>Direction</strong>Which way you can ride the trail. <a href="#trail-direction">See trail direction<span class="fa-solid fa-circle-arrow-down arrow" aria-hidden="true"></span></a></li>
+            <li><strong>Trail users</strong>Who else may be using the trail. <a href="#trail-users">See trail users<span class="fa-solid fa-circle-arrow-down arrow" aria-hidden="true"></span></a></li>
+            <li><strong>QR code</strong>Scan it for the trail's Trailforks page: detailed map, recent trail reports, and live conditions.</li>
+            <li><strong>Riding area</strong>Identifies which riding area you're in. NAMBA at Twin Peaks; the resort logo at Grand Hirafu and Niseko Hanazono.</li>
+          </ul>
+        </div>
+
       </div>
     </div>
 
@@ -67,39 +362,172 @@ masthead:
   <!-- Difficulty ratings explained -->
   <div class="section">
 
-    <div class="module-title-wrap" style="max-width:900px;">
+    <div class="module-title-wrap" style="max-width:1100px;">
       <h3
+        id="difficulty-ratings"
         class="module-title ja-animate"
         data-animation="move-from-bottom"
-        data-delay="200">Difficulty ratings explained</h3>
+        data-delay="200">Difficulty ratings</h3>
+
+      <p style="max-width:900px; margin:0 auto; text-align:center; font-size:15px; color:var(--color-text);">Difficulty follows the IMBA international system, the same colour scale you'll see at bike parks and ski resorts worldwide.</p>
+
       <div
-        class="features-desc ja-animate"
+        class="difficulty-cards ja-animate"
         data-animation="move-from-bottom"
         data-delay="400">
-        <ul style="list-style:none; line-height:2.2; font-size:130%; padding-left:0;">
-          <li><span aria-hidden="true" data-tf-icon="" class="dicon_small dgreen tip" style="font-size:22px;"></span> <strong>Green (Easy)</strong>: Wide trails, gentle gradients, smooth surfaces. Suitable for beginners and families.</li>
-          <li><span aria-hidden="true" data-tf-icon="" class="dicon_small dblue tip" style="font-size:22px;"></span> <strong>Blue (More Difficult)</strong>: Narrower trails, steeper gradients, uneven surfaces. Requires basic mountain biking skills.</li>
-          <li><span aria-hidden="true" data-tf-icon="" class="dicon_small dblack tip" style="font-size:22px;"></span> <strong>Black (Very Difficult)</strong>: Technical terrain, steep gradients, obstacles. Demands strong skills and experience.</li>
-          <li><span aria-hidden="true" data-tf-icon="" class="dicon_small dblack" style="font-size:22px;"></span> <strong>Double Black (Extremely Difficult)</strong>: Highly technical, very steep terrain. Large drops, rock features, and exposure. Expert riders only.</li>
-        </ul>
+
+        <div class="difficulty-card">
+          <span class="difficulty-card-icon">
+            <span aria-hidden="true" data-tf-icon="" class="dicon_small dgreen tip"></span>
+          </span>
+          <h4 class="difficulty-card-name">Green</h4>
+          <p class="difficulty-card-label">Easy</p>
+          <p>Wide trail, gentle gradient, smooth surface. Good for beginners and families.</p>
+        </div>
+
+        <div class="difficulty-card">
+          <span class="difficulty-card-icon">
+            <span aria-hidden="true" data-tf-icon="" class="dicon_small dblue tip"></span>
+          </span>
+          <h4 class="difficulty-card-name">Blue</h4>
+          <p class="difficulty-card-label">More Difficult</p>
+          <p>Narrower trail, steeper grade, some rougher sections. Some mountain biking skill required.</p>
+        </div>
+
+        <div class="difficulty-card is-black">
+          <span class="difficulty-card-icon">
+            <span aria-hidden="true" data-tf-icon="" class="dicon_small dblack tip"></span>
+          </span>
+          <h4 class="difficulty-card-name">Black</h4>
+          <p class="difficulty-card-label">Very Difficult</p>
+          <p>Steep, technical, with obstacles. Strong skills and solid experience required.</p>
+        </div>
+
+        <div class="difficulty-card is-double-black">
+          <span class="difficulty-card-icon">
+            <span aria-hidden="true" data-tf-icon="" class="dicon_small dblack"></span>
+          </span>
+          <h4 class="difficulty-card-name">Double Black</h4>
+          <p class="difficulty-card-label">Extremely Difficult</p>
+          <p>Severely steep and technical, with large drops, rock features, and exposure. Expert riders only.</p>
+        </div>
+
       </div>
     </div>
 
   </div>
 
-  <!-- Across the Niseko network -->
+  <!-- Trail direction -->
   <div class="section">
 
-    <div class="module-title-wrap" style="max-width:900px;">
+    <div class="module-title-wrap" style="max-width:1100px;">
       <h3
+        id="trail-direction"
         class="module-title ja-animate"
         data-animation="move-from-bottom"
-        data-delay="200">Across the Niseko network</h3>
+        data-delay="200">Trail direction</h3>
+
       <div
-        class="features-desc ja-animate"
+        class="spec-cards ja-animate"
         data-animation="move-from-bottom"
         data-delay="400">
-        <div style="font-size:130%;"><span>The unified signage system is one of the ways NAMBA connects the riding experience across the region. The same design language appears at Twin Peaks, Grand Hirafu, and Hanazono, creating a cohesive destination experience. As the network grows, every new trail and park will use the same system.</span></div>
+
+        <div class="spec-card">
+          <div class="spec-card-icon"><img src="/assets/images/trails/one-way.png" alt="One way" /></div>
+          <h4 class="spec-card-name">One way</h4>
+          <p class="spec-card-sub">Ride in the marked direction only.</p>
+        </div>
+
+        <div class="spec-card">
+          <div class="spec-card-icon"><img src="/assets/images/trails/two-way.png" alt="Two way" /></div>
+          <h4 class="spec-card-name">Two way</h4>
+          <p class="spec-card-sub">Ride in either direction.</p>
+        </div>
+
+        <div class="spec-card">
+          <div class="spec-card-icon"><img src="/assets/images/trails/down-only.png" alt="Downhill only" /></div>
+          <h4 class="spec-card-name">Downhill only</h4>
+          <p class="spec-card-sub">Descending only. No climbing.</p>
+        </div>
+
+        <div class="spec-card">
+          <div class="spec-card-icon"><img src="/assets/images/trails/up-only.png" alt="Uphill only" /></div>
+          <h4 class="spec-card-name">Uphill only</h4>
+          <p class="spec-card-sub">Climbing only. No descending.</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Trail users -->
+  <div class="section">
+
+    <div class="module-title-wrap" style="max-width:1100px;">
+      <h3
+        id="trail-users"
+        class="module-title ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="200">Trail users</h3>
+
+      <div
+        class="spec-cards spec-cards-3 ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="400">
+
+        <div class="spec-card">
+          <div class="spec-card-icon"><img src="/assets/images/trails/multiuse.png" alt="Multi-use" /></div>
+          <h4 class="spec-card-name">Multi-use</h4>
+          <p class="spec-card-sub">Shared with hikers and trail runners. Give way and call out as you approach.</p>
+        </div>
+
+        <div class="spec-card">
+          <div class="spec-card-icon"><img src="/assets/images/trails/bikes-only.png" alt="Bikes only" /></div>
+          <h4 class="spec-card-name">Bikes only</h4>
+          <p class="spec-card-sub">No hikers or trail runners.</p>
+        </div>
+
+        <div class="spec-card">
+          <div class="spec-card-icon"><img src="/assets/images/trails/no-bikes.png" alt="No bikes" /></div>
+          <h4 class="spec-card-name">No bikes</h4>
+          <p class="spec-card-sub">Hikers and trail runners only.</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Your location -->
+  <div class="section">
+
+    <div class="module-title-wrap" style="max-width:1100px;">
+      <h3
+        id="your-location"
+        class="module-title ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="200">Your location</h3>
+
+      <div
+        class="location-block ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="400">
+
+        <div class="location-tile-wrap">
+          <div class="location-tile">
+            <span class="fa-solid fa-location-dot location-tile-pin" aria-hidden="true"></span>
+            <span class="location-tile-code">C30</span>
+          </div>
+        </div>
+
+        <p class="location-text">Every NAMBA-managed trail is divided into short marked sections. The code on each sign tells you exactly where you are. If you're meeting friends, sharing the code beats describing the spot. If you need help, give it to emergency services and they can find you within metres.</p>
+
+        <figure class="location-map">
+          <img src="/assets/images/twinpeaks/easy-ryder-locations.jpg" alt="Trail map of Easy Ryder at Twin Peaks showing location codes C30 through C90 along the route" />
+          <figcaption>Easy Ryder at Twin Peaks, with location codes marked along the trail.</figcaption>
+        </figure>
+
       </div>
     </div>
 
