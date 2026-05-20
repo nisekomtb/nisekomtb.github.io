@@ -1,6 +1,6 @@
 ---
 title: Twin Peaks Bike Park
-description: The flagship NAMBA project. Japan's largest free-access mountain bike trail network with 21km+ of Swiss-designed trails in Niseko.
+description: The flagship NAMBA project. Japan's largest free-to-ride mountain bike park with 17km+ of Swiss-designed trails in Niseko.
 masthead:
   img: /assets/images/twinpeaks/header.jpg
   credit:
@@ -8,8 +8,106 @@ masthead:
     name: Liam Larnach
 ---
 <style>
-  .timeline-item { margin-bottom: 20px; font-size: 130%; }
-  .timeline-item .year { font-family: "Metropolis", Helvetica, Arial, sans-serif; font-weight: 700; color: var(--color-accent); font-size: 110%; }
+  /* Journey timeline (matches /impact/ pattern) */
+  .journey-timeline { position: relative; max-width: 880px; margin: 0 auto; padding: 16px 0; }
+  .journey-timeline::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: var(--color-bg-border);
+    transform: translateX(-50%);
+  }
+  .journey-row { display: flex; margin-bottom: 36px; position: relative; }
+  .journey-row:last-child { margin-bottom: 0; }
+  .journey-nub {
+    position: absolute;
+    left: 50%;
+    top: 24px;
+    width: 14px;
+    height: 14px;
+    background: var(--color-accent);
+    border-radius: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+  .journey-card {
+    width: calc(50% - 32px);
+    padding: 16px 20px;
+    background: var(--color-bg-panel);
+    border-radius: 3px;
+  }
+  .journey-row.left { justify-content: flex-start; }
+  .journey-row.right { justify-content: flex-end; }
+  .journey-row.left .journey-card { text-align: right; border-right: 3px solid var(--color-accent); }
+  .journey-row.right .journey-card { text-align: left; border-left: 3px solid var(--color-accent); }
+  .journey-year {
+    color: var(--color-accent);
+    font-weight: 700;
+    font-size: 220%;
+    line-height: 1;
+    margin-bottom: 8px;
+    font-family: "Metropolis", Helvetica, Arial, sans-serif;
+  }
+  .journey-head { color: #ffffff; font-size: 115%; font-weight: 700; margin-bottom: 8px; line-height: 1.3; }
+  .journey-desc { color: #cccccc; font-size: 95%; line-height: 1.6; margin: 0; }
+
+  .journey-row.now .journey-card { border-color: var(--color-primary); }
+  .journey-row.now .journey-nub {
+    background: var(--color-primary);
+    box-shadow: 0 0 0 4px rgba(179, 79, 36, 0.25);
+    animation: journey-pulse 2.4s ease-in-out infinite;
+  }
+  .journey-row.now .journey-year::after {
+    content: " · NOW";
+    color: #ffffff;
+    font-size: 50%;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  @keyframes journey-pulse {
+    0%, 100% { box-shadow: 0 0 0 4px rgba(179, 79, 36, 0.25); }
+    50% { box-shadow: 0 0 0 8px rgba(179, 79, 36, 0.10); }
+  }
+
+  @media (max-width: 720px) {
+    .journey-timeline { padding-left: 8px; }
+    .journey-timeline::before { left: 14px; transform: none; }
+    .journey-nub { left: 14px; transform: none; }
+    .journey-row.left, .journey-row.right { justify-content: flex-end; }
+    .journey-row.left .journey-card, .journey-row.right .journey-card {
+      width: calc(100% - 36px);
+      text-align: left;
+      border-left: 3px solid var(--color-accent);
+      border-right: none;
+    }
+    .journey-year { font-size: 190%; }
+  }
+
+  /* Phase photo placeholders (larger, 2-up on desktop) */
+  .phase-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    max-width: 900px;
+    margin: 20px auto;
+  }
+  .phase-grid .phase-tile {
+    background: var(--color-bg-panel);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 3px;
+    padding: 60px 24px;
+    text-align: center;
+    color: #999;
+  }
+  .phase-grid .phase-tile .fa-solid { font-size: 40px; display: block; margin-bottom: 12px; color: var(--color-accent); }
+  .phase-grid .phase-tile .year { font-family: "Metropolis", Helvetica, Arial, sans-serif; font-weight: 700; font-size: 130%; color: #fff; margin-bottom: 6px; }
+  .phase-grid .phase-tile .label { font-size: 90%; }
+  @media (max-width: 600px) {
+    .phase-grid { grid-template-columns: 1fr; }
+  }
 </style>
 
 <div class="t3-section-wrap">
@@ -27,18 +125,18 @@ masthead:
       <h3
         class="module-title ja-animate"
         data-animation="move-from-bottom"
-        data-delay="200">Japan's Largest Free-Access MTB Network</h3>
+        data-delay="200">Japan's Largest Free-to-Ride MTB Park</h3>
       <div
         class="features-desc ja-animate"
         data-animation="move-from-bottom"
         data-delay="400">
-        <div style="font-size:130%;"><span>Twin Peaks is NAMBA's flagship project: Japan's largest free-access, nonprofit-built mountain bike trail network. Over 21 kilometres of Swiss-designed trails spanning 20+ routes, from beginner-friendly flow to expert technical terrain. Open every day of the riding season, free to all, no registration required.</span></div>
+        <div style="font-size:130%;"><span>Twin Peaks is NAMBA's flagship project: Japan's largest free-to-ride mountain bike park. Over 17km of Swiss-designed trails across 20+ routes, from beginner flow lines to expert technical terrain. Open every day of the riding season. No fees, no registration.</span></div>
       </div>
     </div>
 
   </div>
 
-  <!-- Timeline -->
+  <!-- Growth Timeline -->
   <div class="section">
 
     <div class="module-title-wrap" style="max-width:900px;">
@@ -46,75 +144,95 @@ masthead:
         class="module-title ja-animate"
         data-animation="move-from-bottom"
         data-delay="200">Growth Timeline</h3>
+    </div>
+
+    <div class="journey-timeline ja-animate" data-animation="move-from-bottom" data-delay="400">
+      <div class="journey-row left">
+        <div class="journey-card">
+          <div class="journey-year">2022</div>
+          <div class="journey-head">4.4km · NPO formed</div>
+          <p class="journey-desc">NPO officially registered. Kutchan town approves trail-building rights at Twin Peaks. 4.4km built in a COVID-shortened window, under a 1m width restriction, and without cutting down a single tree.</p>
+        </div>
+        <div class="journey-nub"></div>
+      </div>
+      <div class="journey-row right">
+        <div class="journey-card">
+          <div class="journey-year">2023</div>
+          <div class="journey-head">Twin Peaks opens · ¥29M raised</div>
+          <p class="journey-desc">Twin Peaks opens to the public. 6km built in one summer, the fastest project Allegra had ever seen. Network reaches 10.4km. Hokkaido's first Soil Searching event.</p>
+        </div>
+        <div class="journey-nub"></div>
+      </div>
+      <div class="journey-row left">
+        <div class="journey-card">
+          <div class="journey-year">2024</div>
+          <div class="journey-head">7,750 visitors · Taki Tech opens</div>
+          <p class="journey-desc">3.4km of new trail at Twin Peaks, including Taki Tech, our first double-black. 7,750 visitors. Dirty Dames launches with 30+ women at the opening ride. Loic Bruni stops by.</p>
+        </div>
+        <div class="journey-nub"></div>
+      </div>
+      <div class="journey-row right">
+        <div class="journey-card">
+          <div class="journey-year">2025</div>
+          <div class="journey-head">11,500 visitors · jump line opens</div>
+          <p class="journey-desc">Visitors up 48% to 11,500. Twin Peaks' first jump line opens, paired with a dedicated climb trail for hot laps.</p>
+        </div>
+        <div class="journey-nub"></div>
+      </div>
+      <div class="journey-row left now">
+        <div class="journey-card">
+          <div class="journey-year">2026</div>
+          <div class="journey-head">Green Flow and Lower Green Climb</div>
+          <p class="journey-desc">Green Flow Trail and Lower Green Climb pending sponsorship. The network keeps growing.</p>
+        </div>
+        <div class="journey-nub"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Phase Photos -->
+  <div class="section">
+
+    <div class="module-title-wrap" style="max-width:900px;">
+      <h3
+        class="module-title ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="200">Year-by-year Growth</h3>
       <div
         class="features-desc ja-animate"
         data-animation="move-from-bottom"
         data-delay="400">
-        <div class="timeline-item">
-          <div class="year">2022</div>
-          <p>Construction begins with Allegra. First 4.7km of trail built.</p>
-        </div>
+        <div style="font-size:115%;"><span>Trail network expansion at Twin Peaks, year by year.</span></div>
       </div>
-      <div
-        class="features-desc ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="600">
-        <div class="timeline-item">
-          <div class="year">2023</div>
-          <p>Park opens to the public. 14.2km of trail, first community events.</p>
-        </div>
+    </div>
+
+    <div class="phase-grid ja-animate" data-animation="move-from-bottom" data-delay="600">
+      <div class="phase-tile">
+        <span class="fa-solid fa-map-location-dot"></span>
+        <div class="year">2022</div>
+        <div class="label">First 4.4km · network start</div>
       </div>
-      <div
-        class="features-desc ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="800">
-        <div class="timeline-item">
-          <div class="year">2024</div>
-          <p>7,750+ visitors. Dirty Dames women's programme launches. 20+ trails. Loic Bruni visits.</p>
-        </div>
+      <div class="phase-tile">
+        <span class="fa-solid fa-map-location-dot"></span>
+        <div class="year">2023</div>
+        <div class="label">10.4km · Twin Peaks opens</div>
       </div>
-      <div
-        class="features-desc ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="1000">
-        <div class="timeline-item">
-          <div class="year">2025</div>
-          <p>11,500+ visitors. Major expansion. Hirafu connection. Pinkbike Trail of the Month.</p>
-        </div>
+      <div class="phase-tile">
+        <span class="fa-solid fa-map-location-dot"></span>
+        <div class="year">2024</div>
+        <div class="label">13.8km · Taki Tech double-black</div>
       </div>
-      <div
-        class="features-desc ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="1200">
-        <div class="timeline-item">
-          <div class="year">2026</div>
-          <p>Green Flow Trail and Lower Green Climb pending sponsorship. The network continues to grow.</p>
-        </div>
+      <div class="phase-tile">
+        <span class="fa-solid fa-map-location-dot"></span>
+        <div class="year">2025</div>
+        <div class="label">17.8km · jump line + climb trail</div>
       </div>
     </div>
 
   </div>
 
-  <div style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin:20px auto; max-width:900px;">
-    <div style="flex:1; min-width:150px; background:var(--color-bg-panel); padding:24px 16px; text-align:center; border-radius:3px; color:#666;">
-      <span class="fa-solid fa-image" style="font-size:32px; display:block; margin-bottom:8px;"></span>
-      <p style="margin:0; font-size:90%;">2022: Satellite view of first 4.7km of trail</p>
-    </div>
-    <div style="flex:1; min-width:150px; background:var(--color-bg-panel); padding:24px 16px; text-align:center; border-radius:3px; color:#666;">
-      <span class="fa-solid fa-image" style="font-size:32px; display:block; margin-bottom:8px;"></span>
-      <p style="margin:0; font-size:90%;">2023: Satellite view showing 14.2km network</p>
-    </div>
-    <div style="flex:1; min-width:150px; background:var(--color-bg-panel); padding:24px 16px; text-align:center; border-radius:3px; color:#666;">
-      <span class="fa-solid fa-image" style="font-size:32px; display:block; margin-bottom:8px;"></span>
-      <p style="margin:0; font-size:90%;">2024: Satellite view showing 19.6km expansion</p>
-    </div>
-    <div style="flex:1; min-width:150px; background:var(--color-bg-panel); padding:24px 16px; text-align:center; border-radius:3px; color:#666;">
-      <span class="fa-solid fa-image" style="font-size:32px; display:block; margin-bottom:8px;"></span>
-      <p style="margin:0; font-size:90%;">2025: Satellite view showing 21km+ full network</p>
-    </div>
-  </div>
-
-  <!-- The Allegra Partnership -->
+  <!-- Allegra Partnership -->
   <div class="section">
 
     <div class="module-title-wrap" style="max-width:900px;">
@@ -126,7 +244,7 @@ masthead:
         class="features-desc ja-animate"
         data-animation="move-from-bottom"
         data-delay="400">
-        <div style="font-size:130%;"><span>Every trail at Twin Peaks is designed and built with Allegra, the Swiss trail-building firm behind projects across the Alps and beyond.</span></div>
+        <div style="font-size:130%;"><span>Every trail at Twin Peaks is designed and built with Allegra, the Swiss firm behind some of the best-known trail networks in the Alps and beyond. The 2023 build of 6km in one summer was the fastest project Allegra had ever delivered.</span></div>
       </div>
     </div>
 
@@ -144,15 +262,18 @@ masthead:
         class="features-desc ja-animate"
         data-animation="move-from-bottom"
         data-delay="400">
-        <div style="font-size:130%;"><span>Twin Peaks is 100% community-funded. 93% private funding, 69% from local businesses, 92% goes directly to trail building. Every trail has been fully sponsored.</span></div>
+        <div style="font-size:130%;"><span>Twin Peaks is 100% community-funded. Across 2022 to 2025, 92% of funding came from private and community sources, with 74% from local businesses. 82% of every yen goes directly to trail construction; 95% to trails counting maintenance. Every trail has been fully sponsored.</span></div>
       </div>
     </div>
 
   </div>
 
-  <div style="background:var(--color-bg-panel); padding:40px; text-align:center; border-radius:3px; margin:20px auto; color:#666; max-width:900px;">
-    <span class="fa-solid fa-image" style="font-size:48px; display:block; margin-bottom:12px;"></span>
-    <p style="margin:0;">Photo: Trailhead signage showing sponsor logos at Twin Peaks</p>
+  <div style="max-width:900px; margin:20px auto;">
+    <img
+      src="/assets/images/partner/trail-map-board.webp"
+      alt="Two riders at the Twin Peaks Bike Park trail map board, sponsor logos visible along the bottom"
+      loading="lazy"
+      style="width:100%; height:auto; border-radius:3px; display:block;" />
   </div>
 
   <!-- CTA -->

@@ -436,17 +436,23 @@ Decide: resort icons? Unified signage section?
 - Modify: `projects/twin-peaks/index.html`, `ja/projects/twin-peaks/index.html`
 
 Steps:
-- [ ] Create phase photos: per-phase map graphic (Google Maps screenshot or similar) showing trails completed/in-progress.
-- [ ] Make phase photos larger / add a way to view detail (lightbox, larger inline, or expandable). Currently too small to read.
-- [ ] Replace other page images (Pattern P-IMG).
-- [ ] Check text.
-- [ ] Convert timeline to the style used on About and Impact pages. Reference those pages' timeline markup.
-- [ ] Mirror EN → JA (Pattern P-EN-JA).
-- [ ] Visual check.
-- [ ] Pattern P-COMMIT.
+- [ ] Create phase photos: per-phase map graphic (Google Maps screenshot or similar) showing trails completed/in-progress. **Deferred** — Tom to source 4 satellite/map screenshots (2022, 2023, 2024, 2025).
+- [x] Make phase photos larger / add a way to view detail. Decision: **lightbox via PhotoSwipe**. Placeholders enlarged to 2-up grid (1-col mobile) with map-pin icon + year + label. PhotoSwipe wiring to be added when real images exist.
+- [x] Replace other page images (Pattern P-IMG): signage placeholder replaced with the `/assets/images/partner/trail-map-board.webp` shot (reused from /partner/). Masthead kept (Larnach shot).
+- [x] Check text: positioning fixed ("free-access" → "free-to-ride", "MTB Network" → "MTB Park"), timeline figures synced with `_data/impact.yml`, Pinkbike line dropped from 2025, added detail (Soil Searching, Taki Tech, Dirty Dames 30+, Loic Bruni). Funding stats rebuilt from canonical data: 92% private/community, 74% local businesses, 82% direct trail construction.
+- [x] Convert timeline to the style used on About and Impact pages: `.journey-timeline` with alternating L/R cards, gold accent year, head + desc, animated NOW indicator on 2026.
+- [x] Mirror EN → JA (Pattern P-EN-JA).
+- [x] Visual check.
+- [x] Pattern P-COMMIT.
+
+**Cross-page sync (folded into this commit):** TP-specific 21km+ → 17km+ on `/twin-peaks/`, `/ja/twin-peaks/`, `/projects/` index, `/ja/projects/`, `/where-to-ride/`, `/ja/where-to-ride/`, `/press/`, `/ja/press/`. `/projects/` TP card "free-access" → "free-to-ride". /impact/ description + stat-number stay at 21km+ (NAMBA-total, matches `_data/impact.yml trails[2025].namba_km`).
+
+**Deferred follow-up:**
+- Source 4 satellite/map screenshots for phase grid (2022, 2023, 2024, 2025) and wire PhotoSwipe lightbox.
+- `/twin-peaks/` landing copy still mentions "14.2km of trail" at 2023 opening (impact data says 10.4km network at end of 2023) and uses "free-access" wording — flag for a separate sweep.
 
 Notes:
-Decide: phase-photo enlarge mechanism (lightbox vs larger inline vs expandable)
+Decide: (resolved)
 
 ---
 

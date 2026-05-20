@@ -1,6 +1,6 @@
 ---
 title: ツインピークスバイクパーク
-description: NAMBAの旗艦プロジェクト。スイス設計の21km以上のトレイルを擁する日本最大の無料マウンテンバイクトレイルネットワーク。
+description: NAMBAの旗艦プロジェクト。スイス設計の17km以上のトレイルを擁する日本最大の無料で楽しめるマウンテンバイクパーク。
 masthead:
   img: /assets/images/twinpeaks/header.jpg
   credit:
@@ -8,8 +8,106 @@ masthead:
     name: Liam Larnach
 ---
 <style>
-  .timeline-item { margin-bottom: 20px; font-size: 130%; }
-  .timeline-item .year { font-family: "Metropolis", Helvetica, Arial, sans-serif; font-weight: 700; color: var(--color-accent); font-size: 110%; }
+  /* Journey timeline (matches /impact/ pattern) */
+  .journey-timeline { position: relative; max-width: 880px; margin: 0 auto; padding: 16px 0; }
+  .journey-timeline::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: var(--color-bg-border);
+    transform: translateX(-50%);
+  }
+  .journey-row { display: flex; margin-bottom: 36px; position: relative; }
+  .journey-row:last-child { margin-bottom: 0; }
+  .journey-nub {
+    position: absolute;
+    left: 50%;
+    top: 24px;
+    width: 14px;
+    height: 14px;
+    background: var(--color-accent);
+    border-radius: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+  .journey-card {
+    width: calc(50% - 32px);
+    padding: 16px 20px;
+    background: var(--color-bg-panel);
+    border-radius: 3px;
+  }
+  .journey-row.left { justify-content: flex-start; }
+  .journey-row.right { justify-content: flex-end; }
+  .journey-row.left .journey-card { text-align: right; border-right: 3px solid var(--color-accent); }
+  .journey-row.right .journey-card { text-align: left; border-left: 3px solid var(--color-accent); }
+  .journey-year {
+    color: var(--color-accent);
+    font-weight: 700;
+    font-size: 220%;
+    line-height: 1;
+    margin-bottom: 8px;
+    font-family: "Metropolis", Helvetica, Arial, sans-serif;
+  }
+  .journey-head { color: #ffffff; font-size: 115%; font-weight: 700; margin-bottom: 8px; line-height: 1.3; }
+  .journey-desc { color: #cccccc; font-size: 95%; line-height: 1.6; margin: 0; }
+
+  .journey-row.now .journey-card { border-color: var(--color-primary); }
+  .journey-row.now .journey-nub {
+    background: var(--color-primary);
+    box-shadow: 0 0 0 4px rgba(179, 79, 36, 0.25);
+    animation: journey-pulse 2.4s ease-in-out infinite;
+  }
+  .journey-row.now .journey-year::after {
+    content: " · NOW";
+    color: #ffffff;
+    font-size: 50%;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  @keyframes journey-pulse {
+    0%, 100% { box-shadow: 0 0 0 4px rgba(179, 79, 36, 0.25); }
+    50% { box-shadow: 0 0 0 8px rgba(179, 79, 36, 0.10); }
+  }
+
+  @media (max-width: 720px) {
+    .journey-timeline { padding-left: 8px; }
+    .journey-timeline::before { left: 14px; transform: none; }
+    .journey-nub { left: 14px; transform: none; }
+    .journey-row.left, .journey-row.right { justify-content: flex-end; }
+    .journey-row.left .journey-card, .journey-row.right .journey-card {
+      width: calc(100% - 36px);
+      text-align: left;
+      border-left: 3px solid var(--color-accent);
+      border-right: none;
+    }
+    .journey-year { font-size: 190%; }
+  }
+
+  /* Phase photo placeholders (larger, 2-up on desktop) */
+  .phase-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    max-width: 900px;
+    margin: 20px auto;
+  }
+  .phase-grid .phase-tile {
+    background: var(--color-bg-panel);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 3px;
+    padding: 60px 24px;
+    text-align: center;
+    color: #999;
+  }
+  .phase-grid .phase-tile .fa-solid { font-size: 40px; display: block; margin-bottom: 12px; color: var(--color-accent); }
+  .phase-grid .phase-tile .year { font-family: "Metropolis", Helvetica, Arial, sans-serif; font-weight: 700; font-size: 130%; color: #fff; margin-bottom: 6px; }
+  .phase-grid .phase-tile .label { font-size: 90%; }
+  @media (max-width: 600px) {
+    .phase-grid { grid-template-columns: 1fr; }
+  }
 </style>
 
 <div class="t3-section-wrap">
@@ -27,18 +125,18 @@ masthead:
       <h3
         class="module-title ja-animate"
         data-animation="move-from-bottom"
-        data-delay="200">日本最大の無料アクセスMTBネットワーク</h3>
+        data-delay="200">日本最大の無料で楽しめるMTBパーク</h3>
       <div
         class="features-desc ja-animate"
         data-animation="move-from-bottom"
         data-delay="400">
-        <div style="font-size:130%;"><span>ツインピークスはNAMBAの旗艦プロジェクト：日本最大の無料アクセス、非営利団体運営のマウンテンバイクトレイルネットワークです。スイス設計のトレイルが21km以上、20本以上のルートにわたって、初心者向けフローから上級テクニカルまでをカバー。シーズン中は毎日オープン、すべて無料、登録不要。</span></div>
+        <div style="font-size:130%;"><span>ツインピークスはNAMBAの旗艦プロジェクト：日本最大の無料で楽しめるマウンテンバイクパークです。スイス設計のトレイルが17km以上、20本以上のルートにわたり、初心者向けフローから上級テクニカルまでをカバー。シーズン中は毎日オープン。料金なし、登録不要。</span></div>
       </div>
     </div>
 
   </div>
 
-  <!-- Timeline -->
+  <!-- Growth Timeline -->
   <div class="section">
 
     <div class="module-title-wrap" style="max-width:900px;">
@@ -46,72 +144,92 @@ masthead:
         class="module-title ja-animate"
         data-animation="move-from-bottom"
         data-delay="200">成長のタイムライン</h3>
-      <div
-        class="features-desc ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="400">
-        <div class="timeline-item">
-          <div class="year">2022</div>
-          <p>アレグラとの建設開始。最初の4.7kmのトレイルが完成。</p>
+    </div>
+
+    <div class="journey-timeline ja-animate" data-animation="move-from-bottom" data-delay="400">
+      <div class="journey-row left">
+        <div class="journey-card">
+          <div class="journey-year">2022</div>
+          <div class="journey-head">4.4km · NPO設立</div>
+          <p class="journey-desc">NPO正式登録。倶知安町がツインピークスのトレイル建設権を承認。コロナで短縮されたシーズン中、幅1m制限のもと、1本の木も伐採せずに4.4kmを建設。</p>
         </div>
+        <div class="journey-nub"></div>
       </div>
-      <div
-        class="features-desc ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="600">
-        <div class="timeline-item">
-          <div class="year">2023</div>
-          <p>パークが一般公開。14.2kmのトレイル、最初のコミュニティイベント開催。</p>
+      <div class="journey-row right">
+        <div class="journey-card">
+          <div class="journey-year">2023</div>
+          <div class="journey-head">ツインピークス開園 · ¥29M調達</div>
+          <p class="journey-desc">ツインピークスが一般公開。ひと夏で6kmを建設、アレグラ史上最速のプロジェクト。ネットワークは10.4kmに到達。北海道初のSoil Searchingイベント開催。</p>
         </div>
+        <div class="journey-nub"></div>
       </div>
-      <div
-        class="features-desc ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="800">
-        <div class="timeline-item">
-          <div class="year">2024</div>
-          <p>来場者7,750人以上。ダーティ・デイムズ（女性向けプログラム）開始。20本以上のトレイル。ロイック・ブルーニが訪問。</p>
+      <div class="journey-row left">
+        <div class="journey-card">
+          <div class="journey-year">2024</div>
+          <div class="journey-head">7,750人来場 · タキテック開通</div>
+          <p class="journey-desc">ツインピークスで新たに3.4kmを建設、うち最初のダブルブラック「タキテック」が誕生。来場者7,750人。ダーティーデイムズが30人以上の女性ライダーと共に始動。ロイック・ブルーニが訪問。</p>
         </div>
+        <div class="journey-nub"></div>
       </div>
-      <div
-        class="features-desc ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="1000">
-        <div class="timeline-item">
-          <div class="year">2025</div>
-          <p>来場者11,500人以上。大規模な拡張。ヒラフへの接続。Pinkbikeのトレイル・オブ・ザ・マンスに選出。</p>
+      <div class="journey-row right">
+        <div class="journey-card">
+          <div class="journey-year">2025</div>
+          <div class="journey-head">11,500人来場 · ジャンプラインオープン</div>
+          <p class="journey-desc">来場者が48%増の11,500人に。ツインピークス初のジャンプラインがオープン、専用クライムトレイルとペアで何度も滑れる構成。</p>
         </div>
+        <div class="journey-nub"></div>
       </div>
-      <div
-        class="features-desc ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="1200">
-        <div class="timeline-item">
-          <div class="year">2026</div>
-          <p>グリーンフロートレイルとロワーグリーンクライムはスポンサーシップ待ち。ネットワークは成長を続けています。</p>
+      <div class="journey-row left now">
+        <div class="journey-card">
+          <div class="journey-year">2026</div>
+          <div class="journey-head">グリーンフローとロワーグリーンクライム</div>
+          <p class="journey-desc">グリーンフロートレイルとロワーグリーンクライムはスポンサーシップ待ち。ネットワークは成長を続けています。</p>
         </div>
+        <div class="journey-nub"></div>
       </div>
     </div>
 
   </div>
 
-  <div style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin:20px auto; max-width:900px;">
-    <div style="flex:1; min-width:150px; background:var(--color-bg-panel); padding:24px 16px; text-align:center; border-radius:3px; color:#666;">
-      <span class="fa-solid fa-image" style="font-size:32px; display:block; margin-bottom:8px;"></span>
-      <p style="margin:0; font-size:90%;">2022年：最初の4.7kmのトレイル衛星画像</p>
+  <!-- Phase Photos -->
+  <div class="section">
+
+    <div class="module-title-wrap" style="max-width:900px;">
+      <h3
+        class="module-title ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="200">年ごとの成長</h3>
+      <div
+        class="features-desc ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="400">
+        <div style="font-size:115%;"><span>ツインピークスのトレイルネットワークの年ごとの拡大。</span></div>
+      </div>
     </div>
-    <div style="flex:1; min-width:150px; background:var(--color-bg-panel); padding:24px 16px; text-align:center; border-radius:3px; color:#666;">
-      <span class="fa-solid fa-image" style="font-size:32px; display:block; margin-bottom:8px;"></span>
-      <p style="margin:0; font-size:90%;">2023年：14.2kmのネットワークを示す衛星画像</p>
+
+    <div class="phase-grid ja-animate" data-animation="move-from-bottom" data-delay="600">
+      <div class="phase-tile">
+        <span class="fa-solid fa-map-location-dot"></span>
+        <div class="year">2022</div>
+        <div class="label">最初の4.4km · ネットワーク始動</div>
+      </div>
+      <div class="phase-tile">
+        <span class="fa-solid fa-map-location-dot"></span>
+        <div class="year">2023</div>
+        <div class="label">10.4km · ツインピークス開園</div>
+      </div>
+      <div class="phase-tile">
+        <span class="fa-solid fa-map-location-dot"></span>
+        <div class="year">2024</div>
+        <div class="label">13.8km · タキテック（ダブルブラック）</div>
+      </div>
+      <div class="phase-tile">
+        <span class="fa-solid fa-map-location-dot"></span>
+        <div class="year">2025</div>
+        <div class="label">17.8km · ジャンプライン + クライム</div>
+      </div>
     </div>
-    <div style="flex:1; min-width:150px; background:var(--color-bg-panel); padding:24px 16px; text-align:center; border-radius:3px; color:#666;">
-      <span class="fa-solid fa-image" style="font-size:32px; display:block; margin-bottom:8px;"></span>
-      <p style="margin:0; font-size:90%;">2024年：19.6kmへの拡張を示す衛星画像</p>
-    </div>
-    <div style="flex:1; min-width:150px; background:var(--color-bg-panel); padding:24px 16px; text-align:center; border-radius:3px; color:#666;">
-      <span class="fa-solid fa-image" style="font-size:32px; display:block; margin-bottom:8px;"></span>
-      <p style="margin:0; font-size:90%;">2025年：21km以上の完全ネットワーク衛星画像</p>
-    </div>
+
   </div>
 
   <!-- The Allegra Partnership -->
@@ -126,7 +244,7 @@ masthead:
         class="features-desc ja-animate"
         data-animation="move-from-bottom"
         data-delay="400">
-        <div style="font-size:130%;"><span>ツインピークスのすべてのトレイルは、アルプスを中心に世界各地でトレイルネットワークを手がけるスイスのトレイル建設会社、アレグラとの協力で設計・建設されています。</span></div>
+        <div style="font-size:130%;"><span>ツインピークスのすべてのトレイルは、アルプスを中心に世界各地で知られたトレイルネットワークを手がけるスイスのトレイル建設会社、アレグラと協働で設計・建設されています。2023年のひと夏で6kmを建設したのは、アレグラ史上最速のプロジェクトでした。</span></div>
       </div>
     </div>
 
@@ -144,15 +262,18 @@ masthead:
         class="features-desc ja-animate"
         data-animation="move-from-bottom"
         data-delay="400">
-        <div style="font-size:130%;"><span>ツインピークスは100%コミュニティ資金で運営されています。民間資金93%、うち地元企業からが69%、92%が直接トレイル建設に使われています。すべてのトレイルにスポンサーが付いています。</span></div>
+        <div style="font-size:130%;"><span>ツインピークスは100%コミュニティ資金で運営されています。2022年から2025年までの累計で、92%が民間・コミュニティからの資金、うち74%が地元企業から。82%が直接トレイル建設に使われ、メンテナンスを含めると95%がトレイル関連に充てられています。すべてのトレイルにスポンサーが付いています。</span></div>
       </div>
     </div>
 
   </div>
 
-  <div style="background:var(--color-bg-panel); padding:40px; text-align:center; border-radius:3px; margin:20px auto; color:#666; max-width:900px;">
-    <span class="fa-solid fa-image" style="font-size:48px; display:block; margin-bottom:12px;"></span>
-    <p style="margin:0;">写真：ツインピークスのトレイルヘッドにあるスポンサーロゴ標識</p>
+  <div style="max-width:900px; margin:20px auto;">
+    <img
+      src="/assets/images/partner/trail-map-board.webp"
+      alt="ツインピークスバイクパークのトレイルマップボードの前に立つ2人のライダー、下部にスポンサーロゴが並ぶ"
+      loading="lazy"
+      style="width:100%; height:auto; border-radius:3px; display:block;" />
   </div>
 
   <!-- CTA -->
