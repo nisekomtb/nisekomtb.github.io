@@ -154,14 +154,14 @@ og:
     border-color: transparent !important;
   }
 
-  /* Product cards — match event card aesthetic */
+  /* Product cards — match .ride-card pattern */
   html#ecwid_html body#ecwid_body .ec-size .ec-store .grid-product__wrap-inner {
     background: var(--color-bg-panel) !important;
     border-radius: 3px !important;
-    border: 0 !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
     box-shadow: none !important;
     overflow: hidden !important;
-    transition: background 300ms ease !important;
+    transition: border-color 200ms ease !important;
   }
 
   html#ecwid_html body#ecwid_body .ec-size .ec-store .grid-product--has-shadow .grid-product__wrap-inner {
@@ -169,7 +169,7 @@ og:
   }
 
   html#ecwid_html body#ecwid_body .ec-size .ec-store .grid-product__wrap-inner:hover {
-    background: var(--color-bg-border) !important;
+    border-color: var(--color-secondary) !important;
   }
 
   /* Image link gets relative positioning so we can layer the gradient */
@@ -188,12 +188,7 @@ og:
     height: 60px;
     background: linear-gradient(to bottom, transparent, var(--color-bg-panel));
     pointer-events: none;
-    transition: background 300ms ease;
     z-index: 2;
-  }
-
-  html#ecwid_html body#ecwid_body .ec-size .ec-store .grid-product__wrap-inner:hover .grid-product__image::after {
-    background: linear-gradient(to bottom, transparent, var(--color-bg-border));
   }
 
   /* Disable hover-zoom on product image (keep the second-image swap) */
