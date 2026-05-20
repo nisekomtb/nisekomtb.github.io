@@ -1,6 +1,6 @@
 ---
-title: オンラインショップ
-description: NAMBAのオンラインショップ。ご購入がニセコのトレイル整備に役立ちます。
+title: ニセコMTBのグッズとメンバーシップ
+description: 地元アーティストによる数量限定Tシャツ、NAMBAメンバーシップ、寄付。売上はすべて、ニセコのマウンテンバイクトレイル整備へ。
 masthead:
   img: /assets/images/bg/bg-header-shop.jpg
 og:
@@ -124,6 +124,82 @@ og:
     float: right;
   }
 
+  /* Primary action buttons — match site .btn-primary */
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .form-control--button.form-control--primary,
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .form-control--button.form-control--secondary {
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: 260px !important;
+    background: var(--color-primary) !important;
+    border-color: var(--color-primary) !important;
+    border-radius: 3px !important;
+    color: #fff !important;
+    transition: background-color 200ms ease, border-color 200ms ease !important;
+  }
+
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .form-control--button.form-control--primary:hover,
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .form-control--button.form-control--primary:focus,
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .form-control--button.form-control--secondary:hover,
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .form-control--button.form-control--secondary:focus {
+    background: var(--color-primary-hover) !important;
+    border-color: var(--color-primary-hover) !important;
+  }
+
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .form-control--button.form-control--primary:active,
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .form-control--button.form-control--secondary:active {
+    background: var(--color-primary-active) !important;
+    border-color: var(--color-primary-active) !important;
+  }
+
+  /* Cart-page Credit Card Checkout button — full width to match Stripe Link / PayPal */
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .form-control--button.ec-cart__button--checkout {
+    max-width: none !important;
+    width: 100% !important;
+  }
+
+  /* Pay-what-you-want input — unify ¥ prefix with input as one field */
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .form-control--prefix {
+    background: var(--color-bg-panel) !important;
+    border: 1px solid var(--color-bg-border) !important;
+    border-radius: 3px !important;
+    box-shadow: none !important;
+    overflow: hidden !important;
+    transition: border-color 200ms ease !important;
+  }
+
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .form-control--prefix:focus-within,
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .form-control--prefix.form-control--focus,
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .form-control--prefix.form-control--focus-visible {
+    border-color: var(--color-accent) !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+
+  /* Quantity / select inputs — gold on focus */
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .form-control--select-inline:focus-within,
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .form-control--select-inline.form-control--focus {
+    border-color: var(--color-accent) !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .form-control--prefix .form-control__inner,
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .form-control--prefix .form-control__field,
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .form-control--prefix .form-control__prefix,
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .form-control--prefix .form-control__text {
+    border: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .form-control--prefix .form-control__text:focus,
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .form-control--prefix .form-control__text:focus-visible {
+    outline: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+
   /* Size option buttons */
   html#ecwid_html body#ecwid_body .ec-size .ec-store .form-control--checkbox-button .form-control__inline-label label,
   html#ecwid_html body#ecwid_body .ec-size .ec-store .form-control--checkbox-button .form-control__checkbox:checked~.form-control__inline-label label:active,
@@ -134,20 +210,20 @@ og:
   html#ecwid_html body#ecwid_body .ec-size .ec-store .form-control--checkbox-button .form-control__inline-label label:hover,
   html#ecwid_html body#ecwid_body .ec-size .ec-store .form-control--checkbox-button .form-control__radio:checked~.form-control__inline-label label {
     background-color: var(--color-bg-border) !important;
-    border-color: var(--color-primary) !important;
+    border-color: var(--color-secondary) !important;
   }
 
   /* Colour swatch hover/selected outline */
   html#ecwid_html body#ecwid_body .ec-size .ec-store .product-details-options__swatches .options-swatches-item__color:hover,
   html#ecwid_html body#ecwid_body .ec-size .ec-store .product-details-options__swatches .options-swatches-item__color:focus {
-    outline-color: var(--color-primary) !important;
-    border-color: var(--color-primary) !important;
+    outline-color: var(--color-secondary) !important;
+    border-color: var(--color-secondary) !important;
   }
 
   html#ecwid_html body#ecwid_body .ec-size .ec-store .product-details-options__swatches .options-swatches-item__color--selected,
   html#ecwid_html body#ecwid_body .ec-size .ec-store .product-details-options__swatches .options-swatches-item__color--selected-disabled {
-    outline-color: var(--color-primary) !important;
-    border-color: var(--color-primary) !important;
+    outline-color: var(--color-secondary) !important;
+    border-color: var(--color-secondary) !important;
   }
 
   html#ecwid_html body#ecwid_body .ec-size .ec-store .product-details-options__swatches .options-swatches-item__color:has(> .options-swatches-item__color--selected) {
