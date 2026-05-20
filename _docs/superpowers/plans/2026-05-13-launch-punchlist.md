@@ -321,6 +321,9 @@ Notes:
 Decision: polish. Page lean-rewritten with focus on gondola access, Shimizu-supervised course design (past tense — he doesn't have ongoing involvement), Downhill Series Niseko round annual host, raw natural-line trail not for beginners, and the non-NAMBA status (no unified signage). Gallery added (6 images: 5 race day + 1 cropped resort site sunset shot). `signage_card="false"` opt-out passed to the trails-table include so the NAMBA signage card doesn't appear on this non-NAMBA park page.
 Decide: (resolved) polish
 
+Follow-up:
+- [ ] Source a new lead/gallery photo for `/where-to-ride/annupuri/`. The current `01.jpg` (aerial panorama of the Annupuri peak with ski runs) is now also being used as the body panorama on `/projects/`, so the Annupuri page should get a distinct hero shot to avoid duplication.
+
 ---
 
 ### Task A.7a: `/where-to-ride/signage/`
