@@ -8,84 +8,6 @@ masthead:
     name: Liam Larnach
 ---
 <style>
-  /* Journey timeline (matches /impact/ pattern) */
-  .journey-timeline { position: relative; max-width: 880px; margin: 0 auto; padding: 16px 0; }
-  .journey-timeline::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    width: 2px;
-    background: var(--color-bg-border);
-    transform: translateX(-50%);
-  }
-  .journey-row { display: flex; margin-bottom: 36px; position: relative; }
-  .journey-row:last-child { margin-bottom: 0; }
-  .journey-nub {
-    position: absolute;
-    left: 50%;
-    top: 24px;
-    width: 14px;
-    height: 14px;
-    background: var(--color-accent);
-    border-radius: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
-  }
-  .journey-card {
-    width: calc(50% - 32px);
-    padding: 16px 20px;
-    background: var(--color-bg-panel);
-    border-radius: 3px;
-  }
-  .journey-row.left { justify-content: flex-start; }
-  .journey-row.right { justify-content: flex-end; }
-  .journey-row.left .journey-card { text-align: right; border-right: 3px solid var(--color-accent); }
-  .journey-row.right .journey-card { text-align: left; border-left: 3px solid var(--color-accent); }
-  .journey-year {
-    color: var(--color-accent);
-    font-weight: 700;
-    font-size: 220%;
-    line-height: 1;
-    margin-bottom: 8px;
-    font-family: "Metropolis", Helvetica, Arial, sans-serif;
-  }
-  .journey-head { color: #ffffff; font-size: 115%; font-weight: 700; margin-bottom: 8px; line-height: 1.3; }
-  .journey-desc { color: #cccccc; font-size: 95%; line-height: 1.6; margin: 0; }
-
-  .journey-row.now .journey-card { border-color: var(--color-primary); }
-  .journey-row.now .journey-nub {
-    background: var(--color-primary);
-    box-shadow: 0 0 0 4px rgba(179, 79, 36, 0.25);
-    animation: journey-pulse 2.4s ease-in-out infinite;
-  }
-  .journey-row.now .journey-year::after {
-    content: " · NOW";
-    color: #ffffff;
-    font-size: 50%;
-    font-weight: 700;
-    letter-spacing: 1px;
-  }
-  @keyframes journey-pulse {
-    0%, 100% { box-shadow: 0 0 0 4px rgba(179, 79, 36, 0.25); }
-    50% { box-shadow: 0 0 0 8px rgba(179, 79, 36, 0.10); }
-  }
-
-  @media (max-width: 720px) {
-    .journey-timeline { padding-left: 8px; }
-    .journey-timeline::before { left: 14px; transform: none; }
-    .journey-nub { left: 14px; transform: none; }
-    .journey-row.left, .journey-row.right { justify-content: flex-end; }
-    .journey-row.left .journey-card, .journey-row.right .journey-card {
-      width: calc(100% - 36px);
-      text-align: left;
-      border-left: 3px solid var(--color-accent);
-      border-right: none;
-    }
-    .journey-year { font-size: 190%; }
-  }
-
   /* Phase photo placeholders (larger, 2-up on desktop) */
   .phase-grid {
     display: grid;
@@ -150,40 +72,40 @@ masthead:
       <div class="journey-row left">
         <div class="journey-card">
           <div class="journey-year">2022</div>
-          <div class="journey-head">4.4km · NPO設立</div>
-          <p class="journey-desc">NPO正式登録。倶知安町がツインピークスのトレイル建設権を承認。コロナで短縮されたシーズン中、幅1m制限のもと、1本の木も伐採せずに4.4kmを建設。</p>
+          <div class="journey-head">4.4km · 建設開始</div>
+          <p class="journey-desc">倶知安町がツインピークスバイクパークのための土地賃借を承認。コロナで短縮されたシーズン中でも、幅1m制限のもと、1本の木も伐採せずに4.4kmを建設。</p>
         </div>
         <div class="journey-nub"></div>
       </div>
       <div class="journey-row right">
         <div class="journey-card">
           <div class="journey-year">2023</div>
-          <div class="journey-head">ツインピークス開園 · ¥29M調達</div>
-          <p class="journey-desc">ツインピークスが一般公開。ひと夏で6kmを建設、アレグラ史上最速のプロジェクト。ネットワークは10.4kmに到達。北海道初のSoil Searchingイベント開催。</p>
+          <div class="journey-head">10.4km · 開園</div>
+          <p class="journey-desc">アグレッシブな建設計画で追加6kmを計画。アレグラ史上最速のプロジェクトとして予定通り完成し、9月にツインピークスが一般開放。</p>
         </div>
         <div class="journey-nub"></div>
       </div>
       <div class="journey-row left">
         <div class="journey-card">
           <div class="journey-year">2024</div>
-          <div class="journey-head">7,750人来場 · タキテック開通</div>
-          <p class="journey-desc">ツインピークスで新たに3.4kmを建設、うち最初のダブルブラック「タキテック」が誕生。来場者7,750人。ダーティーデイムズが30人以上の女性ライダーと共に始動。ロイック・ブルーニが訪問。</p>
+          <div class="journey-head">13.8km · 初のダブルブラック</div>
+          <p class="journey-desc">タキトレイルとタキテックで、北海道初のダブルブラックが完成。パークは13.8kmへ。</p>
         </div>
         <div class="journey-nub"></div>
       </div>
       <div class="journey-row right">
         <div class="journey-card">
           <div class="journey-year">2025</div>
-          <div class="journey-head">11,500人来場 · ジャンプラインオープン</div>
-          <p class="journey-desc">来場者が48%増の11,500人に。ツインピークス初のジャンプラインがオープン、専用クライムトレイルとペアで何度も滑れる構成。</p>
+          <div class="journey-head">17.8km · ジャンプラインオープン</div>
+          <p class="journey-desc">ニセコ初のジャンプラインがオープン、専用クライムトレイルとペアで何度も滑れる構成。ネットワークは17.8kmに。ロウアー・ウェスト・クライムの建設に着手。</p>
         </div>
         <div class="journey-nub"></div>
       </div>
       <div class="journey-row left now">
         <div class="journey-card">
           <div class="journey-year">2026</div>
-          <div class="journey-head">グリーンフローとロワーグリーンクライム</div>
-          <p class="journey-desc">グリーンフロートレイルとロワーグリーンクライムはスポンサーシップ待ち。ネットワークは成長を続けています。</p>
+          <div class="journey-head">ロウアー・ウェスト・クライム · 初のグリーンダウンヒル</div>
+          <p class="journey-desc">ロウアー・ウェスト・クライムが完成し、昨年のジャンプラインクライムに接続。北海道初のグリーンダウンヒルトレイルがロウアー・グリーン・クライムにつながります。両トレイルとも<a href="/ja/partner/">スポンサー募集</a>中。</p>
         </div>
         <div class="journey-nub"></div>
       </div>

@@ -473,6 +473,12 @@ Steps:
 Notes:
 Decide: (resolved via A.12 enlarge mechanism, apply same here)
 
+**Timeline content (Tom-supplied, km figures from trail-length stats screenshot):**
+- 2023 — Tokyu builds 5.3km top-to-bottom flow at Grand Hirafu (Kamiwaza 2.1km, Kuro Obi 1.8km, Kaikan 1.4km) — non-NAMBA. After seeing the success of Twin Peaks opening, Tokyu approaches NAMBA to take over building at Grand Hirafu.
+- 2024 — NAMBA reworks the lower trail (Kaikan Rebuild 2.1km) to make it easier for beginners, and starts work on connector trails (Kings High 0.7km, Key Path 0.8km) heading over toward Twin Peaks. NAMBA-built at GH: 3.6km.
+- 2025 — NAMBA pitches a project with Loic Bruni and Nico Vink, who are invited over for planning. NAMBA starts to prepare for Grand Hirafu's switch to the newly installed Ace Gondola.
+- 2026 — Linking the trails top and bottom to the new Ace Gondola. Old trails (Kaikan, Kings High, Key Path) are decommissioned; new Lower Blue (2.0km) is built to fit the gondola layout. NAMBA-built at GH (post-rebuild): 2.0km.
+
 ---
 
 ### Task A.14: `/projects/hanazono/`
@@ -490,6 +496,11 @@ Steps:
 
 Notes:
 Decide: (resolved via A.12)
+
+**Timeline content (Tom-supplied, km figures from trail-length stats screenshot):**
+- End of 2024 — NAMBA pitches Hanazono that now is the time to invest in mountain biking, and shares the masterplan for Niseko.
+- 2025 — Because Hanazono has many landowners and varied forest, initial permitting begins. First 1km of Lower Symphony Blue built.
+- 2026 — Symphony Blue (4.2km) and Forest Loop / forest adventure course (1.4km) complete. Park opens to the public with 5.6km of new NAMBA-built trail. Aggressive build continues with half of the next blue trail, additional progression lines in the forest loop (turning it into a skill centre), and a green loop trail at the top of the Hana1 lift.
 
 ---
 
