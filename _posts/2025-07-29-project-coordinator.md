@@ -2,7 +2,7 @@
 layout: job
 categories: jobs
 title: Project Coordinator
-description: We are seeking a highly organized and proactive Project Coordinator to support NAMBA’s committee heads and strategic initiatives. This role is central to helping our volunteer-led committees deliver key projects. You will act as a communication hub, ensuring tasks move forward smoothly, timelines are met, and stakeholders stay informed and connected.
+description: A part-time Project Coordinator role supporting NAMBA's committee heads. You'll keep timelines on track, run agendas and minutes, and act as the connective tissue between volunteer-led committees and their partners.
 masthead:
   img: /assets/images/jobs/project-coordinator.jpg
 og:
@@ -25,13 +25,13 @@ perks:
     perk: Available in Niseko Hirafu
 applyUrl: /contact/?topic=job-application
 ---
-<h3 style="margin-top:0;" id="about-namba">About NAMBA:</h3>
+<h3 id="about-namba">About NAMBA:</h3>
 
 NAMBA (Niseko Area Mountain Bike Association) is a non-profit organization dedicated to the development, maintenance, and promotion of mountain biking in the Niseko region. We work with the local community, government, and businesses to create accessible and sustainable trails for locals and visitors alike.
 
 ### Role Overview:
 
-We are seeking a highly organized and proactive <strong>Project Coordinator</strong> to support NAMBA’s committee heads and strategic initiatives. This role is central to helping our volunteer-led committees deliver key projects. You will act as a communication hub, ensuring tasks move forward smoothly, timelines are met, and stakeholders stay informed and connected.
+A part-time <strong>Project Coordinator</strong> role supporting NAMBA's committee heads. You'll keep projects moving across NAMBA's volunteer-led committees: tracking timelines and deliverables, running agendas and minutes, and acting as the connective tissue between committees and their partners.
 
 ### Key Responsibilities:
 
@@ -64,8 +64,3 @@ We are seeking a highly organized and proactive <strong>Project Coordinator</str
 
 Please apply via our <a href="{{- page.applyUrl -}}">contact form</a>, including a short introduction about yourself and why you're interested in working with NAMBA.
 
-{% if page.isOpen %}
-<div style="text-align:center; margin:50px 0;">
-  <a class="btn btn-primary" href="{{- page.applyUrl -}}" target="_blank">Click here to apply</a>
-</div>
-{% endif %}

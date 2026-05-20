@@ -2,7 +2,7 @@
 layout: job
 categories: jobs
 title: Operations Manager
-description: As the Operations Manager, you will play a pivotal role in overseeing the day-to-day operations of the Twin Peaks Bike Park and other essential NAMBA projects. You will be a key leader in our organization, responsible for ensuring the smooth and efficient functioning of the park to provide visitors with an exceptional mountain biking experience.
+description: The Operations Manager runs day-to-day operations at Twin Peaks Bike Park and across NAMBA's regional projects. You'll lead the trail crew, work with the board and subcommittees, and keep the park ride-ready every day of the season.
 isOpen: false
 location: Niseko, Japan and surrounding areas
 startDate: 1 May 2024
@@ -12,29 +12,19 @@ pay: ¥300,000 ~ ¥330,000 per month, depending on experience
 bonus: Up to ¥100,000 performance bonus upon a satisfactory completion of the contract period
 applyUrl: https://forms.gle/Vini5784YEqxgyzXA
 ---
-<h3 style="margin-top:0;" id="about-namba">About NAMBA:</h3>
+<h3 id="about-namba">About NAMBA:</h3>
 
-The Niseko Area Mountain Bike Association (NAMBA) is Japan's premier trails organization and the leading advocate for mountain biking in the Niseko area. Established in 2021 by local mountain biking enthusiasts, NAMBA is dedicated to enhancing the mountain biking infrastructure and promoting the sport in the region – <em>and having a damn good time while doing it!</em>
-
-In 2022, NAMBA achieved significant milestones, including official nonprofit status in Japan and the groundbreaking of the Twin Peaks Bike Park in partnership with Allegra. The park, located in Hirafu, offers free access to approximately 30 kilometers of interconnected trails suitable for riders of all ages and skill levels.
-
-2023 marked the Grand Opening of the Twin Peaks Bike Park, featuring ~9.5km of trails, and strengthened partnerships with local resorts, stakeholders, and leading mountain bike brands. By the end of the building season, NAMBA had completed over 14 kilometers of trails within the park.
-
-Building on this success, 2024 promises further expansion of the Twin Peaks Bike Park and other exciting plans, making it an exciting time to join NAMBA and contribute to our vision for the area.
+NAMBA (Niseko Area Mountain Bike Association) is a Japanese non-profit that builds and maintains free mountain bike trails across the Niseko region. Founded in 2021, we work with the local community, government, and resort partners to grow the sport sustainably <em>and have a damn good time doing it</em>.
 
 ### About the Operations Manager Role:
 
-As the Operations Manager, you will play a pivotal role in overseeing the day-to-day operations of the Twin Peaks Bike Park and other essential NAMBA projects. You will be a key leader in our organization, responsible for ensuring the smooth and efficient functioning of the park to provide visitors with an exceptional mountain biking experience.
+The Operations Manager is the day-to-day lead at Twin Peaks Bike Park. You work closely with the NAMBA Board, Trails Subcommittee, and Access Subcommittee to coordinate operations and keep the park running.
 
-Just as our Trail Crew members are local legends, the Operations Manager is a pivotal figure in the community, known and respected by all. You will work closely with the NAMBA Board, Trail Subcommittee, and Access Subcommittee to coordinate operations and ensure the park's success.
+You'll lead the NAMBA Trail Crew (both build and maintenance teams), collaborate with contracted Trail Builders, and report to the NAMBA Board. The contract runs 1 May 2024 to 31 October 2024, with potential to extend based on performance and mutual fit.
 
-With 14+ kilometers of trails completed as of 2023 and ambitious plans for 2024, you will lead a team of dedicated individuals in creating and maintaining world-class trails. You will collaborate with contracted Trail Builders, and the NAMBA Trail Crew (our building team, and our maintenance team), to achieve our goals, reporting to the NAMBA Board and working alongside our staff and contractors to bring our vision to life.
+We're looking for someone with a background in trail building and maintenance, strong leadership skills, and a love of mountain biking. You should be able to work independently, manage a team, and keep the park in good shape for riders.
 
-The employment period for the Operations Manager will run from 1 May 2024 to 31 October 2024, with potential for extension based on performance and mutual agreement.
-
-The ideal candidate will be passionate about mountain biking, possess strong leadership skills, and have a background in trail building and maintenance. This role requires someone who can work independently, manage a team effectively, and ensure the park operates smoothly to provide visitors with an exceptional experience.
-
-Due to the multicultural nature of Niseko, strong preference will be given to candidates who are able to communicate in both English and Japanese.
+Niseko is multicultural, so strong preference goes to candidates who can communicate in both English and Japanese.
 
 ### Perks:
 
@@ -50,7 +40,7 @@ Due to the multicultural nature of Niseko, strong preference will be given to ca
 
 #### Operation of the Twin Peaks Bike Park:
 
-- Manage overall operations of the bike park, ensuring a safe and enjoyable experience for all visitors.
+- Manage day-to-day operations of the bike park so riders have a safe and enjoyable experience.
 - Run trail maintenance, proactively identifying areas in need of maintenance or reworking before they become problems.
 - Oversee daily operations, including opening and closing procedures (or delegation thereof when required).
 - Implement and enforce park policies and safety protocols.
@@ -84,8 +74,8 @@ Due to the multicultural nature of Niseko, strong preference will be given to ca
 
 #### Learn about Trail Building:
 
-- Continuously educate oneself about trail building techniques, sustainable practices, and industry trends.
-- Suggest new ideas and innovations to improve trail quality and user experience.
+- Stay current on trail building techniques, sustainable practices, and industry trends.
+- Suggest improvements to trail quality and rider experience.
 
 ### Qualifications:
 
@@ -104,12 +94,5 @@ Due to the multicultural nature of Niseko, strong preference will be given to ca
 - Passion for mountain biking and/or outdoor recreation.
 - Eligibility to work in Japan, though visa sponsorship may be possible for uniquely qualified applicants.
 
-The Operations Manager will need to report to members of the NAMBA Board, including members of the Trails Subcommittee and Access Subcommittee, and will need to work alongside members of NAMBA's staff, as well as contracted staff. There may be instances where they are required to report to contractors.
+<strong>For the right candidate, we'd like this to become a returning summer seasonal position year on year.</strong>
 
-Join our team and play a key role in creating memorable experiences for mountain bike enthusiasts from around the world! If you are a self-motivated individual with a passion for the outdoors and a desire to lead a dynamic team, we want to hear from you. <strong>We aim to grow our Operations Manager with us, and for the right candidate, we'd like this to become a yearly summer seasonal position.</strong>
-
-{% if page.isOpen %}
-<div style="text-align:center; margin:50px 0;">
-  <a class="btn btn-primary" href="{{- page.applyUrl -}}" target="_blank">Register your interest here!</a>
-</div>
-{% endif %}

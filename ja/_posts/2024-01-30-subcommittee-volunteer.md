@@ -2,7 +2,7 @@
 layout: job
 categories: jobs
 title: ボランティア委員スタッフ
-description: ボランティア委員スタッフとしてチームに参加しませんか？ ボランテイアスタッフはNAMBAの活動を継続していく為に重要な役割を担っています。委員会は、アクセス部、マーケティング部、トレイル部、アドミン部と構成されいて、すべてボランティア委員スタッフにより運営されてます。
+description: NAMBAのサブコミッティでボランティアを募集中。トレイル、アクセス、イベント、マーケティング、アドミン部門。現在は特にアクセス部門とアドミン部門の協力者を募集しています。
 og:
   employmentType: VOLUNTEER
 isOpen: true
@@ -11,37 +11,25 @@ term: 雇用期間の定めなし
 pay: ボランティアワーク
 applyUrl: https://forms.gle/qMPEXrZqRNCdVB8C8
 ---
-<h2 style="margin-top:0;" id="join-our-volunteer-subcommittee-teams">ボランティア委員スタッフと<wbr>して<wbr>チームに<wbr>参加しませんか？</h2>
+<h3 id="join-our-volunteer-subcommittee-teams">ボランティア委員スタッフと<wbr>して<wbr>チームに<wbr>参加しませんか？</h3>
 
-ボランテイアスタッフは<wbr>NAMBAの<wbr>活動を<wbr>継続していく<wbr>為に<wbr>重要な<wbr>役割を<wbr>担っています。<wbr>委員会は、<wbr>アクセス部、<wbr>マーケティング部、<wbr>トレイル部、<wbr>アドミン部と<wbr>構成されいて、<wbr>すべて<wbr>ボランティア委員スタッフに<wbr>より<wbr>運営されてます。
+ボランティアは​NAMBAの​土台です。​手も​足も、​頭も​心も、​すべて​ボランティアです。​すべての​サブコミッティは​ボランティア運営です。
 
-<strong>NAMBAの<wbr>活動は<wbr>拡大中で、<wbr>活動を<wbr>継続させる<wbr>為には<wbr>ボランティア委員の<wbr>協力が<wbr>不可欠です。</strong> 現在は<wbr>アクセス部門、<wbr>アドミン部門での<wbr>ボランティアに<wbr>参加してくれる<wbr>メンバーを<wbr>募集しています。
+<strong>NAMBAは​成長中で、​追いつくには​もっと​ボランティアが​必要です。</strong> 現在は​特に​アクセス部門と​アドミン部門の​協力者を​募集しています。
 
-私たちチームに<wbr>入り、<wbr>ニセコを<wbr>より<wbr>ワクワクする<wbr>場所に<wbr>しませんか？
+以下の​サブコミッティの​いずれかに​参加してください：
 
-- <h4>トレール部門</h4>
-  <div class="desc">トレイル部門チームは、<wbr>トレイルに<wbr>関連する<wbr>すべての<wbr>事柄の<wbr>最前線に<wbr>います！<wbr>計画から<wbr>デザイン、<wbr>構築、<wbr>メインテナンスまで、<wbr>すべてを<wbr>ディレクションしてます。<wbr>現在継続中である<wbr>プロジェクとは<wbr>アクセス部門との<wbr>密接な<wbr>連携しながら<wbr>協働してます。</div>
-- <h4>アクセス部門</h4>
-  <div class="desc">アクセス部門チームは、<wbr>現地での<wbr>土地所<wbr>有者や<wbr>エリアの<wbr>ステークホルダー<wbr>（個人<wbr>および公共）との<wbr>関係<wbr>構築、<wbr>強化、<wbr>維持するのに<wbr>不可欠な<wbr>役割を<wbr>担ってます。<wbr>アクセス部門は<wbr>トレイル部門との<wbr>密接な<wbr>連帯を<wbr>通して、<wbr>NAMBAが<wbr>建設した<wbr>トレイルの<wbr>計画、<wbr>デザイン、<wbr>申請、<wbr>および遵守の<wbr>維持を<wbr>行います。</div>
-- <h4>イベント部門</h4>
-  <div class="desc">イベント部門では<wbr>グループライドや<wbr>カジュアルな<wbr>コミュニティーレースから<wbr>募金活動、<wbr>デモデーまで、<wbr>イベント部門スタッフは<wbr>様々な<wbr>イベントを<wbr>計画し実行します。<wbr>コミュニケーション＆マーケティング部門と<wbr>連携し、<wbr>外部の<wbr>スポンサーや<wbr>パートナーとも<wbr>協力して、<wbr>パーテイーの<wbr>開催だけではなく、<wbr>コミュニティーの<wbr>参加を<wbr>促進します。<wbr>また<wbr>様々な<wbr>レベルの<wbr>ライダーに<wbr>適した<wbr>トレイルを<wbr>推奨する<wbr>イベントを<wbr>作り上げます！</div>
-- <h4>コミュニケーション＆マーケティング部門</h4>
-  コミュニケーション＆マーケティング部門は、<wbr>NAMBAブランドの<wbr>創造的な<wbr>発信源です。<wbr>チームは<wbr>マーケティングコンテンツの<wbr>制作と<wbr>公開、<wbr>募金活動の<wbr>運営、<wbr>ウェブサイトの<wbr>管理、<wbr>およびTrailforksなどの<wbr>
-- <h4>アドミン部門委員</h4>
-  <div class="desc">NAMBAの<wbr>運営に<wbr>とって<wbr>中核と<wbr>なる<wbr>アドミン部門では、<wbr>NAMBAの<wbr>スムーズな<wbr>運営機能に<wbr>重要な<wbr>役割を<wbr>担ってます。<wbr>会計や<wbr>助成金の<wbr>申請、<wbr>重要な<wbr>行政関係との<wbr>プロセスの<wbr>監視まで、<wbr>NAMBAの<wbr>活動作業を<wbr>円滑に<wbr>進める<wbr>上で<wbr>中心的な<wbr>役割を<wbr>果たしています。</div>
+- <h4>トレイル委員会</h4>
+  <div class="desc">NAMBAの​トレイルを​計画、​設計、​建設、​整備します。​許認可や​土地所有者対応で​アクセス委員会と​緊密に​連携します。</div>
+- <h4>アクセス委員会</h4>
+  <div class="desc">地元の​土地所有者や​ステークホルダー​（民間・​公共）との​関係を​築き、​維持します。​アクセスが​なければ​トレイルは​ありません。​トレイル委員会と​協力し、​許認可、​設計、​コンプライアンスを​担当します。</div>
+- <h4>イベント委員会</h4>
+  <div class="desc">NAMBAの​イベントを​企画・​運営します​（グループライド、​コミュニティレース、​ファンドレイザー、​デモデー）。​コミュニケーション＆マーケティング委員会や​外部スポンサーと​連携します。</div>
+- <h4>コミュニケーション＆マーケティング委員会</h4>
+  <div class="desc">NAMBAブランドを​運営します。​マーケティングコンテンツ、​ファンドレイザー、​ウェブサイト、​Trailforks統合などを​担当します。</div>
+- <h4>アドミン委員会</h4>
+  <div class="desc">NAMBAの​裏方を​支えます。​経理、​助成金申請、​管理業務を​担当します。</div>
 
-現在、<wbr>アクセス部門と<wbr>アドミン部門で<wbr>貢献して<wbr>頂ける<wbr>人員を<wbr>募集しています！<wbr>NAMBAボランティア委員に<wbr>参加する<wbr>ことで、<wbr>今後の<wbr>活動を<wbr>円滑に<wbr>機能させ、<wbr>ネットワークの<wbr>成長拡大の<wbr>手助けと<wbr>なります。
+### 一緒に​働きませんか？
 
-NAMBAの<wbr>成長に<wbr>おいて<wbr>主導的な<wbr>役割を<wbr>果たし、<wbr>ニセコの<wbr>アウトドアコミュニティに<wbr>貢献する<wbr>絶好の<wbr>機会を<wbr>お見逃しなく！
-
-{% if page.isOpen %}
-<div style="text-align:center; margin:50px 0;">
-  <a class="btn btn-primary" href="{{- page.applyUrl -}}" target="_blank">協力いただける<wbr>方は<wbr>こちらで<wbr>登録！</a>
-</div>
-{% endif %}
-
-### 私たちの<wbr>チームに<wbr>加わりませんか？
-
-トレイルを<wbr>整備し、<wbr>ニセコの<wbr>マウンテンバイクパークの<wbr>未来を<wbr>築きたいですか？<wbr> NAMBAは、<wbr>夏季の<wbr>季節労働者および運営ポジションの<wbr>募集を<wbr>まも<wbr>なく<wbr>開始します。
-
-募集の空きについては<a href="https://www.instagram.com/nisekomtb/" target="_blank">SNSをフォローして</a>、最新情報をチェック！
+NAMBAは​毎年、​夏季の​トレイルクルーと​運営ポジションを​募集しています。<a href="/ja/jobs/">現在の​募集を​見る</a>、または<a href="https://www.instagram.com/nisekomtb/" target="_blank">Instagramで​フォロー</a>して​最新情報を​チェックしてください。

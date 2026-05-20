@@ -23,19 +23,11 @@ perks:
     perk: Free use NAMBA's staff bikes
 applyUrl: https://forms.gle/Vini5784YEqxgyzXA
 ---
-<h3 style="margin-top:0;" id="about-namba">About NAMBA:</h3>
+<h3 id="about-namba">About NAMBA:</h3>
 
-The Niseko Area Mountain Bike Association (NAMBA) is Japan's premier trails organization and the leading advocate for mountain biking in the Niseko area. Established in 2021 by local mountain biking enthusiasts, NAMBA is dedicated to enhancing the mountain biking infrastructure and promoting the sport in the region – <em>and having a damn good time while doing it!</em>
-
-In 2022, NAMBA achieved significant milestones, including official nonprofit status in Japan and the groundbreaking of the Twin Peaks Bike Park in partnership with Allegra. The park, located in Hirafu, offers free access to approximately 30 kilometers of interconnected trails suitable for riders of all ages and skill levels.
-
-2023 marked the Grand Opening of the Twin Peaks Bike Park, featuring ~9.5km of trails, and strengthened partnerships with local resorts, stakeholders, and leading mountain bike brands. By the end of the building season, NAMBA had completed over 14 kilometers of trails within the park.
-
-Building on this success, 2024 promises further expansion of the Twin Peaks Bike Park and other exciting plans, making it an exciting time to join NAMBA and contribute to our vision for the area.
+NAMBA (Niseko Area Mountain Bike Association) is a Japanese non-profit that builds and maintains free mountain bike trails across the Niseko region. Founded in 2021, we work with the local community, government, and resort partners to grow the sport sustainably <em>and have a damn good time doing it</em>.
 
 ### About the Trail Crew Role:
-
-As part of the Trail Crew, you will be a local legend –  beloved at the bar & the bike shop, at the trailhead, and by all of us at NAMBA. These folks are the ones out there shaping trails and the community!
 
 The love our Trail Crew receives is well deserved, this team works on the Twin Peaks Bike Park and on other regional projects as needed. With 14+ kilometers built so far, and much more planned for 2024, the NAMBA Trail Crew members will be split into the Trail Building team and into the Trail Maintenance team, with rotation between these two teams as required.
 
@@ -88,12 +80,5 @@ NAMBA Trail Crew members are to report to their Machine Operator, NAMBA Trail Cr
 - Experience in trail building or landscaping and using tools such as of brush cutters or chainsaws is a plus, but is not strictly required
 - Valid driver's license, clean driving record are desired but not necessarily essential
 
-The Trail Crew members will work under the supervision of the Machine Operator, NAMBA Trail Builder Supervisor, and Project Manager. They will also collaborate with other members of the NAMBA team, including volunteers, to ensure that trail construction and maintenance activities are carried out efficiently and according to standards. While the Trail Crew will primarily report to their immediate supervisors, there may be instances where they are required to communicate with other stakeholders, such as NAMBA Board members or contractors.
+For the right candidates, there may be opportunities for extended or returning seasonal positions.
 
-If you are a motivated individual with a love for mountain biking and a desire to contribute to the growth of the sport in Niseko, we want you on our team! Join us and be part of creating unforgettable experiences for mountain bike enthusiasts from around the world. We are committed to developing our Trail Crew members and, for the right candidates, there may be opportunities for extended seasonal positions. Apply now and be a part of our exciting journey!
-
-{% if page.isOpen %}
-<div style="text-align:center; margin:50px 0;">
-  <a class="btn btn-primary" href="{{- page.applyUrl -}}" target="_blank">Register your interest here!</a>
-</div>
-{% endif %}

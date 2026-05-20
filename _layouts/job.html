@@ -32,6 +32,14 @@ layout: base
   .job-apply-top {
     margin-top: 16px;
   }
+  .btn.disabled,
+  .btn[aria-disabled="true"] {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #888 !important;
+    border-color: transparent !important;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
 
   .job-sidebar {
     background: var(--color-bg-panel);
@@ -102,6 +110,9 @@ layout: base
 
     <div class="col-12">
 
+      {% assign cta_disabled = false %}
+      {% unless page.isOpen %}{% assign cta_disabled = true %}{% endunless %}
+
       <!-- Header with status and apply -->
       <div class="job-header ja-animate" data-animation="move-from-bottom" data-delay="200">
         {% if page.isOpen %}
@@ -110,9 +121,9 @@ layout: base
           <div class="job-status closed">{% if page.lang == "ja" %}募集終了{% else %}Closed{% endif %}</div>
         {% endif %}
         {% if page.description %}<p style="font-size:120%; color:#aaa; max-width:700px; margin:0 auto;">{{ page.description }}</p>{% endif %}
-        {% if page.applyUrl and page.isOpen %}
+        {% if page.applyUrl %}
           <div class="job-apply-top">
-            <a class="btn btn-primary" href="{{ page.applyUrl }}">{% if page.lang == "ja" %}応募する{% else %}Apply now{% endif %}</a>
+            <a class="btn btn-primary{% if cta_disabled %} disabled{% endif %}" href="{{ page.applyUrl }}"{% if cta_disabled %} aria-disabled="true" tabindex="-1"{% endif %}>{% if page.lang == "ja" %}応募する{% else %}Apply now{% endif %}</a>
           </div>
         {% endif %}
       </div>
@@ -140,12 +151,15 @@ layout: base
       </div>
       {% endif %}
 
-      <!-- Bottom apply CTA -->
-      {% if page.applyUrl and page.isOpen %}
+      <!-- Bottom button row -->
+      {% assign has_primary_cta = false %}
+      {% if page.applyUrl %}{% assign has_primary_cta = true %}{% endif %}
       <div style="text-align:center; margin:48px 0;" class="ja-animate" data-animation="move-from-bottom" data-delay="800">
-        <a class="btn btn-primary" href="{{ page.applyUrl }}">{% if page.lang == "ja" %}応募する{% else %}Apply now{% endif %}</a>
+        {% if page.applyUrl %}
+          <a class="btn btn-primary{% if cta_disabled %} disabled{% endif %}" href="{{ page.applyUrl }}" style="margin:5px;"{% if cta_disabled %} aria-disabled="true" tabindex="-1"{% endif %}>{% if page.lang == "ja" %}応募する{% else %}Apply now{% endif %}</a>
+        {% endif %}
+        <a class="btn btn-{% if has_primary_cta %}secondary{% else %}primary{% endif %}" href="{% if page.lang == 'ja' %}/ja{% endif %}/jobs/" style="margin:5px;">{% if page.lang == "ja" %}求人一覧に戻る{% else %}Back to jobs{% endif %}</a>
       </div>
-      {% endif %}
     </div>
 
     <!-- Sidebar -->

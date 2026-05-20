@@ -2,7 +2,7 @@
 layout: job
 categories: jobs
 title: プロジェクト コーディネーター
-description: 私たちは、NAMBAの委員会責任者や戦略的イニシアチブを支援する、非常に整理整頓された積極的なプロジェクトコーディネーターを募集しています。
+description: NAMBAの委員会責任者を支援するパートタイムのプロジェクトコーディネーター職。スケジュール管理、議題と議事録の作成、ボランティア委員会とパートナー間の橋渡しを担います。
 masthead:
   img: /assets/images/jobs/project-coordinator.jpg
 og:
@@ -25,13 +25,13 @@ perks:
     perk: ニセコひらふで利用可能
 applyUrl: /ja/contact/?topic=job-application
 ---
-<h3 style="margin-top:0;" id="about-namba">団体概要（NAMBAについて）：</h3>
+<h3 id="about-namba">団体概要（NAMBAについて）：</h3>
 
 NAMBA<wbr>（ニセコエリア・マウンテンバイク協会）は、<wbr>ニセコ地域に<wbr>おける<wbr>マウンテンバイクの<wbr>開発・整備・普及を<wbr>目的とした<wbr>非営利団体です。<wbr>私たちは<wbr>地域住民、<wbr>自治体、<wbr>企業と<wbr>連携し、<wbr>地域住民および<wbr>来訪者に<wbr>とって<wbr>利用しや<wbr>すく、<wbr>持続可能な<wbr>トレイルの<wbr>整備に<wbr>取り<wbr>組んでいます。
 
 ### 役割概要：
 
-私たちは、<wbr>NAMBAの<wbr>委員会責任者や<wbr>戦略的イニシアチブを<wbr>支援する、<wbr>非常に<wbr>整理整頓された<wbr>積極的な<wbr>プロジェクトコーディネーターを<wbr>募集しています。<wbr>この<wbr>役割は、<wbr>ボランティア主導の<wbr>委員会が<wbr>重要な<wbr>プロジェクトを<wbr>確実に<wbr>遂行する<wbr>ための<wbr>中心的な<wbr>存在です。<wbr>あなたは<wbr>コミュニケーションの<wbr>ハブと<wbr>して<wbr>機能し、<wbr>タスクが<wbr>円滑に<wbr>進行し、<wbr>スケジュールが<wbr>守られ、<wbr>関係者が<wbr>常に<wbr>情報共有されてつながっていられるようにします。
+NAMBAの​委員会責任者を​支援する​パートタイムの​<strong>プロジェクトコーディネーター</strong>職。​スケジュールや​成果物の​追跡、​議題と​議事録の​作成、​各委員会と​パートナー間の​橋渡しなど、​NAMBAの​ボランティア主導の​委員会全体で​プロジェクトを​前進させる​役割です。
 
 ### 業務内容：
 
@@ -64,8 +64,3 @@ NAMBA<wbr>（ニセコエリア・マウンテンバイク協会）は、<wbr>�
 
 <a href="{{- page.applyUrl -}}">お問い合わせフォーム</a>から、簡単な自己紹介とNAMBAで働きたい理由をお送りください。
 
-{% if page.isOpen %}
-<div style="text-align:center; margin:50px 0;">
-  <a class="btn btn-primary" href="{{- page.applyUrl -}}" target="_blank">申し込みはこちらをクリック</a>
-</div>
-{% endif %}

@@ -21,7 +21,7 @@ perks:
     perk: 研修期間も全額支給
 applyUrl: /ja/contact/?topic=job-application
 ---
-<h3 style="margin-top:0;" id="about-namba">団体概要（NAMBAについて）：</h3>
+<h3 id="about-namba">団体概要（NAMBAについて）：</h3>
 
 NAMBA<wbr>（ニセコエリア・マウンテンバイク協会）は、<wbr>ニセコ地域に<wbr>おける<wbr>マウンテンバイクの<wbr>開発・整備・普及を<wbr>目的とした<wbr>非営利団体です。<wbr>私たちは<wbr>地域住民、<wbr>自治体、<wbr>企業と<wbr>連携し、<wbr>地域住民および<wbr>来訪者に<wbr>とって<wbr>利用しや<wbr>すく、<wbr>持続可能な<wbr>トレイルの<wbr>整備に<wbr>取り<wbr>組んでいます。
 
@@ -47,12 +47,10 @@ NAMBA<wbr>（ニセコエリア・マウンテンバイク協会）は、<wbr>�
 
 - 日本語の<wbr>読み書き・会話に<wbr>堪能な<wbr>方
 - 以下の<wbr>ツールに<wbr>関する<wbr>実務レベルの<wbr>スキル：
-
   - Microsoft Excel<wbr>（データ入力、<wbr>表作成、<wbr>書式設定など）
   - Adobe Illustrator & Photoshop<wbr>（地図や<wbr>資料の<wbr>作成・編集）
   - Google Earth / Google Maps<wbr>（GPSプロット、<wbr>KML/KMZファイル編集）
   - Google Drive, Docs, Sheets などの<wbr>Google製ツール
-
 - 自主的に<wbr>タスク管理が<wbr>でき、<wbr>信頼性が<wbr>高く<wbr>整理能力が<wbr>ある<wbr>方
 - 行政・地域関係者との<wbr>やり<wbr>取りに<wbr>おける<wbr>コミュニケーション能力
 
@@ -74,8 +72,3 @@ NAMBA<wbr>（ニセコエリア・マウンテンバイク協会）は、<wbr>�
 
 <a href="{{- page.applyUrl -}}">お問い合わせフォーム</a>から、簡単な自己紹介とNAMBAで働きたい理由をお送りください。
 
-{% if page.isOpen %}
-<div style="text-align:center; margin:50px 0;">
-  <a class="btn btn-primary" href="{{- page.applyUrl -}}" target="_blank">申し込みはこちらをクリック</a>
-</div>
-{% endif %}

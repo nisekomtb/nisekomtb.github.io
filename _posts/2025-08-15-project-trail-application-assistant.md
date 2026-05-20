@@ -21,13 +21,12 @@ perks:
     perk: Training provided at full pay
 applyUrl: /contact/?topic=job-application
 ---
-<h3 style="margin-top:0;" id="about-namba">About NAMBA:</h3>
+<h3 id="about-namba">About NAMBA:</h3>
 
 NAMBA (Niseko Area Mountain Bike Association) is a non-profit organization dedicated to the development, maintenance, and promotion of mountain biking in the Niseko region. We work with the local community, government, and businesses to create accessible and sustainable trails for locals and visitors alike.
 
 ### Role Overview:
 
-We are looking for a reliable and detail-oriented Part-Time Assistant to help with trail development and permit application work in the Niseko region.
 You will support communication with government offices (e.g., National Parks, National Forests, Hokkaido Forests, and town offices), help prepare documents, maps, and reports, and organize essential planning data for multi-use trail projects.
 This is a flexible, task-based position ideal for someone with strong digital and organizational skills, an interest in outdoor infrastructure, and the ability to work comfortably in Japanese.
 
@@ -45,12 +44,10 @@ This is a flexible, task-based position ideal for someone with strong digital an
 
 - Fluency in Japanese written and spoken.
 - Proficiency using:
-
   - Microsoft Excel (data entry, formatting, tables)
   - Adobe Illustrator & Photoshop (creating and editing documents, maps, diagrams)
   - Google Earth / Google Maps (GPS plotting, KML/KMZ editing)
   - Google Drive, Docs, Sheets, etc.
-
 - Organized, reliable, and able to manage tasks independently
 - Strong communication and interpersonal skills when working with officials and local stakeholders
 
@@ -72,8 +69,3 @@ Transportation expenses covered for work-related field activities
 
 Please apply via our <a href="{{- page.applyUrl -}}">contact form</a>, including a short introduction about yourself and why you're interested in working with NAMBA.
 
-{% if page.isOpen %}
-<div style="text-align:center; margin:50px 0;">
-  <a class="btn btn-primary" href="{{- page.applyUrl -}}" target="_blank">Click here to apply</a>
-</div>
-{% endif %}

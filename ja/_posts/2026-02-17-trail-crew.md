@@ -26,19 +26,9 @@ perks:
     perk: ニセコひらふで利用可能
 applyUrl: https://forms.gle/hmvCxEXEPPJ3bjrr9
 ---
-<h3 style="margin-top:0;" id="about-namba">NAMBAに<wbr>ついて<wbr>：</h3>
+<h3 id="about-namba">NAMBAに<wbr>ついて<wbr>：</h3>
 
-ニセコエリアマウンテンバイク協会<wbr>（NAMBA）は、<wbr>ニセコ地区で<wbr>公共利用無料の<wbr>トレイルネットワークを<wbr>造成する<wbr>組織団体である。<wbr>2021年に<wbr>ローカルライダーに<wbr>よって<wbr>設立された<wbr>NAMBAは、<wbr>マウンテンバイクの<wbr>インフラを<wbr>向上させ、<wbr>ニセコ地域で<wbr>マウンテンバイカーの<wbr>ためのより<wbr>良い<wbr>フィールド作りを<wbr>楽しみながら、<wbr> 地域を<wbr>発展させる<wbr>共通の<wbr>目的を<wbr>持っています。
-
-2022年、<wbr>NAMBAは、<wbr>公式な<wbr>非営利団体を<wbr>設立し、<wbr>Allegraとの<wbr>パートナーシップに<wbr>よる<wbr>ツインピークスバイクパークの<wbr>オープンと<wbr>いう、<wbr>重要な<wbr>節目を<wbr>迎えました。<wbr>バイクパークは<wbr>ヒラフエリア東側泉卿地区に<wbr>位置し、<wbr>全ての<wbr>年齢層と<wbr>スキルレベルの<wbr>ライダーに<wbr>適した、<wbr>約30キロメートルに<wbr>渡る<wbr>相互接続された<wbr>トレイルへの<wbr>無料アクセスを<wbr>提供しています。
-
-2023年は、<wbr>新たに<wbr>約9.5kmの<wbr>トレイルの<wbr>増設を<wbr>完了した<wbr>後に<wbr>ツインピークスバイクパークの<wbr>グランドオープニングが<wbr>行われ、<wbr>リゾート関係者、<wbr>ステークホルダー、<wbr>そして<wbr>トップマウンテンバイクブランドとの<wbr>パートナーシップが<wbr>強化されました。<wbr>トレイル造成シーズンの<wbr>終わりまでに、<wbr>NAMBAは<wbr>パーク内で<wbr>総距離約14キロの<wbr>トレイルを<wbr>完成させました。
-
-2024年は<wbr>さらなる<wbr>成長の<wbr>年と<wbr>なり、<wbr>Twin Peaksに<wbr>約4.8km、<wbr>Grand Hirafuに<wbr>約1.5kmの<wbr>トレイルを<wbr>新たに<wbr>整備しました。<wbr>これに<wbr>より、<wbr>2つの<wbr>バイクパークを<wbr>接続すると<wbr>いう<wbr>長期目標に<wbr>向けて<wbr>前進し、<wbr>ニセコを<wbr>アジア有数の<wbr>マウンテンバイク・デスティネーションと<wbr>して<wbr>確立する<wbr>取り組みを<wbr>進めました。
-
-2025年には、<wbr>ニセコ初と<wbr>なる<wbr>専用ジャンプトレイルを<wbr>オープンし、<wbr>NAMBAは<wbr>新たな<wbr>大きな<wbr>マイルストーンを<wbr>達成しました。<wbr>これに<wbr>より<wbr>ライダーの<wbr>スキル向上の<wbr>幅が<wbr>広がり、<wbr>上級者や<wbr>フリースタイル志向の<wbr>マウンテンバイカーに<wbr>とっての<wbr>魅力が<wbr>さらに<wbr>高まりました。<wbr>あわせて<wbr>トレイルクルーは、<wbr>Twin Peaksおよび<wbr>Grand Hirafuエリア全体で<wbr>ネットワークの<wbr>拡張を<wbr>継続し、<wbr>既存トレイルの<wbr>改良に<wbr>よって<wbr>走行性と<wbr>安全性の<wbr>基準を<wbr>向上させるとともに、<wbr>長期的な<wbr>接続計画を<wbr>前進させました。<wbr>また、<wbr>イベントや<wbr>ボランティア・ディグデイの<wbr>開催、<wbr>行政機関や<wbr>リゾートパートナーとの<wbr>連携強化を<wbr>通じて、<wbr>地域との<wbr>関わりも<wbr>一層深まりました。
-
-この<wbr>勢いを<wbr>基盤と<wbr>して、<wbr>2026年は<wbr>NAMBAの<wbr>進化に<wbr>おける<wbr>次の<wbr>ステージと<wbr>なります。<wbr>戦略的な<wbr>トレイル拡張、<wbr>より<wbr>高品質な<wbr>施工、<wbr>持続可能な<wbr>設計手法の<wbr>推進、<wbr>そして<wbr>ニセコを<wbr>世界水準の<wbr>ライディングデスティネーションと<wbr>して<wbr>確立する<wbr>ことに<wbr>注力していきます。<wbr>地域の<wbr>マウンテンバイクの<wbr>未来を<wbr>形づくる<wbr>一員と<wbr>して、<wbr>実践的に<wbr>関わる<wbr>ことができる、<wbr>非常に<wbr>エキサイティングな<wbr>タイミングです。
+NAMBA​（Niseko Area Mountain Bike Association）は、​ニセコ地域で​無料の​マウンテンバイクトレイルを​建設・維持する​日本の​NPOです。​2021年設立以来、​地域コミュニティ、​行政、​リゾートパートナーと​協力し、​楽しみながら​スポーツの​持続的な​成長に​取り​組んでいます。
 
 ### トレイルクルーの<wbr>役割に<wbr>ついて<wbr>：
 
@@ -83,12 +73,5 @@ NAMBAトレイルクルーは、<wbr>NAMBAの<wbr>トレイルクルースーパ
 - トレイル造成や<wbr>造園の<wbr>経験、<wbr>ブラシカッターや<wbr>チェーンソーなどの<wbr>工具使用経験が<wbr>あれば<wbr>尚良いですが、<wbr>必須では<wbr>ありません。
 - 有効な<wbr>運転免許証保持者、<wbr>優良運転記録者が<wbr>望まれますが、<wbr>必須では<wbr>ありません。
 
-トレイルクルーの<wbr>メンバーは、<wbr>重機オペレーター、<wbr>NAMBAトレイル造成スーパーバイザー、<wbr>およびプロジェクトマネージャーの<wbr>監督のもとで<wbr>働きます。<wbr>また、<wbr>NAMBA他の<wbr>メンバーや<wbr>ボランティアとも<wbr>協力し、<wbr>トレイルの<wbr>造成と<wbr>メンテナンス活動が<wbr>効率的に、<wbr>そして<wbr>基準に<wbr>従って<wbr>実施されるようにします。<wbr>トレイルクルーは<wbr>主に<wbr>直属の<wbr>上司に<wbr>報告しますが、<wbr>NAMBAの<wbr>理事会メンバーや<wbr>契約業者など、<wbr>他の<wbr>関係者とも<wbr>コミュニケーションを<wbr>取る<wbr>必要が<wbr>ある<wbr>場合も<wbr>あります。
+向いている​方には、​長期または​継続的な​シーズン雇用の​機会も​あります。
 
-マウンテンバイクが<wbr>好きで、<wbr>ニセコの<wbr>スポーツを<wbr>盛り上げたい方、<wbr>私たちと<wbr>一緒に<wbr>活躍しませんか？<wbr>世界中の<wbr>マウンテンバイクファンに<wbr>特別な<wbr>体験を<wbr>提供する<wbr>私たちの<wbr>チームで、<wbr>一緒に<wbr>楽しい<wbr>冒険を<wbr>しましょう。<wbr>トレイルクルーと<wbr>して<wbr>スキルアップに<wbr>力を<wbr>入れており、<wbr>向いている<wbr>方には、<wbr>もっと<wbr>長く<wbr>働ける<wbr>チャンスも<wbr>あります。<wbr>興味が<wbr>ある<wbr>方は、<wbr>ぜひ応募して、<wbr>私たちの<wbr>エキサイティングな<wbr>プロジェクトの<wbr>一員に<wbr>なりましょう！
-
-{% if page.isOpen %}
-<div style="text-align:center; margin:50px 0;">
-  <a class="btn btn-primary" href="{{- page.applyUrl -}}" target="_blank">協力いただける<wbr>方は<wbr>こちらで<wbr>登録！</a>
-</div>
-{% endif %}
