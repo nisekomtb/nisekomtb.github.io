@@ -553,15 +553,23 @@ Decide: (none open)
 - Modify: `press/index.html`, `ja/press/index.html`
 
 Steps:
-- [ ] Formatting check: find the list bullet issue Tom flagged. Inspect raw markup and rendered output. Fix the bullet/list rendering.
-- [ ] Fact-check each press mention (publication, date, link, summary).
-- [ ] Replace images (Pattern P-IMG).
-- [ ] Mirror EN → JA (Pattern P-EN-JA).
-- [ ] Visual check.
-- [ ] Pattern P-COMMIT.
+- [x] Formatting fix: converted default disc-bullet Key Facts list to the partner-page `.benefit-list` pattern (gold `fa-circle-check`, 720px max-width, flex layout).
+- [x] Positioning correction: reframed intro + Key Facts + Story Angles to clarify Twin Peaks is the free-to-ride park, Grand Hirafu/Hanazono are lift-accessed. Multi-park masterplan framing.
+- [x] Key Facts data sync from /impact/ + /partner/: ¥86M raised in 2025 added; "11,500+ visitors at Twin Peaks" clarified; "24-person board" verified; Pinkbike line dropped.
+- [x] Downloads rebuilt: 3 logo cards (NAMBA SVG+PNG+AI, Twin Peaks SVG+PNG+AI, Dirty Dames SVG+PNG+AI) using a new `.logo-download` card pattern. AI files via Drive direct-download links.
+- [x] Photo library nudge: replaced sample image tiles with a gold-bordered `.partner-photo-nudge` block — 3 sample thumbnails (landscape, Japan context, in-park) + text + "Become a partner" CTA.
+- [x] Mastheads: new `bg-header-press.jpg` (Toshi Pander 0271, centered rocky descent), new body `hero-action.jpg` (9643).
+- [x] Humanizer pass on intro, Key Facts, Story Angles, partner nudge.
+- [x] SEO title: "Press & Media" → "NAMBA Press & Media Kit"; description tightened.
+- [x] Mirror EN → JA (Pattern P-EN-JA). ¥86M → 8,600万円 conversion. New titles + descriptions mirrored.
+- [x] Visual check.
+- [x] Pattern P-COMMIT.
 
 Notes:
 Decide: (none open)
+
+**Deferred follow-up:**
+Add a "Press mentions" / past coverage section (publications, dates, links) when there's a list ready to publish. Tom wants this but later — out of launch scope.
 
 ---
 
