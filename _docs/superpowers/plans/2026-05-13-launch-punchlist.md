@@ -514,11 +514,12 @@ Decide: confirm "Yotei Loop" rename
 - Modify: `impact/index.html`, `ja/impact/index.html`
 
 Steps:
-- [ ] Final text check, looking for any data points that need descriptive context (a number on its own with no framing).
+- [x] Final text check: light humanizer trims on the 4 glossary descriptions (Local Partnerships, Community Fund, Trail Construction, Admin & Other). Removed "an estimated" from visitor line.
 - [ ] Ask Tom for keyword search increases from Google Analytics (organic search growth metric) if available. If provided, add to the data narrative.
-- [ ] Mirror any EN edits to JA (Pattern P-EN-JA).
-- [ ] Visual check.
-- [ ] Pattern P-COMMIT.
+- [x] Mirror any EN edits to JA (Pattern P-EN-JA). JA timeline fully rewritten 2021-2026 for parity with EN (BudouX tokenized).
+- [x] Visual check.
+- [x] New masthead `bg-header-impact.jpg` (group on flowy berms, 2000×1333, 692KB).
+- [x] Pattern P-COMMIT.
 
 Notes:
 Decide: GA keyword data availability
@@ -531,11 +532,15 @@ Decide: GA keyword data availability
 - Modify: `dirty-dames/index.html`, `ja/dirty-dames/index.html`
 
 Steps:
-- [ ] Add images (Pattern P-IMG).
-- [ ] Check data: participant numbers, dates, recent event details. Update from source if stale.
-- [ ] Mirror EN → JA (Pattern P-EN-JA).
-- [ ] Visual check.
-- [ ] Pattern P-COMMIT.
+- [x] Add images: new masthead `bg-header-dirty-dames.jpg` (Block Party group at gondola) + 2 body images (group-forest.jpg, skills-session.jpg).
+- [x] Add Dirty Dames brand logo at top of intro section (replaces redundant H3).
+- [x] Restructure both bullet sections to h4 + body pattern (matching /projects/), narrower wrap width.
+- [x] Humanizer pass on EN intro/programme/why-it-matters paragraphs.
+- [x] Drop second CTA "Join NAMBA" — keep "View events" only.
+- [x] Participant numbers/dates verified (200+ since 2024 launch, June–October season).
+- [x] Mirror EN → JA (Pattern P-EN-JA).
+- [x] Visual check.
+- [x] Pattern P-COMMIT.
 
 Notes:
 Decide: (none open)
