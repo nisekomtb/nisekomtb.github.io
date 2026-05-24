@@ -58,13 +58,8 @@ masthead:
   table.levels td .font-icon span:before {
     font-size: 36px;
     color: var(--color-secondary);
-    background: var(--color-secondary);
-    background-clip: text;
     display: inline-block;
-    -webkit-background-clip: text;
-    text-fill-color: transparent;
-    -webkit-text-fill-color: transparent;
-    font-weight: 400;
+    line-height: 1.2;
     text-indent: 1px;
   }
   table.levels td.hd {
@@ -793,7 +788,7 @@ masthead:
       data-animation="move-from-bottom"
       data-delay="400">
       <div class="tier-heading">
-        <i class="fa-solid fa-handshake" style="font-size:28px; color:var(--color-secondary); margin-bottom:6px; display:block;"></i>
+        <i class="fa-solid fa-handshake" style="font-size:28px; color:var(--color-secondary); margin-bottom:6px;"></i>
         <h4>{% if page.lang == "ja" %}トレイル＆戦略パートナー{% else %}Trail &amp; Strategic Partners{% endif %}</h4>
       </div>
       <div class="tier-logos">

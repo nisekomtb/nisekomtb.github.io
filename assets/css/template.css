@@ -6139,12 +6139,7 @@ div.t3-wrapper {
 .t3-copyright .copyright .social a.font-icon span:before {
   color: var(--color-secondary);
   font-size: 35px;
-  background: var(--color-secondary);
-  background-clip: text;
   display: inline-block;
-  -webkit-background-clip: text;
-  text-fill-color: transparent;
-  -webkit-text-fill-color: transparent;
   font-weight: 400;
   text-indent: 1px;
   line-height: 1.2;
@@ -6355,14 +6350,8 @@ div.t3-wrapper {
 .acm-features.style-2 .features-item .font-icon span:before {
   color: var(--color-secondary);
   font-size: 96px;
-  background: var(--color-secondary);
-  background-clip: text;
   display: inline-block;
-  -webkit-background-clip: text;
-  text-fill-color: transparent;
-  -webkit-text-fill-color: transparent;
-  font-weight: 400;
-
+  line-height: 1.2;
   text-indent: 1px;
 }
 
@@ -7415,3 +7404,21 @@ joomla-field-custom.field-custom-wrapper .input-group .input-group-btn .btn span
 :lang(ja) .journey-head { line-height: 1.4; }
 :lang(ja) .journey-desc { line-height: 1.7; }
 :lang(ja) .journey-row.now .journey-year::after { content: " · 現在"; }
+
+/* Font Awesome 7 defaults icon width to 1.25em, which shifts the spacing of
+ * every icon-with-text pair across the site (the layouts were authored for
+ * the v5/v6 default of 1em). Restore the old default so existing layouts
+ * keep their alignment. */
+.fa, .fas, .far, .fab,
+.fa-solid, .fa-regular, .fa-brands, .fa-classic {
+  --fa-width: 1em;
+}
+
+/* For the large feature-card icons, the :before glyph is sized way up
+ * (96px / 35px), but v7's fixed width on the span clips it visually — the
+ * 1em-wide span sits centered while the much larger glyph overflows to one
+ * side. Let the span size to the glyph so centering works as authored. */
+.acm-features.style-2 .features-item .font-icon span,
+.t3-copyright .copyright .social a.font-icon span {
+  width: auto;
+}

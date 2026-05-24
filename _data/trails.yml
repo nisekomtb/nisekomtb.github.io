@@ -126,7 +126,7 @@ twinpeaks:
   trails:
     - name: Jinja Ninja
       ja:
-        name: ジンジャニンジャ
+        name: ジンジャ・ニンジャ
       difficulty: green
       distance: 178
       climb: 5
@@ -136,7 +136,7 @@ twinpeaks:
       trailforks_id: 657442
     - name: Ezo Shika
       ja:
-        name: エゾシカ
+        name: エゾ・シカ
       difficulty: green
       distance: "3,483"
       climb: 240
@@ -147,7 +147,7 @@ twinpeaks:
       trailforks_id: 611923
     - name: Repeat Offender
       ja:
-        name: リピートオフェンダー
+        name: リピート・オフェンダー
       difficulty: green
       distance: 664
       climb: 23
@@ -158,7 +158,7 @@ twinpeaks:
       trailforks_id: 753819
     - name: Mana Skills Park
       ja:
-        name: マナスキルズパーク
+        name: マナ・スキルズ・パーク
       difficulty: green
       distance: 315
       climb: 21
@@ -169,7 +169,7 @@ twinpeaks:
       trailforks_id: 680884
     - name: Mana Skills Loop
       ja:
-        name: マナスキルループ
+        name: マナ・スキル・ループ
       difficulty: green
       distance: 697
       climb: 16
@@ -180,7 +180,7 @@ twinpeaks:
       trailforks_id: 657445
     - name: Mana Pump
       ja:
-        name: マナポンプ
+        name: マナ・ポンプ
       difficulty: blue
       distance: 122
       climb: 3
@@ -191,7 +191,7 @@ twinpeaks:
       trailforks_id: 657444
     - name: Mana Berms
       ja:
-        name: マナバーム
+        name: マナ・バーム
       difficulty: blue
       distance: 79
       climb: 0
@@ -202,7 +202,7 @@ twinpeaks:
       trailforks_id: 657446
     - name: Mana Jumps
       ja:
-        name: マナジャンプ
+        name: マナ・ジャンプ
       difficulty: blue
       distance: 222
       climb: 1
@@ -213,7 +213,7 @@ twinpeaks:
       trailforks_id: 657447
     - name: Easy Ryder
       ja:
-        name: イージーライダー
+        name: イージー・ライダー
       difficulty: blue
       distance: "2,186"
       climb: 16
@@ -235,7 +235,7 @@ twinpeaks:
       trailforks_id: 680500
     - name: Air Ryder
       ja:
-        name: エアライダー
+        name: エア・ライダー
       difficulty: blue
       distance: 427
       climb: 1
@@ -246,7 +246,7 @@ twinpeaks:
       trailforks_id: 680498
     - name: Chon Mage
       ja:
-        name: チョンマゲ
+        name: チョン・マゲ
       difficulty: blue
       distance: 938
       climb: 7
@@ -257,7 +257,7 @@ twinpeaks:
       trailforks_id: 753826
     - name: Chon Mage Link
       ja:
-        name: チョンマゲリンク
+        name: チョン・マゲ・リンク
       difficulty: blue
       distance: 153
       climb: 3
@@ -268,7 +268,7 @@ twinpeaks:
       trailforks_id: 793071
     # - name: Creek 'n' Peak
     #   ja:
-    #     name: クリークンピーク
+    #     name: クリーク・ン・ピーク
     #   difficulty: blue
     #   distance: 546
     #   climb: 5
@@ -279,7 +279,7 @@ twinpeaks:
     #   trailforks_id: 753825
     - name: Cruise Control
       ja:
-        name: クルーズコントロール
+        name: クルーズ・コントロール
       difficulty: blue
       distance: "2,765"
       climb: 15
@@ -290,7 +290,7 @@ twinpeaks:
       trailforks_id: 753804
     - name: Launch Control
       ja:
-        name: ローンチコントロール
+        name: ローンチ・コントロール
       difficulty: blue
       distance: 686
       climb: 11
@@ -301,7 +301,7 @@ twinpeaks:
       trailforks_id: 753818
     - name: Mana Taki
       ja:
-        name: マナタキ
+        name: マナ・タキ
       difficulty: black
       distance: 189
       climb: 11
@@ -312,7 +312,7 @@ twinpeaks:
       trailforks_id: 777417
     - name: Shogun Syndicate
       ja:
-        name: ショウグンシンジケート
+        name: ショウグン・シンジケート
       difficulty: black
       distance: "2,138"
       climb: 14
@@ -323,7 +323,7 @@ twinpeaks:
       trailforks_id: 657436
     - name: Taki Shogun
       ja:
-        name: タキショーグン
+        name: タキ・ショーグン
       difficulty: black
       distance: 83
       climb: 0
@@ -334,7 +334,7 @@ twinpeaks:
       trailforks_id: 789336
     - name: Taki Trail
       ja:
-        name: タキトレイル
+        name: タキ・トレイル
       difficulty: black
       distance: "1,276"
       climb: 11
@@ -345,7 +345,7 @@ twinpeaks:
       trailforks_id: 657437
     - name: Taki Tech
       ja:
-        name: タキテック
+        name: タキ・テック
       difficulty: double-black
       distance: 641
       climb: 8

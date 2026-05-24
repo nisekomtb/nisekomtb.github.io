@@ -97,16 +97,16 @@ higuma:
     # - name: coin metro
     #   image: /assets/images/company/coinmetro.png
     #   url: https://coinmetro.com
-    - name: hanazono
-      image: /assets/images/company/hanazono.png
-      url: https://hanazononiseko.com/en
-      ja:
-        url: https://hanazononiseko.com/ja
     - name: h2
       image: /assets/images/company/h2.png
       url: https://www.h2group.com
       ja:
         url: https://www.h2group.com/jp/
+    - name: hanazono
+      image: /assets/images/company/hanazono.png
+      url: https://hanazononiseko.com/en
+      ja:
+        url: https://hanazononiseko.com/ja
     - name: hbc
       image: /assets/images/company/hbc.png
       url: https://www.hokkaidobackcountryclub.com/en/homepage/

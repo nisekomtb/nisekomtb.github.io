@@ -9,6 +9,12 @@ baseurl: ""
 url: https://namba.ngo
 github_username:  nisekomtb
 
+# Disable the default github-pages theme (jekyll-theme-primer). The site has
+# its own layouts and styles, so the theme is unused. Loading it triggers a
+# Ruby 3.4 + jekyll-sass-converter 1.5.2 encoding bug on macOS shells without
+# LANG=en_US.UTF-8 set.
+theme: null
+
 strict_front_matter: true
 permalink: /:categories/:title-:year/
 
