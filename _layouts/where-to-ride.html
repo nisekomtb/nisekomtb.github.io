@@ -548,6 +548,16 @@ layout: base
           </a>
           {% endfor %}
         </div>
+        {% if park_data.gallery_credit.name %}
+          {% if park_data.gallery_credit.url %}
+            <a class="park-gallery-credit"
+               href="{{ park_data.gallery_credit.url }}"
+               target="_blank"
+               rel="noopener">📸 {{ park_data.gallery_credit.name }}</a>
+          {% else %}
+            <span class="park-gallery-credit">📸 {{ park_data.gallery_credit.name }}</span>
+          {% endif %}
+        {% endif %}
       </section>
     </div>
   </div>

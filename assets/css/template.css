@@ -2515,6 +2515,18 @@ input.invalid {
   transform: scale(1.04);
 }
 
+.park-gallery-credit {
+  display: block;
+  margin-top: 12px;
+  text-align: right;
+  opacity: 0.3;
+  text-decoration: none;
+}
+
+.park-gallery-credit:hover {
+  opacity: 1;
+}
+
 .seasons-gallery {
   max-width: 900px;
   margin: 20px auto;
