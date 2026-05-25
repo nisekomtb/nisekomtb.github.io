@@ -77,6 +77,7 @@
       resizeTicking = true;
       window.requestAnimationFrame(function () {
         heroHeight = hero.offsetHeight;
+        update();
         resizeTicking = false;
       });
     }, { passive: true });
@@ -163,6 +164,7 @@
       resizeTicking = true;
       window.requestAnimationFrame(function () {
         measure();
+        update();
         resizeTicking = false;
       });
     }, { passive: true });
