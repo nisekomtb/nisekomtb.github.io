@@ -1,1 +1,43 @@
-<!-- _includes/home/section-stories.html -->
+<!-- _includes/home/section-stories.html: Section 06b -->
+{% if page.lang == "ja" %}
+  {% assign stories_src = site.categories.stories | where: "lang", "ja" %}
+{% else %}
+  {% assign stories_src = site.categories.stories | where: "lang", "en" %}
+{% endif %}
+{% assign stories = stories_src | sort: "date" | reverse %}
+
+{% if stories.size > 0 %}
+<section class="home-stories fade-up">
+  <div class="container home-stories-wrap">
+    <header class="home-stories-head">
+      <h2 class="home-stories-title">
+        {% if page.lang == "en" %}Latest stories.
+        {% else %}最新の<wbr>ストーリー。
+        {% endif %}
+      </h2>
+    </header>
+    <div class="home-stories-grid">
+      {% for st in stories limit: 3 %}
+        <a class="home-story-card" href="{{ st.url }}">
+          {% if st.thumbnail %}
+            <div class="home-story-thumb" style="background-image: url('{{ st.thumbnail }}');"></div>
+          {% elsif st.masthead.img %}
+            <div class="home-story-thumb" style="background-image: url('{{ st.masthead.img }}');"></div>
+          {% else %}
+            <div class="home-story-thumb home-story-thumb-fallback"></div>
+          {% endif %}
+          <div class="home-story-body">
+            <div class="home-story-date">{{ st.date | date: "%b %-d, %Y" }}</div>
+            <h3 class="home-story-title">{{ st.title }}</h3>
+            <p class="home-story-excerpt">{{ st.description | default: st.excerpt | strip_html | truncate: 120 }}</p>
+            <div class="home-story-action">{% if page.lang == "en" %}Read →{% else %}読む →{% endif %}</div>
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+    <p class="home-stories-all">
+      <a href="{% if page.lang == 'ja' %}/ja{% endif %}/stories/">{% if page.lang == "en" %}View all stories →{% else %}すべての<wbr>ストーリーを<wbr>見る →{% endif %}</a>
+    </p>
+  </div>
+</section>
+{% endif %}

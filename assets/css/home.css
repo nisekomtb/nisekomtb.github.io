@@ -394,3 +394,40 @@ html[lang="ja"] .home-pull-quote { font-style: normal; }
 .home-events-empty a { color: #d4a574; }
 @media (max-width: 1023px) { .home-events-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 600px)  { .home-events-grid { grid-template-columns: 1fr; } }
+
+/* ── Section 06b: Stories ─────────────────────────────────────────── */
+.home-stories {
+  background: #131314;
+  padding: clamp(72px, 12vh, 140px) 0;
+  color: #ededeb;
+}
+.home-stories-head { text-align: left; margin-bottom: 36px; }
+.home-stories-title { font-size: clamp(26px, 3.5vw, 40px); font-weight: 700; margin: 0; }
+.home-stories-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+.home-story-card {
+  display: flex; flex-direction: column;
+  background: #161618;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 6px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #ededeb;
+  transition: border-color 200ms ease, transform 200ms ease;
+}
+.home-story-card:hover { border-color: #d4a574; transform: translateY(-2px); }
+.home-story-thumb { width: 100%; aspect-ratio: 16 / 10; background-position: center; background-size: cover; background-color: #1a1a1c; }
+.home-story-thumb-fallback { background-image: linear-gradient(135deg, #20262a 0%, #1a1a1c 100%); }
+.home-story-body { padding: 20px 22px; flex: 1; display: flex; flex-direction: column; }
+.home-story-date { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #d4a574; margin-bottom: 6px; }
+.home-story-title { font-size: 17px; font-weight: 700; margin: 0 0 8px; line-height: 1.3; }
+.home-story-excerpt { font-size: 13px; line-height: 1.55; opacity: 0.78; margin: 0 0 14px; flex: 1; }
+.home-story-action { font-size: 13px; font-weight: 600; letter-spacing: 0.04em; color: #d4a574; }
+.home-stories-all { text-align: right; margin-top: 24px; font-size: 14px; }
+.home-stories-all a { color: #d4a574; text-decoration: none; border-bottom: 1px solid transparent; }
+.home-stories-all a:hover { border-color: #d4a574; }
+@media (max-width: 1023px) { .home-stories-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px)  { .home-stories-grid { grid-template-columns: 1fr; } }
