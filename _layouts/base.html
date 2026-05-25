@@ -60,6 +60,10 @@
     <link href="/assets/fonts/trailforks/stylesheet.css?d={{ build }}" rel="stylesheet" type="text/css" />
     <link href="/assets/js/splide/splide.min.css?d={{ build }}" rel="stylesheet" type="text/css"/>
     <link href="/assets/css/masthead.css?d={{ build }}" rel="stylesheet" type="text/css"/>
+    {% if page.path == "index.html" or page.path == "ja/index.html" %}
+      <link rel="preload" as="image" href="/assets/images/bg/bg-header-yotei.jpg?d={{ build }}"/>
+      <link href="/assets/css/home.css?d={{ build }}" rel="stylesheet" type="text/css"/>
+    {% endif %}
     <!-- block links endblock -->
     <script src="/assets/js/caption.js?d={{ build }}" type="text/javascript"></script>
     <script src="/assets/js/bootstrap.bundle.min.js?d={{ build }}" type="text/javascript"></script>
@@ -69,6 +73,9 @@
     <script src="/assets/js/splide/splide.min.js?d={{ build }}" type="text/javascript"></script>
     <script src="/assets/js/script.js?d={{ build }}" type="text/javascript"></script>
     <script src="/assets/js/acm/script.js?d={{ build }}" type="text/javascript"></script>
+    {% if page.path == "index.html" or page.path == "ja/index.html" %}
+      <script src="/assets/js/home.js?d={{ build }}" type="text/javascript" defer></script>
+    {% endif %}
     <script type="text/javascript">
       window.addEventListener('load', function () {
         new JCaption('img.caption');
