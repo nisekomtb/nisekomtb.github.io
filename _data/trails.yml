@@ -614,6 +614,24 @@ hanazono:
       height: 2000
       alt_en: A rider on the trail alongside susuki grass and the Hanazono lift line
       alt_ja: ススキの脇、花園リフト沿いのトレイルを走るライダー
+    - img: /assets/images/trails/hanazono/gallery/riders-flow-berms.webp
+      img_large: /assets/images/trails/hanazono/gallery/riders-flow-berms-large.webp
+      width: 3556
+      height: 2000
+      alt_en: Four riders railing banked berms on a flow trail at Niseko Hanazono Bike Park, Mount Yotei behind
+      alt_ja: ニセコHANAZONOバイクパークのフロートレイルでバームを駆け抜ける4人のライダー、奥に羊蹄山
+    - img: /assets/images/trails/hanazono/gallery/rider-cornering-gondola.webp
+      img_large: /assets/images/trails/hanazono/gallery/rider-cornering-gondola-large.webp
+      width: 3000
+      height: 2000
+      alt_en: Rider cornering hard on a flow berm with the Hanazono gondola overhead
+      alt_ja: 花園ゴンドラを背に、フロートレイルのバームをコーナリングするライダー
+    - img: /assets/images/trails/hanazono/gallery/trail-yotei-autumn.webp
+      img_large: /assets/images/trails/hanazono/gallery/trail-yotei-autumn-large.webp
+      width: 3000
+      height: 2000
+      alt_en: Trail winding through autumn susuki grasses with Mount Yotei in the distance
+      alt_ja: 秋のススキ草原を抜けるトレイル、遠くに羊蹄山
   trails:
     - name: Forest Loop Course
       ja:
