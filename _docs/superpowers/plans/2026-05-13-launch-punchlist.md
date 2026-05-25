@@ -794,7 +794,7 @@ Decide: (none open)
 - [x] `/join/`
 - [x] `/donate/` — `bg-header-donate.jpg` (top-down trail crew hands-on stone work, 2000×1333 q82)
 - [x] `/jobs/` — `bg-header-jobs.jpg` (3-person working crew, 2000×1333 q82)
-- [x] `/contact/` — `bg-header-contact.jpg` (NAMBA crew + Soil Searching event group conversation at the Welcome Centre, 2000×1333 q82, 658 KB). Credit: Sea and Summit Media.
+- [x] `/contact/` — reverted to site default masthead (`bg-header.jpg` via Jekyll defaults). The bespoke `bg-header-contact.jpg` was dropped to match privacy/terms/utility-page convention (commit 466b2ce).
 - [x] `/press/` — `bg-header-press.jpg` (Toshi Pander 0271, commit 38a28a6)
 - [x] `/stories/` — **deferred** (page not going live at launch; revisit when first story publishes, see R.1).
 - [x] `/artist-series/` — keeps `/assets/images/artists/header.jpg`. Tom confirmed.
@@ -906,6 +906,7 @@ Apply this template to:
 - [x] B.25 Job layout + sample post sweep — `_layouts/job.html`: JobPosting schema `hiringOrganization` now references canonical `@id: "https://namba.ngo/#organization"`. Sample post `_posts/2026-02-17-trail-crew.md` (latest job post, closed): fixed em dash in description, replaced "Asia's fastest growing bike park" promotional cliché with "fastest growing bike park network in the country", removed 2 more em dashes from perks bullets ("- the NAMBA team works hard" and "- don't just be a part") and reflowed as full sentences. JA mirror: replaced アジアで最も急成長している with 国内で最も急成長している, fixed em-dash bullet "ライドデー –" to full sentence form.
 - [x] B.26 `/shop/` + artist series — `/shop/`: title gains NAMBA brand prefix "NAMBA Shop: Niseko MTB Merch & Memberships" (43ch). No body changes — intro copy already voicey and grounded ("shipping's on us, wherever in the world you ride"). Schema: CollectionPage + BreadcrumbList with `about` → Organization @id. EN + JA. `/artist-series/`: title expanded from "Artist Series" (13ch) to "NAMBA Artist Series: Limited-Edition Gear by Local Artists" (57ch). Artist bios deliberately left untouched — they are the artists' own provided words, not editorial copy. Schema: CollectionPage + BreadcrumbList (3-step: Home → Shop → Artist Series) with `about` → Organization @id. EN + JA. JA titles mirrored.
 - [ ] B.27 `/` (Home: only if Home redesign spec has completed; otherwise defer)
+- [x] B.28 Title-split refactor (discovered mid-B, not originally planned) — Phase B's SEO-driven title expansion left visible h1s long. Split `title` into `title` + `subtitle` front matter on 29 pages × EN/JA so the h1 renders as two-tier visual hierarchy while the HTML `<title>` and `og:title` still compose the full string for SEO. Infrastructure: `_layouts/base.html` composes `{{ title }}: {{ subtitle }}` for `<title>` + `og:title`; `_includes/masthead.html` wraps h1 in `.title-primary` + `.title-secondary` spans (falls through to single h1 when no subtitle); `assets/css/template.css` styles `.title-secondary` at 26px (16px mobile), light weight, solid colour overriding the gradient. Project pages converted from `|` to `:` (also updated schema JSON-LD `name` fields). `/artist-series/` legacy standalone subtitle dropped (field repurposed). `/where-to-ride/skills-parks/` left unsplit ("in Niseko" subtitle would read awkwardly after the colon); title trimmed instead. Commit 23f24ef (62 files).
 
 ---
 
