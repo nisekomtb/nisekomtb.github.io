@@ -123,6 +123,24 @@ twinpeaks:
       height: 2000
       alt_en: NAMBA trail signage at Twin Peaks
       alt_ja: ツインピークスのNAMBAトレイルサイン
+    - img: /assets/images/twinpeaks/gallery/aerial-singletrack.webp
+      img_large: /assets/images/twinpeaks/gallery/aerial-singletrack-large.webp
+      width: 2000
+      height: 1333
+      alt_en: Aerial view of singletrack winding through Twin Peaks forest
+      alt_ja: ツインピークスの森を抜けるシングルトラックを上空から望む
+    - img: /assets/images/twinpeaks/gallery/forest-riders.webp
+      img_large: /assets/images/twinpeaks/gallery/forest-riders-large.webp
+      width: 2000
+      height: 1333
+      alt_en: Riders descending a Twin Peaks trail through autumn forest
+      alt_ja: 秋の森を下るツインピークスのライダーたち
+    - img: /assets/images/twinpeaks/gallery/trail-building.webp
+      img_large: /assets/images/twinpeaks/gallery/trail-building-large.webp
+      width: 2000
+      height: 1333
+      alt_en: NAMBA volunteers hand-building trail at Twin Peaks
+      alt_ja: ツインピークスでトレイルを手作業で築くNAMBAボランティア
   trails:
     - name: Jinja Ninja
       ja:
