@@ -1,1 +1,35 @@
-<!-- _includes/home/hero-parallax.html -->
+<!-- _includes/home/hero-parallax.html: Section 01 -->
+<div class="home-hero">
+  <div class="home-hero-bg-wrap">
+    <div class="home-hero-bg" style="background-image: url('/assets/images/bg/bg-header-yotei.jpg');"></div>
+  </div>
+  <div class="home-hero-content container">
+    <h1 class="home-hero-title ja-animate" data-animation="move-from-bottom" data-delay="200">
+      {% if page.lang == "en" %}Niseko Area Mountain Bike Association
+      {% else %}<wbr>ニセコ<wbr>エリア<wbr>マウンテンバイク<wbr>協会
+      {% endif %}
+    </h1>
+    <p class="home-hero-logo ja-animate" data-animation="move-from-bottom" data-delay="600">
+      <img class="metal" src="/assets/images/logos/favicon.png" alt="NAMBA"/>
+    </p>
+    <p class="home-hero-sub ja-animate" data-animation="move-from-bottom" data-delay="800">
+      {% if page.lang == "en" %}Building trails and community.
+      {% else %}トレイルと<wbr>コミュニティーの<wbr>構築
+      {% endif %}
+    </p>
+  </div>
+  <span id="home-hero-cue" class="icon-bottom ja-animate" data-animation="move-from-bottom" data-delay="1600"></span>
+</div>
+
+<script>
+(function () {
+  var cue = document.getElementById('home-hero-cue');
+  if (cue) {
+    cue.addEventListener('click', function () {
+      var hero = document.querySelector('.home-hero');
+      var next = hero ? hero.offsetHeight: 0;
+      window.scrollTo({ top: next, behavior: 'smooth' });
+    });
+  }
+})();
+</script>

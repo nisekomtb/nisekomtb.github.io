@@ -4,7 +4,7 @@ layout: base
 {% assign path = page.path | remove: "ja/" | remove: "index.html" %}
 {% case path %}
   {% when '' %}
-    {% include hero.html %}
+    {% comment %} Home page brings its own hero via index.html include {% endcomment %}
   {% else %}
     {% include masthead.html %}
 {% endcase %}

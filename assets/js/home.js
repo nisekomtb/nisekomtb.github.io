@@ -20,6 +20,34 @@
   }
 
   function init() {
-    // Sections register here as they're built.
+    initHeroParallax();
+  }
+
+  function initHeroParallax() {
+    if (prefersReducedMotion || isMobile) return;
+    var bg = document.querySelector('.home-hero-bg');
+    var hero = document.querySelector('.home-hero');
+    if (!bg || !hero) return;
+
+    var ticking = false;
+    function update() {
+      var rect = hero.getBoundingClientRect();
+      // Only animate while hero is on screen
+      if (rect.bottom < 0 || rect.top > window.innerHeight) {
+        ticking = false;
+        return;
+      }
+      var scrolled = Math.min(Math.max(-rect.top, 0), hero.offsetHeight);
+      var translateY = scrolled * 0.5;
+      bg.style.transform = 'translate3d(0, ' + translateY + 'px, 0)';
+      ticking = false;
+    }
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        window.requestAnimationFrame(update);
+        ticking = true;
+      }
+    }, { passive: true });
+    update();
   }
 })();
