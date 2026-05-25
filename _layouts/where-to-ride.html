@@ -460,6 +460,7 @@ layout: base
           const dest = { lat: {{ park_data.location_lat }}, lng: {{ park_data.location_lng }} };
           const map = new Map(document.getElementById("getting-here-map"), {
             mapId: "bfcc0961204fb2ec",
+            colorScheme: "DARK",
             zoom: 9,
             center: dest,
             gestureHandling: "cooperative",
