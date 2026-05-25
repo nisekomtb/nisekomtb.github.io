@@ -492,37 +492,55 @@ annupuri:
     managed_by: ニセコアンヌプリ
   location_lat: 42.847557294449004
   location_lng: 140.64795548334948
+  gallery_credit:
+    name: Noriyasu Kato
+    url: https://www.instagram.com/noriyasukato
   gallery:
     - img: /assets/images/trails/annupuri/gallery/gondola-yotei.webp
-      width: 1736
-      height: 1157
-      alt_en: Annupuri gondola cabins overhead with Mount Yotei rising in the distance
-      alt_ja: アンヌプリゴンドラの後方に羊蹄山がそびえる景色
-    - img: /assets/images/trails/annupuri/gallery/riders-gondola-valley.webp
       width: 1920
-      height: 1280
-      alt_en: Two downhill riders on the Annupuri course with a gondola cabin overhead and the Niseko valley below
-      alt_ja: アンヌプリのコースを走るダウンヒルライダー2人、頭上にはゴンドラ、眼下にはニセコの谷
-    - img: /assets/images/trails/annupuri/gallery/rider-cornering-grass.webp
+      height: 1277
+      alt_en: An Annupuri gondola cabin floats in front of Mount Yotei with foliage framing the shot
+      alt_ja: 木々の間から羊蹄山を背にして浮かぶアンヌプリゴンドラのキャビン
+    - img: /assets/images/trails/annupuri/gallery/gondola-valley-vista.webp
       width: 1920
-      height: 1280
-      alt_en: A downhill racer carving a corner through tall grass on the Annupuri course
-      alt_ja: アンヌプリのコースで草地のコーナーを攻めるダウンヒルレーサー
-    - img: /assets/images/trails/annupuri/gallery/rider-base-finish.webp
+      height: 1277
+      alt_en: An Annupuri gondola cabin glides above the trees with the Niseko valley and distant peaks beyond
+      alt_ja: 木々の上を進むアンヌプリゴンドラのキャビン、奥にはニセコの谷と遠くの山々
+    - img: /assets/images/trails/annupuri/gallery/gondola-overhead-patchwork.webp
       width: 1920
-      height: 1280
-      alt_en: A race rider descending the lower section of the Annupuri downhill course toward the base
-      alt_ja: アンヌプリ・ダウンヒルコース下部をベースに向かって駆け下りるレースライダー
-    - img: /assets/images/trails/annupuri/gallery/rider-summit-view.webp
+      height: 1277
+      alt_en: An Annupuri gondola cabin passes overhead with the patchwork farmland of the Niseko valley spread out below
+      alt_ja: 頭上を通過するアンヌプリゴンドラのキャビン、眼下にはニセコの谷のパッチワーク状の畑が広がる
+    - img: /assets/images/trails/annupuri/gallery/course-ridge-tape.webp
       width: 1920
-      height: 1280
-      alt_en: A rider taking in the view across the Niseko valley from the top of the Annupuri course
-      alt_ja: アンヌプリコース上部からニセコの谷を望むライダー
-    - img: /assets/images/trails/annupuri/gallery/riders-race-action.webp
+      height: 1277
+      alt_en: The raw, natural-line Annupuri downhill course climbing a ridge, lined with blue race tape
+      alt_ja: 青いコーステープに縁取られた、自然のままのアンヌプリ・ダウンヒルコースが尾根を登る
+    - img: /assets/images/trails/annupuri/gallery/rider-wood-feature.webp
       width: 1920
-      height: 1280
-      alt_en: Two downhill racers in numbered jerseys riding the Annupuri course
-      alt_ja: アンヌプリのコースを走るゼッケン姿のダウンヒルレーサー2人
+      height: 1277
+      alt_en: A rider rolling off a wooden feature near the top of the Annupuri course, lift towers behind
+      alt_ja: アンヌプリコース上部の木製フィーチャーを越えるライダー、奥にはリフトの支柱
+    - img: /assets/images/trails/annupuri/gallery/racers-line-singletrack.webp
+      width: 1920
+      height: 1277
+      alt_en: Four downhill racers strung out along a muddy, grass-lined section of the Annupuri course
+      alt_ja: アンヌプリコースの泥と草に挟まれた区間を縦一列で下るダウンヒルレーサー4人
+    - img: /assets/images/trails/annupuri/gallery/racer-corner-sky.webp
+      width: 1920
+      height: 1277
+      alt_en: A downhill racer exits a corner on the Annupuri course under a bright blue summer sky
+      alt_ja: 真夏の青空の下、アンヌプリコースでコーナーを抜けるダウンヒルレーサー
+    - img: /assets/images/trails/annupuri/gallery/racer-cornering-grass.webp
+      width: 1920
+      height: 1277
+      alt_en: A race rider drifting through a grass-fringed corner on the Annupuri downhill course
+      alt_ja: 草に縁取られたコーナーを攻めるアンヌプリ・ダウンヒルコースのレースライダー
+    - img: /assets/images/trails/annupuri/gallery/riders-meadow-annupuri.webp
+      width: 1920
+      height: 1277
+      alt_en: Two riders push their bikes up through a wildflower meadow with Mount Annupuri and the gondola line behind
+      alt_ja: 野草の咲く草原を自転車を押して登る2人のライダー、奥にはアンヌプリ山とゴンドラ
   trailforks_rid: 66231
   trails:
   - name: Downhill course
