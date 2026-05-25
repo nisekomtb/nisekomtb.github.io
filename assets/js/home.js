@@ -21,9 +21,21 @@
 
   function init() {
     initHeroParallax();
+    initHeroCue();
     initFadeUps();
     initNetworkScrub();
     initCountUps();
+  }
+
+  function initHeroCue() {
+    var cue = document.getElementById('home-hero-cue');
+    if (!cue) return;
+    cue.addEventListener('click', function () {
+      var hero = document.querySelector('.home-hero');
+      var next = hero ? hero.offsetHeight : 0;
+      var behavior = prefersReducedMotion ? 'auto' : 'smooth';
+      window.scrollTo({ top: next, behavior: behavior });
+    });
   }
 
   function initFadeUps() {
@@ -111,8 +123,13 @@
         else cap.removeAttribute('data-active');
       });
       tabs.forEach(function (tab, i) {
-        if (i === idx) tab.setAttribute('data-active', 'true');
-        else tab.removeAttribute('data-active');
+        if (i === idx) {
+          tab.setAttribute('data-active', 'true');
+          tab.setAttribute('aria-pressed', 'true');
+        } else {
+          tab.removeAttribute('data-active');
+          tab.setAttribute('aria-pressed', 'false');
+        }
       });
       if (badge) badge.textContent = years[idx];
       current = idx;

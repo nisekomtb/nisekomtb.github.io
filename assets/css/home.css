@@ -146,7 +146,10 @@ html[lang="ja"] .home-pull-quote { font-style: normal; }
   gap: 56px;
   align-items: start;
   position: relative;
-  min-height: 60vh;
+  /* Desktop: tall enough to give scroll-tied scrub ~5 viewports of travel
+     so the year scrub progresses smoothly through 2022 -> 2026. Mobile
+     override below removes this (tab-based switching, no scroll-tie). */
+  min-height: 220vh;
 }
 .home-network-map {
   position: sticky;
@@ -236,7 +239,7 @@ html[lang="ja"] .home-pull-quote { font-style: normal; }
 .home-network-park p { font-size: 13px; line-height: 1.45; margin: 0; opacity: 0.78; }
 
 @media (max-width: 1023px) {
-  .home-network-grid { grid-template-columns: 1fr; gap: 32px; }
+  .home-network-grid { grid-template-columns: 1fr; gap: 32px; min-height: auto; }
   .home-network-map { position: relative; top: auto; }
   .home-network-captions { min-height: auto; }
   .home-network-caption { position: relative; inset: auto; }

@@ -20,16 +20,3 @@
   </div>
   <button type="button" id="home-hero-cue" class="icon-bottom ja-animate" data-animation="move-from-bottom" data-delay="1600" aria-label="{% if page.lang == 'en' %}Scroll to next section{% else %}次のセクションへスクロール{% endif %}"></button>
 </div>
-
-<script>
-(function () {
-  var cue = document.getElementById('home-hero-cue');
-  if (cue) {
-    cue.addEventListener('click', function () {
-      var hero = document.querySelector('.home-hero');
-      var next = hero ? hero.offsetHeight: 0;
-      window.scrollTo({ top: next, behavior: 'smooth' });
-    });
-  }
-})();
-</script>

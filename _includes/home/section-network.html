@@ -23,7 +23,7 @@
         <div class="home-network-year-badge">2022</div>
         <div class="home-network-tabs">
           {% for y in years %}
-            <button class="home-network-tab" data-year="{{ y }}" type="button" aria-label="{{ y }}">{{ y }}</button>
+            <button class="home-network-tab" data-year="{{ y }}" type="button" aria-label="{{ y }}" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}">{{ y }}</button>
           {% endfor %}
         </div>
       </div>
