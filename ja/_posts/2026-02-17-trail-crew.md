@@ -40,10 +40,10 @@ NAMBAトレイルクルーは、<wbr>NAMBAの<wbr>トレイルクルースーパ
 
 ### チーム特典：
 
-- 日本を<wbr>代表する<wbr>トレイル協会、<wbr>そして<wbr>アジアで<wbr>最も<wbr>急成長している<wbr>バイクパークに、<wbr>自分の<wbr>足跡を<wbr>残すチャンス！
-- 「やるべき<wbr>ことを<wbr>やって、<wbr>とことん楽しむ」文化の<wbr>一員に<wbr>なろう！<wbr>NAMBAチームは<wbr>一生懸命<wbr>働きますが、<wbr>クルーライドや<wbr>BBQ、<wbr>週末の<wbr>ちょっと<wbr>した<wbr>冒険でも<wbr>知られています。
+- 日本を<wbr>代表する<wbr>トレイル協会、<wbr>そして<wbr>国内で<wbr>最も<wbr>急成長している<wbr>バイクパークネットワークに、<wbr>自分の<wbr>足跡を<wbr>残すチャンス
+- 「やるべき<wbr>ことを<wbr>やって、<wbr>とことん楽しむ」文化の<wbr>一員に<wbr>なろう。<wbr>NAMBAチームは<wbr>一生懸命<wbr>働きますが、<wbr>クルーライドや<wbr>BBQ、<wbr>週末の<wbr>ちょっと<wbr>した<wbr>冒険でも<wbr>知られています
 - Specialized Japan提供の<wbr>NAMBAトレイルクルーバイクを<wbr>利用可能
-- コミュニティイベントや<wbr>ライドデー – ただの<wbr>参加者ではなく、<wbr>コミュニティを<wbr>一緒に<wbr>作っていく<wbr>存在に！
+- コミュニティイベントや<wbr>ライドデーへの<wbr>参加。<wbr>ただの<wbr>参加者ではなく、<wbr>コミュニティを<wbr>一緒に<wbr>作っていく<wbr>存在に
 - トレイル近くに、<wbr>必要に<wbr>応じて<wbr>利用できる<wbr>リーズナブルな<wbr>宿泊施設あり
 - NAMBAの<wbr>車両を<wbr>使って<wbr>買い出しや、<wbr>地域の<wbr>レクリエーションスポットを<wbr>巡る<wbr>ことも<wbr>可能
 

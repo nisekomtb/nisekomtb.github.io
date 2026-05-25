@@ -2,7 +2,7 @@
 layout: job
 categories: jobs
 title: Trail Crew
-description: As part of the Trail Crew, you will be a local legend – beloved at the bar & the bike shop, at the trailhead, and by all of us at NAMBA. These folks are the ones out there shaping trails and the community!
+description: As part of the Trail Crew, you will be a local legend, known at the bar, the bike shop, at the trailhead, and by all of us at NAMBA. These folks are the ones out there shaping trails and the community.
 masthead:
   img: /assets/images/jobs/2026-trail-crew.jpg
 og:
@@ -38,10 +38,10 @@ NAMBA Trail Crew members are to report to their NAMBA Trail Crew Supervisor, NAM
 
 ### Perks:
 
-- Chance to leave your positive mark on Japan’s leading trails association, and Asia’s fastest growing bike park
-- Be a part of a “get shit done and have fun” culture – the NAMBA team works hard, but we are known for crew group rides, team BBQs and other weekend shenanigans
-- Access to NAMBA’s Trail Crew bikes, sponsored by Specialized Japan
-- Community events, ride days – don’t just be a part of the community, you get to help shape it!
+- Chance to leave your mark on Japan's leading trails association and the fastest growing bike park network in the country
+- Be part of a "get shit done and have fun" culture. The NAMBA team works hard, but we are known for crew group rides, team BBQs, and other weekend shenanigans
+- Access to NAMBA's Trail Crew bikes, sponsored by Specialized Japan
+- Community events and ride days. Don't just be part of the community, help shape it
 - Reasonably priced accommodation nearby the trails if required
 - Possibility to use NAMBA vehicles for grocery runs, and to familiarize yourself with the region’s recreational offerings
 
