@@ -6,6 +6,70 @@ masthead:
 og:
   image: /assets/images/bg/bg-header-about.jpg
 ---
+<style>
+  .phase-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    max-width: 1200px;
+    margin: 20px auto;
+  }
+  .phase-grid .phase-tile {
+    position: relative;
+    display: block;
+    background: var(--color-bg-panel);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 3px;
+    overflow: hidden;
+    text-decoration: none;
+    transition: transform 200ms ease, box-shadow 200ms ease;
+  }
+  .phase-grid .phase-tile:hover,
+  .phase-grid .phase-tile:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+    outline: none;
+  }
+  .phase-grid .phase-tile img {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    transition: transform 400ms ease;
+  }
+  .phase-grid .phase-tile:hover img,
+  .phase-grid .phase-tile:focus-visible img {
+    transform: scale(1.04);
+  }
+  .phase-grid .phase-tile .caption {
+    padding: 14px 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .phase-grid .phase-tile .year {
+    font-family: "Metropolis", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--color-accent);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .phase-grid .phase-tile .label {
+    font-size: 95%;
+    color: #ddd;
+    line-height: 1.4;
+  }
+  @media (max-width: 991px) {
+    .phase-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .phase-grid { grid-template-columns: 1fr; }
+  }
+</style>
 <div class="t3-section-wrap">
 
   <!-- The NAMBA Story -->
@@ -170,23 +234,47 @@ og:
 
   </div>
 
-  <div style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin:20px auto; max-width:900px;">
-    <div style="flex:1; min-width:150px; background:var(--color-bg-panel); padding:24px 16px; text-align:center; border-radius:3px; color:#666;">
-      <span class="fa-solid fa-image" style="font-size:32px; display:block; margin-bottom:8px;"></span>
-      <p style="margin:0; font-size:90%;">2022: Satellite view of first 4.7km of trail</p>
-    </div>
-    <div style="flex:1; min-width:150px; background:var(--color-bg-panel); padding:24px 16px; text-align:center; border-radius:3px; color:#666;">
-      <span class="fa-solid fa-image" style="font-size:32px; display:block; margin-bottom:8px;"></span>
-      <p style="margin:0; font-size:90%;">2023: Satellite view showing 14.2km network</p>
-    </div>
-    <div style="flex:1; min-width:150px; background:var(--color-bg-panel); padding:24px 16px; text-align:center; border-radius:3px; color:#666;">
-      <span class="fa-solid fa-image" style="font-size:32px; display:block; margin-bottom:8px;"></span>
-      <p style="margin:0; font-size:90%;">2024: Satellite view showing 19.6km expansion</p>
-    </div>
-    <div style="flex:1; min-width:150px; background:var(--color-bg-panel); padding:24px 16px; text-align:center; border-radius:3px; color:#666;">
-      <span class="fa-solid fa-image" style="font-size:32px; display:block; margin-bottom:8px;"></span>
-      <p style="margin:0; font-size:90%;">2025: Satellite view showing 21km+ full network</p>
-    </div>
+  <div class="phase-grid about-pswp">
+    <a class="phase-tile" href="/assets/images/projects/twin-peaks/2022-large.webp"
+       data-pswp-width="2400" data-pswp-height="1350" target="_blank" rel="noopener">
+      <img src="/assets/images/projects/twin-peaks/2022.webp"
+           alt="Aerial view of Twin Peaks in 2022 showing the first 4.4km of trail traced in gold on the ridge above Kutchan"
+           loading="lazy">
+      <div class="caption">
+        <div class="year">2022</div>
+        <div class="label">4.4km · First build</div>
+      </div>
+    </a>
+    <a class="phase-tile" href="/assets/images/projects/twin-peaks/2023-large.webp"
+       data-pswp-width="2400" data-pswp-height="1350" target="_blank" rel="noopener">
+      <img src="/assets/images/projects/twin-peaks/2023.webp"
+           alt="Aerial view of Twin Peaks in 2023 with the trail network expanded to 10.4km and the park opened to the public"
+           loading="lazy">
+      <div class="caption">
+        <div class="year">2023</div>
+        <div class="label">10.4km · Park opens</div>
+      </div>
+    </a>
+    <a class="phase-tile" href="/assets/images/projects/twin-peaks/2024-large.webp"
+       data-pswp-width="2400" data-pswp-height="1350" target="_blank" rel="noopener">
+      <img src="/assets/images/projects/twin-peaks/2024.webp"
+           alt="Aerial view of Twin Peaks in 2024 showing the network grown to 13.8km with the first double-black trails Taki Trail and Taki Tech"
+           loading="lazy">
+      <div class="caption">
+        <div class="year">2024</div>
+        <div class="label">13.8km · First double-black</div>
+      </div>
+    </a>
+    <a class="phase-tile" href="/assets/images/projects/twin-peaks/2025-large.webp"
+       data-pswp-width="2400" data-pswp-height="1350" target="_blank" rel="noopener">
+      <img src="/assets/images/projects/twin-peaks/2025.webp"
+           alt="Aerial view of Twin Peaks in 2025 with the network at 17.8km, including Niseko's first jump line and dedicated climb trail"
+           loading="lazy">
+      <div class="caption">
+        <div class="year">2025</div>
+        <div class="label">17.8km · Jump line opens</div>
+      </div>
+    </a>
   </div>
 
   <!-- Explore More -->
@@ -238,3 +326,14 @@ og:
   </div>
 
 </div>
+
+<link rel="stylesheet" href="https://unpkg.com/photoswipe@5.4.4/dist/photoswipe.css">
+<script type="module">
+  import PhotoSwipeLightbox from 'https://unpkg.com/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.js';
+  const lightbox = new PhotoSwipeLightbox({
+    gallery: '.about-pswp',
+    children: 'a',
+    pswpModule: () => import('https://unpkg.com/photoswipe@5.4.4/dist/photoswipe.esm.js'),
+  });
+  lightbox.init();
+</script>

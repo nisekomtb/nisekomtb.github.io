@@ -7,6 +7,7 @@ masthead:
 ---
 <style>
   .job-card {
+    position: relative;
     background: var(--color-bg-panel);
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 3px;
@@ -21,6 +22,27 @@ masthead:
   }
   .job-card:has(a):hover {
     border-color: var(--color-secondary);
+  }
+  .job-card .action span {
+    margin-left: 8px;
+    position: relative;
+    top: 1px;
+    letter-spacing: -1px;
+    transition: all 500ms;
+  }
+  .job-card .action:hover,
+  .job-card .action:focus {
+    color: #fff;
+  }
+  .job-card .action:hover span,
+  .job-card .action:focus span {
+    margin-left: 14px;
+  }
+  .job-card:has(a) .action::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
   }
   .job-card .job-info {
     flex: 1;

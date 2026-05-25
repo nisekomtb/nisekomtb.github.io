@@ -6418,6 +6418,24 @@ div.t3-wrapper {
   margin-left: 14px;
 }
 
+.acm-features.style-2 .features-item:not(.no-hover):has(a) {
+  display: flex;
+  flex-direction: column;
+}
+
+.acm-features.style-2 .features-item:not(.no-hover):has(a) .action {
+  position: static;
+  margin-top: auto;
+  padding-top: 24px;
+}
+
+.acm-features.style-2 .features-item:not(.no-hover):has(a) .action::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
 
 @media (max-width: 991px) {
   .acm-features.style-3 .features-image {

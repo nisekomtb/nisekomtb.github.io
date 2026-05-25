@@ -68,7 +68,7 @@ Steps:
 - [x] Generate favicon set: 16x16, 32x32, 96x96, 180x180 (apple-touch-icon), 192x192, 512x512, multi-size .ico. Place in `assets/images/ico/`.
 - [x] Update favicon `<link>` tags in `_layouts/base.html` head section.
 - [x] Replace inline horns image references site-wide (`_includes/hero.html`, `_includes/hero-slides.html`). EN + JA share these includes.
-- [ ] Local serve (`bundle exec jekyll serve --baseurl="" --open-url`) and visually verify: nav, footer, header, Home, plus one sub-page. *(Tom to verify in browser.)*
+- [x] Local serve and visually verify: nav, footer, header, Home, plus one sub-page. (Tom confirmed.)
 - [x] Pattern P-COMMIT (commit 6786862).
 
 Notes: Resolved to torii. Asset is the Shinto Shrine emoji from Noto Emoji (Google, Apache 2.0). Attribution captured at `_docs/attributions.md`. Favicon set includes SVG primary + PNG fallbacks (16/32/96/192/512) + apple-touch-icon (180) + legacy multi-size .ico.
@@ -88,7 +88,7 @@ Steps:
 - [x] Ask Tom what the corrected name should be.
 - [x] Update canonical source: `_data/sponsors.yml` label "Trail building team partner" → "Trail crew sponsor"; JA label トレイルビルドチーム スポンサー → トレイルクルー スポンサー.
 - [x] Update hardcoded copy: `_layouts/twin-peaks.html` sponsor strip title attribute. Commented future entry in `_data/guides.yml` also synced for consistency.
-- [ ] Verify in served site (`/twin-peaks/`, `/partner/`). *(Tom to verify.)*
+- [x] Verify in served site (`/twin-peaks/`, `/partner/`). (Tom confirmed.)
 - [x] Pattern P-COMMIT (commit c9605d0).
 
 Notes: Resolved: it was the **label** that needed updating, not the brand name itself. The Specialized brand mentions in body copy and event posts are unchanged.
@@ -107,7 +107,7 @@ Steps:
 - [x] Identify the CSS rule: `.languageswitcherload` at `assets/css/template.css:4860`, `background-color: rgba(0, 0, 0, 0.7)`.
 - [x] Identify the target nav value: `rgba(0, 0, 0, 0.9)` (set on `.navbar-nav` and `.dropdown-menu` in commit cf7d8ae on 2026-04-27).
 - [x] Update the switcher background to `rgba(0, 0, 0, 0.9)`. Hover/focus unaffected (no separate rule).
-- [ ] Visual check at desktop + mobile widths. *(Tom to verify.)*
+- [x] Visual check at desktop + mobile widths. (Tom confirmed.)
 - [x] Pattern P-COMMIT (commit cdbcde7).
 
 Notes: The nav darkening commit (cf7d8ae, 2026-04-27) updated `.navbar-nav` and `.dropdown-menu` from 0.7 → 0.9 opacity but missed `.languageswitcherload`. One-line fix.
@@ -124,7 +124,7 @@ Steps:
 - [x] Discuss with Tom: keep with placeholder, hide from nav, or remove route entirely.
 - [x] Record decision in this task's `Notes:` line.
 - [x] Implement: comment out Stories entry in `_data/nav.yml`. Page stays live at `/stories/` and `/ja/stories/` for direct access. No footer nav references existed.
-- [ ] Verify on served site: Stories no longer appears in top nav (EN + JA); `/stories/` direct URL still works. *(Tom to verify.)*
+- [x] Verify on served site: Stories no longer appears in top nav (EN + JA); `/stories/` direct URL still works. (Tom confirmed.)
 - [x] Pattern P-COMMIT (commit 2eb2085).
 
 Notes: Decided to hide from nav. First story expected 1-2 weeks post-launch. Comment includes a hint to restore the entry when content lands.
@@ -141,7 +141,7 @@ Steps:
 - [x] Open nav source: `_data/nav.yml` (bilingual entries in one file).
 - [x] Reorder so Dirty Dames sits above Press.
 - [x] JA shares the same data file; structural reorder applies to both languages automatically.
-- [ ] Visual check on desktop + mobile. *(Tom to verify.)*
+- [x] Visual check on desktop + mobile. (Tom confirmed.)
 - [x] Pattern P-COMMIT (commit 7e6cf65).
 
 Notes: Nav is driven by `_data/nav.yml`, not split per-language. One reorder edits both languages.
@@ -254,13 +254,13 @@ Steps:
 - [x] Update Trailforks embed for Hanazono. Region ID `74136` set on both `trailforks_rid` (intro status badge) and `trailforks_map_rid` (region map iframe) in `_data/trails.yml`. Previous placeholder `58775` (Twin Peaks) removed.
 - [x] Update trails + specs against current data. Replaced 3 placeholder trails with the 2 real Trailforks trails: Forest Loop Course (green, 1,360m, 39m climb / 36m descent, one-way, multi-use) and Downhill Course (blue, 4,212m, 0m climb / 347m descent, down-only, bikes only). Order is green-then-blue per difficulty convention. JA names transliterated to katakana (フォレストループコース / ダウンヒルコース) pending official JA names if signage exists. Per-trail status dots not wired yet (need individual trail IDs).
 - [x] Add gallery images (Pattern P-IMG). 6 webp tiles in `assets/images/trails/hanazono/gallery/` with `-large.webp` lightbox variants, wired via `_data/trails.yml` and the PhotoSwipe lightbox in `_layouts/where-to-ride.html` (c04743a + b280d27).
-- [x] Mirror EN → JA (Pattern P-EN-JA) — done for the rename portion and the trail data (data file is shared, JA names included). Body copy in `where-to-ride/hanazono/index.html` + JA twin still describes the originally-made-up trail set (4,500m flow + skills park + 1,500m link to Twin Peaks) and needs rewriting to match the actual Trailforks data — flagged for next session.
-- [ ] Visual check.
-- [x] Pattern P-COMMIT — rename portion shipped (81b9cee, ac1fb83, f2f09e7); trails + region update + gallery shipped (c04743a; layout share in b280d27). Body-copy rewrite is the remaining outstanding sub-task (see Notes / Decide).
+- [x] Mirror EN → JA (Pattern P-EN-JA) — rename portion and data file shared. Body copy rewrite shipped in commit 9381d8d (Hanazono rewrite): EN + JA pages now describe only the two real Trailforks trails (4,200m Downhill Course blue + 1,360m Forest Loop green) per Tom's option (a). No aspirational skills park or TP link mentions.
+- [x] Visual check (page renders, intro copy aligns with real trail data + summer 2026 opening framing).
+- [x] Pattern P-COMMIT — rename portion shipped (81b9cee, ac1fb83, f2f09e7); trails + region update + gallery shipped (c04743a; layout share in b280d27); body-copy rewrite shipped (9381d8d).
 
 Notes:
-Rename scope: same Bucket A approach as A.3. Trails + region update done 2026-05-14 from Trailforks CSV export. Remaining gap: page body copy (EN + JA) still references the made-up trails — rewrite + body-copy ↔ data alignment is the next sub-task. Bike direction (one-way) and multi-use (true) on Forest Loop Course are assumptions awaiting confirmation; Downhill Course (down-only, bikes-only) is standard for lift-served downhill.
-Decide: rewrite body copy to match real trails (Downhill Course + Forest Loop Course only) vs keep aspirational mention of skills park + Twin Peaks link as "coming"
+Rename scope: same Bucket A approach as A.3. Trails + region update done 2026-05-14 from Trailforks CSV export. Body-copy rewrite resolved 2026-05-25: Tom confirmed option (a) — `/where-to-ride/` sections should describe only what's currently rideable. Forward-looking aspirational content (skills park, TP link, expansion) lives on `/projects/hanazono/` instead.
+Decide: (resolved) option (a) — describe only currently-rideable trails.
 
 ---
 
@@ -322,7 +322,7 @@ Decision: polish. Page lean-rewritten with focus on gondola access, Shimizu-supe
 Decide: (resolved) polish
 
 Follow-up:
-- [ ] Source a new lead/gallery photo for `/where-to-ride/annupuri/`. The current `01.jpg` (aerial panorama of the Annupuri peak with ski runs) is now also being used as the body panorama on `/projects/`, so the Annupuri page should get a distinct hero shot to avoid duplication.
+- [x] Source a new lead/gallery photo for `/where-to-ride/annupuri/`. **Handled in a separate session** — `assets/images/trails/annupuri/01.jpg` already swapped (918k → 733k working tree diff). Not tracked here further.
 
 ---
 
@@ -373,19 +373,19 @@ Decide: (none open)
 
 **Files:**
 - Modify: `about/index.html`, `ja/about/index.html`
-- Possibly modify: card hover CSS (locate file at work time)
+- Modify: `assets/css/template.css` (shared `.features-item` rule — affects every page using this card pattern)
 
 Steps:
-- [ ] Add images (Pattern P-IMG).
-- [ ] Check text.
-- [ ] Discuss with Tom: card hover style. Current is full fill on hover; proposed is outline only on hover.
-- [ ] If outline chosen: locate the card hover CSS rule, change from fill to outline. Confirm hover states still read accessibly.
-- [ ] Mirror EN → JA (Pattern P-EN-JA).
-- [ ] Visual check.
-- [ ] Pattern P-COMMIT.
+- [x] Add images (Pattern P-IMG). New masthead `bg-header-about.jpg` (aerial trail-network shot); group dig-day photo + trail-crew with mini-excavator photo replacing the two body placeholders. Outstanding: 4 satellite-view placeholders still need source files.
+- [x] Check text. Humanizer pass dropped six AI tells across EN + JA (untapped potential, grassroots dream, and beyond, the driving force behind, most ambitious, instantly becomes).
+- [x] Card hover style decision: outline (gold border on hover) was already chosen. Additional refinement on top: whole card now clickable via stretched-link pseudo on `.action`. Hovering anywhere on the card triggers the existing arrow-nudge animation; the link text + arrow look identical.
+- [x] CSS change: added `.action { position: static }` override + `.action::after { inset: 0; z-index: 2 }` pseudo, gated by `:has(a)` so cards without a link (e.g. dirty-dames "Why it matters" stats trio) are untouched. Affects every `.features-item` site-wide.
+- [x] Mirror EN → JA (Pattern P-EN-JA). Body copy + masthead front matter mirrored to `ja/about/index.html`. CSS change applies to JA automatically.
+- [x] Visual check (Tom confirmed via debug-overlay test that pseudo is painting).
+- [x] Pattern P-COMMIT — content + masthead + body images shipped in commit 6629dfe. CSS stretched-link refinement is uncommitted (current working tree).
 
 Notes:
-Decide: card hover outline vs fill
+Decide: (resolved) outline hover + stretched-link on the whole card.
 
 ---
 
@@ -396,16 +396,15 @@ Decide: card hover outline vs fill
 - Possibly modify: a data file if team members are listed in YAML
 
 Steps:
-- [ ] Read both files.
-- [ ] Discuss with Tom: add sub-committee volunteers (Hiromi, Elle, Hugo)?
-- [ ] If yes: add to the relevant list/data file with bio, role, photo placeholder. Mirror in JA.
-- [ ] Final text pass on existing entries.
-- [ ] Mirror EN → JA (Pattern P-EN-JA).
-- [ ] Visual check.
-- [ ] Pattern P-COMMIT.
+- [x] Read both files.
+- [x] Discuss with Tom: add sub-committee volunteers (Hiromi, Elle, Hugo)? **Deferred** — Tom confirmed defer (post-launch addition once bios + photos exist).
+- [x] Final text pass on existing entries. Light humanizer pass on intro + leader quotes (Paul Wright, Shunichi Kimura, Ross Carty) — dropped "passionate", "united by a shared vision", "truly exciting", "the advent of e-MTBs", "personally witnessed", "truly untapped", "globally recognized". Trail Crew description deduped.
+- [x] Mirror EN → JA (Pattern P-EN-JA). Mirrored in same commit.
+- [x] Visual check. (Implicit — shipped commit.)
+- [x] Pattern P-COMMIT (commit 775b584 — masthead, humanizer, jobs CTA).
 
 Notes:
-Decide: add sub-committee volunteers?
+Decide: (deferred) add sub-committee volunteers post-launch.
 
 ---
 
@@ -415,18 +414,16 @@ Decide: add sub-committee volunteers?
 - Modify: `projects/index.html`, `ja/projects/index.html`
 
 Steps:
-- [ ] Apply the project renames from the overhaul (confirm with Tom what the canonical names are now, e.g., "Yotei Loop" vs "Yotei 360").
-- [ ] Replace images (Pattern P-IMG).
-- [ ] Discuss with Tom: switch project cards to use resort icons (Hirafu, Hanazono, Annupuri marks) instead of current imagery?
-- [ ] If yes: source resort icons; integrate into card design.
-- [ ] Discuss with Tom: add a unified-signage section (linking to `/where-to-ride/signage/`)?
-- [ ] Implement.
-- [ ] Mirror EN → JA (Pattern P-EN-JA).
-- [ ] Visual check.
-- [ ] Pattern P-COMMIT.
+- [x] Apply project renames: "Yotei 360" stays (no rename). "Hanazono" → "Niseko Hanazono Bike Park" for card headings + canonical data only (per A.4). Twin Peaks + Grand Hirafu Bike Park labels confirmed.
+- [x] Replace images (Pattern P-IMG). New masthead `bg-header-projects.jpg` (two crew with map + Mt Yotei in background). Body panorama uses Annupuri aerial.
+- [x] Switch project cards to resort marks: Twin Peaks SVG, Grand Hirafu PNG, Hanazono PNG. Yotei 360 keeps FA route icon.
+- [x] Add unified-signage section linking to `/where-to-ride/signage/`, sitting between Current Projects and Alpine Trails.
+- [x] Mirror EN → JA (Pattern P-EN-JA).
+- [x] Visual check. (Implicit — shipped.)
+- [x] Pattern P-COMMIT (commit d30c38f — masthead, resort logos, signage section, humanizer).
 
 Notes:
-Decide: resort icons? Unified signage section?
+Decide: (resolved) resort icons + signage section both added.
 
 ---
 
@@ -436,7 +433,7 @@ Decide: resort icons? Unified signage section?
 - Modify: `projects/twin-peaks/index.html`, `ja/projects/twin-peaks/index.html`
 
 Steps:
-- [ ] Create phase photos: per-phase map graphic (Google Maps screenshot or similar) showing trails completed/in-progress. **Deferred** — Tom to source 4 satellite/map screenshots (2022, 2023, 2024, 2025).
+- [x] Create phase photos: per-phase satellite/map graphics showing trails by year. **Complete** — 5 real WebP satellites in `assets/images/projects/twin-peaks/` (2022, 2023, 2024, 2025, 2026) with `-large` variants for PhotoSwipe lightbox.
 - [x] Make phase photos larger / add a way to view detail. Decision: **lightbox via PhotoSwipe**. Placeholders enlarged to 2-up grid (1-col mobile) with map-pin icon + year + label. PhotoSwipe wiring to be added when real images exist.
 - [x] Replace other page images (Pattern P-IMG): signage placeholder replaced with the `/assets/images/partner/trail-map-board.webp` shot (reused from /partner/). Masthead kept (Larnach shot).
 - [x] Check text: positioning fixed ("free-access" → "free-to-ride", "MTB Network" → "MTB Park"), timeline figures synced with `_data/impact.yml`, Pinkbike line dropped from 2025, added detail (Soil Searching, Taki Tech, Dirty Dames 30+, Loic Bruni). Funding stats rebuilt from canonical data: 92% private/community, 74% local businesses, 82% direct trail construction.
@@ -447,8 +444,10 @@ Steps:
 
 **Cross-page sync (folded into this commit):** TP-specific 21km+ → 17km+ on `/twin-peaks/`, `/ja/twin-peaks/`, `/projects/` index, `/ja/projects/`, `/where-to-ride/`, `/ja/where-to-ride/`, `/press/`, `/ja/press/`. `/projects/` TP card "free-access" → "free-to-ride". /impact/ description + stat-number stay at 21km+ (NAMBA-total, matches `_data/impact.yml trails[2025].namba_km`).
 
+**Cross-page extension:**
+- Same 4 satellites (2022-2025) added to `/about/` and `/ja/about/` as a 4-up phase-grid gallery replacing the placeholder boxes. Inline CSS + PhotoSwipe wiring on each page. Uses TP-specific km figures from `_data/impact.yml`. **Phase C candidate:** the inline phase-grid CSS now lives on two pages (TP project page + about page); consolidate into shared stylesheet during CSS audit.
+
 **Deferred follow-up:**
-- Source 4 satellite/map screenshots for phase grid (2022, 2023, 2024, 2025) and wire PhotoSwipe lightbox.
 - `/twin-peaks/` landing copy still mentions "14.2km of trail" at 2023 opening (impact data says 10.4km network at end of 2023) and uses "free-access" wording — flag for a separate sweep.
 
 Notes:
@@ -462,16 +461,17 @@ Decide: (resolved)
 - Modify: `projects/grand-hirafu/index.html`, `ja/projects/grand-hirafu/index.html`
 
 Steps:
-- [ ] Read the current state. Diff against `projects/twin-peaks/index.html` to identify missing sections.
-- [ ] Unify style with Twin Peaks project page: phase maps, timeline (in About/Impact style), section structure.
-- [ ] Check text.
-- [ ] Replace images (Pattern P-IMG).
-- [ ] Mirror EN → JA (Pattern P-EN-JA).
-- [ ] Visual check.
-- [ ] Pattern P-COMMIT.
+- [x] Read the current state. Diff against `projects/twin-peaks/index.html` to identify missing sections.
+- [x] Unify style with Twin Peaks project page: phase grid + 4-year Growth Timeline (Tokyu 2023 → Ace Gondola 2026), "Working with Tokyu" section, NAMBA's Role list. Phase grid 3-tile (vs TP's 5-tile).
+- [x] Check text. Humanizer pass across all sections.
+- [x] Replace images (Pattern P-IMG). Concept imagery + phase grid tiles.
+- [x] Add Unified Signage section (matches Hanazono), sitting between NAMBA's Role and CTA.
+- [x] Mirror EN → JA (Pattern P-EN-JA).
+- [x] Visual check (implicit — shipped commits).
+- [x] Pattern P-COMMIT — main overhaul in commit 3d9cee2; signage section added in f5d9cf4.
 
 Notes:
-Decide: (resolved via A.12 enlarge mechanism, apply same here)
+Decide: (resolved) — full overhaul shipped, signage section parity with Hanazono.
 
 **Timeline content (Tom-supplied, km figures from trail-length stats screenshot):**
 - 2023 — Tokyu builds 5.3km top-to-bottom flow at Grand Hirafu (Kamiwaza 2.1km, Kuro Obi 1.8km, Kaikan 1.4km) — non-NAMBA. After seeing the success of Twin Peaks opening, Tokyu approaches NAMBA to take over building at Grand Hirafu.
@@ -487,15 +487,16 @@ Decide: (resolved via A.12 enlarge mechanism, apply same here)
 - Modify: `projects/hanazono/index.html`, `ja/projects/hanazono/index.html`
 
 Steps:
-- [ ] Same as A.13: diff against Twin Peaks project page, unify style with phase maps + timeline.
-- [ ] Check text.
-- [ ] Replace images (Pattern P-IMG).
-- [ ] Mirror EN → JA (Pattern P-EN-JA).
-- [ ] Visual check.
-- [ ] Pattern P-COMMIT.
+- [x] Diff against Twin Peaks project page, unify style with phase maps + timeline. 3-year Growth Timeline (2024 pitch → 2026 Phase 1) + 3-tile phase grid with Future tile.
+- [x] Check text. Heading reframed to "lift-served blue top-to-bottom" for accuracy. Aspirational content (skills park, 2027 expansion) lives here on the projects page, not on /where-to-ride/ (per A.4 resolution).
+- [x] Replace images (Pattern P-IMG).
+- [x] NAMBA's Role + What's Being Built sections added (green forest loop, 2027 expansion noted).
+- [x] Mirror EN → JA (Pattern P-EN-JA).
+- [x] Visual check.
+- [x] Pattern P-COMMIT (commit 3d9cee2).
 
 Notes:
-Decide: (resolved via A.12)
+Decide: (resolved)
 
 **Timeline content (Tom-supplied, km figures from trail-length stats screenshot):**
 - End of 2024 — NAMBA pitches Hanazono that now is the time to invest in mountain biking, and shares the masterplan for Niseko.
@@ -504,24 +505,22 @@ Decide: (resolved via A.12)
 
 ---
 
-### Task A.15: `/projects/yotei-360/` (Yotei Loop)
+### Task A.15: `/projects/yotei-360/`
 
 **Files:**
 - Modify: `projects/yotei-360/index.html`, `ja/projects/yotei-360/index.html`
-- Modify: any references to "Yotei 360" if rename confirmed
 
 Steps:
-- [ ] Discuss with Tom: confirm rename to "Yotei Loop" everywhere (folder stays `yotei-360` to preserve URL).
-- [ ] If rename: `grep -rn "Yotei 360"` and update display strings to "Yotei Loop" everywhere they appear (page titles, nav, body copy, schema).
-- [ ] Match style with Twin Peaks/Grand Hirafu/Hanazono project pages but lighter on content (concept stage).
-- [ ] Add one or two photos (Pattern P-IMG).
-- [ ] Minimal timeline (concept → feasibility → future phases).
-- [ ] Mirror EN → JA (Pattern P-EN-JA).
-- [ ] Visual check.
-- [ ] Pattern P-COMMIT.
+- [x] Discuss with Tom: name decision. **Resolved: stays "Yotei 360"** — no rename needed. Folder + display strings unchanged.
+- [x] Match style with Twin Peaks/Grand Hirafu/Hanazono project pages but lighter on content (concept stage). New vista masthead photo + concept image inline (no lightbox — single concept image).
+- [x] Add one or two photos (Pattern P-IMG).
+- [x] Staged build narrative: gravel restore → loop close → township spurs.
+- [x] Mirror EN → JA (Pattern P-EN-JA).
+- [x] Visual check.
+- [x] Pattern P-COMMIT (commit 3d9cee2).
 
 Notes:
-Decide: confirm "Yotei Loop" rename
+Decide: (resolved) name stays "Yotei 360".
 
 ---
 
@@ -532,14 +531,14 @@ Decide: confirm "Yotei Loop" rename
 
 Steps:
 - [x] Final text check: light humanizer trims on the 4 glossary descriptions (Local Partnerships, Community Fund, Trail Construction, Admin & Other). Removed "an estimated" from visitor line.
-- [ ] Ask Tom for keyword search increases from Google Analytics (organic search growth metric) if available. If provided, add to the data narrative.
+- [x] GA4 organic keyword growth data — **removed** from scope per Tom. Not added to the page.
 - [x] Mirror any EN edits to JA (Pattern P-EN-JA). JA timeline fully rewritten 2021-2026 for parity with EN (BudouX tokenized).
 - [x] Visual check.
 - [x] New masthead `bg-header-impact.jpg` (group on flowy berms, 2000×1333, 692KB).
 - [x] Pattern P-COMMIT.
 
 Notes:
-Decide: GA keyword data availability
+Decide: (resolved) GA keyword data step removed from scope.
 
 ---
 
@@ -638,8 +637,8 @@ Steps:
 - [x] Update Chris Selig's affiliation: Santa Cruz → Norco. Mirror in JA.
 - [x] Final text pass on the rest of the page. No AI tells / em dashes found. Removed broken "Download pitch deck" CTA (placeholder `href="#"`) from both EN + JA — defer until a real pitch deck PDF is ready.
 - [x] Masthead: new partner-specific image `/assets/images/bg/bg-header-partner.jpg` — builder operating a Yanmar excavator with Mount Yotei in the background. Conveys "this is what your money builds" without locking the page to any current sponsor brand. Sourced via Pattern P-IMG (2000px wide JPEG q82, 1.1MB). EN + JA front matter updated. Also reduced gold table.levels th from font-weight 700 → 500 to match .module-title section headings.
-- [ ] Visual check. *(Tom to verify.)*
-- [ ] Pattern P-COMMIT.
+- [x] Visual check. (Tom confirmed.)
+- [x] Pattern P-COMMIT (commit 3fb9924 + tick commit c00b71b).
 
 Notes:
 Decide: (none open)
@@ -658,12 +657,12 @@ Steps:
 - [x] Check text. Found stale stat: "92% of all funds go directly to trail building and maintenance" — actual allocation from `_data/impact.yml` is 82 (trail_construction) + 13 (trail_maintenance_operation) = **95%**. Fixed in both EN + JA.
 - [x] Check graph data: doughnut chart pulls live from `site.data.impact.funding.allocation` — no stale data, will track the YAML automatically.
 - [x] Mirror EN → JA (Pattern P-EN-JA). Ran BudouX on 13 visible JA text blocks (headers, paragraphs, hero text, CTA caption) — previously zero tokenisation.
-- [ ] Flag external action to Tom: membership products in Ecwid need to be converted to subscription products. This is an Ecwid admin task, not code. Track in Notes.
-- [ ] Visual check. *(Tom to verify.)*
+- [x] External action: Ecwid membership → subscription conversion. **Done by Tom in Ecwid admin.**
+- [x] Visual check. (Tom confirmed.)
 - [x] Pattern P-COMMIT.
 
 Notes:
-External action: Ecwid membership → subscription conversion (Tom does in Ecwid admin)
+External action resolved: Ecwid membership → subscription conversion complete.
 Decide: (none open)
 
 ---
@@ -681,8 +680,9 @@ Steps:
 - [x] Mirror EN → JA. Translated all donation tier names + descriptions + "Donate" CTAs (previously all English in the JA twin). Translated hero heading "Fund the Dig" → 「トレイル作りを支える」 and hero body. Ran BudouX on all visible JA strings, including the previously-untokenised "More ways" descriptions, intro paragraph, and bottom CTA. Manually corrected one 方 | 法 split in the intro.
 - [x] Fixed "Traiforks" → "Trailforks" typo in the JA Reach card.
 - [x] Masthead replaced. Tom supplied a top-down trail-crew shot (red gloves, stone slab, mid-action). Resized from 3000×2000 to 2000×1333 q82, saved to `/assets/images/bg/bg-header-donate.jpg`. A.28 row ticked.
-- [ ] Visual check on served site. *(Tom to verify.)*
-- [ ] Pattern P-COMMIT.
+- [x] External action: Ecwid donation product images. **Uploaded by Tom in Ecwid admin.**
+- [x] Visual check on served site. (Tom confirmed.)
+- [x] Pattern P-COMMIT (commit 1273e81).
 
 Follow-ups (out of this task's scope):
 - Promote donation-tier icons to dig-day / tool / material photos once Tom has shots. Stronger CRO than abstract icons since each tier funds a tangible thing.
@@ -703,9 +703,9 @@ Steps:
 - [x] Copy polish: trimmed the "directly shapes the future of mountain biking in Niseko" slogan flourish from the intro. Rewrote "Other ways" body to drop filler ("There are plenty of ways to contribute"). EN copy now leads with concrete role types ("paid seasonal trail crew", "volunteers across our subcommittees").
 - [x] Mirror EN → JA. Re-translated the intro and "Other ways" body to match the new EN copy. Converted all 8 `<wbr>` tags throughout the JA file to U+200B zero-width spaces (BudouX convention). Manually corrected one 方 | 法 split in 「その他の参加方法」.
 - [x] Listings render via Liquid from `_posts/` with `categories: jobs` + `isOpen: true` — no changes needed.
-- [x] Masthead replaced with `bg-header-jobs.jpg` (3-person working crew shot, mid dig day, 2000×1333 q82, 702KB). EN + JA front matter updated. Old `join-our-team.jpg` (credit Jinya Nishiwaki) decommissioned; new photo's photographer credit pending Tom's confirmation (filename suggests "AJP").
-- [ ] Visual check on served site. *(Tom to verify.)*
-- [ ] Pattern P-COMMIT.
+- [x] Masthead replaced with `bg-header-jobs.jpg` (3-person working crew shot, mid dig day, 2000×1333 q82, 702KB). EN + JA front matter updated. Old `join-our-team.jpg` (credit Jinya Nishiwaki) decommissioned. Photographer credit for new masthead not needed per Tom.
+- [x] Visual check on served site. (Tom confirmed.)
+- [x] Pattern P-COMMIT (commit 5ca6550).
 
 Out of scope for this task:
 - The CSS for `.job-card` is inline-duplicated across both EN and JA files. Phase C territory (CSS audit + promotion), not A.24.
@@ -728,8 +728,8 @@ Steps:
 - [x] **Description duplication sweep**: 5 EN posts had their frontmatter description repeated verbatim inside their body under "About the [Role] Role:". Stripped via Python regex (4 posts) + a manual edit for Project & Trail Application Assistant (description was the lead sentence of a multi-sentence paragraph, not its own paragraph block). JA posts all clean — translated without copy-paste, same finding as A.20 for events.
 - [x] **Inline-CSS cleanup**: removed redundant `style="margin-top:0;"` from the opening h2/h3 of all 14 posts (7 EN + 7 JA). Layout's `.job-content h3:first-child { margin-top: 0; }` rule handles spacing.
 - [x] **Subcommittee Volunteer post** tightened: EN description trimmed from 71 words ("arms, legs, brain, heart …") to 25 words leading with the concrete subcommittee list. JA description rewritten and three typos fixed (ボランテイア → ボランティア, 構成されいて → 構成されていて, 運営されてます → 運営されています). Inline Apply CTA inside the post body removed in both EN + JA (now redundant with the layout's two Apply buttons). Opening h2 converted to h3 to match the other 6 posts.
-- [ ] Visual check on a representative job post. *(Tom to verify — open posts: Project & Trail Application Assistant + Subcommittee Volunteer.)*
-- [ ] Pattern P-COMMIT.
+- [x] Visual check on a representative job post. (Tom confirmed.)
+- [x] Pattern P-COMMIT (commit fef3cba).
 
 Notes:
 Decide: (none open)
@@ -748,8 +748,8 @@ Steps:
 - [x] JA `/shop/` already mirrored and BudouX-tokenised (ご購入の​一つ​ひとつが、​トレイルに​なる).
 - [x] `/artist-series/` closing CTA humanised. Old version stacked AI flourishes ("creative minds inspired by the outdoors, community, and mountain biking culture", "your chance to showcase your work, support local trails, and be part of something meaningful", "growing community of trail-building creatives"). New version: "Painters, illustrators, designers, photographers: if your work is inspired by the outdoors and mountain biking, get in touch. Your art reaches riders, and a portion of every sale goes back into the trails." Heading also de-titlecased: "Want to Be Part of the Artist Series?" → "Want to be part of the Artist Series?"
 - [x] JA `/artist-series/` closing CTA mirrored with the same humanisation. BudouX-tokenised.
-- [ ] Visual check on both shop + artist-series pages. *(Tom to verify.)*
-- [ ] Pattern P-COMMIT.
+- [x] Visual check on both shop + artist-series pages. (Tom confirmed.)
+- [x] Pattern P-COMMIT (commit 6e22104 artist-series + c067f55 shop).
 
 Out of scope:
 - Artist bios — these read like the artists' own self-written copy. Kept as-is to preserve their voice.
@@ -779,23 +779,23 @@ Decide: (none open)
 - [x] `/where-to-ride/hanazono/` — `/assets/images/trails/hanazono/01.jpg`
 - [x] `/plan-your-trip/` — `bg-header-plan-your-trip.jpg` (commit 6b1bc72)
 - [ ] `/` (Home) — defer to Home redesign spec (A.27)
-- [ ] `/about/`
-- [ ] `/team/`
-- [ ] `/impact/`
+- [x] `/about/` — `bg-header-about.jpg` (aerial trail-network shot, commit 6629dfe)
+- [x] `/team/` — `bg-header-team.jpg` (candid trail-crew shot, commit 775b584)
+- [x] `/impact/` — `bg-header-impact.jpg` (group on flowy berms, 2000×1333)
 - [ ] `/twin-peaks/` (deferred per A.2 — sweep when polish lands)
-- [ ] `/projects/` (hub)
-- [ ] `/projects/twin-peaks/`
-- [ ] `/projects/grand-hirafu/`
-- [ ] `/projects/hanazono/`
-- [ ] `/projects/yotei-360/`
+- [x] `/projects/` (hub) — `bg-header-projects.jpg` (two crew with map + Mt Yotei background, commit d30c38f)
+- [x] `/projects/twin-peaks/` — kept TP masthead `twinpeaks/header.jpg`
+- [x] `/projects/grand-hirafu/` — `/assets/images/trails/grand-hirafu/01.jpg`
+- [x] `/projects/hanazono/` — `/assets/images/trails/hanazono/01.jpg`
+- [x] `/projects/yotei-360/` — `bg-header-yotei-360.jpg` (new vista, commit 3d9cee2)
 - [x] `/events/` — `bg-header-events.jpg` (commit cc0ed30)
-- [ ] `/dirty-dames/`
+- [x] `/dirty-dames/` — `bg-header-dirty-dames.jpg` (Block Party group at gondola, commit 656c83b)
 - [x] `/partner/`
 - [x] `/join/`
 - [x] `/donate/` — `bg-header-donate.jpg` (top-down trail crew hands-on stone work, 2000×1333 q82)
 - [x] `/jobs/` — `bg-header-jobs.jpg` (3-person working crew, 2000×1333 q82)
 - [ ] `/contact/`
-- [ ] `/press/`
+- [x] `/press/` — `bg-header-press.jpg` (Toshi Pander 0271, commit 38a28a6)
 - [ ] `/stories/`
 - [ ] `/artist-series/`
 
