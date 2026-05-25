@@ -439,6 +439,18 @@ masthead:
     .ride-card:has(a):hover {
       border-color: var(--color-secondary);
     }
+    .ride-card:has(a) {
+      position: relative;
+    }
+    .ride-card:has(a) .ride-card-body .action {
+      position: static;
+    }
+    .ride-card:has(a) .ride-card-body .action::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+    }
   </style>
 
   <div class="section">
