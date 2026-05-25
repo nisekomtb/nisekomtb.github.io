@@ -205,7 +205,7 @@ Steps:
 - [x] Locate the "navigating around park" section. Remove it. Add a clear link to `/where-to-ride/signage/` in a sensible spot. Replaced with compact `.signage-link` paragraph directly under the trails table linking to `/where-to-ride/signage/` (EN) and `/ja/where-to-ride/signage/` (JA). Also stripped ~258 lines of `.trail-sign*` CSS, the `body:after` preloader for the trailsign zoom images, and the Splide init script that only served the removed carousel.
 - [x] Check if gallery markup is already in the layout template. If not, add a gallery section near the bottom of the page; source images via Pattern P-IMG. No existing gallery pattern on the site; built one as `.tp-gallery` with `.gallery-grid` (1/2/3 columns at mobile/tablet/desktop), `.gallery-tile` (3:2 aspect-ratio), and `.gallery-placeholder` (fa-image icon + descriptive label). 6 placeholders shipped with category labels (aerial, flow, jumps, beginner, forest singletrack, trailhead signage). Real photos to be dropped into `assets/images/_triage/twin-peaks/` per Pattern P-IMG; placeholders swap to `<img>` tags inside `.gallery-tile`. **Placement:** gallery markup + CSS lives in `_layouts/twin-peaks.html` (not in the page) so it spans the full container width below the content + sidebar row. Gated with `{% unless path1 %}` so only the main `/twin-peaks/` page renders it, not the sub-pages (Access, Rules, Wet Trails, etc.). Bilingual labels via the layout's existing `{% if page.lang == "ja" %}` pattern.
 - [x] Mirror EN → JA (Pattern P-EN-JA). JA placeholder labels tokenised with `<wbr>`. Signage link text: 「トレイルサインの読み方は、統一トレイルサインガイドをご覧ください。」 with `<wbr>` markup.
-- [ ] Visual check. *(Tom to verify in browser — pages return 200, build clean, no residual carousel references.)*
+- [x] Visual check. (Tom confirmed.)
 - [x] Pattern P-COMMIT — iterative commits across multiple sessions (888cba9 carousel-drop + signage link + gallery placeholders, 8c6f081 gallery to layout, 5e7281a single-panel sidebar + duplicate-H1 sweep, 74214dc/1cb6657/b0e1fc5 sidebar polish, 679ee9b sub-nav to tabs, eb4aa3b logo in panel, b1faa04 drop masthead subtitles, ebde5bd intro copy expansion, 03cc167 hide Getting-here on access).
 
 Notes:
@@ -782,7 +782,7 @@ Decide: (none open)
 - [x] `/about/` — `bg-header-about.jpg` (aerial trail-network shot, commit 6629dfe)
 - [x] `/team/` — `bg-header-team.jpg` (candid trail-crew shot, commit 775b584)
 - [x] `/impact/` — `bg-header-impact.jpg` (group on flowy berms, 2000×1333)
-- [ ] `/twin-peaks/` (deferred per A.2 — sweep when polish lands)
+- [x] `/twin-peaks/` — keeps the Liam Larnach shot at `/assets/images/twinpeaks/header.jpg` (set via Jekyll defaults in `_config.yml`). Tom confirmed.
 - [x] `/projects/` (hub) — `bg-header-projects.jpg` (two crew with map + Mt Yotei background, commit d30c38f)
 - [x] `/projects/twin-peaks/` — kept TP masthead `twinpeaks/header.jpg`
 - [x] `/projects/grand-hirafu/` — `/assets/images/trails/grand-hirafu/01.jpg`
@@ -794,10 +794,10 @@ Decide: (none open)
 - [x] `/join/`
 - [x] `/donate/` — `bg-header-donate.jpg` (top-down trail crew hands-on stone work, 2000×1333 q82)
 - [x] `/jobs/` — `bg-header-jobs.jpg` (3-person working crew, 2000×1333 q82)
-- [ ] `/contact/`
+- [x] `/contact/` — `bg-header-contact.jpg` (NAMBA crew + Soil Searching event group conversation at the Welcome Centre, 2000×1333 q82, 658 KB). Credit: Sea and Summit Media.
 - [x] `/press/` — `bg-header-press.jpg` (Toshi Pander 0271, commit 38a28a6)
-- [ ] `/stories/`
-- [ ] `/artist-series/`
+- [x] `/stories/` — **deferred** (page not going live at launch; revisit when first story publishes, see R.1).
+- [x] `/artist-series/` — keeps `/assets/images/artists/header.jpg`. Tom confirmed.
 
 Per-page steps when one comes up:
 - [ ] Confirm current `masthead.img` value (or fallback to `/assets/images/bg/bg-header.jpg`).
