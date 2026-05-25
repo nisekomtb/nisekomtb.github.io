@@ -8,14 +8,14 @@ twinpeaks:
   shuttle_access: false
   pedal_access: true
   location: Hirafu
-  season: June - End October
+  season: Mid-May - End October
   hours: 7am - 7pm
   managed_by: Niseko Area Mountain Bike Association
   ja:
     name: ツインピークスバイクパーク
     cost: 一般無料開放
     location: ひらふ
-    season: 6月 - 10月後半まで
+    season: 5月中旬 - 10月後半まで
     hours: 7am - 7pm
     managed_by: ニセコエリアマウンテンバイク協会
   location_lat: 42.866
