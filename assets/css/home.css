@@ -469,3 +469,23 @@ html[lang="ja"] .home-pull-quote { font-style: normal; }
   /* Remove this whole rule when feature-image.jpg is replaced with the real asset. */
 }
 @media (max-width: 767px) { .home-feature { height: 40vh; min-height: 280px; } }
+
+/* ── Section 08: Plan + Get Involved (split) ──────────────────────── */
+.home-action {
+  background: #0f0f10;
+  color: #ededeb;
+}
+.home-action-grid { display: grid; grid-template-columns: 1fr 1fr; min-height: 50vh; }
+.home-action-half { padding: clamp(56px, 9vh, 120px) clamp(28px, 5vw, 80px); display: flex; align-items: center; }
+.home-action-ride { background: linear-gradient(180deg, rgba(80,120,150,0.10), rgba(80,120,150,0.04)); }
+.home-action-build { background: linear-gradient(180deg, rgba(212,165,116,0.10), rgba(212,165,116,0.04)); }
+.home-action-inner { max-width: 480px; width: 100%; margin: 0 auto; }
+.home-action-title { font-size: clamp(28px, 3.5vw, 40px); font-weight: 700; margin: 0 0 18px; letter-spacing: -0.015em; }
+.home-action-body { font-size: clamp(15px, 1.4vw, 17px); line-height: 1.55; opacity: 0.85; margin: 0 0 28px; }
+.home-action-cta { display: inline-block; }
+.home-action-links { display: flex; flex-direction: column; gap: 10px; font-size: 15px; }
+.home-action-links a { color: #d4a574; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 200ms ease; width: max-content; }
+.home-action-links a:hover { border-color: #d4a574; }
+@media (max-width: 767px) {
+  .home-action-grid { grid-template-columns: 1fr; }
+}

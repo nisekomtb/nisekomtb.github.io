@@ -1,1 +1,41 @@
-<!-- _includes/home/section-action.html -->
+<!-- _includes/home/section-action.html: Section 08 -->
+<section class="home-action fade-up">
+  <div class="home-action-grid">
+    <div class="home-action-half home-action-ride">
+      <div class="home-action-inner">
+        <h2 class="home-action-title">
+          {% if page.lang == "en" %}Ride here.
+          {% else %}ここで<wbr>乗る。
+          {% endif %}
+        </h2>
+        <p class="home-action-body">
+          {% if page.lang == "en" %}Niseko's MTB season runs May through October. Trails are free. Bikes rent locally. Sapporo is a two-hour drive.
+          {% else %}ニセコの<wbr>MTB<wbr>シーズンは<wbr>5月から<wbr>10月。<wbr>トレイルは<wbr>無料。<wbr>バイクは<wbr>現地で<wbr>レンタル可能。<wbr>札幌から<wbr>車で<wbr>2時間です。
+          {% endif %}
+        </p>
+        <a class="btn btn-primary home-action-cta" href="{% if page.lang == 'ja' %}/ja{% endif %}/plan-your-trip/">
+          {% if page.lang == "en" %}Plan a trip →{% else %}旅行を<wbr>計画する →{% endif %}
+        </a>
+      </div>
+    </div>
+    <div class="home-action-half home-action-build">
+      <div class="home-action-inner">
+        <h2 class="home-action-title">
+          {% if page.lang == "en" %}Build here.
+          {% else %}ここで<wbr>つくる。
+          {% endif %}
+        </h2>
+        <p class="home-action-body">
+          {% if page.lang == "en" %}NAMBA runs on community and partner support. Come ride and join, or back us as a sponsor.
+          {% else %}NAMBAは<wbr>コミュニティーと<wbr>パートナーの<wbr>支援で<wbr>運営されています。<wbr>ライドして<wbr>参加するか、<wbr>スポンサーとして<wbr>支援を。
+          {% endif %}
+        </p>
+        <div class="home-action-links">
+          <a href="{% if page.lang == 'ja' %}/ja{% endif %}/get-involved/partner/">{% if page.lang == "en" %}Become a partner →{% else %}パートナーに<wbr>なる →{% endif %}</a>
+          <a href="{% if page.lang == 'ja' %}/ja{% endif %}/join/">{% if page.lang == "en" %}Join NAMBA →{% else %}NAMBAに<wbr>参加する →{% endif %}</a>
+          <a href="{% if page.lang == 'ja' %}/ja{% endif %}/donate/">{% if page.lang == "en" %}Donate →{% else %}寄付する →{% endif %}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
