@@ -850,12 +850,12 @@ Steps:
 - [x] `_docs/seo-baseline-2026-04/` GSC export confirmed current (May 2026, well inside the 3-month freshness window). Contains: Chart, Countries, Devices, Filters, Pages, Queries, Search appearance CSVs.
 - [x] Comprehensive `claude-seo:seo-audit` / `claude-seo:seo-geo` pre-runs **skipped** — per-page cadence means `claude-seo:seo-page`, `claude-seo:seo-schema`, `claude-seo:seo-content`, `marketing-skills:ai-seo`, and `claude-seo:seo-hreflang` will run inside each B.x sweep. No need for a site-wide baseline scan first.
 - [x] GA4 organic keyword export: **skipped** (Tom decision 2026-05-25). Work from GSC baseline + `_docs/marketing-strategy.md` §2 keyword list.
-- [x] DataForSEO MCP: **Tom installing** (2026-05-25). Per-page work proceeds in parallel; the MCP gets used opportunistically once available (live SERP checks, competitor data) but is not a hard prerequisite — the existing GSC baseline + marketing-strategy keywords already cover the per-page SEO pass.
+- [x] DataForSEO MCP: **skipped** (Tom decision 2026-05-25, paid account cost not justified for launch). All per-page SEO passes will work from the GSC baseline + `_docs/marketing-strategy.md` §2 keyword list + the `claude-seo:*` skills.
 - [x] `_docs/marketing-strategy.md` §2 keyword list confirmed current (line 142 onwards; cross-referenced with line 225-227 priority campaigns: "Visit Niseko MTB", "Sponsor NAMBA", "Twin Peaks Bike Park").
 - [x] Pattern P-COMMIT — bundled with B.0.1 punchlist tick in a single commit (no new input artifacts saved into the repo).
 
 Notes:
-Decide: (resolved 2026-05-25) GA4 skipped, DataForSEO Tom-installing in parallel, comprehensive pre-audit skipped in favour of per-page coverage. Per-page cadence: one page at a time with Tom sign-off (matches Phase A rhythm).
+Decide: (resolved 2026-05-25) GA4 skipped, DataForSEO skipped (paid account not affordable), comprehensive pre-audit skipped in favour of per-page coverage. Per-page cadence: one page at a time with Tom sign-off (matches Phase A rhythm).
 
 ---
 
@@ -878,7 +878,7 @@ For each page from the Phase A order (B.1 corresponds to A.1, etc., minus A.27 w
 - [ ] Pattern P-COMMIT.
 
 Apply this template to:
-- [ ] B.1 `/where-to-ride/` (hub)
+- [x] B.1 `/where-to-ride/` (hub) — humanize: Hanazono + Skills Parks ride card descriptions tightened. SEO: title "Where to Mountain Bike in Niseko: Bike Parks & Trails" (52ch), description adds "Hokkaido" + "free-to-ride bike park" (152ch), trail-signage img alt rewritten to be descriptive. Schema: new JSON-LD with @graph[WebPage, BreadcrumbList, ItemList[4 TouristAttraction parks with geo]] added inline on both EN + JA, with `inLanguage` and locale-appropriate URLs. JA mirror complete with BudouX tokenisation on the two updated body sentences. Hreflang verified clean. **Follow-up:** ride cards on this page now get the same stretched-link + arrow-nudge-on-card-hover pattern that `.features-item` cards got in A.9 — `.ride-card:has(a) { position: relative }` + `.action { position: static }` + `.action::after { inset: 0; z-index: 2 }`. CSS added to the inline `<style>` block in both EN + JA. **Phase C candidate:** `.ride-card` styles are duplicated across EN + JA inline; consolidate into shared partial/stylesheet during CSS audit.
 - [ ] B.2 `/twin-peaks/`
 - [ ] B.3 `/where-to-ride/grand-hirafu/`
 - [ ] B.4 `/where-to-ride/hanazono/`
