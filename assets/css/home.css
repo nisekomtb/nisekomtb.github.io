@@ -489,3 +489,33 @@ html[lang="ja"] .home-pull-quote { font-style: normal; }
 @media (max-width: 767px) {
   .home-action-grid { grid-template-columns: 1fr; }
 }
+
+/* ── Section 09: Jobs strip ───────────────────────────────────────── */
+.home-jobs {
+  background: #181818;
+  padding: clamp(56px, 8vh, 100px) 0;
+  color: #ededeb;
+}
+.home-jobs-head { margin-bottom: 24px; }
+.home-jobs-title { font-size: clamp(22px, 2.8vw, 30px); font-weight: 700; margin: 0; }
+.home-jobs-list { list-style: none; margin: 0; padding: 0; }
+.home-jobs-item { border-top: 1px solid rgba(255,255,255,0.07); }
+.home-jobs-item:last-child { border-bottom: 1px solid rgba(255,255,255,0.07); }
+.home-jobs-item a {
+  display: flex; align-items: center; gap: 24px;
+  padding: 18px 4px;
+  text-decoration: none;
+  color: #ededeb;
+  transition: padding 200ms ease;
+}
+.home-jobs-item a:hover { padding-left: 12px; }
+.home-jobs-item-title { font-weight: 700; font-size: 16px; flex: 1; }
+.home-jobs-item-loc, .home-jobs-item-type { font-size: 13px; opacity: 0.7; }
+.home-jobs-item-action { color: #d4a574; font-weight: 600; font-size: 13px; letter-spacing: 0.04em; }
+.home-jobs-all { text-align: right; margin-top: 18px; font-size: 13px; }
+.home-jobs-all a { color: #d4a574; text-decoration: none; border-bottom: 1px solid transparent; }
+.home-jobs-all a:hover { border-color: #d4a574; }
+@media (max-width: 767px) {
+  .home-jobs-item a { flex-wrap: wrap; gap: 8px 16px; }
+  .home-jobs-item-title { flex-basis: 100%; }
+}

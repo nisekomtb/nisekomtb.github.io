@@ -1,1 +1,36 @@
-<!-- _includes/home/section-jobs.html -->
+<!-- _includes/home/section-jobs.html: Section 09 -->
+{% if page.lang == "ja" %}
+  {% assign jobs_src = site.categories.jobs | where: "lang", "ja" %}
+{% else %}
+  {% assign jobs_src = site.categories.jobs | where: "lang", "en" %}
+{% endif %}
+{% assign jobs = jobs_src | where: "isOpen", true | sort: "date" | reverse %}
+
+{% if jobs.size > 0 %}
+<section class="home-jobs fade-up">
+  <div class="container home-jobs-wrap">
+    <header class="home-jobs-head">
+      <h2 class="home-jobs-title">
+        {% if page.lang == "en" %}We're hiring.
+        {% else %}求人中。
+        {% endif %}
+      </h2>
+    </header>
+    <ul class="home-jobs-list">
+      {% for job in jobs %}
+        <li class="home-jobs-item">
+          <a href="{{ job.url }}">
+            <span class="home-jobs-item-title">{{ job.title }}</span>
+            {% if job.location %}<span class="home-jobs-item-loc">{{ job.location }}</span>{% endif %}
+            {% if job.type %}<span class="home-jobs-item-type">{{ job.type }}</span>{% endif %}
+            <span class="home-jobs-item-action">{% if page.lang == "en" %}Apply →{% else %}応募する →{% endif %}</span>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+    <p class="home-jobs-all">
+      <a href="{% if page.lang == 'ja' %}/ja{% endif %}/jobs/">{% if page.lang == "en" %}All openings →{% else %}すべての<wbr>募集を<wbr>見る →{% endif %}</a>
+    </p>
+  </div>
+</section>
+{% endif %}
