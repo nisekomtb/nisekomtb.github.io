@@ -2,9 +2,13 @@
 <div class="wrap t3-masthead">
   <div class="ja-masthead" style="background-image: url('{{ page.masthead.img | default: '/assets/images/bg/bg-header.jpg' }}')">
     <div class="ja-masthead-detail">
-      <h1 class="ja-masthead-title">{{ page.titleHtml | default: page.title }}</h1>
       {% if page.subtitle %}
-        <div class="ja-masthead-description">{{ page.subtitle }}</div>
+        <h1 class="ja-masthead-title">
+          <span class="title-primary">{{ page.titleHtml | default: page.title }}</span>
+          <span class="title-secondary">{{ page.subtitleHtml | default: page.subtitle }}</span>
+        </h1>
+      {% else %}
+        <h1 class="ja-masthead-title">{{ page.titleHtml | default: page.title }}</h1>
       {% endif %}
       {% if page.action %}
       <div style="text-align:center; margin-top:30px;">
