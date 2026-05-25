@@ -13,11 +13,11 @@
     {% when "double-black" %}{% assign dbc = dbc | plus: 1 %}
   {% endcase %}
 {% endfor %}
-<span style="display:inline-flex; gap:10px; justify-content:center; flex-wrap:wrap; margin:8px 0;">
+<span class="trail-counts" style="display:inline-flex; gap:10px; justify-content:center; flex-wrap:wrap; margin:8px 0;">
   {% unless park_d.lifts == nil %}<span style="font-size:12px; text-align:center; display:inline-flex; flex-direction:column; align-items:center;"><span aria-hidden="true" data-tf-icon="" class="dicon_small" title="{% if page.lang == "ja" %}リフト{% else %}Lifts{% endif %}" style="font-size:18px; color:#666;"></span> <strong>{{ park_d.lifts }}</strong></span>{% endunless %}
   {% if gc > 0 %}<span style="font-size:12px; text-align:center; display:inline-flex; flex-direction:column; align-items:center;"><span aria-hidden="true" data-tf-icon="" class="dicon_small dgreen tip" title="{% if page.lang == "ja" %}初級 (グリーン){% else %}Easy (Green){% endif %}" style="font-size:18px;"></span> <strong>{{ gc }}</strong></span>{% endif %}
   {% if bc > 0 %}<span style="font-size:12px; text-align:center; display:inline-flex; flex-direction:column; align-items:center;"><span aria-hidden="true" data-tf-icon="" class="dicon_small dblue tip" title="{% if page.lang == "ja" %}中級 (ブルー){% else %}More Difficult (Blue){% endif %}" style="font-size:18px;"></span> <strong>{{ bc }}</strong></span>{% endif %}
-  {% if bkc > 0 %}<span style="font-size:12px; text-align:center; display:inline-flex; flex-direction:column; align-items:center;"><span aria-hidden="true" data-tf-icon="" class="dicon_small dblack tip" title="{% if page.lang == "ja" %}上級 (ブラック){% else %}Very Difficult (Black){% endif %}" style="font-size:18px;"></span> <strong>{{ bkc }}</strong></span>{% endif %}
-  {% if dbc > 0 %}<span style="font-size:12px; text-align:center; display:inline-flex; flex-direction:column; align-items:center;"><span aria-hidden="true" data-tf-icon="" class="dicon_small dblack" title="{% if page.lang == "ja" %}超上級 (ダブルブラック){% else %}Extremely Difficult (Double Black){% endif %}" style="font-size:18px;"></span> <strong>{{ dbc }}</strong></span>{% endif %}
+  {% if bkc > 0 %}<span style="font-size:12px; text-align:center; display:inline-flex; flex-direction:column; align-items:center;"><span aria-hidden="true" data-tf-icon="" class="dicon_small dblack tip is-black" title="{% if page.lang == "ja" %}上級 (ブラック){% else %}Very Difficult (Black){% endif %}" style="font-size:18px;"></span> <strong>{{ bkc }}</strong></span>{% endif %}
+  {% if dbc > 0 %}<span style="font-size:12px; text-align:center; display:inline-flex; flex-direction:column; align-items:center;"><span aria-hidden="true" data-tf-icon="" class="dicon_small dblack is-double-black" title="{% if page.lang == "ja" %}超上級 (ダブルブラック){% else %}Extremely Difficult (Double Black){% endif %}" style="font-size:18px;"></span> <strong>{{ dbc }}</strong></span>{% endif %}
 </span>
 {% endif %}
