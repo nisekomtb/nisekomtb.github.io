@@ -68,6 +68,16 @@ html[lang="ja"] .home-hero-title { letter-spacing: normal; }
   transform: translateX(-50%);
   z-index: 2;
   cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+}
+#home-hero-cue:focus-visible {
+  outline: 2px solid #d4a574;
+  outline-offset: 4px;
+  border-radius: 2px;
 }
 
 @media (max-width: 767px) {

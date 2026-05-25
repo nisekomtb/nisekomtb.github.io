@@ -6,7 +6,7 @@
   <div class="home-hero-content container">
     <h1 class="home-hero-title ja-animate" data-animation="move-from-bottom" data-delay="200">
       {% if page.lang == "en" %}Niseko Area Mountain Bike Association
-      {% else %}<wbr>ニセコ<wbr>エリア<wbr>マウンテンバイク<wbr>協会
+      {% else %}ニセコ<wbr>エリア<wbr>マウンテンバイク<wbr>協会
       {% endif %}
     </h1>
     <p class="home-hero-logo ja-animate" data-animation="move-from-bottom" data-delay="600">
@@ -18,7 +18,7 @@
       {% endif %}
     </p>
   </div>
-  <span id="home-hero-cue" class="icon-bottom ja-animate" data-animation="move-from-bottom" data-delay="1600"></span>
+  <button type="button" id="home-hero-cue" class="icon-bottom ja-animate" data-animation="move-from-bottom" data-delay="1600" aria-label="{% if page.lang == 'en' %}Scroll to next section{% else %}次のセクションへスクロール{% endif %}"></button>
 </div>
 
 <script>

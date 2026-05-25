@@ -29,25 +29,36 @@
     var hero = document.querySelector('.home-hero');
     if (!bg || !hero) return;
 
+    // Cache hero height to avoid layout-flushing reads per frame.
+    var heroHeight = hero.offsetHeight;
     var ticking = false;
+
     function update() {
-      var rect = hero.getBoundingClientRect();
-      // Only animate while hero is on screen
-      if (rect.bottom < 0 || rect.top > window.innerHeight) {
-        ticking = false;
-        return;
-      }
-      var scrolled = Math.min(Math.max(-rect.top, 0), hero.offsetHeight);
-      var translateY = scrolled * 0.5;
-      bg.style.transform = 'translate3d(0, ' + translateY + 'px, 0)';
+      var y = window.scrollY || window.pageYOffset || 0;
+      if (y > heroHeight) { ticking = false; return; }
+      var scrolled = Math.min(Math.max(y, 0), heroHeight);
+      bg.style.transform = 'translate3d(0, ' + (scrolled * 0.5) + 'px, 0)';
       ticking = false;
     }
+
     window.addEventListener('scroll', function () {
       if (!ticking) {
         window.requestAnimationFrame(update);
         ticking = true;
       }
     }, { passive: true });
+
+    // Recompute cached height on resize (debounced via rAF).
+    var resizeTicking = false;
+    window.addEventListener('resize', function () {
+      if (resizeTicking) return;
+      resizeTicking = true;
+      window.requestAnimationFrame(function () {
+        heroHeight = hero.offsetHeight;
+        resizeTicking = false;
+      });
+    }, { passive: true });
+
     update();
   }
 })();
