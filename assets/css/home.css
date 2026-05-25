@@ -88,3 +88,39 @@ html[lang="ja"] .home-hero-title { letter-spacing: normal; }
 @media (prefers-reduced-motion: reduce) {
   .home-hero-bg { inset: 0; transform: none !important; }
 }
+
+/* ── Section 02: Mission intro + pull quote ───────────────────────── */
+.home-intro {
+  background: #181818;
+  padding: clamp(72px, 12vh, 140px) 0;
+  color: #ededeb;
+}
+.home-intro-wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: left;
+}
+.home-intro-body {
+  font-size: clamp(17px, 1.8vw, 22px);
+  line-height: 1.55;
+  margin: 0 0 56px;
+  opacity: 0.92;
+}
+.home-pull-quote {
+  font-family: 'Cormorant Garamond', 'YuMincho', 'Hiragino Mincho ProN', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(22px, 2.8vw, 32px);
+  line-height: 1.35;
+  margin: 0;
+  padding: 12px 0 12px 28px;
+  border-left: 3px solid #d4a574;
+  color: #f5f5f0;
+}
+html[lang="ja"] .home-pull-quote { font-style: normal; }
+
+/* Fade-up reveal (shared utility) */
+.fade-up { opacity: 0; transform: translateY(24px); transition: opacity 600ms ease-out, transform 600ms ease-out; }
+.fade-up.in { opacity: 1; transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) {
+  .fade-up { opacity: 1; transform: none; transition: none; }
+}

@@ -63,6 +63,9 @@
     {% if page.path == "index.html" or page.path == "ja/index.html" %}
       <link rel="preload" as="image" href="/assets/images/bg/bg-header-yotei.jpg?d={{ build }}"/>
       <link href="/assets/css/home.css?d={{ build }}" rel="stylesheet" type="text/css"/>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500&display=swap" rel="stylesheet">
     {% endif %}
     <!-- block links endblock -->
     <script src="/assets/js/caption.js?d={{ build }}" type="text/javascript"></script>
