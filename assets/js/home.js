@@ -22,6 +22,7 @@
   function init() {
     initHeroParallax();
     initFadeUps();
+    initNetworkScrub();
   }
 
   function initFadeUps() {
@@ -80,6 +81,93 @@
       });
     }, { passive: true });
 
+    update();
+  }
+
+  function initNetworkScrub() {
+    var section = document.querySelector('.home-network');
+    if (!section) return;
+    var images = section.querySelectorAll('.home-network-img');
+    var captions = section.querySelectorAll('.home-network-caption');
+    var tabs = section.querySelectorAll('.home-network-tab');
+    var badge = section.querySelector('.home-network-year-badge');
+    if (images.length === 0) return;
+
+    var years = section.dataset.years.split(',');
+    var current = 0;
+
+    function setYear(idx) {
+      if (idx < 0) idx = 0;
+      if (idx >= years.length) idx = years.length - 1;
+      if (idx === current) return;
+      images.forEach(function (img, i) {
+        if (i === idx) img.setAttribute('data-active', 'true');
+        else img.removeAttribute('data-active');
+      });
+      captions.forEach(function (cap, i) {
+        if (i === idx) cap.setAttribute('data-active', 'true');
+        else cap.removeAttribute('data-active');
+      });
+      tabs.forEach(function (tab, i) {
+        if (i === idx) tab.setAttribute('data-active', 'true');
+        else tab.removeAttribute('data-active');
+      });
+      if (badge) badge.textContent = years[idx];
+      current = idx;
+    }
+
+    // Tab clicks (mobile + accessible)
+    tabs.forEach(function (tab, i) {
+      tab.addEventListener('click', function () { setYear(i); });
+    });
+
+    if (prefersReducedMotion || isMobile) return;
+
+    // Desktop: scroll-tied scrub.
+    // Cache section dimensions to avoid layout-flushing reads per frame.
+    var sectionTop = 0;
+    var sectionHeight = 0;
+    var viewportHeight = window.innerHeight;
+
+    function measure() {
+      var rect = section.getBoundingClientRect();
+      var scrollY = window.scrollY || window.pageYOffset || 0;
+      sectionTop = rect.top + scrollY;
+      sectionHeight = section.offsetHeight;
+      viewportHeight = window.innerHeight;
+    }
+
+    var ticking = false;
+    function update() {
+      var scrollY = window.scrollY || window.pageYOffset || 0;
+      var relativeScroll = scrollY - sectionTop;
+      var scrollableRange = Math.max(1, sectionHeight - viewportHeight);
+      var progress = Math.min(Math.max(relativeScroll / scrollableRange, 0), 1);
+      var idx = Math.floor(progress * years.length);
+      if (idx >= years.length) idx = years.length - 1;
+      setYear(idx);
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        window.requestAnimationFrame(update);
+        ticking = true;
+      }
+    }, { passive: true });
+
+    // Recompute on resize (debounced via rAF).
+    var resizeTicking = false;
+    window.addEventListener('resize', function () {
+      if (resizeTicking) return;
+      resizeTicking = true;
+      window.requestAnimationFrame(function () {
+        measure();
+        resizeTicking = false;
+      });
+    }, { passive: true });
+
+    measure();
     update();
   }
 })();

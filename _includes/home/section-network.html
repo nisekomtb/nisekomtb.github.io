@@ -1,1 +1,80 @@
-<!-- _includes/home/section-network.html -->
+<!-- _includes/home/section-network.html: Section 03 -->
+<section class="home-network" data-years="2022,2023,2024,2025,2026">
+  <div class="container home-network-wrap">
+    <header class="home-network-head fade-up">
+      <h2 class="home-network-title">
+        {% if page.lang == "en" %}Niseko's network, 2022 to 2026.
+        {% else %}ニセコの<wbr>ネットワーク、<wbr>2022年から<wbr>2026年へ。
+        {% endif %}
+      </h2>
+    </header>
+
+    <div class="home-network-grid">
+      <div class="home-network-map">
+        {% assign years = "2022,2023,2024,2025,2026" | split: "," %}
+        {% for y in years %}
+          <img src="/assets/images/home/network-{{ y }}.webp"
+               alt="{% if page.lang == 'en' %}Niseko MTB trail network in {{ y }}{% else %}{{ y }}年のニセコMTBトレイルネットワーク{% endif %}"
+               class="home-network-img"
+               data-year="{{ y }}"
+               {% if forloop.first %}data-active="true"{% endif %}
+               loading="lazy"/>
+        {% endfor %}
+        <div class="home-network-year-badge">2022</div>
+        <div class="home-network-tabs" role="tablist">
+          {% for y in years %}
+            <button class="home-network-tab" data-year="{{ y }}" type="button" aria-label="{{ y }}">{{ y }}</button>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="home-network-captions">
+        <div class="home-network-caption" data-year="2022" data-active="true">
+          {% if page.lang == "en" %}<strong>2022.</strong> NAMBA founded. The first trail at Twin Peaks opens to the public.
+          {% else %}<strong>2022年。</strong>NAMBA<wbr>設立。<wbr>ツインピークスの<wbr>最初の<wbr>トレイルが<wbr>一般公開。
+          {% endif %}
+        </div>
+        <div class="home-network-caption" data-year="2023">
+          {% if page.lang == "en" %}<strong>2023.</strong> Twin Peaks expands. Allegra-designed flow trails open. The pump track and skills area follow.
+          {% else %}<strong>2023年。</strong>ツインピークスが<wbr>拡張。<wbr>アレグラ設計の<wbr>フロートレイルが<wbr>オープン。<wbr>パンプトラックと<wbr>スキルエリアが<wbr>続く。
+          {% endif %}
+        </div>
+        <div class="home-network-caption" data-year="2024">
+          {% if page.lang == "en" %}<strong>2024.</strong> 7,500+ riders. Twin Peaks signage system rolls out. Grand Hirafu consulting begins.
+          {% else %}<strong>2024年。</strong>来場者<wbr>7,500人超。<wbr>ツインピークスの<wbr>サイン<wbr>システム<wbr>導入。<wbr>グランヒラフへの<wbr>コンサルティング<wbr>開始。
+          {% endif %}
+        </div>
+        <div class="home-network-caption" data-year="2025">
+          {% if page.lang == "en" %}<strong>2025.</strong> 11,500+ riders. Hanazono construction starts. Mt Yotei loop enters planning.
+          {% else %}<strong>2025年。</strong>来場者<wbr>11,500人超。<wbr>花園の<wbr>工事<wbr>開始。<wbr>羊蹄山<wbr>周回ルートの<wbr>計画<wbr>始動。
+          {% endif %}
+        </div>
+        <div class="home-network-caption" data-year="2026">
+          {% if page.lang == "en" %}<strong>2026.</strong> Hanazono opens. New green flow trail and lower green climb pending sponsorship.
+          {% else %}<strong>2026年。</strong>花園<wbr>オープン。<wbr>新しい<wbr>グリーン<wbr>フロー<wbr>トレイルと<wbr>ロワー<wbr>グリーン<wbr>クライムが<wbr>スポンサー<wbr>待ち。
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <div class="home-network-parks fade-up">
+      <a class="home-network-park" href="{% if page.lang == 'ja' %}/ja{% endif %}/twin-peaks/">
+        <h3>{% if page.lang == "en" %}Twin Peaks Bike Park{% else %}ツインピークス<wbr>バイクパーク{% endif %}</h3>
+        <p>{% if page.lang == "en" %}21+ km of free, Swiss-designed trails. The flagship.{% else %}21km超の<wbr>無料・<wbr>スイス設計<wbr>トレイル。<wbr>フラッグシップ。{% endif %}</p>
+      </a>
+      <a class="home-network-park" href="{% if page.lang == 'ja' %}/ja{% endif %}/where-to-ride/grand-hirafu/">
+        <h3>{% if page.lang == "en" %}Grand Hirafu Bike Park{% else %}グランヒラフ<wbr>バイクパーク{% endif %}</h3>
+        <p>{% if page.lang == "en" %}Lift-served downhill on the iconic Hirafu side.{% else %}リフト<wbr>アクセスの<wbr>ダウンヒル。<wbr>象徴的な<wbr>ヒラフ側。{% endif %}</p>
+      </a>
+      <a class="home-network-park" href="{% if page.lang == 'ja' %}/ja{% endif %}/where-to-ride/hanazono/">
+        <h3>{% if page.lang == "en" %}Niseko Hanazono Bike Park{% else %}ニセコ花園<wbr>バイクパーク{% endif %}</h3>
+        <p>{% if page.lang == "en" %}Niseko's first lift-accessed green flow trail. Opening summer 2026.{% else %}ニセコ初の<wbr>リフト<wbr>アクセス<wbr>グリーン<wbr>フロー<wbr>トレイル。<wbr>2026年夏<wbr>オープン。{% endif %}</p>
+      </a>
+      <a class="home-network-park" href="{% if page.lang == 'ja' %}/ja{% endif %}/projects/yotei-360/">
+        <h3>{% if page.lang == "en" %}Mt Yotei 360{% else %}羊蹄山<wbr>360{% endif %}</h3>
+        <p>{% if page.lang == "en" %}A 50 km loop around Yotei. In planning.{% else %}羊蹄山を<wbr>巡る<wbr>50km<wbr>ループ。<wbr>計画中。{% endif %}</p>
+      </a>
+    </div>
+
+  </div>
+</section>
