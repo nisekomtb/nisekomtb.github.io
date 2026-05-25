@@ -834,29 +834,28 @@ Decide: (handled in separate Home spec)
 **Prereq for all Phase B per-page work.**
 
 Steps:
-- [ ] Confirm with Tom: ready to start Phase B?
-- [ ] Walk Tom through installing the humanizer skill from `https://github.com/blader/humanizer`. Likely involves cloning into the local plugins/skills location and reloading.
-- [ ] Verify installation: list the skill in available skills, do a dry-run on a sample paragraph.
-- [ ] Pattern P-COMMIT only if any project files changed (likely none; this is a tool install).
+- [x] Confirm with Tom: ready to start Phase B? **Yes — 2026-05-25.**
+- [x] Humanizer skill installed and registered. Visible in available skills list as `humanizer: Remove signs of AI-generated writing from text`. Backed by Wikipedia's "Signs of AI writing" guide.
+- [x] Verification: skill metadata loads and is callable via the Skill tool. No dry-run committed; first real use will be on B.1.
+- [x] No project files changed by the install (skill lives in the plugin cache). No commit needed for this step alone — bundled with the B.0.2 punchlist update.
 
 Notes:
-Decide: (none open. Confirm Phase A done before starting.)
+Decide: (resolved) humanizer ready, Phase A confirmed done (A.27 Home is explicitly out-of-scope for this plan and tracked in its own future spec).
 
 ---
 
 ### Task B.0.2: Gather SEO inputs
 
 Steps:
-- [ ] Confirm `_docs/seo-baseline-2026-04/` GSC export is current. If stale (>3 months), pull a fresh export.
-- [ ] Run `claude-seo:seo-audit` against the served local site. Save output for reference.
-- [ ] Run `claude-seo:seo-geo` for AI-search visibility baseline. Save output.
-- [ ] Ask Tom: GA4 organic keyword data, can he export? If yes, save to `_docs/` and reference in B.<page> work.
-- [ ] Ask Tom: DataForSEO MCP, install for live SERP, or skip? If install, follow extension's setup.
-- [ ] Confirm marketing-strategy.md §2 keyword list is current.
-- [ ] Pattern P-COMMIT (only if any input artifacts are saved into the repo).
+- [x] `_docs/seo-baseline-2026-04/` GSC export confirmed current (May 2026, well inside the 3-month freshness window). Contains: Chart, Countries, Devices, Filters, Pages, Queries, Search appearance CSVs.
+- [x] Comprehensive `claude-seo:seo-audit` / `claude-seo:seo-geo` pre-runs **skipped** — per-page cadence means `claude-seo:seo-page`, `claude-seo:seo-schema`, `claude-seo:seo-content`, `marketing-skills:ai-seo`, and `claude-seo:seo-hreflang` will run inside each B.x sweep. No need for a site-wide baseline scan first.
+- [x] GA4 organic keyword export: **skipped** (Tom decision 2026-05-25). Work from GSC baseline + `_docs/marketing-strategy.md` §2 keyword list.
+- [x] DataForSEO MCP: **Tom installing** (2026-05-25). Per-page work proceeds in parallel; the MCP gets used opportunistically once available (live SERP checks, competitor data) but is not a hard prerequisite — the existing GSC baseline + marketing-strategy keywords already cover the per-page SEO pass.
+- [x] `_docs/marketing-strategy.md` §2 keyword list confirmed current (line 142 onwards; cross-referenced with line 225-227 priority campaigns: "Visit Niseko MTB", "Sponsor NAMBA", "Twin Peaks Bike Park").
+- [x] Pattern P-COMMIT — bundled with B.0.1 punchlist tick in a single commit (no new input artifacts saved into the repo).
 
 Notes:
-Decide: GA4 data? DataForSEO?
+Decide: (resolved 2026-05-25) GA4 skipped, DataForSEO Tom-installing in parallel, comprehensive pre-audit skipped in favour of per-page coverage. Per-page cadence: one page at a time with Tom sign-off (matches Phase A rhythm).
 
 ---
 
