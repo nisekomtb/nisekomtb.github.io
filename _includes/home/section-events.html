@@ -1,1 +1,60 @@
-<!-- _includes/home/section-events.html -->
+<!-- _includes/home/section-events.html: Section 06a -->
+{% assign today = site.time | date: "%Y-%m-%d" %}
+{% if page.lang == "ja" %}
+  {% assign events_src = site.categories.events | where: "lang", "ja" %}
+{% else %}
+  {% assign events_src = site.categories.events | where: "lang", "en" %}
+{% endif %}
+{% assign events = "" | split: "" %}
+{% for post in events_src %}
+  {% if post.startDate %}
+    {% assign sd = post.startDate | date: "%Y-%m-%d" %}
+    {% if sd >= today %}
+      {% assign events = events | push: post %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+{% assign events = events | sort: "startDate" %}
+
+<section class="home-events fade-up">
+  <div class="container home-events-wrap">
+    <header class="home-events-head">
+      <h2 class="home-events-title">
+        {% if page.lang == "en" %}What's on.
+        {% else %}開催<wbr>予定。
+        {% endif %}
+      </h2>
+    </header>
+
+    {% if events.size > 0 %}
+      <div class="home-events-grid">
+        {% for ev in events limit: 3 %}
+          <a class="home-event-card" href="{{ ev.url }}">
+            {% if ev.thumbnail %}
+              <div class="home-event-thumb" style="background-image: url('{{ ev.thumbnail }}');"></div>
+            {% elsif ev.masthead.img %}
+              <div class="home-event-thumb" style="background-image: url('{{ ev.masthead.img }}');"></div>
+            {% else %}
+              <div class="home-event-thumb home-event-thumb-fallback"></div>
+            {% endif %}
+            <div class="home-event-body">
+              <div class="home-event-date">{{ ev.startDate | date: "%b %-d, %Y" }}</div>
+              <h3 class="home-event-title">{{ ev.title }}</h3>
+              {% if ev.location %}<div class="home-event-loc">{{ ev.location }}</div>{% endif %}
+              <div class="home-event-action">{% if page.lang == "en" %}Details →{% else %}詳細 →{% endif %}</div>
+            </div>
+          </a>
+        {% endfor %}
+      </div>
+      <p class="home-events-all">
+        <a href="{% if page.lang == 'ja' %}/ja{% endif %}/events/">{% if page.lang == "en" %}View all events →{% else %}すべての<wbr>イベントを<wbr>見る →{% endif %}</a>
+      </p>
+    {% else %}
+      <p class="home-events-empty">
+        {% if page.lang == "en" %}No events scheduled. Follow <a href="https://www.instagram.com/nisekomtb/">@nisekomtb</a> for updates.
+        {% else %}開催<wbr>予定の<wbr>イベントは<wbr>ありません。<wbr>最新情報は <a href="https://www.instagram.com/nisekomtb/">@nisekomtb</a> を<wbr>フォローして<wbr>ください。
+        {% endif %}
+      </p>
+    {% endif %}
+  </div>
+</section>
