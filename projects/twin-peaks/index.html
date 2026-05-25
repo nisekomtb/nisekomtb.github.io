@@ -1,14 +1,15 @@
 ---
-title: Twin Peaks Bike Park
-description: The flagship NAMBA project. Japan's largest free-to-ride mountain bike park with 17km+ of Swiss-designed trails in Niseko.
+title: Twin Peaks Bike Park | NAMBA's Flagship Project
+description: Japan's largest free-to-ride mountain bike park. Over 17km of Swiss-designed trails in Niseko, 100% community-funded since 2022.
 masthead:
   img: /assets/images/twinpeaks/header.jpg
   credit:
     url: https://www.liamlarnach.com
     name: Liam Larnach
+og:
+  image: /assets/images/twinpeaks/header.jpg
 ---
 <style>
-  /* Phase photo placeholders (larger, 2-up on desktop) */
   .phase-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -17,18 +18,78 @@ masthead:
     margin: 20px auto;
   }
   .phase-grid .phase-tile {
+    position: relative;
+    display: block;
     background: var(--color-bg-panel);
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 3px;
-    padding: 60px 24px;
-    text-align: center;
-    color: #999;
+    overflow: hidden;
+    text-decoration: none;
+    transition: transform 200ms ease, box-shadow 200ms ease;
   }
-  .phase-grid .phase-tile .fa-solid { font-size: 40px; display: block; margin-bottom: 12px; color: var(--color-accent); }
-  .phase-grid .phase-tile .year { font-family: "Metropolis", Helvetica, Arial, sans-serif; font-weight: 700; font-size: 130%; color: #fff; margin-bottom: 6px; }
-  .phase-grid .phase-tile .label { font-size: 90%; }
+  .phase-grid .phase-tile:hover,
+  .phase-grid .phase-tile:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+    outline: none;
+  }
+  .phase-grid .phase-tile img {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    transition: transform 400ms ease;
+  }
+  .phase-grid .phase-tile:hover img,
+  .phase-grid .phase-tile:focus-visible img {
+    transform: scale(1.04);
+  }
+  .phase-grid .phase-tile .caption {
+    padding: 14px 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .phase-grid .phase-tile .year {
+    font-family: "Metropolis", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--color-accent);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .phase-grid .phase-tile .label {
+    font-size: 95%;
+    color: #ddd;
+    line-height: 1.4;
+  }
   @media (max-width: 600px) {
     .phase-grid { grid-template-columns: 1fr; }
+  }
+  .benefit-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto 0;
+    max-width: 720px;
+    font-size: 110%;
+  }
+  .benefit-list li {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 14px;
+    padding: 8px 0;
+    line-height: 1.5;
+    text-align: left;
+  }
+  .benefit-list li > i {
+    color: var(--color-accent);
+    font-size: 18px;
+    flex-shrink: 0;
+    margin-top: 4px;
   }
 </style>
 
@@ -52,7 +113,7 @@ masthead:
         class="features-desc ja-animate"
         data-animation="move-from-bottom"
         data-delay="400">
-        <div style="font-size:130%;"><span>Twin Peaks is NAMBA's flagship project: Japan's largest free-to-ride mountain bike park. Over 17km of Swiss-designed trails across 20+ routes, from beginner flow lines to expert technical terrain. Open every day of the riding season. No fees, no registration.</span></div>
+        <div style="font-size:130%;"><span>Twin Peaks is NAMBA's flagship: Japan's largest free-to-ride mountain bike park. Over 17km of Swiss-designed trails across 20+ routes, beginner flow lines through to expert technical terrain. Open every day of the riding season. No fees, no registration.</span></div>
       </div>
     </div>
 
@@ -72,40 +133,40 @@ masthead:
       <div class="journey-row left">
         <div class="journey-card">
           <div class="journey-year">2022</div>
-          <div class="journey-head">4.4km · park begins</div>
-          <p class="journey-desc">Kutchan town grants permission to rent land for the Twin Peaks Bike Park. With a COVID-shortened build window, we still finish 4.4km of trail, under a 1m width restriction, without cutting down a single tree.</p>
+          <div class="journey-head">4.4km · First build, no trees cut</div>
+          <p class="journey-desc">Kutchan town grants permission to rent land for Twin Peaks Bike Park. With a COVID-shortened build window, we still finish 4.4km of trail under a 1m width restriction, without cutting down a single tree in the preservation forest.</p>
         </div>
         <div class="journey-nub"></div>
       </div>
       <div class="journey-row right">
         <div class="journey-card">
           <div class="journey-year">2023</div>
-          <div class="journey-head">10.4km · park opens</div>
-          <p class="journey-desc">We gamble on an aggressive build window and plan an additional 6km of trail. The build completes on time, the fastest project Allegra had ever delivered. Twin Peaks opens to the public in September.</p>
+          <div class="journey-head">10.4km · Park opens</div>
+          <p class="journey-desc">We gamble on an aggressive build window and plan an additional 6km of trail. The build completes on time, the fastest project Allegra had ever worked on. Twin Peaks opens to the public in September.</p>
         </div>
         <div class="journey-nub"></div>
       </div>
       <div class="journey-row left">
         <div class="journey-card">
           <div class="journey-year">2024</div>
-          <div class="journey-head">13.8km · first double-black</div>
-          <p class="journey-desc">Taki Trail and Taki Tech bring the region its first double-black. The park grows to 13.8km.</p>
+          <div class="journey-head">13.8km · First double-black</div>
+          <p class="journey-desc">A handwork-heavy year. We finish off Taki Tech, the region's first double-black, and open up the entrance to Taki Trail (black). The top section of Cruise Control also comes in. Network reaches 13.8km.</p>
         </div>
         <div class="journey-nub"></div>
       </div>
       <div class="journey-row right">
         <div class="journey-card">
           <div class="journey-year">2025</div>
-          <div class="journey-head">17.8km · jump line opens</div>
-          <p class="journey-desc">Niseko's first jump line opens, paired with a dedicated climb trail for hot laps. Network reaches 17.8km. Work begins on the Lower West Climb.</p>
+          <div class="journey-head">17.8km · Jump line opens</div>
+          <p class="journey-desc">Cruise Control finishes and quickly becomes the park's most popular trail. Niseko's first jump line opens too, paired with a dedicated climb trail for hot laps. Network reaches 17.8km. Work begins on the lower west climb.</p>
         </div>
         <div class="journey-nub"></div>
       </div>
       <div class="journey-row left now">
         <div class="journey-card">
           <div class="journey-year">2026</div>
-          <div class="journey-head">Lower West Climb · first green downhill</div>
-          <p class="journey-desc">Lower West Climb finishes, connecting to last year's jump line climb. The region's first green downhill trail joins the Lower Green Climb. Both trails are still available to <a href="/partner/">sponsor</a>.</p>
+          <div class="journey-head">Beginner focused</div>
+          <p class="journey-desc">The lower west climb finishes, and the region's first green downhill opens to pair with it. Both trails are still open for <a href="/partner/">sponsorship</a>.</p>
         </div>
         <div class="journey-nub"></div>
       </div>
@@ -125,30 +186,83 @@ masthead:
         class="features-desc ja-animate"
         data-animation="move-from-bottom"
         data-delay="400">
-        <div style="font-size:115%;"><span>Trail network expansion at Twin Peaks, year by year.</span></div>
+        <div style="font-size:115%;"><span>What was built each year, and what's planned next. Tap any image for full size.</span></div>
       </div>
     </div>
 
-    <div class="phase-grid ja-animate" data-animation="move-from-bottom" data-delay="600">
-      <div class="phase-tile">
-        <span class="fa-solid fa-map-location-dot"></span>
-        <div class="year">2022</div>
-        <div class="label">First 4.4km · network start</div>
-      </div>
-      <div class="phase-tile">
-        <span class="fa-solid fa-map-location-dot"></span>
-        <div class="year">2023</div>
-        <div class="label">10.4km · Twin Peaks opens</div>
-      </div>
-      <div class="phase-tile">
-        <span class="fa-solid fa-map-location-dot"></span>
-        <div class="year">2024</div>
-        <div class="label">13.8km · Taki Tech double-black</div>
-      </div>
-      <div class="phase-tile">
-        <span class="fa-solid fa-map-location-dot"></span>
-        <div class="year">2025</div>
-        <div class="label">17.8km · jump line + climb trail</div>
+    <div class="phase-grid projects-pswp ja-animate" data-animation="move-from-bottom" data-delay="600">
+      <a class="phase-tile" href="/assets/images/projects/twin-peaks/2022-large.webp"
+         data-pswp-width="2400" data-pswp-height="1350" target="_blank" rel="noopener">
+        <img src="/assets/images/projects/twin-peaks/2022.webp"
+             alt="Aerial view of Twin Peaks in 2022 showing the first 4.4km of trail traced in gold on the ridge above Kutchan"
+             loading="lazy">
+        <div class="caption">
+          <div class="year">2022</div>
+          <div class="label">4.4km · First build, no trees cut</div>
+        </div>
+      </a>
+      <a class="phase-tile" href="/assets/images/projects/twin-peaks/2023-large.webp"
+         data-pswp-width="2400" data-pswp-height="1350" target="_blank" rel="noopener">
+        <img src="/assets/images/projects/twin-peaks/2023.webp"
+             alt="Aerial view of Twin Peaks in 2023 with the trail network expanded to 10.4km and the park opened to the public"
+             loading="lazy">
+        <div class="caption">
+          <div class="year">2023</div>
+          <div class="label">10.4km · Park opens</div>
+        </div>
+      </a>
+      <a class="phase-tile" href="/assets/images/projects/twin-peaks/2024-large.webp"
+         data-pswp-width="2400" data-pswp-height="1350" target="_blank" rel="noopener">
+        <img src="/assets/images/projects/twin-peaks/2024.webp"
+             alt="Aerial view of Twin Peaks in 2024 showing the network grown to 13.8km with the first double-black trails Taki Trail and Taki Tech"
+             loading="lazy">
+        <div class="caption">
+          <div class="year">2024</div>
+          <div class="label">13.8km · First double-black</div>
+        </div>
+      </a>
+      <a class="phase-tile" href="/assets/images/projects/twin-peaks/2025-large.webp"
+         data-pswp-width="2400" data-pswp-height="1350" target="_blank" rel="noopener">
+        <img src="/assets/images/projects/twin-peaks/2025.webp"
+             alt="Aerial view of Twin Peaks in 2025 with the network at 17.8km, including Niseko's first jump line and dedicated climb trail"
+             loading="lazy">
+        <div class="caption">
+          <div class="year">2025</div>
+          <div class="label">17.8km · Jump line opens</div>
+        </div>
+      </a>
+      <a class="phase-tile" href="/assets/images/projects/twin-peaks/2026-large.webp"
+         data-pswp-width="2400" data-pswp-height="1350" target="_blank" rel="noopener">
+        <img src="/assets/images/projects/twin-peaks/2026.webp"
+             alt="Aerial view of the planned future Twin Peaks network with the lower west climb completed and the region's first green downhill trail added"
+             loading="lazy">
+        <div class="caption">
+          <div class="year">Future</div>
+          <div class="label">Beginner focused</div>
+        </div>
+      </a>
+    </div>
+
+  </div>
+
+  <!-- NAMBA's Role -->
+  <div class="section">
+
+    <div class="module-title-wrap" style="max-width:900px;">
+      <h3
+        class="module-title ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="200">NAMBA's Role</h3>
+      <div
+        class="features-desc ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="400">
+        <ul class="benefit-list">
+          <li><i class="fa-solid fa-circle-check"></i><span>Designing the masterplan and regional trail network</span></li>
+          <li><i class="fa-solid fa-circle-check"></i><span>Raising and managing community funding</span></li>
+          <li><i class="fa-solid fa-circle-check"></i><span>Trail design, build, and ongoing maintenance</span></li>
+          <li><i class="fa-solid fa-circle-check"></i><span>Day-to-day operations and rider experience</span></li>
+        </ul>
       </div>
     </div>
 
@@ -166,7 +280,13 @@ masthead:
         class="features-desc ja-animate"
         data-animation="move-from-bottom"
         data-delay="400">
-        <div style="font-size:130%;"><span>Every trail at Twin Peaks is designed and built with Allegra, the Swiss firm behind some of the best-known trail networks in the Alps and beyond. The 2023 build of 6km in one summer was the fastest project Allegra had ever delivered.</span></div>
+        <div style="font-size:130%;"><span>Every trail at Twin Peaks is designed and built with Allegra, the Swiss firm responsible for major trail networks across the Alps. Allegra say Twin Peaks is the fastest-growing trail network project they've ever worked on, or known of anywhere in the world.</span></div>
+      </div>
+      <div
+        class="features-desc ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="600">
+        <div style="font-size:130%;"><span>On the ground, NAMBA's seasonal trail crew handle the build, alongside community volunteers on regular dig days.</span></div>
       </div>
     </div>
 
@@ -184,7 +304,13 @@ masthead:
         class="features-desc ja-animate"
         data-animation="move-from-bottom"
         data-delay="400">
-        <div style="font-size:130%;"><span>Twin Peaks is 100% community-funded. Across 2022 to 2025, 92% of funding came from private and community sources, with 74% from local businesses. 82% of every yen goes directly to trail construction; 95% to trails counting maintenance. Every trail has been fully sponsored.</span></div>
+        <div style="font-size:130%;"><span>Twin Peaks is 100% community-funded. From 2022 to 2025, 92% of funding came from private and community sources, with 74% from local businesses alone. 82% of every yen goes straight into trail construction; 95% if you count maintenance. Every trail in the park has a sponsor.</span></div>
+      </div>
+      <div
+        class="features-desc ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="600">
+        <div style="font-size:130%;"><span>Visitor numbers have grown with the network: 7,747 in 2024, 11,500+ in 2025.</span></div>
       </div>
     </div>
 
@@ -206,17 +332,35 @@ masthead:
         class="module-title ja-animate"
         data-animation="move-from-bottom"
         data-delay="200">Ride or support Twin Peaks</h3>
+      <div
+        class="features-desc ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="400">
+        <div style="font-size:130%;"><span>Twin Peaks is open every day of the riding season. Free to ride, no booking. Or partner with us to fund what comes next.</span></div>
+      </div>
     </div>
     <div class="module-title-wrap">
       <div
         class="t3-section action ja-animate"
         data-animation="move-from-bottom"
-        data-delay="400">
+        data-delay="600">
         <a class="btn btn-primary" href="/twin-peaks/">Ride Twin Peaks</a>
         <a class="btn btn-secondary" href="/partner/" style="margin-left: 10px;">Partner with us</a>
+        <a class="btn btn-secondary" href="/projects/" style="margin-left: 10px;">Back to projects</a>
       </div>
     </div>
 
   </div>
 
 </div>
+
+<link rel="stylesheet" href="https://unpkg.com/photoswipe@5.4.4/dist/photoswipe.css">
+<script type="module">
+  import PhotoSwipeLightbox from 'https://unpkg.com/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.js';
+  const lightbox = new PhotoSwipeLightbox({
+    gallery: '.projects-pswp',
+    children: 'a',
+    pswpModule: () => import('https://unpkg.com/photoswipe@5.4.4/dist/photoswipe.esm.js'),
+  });
+  lightbox.init();
+</script>

@@ -1,9 +1,94 @@
 ---
-title: Grand Hirafu Bike Park
-description: NAMBA consults on Grand Hirafu's bike park expansion, bringing trail design, unified signage, and trail building to Niseko's largest resort village.
+title: Grand Hirafu Bike Park | NAMBA Project
+description: NAMBA designs, builds, and signs the trail network at Grand Hirafu, Niseko's largest resort, now lift-served by the new Ace Gondola.
 masthead:
-  img: /assets/images/bg/bg-header-twinpeaks.jpg
+  img: /assets/images/trails/grand-hirafu/01.jpg
+og:
+  image: /assets/images/trails/grand-hirafu/01.jpg
 ---
+<style>
+  .phase-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    max-width: 900px;
+    margin: 20px auto;
+  }
+  .phase-grid .phase-tile {
+    position: relative;
+    display: block;
+    background: var(--color-bg-panel);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 3px;
+    overflow: hidden;
+    text-decoration: none;
+    transition: transform 200ms ease, box-shadow 200ms ease;
+  }
+  .phase-grid .phase-tile:hover,
+  .phase-grid .phase-tile:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+    outline: none;
+  }
+  .phase-grid .phase-tile img {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    transition: transform 400ms ease;
+  }
+  .phase-grid .phase-tile:hover img,
+  .phase-grid .phase-tile:focus-visible img {
+    transform: scale(1.04);
+  }
+  .phase-grid .phase-tile .caption {
+    padding: 14px 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .phase-grid .phase-tile .year {
+    font-family: "Metropolis", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--color-accent);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .phase-grid .phase-tile .label {
+    font-size: 95%;
+    color: #ddd;
+    line-height: 1.4;
+  }
+  @media (max-width: 600px) {
+    .phase-grid { grid-template-columns: 1fr; }
+  }
+  .benefit-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto 0;
+    max-width: 720px;
+    font-size: 110%;
+  }
+  .benefit-list li {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 14px;
+    padding: 8px 0;
+    line-height: 1.5;
+    text-align: left;
+  }
+  .benefit-list li > i {
+    color: var(--color-accent);
+    font-size: 18px;
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+</style>
 
 <div class="t3-section-wrap">
 
@@ -25,15 +110,126 @@ masthead:
         class="features-desc ja-animate"
         data-animation="move-from-bottom"
         data-delay="400">
-        <div style="font-size:130%;"><span>NAMBA works with Grand Hirafu on bike park expansion, bringing trail design expertise, unified signage systems, and trail building to Niseko's largest resort village. As the network grows, Grand Hirafu's trails become part of the interconnected riding experience across the region.</span></div>
+        <div style="font-size:130%;"><span>NAMBA works with Grand Hirafu on the bike park expansion: trail design, signage, and trail building at Niseko's largest resort village. In time, these trails will link into the wider regional network.</span></div>
       </div>
     </div>
 
   </div>
 
-  <div style="background:var(--color-bg-panel); padding:40px; text-align:center; border-radius:3px; margin:20px auto; color:#666; max-width:900px;">
-    <span class="fa-solid fa-image" style="font-size:48px; display:block; margin-bottom:12px;"></span>
-    <p style="margin:0;">Photo: Grand Hirafu bike park trails or signage designed by NAMBA</p>
+  <!-- Growth Timeline -->
+  <div class="section">
+
+    <div class="module-title-wrap" style="max-width:900px;">
+      <h3
+        class="module-title ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="200">Growth Timeline</h3>
+    </div>
+
+    <div class="journey-timeline ja-animate" data-animation="move-from-bottom" data-delay="400">
+      <div class="journey-row left">
+        <div class="journey-card">
+          <div class="journey-year">2023</div>
+          <div class="journey-head">5.3km · Tokyu opens flow trails</div>
+          <p class="journey-desc">Grand Hirafu reopens after its COVID hiatus with three new Tokyu-built top-to-bottom flow trails: Kamiwaza, Kuro Obi, and Kaikan. After watching Twin Peaks open, Tokyu invites NAMBA to take over future trail building at the resort.</p>
+        </div>
+        <div class="journey-nub"></div>
+      </div>
+      <div class="journey-row right">
+        <div class="journey-card">
+          <div class="journey-year">2024</div>
+          <div class="journey-head">3.6km · NAMBA takes over</div>
+          <p class="journey-desc">NAMBA reworks the lower trail (Kaikan Rebuild) into a friendlier ride for beginners, then starts pushing connector trails (Kings High, Key Path) toward Twin Peaks.</p>
+        </div>
+        <div class="journey-nub"></div>
+      </div>
+      <div class="journey-row left">
+        <div class="journey-card">
+          <div class="journey-year">2025</div>
+          <div class="journey-head">Bruni and Vink at the table</div>
+          <p class="journey-desc">NAMBA pitches a flagship project for Grand Hirafu and brings Loic Bruni and Nico Vink over to help plan it. Prep work starts for the resort's switch to the new Ace Gondola.</p>
+        </div>
+        <div class="journey-nub"></div>
+      </div>
+      <div class="journey-row right now">
+        <div class="journey-card">
+          <div class="journey-year">2026</div>
+          <div class="journey-head">Linking to the Ace Gondola</div>
+          <p class="journey-desc">As operations switch to the new gondola, the trails need to link up too. A new 2km blue runs from the end of Kuro Obi across to the new base, built to match the Ace Gondola layout.</p>
+        </div>
+        <div class="journey-nub"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Working with Tokyu -->
+  <div class="section">
+
+    <div class="module-title-wrap" style="max-width:900px;">
+      <h3
+        class="module-title ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="200">Working with Tokyu</h3>
+      <div
+        class="features-desc ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="400">
+        <div style="font-size:130%;"><span>Tokyu opened their first three flow trails at Grand Hirafu in 2023. After watching Twin Peaks open the same year, they invited NAMBA in to take over future trail design, building, and signage. Grand Hirafu became the second resort to plug into the regional masterplan.</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Year-by-year Growth -->
+  <div class="section">
+
+    <div class="module-title-wrap" style="max-width:900px;">
+      <h3
+        class="module-title ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="200">Year-by-year Growth</h3>
+      <div
+        class="features-desc ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="400">
+        <div style="font-size:115%;"><span>What was built each year, and what's planned next. Tap any image for full size.</span></div>
+      </div>
+    </div>
+
+    <div class="phase-grid projects-pswp ja-animate" data-animation="move-from-bottom" data-delay="600">
+      <a class="phase-tile" href="/assets/images/projects/grand-hirafu/2023-large.webp"
+         data-pswp-width="2400" data-pswp-height="1350" target="_blank" rel="noopener">
+        <img src="/assets/images/projects/grand-hirafu/2023.webp"
+             alt="Aerial view of Grand Hirafu in 2023 with the first 5.3km of Tokyu-built top-to-bottom flow trails traced in gold down the resort"
+             loading="lazy">
+        <div class="caption">
+          <div class="year">2023</div>
+          <div class="label">5.3km · Tokyu opens flow trails</div>
+        </div>
+      </a>
+      <a class="phase-tile" href="/assets/images/projects/grand-hirafu/2024-large.webp"
+         data-pswp-width="2400" data-pswp-height="1350" target="_blank" rel="noopener">
+        <img src="/assets/images/projects/grand-hirafu/2024.webp"
+             alt="Aerial view of Grand Hirafu in 2024 showing NAMBA's Kaikan rebuild and new connector trails toward Twin Peaks"
+             loading="lazy">
+        <div class="caption">
+          <div class="year">2024</div>
+          <div class="label">3.6km · NAMBA takes over</div>
+        </div>
+      </a>
+      <a class="phase-tile" href="/assets/images/projects/grand-hirafu/2026-large.webp"
+         data-pswp-width="2400" data-pswp-height="1350" target="_blank" rel="noopener">
+        <img src="/assets/images/projects/grand-hirafu/2026.webp"
+             alt="Aerial view of Grand Hirafu in 2026 with the new Lower Blue trail linking the network to the newly installed Ace Gondola"
+             loading="lazy">
+        <div class="caption">
+          <div class="year">2026</div>
+          <div class="label">Linking to the Ace Gondola</div>
+        </div>
+      </a>
+    </div>
+
   </div>
 
   <!-- NAMBA's Role -->
@@ -48,13 +244,12 @@ masthead:
         class="features-desc ja-animate"
         data-animation="move-from-bottom"
         data-delay="400">
-        <div style="font-size:130%;">
-          <ul style="list-style:none; padding:0;">
-            <li style="padding:8px 0;">&#10003; Consulting on trail design</li>
-            <li style="padding:8px 0;">&#10003; Designing unified signage system</li>
-            <li style="padding:8px 0;">&#10003; Trail building</li>
-          </ul>
-        </div>
+        <ul class="benefit-list">
+          <li><i class="fa-solid fa-circle-check"></i><span>Advising on the regional masterplan</span></li>
+          <li><i class="fa-solid fa-circle-check"></i><span>Consulting on trail design</span></li>
+          <li><i class="fa-solid fa-circle-check"></i><span>Designing the unified signage system</span></li>
+          <li><i class="fa-solid fa-circle-check"></i><span>Trail building</span></li>
+        </ul>
       </div>
     </div>
 
@@ -74,10 +269,23 @@ masthead:
         class="t3-section action ja-animate"
         data-animation="move-from-bottom"
         data-delay="400">
-        <a class="btn btn-primary" href="/partner/">Partner with us</a>
+        <a class="btn btn-primary" href="/where-to-ride/grand-hirafu/">Ride Grand Hirafu</a>
+        <a class="btn btn-secondary" href="/partner/" style="margin-left: 10px;">Partner with us</a>
+        <a class="btn btn-secondary" href="/projects/" style="margin-left: 10px;">Back to projects</a>
       </div>
     </div>
 
   </div>
 
 </div>
+
+<link rel="stylesheet" href="https://unpkg.com/photoswipe@5.4.4/dist/photoswipe.css">
+<script type="module">
+  import PhotoSwipeLightbox from 'https://unpkg.com/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.js';
+  const lightbox = new PhotoSwipeLightbox({
+    gallery: '.projects-pswp',
+    children: 'a',
+    pswpModule: () => import('https://unpkg.com/photoswipe@5.4.4/dist/photoswipe.esm.js'),
+  });
+  lightbox.init();
+</script>

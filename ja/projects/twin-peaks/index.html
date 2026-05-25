@@ -1,14 +1,15 @@
 ---
-title: ツインピークスバイクパーク
-description: NAMBAの旗艦プロジェクト。スイス設計の17km以上のトレイルを擁する日本最大の無料で楽しめるマウンテンバイクパーク。
+title: ツインピークスバイクパーク | NAMBAの旗艦プロジェクト
+description: 日本最大の無料で楽しめるマウンテンバイクパーク。ニセコにスイス設計のトレイル17km超、2022年以来100%コミュニティ資金。
 masthead:
   img: /assets/images/twinpeaks/header.jpg
   credit:
     url: https://www.liamlarnach.com
     name: Liam Larnach
+og:
+  image: /assets/images/twinpeaks/header.jpg
 ---
 <style>
-  /* Phase photo placeholders (larger, 2-up on desktop) */
   .phase-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -17,18 +18,78 @@ masthead:
     margin: 20px auto;
   }
   .phase-grid .phase-tile {
+    position: relative;
+    display: block;
     background: var(--color-bg-panel);
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 3px;
-    padding: 60px 24px;
-    text-align: center;
-    color: #999;
+    overflow: hidden;
+    text-decoration: none;
+    transition: transform 200ms ease, box-shadow 200ms ease;
   }
-  .phase-grid .phase-tile .fa-solid { font-size: 40px; display: block; margin-bottom: 12px; color: var(--color-accent); }
-  .phase-grid .phase-tile .year { font-family: "Metropolis", Helvetica, Arial, sans-serif; font-weight: 700; font-size: 130%; color: #fff; margin-bottom: 6px; }
-  .phase-grid .phase-tile .label { font-size: 90%; }
+  .phase-grid .phase-tile:hover,
+  .phase-grid .phase-tile:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+    outline: none;
+  }
+  .phase-grid .phase-tile img {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    transition: transform 400ms ease;
+  }
+  .phase-grid .phase-tile:hover img,
+  .phase-grid .phase-tile:focus-visible img {
+    transform: scale(1.04);
+  }
+  .phase-grid .phase-tile .caption {
+    padding: 14px 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .phase-grid .phase-tile .year {
+    font-family: "Metropolis", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--color-accent);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .phase-grid .phase-tile .label {
+    font-size: 95%;
+    color: #ddd;
+    line-height: 1.4;
+  }
   @media (max-width: 600px) {
     .phase-grid { grid-template-columns: 1fr; }
+  }
+  .benefit-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto 0;
+    max-width: 720px;
+    font-size: 110%;
+  }
+  .benefit-list li {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 14px;
+    padding: 8px 0;
+    line-height: 1.5;
+    text-align: left;
+  }
+  .benefit-list li > i {
+    color: var(--color-accent);
+    font-size: 18px;
+    flex-shrink: 0;
+    margin-top: 4px;
   }
 </style>
 
@@ -47,12 +108,12 @@ masthead:
       <h3
         class="module-title ja-animate"
         data-animation="move-from-bottom"
-        data-delay="200">日本最大の無料で楽しめるMTBパーク</h3>
+        data-delay="200">日本最大​の​無料​で​楽しめる​MTB​パーク</h3>
       <div
         class="features-desc ja-animate"
         data-animation="move-from-bottom"
         data-delay="400">
-        <div style="font-size:130%;"><span>ツインピークスはNAMBAの旗艦プロジェクト：日本最大の無料で楽しめるマウンテンバイクパークです。スイス設計のトレイルが17km以上、20本以上のルートにわたり、初心者向けフローから上級テクニカルまでをカバー。シーズン中は毎日オープン。料金なし、登録不要。</span></div>
+        <div style="font-size:130%;"><span>ツインピークス​は​NAMBAの​旗艦:​ 日本最大​の​無料​で​楽しめる​マウンテンバイク​パーク。​スイス設計​の​トレイル​17km超、​20以上​の​ルート、​初心者​向け​フロー​から​上級​テクニカル​まで。​シーズン中​は​毎日​オープン。​料金​なし、​登録不要。</span></div>
       </div>
     </div>
 
@@ -65,47 +126,47 @@ masthead:
       <h3
         class="module-title ja-animate"
         data-animation="move-from-bottom"
-        data-delay="200">成長のタイムライン</h3>
+        data-delay="200">成長​の​タイムライン</h3>
     </div>
 
     <div class="journey-timeline ja-animate" data-animation="move-from-bottom" data-delay="400">
       <div class="journey-row left">
         <div class="journey-card">
           <div class="journey-year">2022</div>
-          <div class="journey-head">4.4km · 建設開始</div>
-          <p class="journey-desc">倶知安町がツインピークスバイクパークのための土地賃借を承認。コロナで短縮されたシーズン中でも、幅1m制限のもと、1本の木も伐採せずに4.4kmを建設。</p>
+          <div class="journey-head">4.4km · ​初​の​建設、​一本​も​伐採​なし</div>
+          <p class="journey-desc">倶知安町​が​ツインピークス​バイクパーク​の​ため​の​土地賃借​を​承認。​コロナ​で​短縮​された​建設シーズン​の​中、​幅​1m​制限​の​もと、​保安林​の​木​を​一本​も​伐採​せず​に​4.4kmを​完成。</p>
         </div>
         <div class="journey-nub"></div>
       </div>
       <div class="journey-row right">
         <div class="journey-card">
           <div class="journey-year">2023</div>
-          <div class="journey-head">10.4km · 開園</div>
-          <p class="journey-desc">アグレッシブな建設計画で追加6kmを計画。アレグラ史上最速のプロジェクトとして予定通り完成し、9月にツインピークスが一般開放。</p>
+          <div class="journey-head">10.4km · ​パーク​開園</div>
+          <p class="journey-desc">アグレッシブ​な​建設​計画​で、​追加​6km​の​トレイル​を​企画。​アレグラ​史上最速​の​プロジェクト​と​して​予定通り​完成​し、​ツインピークス​が​9月​に​一般​開放。</p>
         </div>
         <div class="journey-nub"></div>
       </div>
       <div class="journey-row left">
         <div class="journey-card">
           <div class="journey-year">2024</div>
-          <div class="journey-head">13.8km · 初のダブルブラック</div>
-          <p class="journey-desc">タキトレイルとタキテックで、北海道初のダブルブラックが完成。パークは13.8kmへ。</p>
+          <div class="journey-head">13.8km · ​初​の​ダブル​ブラック</div>
+          <p class="journey-desc">手作業​中心​の​年。​タキ​テック​を​仕上げ、​タキ​トレイル​の​入口​も​開通(​タキ​テック​は​地域初​の​ダブル​ブラック、​タキ​トレイル​は​ブラック)。​クルーズ​コントロール​の​上部​区間​も​完成。​ネットワーク​は​13.8kmに。</p>
         </div>
         <div class="journey-nub"></div>
       </div>
       <div class="journey-row right">
         <div class="journey-card">
           <div class="journey-year">2025</div>
-          <div class="journey-head">17.8km · ジャンプラインオープン</div>
-          <p class="journey-desc">ニセコ初のジャンプラインがオープン、専用クライムトレイルとペアで何度も滑れる構成。ネットワークは17.8kmに。ロウアー・ウェスト・クライムの建設に着手。</p>
+          <div class="journey-head">17.8km · ​ジャンプライン​オープン</div>
+          <p class="journey-desc">クルーズ​コントロール​が​完成​し、​あっという間​に​パーク​で​最も​人気​の​トレイル​に。​さらに​ニセコ初​の​ジャンプライン​が​オープン、​専用​の​クライム​トレイル​と​セット​で​何度​も​回せる​構成。​ネットワーク​は​17.8km。​ロウアー​ウェスト​クライム​の​建設​も​始まる。</p>
         </div>
         <div class="journey-nub"></div>
       </div>
       <div class="journey-row left now">
         <div class="journey-card">
           <div class="journey-year">2026</div>
-          <div class="journey-head">ロウアー・ウェスト・クライム · 初のグリーンダウンヒル</div>
-          <p class="journey-desc">ロウアー・ウェスト・クライムが完成し、昨年のジャンプラインクライムに接続。北海道初のグリーンダウンヒルトレイルがロウアー・グリーン・クライムにつながります。両トレイルとも<a href="/ja/partner/">スポンサー募集</a>中。</p>
+          <div class="journey-head">初心者​に​フォーカス</div>
+          <p class="journey-desc">ロウアー​ウェスト​クライム​が​完成​し、​地域初​の​グリーン​ダウンヒル​が​そこ​と​ペア​に​なる​形​で​オープン。​両​トレイル​は​現在​も​<a href="/ja/partner/">スポンサー募集中</a>。</p>
         </div>
         <div class="journey-nub"></div>
       </div>
@@ -120,35 +181,88 @@ masthead:
       <h3
         class="module-title ja-animate"
         data-animation="move-from-bottom"
-        data-delay="200">年ごとの成長</h3>
+        data-delay="200">年ごと​の​成長</h3>
       <div
         class="features-desc ja-animate"
         data-animation="move-from-bottom"
         data-delay="400">
-        <div style="font-size:115%;"><span>ツインピークスのトレイルネットワークの年ごとの拡大。</span></div>
+        <div style="font-size:115%;"><span>各年​に​建設​した​内容​と、​次​に​計画​している​こと。​画像​を​タップ​すると​拡大表示​されます。</span></div>
       </div>
     </div>
 
-    <div class="phase-grid ja-animate" data-animation="move-from-bottom" data-delay="600">
-      <div class="phase-tile">
-        <span class="fa-solid fa-map-location-dot"></span>
-        <div class="year">2022</div>
-        <div class="label">最初の4.4km · ネットワーク始動</div>
-      </div>
-      <div class="phase-tile">
-        <span class="fa-solid fa-map-location-dot"></span>
-        <div class="year">2023</div>
-        <div class="label">10.4km · ツインピークス開園</div>
-      </div>
-      <div class="phase-tile">
-        <span class="fa-solid fa-map-location-dot"></span>
-        <div class="year">2024</div>
-        <div class="label">13.8km · タキテック（ダブルブラック）</div>
-      </div>
-      <div class="phase-tile">
-        <span class="fa-solid fa-map-location-dot"></span>
-        <div class="year">2025</div>
-        <div class="label">17.8km · ジャンプライン + クライム</div>
+    <div class="phase-grid projects-pswp ja-animate" data-animation="move-from-bottom" data-delay="600">
+      <a class="phase-tile" href="/assets/images/projects/twin-peaks/2022-large.webp"
+         data-pswp-width="2400" data-pswp-height="1350" target="_blank" rel="noopener">
+        <img src="/assets/images/projects/twin-peaks/2022.webp"
+             alt="2022年​の​ツインピークス上空写真。​倶知安​上部​の​尾根​に​最初​の​4.4kmの​トレイル​が​金色​で​描かれている"
+             loading="lazy">
+        <div class="caption">
+          <div class="year">2022</div>
+          <div class="label">4.4km · ​初​の​建設、​伐採​なし</div>
+        </div>
+      </a>
+      <a class="phase-tile" href="/assets/images/projects/twin-peaks/2023-large.webp"
+         data-pswp-width="2400" data-pswp-height="1350" target="_blank" rel="noopener">
+        <img src="/assets/images/projects/twin-peaks/2023.webp"
+             alt="2023年​の​ツインピークス上空写真。​トレイルネットワーク​が​10.4kmに​拡大し、​パーク​が​一般​に​開放​された​様子"
+             loading="lazy">
+        <div class="caption">
+          <div class="year">2023</div>
+          <div class="label">10.4km · ​パーク​開園</div>
+        </div>
+      </a>
+      <a class="phase-tile" href="/assets/images/projects/twin-peaks/2024-large.webp"
+         data-pswp-width="2400" data-pswp-height="1350" target="_blank" rel="noopener">
+        <img src="/assets/images/projects/twin-peaks/2024.webp"
+             alt="2024年​の​ツインピークス上空写真。​ネットワーク​が​13.8kmに​拡大し、​初​の​ダブルブラック「タキ​トレイル」と「タキ​テック」が​追加​された​様子"
+             loading="lazy">
+        <div class="caption">
+          <div class="year">2024</div>
+          <div class="label">13.8km · ​初​の​ダブル​ブラック</div>
+        </div>
+      </a>
+      <a class="phase-tile" href="/assets/images/projects/twin-peaks/2025-large.webp"
+         data-pswp-width="2400" data-pswp-height="1350" target="_blank" rel="noopener">
+        <img src="/assets/images/projects/twin-peaks/2025.webp"
+             alt="2025年​の​ツインピークス上空写真。​ネットワーク​が​17.8kmに​到達し、​ニセコ初​の​ジャンプライン​と​専用​クライムトレイル​が​追加​された​様子"
+             loading="lazy">
+        <div class="caption">
+          <div class="year">2025</div>
+          <div class="label">17.8km · ​ジャンプライン​オープン</div>
+        </div>
+      </a>
+      <a class="phase-tile" href="/assets/images/projects/twin-peaks/2026-large.webp"
+         data-pswp-width="2400" data-pswp-height="1350" target="_blank" rel="noopener">
+        <img src="/assets/images/projects/twin-peaks/2026.webp"
+             alt="将来​の​ツインピークス・​ネットワーク​の​空撮​イメージ。​ロウアー​ウェスト​クライム​が​完成​し、​地域初​の​グリーン​ダウンヒルトレイル​が​追加​された​様子"
+             loading="lazy">
+        <div class="caption">
+          <div class="year">Future</div>
+          <div class="label">初心者​に​フォーカス</div>
+        </div>
+      </a>
+    </div>
+
+  </div>
+
+  <!-- NAMBA's Role -->
+  <div class="section">
+
+    <div class="module-title-wrap" style="max-width:900px;">
+      <h3
+        class="module-title ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="200">NAMBAの​役割</h3>
+      <div
+        class="features-desc ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="400">
+        <ul class="benefit-list">
+          <li><i class="fa-solid fa-circle-check"></i><span>マスタープラン​と​地域全体​の​トレイル​ネットワーク​の​設計</span></li>
+          <li><i class="fa-solid fa-circle-check"></i><span>コミュニティ​資金​の​調達​と​運営管理</span></li>
+          <li><i class="fa-solid fa-circle-check"></i><span>トレイル​の​設計、​建設、​継続​メンテナンス</span></li>
+          <li><i class="fa-solid fa-circle-check"></i><span>日々​の​運営​と​ライダー​体験</span></li>
+        </ul>
       </div>
     </div>
 
@@ -161,12 +275,18 @@ masthead:
       <h3
         class="module-title ja-animate"
         data-animation="move-from-bottom"
-        data-delay="200">アレグラとのパートナーシップ</h3>
+        data-delay="200">アレグラ​と​の​パートナーシップ</h3>
       <div
         class="features-desc ja-animate"
         data-animation="move-from-bottom"
         data-delay="400">
-        <div style="font-size:130%;"><span>ツインピークスのすべてのトレイルは、アルプスを中心に世界各地で知られたトレイルネットワークを手がけるスイスのトレイル建設会社、アレグラと協働で設計・建設されています。2023年のひと夏で6kmを建設したのは、アレグラ史上最速のプロジェクトでした。</span></div>
+        <div style="font-size:130%;"><span>ツインピークス​の​すべて​の​トレイル​は、​アルプス各地​で​主要​な​トレイル​ネットワーク​を​手がけて​きた​スイス​の​アレグラ​と​協働​で​設計・​建設​されて​います。​アレグラ​は、​ツインピークス​を「これまでに​手がけた、​あるいは​世界中​で​見聞き​した​中​で​最も​急速​に​成長​して​いる​トレイル​ネットワーク​プロジェクト」と​語って​います。</span></div>
+      </div>
+      <div
+        class="features-desc ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="600">
+        <div style="font-size:130%;"><span>現場​で​は、​NAMBAの​シーズン​トレイル​クルー​が​建設​を​担い、​コミュニティ​の​ボランティア​が​定期的​な​ディグ​デー​で​手​を​貸して​います。</span></div>
       </div>
     </div>
 
@@ -179,12 +299,18 @@ masthead:
       <h3
         class="module-title ja-animate"
         data-animation="move-from-bottom"
-        data-delay="200">100%コミュニティ資金</h3>
+        data-delay="200">100%​コミュニティ​資金</h3>
       <div
         class="features-desc ja-animate"
         data-animation="move-from-bottom"
         data-delay="400">
-        <div style="font-size:130%;"><span>ツインピークスは100%コミュニティ資金で運営されています。2022年から2025年までの累計で、92%が民間・コミュニティからの資金、うち74%が地元企業から。82%が直接トレイル建設に使われ、メンテナンスを含めると95%がトレイル関連に充てられています。すべてのトレイルにスポンサーが付いています。</span></div>
+        <div style="font-size:130%;"><span>ツインピークス​は​100%​コミュニティ​資金。​2022年​から​2025年​まで、​資金​の​92%​が​民間・​コミュニティ、​74%​は​地元​企業​だけ​から。​1円​の​うち​82%​が​直接​トレイル​建設​に、​メンテナンス​を​含めれば​95%。​パーク​の​すべて​の​トレイル​に​スポンサー​が​付いて​います。</span></div>
+      </div>
+      <div
+        class="features-desc ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="600">
+        <div style="font-size:130%;"><span>来場​者​数​も​ネットワーク​と​共​に​伸び​て​います:​ 2024年​7,747人、​2025年​11,500人​超。</span></div>
       </div>
     </div>
 
@@ -193,7 +319,7 @@ masthead:
   <div style="max-width:900px; margin:20px auto;">
     <img
       src="/assets/images/partner/trail-map-board.webp"
-      alt="ツインピークスバイクパークのトレイルマップボードの前に立つ2人のライダー、下部にスポンサーロゴが並ぶ"
+      alt="ツインピークスバイクパーク​の​トレイル​マップ​ボード​の​前​に​立つ​2人​の​ライダー、​下部​に​スポンサー​ロゴ​が​並ぶ"
       loading="lazy"
       style="width:100%; height:auto; border-radius:3px; display:block;" />
   </div>
@@ -205,18 +331,36 @@ masthead:
       <h3
         class="module-title ja-animate"
         data-animation="move-from-bottom"
-        data-delay="200">ツインピークスを走る、または支援する</h3>
+        data-delay="200">ツインピークス​を​走る、​または​支える</h3>
+      <div
+        class="features-desc ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="400">
+        <div style="font-size:130%;"><span>ツインピークス​は​シーズン中​毎日​オープン。​料金​なし、​予約​なし。​あるいは​次​に​来る​もの​を​支える​パートナー​に​なって​ください。</span></div>
+      </div>
     </div>
     <div class="module-title-wrap">
       <div
         class="t3-section action ja-animate"
         data-animation="move-from-bottom"
-        data-delay="400">
-        <a class="btn btn-primary" href="/ja/twin-peaks/">ツインピークスを走る</a>
-        <a class="btn btn-secondary" href="/ja/partner/" style="margin-left: 10px;">パートナーになる</a>
+        data-delay="600">
+        <a class="btn btn-primary" href="/ja/twin-peaks/">ツインピークス​を​走る</a>
+        <a class="btn btn-secondary" href="/ja/partner/" style="margin-left: 10px;">パートナー​に​なる</a>
+        <a class="btn btn-secondary" href="/ja/projects/" style="margin-left: 10px;">プロジェクト​一覧​に​戻る</a>
       </div>
     </div>
 
   </div>
 
 </div>
+
+<link rel="stylesheet" href="https://unpkg.com/photoswipe@5.4.4/dist/photoswipe.css">
+<script type="module">
+  import PhotoSwipeLightbox from 'https://unpkg.com/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.js';
+  const lightbox = new PhotoSwipeLightbox({
+    gallery: '.projects-pswp',
+    children: 'a',
+    pswpModule: () => import('https://unpkg.com/photoswipe@5.4.4/dist/photoswipe.esm.js'),
+  });
+  lightbox.init();
+</script>
