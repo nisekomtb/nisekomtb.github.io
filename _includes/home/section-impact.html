@@ -1,1 +1,44 @@
-<!-- _includes/home/section-impact.html -->
+<!-- _includes/home/section-impact.html: Section 05 -->
+<section class="home-impact fade-up">
+  <div class="container home-impact-wrap">
+    <header class="home-impact-head">
+      <h2 class="home-impact-title">
+        {% if page.lang == "en" %}By the numbers.
+        {% else %}数字で<wbr>見る<wbr>NAMBA。
+        {% endif %}
+      </h2>
+    </header>
+
+    <div class="home-impact-grid">
+      <div class="home-impact-stat" data-target="21" data-suffix="+">
+        <div class="home-impact-num"><span class="value">0</span><span class="unit">km</span></div>
+        <div class="home-impact-lbl">{% if page.lang == "en" %}Free trails{% else %}無料<wbr>トレイル{% endif %}</div>
+      </div>
+      <div class="home-impact-stat" data-target="11500" data-suffix="+">
+        <div class="home-impact-num"><span class="value">0</span></div>
+        <div class="home-impact-lbl">{% if page.lang == "en" %}Riders in 2025{% else %}2025年の<wbr>ライダー数{% endif %}</div>
+      </div>
+      <div class="home-impact-stat" data-target="100" data-suffix="%">
+        <div class="home-impact-num"><span class="value">0</span><span class="unit">%</span></div>
+        <div class="home-impact-lbl">{% if page.lang == "en" %}Trail funding success{% else %}トレイル<wbr>資金<wbr>調達<wbr>成功率{% endif %}</div>
+      </div>
+      <div class="home-impact-stat" data-target="200" data-suffix="+">
+        <div class="home-impact-num"><span class="value">0</span></div>
+        <div class="home-impact-lbl">{% if page.lang == "en" %}Dirty Dames participants{% else %}ダーティー・<wbr>デイムス<wbr>参加者{% endif %}</div>
+      </div>
+      <div class="home-impact-stat" data-target="4" data-suffix="">
+        <div class="home-impact-num"><span class="value">0</span></div>
+        <div class="home-impact-lbl">{% if page.lang == "en" %}Bike parks{% else %}バイク<wbr>パーク{% endif %}</div>
+      </div>
+    </div>
+
+    <p class="home-impact-link">
+      <a href="{% if page.lang == 'ja' %}/ja{% endif %}/impact/">
+        {% if page.lang == "en" %}See the full impact story →
+        {% else %}インパクト・<wbr>ストーリーを<wbr>見る →
+        {% endif %}
+      </a>
+    </p>
+  </div>
+</section>
+<!-- Source for numbers: _docs/marketing-strategy.md §0 -->

@@ -284,3 +284,68 @@ html[lang="ja"] .home-pull-quote { font-style: normal; }
 @media (max-width: 767px) {
   .home-video-player { max-width: none; padding: 0 16px; }
 }
+
+/* ── Section 05: By the Numbers ───────────────────────────────────── */
+.home-impact {
+  background: #181818;
+  padding: clamp(72px, 12vh, 140px) 0;
+  color: #ededeb;
+}
+.home-impact-head { text-align: center; margin-bottom: 64px; }
+.home-impact-title {
+  font-size: clamp(26px, 3.5vw, 40px);
+  font-weight: 700;
+  margin: 0;
+}
+.home-impact-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.home-impact-stat {
+  padding: 32px 18px;
+  text-align: center;
+  border-right: 1px solid rgba(255,255,255,0.06);
+  font-variant-numeric: tabular-nums;
+}
+.home-impact-stat:last-child { border-right: none; }
+.home-impact-num {
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 800;
+  color: #d4a574;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.home-impact-num .unit {
+  font-size: 0.55em;
+  font-weight: 600;
+  margin-left: 2px;
+  opacity: 0.8;
+}
+.home-impact-lbl {
+  margin-top: 14px;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  font-weight: 500;
+}
+.home-impact-link {
+  text-align: center;
+  margin-top: 48px;
+  margin-bottom: 0;
+  font-size: 14px;
+}
+.home-impact-link a {
+  color: #d4a574;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid transparent;
+  transition: border-color 200ms ease;
+}
+.home-impact-link a:hover { border-color: #d4a574; }
+
+@media (max-width: 1023px) { .home-impact-grid { grid-template-columns: repeat(3, 1fr); } .home-impact-stat:nth-child(3n) { border-right: none; } }
+@media (max-width: 600px)  { .home-impact-grid { grid-template-columns: repeat(2, 1fr); } .home-impact-stat:nth-child(3n) { border-right: 1px solid rgba(255,255,255,0.06); } .home-impact-stat:nth-child(2n) { border-right: none; } }

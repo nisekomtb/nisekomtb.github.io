@@ -23,6 +23,7 @@
     initHeroParallax();
     initFadeUps();
     initNetworkScrub();
+    initCountUps();
   }
 
   function initFadeUps() {
@@ -171,5 +172,52 @@
 
     measure();
     update();
+  }
+
+  function initCountUps() {
+    var stats = document.querySelectorAll('.home-impact-stat');
+    if (stats.length === 0) return;
+
+    function finalValue(stat) {
+      var target = parseFloat(stat.dataset.target || '0');
+      var suffix = stat.dataset.suffix || '';
+      var v = stat.querySelector('.value');
+      if (v) v.textContent = formatNumber(target) + suffix;
+    }
+
+    if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+      stats.forEach(finalValue);
+      return;
+    }
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var stat = entry.target;
+        var target = parseFloat(stat.dataset.target || '0');
+        var suffix = stat.dataset.suffix || '';
+        var v = stat.querySelector('.value');
+        if (!v) return;
+        var duration = 1200;
+        var start = performance.now();
+        function tick(now) {
+          var t = Math.min((now - start) / duration, 1);
+          var eased = 1 - Math.pow(1 - t, 4); // easeOutQuart
+          var current = target * eased;
+          v.textContent = formatNumber(current) + (t < 1 ? '': suffix);
+          if (t < 1) requestAnimationFrame(tick);
+          else v.textContent = formatNumber(target) + suffix;
+        }
+        requestAnimationFrame(tick);
+        io.unobserve(stat);
+      });
+    }, { threshold: 0.4 });
+    stats.forEach(function (s) { io.observe(s); });
+  }
+
+  function formatNumber(n) {
+    if (n >= 1000) return Math.round(n).toLocaleString();
+    if (Number.isInteger(n)) return String(Math.round(n));
+    return Math.round(n).toString();
   }
 })();
