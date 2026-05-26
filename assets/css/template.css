@@ -7695,7 +7695,6 @@ joomla-field-custom.field-custom-wrapper .input-group .input-group-btn .btn span
   color: var(--color-text-heading);
   text-decoration: none;
 }
-.event-card-title a:hover { color: var(--color-primary); }
 .event-card-link::after {
   /* Card-wide click target. Sits below the badges (z-index 2) so they
      stay clickable / visible, above the rest of the card chrome. */
