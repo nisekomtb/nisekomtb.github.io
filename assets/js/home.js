@@ -72,51 +72,49 @@
     var section = document.querySelector('.home-network');
     if (!section) return;
     var images = section.querySelectorAll('.home-network-img');
-    var captions = section.querySelectorAll('.home-network-caption');
-    var tabs = section.querySelectorAll('.home-network-tab');
+    var rows = section.querySelectorAll('.home-network-row');
+    var spineFill = section.querySelector('.home-network-spine-fill');
     var badge = section.querySelector('.home-network-year-badge');
     if (images.length === 0) return;
 
     var years = section.dataset.years.split(',');
-    var current = 0;
+    var currentIdx = -1;
 
     function setYear(idx) {
       if (idx < 0) idx = 0;
       if (idx >= years.length) idx = years.length - 1;
-      if (idx === current) return;
+      if (idx === currentIdx) return;
       images.forEach(function (img, i) {
         if (i === idx) img.setAttribute('data-active', 'true');
         else img.removeAttribute('data-active');
       });
-      captions.forEach(function (cap, i) {
-        if (i === idx) cap.setAttribute('data-active', 'true');
-        else cap.removeAttribute('data-active');
-      });
-      tabs.forEach(function (tab, i) {
-        if (i === idx) {
-          tab.setAttribute('data-active', 'true');
-          tab.setAttribute('aria-pressed', 'true');
-        } else {
-          tab.removeAttribute('data-active');
-          tab.setAttribute('aria-pressed', 'false');
-        }
+      rows.forEach(function (row, i) {
+        if (i < idx) row.setAttribute('data-state', 'passed');
+        else if (i === idx) row.setAttribute('data-state', 'current');
+        else row.removeAttribute('data-state');
       });
       if (badge) badge.textContent = years[idx];
-      current = idx;
+      currentIdx = idx;
     }
 
-    // Tab clicks (mobile + accessible)
-    tabs.forEach(function (tab, i) {
-      tab.addEventListener('click', function () { setYear(i); });
-    });
-
-    if (prefersReducedMotion || isMobile) return;
+    /* Mobile and reduced-motion: render in final state (all rows revealed,
+       2026 image active). CSS un-sticks the section so it scrolls naturally. */
+    if (prefersReducedMotion || isMobile) {
+      // For mobile we want to highlight 2026 as current.
+      setYear(years.length - 1);
+      rows.forEach(function (row) { row.setAttribute('data-state', 'passed'); });
+      rows[rows.length - 1].setAttribute('data-state', 'current');
+      if (spineFill) spineFill.style.height = '100%';
+      return;
+    }
 
     // Desktop: scroll-tied scrub.
-    // Cache section dimensions to avoid layout-flushing reads per frame.
     var sectionTop = 0;
     var sectionHeight = 0;
     var viewportHeight = window.innerHeight;
+    var spineHeight = 0;
+    var nubOffsets = []; // y-position of each nub relative to the spine top
+    var spine = section.querySelector('.home-network-spine');
 
     function measure() {
       var rect = section.getBoundingClientRect();
@@ -124,6 +122,17 @@
       sectionTop = rect.top + scrollY;
       sectionHeight = section.offsetHeight;
       viewportHeight = window.innerHeight;
+      if (spine) {
+        var spineRect = spine.getBoundingClientRect();
+        spineHeight = spineRect.height;
+        nubOffsets = [];
+        rows.forEach(function (row) {
+          var nub = row.querySelector('.home-network-nub');
+          if (!nub) { nubOffsets.push(0); return; }
+          var nubRect = nub.getBoundingClientRect();
+          nubOffsets.push((nubRect.top + nubRect.height / 2) - spineRect.top);
+        });
+      }
     }
 
     var ticking = false;
@@ -132,9 +141,20 @@
       var relativeScroll = scrollY - sectionTop;
       var scrollableRange = Math.max(1, sectionHeight - viewportHeight);
       var progress = Math.min(Math.max(relativeScroll / scrollableRange, 0), 1);
-      var idx = Math.floor(progress * years.length);
+
+      // Dot travels from nub[0] at progress=0 to nub[last] at progress=1.
+      // Interpolate between adjacent nubs so the dot lands exactly on each.
+      var nubFloat = progress * (years.length - 1);
+      var idx = Math.round(nubFloat);
       if (idx >= years.length) idx = years.length - 1;
       setYear(idx);
+
+      if (spineFill && spineHeight > 0 && nubOffsets.length === years.length) {
+        var floorI = Math.min(Math.floor(nubFloat), years.length - 2);
+        var frac = nubFloat - floorI;
+        var dotY = nubOffsets[floorI] + (nubOffsets[floorI + 1] - nubOffsets[floorI]) * frac;
+        spineFill.style.height = (dotY / spineHeight * 100) + '%';
+      }
       ticking = false;
     }
 
@@ -145,7 +165,6 @@
       }
     }, { passive: true });
 
-    // Recompute on resize (debounced via rAF).
     var resizeTicking = false;
     window.addEventListener('resize', function () {
       if (resizeTicking) return;

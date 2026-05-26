@@ -182,42 +182,28 @@ html[lang="ja"] .home-pull-quote { font-style: normal; }
   .fade-up { opacity: 1; transform: none; transition: none; }
 }
 
-/* ── Section 03: The Network ──────────────────────────────────────── */
+/* ── Section 03: The Network (sticky theatre + journey rail) ─────── */
+/* Section is full-bleed and very tall so the inner sticky stage stays
+   pinned for the entire scrub. Total height = 100vh stage + 4 viewports
+   of scroll for the 4 year transitions. */
 .home-network {
   background: var(--color-bg);
-  padding: clamp(72px, 12vh, 140px) 0;
   color: var(--color-text);
   position: relative;
+  height: 500vh;
 }
-.home-network-head { margin-bottom: 56px; text-align: center; }
-.home-network-title {
-  font-family: "Fruit Viesta", "Zen Maru Gothic", "Metropolis", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
-  font-weight: 500;
-  font-size: clamp(28px, 4vw, 48px);
-  line-height: 1.1;
-  margin: 0;
-  color: var(--color-text-heading);
-}
-html[lang="ja"] .home-network-title { letter-spacing: normal; text-transform: none; }
-.home-network-grid {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  gap: 56px;
-  align-items: start;
-  position: relative;
-  /* Desktop: tall enough to give scroll-tied scrub ~5 viewports of travel
-     so the year scrub progresses smoothly through 2022 -> 2026. Mobile
-     override below removes this (tab-based switching, no scroll-tie). */
-  min-height: 220vh;
-}
-.home-network-map {
+.home-network-stage {
   position: sticky;
-  top: 96px;
-  aspect-ratio: 4 / 3;
-  background: var(--color-bg-panel);
-  border-radius: 8px;
+  top: 0;
+  height: 100vh;
   overflow: hidden;
+  background: var(--color-bg);
+}
+
+/* Background map: full-bleed crossfade behind everything */
+.home-network-bg {
+  position: absolute;
+  inset: 0;
 }
 .home-network-img {
   position: absolute;
@@ -226,69 +212,215 @@ html[lang="ja"] .home-network-title { letter-spacing: normal; text-transform: no
   height: 100%;
   object-fit: cover;
   opacity: 0;
-  transition: opacity 400ms ease;
+  transition: opacity 600ms ease;
 }
 .home-network-img[data-active="true"] { opacity: 1; }
+.home-network-overlay {
+  position: absolute;
+  inset: 0;
+  /* Heavier on the left so the rail and cards stay legible regardless of
+     what's underneath; lighter on the right so the map detail still reads. */
+  background:
+    linear-gradient(90deg, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.45) 45%, rgba(0,0,0,0.25) 100%),
+    linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0) 25%, rgba(0,0,0,0) 75%, rgba(0,0,0,0.5) 100%);
+  pointer-events: none;
+}
+
+/* Title pinned top-left of the stage */
+.home-network-head {
+  position: absolute;
+  top: clamp(32px, 6vh, 56px);
+  left: clamp(24px, 5vw, 80px);
+  z-index: 3;
+}
+.home-network-title {
+  font-family: "Fruit Viesta", "Zen Maru Gothic", "Metropolis", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: clamp(28px, 4vw, 56px);
+  line-height: 1.05;
+  margin: 0;
+  color: var(--color-text-heading);
+  text-shadow: 0 2px 12px rgba(0,0,0,0.55);
+}
+html[lang="ja"] .home-network-title { letter-spacing: normal; text-transform: none; }
+.home-network-sub {
+  margin: 8px 0 0;
+  font-size: clamp(13px, 1.1vw, 15px);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  font-weight: 500;
+}
+html[lang="ja"] .home-network-sub { letter-spacing: normal; text-transform: none; }
+
+/* Year badge top-right of the stage */
 .home-network-year-badge {
   position: absolute;
-  bottom: 16px;
-  left: 16px;
+  top: clamp(28px, 5vh, 48px);
+  right: clamp(24px, 5vw, 80px);
+  z-index: 3;
   font-family: "Fruit Viesta", "Zen Maru Gothic", "Metropolis", Helvetica, Arial, sans-serif;
   font-weight: 500;
-  font-size: clamp(36px, 5vw, 64px);
+  font-size: clamp(56px, 8vw, 112px);
   color: var(--color-accent);
   line-height: 1;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+  text-shadow: 0 2px 16px rgba(0,0,0,0.65);
   pointer-events: none;
+  opacity: 0.92;
 }
-.home-network-tabs {
-  position: absolute;
-  bottom: 16px;
-  right: 16px;
-  display: none; /* desktop hides; mobile shows */
-  gap: 6px;
-}
-.home-network-tab {
-  background: rgba(0,0,0,0.4);
-  border: 1px solid rgba(255,255,255,0.2);
-  color: var(--color-text-light);
-  font-size: 11px;
-  letter-spacing: 0.05em;
-  padding: 6px 10px;
-  border-radius: 999px;
-  cursor: pointer;
-}
-.home-network-tab[data-active="true"] {
-  background: var(--color-accent);
-  color: var(--color-bg);
-  border-color: var(--color-accent);
-}
-.home-network-captions {
-  /* Sticky alongside the map so the caption tracks with the year being shown
-     instead of floating at the top of a tall column. */
-  position: sticky;
-  top: 96px;
-  min-height: 280px;
-  display: grid;
-}
-.home-network-caption {
-  /* Stack all captions in the same grid cell so they overlay each other;
-     the JS toggles data-active to fade the right one in. */
-  grid-area: 1 / 1;
-  align-self: center;
-  font-size: clamp(15px, 1.4vw, 18px);
-  line-height: 1.55;
-  color: var(--color-text-light);
-  opacity: 0;
-  transform: translateY(8px);
-  transition: opacity 350ms ease, transform 350ms ease;
-  pointer-events: none;
-}
-.home-network-caption[data-active="true"] { opacity: 1; transform: translateY(0); }
-.home-network-caption strong { color: var(--color-accent); font-weight: 500; margin-right: 6px; }
 
+/* The journey rail: left-aligned, vertically centred in the stage */
+.home-network-rail {
+  position: absolute;
+  top: 50%;
+  left: clamp(24px, 5vw, 80px);
+  transform: translateY(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(14px, 2.2vh, 26px);
+  max-width: 460px;
+  width: 42vw;
+  padding-left: 40px; /* room for spine + nub */
+}
+
+/* The spine runs the full height of the rail, gold gradient with a fill
+   that grows from top down as the user scrubs. */
+.home-network-spine {
+  position: absolute;
+  left: 12px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: linear-gradient(180deg,
+    rgba(200, 169, 81, 0.15) 0%,
+    rgba(200, 169, 81, 0.45) 6%,
+    rgba(200, 169, 81, 0.45) 94%,
+    rgba(200, 169, 81, 0.15) 100%);
+}
+.home-network-spine-fill {
+  position: absolute;
+  inset: 0 0 auto 0;
+  width: 100%;
+  height: 0%;
+  background: linear-gradient(180deg, var(--color-accent) 0%, var(--color-accent) 90%, transparent 100%);
+  transition: height 280ms ease-out;
+}
+/* The glowing dot at the leading edge of the fill */
+.home-network-spine-fill::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 50%);
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 4px var(--color-bg),
+    0 0 0 6px var(--color-accent),
+    0 0 20px rgba(200, 169, 81, 0.9);
+  animation: home-network-pulse 2.4s ease-in-out infinite;
+}
+@keyframes home-network-pulse {
+  0%, 100% {
+    box-shadow:
+      0 0 0 4px var(--color-bg),
+      0 0 0 6px var(--color-accent),
+      0 0 18px rgba(200, 169, 81, 0.8);
+  }
+  50% {
+    box-shadow:
+      0 0 0 4px var(--color-bg),
+      0 0 0 6px var(--color-accent),
+      0 0 28px rgba(200, 169, 81, 1);
+  }
+}
+
+/* Each year row */
+.home-network-row {
+  position: relative;
+  display: block;
+  opacity: 0.32;
+  transform: translateX(-6px);
+  transition: opacity 380ms ease, transform 380ms ease;
+}
+.home-network-row[data-state="passed"] { opacity: 0.68; transform: translateX(0); }
+.home-network-row[data-state="current"] { opacity: 1; transform: translateX(0); }
+.home-network-nub {
+  position: absolute;
+  left: -34px;
+  top: 8px;
+  width: 14px;
+  height: 14px;
+  background: rgba(200, 169, 81, 0.4);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px var(--color-bg);
+  transition: background 280ms ease, box-shadow 280ms ease;
+}
+.home-network-row[data-state="passed"] .home-network-nub,
+.home-network-row[data-state="current"] .home-network-nub {
+  background: var(--color-accent);
+}
+.home-network-card {
+  background: rgba(20, 20, 20, 0.78);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(200, 169, 81, 0.18);
+  border-left: 3px solid var(--color-accent);
+  border-radius: 6px;
+  padding: 14px 18px;
+}
+.home-network-row[data-state="current"] .home-network-card {
+  border-color: rgba(200, 169, 81, 0.5);
+  border-left-color: var(--color-accent);
+  background: rgba(20, 20, 20, 0.86);
+}
+.home-network-year {
+  color: var(--color-accent);
+  font-weight: 700;
+  font-size: 120%;
+  line-height: 1;
+  margin-bottom: 6px;
+  font-family: "Metropolis", Helvetica, Arial, sans-serif;
+  letter-spacing: -0.3px;
+}
+.home-network-now {
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 50%;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #fff;
+  vertical-align: middle;
+  opacity: 0;
+  transition: opacity 280ms ease;
+}
+.home-network-row[data-state="current"] .home-network-now { opacity: 1; }
+.home-network-card-head {
+  color: #fff;
+  font-family: "Metropolis", Helvetica, Arial, sans-serif;
+  font-size: clamp(15px, 1.3vw, 18px);
+  font-weight: 500;
+  line-height: 1.3;
+  margin: 0 0 6px;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.home-network-card-desc {
+  color: #cccccc;
+  font-size: clamp(12px, 1vw, 14px);
+  line-height: 1.5;
+  margin: 0;
+}
+:lang(ja) .home-network-card-head { line-height: 1.4; }
+:lang(ja) .home-network-card-desc { line-height: 1.7; }
+
+/* Parks grid, post-theatre */
+.home-network-parks-wrap { padding: clamp(48px, 8vh, 96px) 0; }
 .home-network-parks {
-  margin-top: 48px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 18px;
@@ -311,17 +443,80 @@ html[lang="ja"] .home-network-title { letter-spacing: normal; text-transform: no
 }
 .home-network-park p { font-size: 13px; line-height: 1.45; margin: 0; color: var(--color-text); }
 
-@media (max-width: 1023px) {
-  .home-network-grid { grid-template-columns: 1fr; gap: 32px; min-height: auto; }
-  .home-network-map { position: relative; top: auto; }
-  .home-network-captions { min-height: auto; }
-  .home-network-caption { position: relative; inset: auto; }
-  .home-network-caption:not([data-active="true"]) { display: none; }
-  .home-network-tabs { display: flex; }
+/* Mobile (< 768px): un-stick. Show the 2026 frame as a static preview
+   above the stacked timeline cards, no scrub. */
+@media (max-width: 767px) {
+  .home-network {
+    height: auto;
+    padding: clamp(56px, 9vh, 96px) 0 clamp(32px, 6vh, 64px);
+  }
+  .home-network-stage {
+    position: relative;
+    top: auto;
+    height: auto;
+    overflow: visible;
+    padding: 0;
+  }
+  .home-network-bg {
+    position: relative;
+    inset: auto;
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    margin: 0 0 32px;
+    overflow: hidden;
+  }
+  .home-network-img:not([data-year="2026"]) { display: none; }
+  .home-network-img[data-year="2026"] { opacity: 1; }
+  .home-network-overlay {
+    background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.5) 100%);
+  }
+  .home-network-head {
+    position: relative;
+    top: auto;
+    left: auto;
+    padding: 0 24px;
+    margin-bottom: 28px;
+    text-align: left;
+  }
+  .home-network-year-badge { display: none; }
+  .home-network-rail {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: 100%;
+    max-width: none;
+    padding: 0 24px 0 56px;
+    gap: 18px;
+  }
+  .home-network-spine { left: 38px; }
+  .home-network-spine-fill { height: 100%; }
+  .home-network-spine-fill::after { display: none; }
+  .home-network-row { opacity: 1; transform: none; }
+  .home-network-nub { left: -30px; background: var(--color-accent); }
+  .home-network-card { padding: 14px 16px; }
+  .home-network-parks-wrap { padding: 48px 0; }
+  .home-network-parks { grid-template-columns: 1fr; gap: 12px; padding: 0 24px; }
+}
+
+/* Mid-range (768-1023px): narrower rail, keep theatre */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .home-network-rail { width: 48vw; max-width: 420px; }
   .home-network-parks { grid-template-columns: repeat(2, 1fr); }
 }
-@media (max-width: 480px) {
-  .home-network-parks { grid-template-columns: 1fr; }
+
+/* prefers-reduced-motion: collapse to first frame + full card list */
+@media (prefers-reduced-motion: reduce) {
+  .home-network { height: auto; }
+  .home-network-stage { position: relative; height: auto; overflow: visible; padding: 80px 0; }
+  .home-network-bg { display: none; }
+  .home-network-head { position: relative; top: auto; left: auto; padding: 0 24px; margin-bottom: 32px; }
+  .home-network-year-badge { display: none; }
+  .home-network-rail { position: relative; top: auto; left: auto; transform: none; width: 100%; max-width: 760px; padding: 0 24px 0 56px; margin: 0 auto; }
+  .home-network-spine-fill { height: 100%; }
+  .home-network-spine-fill::after { display: none; }
+  .home-network-row { opacity: 1; transform: none; }
+  .home-network-nub { background: var(--color-accent); }
 }
 
 /* ── Section 04: Video block ──────────────────────────────────────── */

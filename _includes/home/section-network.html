@@ -1,62 +1,90 @@
-<!-- _includes/home/section-network.html: Section 03 -->
+<!-- _includes/home/section-network.html: Section 03 (sticky theatre with journey rail) -->
+{% assign years = "2022,2023,2024,2025,2026" | split: "," %}
 <section class="home-network" data-years="2022,2023,2024,2025,2026">
-  <div class="container home-network-wrap">
-    <header class="home-network-head fade-up">
+  <div class="home-network-stage">
+
+    <div class="home-network-bg">
+      {% for y in years %}
+        <img src="/assets/images/about/network/{{ y }}.webp"
+             srcset="/assets/images/about/network/{{ y }}.webp 1600w, /assets/images/about/network/{{ y }}-large.webp 2400w"
+             sizes="100vw"
+             alt="{% if page.lang == 'en' %}Niseko MTB trail network in {{ y }}{% else %}{{ y }}年のニセコMTBトレイルネットワーク{% endif %}"
+             class="home-network-img"
+             data-year="{{ y }}"
+             {% if forloop.first %}data-active="true"{% endif %}
+             loading="lazy"/>
+      {% endfor %}
+      <div class="home-network-overlay"></div>
+    </div>
+
+    <header class="home-network-head">
       <h2 class="home-network-title">
-        {% if page.lang == "en" %}Niseko's network, 2022 to 2026.
-        {% else %}ニセコの<wbr>ネットワーク、<wbr>2022年から<wbr>2026年へ。
+        {% if page.lang == "en" %}The Network
+        {% else %}ネットワーク
         {% endif %}
       </h2>
+      <p class="home-network-sub">
+        {% if page.lang == "en" %}2022 to 2026
+        {% else %}2022年から2026年へ
+        {% endif %}
+      </p>
+      <div class="home-network-year-badge" aria-hidden="true">2022</div>
     </header>
 
-    <div class="home-network-grid">
-      <div class="home-network-map">
-        {% assign years = "2022,2023,2024,2025,2026" | split: "," %}
-        {% for y in years %}
-          <img src="/assets/images/home/network-{{ y }}.webp"
-               alt="{% if page.lang == 'en' %}Niseko MTB trail network in {{ y }}{% else %}{{ y }}年のニセコMTBトレイルネットワーク{% endif %}"
-               class="home-network-img"
-               data-year="{{ y }}"
-               {% if forloop.first %}data-active="true"{% endif %}
-               loading="lazy"/>
-        {% endfor %}
-        <div class="home-network-year-badge">2022</div>
-        <div class="home-network-tabs">
-          {% for y in years %}
-            <button class="home-network-tab" data-year="{{ y }}" type="button" aria-label="{{ y }}" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}">{{ y }}</button>
-          {% endfor %}
+    <div class="home-network-rail" aria-hidden="true">
+      <div class="home-network-spine">
+        <div class="home-network-spine-fill"></div>
+      </div>
+
+      <div class="home-network-row" data-year-idx="0" data-year="2022">
+        <div class="home-network-nub"></div>
+        <div class="home-network-card">
+          <div class="home-network-year">2022</div>
+          <h3 class="home-network-card-head">{% if page.lang == "en" %}First trails open{% else %}最初の<wbr>トレイル<wbr>開設{% endif %}</h3>
+          <p class="home-network-card-desc">{% if page.lang == "en" %}NAMBA is officially founded. The first trails at Twin Peaks open to the public, all built under a 1m trail-width restriction without cutting down a single tree.{% else %}NAMBA<wbr>設立。<wbr>ツインピークスの<wbr>最初の<wbr>トレイルが<wbr>一般公開。<wbr>すべて<wbr>1m幅の<wbr>制限の<wbr>もと、<wbr>樹木を<wbr>一本も<wbr>伐採せずに<wbr>完成。{% endif %}</p>
         </div>
       </div>
 
-      <div class="home-network-captions">
-        <div class="home-network-caption" data-year="2022" data-active="true">
-          {% if page.lang == "en" %}<strong>2022.</strong> NAMBA founded. The first trail at Twin Peaks opens to the public.
-          {% else %}<strong>2022年。</strong>NAMBA<wbr>設立。<wbr>ツインピークスの<wbr>最初の<wbr>トレイルが<wbr>一般公開。
-          {% endif %}
+      <div class="home-network-row" data-year-idx="1" data-year="2023">
+        <div class="home-network-nub"></div>
+        <div class="home-network-card">
+          <div class="home-network-year">2023</div>
+          <h3 class="home-network-card-head">{% if page.lang == "en" %}Twin Peaks expands{% else %}ツインピークス<wbr>拡張{% endif %}</h3>
+          <p class="home-network-card-desc">{% if page.lang == "en" %}Allegra-designed flow trails open. The pump track and skills area follow. Volunteers show up to build bridges, install signage, and hand-seed grass.{% else %}アレグラ設計の<wbr>フロー<wbr>トレイルが<wbr>続々<wbr>オープン。<wbr>パンプ<wbr>トラックと<wbr>スキル<wbr>エリアも<wbr>完成。<wbr>ボランティアが<wbr>橋の<wbr>建設、<wbr>サイン<wbr>設置、<wbr>芝生の<wbr>手蒔きに<wbr>参加。{% endif %}</p>
         </div>
-        <div class="home-network-caption" data-year="2023">
-          {% if page.lang == "en" %}<strong>2023.</strong> Twin Peaks expands. Allegra-designed flow trails open. The pump track and skills area follow.
-          {% else %}<strong>2023年。</strong>ツインピークスが<wbr>拡張。<wbr>アレグラ設計の<wbr>フロートレイルが<wbr>オープン。<wbr>パンプトラックと<wbr>スキルエリアが<wbr>続く。
-          {% endif %}
+      </div>
+
+      <div class="home-network-row" data-year-idx="2" data-year="2024">
+        <div class="home-network-nub"></div>
+        <div class="home-network-card">
+          <div class="home-network-year">2024</div>
+          <h3 class="home-network-card-head">{% if page.lang == "en" %}Two parks, one network{% else %}2つの<wbr>パーク、<wbr>1つの<wbr>ネットワーク{% endif %}</h3>
+          <p class="home-network-card-desc">{% if page.lang == "en" %}7,500+ riders. Twin Peaks signage system rolls out. Grand Hirafu consulting begins, with a future link to Twin Peaks in mind.{% else %}来場者<wbr>7,500人超。<wbr>ツインピークスの<wbr>サイン<wbr>システム<wbr>導入。<wbr>グランヒラフへの<wbr>コンサルティング<wbr>開始、<wbr>ツインピークスとの<wbr>将来の<wbr>接続を<wbr>視野に。{% endif %}</p>
         </div>
-        <div class="home-network-caption" data-year="2024">
-          {% if page.lang == "en" %}<strong>2024.</strong> 7,500+ riders. Twin Peaks signage system rolls out. Grand Hirafu consulting begins.
-          {% else %}<strong>2024年。</strong>来場者<wbr>7,500人超。<wbr>ツインピークスの<wbr>サイン<wbr>システム<wbr>導入。<wbr>グランヒラフへの<wbr>コンサルティング<wbr>開始。
-          {% endif %}
+      </div>
+
+      <div class="home-network-row" data-year-idx="3" data-year="2025">
+        <div class="home-network-nub"></div>
+        <div class="home-network-card">
+          <div class="home-network-year">2025</div>
+          <h3 class="home-network-card-head">{% if page.lang == "en" %}Hanazono begins{% else %}花園、<wbr>着工{% endif %}</h3>
+          <p class="home-network-card-desc">{% if page.lang == "en" %}11,500+ riders. Hanazono construction starts. Mt Yotei loop enters planning. Cruise Control and Twin Peaks' first jump line both open.{% else %}来場者<wbr>11,500人超。<wbr>花園の<wbr>工事<wbr>開始。<wbr>羊蹄山<wbr>周回ルートの<wbr>計画<wbr>始動。<wbr>クルーズ<wbr>コントロールと<wbr>ツインピークス<wbr>初の<wbr>ジャンプ<wbr>ラインが<wbr>両方<wbr>オープン。{% endif %}</p>
         </div>
-        <div class="home-network-caption" data-year="2025">
-          {% if page.lang == "en" %}<strong>2025.</strong> 11,500+ riders. Hanazono construction starts. Mt Yotei loop enters planning.
-          {% else %}<strong>2025年。</strong>来場者<wbr>11,500人超。<wbr>花園の<wbr>工事<wbr>開始。<wbr>羊蹄山<wbr>周回ルートの<wbr>計画<wbr>始動。
-          {% endif %}
-        </div>
-        <div class="home-network-caption" data-year="2026">
-          {% if page.lang == "en" %}<strong>2026.</strong> Hanazono opens. New green flow trail and lower green climb pending sponsorship.
-          {% else %}<strong>2026年。</strong>花園<wbr>オープン。<wbr>新しい<wbr>グリーン<wbr>フロー<wbr>トレイルと<wbr>ロワー<wbr>グリーン<wbr>クライムが<wbr>スポンサー<wbr>待ち。
-          {% endif %}
+      </div>
+
+      <div class="home-network-row" data-year-idx="4" data-year="2026">
+        <div class="home-network-nub"></div>
+        <div class="home-network-card">
+          <div class="home-network-year">2026<span class="home-network-now">NOW</span></div>
+          <h3 class="home-network-card-head">{% if page.lang == "en" %}A regional network{% else %}リージョナル<wbr>ネットワーク{% endif %}</h3>
+          <p class="home-network-card-desc">{% if page.lang == "en" %}Hanazono opens this summer. A new green flow trail and lower green climb are pending sponsorship. The vision the founders sketched in 2021, one connected Niseko region, is becoming the map.{% else %}今夏、<wbr>花園<wbr>オープン。<wbr>新しい<wbr>グリーン<wbr>フロー<wbr>トレイルと<wbr>ロワー<wbr>グリーン<wbr>クライムが<wbr>スポンサー<wbr>待ち。<wbr>2021年に<wbr>創設者たちが<wbr>描いた、<wbr>一つに<wbr>つながる<wbr>ニセコ<wbr>リージョンという<wbr>ビジョンが、<wbr>いま<wbr>地図に<wbr>なる。{% endif %}</p>
         </div>
       </div>
     </div>
 
+  </div>
+
+  <div class="container home-network-parks-wrap">
     <div class="home-network-parks fade-up">
       <a class="home-network-park" href="{% if page.lang == 'ja' %}/ja{% endif %}/twin-peaks/">
         <h3>{% if page.lang == "en" %}Twin Peaks Bike Park{% else %}ツインピークス<wbr>バイクパーク{% endif %}</h3>
@@ -75,6 +103,5 @@
         <p>{% if page.lang == "en" %}A 50 km loop around Yotei. In planning.{% else %}羊蹄山を<wbr>巡る<wbr>50km<wbr>ループ。<wbr>計画中。{% endif %}</p>
       </a>
     </div>
-
   </div>
 </section>
