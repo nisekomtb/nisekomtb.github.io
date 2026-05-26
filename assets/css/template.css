@@ -7719,8 +7719,10 @@ joomla-field-custom.field-custom-wrapper .input-group .input-group-btn .btn span
 :lang(ja) .event-card-action { letter-spacing: normal; }
 .event-card-action-arrow {
   display: inline-block;
-  margin-left: 4px;
+  margin-left: 6px;
+  position: relative;
+  top: 1px;
   transition: margin-left 300ms ease;
 }
-.event-card:not(.disabled):hover .event-card-action { color: #fff; }
-.event-card:not(.disabled):hover .event-card-action-arrow { margin-left: 10px; }
+.event-card:hover .event-card-action { color: #fff; }
+.event-card:hover .event-card-action-arrow { margin-left: 12px; }

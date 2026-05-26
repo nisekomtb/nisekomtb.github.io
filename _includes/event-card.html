@@ -44,6 +44,6 @@
         {% if event.days and event.days > 1 %}{% if event.location %} &middot; {% endif %}{% if page.lang == "en" %}{{ event.days }} Days{% else %}{{ event.days }}日間{% endif %}{% endif %}
       </div>
     {% endif %}
-    <div class="event-card-action">{% if page.lang == "en" %}Details{% else %}詳細{% endif %} <span class="event-card-action-arrow">→</span></div>
+    <div class="event-card-action">{% if page.lang == "en" %}Details{% else %}詳細{% endif %} <span class="event-card-action-arrow fa-solid fa-circle-arrow-right"></span></div>
   </div>
 </article>
