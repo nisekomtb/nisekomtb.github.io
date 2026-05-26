@@ -16,18 +16,36 @@
         {% endif %}
       </h2>
     </header>
-    <ul class="home-jobs-list">
+
+    <div class="home-jobs-cards">
       {% for job in jobs %}
-        <li class="home-jobs-item">
-          <a href="{{ job.url }}">
-            <span class="home-jobs-item-title">{{ job.title }}</span>
-            {% if job.location %}<span class="home-jobs-item-loc">{{ job.location }}</span>{% endif %}
-            {% if job.type %}<span class="home-jobs-item-type">{{ job.type }}</span>{% endif %}
-            <span class="home-jobs-item-action">{% if page.lang == "en" %}Apply →{% else %}応募する →{% endif %}</span>
-          </a>
-        </li>
+        {% assign isPaid = true %}
+        {% if job.pay == "Volunteer position" %}
+          {% assign isPaid = false %}
+        {% endif %}
+        <div class="job-card">
+          <div class="job-info">
+            <p class="job-title"><a href="{{ job.url }}">{{ job.title }}</a></p>
+            <p class="job-meta">
+              {% if isPaid %}
+                <span class="job-badge paid">{% if page.lang == "en" %}Paid{% else %}有給{% endif %}</span>
+              {% else %}
+                <span class="job-badge volunteer">{% if page.lang == "en" %}Volunteer{% else %}ボランティア{% endif %}</span>
+              {% endif %}
+              {% if job.location %}{{ job.location }}{% endif %}
+              {% if job.term %} &middot; {{ job.term }}{% endif %}
+              {% if isPaid and job.pay %} &middot; {{ job.pay }}{% endif %}
+            </p>
+          </div>
+          <div class="job-cta">
+            <a class="action" href="{{ job.url }}">
+              {% if page.lang == "en" %}View details{% else %}詳しく見る{% endif %} <span class="fa-solid fa-circle-arrow-right"></span>
+            </a>
+          </div>
+        </div>
       {% endfor %}
-    </ul>
+    </div>
+
     <p class="home-jobs-all">
       <a href="{% if page.lang == 'ja' %}/ja{% endif %}/jobs/">{% if page.lang == "en" %}All openings →{% else %}すべての<wbr>募集を<wbr>見る →{% endif %}</a>
     </p>

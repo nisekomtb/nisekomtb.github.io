@@ -805,24 +805,7 @@ html[lang="ja"] .home-action-title { letter-spacing: normal; text-transform: non
   line-height: 1.05;
 }
 html[lang="ja"] .home-jobs-title { letter-spacing: normal; text-transform: none; }
-.home-jobs-list { list-style: none; margin: 0; padding: 0; }
-.home-jobs-item { border-top: 1px solid var(--color-bg-border); }
-.home-jobs-item:last-child { border-bottom: 1px solid var(--color-bg-border); }
-.home-jobs-item a {
-  display: flex; align-items: center; gap: 24px;
-  padding: 18px 4px;
-  text-decoration: none;
-  color: var(--color-text-light);
-  transition: padding 200ms ease;
-}
-.home-jobs-item a:hover { padding-left: 12px; }
-.home-jobs-item-title { font-weight: 500; font-size: 16px; flex: 1; color: var(--color-text-heading); }
-.home-jobs-item-loc, .home-jobs-item-type { font-size: 13px; color: var(--color-text-muted); }
-.home-jobs-item-action { color: var(--color-primary); font-weight: 500; font-size: 13px; letter-spacing: 0.04em; }
-.home-jobs-all { text-align: right; margin-top: 18px; font-size: 13px; }
+.home-jobs-cards { max-width: 900px; margin: 0 auto; }
+.home-jobs-all { text-align: right; margin-top: 24px; font-size: 13px; max-width: 900px; margin-left: auto; margin-right: auto; }
 .home-jobs-all a { color: var(--color-primary); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 200ms ease, color 200ms ease; }
 .home-jobs-all a:hover { color: var(--color-primary-hover); border-color: var(--color-primary-hover); }
-@media (max-width: 767px) {
-  .home-jobs-item a { flex-wrap: wrap; gap: 8px 16px; }
-  .home-jobs-item-title { flex-basis: 100%; }
-}
