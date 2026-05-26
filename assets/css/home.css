@@ -403,7 +403,7 @@ html[lang="ja"] .home-network-title { letter-spacing: normal; text-transform: no
   background: var(--color-bg);
   padding: clamp(48px, 8vh, 96px) 0;
 }
-.home-network-parks-head { margin-bottom: 36px; text-align: left; }
+.home-network-parks-head { margin-bottom: 36px; text-align: center; }
 .home-network-parks-title {
   font-family: "Fruit Viesta", "Zen Maru Gothic", "Metropolis", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
@@ -582,7 +582,7 @@ html[lang="ja"] .home-impact-title { letter-spacing: normal; text-transform: non
   padding: clamp(72px, 12vh, 140px) 0;
   color: var(--color-text);
 }
-.home-events-head { text-align: left; margin-bottom: 36px; }
+.home-events-head { text-align: center; margin-bottom: 36px; }
 .home-events-title {
   font-family: "Fruit Viesta", "Zen Maru Gothic", "Metropolis", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
@@ -755,7 +755,7 @@ html[lang="ja"] .home-action-title { letter-spacing: normal; text-transform: non
   padding: clamp(56px, 8vh, 100px) 0;
   color: var(--color-text);
 }
-.home-jobs-head { margin-bottom: 24px; }
+.home-jobs-head { margin-bottom: 24px; text-align: center; }
 .home-jobs-title {
   font-family: "Fruit Viesta", "Zen Maru Gothic", "Metropolis", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
