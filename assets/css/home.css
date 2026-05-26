@@ -642,30 +642,6 @@ html[lang="ja"] .home-events-title { letter-spacing: normal; text-transform: non
   grid-template-columns: repeat(3, 1fr);
   gap: 22px;
 }
-.home-event-card {
-  display: flex; flex-direction: column;
-  background: var(--color-bg);
-  border: 1px solid var(--color-bg-border);
-  border-radius: 6px;
-  overflow: hidden;
-  text-decoration: none;
-  color: var(--color-text-light);
-  transition: border-color 200ms ease, transform 200ms ease;
-}
-.home-event-card:hover { border-color: var(--color-primary); transform: translateY(-2px); }
-.home-event-thumb {
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  background-position: center;
-  background-size: cover;
-  background-color: var(--color-bg-panel);
-}
-.home-event-thumb-fallback { background-image: linear-gradient(135deg, var(--color-bg-border) 0%, var(--color-bg-panel) 100%); }
-.home-event-body { padding: 20px 22px; }
-.home-event-date { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 6px; font-weight: 500; }
-.home-event-title { font-size: 17px; font-weight: 500; margin: 0 0 6px; line-height: 1.3; color: var(--color-text-heading); }
-.home-event-loc { font-size: 13px; color: var(--color-text-muted); margin-bottom: 14px; }
-.home-event-action { font-size: 13px; font-weight: 500; letter-spacing: 0.04em; color: var(--color-primary); }
 .home-events-all { text-align: right; margin-top: 24px; font-size: 14px; }
 .home-events-all a { color: var(--color-primary); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 200ms ease, color 200ms ease; }
 .home-events-all a:hover { color: var(--color-primary-hover); border-color: var(--color-primary-hover); }

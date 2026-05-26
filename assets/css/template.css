@@ -7578,3 +7578,121 @@ joomla-field-custom.field-custom-wrapper .input-group .input-group-btn .btn span
 .job-badge.paid { background: #46b414; color: #fff; }
 .job-badge.volunteer { background: var(--color-accent); color: #fff; }
 .job-card .job-cta { flex-shrink: 0; }
+
+/* ------------------------------------------------------------------
+ * .event-card — shared between /events/, /ja/events/, and the home
+ * page "What's on" strip. Unified card pattern: square thumbnail
+ * with fade-to-panel gradient, gold uppercase date caps, title,
+ * location + duration meta row, "Details" CTA. Cancellation and
+ * past-event badges overlay the thumbnail. The whole card is the
+ * click target via an absolute ::after on the title link.
+ * ------------------------------------------------------------------ */
+.event-card {
+  position: relative;
+  background: var(--color-bg-panel);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 200ms ease, transform 200ms ease;
+}
+.event-card:not(.disabled):hover {
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+}
+.event-card.disabled { opacity: 0.55; }
+
+.event-card-thumb {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: var(--color-bg);
+}
+.event-card-thumb img,
+.event-card-thumb-fallback {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.event-card-thumb-fallback {
+  background: linear-gradient(135deg, var(--color-bg-border) 0%, var(--color-bg-panel) 100%);
+}
+.event-card-thumb-fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(to bottom, transparent, var(--color-bg-panel));
+  pointer-events: none;
+}
+
+.event-card-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  z-index: 2;
+}
+.event-card-badge.ended { background: rgba(255, 255, 255, 0.15); color: #aaa; }
+.event-card-badge.cancelled { background: rgba(190, 0, 20, 0.85); color: #fff; }
+
+.event-card-body {
+  padding: 16px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.event-card-date {
+  font-family: "Metropolis", Helvetica, Arial, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+:lang(ja) .event-card-date { letter-spacing: normal; text-transform: none; }
+.event-card-title {
+  font-family: "Metropolis", Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.3;
+  margin: 0 0 8px;
+  color: var(--color-text-heading);
+}
+.event-card-title a {
+  color: var(--color-text-heading);
+  text-decoration: none;
+}
+.event-card-title a:hover { color: var(--color-primary); }
+.event-card-link::after {
+  /* Card-wide click target. Sits below the badges (z-index 2) so they
+     stay clickable / visible, above the rest of the card chrome. */
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.event-card-meta {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  margin-bottom: 12px;
+}
+.event-card-action {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--color-primary);
+  margin-top: auto;
+}
+:lang(ja) .event-card-action { letter-spacing: normal; }

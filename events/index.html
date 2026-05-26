@@ -8,112 +8,7 @@ masthead:
 ---
 <style>
   @media (max-width: 991px) {
-    .items-row .item {
-      min-height: auto !important;
-    }
-  }
-
-  /* Event card redesign */
-  .project-view.style-1 .view-project {
-    background: var(--color-bg-panel);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 3px;
-    overflow: hidden;
-    transition: border-color 200ms ease;
-  }
-  .project-view.style-1 .view-project:has(a):hover {
-    border-color: var(--color-secondary);
-  }
-  .project-view.style-1 .view-project .image-wrap {
-    position: relative;
-    overflow: hidden;
-    aspect-ratio: 1 / 1;
-  }
-  .project-view.style-1 .view-project .image-wrap .item-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-  }
-  .project-view.style-1 .view-project .image-wrap .item-image a {
-    display: block;
-    width: 100%;
-    height: 100%;
-  }
-  .project-view.style-1 .view-project .image-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
-  .project-view.style-1 .view-project .image-wrap::after {
-    content: '' !important;
-    display: block !important;
-    clear: none !important;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 60px;
-    background: linear-gradient(to bottom, transparent, var(--color-bg-panel));
-    pointer-events: none;
-    transition: background 300ms;
-  }
-  .project-view.style-1 .view-project .image-wrap a:before {
-    display: none;
-  }
-  .project-view.style-1 .view-project.disabled .image-wrap a:before {
-    display: block !important;
-    opacity: 0.5 !important;
-  }
-  .project-view.style-1 .view-project.disabled:hover .image-wrap a:before {
-    opacity: 0.35 !important;
-  }
-  .project-view.style-1 .view-project .intro-wrap {
-    position: relative;
-    padding: 16px 16px 20px;
-    text-shadow: none;
-    bottom: auto;
-  }
-  .project-view.style-1 .view-project .intro-wrap .article-title {
-    margin-bottom: 8px;
-  }
-  .project-view.style-1 .view-project .intro-wrap .article-title a {
-    font-size: 16px;
-  }
-  /* Remove hover slide-up animation */
-  @media (min-width: 1200px) {
-    .project-view.style-1 .view-project:hover .intro-wrap {
-      transform: none;
-      bottom: auto;
-    }
-    .project-view.style-1 .view-project:hover .image-wrap a:before {
-      display: none;
-    }
-  }
-
-  .event-badge {
-    display: inline-block;
-    padding: 4px 12px;
-    border-radius: 4px;
-    font-size: 11px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    position: absolute;
-    top: 18px;
-    left: 18px;
-    z-index: 1;
-  }
-  .event-badge.ended {
-    background: rgba(255,255,255,0.15);
-    color: #aaa;
-  }
-  .event-badge.cancelled {
-    background: rgba(190,0,20,0.8);
-    color: #fff;
+    .items-row .item { min-height: auto !important; }
   }
 </style>
 <script type="application/ld+json">
@@ -185,6 +80,8 @@ masthead:
       {% endif %}
 
 
+      {% assign isDisabled = false %}
+      {% if forloop.index0 >= firstPastEventIndex %}{% assign isDisabled = true %}{% endif %}
       <div class="col-12 col-md-6 col-lg-3">
         <div
           class="item column-{{ indexModulo4 }} ja-animate"
@@ -194,68 +91,7 @@ masthead:
           itemscope=""
           itemtype="https://schema.org/BlogPosting"
           >
-
-          <!-- Article -->
-          <article class="view-project {% if forloop.index0 >= firstPastEventIndex or event.cancelled %}disabled{% endif %}">
-            <div class="image-wrap">
-              <div class="float-start item-image">
-                <a href="{{ event.override_url | default: event.url }}" {% if event.override_url %}target="_blank"{% endif %}><img
-                    src="{{ event.thumbnail }}?d={{ site.time | date: '%s' }}"
-                    alt=""
-                    itemprop="thumbnailUrl"></a>
-              </div>
-            </div>
-
-            <div class="intro-wrap">
-
-              <header class="article-header clearfix">
-                <h2 class="article-title" itemprop="headline">
-                  <a
-                    href="{{ event.override_url | default: event.url }}"
-                    itemprop="url"
-                    title="{{ event.title }}"
-                    {% if event.override_url %}target="_blank"{% endif %}>
-                    {{ event.title }}</a>
-                </h2>
-
-              </header>
-              <span class="project-type"><i class="fa-regular fa-calendar"></i> {{ event.startDate | date: "%A %e %B %Y" }}</span>
-              <br />
-              <span class="project-type"><i class="fa-regular fa-clock"></i> {% if event.days == 1 %}{{ event.time }}{% else %}{{ event.days }} Days{% endif %}</span>
-              <br />
-              {% comment %} {% if event.price[0] or event.price != 0 %}
-                <span class="project-type"><i class="fa-solid fa-yen-sign"></i></span>
-              {% else %}
-                <span class="project-type"><i class="fa-brands fa-creative-commons-nc-jp"></i></span>
-              {% endif %} {% endcomment %}
-              {% comment %} <span class="project-type">{{ event.excerpt | strip_html | slice: 0, 100 }} ...</span> {% endcomment %}
-
-
-            <!-- Aside -->
-              <!-- //Aside -->
-
-
-              <!-- footer -->
-              <!-- //footer -->
-
-
-            </div>
-            {% assign days = event.days | times: 24 | times: 60 | times: 60 %}
-            {% assign endDate = event.startDate | date: "%s" | plus: days | date: "%F" %}
-            {% assign today = "today" | date: "%F" %}
-            {% if forloop.index0 < firstPastEventIndex %}
-              {% if event.cancelled %}
-              <div class="event-badge cancelled" name="cancelled" data-end-date="{{- endDate -}}">Cancelled</div>
-              {% endif %}
-            <div class="event-badge ended" style="display:none;" name="ended" data-end-date="{{- endDate -}}">Ended</div>
-            {% else %}
-            <div class="event-badge ended">Ended</div>
-            {% endif %}
-          </article>
-          <!-- //Article -->
-
-
-
+          {% include event-card.html event=event disabled=isDisabled %}
         </div>
         <!-- end item -->
       </div>
