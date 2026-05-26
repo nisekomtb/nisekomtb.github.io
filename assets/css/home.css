@@ -580,6 +580,12 @@ html[lang="ja"] .home-impact-title { letter-spacing: normal; text-transform: non
   color: var(--color-accent);
   line-height: 1.1;
 }
+/* .value gets a min-width set by JS to the final string's character
+   count so the digits don't shift the layout mid count-up. */
+.home-impact-num .value {
+  display: inline-block;
+  text-align: center;
+}
 .home-impact-num .unit {
   font-size: 0.6em;
   font-weight: 700;

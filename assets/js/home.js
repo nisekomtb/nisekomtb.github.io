@@ -190,6 +190,19 @@
       if (v) v.textContent = prefix + formatNumber(target) + suffix;
     }
 
+    // Reserve the final string width on .value so digits don't shift
+    // the layout during the count-up animation.
+    function lockWidth(stat) {
+      var target = parseFloat(stat.dataset.target || '0');
+      var prefix = stat.dataset.prefix || '';
+      var suffix = stat.dataset.suffix || '';
+      var v = stat.querySelector('.value');
+      if (!v) return;
+      var finalStr = prefix + formatNumber(target) + suffix;
+      v.style.minWidth = finalStr.length + 'ch';
+    }
+    stats.forEach(lockWidth);
+
     if (prefersReducedMotion || !('IntersectionObserver' in window)) {
       stats.forEach(finalValue);
       return;
