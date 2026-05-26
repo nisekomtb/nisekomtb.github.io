@@ -216,10 +216,11 @@ html[lang="ja"] .home-pull-quote { font-style: normal; }
   position: absolute;
   inset: 0;
   /* Heavier on the left so the rail and cards stay legible regardless of
-     what's underneath; lighter on the right so the map detail still reads. */
+     what's underneath; rest of the image now stays close to clean so the
+     map detail shows. */
   background:
-    linear-gradient(90deg, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.45) 45%, rgba(0,0,0,0.25) 100%),
-    linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0) 25%, rgba(0,0,0,0) 75%, rgba(0,0,0,0.5) 100%);
+    linear-gradient(90deg, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.28) 35%, rgba(0,0,0,0.05) 70%, rgba(0,0,0,0) 100%),
+    linear-gradient(180deg, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0) 18%, rgba(0,0,0,0) 82%, rgba(0,0,0,0.28) 100%);
   pointer-events: none;
 }
 
