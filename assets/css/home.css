@@ -559,37 +559,32 @@ html[lang="ja"] .home-impact-title { letter-spacing: normal; text-transform: non
 .home-impact-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 0;
-  border-top: 1px solid var(--color-bg-border);
-  border-bottom: 1px solid var(--color-bg-border);
+  gap: clamp(24px, 3vw, 48px);
 }
 .home-impact-stat {
-  padding: 32px 18px;
+  padding: 16px 8px;
   text-align: center;
-  border-right: 1px solid var(--color-bg-border);
   font-variant-numeric: tabular-nums;
 }
-.home-impact-stat:last-child { border-right: none; }
 .home-impact-num {
-  font-family: "Fruit Viesta", "Zen Maru Gothic", "Metropolis", Helvetica, Arial, sans-serif;
-  font-size: clamp(32px, 4.5vw, 56px);
-  font-weight: 500;
+  font-family: "Metropolis", Helvetica, Arial, sans-serif;
+  font-size: clamp(40px, 5vw, 64px);
+  font-weight: 700;
   color: var(--color-accent);
-  line-height: 1;
+  line-height: 1.1;
 }
 .home-impact-num .unit {
-  font-size: 0.55em;
-  font-weight: 500;
+  font-size: 0.6em;
+  font-weight: 700;
   margin-left: 2px;
-  opacity: 0.85;
 }
 .home-impact-lbl {
-  margin-top: 14px;
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  margin-top: 10px;
+  font-family: "Metropolis", Helvetica, Arial, sans-serif;
+  font-size: clamp(13px, 1vw, 15px);
+  font-weight: 400;
+  line-height: 1.4;
   color: var(--color-text-muted);
-  font-weight: 500;
 }
 .home-impact-link {
   text-align: center;
@@ -606,8 +601,8 @@ html[lang="ja"] .home-impact-title { letter-spacing: normal; text-transform: non
 }
 .home-impact-link a:hover { color: var(--color-primary-hover); border-color: var(--color-primary-hover); }
 
-@media (max-width: 1023px) { .home-impact-grid { grid-template-columns: repeat(3, 1fr); } .home-impact-stat:nth-child(3n) { border-right: none; } }
-@media (max-width: 600px)  { .home-impact-grid { grid-template-columns: repeat(2, 1fr); } .home-impact-stat:nth-child(3n) { border-right: 1px solid var(--color-bg-border); } .home-impact-stat:nth-child(2n) { border-right: none; } }
+@media (max-width: 1023px) { .home-impact-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 600px)  { .home-impact-grid { grid-template-columns: repeat(2, 1fr); } }
 
 /* ── Section 06: Events ───────────────────────────────────────────── */
 .home-events {

@@ -184,9 +184,10 @@
 
     function finalValue(stat) {
       var target = parseFloat(stat.dataset.target || '0');
+      var prefix = stat.dataset.prefix || '';
       var suffix = stat.dataset.suffix || '';
       var v = stat.querySelector('.value');
-      if (v) v.textContent = formatNumber(target) + suffix;
+      if (v) v.textContent = prefix + formatNumber(target) + suffix;
     }
 
     if (prefersReducedMotion || !('IntersectionObserver' in window)) {
@@ -199,6 +200,7 @@
         if (!entry.isIntersecting) return;
         var stat = entry.target;
         var target = parseFloat(stat.dataset.target || '0');
+        var prefix = stat.dataset.prefix || '';
         var suffix = stat.dataset.suffix || '';
         var v = stat.querySelector('.value');
         if (!v) return;
@@ -208,9 +210,11 @@
           var t = Math.min((now - start) / duration, 1);
           var eased = 1 - Math.pow(1 - t, 4); // easeOutQuart
           var current = target * eased;
-          v.textContent = formatNumber(current) + (t < 1 ? '': suffix);
+          // Suffix held back until the end so intermediate frames don't
+          // read as wrong units (e.g. "100M+" mid-count-up to 196M+).
+          v.textContent = prefix + formatNumber(current) + (t < 1 ? '': suffix);
           if (t < 1) requestAnimationFrame(tick);
-          else v.textContent = formatNumber(target) + suffix;
+          else v.textContent = prefix + formatNumber(target) + suffix;
         }
         requestAnimationFrame(tick);
         io.unobserve(stat);
