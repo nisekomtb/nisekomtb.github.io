@@ -697,28 +697,56 @@ html[lang="ja"] .home-stories-title { letter-spacing: normal; text-transform: no
   background: var(--color-bg-panel);
   color: var(--color-text);
 }
-.home-action-grid { display: grid; grid-template-columns: 1fr 1fr; min-height: 50vh; }
-.home-action-half { padding: clamp(56px, 9vh, 120px) clamp(28px, 5vw, 80px); display: flex; align-items: center; }
-.home-action-ride  { background: linear-gradient(180deg, rgba(53, 150, 93, 0.08), rgba(53, 150, 93, 0.02)); }   /* forest green tint (--color-secondary) */
-.home-action-build { background: linear-gradient(180deg, rgba(179, 79, 36, 0.08), rgba(179, 79, 36, 0.02)); }    /* rust orange tint (--color-primary) */
+.home-action-grid { display: grid; grid-template-columns: 1fr 1fr; min-height: 60vh; }
+.home-action-half {
+  padding: clamp(64px, 10vh, 140px) clamp(28px, 5vw, 80px);
+  display: flex;
+  align-items: center;
+}
+/* Tints are bumped from the previous 0.08/0.02 so the colour
+   coding reads more clearly on dark backgrounds. */
+.home-action-ride  { background: linear-gradient(180deg, rgba(53, 150, 93, 0.14), rgba(53, 150, 93, 0.04)); }   /* forest green tint (--color-secondary) */
+.home-action-build {
+  background: linear-gradient(180deg, rgba(179, 79, 36, 0.14), rgba(179, 79, 36, 0.04));     /* rust orange tint (--color-primary) */
+  border-left: 1px solid rgba(255, 255, 255, 0.06);
+}
 .home-action-inner { max-width: 480px; width: 100%; margin: 0 auto; }
 .home-action-title {
   font-family: "Fruit Viesta", "Zen Maru Gothic", "Metropolis", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 500;
-  font-size: clamp(28px, 3.5vw, 44px);
+  font-size: clamp(32px, 4vw, 56px);
   line-height: 1.05;
-  margin: 0 0 18px;
+  margin: 0 0 20px;
   color: var(--color-text-heading);
 }
 html[lang="ja"] .home-action-title { letter-spacing: normal; text-transform: none; }
-.home-action-body { font-size: clamp(15px, 1.4vw, 17px); line-height: 1.55; color: var(--color-text-light); margin: 0 0 28px; }
-.home-action-cta { display: inline-block; }
-.home-action-links { display: flex; flex-direction: column; gap: 10px; font-size: 15px; }
-.home-action-links a { color: var(--color-primary); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 200ms ease, color 200ms ease; width: max-content; }
-.home-action-links a:hover { color: var(--color-primary-hover); border-color: var(--color-primary-hover); }
+.home-action-body {
+  font-size: clamp(15px, 1.4vw, 17px);
+  line-height: 1.55;
+  color: var(--color-text-light);
+  margin: 0 0 28px;
+}
+.home-action-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.home-action-ctas .btn { flex: 0 0 auto; }
+.home-action-tertiary { margin: 8px 0 0; font-size: 14px; }
+.home-action-tertiary a {
+  color: var(--color-primary);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 200ms ease, color 200ms ease;
+}
+.home-action-tertiary a:hover { color: var(--color-primary-hover); border-color: var(--color-primary-hover); }
+
 @media (max-width: 767px) {
-  .home-action-grid { grid-template-columns: 1fr; }
+  .home-action-grid { grid-template-columns: 1fr; min-height: 0; }
+  .home-action-build { border-left: none; border-top: 1px solid rgba(255, 255, 255, 0.06); }
+  .home-action-half { padding: clamp(48px, 8vh, 80px) 24px; }
 }
 
 /* ── Section 09: Jobs strip ───────────────────────────────────────── */
