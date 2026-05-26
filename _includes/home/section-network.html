@@ -81,6 +81,13 @@
 
 <section class="home-network-parks-section">
   <div class="container">
+    <header class="home-network-parks-head fade-up">
+      <h2 class="home-network-parks-title">
+        {% if page.lang == "en" %}Where to ride.
+        {% else %}ライディング<wbr>エリア。
+        {% endif %}
+      </h2>
+    </header>
     <div class="row equal-height equal-height-child home-network-parks-row">
       <div class="col col-12 col-md-6 col-lg-3">
         {% if page.lang == "ja" %}
@@ -161,5 +168,8 @@
         {% endif %}
       </div>
     </div>
+    <p class="home-network-parks-all">
+      <a href="{% if page.lang == 'ja' %}/ja{% endif %}/where-to-ride/">{% if page.lang == "en" %}All riding areas →{% else %}すべての<wbr>ライディング<wbr>エリアを<wbr>見る →{% endif %}</a>
+    </p>
   </div>
 </section>

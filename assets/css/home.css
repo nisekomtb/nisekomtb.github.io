@@ -403,6 +403,25 @@ html[lang="ja"] .home-network-title { letter-spacing: normal; text-transform: no
   background: var(--color-bg);
   padding: clamp(48px, 8vh, 96px) 0;
 }
+.home-network-parks-head { margin-bottom: 36px; text-align: left; }
+.home-network-parks-title {
+  font-family: "Fruit Viesta", "Zen Maru Gothic", "Metropolis", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: clamp(26px, 3.5vw, 44px);
+  margin: 0;
+  color: var(--color-text-heading);
+  line-height: 1.05;
+}
+html[lang="ja"] .home-network-parks-title { letter-spacing: normal; text-transform: none; }
+.home-network-parks-all { text-align: right; margin-top: 24px; font-size: 14px; }
+.home-network-parks-all a {
+  color: var(--color-primary);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 200ms ease, color 200ms ease;
+}
+.home-network-parks-all a:hover { color: var(--color-primary-hover); border-color: var(--color-primary-hover); }
 
 /* Mobile (< 768px): un-stick. Show the 2026 frame as a static preview
    above the stacked timeline cards, no scrub. */
