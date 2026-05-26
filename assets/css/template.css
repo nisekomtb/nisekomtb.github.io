@@ -6387,11 +6387,12 @@ div.t3-wrapper {
   padding: 72px 54px;
   text-align: center;
   position: relative;
-  transition: border-color 200ms ease;
+  transition: border-color 200ms ease, transform 200ms ease;
 }
 
 .acm-features.style-2 .features-item:not(.no-hover):has(a):hover {
   border-color: var(--color-secondary);
+  transform: translateY(-2px);
 }
 
 @media (max-width: 767px) {
@@ -7535,9 +7536,12 @@ joomla-field-custom.field-custom-wrapper .input-group .input-group-btn .btn span
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 16px;
-  transition: border-color 200ms ease;
+  transition: border-color 200ms ease, transform 200ms ease;
 }
-.job-card:has(a):hover { border-color: var(--color-secondary); }
+.job-card:has(a):hover {
+  border-color: var(--color-secondary);
+  transform: translateY(-2px);
+}
 .job-card .action span {
   margin-left: 8px;
   position: relative;
