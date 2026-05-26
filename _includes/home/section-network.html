@@ -81,23 +81,85 @@
 
 <section class="home-network-parks-section">
   <div class="container">
-    <div class="home-network-parks fade-up">
-      <a class="home-network-park" href="{% if page.lang == 'ja' %}/ja{% endif %}/twin-peaks/">
-        <h3>{% if page.lang == "en" %}Twin Peaks Bike Park{% else %}ツインピークス<wbr>バイクパーク{% endif %}</h3>
-        <p>{% if page.lang == "en" %}21+ km of free, Swiss-designed trails. The flagship.{% else %}21km超の<wbr>無料・<wbr>スイス設計<wbr>トレイル。<wbr>フラッグシップ。{% endif %}</p>
-      </a>
-      <a class="home-network-park" href="{% if page.lang == 'ja' %}/ja{% endif %}/where-to-ride/grand-hirafu/">
-        <h3>{% if page.lang == "en" %}Grand Hirafu Bike Park{% else %}グランヒラフ<wbr>バイクパーク{% endif %}</h3>
-        <p>{% if page.lang == "en" %}Lift-served downhill on the iconic Hirafu side.{% else %}リフト<wbr>アクセスの<wbr>ダウンヒル。<wbr>象徴的な<wbr>ヒラフ側。{% endif %}</p>
-      </a>
-      <a class="home-network-park" href="{% if page.lang == 'ja' %}/ja{% endif %}/where-to-ride/hanazono/">
-        <h3>{% if page.lang == "en" %}Niseko Hanazono Bike Park{% else %}ニセコ花園<wbr>バイクパーク{% endif %}</h3>
-        <p>{% if page.lang == "en" %}Niseko's first lift-accessed green flow trail. Opening summer 2026.{% else %}ニセコ初の<wbr>リフト<wbr>アクセス<wbr>グリーン<wbr>フロー<wbr>トレイル。<wbr>2026年夏<wbr>オープン。{% endif %}</p>
-      </a>
-      <a class="home-network-park" href="{% if page.lang == 'ja' %}/ja{% endif %}/projects/yotei-360/">
-        <h3>{% if page.lang == "en" %}Mt Yotei 360{% else %}羊蹄山<wbr>360{% endif %}</h3>
-        <p>{% if page.lang == "en" %}A 50 km loop around Yotei. In planning.{% else %}羊蹄山を<wbr>巡る<wbr>50km<wbr>ループ。<wbr>計画中。{% endif %}</p>
-      </a>
+    <div class="row equal-height equal-height-child home-network-parks-row">
+      <div class="col col-12 col-md-6 col-lg-3">
+        {% if page.lang == "ja" %}
+          {% include ride-card.html
+              title="ツインピークスバイクパーク"
+              image="/assets/images/twinpeaks/header.jpg"
+              logo="/assets/images/logos/twin-peaks.svg"
+              description="21km超の​無料・​スイス設計トレイル。​NAMBAの​フラッグシップパーク。"
+              url="/ja/twin-peaks/"
+              action_label="詳しく見る" %}
+        {% else %}
+          {% include ride-card.html
+              title="Twin Peaks Bike Park"
+              image="/assets/images/twinpeaks/header.jpg"
+              logo="/assets/images/logos/twin-peaks.svg"
+              description="21+ km of free, Swiss-designed trails. NAMBA's flagship park."
+              url="/twin-peaks/"
+              action_label="Learn more" %}
+        {% endif %}
+      </div>
+      <div class="col col-12 col-md-6 col-lg-3">
+        {% if page.lang == "ja" %}
+          {% include ride-card.html
+              title="グラン・ヒラフバイクパーク"
+              image="/assets/images/trails/grand-hirafu/01.jpg"
+              logo="/assets/images/company/grand-hirafu.png"
+              description="新設の​Aceゴンドラに​よる​リフトアクセスの​ダウンヒル。"
+              url="/ja/where-to-ride/grand-hirafu/"
+              action_label="詳しく見る" %}
+        {% else %}
+          {% include ride-card.html
+              title="Grand Hirafu Bike Park"
+              image="/assets/images/trails/grand-hirafu/01.jpg"
+              logo="/assets/images/company/grand-hirafu.png"
+              description="Lift-served downhill on the iconic Hirafu side, served by the new Ace Gondola."
+              url="/where-to-ride/grand-hirafu/"
+              action_label="Learn more" %}
+        {% endif %}
+      </div>
+      <div class="col col-12 col-md-6 col-lg-3">
+        {% if page.lang == "ja" %}
+          {% include ride-card.html
+              title="ニセコHANAZONOバイクパーク"
+              image="/assets/images/trails/hanazono/01.jpg"
+              logo="/assets/images/company/hanazono.png"
+              badge="2026年夏オープン"
+              description="ニセコ初の​リフトアクセスに​よる​グリーンフロートレイル。"
+              url="/ja/where-to-ride/hanazono/"
+              action_label="詳しく見る" %}
+        {% else %}
+          {% include ride-card.html
+              title="Niseko Hanazono Bike Park"
+              image="/assets/images/trails/hanazono/01.jpg"
+              logo="/assets/images/company/hanazono.png"
+              badge="Opening Summer 2026"
+              description="Niseko's first lift-accessed green flow trail."
+              url="/where-to-ride/hanazono/"
+              action_label="Learn more" %}
+        {% endif %}
+      </div>
+      <div class="col col-12 col-md-6 col-lg-3">
+        {% if page.lang == "ja" %}
+          {% include ride-card.html
+              title="ニセコアンヌプリバイクパーク"
+              image="/assets/images/trails/annupuri/01.jpg"
+              logo="/assets/images/company/annupuri.png"
+              description="ゴンドラアクセスの​ダウンヒルコース。​ダウンヒルシリーズ・ニセコ大会の​会場。"
+              url="/ja/where-to-ride/annupuri/"
+              action_label="詳しく見る" %}
+        {% else %}
+          {% include ride-card.html
+              title="Niseko Annupuri Bike Park"
+              image="/assets/images/trails/annupuri/01.jpg"
+              logo="/assets/images/company/annupuri.png"
+              description="Gondola-served downhill course. Host of the Downhill Series Niseko round each summer."
+              url="/where-to-ride/annupuri/"
+              action_label="Learn more" %}
+        {% endif %}
+      </div>
     </div>
   </div>
 </section>

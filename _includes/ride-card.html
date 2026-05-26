@@ -1,0 +1,38 @@
+{%- comment -%}
+  Shared ride card. Used by /where-to-ride/, /ja/where-to-ride/, and
+  the home "Network" parks row. Renders a single card with image,
+  logo or icon overlay, optional badge, title, optional trail counts,
+  short description, and a "Learn more" CTA.
+
+  Parameters:
+    include.id            (optional) — id attribute for anchor links
+    include.title         (required) — area or park name
+    include.image         (required) — header image path
+    include.image_height  (optional) — override the 200px image height
+                                       (used for the larger Twin Peaks
+                                       card on /where-to-ride/)
+    include.logo          (optional) — logo image overlay
+    include.icon          (optional) — fa-solid icon class instead of logo
+    include.badge         (optional) — text badge e.g. "Opening Summer 2026"
+    include.description   (required) — short paragraph
+    include.url           (required) — link destination
+    include.action_label  (required) — CTA text
+    include.stats_key     (optional) — if set, renders trail-difficulty-counts
+    include.delay         (optional) — ja-animate delay e.g. "item-0"
+{%- endcomment -%}
+<div{% if include.id %} id="{{ include.id }}"{% endif %} class="ride-card{% if include.delay %} ja-animate{% endif %}"{% if include.delay %} data-animation="move-from-bottom" data-delay="{{ include.delay }}"{% endif %}>
+  <div class="ride-card-image" style="background-image:url('{{ include.image }}');{% if include.image_height %} height:{{ include.image_height }};{% endif %}">
+    {% if include.badge %}<span class="ride-card-badge">{{ include.badge }}</span>{% endif %}
+    {% if include.logo %}
+      <img class="ride-card-logo" src="{{ include.logo }}" alt="{{ include.title }}" />
+    {% elsif include.icon %}
+      <span class="ride-card-icon fa-solid {{ include.icon }}"></span>
+    {% endif %}
+  </div>
+  <div class="ride-card-body">
+    <h4>{{ include.title }}</h4>
+    {% if include.stats_key %}{% include trail-difficulty-counts.html data_key=include.stats_key %}{% endif %}
+    <p>{{ include.description }}</p>
+    <a class="action" href="{{ include.url }}">{{ include.action_label }} <span class="fa-solid fa-circle-arrow-right"></span></a>
+  </div>
+</div>

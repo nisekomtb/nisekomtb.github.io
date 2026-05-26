@@ -7758,3 +7758,107 @@ joomla-field-custom.field-custom-wrapper .input-group .input-group-btn .btn span
   .event-card-feature .event-card-meta { font-size: 14px; margin-bottom: 18px; }
   .event-card-feature .event-card-action { font-size: 14px; }
 }
+
+/* ------------------------------------------------------------------
+ * .ride-card — shared between /where-to-ride/, /ja/where-to-ride/,
+ * and the home page "Network" parks row. Image with logo or icon
+ * overlay, fade-to-panel gradient, body with title + optional trail
+ * counts + description, whole-card click via ::after on the .action
+ * link. Used to live as inline <style> on /where-to-ride/.
+ * ------------------------------------------------------------------ */
+.ride-card {
+  background: var(--color-bg-panel);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 200ms ease, transform 200ms ease;
+}
+.ride-card .ride-card-image {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.ride-card .ride-card-image::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(to bottom, transparent, var(--color-bg-panel));
+}
+.ride-card .ride-card-image .ride-card-logo {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+}
+.ride-card .ride-card-image .ride-card-icon {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  font-size: 96px;
+  color: var(--color-secondary);
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+}
+.ride-card .ride-card-body {
+  padding: 44px 24px 24px;
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.ride-card .ride-card-body h4 { margin: 0 0 12px; }
+.ride-card .ride-card-body p { flex: 1; }
+.ride-card .ride-card-body .action,
+.ride-card .ride-card-body .action:hover,
+.ride-card .ride-card-body .action:focus {
+  margin-top: 12px;
+  color: #fff;
+  text-decoration: none;
+}
+.ride-card .ride-card-body .action span {
+  margin-left: 8px;
+  position: relative;
+  top: 1px;
+  letter-spacing: -1px;
+  transition: margin 500ms;
+}
+.ride-card .ride-card-body .action:hover span { margin-left: 14px; }
+.ride-card .ride-card-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 1;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: var(--color-accent);
+  color: #fff;
+}
+.ride-card:has(a) { position: relative; }
+.ride-card:has(a):hover {
+  border-color: var(--color-secondary);
+  transform: translateY(-2px);
+}
+.ride-card:has(a) .ride-card-body .action { position: static; }
+.ride-card:has(a) .ride-card-body .action::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}

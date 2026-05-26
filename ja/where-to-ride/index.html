@@ -347,111 +347,6 @@ masthead:
       margin-left: 14px;
     }
 
-    .ride-card {
-      background: var(--color-bg-panel);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 3px;
-      overflow: hidden;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      transition: border-color 200ms ease;
-    }
-    .ride-card .ride-card-image {
-      height: 200px;
-      background-size: cover;
-      background-position: center;
-      position: relative;
-    }
-    .ride-card .ride-card-image::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 80px;
-      background: linear-gradient(to bottom, transparent, var(--color-bg-panel));
-    }
-    .ride-card .ride-card-image .ride-card-logo {
-      position: absolute;
-      bottom: -30px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 1;
-      width: 120px;
-      height: 120px;
-      object-fit: contain;
-      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));
-    }
-    .ride-card .ride-card-image .ride-card-icon {
-      position: absolute;
-      bottom: -30px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 1;
-      font-size: 96px;
-      color: var(--color-secondary);
-      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));
-    }
-    .ride-card .ride-card-body {
-      padding: 44px 24px 24px;
-      text-align: center;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
-    .ride-card .ride-card-body h4 {
-      margin: 0 0 12px;
-    }
-    .ride-card .ride-card-body p {
-      flex: 1;
-    }
-    .ride-card .ride-card-body .action,
-    .ride-card .ride-card-body .action:hover,
-    .ride-card .ride-card-body .action:focus {
-      margin-top: 12px;
-      color: #fff;
-      text-decoration: none;
-    }
-    .ride-card .ride-card-body .action span {
-      margin-left: 8px;
-      position: relative;
-      top: 1px;
-      letter-spacing: -1px;
-      transition: margin 500ms;
-    }
-    .ride-card .ride-card-body .action:hover span {
-      margin-left: 14px;
-    }
-    .ride-card .ride-card-badge {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      z-index: 1;
-      padding: 4px 12px;
-      border-radius: 4px;
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      background: var(--color-accent);
-      color: #fff;
-    }
-    .ride-card:has(a):hover {
-      border-color: var(--color-secondary);
-    }
-    .ride-card:has(a) {
-      position: relative;
-    }
-    .ride-card:has(a) .ride-card-body .action {
-      position: static;
-    }
-    .ride-card:has(a) .ride-card-body .action::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      z-index: 2;
-    }
   </style>
 
   <div class="section">
@@ -467,63 +362,60 @@ masthead:
 
         <!-- Twin Peaks -->
         <div class="col col-12 col-lg-12">
-          <div id="ride-twin-peaks" class="ride-card ja-animate" data-animation="move-from-bottom" data-delay="item-0">
-            <div class="ride-card-image" style="background-image:url('/assets/images/twinpeaks/header.jpg'); height:280px;">
-              <img class="ride-card-logo" src="/assets/images/logos/twin-peaks.svg" alt="Twin Peaks Bike Park" />
-            </div>
-            <div class="ride-card-body">
-              <h4>ツインピークスバイクパーク</h4>
-              {% include trail-difficulty-counts.html data_key="twinpeaks" %}
-              <p>日本最大の​無料で​楽しめる​MTBパーク。​スイス設計の​20以上の​トレイルが​17km以上。​初心者フローから​エキスパートテクニカルまで。​毎日​無料、​登録不要。</p>
-              <a class="action" href="/ja/twin-peaks/">ツインピークスを見る <span class="fa-solid fa-circle-arrow-right"></span></a>
-            </div>
-          </div>
+          {% include ride-card.html
+              id="ride-twin-peaks"
+              title="ツインピークスバイクパーク"
+              image="/assets/images/twinpeaks/header.jpg"
+              image_height="280px"
+              logo="/assets/images/logos/twin-peaks.svg"
+              stats_key="twinpeaks"
+              description="日本最大の​無料で​楽しめる​MTBパーク。​スイス設計の​20以上の​トレイルが​17km以上。​初心者フローから​エキスパートテクニカルまで。​毎日​無料、​登録不要。"
+              url="/ja/twin-peaks/"
+              action_label="ツインピークスを見る"
+              delay="item-0" %}
         </div>
 
         <!-- Grand Hirafu -->
         <div class="col col-12 col-md-6 col-lg-6">
-          <div id="ride-grand-hirafu" class="ride-card ja-animate" data-animation="move-from-bottom" data-delay="item-1">
-            <div class="ride-card-image" style="background-image:url('/assets/images/trails/grand-hirafu/01.jpg');">
-              <img class="ride-card-logo" src="/assets/images/company/grand-hirafu.png" alt="グラン・ヒラフバイクパーク" />
-            </div>
-            <div class="ride-card-body">
-              <h4>グラン・ヒラフバイクパーク</h4>
-              {% include trail-difficulty-counts.html data_key="grand-hirafu" %}
-              <p>ニセコ初の​バイクパーク。​新設の​Aceゴンドラを​利用した​トップトゥボトムの​ファストラップが​楽しめます。</p>
-              <a class="action" href="/ja/where-to-ride/grand-hirafu/">詳しく見る <span class="fa-solid fa-circle-arrow-right"></span></a>
-            </div>
-          </div>
+          {% include ride-card.html
+              id="ride-grand-hirafu"
+              title="グラン・ヒラフバイクパーク"
+              image="/assets/images/trails/grand-hirafu/01.jpg"
+              logo="/assets/images/company/grand-hirafu.png"
+              stats_key="grand-hirafu"
+              description="ニセコ初の​バイクパーク。​新設の​Aceゴンドラを​利用した​トップトゥボトムの​ファストラップが​楽しめます。"
+              url="/ja/where-to-ride/grand-hirafu/"
+              action_label="詳しく見る"
+              delay="item-1" %}
         </div>
 
         <!-- Hanazono -->
         <div class="col col-12 col-md-6 col-lg-6">
-          <div id="ride-hanazono" class="ride-card ja-animate" data-animation="move-from-bottom" data-delay="item-2">
-            <div class="ride-card-image" style="background-image:url('/assets/images/trails/hanazono/01.jpg');">
-              <span class="ride-card-badge">2026年夏オープン</span>
-              <img class="ride-card-logo" src="/assets/images/company/hanazono.png" alt="ニセコHANAZONOバイクパーク" />
-            </div>
-            <div class="ride-card-body">
-              <h4>ニセコHANAZONOバイクパーク</h4>
-              {% include trail-difficulty-counts.html data_key="hanazono" %}
-              <p>2026年夏オープン：ニセコ初の​リフトアクセスに​よる​トップトゥボトムの​中級トレイル、​そして​初心者向けの​フォレストループ。</p>
-              <a class="action" href="/ja/where-to-ride/hanazono/">詳しく見る <span class="fa-solid fa-circle-arrow-right"></span></a>
-            </div>
-          </div>
+          {% include ride-card.html
+              id="ride-hanazono"
+              title="ニセコHANAZONOバイクパーク"
+              image="/assets/images/trails/hanazono/01.jpg"
+              logo="/assets/images/company/hanazono.png"
+              badge="2026年夏オープン"
+              stats_key="hanazono"
+              description="2026年夏オープン：ニセコ初の​リフトアクセスに​よる​トップトゥボトムの​中級トレイル、​そして​初心者向けの​フォレストループ。"
+              url="/ja/where-to-ride/hanazono/"
+              action_label="詳しく見る"
+              delay="item-2" %}
         </div>
 
         <!-- Annupuri -->
         <div class="col col-12 col-md-6 col-lg-6">
-          <div id="ride-annupuri" class="ride-card ja-animate" data-animation="move-from-bottom" data-delay="item-3">
-            <div class="ride-card-image" style="background-image:url('/assets/images/trails/annupuri/01.jpg');">
-              <img class="ride-card-logo" src="/assets/images/company/annupuri.png" alt="ニセコアンヌプリバイクパーク" />
-            </div>
-            <div class="ride-card-body">
-              <h4>ニセコアンヌプリバイクパーク</h4>
-              {% include trail-difficulty-counts.html data_key="annupuri" %}
-              <p>ゴンドラアクセスの​ダウンヒルコース、​コース設計は​プロMTBアスリート清水一輝​氏が​監修。​毎年夏、​ダウンヒルシリーズの​ニセコ大会の​会場と​なります。​中級・上級向け。</p>
-              <a class="action" href="/ja/where-to-ride/annupuri/">詳しく見る <span class="fa-solid fa-circle-arrow-right"></span></a>
-            </div>
-          </div>
+          {% include ride-card.html
+              id="ride-annupuri"
+              title="ニセコアンヌプリバイクパーク"
+              image="/assets/images/trails/annupuri/01.jpg"
+              logo="/assets/images/company/annupuri.png"
+              stats_key="annupuri"
+              description="ゴンドラアクセスの​ダウンヒルコース、​コース設計は​プロMTBアスリート清水一輝​氏が​監修。​毎年夏、​ダウンヒルシリーズの​ニセコ大会の​会場と​なります。​中級・上級向け。"
+              url="/ja/where-to-ride/annupuri/"
+              action_label="詳しく見る"
+              delay="item-3" %}
         </div>
 
         <!-- Gravel -->
