@@ -580,7 +580,7 @@ html[lang="ja"] .home-impact-title { letter-spacing: normal; text-transform: non
 }
 .home-impact-num {
   font-family: "Metropolis", Helvetica, Arial, sans-serif;
-  font-size: clamp(40px, 5vw, 64px);
+  font-size: clamp(28px, 2.8vw, 44px);
   font-weight: 700;
   color: var(--color-accent);
   line-height: 1.1;
