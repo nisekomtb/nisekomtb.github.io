@@ -7595,10 +7595,24 @@ joomla-field-custom.field-custom-wrapper .input-group .input-group-btn .btn span
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  /* Fill the height the .equal-height row gives us so cards in the
-     same row line up at the bottom edge. */
+  /* height: 100% only works if the parent has a definite height,
+     not a min-height. The .equal-height JS sets min-height on the
+     .item wrapper, so we use the wrapper-flex rule below to make
+     this card stretch instead. */
   height: 100%;
   transition: border-color 200ms ease, transform 200ms ease;
+}
+
+/* Make the wrapper that the equal-height JS measures into a flex
+   column when it contains an .event-card, so the card stretches to
+   fill the wrapper's measured min-height. Without this the card sits
+   at its intrinsic height and cards in the same row don't line up. */
+.equal-height > .col > div:has(> .event-card) {
+  display: flex;
+  flex-direction: column;
+}
+.equal-height > .col > div:has(> .event-card) > .event-card {
+  flex: 1;
 }
 .event-card:not(.disabled):hover {
   border-color: var(--color-secondary);
