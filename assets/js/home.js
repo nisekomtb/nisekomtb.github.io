@@ -74,7 +74,6 @@
     var images = section.querySelectorAll('.home-network-img');
     var rows = section.querySelectorAll('.home-network-row');
     var spineFill = section.querySelector('.home-network-spine-fill');
-    var badge = section.querySelector('.home-network-year-badge');
     if (images.length === 0) return;
 
     var years = section.dataset.years.split(',');
@@ -93,7 +92,6 @@
         else if (i === idx) row.setAttribute('data-state', 'current');
         else row.removeAttribute('data-state');
       });
-      if (badge) badge.textContent = years[idx];
       currentIdx = idx;
     }
 

@@ -244,31 +244,6 @@ html[lang="ja"] .home-pull-quote { font-style: normal; }
   text-shadow: 0 2px 12px rgba(0,0,0,0.55);
 }
 html[lang="ja"] .home-network-title { letter-spacing: normal; text-transform: none; }
-.home-network-sub {
-  margin: 8px 0 0;
-  font-size: clamp(13px, 1.1vw, 15px);
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  font-weight: 500;
-}
-html[lang="ja"] .home-network-sub { letter-spacing: normal; text-transform: none; }
-
-/* Year badge top-right of the stage */
-.home-network-year-badge {
-  position: absolute;
-  top: clamp(28px, 5vh, 48px);
-  right: clamp(24px, 5vw, 80px);
-  z-index: 3;
-  font-family: "Fruit Viesta", "Zen Maru Gothic", "Metropolis", Helvetica, Arial, sans-serif;
-  font-weight: 500;
-  font-size: clamp(56px, 8vw, 112px);
-  color: var(--color-accent);
-  line-height: 1;
-  text-shadow: 0 2px 16px rgba(0,0,0,0.65);
-  pointer-events: none;
-  opacity: 0.92;
-}
 
 /* The journey rail: left-aligned, vertically centred in the stage */
 .home-network-rail {
@@ -352,7 +327,8 @@ html[lang="ja"] .home-network-sub { letter-spacing: normal; text-transform: none
 .home-network-nub {
   position: absolute;
   left: -34px;
-  top: 8px;
+  top: 50%;
+  transform: translateY(-50%);
   width: 14px;
   height: 14px;
   background: rgba(200, 169, 81, 0.4);
@@ -478,7 +454,6 @@ html[lang="ja"] .home-network-sub { letter-spacing: normal; text-transform: none
     margin-bottom: 28px;
     text-align: left;
   }
-  .home-network-year-badge { display: none; }
   .home-network-rail {
     position: relative;
     top: auto;
@@ -511,7 +486,6 @@ html[lang="ja"] .home-network-sub { letter-spacing: normal; text-transform: none
   .home-network-stage { position: relative; height: auto; overflow: visible; padding: 80px 0; }
   .home-network-bg { display: none; }
   .home-network-head { position: relative; top: auto; left: auto; padding: 0 24px; margin-bottom: 32px; }
-  .home-network-year-badge { display: none; }
   .home-network-rail { position: relative; top: auto; left: auto; transform: none; width: 100%; max-width: 760px; padding: 0 24px 0 56px; margin: 0 auto; }
   .home-network-spine-fill { height: 100%; }
   .home-network-spine-fill::after { display: none; }
