@@ -2,21 +2,21 @@
 layout: base
 ---
 {% assign path = page.path | remove: "ja/" | remove: "index.html" %}
-{% case path %}
-  {% when '' %}
-    {% comment %} Home page brings its own hero via index.html include {% endcomment %}
-  {% else %}
-    {% include masthead.html %}
-{% endcase %}
+{% if path == '' %}
+  {% comment %} Home page: full-bleed sections, no container wrap. Each
+     home/*.html partial supplies its own container where needed. {% endcomment %}
+  {{ content }}
+{% else %}
+  {% include masthead.html %}
+  <div id="t3-mainbody" class="container t3-mainbody">
+    <div class="row">
 
-<div id="t3-mainbody" class="container t3-mainbody">
-  <div class="row">
-
-    <!-- MAIN CONTENT -->
-    <div id="t3-content" class="t3-content col-12">
-      {{ content }}
+      <!-- MAIN CONTENT -->
+      <div id="t3-content" class="t3-content col-12">
+        {{ content }}
+      </div>
+    <!-- //MAIN CONTENT -->
     </div>
-  <!-- //MAIN CONTENT -->
-  </div>
 
-</div>
+  </div>
+{% endif %}
