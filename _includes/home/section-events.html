@@ -26,7 +26,12 @@
       </h2>
     </header>
 
-    {% if events.size > 0 %}
+    {% if events.size == 1 %}
+      <div class="home-events-feature">
+        {% include event-card.html event=events.first variant="feature" %}
+      </div>
+      <p class="home-events-all">
+    {% elsif events.size > 0 %}
       <div class="home-events-grid">
         {% for ev in events limit: 3 %}
           {% include event-card.html event=ev %}

@@ -7724,3 +7724,33 @@ joomla-field-custom.field-custom-wrapper .input-group .input-group-btn .btn span
   transition: margin-left 300ms ease;
 }
 .event-card:hover .event-card-action-arrow { margin-left: 12px; }
+
+/* Feature variant: horizontal layout for spotlight use (e.g. home
+   "What's on" when only one event is upcoming). Falls back to the
+   default vertical card on narrow viewports. */
+@media (min-width: 600px) {
+  .event-card-feature { flex-direction: row; }
+  .event-card-feature .event-card-thumb {
+    flex: 0 0 40%;
+    max-width: 40%;
+  }
+  .event-card-feature .event-card-thumb-fade {
+    /* Vertical fade flipped to horizontal so the right edge melts
+       into the body panel instead of the bottom of the image. */
+    top: 0;
+    left: auto;
+    right: 0;
+    width: 60px;
+    height: auto;
+    background: linear-gradient(to right, transparent, var(--color-bg-panel));
+  }
+  .event-card-feature .event-card-body {
+    padding: clamp(20px, 3vw, 36px);
+    justify-content: center;
+    flex: 1;
+  }
+  .event-card-feature .event-card-date { font-size: 14px; }
+  .event-card-feature .event-card-title { font-size: clamp(20px, 2.2vw, 28px); }
+  .event-card-feature .event-card-meta { font-size: 14px; margin-bottom: 18px; }
+  .event-card-feature .event-card-action { font-size: 14px; }
+}

@@ -9,13 +9,17 @@
     include.disabled  — true if the event has already ended (used on
                         /events/ for past-event entries; home never
                         passes this since it filters past events out)
+    include.variant   — optional layout variant. Currently supports
+                        "feature" (horizontal layout used by the home
+                        "What's on" section when only one event is
+                        upcoming).
 {%- endcomment -%}
 {% assign event = include.event %}
 {% if event.override_url %}{% assign event_url = event.override_url %}{% else %}{% assign event_url = event.url %}{% endif %}
 {% assign daysSec = event.days | times: 86400 %}
 {% assign endDate = event.startDate | date: "%s" | plus: daysSec | date: "%F" %}
 
-<article class="event-card{% if include.disabled or event.cancelled %} disabled{% endif %}">
+<article class="event-card{% if include.variant %} event-card-{{ include.variant }}{% endif %}{% if include.disabled or event.cancelled %} disabled{% endif %}">
   <div class="event-card-thumb">
     {% if event.thumbnail %}
       <img src="{{ event.thumbnail }}?d={{ site.time | date: '%s' }}" alt="" itemprop="thumbnailUrl">

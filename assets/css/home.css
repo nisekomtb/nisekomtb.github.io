@@ -642,6 +642,7 @@ html[lang="ja"] .home-events-title { letter-spacing: normal; text-transform: non
   grid-template-columns: repeat(3, 1fr);
   gap: 22px;
 }
+.home-events-feature { max-width: 760px; margin: 0 auto; }
 .home-events-all { text-align: right; margin-top: 24px; font-size: 14px; }
 .home-events-all a { color: var(--color-primary); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 200ms ease, color 200ms ease; }
 .home-events-all a:hover { color: var(--color-primary-hover); border-color: var(--color-primary-hover); }
