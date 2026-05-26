@@ -556,22 +556,27 @@ html[lang="ja"] .home-video-title { letter-spacing: normal; text-transform: none
   line-height: 1.05;
 }
 html[lang="ja"] .home-impact-title { letter-spacing: normal; text-transform: none; }
-.home-impact-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: clamp(24px, 3vw, 48px);
+/* Row + col scaffolding so cards inherit the same equal-height
+   behaviour as the /impact/ stat cards. .col col-12 gives one per row
+   on xs, col-md-6 splits to two per row on md, and .home-impact-col
+   takes over at lg+ to fit all five cards on one row. */
+.home-impact-row { margin-top: 0; margin-bottom: 0; }
+.home-impact-col { padding: 12px; }
+@media (min-width: 992px) {
+  .home-impact-col { flex: 0 0 20%; max-width: 20%; }
 }
 .home-impact-stat {
   background: var(--color-bg-panel);
   border: 1px solid rgba(200, 169, 81, 0.18);
   border-radius: 6px;
-  padding: 32px 16px;
+  padding: clamp(32px, 4vw, 56px) 16px;
   text-align: center;
   font-variant-numeric: tabular-nums;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100%; /* stretch to the col's height for equal-height cards */
 }
 .home-impact-num {
   font-family: "Metropolis", Helvetica, Arial, sans-serif;
@@ -614,8 +619,6 @@ html[lang="ja"] .home-impact-title { letter-spacing: normal; text-transform: non
 }
 .home-impact-link a:hover { color: var(--color-primary-hover); border-color: var(--color-primary-hover); }
 
-@media (max-width: 1023px) { .home-impact-grid { grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 600px)  { .home-impact-grid { grid-template-columns: repeat(2, 1fr); } }
 
 /* ── Section 06: Events ───────────────────────────────────────────── */
 .home-events {
