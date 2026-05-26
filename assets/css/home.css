@@ -568,6 +568,10 @@ html[lang="ja"] .home-impact-title { letter-spacing: normal; text-transform: non
   padding: 32px 16px;
   text-align: center;
   font-variant-numeric: tabular-nums;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .home-impact-num {
   font-family: "Metropolis", Helvetica, Arial, sans-serif;
