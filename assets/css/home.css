@@ -280,7 +280,8 @@ html[lang="ja"] .home-network-title { letter-spacing: normal; text-transform: no
   background: linear-gradient(180deg, var(--color-accent) 0%, var(--color-accent) 90%, transparent 100%);
   transition: height 280ms ease-out;
 }
-/* The glowing dot at the leading edge of the fill */
+/* The glowing dot at the leading edge of the fill. z-index lifts it
+   above the static year nubs so the live position is always visible. */
 .home-network-spine-fill::after {
   content: "";
   position: absolute;
@@ -296,6 +297,7 @@ html[lang="ja"] .home-network-title { letter-spacing: normal; text-transform: no
     0 0 0 6px var(--color-accent),
     0 0 20px rgba(200, 169, 81, 0.9);
   animation: home-network-pulse 2.4s ease-in-out infinite;
+  z-index: 5;
 }
 @keyframes home-network-pulse {
   0%, 100% {
