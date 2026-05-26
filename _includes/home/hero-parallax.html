@@ -1,7 +1,17 @@
-<!-- _includes/home/hero-parallax.html: Section 01 -->
+<!-- _includes/home/hero-parallax.html: Section 01 (video-background hero) -->
 <div class="home-hero">
   <div class="home-hero-bg-wrap">
-    <div class="home-hero-bg" style="background-image: url('/assets/images/bg/bg-header-yotei.jpg');"></div>
+    <div class="home-hero-bg" style="background-image: url('/assets/images/home/hero-video-poster.jpg');"></div>
+    <iframe
+      class="home-hero-video"
+      src="https://player.vimeo.com/video/1195232610?background=1&loop=1&autopause=0&dnt=1"
+      frameborder="0"
+      allow="autoplay; fullscreen; picture-in-picture"
+      allowfullscreen
+      title="{% if page.lang == 'en' %}NAMBA 2026 reel{% else %}NAMBA 2026年リール{% endif %}"
+      aria-hidden="true"
+      tabindex="-1"></iframe>
+    <div class="home-hero-overlay"></div>
   </div>
   <div class="home-hero-content container">
     <h1 class="home-hero-title">
