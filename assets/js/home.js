@@ -217,7 +217,7 @@
         var suffix = stat.dataset.suffix || '';
         var v = stat.querySelector('.value');
         if (!v) return;
-        var duration = 1200;
+        var duration = 1800;
         var start = performance.now();
         function tick(now) {
           var t = Math.min((now - start) / duration, 1);
