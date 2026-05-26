@@ -655,7 +655,7 @@ html[lang="ja"] .home-stories-title { letter-spacing: normal; text-transform: no
 @media (max-width: 1023px) { .home-stories-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 600px) { .home-stories-grid { grid-template-columns: 1fr; } }
 
-/* ── Section 07: Feature image (chapter break #2) ─────────────────── */
+/* ── Section 07: Feature image (parallax chapter break) ───────────── */
 .home-feature {
   position: relative;
   width: 100%;
@@ -664,11 +664,19 @@ html[lang="ja"] .home-stories-title { letter-spacing: normal; text-transform: no
   overflow: hidden;
   background: var(--color-bg);
 }
+/* Image is 30% taller than the section so scroll-tied parallax can
+   shift it +/- 15% of section height without exposing the dark
+   background underneath. JS sets transform: translateY(...) based on
+   scroll progress. */
 .home-feature-img {
   position: absolute;
-  inset: 0;
+  top: -15%;
+  left: 0;
+  right: 0;
+  height: 130%;
   background-position: center;
   background-size: cover;
+  will-change: transform;
 }
 .home-feature-img::after {
   content: "";
@@ -677,21 +685,10 @@ html[lang="ja"] .home-stories-title { letter-spacing: normal; text-transform: no
   background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.5) 100%);
   pointer-events: none;
 }
-.home-feature-placeholder-overlay {
-  position: absolute;
-  bottom: 16px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--color-primary);
-  color: #fff;
-  font-size: 12px;
-  letter-spacing: 0.05em;
-  padding: 6px 14px;
-  border-radius: 4px;
-  font-weight: 500;
-  /* Remove this whole rule when feature-image.jpg is replaced with the real asset. */
-}
 @media (max-width: 767px) { .home-feature { height: 40vh; min-height: 280px; } }
+@media (prefers-reduced-motion: reduce) {
+  .home-feature-img { transform: none !important; }
+}
 
 /* ── Section 08: Plan + Get Involved (split) ──────────────────────── */
 .home-action {

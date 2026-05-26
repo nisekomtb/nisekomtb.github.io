@@ -25,6 +25,7 @@
     initFadeUps();
     initNetworkScrub();
     initCountUps();
+    initFeatureParallax();
   }
 
   function initHeroVideo() {
@@ -234,6 +235,53 @@
       });
     }, { threshold: 0.4 });
     stats.forEach(function (s) { io.observe(s); });
+  }
+
+  /* Feature chapter-break section: scroll-tied parallax. The image is
+   * sized 130% tall and offset top: -15% (in CSS) so it has 15% of
+   * section-height of vertical headroom in each direction. As the
+   * section moves through the viewport, translate the image opposite
+   * to the natural scroll so it appears to lag (classic background
+   * parallax). */
+  function initFeatureParallax() {
+    if (prefersReducedMotion) return;
+    var section = document.querySelector('.home-feature');
+    if (!section) return;
+    var img = section.querySelector('.home-feature-img');
+    if (!img) return;
+
+    var MAX_PX = 80; // peak translate in either direction
+    var ticking = false;
+
+    function update() {
+      var rect = section.getBoundingClientRect();
+      var vh = window.innerHeight;
+      var totalDistance = vh + rect.height; // distance from "just entering" to "just leaving"
+      var progress = 1 - (rect.bottom / totalDistance);
+      if (progress < 0) progress = 0;
+      else if (progress > 1) progress = 1;
+      // progress=0 -> +MAX (image shifted down, exposing top content)
+      // progress=0.5 -> 0
+      // progress=1 -> -MAX (image shifted up, exposing bottom content)
+      var translate = (0.5 - progress) * 2 * MAX_PX;
+      img.style.transform = 'translateY(' + translate.toFixed(1) + 'px)';
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        window.requestAnimationFrame(update);
+        ticking = true;
+      }
+    }, { passive: true });
+    window.addEventListener('resize', function () {
+      if (!ticking) {
+        window.requestAnimationFrame(update);
+        ticking = true;
+      }
+    }, { passive: true });
+
+    update();
   }
 
   function formatNumber(n) {
