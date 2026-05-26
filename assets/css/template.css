@@ -7595,10 +7595,13 @@ joomla-field-custom.field-custom-wrapper .input-group .input-group-btn .btn span
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  /* Fill the height the .equal-height row gives us so cards in the
+     same row line up at the bottom edge. */
+  height: 100%;
   transition: border-color 200ms ease, transform 200ms ease;
 }
 .event-card:not(.disabled):hover {
-  border-color: var(--color-primary);
+  border-color: var(--color-secondary);
   transform: translateY(-2px);
 }
 .event-card.disabled { opacity: 0.55; }
@@ -7643,7 +7646,11 @@ joomla-field-custom.field-custom-wrapper .input-group .input-group-btn .btn span
   letter-spacing: 1px;
   z-index: 2;
 }
-.event-card-badge.ended { background: rgba(255, 255, 255, 0.15); color: #aaa; }
+.event-card-badge.ended {
+  background: rgba(20, 20, 20, 0.85);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
 .event-card-badge.cancelled { background: rgba(190, 0, 20, 0.85); color: #fff; }
 
 .event-card-body {
