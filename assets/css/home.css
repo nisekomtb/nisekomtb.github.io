@@ -226,12 +226,13 @@ html[lang="ja"] .home-pull-quote { font-style: normal; }
   pointer-events: none;
 }
 
-/* Title pinned top-left of the stage */
+/* Title pinned top-right of the stage (clear of the left-side rail) */
 .home-network-head {
   position: absolute;
   top: clamp(32px, 6vh, 56px);
-  left: clamp(24px, 5vw, 80px);
+  right: clamp(24px, 5vw, 80px);
   z-index: 3;
+  text-align: right;
 }
 .home-network-title {
   font-family: "Fruit Viesta", "Zen Maru Gothic", "Metropolis", Helvetica, Arial, sans-serif;
@@ -314,16 +315,12 @@ html[lang="ja"] .home-network-title { letter-spacing: normal; text-transform: no
   }
 }
 
-/* Each year row */
+/* Each year row. Row stays put so the nub stays centred on the spine;
+   opacity + horizontal shift live on the card only. */
 .home-network-row {
   position: relative;
   display: block;
-  opacity: 0.32;
-  transform: translateX(-6px);
-  transition: opacity 380ms ease, transform 380ms ease;
 }
-.home-network-row[data-state="passed"] { opacity: 0.68; transform: translateX(0); }
-.home-network-row[data-state="current"] { opacity: 1; transform: translateX(0); }
 .home-network-nub {
   position: absolute;
   left: -34px;
@@ -348,8 +345,14 @@ html[lang="ja"] .home-network-title { letter-spacing: normal; text-transform: no
   border-left: 3px solid var(--color-accent);
   border-radius: 6px;
   padding: 14px 18px;
+  opacity: 0.32;
+  transform: translateX(-6px);
+  transition: opacity 380ms ease, transform 380ms ease, border-color 280ms ease, background 280ms ease;
 }
+.home-network-row[data-state="passed"] .home-network-card { opacity: 0.68; transform: translateX(0); }
 .home-network-row[data-state="current"] .home-network-card {
+  opacity: 1;
+  transform: translateX(0);
   border-color: rgba(200, 169, 81, 0.5);
   border-left-color: var(--color-accent);
   background: rgba(20, 20, 20, 0.86);
@@ -394,8 +397,11 @@ html[lang="ja"] .home-network-title { letter-spacing: normal; text-transform: no
 :lang(ja) .home-network-card-head { line-height: 1.4; }
 :lang(ja) .home-network-card-desc { line-height: 1.7; }
 
-/* Parks grid, post-theatre */
-.home-network-parks-wrap { padding: clamp(48px, 8vh, 96px) 0; }
+/* Parks grid, its own section after the network theatre */
+.home-network-parks-section {
+  background: var(--color-bg);
+  padding: clamp(48px, 8vh, 96px) 0;
+}
 .home-network-parks {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -470,7 +476,7 @@ html[lang="ja"] .home-network-title { letter-spacing: normal; text-transform: no
   .home-network-row { opacity: 1; transform: none; }
   .home-network-nub { left: -30px; background: var(--color-accent); }
   .home-network-card { padding: 14px 16px; }
-  .home-network-parks-wrap { padding: 48px 0; }
+  .home-network-parks-section { padding: 48px 0; }
   .home-network-parks { grid-template-columns: 1fr; gap: 12px; padding: 0 24px; }
 }
 
