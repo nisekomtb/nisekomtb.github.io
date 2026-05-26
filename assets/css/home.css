@@ -562,7 +562,10 @@ html[lang="ja"] .home-impact-title { letter-spacing: normal; text-transform: non
   gap: clamp(24px, 3vw, 48px);
 }
 .home-impact-stat {
-  padding: 16px 8px;
+  background: var(--color-bg-panel);
+  border: 1px solid rgba(200, 169, 81, 0.18);
+  border-radius: 6px;
+  padding: 32px 16px;
   text-align: center;
   font-variant-numeric: tabular-nums;
 }
