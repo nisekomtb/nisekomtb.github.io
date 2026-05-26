@@ -7614,7 +7614,7 @@ joomla-field-custom.field-custom-wrapper .input-group .input-group-btn .btn span
 .equal-height > .col > div:has(> .event-card) > .event-card {
   flex: 1;
 }
-.event-card:not(.disabled):hover {
+.event-card:hover {
   border-color: var(--color-secondary);
   transform: translateY(-2px);
 }
