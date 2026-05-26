@@ -7712,9 +7712,8 @@ joomla-field-custom.field-custom-wrapper .input-group .input-group-btn .btn span
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 0.04em;
-  color: var(--color-primary);
+  color: #fff;
   margin-top: auto;
-  transition: color 200ms ease;
 }
 :lang(ja) .event-card-action { letter-spacing: normal; }
 .event-card-action-arrow {
@@ -7724,5 +7723,4 @@ joomla-field-custom.field-custom-wrapper .input-group .input-group-btn .btn span
   top: 1px;
   transition: margin-left 300ms ease;
 }
-.event-card:hover .event-card-action { color: #fff; }
 .event-card:hover .event-card-action-arrow { margin-left: 12px; }
