@@ -46,20 +46,20 @@ parking: false
 about: false
 ---
 
-### Ride with Loic Bruni at Twin Peaks
+## Ride with Loic Bruni at Twin Peaks
 
 **Loic Bruni** is in Niseko on 25 July: 6x UCI Downhill World Champion, 4x UCI World Cup Overall Champion, and a fixture on the Specialized Gravity team. He'll lead a group ride at Twin Peaks Bike Park, followed by a meet and greet at Rhythm Hirafu.
 
 Fan or first-timer, this is a community ride: social pace, not a race.
 
-### Who's riding
+## Who's riding
 
 - <a href="https://instagram.com/vinknico" target="_blank">Nico Vink</a>, freeride rider and trail builder
 - <a href="https://instagram.com/hajimeeeee" target="_blank">Hajime Imoto</a>, one of Japan's fastest downhill racers
 - <a href="https://instagram.com/yukikushima" target="_blank">Yuki Kushima</a>, DH athlete on the international circuit
 - <a href="https://instagram.com/juunnya" target="_blank">Junya Nagata</a>, local rider
 
-### Group ride requirements
+## Group ride requirements
 
 - Comfortable on intermediate (blue) trails
 - Able to pedal to the top of Twin Peaks (20–30 min moderate climb)

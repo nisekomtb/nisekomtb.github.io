@@ -31,7 +31,7 @@ parking: false
 about: false
 ---
 
-### Course Details
+## Course Details
 
 September 13 (Sat) 11:00 Start / 15:00 Finish
 Gravel Ride Session: 55 km / Elevation gain approx. 900 m

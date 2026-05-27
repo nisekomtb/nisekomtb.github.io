@@ -93,7 +93,7 @@ Across the weekend of 16-17 September:
 - Booths from ION, Reserve Wheels, Peaty's and more
 - Giveaways and free merch
 
-### The event
+## The event
 
 Santa Cruz brings a fleet of demo bikes to Rhythm Japan Base: Megatower, Hightower, Tallboy, Nomad, Bronson, 5010, Blur, and Stigmata.
 

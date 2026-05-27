@@ -40,7 +40,7 @@ about: false
 
 ![Grand HIRAFU gondola transporting riders to the bike park trails](/assets/images/events/2024/hirafu-bike-park-opens/gondola.jpg)
 
-### What's new
+## What's new
 
 - **Top-to-bottom flow trail.** A new flow line designed to ride from gondola top to bike park base.
 - **Gondola access.** The old Center 4 lift has been removed; operation has shifted to the gondola.
@@ -49,7 +49,7 @@ about: false
 
 NAMBA will be there for opening day. Season passes are good value if you plan to ride more than a few times.
 
-### Season
+## Season
 
 13 July (Saturday) to 23 September 2024 (Monday holiday).
 

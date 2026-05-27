@@ -448,7 +448,7 @@ layout: base
       {% endcomment %}
       {% if page.show_getting_here and park_data.location_lat and park_data.location_lng %}
       <section class="article-content">
-        <h3 class="module-title">{% if page.lang == "ja" %}アクセス{% else %}Getting here{% endif %}</h3>
+        <h2 class="module-title">{% if page.lang == "ja" %}アクセス{% else %}Getting here{% endif %}</h2>
         <div id="getting-here-map" style="width:100%; height:450px; border-radius:3px; overflow:hidden;"></div>
       </section>
       <script>(g => { var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window; b = b[c] || (b[c] = {}); var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => { await (a = m.createElement("script")); e.set("libraries", [...r] + ""); for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]); e.set("callback", c + ".maps." + q); a.src = `https://maps.${c}apis.com/maps/api/js?` + e; d[q] = f; a.onerror = () => h = n(Error(p + " could not load.")); a.nonce = m.querySelector("script[nonce]")?.nonce || ""; m.head.append(a) })); d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)) })
@@ -495,7 +495,7 @@ layout: base
           src="{{ park_data.logo }}?d={{ site.time | date: '%s' }}"
           alt="{% if page.lang == 'ja' %}{{ park_data.ja.name | default: park_data.name }}{% else %}{{ park_data.name }}{% endif %}" />
         {% endif %}
-        <h3 class="module-title">{% if page.lang == "ja" %}基本データ{% else %}Key stats{% endif %}</h3>
+        <h2 class="module-title">{% if page.lang == "ja" %}基本データ{% else %}Key stats{% endif %}</h2>
         {% include park-stats.html data_key=page.trail_data_key %}
 
         {% if park_data.partners %}
@@ -526,7 +526,7 @@ layout: base
   <div class="row">
     <div class="col col-12">
       <section class="park-gallery">
-        <h3>{% if page.lang == 'ja' %}ギャラリー{% else %}Gallery{% endif %}</h3>
+        <h2>{% if page.lang == 'ja' %}ギャラリー{% else %}Gallery{% endif %}</h2>
         <div class="gallery-grid">
           {% for tile in park_data.gallery %}
           {% assign pswp_href = tile.img_large | default: tile.img %}

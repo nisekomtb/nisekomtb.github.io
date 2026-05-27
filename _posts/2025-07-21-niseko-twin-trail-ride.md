@@ -26,20 +26,20 @@ parking: false
 about: false
 ---
 
-### MTB workshop and guided ride day
+## MTB workshop and guided ride day
 
 Niseko Hirafu Green Park hosts a one-day MTB event across **Grand Hirafu** and **Twin Peaks Bike Park**. **Pro rider Fumiya Kurose** leads guided sessions, skill workshops, and a setup and maintenance talk.
 
 ---
 
-### What's Included
+## What's Included
 - Guided trail sessions & skill workshops
 - Maintenance tips & setup talk
 - Chill time + snacks at Hirafu Green Park *(tentative)*
 
 ---
 
-### Details
+## Details
 - **Date & Time:** TBC (weather dependent)
 - **For:** Experienced MTB riders (all levels welcome)
 - **Capacity:** 15 riders max

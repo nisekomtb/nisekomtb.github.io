@@ -47,20 +47,20 @@ parking: false
 about: false
 ---
 
-### ツインピークスで​Loic Bruniと​ライド
+## ツインピークスで​Loic Bruniと​ライド
 
 **Loic Bruni**が​7月25日に​ニセコに​来ます。​UCIダウンヒル世界選手権6回優勝、​UCIワールドカップ年間総合優勝4回、​Specialized Gravityチーム所属の​ライダーです。​ツインピークス・バイクパークでの​グループライドと、​Rhythm Hirafuでの​ミート&グリートを​開催します。
 
 ファンも​初心者も​歓迎です。​コミュニティライドで、​レースでは​ありません。
 
-### ゲストライダー
+## ゲストライダー
 
 - <a href="https://instagram.com/vinknico" target="_blank">Nico Vink</a>、​フリーライドライダー兼​トレイルビルダー
 - <a href="https://instagram.com/hajimeeeee" target="_blank">井本​はじめ</a>、​日本を​代表する​ダウンヒルレーサー
 - <a href="https://instagram.com/yukikushima" target="_blank">櫛間悠樹</a>、​国際​サーキットで​活躍する​DHアスリート
 - <a href="https://instagram.com/juunnya" target="_blank">長田淳也</a>、​地元ライダー
 
-### グループライド参加条件
+## グループライド参加条件
 
 - 中級​（青）トレイルを​快適に​走れる​こと
 - ツインピークスの​頂上まで​登れる​体力​（中強度の​登りで​20〜30分）

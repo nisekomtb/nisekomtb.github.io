@@ -66,20 +66,20 @@ about: false
 storeProductId: 679581277
 storeProductSlug: soil-searching-2024
 ---
-### Soil Searching Niseko 2024
+## Soil Searching Niseko 2024
 
 Specializedの​Soil Searchingイベントが​ニセコで​2年目の​開催。​今年は​NAMBAクルーと​一緒に​ハンズオンの​トレイル建設、​フィーチャー造成、​メンテナンスに​取り組みます。
 
 ![Soil Searching Niseko 2024でトレイル構築を学ぶ参加者たち](/assets/images/events/2024/soil-searching/learn.jpg)
 
-### 含まれるもの
+## 含まれるもの
 
 - この​イベント限定の​Soil Searching Tシャツ。
 - Specializedレンタルバイク、​先着順。
 - ツインピークスを​建設している​クルーから​の​トレイル建設指導。
 - 1日目の​ランチ、​Pow Barの​エナジーバー、​ステッカー、​夕方の​パーティーでビール​（成人のみ）。
 
-### スケジュール
+## スケジュール
 
 - **1日目、​Dig：** トレイル・フィーチャー造成。​ランチ提供。​Rhythm Hirafuで​夕方の​パーティー。​子ども向けの​アクティビティもあります。
 - **2日目、​Ride：** 前日に​造ったトレイル​・フィーチャーを​走ります。​Specializedアンバサダーと​のグループライド。

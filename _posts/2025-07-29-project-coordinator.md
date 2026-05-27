@@ -25,15 +25,15 @@ perks:
     perk: Available in Niseko Hirafu
 applyUrl: /contact/?topic=job-application
 ---
-<h3 id="about-namba">About NAMBA:</h3>
+<h2 id="about-namba">About NAMBA:</h2>
 
 NAMBA (Niseko Area Mountain Bike Association) is a non-profit organization dedicated to the development, maintenance, and promotion of mountain biking in the Niseko region. We work with the local community, government, and businesses to create accessible and sustainable trails for locals and visitors alike.
 
-### Role Overview:
+## Role Overview:
 
 A part-time <strong>Project Coordinator</strong> role supporting NAMBA's committee heads. You'll keep projects moving across NAMBA's volunteer-led committees: tracking timelines and deliverables, running agendas and minutes, and acting as the connective tissue between committees and their partners.
 
-### Key Responsibilities:
+## Key Responsibilities:
 
 - <strong>Project Coordination:</strong>
   - Support the planning and delivery of NAMBA-led projects.
@@ -48,7 +48,7 @@ A part-time <strong>Project Coordinator</strong> role supporting NAMBA's committ
   - Maintain shared files and systems for budgeting, scheduling, and reporting.
   - Assist with basic bookkeeping and liaising with the accounts volunteer.
 
-### Requirements:
+## Requirements:
 
 - Applicants must have the legal right to work in Japan. Please note that we are not able to provide visa sponsorship for this position at this time.
 - Excellent organizational and multitasking skills.
@@ -60,7 +60,7 @@ A part-time <strong>Project Coordinator</strong> role supporting NAMBA's committ
 - Prepared to work occasionally outside, at new or existing trail sites.
 - Valid driver’s license with clean driving record
 
-### How to Apply:
+## How to Apply:
 
 Please apply via our <a href="{{- page.applyUrl -}}">contact form</a>, including a short introduction about yourself and why you're interested in working with NAMBA.
 

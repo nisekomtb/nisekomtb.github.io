@@ -6,7 +6,7 @@
 {% assign trail_key = include.data_key %}
 {% if trail_key %}
 <section class="article-content" itemprop="articleBody">
-  <h3>{% if page.lang == "ja" %}トレイル{% else %}Trails{% endif %}</h3>
+  <h2>{% if page.lang == "ja" %}トレイル{% else %}Trails{% endif %}</h2>
   <div class="trails-key">
     <h4>{% if page.lang == "ja" %}トレイルキー{% else %}Trail key{% endif %}</h4>
     <ul>
@@ -89,7 +89,7 @@
         <img src="/assets/images/twinpeaks/trailsign.jpg" alt="{% if page.lang == 'ja' %}NAMBAトレイル標識{% else %}NAMBA trail signage{% endif %}" style="width:100%; height:100%; object-fit:cover; display:block;" />
       </div>
       <div style="flex:1; min-width:250px; padding:32px;">
-        <h3 class="module-title" style="margin-bottom:12px;">{% if page.lang == 'ja' %}トレイル標識ガイド{% else %}Trail Signage Guide{% endif %}</h3>
+        <h2 class="module-title" style="margin-bottom:12px;">{% if page.lang == 'ja' %}トレイル標識ガイド{% else %}Trail Signage Guide{% endif %}</h2>
         <p style="font-size:110%; margin-bottom:20px;">{% if page.lang == 'ja' %}ニセコ全域で統一された標識システムの読み方：難易度、方向コード、位置マーカー。{% else %}Learn how to read the unified signage system used across all Niseko riding areas: difficulty ratings, direction codes, location markers.{% endif %}</p>
         <a class="btn btn-primary" href="{% if page.lang == 'ja' %}/ja{% endif %}/where-to-ride/signage/">{% if page.lang == 'ja' %}ガイドを見る{% else %}Read the guide{% endif %}</a>
       </div>

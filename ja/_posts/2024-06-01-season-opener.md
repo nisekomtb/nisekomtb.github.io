@@ -54,13 +54,13 @@ itinerary:
 parking: false
 about: false
 ---
-### Dirty Dames 女性グループライド <small>(天候に​よる)</small>
+## Dirty Dames 女性グループライド <small>(天候に​よる)</small>
 
 昨年から​延期された​Dirty Dames女性グループライドの​デビュー。​9:00から​Rhythmで​コーヒー、​10:00〜11:00に​ライド。​全スキルレベル歓迎。
 
 ![ツインピークスシーズンオープナーでのDirty Dames女性グループライド](/assets/images/events/2024/season-opener/dirtydames.jpg)
 
-### Stravaコンテスト開始
+## Stravaコンテスト開始
 
 シーズン通しの​Stravaコンテストが​スタート。​年齢層別の​King of the Mountain（KOM）と​Queen of the Mountain（QOM）。​勝者は​シーズン終了時に​発表。​夏全体で​タイムを​縮める​チャンスです。
 
@@ -83,7 +83,7 @@ StravaはライドをGPS記録する​アプリです。​当日、​対象�
 
 ![ツインピークスバイクパークでStravaセグメントを競うライダーたち](/assets/images/events/2024/season-opener/strava.jpg)
 
-### Rhythm サマーオープニングパーティー
+## Rhythm サマーオープニングパーティー
 
 Rhythmも​同じ​週末に​夏の​オープニングを​開催。​内容：
 

@@ -78,7 +78,7 @@ itinerary:
 parking: false
 about: false
 ---
-### Trail information
+## Trail information
 
 Cruz Control will stretch 2.8km when fully built. The opening weekend unveils the first 1.1km. Riders should be comfortable on the black trail Shogun Syndicate, which connects to the new section.
 
@@ -91,7 +91,7 @@ var script = document.createElement("script"); script.setAttribute("src", "https
 </script>
 <!-- TRAILFORKS WIDGET END -->
 
-### Activities
+## Activities
 
 - **Santa Cruz demo bikes:** outside Rhythm, 9:00am to 3:00pm each day. First time on an MTB or testing the latest Santa Cruz models.
 - **Coffee at Rhythm:** start the morning with a coffee inside before heading up.

@@ -55,13 +55,13 @@ parking: false
 about: false
 ---
 
-### The Dirty Dames women's group ride <small>(weather permitting)</small>
+## The Dirty Dames women's group ride <small>(weather permitting)</small>
 
 The debut of the Dirty Dames women's group ride, postponed from last year. Coffee at Rhythm from 9am, ride from 10am to 11am. All skill levels welcome.
 
 ![Dirty Dames women's group ride at the Twin Peaks season opener](/assets/images/events/2024/season-opener/dirtydames.jpg)
 
-### Strava contest launch
+## Strava contest launch
 
 The weekend launches our season-long Strava competition: King of the Mountain (KOM) and Queen of the Mountain (QOM) titles across age groups. Winners announced at season close. The whole summer to improve your times.
 
@@ -84,7 +84,7 @@ Open to all riders (NAMBA crew excluded). Three steps:
 
 ![Riders racing a Strava segment at Twin Peaks Bike Park](/assets/images/events/2024/season-opener/strava.jpg)
 
-### Rhythm summer opening party
+## Rhythm summer opening party
 
 Rhythm reopens for summer the same weekend. Their party includes:
 

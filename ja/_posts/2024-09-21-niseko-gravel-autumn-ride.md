@@ -32,13 +32,13 @@ link:
 parking: false
 about: false
 ---
-### MTBの​先へ：ニセコ・オータムグラベルライド 2024
+## MTBの​先へ：ニセコ・オータムグラベルライド 2024
 
 9月21〜22日の​2日間、​ニセコの​秋の​景色の​中を​舗装路と​未舗装路を​組み合わせて​走る​グラベルライド。
 
 ![グラベルライドのルートから望むニセコの色鮮やかな秋の風景](/assets/images/events/2024/niseko-gravel-autumn-ride/view.jpg)
 
-### コース
+## コース
 
 - XL PAS Ex Long Course: 16,000円
 - L SHIMANO GRX Long Course: 12,500円
@@ -47,7 +47,7 @@ about: false
 
 舗装路と​グラベルの​組み合わせ。​長距離コースは​登りも​多めです。
 
-### 詳細
+## 詳細
 
 ルートと​参加登録は​下の​リンクから。
 

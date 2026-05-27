@@ -59,13 +59,13 @@ about: false
 logo: /assets/images/events/2023/soil-searching/soil-searching.png
 ---
 
-### The event
+## The event
 
 Two days of trail work and riding at Twin Peaks Bike Park, before the bike park's grand opening to the public. Volunteers join NAMBA and Specialized's builders and riders to finish the trails. A chance to contribute to the project and ride lines that aren't yet open.
 
 ![Volunteers working together on trail construction at Soil Searching Niseko](/assets/images/events/2023/soil-searching/ss02.jpg)
 
-### About Soil Searching
+## About Soil Searching
 
 <strong>Why not sponsor trail builders like athletes?</strong>
 

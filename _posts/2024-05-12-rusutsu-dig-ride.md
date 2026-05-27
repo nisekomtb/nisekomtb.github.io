@@ -28,22 +28,22 @@ about: false
 
 <div class="TrailforksWidgetTrail" data-w="100%" data-h="350px" data-trailid="450955" data-activitytype="1" data-map="1" data-basemap="trailforks" data-elevation="1" data-photos="0" data-title="1" data-info="1" data-trail_opacity="25" data-v="2" data-basicmap="1"></div>
 
-### Event details
+## Event details
 
 Snow is clear and the trail is ready for its season prep. We dig in the morning, ride in the afternoon.
 
-### What to bring
+## What to bring
 
 - Maintenance tools (shovels preferred; the club has a few spares but bring your own if you can)
 - Bike and helmet for the post-dig ride
 
 ![Volunteers digging and maintaining trails at Rusutsu](/assets/images/events/2024/rusutsu-dig-ride/dig.jpg)
 
-### Weather
+## Weather
 
 The event runs in light rain; dress accordingly.
 
-### Note
+## Note
 
 Timing is loose. Join later or leave earlier if needed. Scheduled outside Golden Week for accessibility.
 

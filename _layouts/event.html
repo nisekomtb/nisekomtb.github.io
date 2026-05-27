@@ -365,7 +365,7 @@ layout: base
         {{ content }}
 
         {% if page.itinerary %}
-        <h3>{% if page.lang == "en" %}Itinerary{% else %}行程{% endif %}</h3>
+        <h2>{% if page.lang == "en" %}Itinerary{% else %}行程{% endif %}</h2>
         {% for day in page.itinerary.days %}
 
           {% if page.days != 1 %}
@@ -397,7 +397,7 @@ layout: base
 
         {% if page.parking %}
           {% if page.lang == "en" %}
-          <h3>Parking location</h3>
+          <h2>Parking location</h2>
           <p>Parking at the trailhead is strictly prohibited – please use one of the below parking locations:</p>
           <ul>
             <li><a href="https://www.trailforks.com/poi/123003/" target="_blank">Hirafu Gondola Parking</a></li>
@@ -405,7 +405,7 @@ layout: base
             <li><a href="https://www.trailforks.com/poi/123002/" target="_blank">Sunsports Land Parking</a></li>
           </ul>
           {% else %}
-          <h3>駐車場所</h3>
+          <h2>駐車場所</h2>
           <p>登山口への<wbr>駐車は<wbr>固く<wbr>お断りいたします<wbr>：</p>
           <ul>
             <li><a href="https://www.trailforks.com/poi/123003/" target="_blank">ひらふゴンドラ駐車場</a></li>
@@ -419,13 +419,13 @@ layout: base
 
         {% if page.about %}
           {% if page.lang == "en" %}
-          <h3>About NAMBA</h3>
+          <h2>About NAMBA</h2>
 
           <p>NAMBA (Niseko Area Mountain Bike Association) is a Japanese nonprofit building Niseko's mountain bike network. We design, build, and run free-to-ride trails for the local community and visiting riders, in partnership with local resorts and landowners.</p>
           <p>Our flagship is Twin Peaks Bike Park, Japan's largest free-to-ride mountain bike park, now over 17km of professionally designed trail. Beyond Twin Peaks, we work with Grand Hirafu and Niseko Hanazono on lift-accessed trail networks, with the regional total reaching 33km in 2026.</p>
           <p>Want to ride more? <a href="/get-involved/join/">Become a member</a>, <a href="/partner/">partner with us</a>, or join a trail building day.</p>
           {% else %}
-          <h3>NAMBAに​ついて</h3>
+          <h2>NAMBAに​ついて</h2>
 
           <p>NAMBA（Niseko Area Mountain Bike Association）は、​ニセコの​マウンテンバイクネットワークを​築く​日本の​非営利団体です。​地元の​コミュニティと​訪れる​ライダーの​ために、​無料で​楽しめる​トレイルを​設計・建設・​運営しています。​地元の​リゾートや​土地所有者と​協力しています。</p>
           <p>代表的な​プロジェクトは​ツインピークス・バイクパーク。​日本最大の​無料で​楽しめる​マウンテンバイクパークで、​現在は​17km以上の​プロ設計トレイルを​擁します。​ツインピークスの​他、​グラン・ヒラフと​ニセコHANAZONOでも​リフトアクセス可能な​トレイルネットワークを​展開し、​2026年には​地域全体で​33kmに​到達します。</p>
@@ -453,7 +453,7 @@ layout: base
     <!-- Sidebar -->
     <div class="col-12 col-md-4 col-lg-3">
       <div class="event-sidebar ja-animate" data-animation="move-from-bottom" data-delay="400">
-        <h3 class="module-title">{% if page.lang == "ja" %}イベント詳細{% else %}Event Details{% endif %}</h3>
+        <h2 class="module-title">{% if page.lang == "ja" %}イベント詳細{% else %}Event Details{% endif %}</h2>
 
         <div class="detail-item">
           <h4><span class="fa-solid fa-calendar" style="margin-right:4px;"></span> {% if page.lang == "ja" %}日程{% else %}Dates{% endif %}</h4>

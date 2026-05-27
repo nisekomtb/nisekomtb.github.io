@@ -98,13 +98,13 @@ parking: false
 about: false
 ---
 
-Special guest riders: <a href="https:instagram.com/hajimeeeee" target="blank">Hajime Imoto</a> and <a href="https:instagram.com/yukikushima" target="blank">Yuki Kushima</a> from Santa Cruz Bicycles.
+Special guest riders: <a href="https://instagram.com/hajimeeeee" target="blank">Hajime Imoto</a> and <a href="https://instagram.com/yukikushima" target="blank">Yuki Kushima</a> from Santa Cruz Bicycles.
 
-### Rides:
+## Rides:
 
 Kids and Dirty Dames women's group rides will be led by one of the pro riders. All levels welcome, kids need to be able to ride a bike.
 
-### DH Series
+## DH Series
 
 Sign ups and more details about the Downhill Series can be found below;
 

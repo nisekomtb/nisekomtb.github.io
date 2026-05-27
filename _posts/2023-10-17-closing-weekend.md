@@ -76,7 +76,7 @@ about: false
 
 Several events across the weekend:
 
-### Strava segment challenge <small>(weather permitting)</small>
+## Strava segment challenge <small>(weather permitting)</small>
 
 <span class="cancelled">⛈️ Cancelled due to weather ⛈️</span>
 
@@ -97,7 +97,7 @@ Three steps:
 
 ![Riders competing in the Strava segment challenge at Twin Peaks](/assets/images/events/2023/closing-weekend/strava.jpg)
 
-### Costume competition <small>(weather permitting)</small>
+## Costume competition <small>(weather permitting)</small>
 
 <span class="cancelled">⛈️ Cancelled due to weather ⛈️</span>
 
@@ -105,7 +105,7 @@ Halloween is around the corner. Show up in costume, ride the trails, prizes for 
 
 ![Halloween pumpkin decoration for the costume competition](/assets/images/events/2023/closing-weekend/pumpkin.jpg)
 
-### The Dirty Dames women-only group ride <small>(weather permitting)</small>
+## The Dirty Dames women-only group ride <small>(weather permitting)</small>
 
 <span class="cancelled">⛈️ Cancelled due to weather ⛈️</span>
 
@@ -113,7 +113,7 @@ The first Dirty Dames group ride. Women-only, all skill levels welcome.
 
 ![Dirty Dames women-only group ride at the closing weekend](/assets/images/events/2023/closing-weekend/dirtydames.jpg)
 
-### NAMBA open house
+## NAMBA open house
 
 NAMBA hosts an open house at Midtown Niseko, just down the road from the trailhead. Members of the media and government will be there for an update on Twin Peaks and NAMBA's plans for the wider Niseko area. Open to the public.
 

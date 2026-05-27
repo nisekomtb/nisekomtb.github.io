@@ -78,7 +78,7 @@ itinerary:
 parking: false
 about: false
 ---
-### トレイル情報
+## トレイル情報
 
 クルーズ・コントロールは​全長​2.8kmで​完成予定。​オープニングウィークエンドでは​最初の​1.1kmを​公開します。​新区間に​接続する​ブラックトレイル​「将軍シンジケート」を​快適に​走れる​ライダー向け。
 
@@ -91,7 +91,7 @@ var script = document.createElement("script"); script.setAttribute("src", "https
 </script>
 <!-- TRAILFORKS WIDGET END -->
 
-### アクティビティ
+## アクティビティ
 
 - **サンタクルーズ・デモバイク：** Rhythmの​前で​毎日​9:00am〜3:00pmに​試乗可能。​MTB初体験の​方も、​最新の​サンタクルーズを​試したい​経験者も​どうぞ。
 - **Rhythmでの​コーヒー：** トレイルに​出る​前に​Rhythmで​コーヒーを。

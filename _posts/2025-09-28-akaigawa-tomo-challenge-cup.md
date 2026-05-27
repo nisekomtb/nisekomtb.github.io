@@ -44,12 +44,12 @@ link:
 parking: false
 about: false
 ---
-### Event Categories
+## Event Categories
 
 - Time Attack Ride (Men’s, Women’s, Kids’ Classes)
 - Target Time Ride (No class divisions)
 
-### Participation Requirements
+## Participation Requirements
 
 - Must be able to ride safely without assistance (for elementary school students and above)
 - Must bring a suitable bike for the course (MTB, BMX, etc.)
@@ -57,16 +57,16 @@ about: false
 
 Note: Injuries are your own responsibility, so individual insurance is recommended.
 
-### Entry Method
+## Entry Method
 
 Sign up on the event day at the reception
 
-### Awards
+## Awards
 
 - Top 3 in each class
 - 1 person will be awarded in the Target Time Ride
 
-### Weather-Related Cancellations
+## Weather-Related Cancellations
 
 In case of bad weather, the event will be canceled. Announcements will be made by 7:00 AM on the event day via the website and social media.
 

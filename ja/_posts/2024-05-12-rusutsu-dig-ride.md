@@ -27,22 +27,22 @@ about: false
 ---
 <div class="TrailforksWidgetTrail" data-w="100%" data-h="350px" data-trailid="450955" data-activitytype="1" data-map="1" data-basemap="trailforks" data-elevation="1" data-photos="0" data-title="1" data-info="1" data-trail_opacity="25" data-v="2" data-basicmap="1"></div>
 
-### イベント詳細
+## イベント詳細
 
 雪は​すでに​消え、​トレイルの​シーズン整備が​できる​状態です。​午前中に​掘って、​午後に​ライドします。
 
-### 持ち物
+## 持ち物
 
 - メンテナンスツール​（シャベル推奨。​クラブの​スペアは​限り​あり、​できれば​持参を）
 - 整備後に​走る​ための​自転車と​ヘルメット
 
 ![ルスツでトレイル整備を行うボランティアたち](/assets/images/events/2024/rusutsu-dig-ride/dig.jpg)
 
-### 天候
+## 天候
 
 小雨でも​実施します。​服装を​ご準備ください。
 
-### 注意
+## 注意
 
 時間は​柔軟です。​遅れて​参加したり​早めに​帰る​ことも​可能。​ゴールデンウィーク外の​開催で、​スケジュールが​組みやすい​日程です。
 

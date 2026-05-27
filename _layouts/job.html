@@ -139,7 +139,7 @@ layout: base
       <!-- Perks -->
       {% if page.perks.size > 0 %}
       <div class="ja-animate" data-animation="move-from-bottom" data-delay="600">
-        <h3 class="module-title" style="margin-top:36px;">{% if page.lang == "ja" %}特典{% else %}Perks{% endif %}</h3>
+        <h2 class="module-title" style="margin-top:36px;">{% if page.lang == "ja" %}特典{% else %}Perks{% endif %}</h2>
         <div class="job-perks">
           {% for perk in page.perks %}
             <div class="job-perk">
@@ -165,7 +165,7 @@ layout: base
     <!-- Sidebar -->
     <div class="col-12 col-md-4 col-lg-3">
       <div class="job-sidebar ja-animate" data-animation="move-from-bottom" data-delay="400">
-        <h3 class="module-title">{% if page.lang == "ja" %}ポジション詳細{% else %}Position Details{% endif %}</h3>
+        <h2 class="module-title">{% if page.lang == "ja" %}ポジション詳細{% else %}Position Details{% endif %}</h2>
 
         {% if page.location %}
         <div class="detail-item">

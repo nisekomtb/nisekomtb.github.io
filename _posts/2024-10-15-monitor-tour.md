@@ -55,29 +55,29 @@ itinerary:
 parking: false
 about: false
 ---
-### Twin Peaks Bike Park monitor tour
+## Twin Peaks Bike Park monitor tour
 
 A two-day monitor tour at Twin Peaks Bike Park on Tuesday 15 and Wednesday 16 October. Ride the trails with the people who built them, hear how they were designed, and share feedback that shapes what gets built next.
 
-### What to expect
+## What to expect
 
 - **Guided tour:** ride with the trail builders themselves. Hear how the trails were planned and built.
 - **Rental bikes provided.** Helmets available too, though we recommend bringing your own for fit and comfort.
 - **Trail building talk:** sustainable design principles and how the network has evolved.
 - **Feedback session:** after the ride, share your impressions. Your input shapes the next phase of trail building.
 
-### What to bring
+## What to bring
 
 - Outdoor clothing and enclosed shoes
 - Your own helmet if you have one (rentals available)
 - Water and bug spray
 
-### Requirements
+## Requirements
 
 - Basic fitness, comfortable on a bike
 - Maximum 10 riders per tour
 - One tour per person to spread the spots
 
-### How to sign up
+## How to sign up
 
 Spots are limited and selected by lottery. Register your interest via the form linked at the top of this page.

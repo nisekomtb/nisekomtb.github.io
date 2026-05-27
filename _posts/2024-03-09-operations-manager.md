@@ -12,11 +12,11 @@ pay: ¥300,000 ~ ¥330,000 per month, depending on experience
 bonus: Up to ¥100,000 performance bonus upon a satisfactory completion of the contract period
 applyUrl: https://forms.gle/Vini5784YEqxgyzXA
 ---
-<h3 id="about-namba">About NAMBA:</h3>
+<h2 id="about-namba">About NAMBA:</h2>
 
 NAMBA (Niseko Area Mountain Bike Association) is a Japanese non-profit that builds and maintains free mountain bike trails across the Niseko region. Founded in 2021, we work with the local community, government, and resort partners to grow the sport sustainably <em>and have a damn good time doing it</em>.
 
-### About the Operations Manager Role:
+## About the Operations Manager Role:
 
 The Operations Manager is the day-to-day lead at Twin Peaks Bike Park. You work closely with the NAMBA Board, Trails Subcommittee, and Access Subcommittee to coordinate operations and keep the park running.
 
@@ -26,7 +26,7 @@ We're looking for someone with a background in trail building and maintenance, s
 
 Niseko is multicultural, so strong preference goes to candidates who can communicate in both English and Japanese.
 
-### Perks:
+## Perks:
 
 - Chance to leave your positive mark on Japan’s leading trails association, and Asia’s fastest growing bike park
 - Be a part of a “get shit done and have fun” culture – the NAMBA team works hard, but we are known for crew group rides, team BBQs and other weekend shenanigans
@@ -36,9 +36,9 @@ Niseko is multicultural, so strong preference goes to candidates who can communi
 - Reasonably priced accommodation nearby the trails if required
 - Possibility to use NAMBA vehicles for grocery runs, and to familiarize yourself with the region’s recreational offerings
 
-### Responsibilities:
+## Responsibilities:
 
-#### Operation of the Twin Peaks Bike Park:
+### Operation of the Twin Peaks Bike Park:
 
 - Manage day-to-day operations of the bike park so riders have a safe and enjoyable experience.
 - Run trail maintenance, proactively identifying areas in need of maintenance or reworking before they become problems.
@@ -54,30 +54,30 @@ Niseko is multicultural, so strong preference goes to candidates who can communi
 - Help manage equipment, tools and personal protective equipment (PPE)
 - Represent NAMBA, and the sport of mountain biking in a positive, professional manner at all times
 
-#### Management of Staff:
+### Management of Staff:
 
 - Supervise and provide leadership to the trail crew and maintenance personnel, both managing and working alongside the crews.
 - Lead by example, demonstrating a strong work ethic and proactive attitude.
 - Keep NAMBA staff stoked and foster our culture of “getting shit done and having fun” within the crew.
 
-#### Oversee Maintenance:
+### Oversee Maintenance:
 
 - Proactively maintain the park through routine maintenance tasks, including trail repairs, signage updates, and facility upkeep.
 - Coordinate with the maintenance team to address any issues or repairs promptly and efficiently.
 - Maintain inventory of equipment and supplies, and coordinate procurement and/or maintenance as needed.
 
-#### Run Events:
+### Run Events:
 
 - Coordinate with NAMBA's Events subcommittee for the coordination of special events such as group rides, and community maintenance days, and other activities to enhance the park's offerings and attract visitors.
 - Develop event schedules, manage logistics, and ensure events run smoothly and according to plan.
 - Work closely with the marketing team to promote events and attract participants, and to create content.
 
-#### Learn about Trail Building:
+### Learn about Trail Building:
 
 - Stay current on trail building techniques, sustainable practices, and industry trends.
 - Suggest improvements to trail quality and rider experience.
 
-### Qualifications:
+## Qualifications:
 
 - Previous experience in a supervisory or managerial role, preferably in the outdoor recreation, construction, or hospitality industry.
 - Strong leadership and communication skills, with the ability to effectively manage a diverse team.

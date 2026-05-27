@@ -95,7 +95,7 @@ about: false
   <li>景品と無料グッズ</li>
 </ul>
 
-<h3>イベント内容</h3>
+<h2>イベント内容</h2>
 
 <p>Santa CruzがRhythm Japan Baseにデモバイク（Megatower、Hightower、Tallboy、Nomad、Bronson、5010、Blur、Stigmata）を持ち込みます。</p>
 

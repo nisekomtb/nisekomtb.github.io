@@ -32,13 +32,13 @@ link:
 parking: false
 about: false
 ---
-### Beyond MTB: Niseko Autumn Gravel Ride 2024
+## Beyond MTB: Niseko Autumn Gravel Ride 2024
 
 A two-day gravel ride through Niseko on 21-22 September, weaving paved and unpaved roads through the area's autumn colour.
 
 ![Scenic autumn view of Niseko's colourful landscape from the gravel ride route](/assets/images/events/2024/niseko-gravel-autumn-ride/view.jpg)
 
-### Course options
+## Course options
 
 - XL PAS Ex Long Course: ¥16,000
 - L SHIMANO GRX Long Course: ¥12,500
@@ -47,7 +47,7 @@ A two-day gravel ride through Niseko on 21-22 September, weaving paved and unpav
 
 Mix of gravel and paved roads, with substantial climbing on the longer routes.
 
-### More info
+## More info
 
 Full route details and registration via the link below.
 

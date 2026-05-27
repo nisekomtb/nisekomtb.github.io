@@ -59,7 +59,7 @@ The trail crew have been hard at it since the snow melted, and Twin Peaks is bac
 
 Come for a lap, stay for the community.
 
-### Morning rides
+## Morning rides
 
 Two rides leave the trailhead at 10:00am.
 
@@ -67,11 +67,11 @@ The Dirty Dames women's skills clinic, run in partnership with NAMBA, welcomes a
 
 Alongside the clinic, our crew will lead a one-hour orientation ride for anyone new to the park. We keep it easy and show you the layout, so you can ride on your own afterwards. Just turn up.
 
-### At the trail base
+## At the trail base
 
 The NAMBA tent is open 9:00am to 3:00pm. Come check out the new trailhead map, pick up fresh merch, and chat with the team about what's coming next for Twin Peaks. The Nuthatch food truck will be on site all day for fuel between laps. From 11:30am to 12:30pm we'll run a scavenger hunt for the kids around the base, with sticker prizes for everyone who finishes.
 
-### Need a bike?
+## Need a bike?
 
 Rhythm is offering 50% off rentals all day, with a free beginner session included with every rental. Grab a rig there before heading up to the trailhead.
 

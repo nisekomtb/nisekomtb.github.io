@@ -38,7 +38,7 @@ parking: false
 about: false
 ---
 
-### Help us get the trails ready for summer
+## Help us get the trails ready for summer
 
 After a long winter buried under snow, our trails need some love before the season kicks off. Join us on **Wednesday 6 May** (Constitution Day holiday) for a volunteer trail day at Twin Peaks Bike Park, a fitting public holiday to be outdoors working in nature.
 
@@ -46,7 +46,7 @@ We need your help to clear fallen branches and leaves, rake out the trails, and 
 
 It's a great chance to meet the NAMBA crew, be among the first to walk the trails after the snow melts, and help shape the riding for the summer ahead.
 
-### Two sessions
+## Two sessions
 
 There are two sessions to choose from:
 
@@ -55,12 +55,12 @@ There are two sessions to choose from:
 
 You're welcome to come for one session, both, or as much as you can manage. **Please arrive at the start of your session** so we can allocate tools and assign jobs.
 
-### What to bring
+## What to bring
 
 All tools will be provided. If you have your own rake, feel free to bring it along. There's no need to bring a bike — the trails won't be open for riding until the official season opening.
 
 Wear clothes and footwear you don't mind getting dirty. Gloves are recommended. Bring water and sun protection.
 
-### Under 12s
+## Under 12s
 
 Children under 12 are welcome but must be accompanied by an adult at all times.

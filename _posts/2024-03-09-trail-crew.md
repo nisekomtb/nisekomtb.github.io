@@ -23,11 +23,11 @@ perks:
     perk: Free use NAMBA's staff bikes
 applyUrl: https://forms.gle/Vini5784YEqxgyzXA
 ---
-<h3 id="about-namba">About NAMBA:</h3>
+<h2 id="about-namba">About NAMBA:</h2>
 
 NAMBA (Niseko Area Mountain Bike Association) is a Japanese non-profit that builds and maintains free mountain bike trails across the Niseko region. Founded in 2021, we work with the local community, government, and resort partners to grow the sport sustainably <em>and have a damn good time doing it</em>.
 
-### About the Trail Crew Role:
+## About the Trail Crew Role:
 
 The love our Trail Crew receives is well deserved, this team works on the Twin Peaks Bike Park and on other regional projects as needed. With 14+ kilometers built so far, and much more planned for 2024, the NAMBA Trail Crew members will be split into the Trail Building team and into the Trail Maintenance team, with rotation between these two teams as required.
 
@@ -35,7 +35,7 @@ When working on the Trail Building team, the Trail Crew member will primarily wo
 
 NAMBA Trail Crew members are to report to their Machine Operator, NAMBA Trail Crew Supervisor, NAMBA Operations Manager and the Project Manager, and are to adhere to their guidance and instructions.
 
-### Perks:
+## Perks:
 
 - Chance to leave your positive mark on Japan’s leading trails association, and Asia’s fastest growing bike park
 - Be a part of a “get shit done and have fun” culture – the NAMBA team works hard, but we are known for crew group rides, team BBQs and other weekend shenanigans
@@ -46,9 +46,9 @@ NAMBA Trail Crew members are to report to their Machine Operator, NAMBA Trail Cr
 - Reasonably priced accommodation nearby the trails if required
 - Possibility to use NAMBA vehicles for grocery runs, and to familiarize yourself with the region’s recreational offerings
 
-### Responsibilities:
+## Responsibilities:
 
-#### Trail Building crew:
+### Trail Building crew:
 
 - Assist Trail Builder (machine operator), NAMBA Operations Manager and Project Manager with all trail construction activities
 - Ensure work is performed according to objectives and standards
@@ -58,19 +58,19 @@ NAMBA Trail Crew members are to report to their Machine Operator, NAMBA Trail Cr
 - Instruct and supervise volunteers as needed
 - Represent NAMBA, and the sport of mountain biking in a positive, professional manner at all times
 
-#### Trail Maintenance crew:
+### Trail Maintenance crew:
 
 - Proactively maintain, repair, and improve trails and facilities as required and as instructed by the Operations Manager and other superiors.
 - Report to, and coordinate with, other members of the team to address any issues or repairs promptly and efficiently.
 - Maintain inventory of equipment and supplies, and coordinate procurement and/or maintenance as needed.
 - Perform other duties as reasonably required.
 
-#### Assist Events:
+### Assist Events:
 
 - Assist NAMBA's Operations Manager and Events Subcommittee for the running of special events such as group rides, and community maintenance days, and other activities to enhance the park's offerings and attract visitors
 
 
-### Qualifications:
+## Qualifications:
 
 - Adequate physical fitness and physical wellbeing. Work will be outside using shovels, rakes and other implements to build and maintain trails.
 - Ability and desire to work hard and with minimal oversight

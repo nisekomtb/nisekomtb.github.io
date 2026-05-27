@@ -75,7 +75,7 @@ about: false
 ---
 週末を​通じて​いくつかの​イベントを​開催します：
 
-### Stravaセグメントチャレンジ <small>(天候による)</small>
+## Stravaセグメントチャレンジ <small>(天候による)</small>
 
 <span class="cancelled">⛈️ 天候の影響により中止 ⛈️</span>
 
@@ -97,7 +97,7 @@ Stravaはライドを​GPS記録する​アプリです。​当日、​対�
 
 ![ツインピークスでStravaセグメントチャレンジに挑むライダーたち](/assets/images/events/2023/closing-weekend/strava.jpg)
 
-### コスチュームコンペ <small>(天候による)</small>
+## コスチュームコンペ <small>(天候による)</small>
 
 <span class="cancelled">⛈️ 天候の影響により中止 ⛈️</span>
 
@@ -105,7 +105,7 @@ Stravaはライドを​GPS記録する​アプリです。​当日、​対�
 
 ![コスチュームコンペティション用のハロウィンかぼちゃの装飾](/assets/images/events/2023/closing-weekend/pumpkin.jpg)
 
-### Dirty Dames 女性限定グループライド <small>(天候による)</small>
+## Dirty Dames 女性限定グループライド <small>(天候による)</small>
 
 <span class="cancelled">⛈️ 天候の影響により中止 ⛈️</span>
 
@@ -113,7 +113,7 @@ Stravaはライドを​GPS記録する​アプリです。​当日、​対�
 
 ![クロージングウィークエンドでのDirty Dames女性限定グループライド](/assets/images/events/2023/closing-weekend/dirtydames.jpg)
 
-### NAMBAオープンハウス
+## NAMBAオープンハウス
 
 NAMBAが​ミッドタウン・ニセコで​オープンハウスを​開催。​トレイルヘッドから​すぐの​場所です。​メディアや​行政関係者も​参加し、​ツインピークスの​進捗と、​NAMBAの​ニセコエリア全体への​取り組みを​共有します。​一般公開、​誰でも​参加可能。
 

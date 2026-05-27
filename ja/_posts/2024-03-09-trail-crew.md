@@ -23,11 +23,11 @@ perks:
     perk: NAMBAの<wbr>バイクを<wbr>無料で<wbr>利用できます
 applyUrl: https://forms.gle/oazKN1uK9Jh6Huzw7
 ---
-<h3 id="about-namba">NAMBAに<wbr>ついて<wbr>：</h3>
+<h2 id="about-namba">NAMBAに<wbr>ついて<wbr>：</h2>
 
 NAMBA​（Niseko Area Mountain Bike Association）は、​ニセコ地域で​無料の​マウンテンバイクトレイルを​建設・維持する​日本の​NPOです。​2021年設立以来、​地域コミュニティ、​行政、​リゾートパートナーと​協力し、​楽しみながら​スポーツの​持続的な​成長に​取り​組んでいます。
 
-### トレイルクルーの<wbr>役割に<wbr>ついて<wbr>：
+## トレイルクルーの<wbr>役割に<wbr>ついて<wbr>：
 
 トレイルクルーと<wbr>して<wbr>働くと、<wbr>ローカルの<wbr>間で<wbr>ヒーローのような<wbr>存在に<wbr>なります。<wbr>バーや<wbr>バイクショップ、<wbr>トレイルの<wbr>入口などで、<wbr>私たちNAMBAチームから<wbr>愛される<wbr>ことでしょう。<wbr>私たちは<wbr>一緒に<wbr>なって、<wbr>トレイルや<wbr>コミュニティを<wbr>より<wbr>良く<wbr>する<wbr>ために<wbr>頑張っています。
 
@@ -37,7 +37,7 @@ NAMBA​（Niseko Area Mountain Bike Association）は、​ニセコ地域で�
 
 NAMBAトレイルクルーの<wbr>メンバーは、<wbr>重機操作者、<wbr>NAMBAトレイルクルースーパーバイザー、<wbr>NAMBAオペレーションズマネージャー、<wbr>そして<wbr>プロジェクトマネージャーの<wbr>指導と<wbr>指示に<wbr>従いながら<wbr>状況を<wbr>報告する<wbr>業務が<wbr>あります。
 
-### チーム特典：
+## チーム特典：
 
 - アジアの<wbr>中でも<wbr>急成長を<wbr>遂げた<wbr>バイクパークを<wbr>造成した<wbr>NAMBAチームの<wbr>中で、<wbr>あなたの<wbr>ポジテイブな<wbr>行動が<wbr>さらに<wbr>良い<wbr>方向へ<wbr>導く<wbr>事が<wbr>できる
 - 「やるべき<wbr>ことを<wbr>やって<wbr>楽しむ」 NAMBAチームは<wbr>勤務中は<wbr>一生懸命<wbr>働きますが、<wbr>クルーグループライド、<wbr>チームBBQ、<wbr>その<wbr>他の<wbr>週末は<wbr>思いっきりチームで<wbr>楽しみます
@@ -47,9 +47,9 @@ NAMBAトレイルクルーの<wbr>メンバーは、<wbr>重機操作者、<wbr>
 - 必要に<wbr>応じて<wbr>トレイル近くの<wbr>リーズナブルな<wbr>価格の<wbr>宿泊施設への<wbr>滞在
 - 買い物や<wbr>地域の<wbr>レクリエーション施設を<wbr>知る<wbr>ために<wbr>NAMBAの<wbr>車両を<wbr>使用する<wbr>可能性あり
 
-### 責任に<wbr>ついて<wbr>：
+## 責任に<wbr>ついて<wbr>：
 
-#### トレイル造成クルー：
+### トレイル造成クルー：
 
 - トレイルビルダー<wbr>（重機オペレーター）、<wbr>NAMBAオペレーションズマネージャー、<wbr>プロジェクトマネージャーと<wbr>協力して、<wbr>全ての<wbr>トレイル建設活動を<wbr>支援します
 - 作業が<wbr>目標と<wbr>基準に<wbr>従って<wbr>行われるように<wbr>確認します
@@ -60,18 +60,18 @@ NAMBAトレイルクルーの<wbr>メンバーは、<wbr>重機操作者、<wbr>
 - 作業が<wbr>目標と<wbr>基準に<wbr>従って<wbr>実行される<wbr>ことを<wbr>確認します
 - 常に<wbr>ポジティブで<wbr>プロフェッショナルな<wbr>姿勢で<wbr>NAMBAおよびマウンテンバイクの<wbr>スポーツを<wbr>リードします
 
-#### トレイルメインテナンスクルー：
+### トレイルメインテナンスクルー：
 
 - オペレーションズマネージャーや<wbr>その<wbr>他の<wbr>上司からの<wbr>指示に<wbr>従い、<wbr>必要に<wbr>応じて<wbr>積極的に<wbr>トレイルや<wbr>施設の<wbr>維持、<wbr>修理、<wbr>改善を<wbr>行う。
 - チームを<wbr>はじめ、<wbr>他の<wbr>メンバーにも<wbr>報告、<wbr>連携を<wbr>取りながら、<wbr>いかなる<wbr>問題や<wbr>修理も<wbr>迅速かつ効率的に<wbr>対応する。
 - 機材や<wbr>備品の<wbr>在庫を<wbr>維持し、<wbr>必要に<wbr>応じて<wbr>調達や<wbr>メンテナンスを<wbr>調整する。
 - 必要に<wbr>応じて、<wbr>他の<wbr>仕事も<wbr>適切に<wbr>こなす。
 
-#### イベントの<wbr>サポート：
+### イベントの<wbr>サポート：
 
 - グループライドや<wbr>コミュニティメンテナンスデーなどの<wbr>特別イベントの<wbr>運営、<wbr>および<wbr>バイクパークの<wbr>魅力向上と<wbr>ライダーの<wbr>誘致を<wbr>目的と<wbr>した<wbr>活動で、<wbr>NAMBAの<wbr>オペレーションマネージャーおよびイベント委員会を<wbr>サポートする。
 
-### 応募資格：
+## 応募資格：
 
 - 適切な<wbr>体力と<wbr>健康状態が<wbr>良好な方。<wbr>仕事は<wbr>外で<wbr>シャベル、<wbr>レーキなどの<wbr>道具を<wbr>使用して<wbr>トレイルを<wbr>造成およびメンテナンスすることになります。
 - <wbr>最小限の<wbr>監督で<wbr>一生懸命に<wbr>働く<wbr>能力と<wbr>意欲が<wbr>ある方。

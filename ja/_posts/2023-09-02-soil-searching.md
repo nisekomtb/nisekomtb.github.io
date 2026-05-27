@@ -60,13 +60,13 @@ about: false
 logo: /assets/images/events/2023/soil-searching/soil-searching.png
 ---
 
-### イベント内容
+## イベント内容
 
 ツインピークス・バイクパークが一般公開される前の2日間、トレイル整備とライドを行います。ボランティアがNAMBAとスペシャライズドのビルダー・ライダーチームと一緒にトレイルを仕上げます。プロジェクトに貢献しつつ、まだ公開されていないラインを走るチャンスです。
 
 ![Soil Searchingニセコでトレイル建設に取り組むボランティアたち](/assets/images/events/2023/soil-searching/ss02.jpg)
 
-### ソイル・サーチングについて
+## ソイル・サーチングについて
 
 <strong>アスリートのようなトレイルビルダーのスポンサーをしませんか？</strong>
 

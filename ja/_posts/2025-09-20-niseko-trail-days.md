@@ -66,13 +66,13 @@ storeProductSlug: niseko-trail-days-2025
 logo: /assets/images/events/2025/niseko-trail-days/logo.png
 ---
 
-### スペシャライズド・Trail Days、ニセコ​エディション
+## スペシャライズド・Trail Days、ニセコ​エディション
 
 Specialized Japanが​毎年​全国で​開催している​Trail Days。​北海道​エディションは​ツインピークス・バイクパークで​開催します。​1日かけて​トレイル整備、​ライディング、​デモ、​ジャンプクリニック、​そして​Rhythmでの​アフターパーティーまで。
 
 ローカルも​遠方からの​ライダーも、​クルーと​一緒に​掘って、​コミュニティと​ライドして、​食事と​ドリンクで​1日を​締めくくる​機会です。
 
-### 含まれるもの
+## 含まれるもの
 
 - この​イベント限定の​Trail Daysステッカー。
 - スペシャライズドの​Turbo Levo デモバイク、​先着順。
@@ -81,11 +81,11 @@ Specialized Japanが​毎年​全国で​開催している​Trail Days。�
 - 抽選券：終日参加者は​5枚、​夕方のみ​参加者は​1枚。​参加者のみが​当選対象、​外部での​販売は​なし。[抽選の​詳細](/raffle/)。
 - フードと​ドリンク：Pow Barの​エナジーバー、​ニセコブリュワリーの​地ビール（20歳以上）、​Rhythmでの​アフターパーティーでは​<a href="https://www.instagram.com/tacodake/" target="_blank">Tako Dake</a>の​料理。
 
-### Turbo Levo デモ
+## Turbo Levo デモ
 
 スペシャライズドが​Turbo Levoの​e-MTBを​4台​持ち込み、​参加者が​トレイルで​試乗できます。
 
-### ライダー紹介：Ayato Kimura
+## ライダー紹介：Ayato Kimura
 
 <a href="https://www.instagram.com/ayato_trials/" target="_blank">Ayato Kimura</a>、​20歳。​日本を​代表する​MTBトライアルライダーの​一人。​アーバンフリーライド、​コンペティショントライアル、​ストリートトリックを​融合した​スタイルで​注目を​集めています。
 
@@ -93,7 +93,7 @@ Specialized Japanが​毎年​全国で​開催している​Trail Days。�
 
 最近​Red Bull Japanに​加入。​長野で​開催された​イベントでは、​Loic Bruniと​Brook MacDonaldから​Red Bullヘルメットを​授与されました。
 
-### お申し込み
+## お申し込み
 
 定員が​あります。​上記の​申し込みから​参加登録を​お願いします。
 

@@ -29,11 +29,11 @@ link:
 parking: false
 about: false
 ---
-### NAMBA at the 2024 Downhill Series
+## NAMBA at the 2024 Downhill Series
 
 NAMBA runs three side events alongside the 2024 Downhill Series race weekend at Niseko Annupuri.
 
-### Side events
+## Side events
 
 **Rhythm Skate Jam, Thursday 4-7pm**
 Public skateboarding session at Rhythm Japan's skate park, with prizes for standout riders.
@@ -44,7 +44,7 @@ Free for DHS participants. Meet at Rhythm at 9am for coffee, then ride the trail
 **Welcome party, Friday 5-7pm**
 DHS-only gathering on the second floor of Rhythm. Finger food, drinks, no charge.
 
-### NAMBA booth
+## NAMBA booth
 
 Find us at the venue across the race weekend. Trail updates, upcoming events, and ways to get involved with the Niseko trails.
 
