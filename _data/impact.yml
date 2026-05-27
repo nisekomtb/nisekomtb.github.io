@@ -22,29 +22,25 @@ visitors:
 
 trails:
   # Cumulative km of open trail at end of each year.
-  - year: 2022
-    namba_km: 4.41
-    niseko_km: 5.24
+  # 2022 omitted: NAMBA founded that year but no trails were open yet.
   - year: 2023
     namba_km: 10.43
-    niseko_km: 16.58
+    niseko_km: 10.93
   - year: 2024
-    namba_km: 17.48
-    niseko_km: 25.37
+    namba_km: 15.34
+    niseko_km: 24.32
   - year: 2025
     namba_km: 21.47
-    niseko_km: 29.37
-  # 2026 projection — re-enable once trails open this season.
+    niseko_km: 29.04
+  # 2026 projection, re-enable once trails open this season.
   # - year: 2026
   #   namba_km: 25.39
-  #   niseko_km: 33.29
+  #   niseko_km: 32.96
 
 twin_peaks:
   # Twin Peaks Bike Park. NAMBA-built cumulative trail km and visitor counts.
-  # Park opened September 2023; trail counters added start of 2023.
+  # Park opened 2023; 2022 omitted (under construction, no open trails).
   years:
-    - year: 2022
-      trail_km: 4.41
     - year: 2023
       trail_km: 10.43
     - year: 2024

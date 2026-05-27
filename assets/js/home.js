@@ -1,7 +1,7 @@
 /* Home page JS. Loaded only on / and /ja/.
  * Implements: hero video fade-in, scroll-cue, count-up numbers,
  * network scroll-scrub, intersection-observer-driven fade-ups.
- * Honors prefers-reduced-motion. */
+ * Honours prefers-reduced-motion. */
 (function () {
   'use strict';
 
@@ -25,7 +25,6 @@
     initFadeUps();
     initNetworkScrub();
     initCountUps();
-    initFeatureParallax();
   }
 
   function initHeroVideo() {
@@ -72,21 +71,42 @@
   function initNetworkScrub() {
     var section = document.querySelector('.home-network');
     if (!section) return;
-    var images = section.querySelectorAll('.home-network-img');
     var rows = section.querySelectorAll('.home-network-row');
     var spineFill = section.querySelector('.home-network-spine-fill');
-    if (images.length === 0) return;
+    var svg = section.querySelector('.home-network-svg');
+    var yearGroups = svg ? svg.querySelectorAll('g[id^="year-"]') : [];
 
     var years = section.dataset.years.split(',');
     var currentIdx = -1;
+
+    /* Prep each SVG path: stash its length, set dasharray to length, start
+       with dashoffset = length so the path is fully un-drawn. setYear()
+       later transitions dashoffset to 0 to "draw" the trail. */
+    if (svg) {
+      svg.querySelectorAll('path').forEach(function (path) {
+        var len = path.getTotalLength();
+        path._pathLength = len;
+        path.style.strokeDasharray = len;
+        path.style.strokeDashoffset = len;
+      });
+    }
 
     function setYear(idx) {
       if (idx < 0) idx = 0;
       if (idx >= years.length) idx = years.length - 1;
       if (idx === currentIdx) return;
-      images.forEach(function (img, i) {
-        if (i === idx) img.setAttribute('data-active', 'true');
-        else img.removeAttribute('data-active');
+      var currentYear = parseInt(years[idx], 10);
+      yearGroups.forEach(function (g) {
+        var openedYear = parseInt(g.id.replace('year-', ''), 10);
+        g.querySelectorAll('path').forEach(function (path) {
+          /* A path is drawn when its opening year has passed AND its
+             closed-year (if any) has not. data-closed-year on a path
+             un-draws it from that year onward, so e.g. Kaikan-Old opens
+             with year-2024 and unwinds in 2025 when Kaikan opens. */
+          var closedYear = path.dataset.closedYear ? parseInt(path.dataset.closedYear, 10) : Infinity;
+          var draw = currentYear >= openedYear && currentYear < closedYear;
+          path.style.strokeDashoffset = draw ? 0 : path._pathLength;
+        });
       });
       rows.forEach(function (row, i) {
         if (i < idx) row.setAttribute('data-state', 'passed');
@@ -96,10 +116,10 @@
       currentIdx = idx;
     }
 
-    /* Mobile and reduced-motion: render in final state (all rows revealed,
-       2026 image active). CSS un-sticks the section so it scrolls naturally. */
+    /* Mobile and reduced-motion: render in final state (all trails drawn,
+       2026 row marked current). CSS un-sticks the section so it scrolls
+       naturally. */
     if (prefersReducedMotion || isMobile) {
-      // For mobile we want to highlight 2026 as current.
       setYear(years.length - 1);
       rows.forEach(function (row) { row.setAttribute('data-state', 'passed'); });
       rows[rows.length - 1].setAttribute('data-state', 'current');
@@ -235,53 +255,6 @@
       });
     }, { threshold: 0.4 });
     stats.forEach(function (s) { io.observe(s); });
-  }
-
-  /* Feature chapter-break section: scroll-tied parallax. The image is
-   * sized 130% tall and offset top: -15% (in CSS) so it has 15% of
-   * section-height of vertical headroom in each direction. As the
-   * section moves through the viewport, translate the image opposite
-   * to the natural scroll so it appears to lag (classic background
-   * parallax). */
-  function initFeatureParallax() {
-    if (prefersReducedMotion) return;
-    var section = document.querySelector('.home-feature');
-    if (!section) return;
-    var img = section.querySelector('.home-feature-img');
-    if (!img) return;
-
-    var MAX_PX = 80; // peak translate in either direction
-    var ticking = false;
-
-    function update() {
-      var rect = section.getBoundingClientRect();
-      var vh = window.innerHeight;
-      var totalDistance = vh + rect.height; // distance from "just entering" to "just leaving"
-      var progress = 1 - (rect.bottom / totalDistance);
-      if (progress < 0) progress = 0;
-      else if (progress > 1) progress = 1;
-      // progress=0 -> +MAX (image shifted down, exposing top content)
-      // progress=0.5 -> 0
-      // progress=1 -> -MAX (image shifted up, exposing bottom content)
-      var translate = (0.5 - progress) * 2 * MAX_PX;
-      img.style.transform = 'translateY(' + translate.toFixed(1) + 'px)';
-      ticking = false;
-    }
-
-    window.addEventListener('scroll', function () {
-      if (!ticking) {
-        window.requestAnimationFrame(update);
-        ticking = true;
-      }
-    }, { passive: true });
-    window.addEventListener('resize', function () {
-      if (!ticking) {
-        window.requestAnimationFrame(update);
-        ticking = true;
-      }
-    }, { passive: true });
-
-    update();
   }
 
   function formatNumber(n) {

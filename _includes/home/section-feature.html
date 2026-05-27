@@ -1,4 +1,10 @@
-<!-- _includes/home/section-feature.html: Section 07 (parallax chapter break) -->
-<section class="home-feature" aria-hidden="true">
-  <div class="home-feature-img" style="background-image: url('/assets/images/bg/bg-header-yotei.jpg');"></div>
+<!-- _includes/home/section-feature.html: Section 07 (fixed-bg quote band) -->
+<section class="home-feature">
+  <blockquote class="home-feature-quote">
+    {% if page.lang == "en" %}
+      <p>What snowsports did for Niseko&rsquo;s winters, mountain biking will do for its summers.</p>
+    {% else %}
+      <p>スノースポーツが<wbr>ニセコの<wbr>冬を<wbr>変えたように、<wbr>マウンテンバイクが<wbr>夏を<wbr>変える。</p>
+    {% endif %}
+  </blockquote>
 </section>

@@ -30,13 +30,13 @@
             <div class="home-story-date">{{ st.date | date: "%b %-d, %Y" }}</div>
             <h3 class="home-story-title">{{ st.title }}</h3>
             <p class="home-story-excerpt">{{ st.description | default: st.excerpt | strip_html | truncate: 120 }}</p>
-            <div class="home-story-action">{% if page.lang == "en" %}Read →{% else %}読む →{% endif %}</div>
+            <div class="home-story-action">{% if page.lang == "en" %}Read{% else %}読む{% endif %} <span class="fa-solid fa-circle-arrow-right"></span></div>
           </div>
         </a>
       {% endfor %}
     </div>
     <p class="home-stories-all">
-      <a href="{% if page.lang == 'ja' %}/ja{% endif %}/stories/">{% if page.lang == "en" %}View all stories →{% else %}すべての<wbr>ストーリーを<wbr>見る →{% endif %}</a>
+      <a href="{% if page.lang == 'ja' %}/ja{% endif %}/stories/">{% if page.lang == "en" %}View all stories{% else %}すべての<wbr>ストーリーを<wbr>見る{% endif %} <span class="home-more-arrow fa-solid fa-circle-arrow-right"></span></a>
     </p>
   </div>
 </section>

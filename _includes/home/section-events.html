@@ -39,7 +39,7 @@
         </div>
       {% endif %}
       <p class="home-events-all">
-        <a href="{% if page.lang == 'ja' %}/ja{% endif %}/events/">{% if page.lang == "en" %}View all events →{% else %}すべての<wbr>イベントを<wbr>見る →{% endif %}</a>
+        <a href="{% if page.lang == 'ja' %}/ja{% endif %}/events/">{% if page.lang == "en" %}View all events{% else %}すべての<wbr>イベントを<wbr>見る{% endif %} <span class="home-more-arrow fa-solid fa-circle-arrow-right"></span></a>
       </p>
     {% else %}
       <p class="home-events-empty">

@@ -146,7 +146,7 @@ html[lang="ja"] .home-hero-title { letter-spacing: normal; }
 
 /* ── Section 02: Mission intro + pull quote ───────────────────────── */
 .home-intro {
-  background: var(--color-bg-panel);
+  background: var(--color-bg);
   padding: clamp(72px, 12vh, 140px) 0;
   color: var(--color-text);
 }
@@ -161,16 +161,16 @@ html[lang="ja"] .home-hero-title { letter-spacing: normal; }
   margin: 0 0 56px;
   color: var(--color-text-light);
 }
-.home-pull-quote {
-  font-style: italic;
-  font-size: clamp(20px, 2.4vw, 28px);
-  line-height: 1.4;
-  margin: 0;
-  padding: 12px 0 12px 28px;
-  border-left: 3px solid var(--color-accent);
-  color: var(--color-text-heading);
+/* Shared "view all / more" link arrow. Slides right when its parent
+   link is hovered, matching the card-action pattern. */
+.home-more-arrow {
+  display: inline-block;
+  margin-left: 6px;
+  position: relative;
+  top: 1px;
+  transition: margin-left 300ms ease;
 }
-html[lang="ja"] .home-pull-quote { font-style: normal; }
+a:hover > .home-more-arrow { margin-left: 12px; }
 
 /* Fade-up reveal (shared utility) */
 .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 600ms ease-out, transform 600ms ease-out; }
@@ -197,7 +197,7 @@ html[lang="ja"] .home-pull-quote { font-style: normal; }
   background: var(--color-bg);
 }
 
-/* Background map: full-bleed crossfade behind everything */
+/* Background map: full-bleed satellite + SVG trail overlay */
 .home-network-bg {
   position: absolute;
   inset: 0;
@@ -208,10 +208,39 @@ html[lang="ja"] .home-pull-quote { font-style: normal; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0;
-  transition: opacity 600ms ease;
+  opacity: 1;
 }
-.home-network-img[data-active="true"] { opacity: 1; }
+/* SVG overlay containing per-year <g id="year-YYYY"> groups of trail paths.
+   JS sets stroke-dasharray/dashoffset on each path so they "draw" in as the
+   user scrubs through years. */
+.home-network-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+.home-network-svg path {
+  fill: none;
+  stroke: var(--color-accent);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+  filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.55));
+  transition: stroke-dashoffset 900ms cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+/* Non-NAMBA trails (resort or pre-existing). Same gold hue, but faded
+   and unhaloed so the eye reads them as context, not story. */
+.home-network-svg path[data-namba="false"] {
+  opacity: 0.55;
+  stroke-width: 2;
+  filter: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-network-svg path { transition: none; }
+}
 .home-network-overlay {
   position: absolute;
   inset: 0;
@@ -417,12 +446,12 @@ html[lang="ja"] .home-network-title { letter-spacing: normal; text-transform: no
 html[lang="ja"] .home-network-parks-title { letter-spacing: normal; text-transform: none; }
 .home-network-parks-all { text-align: right; margin-top: 24px; font-size: 14px; }
 .home-network-parks-all a {
-  color: var(--color-primary);
+  color: #fff;
   text-decoration: none;
   border-bottom: 1px solid transparent;
   transition: border-color 200ms ease, color 200ms ease;
 }
-.home-network-parks-all a:hover { color: var(--color-primary-hover); border-color: var(--color-primary-hover); }
+.home-network-parks-all a:hover { color: var(--color-primary); border-color: var(--color-primary); }
 
 /* Mobile (< 768px): un-stick. Show the 2026 frame as a static preview
    above the stacked timeline cards, no scrub. */
@@ -446,8 +475,9 @@ html[lang="ja"] .home-network-parks-title { letter-spacing: normal; text-transfo
     margin: 0 0 32px;
     overflow: hidden;
   }
-  .home-network-img:not([data-year="2026"]) { display: none; }
-  .home-network-img[data-year="2026"] { opacity: 1; }
+  /* Mobile: bg image stays as-is; SVG paths shown fully drawn (JS will set
+     stroke-dashoffset: 0 on all paths when on mobile / reduced motion). */
+  .home-network-svg path { stroke-width: 1.75; }
   .home-network-overlay {
     background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.5) 100%);
   }
@@ -568,13 +598,13 @@ html[lang="ja"] .home-impact-title { letter-spacing: normal; text-transform: non
   font-size: 14px;
 }
 .home-impact-link a {
-  color: var(--color-primary);
+  color: #fff;
   text-decoration: none;
   letter-spacing: 0.05em;
   border-bottom: 1px solid transparent;
   transition: border-color 200ms ease, color 200ms ease;
 }
-.home-impact-link a:hover { color: var(--color-primary-hover); border-color: var(--color-primary-hover); }
+.home-impact-link a:hover { color: var(--color-primary); border-color: var(--color-primary); }
 
 
 /* ── Section 06: Events ───────────────────────────────────────────── */
@@ -601,8 +631,8 @@ html[lang="ja"] .home-events-title { letter-spacing: normal; text-transform: non
 }
 .home-events-feature { max-width: 760px; margin: 0 auto; }
 .home-events-all { text-align: right; margin-top: 24px; font-size: 14px; }
-.home-events-all a { color: var(--color-primary); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 200ms ease, color 200ms ease; }
-.home-events-all a:hover { color: var(--color-primary-hover); border-color: var(--color-primary-hover); }
+.home-events-all a { color: #fff; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 200ms ease, color 200ms ease; }
+.home-events-all a:hover { color: var(--color-primary); border-color: var(--color-primary); }
 .home-events-empty { font-size: 15px; color: var(--color-text); }
 .home-events-empty a { color: var(--color-primary); }
 .home-events-empty a:hover { color: var(--color-primary-hover); }
@@ -650,44 +680,69 @@ html[lang="ja"] .home-stories-title { letter-spacing: normal; text-transform: no
 .home-story-excerpt { font-size: 13px; line-height: 1.55; color: var(--color-text); margin: 0 0 14px; flex: 1; }
 .home-story-action { font-size: 13px; font-weight: 500; letter-spacing: 0.04em; color: var(--color-primary); }
 .home-stories-all { text-align: right; margin-top: 24px; font-size: 14px; }
-.home-stories-all a { color: var(--color-primary); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 200ms ease, color 200ms ease; }
-.home-stories-all a:hover { color: var(--color-primary-hover); border-color: var(--color-primary-hover); }
+.home-stories-all a { color: #fff; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 200ms ease, color 200ms ease; }
+.home-stories-all a:hover { color: var(--color-primary); border-color: var(--color-primary); }
 @media (max-width: 1023px) { .home-stories-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 600px) { .home-stories-grid { grid-template-columns: 1fr; } }
 
-/* ── Section 07: Feature image (parallax chapter break) ───────────── */
+/* ── Section 07: Feature image + quote (fixed-background band) ────── */
+/* The image is attached to the viewport, so as the section scrolls past
+   it acts like a window onto a static landscape. iOS Safari ignores
+   background-attachment: fixed, so the mobile fallback uses a plain
+   cover image which still looks fine. */
 .home-feature {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  height: 60vh;
-  min-height: 380px;
+  min-height: 60vh;
+  padding: 80px 24px;
   overflow: hidden;
-  background: var(--color-bg);
-}
-/* Image is 30% taller than the section so scroll-tied parallax can
-   shift it +/- 15% of section height without exposing the dark
-   background underneath. JS sets transform: translateY(...) based on
-   scroll progress. */
-.home-feature-img {
-  position: absolute;
-  top: -15%;
-  left: 0;
-  right: 0;
-  height: 130%;
-  background-position: center;
+  background-color: var(--color-bg);
+  background-image: url('/assets/images/bg/bg-header-yotei.jpg');
+  background-position: center top;
   background-size: cover;
-  will-change: transform;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
-.home-feature-img::after {
+/* Dark scrim so the white quote stays legible against the bright sky. */
+.home-feature::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.5) 100%);
+  background: linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.45) 100%);
   pointer-events: none;
 }
-@media (max-width: 767px) { .home-feature { height: 40vh; min-height: 280px; } }
-@media (prefers-reduced-motion: reduce) {
-  .home-feature-img { transform: none !important; }
+.home-feature-quote {
+  position: relative;
+  z-index: 1;
+  max-width: 880px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  text-align: center;
+  color: #fff;
+}
+.home-feature-quote p {
+  margin: 0;
+  font-family: "Metropolis", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: clamp(24px, 2.8vw, 40px);
+  line-height: 1.35;
+  letter-spacing: 0;
+  text-shadow: 0 2px 24px rgba(0,0,0,0.45);
+}
+.ja .home-feature-quote p {
+  font-size: clamp(22px, 2.8vw, 40px);
+  line-height: 1.5;
+}
+@media (max-width: 767px) {
+  .home-feature {
+    min-height: 50vh;
+    padding: 64px 20px;
+    background-attachment: scroll;
+  }
 }
 
 /* ── Section 08: Plan + Get Involved (split) ──────────────────────── */
@@ -734,12 +789,12 @@ html[lang="ja"] .home-action-title { letter-spacing: normal; text-transform: non
 .home-action-ctas .btn { flex: 0 0 auto; }
 .home-action-tertiary { margin: 8px 0 0; font-size: 14px; }
 .home-action-tertiary a {
-  color: var(--color-primary);
+  color: #fff;
   text-decoration: none;
   border-bottom: 1px solid transparent;
   transition: border-color 200ms ease, color 200ms ease;
 }
-.home-action-tertiary a:hover { color: var(--color-primary-hover); border-color: var(--color-primary-hover); }
+.home-action-tertiary a:hover { color: var(--color-primary); border-color: var(--color-primary); }
 
 @media (max-width: 767px) {
   .home-action-grid { grid-template-columns: 1fr; min-height: 0; }
@@ -766,5 +821,5 @@ html[lang="ja"] .home-action-title { letter-spacing: normal; text-transform: non
 html[lang="ja"] .home-jobs-title { letter-spacing: normal; text-transform: none; }
 .home-jobs-cards { max-width: 900px; margin: 0 auto; }
 .home-jobs-all { text-align: right; margin-top: 24px; font-size: 13px; max-width: 900px; margin-left: auto; margin-right: auto; }
-.home-jobs-all a { color: var(--color-primary); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 200ms ease, color 200ms ease; }
-.home-jobs-all a:hover { color: var(--color-primary-hover); border-color: var(--color-primary-hover); }
+.home-jobs-all a { color: #fff; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 200ms ease, color 200ms ease; }
+.home-jobs-all a:hover { color: var(--color-primary); border-color: var(--color-primary); }
