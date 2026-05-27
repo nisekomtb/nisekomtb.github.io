@@ -41,6 +41,20 @@ layout: base
   .event-signup-top {
     margin-top: 16px;
   }
+  .event-signup-terms {
+    margin: 14px auto 0;
+    max-width: 520px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #888;
+  }
+  .event-signup-terms a {
+    color: inherit;
+    text-decoration: underline;
+  }
+  .event-signup-terms a:hover {
+    color: var(--color-accent);
+  }
   .btn.disabled,
   .btn[aria-disabled="true"] {
     background: rgba(255, 255, 255, 0.1) !important;
@@ -354,6 +368,18 @@ layout: base
           <div class="event-signup-top">
             <a class="btn btn-primary{% if cta_disabled %} disabled{% endif %}" href="/{% if page.lang == 'ja' %}ja/{% endif %}shop/#!/{{ page.storeProductSlug }}"{% if cta_disabled %} aria-disabled="true" tabindex="-1"{% endif %}>{% if page.lang == "ja" %}チケットを<wbr>購入{% else %}Buy ticket{% endif %}</a>
           </div>
+        {% endif %}
+        {% assign show_signup_terms = false %}
+        {% if page.storeProductSlug %}{% assign show_signup_terms = true %}{% endif %}
+        {% if page.link and page.link.url and page.link.isSignup %}{% assign show_signup_terms = true %}{% endif %}
+        {% if show_signup_terms and cta_disabled == false %}
+          <p class="event-signup-terms">
+            {% if page.lang == "ja" %}
+              お申し込み<wbr>または<wbr>当日の<wbr>ご参加を<wbr>もって、<wbr><a href="/ja/events/waiver/">イベント参加申込規約</a>に<wbr>同意した<wbr>ものと<wbr>みなします。
+            {% else %}
+              By signing up or attending, you agree to our <a href="/events/waiver/">Event Participation Terms</a>.
+            {% endif %}
+          </p>
         {% endif %}
       </div>
 
