@@ -1,9 +1,35 @@
 {% comment %}
-  Usage: {% include image.html src="/assets/images/path/image.jpg" alt="Description" %}
-  If a .webp version exists at the same path, it will be served to supporting browsers.
+  Usage (WebP fallback, no responsive variants):
+    {% include image.html src="/assets/images/path/image.jpg" alt="Description" %}
+
+  Responsive (srcset across 1-3 width tiers):
+    {% include image.html
+       src="/assets/images/path/image.jpg"
+       alt="Description"
+       widths="1600,2400,3840"
+       sizes="100vw" %}
+
+  Widths map to filename suffixes in order:
+    1st width = base file        (image.webp)
+    2nd width = -large suffix    (image-large.webp)
+    3rd width = -xlarge suffix   (image-xlarge.webp)
+
+  The caller is responsible for producing the WebP variants.
+  See _docs/responsive-images.md for the resize workflow.
+
+  Optional params:
+    class, style, sizes (default "100vw"), loading (default "lazy").
+    attrs — raw passthrough for extra attributes on <img> (e.g. data-* hooks).
+  Use loading="eager" for above-the-fold imagery.
 {% endcomment %}
-{% assign webp_src = include.src | replace: ".jpg", ".webp" | replace: ".png", ".webp" | replace: ".jpeg", ".webp" %}
+{% assign base_webp = include.src | replace: ".jpg", ".webp" | replace: ".png", ".webp" | replace: ".jpeg", ".webp" %}
+{% if include.widths %}
+{% assign base_stem = base_webp | replace: ".webp", "" %}
+{% assign widths = include.widths | split: "," %}
+{% assign suffixes = "|-large|-xlarge" | split: "|" %}
+{% capture srcset %}{% for w in widths %}{% unless forloop.first %}, {% endunless %}{{ base_stem }}{{ suffixes[forloop.index0] }}.webp {{ w | strip }}w{% endfor %}{% endcapture %}
+{% endif %}
 <picture>
-  <source srcset="{{ webp_src }}" type="image/webp">
-  <img src="{{ include.src }}" alt="{{ include.alt }}"{% if include.class %} class="{{ include.class }}"{% endif %}{% if include.style %} style="{{ include.style }}"{% endif %} />
+  {% if include.widths %}<source srcset="{{ srcset }}" sizes="{{ include.sizes | default: '100vw' }}" type="image/webp">{% else %}<source srcset="{{ base_webp }}" type="image/webp">{% endif %}
+  <img src="{{ include.src }}" alt="{{ include.alt }}" loading="{{ include.loading | default: 'lazy' }}"{% if include.class %} class="{{ include.class }}"{% endif %}{% if include.style %} style="{{ include.style }}"{% endif %}{% if include.attrs %} {{ include.attrs }}{% endif %} />
 </picture>

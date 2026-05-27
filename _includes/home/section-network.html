@@ -5,14 +5,16 @@
 
     <div class="home-network-bg">
       {% for y in years %}
-        <img src="/assets/images/about/network/{{ y }}.webp"
-             srcset="/assets/images/about/network/{{ y }}.webp 1600w, /assets/images/about/network/{{ y }}-large.webp 2400w, /assets/images/about/network/{{ y }}-xlarge.webp 3840w"
-             sizes="100vw"
-             alt="{% if page.lang == 'en' %}Niseko MTB trail network in {{ y }}{% else %}{{ y }}年のニセコMTBトレイルネットワーク{% endif %}"
-             class="home-network-img"
-             data-year="{{ y }}"
-             {% if forloop.first %}data-active="true"{% endif %}
-             loading="lazy"/>
+        {% capture year_src %}/assets/images/about/network/{{ y }}.jpg{% endcapture %}
+        {% capture year_alt %}{% if page.lang == 'en' %}Niseko MTB trail network in {{ y }}{% else %}{{ y }}年のニセコMTBトレイルネットワーク{% endif %}{% endcapture %}
+        {% capture year_attrs %}data-year="{{ y }}"{% if forloop.first %} data-active="true"{% endif %}{% endcapture %}
+        {% include image.html
+            src=year_src
+            alt=year_alt
+            widths="1600,2400,3840"
+            sizes="100vw"
+            class="home-network-img"
+            attrs=year_attrs %}
       {% endfor %}
       <div class="home-network-overlay"></div>
     </div>
@@ -169,7 +171,7 @@
       </div>
     </div>
     <p class="home-network-parks-all">
-      <a href="{% if page.lang == 'ja' %}/ja{% endif %}/where-to-ride/">{% if page.lang == "en" %}All riding areas →{% else %}すべての<wbr>ライディング<wbr>エリアを<wbr>見る →{% endif %}</a>
+      <a href="{% if page.lang == 'ja' %}/ja{% endif %}/where-to-ride/">{% if page.lang == "en" %}All riding areas{% else %}すべての<wbr>ライディング<wbr>エリアを<wbr>見る{% endif %} <span class="home-more-arrow fa-solid fa-circle-arrow-right"></span></a>
     </p>
   </div>
 </section>

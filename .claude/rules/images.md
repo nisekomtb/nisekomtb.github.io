@@ -33,6 +33,15 @@ or note that the JA page needs a localised alt attribute.
 <img src="/assets/images/trails/header.jpg" alt="ツインピークストレイルを下るライダー">
 ```
 
+## Responsive sizes
+
+For new imagery, prefer `{% include image.html %}` over raw `<img>`. It emits WebP
+fallback automatically and accepts a `widths="..."` param to produce a responsive
+`srcset` across `base / -large / -xlarge` WebP variants.
+
+See `@_docs/responsive-images.md` for the full workflow (when to use variants, naming
+convention, ImageMagick resize commands, `sizes` attribute guide).
+
 ## OG images
 
 - Default OG image is `/assets/images/og/hero.jpg` (set in `_config.yml`)
