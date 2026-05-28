@@ -1,4 +1,10 @@
 User-agent: *
 Allow: /
 
+# Block legacy AJAX-crawling URLs left over from the Ecwid hash-bang storefront.
+# These were the server-side counterparts to /shop/#!/... fragments under Google's
+# deprecated AJAX crawling scheme (sunset 2015). Indexing them wastes crawl budget
+# and clutters search results.
+Disallow: /*_escaped_fragment_*
+
 Sitemap: https://namba.ngo/sitemap.xml
