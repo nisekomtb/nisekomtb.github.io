@@ -11,7 +11,6 @@
     var btn = null;
     var nav = null;
     var direction = 'left';
-    var fixed = null;
     var JA_isLoading = false;
 
     if (!wrapper) return;
@@ -84,14 +83,6 @@
 
         if (nav) nav.classList.remove('off-canvas-current');
 
-        // Restore fixed elements
-        if (fixed) {
-          fixed.forEach(function (el) {
-            el.style.position = '';
-            el.style.marginTop = '';
-          });
-        }
-
         JA_isLoading = false;
       }, 700);
     }
@@ -120,22 +111,6 @@
       return true;
     }
 
-    // Find fixed-position elements inside inner
-    function findFixed() {
-      var all = inner.querySelectorAll('*');
-      var result = [];
-      all.forEach(function (el) {
-        if (getComputedStyle(el).position === 'fixed') {
-          result.push(el);
-        }
-      });
-      // Also include .affix elements
-      inner.querySelectorAll('.affix').forEach(function (el) {
-        if (result.indexOf(el) === -1) result.push(el);
-      });
-      return result;
-    }
-
     toggles.forEach(function (toggle) {
       toggle.addEventListener('click', function (e) {
         stopBubble(e);
@@ -148,45 +123,17 @@
         btn = toggle;
         nav = btn.dataset.nav ? document.querySelector(btn.dataset.nav) : null;
 
-        if (!fixed) fixed = findFixed();
-        else {
-          // Refresh: keep only currently fixed + .affix elements
-          fixed = fixed.filter(function (el) {
-            return getComputedStyle(el).position === 'fixed';
-          });
-          inner.querySelectorAll('.affix').forEach(function (el) {
-            if (fixed.indexOf(el) === -1) fixed.push(el);
-          });
-        }
-
         if (nav) nav.classList.add('off-canvas-current');
 
         var isRtl = html.getAttribute('dir') === 'rtl';
         var pos = btn.dataset.pos;
         direction = (isRtl && pos !== 'right') || (!isRtl && pos === 'right') ? 'right' : 'left';
 
-        if (offcanvas) offcanvas.style.height = window.innerHeight + 'px';
-
         // Disable scroll on page
         var scrollTop = html.scrollTop || document.body.scrollTop;
         html.classList.add('noscroll');
         html.style.top = -scrollTop + 'px';
         html.dataset.top = scrollTop;
-        if (offcanvas) offcanvas.style.top = scrollTop + 'px';
-
-        // Make fixed elements become absolute
-        fixed.forEach(function (el) {
-          var parent = el.parentElement;
-          while (parent !== inner && getComputedStyle(parent).position === 'static') {
-            parent = parent.parentElement;
-          }
-          var mtop = -parent.getBoundingClientRect().top - window.pageYOffset + (parent.getBoundingClientRect().top + window.pageYOffset) * 0;
-          // Calculate offset from parent
-          var parentRect = parent.getBoundingClientRect();
-          mtop = -(parentRect.top + window.pageYOffset);
-          el.style.position = 'absolute';
-          el.style.marginTop = mtop + 'px';
-        });
 
         wrapper.scrollTop = scrollTop;
 
@@ -200,11 +147,5 @@
       });
     });
 
-    // Preload fixed items
-    window.addEventListener('load', function () {
-      setTimeout(function () {
-        fixed = findFixed();
-      }, 100);
-    });
   });
 })();
