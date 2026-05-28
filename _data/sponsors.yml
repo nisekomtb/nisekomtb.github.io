@@ -152,129 +152,166 @@ higuma:
 shika:
   width: 17
   sponsors:
-    - image: /assets/images/company/midori.png
+    - name: midori
+      image: /assets/images/company/midori.png
       url: https://midoriinvestors.com
-    - image: /assets/images/company/mori-no-takumi.png
+    - name: mori no takumi
+      image: /assets/images/company/mori-no-takumi.png
       url: https://www.nisekocustomwoodwork.com/
-    # - image: /assets/images/company/niseko-central.png
+    # - name: niseko central
+    #   image: /assets/images/company/niseko-central.png
     #   url: https://www.nisekocentral.com
     #   ja:
     #     url: https://www.nisekocentral.com/ja/
-    - image: /assets/images/company/noasc.png
+    - name: noasc
+      image: /assets/images/company/noasc.png
       url: https://noasc.com/en/
       ja:
         url: https://noasc.com/ja/
-    - image: /assets/images/company/npb.png
+    - name: npb
+      image: /assets/images/company/npb.png
       url: https://nisekotourism.com
       ja:
         url: https://nisekotourism.com/ja
-    - image: /assets/images/company/oyuki.png
+    - name: oyuki
+      image: /assets/images/company/oyuki.png
       url: https://oyuki.com
-    - image: /assets/images/company/peak-car-rentals.png
+    - name: peak car rentals
+      image: /assets/images/company/peak-car-rentals.png
       url: https://www.nisekocarrental.com
-    - image: /assets/images/company/peatys.png
+    - name: peatys
+      image: /assets/images/company/peatys.png
       url: https://sports-w.com/brands/peatys/
-    - image: /assets/images/company/the-niseko-company.png
+    - name: the niseko company
+      image: /assets/images/company/the-niseko-company.png
       url: https://thenisekocompany.com
       ja:
         url: https://thenisekocompany.com/ja/
-    - image: /assets/images/company/sandls-designs.png
+    - name: sandls designs
+      image: /assets/images/company/sandls-designs.png
       url: http://www.sandlsdesign.com
-    - image: /assets/images/company/sango.png
+    - name: sango
+      image: /assets/images/company/sango.png
       url: https://www.kk35.jp
-    - image: /assets/images/company/setsu.png
+    - name: setsu
+      image: /assets/images/company/setsu.png
       url: https://setsuniseko.com/en
       ja:
         url: https://setsuniseko.com/ja
-    - image: /assets/images/company/sme.png
+    - name: sme
+      image: /assets/images/company/sme.png
       url: https://www.smejapan.com
-    - image: /assets/images/company/smith.png
+    - name: smith
+      image: /assets/images/company/smith.png
       url: https://smithjapan.co.jp
-    - image: /assets/images/company/suiboku.png
+    - name: suiboku
+      image: /assets/images/company/suiboku.png
       url: https://www.suibokuhirafu.com
       ja:
         url: https://www.suibokuhirafu.com/ja/
-    - image: /assets/images/company/taiga.png
+    - name: taiga
+      image: /assets/images/company/taiga.png
       url: https://www.taigaprojects.com
       ja:
         url: https://www.taigaprojects.com/ja/
-    - image: /assets/images/company/vacation-niseko.png
+    - name: vacation niseko
+      image: /assets/images/company/vacation-niseko.png
       url: https://vacationniseko.com/en
       ja:
         url: https://vacationniseko.com/ja
-    - image: /assets/images/company/west-canada-homes.png
+    - name: west canada homes
+      image: /assets/images/company/west-canada-homes.png
       url: http://westcanadaproperties.com
 
 tanuki:
   width: 18
   sponsors:
-    - image: /assets/images/company/annupuri.png
+    - name: annupuri
+      image: /assets/images/company/annupuri.png
       url: https://annupuri.info/en/
       ja:
         url: https://annupuri.info
-    - image: /assets/images/company/blowhard.png
+    - name: blowhard
+      image: /assets/images/company/blowhard.png
       url: https://www.blowhard-all-year.com/
       ja:
         url: https://www.blowhard-all-year.com/ja
-    - image: /assets/images/company/burton.png
+    - name: burton
+      image: /assets/images/company/burton.png
       url: https://www.burton.com/jp/en
       ja:
         url: https://www.burton.com/jp/ja
-    - image: /assets/images/company/clintvosloo.png
+    - name: clint vosloo
+      image: /assets/images/company/clintvosloo.png
       url: https://www.clintvosloo.com
-    - image: /assets/images/company/explore-niseko.png
+    - name: explore niseko
+      image: /assets/images/company/explore-niseko.png
       url: https://www.explore-niseko.com
       ja:
         url: https://www.explore-niseko.com/ja/
-    - image: /assets/images/company/gentemstick.png
+    - name: gentemstick
+      image: /assets/images/company/gentemstick.png
       url: https://gentemstick.com
-    - image: /assets/images/company/nikota.png
+    - name: nikota
+      image: /assets/images/company/nikota.png
       url: http://www.nikotarealty.com
       ja:
         url: http://www.nikotarealty.com/ja/
-    - image: /assets/images/company/niseko-portfolio.png
+    - name: niseko portfolio
+      image: /assets/images/company/niseko-portfolio.png
       url: https://nisekoportfolio.com
       ja:
         url: https://nisekoportfolio.com/ja/
-    - image: /assets/images/company/niseko-zen.png
+    - name: niseko zen
+      image: /assets/images/company/niseko-zen.png
       url: https://www.nisekozen.com
-    - image: /assets/images/company/nomad-wellness.png
+    - name: nomad wellness
+      image: /assets/images/company/nomad-wellness.png
       url: https://nomadwellnessniseko.com
-    - image: /assets/images/company/north-bicycle.png
+    - name: north bicycle
+      image: /assets/images/company/north-bicycle.png
       url: https://northbicycle.co.jp
-    - image: /assets/images/company/odin.png
+    - name: odin
+      image: /assets/images/company/odin.png
       url: https://www.odin-property.com
-    - image: /assets/images/company/powbar.png
+    - name: powbar
+      image: /assets/images/company/powbar.png
       url: https://www.thepowbar.com
-    - image: /assets/images/company/powderlife.png
+    - name: powderlife
+      image: /assets/images/company/powderlife.png
       url: https://www.powderlife.com
-    - image: /assets/images/company/roomboss.png
+    - name: roomboss
+      image: /assets/images/company/roomboss.png
       url: https://roomboss.com
       ja:
         url: https://roomboss.com/ja/
-    - image: /assets/images/company/seasons.png
+    - name: seasons
+      image: /assets/images/company/seasons.png
       url: https://www.seasons-niseko.com
-    - image: /assets/images/company/whiteroom-property.png
-    - image: /assets/images/company/yotei-brewing.png
+    - name: whiteroom property
+      image: /assets/images/company/whiteroom-property.png
+    - name: yotei brewing
+      image: /assets/images/company/yotei-brewing.png
       url: https://yotei.beer/
 
 artists:
   width: 15
   sponsors:
-    - image: /assets/images/artists/aikawa-mitsugu.png
+    - name: Aikawa Mitsugu
+      image: /assets/images/artists/aikawa-mitsugu.png
       url: https://aikawamitsugu.com
-      # label: Aikawa Mitsugu
-    - image: /assets/images/artists/59niseko.png
+    - name: 59 Niseko
+      image: /assets/images/artists/59niseko.png
       url: https://www.59niseko.com
-      # label: 59 Niseko
-    - image: /assets/images/artists/froglet-paintings.png
+    - name: Froglet Paintings
+      image: /assets/images/artists/froglet-paintings.png
       url: https://www.frogletpaintings.com
-      # label: Froglet Paintings
-    - image: /assets/images/artists/joekkaido.png
+    - name: Joekkaido
+      image: /assets/images/artists/joekkaido.png
       url: https://instagram.com/joekkaido
-      # label: Joekkaido
-    - image: /assets/images/artists/mtnsea.png
+    - name: MtnSea
+      image: /assets/images/artists/mtnsea.png
       url: https://www.instagram.com/mtn_sea
-      # label: Luke Sand
-    - image: /assets/images/artists/rainbow-captain.png
+    - name: The Rainbow Captain
+      image: /assets/images/artists/rainbow-captain.png
       url: https://www.instagram.com/therainbowcaptain

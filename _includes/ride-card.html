@@ -33,6 +33,6 @@
     <h3>{{ include.title }}</h3>
     {% if include.stats_key %}{% include trail-difficulty-counts.html data_key=include.stats_key %}{% endif %}
     <p>{{ include.description }}</p>
-    <a class="action" href="{{ include.url }}">{{ include.action_label }} <span class="fa-solid fa-circle-arrow-right"></span></a>
+    <a class="action" href="{{ include.url }}" aria-label="{{ include.action_label }}: {{ include.title }}">{{ include.action_label }} <span class="fa-solid fa-circle-arrow-right"></span></a>
   </div>
 </div>

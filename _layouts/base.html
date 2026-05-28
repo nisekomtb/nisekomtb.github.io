@@ -24,12 +24,12 @@
     <meta property="og:image:secure_url" content="https://namba.ngo{{ page.og.image }}?d={{ site.time | date: "%s" }}"/>
     <meta property="og:url" content="https://namba.ngo{% if page.lang == 'ja' %}/ja{% endif %}{{ path }}"/>
     {% if page.description %}<meta property="og:description" content="{{ page.description }}"/>{% endif %}
-    {% if page.lang == 'en' %}<meta property="og:locale" content="en_JP"/>
+    {% if page.lang == 'en' %}<meta property="og:locale" content="en_GB"/>
       <meta property="og:site_name" content="Niseko Area Mountain Bike Association"/>
       <meta property="og:locale:alternate" content="ja_JP"/>
     {% else %}<meta property="og:locale" content="ja_JP"/>
       <meta property="og:site_name" content="ニセコエリアマウンテンバイク 協会"/>
-      <meta property="og:locale:alternate" content="en_JP"/>
+      <meta property="og:locale:alternate" content="en_GB"/>
     {% endif %}
     <meta name="twitter:card" content="summary_large_image"/>
     <meta name="twitter:title" content="{{ page.title }}{% if page.subtitle %}: {{ page.subtitle }}{% endif %}"/>
@@ -148,9 +148,15 @@
       "name": "Niseko Area Mountain Bike Association",
       "alternateName": "NAMBA",
       "url": "https://namba.ngo/",
-      "logo": "https://namba.ngo/assets/images/logos/logo.svg",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://namba.ngo/assets/images/logos/logo.svg",
+        "width": 1000,
+        "height": 695
+      },
       "description": "Nonprofit building mountain bike trails and community in Niseko, Hokkaido, Japan.",
       "foundingDate": "2022",
+      "nonprofitStatus": "Specified Non-Profit Corporation (NPO) under Japanese law",
       "location": {
         "@type": "Place",
         "name": "Niseko",
@@ -161,6 +167,13 @@
           "addressCountry": "JP"
         }
       },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "info@namba.ngo",
+        "contactType": "customer support",
+        "areaServed": "JP",
+        "availableLanguage": ["en", "ja"]
+      },
       "sameAs": [
         "https://www.instagram.com/nisekomtb/",
         "https://www.facebook.com/nisekoareamtbassociation"
@@ -168,8 +181,22 @@
     }
     </script>
 
+    <!-- Site-wide website schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://namba.ngo/#website",
+      "url": "https://namba.ngo/",
+      "name": "Niseko Area Mountain Bike Association",
+      "alternateName": "NAMBA",
+      "inLanguage": ["en", "ja"],
+      "publisher": { "@id": "https://namba.ngo/#organization" }
+    }
+    </script>
+
     {% if page.path == "index.html" or page.path == "ja/index.html" %}
-    <!-- Home page schema: WebPage + BreadcrumbList + VideoObject + park references -->
+    <!-- Home page schema: WebPage + VideoObject + park references -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -179,18 +206,8 @@
       "name": "{{ page.title | escape }}",
       "description": "{{ page.description | escape }}",
       "inLanguage": "{{ page.lang }}",
-      "isPartOf": { "@id": "https://namba.ngo/#organization" },
-      "breadcrumb": {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "{% if page.lang == 'ja' %}ホーム{% else %}Home{% endif %}",
-            "item": "https://namba.ngo{% if page.lang == 'ja' %}/ja{% endif %}/"
-          }
-        ]
-      },
+      "isPartOf": { "@id": "https://namba.ngo/#website" },
+      "publisher": { "@id": "https://namba.ngo/#organization" },
       "primaryImageOfPage": {
         "@type": "ImageObject",
         "url": "https://namba.ngo/assets/images/og/hero.jpg",
@@ -204,6 +221,7 @@
         "thumbnailUrl": "https://namba.ngo/assets/images/home/hero-video-poster.jpg",
         "embedUrl": "https://player.vimeo.com/video/1195232610",
         "uploadDate": "2026-05-25",
+        "duration": "PT1M",
         "publisher": { "@id": "https://namba.ngo/#organization" }
       },
       "about": [
@@ -304,10 +322,10 @@
             <div class="col-lg-12 copyright ">
               <div class="mod-custom custom">
                 <div class="social">
-                  <a class="font-icon" href="https://www.instagram.com/nisekomtb/">
+                  <a class="font-icon" href="https://www.instagram.com/nisekomtb/" rel="noopener noreferrer" aria-label="NAMBA on Instagram">
                     <span class="fa-brands fa-instagram"></span>
                   </a>
-                  <a class="font-icon" href="https://www.facebook.com/nisekoareamtbassociation">
+                  <a class="font-icon" href="https://www.facebook.com/nisekoareamtbassociation" rel="noopener noreferrer" aria-label="NAMBA on Facebook">
                     <span class="fa-brands fa-facebook"></span>
                   </a>
                 </div>
