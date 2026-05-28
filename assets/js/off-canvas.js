@@ -150,11 +150,11 @@
       panel.setAttribute('aria-hidden', 'false');
       toggle.setAttribute('aria-label', isJa ? labelCloseJa : labelClose);
       lastFocused = document.activeElement;
-      var focusable = getFocusable();
-      if (focusable.length) {
-        // Delay slightly so the entry animation doesn't fight focus.
-        setTimeout(function () { focusable[0].focus(); }, 50);
-      }
+      // Focus the panel itself (tabindex=-1) so screen readers
+      // announce the dialog without leaving a visible focus ring on
+      // the first link for mouse users. Keyboard users still Tab
+      // into the focusable set as usual.
+      setTimeout(function () { panel.focus(); }, 50);
     }
 
     function onClose() {

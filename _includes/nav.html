@@ -210,7 +210,8 @@
       role="dialog"
       aria-modal="true"
       aria-label="{% if page.lang == 'en' %}Site navigation{% else %}サイトナビゲーション{% endif %}"
-      aria-hidden="true">
+      aria-hidden="true"
+      tabindex="-1">
 
       <nav class="mobile-nav-list">
         {% for nav in site.data.nav %}
@@ -274,20 +275,6 @@
           {% endif %}
         {% endfor %}
       </nav>
-
-      <div class="mobile-nav-foot">
-        {% for nav in site.data.nav %}
-          {% if nav.sub %}
-            {% for subNav in nav.sub %}
-              {% if subNav.url %}
-                <a class="mobile-nav-foot-link" href="{{ subNav.url }}">
-                  {% if subNav.icon %}<i class="{{ subNav.icon }}" aria-hidden="true"></i> {% endif %}{% if page.lang == 'en' %}{{- subNav.en -}}{% else %}{{- subNav.ja -}}{% endif %}
-                </a>
-              {% endif %}
-            {% endfor %}
-          {% endif %}
-        {% endfor %}
-      </div>
 
     </div>
   <!-- //OFF-CANVAS SIDEBAR -->
