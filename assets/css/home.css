@@ -67,6 +67,54 @@ html[lang="ja"] .home-section-title { letter-spacing: normal; }
   transition: opacity 1.2s ease-out 0.3s;
 }
 .home-hero.video-ready .home-hero-video { opacity: 1; }
+/* Subtle loading cue while the deferred Vimeo iframe is still mounting.
+   Sits bottom-right of the hero; fades out once .video-ready is set, and
+   is suppressed entirely under prefers-reduced-motion (no video then). */
+.home-hero-loader {
+  position: absolute;
+  z-index: 1;
+  bottom: 44px;
+  right: clamp(20px, 5vw, 44px);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px 6px 8px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  color: rgba(255, 255, 255, 0.85);
+  font-family: "Metropolis", Helvetica, Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  line-height: 1;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 600ms ease-out;
+}
+.home-hero-loader-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.6);
+  animation: home-hero-loader-pulse 1.6s ease-in-out infinite;
+}
+html[lang="ja"] .home-hero-loader-label { letter-spacing: 0.5px; }
+.home-hero.video-ready .home-hero-loader { opacity: 0; }
+@keyframes home-hero-loader-pulse {
+  0%, 100% { transform: scale(1);    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.55); }
+  50%      { transform: scale(0.85); box-shadow: 0 0 0 6px rgba(255, 255, 255, 0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-hero-loader { display: none; }
+}
+@media (max-width: 600px) {
+  .home-hero-loader { bottom: 36px; right: 16px; font-size: 10px; }
+}
 .home-hero-overlay {
   position: absolute;
   inset: 0;

@@ -25,6 +25,12 @@
       })();
     </script>
     <div class="home-hero-overlay"></div>
+    <span class="home-hero-loader" aria-hidden="true">
+      <span class="home-hero-loader-dot"></span>
+      <span class="home-hero-loader-label">
+        {% if page.lang == "en" %}Loading{% else %}読み込み中{% endif %}
+      </span>
+    </span>
   </div>
   <div class="home-hero-content">
     <p class="home-hero-kicker">
