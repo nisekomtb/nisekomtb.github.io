@@ -438,15 +438,8 @@ artists:
       "description": "地元アーティストと協力し、ニセコのライディングをモチーフにした数量限定のグッズを制作しています。売上はトレイルの整備と維持に還元されます。",
       "inLanguage": "ja",
       "primaryImageOfPage": "https://namba.ngo/assets/images/artists/header.jpg",
-      "about": { "@id": "https://namba.ngo/#organization" }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://namba.ngo/ja/" },
-        { "@type": "ListItem", "position": 2, "name": "ショップ", "item": "https://namba.ngo/ja/shop/" },
-        { "@type": "ListItem", "position": 3, "name": "アーティストシリーズ", "item": "https://namba.ngo/ja/artist-series/" }
-      ]
+      "about": { "@id": "https://namba.ngo/#organization" },
+      "isPartOf": { "@id": "https://namba.ngo/#website" }
     }
   ]
 }
@@ -459,7 +452,7 @@ artists:
     const lightbox = new PhotoSwipeLightbox({
       gallery: '#' + gallery.id,
       children: 'a',
-      pswpModule: () => import('https://unpkg.com/photoswipe@5.4.4/dist/photoswipe.esm.js'),
+      pswpModule: () => import('https://unpkg.com/photoswipe@5.4.4/dist/photoswipe.esm.js')
     });
     lightbox.init();
   });

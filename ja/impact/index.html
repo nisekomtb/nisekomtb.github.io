@@ -71,14 +71,8 @@ og:
       "description": "NAMBAの実績：11,500人以上の来場者、21km以上のトレイル、資金調達成功率100%、20,000時間以上のボランティア活動で、日本最大の無料公開MTBネットワークを構築。",
       "inLanguage": "ja",
       "primaryImageOfPage": "https://namba.ngo/assets/images/bg/bg-header-impact.jpg",
-      "about": { "@id": "https://namba.ngo/#organization" }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://namba.ngo/ja/" },
-        { "@type": "ListItem", "position": 2, "name": "実績", "item": "https://namba.ngo/ja/impact/" }
-      ]
+      "about": { "@id": "https://namba.ngo/#organization" },
+      "isPartOf": { "@id": "https://namba.ngo/#website" }
     }
   ]
 }
@@ -359,7 +353,7 @@ og:
     blue: '#148cf0',
     blueLight: 'rgba(20, 140, 240, 0.3)',
     red: '#be0014',
-    grey: '#666666',
+    grey: '#666666'
   };
 
   const categorySummaries = {
@@ -370,7 +364,7 @@ og:
     trail_construction: '設計、重機、資材、労働力、現場復元。',
     trail_maintenance_operation: 'クルー、整備車両、工具、土地利用料。',
     marketing_events: 'イベント、コンテンツ、コミュニティ広報。',
-    admin_other: '会計、法令遵守、保険、銀行業務。',
+    admin_other: '会計、法令遵守、保険、銀行業務。'
   };
   const incomeKeys = ['local_partnerships', 'industry_sponsors', 'grants_subsidies', 'community_fund'];
   const allocationKeys = ['trail_construction', 'trail_maintenance_operation', 'marketing_events', 'admin_other'];
@@ -392,7 +386,7 @@ og:
       tension: 0.3,
       pointRadius: 5,
       pointHoverRadius: 8,
-      borderWidth: 3,
+      borderWidth: 3
     };
   });
 
@@ -400,7 +394,7 @@ og:
     type: 'line',
     data: {
       labels: monthLabels,
-      datasets: visitorDatasets,
+      datasets: visitorDatasets
     },
     options: {
       responsive: true,
@@ -444,7 +438,7 @@ og:
           tension: 0.3,
           pointRadius: 5,
           pointHoverRadius: 8,
-          borderWidth: 3,
+          borderWidth: 3
         },
         {
           label: 'NAMBA建設',
@@ -455,9 +449,9 @@ og:
           tension: 0.3,
           pointRadius: 5,
           pointHoverRadius: 8,
-          borderWidth: 3,
+          borderWidth: 3
         }
-      ],
+      ]
     },
     options: {
       responsive: true,
@@ -539,7 +533,7 @@ og:
           borderColor: colours.accent,
           borderWidth: 1,
           yAxisID: 'y2',
-          order: 2,
+          order: 2
         },
         {
           type: 'line',
@@ -553,9 +547,9 @@ og:
           pointHoverRadius: 8,
           borderWidth: 3,
           yAxisID: 'y',
-          order: 1,
-        },
-      ],
+          order: 1
+        }
+      ]
     },
     options: {
       responsive: true,
@@ -606,24 +600,24 @@ og:
         {
           label: '地元パートナーシップ',
           data: incomeData.map(function(d) { return d.local_partnerships; }),
-          backgroundColor: colours.primary,
+          backgroundColor: colours.primary
         },
         {
           label: '業界スポンサー',
           data: incomeData.map(function(d) { return d.industry_sponsors; }),
-          backgroundColor: colours.accent,
+          backgroundColor: colours.accent
         },
         {
           label: '助成金・補助金',
           data: incomeData.map(function(d) { return d.grants_subsidies; }),
-          backgroundColor: colours.blue,
+          backgroundColor: colours.blue
         },
         {
           label: 'コミュニティ基金',
           data: incomeData.map(function(d) { return d.community_fund; }),
-          backgroundColor: colours.grey,
+          backgroundColor: colours.grey
         }
-      ],
+      ]
     },
     options: {
       responsive: true,
@@ -650,7 +644,7 @@ og:
           },
           title: {
             display: true,
-            text: '収入 (円)',
+            text: '収入 (円)'
           }
         }
       }
@@ -666,7 +660,7 @@ og:
       datasets: [{
         data: [sources.local_partnerships, sources.industry_sponsors, sources.grants_subsidies, sources.community_fund],
         backgroundColor: [colours.primary, colours.accent, colours.blue, colours.grey],
-        borderWidth: 0,
+        borderWidth: 0
       }]
     },
     options: {
@@ -675,7 +669,7 @@ og:
         title: {
           display: true,
           text: '資金源',
-          font: { size: 16, weight: 700 },
+          font: { size: 16, weight: 700 }
         },
         legend: { position: 'bottom' },
         tooltip: {
@@ -699,7 +693,7 @@ og:
       datasets: [{
         data: [allocation.trail_construction, allocation.trail_maintenance_operation, allocation.marketing_events, allocation.admin_other],
         backgroundColor: [colours.primary, colours.accent, colours.blue, colours.grey],
-        borderWidth: 0,
+        borderWidth: 0
       }]
     },
     options: {
@@ -708,7 +702,7 @@ og:
         title: {
           display: true,
           text: '資金配分',
-          font: { size: 16, weight: 700 },
+          font: { size: 16, weight: 700 }
         },
         legend: { position: 'bottom' },
         tooltip: {

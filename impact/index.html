@@ -71,14 +71,8 @@ og:
       "description": "NAMBA's impact: 11,500+ visitors, 21km+ of trail, 100% funding success rate, 20,000+ volunteer hours building Japan's largest free-access MTB network.",
       "inLanguage": "en",
       "primaryImageOfPage": "https://namba.ngo/assets/images/bg/bg-header-impact.jpg",
-      "about": { "@id": "https://namba.ngo/#organization" }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://namba.ngo/" },
-        { "@type": "ListItem", "position": 2, "name": "Our Impact", "item": "https://namba.ngo/impact/" }
-      ]
+      "about": { "@id": "https://namba.ngo/#organization" },
+      "isPartOf": { "@id": "https://namba.ngo/#website" }
     }
   ]
 }
@@ -359,7 +353,7 @@ og:
     blue: '#148cf0',
     blueLight: 'rgba(20, 140, 240, 0.3)',
     red: '#be0014',
-    grey: '#666666',
+    grey: '#666666'
   };
 
   const categorySummaries = {
@@ -370,7 +364,7 @@ og:
     trail_construction: 'Design, machinery, materials, labour, and site restoration.',
     trail_maintenance_operation: 'Trail crew, vehicles, tools, and land access fees.',
     marketing_events: 'Events, content, and community outreach.',
-    admin_other: 'Accounting, legal, insurance, and banking.',
+    admin_other: 'Accounting, legal, insurance, and banking.'
   };
   const incomeKeys = ['local_partnerships', 'industry_sponsors', 'grants_subsidies', 'community_fund'];
   const allocationKeys = ['trail_construction', 'trail_maintenance_operation', 'marketing_events', 'admin_other'];
@@ -392,7 +386,7 @@ og:
       tension: 0.3,
       pointRadius: 5,
       pointHoverRadius: 8,
-      borderWidth: 3,
+      borderWidth: 3
     };
   });
 
@@ -400,7 +394,7 @@ og:
     type: 'line',
     data: {
       labels: monthLabels,
-      datasets: visitorDatasets,
+      datasets: visitorDatasets
     },
     options: {
       responsive: true,
@@ -444,7 +438,7 @@ og:
           tension: 0.3,
           pointRadius: 5,
           pointHoverRadius: 8,
-          borderWidth: 3,
+          borderWidth: 3
         },
         {
           label: 'Built by NAMBA',
@@ -455,9 +449,9 @@ og:
           tension: 0.3,
           pointRadius: 5,
           pointHoverRadius: 8,
-          borderWidth: 3,
+          borderWidth: 3
         }
-      ],
+      ]
     },
     options: {
       responsive: true,
@@ -539,7 +533,7 @@ og:
           borderColor: colours.accent,
           borderWidth: 1,
           yAxisID: 'y2',
-          order: 2,
+          order: 2
         },
         {
           type: 'line',
@@ -553,9 +547,9 @@ og:
           pointHoverRadius: 8,
           borderWidth: 3,
           yAxisID: 'y',
-          order: 1,
-        },
-      ],
+          order: 1
+        }
+      ]
     },
     options: {
       responsive: true,
@@ -606,24 +600,24 @@ og:
         {
           label: 'Local partnerships',
           data: incomeData.map(function(d) { return d.local_partnerships; }),
-          backgroundColor: colours.primary,
+          backgroundColor: colours.primary
         },
         {
           label: 'Industry sponsors',
           data: incomeData.map(function(d) { return d.industry_sponsors; }),
-          backgroundColor: colours.accent,
+          backgroundColor: colours.accent
         },
         {
           label: 'Grants & subsidies',
           data: incomeData.map(function(d) { return d.grants_subsidies; }),
-          backgroundColor: colours.blue,
+          backgroundColor: colours.blue
         },
         {
           label: 'Community fund',
           data: incomeData.map(function(d) { return d.community_fund; }),
-          backgroundColor: colours.grey,
+          backgroundColor: colours.grey
         }
-      ],
+      ]
     },
     options: {
       responsive: true,
@@ -650,7 +644,7 @@ og:
           },
           title: {
             display: true,
-            text: 'Income (¥)',
+            text: 'Income (¥)'
           }
         }
       }
@@ -666,7 +660,7 @@ og:
       datasets: [{
         data: [sources.local_partnerships, sources.industry_sponsors, sources.grants_subsidies, sources.community_fund],
         backgroundColor: [colours.primary, colours.accent, colours.blue, colours.grey],
-        borderWidth: 0,
+        borderWidth: 0
       }]
     },
     options: {
@@ -675,7 +669,7 @@ og:
         title: {
           display: true,
           text: 'Funding Sources',
-          font: { size: 16, weight: 700 },
+          font: { size: 16, weight: 700 }
         },
         legend: { position: 'bottom' },
         tooltip: {
@@ -699,7 +693,7 @@ og:
       datasets: [{
         data: [allocation.trail_construction, allocation.trail_maintenance_operation, allocation.marketing_events, allocation.admin_other],
         backgroundColor: [colours.primary, colours.accent, colours.blue, colours.grey],
-        borderWidth: 0,
+        borderWidth: 0
       }]
     },
     options: {
@@ -708,7 +702,7 @@ og:
         title: {
           display: true,
           text: 'How Funds Are Spent',
-          font: { size: 16, weight: 700 },
+          font: { size: 16, weight: 700 }
         },
         legend: { position: 'bottom' },
         tooltip: {

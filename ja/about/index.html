@@ -347,7 +347,7 @@ og:
   const lightbox = new PhotoSwipeLightbox({
     gallery: '.about-pswp',
     children: 'a',
-    pswpModule: () => import('https://unpkg.com/photoswipe@5.4.4/dist/photoswipe.esm.js'),
+    pswpModule: () => import('https://unpkg.com/photoswipe@5.4.4/dist/photoswipe.esm.js')
   });
   lightbox.init();
 </script>
@@ -364,14 +364,9 @@ og:
       "description": "NAMBAは、北海道ニセコで日本最大の無料アクセスのマウンテンバイクトレイルネットワークを構築する、ボランティア主導の非営利団体です。",
       "inLanguage": "ja",
       "primaryImageOfPage": "https://namba.ngo/assets/images/bg/bg-header-about.jpg",
-      "mainEntity": { "@id": "https://namba.ngo/#organization" }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://namba.ngo/ja/" },
-        { "@type": "ListItem", "position": 2, "name": "NAMBAについて", "item": "https://namba.ngo/ja/about/" }
-      ]
+      "mainEntity": { "@id": "https://namba.ngo/#organization" },
+      "isPartOf": { "@id": "https://namba.ngo/#website" },
+      "about": { "@id": "https://namba.ngo/#organization" }
     },
     {
       "@type": "NGO",

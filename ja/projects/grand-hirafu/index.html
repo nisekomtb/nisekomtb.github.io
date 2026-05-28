@@ -314,7 +314,7 @@ og:
   const lightbox = new PhotoSwipeLightbox({
     gallery: '.projects-pswp',
     children: 'a',
-    pswpModule: () => import('https://unpkg.com/photoswipe@5.4.4/dist/photoswipe.esm.js'),
+    pswpModule: () => import('https://unpkg.com/photoswipe@5.4.4/dist/photoswipe.esm.js')
   });
   lightbox.init();
 </script>
@@ -332,15 +332,8 @@ og:
       "inLanguage": "ja",
       "primaryImageOfPage": "https://namba.ngo/assets/images/trails/grand-hirafu/01.jpg",
       "mainEntity": { "@id": "https://namba.ngo/where-to-ride/grand-hirafu/#bikepark" },
-      "about": { "@id": "https://namba.ngo/#organization" }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://namba.ngo/ja/" },
-        { "@type": "ListItem", "position": 2, "name": "プロジェクト", "item": "https://namba.ngo/ja/projects/" },
-        { "@type": "ListItem", "position": 3, "name": "グラン・ヒラフバイクパーク", "item": "https://namba.ngo/ja/projects/grand-hirafu/" }
-      ]
+      "about": { "@id": "https://namba.ngo/#organization" },
+      "isPartOf": { "@id": "https://namba.ngo/#website" }
     }
   ]
 }

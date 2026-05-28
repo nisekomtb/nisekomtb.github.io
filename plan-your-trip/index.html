@@ -136,7 +136,7 @@ masthead:
         colorScheme: "DARK",
         streetViewControl: false,
         mapTypeControl: false,
-        fullscreenControl: false,
+        fullscreenControl: false
       });
 
       var directionsRenderer = new DirectionsRenderer({
@@ -145,14 +145,14 @@ masthead:
         polylineOptions: {
           strokeColor: "#d4a843",
           strokeWeight: 4,
-          strokeOpacity: 0.9,
+          strokeOpacity: 0.9
         }
       });
 
       new DirectionsService().route({
         origin: cts,
         destination: hirafu,
-        travelMode: "DRIVING",
+        travelMode: "DRIVING"
       }, function(result, status) {
         if (status === "OK") directionsRenderer.setDirections(result);
       });
@@ -166,7 +166,7 @@ masthead:
           background: colour,
           borderColor: "#fff",
           glyph: glyph,
-          scale: 1.3,
+          scale: 1.3
         }).element;
       }
 
@@ -175,7 +175,7 @@ masthead:
         map: map,
         title: "New Chitose Airport (CTS) — click for directions",
         content: makePin("fa-plane", "#35965d"),
-        gmpClickable: true,
+        gmpClickable: true
       });
 
       var hirafuMarker = new AdvancedMarkerElement({
@@ -183,7 +183,7 @@ masthead:
         map: map,
         title: "Hirafu Welcome Centre — click for directions",
         content: makePin("fa-person-biking", "#b34f24"),
-        gmpClickable: true,
+        gmpClickable: true
       });
 
       function openDirections() {
@@ -345,7 +345,7 @@ masthead:
     const lightbox = new PhotoSwipeLightbox({
       gallery: '.seasons-gallery .gallery-grid',
       children: 'a',
-      pswpModule: () => import('https://unpkg.com/photoswipe@5.4.4/dist/photoswipe.esm.js'),
+      pswpModule: () => import('https://unpkg.com/photoswipe@5.4.4/dist/photoswipe.esm.js')
     });
     lightbox.init();
   </script>
@@ -378,14 +378,9 @@ masthead:
       "name": "Plan Your Niseko Mountain Biking Trip",
       "description": "Plan a mountain biking trip to Niseko, Hokkaido. Bike rentals, accommodation, transport from Sapporo, when to visit, and what to pack.",
       "inLanguage": "en",
-      "primaryImageOfPage": "https://namba.ngo/assets/images/bg/bg-header-plan-your-trip.jpg"
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://namba.ngo/" },
-        { "@type": "ListItem", "position": 2, "name": "Plan Your Trip", "item": "https://namba.ngo/plan-your-trip/" }
-      ]
+      "primaryImageOfPage": "https://namba.ngo/assets/images/bg/bg-header-plan-your-trip.jpg",
+      "isPartOf": { "@id": "https://namba.ngo/#website" },
+      "about": { "@id": "https://namba.ngo/#organization" }
     }
   ]
 }
