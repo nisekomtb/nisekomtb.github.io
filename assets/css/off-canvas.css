@@ -245,27 +245,33 @@ body {
 .off-canvas-open #t3-off-canvas .mobile-nav-group:nth-child(4) { transition-delay: 90ms; }
 .off-canvas-open #t3-off-canvas .mobile-nav-group:nth-child(5) { transition-delay: 120ms; }
 
-/* Footer fades in with the panel, no stagger. */
+/* Footer fades in with the panel, with a 100ms entry delay so it
+   arrives just after the staggered groups. Exit (when .off-canvas-open
+   is removed) drops the delay so the footer fades out together with
+   the groups. */
 .mobile-nav-foot {
   opacity: 0;
-  transition: opacity 220ms ease-out 100ms;
+  transition: opacity 220ms ease-out;
 }
 
 .off-canvas-open #t3-off-canvas .mobile-nav-foot {
   opacity: 1;
+  transition: opacity 220ms ease-out 100ms;
 }
 
 /* Respect reduced-motion preferences. */
 @media (prefers-reduced-motion: reduce) {
   .mobile-nav-group,
-  .mobile-nav-foot {
+  .mobile-nav-foot,
+  .btn.off-canvas-toggle .fa-bars {
     transition: none;
     transform: none;
   }
-  #t3-off-canvas {
-    transition: opacity 1ms;
-  }
+  #t3-off-canvas,
   .off-canvas-open #t3-off-canvas {
     transition: opacity 1ms;
+  }
+  .off-canvas-open .btn.off-canvas-toggle .fa-bars {
+    transform: none;
   }
 }
