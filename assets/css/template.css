@@ -3224,14 +3224,38 @@ div.ja-masthead .ja-masthead-detail .ja-masthead-description {
 .item-page p > a,
 .item-page li > a,
 .article-content p > a,
-.article-content li > a {
+.article-content li > a,
+.features-desc p > a,
+.features-desc li > a,
+.features-desc span > a,
+.event-content p > a,
+.event-content li > a,
+.job-content p > a,
+.job-content li > a,
+.journey-card p > a,
+#t3-content > p > a,
+#t3-content > ul > li > a,
+#t3-content > ol > li > a,
+address a {
   text-decoration: underline;
   text-underline-offset: 2px;
 }
 .item-page p > a:hover,
 .item-page li > a:hover,
 .article-content p > a:hover,
-.article-content li > a:hover {
+.article-content li > a:hover,
+.features-desc p > a:hover,
+.features-desc li > a:hover,
+.features-desc span > a:hover,
+.event-content p > a:hover,
+.event-content li > a:hover,
+.job-content p > a:hover,
+.job-content li > a:hover,
+.journey-card p > a:hover,
+#t3-content > p > a:hover,
+#t3-content > ul > li > a:hover,
+#t3-content > ol > li > a:hover,
+address a:hover {
   text-decoration: none;
 }
 
