@@ -50,6 +50,25 @@ body {
   position: relative;
 }
 
+/* At <=991px the burger escapes .t3-header's stacking context
+   (z-1000) and sits above the overlay (z-1500), matching the
+   pill's z-2000. Coordinates align with .t3-header padding. */
+@media (max-width: 991px) {
+  .btn.off-canvas-toggle {
+    position: fixed;
+    top: 72px;
+    right: 36px;
+    z-index: 2000;
+  }
+}
+
+@media (max-width: 767px) {
+  .btn.off-canvas-toggle {
+    top: 36px;
+    right: 18px;
+  }
+}
+
 .btn.off-canvas-toggle:hover,
 .btn.off-canvas-toggle:focus,
 .btn.off-canvas-toggle:focus-visible,
