@@ -2,12 +2,14 @@ special:
   width: 14
   sponsors:
     - name: allegra
+      displayName: Allegra
       image: /assets/images/company/allegra.png
       url: https://helloallegra.com
       label: Trail building partner
       ja:
         label: トレイルビルド パートナー
     - name: holiday niseko
+      displayName: Holiday Niseko
       image: /assets/images/company/holiday-niseko.png
       url: https://holidayniseko.com
       label: Trail sponsor
@@ -15,6 +17,7 @@ special:
         url: https://holidayniseko.jp
         label: トレイル スポンサー
     - name: kta
+      displayName: KTA
       image: /assets/images/company/kta.png
       url: https://niseko.co.jp/en/
       label: Benefactor
@@ -22,6 +25,7 @@ special:
         url: https://niseko.co.jp
         label: 恩人
     - name: mnk
+      displayName: MnK Niseko
       image: /assets/images/company/mnk.png
       url: https://www.mnkniseko.com/en
       label: Trail sponsor
@@ -29,6 +33,7 @@ special:
         url: https://www.mnkniseko.com/ja
         label: トレイル スポンサー
     - name: nisade
+      displayName: NISADE
       image: /assets/images/company/nisade.png
       url: https://nisade.com
       label: Headline sponsor
@@ -36,18 +41,21 @@ special:
         url: https://nisade.com/ja/
         label: ヘッドライン スポンサー
     - name: niseko realty
+      displayName: Niseko Realty
       image: /assets/images/company/niseko-realty.png
       url: https://www.nisekorealty.com
       label: Trail sponsor
       ja:
         label: トレイル スポンサー
     - name: niseko realty sales
+      displayName: Niseko Realty Sales
       image: /assets/images/company/nrs.png
       url: http://www.nisekorealtysales.com
       label: Trail sponsor
       ja:
         label: トレイル スポンサー
     - name: niseko tokyu grand hirafu
+      displayName: Niseko Tokyu Grand Hirafu
       image: /assets/images/company/grand-hirafu.png
       url: https://www.grand-hirafu.jp/en/
       label: Trail sponsor
@@ -55,12 +63,14 @@ special:
         url: https://www.grand-hirafu.jp
         label: トレイル スポンサー
     - name: paydirt
+      displayName: Paydirt
       image: /assets/images/company/paydirt.png
       url: https://paydirt.earth
       label: Benefactor
       ja:
         label: 恩人
     - name: rhythm
+      displayName: Rhythm Japan
       image: /assets/images/company/rhythm.png
       url: https://rhythmjapan.com
       label: Maintenance sponsor
@@ -68,23 +78,27 @@ special:
         url: https://www.rhythmjapan.com/ja/
         label: メンテナンス スポンサー
     - name: santa cruz
+      displayName: Santa Cruz Bicycles
       image: /assets/images/company/santa-cruz.png
       url: https://sports-w.com/brands/santa-cruz/
       label: Trail sponsor
       ja:
         label: トレイル スポンサー
     - name: specialized
+      displayName: Specialized
       image: /assets/images/company/specialized.png
       url: https://www.specialized-onlinestore.jp/
       label: Trail crew sponsor
       ja:
         label: トレイルクルー スポンサー
     - name: taki
+      displayName: Taki
       image: /assets/images/company/taki.png
       label: Trail sponsor
       ja:
         label: トレイル スポンサー
     - name: trail trust fox
+      displayName: Trail Trust
       image: /assets/images/company/fox-trail-trust.png
       url: https://trailtrust.com
       label: Benefactor
@@ -98,44 +112,54 @@ higuma:
     #   image: /assets/images/company/coinmetro.png
     #   url: https://coinmetro.com
     - name: h2
+      displayName: H2 Group
       image: /assets/images/company/h2.png
       url: https://www.h2group.com
       ja:
         url: https://www.h2group.com/jp/
     - name: hanazono
+      displayName: Hanazono Niseko
       image: /assets/images/company/hanazono.png
       url: https://hanazononiseko.com/en
       ja:
         url: https://hanazononiseko.com/ja
     - name: hbc
+      displayName: Hokkaido Backcountry Club
       image: /assets/images/company/hbc.png
       url: https://www.hokkaidobackcountryclub.com/en/homepage/
       ja:
         url: https://www.hokkaidobackcountryclub.com/ja/homepage-2/
     - name: holiday niseko
+      displayName: Holiday Niseko
       image: /assets/images/company/holiday-niseko.png
       url: https://holidayniseko.com
       ja:
         url: https://holidayniseko.jp
     - name: niseko wow
+      displayName: Niseko WOW
       image: /assets/images/company/niseko-wow.png
       url: https://www.niseko-wow.com
     - name: north build
+      displayName: North Build
       image: /assets/images/company/northbuild.png
     - name: nre
+      displayName: Niseko Real Estate
       image: /assets/images/company/nre.png
       url: https://nisekorealestate.com
       ja:
         url: https://nisekorealestate.com/ja/
     - name: odin hills
+      displayName: Odin Hills
       image: /assets/images/company/odin-hills.png
       url: https://www.odinhills.com
     - name: panorama niseko
+      displayName: Panorama Niseko
       image: /assets/images/company/panorama-niseko.png
       url: https://www.panoramaniseko.com
       ja:
         url: https://www.panoramaniseko.com/ja
     - name: park hyatt
+      displayName: Park Hyatt Niseko Hanazono
       image: /assets/images/company/park-hyatt.png
       url: http://parkhyattniseko.com
     # - name: rising sun
@@ -153,9 +177,11 @@ shika:
   width: 17
   sponsors:
     - name: midori
+      displayName: Midori Investors
       image: /assets/images/company/midori.png
       url: https://midoriinvestors.com
     - name: mori no takumi
+      displayName: Mori no Takumi
       image: /assets/images/company/mori-no-takumi.png
       url: https://www.nisekocustomwoodwork.com/
     # - name: niseko central
@@ -164,62 +190,77 @@ shika:
     #   ja:
     #     url: https://www.nisekocentral.com/ja/
     - name: noasc
+      displayName: NOASC
       image: /assets/images/company/noasc.png
       url: https://noasc.com/en/
       ja:
         url: https://noasc.com/ja/
     - name: npb
+      displayName: Niseko Tourism
       image: /assets/images/company/npb.png
       url: https://nisekotourism.com
       ja:
         url: https://nisekotourism.com/ja
     - name: oyuki
+      displayName: Oyuki
       image: /assets/images/company/oyuki.png
       url: https://oyuki.com
     - name: peak car rentals
+      displayName: Peak Car Rentals
       image: /assets/images/company/peak-car-rentals.png
       url: https://www.nisekocarrental.com
     - name: peatys
+      displayName: Peaty's
       image: /assets/images/company/peatys.png
       url: https://sports-w.com/brands/peatys/
     - name: the niseko company
+      displayName: The Niseko Company
       image: /assets/images/company/the-niseko-company.png
       url: https://thenisekocompany.com
       ja:
         url: https://thenisekocompany.com/ja/
     - name: sandls designs
+      displayName: Sandls Design
       image: /assets/images/company/sandls-designs.png
       url: http://www.sandlsdesign.com
     - name: sango
+      displayName: Sango
       image: /assets/images/company/sango.png
       url: https://www.kk35.jp
     - name: setsu
+      displayName: Setsu Niseko
       image: /assets/images/company/setsu.png
       url: https://setsuniseko.com/en
       ja:
         url: https://setsuniseko.com/ja
     - name: sme
+      displayName: SME Japan
       image: /assets/images/company/sme.png
       url: https://www.smejapan.com
     - name: smith
+      displayName: Smith Optics
       image: /assets/images/company/smith.png
       url: https://smithjapan.co.jp
     - name: suiboku
+      displayName: Suiboku Hirafu
       image: /assets/images/company/suiboku.png
       url: https://www.suibokuhirafu.com
       ja:
         url: https://www.suibokuhirafu.com/ja/
     - name: taiga
+      displayName: Taiga Projects
       image: /assets/images/company/taiga.png
       url: https://www.taigaprojects.com
       ja:
         url: https://www.taigaprojects.com/ja/
     - name: vacation niseko
+      displayName: Vacation Niseko
       image: /assets/images/company/vacation-niseko.png
       url: https://vacationniseko.com/en
       ja:
         url: https://vacationniseko.com/ja
     - name: west canada homes
+      displayName: West Canada Homes
       image: /assets/images/company/west-canada-homes.png
       url: http://westcanadaproperties.com
 
@@ -227,70 +268,88 @@ tanuki:
   width: 18
   sponsors:
     - name: annupuri
+      displayName: Niseko Annupuri
       image: /assets/images/company/annupuri.png
       url: https://annupuri.info/en/
       ja:
         url: https://annupuri.info
     - name: blowhard
+      displayName: Blowhard
       image: /assets/images/company/blowhard.png
       url: https://www.blowhard-all-year.com/
       ja:
         url: https://www.blowhard-all-year.com/ja
     - name: burton
+      displayName: Burton
       image: /assets/images/company/burton.png
       url: https://www.burton.com/jp/en
       ja:
         url: https://www.burton.com/jp/ja
     - name: clint vosloo
+      displayName: Clint Vosloo
       image: /assets/images/company/clintvosloo.png
       url: https://www.clintvosloo.com
     - name: explore niseko
+      displayName: Explore Niseko
       image: /assets/images/company/explore-niseko.png
       url: https://www.explore-niseko.com
       ja:
         url: https://www.explore-niseko.com/ja/
     - name: gentemstick
+      displayName: Gentemstick
       image: /assets/images/company/gentemstick.png
       url: https://gentemstick.com
     - name: nikota
+      displayName: Nikota Realty
       image: /assets/images/company/nikota.png
       url: http://www.nikotarealty.com
       ja:
         url: http://www.nikotarealty.com/ja/
     - name: niseko portfolio
+      displayName: Niseko Portfolio
       image: /assets/images/company/niseko-portfolio.png
       url: https://nisekoportfolio.com
       ja:
         url: https://nisekoportfolio.com/ja/
     - name: niseko zen
+      displayName: Niseko Zen
       image: /assets/images/company/niseko-zen.png
       url: https://www.nisekozen.com
     - name: nomad wellness
+      displayName: Nomad Wellness Niseko
       image: /assets/images/company/nomad-wellness.png
       url: https://nomadwellnessniseko.com
     - name: north bicycle
+      displayName: North Bicycle
       image: /assets/images/company/north-bicycle.png
       url: https://northbicycle.co.jp
     - name: odin
+      displayName: Odin Property
       image: /assets/images/company/odin.png
       url: https://www.odin-property.com
     - name: powbar
+      displayName: PowBar
       image: /assets/images/company/powbar.png
       url: https://www.thepowbar.com
     - name: powderlife
+      displayName: Powderlife
       image: /assets/images/company/powderlife.png
       url: https://www.powderlife.com
     - name: roomboss
+      displayName: RoomBoss
       image: /assets/images/company/roomboss.png
       url: https://roomboss.com
       ja:
         url: https://roomboss.com/ja/
     - name: seasons
+      displayName: Seasons Niseko
       image: /assets/images/company/seasons.png
       url: https://www.seasons-niseko.com
     - name: whiteroom property
+      displayName: Whiteroom Property
       image: /assets/images/company/whiteroom-property.png
     - name: yotei brewing
+      displayName: Yotei Brewing
       image: /assets/images/company/yotei-brewing.png
       url: https://yotei.beer/
 
@@ -298,20 +357,26 @@ artists:
   width: 15
   sponsors:
     - name: Aikawa Mitsugu
+      displayName: Aikawa Mitsugu
       image: /assets/images/artists/aikawa-mitsugu.png
       url: https://aikawamitsugu.com
     - name: 59 Niseko
+      displayName: 59 Niseko
       image: /assets/images/artists/59niseko.png
       url: https://www.59niseko.com
     - name: Froglet Paintings
+      displayName: Froglet Paintings
       image: /assets/images/artists/froglet-paintings.png
       url: https://www.frogletpaintings.com
     - name: Joekkaido
+      displayName: Joekkaido
       image: /assets/images/artists/joekkaido.png
       url: https://instagram.com/joekkaido
     - name: MtnSea
+      displayName: MtnSea
       image: /assets/images/artists/mtnsea.png
       url: https://www.instagram.com/mtn_sea
     - name: The Rainbow Captain
+      displayName: The Rainbow Captain
       image: /assets/images/artists/rainbow-captain.png
       url: https://www.instagram.com/therainbowcaptain

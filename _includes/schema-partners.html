@@ -29,7 +29,7 @@
       {%- if first %}{%- assign first = false -%}{% else %},{% endif %}
     {
       "@type": "Organization",
-      "name": {{ sponsor.name | capitalize | jsonify }}
+      "name": {% if sponsor.displayName %}{{ sponsor.displayName | jsonify }}{% else %}{{ sponsor.name | capitalize | jsonify }}{% endif %}
       {%- if sponsor.url -%}
         {%- if page.lang == 'ja' and sponsor.ja.url -%}
 ,

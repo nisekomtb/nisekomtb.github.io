@@ -15,11 +15,11 @@
             <div class="client-img">
               {% if sponsor.url %}
                 <a href="{% if sponsor.ja.url and page.lang == "ja" %}{{ sponsor.ja.url }}{% else %}{{ sponsor.url }}{% endif %}" target="_blank" rel="sponsored noopener noreferrer">
-                  <img class="img-fluid" src="{{ sponsor.image }}?d={{ site.time | date: "%s" }}" alt="{{ sponsor.name | capitalize }}{% if sponsor.label %}, {{ sponsor.label }}{% endif %}" loading="lazy">
+                  <img class="img-fluid" src="{{ sponsor.image }}?d={{ site.time | date: "%s" }}" alt="{% if sponsor.displayName %}{{ sponsor.displayName }}{% else %}{{ sponsor.name | capitalize }}{% endif %}{% if sponsor.label %}, {{ sponsor.label }}{% endif %}" loading="lazy">
                 </a>
               {% else %}
                 <span>
-                  <img class="img-fluid" src="{{ sponsor.image }}?d={{ site.time | date: "%s" }}" alt="{{ sponsor.name | capitalize }}{% if sponsor.label %}, {{ sponsor.label }}{% endif %}" loading="lazy">
+                  <img class="img-fluid" src="{{ sponsor.image }}?d={{ site.time | date: "%s" }}" alt="{% if sponsor.displayName %}{{ sponsor.displayName }}{% else %}{{ sponsor.name | capitalize }}{% endif %}{% if sponsor.label %}, {{ sponsor.label }}{% endif %}" loading="lazy">
                 </span>
               {% endif %}
             </div>

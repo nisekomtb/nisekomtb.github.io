@@ -37,10 +37,10 @@
   {% for sponsor in footer_sponsors %}
     {% if sponsor.url %}
       <a href="{% if sponsor.ja.url and page.lang == 'ja' %}{{ sponsor.ja.url }}{% else %}{{ sponsor.url }}{% endif %}" target="_blank" rel="sponsored noopener noreferrer">
-        <img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name | capitalize }}{% if sponsor.label %}, {{ sponsor.label }}{% endif %}" loading="lazy" />
+        <img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{% if sponsor.displayName %}{{ sponsor.displayName }}{% else %}{{ sponsor.name | capitalize }}{% endif %}{% if sponsor.label %}, {{ sponsor.label }}{% endif %}" loading="lazy" />
       </a>
     {% else %}
-      <span><img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name | capitalize }}{% if sponsor.label %}, {{ sponsor.label }}{% endif %}" loading="lazy" /></span>
+      <span><img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{% if sponsor.displayName %}{{ sponsor.displayName }}{% else %}{{ sponsor.name | capitalize }}{% endif %}{% if sponsor.label %}, {{ sponsor.label }}{% endif %}" loading="lazy" /></span>
     {% endif %}
   {% endfor %}
 </div>
