@@ -996,6 +996,44 @@ Notes:
 
 ---
 
+## Post-Launch Backlog (SEO follow-ups)
+
+Items surfaced during the 2026-05 SEO baseline review that are nice-to-have but not launch-gating. Pick up after launch.
+
+### B.1: Regional Niseko trail map page under `/where-to-ride/`
+
+**Why:** GSC baseline shows real demand for a multi-park overview map:
+- `niseko trail map` — 77 imp, pos 62
+- `trail map niseko` — 69 imp
+- `niseko japan trail map` — 78 imp, pos 78
+- `niseko mountain map`, `hirafu trail map` — similar tail
+
+Twin Peaks already has its own park map. This would be a regional-scale page covering all four areas (Twin Peaks, Grand Hirafu, Hanazono, Annupuri) plus the skills parks. Distinct from individual park maps.
+
+**Suggested approach:**
+- New page at `/where-to-ride/map/` and `/ja/where-to-ride/map/`.
+- Embed the existing area map (Google Maps with all park markers — same one already used on `/where-to-ride/`) as the primary content, full-width.
+- Add `ImageObject` or `Map` schema for the visual.
+- Title: "Niseko MTB Trail Map" / `ニセコMTBトレイルマップ`. Lead with target keyword.
+- Link from `/where-to-ride/` and from each park sub-page.
+
+### B.2: Loïc Bruni evergreen story page
+
+**Why:** Branded queries had real traction in the baseline:
+- `ロイックブルーニ` — 116 imp, pos 4.1
+- `ロイック・ブルーニ` — 80 imp, pos 2.67
+- `loic bruni` — 60 imp, pos 10.57
+
+The current source of these clicks is `/ja/events/loic-bruni-in-niseko-2025/` — a dated event page that will lose relevance after the event year passes. An evergreen story page keeps the ranking.
+
+**Suggested approach:**
+- New page at `/stories/loic-bruni-niseko/` (and JA mirror) once `/stories/` is enabled (see R.1).
+- Repurpose hero photo + cover the visit narrative.
+- Add `NewsArticle` schema with `author`, `datePublished`, `image`.
+- 301-style canonical reference from the original event page to the story page.
+
+---
+
 ## Post-Launch Restorations
 
 Items intentionally hidden or disabled at launch that need to be re-enabled when their gating condition is met. Add new entries here whenever something gets temporarily switched off.
