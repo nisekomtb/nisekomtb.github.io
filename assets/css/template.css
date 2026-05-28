@@ -6081,7 +6081,7 @@ div.t3-wrapper {
 
 .t3-footer {
   background: var(--color-bg);
-  color: #555555;
+  color: var(--color-text-muted);
 }
 
 .t3-footer:before,
