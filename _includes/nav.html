@@ -204,94 +204,89 @@
     </button>
 
     <!-- OFF-CANVAS SIDEBAR -->
-    <div id="t3-off-canvas" class="t3-off-canvas  d-lg-none">
+    <div
+      id="t3-off-canvas"
+      class="t3-off-canvas  d-lg-none"
+      role="dialog"
+      aria-modal="true"
+      aria-label="{% if page.lang == 'en' %}Site navigation{% else %}サイトナビゲーション{% endif %}"
+      aria-hidden="true">
 
-      <div class="t3-off-canvas-header">
-        <div class="t3-off-canvas-header-title"></div>
-        <button
-          type="button"
-          class="close"
-          data-bs-dismiss="modal"
-          aria-hidden="true">&times;</button>
-      </div>
+      <nav class="mobile-nav-list">
+        {% for nav in site.data.nav %}
+          {% assign navId = forloop.index %}
+          {% assign navSelected = false %}
+          {% if nav.sub %}
+            {% for subNav in nav.sub %}
+              {% assign navPath = nav.path | append: "/" | append: subNav.path | append: "/" %}
+              {% assign subNavPath = subNav.path | append: "/" %}
+              {% if nav.path == "" and path == subNavPath %}
+                {% assign navSelected = true %}
+              {% elsif path == navPath %}
+                {% assign navSelected = true %}
+              {% endif %}
+            {% endfor %}
+          {% elsif path0 == nav.path %}
+            {% assign navSelected = true %}
+          {% endif %}
 
-      <div class="t3-off-canvas-body">
-        <div class="t3-module module " id="Mod109">
-          <div class="module-inner">
-            <div class="module-ct">
-              <ul class="nav nav-pills flex-column menu">
-                {% for nav in site.data.nav %}
-                  {% assign navId = forloop.index %}
-                  {% assign navSelected = false %}
-                  {% if nav.sub %}
-
-                    {% for subNav in nav.sub %}
-
-                      {% assign navPath = nav.path | append: "/" | append: subNav.path | append: "/" %}
-                      {% assign subNavPath = subNav.path | append: "/" %}
-                      {% if nav.path == "" and path == subNavPath %}
-                        {% assign navSelected = true %}
-                      {% elsif path == navPath %}
-                        {% assign navSelected = true %}
-                      {% endif %}
-
-                    {% endfor %}
-                  {% elsif path0 == nav.path %}
-                    {% assign navSelected = true %}
-                  {% endif %}
-                  <li class="{% if navSelected %}current active {% endif %}item-{{ navId }}0{% if nav.sub %} dropdown-submenu parent{% endif %}">
-                    {% if nav.sub %}
-                      <span class="nav-header ">
-                        {% if page.lang == 'en' %}
-                          {{- nav.en -}}
-                        {% else %}
-                          {{- nav.ja -}}{% endif %}
-                      </span>
-                      <ul class="dropdown-menu">
-                        {% for subNav in nav.sub %}
-                          {% assign subNavPath = subNav.path | append: "/" %}
-                          {% assign subNavActive = false %}
-                          {% if subNav.path %}
-                            {% if path == subNavPath or path1 == subNav.path %}
-                              {% assign subNavActive = true %}
-                            {% endif %}
-                          {% endif %}
-                          <li class="{% if subNavActive %}current active {% endif %}item-{{ navId }}{{ forloop.index }}">
-                            <a
-                              {% if subNav.url %}
-                              href="{{ subNav.url }}"
-                              {% if subNav.url contains "://" %}target="_blank"{% endif %}
-                              {% else %}
-                              href="{{ langPrefix | append: nav.path | append: '/' | append: subNav.path | append: '/' | replace: "//", "/" }}"
-                              {% endif %}
-                              class="">
-                              {% if subNav.icon %}<i class="{{ subNav.icon }}" aria-hidden="true"></i> {% endif %}{% if page.lang == 'en' %}{{- subNav.en -}}{% else %}{{- subNav.ja -}}{% endif %}
-                            </a>
-                          </li>
-                        {% endfor %}
-                      </ul>
-                    {% else %}
-                      <a
-                        {% if nav.url %}
-                        href="{{ nav.url }}"
-                        {% if nav.url contains "://" %}target="_blank"{% endif %}
-                        {% else %}
-                        href="{{ langPrefix | append: nav.path | append: '/' }}"
-                        {% endif %}
-                        class="">
-                        {% if page.lang == 'en' %}
-                          {{- nav.en -}}
-                        {% else %}
-                          {{- nav.ja -}}
-                        {% endif %}
-                      </a>
+          {% if nav.sub %}
+            <div class="mobile-nav-group{% if navSelected %} current{% endif %}">
+              <div class="mobile-nav-group-title">
+                {% if page.lang == 'en' %}{{- nav.en -}}{% else %}{{- nav.ja -}}{% endif %}
+              </div>
+              <ul class="mobile-nav-group-items">
+                {% for subNav in nav.sub %}
+                  {% assign subNavPath = subNav.path | append: "/" %}
+                  {% assign subNavActive = false %}
+                  {% if subNav.path %}
+                    {% if path == subNavPath or path1 == subNav.path %}
+                      {% assign subNavActive = true %}
                     {% endif %}
+                  {% endif %}
+                  <li class="mobile-nav-item{% if subNavActive %} current{% endif %}">
+                    <a
+                      {% if subNav.url %}
+                      href="{{ subNav.url }}"
+                      {% if subNav.url contains "://" %}target="_blank"{% endif %}
+                      {% else %}
+                      href="{{ langPrefix | append: nav.path | append: '/' | append: subNav.path | append: '/' | replace: "//", "/" }}"
+                      {% endif %}>
+                      {% if subNav.icon %}<i class="{{ subNav.icon }}" aria-hidden="true"></i> {% endif %}{% if page.lang == 'en' %}{{- subNav.en -}}{% else %}{{- subNav.ja -}}{% endif %}
+                    </a>
                   </li>
                 {% endfor %}
               </ul>
             </div>
-          </div>
-        </div>
+          {% else %}
+            <div class="mobile-nav-group mobile-nav-group--solo{% if navSelected %} current{% endif %}">
+              <a
+                class="mobile-nav-group-title mobile-nav-group-title--link"
+                {% if nav.url %}
+                href="{{ nav.url }}"
+                {% if nav.url contains "://" %}target="_blank"{% endif %}
+                {% else %}
+                href="{{ langPrefix | append: nav.path | append: '/' }}"
+                {% endif %}>
+                {% if page.lang == 'en' %}{{- nav.en -}}{% else %}{{- nav.ja -}}{% endif %}
+              </a>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </nav>
+
+      <div class="mobile-nav-foot">
+        {% for nav in site.data.nav %}
+          {% if nav.sub %}
+            {% for subNav in nav.sub %}
+              {% if subNav.url %}
+                <a class="mobile-nav-foot-link" href="{{ subNav.url }}">
+                  {% if subNav.icon %}<i class="{{ subNav.icon }}" aria-hidden="true"></i> {% endif %}{% if page.lang == 'en' %}{{- subNav.en -}}{% else %}{{- subNav.ja -}}{% endif %}
+                </a>
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+        {% endfor %}
       </div>
 
     </div>
