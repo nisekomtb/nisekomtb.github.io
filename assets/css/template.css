@@ -5149,7 +5149,14 @@ div.modal.fade.in {
 
 @media (max-width: 991px) {
   .languageswitcherload {
-    right: 78px;
+    right: 72px;
+    border-radius: 10px 0 0 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  .languageswitcherload {
+    right: 54px;
   }
 }
 

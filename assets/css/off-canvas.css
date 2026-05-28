@@ -616,51 +616,41 @@ html[dir="ltr"] .off-canvas-right.old-ie .t3-off-canvas {
   background: var(--color-secondary-hover);
 }
 .btn.off-canvas-toggle {
-  background: var(--color-secondary);
-  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.9);
+  border-radius: 0 10px 10px 0;
   border: 0;
   display: inline-block;
   padding: 0;
-  margin-left: 6px;
+  margin-left: 0;
   width: 36px;
   height: 36px;
   line-height: 36px;
   position: relative;
 }
+.btn.off-canvas-toggle:hover,
 .btn.off-canvas-toggle:focus,
-.btn.off-canvas-toggle:focus,
+.btn.off-canvas-toggle:focus-visible,
 .btn.off-canvas-toggle:active {
-  background: var(--color-secondary-hover);
+  background: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.9);
+  border-color: transparent;
+  box-shadow: none;
   outline: none;
+  transform: none;
 }
-.btn.off-canvas-toggle span {
-  background-color: #ffffff;
-  display: block;
-  height: 1px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  margin-left: -5px;
-  margin-top: 0px;
-  width: 10px;
-  transition: all 0.25s;
+.btn.off-canvas-toggle .fa-bars {
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 36px;
+  transition: color 0.2s ease, transform 0.25s ease;
 }
-.btn.off-canvas-toggle span.bar-first {
-  margin-top: -3px;
+.btn.off-canvas-toggle:hover .fa-bars,
+.btn.off-canvas-toggle:focus .fa-bars {
+  color: var(--color-primary);
 }
-.btn.off-canvas-toggle span.bar-last {
-  margin-top: 3px;
-}
-.off-canvas-open .off-canvas-toggle span.bar-mid {
-  display: none;
-}
-.off-canvas-open .off-canvas-toggle span.bar-first {
-  margin-top: 0;
-  transform: rotate(45deg);
-}
-.off-canvas-open .off-canvas-toggle span.bar-last {
-  margin-top: 0;
-  transform: rotate(-45deg);
+.off-canvas-open .btn.off-canvas-toggle .fa-bars {
+  --fa: "\f00d";
+  transform: rotate(180deg);
 }
 #t3-off-canvas {
   background: var(--color-bg-input);

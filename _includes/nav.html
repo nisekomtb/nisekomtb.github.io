@@ -198,17 +198,16 @@
       type="button"
       data-pos="right"
       data-nav="#t3-off-canvas"
-      data-effect="off-canvas-effect-4">
-      <span class="bar-first"></span>
-      <span class="bar-mid"></span>
-      <span class="bar-last"></span>
+      data-effect="off-canvas-effect-4"
+      aria-label="{% if page.lang == 'en' %}Open menu{% else %}メニューを開く{% endif %}">
+      <span class="fa-solid fa-bars" aria-hidden="true"></span>
     </button>
 
     <!-- OFF-CANVAS SIDEBAR -->
     <div id="t3-off-canvas" class="t3-off-canvas  d-lg-none">
 
       <div class="t3-off-canvas-header">
-        <h2 class="t3-off-canvas-header-title"></h2>
+        <div class="t3-off-canvas-header-title"></div>
         <button
           type="button"
           class="close"
