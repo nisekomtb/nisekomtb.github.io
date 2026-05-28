@@ -245,8 +245,9 @@ select:focus {
 }
 
 .btn-secondary {
+  /* Use active shade so white text passes WCAG AA (4.5:1). #277045 → 4.88:1 on white. */
   --bs-btn-color: #fff;
-  --bs-btn-bg: var(--color-secondary);
+  --bs-btn-bg: var(--color-secondary-active);
   --bs-btn-border-color: transparent;
   --bs-btn-hover-color: #fff;
   --bs-btn-hover-bg: var(--color-secondary-hover);
@@ -255,7 +256,7 @@ select:focus {
   --bs-btn-active-bg: var(--color-secondary-active);
   --bs-btn-active-border-color: transparent;
   --bs-btn-focus-shadow-rgb: 74, 124, 89;
-  background-color: var(--color-secondary);
+  background-color: var(--color-secondary-active);
 }
 
 .btn-success {

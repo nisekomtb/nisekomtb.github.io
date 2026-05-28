@@ -21,9 +21,11 @@ html[lang="ja"] .home-section-title { letter-spacing: normal; }
 /* ── Section 01: Yotei parallax hero ───────────────────────────────── */
 /* Pull hero up behind the floating header (matches the site's
    .t3-header + .t3-hero pattern so the hero starts at the very top). */
-.t3-header + .home-hero { margin-top: -108px; }
+.t3-header + .home-hero,
+.t3-header + main > .home-hero { margin-top: -108px; }
 @media (max-width: 767px) {
-  .t3-header + .home-hero { margin-top: -72px; }
+  .t3-header + .home-hero,
+  .t3-header + main > .home-hero { margin-top: -72px; }
 }
 
 .home-hero {

@@ -144,11 +144,7 @@ og:
 
   <!-- Hero body image -->
   <div style="max-width:900px; margin:20px auto;">
-    <img
-      src="/assets/images/press/hero-action.jpg"
-      alt="Mountain biker riding a sun-dappled flow trail through Niseko's birch forest at Twin Peaks Bike Park"
-      loading="lazy"
-      style="width:100%; height:auto; border-radius:3px; display:block;" />
+    {% include image.html src="/assets/images/press/hero-action.jpg" alt="Mountain biker riding a sun-dappled flow trail through Niseko's birch forest at Twin Peaks Bike Park" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" loading="lazy" style="width:100%; height:auto; border-radius:3px; display:block;" %}
   </div>
 
   <!-- Story Angles -->
@@ -238,9 +234,9 @@ og:
 
     <div class="partner-photo-nudge ja-animate" data-animation="move-from-bottom" data-delay="600">
       <div class="photo-samples">
-        <img src="/assets/images/press/sample-landscape.jpg" alt="Riders on a Niseko trail with Mt Yotei in the background" loading="lazy" />
-        <img src="/assets/images/press/sample-japan.jpg" alt="Riders passing under a metal torii-style trail arch at Twin Peaks" loading="lazy" />
-        <img src="/assets/images/press/sample-trail.jpg" alt="Riders pausing at a trail signpost in Twin Peaks Bike Park" loading="lazy" />
+        {% include image.html src="/assets/images/press/sample-landscape.jpg" alt="Riders on a Niseko trail with Mt Yotei in the background" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" loading="lazy" %}
+        {% include image.html src="/assets/images/press/sample-japan.jpg" alt="Riders passing under a metal torii-style trail arch at Twin Peaks" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" loading="lazy" %}
+        {% include image.html src="/assets/images/press/sample-trail.jpg" alt="Riders pausing at a trail signpost in Twin Peaks Bike Park" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" loading="lazy" %}
       </div>
       <p>High-resolution photography is a NAMBA partner benefit. Become a partner for access to trail action, event coverage, and landscape imagery for media use.</p>
       <a class="btn btn-primary" href="/partner/">Become a partner</a>

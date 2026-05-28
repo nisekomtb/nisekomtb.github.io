@@ -103,5 +103,5 @@ about: false
 
 <p>パークの設計と造成をリードしたAllegra、そしてこの自由でオープンなトレイルネットワーク作りを支えてくれたスポンサー、サポーター、コミュニティに感謝します。</p>
 
-<p><img src="/assets/images/events/2023/grand-opening/riders.jpg" alt="" /></p>
+<p>{% include image.html src="/assets/images/events/2023/grand-opening/riders.jpg" alt="" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" loading="lazy" %}</p>
 

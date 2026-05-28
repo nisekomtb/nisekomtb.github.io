@@ -7,22 +7,22 @@
 {% if park %}
 <div class="detail-item">
   {% if page.lang == "ja" %}
-    <h4><span class="fa-solid fa-tag" style="margin-right:4px;"></span> コスト</h4>
+    <h3><span class="fa-solid fa-tag" style="margin-right:4px;"></span> コスト</h3>
     <p>{{ park.ja.cost | default: park.cost }}</p>
   {% else %}
-    <h4><span class="fa-solid fa-tag" style="margin-right:4px;"></span> Cost</h4>
+    <h3><span class="fa-solid fa-tag" style="margin-right:4px;"></span> Cost</h3>
     <p>{{ park.cost }}</p>
   {% endif %}
 </div>
 
 <div class="detail-item">
   {% if page.lang == "ja" %}
-    <h4><span class="fa-solid fa-cable-car" style="margin-right:4px;"></span> 上りのタイプ</h4>
+    <h3><span class="fa-solid fa-cable-car" style="margin-right:4px;"></span> 上りのタイプ</h3>
     <p>リフトアクセス：<strong>{% if park.lift_access %}有{% else %}無{% endif %}</strong></p>
     <p>シャトルアクセス：<strong>{% if park.shuttle_access %}有{% else %}無{% endif %}</strong></p>
     <p>ペダルアクセス：<strong>{% if park.pedal_access %}有{% else %}無{% endif %}</strong></p>
   {% else %}
-    <h4><span class="fa-solid fa-cable-car" style="margin-right:4px;"></span> Uplift type</h4>
+    <h3><span class="fa-solid fa-cable-car" style="margin-right:4px;"></span> Uplift type</h3>
     <p>Lift access: <strong>{% if park.lift_access %}Yes{% else %}No{% endif %}</strong></p>
     <p>Shuttle access: <strong>{% if park.shuttle_access %}Yes{% else %}No{% endif %}</strong></p>
     <p>Pedal access: <strong>{% if park.pedal_access %}Yes{% else %}No{% endif %}</strong></p>
@@ -31,10 +31,10 @@
 
 <div class="detail-item">
   {% if page.lang == "ja" %}
-    <h4><span class="fa-solid fa-location-dot" style="margin-right:4px;"></span> ロケーション</h4>
+    <h3><span class="fa-solid fa-location-dot" style="margin-right:4px;"></span> ロケーション</h3>
     <p>{{ park.ja.location | default: park.location }}</p>
   {% else %}
-    <h4><span class="fa-solid fa-location-dot" style="margin-right:4px;"></span> Location</h4>
+    <h3><span class="fa-solid fa-location-dot" style="margin-right:4px;"></span> Location</h3>
     <p>{{ park.location }}</p>
   {% endif %}
 </div>
@@ -42,9 +42,9 @@
 {% if park.trails %}
 <div class="detail-item">
   {% if page.lang == "ja" %}
-    <h4><span class="fa-solid fa-chart-simple" style="margin-right:4px;"></span> トレイルステータス</h4>
+    <h3><span class="fa-solid fa-chart-simple" style="margin-right:4px;"></span> トレイルステータス</h3>
   {% else %}
-    <h4><span class="fa-solid fa-chart-simple" style="margin-right:4px;"></span> Trail stats</h4>
+    <h3><span class="fa-solid fa-chart-simple" style="margin-right:4px;"></span> Trail stats</h3>
   {% endif %}
   {% assign greenTrailCount = 0 %}
   {% assign blueTrailCount = 0 %}
@@ -116,13 +116,14 @@
 {% if park.trailforks_rid %}
 <div class="detail-item">
   {% if page.lang == 'ja' %}
-    <h4><span class="fa-solid fa-circle-info" style="margin-right:4px;"></span> バイクパークステータス</h4>
+    <h3><span class="fa-solid fa-circle-info" style="margin-right:4px;"></span> バイクパークステータス</h3>
   {% else %}
-    <h4><span class="fa-solid fa-circle-info" style="margin-right:4px;"></span> Bike Park status</h4>
+    <h3><span class="fa-solid fa-circle-info" style="margin-right:4px;"></span> Bike Park status</h3>
   {% endif %}
   <div
     style="margin-top:3px;"
     class="TrailforksWidgetRegionStatus"
+    aria-hidden="true"
     data-w="100px"
     data-h="15px"
     data-rid="{{ park.trailforks_rid }}"
@@ -136,11 +137,11 @@
 
 <div class="detail-item">
   {% if page.lang == "ja" %}
-    <h4><span class="fa-solid fa-calendar" style="margin-right:4px;"></span> 開放日＆時間</h4>
+    <h3><span class="fa-solid fa-calendar" style="margin-right:4px;"></span> 開放日＆時間</h3>
     <p>{{ park.ja.season | default: park.season }}</p>
     <p>{{ park.ja.hours | default: park.hours }}</p>
   {% else %}
-    <h4><span class="fa-solid fa-calendar" style="margin-right:4px;"></span> Opening dates & times</h4>
+    <h3><span class="fa-solid fa-calendar" style="margin-right:4px;"></span> Opening dates & times</h3>
     <p>{{ park.season }}</p>
     <p>{{ park.hours }}</p>
   {% endif %}
@@ -149,10 +150,10 @@
 {% if park.managed_by %}
 <div class="detail-item">
   {% if page.lang == "ja" %}
-    <h4><span class="fa-solid fa-people-group" style="margin-right:4px;"></span> 管理・運営</h4>
+    <h3><span class="fa-solid fa-people-group" style="margin-right:4px;"></span> 管理・運営</h3>
     <p>{{ park.ja.managed_by | default: park.managed_by }}</p>
   {% else %}
-    <h4><span class="fa-solid fa-people-group" style="margin-right:4px;"></span> Managed by</h4>
+    <h3><span class="fa-solid fa-people-group" style="margin-right:4px;"></span> Managed by</h3>
     <p>{{ park.managed_by }}</p>
   {% endif %}
 </div>

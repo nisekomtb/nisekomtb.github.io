@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html prefix="og: https://ogp.me/ns#" lang="{{ page.lang }}" dir="ltr" class='com_content mm-hover no-touch {{ layout.baseCss }} {{ page.baseCss }}'>
   <head>
-    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-XWZ6MXLBEJ"></script>
+    <script async="async" fetchpriority="low" src="https://www.googletagmanager.com/gtag/js?id=G-XWZ6MXLBEJ"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -65,6 +65,13 @@
     <link href="/assets/fonts/trailforks/stylesheet.css?d={{ build }}" rel="stylesheet" type="text/css" />
     <link href="/assets/js/splide/splide.min.css?d={{ build }}" rel="stylesheet" type="text/css"/>
     <link href="/assets/css/masthead.css?d={{ build }}" rel="stylesheet" type="text/css"/>
+    {% if page.masthead.img %}
+      {% assign mh_widths = page.masthead.widths | default: "800,1600" | split: "," %}
+      {% assign mh_base = page.masthead.img | replace: ".jpg", "" | replace: ".png", "" | replace: ".jpeg", "" %}
+      {% assign mh_suffixes = "|-large|-xlarge" | split: "|" %}
+      {% capture mh_srcset %}{% for w in mh_widths %}{% unless forloop.first %}, {% endunless %}{{ mh_base }}{{ mh_suffixes[forloop.index0] }}.webp {{ w | strip }}w{% endfor %}{% endcapture %}
+      <link rel="preload" as="image" type="image/webp" imagesrcset="{{ mh_srcset }}" imagesizes="100vw" fetchpriority="high"/>
+    {% endif %}
     {% if page.path == "index.html" or page.path == "ja/index.html" %}
       <link rel="preload" as="image" href="/assets/images/home/hero-video-poster.jpg?d={{ build }}"/>
       <link href="/assets/css/home.css?d={{ build }}" rel="stylesheet" type="text/css"/>
@@ -121,18 +128,20 @@
     </style>
 
     <meta name="facebook-domain-verification" content="wfetaos4b4jsgjsysyw76hp2n8jq8z" />
-    <!-- Meta Pixel Code -->
+    <!-- Meta Pixel Code — deferred until after page load to keep TBT/INP low -->
     <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '691041252525571');
-    fbq('track', 'PageView');
+    window.addEventListener('load', function() {
+      (function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;t.fetchPriority='low';
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)})(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '691041252525571');
+      fbq('track', 'PageView');
+    });
     </script>
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=691041252525571&ev=PageView&noscript=1"
@@ -262,7 +271,9 @@
         {% include nav.html %}
       </header>
 
-      {{ content }}
+      <main id="t3-main">
+        {{ content }}
+      </main>
     </div>
 
     {% if path != '' and path0 != 'partner' %}

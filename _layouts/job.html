@@ -260,7 +260,7 @@ layout: base
     "value": "{{ page.url | replace: "/ja/", "/" | replace: "/jobs/", "/" | replace: "/", "" }}"
   },
   "title": "{{ page.title }}",
-  "description": "{{ page.content | strip_html | newline_to_br }}",
+  "description": {{ page.content | strip_html | newline_to_br | jsonify }},
     {% if page.masthead.img %}
   "image": {
     "@type": "imageObject",

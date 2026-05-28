@@ -440,7 +440,7 @@ layout: base
           </ul>
           {% endif %}
 
-          <p><img src="/assets/images/events/parking-map.jpg" alt="" /></p>
+          <p>{% include image.html src="/assets/images/events/parking-map.jpg" alt="" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" loading="lazy" %}</p>
         {% endif %}
 
         {% if page.about %}

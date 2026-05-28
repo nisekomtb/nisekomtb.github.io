@@ -120,7 +120,7 @@ layout: base
     display:inline-block;
   }
 
-  .trails-key h4 {
+  .trails-key h3 {
     font-size: 16px;
     margin-left: 20px;
   }
@@ -249,15 +249,18 @@ layout: base
     display: none;
   }
 
-  table.trails td.climb-descent {
+  table.trails td.climb-descent,
+  table.trails th.climb-descent {
     display: table-cell;
   }
 
-  table.trails td.climb, table.trails td.descent {
+  table.trails td.climb, table.trails td.descent,
+  table.trails th.climb, table.trails th.descent {
     display: none;
   }
 
-  table.trails td.bike, table.trails td.hike {
+  table.trails td.bike, table.trails td.hike,
+  table.trails th.bike, table.trails th.hike {
     display: none;
   }
 
@@ -266,7 +269,8 @@ layout: base
   }
 
   @media(min-width: 430px) {
-    table.trails td.bike, table.trails td.hike {
+    table.trails td.bike, table.trails td.hike,
+    table.trails th.bike, table.trails th.hike {
       display: table-cell;
     }
 
@@ -276,11 +280,13 @@ layout: base
   }
 
   @media(min-width: 500px) {
-    table.trails td.climb-descent {
+    table.trails td.climb-descent,
+    table.trails th.climb-descent {
       display: none;
     }
 
-    table.trails td.climb, table.trails td.descent {
+    table.trails td.climb, table.trails td.descent,
+    table.trails th.climb, table.trails th.descent {
       display: table-cell;
     }
   }
@@ -401,7 +407,7 @@ layout: base
         {% if park_data.trailforks_rid %}
         <p style="text-align:center;">
           <strong>{% if page.lang == 'ja' %}ステータス：{% else %}Status:{% endif %}</strong>
-          <span class="TrailforksWidgetRegionStatus" data-w="100px" data-h="15px" data-rid="{{ park_data.trailforks_rid }}" data-activitytype="1" data-status="1" data-st="1" data-ct="0" data-date="0"></span>
+          <span class="TrailforksWidgetRegionStatus" aria-hidden="true" data-w="100px" data-h="15px" data-rid="{{ park_data.trailforks_rid }}" data-activitytype="1" data-status="1" data-st="1" data-ct="0" data-date="0"></span>
         </p>
         {% endif %}
       </section>
@@ -411,6 +417,8 @@ layout: base
       {% if park_data.trailforks_rid %}
       <section>
         <div class="widget TrailforksWidgetMap"
+          role="region"
+          aria-label="{% if page.lang == 'ja' %}{{ park_data.ja.name | default: park_data.name }}トレイルマップ{% else %}{{ park_data.name }} trail map{% endif %}"
           data-w="100%"
           data-h="600px"
           data-rid="{{ park_data.trailforks_rid }}"
@@ -426,9 +434,27 @@ layout: base
           {% if park_data.map_zoom %}data-z="{{ park_data.map_zoom }}"{% endif %}
           {% if park_data.map_lat %}data-lat="{{ park_data.map_lat }}"{% endif %}
           {% if park_data.map_lon %}data-lon="{{ park_data.map_lon }}"{% endif %}
-          style="position:relative;">
+          style="position:relative; min-height:600px;">
           <div class="widget-cover"></div>
         </div>
+        <script>
+          (function() {
+            // Add a title to the Trailforks-injected iframe so it has an accessible name.
+            var widget = document.currentScript.previousElementSibling;
+            if (!widget) return;
+            var label = widget.getAttribute('aria-label') || 'Interactive trail map';
+            var observer = new MutationObserver(function() {
+              var iframe = widget.querySelector('iframe');
+              if (iframe && !iframe.title) {
+                iframe.title = label;
+                observer.disconnect();
+              }
+            });
+            observer.observe(widget, { childList: true, subtree: true });
+            // Safety: stop watching after 10s
+            setTimeout(function() { observer.disconnect(); }, 10000);
+          })();
+        </script>
       </section>
       {% endif %}
       {% endunless %}
@@ -500,7 +526,7 @@ layout: base
 
         {% if park_data.partners %}
         <div class="detail-item">
-          <h4><span class="fa-solid fa-handshake" style="margin-right:4px;"></span> {% if page.lang == 'ja' %}バイクパーク パートナー{% else %}Bike park partners{% endif %}</h4>
+          <h3><span class="fa-solid fa-handshake" style="margin-right:4px;"></span> {% if page.lang == 'ja' %}バイクパーク パートナー{% else %}Bike park partners{% endif %}</h3>
           <div class="partners-imgs">
             {% for p in park_data.partners %}
               {% assign partner_label = p.title_en %}

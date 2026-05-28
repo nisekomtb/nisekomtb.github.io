@@ -4,13 +4,26 @@
     <div class="home-hero-bg" style="background-image: url('/assets/images/home/hero-video-poster.jpg');"></div>
     <iframe
       class="home-hero-video"
-      src="https://player.vimeo.com/video/1195232610?background=1&loop=1&autopause=0&dnt=1#t=0.7s"
+      data-src="https://player.vimeo.com/video/1195232610?background=1&loop=1&autopause=0&dnt=1#t=0.7s"
       frameborder="0"
       allow="autoplay; fullscreen; picture-in-picture"
       allowfullscreen
+      loading="lazy"
       title="{% if page.lang == 'en' %}NAMBA 2026 reel{% else %}NAMBA 2026年リール{% endif %}"
       aria-hidden="true"
       tabindex="-1"></iframe>
+    <script>
+      // Defer Vimeo iframe src until idle so the player JS doesn't compete with LCP.
+      (function() {
+        var iframe = document.currentScript.previousElementSibling;
+        function load() { if (iframe && iframe.dataset.src) { iframe.src = iframe.dataset.src; } }
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(load, { timeout: 2000 });
+        } else {
+          window.addEventListener('load', function() { setTimeout(load, 500); });
+        }
+      })();
+    </script>
     <div class="home-hero-overlay"></div>
   </div>
   <div class="home-hero-content">

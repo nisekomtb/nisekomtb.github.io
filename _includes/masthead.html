@@ -1,6 +1,17 @@
 <!-- MASTHEAD -->
+{% assign masthead_img = page.masthead.img | default: "/assets/images/bg/bg-header.jpg" %}
+{% assign masthead_widths = page.masthead.widths | default: "800,1600" %}
 <div class="wrap t3-masthead">
-  <div class="ja-masthead" style="background-image: url('{{ page.masthead.img | default: '/assets/images/bg/bg-header.jpg' }}')">
+  <div class="ja-masthead">
+    <div class="ja-masthead-bg" aria-hidden="true">
+      {% include image.html
+         src=masthead_img
+         alt=""
+         widths=masthead_widths
+         sizes="100vw"
+         loading="eager"
+         attrs='fetchpriority="high" decoding="async"' %}
+    </div>
     <div class="ja-masthead-detail">
       {% if page.subtitle %}
         <h1 class="ja-masthead-title">
