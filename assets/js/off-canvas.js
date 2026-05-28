@@ -10,33 +10,9 @@
     var closeButtons = document.querySelectorAll('.t3-off-canvas .close');
     var btn = null;
     var nav = null;
-    var direction = 'left';
     var JA_isLoading = false;
 
     if (!wrapper) return;
-
-    // Add effect class for nav
-    toggles.forEach(function (toggle) {
-      var navSelector = toggle.dataset.nav;
-      var navEl = navSelector ? document.querySelector(navSelector) : null;
-      var effect = toggle.dataset.effect;
-      var isRtl = html.getAttribute('dir') === 'rtl';
-      var pos = toggle.dataset.pos;
-      var dir = (isRtl && pos !== 'right') || (!isRtl && pos === 'right') ? 'right' : 'left';
-
-      if (navEl) {
-        navEl.classList.add(effect);
-        navEl.classList.add('off-canvas-' + dir);
-
-        // Move to outside wrapper-content
-        var insideEffects = ['off-canvas-effect-3', 'off-canvas-effect-16', 'off-canvas-effect-7', 'off-canvas-effect-8', 'off-canvas-effect-14'];
-        if (insideEffects.indexOf(effect) === -1) {
-          inner.parentNode.insertBefore(navEl, inner);
-        } else {
-          inner.insertBefore(navEl, inner.firstChild);
-        }
-      }
-    });
 
     function stopBubble(e) {
       e.stopPropagation();
@@ -68,11 +44,6 @@
       }, 100);
 
       setTimeout(function () {
-        if (btn) {
-          var effect = btn.dataset.effect;
-          if (effect) wrapper.classList.remove(effect);
-        }
-        wrapper.classList.remove('off-canvas-' + direction);
         wrapper.scrollTop = 0;
 
         // Enable scroll
@@ -125,10 +96,6 @@
 
         if (nav) nav.classList.add('off-canvas-current');
 
-        var isRtl = html.getAttribute('dir') === 'rtl';
-        var pos = btn.dataset.pos;
-        direction = (isRtl && pos !== 'right') || (!isRtl && pos === 'right') ? 'right' : 'left';
-
         // Disable scroll on page
         var scrollTop = html.scrollTop || document.body.scrollTop;
         html.classList.add('noscroll');
@@ -136,10 +103,6 @@
         html.dataset.top = scrollTop;
 
         wrapper.scrollTop = scrollTop;
-
-        // Update effect class - remove old off-canvas-effect-* classes
-        wrapper.className = wrapper.className.replace(/\s*off-canvas-effect-\d+\s*/g, ' ').trim() +
-          ' ' + btn.dataset.effect + ' ' + 'off-canvas-' + direction;
 
         setTimeout(oc_show, 50);
 
