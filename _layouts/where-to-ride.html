@@ -503,14 +503,20 @@ layout: base
           <h4><span class="fa-solid fa-handshake" style="margin-right:4px;"></span> {% if page.lang == 'ja' %}バイクパーク パートナー{% else %}Bike park partners{% endif %}</h4>
           <div class="partners-imgs">
             {% for p in park_data.partners %}
+              {% assign partner_label = p.title_en %}
+              {% if page.lang == 'ja' %}{% assign partner_label = p.title_ja | default: p.title_en %}{% endif %}
               {% if p.url_en %}
-              <a href="{% if page.lang == 'ja' %}{{ p.url_ja | default: p.url_en }}{% else %}{{ p.url_en }}{% endif %}" target="_blank">
+              <a href="{% if page.lang == 'ja' %}{{ p.url_ja | default: p.url_en }}{% else %}{{ p.url_en }}{% endif %}" target="_blank" rel="sponsored noopener noreferrer">
                 <img src="{{ p.img }}"
-                  title="{% if page.lang == 'ja' %}{{ p.title_ja | default: p.title_en }}{% else %}{{ p.title_en }}{% endif %}">
+                  alt="{{ partner_label }}"
+                  title="{{ partner_label }}"
+                  loading="lazy">
               </a>
               {% else %}
               <img src="{{ p.img }}"
-                title="{% if page.lang == 'ja' %}{{ p.title_ja | default: p.title_en }}{% else %}{{ p.title_en }}{% endif %}">
+                alt="{{ partner_label }}"
+                title="{{ partner_label }}"
+                loading="lazy">
               {% endif %}
             {% endfor %}
           </div>

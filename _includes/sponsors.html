@@ -14,13 +14,13 @@
             data-delay="item-{{ forloop.index0 }}">
             <div class="client-img">
               {% if sponsor.url %}
-                <a href="{% if sponsor.ja.url and page.lang == "ja" %}{{ sponsor.ja.url }}{% else %}{{ sponsor.url }}{% endif %}" target="_blank">
-                  <img class="img-fluid" src="{{ sponsor.image }}?d={{ site.time | date: "%s" }}">
+                <a href="{% if sponsor.ja.url and page.lang == "ja" %}{{ sponsor.ja.url }}{% else %}{{ sponsor.url }}{% endif %}" target="_blank" rel="sponsored noopener noreferrer">
+                  <img class="img-fluid" src="{{ sponsor.image }}?d={{ site.time | date: "%s" }}" alt="{{ sponsor.name | capitalize }}{% if sponsor.label %}, {{ sponsor.label }}{% endif %}" loading="lazy">
                 </a>
               {% else %}
-                <a>
-                  <img class="img-fluid" src="{{ sponsor.image }}?d={{ site.time | date: "%s" }}">
-                </a>
+                <span>
+                  <img class="img-fluid" src="{{ sponsor.image }}?d={{ site.time | date: "%s" }}" alt="{{ sponsor.name | capitalize }}{% if sponsor.label %}, {{ sponsor.label }}{% endif %}" loading="lazy">
+                </span>
               {% endif %}
             </div>
             {% if sponsor.label and include.class == "special" %}

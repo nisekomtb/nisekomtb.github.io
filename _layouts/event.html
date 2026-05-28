@@ -533,8 +533,8 @@ layout: base
         <div class="detail-item">
           <h4><span class="fa-solid fa-building" style="margin-right:4px;"></span> {% if page.lang == "ja" %}イベント主催者{% else %}Host{% endif %}</h4>
           <div class="partners-imgs">
-            <a href="{{- page.host.url -}}" target="_blank">
-              <img src="/assets/images/company{{- page.host.img -}}" alt="{{- page.host.name -}}">
+            <a href="{{- page.host.url -}}" target="_blank" rel="sponsored noopener noreferrer">
+              <img src="/assets/images/company{{- page.host.img -}}" alt="{{ page.host.name }}{% if page.lang == 'ja' %}、イベント主催者{% else %}, event host{% endif %}" loading="lazy">
             </a>
           </div>
         </div>
@@ -545,8 +545,8 @@ layout: base
           <h4><span class="fa-solid fa-handshake" style="margin-right:4px;"></span> {% if page.lang == "ja" %}イベントパートナー{% else %}Event Partners{% endif %}</h4>
           <div class="partners-imgs">
             {% for partner in page.partners %}
-              <a href="{{- partner.url -}}" target="_blank">
-                <img src="/assets/images/company{{- partner.img -}}" alt="{{- partner.name -}}">
+              <a href="{{- partner.url -}}" target="_blank" rel="sponsored noopener noreferrer">
+                <img src="/assets/images/company{{- partner.img -}}" alt="{{ partner.name }}{% if page.lang == 'ja' %}、イベントパートナー{% else %}, event partner{% endif %}" loading="lazy">
               </a>
             {% endfor %}
           </div>
