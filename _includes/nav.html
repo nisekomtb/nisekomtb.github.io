@@ -236,7 +236,11 @@
               <div class="mobile-nav-group-title" id="mobile-nav-group-{{ navId }}">
                 {% if page.lang == 'en' %}{{- nav.en -}}{% else %}{{- nav.ja -}}{% endif %}
               </div>
-              <ul class="mobile-nav-group-items" aria-labelledby="mobile-nav-group-{{ navId }}">
+              <ul
+                class="mobile-nav-group-items"
+                aria-labelledby="mobile-nav-group-{{ navId }}"
+                itemscope
+                itemtype="http://www.schema.org/SiteNavigationElement">
                 {% for subNav in nav.sub %}
                   {% assign subNavPath = subNav.path | append: "/" %}
                   {% assign subNavActive = false %}
@@ -245,8 +249,11 @@
                       {% assign subNavActive = true %}
                     {% endif %}
                   {% endif %}
-                  <li class="mobile-nav-item{% if subNavActive %} current{% endif %}">
+                  <li
+                    itemprop="name"
+                    class="mobile-nav-item{% if subNavActive %} current{% endif %}">
                     <a
+                      itemprop="url"
                       {% if subNav.url %}
                       href="{{ subNav.url }}"
                       {% if subNav.url contains "://" %}target="_blank"{% endif %}

@@ -44,9 +44,9 @@ body {
   display: inline-block;
   padding: 0;
   margin-left: 0;
-  width: 36px;
-  height: 36px;
-  line-height: 36px;
+  width: 44px;
+  height: 44px;
+  line-height: 44px;
   position: relative;
 }
 
@@ -84,7 +84,7 @@ body {
 .btn.mobile-nav-toggle .fa-bars {
   color: #ffffff;
   font-size: 16px;
-  line-height: 36px;
+  line-height: 44px;
   transition: color 0.2s ease, transform 0.25s ease;
 }
 
@@ -226,7 +226,7 @@ body {
   text-transform: none;
   color: #ffffff;
   text-decoration: none;
-  padding: 5px 0;
+  padding: 10px 0;
   font-family: inherit;
 }
 
@@ -244,7 +244,7 @@ body {
 
 .mobile-nav-item a {
   display: block;
-  padding: 5px 0;
+  padding: 10px 0;
   font-size: 17px;
   font-weight: 600;
   color: #ffffff;
