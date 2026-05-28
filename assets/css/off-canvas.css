@@ -192,6 +192,10 @@ body {
   color: var(--color-primary);
 }
 
+.mobile-nav-group--solo.current .mobile-nav-group-title--link {
+  color: var(--color-primary);
+}
+
 /* Utility footer (Account, Cart). */
 .mobile-nav-foot {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
