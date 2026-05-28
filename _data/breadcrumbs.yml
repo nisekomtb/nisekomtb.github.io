@@ -1,0 +1,58 @@
+# Slug -> human-readable label for BreadcrumbList JSON-LD.
+# Used by _includes/schema-breadcrumb.html. Resolution order:
+#   1. This file (overrides + sub-pages not in nav)
+#   2. _data/nav.yml (auto-pulls menu labels)
+#   3. page.title (final segment fallback)
+#   4. humanised slug (last resort)
+#
+# Add an entry here when:
+#   - The menu label is too verbose for a breadcrumb (e.g. "About NAMBA"
+#     in the menu vs. "About" in the breadcrumb).
+#   - The slug isn't in nav.yml at all (sub-pages, legal pages, etc.).
+
+# --- Overrides where the breadcrumb label is shorter than the menu label ---
+about: { en: About, ja: NAMBAについて }
+team: { en: Team, ja: チーム }
+projects: { en: Projects, ja: プロジェクト }
+impact: { en: Impact, ja: インパクト }
+press: { en: Press, ja: プレス }
+partner: { en: Partner, ja: 協賛 }
+
+# --- Pages without a menu entry ---
+auction: { en: Auction, ja: オークション }
+code-conduct: { en: Code of Conduct, ja: 行動規範 }
+contact: { en: Contact, ja: お問い合わせ }
+get-involved: { en: Get Involved, ja: 参加する }
+privacy: { en: Privacy, ja: プライバシー }
+proposal: { en: Proposal, ja: プロポーザル }
+raffle: { en: Raffle, ja: ラッフル }
+stories: { en: Stories, ja: ストーリー }
+terms: { en: Terms, ja: 利用規約 }
+thanks: { en: Thanks, ja: ありがとう }
+
+# --- Twin Peaks sub-pages ---
+access: { en: Access, ja: アクセス }
+commercial-pass: { en: Commercial Pass, ja: コマーシャルパス }
+emergency: { en: Emergency, ja: 緊急時 }
+guides: { en: Guides, ja: ガイド }
+rules: { en: Rules, ja: ルール }
+wet-trails: { en: Wet Trails, ja: ウェットトレイル }
+
+# --- Where to ride sub-pages ---
+annupuri: { en: Annupuri, ja: アンヌプリ }
+grand-hirafu: { en: Grand Hirafu, ja: グラン・ヒラフ }
+gravel: { en: Gravel, ja: グラベル }
+hanazono: { en: Hanazono, ja: HANAZONO }
+signage: { en: Signage, ja: 標識 }
+skills-parks: { en: Skills Parks, ja: スキルパーク }
+
+# --- Get involved sub-pages ---
+crowdfund: { en: Crowdfund, ja: クラウドファンディング }
+
+# --- Projects sub-pages ---
+yotei-360: { en: Yotei 360, ja: 羊蹄360 }
+
+# --- Misc ---
+waiver: { en: Waiver, ja: 免責 }
+waver: { en: Waiver, ja: 免責 }
+soil-searching: { en: Soil Searching, ja: ソイルサーチング }

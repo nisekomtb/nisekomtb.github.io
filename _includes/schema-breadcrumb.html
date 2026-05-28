@@ -1,0 +1,95 @@
+{%- comment -%}
+  Auto-generated BreadcrumbList JSON-LD for inner pages.
+
+  Label lookup order for each URL segment:
+    1. _data/breadcrumbs.yml         (overrides + sub-pages not in nav)
+    2. _data/nav.yml                 (top-level and submenu paths)
+    3. page.title                    (final segment only)
+    4. humanised slug                (last-resort fallback)
+
+  Renders nothing on the home page (no path segments).
+{%- endcomment -%}
+
+{%- assign bc_path = page.url | replace: 'index.html', '' -%}
+{%- if page.lang == 'ja' -%}
+  {%- assign bc_path = bc_path | remove_first: '/ja' -%}
+{%- endif -%}
+{%- assign bc_raw = bc_path | split: '/' -%}
+{%- assign bc_segments = bc_raw | where_exp: 'item', 'item != ""' -%}
+
+{%- if bc_segments.size > 0 -%}
+  {%- assign lang_prefix = '' -%}
+  {%- if page.lang == 'ja' -%}{%- assign lang_prefix = '/ja' -%}{%- endif -%}
+  {%- assign home_label = 'Home' -%}
+  {%- if page.lang == 'ja' -%}{%- assign home_label = 'ホーム' -%}{%- endif -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": {{ home_label | jsonify }},
+      "item": "https://namba.ngo{{ lang_prefix }}/"
+    }
+    {%- assign cum_path = '' -%}
+    {%- for seg in bc_segments -%}
+      {%- assign cum_path = cum_path | append: '/' | append: seg -%}
+      {%- assign label = nil -%}
+
+      {%- comment -%} 1. breadcrumbs.yml override {%- endcomment -%}
+      {%- assign bc_entry = site.data.breadcrumbs[seg] -%}
+      {%- if bc_entry -%}
+        {%- if page.lang == 'ja' and bc_entry.ja -%}
+          {%- assign label = bc_entry.ja -%}
+        {%- else -%}
+          {%- assign label = bc_entry.en -%}
+        {%- endif -%}
+      {%- endif -%}
+
+      {%- comment -%} 2. nav.yml lookup (top-level and submenu paths) {%- endcomment -%}
+      {%- if label == nil -%}
+        {%- for nav in site.data.nav -%}
+          {%- if nav.path == seg and nav.path != '' -%}
+            {%- if page.lang == 'ja' and nav.ja -%}
+              {%- assign label = nav.ja -%}
+            {%- else -%}
+              {%- assign label = nav.en -%}
+            {%- endif -%}
+          {%- endif -%}
+          {%- if nav.sub and label == nil -%}
+            {%- for sub in nav.sub -%}
+              {%- if sub.path == seg -%}
+                {%- if page.lang == 'ja' and sub.ja -%}
+                  {%- assign label = sub.ja -%}
+                {%- else -%}
+                  {%- assign label = sub.en -%}
+                {%- endif -%}
+              {%- endif -%}
+            {%- endfor -%}
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endif -%}
+
+      {%- comment -%} 3. page.title for final segment {%- endcomment -%}
+      {%- if label == nil and forloop.last -%}
+        {%- assign label = page.title -%}
+      {%- endif -%}
+
+      {%- comment -%} 4. humanised slug as last resort {%- endcomment -%}
+      {%- if label == nil -%}
+        {%- assign label = seg | replace: '-', ' ' | capitalize -%}
+      {%- endif -%}
+    ,
+    {
+      "@type": "ListItem",
+      "position": {{ forloop.index | plus: 1 }},
+      "name": {{ label | jsonify }},
+      "item": "https://namba.ngo{{ lang_prefix }}{{ cum_path }}/"
+    }
+    {%- endfor %}
+  ]
+}
+</script>
+{%- endif -%}
