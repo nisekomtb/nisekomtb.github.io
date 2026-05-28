@@ -6505,10 +6505,19 @@ div.t3-wrapper {
   margin-bottom: 36px;
 }
 
+.acm-features.style-2 .features-item h3,
 .acm-features.style-2 .features-item h4 {
   margin-top: 0;
   margin-bottom: 24px;
   font-weight: 500;
+}
+
+/* Cards using <h3> as card title (bumped from h4 for heading-order a11y).
+   Keep the tighter margin h4 had to avoid taller cards. */
+.features-item > h3,
+.features-item h3:not(.features-item-title) {
+  margin-top: 0;
+  margin-bottom: 12px;
 }
 
 .acm-features.style-2 .features-item p {
