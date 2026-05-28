@@ -205,15 +205,19 @@
     }
 
     // Watch for .off-canvas-open being added/removed on the wrapper.
-    var observer = new MutationObserver(function (mutations) {
-      mutations.forEach(function (m) {
-        if (m.attributeName !== 'class') return;
-        if (wrapper.classList.contains('off-canvas-open')) {
-          onOpen();
-        } else {
-          onClose();
-        }
-      });
+    // Track previous open state so spurious body-class mutations
+    // (the existing IIFE rewrites className during toggle) don't
+    // trigger onOpen/onClose redundantly.
+    var ocOpen = wrapper.classList.contains('off-canvas-open');
+    var observer = new MutationObserver(function () {
+      var nowOpen = wrapper.classList.contains('off-canvas-open');
+      if (nowOpen === ocOpen) return;
+      ocOpen = nowOpen;
+      if (nowOpen) {
+        onOpen();
+      } else {
+        onClose();
+      }
     });
     observer.observe(wrapper, { attributes: true, attributeFilter: ['class'] });
 
