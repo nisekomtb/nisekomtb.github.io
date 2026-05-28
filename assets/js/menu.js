@@ -439,7 +439,7 @@
   // Init function for a nav element
   function initT3Menu(el, options) {
     // Ignore off-canvas navigation
-    if (el.closest('#off-canvas-nav') || el.closest('#t3-off-canvas')) return;
+    if (el.closest('#off-canvas-nav') || el.closest('#mobile-nav')) return;
     if (el._t3menuData) return;
     el._t3menuData = new T3Menu(el, options);
   }

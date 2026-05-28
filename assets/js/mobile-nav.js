@@ -5,9 +5,9 @@
     var html = document.documentElement;
     var wrapper = document.body;
     var inner = document.querySelector('.t3-wrapper');
-    var toggles = document.querySelectorAll('.off-canvas-toggle');
-    var offcanvas = document.querySelector('.t3-off-canvas');
-    var closeButtons = document.querySelectorAll('.t3-off-canvas .close');
+    var toggles = document.querySelectorAll('.mobile-nav-toggle');
+    var offcanvas = document.querySelector('#mobile-nav');
+    var closeButtons = document.querySelectorAll('#mobile-nav .close');
     var btn = null;
     var nav = null;
     var JA_isLoading = false;
@@ -21,7 +21,7 @@
     function oc_show() {
       if (JA_isLoading) return;
       JA_isLoading = true;
-      wrapper.classList.add('off-canvas-open');
+      wrapper.classList.add('mobile-nav-open');
       inner.addEventListener('click', oc_hide);
       closeButtons.forEach(function (btn) { btn.addEventListener('click', oc_hide); });
       if (offcanvas) offcanvas.addEventListener('click', handleClick);
@@ -40,7 +40,7 @@
 
       // Delay for click action
       setTimeout(function () {
-        wrapper.classList.remove('off-canvas-open');
+        wrapper.classList.remove('mobile-nav-open');
       }, 100);
 
       setTimeout(function () {
@@ -52,7 +52,7 @@
         var savedTop = parseInt(html.dataset.top || '0', 10);
         window.scrollTo(0, savedTop);
 
-        if (nav) nav.classList.remove('off-canvas-current');
+        if (nav) nav.classList.remove('mobile-nav-current');
 
         JA_isLoading = false;
       }, 700);
@@ -86,7 +86,7 @@
       toggle.addEventListener('click', function (e) {
         stopBubble(e);
 
-        if (wrapper.classList.contains('off-canvas-open')) {
+        if (wrapper.classList.contains('mobile-nav-open')) {
           oc_hide(e);
           return false;
         }
@@ -94,7 +94,7 @@
         btn = toggle;
         nav = btn.dataset.nav ? document.querySelector(btn.dataset.nav) : null;
 
-        if (nav) nav.classList.add('off-canvas-current');
+        if (nav) nav.classList.add('mobile-nav-current');
 
         // Disable scroll on page
         var scrollTop = html.scrollTop || document.body.scrollTop;
@@ -116,15 +116,15 @@
 // ============================================================
 // Mobile nav overlay accessibility behaviours.
 // Layered on top of the existing open/close handlers. Triggered
-// by mutations to the .off-canvas-open class on document.body.
+// by mutations to the .mobile-nav-open class on document.body.
 // ============================================================
 (function () {
   'use strict';
 
   document.addEventListener('DOMContentLoaded', function () {
     var wrapper = document.body;
-    var panel = document.querySelector('#t3-off-canvas');
-    var toggle = document.querySelector('.off-canvas-toggle');
+    var panel = document.querySelector('#mobile-nav');
+    var toggle = document.querySelector('.mobile-nav-toggle');
     if (!wrapper || !panel || !toggle) return;
 
     var lastFocused = null;
@@ -167,13 +167,13 @@
       }
     }
 
-    // Watch for .off-canvas-open being added/removed on the wrapper.
+    // Watch for .mobile-nav-open being added/removed on the wrapper.
     // Track previous open state so spurious body-class mutations
     // (the existing IIFE rewrites className during toggle) don't
     // trigger onOpen/onClose redundantly.
-    var ocOpen = wrapper.classList.contains('off-canvas-open');
+    var ocOpen = wrapper.classList.contains('mobile-nav-open');
     var observer = new MutationObserver(function () {
-      var nowOpen = wrapper.classList.contains('off-canvas-open');
+      var nowOpen = wrapper.classList.contains('mobile-nav-open');
       if (nowOpen === ocOpen) return;
       ocOpen = nowOpen;
       if (nowOpen) {
@@ -187,7 +187,7 @@
     // Escape key closes the overlay by triggering the toggle.
     document.addEventListener('keydown', function (e) {
       if (e.key !== 'Escape') return;
-      if (!wrapper.classList.contains('off-canvas-open')) return;
+      if (!wrapper.classList.contains('mobile-nav-open')) return;
       toggle.click();
     });
 
@@ -195,7 +195,7 @@
     // Listens on document because the toggle is outside the panel.
     document.addEventListener('keydown', function (e) {
       if (e.key !== 'Tab') return;
-      if (!wrapper.classList.contains('off-canvas-open')) return;
+      if (!wrapper.classList.contains('mobile-nav-open')) return;
       var focusable = getFocusable();
       if (!focusable.length) return;
       var first = focusable[0];

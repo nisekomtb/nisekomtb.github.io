@@ -1,4 +1,4 @@
-.off-canvas-toggle {
+.mobile-nav-toggle {
   z-index: 100;
 }
 html,
@@ -34,10 +34,10 @@ body {
    BURGER
    Lives inside the language-switcher pill at <=991px. Black
    pill-right-half background. fa-bars rotates and swaps to
-   fa-xmark via --fa custom property when .off-canvas-open is
+   fa-xmark via --fa custom property when .mobile-nav-open is
    set.
    ============================================================ */
-.btn.off-canvas-toggle {
+.btn.mobile-nav-toggle {
   background: rgba(0, 0, 0, 0.9);
   border-radius: 0 10px 10px 0;
   border: 0;
@@ -54,7 +54,7 @@ body {
    (z-1000) and sits above the overlay (z-1500), matching the
    pill's z-2000. Coordinates align with .t3-header padding. */
 @media (max-width: 991px) {
-  .btn.off-canvas-toggle {
+  .btn.mobile-nav-toggle {
     position: fixed;
     top: 72px;
     right: 36px;
@@ -63,16 +63,16 @@ body {
 }
 
 @media (max-width: 767px) {
-  .btn.off-canvas-toggle {
+  .btn.mobile-nav-toggle {
     top: 36px;
     right: 18px;
   }
 }
 
-.btn.off-canvas-toggle:hover,
-.btn.off-canvas-toggle:focus,
-.btn.off-canvas-toggle:focus-visible,
-.btn.off-canvas-toggle:active {
+.btn.mobile-nav-toggle:hover,
+.btn.mobile-nav-toggle:focus,
+.btn.mobile-nav-toggle:focus-visible,
+.btn.mobile-nav-toggle:active {
   background: rgba(0, 0, 0, 0.9);
   background-color: rgba(0, 0, 0, 0.9);
   border-color: transparent;
@@ -81,19 +81,19 @@ body {
   transform: none;
 }
 
-.btn.off-canvas-toggle .fa-bars {
+.btn.mobile-nav-toggle .fa-bars {
   color: #ffffff;
   font-size: 16px;
   line-height: 36px;
   transition: color 0.2s ease, transform 0.25s ease;
 }
 
-.btn.off-canvas-toggle:hover .fa-bars,
-.btn.off-canvas-toggle:focus .fa-bars {
+.btn.mobile-nav-toggle:hover .fa-bars,
+.btn.mobile-nav-toggle:focus .fa-bars {
   color: var(--color-primary);
 }
 
-.off-canvas-open .btn.off-canvas-toggle .fa-bars {
+.mobile-nav-open .btn.mobile-nav-toggle .fa-bars {
   --fa: "\f00d";
   transform: rotate(180deg);
 }
@@ -102,10 +102,10 @@ body {
    MOBILE NAV OVERLAY
    Full-screen panel that replaces the off-canvas drawer at
    <=991px. Triggered by the burger inside the language-switcher
-   pill; .off-canvas-open is toggled on .t3-wrapper by
-   off-canvas.js.
+   pill; .mobile-nav-open is toggled on .t3-wrapper by
+   mobile-nav.js.
    ============================================================ */
-#t3-off-canvas {
+#mobile-nav {
   position: fixed;
   inset: 0;
   z-index: 1500;
@@ -119,11 +119,11 @@ body {
   transition: opacity 160ms ease-in, visibility 0s linear 160ms;
 }
 
-#t3-off-canvas:focus {
+#mobile-nav:focus {
   outline: none;
 }
 
-.off-canvas-open #t3-off-canvas {
+.mobile-nav-open #mobile-nav {
   visibility: visible;
   opacity: 1;
   pointer-events: auto;
@@ -157,9 +157,9 @@ body {
 }
 
 /* ============================================================
-   LIST + FOOTER STYLING
+   LIST STYLING
    Flat list, golden-sun section labels, white child links,
-   rust hover/active. Footer strip carries Account + Cart.
+   rust hover/active.
    ============================================================ */
 
 /* List container fills the panel and scrolls if needed.
@@ -179,10 +179,10 @@ body {
 
 /* Solid band at the top of the overlay so scrolled list items hide
    behind the logo/pill instead of bleeding through. Sits inside the
-   overlay's stacking context (z-1 within #t3-off-canvas), above the
+   overlay's stacking context (z-1 within #mobile-nav), above the
    list (z-auto). Height matches the list's padding-top so the first
    link emerges flush below the band. */
-#t3-off-canvas::before {
+#mobile-nav::before {
   content: "";
   position: absolute;
   top: 0;
@@ -195,7 +195,7 @@ body {
 }
 
 @media (max-width: 767px) {
-  #t3-off-canvas::before {
+  #mobile-nav::before {
     height: 108px;
   }
 }
@@ -242,10 +242,6 @@ body {
   margin: 0;
 }
 
-.mobile-nav-item {
-  margin: 0;
-}
-
 .mobile-nav-item a {
   display: block;
   padding: 5px 0;
@@ -269,32 +265,6 @@ body {
   color: var(--color-primary);
 }
 
-/* Utility footer (Account, Cart). */
-.mobile-nav-foot {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 12px 24px 18px;
-  display: flex;
-  gap: 18px;
-  font-size: 13px;
-}
-
-.mobile-nav-foot-link {
-  color: rgba(255, 255, 255, 0.75);
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.mobile-nav-foot-link:hover,
-.mobile-nav-foot-link:focus-visible {
-  color: var(--color-primary);
-}
-
-.mobile-nav-foot-link i {
-  font-size: 12px;
-}
-
 /* ============================================================
    ENTRY/EXIT ANIMATIONS
    Groups rise into place top-down on open, 30ms staggered.
@@ -307,44 +277,29 @@ body {
   transition: opacity 220ms ease-out, transform 220ms ease-out;
 }
 
-.off-canvas-open #t3-off-canvas .mobile-nav-group {
+.mobile-nav-open #mobile-nav .mobile-nav-group {
   opacity: 1;
   transform: translateY(0);
 }
 
-.off-canvas-open #t3-off-canvas .mobile-nav-group:nth-child(1) { transition-delay: 0ms; }
-.off-canvas-open #t3-off-canvas .mobile-nav-group:nth-child(2) { transition-delay: 30ms; }
-.off-canvas-open #t3-off-canvas .mobile-nav-group:nth-child(3) { transition-delay: 60ms; }
-.off-canvas-open #t3-off-canvas .mobile-nav-group:nth-child(4) { transition-delay: 90ms; }
-.off-canvas-open #t3-off-canvas .mobile-nav-group:nth-child(5) { transition-delay: 120ms; }
-
-/* Footer fades in with the panel, with a 100ms entry delay so it
-   arrives just after the staggered groups. Exit (when .off-canvas-open
-   is removed) drops the delay so the footer fades out together with
-   the groups. */
-.mobile-nav-foot {
-  opacity: 0;
-  transition: opacity 220ms ease-out;
-}
-
-.off-canvas-open #t3-off-canvas .mobile-nav-foot {
-  opacity: 1;
-  transition: opacity 220ms ease-out 100ms;
-}
+.mobile-nav-open #mobile-nav .mobile-nav-group:nth-child(1) { transition-delay: 0ms; }
+.mobile-nav-open #mobile-nav .mobile-nav-group:nth-child(2) { transition-delay: 30ms; }
+.mobile-nav-open #mobile-nav .mobile-nav-group:nth-child(3) { transition-delay: 60ms; }
+.mobile-nav-open #mobile-nav .mobile-nav-group:nth-child(4) { transition-delay: 90ms; }
+.mobile-nav-open #mobile-nav .mobile-nav-group:nth-child(5) { transition-delay: 120ms; }
 
 /* Respect reduced-motion preferences. */
 @media (prefers-reduced-motion: reduce) {
   .mobile-nav-group,
-  .mobile-nav-foot,
-  .btn.off-canvas-toggle .fa-bars {
+  .btn.mobile-nav-toggle .fa-bars {
     transition: none;
     transform: none;
   }
-  #t3-off-canvas,
-  .off-canvas-open #t3-off-canvas {
+  #mobile-nav,
+  .mobile-nav-open #mobile-nav {
     transition: opacity 1ms;
   }
-  .off-canvas-open .btn.off-canvas-toggle .fa-bars {
+  .mobile-nav-open .btn.mobile-nav-toggle .fa-bars {
     transform: none;
   }
 }
