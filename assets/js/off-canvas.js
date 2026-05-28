@@ -149,3 +149,98 @@
 
   });
 })();
+
+// ============================================================
+// Mobile nav overlay accessibility behaviours.
+// Layered on top of the existing open/close handlers. Triggered
+// by mutations to the .off-canvas-open class on .t3-wrapper.
+// ============================================================
+(function () {
+  'use strict';
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var wrapper = document.querySelector('.t3-wrapper');
+    var panel = document.querySelector('#t3-off-canvas');
+    var toggle = document.querySelector('.off-canvas-toggle');
+    if (!wrapper || !panel || !toggle) return;
+
+    var lastFocused = null;
+    var labelOpen = toggle.getAttribute('aria-label') || 'Open menu';
+    var labelOpenJa = 'メニューを開く';
+    var labelClose = 'Close menu';
+    var labelCloseJa = 'メニューを閉じる';
+    var isJa = document.documentElement.lang === 'ja';
+
+    // Focusable elements include all links inside the panel AND the
+    // toggle button itself, so keyboard users can Tab from the last
+    // link back to the X to close the overlay without leaving the
+    // dialog's keyboard scope.
+    function getFocusable() {
+      var inside = Array.prototype.slice.call(
+        panel.querySelectorAll('a[href], button:not([disabled])')
+      );
+      inside.push(toggle);
+      return inside;
+    }
+
+    function onOpen() {
+      panel.setAttribute('aria-hidden', 'false');
+      toggle.setAttribute('aria-label', isJa ? labelCloseJa : labelClose);
+      lastFocused = document.activeElement;
+      var focusable = getFocusable();
+      if (focusable.length) {
+        // Delay slightly so the entry animation doesn't fight focus.
+        setTimeout(function () { focusable[0].focus(); }, 50);
+      }
+    }
+
+    function onClose() {
+      panel.setAttribute('aria-hidden', 'true');
+      toggle.setAttribute('aria-label', isJa ? labelOpenJa : labelOpen);
+      if (lastFocused && lastFocused !== toggle && typeof lastFocused.focus === 'function') {
+        lastFocused.focus();
+      } else {
+        toggle.focus();
+      }
+    }
+
+    // Watch for .off-canvas-open being added/removed on the wrapper.
+    var observer = new MutationObserver(function (mutations) {
+      mutations.forEach(function (m) {
+        if (m.attributeName !== 'class') return;
+        if (wrapper.classList.contains('off-canvas-open')) {
+          onOpen();
+        } else {
+          onClose();
+        }
+      });
+    });
+    observer.observe(wrapper, { attributes: true, attributeFilter: ['class'] });
+
+    // Escape key closes the overlay by triggering the toggle.
+    document.addEventListener('keydown', function (e) {
+      if (e.key !== 'Escape') return;
+      if (!wrapper.classList.contains('off-canvas-open')) return;
+      toggle.click();
+    });
+
+    // Focus trap: when Tab would leave the focusable set, wrap.
+    // Listens on document because the toggle is outside the panel.
+    document.addEventListener('keydown', function (e) {
+      if (e.key !== 'Tab') return;
+      if (!wrapper.classList.contains('off-canvas-open')) return;
+      var focusable = getFocusable();
+      if (!focusable.length) return;
+      var first = focusable[0];
+      var last = focusable[focusable.length - 1];
+      var active = document.activeElement;
+      if (e.shiftKey && active === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && active === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    });
+  });
+})();
