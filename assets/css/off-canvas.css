@@ -221,3 +221,51 @@ body {
 .mobile-nav-foot-link i {
   font-size: 12px;
 }
+
+/* ============================================================
+   ENTRY/EXIT ANIMATIONS
+   Groups rise into place top-down on open, 30ms staggered.
+   Exit is a flat fade (no reverse-stagger) so dismiss feels quick.
+   ============================================================ */
+
+.mobile-nav-group {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 220ms ease-out, transform 220ms ease-out;
+}
+
+.off-canvas-open #t3-off-canvas .mobile-nav-group {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.off-canvas-open #t3-off-canvas .mobile-nav-group:nth-child(1) { transition-delay: 0ms; }
+.off-canvas-open #t3-off-canvas .mobile-nav-group:nth-child(2) { transition-delay: 30ms; }
+.off-canvas-open #t3-off-canvas .mobile-nav-group:nth-child(3) { transition-delay: 60ms; }
+.off-canvas-open #t3-off-canvas .mobile-nav-group:nth-child(4) { transition-delay: 90ms; }
+.off-canvas-open #t3-off-canvas .mobile-nav-group:nth-child(5) { transition-delay: 120ms; }
+
+/* Footer fades in with the panel, no stagger. */
+.mobile-nav-foot {
+  opacity: 0;
+  transition: opacity 220ms ease-out 100ms;
+}
+
+.off-canvas-open #t3-off-canvas .mobile-nav-foot {
+  opacity: 1;
+}
+
+/* Respect reduced-motion preferences. */
+@media (prefers-reduced-motion: reduce) {
+  .mobile-nav-group,
+  .mobile-nav-foot {
+    transition: none;
+    transform: none;
+  }
+  #t3-off-canvas {
+    transition: opacity 1ms;
+  }
+  .off-canvas-open #t3-off-canvas {
+    transition: opacity 1ms;
+  }
+}
