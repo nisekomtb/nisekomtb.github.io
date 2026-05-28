@@ -36,11 +36,11 @@
   {% assign footer_sponsors = site.data.sponsors.special.sponsors | concat: site.data.sponsors.higuma.sponsors %}
   {% for sponsor in footer_sponsors %}
     {% if sponsor.url %}
-      <a href="{% if sponsor.ja.url and page.lang == 'ja' %}{{ sponsor.ja.url }}{% else %}{{ sponsor.url }}{% endif %}" target="_blank">
-        <img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name }}" />
+      <a href="{% if sponsor.ja.url and page.lang == 'ja' %}{{ sponsor.ja.url }}{% else %}{{ sponsor.url }}{% endif %}" target="_blank" rel="sponsored noopener noreferrer">
+        <img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name | capitalize }}{% if sponsor.label %}, {{ sponsor.label }}{% endif %}" />
       </a>
     {% else %}
-      <span><img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name }}" /></span>
+      <span><img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name | capitalize }}{% if sponsor.label %}, {{ sponsor.label }}{% endif %}" /></span>
     {% endif %}
   {% endfor %}
 </div>

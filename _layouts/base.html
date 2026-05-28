@@ -16,6 +16,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <title>{{- page.title }}{% if page.subtitle %}: {{ page.subtitle }}{% endif %} - NAMBA</title>
     {% if page.description %}<meta name="description" content="{{ page.description }}"/>{% endif %}
+    <meta name="robots" content="index, follow, max-image-preview:large"/>
     <meta property="og:title" content="{{ page.title }}{% if page.subtitle %}: {{ page.subtitle }}{% endif %}"/>
     <meta property="og:type" content="{% if page.layout == 'event' or page.layout == 'competition' %}event{% else %}website{% endif %}"/>
     <meta property="og:image" content="https://namba.ngo{{ page.og.image }}?d={{ site.time | date: "%s" }}"/>
@@ -30,6 +31,10 @@
       <meta property="og:site_name" content="ニセコエリアマウンテンバイク 協会"/>
       <meta property="og:locale:alternate" content="en_JP"/>
     {% endif %}
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="{{ page.title }}{% if page.subtitle %}: {{ page.subtitle }}{% endif %}"/>
+    {% if page.description %}<meta name="twitter:description" content="{{ page.description }}"/>{% endif %}
+    <meta name="twitter:image" content="https://namba.ngo{{ page.og.image }}?d={{ site.time | date: '%s' }}"/>
     <link rel="alternate" hreflang="en" href="https://namba.ngo{{ path }}"/>
     <link rel="alternate" hreflang="ja" href="https://namba.ngo/ja{{ path }}"/>
     <link rel="alternate" hreflang="x-default" href="https://namba.ngo{{ path }}"/>
@@ -84,7 +89,7 @@
     <!-- block scripts endblock -->
 
     <!-- META FOR IOS & HANDHELD -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="HandheldFriendly" content="true"/>
     <meta name="apple-mobile-web-app-capable" content="YES"/>
     <!-- //META FOR IOS & HANDHELD -->
@@ -133,6 +138,99 @@
     src="https://www.facebook.com/tr?id=691041252525571&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code -->
+
+    <!-- Site-wide organisation schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "NonprofitOrganization",
+      "@id": "https://namba.ngo/#organization",
+      "name": "Niseko Area Mountain Bike Association",
+      "alternateName": "NAMBA",
+      "url": "https://namba.ngo/",
+      "logo": "https://namba.ngo/assets/images/logos/logo.svg",
+      "description": "Nonprofit building mountain bike trails and community in Niseko, Hokkaido, Japan.",
+      "foundingDate": "2022",
+      "location": {
+        "@type": "Place",
+        "name": "Niseko",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Niseko",
+          "addressRegion": "Hokkaido",
+          "addressCountry": "JP"
+        }
+      },
+      "sameAs": [
+        "https://www.instagram.com/nisekomtb/",
+        "https://www.facebook.com/nisekoareamtbassociation"
+      ]
+    }
+    </script>
+
+    {% if page.path == "index.html" or page.path == "ja/index.html" %}
+    <!-- Home page schema: WebPage + BreadcrumbList + VideoObject + park references -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": "https://namba.ngo{% if page.lang == 'ja' %}/ja{% endif %}/#webpage",
+      "url": "https://namba.ngo{% if page.lang == 'ja' %}/ja{% endif %}/",
+      "name": "{{ page.title | escape }}",
+      "description": "{{ page.description | escape }}",
+      "inLanguage": "{{ page.lang }}",
+      "isPartOf": { "@id": "https://namba.ngo/#organization" },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "{% if page.lang == 'ja' %}ホーム{% else %}Home{% endif %}",
+            "item": "https://namba.ngo{% if page.lang == 'ja' %}/ja{% endif %}/"
+          }
+        ]
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://namba.ngo/assets/images/og/hero.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "video": {
+        "@type": "VideoObject",
+        "name": "{% if page.lang == 'ja' %}NAMBA 2026年リール{% else %}NAMBA 2026 reel{% endif %}",
+        "description": "{% if page.lang == 'ja' %}北海道ニセコのNAMBAマウンテンバイクトレイルネットワークのハイライトリール。{% else %}Highlight reel of NAMBA's mountain bike trail network in Niseko, Hokkaido.{% endif %}",
+        "thumbnailUrl": "https://namba.ngo/assets/images/home/hero-video-poster.jpg",
+        "embedUrl": "https://player.vimeo.com/video/1195232610",
+        "uploadDate": "2026-05-25",
+        "publisher": { "@id": "https://namba.ngo/#organization" }
+      },
+      "about": [
+        {
+          "@type": "SportsActivityLocation",
+          "name": "{% if page.lang == 'ja' %}ツインピークスバイクパーク{% else %}Twin Peaks Bike Park{% endif %}",
+          "url": "https://namba.ngo{% if page.lang == 'ja' %}/ja{% endif %}/twin-peaks/"
+        },
+        {
+          "@type": "SportsActivityLocation",
+          "name": "{% if page.lang == 'ja' %}グラン・ヒラフバイクパーク{% else %}Grand Hirafu Bike Park{% endif %}",
+          "url": "https://namba.ngo{% if page.lang == 'ja' %}/ja{% endif %}/where-to-ride/grand-hirafu/"
+        },
+        {
+          "@type": "SportsActivityLocation",
+          "name": "{% if page.lang == 'ja' %}ニセコHANAZONOバイクパーク{% else %}Niseko Hanazono Bike Park{% endif %}",
+          "url": "https://namba.ngo{% if page.lang == 'ja' %}/ja{% endif %}/where-to-ride/hanazono/"
+        },
+        {
+          "@type": "SportsActivityLocation",
+          "name": "{% if page.lang == 'ja' %}ニセコアンヌプリバイクパーク{% else %}Niseko Annupuri Bike Park{% endif %}",
+          "url": "https://namba.ngo{% if page.lang == 'ja' %}/ja{% endif %}/where-to-ride/annupuri/"
+        }
+      ]
+    }
+    </script>
+    {% endif %}
   </head>
 
   <body>

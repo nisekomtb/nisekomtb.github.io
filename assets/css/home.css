@@ -81,25 +81,47 @@ html[lang="ja"] .home-section-title { letter-spacing: normal; }
   z-index: 1;
   bottom: clamp(72px, 11vh, 130px); /* clear of the centred scroll-cue */
   left: clamp(24px, 5vw, 80px);
-  max-width: min(520px, calc(100vw - 96px));
+  max-width: min(620px, calc(100vw - 96px));
   text-align: left;
 }
+@media (max-width: 600px) {
+  .home-hero-content {
+    left: 16px;
+    max-width: calc(100vw - 32px);
+  }
+}
+/* Eyebrow above the H1: org-name kicker. Smaller, uppercase, letter-spaced
+   so the H1 keyword phrase reads as the visual headline while the brand
+   identity stays present right above it. */
+.home-hero-kicker {
+  font-family: "Metropolis", Helvetica, Arial, sans-serif;
+  font-size: clamp(10px, 1.04vw + 2px, 17px);
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  line-height: 1.2;
+  margin: 0 0 12px;
+  color: rgba(255, 255, 255, 0.75);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+  max-width: 44ch;
+}
+html[lang="ja"] .home-hero-kicker { letter-spacing: 1px; }
 .home-hero-title {
   /* Inherits Fruit Viesta uppercase + weight 500 from template's h1 rule. */
-  font-size: clamp(22px, 3vw, 38px);
+  font-size: clamp(30px, 1.49vw + 18.6px, 40px);
   line-height: 1.1;
   margin: 0 0 10px;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
-  max-width: 20ch;
+  max-width: 28ch;
   padding-right: 0;
 }
 html[lang="ja"] .home-hero-title { letter-spacing: normal; }
 .home-hero-sub {
-  font-size: clamp(13px, 1.4vw, 16px);
+  font-size: clamp(12px, 0.74vw + 6.3px, 17px);
   line-height: 1.4;
   margin: 0;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
-  max-width: 36ch;
+  max-width: 32ch;
   color: var(--color-text-light);
 }
 #home-hero-cue {
@@ -187,7 +209,7 @@ a:hover > .home-more-arrow { margin-left: 12px; }
   background: var(--color-bg);
   color: var(--color-text);
   position: relative;
-  height: 500vh;
+  height: 400vh;
 }
 .home-network-stage {
   position: sticky;
@@ -253,13 +275,15 @@ a:hover > .home-more-arrow { margin-left: 12px; }
   pointer-events: none;
 }
 
-/* Title pinned top-right of the stage (clear of the left-side rail) */
+/* Title pinned top-right of the stage. Text is left-aligned within the
+   right-anchored box so the words read naturally; the corner anchor
+   gives the right column its own focal point opposite the cards. */
 .home-network-head {
   position: absolute;
   top: clamp(32px, 6vh, 56px);
   right: clamp(24px, 5vw, 80px);
   z-index: 3;
-  text-align: right;
+  text-align: left;
 }
 .home-network-title {
   font-family: "Fruit Viesta", "Zen Maru Gothic", "Metropolis", Helvetica, Arial, sans-serif;
@@ -273,15 +297,20 @@ a:hover > .home-more-arrow { margin-left: 12px; }
 }
 html[lang="ja"] .home-network-title { letter-spacing: normal; text-transform: none; }
 
-/* The journey rail: left-aligned, vertically centred in the stage */
+/* The journey rail: left-aligned, anchored top and bottom so the cards
+   distribute across the full stage height via space-between. Top clamp
+   matches the title so card 1 and the heading share a baseline at the
+   top of the stage. gap stays as a minimum so cards don't collide on
+   short viewports. */
 .home-network-rail {
   position: absolute;
-  top: 50%;
+  top: clamp(32px, 6vh, 56px);
+  bottom: clamp(40px, 6vh, 80px);
   left: clamp(24px, 5vw, 80px);
-  transform: translateY(-50%);
   z-index: 2;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: clamp(14px, 2.2vh, 26px);
   max-width: 460px;
   width: 42vw;
@@ -386,14 +415,38 @@ html[lang="ja"] .home-network-title { letter-spacing: normal; text-transform: no
   border-left-color: var(--color-accent);
   background: rgba(20, 20, 20, 0.86);
 }
+/* Year + cumulative NAMBA-built km share a baseline-aligned row;
+   the meta wrapper carries the spacing to the title below. */
+.home-network-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 6px;
+}
 .home-network-year {
   color: var(--color-accent);
   font-weight: 700;
   font-size: 120%;
   line-height: 1;
-  margin-bottom: 6px;
   font-family: "Metropolis", Helvetica, Arial, sans-serif;
   letter-spacing: -0.3px;
+}
+.home-network-km {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  font-family: "Metropolis", Helvetica, Arial, sans-serif;
+  white-space: nowrap;
+}
+.home-network-km-label {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-right: 6px;
 }
 .home-network-now {
   display: inline-block;
@@ -485,6 +538,7 @@ html[lang="ja"] .home-network-parks-title { letter-spacing: normal; text-transfo
     position: relative;
     top: auto;
     left: auto;
+    right: auto;
     padding: 0 24px;
     margin-bottom: 28px;
     text-align: left;
@@ -492,6 +546,7 @@ html[lang="ja"] .home-network-parks-title { letter-spacing: normal; text-transfo
   .home-network-rail {
     position: relative;
     top: auto;
+    bottom: auto;
     left: auto;
     transform: none;
     width: 100%;
@@ -518,8 +573,8 @@ html[lang="ja"] .home-network-parks-title { letter-spacing: normal; text-transfo
   .home-network { height: auto; }
   .home-network-stage { position: relative; height: auto; overflow: visible; padding: 80px 0; }
   .home-network-bg { display: none; }
-  .home-network-head { position: relative; top: auto; left: auto; padding: 0 24px; margin-bottom: 32px; }
-  .home-network-rail { position: relative; top: auto; left: auto; transform: none; width: 100%; max-width: 760px; padding: 0 24px 0 56px; margin: 0 auto; }
+  .home-network-head { position: relative; top: auto; left: auto; right: auto; padding: 0 24px; margin-bottom: 32px; }
+  .home-network-rail { position: relative; top: auto; bottom: auto; left: auto; transform: none; width: 100%; max-width: 760px; padding: 0 24px 0 56px; margin: 0 auto; }
   .home-network-spine-fill { height: 100%; }
   .home-network-spine-fill::after { display: none; }
   .home-network-row { opacity: 1; transform: none; }
@@ -543,6 +598,13 @@ html[lang="ja"] .home-network-parks-title { letter-spacing: normal; text-transfo
   line-height: 1.05;
 }
 html[lang="ja"] .home-impact-title { letter-spacing: normal; text-transform: none; }
+.home-impact-intro {
+  font-size: clamp(15px, 1.4vw, 18px);
+  line-height: 1.5;
+  margin: 16px auto 0;
+  max-width: 560px;
+  color: var(--color-text-light);
+}
 /* Row + col scaffolding so cards inherit the same equal-height
    behaviour as the /impact/ stat cards. .col col-12 gives one per row
    on xs, col-md-6 splits to two per row on md, and .home-impact-col
@@ -819,6 +881,13 @@ html[lang="ja"] .home-action-title { letter-spacing: normal; text-transform: non
   line-height: 1.05;
 }
 html[lang="ja"] .home-jobs-title { letter-spacing: normal; text-transform: none; }
+.home-jobs-intro {
+  font-size: clamp(15px, 1.4vw, 18px);
+  line-height: 1.5;
+  margin: 12px auto 0;
+  max-width: 560px;
+  color: var(--color-text-light);
+}
 .home-jobs-cards { max-width: 900px; margin: 0 auto; }
 .home-jobs-all { text-align: right; margin-top: 24px; font-size: 13px; max-width: 900px; margin-left: auto; margin-right: auto; }
 .home-jobs-all a { color: #fff; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 200ms ease, color 200ms ease; }

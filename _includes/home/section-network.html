@@ -1,6 +1,20 @@
 <!-- _includes/home/section-network.html: Section 03 (sticky theatre with journey rail) -->
-{% assign years = "2022,2023,2024,2025,2026" | split: "," %}
-<section class="home-network" data-years="2022,2023,2024,2025,2026">
+{%- comment -%}
+  Cumulative NAMBA-built km per year, sourced from _data/impact.yml.
+  2026 is projected and intentionally commented out in impact.yml (so the
+  /impact/ page doesn't surface it until trails open); we fall back to the
+  projection here. Once 2026 is enabled in the data file, the fallback is
+  ignored and the home card picks up the data value automatically.
+{%- endcomment -%}
+{% assign t2023 = site.data.impact.trails | where: "year", 2023 | first %}
+{% assign t2024 = site.data.impact.trails | where: "year", 2024 | first %}
+{% assign t2025 = site.data.impact.trails | where: "year", 2025 | first %}
+{% assign t2026 = site.data.impact.trails | where: "year", 2026 | first %}
+{% assign km_2023 = t2023.namba_km | round %}
+{% assign km_2024 = t2024.namba_km | round %}
+{% assign km_2025 = t2025.namba_km | round %}
+{% assign km_2026 = t2026.namba_km | default: 25.39 | round %}
+<section class="home-network" data-years="2023,2024,2025,2026">
   <div class="home-network-stage">
 
     <div class="home-network-bg">
@@ -17,8 +31,8 @@
 
     <header class="home-network-head">
       <h2 class="home-network-title">
-        {% if page.lang == "en" %}The Network
-        {% else %}ネットワーク
+        {% if page.lang == "en" %}The Build
+        {% else %}これまでの<wbr>歩み
         {% endif %}
       </h2>
     </header>
@@ -28,48 +42,51 @@
         <div class="home-network-spine-fill"></div>
       </div>
 
-      <div class="home-network-row" data-year-idx="0" data-year="2022">
+      <div class="home-network-row" data-year-idx="0" data-year="2023">
         <div class="home-network-nub"></div>
         <div class="home-network-card">
-          <div class="home-network-year">2022</div>
-          <h3 class="home-network-card-head">{% if page.lang == "en" %}NAMBA gets to work{% else %}NAMBA、<wbr>始動{% endif %}</h3>
-          <p class="home-network-card-desc">{% if page.lang == "en" %}NAMBA is founded. Construction begins at Twin Peaks, all under a 1 m width restriction, without cutting down a single tree.{% else %}NAMBAが<wbr>設立。<wbr>ツインピークスで<wbr>工事が<wbr>開始、<wbr>すべて<wbr>1m幅制限の<wbr>もと、<wbr>樹木を<wbr>一本も<wbr>伐採せず。{% endif %}</p>
+          <div class="home-network-meta">
+            <div class="home-network-year">2023</div>
+            <div class="home-network-km"><span class="home-network-km-label">{% if page.lang == "en" %}NAMBA-built{% else %}NAMBA構築{% endif %}</span> {{ km_2023 }} km</div>
+          </div>
+          <h3 class="home-network-card-head">{% if page.lang == "en" %}It begins.{% else %}はじまり。{% endif %}</h3>
+          <p class="home-network-card-desc">{% if page.lang == "en" %}The 2021 sketch becomes a park. Twin Peaks opens to the public with 10+ km of free-to-ride, Swiss-designed trail.{% else %}2021年の<wbr>ビジョンが、<wbr>ひとつの<wbr>パークに<wbr>なる。<wbr>ツインピークス、<wbr>一般公開。<wbr>10km超の<wbr>無料・<wbr>スイス設計<wbr>トレイル。{% endif %}</p>
         </div>
       </div>
 
-      <div class="home-network-row" data-year-idx="1" data-year="2023">
+      <div class="home-network-row" data-year-idx="1" data-year="2024">
         <div class="home-network-nub"></div>
         <div class="home-network-card">
-          <div class="home-network-year">2023</div>
-          <h3 class="home-network-card-head">{% if page.lang == "en" %}Twin Peaks Bike Park opens{% else %}ツインピークス<wbr>バイクパーク<wbr>オープン{% endif %}</h3>
-          <p class="home-network-card-desc">{% if page.lang == "en" %}Twin Peaks opens to the public with over 10 km of Allegra-designed trail. The pump track and skills area follow. Volunteers turn up to build bridges, install signage, and hand-seed grass.{% else %}ツインピークスが<wbr>10km超の<wbr>アレグラ設計<wbr>トレイルとともに<wbr>一般公開。<wbr>続いて<wbr>パンプ<wbr>トラックと<wbr>スキル<wbr>エリアも<wbr>完成。<wbr>ボランティアが<wbr>集まり、<wbr>橋の<wbr>建設、<wbr>サイン<wbr>設置、<wbr>芝生の<wbr>手蒔きに<wbr>参加。{% endif %}</p>
-        </div>
-      </div>
-
-      <div class="home-network-row" data-year-idx="2" data-year="2024">
-        <div class="home-network-nub"></div>
-        <div class="home-network-card">
-          <div class="home-network-year">2024</div>
+          <div class="home-network-meta">
+            <div class="home-network-year">2024</div>
+            <div class="home-network-km"><span class="home-network-km-label">{% if page.lang == "en" %}NAMBA-built{% else %}NAMBA構築{% endif %}</span> {{ km_2024 }} km</div>
+          </div>
           <h3 class="home-network-card-head">{% if page.lang == "en" %}From 1 to 3{% else %}1から<wbr>3パークへ{% endif %}</h3>
-          <p class="home-network-card-desc">{% if page.lang == "en" %}Niseko Annupuri and Grand Hirafu join the network with their own trails. NAMBA finishes its first 1.5 km at Grand Hirafu, with a future link to Twin Peaks in mind. Twin Peaks expands by another 3.4 km, including the upper section of Cruise Control.{% else %}ニセコ<wbr>アンヌプリと<wbr>グランヒラフが<wbr>自前の<wbr>トレイルで<wbr>ネットワークに<wbr>参加。<wbr>NAMBAは<wbr>グランヒラフでの<wbr>最初の<wbr>1.5kmを<wbr>完成、<wbr>将来の<wbr>ツインピークスとの<wbr>接続を<wbr>視野に。<wbr>ツインピークスは<wbr>さらに<wbr>3.4km<wbr>拡張、<wbr>人気の<wbr>クルーズ<wbr>コントロールの<wbr>アッパー<wbr>セクションも<wbr>含む。{% endif %}</p>
+          <p class="home-network-card-desc">{% if page.lang == "en" %}Annupuri and Grand Hirafu join with their own trails. NAMBA breaks ground at Grand Hirafu (1.5 km) with a future Twin Peaks link planned. Twin Peaks adds another 3.4 km.{% else %}ニセコ<wbr>アンヌプリと<wbr>グランヒラフが<wbr>自前の<wbr>トレイルで<wbr>ネットワークに<wbr>参加。<wbr>NAMBAは<wbr>グランヒラフで<wbr>初の<wbr>1.5kmを<wbr>着工、<wbr>将来の<wbr>ツインピークス<wbr>接続を<wbr>計画。<wbr>ツインピークスは<wbr>さらに<wbr>3.4km<wbr>追加。{% endif %}</p>
         </div>
       </div>
 
-      <div class="home-network-row" data-year-idx="3" data-year="2025">
+      <div class="home-network-row" data-year-idx="2" data-year="2025">
         <div class="home-network-nub"></div>
         <div class="home-network-card">
-          <div class="home-network-year">2025</div>
-          <h3 class="home-network-card-head">{% if page.lang == "en" %}Hanazono begins{% else %}花園、<wbr>着工{% endif %}</h3>
-          <p class="home-network-card-desc">{% if page.lang == "en" %}Construction starts at Hanazono. NAMBA expands Grand Hirafu by another 2 km. Twin Peaks adds 4 km, including the completion of Cruise Control and the region's first jump line.{% else %}花園で<wbr>工事開始。<wbr>NAMBAは<wbr>グランヒラフを<wbr>さらに<wbr>2km<wbr>拡張。<wbr>ツインピークスは<wbr>さらに<wbr>4km<wbr>追加、<wbr>クルーズ<wbr>コントロールの<wbr>完成と、<wbr>リージョン初の<wbr>ジャンプ<wbr>ラインを<wbr>含む。{% endif %}</p>
+          <div class="home-network-meta">
+            <div class="home-network-year">2025</div>
+            <div class="home-network-km"><span class="home-network-km-label">{% if page.lang == "en" %}NAMBA-built{% else %}NAMBA構築{% endif %}</span> {{ km_2025 }} km</div>
+          </div>
+          <h3 class="home-network-card-head">{% if page.lang == "en" %}Trails for everyone{% else %}すべての<wbr>ライダーへ{% endif %}</h3>
+          <p class="home-network-card-desc">{% if page.lang == "en" %}NAMBA rebuilds Grand Hirafu's lower mountain to international beginner standard. Twin Peaks adds another 4 km, including a finished Cruise Control and the region's first jump line.{% else %}NAMBAが<wbr>グランヒラフの<wbr>ロワーマウンテンを、<wbr>国際水準の<wbr>ビギナー<wbr>トレイルに<wbr>再構築。<wbr>ツインピークスは<wbr>さらに<wbr>4km<wbr>追加、<wbr>クルーズ<wbr>コントロールの<wbr>完成と、<wbr>リージョン初の<wbr>ジャンプ<wbr>ラインを<wbr>含む。{% endif %}</p>
         </div>
       </div>
 
-      <div class="home-network-row" data-year-idx="4" data-year="2026">
+      <div class="home-network-row" data-year-idx="3" data-year="2026">
         <div class="home-network-nub"></div>
         <div class="home-network-card">
-          <div class="home-network-year">2026<span class="home-network-now">NOW</span></div>
-          <h3 class="home-network-card-head">{% if page.lang == "en" %}A regional network{% else %}リージョナル<wbr>ネットワーク{% endif %}</h3>
-          <p class="home-network-card-desc">{% if page.lang == "en" %}Hanazono opens this summer, taking the regional network past 25 km of NAMBA-built trail. The vision NAMBA sketched in 2021, one connected Niseko region, is becoming the map.{% else %}今夏、<wbr>花園<wbr>オープン。<wbr>NAMBAが<wbr>築いた<wbr>トレイルは<wbr>25km超に。<wbr>2021年に<wbr>NAMBAが<wbr>描いた、<wbr>一つに<wbr>つながる<wbr>ニセコ<wbr>リージョンという<wbr>ビジョンが、<wbr>いま<wbr>地図に<wbr>なる。{% endif %}</p>
+          <div class="home-network-meta">
+            <div class="home-network-year">2026<span class="home-network-now">NOW</span></div>
+            <div class="home-network-km"><span class="home-network-km-label">{% if page.lang == "en" %}NAMBA-built{% else %}NAMBA構築{% endif %}</span> {{ km_2026 }} km</div>
+          </div>
+          <h3 class="home-network-card-head">{% if page.lang == "en" %}Niseko's fourth park{% else %}ニセコ、<wbr>4つ目の<wbr>パーク{% endif %}</h3>
+          <p class="home-network-card-desc">{% if page.lang == "en" %}Hanazono opens this summer: 5.5 km of NAMBA-built trail, and more in 2027. NAMBA has now built 25 of the region's 32 km. The 2021 sketch of one connected Niseko region is becoming the map.{% else %}今夏、<wbr>花園<wbr>オープン。<wbr>NAMBAが<wbr>築いた<wbr>5.5kmの<wbr>トレイル、<wbr>2027年も<wbr>建設は<wbr>続く。<wbr>NAMBAは<wbr>リージョン全体<wbr>32kmの<wbr>うち<wbr>25kmを<wbr>築き上げた。<wbr>2021年に<wbr>NAMBAが<wbr>描いた、<wbr>一つに<wbr>つながる<wbr>ニセコ<wbr>リージョンという<wbr>ビジョンが、<wbr>いま<wbr>地図に<wbr>なる。{% endif %}</p>
         </div>
       </div>
     </div>

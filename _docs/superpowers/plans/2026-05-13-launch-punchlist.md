@@ -818,12 +818,25 @@ This task was created to capture the deferred bg-image decisions from A.2 onward
 - Plus: hero asset references
 
 Steps:
-- [ ] Stop. Trigger a fresh brainstorm/spec for the Home page (hero image + hero video + section restructure). The Home page is large enough to warrant its own design conversation.
-- [ ] Do NOT begin Home work as part of this plan. Write a new spec at `_docs/superpowers/specs/<date>-home-redesign-design.md` first.
-- [ ] Tick this task once the Home spec is written and Home implementation begins under that spec's own plan.
+- [x] Stop. Trigger a fresh brainstorm/spec for the Home page (hero image + hero video + section restructure). The Home page is large enough to warrant its own design conversation.
+- [x] Do NOT begin Home work as part of this plan. Write a new spec at `_docs/superpowers/specs/<date>-home-redesign-design.md` first.
+- [x] Tick this task once the Home spec is written and Home implementation begins under that spec's own plan.
 
 Notes:
-Decide: (handled in separate Home spec)
+Spec written 2026-05-25 (`_docs/superpowers/specs/2026-05-25-home-redesign-design.md`). Implementation plan at `_docs/superpowers/plans/2026-05-25-home-redesign.md`. Home complete via that plan (commits e4ad661 through 1b6c88b on `overhaul/website-restructure`).
+
+### Home page follow-ups (from 2026-05-25 home redesign)
+
+- [ ] **Multi-layer parallax hero.** Slice `assets/images/bg/bg-header-yotei.jpg` into 4 transparent PNG layers (sky, Yotei, mid-trees, foreground). Update `assets/js/home.js` to translate each at independent rates. Replace `home-hero-bg` markup with stacked layer divs.
+- [ ] **Replace placeholder feature image.** Pick a community/trail-day shot. Save to `assets/images/home/feature-image.jpg`. Remove the `.home-feature-placeholder-overlay` rule + markup from `_includes/home/section-feature.html` and `assets/css/home.css`.
+- [ ] **Enable stories section.** Once at least one post with `categories: stories` exists, remove the `{% comment %} ... {% endcomment %}` wrapper around `{% include home/section-stories.html %}` in both `index.html` and `ja/index.html`.
+- [ ] **Custom Vimeo poster frame.** Use ffmpeg to extract a frame from `assets/images/_triage/namba_2026_web_reel.mp4` and configure as the Vimeo player's custom thumbnail (Vimeo dashboard) OR overlay a CSS click-to-play poster on top of the iframe.
+- [ ] **Promote impact numbers to `_data/impact.yml`** if maintenance becomes painful.
+- [ ] **Promote network captions to `_data/network-timeline.yml`** if maintenance becomes painful.
+- [ ] **Optimise feature-image.jpg + strip EXIF** when the real image lands (currently a 622 KB cp of bg-distance.jpg with iPhone 11 Pro EXIF metadata).
+- [ ] **Re-check Lighthouse Performance ≥ 85** on mobile once the final feature image is in place (spec §16 success criterion).
+- [ ] **Press / media mentions strip.** Add an "As featured in" band with logos from MTB publications (Pinkbike, Vital MTB, Outside, JP outdoor mags). Source logos at consistent height (~32-48px), greyscale-on-rest, colour-on-hover (matches existing partner-wall pattern). Slot between Impact and Network, or just above the partner wall in `base.html`. Bilingual heading: "As featured in" / "メディア掲載".
+- [ ] **Stories teaser activation.** Once the first post with `categories: stories` exists, remove the `{% comment %} ... {% endcomment %}` wrapper around `{% include home/section-stories.html %}` in both `index.html` and `ja/index.html`. (Already wired; this is a content-gated activation, not a build task.)
 
 ---
 

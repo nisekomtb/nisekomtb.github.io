@@ -78,6 +78,10 @@
 
     var years = section.dataset.years.split(',');
     var currentIdx = -1;
+    /* Paint is held off until the section first enters the viewport, so
+       the 2023 trail draws in as the user arrives rather than completing
+       silently while the section is still below the fold. */
+    var armed = false;
 
     /* Prep each SVG path: stash its length, set dasharray to length, start
        with dashoffset = length so the path is fully un-drawn. setYear()
@@ -91,11 +95,13 @@
       });
     }
 
+    /* idx === -1 means "no year drawn" — used when the section is out of
+       frame so trails reset to their pre-entry state and animate back
+       in cleanly the next time the section enters. */
     function setYear(idx) {
-      if (idx < 0) idx = 0;
       if (idx >= years.length) idx = years.length - 1;
       if (idx === currentIdx) return;
-      var currentYear = parseInt(years[idx], 10);
+      var currentYear = idx < 0 ? null : parseInt(years[idx], 10);
       yearGroups.forEach(function (g) {
         var openedYear = parseInt(g.id.replace('year-', ''), 10);
         g.querySelectorAll('path').forEach(function (path) {
@@ -104,12 +110,13 @@
              un-draws it from that year onward, so e.g. Kaikan-Old opens
              with year-2024 and unwinds in 2025 when Kaikan opens. */
           var closedYear = path.dataset.closedYear ? parseInt(path.dataset.closedYear, 10) : Infinity;
-          var draw = currentYear >= openedYear && currentYear < closedYear;
+          var draw = currentYear !== null && currentYear >= openedYear && currentYear < closedYear;
           path.style.strokeDashoffset = draw ? 0 : path._pathLength;
         });
       });
       rows.forEach(function (row, i) {
-        if (i < idx) row.setAttribute('data-state', 'passed');
+        if (idx < 0) row.removeAttribute('data-state');
+        else if (i < idx) row.setAttribute('data-state', 'passed');
         else if (i === idx) row.setAttribute('data-state', 'current');
         else row.removeAttribute('data-state');
       });
@@ -156,6 +163,7 @@
 
     var ticking = false;
     function update() {
+      if (!armed) return;
       var scrollY = window.scrollY || window.pageYOffset || 0;
       var relativeScroll = scrollY - sectionTop;
       var scrollableRange = Math.max(1, sectionHeight - viewportHeight);
@@ -196,7 +204,32 @@
     }, { passive: true });
 
     measure();
-    update();
+    if ('IntersectionObserver' in window) {
+      /* rootMargin collapses the intersection root to a 0-height line at
+         the viewport top, so the observer fires the moment the section's
+         top edge crosses the viewport top — i.e. when the sticky stage
+         pins and the satellite map is fully visible.
+
+         We stay subscribed and toggle in both directions: scrolling back
+         up past the trigger un-arms and resets the trails, so the entry
+         animation replays on re-entry rather than freezing drawn. */
+      var armObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            armed = true;
+            update();
+          } else {
+            armed = false;
+            setYear(-1);
+            if (spineFill) spineFill.style.height = '0%';
+          }
+        });
+      }, { threshold: 0, rootMargin: '0px 0px -100% 0px' });
+      armObserver.observe(section);
+    } else {
+      armed = true;
+      update();
+    }
   }
 
   function initCountUps() {

@@ -55,11 +55,11 @@
   {% for sponsor in site.data.sponsors.special.sponsors %}
     <div class="partner">
       {% if sponsor.url %}
-        <a href="{% if sponsor.ja.url and page.lang == 'ja' %}{{ sponsor.ja.url }}{% else %}{{ sponsor.url }}{% endif %}" target="_blank">
-          <img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name }}" />
+        <a href="{% if sponsor.ja.url and page.lang == 'ja' %}{{ sponsor.ja.url }}{% else %}{{ sponsor.url }}{% endif %}" target="_blank" rel="sponsored noopener noreferrer">
+          <img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name | capitalize }}{% if sponsor.label %}, {{ sponsor.label }}{% endif %}" />
         </a>
       {% else %}
-        <img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name }}" />
+        <img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name | capitalize }}{% if sponsor.label %}, {{ sponsor.label }}{% endif %}" />
       {% endif %}
       <span class="partner-label">{% if page.lang == 'ja' and sponsor.ja.label %}{{ sponsor.ja.label }}{% elsif sponsor.label %}{{ sponsor.label }}{% else %}{% if page.lang == 'ja' %}トレイルスポンサー{% else %}Trail sponsor{% endif %}{% endif %}</span>
     </div>
@@ -69,11 +69,11 @@
   {% for sponsor in site.data.sponsors.higuma.sponsors %}
     <div class="partner">
       {% if sponsor.url %}
-        <a href="{% if sponsor.ja.url and page.lang == 'ja' %}{{ sponsor.ja.url }}{% else %}{{ sponsor.url }}{% endif %}" target="_blank">
-          <img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name }}" />
+        <a href="{% if sponsor.ja.url and page.lang == 'ja' %}{{ sponsor.ja.url }}{% else %}{{ sponsor.url }}{% endif %}" target="_blank" rel="sponsored noopener noreferrer">
+          <img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name | capitalize }}{% if sponsor.label %}, {{ sponsor.label }}{% endif %}" />
         </a>
       {% else %}
-        <img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name }}" />
+        <img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name | capitalize }}{% if sponsor.label %}, {{ sponsor.label }}{% endif %}" />
       {% endif %}
       <span class="partner-label">{% if page.lang == 'ja' %}羆パートナー{% else %}Higuma partner{% endif %}</span>
     </div>
@@ -83,11 +83,11 @@
   {% for sponsor in site.data.sponsors.shika.sponsors %}
     <div class="partner">
       {% if sponsor.url %}
-        <a href="{% if sponsor.ja.url and page.lang == 'ja' %}{{ sponsor.ja.url }}{% else %}{{ sponsor.url }}{% endif %}" target="_blank">
-          <img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name }}" />
+        <a href="{% if sponsor.ja.url and page.lang == 'ja' %}{{ sponsor.ja.url }}{% else %}{{ sponsor.url }}{% endif %}" target="_blank" rel="sponsored noopener noreferrer">
+          <img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name | capitalize }}{% if sponsor.label %}, {{ sponsor.label }}{% endif %}" />
         </a>
       {% else %}
-        <img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name }}" />
+        <img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name | capitalize }}{% if sponsor.label %}, {{ sponsor.label }}{% endif %}" />
       {% endif %}
       <span class="partner-label">{% if page.lang == 'ja' %}鹿パートナー{% else %}Shika partner{% endif %}</span>
     </div>
@@ -97,11 +97,11 @@
   {% for sponsor in site.data.sponsors.tanuki.sponsors %}
     <div class="partner">
       {% if sponsor.url %}
-        <a href="{% if sponsor.ja.url and page.lang == 'ja' %}{{ sponsor.ja.url }}{% else %}{{ sponsor.url }}{% endif %}" target="_blank">
-          <img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name }}" />
+        <a href="{% if sponsor.ja.url and page.lang == 'ja' %}{{ sponsor.ja.url }}{% else %}{{ sponsor.url }}{% endif %}" target="_blank" rel="sponsored noopener noreferrer">
+          <img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name | capitalize }}{% if sponsor.label %}, {{ sponsor.label }}{% endif %}" />
         </a>
       {% else %}
-        <img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name }}" />
+        <img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name | capitalize }}{% if sponsor.label %}, {{ sponsor.label }}{% endif %}" />
       {% endif %}
       <span class="partner-label">{% if page.lang == 'ja' %}狸パートナー{% else %}Tanuki partner{% endif %}</span>
     </div>
@@ -111,11 +111,11 @@
   {% for sponsor in site.data.sponsors.artists.sponsors %}
     <div class="partner">
       {% if sponsor.url %}
-        <a href="{{ sponsor.url }}" target="_blank">
-          <img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name }}" />
+        <a href="{{ sponsor.url }}" target="_blank" rel="sponsored noopener noreferrer">
+          <img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name | capitalize }}, artist partner" />
         </a>
       {% else %}
-        <img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name }}" />
+        <img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name | capitalize }}, artist partner" />
       {% endif %}
       <span class="partner-label">{% if page.lang == 'ja' %}アーティスト{% else %}Artist{% endif %}</span>
     </div>
