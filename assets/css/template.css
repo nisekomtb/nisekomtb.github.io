@@ -7682,7 +7682,10 @@ joomla-field-custom.field-custom-wrapper .input-group .input-group-btn .btn span
   border-color: var(--color-secondary);
   transform: translateY(-2px);
 }
-.event-card.disabled { opacity: 0.55; }
+.event-card.disabled { opacity: 0.75; }
+/* Bump meta + date base colours so opacity-dimmed text still meets WCAG AA. */
+.event-card.disabled .event-card-meta { color: var(--color-text-light); }
+.event-card.disabled .event-card-date { color: #e8c25f; }
 
 .event-card-thumb {
   position: relative;
@@ -7922,3 +7925,12 @@ joomla-field-custom.field-custom-wrapper .input-group .input-group-btn .btn span
   inset: 0;
   z-index: 2;
 }
+
+/* Font Awesome ships @font-face with font-display:block. Override to swap
+   so icons don't hold up text render. Browsers merge this declaration into
+   the existing @font-face by family name. */
+@font-face { font-family: "Font Awesome 7 Free"; font-display: swap; }
+@font-face { font-family: "Font Awesome 7 Brands"; font-display: swap; }
+@font-face { font-family: "Font Awesome 5 Free"; font-display: swap; }
+@font-face { font-family: "Font Awesome 5 Brands"; font-display: swap; }
+@font-face { font-family: "FontAwesome"; font-display: swap; }

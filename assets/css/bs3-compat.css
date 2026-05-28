@@ -31,7 +31,7 @@
 
   /* Text */
   --color-text:          #9a9590;  /* stone grey — body text */
-  --color-text-muted:    #888888;  /* muted grey — captions, disabled */
+  --color-text-muted:    #a0a0a0;  /* muted grey — passes WCAG AA on bg-panel */
   --color-text-light:    #cccccc;  /* light grey — subheadings, labels */
   --color-text-heading:  #ffffff;  /* white — headings */
 }
