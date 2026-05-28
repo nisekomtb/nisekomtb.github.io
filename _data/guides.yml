@@ -13,31 +13,37 @@ twinpeaks:
   #   ja:
   #     label: トレイルクルー スポンサー
   - name: ezo bike
+    displayName: EZO Bike
     image: /assets/images/company/other/ezobike.png
     url: https://www.ezobasestudies.com
     ja:
       url: https://www.rhythmjapan.com/ja/
   - name: holiday niseko
+    displayName: Holiday Niseko
     image: /assets/images/company/holiday-niseko.png
     url: https://holidayniseko.com
     ja:
       url: https://holidayniseko.jp
   - name: mnk
+    displayName: MNK Niseko
     image: /assets/images/company/mnk.png
     url: https://www.mnkniseko.com/en
     ja:
       url: https://www.mnkniseko.com/ja
   - name: nac
+    displayName: NAC Adventures
     image: /assets/images/company/nac.png
     url: https://nacadventures.jp/en/summer-e/mountain-biking-tours/
     ja:
       url: https://nacadventures.jp/summer-e/mountain-biking-tours/
   - name: noasc
+    displayName: NOASC
     image: /assets/images/company/noasc.png
     url: https://noasc.com/en/
     ja:
       url: https://noasc.com/ja/
   - name: rhythm
+    displayName: Rhythm Japan
     image: /assets/images/company/rhythm.png
     url: https://rhythmjapan.com
     ja:

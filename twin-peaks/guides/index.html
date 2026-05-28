@@ -5,6 +5,36 @@ title: Twin Peaks Bike Park
 subtitle: Authorised Guides
 description: Guiding and instruction at Twin Peaks Bike Park. The companies listed here are authorised by NAMBA to lead tours and lessons in the park.
 ---
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://namba.ngo/twin-peaks/guides/#webpage",
+  "url": "https://namba.ngo/twin-peaks/guides/",
+  "name": "Twin Peaks Bike Park: Authorised Guides",
+  "description": "Guiding and instruction at Twin Peaks Bike Park. The companies listed here are authorised by NAMBA to lead tours and lessons in the park.",
+  "inLanguage": "en",
+  "isPartOf": { "@id": "https://namba.ngo/#website" },
+  "about": { "@id": "https://namba.ngo/#organization" },
+  "mainEntity": { "@id": "https://namba.ngo/twin-peaks/#bikepark" }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Authorised guides at Twin Peaks Bike Park",
+  "itemListElement": [
+    {%- for guide in site.data.guides["twinpeaks"] -%}
+      {%- if guide.displayName -%}
+    { "@type": "ListItem", "position": {{ forloop.index }}, "item": { "@type": "Organization", "name": {{ guide.displayName | jsonify }}, "url": {{ guide.url | jsonify }} } }{%- unless forloop.last %},{% endunless -%}
+      {%- endif -%}
+    {%- endfor %}
+  ]
+}
+</script>
 <style>
   ul.guides {
     margin-top: 40px;
@@ -35,7 +65,7 @@ description: Guiding and instruction at Twin Peaks Bike Park. The companies list
   }
 </style>
 <div class="float-start item-image">
-  <img src="/assets/images/twinpeaks/guides.jpg" alt="" itemprop="image">
+  <img src="/assets/images/twinpeaks/guides.jpg" alt="Guided ride at Twin Peaks Bike Park" itemprop="image">
   <span class="credit"><a href="https://instagram.com/jingypsy" target="_blank"> 📸 Jinya Nishiwaki</a></span>
 </div>
 
@@ -54,7 +84,7 @@ description: Guiding and instruction at Twin Peaks Bike Park. The companies list
 
     <h2>Authorised companies</h2>
 
-    <p>The following companies are authorized to guide or give tours of the Twin Peaks Bike Park. These companies have
+    <p>The following companies are authorised to guide or give tours of <a href="/twin-peaks/">Twin Peaks Bike Park</a>. These companies have
     contributed to the building of the park.</p>
 
     <ul class="guides">
@@ -63,16 +93,16 @@ description: Guiding and instruction at Twin Peaks Bike Park. The companies list
           {% if guide.url %}
           <a href="{{ guide.url }}"
             target="_blank">
-            <img class="img-fluid" src="{{ guide.image }}?d={{ site.time | date: " %s" }}">
+            <img class="img-fluid" src="{{ guide.image }}?d={{ site.time | date: " %s" }}" alt="{{ guide.displayName | default: guide.name }} logo">
           </a>
           {% else %}
-          <img class="img-fluid" src="{{ guide.image }}?d={{ site.time | date: " %s" }}">
+          <img class="img-fluid" src="{{ guide.image }}?d={{ site.time | date: " %s" }}" alt="{{ guide.displayName | default: guide.name }} logo">
           {% endif %}
         </li>
       {% endfor %}
     </ul>
 
-    <h4>Want to see your company listed here?</h4>
+    <h2>Want to see your company listed here?</h2>
     <p>For more information on how to obtain commercial passes for your business, see our <a href="/twin-peaks/commercial-pass/">commercial pass</a> page.</p>
 
   </section>

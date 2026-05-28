@@ -6,6 +6,36 @@ titleHtml: ツインピークス<wbr>バイクパーク
 subtitle: 公認ガイド
 description: ツインピークスバイクパークでのガイドと指導。掲載企業はNAMBA認定で、パーク内でツアーやレッスンを行うことができます。
 ---
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://namba.ngo/ja/twin-peaks/guides/#webpage",
+  "url": "https://namba.ngo/ja/twin-peaks/guides/",
+  "name": "ツインピークスバイクパーク: 公認ガイド",
+  "description": "ツインピークスバイクパークでのガイドと指導。掲載企業はNAMBA認定で、パーク内でツアーやレッスンを行うことができます。",
+  "inLanguage": "ja",
+  "isPartOf": { "@id": "https://namba.ngo/#website" },
+  "about": { "@id": "https://namba.ngo/#organization" },
+  "mainEntity": { "@id": "https://namba.ngo/twin-peaks/#bikepark" }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "ツインピークスバイクパークの公認ガイド",
+  "itemListElement": [
+    {%- for guide in site.data.guides["twinpeaks"] -%}
+      {%- if guide.displayName -%}
+    { "@type": "ListItem", "position": {{ forloop.index }}, "item": { "@type": "Organization", "name": {{ guide.displayName | jsonify }}, "url": {{ guide.url | jsonify }} } }{%- unless forloop.last %},{% endunless -%}
+      {%- endif -%}
+    {%- endfor %}
+  ]
+}
+</script>
 <style>
   ul.guides {
     margin: 0;
@@ -37,7 +67,7 @@ description: ツインピークスバイクパークでのガイドと指導。�
 <div class="float-start item-image">
   <img
     src="/assets/images/twinpeaks/guides.jpg"
-    alt=""
+    alt="ツインピークスバイクパークでのガイドライド"
     itemprop="image">
   <span class="credit">
     <a href="https://instagram.com/jingypsy" target="_blank">
@@ -54,23 +84,23 @@ description: ツインピークスバイクパークでのガイドと指導。�
 
     <h2>認定企業</h2>
 
-    <p>ツインピークスバイクパーク開設に<wbr>伴い、<wbr>多大なる<wbr>貢献を<wbr>してくれた<wbr>以下の<wbr>会社は、<wbr>ツイン ピークス バイク パークの<wbr>ガイドまたは<wbr>ツアーを<wbr>許可されています。</p>
+    <p>ツインピークスバイクパーク開設に<wbr>伴い、<wbr>多大なる<wbr>貢献を<wbr>してくれた<wbr>以下の<wbr>会社は、<a href="/ja/twin-peaks/">ツインピークスバイクパーク</a>の<wbr>ガイドまたは<wbr>ツアーを<wbr>許可されています。</p>
 
     <ul class="guides">
       {% for guide in site.data.guides["twinpeaks"] %}
         <li>
           {% if guide.url %}
             <a href="{% if guide.ja.url %}{{ guide.ja.url }}{% else %}{{ guide.url }}{% endif %}" target="_blank">
-              <img class="img-fluid" src="{{ guide.image }}?d={{ site.time | date: " %s" }}">
+              <img class="img-fluid" src="{{ guide.image }}?d={{ site.time | date: " %s" }}" alt="{{ guide.displayName | default: guide.name }}のロゴ">
             </a>
           {% else %}
-            <img class="img-fluid" src="{{ guide.image }}?d={{ site.time | date: " %s" }}">
+            <img class="img-fluid" src="{{ guide.image }}?d={{ site.time | date: " %s" }}" alt="{{ guide.displayName | default: guide.name }}のロゴ">
           {% endif %}
         </li>
       {% endfor %}
     </ul>
 
-    <h4>あなたの<wbr>会社の<wbr>ロゴも<wbr>認定企業と<wbr>しての<wbr>せませんか？</h4>
+    <h2>あなたの<wbr>会社の<wbr>ロゴも<wbr>認定企業と<wbr>しての<wbr>せませんか？</h2>
     <p>
       商業事業者パスの取得方法・詳細については、<a href="/ja/twin-peaks/commercial-pass/">商業事業者パス</a>
       ページをご参照ください。
