@@ -153,13 +153,13 @@
 // ============================================================
 // Mobile nav overlay accessibility behaviours.
 // Layered on top of the existing open/close handlers. Triggered
-// by mutations to the .off-canvas-open class on .t3-wrapper.
+// by mutations to the .off-canvas-open class on document.body.
 // ============================================================
 (function () {
   'use strict';
 
   document.addEventListener('DOMContentLoaded', function () {
-    var wrapper = document.querySelector('.t3-wrapper');
+    var wrapper = document.body;
     var panel = document.querySelector('#t3-off-canvas');
     var toggle = document.querySelector('.off-canvas-toggle');
     if (!wrapper || !panel || !toggle) return;
