@@ -11,3 +11,4 @@ chrome
 .superpowers/
 _docs/superpowers/
 assets/images/_triage/
+.playwright-mcp/

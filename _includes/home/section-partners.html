@@ -1,0 +1,27 @@
+<!-- _includes/home/section-partners.html: Section 10 -->
+<section class="home-partners fade-up">
+  <div class="container home-partners-wrap">
+    <header class="home-partners-head">
+      <h2 class="home-partners-title">
+        {% if page.lang == "en" %}Our partners
+        {% else %}パートナー
+        {% endif %}
+      </h2>
+      <p class="home-partners-intro">
+        {% if page.lang == "en" %}Every kilometre of <a href="/impact/">NAMBA trail</a> is paid for by partners. Most are local: Niseko's resorts and businesses, plus a handful of mountain bike brands from further out.
+        {% else %}<a href="/ja/impact/">NAMBAの<wbr>すべての<wbr>トレイル</a>は、<wbr>パートナーの<wbr>支援で<wbr>築かれています。<wbr>多くは<wbr>地元の<wbr>ニセコの<wbr>リゾートや<wbr>事業者で、<wbr>世界の<wbr>マウンテンバイク<wbr>ブランドも<wbr>支えています。
+        {% endif %}
+      </p>
+      <p class="home-partners-link">
+        <a href="{% if page.lang == 'ja' %}/ja{% endif %}/partner/">
+          {% if page.lang == "en" %}Partner with NAMBA
+          {% else %}NAMBAの<wbr>パートナーに<wbr>なる
+          {% endif %}
+          <span class="home-more-arrow fa-solid fa-circle-arrow-right"></span>
+        </a>
+      </p>
+    </header>
+  </div>
+
+  {% include partners-wall.html %}
+</section>

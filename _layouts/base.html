@@ -16,7 +16,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <title>{{- page.title }}{% if page.subtitle %}: {{ page.subtitle }}{% endif %} - NAMBA</title>
     {% if page.description %}<meta name="description" content="{{ page.description }}"/>{% endif %}
-    <meta name="robots" content="index, follow, max-image-preview:large"/>
+    <meta name="robots" content="{% if page.noindex %}noindex, nofollow{% else %}index, follow, max-image-preview:large{% endif %}"/>
     <meta property="og:title" content="{{ page.title }}{% if page.subtitle %}: {{ page.subtitle }}{% endif %}"/>
     <meta property="og:type" content="{% if page.layout == 'event' or page.layout == 'competition' %}event{% else %}website{% endif %}"/>
     <meta property="og:image" content="https://namba.ngo{{ page.og.image }}?d={{ site.time | date: "%s" }}"/>
@@ -41,7 +41,7 @@
     {% if page.canonical %}
       <link rel="canonical" href="https://namba.ngo/{{- page.canonical -}}">
       {% if page.redirect %}
-      <meta http-equiv="refresh" content="0;URL='http://namba.ngo/{{- page.canonical -}}'" />
+      <meta http-equiv="refresh" content="0;URL='https://namba.ngo/{{- page.canonical -}}'" />
       {% endif %}
     {% else %}
       <link rel="canonical" href="https://namba.ngo{% if page.lang == 'ja' %}/ja{% endif %}{{ path }}"/>
@@ -248,6 +248,7 @@
       ]
     }
     </script>
+    {% include schema-partners.html %}
     {% endif %}
 
     {% include schema-breadcrumb.html %}
@@ -264,20 +265,12 @@
       {{ content }}
     </div>
 
-    <div id="t3-section-bottom" class="t3-section-wrap wrap">
-
-      {% if path == '' %}
-        <div class="module-title-wrap">
-          <h2 class="module-title" style="color: var(--color-text-light);">{% if page.lang == "en" %}Our Partners{% else %}パートナー{% endif %}</h2>
-        </div>
-        {% include partners-wall.html %}
-
-      {% elsif path0 != 'partner' %}
+    {% if path != '' and path0 != 'partner' %}
+      <div id="t3-section-bottom" class="t3-section-wrap wrap">
         {% include partners-footer.html %}
-      {% endif %}
-
-      <div class="module-title-wrap"></div>
-    </div>
+        <div class="module-title-wrap"></div>
+      </div>
+    {% endif %}
 
     <!-- BACK TOP TOP BUTTON -->
     <div id="back-to-top" class="back-to-top">

@@ -1,0 +1,57 @@
+{%- comment -%}
+  Organization.sponsor JSON-LD — home page only.
+
+  Extends the site-wide #organization node with NAMBA's anchor partners
+  (the `special` and `higuma` tiers in _data/sponsors.yml) so LLMs and
+  search engines can surface them. Search engines merge JSON-LD nodes
+  that share an @id, so this acts as a patch on the base Organization.
+
+  Sponsors that appear in both tiers are deduplicated by name; the
+  special-tier occurrence wins because it carries the partner label.
+  Uses sponsor.ja.url / sponsor.ja.label on the Japanese home page when
+  those variants are defined.
+{%- endcomment -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NonprofitOrganization",
+  "@id": "https://namba.ngo/#organization",
+  "sponsor": [
+{%- assign seen = '' -%}
+{%- assign first = true -%}
+{%- assign tier_names = 'special,higuma' | split: ',' -%}
+{%- for tier_name in tier_names -%}
+  {%- assign tier = site.data.sponsors[tier_name] -%}
+  {%- for sponsor in tier.sponsors -%}
+    {%- assign key = '|' | append: sponsor.name | append: '|' -%}
+    {%- unless seen contains key -%}
+      {%- assign seen = seen | append: key -%}
+      {%- if first %}{%- assign first = false -%}{% else %},{% endif %}
+    {
+      "@type": "Organization",
+      "name": {{ sponsor.name | capitalize | jsonify }}
+      {%- if sponsor.url -%}
+        {%- if page.lang == 'ja' and sponsor.ja.url -%}
+,
+      "url": {{ sponsor.ja.url | jsonify }}
+        {%- else -%}
+,
+      "url": {{ sponsor.url | jsonify }}
+        {%- endif -%}
+      {%- endif -%}
+      {%- if sponsor.label -%}
+        {%- if page.lang == 'ja' and sponsor.ja.label -%}
+,
+      "description": {{ sponsor.ja.label | jsonify }}
+        {%- else -%}
+,
+      "description": {{ sponsor.label | jsonify }}
+        {%- endif -%}
+      {%- endif %}
+    }
+    {%- endunless -%}
+  {%- endfor -%}
+{%- endfor %}
+  ]
+}
+</script>

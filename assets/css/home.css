@@ -892,3 +892,37 @@ html[lang="ja"] .home-jobs-title { letter-spacing: normal; text-transform: none;
 .home-jobs-all { text-align: right; margin-top: 24px; font-size: 13px; max-width: 900px; margin-left: auto; margin-right: auto; }
 .home-jobs-all a { color: #fff; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 200ms ease, color 200ms ease; }
 .home-jobs-all a:hover { color: var(--color-primary); border-color: var(--color-primary); }
+
+/* ── Section 10: Partners ─────────────────────────────────────────── */
+.home-partners {
+  background: var(--color-bg);
+  padding: clamp(56px, 8vh, 100px) 0 clamp(24px, 4vh, 48px);
+  color: var(--color-text);
+}
+.home-partners-head { margin-bottom: 28px; text-align: center; }
+.home-partners-title {
+  font-family: "Fruit Viesta", "Zen Maru Gothic", "Metropolis", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: clamp(22px, 2.8vw, 34px);
+  margin: 0;
+  color: var(--color-text-heading);
+  line-height: 1.05;
+}
+html[lang="ja"] .home-partners-title { letter-spacing: normal; text-transform: none; }
+.home-partners-intro {
+  font-size: clamp(15px, 1.4vw, 18px);
+  line-height: 1.5;
+  margin: 12px auto 0;
+  max-width: 640px;
+  color: var(--color-text-light);
+}
+.home-partners-intro a {
+  color: inherit;
+  border-bottom: 1px solid currentColor;
+  transition: color 200ms ease, border-color 200ms ease;
+}
+.home-partners-intro a:hover { color: var(--color-primary); border-color: var(--color-primary); }
+.home-partners-link { text-align: center; margin: 18px 0 0; font-size: 14px; }
+.home-partners-link a { color: #fff; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 200ms ease, color 200ms ease; }
+.home-partners-link a:hover { color: var(--color-primary); border-color: var(--color-primary); }
