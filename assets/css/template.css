@@ -5149,6 +5149,8 @@ div.modal.fade.in {
 
 @media (max-width: 991px) {
   .languageswitcherload {
+    position: fixed;
+    top: 72px;
     right: 72px;
     border-radius: 10px 0 0 10px;
   }
@@ -5156,6 +5158,7 @@ div.modal.fade.in {
 
 @media (max-width: 767px) {
   .languageswitcherload {
+    top: 36px;
     right: 54px;
   }
 }

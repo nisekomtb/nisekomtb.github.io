@@ -89,7 +89,7 @@ body {
 #t3-off-canvas {
   position: fixed;
   inset: 0;
-  z-index: 99;
+  z-index: 1500;
   background: var(--color-bg);
   color: #ffffff;
   display: flex;
@@ -107,10 +107,11 @@ body {
   transition: opacity 200ms ease-out, visibility 0s linear 0s;
 }
 
-/* The pill in the page header sits above the overlay so the
-   burger/X stays interactive. */
+/* The pill sits above the overlay so the burger/X stays
+   interactive. Pairs with the position:fixed override on
+   .languageswitcherload at <=991px in template.css. */
 .languageswitcherload {
-  z-index: 101;
+  z-index: 2000;
 }
 
 /* ============================================================
