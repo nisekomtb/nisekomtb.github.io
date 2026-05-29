@@ -124,4 +124,52 @@
     line-height: 1;
     color: var(--color-secondary);
   }
+
+  /* Size-chart tables inside product descriptions: mirror the
+   * trails + event-itinerary treatment. The source HTML emits all
+   * cells as <td>, so the first row is styled as the header via
+   * :first-child. Ecwid storefront CSS uses high-specificity
+   * !important rules from a CORS-locked stylesheet, so we match
+   * its prefix (html#ecwid_html body#ecwid_body .ec-size .ec-store)
+   * to win the cascade. */
+  html#ecwid_html body#ecwid_body .ec-size .ec-store table.ecwid-description-table {
+    width: auto !important;
+    max-width: 100% !important;
+    margin: 30px auto 10px !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 3px !important;
+    border-collapse: collapse !important;
+    border-spacing: 0 !important;
+    box-shadow: none !important;
+  }
+
+  html#ecwid_html body#ecwid_body .ec-size .ec-store table.ecwid-description-table td {
+    background-color: var(--color-bg-panel) !important;
+    color: #ffffff !important;
+    text-align: center !important;
+    padding: 10px 8px !important;
+    font-weight: 700 !important;
+    font-size: 14px !important;
+    vertical-align: middle !important;
+    border: 0 !important;
+  }
+
+  html#ecwid_html body#ecwid_body .ec-size .ec-store table.ecwid-description-table td:first-child {
+    padding-left: 20px !important;
+  }
+
+  html#ecwid_html body#ecwid_body .ec-size .ec-store table.ecwid-description-table td:last-child {
+    padding-right: 20px !important;
+  }
+
+  html#ecwid_html body#ecwid_body .ec-size .ec-store table.ecwid-description-table tr:first-child td {
+    background: transparent !important;
+    color: var(--color-accent) !important;
+    font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif !important;
+    font-size: 12px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0 !important;
+    padding: 12px 8px !important;
+    border-bottom: 1px solid var(--color-bg-border) !important;
+  }
 </style>
