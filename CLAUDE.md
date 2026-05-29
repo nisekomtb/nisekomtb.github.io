@@ -58,3 +58,9 @@ already minified (`*.min.css`, `*.min.js`) are skipped.
 2. Confirm the correct `_layout` and any relevant `_includes` before writing markup
 3. Always produce bilingual output — EN first, then JA — unless explicitly told otherwise
 4. Reference `_docs/marketing-strategy.md` when creating or structuring new content pages
+
+## Shop (Ecwid)
+
+Products are managed in Ecwid, not the repo. When Tom adds new products, run the
+audit + alt-text + JA-translation workflow in `_docs/ecwid-product-alts.md`. The
+CLI is `_scripts/ecwid-helpers.py` and uses `ECWID_TOKEN` from `.env` (gitignored).
