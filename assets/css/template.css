@@ -325,7 +325,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: "Metropolis", Helvetica, Arial, sans-serif;
+  font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
   font-weight: 300;
   line-height: 1.33;
   color: #ffffff;
@@ -417,7 +417,7 @@ h6 .small,
 
 h1,
 .h1 {
-  font-family: "Fruit Viesta", "Zen Maru Gothic", "Metropolis", Helvetica, Arial, sans-serif;
+  font-family: "Fruit Viesta", "Zen Maru Gothic", "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 500;
   font-size: 80px;
@@ -2074,7 +2074,7 @@ input.invalid {
   background-color: var(--color-bg-input);
   border-radius: 3px;
   font-size: 12px;
-  font-family: "Metropolis", Helvetica, Arial, sans-serif;
+  font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
   font-weight: 700;
   float: right;
   text-transform: uppercase;
@@ -2135,7 +2135,7 @@ input.invalid {
 .navbar-default .navbar-nav>li>span {
   color: rgba(255, 255, 255, 0.8);
   cursor: pointer;
-  font-family: "Metropolis", Helvetica, Arial, sans-serif;
+  font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
   font-weight: 500;
   padding-left: 0;
   padding-right: 0;
@@ -2384,7 +2384,7 @@ input.invalid {
   background: transparent;
   color: var(--color-accent);
   font-size: 18px;
-  font-family: "Metropolis", Helvetica, Arial, sans-serif;
+  font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
   font-weight: 500;
   text-transform: uppercase;
   margin: 0 0 24px 0;
@@ -2416,7 +2416,7 @@ input.invalid {
 .park-sidebar-panel .detail-item h3 {
   color: var(--color-accent);
   font-size: 11px;
-  font-family: "Metropolis", Helvetica, Arial, sans-serif;
+  font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -5661,7 +5661,7 @@ a.list-group-item.active:focus .list-group-item-text {
 .list-group-item-heading {
   color: var(--color-accent);
   font-size: 11px;
-  font-family: "Metropolis", Helvetica, Arial, sans-serif;
+  font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -5960,7 +5960,7 @@ div.t3-wrapper {
 }
 
 .headright .mod-languages {
-  font-family: "Metropolis", Helvetica, Arial, sans-serif;
+  font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
 }
 
 .headright .mod-languages img {
@@ -6071,7 +6071,7 @@ div.t3-wrapper {
 .sub-heading {
   color: #ffffff;
   font-size: 36px;
-  font-family: "Metropolis", Helvetica, Arial, sans-serif;
+  font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
   font-weight: 300;
   line-height: 1.5;
   letter-spacing: -2px;
@@ -7344,7 +7344,7 @@ joomla-field-custom.field-custom-wrapper .input-group .input-group-btn .btn span
   background-color: var(--color-bg-panel);
   color: #fff;
   box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
-  font: 700 18px/1 "Metropolis", Helvetica, Arial, sans-serif;
+  font: 700 18px/1 "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
   text-shadow: 0 1px 1px rgba(0, 0, 0, .2);
   text-transform: uppercase;
   text-align: center;
@@ -7543,7 +7543,7 @@ joomla-field-custom.field-custom-wrapper .input-group .input-group-btn .btn span
   font-size: 220%;
   line-height: 1;
   margin-bottom: 10px;
-  font-family: "Metropolis", Helvetica, Arial, sans-serif;
+  font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
   letter-spacing: -0.5px;
 }
 .journey-head { color: #ffffff; font-size: 115%; font-weight: 700; margin-bottom: 8px; line-height: 1.3; }
@@ -7777,7 +7777,7 @@ joomla-field-custom.field-custom-wrapper .input-group .input-group-btn .btn span
   flex: 1;
 }
 .event-card-date {
-  font-family: "Metropolis", Helvetica, Arial, sans-serif;
+  font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
   font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -7787,7 +7787,7 @@ joomla-field-custom.field-custom-wrapper .input-group .input-group-btn .btn span
 }
 :lang(ja) .event-card-date { letter-spacing: normal; text-transform: none; }
 .event-card-title {
-  font-family: "Metropolis", Helvetica, Arial, sans-serif;
+  font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
   font-size: 17px;
   font-weight: 500;
   line-height: 1.3;

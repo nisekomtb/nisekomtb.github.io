@@ -101,7 +101,7 @@ masthead:
       var allocation = {{ site.data.impact.funding.allocation | jsonify }};
 
       Chart.defaults.color = '#aaaaaa';
-      Chart.defaults.font.family = '"Metropolis", Helvetica, Arial, sans-serif';
+      Chart.defaults.font.family = '"Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif';
 
       new Chart(document.getElementById('chart-membership-allocation'), {
         type: 'doughnut',

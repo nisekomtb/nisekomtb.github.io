@@ -213,7 +213,7 @@ body {
   font-weight: 800;
   color: var(--color-accent);
   margin: 0 0 6px;
-  font-family: "Metropolis", Helvetica, Arial, sans-serif;
+  font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
 }
 
 /* Solo sections (no children, e.g. Events) — the title IS the

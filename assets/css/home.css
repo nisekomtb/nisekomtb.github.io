@@ -10,7 +10,7 @@
 
 /* Shared section title (Fruit Viesta uppercase to match site h1 voice). */
 .home-section-title {
-  font-family: "Fruit Viesta", "Zen Maru Gothic", "Metropolis", Helvetica, Arial, sans-serif;
+  font-family: "Fruit Viesta", "Zen Maru Gothic", "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 500;
   line-height: 1.05;
@@ -84,7 +84,7 @@ html[lang="ja"] .home-section-title { letter-spacing: normal; }
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   color: rgba(255, 255, 255, 0.85);
-  font-family: "Metropolis", Helvetica, Arial, sans-serif;
+  font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 1.2px;
@@ -144,7 +144,7 @@ html[lang="ja"] .home-hero-loader-label { letter-spacing: 0.5px; }
    so the H1 keyword phrase reads as the visual headline while the brand
    identity stays present right above it. */
 .home-hero-kicker {
-  font-family: "Metropolis", Helvetica, Arial, sans-serif;
+  font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
   font-size: clamp(10px, 1.04vw + 2px, 17px);
   font-weight: 600;
   letter-spacing: 2px;
@@ -336,7 +336,7 @@ a:hover > .home-more-arrow { margin-left: 12px; }
   text-align: left;
 }
 .home-network-title {
-  font-family: "Fruit Viesta", "Zen Maru Gothic", "Metropolis", Helvetica, Arial, sans-serif;
+  font-family: "Fruit Viesta", "Zen Maru Gothic", "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 500;
   font-size: clamp(28px, 4vw, 56px);
@@ -479,7 +479,7 @@ html[lang="ja"] .home-network-title { letter-spacing: normal; text-transform: no
   font-weight: 700;
   font-size: 120%;
   line-height: 1;
-  font-family: "Metropolis", Helvetica, Arial, sans-serif;
+  font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
   letter-spacing: -0.3px;
 }
 .home-network-km {
@@ -487,7 +487,7 @@ html[lang="ja"] .home-network-title { letter-spacing: normal; text-transform: no
   font-size: 14px;
   font-weight: 600;
   line-height: 1;
-  font-family: "Metropolis", Helvetica, Arial, sans-serif;
+  font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
   white-space: nowrap;
 }
 .home-network-km-label {
@@ -512,7 +512,7 @@ html[lang="ja"] .home-network-title { letter-spacing: normal; text-transform: no
 .home-network-row[data-state="current"] .home-network-now { opacity: 1; }
 .home-network-card-head {
   color: #fff;
-  font-family: "Metropolis", Helvetica, Arial, sans-serif;
+  font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
   font-size: clamp(15px, 1.3vw, 18px);
   font-weight: 500;
   line-height: 1.3;
@@ -538,7 +538,7 @@ html[lang="ja"] .home-network-title { letter-spacing: normal; text-transform: no
 }
 .home-network-parks-head { margin-bottom: 36px; text-align: center; }
 .home-network-parks-title {
-  font-family: "Fruit Viesta", "Zen Maru Gothic", "Metropolis", Helvetica, Arial, sans-serif;
+  font-family: "Fruit Viesta", "Zen Maru Gothic", "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 500;
   font-size: clamp(26px, 3.5vw, 44px);
@@ -639,7 +639,7 @@ html[lang="ja"] .home-network-parks-title { letter-spacing: normal; text-transfo
 }
 .home-impact-head { text-align: center; margin-bottom: 64px; }
 .home-impact-title {
-  font-family: "Fruit Viesta", "Zen Maru Gothic", "Metropolis", Helvetica, Arial, sans-serif;
+  font-family: "Fruit Viesta", "Zen Maru Gothic", "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 500;
   font-size: clamp(26px, 3.5vw, 44px);
@@ -678,7 +678,7 @@ html[lang="ja"] .home-impact-title { letter-spacing: normal; text-transform: non
   height: 100%; /* stretch to the col's height for equal-height cards */
 }
 .home-impact-num {
-  font-family: "Metropolis", Helvetica, Arial, sans-serif;
+  font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
   font-size: clamp(28px, 2.8vw, 44px);
   font-weight: 700;
   color: var(--color-accent);
@@ -697,7 +697,7 @@ html[lang="ja"] .home-impact-title { letter-spacing: normal; text-transform: non
 }
 .home-impact-lbl {
   margin-top: 10px;
-  font-family: "Metropolis", Helvetica, Arial, sans-serif;
+  font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
   font-size: clamp(13px, 1vw, 15px);
   font-weight: 400;
   line-height: 1.4;
@@ -727,7 +727,7 @@ html[lang="ja"] .home-impact-title { letter-spacing: normal; text-transform: non
 }
 .home-events-head { text-align: center; margin-bottom: 36px; }
 .home-events-title {
-  font-family: "Fruit Viesta", "Zen Maru Gothic", "Metropolis", Helvetica, Arial, sans-serif;
+  font-family: "Fruit Viesta", "Zen Maru Gothic", "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 500;
   font-size: clamp(26px, 3.5vw, 44px);
@@ -759,7 +759,7 @@ html[lang="ja"] .home-events-title { letter-spacing: normal; text-transform: non
 }
 .home-stories-head { text-align: left; margin-bottom: 36px; }
 .home-stories-title {
-  font-family: "Fruit Viesta", "Zen Maru Gothic", "Metropolis", Helvetica, Arial, sans-serif;
+  font-family: "Fruit Viesta", "Zen Maru Gothic", "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 500;
   font-size: clamp(26px, 3.5vw, 44px);
@@ -838,7 +838,7 @@ html[lang="ja"] .home-stories-title { letter-spacing: normal; text-transform: no
 }
 .home-feature-quote p {
   margin: 0;
-  font-family: "Metropolis", Helvetica, Arial, sans-serif;
+  font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
   font-weight: 300;
   font-size: clamp(24px, 2.8vw, 40px);
   line-height: 1.35;
@@ -877,7 +877,7 @@ html[lang="ja"] .home-stories-title { letter-spacing: normal; text-transform: no
 }
 .home-action-inner { max-width: 480px; width: 100%; margin: 0 auto; }
 .home-action-title {
-  font-family: "Fruit Viesta", "Zen Maru Gothic", "Metropolis", Helvetica, Arial, sans-serif;
+  font-family: "Fruit Viesta", "Zen Maru Gothic", "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 500;
   font-size: clamp(32px, 4vw, 56px);
@@ -922,7 +922,7 @@ html[lang="ja"] .home-action-title { letter-spacing: normal; text-transform: non
 }
 .home-jobs-head { margin-bottom: 24px; text-align: center; }
 .home-jobs-title {
-  font-family: "Fruit Viesta", "Zen Maru Gothic", "Metropolis", Helvetica, Arial, sans-serif;
+  font-family: "Fruit Viesta", "Zen Maru Gothic", "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 500;
   font-size: clamp(22px, 2.8vw, 34px);
@@ -951,7 +951,7 @@ html[lang="ja"] .home-jobs-title { letter-spacing: normal; text-transform: none;
 }
 .home-partners-head { margin-bottom: 28px; text-align: center; }
 .home-partners-title {
-  font-family: "Fruit Viesta", "Zen Maru Gothic", "Metropolis", Helvetica, Arial, sans-serif;
+  font-family: "Fruit Viesta", "Zen Maru Gothic", "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 500;
   font-size: clamp(22px, 2.8vw, 34px);

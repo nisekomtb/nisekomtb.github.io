@@ -13,7 +13,7 @@ og:
     padding: 30px 0;
   }
   .stat-card .stat-number {
-    font-family: "Metropolis", Helvetica, Arial, sans-serif;
+    font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
     font-size: 350%;
     font-weight: 700;
     color: var(--color-accent);
@@ -51,7 +51,7 @@ og:
   .funding-stat h4 { color: var(--color-accent); margin-bottom: 5px; }
 
   .chart-glossary { margin: 28px auto 0 auto; font-size: 85%; line-height: 1.5; text-align: left; padding: 0 8px; }
-  .chart-glossary dt { color: var(--color-accent); font-weight: 700; margin-top: 14px; font-family: "Metropolis", Helvetica, Arial, sans-serif; }
+  .chart-glossary dt { color: var(--color-accent); font-weight: 700; margin-top: 14px; font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif; }
   .chart-glossary dt:first-child { margin-top: 0; }
   .chart-glossary dd { margin: 4px 0 0 0; color: #cccccc; }
   .chart-row { align-items: flex-start; }
@@ -342,7 +342,7 @@ og:
   // Chart.js dark theme defaults
   Chart.defaults.color = '#aaaaaa';
   Chart.defaults.borderColor = 'rgba(255,255,255,0.08)';
-  Chart.defaults.font.family = '"Metropolis", Helvetica, Arial, sans-serif';
+  Chart.defaults.font.family = '"Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif';
 
   // Colour palette
   const colours = {

@@ -382,7 +382,7 @@
   background: transparent;
   color: #ffffff;
   font-size: 14px;
-  font-family: "Metropolis", Helvetica, Arial, sans-serif;
+  font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
   font-weight: 700;
   line-height: normal;
   text-transform: uppercase;
@@ -542,7 +542,7 @@
   background: transparent;
   color: #ffffff;
   font-size: 14px;
-  font-family: "Metropolis", Helvetica, Arial, sans-serif;
+  font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
   font-weight: 700;
   line-height: normal;
   text-transform: uppercase;
