@@ -268,6 +268,14 @@ og:
     border-color: var(--color-secondary) !important;
   }
 
+  /* Nudge the card up on hover, matching .event-card / .ride-card. */
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .grid-product {
+    transition: transform 200ms ease !important;
+  }
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .grid-product:hover {
+    transform: translateY(-2px) !important;
+  }
+
   /* Image link gets relative positioning so we can layer the gradient */
   html#ecwid_html body#ecwid_body .ec-size .ec-store .grid-product__image {
     position: relative !important;
@@ -287,12 +295,15 @@ og:
     z-index: 2;
   }
 
-  /* Disable hover-zoom on product image (keep the second-image swap) */
+  /* Disable hover-zoom on product image (keep the second-image swap).
+     Scope the substring match to BEM child elements (grid-product__image,
+     grid-product__picture, etc.) so it doesn't accidentally catch the
+     outer card via modifier classes like grid-product--has-additional-image. */
   #store img,
   #store picture,
-  #store [class*="grid-product"][class*="image"],
-  #store [class*="grid-product"][class*="picture"],
-  #store [class*="grid-product"][class*="pic"] {
+  #store [class*="grid-product__image"],
+  #store [class*="grid-product__picture"],
+  #store [class*="grid-product__pic"] {
     transform: none !important;
     scale: none !important;
   }
