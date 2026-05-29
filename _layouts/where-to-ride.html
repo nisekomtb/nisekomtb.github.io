@@ -519,7 +519,8 @@ layout: base
         <img
           class="tp-logo"
           src="{{ park_data.logo }}?d={{ site.time | date: '%s' }}"
-          alt="{% if page.lang == 'ja' %}{{ park_data.ja.name | default: park_data.name }}{% else %}{{ park_data.name }}{% endif %}" />
+          alt="{% if page.lang == 'ja' %}{{ park_data.ja.name | default: park_data.name }}{% else %}{{ park_data.name }}{% endif %}"
+          width="200" height="124" />
         {% endif %}
         <h2 class="module-title">{% if page.lang == "ja" %}基本データ{% else %}Key stats{% endif %}</h2>
         {% include park-stats.html data_key=page.trail_data_key %}
@@ -536,13 +537,15 @@ layout: base
                 <img src="{{ p.img }}"
                   alt="{{ partner_label }}"
                   title="{{ partner_label }}"
-                  loading="lazy">
+                  loading="lazy"
+                  width="56" height="56">
               </a>
               {% else %}
               <img src="{{ p.img }}"
                 alt="{{ partner_label }}"
                 title="{{ partner_label }}"
-                loading="lazy">
+                loading="lazy"
+                width="56" height="56">
               {% endif %}
             {% endfor %}
           </div>

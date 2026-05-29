@@ -2488,8 +2488,9 @@ table.trails .dicon_small.dblack.is-double-black {
 }
 
 .park-sidebar-panel .partners-imgs img {
-  max-height: 56px;
-  max-width: 56px;
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
 }
 
 @media (max-width: 1199px) {
@@ -2498,8 +2499,9 @@ table.trails .dicon_small.dblack.is-double-black {
   }
 
   .park-sidebar-panel .partners-imgs img {
-    max-height: 48px;
-    max-width: 48px;
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
   }
 }
 
