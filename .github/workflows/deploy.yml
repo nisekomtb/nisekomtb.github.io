@@ -1,0 +1,125 @@
+name: Build and deploy to GitHub Pages
+
+# Replaces the default GitHub Pages Jekyll builder so we can add a
+# minification step after Jekyll builds the site. To use this workflow,
+# repo Settings → Pages → "Build and deployment" must be set to
+# "Source: GitHub Actions".
+#
+# Pipeline:
+#   1. Build the site with Jekyll (same Gemfile, JEKYLL_ENV=production)
+#   2. Minify every non-vendor CSS file in _site via lightningcss-cli
+#   3. Minify every non-vendor JS file in _site via terser
+#   4. Collapse whitespace + strip comments from every HTML file via
+#      html-minifier-terser (conservative settings — no inline JS/CSS
+#      minification because we already minified the linked files and
+#      collapsing inline script content is risky)
+#   5. Upload the minified _site/ as the Pages artifact and deploy
+#
+# We never minify the source files in the repo. Source CSS/JS/HTML
+# stays readable and editable; minification happens at deploy time.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Only one deploy in flight at a time; queue subsequent pushes.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Install minifier deps
+        run: npm ci
+
+      - name: Build Jekyll
+        env:
+          JEKYLL_ENV: production
+        run: bundle exec jekyll build --trace
+
+      - name: Minify CSS
+        # Skip anything already named *.min.css (vendor bundles).
+        run: |
+          set -euo pipefail
+          mapfile -t css_files < <(find _site -type f -name '*.css' ! -name '*.min.css')
+          echo "Minifying ${#css_files[@]} CSS files"
+          for f in "${css_files[@]}"; do
+            npx --no-install lightningcss --minify --error-recovery --browserslist "$f" -o "$f.tmp"
+            mv "$f.tmp" "$f"
+          done
+
+      - name: Minify JS
+        # Skip *.min.js (vendor bundles) and any node_modules that leaked in.
+        run: |
+          set -euo pipefail
+          mapfile -t js_files < <(find _site -type f -name '*.js' ! -name '*.min.js' ! -path '*/node_modules/*')
+          echo "Minifying ${#js_files[@]} JS files"
+          for f in "${js_files[@]}"; do
+            npx --no-install terser "$f" -c -m -o "$f"
+          done
+
+      - name: Minify HTML
+        # Conservative settings: collapse whitespace, drop HTML comments,
+        # tidy redundant attributes. Do not touch inline <script> or
+        # <style> content (already minified upstream) and do not strip
+        # quotes (some browsers care, and the savings are marginal).
+        run: |
+          set -euo pipefail
+          mapfile -t html_files < <(find _site -type f -name '*.html')
+          echo "Minifying ${#html_files[@]} HTML files"
+          for f in "${html_files[@]}"; do
+            npx --no-install html-minifier-terser \
+              --collapse-whitespace \
+              --conservative-collapse \
+              --remove-comments \
+              --remove-redundant-attributes \
+              --remove-script-type-attributes \
+              --remove-style-link-type-attributes \
+              --use-short-doctype \
+              -o "$f" "$f"
+          done
+
+      - name: Show build size
+        run: du -sh _site
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
