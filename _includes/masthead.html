@@ -1,6 +1,14 @@
 <!-- MASTHEAD -->
 {% assign masthead_img = page.masthead.img | default: "/assets/images/bg/bg-header.jpg" %}
 {% assign masthead_widths = page.masthead.widths | default: "800,1600" %}
+{% comment %}
+  Default to 3:2 (the source aspect of nearly every masthead image). Pages
+  with a different aspect can override via `masthead.width` + `masthead.height`
+  in front matter. CSS forces object-fit: cover, so these attrs only feed
+  Lighthouse's aspect-ratio reservation, not visual layout.
+{% endcomment %}
+{% assign masthead_width = page.masthead.width | default: 1600 %}
+{% assign masthead_height = page.masthead.height | default: 1067 %}
 <div class="wrap t3-masthead">
   <div class="ja-masthead">
     <div class="ja-masthead-bg" aria-hidden="true">
@@ -8,6 +16,8 @@
          src=masthead_img
          alt=""
          widths=masthead_widths
+         width=masthead_width
+         height=masthead_height
          sizes="100vw"
          loading="eager"
          attrs='fetchpriority="high" decoding="async"' %}

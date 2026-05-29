@@ -19,6 +19,9 @@
 
   Optional params:
     class, style, sizes (default "100vw"), loading (default "lazy").
+    width + height — natural dimensions of the source image (any units, e.g.
+      1600 x 1067). Set both so the browser can reserve aspect-ratio space and
+      pass Lighthouse `unsized-images`. CSS still drives display sizing.
     attrs — raw passthrough for extra attributes on <img> (e.g. data-* hooks).
   Use loading="eager" for above-the-fold imagery.
 {% endcomment %}
@@ -31,5 +34,5 @@
 {% endif %}
 <picture>
   {% if include.widths %}<source srcset="{{ srcset }}" sizes="{{ include.sizes | default: '100vw' }}" type="image/webp">{% else %}<source srcset="{{ base_webp }}" type="image/webp">{% endif %}
-  <img src="{{ include.src }}" alt="{{ include.alt }}" loading="{{ include.loading | default: 'lazy' }}"{% if include.class %} class="{{ include.class }}"{% endif %}{% if include.style %} style="{{ include.style }}"{% endif %}{% if include.attrs %} {{ include.attrs }}{% endif %} />
+  <img src="{{ include.src }}" alt="{{ include.alt }}" loading="{{ include.loading | default: 'lazy' }}"{% if include.width %} width="{{ include.width }}"{% endif %}{% if include.height %} height="{{ include.height }}"{% endif %}{% if include.class %} class="{{ include.class }}"{% endif %}{% if include.style %} style="{{ include.style }}"{% endif %}{% if include.attrs %} {{ include.attrs }}{% endif %} />
 </picture>
