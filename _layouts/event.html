@@ -179,9 +179,11 @@ layout: base
     margin-bottom: 12px;
   }
 
-  table.timetable td:first-child {
+  table.timetable td:first-child,
+  table.timetable th:first-child {
     width: 120px;
     white-space: nowrap;
+    text-align: right;
   }
 
   table.timetable th,
@@ -197,16 +199,8 @@ layout: base
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0;
-    padding: 12px 10px 12px 0;
-  }
-
-  table.timetable th.fst {
-    text-align: right;
-    display: none;
-  }
-
-  table.timetable th.row {
-    text-align: center;
+    text-align: left;
+    padding: 12px 15px;
   }
 
   table.timetable tr.cancelled {
@@ -216,26 +210,24 @@ layout: base
 
   table.timetable td {
     background-color: var(--color-bg-panel);
-    text-align: center;
+    text-align: left;
     padding: 10px 15px;
     font-weight: 700;
   }
 
-  @media(min-width: 600px) {
-    table.timetable td {
-      padding: 10px 15px;
-    }
-  }
-
   @media(min-width: 768px) {
+    table.timetable th,
     table.timetable td {
-      padding: 10px 30px;
+      padding-left: 30px;
+      padding-right: 30px;
     }
   }
 
   @media(min-width: 992px) {
+    table.timetable th,
     table.timetable td {
-      padding: 10px 50px;
+      padding-left: 50px;
+      padding-right: 50px;
     }
   }
 
@@ -400,7 +392,7 @@ layout: base
           </p>
           {% endif %}
           <table class="timetable">
-            <thead class="visually-hidden">
+            <thead>
               <tr>
                 <th scope="col">{% if page.lang == "en" %}Time{% else %}時間{% endif %}</th>
                 <th scope="col">{% if page.lang == "en" %}Activity{% else %}内容{% endif %}</th>
