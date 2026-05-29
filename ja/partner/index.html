@@ -56,18 +56,28 @@ masthead:
     padding: 10px 15px;
     font-weight: 700;
   }
-  table.levels td .font-icon span:before {
+  table.levels .hd .font-icon span:before {
     font-size: 36px;
     color: var(--color-secondary);
     display: inline-block;
     line-height: 1.2;
     text-indent: 1px;
   }
-  table.levels td.hd {
+  table.levels .hd {
     background-color: var(--color-bg);
   }
-  table.levels td h4 {
+  table.levels .hd h4 {
     font-weight: 500;
+  }
+  table.levels th.hd {
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    text-transform: none;
+    letter-spacing: normal;
+    font-weight: 700;
+    text-align: center;
+    padding: 10px 15px;
   }
   table.levels td strong {
     font-weight: 900;
@@ -98,19 +108,21 @@ masthead:
   }
 
   @media(min-width: 768px) {
-    table.levels td {
+    table.levels td,
+    table.levels th.hd {
       padding: 10px 30px;
     }
-    table.levels td .font-icon span:before {
+    table.levels .hd .font-icon span:before {
       font-size: 46px;
     }
   }
 
   @media(min-width: 992px) {
-    table.levels td {
+    table.levels td,
+    table.levels th.hd {
       padding: 10px 50px;
     }
-    table.levels td .font-icon span:before {
+    table.levels .hd .font-icon span:before {
       font-size: 56px;
     }
   }
@@ -415,61 +427,61 @@ masthead:
         <table class="levels">
           <tbody>
             <tr>
-              <th class="fst">
+              <th class="fst" scope="row">
                 <h4>&nbsp;</h4>
               </th>
-              <td class="hd">
+              <th scope="col" class="hd">
                 <div class="font-icon">
                   <img
                     style="width:100px;"
                     alt="Tanuki"
                     src="/assets/images/ico/tanuki.500.png" />
                 </div>
-              </td>
-              <td class="hd">
+              </th>
+              <th scope="col" class="hd">
                 <div class="font-icon">
                   <img
                     style="width:100px;"
                     alt="Shika"
                     src="/assets/images/ico/shika.500.png" />
                 </div>
-              </td>
-              <td class="hd">
+              </th>
+              <th scope="col" class="hd">
                 <div class="font-icon">
                   <img
                     style="width:100px;"
                     alt="Higuma"
                     src="/assets/images/ico/higuma.500.png" />
                 </div>
-              </td>
-              <td class="hd">
+              </th>
+              <th scope="col" class="hd">
                 <div class="font-icon">
                   <span class="fa-solid fa-route" style="font-size:80px; color:var(--color-secondary);"></span>
                 </div>
-              </td>
+              </th>
             </tr>
             <tr>
-              <th class="fst">
+              <th class="fst" scope="row">
                 <h4>&nbsp;</h4>
               </th>
-              <td class="hd">
+              <th scope="col" class="hd">
                 <h4>狸</h4>
-              </td>
-              <td class="hd">
+              </th>
+              <th scope="col" class="hd">
                 <h4>鹿</h4>
-              </td>
-              <td class="hd">
+              </th>
+              <th scope="col" class="hd">
                 <h4>羆</h4>
-              </td>
-              <td class="hd">
+              </th>
+              <th scope="col" class="hd">
                 <h4>トレイル</h4>
-              </td>
+              </th>
             </tr>
             <tr>
               <th class="row" colspan="5">年間費用</th>
             </tr>
             <tr>
-              <th class="fst">年間費用</th>
+              <th class="fst" scope="row">年間費用</th>
               <td>&yen;50,000</td>
               <td>&yen;250,000</td>
               <td>&yen;500,000+</td>
@@ -479,7 +491,7 @@ masthead:
               <th class="row" colspan="5">枠数</th>
             </tr>
             <tr>
-              <th class="fst">枠数</th>
+              <th class="fst" scope="row">枠数</th>
               <td>無制限</td>
               <td>無制限</td>
               <td><strong>15</strong></td>
@@ -489,7 +501,7 @@ masthead:
               <th class="row" colspan="5">NAMBAホームページにロゴ掲載</th>
             </tr>
             <tr>
-              <th class="fst">NAMBAホームページにロゴ掲載</th>
+              <th class="fst" scope="row">NAMBAホームページにロゴ掲載</th>
               <td>&check;</td>
               <td>&check;</td>
               <td>&check;</td>
@@ -499,7 +511,7 @@ masthead:
               <th class="row" colspan="5">選定マーケティング資料にロゴ掲載</th>
             </tr>
             <tr>
-              <th class="fst">選定マーケティング資料にロゴ掲載</th>
+              <th class="fst" scope="row">選定マーケティング資料にロゴ掲載</th>
               <td class="none"></td>
               <td>&check;</td>
               <td>&check;</td>
@@ -509,7 +521,7 @@ masthead:
               <th class="row" colspan="5">トレイル入口・イベントスポンサーバナーにロゴ掲載</th>
             </tr>
             <tr>
-              <th class="fst">トレイル入口・イベントスポンサーバナーにロゴ掲載</th>
+              <th class="fst" scope="row">トレイル入口・イベントスポンサーバナーにロゴ掲載</th>
               <td class="none"></td>
               <td>&check;</td>
               <td>&check;</td>
@@ -519,7 +531,7 @@ masthead:
               <th class="row" colspan="5">NAMBAウェブサイトバナーにロゴ掲載</th>
             </tr>
             <tr>
-              <th class="fst">NAMBAウェブサイトバナーにロゴ掲載</th>
+              <th class="fst" scope="row">NAMBAウェブサイトバナーにロゴ掲載</th>
               <td class="none"></td>
               <td class="none"></td>
               <td>&check;</td>
@@ -529,7 +541,7 @@ masthead:
               <th class="row" colspan="5">年間SNS紹介</th>
             </tr>
             <tr>
-              <th class="fst">年間SNS紹介</th>
+              <th class="fst" scope="row">年間SNS紹介</th>
               <td class="none"></td>
               <td class="none"></td>
               <td>&check;</td>
@@ -539,7 +551,7 @@ masthead:
               <th class="row" colspan="5">複数の大型トレイル入口看板にブランドロゴ掲載</th>
             </tr>
             <tr>
-              <th class="fst">複数の大型トレイル入口看板にブランドロゴ掲載</th>
+              <th class="fst" scope="row">複数の大型トレイル入口看板にブランドロゴ掲載</th>
               <td class="none"></td>
               <td class="none"></td>
               <td>&check;</td>
@@ -549,7 +561,7 @@ masthead:
               <th class="row" colspan="5">トレイル標識にブランドロゴ掲載（500mごと）</th>
             </tr>
             <tr>
-              <th class="fst">トレイル標識にブランドロゴ掲載（500mごと）</th>
+              <th class="fst" scope="row">トレイル標識にブランドロゴ掲載（500mごと）</th>
               <td class="none"></td>
               <td class="none"></td>
               <td class="none"></td>
@@ -559,7 +571,7 @@ masthead:
               <th class="row" colspan="5">SNSテイクオーバー発表</th>
             </tr>
             <tr>
-              <th class="fst">SNSテイクオーバー発表</th>
+              <th class="fst" scope="row">SNSテイクオーバー発表</th>
               <td class="none"></td>
               <td class="none"></td>
               <td class="none"></td>
@@ -569,7 +581,7 @@ masthead:
               <th class="row" colspan="5">コマーシャルオペレーターパス付帯</th>
             </tr>
             <tr>
-              <th class="fst">コマーシャルオペレーターパス付帯</th>
+              <th class="fst" scope="row">コマーシャルオペレーターパス付帯</th>
               <td class="none"></td>
               <td class="none"></td>
               <td class="none"></td>
