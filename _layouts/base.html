@@ -53,6 +53,12 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/ico/apple-touch-icon.png?d={{ build }}"/>
     <link rel="shortcut icon" href="/assets/images/ico/favicon.ico?d={{ build }}"/>
 
+    <!-- Preload Metropolis Medium (used by every masthead H1) so the font
+         arrives early enough to render before first paint, cutting the
+         font-swap CLS window. Regular/light/bold are not preloaded - they
+         are usually below the fold and load in parallel anyway. -->
+    <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/metropolis/metropolis-medium-webfont.woff2?d={{ build }}" crossorigin/>
+
     <link href="/assets/css/bootstrap.min.css?d={{ build }}" rel="stylesheet" type="text/css"/>
     <link href="/assets/css/bs3-compat.css?d={{ build }}" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="/assets/fonts/font-awesome/css/all.min.css?d={{ build }}" media="print" onload="this.media='all'"/>
