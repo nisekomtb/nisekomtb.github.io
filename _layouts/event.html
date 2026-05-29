@@ -400,6 +400,16 @@ layout: base
           </p>
           {% endif %}
           <table class="timetable">
+            <thead class="visually-hidden">
+              <tr>
+                <th scope="col">{% if page.lang == "en" %}Time{% else %}時間{% endif %}</th>
+                <th scope="col">{% if page.lang == "en" %}Activity{% else %}内容{% endif %}</th>
+                {% if day.hasLocations %}
+                <th scope="col">{% if page.lang == "en" %}Location{% else %}場所{% endif %}</th>
+                {% endif %}
+              </tr>
+            </thead>
+            <tbody>
             {% for event in day.events %}
             <tr {% if event.cancelled %} class="cancelled" {% endif %}>
               <td>{{ event.time | default: '~' }}</td>
@@ -417,6 +427,7 @@ layout: base
               {% endif %}
             </tr>
             {% endfor %}
+            </tbody>
           </table>
         {% endfor %}
         {% endif %}
