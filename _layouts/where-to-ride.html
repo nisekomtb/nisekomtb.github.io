@@ -179,16 +179,26 @@ layout: base
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0;
-    padding: 12px 10px 12px 0;
-  }
-
-  table.trails th.fst {
-    text-align: right;
-    display: none;
-  }
-
-  table.trails th.row {
     text-align: center;
+    padding: 12px 0;
+    border: 0;
+    border-bottom: 1px solid var(--color-bg-border);
+  }
+
+  table.trails th:first-child {
+    padding-left: 20px;
+  }
+
+  table.trails th:last-child {
+    padding-right: 20px;
+  }
+
+  table.trails th.left {
+    text-align: left;
+  }
+
+  table.trails th.right {
+    text-align: right;
   }
 
   table.trails td {
