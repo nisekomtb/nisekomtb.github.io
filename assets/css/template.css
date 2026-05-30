@@ -2458,6 +2458,30 @@ input.invalid {
 .status-pill.is-current { background: var(--color-accent); }
 .status-pill.is-future  { background: var(--color-text-light); color: #333; }
 
+.media-narrow {
+  max-width: 900px;
+  margin: 20px auto;
+}
+
+.media-narrow.is-tight {
+  margin: 0 auto;
+}
+
+.img-fluid-rounded {
+  width: 100%;
+  height: auto;
+  border-radius: 3px;
+  display: block;
+}
+
+.img-fluid-rounded.is-spaced {
+  margin: 18px 0 36px;
+}
+
+.img-fluid-rounded.is-top-spaced {
+  margin: 18px 0 0;
+}
+
 .module-title {
   background: transparent;
   color: var(--color-accent);

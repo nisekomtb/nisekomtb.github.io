@@ -37,7 +37,7 @@ masthead:
     {% assign jobCount = jobs | size %}
 
     {% if jobCount > 0 %}
-      <div style="max-width:900px; margin:0 auto;">
+      <div class="media-narrow is-tight">
         {% for job in jobs %}
           {% assign isPaid = true %}
           {% if job.pay == "Volunteer position" %}
@@ -102,7 +102,7 @@ masthead:
         data-delay="200">Recently filled</h2>
     </div>
 
-    <div style="max-width:900px; margin:0 auto;">
+    <div class="media-narrow is-tight">
       {% for job in closedThisYear %}
         {% assign isPaid = true %}
         {% if job.pay == "Volunteer position" %}
