@@ -324,6 +324,26 @@ layout: base
     }
   }
 
+  /* Trails header row visibility: hidden visually at widths where the
+     remaining columns are self-explanatory (icons + numbers), shown again
+     where text wrapping or layout shifts make column meaning ambiguous.
+     Kept in the DOM (clipped, not display:none) so screen readers still
+     associate each td with its th. */
+  @media (max-width: 991px) and (min-width: 769px),
+         (max-width: 499px) and (min-width: 431px) {
+    table.trails thead {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  }
+
   table.trails td img.access {
     width: 20px;
     padding: 2px 1px 1px 2px;
