@@ -81,6 +81,9 @@ exclude:
   - package-lock.json
   - .github
   - .superpowers
+  - vendor
+  - Gemfile
+  - Gemfile.lock
 
 include:
   - .well-known
