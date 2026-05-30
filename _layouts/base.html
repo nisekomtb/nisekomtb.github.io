@@ -82,7 +82,7 @@
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
       <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@900&display=swap" rel="stylesheet"/>
     {% endif %}
-    {% if page.layout == 'where-to-ride' %}
+    {% if page.layout == 'where-to-ride' or page.needsTrailforks %}
       <link href="/assets/fonts/trailforks/stylesheet.css?d={{ build }}" rel="stylesheet" type="text/css" />
     {% endif %}
     {% if page.needsCarousel %}

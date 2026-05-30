@@ -77,6 +77,7 @@ itinerary:
           name: イベント終了
 parking: false
 about: false
+needsTrailforks: true
 ---
 ## トレイル情報
 

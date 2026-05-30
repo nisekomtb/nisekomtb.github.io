@@ -23,6 +23,7 @@ masthead:
 thumbnail: /assets/images/competitions/2024/strava-contest/thumb.jpg
 og:
   image: /assets/images/competitions/2024/strava-contest/header.jpg
+needsTrailforks: true
 ---
 
 ## NAMBAストラバコンペティション：マウンテンキングと<wbr>クイーンの<wbr>タイトルを<wbr>競う<wbr>レース
