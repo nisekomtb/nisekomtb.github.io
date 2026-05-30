@@ -2524,6 +2524,36 @@ input.invalid {
   gap: 2px;
 }
 
+.trail-counts {
+  display: inline-flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 8px 0;
+}
+
+.trail-count-col {
+  font-size: 12px;
+  text-align: center;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.trail-counts .dicon_small {
+  font-size: 18px;
+}
+
+.trail-counts .dicon_small.is-muted {
+  color: #666;
+}
+
+.trail-count-icon {
+  font-size: 18px;
+  color: #aaa;
+  padding: 4px 0;
+}
+
 /* Outlined black / double-black icons in trail count totals and the
    trails table, matching the signage guide treatment: white outline
    for black, red outline for double black. */
