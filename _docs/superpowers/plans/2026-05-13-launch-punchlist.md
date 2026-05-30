@@ -232,12 +232,12 @@ Steps:
 - [x] Audit section padding; fix where inconsistent with new reference style. Absorbed by the unified where-to-ride layout (b280d27) — all park pages now share spacing.
 - [x] Add gallery images (Pattern P-IMG). 6 webp tiles in `assets/images/trails/grand-hirafu/gallery/` wired via `_data/trails.yml` (b280d27).
 - [x] Mirror EN → JA (Pattern P-EN-JA) — done for the rename portion. JA gallery alts + trail JA names are in the shared data file; pages render from the same layout.
-- [ ] Visual check.
+- [x] Visual check. EN + JA verified at desktop (1440) + mobile (375) via Playwright on 2026-05-30. Hero, masthead, Trailforks map embed, intro, trail table (3 trails: Kamiwaza blue, Hirafu Flow blue, Hirafu Skills Area green), signage guide card, 9-tile gallery (3×3 desktop, single-column mobile), sidebar park-stats panel with bike-park partners — all render correctly. JA twin structurally matches EN. Pre-existing trailforks 404s for individual trail status dots (trailid=0 fallback because per-trail Trailforks IDs aren't wired in `_data/trails.yml`) — same situation noted on A.4 Hanazono, out of A.3 scope.
 - [x] Pattern P-COMMIT — rename portion shipped (81b9cee titles + alt; ac1fb83 brand-correct names + JA spelling; f2f09e7 stats card short form). Subsequent embed + trails + gallery work shipped in b280d27.
 
 Notes:
 Rename scope: Bucket A (headings + alt + page titles + canonical data names). Body copy, resort-entity references, park listicles, and internal docs left as-is. Twin Peaks `<h4>` on `/projects/` also gained "Bike Park" for consistency with the other two cards. JA-only spelling fix: グランヒラフ → グラン・ヒラフ (with middle dot) applied to UI headings + canonical name only; body copy still uses グランヒラフ.
-Embed + trails + section padding + gallery all addressed via the unified where-to-ride layout work (b280d27) on 2026-05-15. Only Tom's visual check remains.
+Embed + trails + section padding + gallery all addressed via the unified where-to-ride layout work (b280d27) on 2026-05-15. Visual sign-off 2026-05-30 closes the task.
 Decide: (none open)
 
 ---
@@ -984,24 +984,48 @@ Resolved 2026-05-30:
 ### Task C.5: Refactor
 
 Steps:
-- [ ] Implement new classes in the brand stylesheet.
-- [ ] For each cluster: replace inline rules with the new class across all affected pages.
-- [ ] Update both EN and JA mirrors (structural changes apply to both).
-- [ ] Run `bundle exec jekyll serve` and visually verify a representative page per cluster.
-- [ ] Pattern P-COMMIT (per cluster or grouped sensibly).
+- [x] Implement new classes in the brand stylesheet.
+- [x] For each cluster: replace inline rules with the new class across all affected pages.
+- [x] Update both EN and JA mirrors (structural changes apply to both).
+- [x] Run `bundle exec jekyll serve` and visually verify a representative page per cluster.
+- [x] Pattern P-COMMIT (per cluster or grouped sensibly).
 
 Notes:
+9 commits on `overhaul/website-restructure`, one per cluster, plus a small partner `.benefit-list` dedup follow-up after cluster 9:
+- ed4fdc2 — cluster 2 `.section-lede`
+- 135bf86 — cluster 5 `.feature-list` + `.section-list`
+- 63df05d — cluster 4 tier-price + tier-meta + #custom-donation
+- cbbab12 — cluster 7 `.status-pill`
+- 0d4080b — cluster 6 `.detail-item h3/h4 > .fa-*`
+- d6984ce — cluster 8 `.trail-counts` + `.trail-count-col`
+- e5753a4 — cluster 3 `.img-fluid-rounded` + `.media-narrow`
+- 137bde5 — cluster 9 `.phase-grid` + `.benefit-list` (570-line dedup across 8 files)
+- 2710d59 — cluster 11 where-to-ride map + operator cards (130-line dedup)
+- dade7c8 — cluster 1 `.module-title-wrap` default 650→900px (205 inline strips across 38 EN+JA files)
+- 5840be7 — partner `.benefit-list` dedup follow-up
+
+Net codebase delta: ~1,000 lines removed (1,317 inline declarations stripped, ~250 new CSS lines added in `template.css`, plus ~700 lines of duplicated `<style>` blocks deleted across cluster 9 + 11).
+
+Mid-flight scope adjustments folded into the cluster doc:
+- Cluster 5 split into `.feature-list` (h3-per-item shape) + `.section-list` (strong-lead-in shape) — the proposed single-class-with-modifier didn't survive contact with the markup.
+- Cluster 6 widened from `.park-sidebar-panel` scope to `.detail-item h3/h4 > .fa-*` — same icon-spacing pattern shows up in the event and job sidebars too.
+- Cluster 11 turned out to not need `.ride-card` work (already in template.css) — repurposed to dedupe the map-popup + operator-card blocks that were duplicated across EN+JA `/where-to-ride/`.
 
 ---
 
 ### Task C.6: Visual regression spot-check
 
 Steps:
-- [ ] Spot-check the design-review or design-quick-check skill against 5-6 representative pages (Home, About, Impact, a project page, a Where-to-Ride sub-page, a post).
-- [ ] Fix any regressions immediately.
-- [ ] Pattern P-COMMIT for any fixes.
+- [x] Spot-check the design-review skill against representative pages.
+- [x] Fix any regressions immediately.
+- [x] Pattern P-COMMIT for any fixes.
 
 Notes:
+design-review agent walked 12 pages at desktop (1440) and mobile (375) where risk warranted, covering every cluster's representative call sites: Home, About (phase-grid is-wide), Twin Peaks (park-stats sidebar), Where to Ride (map popups, trail-counts, ride-cards), Projects (status pills), Projects/Twin Peaks (phase-grid default + benefit-list), Donate (tier prices), Join (tier prices with /year suffix), Dirty Dames (feature-list), Partner (heavy module-title-wrap user), Privacy (650→900 default change), Thanks (650→900 + is-flush), Code of Conduct.
+
+**Result: all 12 pages PASS.** Zero JS errors, no horizontal scroll, no layout breakage, all status pill colours / tier prices / trail-counts / phase-grid / map popup / park-stats / feature-list / section-lede renders match expected behaviour. The 650→900 module-title-wrap default change had no measurable visual regression on privacy/thanks/code-conduct (those pages render their lede inside the wrap but body prose outside, so line-length wasn't affected).
+
+One medium-priority doc-vs-implementation mismatch flagged: `.feature-list` in template.css implements the 115%/1.7 shape (compact h3-per-item, the only variant currently used). The cluster doc proposed `.feature-list` at 130%/2.2 with a `.feature-list--compact` modifier — that proposal was restructured during cluster 5 implementation into two separate classes (`.feature-list` h3-per-item + `.section-list` strong-lead-in) based on differing markup shapes. Cluster doc updated to reflect the actual implementation (commit included in summary).
 
 ---
 
