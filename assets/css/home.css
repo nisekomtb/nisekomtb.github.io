@@ -234,38 +234,82 @@ html[lang="ja"] .home-hero-title { letter-spacing: normal; }
   color: var(--color-text-light);
 }
 
-/* Editorial intro takeover: large left-aligned statement that fills the
-   space between the hero and the snowsports quote. Lines reveal one by
-   one as the section enters viewport — the parent already carries
-   .fade-up, which the IO toggles to .in. Each line's --i drives the
-   staggered transition-delay. Key phrases (em) glow in the golden-sun
-   accent so the impact data lands at a glance. */
+/* Editorial intro panel: photographic backdrop carries the visual
+   weight; the editorial statement sits centred over a dark scrim with
+   line-by-line stagger reveal. Same aesthetic family as Section 08
+   (Ride/Build diptych): tinted photo + Ken-Burns drift + bold copy. */
 .home-intro-editorial {
-  padding: clamp(100px, 18vh, 200px) 0 clamp(80px, 14vh, 160px);
+  position: relative;
+  padding: clamp(96px, 14vh, 180px) 0 clamp(96px, 14vh, 180px);
+  min-height: 60vh;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--color-bg);
+}
+.home-intro-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+.home-intro-bg picture,
+.home-intro-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.home-intro-bg-img {
+  object-fit: cover;
+  object-position: center;
+  animation: home-intro-drift 28s ease-in-out infinite alternate;
+  will-change: transform;
+}
+@keyframes home-intro-drift {
+  from { transform: scale(1.04) translate(0, 0); }
+  to   { transform: scale(1.08) translate(-1%, -0.5%); }
+}
+.home-intro-tint {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  background:
+    linear-gradient(180deg, rgba(20, 30, 40, 0.55) 0%, rgba(15, 25, 35, 0.70) 100%);
+}
+.home-intro-scrim {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.55) 80%);
 }
 .home-intro-editorial .home-intro-wrap {
-  max-width: 1100px;
+  position: relative;
+  z-index: 1;
+  max-width: 1000px;
   padding: 0 clamp(20px, 4vw, 56px);
 }
 .home-intro-statement {
   margin: 0;
   font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
-  font-weight: 200;
-  font-size: clamp(26px, 4.2vw, 64px);
-  line-height: 1.18;
-  letter-spacing: -0.01em;
-  color: var(--color-text-light);
+  font-weight: 300;
+  font-size: clamp(22px, 3.2vw, 44px);
+  line-height: 1.25;
+  letter-spacing: -0.005em;
+  color: #fff;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.45);
 }
 .home-intro-line {
   display: block;
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(18px);
   transition: opacity 700ms ease-out, transform 700ms ease-out;
   transition-delay: calc(var(--i, 0) * 140ms + 80ms);
 }
 .home-intro-line em {
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--color-accent);
 }
 .home-intro-editorial.in .home-intro-line {
@@ -274,8 +318,8 @@ html[lang="ja"] .home-hero-title { letter-spacing: normal; }
 }
 .ja .home-intro-statement {
   font-family: "Fruit Viesta", "Zen Maru Gothic", "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
-  font-size: clamp(22px, 3.6vw, 52px);
-  line-height: 1.55;
+  font-size: clamp(20px, 2.8vw, 38px);
+  line-height: 1.6;
   letter-spacing: 0.01em;
   word-break: keep-all;
   overflow-wrap: break-word;
@@ -283,6 +327,7 @@ html[lang="ja"] .home-hero-title { letter-spacing: normal; }
 .home-intro-line + .home-intro-line { margin-top: clamp(8px, 1.2vh, 18px); }
 
 @media (prefers-reduced-motion: reduce) {
+  .home-intro-bg-img { animation: none; transform: scale(1.04); }
   .home-intro-line {
     opacity: 1;
     transform: none;
@@ -853,29 +898,23 @@ html[lang="ja"] .home-stories-title { letter-spacing: normal; text-transform: no
 @media (max-width: 1023px) { .home-stories-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 600px) { .home-stories-grid { grid-template-columns: 1fr; } }
 
-/* ── Section 07: Snowsports quote (sticky theatre with scrub) ─────── */
-/* Outer section is tall (200vh) so the inner sticky stage stays pinned
-   for a full screen's worth of scroll. The JS sets --p (0..1) on the
-   section as the user scrolls through it; winter / summer overlays and
-   quote phases cross-fade against that property. One Yotei photo
-   serves both seasons via colour grading — no extra image loads. */
+/* ── Section 07: Snowsports quote (photographic band) ─────────────── */
+/* Single confident moment: Yotei photo + warm tint + scrim, with the
+   quote centred over it. Same aesthetic family as Section 02 (intro
+   panel) and Section 08 (Ride/Build diptych). No sticky, no scrub —
+   the quote IS the moment. Subtle Ken-Burns drift carries motion. */
 .home-feature {
-  --p: 0;
   position: relative;
-  background: var(--color-bg);
-  color: #fff;
-  height: 200vh;
-  /* Reduced-motion / mobile fallback collapses to a single screen and
-     un-pins the stage; see overrides at bottom of this block. */
-}
-.home-feature-stage {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 72vh;
+  padding: clamp(80px, 12vh, 160px) clamp(20px, 5vw, 80px);
   overflow: hidden;
   isolation: isolate;
+  background: var(--color-bg);
+  color: #fff;
 }
 .home-feature-bg {
   position: absolute;
@@ -893,163 +932,67 @@ html[lang="ja"] .home-stories-title { letter-spacing: normal; text-transform: no
 .home-feature-bg-img {
   object-fit: cover;
   object-position: center 30%;
-  /* Subtle Ken-Burns drift across the whole stage tied to scroll progress
-     — scales up and lifts as winter gives way to summer. The colour
-     grade desaturates and dims the image at low --p so the underlying
-     summer Yotei photo reads as a cold, moody winter scene; saturation
-     and brightness restore as --p approaches 1. This contrast carries
-     the seasonal cross-fade more than the overlay tints alone could. */
-  transform: scale(calc(1.05 + var(--p) * 0.06)) translateY(calc(var(--p) * -1.5%));
-  filter:
-    saturate(calc(0.10 + var(--p) * 0.90))
-    brightness(calc(0.55 + var(--p) * 0.45))
-    contrast(calc(1.05 - var(--p) * 0.05));
-  transition: transform 100ms linear, filter 120ms linear;
-  will-change: transform, filter;
+  animation: home-feature-drift 28s ease-in-out infinite alternate;
+  will-change: transform;
+}
+@keyframes home-feature-drift {
+  from { transform: scale(1.04) translate(0, 0); }
+  to   { transform: scale(1.09) translate(-1%, -0.5%); }
 }
 .home-feature-tint {
   position: absolute;
   inset: 0;
   pointer-events: none;
   mix-blend-mode: multiply;
-  transition: opacity 120ms linear;
-  will-change: opacity;
-}
-/* Winter tint: cool slate-blue wash. Dominant at the start (--p = 0).
-   Stacks with the image's desaturated/dimmed filter to read as a cold
-   moody mountain scene rather than the summer Yotei underneath. */
-.home-feature-tint-winter {
   background:
-    linear-gradient(180deg, rgba(90, 130, 175, 0.45) 0%, rgba(30, 55, 90, 0.65) 100%);
-  opacity: calc(1 - var(--p));
+    radial-gradient(ellipse at 70% 30%, rgba(212, 168, 67, 0.35) 0%, rgba(212, 168, 67, 0) 60%),
+    linear-gradient(180deg, rgba(70, 35, 18, 0.45) 0%, rgba(40, 60, 35, 0.45) 100%);
 }
-/* Summer tint: golden-sun + rust wash. Builds in as --p approaches 1. */
-.home-feature-tint-summer {
-  background:
-    radial-gradient(ellipse at 70% 30%, rgba(212, 168, 67, 0.45) 0%, rgba(212, 168, 67, 0) 60%),
-    linear-gradient(180deg, rgba(179, 79, 36, 0.35) 0%, rgba(53, 150, 93, 0.30) 100%);
-  opacity: var(--p);
-}
-/* Always-on scrim for text legibility, on top of both tints. */
 .home-feature-scrim {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(180deg, rgba(0,0,0,0.30) 0%, rgba(0,0,0,0.55) 100%);
+  background:
+    radial-gradient(ellipse at center, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.55) 80%);
 }
-
 .home-feature-quote {
   position: relative;
   z-index: 1;
   margin: 0;
-  padding: 0 clamp(20px, 5vw, 80px);
+  padding: 0;
   border: 0;
-  max-width: 1200px;
-  width: 100%;
+  max-width: 1000px;
   text-align: center;
-  display: grid;
-  grid-template-areas: "phase";
-  place-items: center;
-}
-.home-feature-phase {
-  grid-area: phase;
-  display: block;
-  font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
-  font-weight: 200;
-  font-size: clamp(34px, 6.4vw, 96px);
-  line-height: 1.08;
-  letter-spacing: -0.01em;
   color: #fff;
-  text-shadow: 0 2px 32px rgba(0, 0, 0, 0.55);
-  transition: opacity 160ms linear, transform 160ms linear, filter 160ms linear;
-  will-change: opacity, transform;
 }
-.home-feature-phase em {
+.home-feature-quote p {
+  margin: 0;
+  font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: clamp(26px, 4vw, 56px);
+  line-height: 1.25;
+  letter-spacing: -0.005em;
+  text-shadow: 0 2px 28px rgba(0, 0, 0, 0.55);
+}
+.home-feature-quote em {
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
+  color: var(--color-accent);
 }
-.home-feature-phase-winter em { color: #e6eef8; }
-.home-feature-phase-summer em { color: var(--color-accent); }
-
-/* Winter phase dominates at low --p, fades and lifts as --p grows.
-   Summer phase rises in from below. Cross-fade uses smoothstep applied
-   in JS via two stacked custom props (--wp, --sp) so the midpoint isn't
-   muddy. CSS variable based on --p as fallback if JS doesn't set them. */
-/* Lines stack in a single grid cell. The staggered cross-fade in the
-   JS ensures only one phase is visible at any moment, so the vertical
-   lift can stay modest (8vh) — it's a stylistic flourish, not a
-   collision-avoidance mechanism. Winter lifts off the top as it
-   fades; summer rises in from below. */
-.home-feature-phase-winter {
-  opacity: var(--wp, calc(1 - var(--p)));
-  transform: translateY(calc((1 - var(--wp, calc(1 - var(--p)))) * -8vh));
-}
-.home-feature-phase-summer {
-  opacity: var(--sp, var(--p));
-  transform: translateY(calc((1 - var(--sp, var(--p))) * 8vh));
-}
-
-.ja .home-feature-phase {
+.ja .home-feature-quote p {
   font-family: "Fruit Viesta", "Zen Maru Gothic", "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
-  font-size: clamp(28px, 5.6vw, 80px);
-  line-height: 1.4;
+  font-size: clamp(22px, 3.4vw, 44px);
+  line-height: 1.55;
   letter-spacing: 0.02em;
   word-break: keep-all;
   overflow-wrap: break-word;
 }
 
-/* Thin scroll-progress bar at the bottom of the stage. Affordance that
-   the section is scroll-driven without dominating the composition. */
-.home-feature-progress {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 3px;
-  z-index: 2;
-  background: rgba(255, 255, 255, 0.08);
+@media (max-width: 767px) {
+  .home-feature { min-height: 56vh; padding: 64px 20px; }
 }
-.home-feature-progress-fill {
-  display: block;
-  height: 100%;
-  width: calc(var(--p) * 100%);
-  background: linear-gradient(90deg, rgba(230, 238, 248, 0.85) 0%, var(--color-accent) 100%);
-  transition: width 120ms linear;
-}
-
-/* Mobile / reduced-motion: un-stick the stage and show both phases
-   stacked statically. Matches The Build precedent (mobile bails out of
-   the scrub). */
-@media (max-width: 767px), (prefers-reduced-motion: reduce) {
-  .home-feature {
-    --p: 1;
-    height: auto;
-    min-height: 70vh;
-    padding: 80px 0;
-  }
-  .home-feature-stage {
-    position: relative;
-    top: auto;
-    height: auto;
-    min-height: 70vh;
-    padding: 64px 0;
-  }
-  .home-feature-quote {
-    display: block;
-    text-align: center;
-  }
-  .home-feature-phase {
-    display: block;
-    opacity: 1;
-    transform: none;
-    margin-bottom: 24px;
-    font-size: clamp(28px, 7vw, 48px);
-  }
-  .home-feature-phase:last-child { margin-bottom: 0; }
-  .home-feature-bg-img { transform: none; }
-  .home-feature-tint-winter { opacity: 0.35; }
-  .home-feature-tint-summer { opacity: 0.85; }
-  .home-feature-progress { display: none; }
+@media (prefers-reduced-motion: reduce) {
+  .home-feature-bg-img { animation: none; transform: scale(1.04); }
 }
 
 /* ── Section 08: Ride / Build diptych (full-bleed photographic) ───── */

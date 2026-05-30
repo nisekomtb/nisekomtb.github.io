@@ -23,7 +23,6 @@
     initHeroVideo();
     initHeroCue();
     initFadeUps();
-    initFeatureScrub();
     initNetworkScrub();
     initCountUps();
   }
@@ -67,104 +66,6 @@
       });
     }, { threshold: 0.15 });
     document.querySelectorAll('.fade-up').forEach(function (el) { io.observe(el); });
-  }
-
-  /* Section 07: snowsports quote sticky theatre. The outer section is
-     200vh tall, the inner stage is sticky 100vh. As the user scrolls
-     through the section, progress goes 0→1 across the scrub range. We
-     publish three custom properties on the section:
-       --p   linear progress (drives Ken-Burns drift, progress bar)
-       --wp  winter phase opacity (smoothstep of 1 - progress)
-       --sp  summer phase opacity (smoothstep of progress)
-     Mobile and reduced-motion render the section statically via CSS;
-     this initialiser bails out and never attaches a scroll listener. */
-  function initFeatureScrub() {
-    var section = document.querySelector('.home-feature-scrub');
-    if (!section) return;
-    if (prefersReducedMotion || isMobile) return;
-
-    var sectionTop = 0;
-    var sectionHeight = 0;
-    var viewportHeight = window.innerHeight;
-    var armed = false;
-    var ticking = false;
-
-    function measure() {
-      var rect = section.getBoundingClientRect();
-      var scrollY = window.scrollY || window.pageYOffset || 0;
-      sectionTop = rect.top + scrollY;
-      sectionHeight = section.offsetHeight;
-      viewportHeight = window.innerHeight;
-    }
-
-    function smoothstep(x) {
-      // Classic Hermite smoothstep: x*x*(3 - 2x). Clamped 0..1.
-      if (x <= 0) return 0;
-      if (x >= 1) return 1;
-      return x * x * (3 - 2 * x);
-    }
-
-    function update() {
-      if (!armed) return;
-      var scrollY = window.scrollY || window.pageYOffset || 0;
-      var relativeScroll = scrollY - sectionTop;
-      var scrollableRange = Math.max(1, sectionHeight - viewportHeight);
-      var progress = Math.min(Math.max(relativeScroll / scrollableRange, 0), 1);
-
-      // Stagger the cross-fade with a brief gap at the midpoint so the
-      // two phases never overlap. Winter fades out 0.40 → 0.50, then a
-      // ~5% empty-mountain beat, then summer fades in 0.55 → 0.65. The
-      // gap makes the phase change feel deliberate rather than muddy.
-      var wp = smoothstep((0.50 - progress) / 0.10);
-      var sp = smoothstep((progress - 0.55) / 0.10);
-
-      section.style.setProperty('--p', progress.toFixed(4));
-      section.style.setProperty('--wp', wp.toFixed(4));
-      section.style.setProperty('--sp', sp.toFixed(4));
-      ticking = false;
-    }
-
-    window.addEventListener('scroll', function () {
-      if (!ticking) {
-        window.requestAnimationFrame(update);
-        ticking = true;
-      }
-    }, { passive: true });
-
-    var resizeTicking = false;
-    window.addEventListener('resize', function () {
-      if (resizeTicking) return;
-      resizeTicking = true;
-      window.requestAnimationFrame(function () {
-        measure();
-        update();
-        resizeTicking = false;
-      });
-    }, { passive: true });
-
-    measure();
-    if ('IntersectionObserver' in window) {
-      // Arm when any part of the section enters viewport; un-arm and
-      // reset to winter when it leaves. Mirrors the network section's
-      // re-entry behaviour so the scrub feels fresh each time.
-      var armObserver = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            armed = true;
-            update();
-          } else {
-            armed = false;
-            section.style.setProperty('--p', '0');
-            section.style.setProperty('--wp', '1');
-            section.style.setProperty('--sp', '0');
-          }
-        });
-      }, { threshold: 0 });
-      armObserver.observe(section);
-    } else {
-      armed = true;
-      update();
-    }
   }
 
   function initNetworkScrub() {

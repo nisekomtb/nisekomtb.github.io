@@ -1,5 +1,16 @@
-<!-- _includes/home/section-intro.html: Section 02 (editorial intro takeover) -->
+<!-- _includes/home/section-intro.html: Section 02 (photographic intro panel) -->
+{% capture intro_alt %}{% if page.lang == 'en' %}Niseko mountain landscape{% else %}ニセコの山並み{% endif %}{% endcapture %}
 <section class="home-intro home-intro-editorial fade-up">
+  <div class="home-intro-bg" aria-hidden="true">
+    {% include image.html
+        src="/assets/images/bg/bg-distance.jpg"
+        alt=intro_alt
+        widths="1600,2400"
+        sizes="100vw"
+        class="home-intro-bg-img" %}
+    <div class="home-intro-tint"></div>
+    <div class="home-intro-scrim"></div>
+  </div>
   <div class="container home-intro-wrap">
     <p class="home-intro-statement">
       {% if page.lang == "en" %}
