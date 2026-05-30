@@ -2,8 +2,8 @@
 layout: event
 categories: events
 title: Twin Peaks Summer Kick Off
-description: All 17km of trails reopen for the 2026 summer. Join the NAMBA community on Saturday 30 May for skills clinics, orientation rides, food truck, kids fun.
-startDate: 2026-05-30 09:00:00 +0900
+description: All 17km of trails reopen for the 2026 summer. Join the NAMBA community on Sunday 31 May for skills clinics, orientation rides, food truck, kids fun.
+startDate: 2026-05-31 09:00:00 +0900
 days: 1
 time: "9:00am - 3:00pm"
 location: Twin Peaks Bike Park, Niseko
@@ -54,6 +54,8 @@ link:
 parking: false
 about: false
 ---
+
+<span class="rescheduled">⛈️ <strong>Rescheduled:</strong> with rain forecast on Saturday, we've moved the kick-off to <strong>Sunday 31 May</strong>. Same trails, same sessions, drier conditions. ⛈️</span>
 
 The trail crew have been hard at it since the snow melted, and Twin Peaks is back. Every line will be open: skills park, flow trails, tech lines, and last year's newest build, Launch Control. All 17km, open for summer.
 
