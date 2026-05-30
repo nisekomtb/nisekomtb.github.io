@@ -1,4 +1,4 @@
-<!-- _includes/home/section-feature.html: Section 07 (snowsports quote band) -->
+<!-- _includes/home/section-feature.html: Section 07 (snowsports quote + intro) -->
 {% capture feature_alt %}{% if page.lang == 'en' %}Mount Yotei rising above Niseko{% else %}ニセコにそびえる羊蹄山{% endif %}{% endcapture %}
 <section class="home-feature fade-up">
   <div class="home-feature-bg" aria-hidden="true">
@@ -11,15 +11,26 @@
     <div class="home-feature-tint"></div>
     <div class="home-feature-scrim"></div>
   </div>
-  <blockquote class="home-feature-quote">
-    <i class="fa-solid fa-quote-left home-feature-quote-mark home-feature-quote-mark-open" aria-hidden="true"></i>
-    <p>
+
+  <div class="home-feature-content">
+    <blockquote class="home-feature-quote">
+      <i class="fa-solid fa-quote-left home-feature-quote-mark home-feature-quote-mark-open" aria-hidden="true"></i>
+      <p>
+        {% if page.lang == "en" %}
+          What snowsports did for Niseko&rsquo;s <em>winters</em>, mountain biking will do for its <em>summers</em>.
+        {% else %}
+          スノースポーツが<wbr>ニセコの<wbr><em>冬</em>を<wbr>変えたように、<wbr>マウンテンバイクが<wbr><em>夏</em>を<wbr>変える。
+        {% endif %}
+      </p>
+      <i class="fa-solid fa-quote-right home-feature-quote-mark home-feature-quote-mark-close" aria-hidden="true"></i>
+    </blockquote>
+
+    <p class="home-feature-intro">
       {% if page.lang == "en" %}
-        What snowsports did for Niseko&rsquo;s <em>winters</em>, mountain biking will do for its <em>summers</em>.
+        NAMBA is the nonprofit behind <strong>Japan&rsquo;s largest</strong> mountain bike network. From Twin Peaks in 2023 to <strong>over 30 km</strong> across <strong>four parks</strong>, making Niseko <strong>the place to ride in Asia</strong>.
       {% else %}
-        スノースポーツが<wbr>ニセコの<wbr><em>冬</em>を<wbr>変えたように、<wbr>マウンテンバイクが<wbr><em>夏</em>を<wbr>変える。
+        NAMBAは、<strong>日本最大の</strong><wbr>マウンテンバイク<wbr>ネットワークを<wbr>支える<wbr>非営利団体です。<wbr>2023年の<wbr>ツインピークスから、<wbr><strong>4つの<wbr>パーク</strong>に<wbr>またがる<wbr><strong>30km超</strong>の<wbr>トレイルへ、<wbr><strong>アジアの<wbr>マウンテンバイク・<wbr>デスティネーション</strong>へ。
       {% endif %}
     </p>
-    <i class="fa-solid fa-quote-right home-feature-quote-mark home-feature-quote-mark-close" aria-hidden="true"></i>
-  </blockquote>
+  </div>
 </section>

@@ -217,163 +217,26 @@ html[lang="ja"] .home-hero-title { letter-spacing: normal; }
 }
 
 /* ── Section 02: Mission intro + pull quote ───────────────────────── */
-.home-intro {
-  background: var(--color-bg);
-  padding: clamp(72px, 12vh, 140px) 0;
-  color: var(--color-text);
-}
-.home-intro-wrap {
-  max-width: 760px;
-  margin: 0 auto;
-  text-align: left;
-}
-.home-intro-body {
-  font-size: clamp(17px, 1.8vw, 22px);
-  line-height: 1.55;
-  margin: 0 0 56px;
-  color: var(--color-text-light);
-}
+/* (.home-intro base styles removed — Section 02 is now a slim
+   breathing band; see .home-intro-divider below.) */
 
-/* Editorial intro panel: asymmetric magazine spread. The photographic
-   backdrop dominates the right; the editorial statement sits in a
-   left-side column with a strong dark gradient creating a "text well"
-   so the panel reads as photo-and-caption rather than text-on-photo.
-   Differentiates this panel from Section 07's centred quote band. */
-.home-intro-editorial {
-  position: relative;
-  padding: clamp(96px, 16vh, 200px) 0 clamp(96px, 16vh, 200px);
-  min-height: 64vh;
-  overflow: hidden;
-  isolation: isolate;
+/* Section 02 is now a slim breathing band between the hero and the
+   Section 07 photographic panel. The intro paragraph itself moved
+   into Section 07 below the quote (magazine pull-quote + body pattern).
+   This band signals a chapter break without taking real estate. */
+.home-intro-divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: var(--color-bg);
+  padding: clamp(40px, 6vh, 72px) 0;
 }
-.home-intro-bg {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  z-index: 0;
-}
-.home-intro-bg picture,
-.home-intro-bg-img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-}
-.home-intro-bg-img {
-  object-fit: cover;
-  /* Anchor the photo toward the right so the dominant subject sits in
-     the visible half once the left-side text well covers ~45% of it. */
-  object-position: 70% center;
-  animation: home-intro-drift 28s ease-in-out infinite alternate;
-  will-change: transform;
-}
-@keyframes home-intro-drift {
-  from { transform: scale(1.04) translate(0, 0); }
-  to   { transform: scale(1.08) translate(-1%, -0.5%); }
-}
-.home-intro-tint {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  mix-blend-mode: multiply;
-  /* Light overall tint — the scrim does the heavy lifting on the text
-     side, so the photo stays clearer on the right than in the centred
-     panels. */
-  background:
-    linear-gradient(180deg, rgba(20, 30, 40, 0.35) 0%, rgba(15, 25, 35, 0.45) 100%);
-}
-.home-intro-scrim {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  /* Asymmetric gradient: dark "text well" on the left fading to mostly
-     clear on the right, so the photo dominates outside the type. */
-  background:
-    linear-gradient(90deg,
-      rgba(0, 0, 0, 0.78) 0%,
-      rgba(0, 0, 0, 0.65) 30%,
-      rgba(0, 0, 0, 0.30) 55%,
-      rgba(0, 0, 0, 0.05) 80%,
-      rgba(0, 0, 0, 0.15) 100%);
-}
-.home-intro-editorial .home-intro-wrap {
-  position: relative;
-  z-index: 1;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: 0 clamp(20px, 4vw, 56px);
-}
-.home-intro-statement {
-  margin: 0;
-  max-width: 540px;
-  font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
-  font-weight: 300;
-  /* Editorial body scale: smaller than Section 07's display quote so
-     the two photographic panels read as different typographic roles
-     — lead paragraph vs tagline. */
-  font-size: clamp(17px, 1.9vw, 26px);
-  line-height: 1.45;
-  letter-spacing: 0;
-  color: rgba(255, 255, 255, 0.92);
-  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.55);
-  /* Vertical accent rule on the left, sitting in the text well. Reads
-     as an editorial pull-quote marker. */
-  border-left: 3px solid var(--color-accent);
-  padding-left: clamp(20px, 2.4vw, 32px);
-}
-.home-intro-line {
+.home-intro-divider-rule {
   display: block;
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 700ms ease-out, transform 700ms ease-out;
-  transition-delay: calc(var(--i, 0) * 140ms + 80ms);
-}
-.home-intro-line em {
-  font-style: normal;
-  /* Bold-white emphasis (not gold) — quieter than Section 07's gold
-     accent so the two panels read as different typographic registers. */
-  font-weight: 700;
-  color: #fff;
-}
-.home-intro-editorial.in .home-intro-line {
-  opacity: 1;
-  transform: translateY(0);
-}
-.ja .home-intro-statement {
-  /* Keep Metropolis-leading stack on the JA editorial intro too. The
-     display font is reserved for Section 07 (tagline) so the two
-     panels stay typographically distinct. */
-  font-size: clamp(15px, 1.8vw, 22px);
-  line-height: 1.75;
-  letter-spacing: 0.02em;
-  word-break: keep-all;
-  overflow-wrap: break-word;
-}
-.home-intro-line + .home-intro-line { margin-top: clamp(8px, 1.2vh, 18px); }
-
-/* Mobile: asymmetric text-well doesn't make sense at narrow widths.
-   Collapse to uniform scrim and full-width statement. */
-@media (max-width: 767px) {
-  .home-intro-bg-img { object-position: center; }
-  .home-intro-scrim {
-    background:
-      linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.70) 100%);
-  }
-  .home-intro-statement {
-    max-width: none;
-    border-left: 0;
-    padding-left: 0;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .home-intro-bg-img { animation: none; transform: scale(1.04); }
-  .home-intro-line {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
+  width: 56px;
+  height: 2px;
+  background: var(--color-accent);
+  opacity: 0.85;
 }
 /* Shared "view all / more" link arrow. Slides right when its parent
    link is hovered, matching the card-action pattern. */
@@ -939,19 +802,19 @@ html[lang="ja"] .home-stories-title { letter-spacing: normal; text-transform: no
 @media (max-width: 1023px) { .home-stories-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 600px) { .home-stories-grid { grid-template-columns: 1fr; } }
 
-/* ── Section 07: Snowsports quote (photographic band) ─────────────── */
-/* Single confident moment: Yotei photo + warm tint + scrim, with the
-   quote centred over it. Same aesthetic family as Section 02 (intro
-   panel) and Section 08 (Ride/Build diptych). No sticky, no scrub —
-   the quote IS the moment. Subtle Ken-Burns drift carries motion. */
+/* ── Section 07: Snowsports quote + intro (merged panel) ──────────── */
+/* Single photographic panel that now carries both the pull-quote (top
+   of content) and the supporting intro paragraph (below). The Yotei
+   summit gets prominent display via generous top padding before the
+   text begins. Parallax drives the bg motion. */
 .home-feature {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  min-height: 72vh;
-  padding: clamp(80px, 12vh, 160px) clamp(20px, 5vw, 80px);
+  min-height: 92vh;
+  padding: clamp(120px, 18vh, 240px) clamp(20px, 5vw, 80px) clamp(96px, 14vh, 180px);
   overflow: hidden;
   isolation: isolate;
   background: var(--color-bg);
@@ -1001,15 +864,26 @@ html[lang="ja"] .home-stories-title { letter-spacing: normal; text-transform: no
   background:
     radial-gradient(ellipse at center, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.55) 80%);
 }
-.home-feature-quote {
+/* Content wrapper: vertical stack carrying the quote (top) and the
+   intro paragraph (below). Centred within the panel. */
+.home-feature-content {
   position: relative;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(28px, 4vh, 56px);
+  max-width: 1000px;
+  width: 100%;
+}
+.home-feature-quote {
+  position: relative;
   margin: 0;
   /* Inset padding leaves room for the floating quotation glyphs in
      the top-left and bottom-right corners. */
   padding: clamp(40px, 5vh, 72px) clamp(56px, 7vw, 120px);
   border: 0;
-  max-width: 1000px;
+  width: 100%;
   text-align: center;
   color: #fff;
 }
@@ -1063,9 +937,37 @@ html[lang="ja"] .home-stories-title { letter-spacing: normal; text-transform: no
   font-style: normal;
 }
 
+/* Supporting intro paragraph below the pull-quote. Smaller editorial
+   body register so the visual hierarchy reads as headline (quote) →
+   context (intro). strong gets bold-white emphasis to keep gold the
+   visual signature of the quote alone. */
+.home-feature-intro {
+  margin: 0;
+  max-width: 720px;
+  text-align: center;
+  font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: clamp(15px, 1.6vw, 20px);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.88);
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.55);
+}
+.home-feature-intro strong {
+  font-weight: 700;
+  color: #fff;
+}
+.ja .home-feature-intro {
+  font-size: clamp(14px, 1.5vw, 18px);
+  line-height: 1.85;
+  letter-spacing: 0.02em;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
 @media (max-width: 767px) {
   .home-feature-quote { padding: 48px 32px; }
   .home-feature-quote-mark { font-size: clamp(36px, 9vw, 52px); }
+  .home-feature-content { gap: 32px; }
 }
 
 @media (max-width: 767px) {

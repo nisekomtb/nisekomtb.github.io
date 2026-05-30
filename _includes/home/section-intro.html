@@ -1,28 +1,4 @@
-<!-- _includes/home/section-intro.html: Section 02 (photographic intro panel) -->
-{% capture intro_alt %}{% if page.lang == 'en' %}Niseko mountain landscape{% else %}ニセコの山並み{% endif %}{% endcapture %}
-<section class="home-intro home-intro-editorial fade-up">
-  <div class="home-intro-bg" aria-hidden="true">
-    {% include image.html
-        src="/assets/images/bg/bg-distance.jpg"
-        alt=intro_alt
-        widths="1600,2400"
-        sizes="100vw"
-        class="home-intro-bg-img" %}
-    <div class="home-intro-tint"></div>
-    <div class="home-intro-scrim"></div>
-  </div>
-  <div class="container home-intro-wrap">
-    <p class="home-intro-statement">
-      {% if page.lang == "en" %}
-        <span class="home-intro-line" style="--i:0">NAMBA is the nonprofit behind</span>
-        <span class="home-intro-line" style="--i:1"><em>Japan&rsquo;s largest</em> mountain bike network.</span>
-        <span class="home-intro-line" style="--i:2">From Twin Peaks in 2023 to <em>over 30 km</em> across <em>four parks</em>,</span>
-        <span class="home-intro-line" style="--i:3">making Niseko <em>the place to ride in Asia</em>.</span>
-      {% else %}
-        <span class="home-intro-line" style="--i:0">NAMBAは、<em>日本最大の</em><wbr>マウンテンバイク<wbr>ネットワークを<wbr>支える<wbr>非営利団体です。</span>
-        <span class="home-intro-line" style="--i:1">2023年の<wbr>ツインピークスから、<wbr><em>4つの<wbr>パーク</em>に<wbr>またがる<wbr><em>30km超</em>の<wbr>トレイルへ。</span>
-        <span class="home-intro-line" style="--i:2">ニセコを、<wbr><em>アジアの<wbr>マウンテンバイク・<wbr>デスティネーション</em>へ。</span>
-      {% endif %}
-    </p>
-  </div>
-</section>
+<!-- _includes/home/section-intro.html: Section 02 (hero ↔ feature breathing band) -->
+<div class="home-intro-divider" aria-hidden="true">
+  <span class="home-intro-divider-rule"></span>
+</div>
