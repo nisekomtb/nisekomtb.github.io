@@ -32,5 +32,14 @@
         NAMBAは、<strong>日本最大の</strong><wbr>マウンテンバイク<wbr>ネットワークを<wbr>支える<wbr>非営利団体です。<wbr>2023年の<wbr>ツインピークスから、<wbr><strong>4つの<wbr>パーク</strong>に<wbr>またがる<wbr><strong>30km超</strong>の<wbr>トレイルへ、<wbr><strong>アジアの<wbr>マウンテンバイク・<wbr>デスティネーション</strong>へ。
       {% endif %}
     </p>
+
+    <p class="home-feature-link">
+      <a href="{% if page.lang == 'ja' %}/ja{% endif %}/about/">
+        {% if page.lang == "en" %}Find out more about NAMBA
+        {% else %}NAMBAに<wbr>ついて<wbr>詳しく
+        {% endif %}
+        <span class="home-more-arrow fa-solid fa-circle-arrow-right"></span>
+      </a>
+    </p>
   </div>
 </section>

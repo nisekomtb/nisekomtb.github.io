@@ -964,6 +964,23 @@ html[lang="ja"] .home-stories-title { letter-spacing: normal; text-transform: no
   overflow-wrap: break-word;
 }
 
+/* "Find out more about NAMBA" link beneath the intro paragraph.
+   Mirrors the home-impact-link / home-events-all pattern: white text,
+   subtle bottom border that picks up the gold accent on hover, and
+   the shared .home-more-arrow chevron that slides on parent hover. */
+.home-feature-link {
+  margin: 0;
+  text-align: center;
+  font-size: 14px;
+}
+.home-feature-link a {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 200ms ease, color 200ms ease;
+}
+.home-feature-link a:hover { color: var(--color-accent); border-color: var(--color-accent); }
+
 @media (max-width: 767px) {
   .home-feature-quote { padding: 48px 32px; }
   .home-feature-quote-mark { font-size: clamp(36px, 9vw, 52px); }
