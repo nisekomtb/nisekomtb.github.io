@@ -233,6 +233,62 @@ html[lang="ja"] .home-hero-title { letter-spacing: normal; }
   margin: 0 0 56px;
   color: var(--color-text-light);
 }
+
+/* Editorial intro takeover: large left-aligned statement that fills the
+   space between the hero and the snowsports quote. Lines reveal one by
+   one as the section enters viewport — the parent already carries
+   .fade-up, which the IO toggles to .in. Each line's --i drives the
+   staggered transition-delay. Key phrases (em) glow in the golden-sun
+   accent so the impact data lands at a glance. */
+.home-intro-editorial {
+  padding: clamp(100px, 18vh, 200px) 0 clamp(80px, 14vh, 160px);
+}
+.home-intro-editorial .home-intro-wrap {
+  max-width: 1100px;
+  padding: 0 clamp(20px, 4vw, 56px);
+}
+.home-intro-statement {
+  margin: 0;
+  font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
+  font-weight: 200;
+  font-size: clamp(26px, 4.2vw, 64px);
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+  color: var(--color-text-light);
+}
+.home-intro-line {
+  display: block;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 700ms ease-out, transform 700ms ease-out;
+  transition-delay: calc(var(--i, 0) * 140ms + 80ms);
+}
+.home-intro-line em {
+  font-style: normal;
+  font-weight: 500;
+  color: var(--color-accent);
+}
+.home-intro-editorial.in .home-intro-line {
+  opacity: 1;
+  transform: translateY(0);
+}
+.ja .home-intro-statement {
+  font-family: "Fruit Viesta", "Zen Maru Gothic", "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
+  font-size: clamp(22px, 3.6vw, 52px);
+  line-height: 1.55;
+  letter-spacing: 0.01em;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+.home-intro-line + .home-intro-line { margin-top: clamp(8px, 1.2vh, 18px); }
+
+@media (prefers-reduced-motion: reduce) {
+  .home-intro-line {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
 /* Shared "view all / more" link arrow. Slides right when its parent
    link is hovered, matching the card-action pattern. */
 .home-more-arrow {
@@ -797,100 +853,310 @@ html[lang="ja"] .home-stories-title { letter-spacing: normal; text-transform: no
 @media (max-width: 1023px) { .home-stories-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 600px) { .home-stories-grid { grid-template-columns: 1fr; } }
 
-/* ── Section 07: Feature image + quote (fixed-background band) ────── */
-/* The image is attached to the viewport, so as the section scrolls past
-   it acts like a window onto a static landscape. iOS Safari ignores
-   background-attachment: fixed, so the mobile fallback uses a plain
-   cover image which still looks fine. */
+/* ── Section 07: Snowsports quote (sticky theatre with scrub) ─────── */
+/* Outer section is tall (200vh) so the inner sticky stage stays pinned
+   for a full screen's worth of scroll. The JS sets --p (0..1) on the
+   section as the user scrolls through it; winter / summer overlays and
+   quote phases cross-fade against that property. One Yotei photo
+   serves both seasons via colour grading — no extra image loads. */
 .home-feature {
+  --p: 0;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  min-height: 60vh;
-  padding: 80px 24px;
-  overflow: hidden;
-  background-color: var(--color-bg);
-  background-image: url('/assets/images/bg/bg-header-yotei.jpg');
-  background-position: center top;
-  background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+  background: var(--color-bg);
+  color: #fff;
+  height: 200vh;
+  /* Reduced-motion / mobile fallback collapses to a single screen and
+     un-pins the stage; see overrides at bottom of this block. */
 }
-/* Dark scrim so the white quote stays legible against the bright sky. */
-.home-feature::after {
-  content: "";
+.home-feature-stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  isolation: isolate;
+}
+.home-feature-bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.45) 100%);
-  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
 }
+.home-feature-bg picture,
+.home-feature-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.home-feature-bg-img {
+  object-fit: cover;
+  object-position: center 30%;
+  /* Subtle Ken-Burns drift across the whole stage tied to scroll progress
+     — scales up and lifts as winter gives way to summer. The colour
+     grade desaturates and dims the image at low --p so the underlying
+     summer Yotei photo reads as a cold, moody winter scene; saturation
+     and brightness restore as --p approaches 1. This contrast carries
+     the seasonal cross-fade more than the overlay tints alone could. */
+  transform: scale(calc(1.05 + var(--p) * 0.06)) translateY(calc(var(--p) * -1.5%));
+  filter:
+    saturate(calc(0.10 + var(--p) * 0.90))
+    brightness(calc(0.55 + var(--p) * 0.45))
+    contrast(calc(1.05 - var(--p) * 0.05));
+  transition: transform 100ms linear, filter 120ms linear;
+  will-change: transform, filter;
+}
+.home-feature-tint {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  transition: opacity 120ms linear;
+  will-change: opacity;
+}
+/* Winter tint: cool slate-blue wash. Dominant at the start (--p = 0).
+   Stacks with the image's desaturated/dimmed filter to read as a cold
+   moody mountain scene rather than the summer Yotei underneath. */
+.home-feature-tint-winter {
+  background:
+    linear-gradient(180deg, rgba(90, 130, 175, 0.45) 0%, rgba(30, 55, 90, 0.65) 100%);
+  opacity: calc(1 - var(--p));
+}
+/* Summer tint: golden-sun + rust wash. Builds in as --p approaches 1. */
+.home-feature-tint-summer {
+  background:
+    radial-gradient(ellipse at 70% 30%, rgba(212, 168, 67, 0.45) 0%, rgba(212, 168, 67, 0) 60%),
+    linear-gradient(180deg, rgba(179, 79, 36, 0.35) 0%, rgba(53, 150, 93, 0.30) 100%);
+  opacity: var(--p);
+}
+/* Always-on scrim for text legibility, on top of both tints. */
+.home-feature-scrim {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(0,0,0,0.30) 0%, rgba(0,0,0,0.55) 100%);
+}
+
 .home-feature-quote {
   position: relative;
   z-index: 1;
-  max-width: 880px;
   margin: 0;
-  padding: 0;
+  padding: 0 clamp(20px, 5vw, 80px);
   border: 0;
+  max-width: 1200px;
+  width: 100%;
   text-align: center;
-  color: #fff;
+  display: grid;
+  grid-template-areas: "phase";
+  place-items: center;
 }
-.home-feature-quote p {
-  margin: 0;
+.home-feature-phase {
+  grid-area: phase;
+  display: block;
   font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
-  font-weight: 300;
-  font-size: clamp(24px, 2.8vw, 40px);
-  line-height: 1.35;
-  letter-spacing: 0;
-  text-shadow: 0 2px 24px rgba(0,0,0,0.45);
+  font-weight: 200;
+  font-size: clamp(34px, 6.4vw, 96px);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: #fff;
+  text-shadow: 0 2px 32px rgba(0, 0, 0, 0.55);
+  transition: opacity 160ms linear, transform 160ms linear, filter 160ms linear;
+  will-change: opacity, transform;
 }
-.ja .home-feature-quote p {
-  font-size: clamp(22px, 2.8vw, 40px);
-  line-height: 1.5;
+.home-feature-phase em {
+  font-style: normal;
+  font-weight: 500;
 }
-@media (max-width: 767px) {
-  .home-feature {
-    min-height: 50vh;
-    padding: 64px 20px;
-    background-attachment: scroll;
-  }
+.home-feature-phase-winter em { color: #e6eef8; }
+.home-feature-phase-summer em { color: var(--color-accent); }
+
+/* Winter phase dominates at low --p, fades and lifts as --p grows.
+   Summer phase rises in from below. Cross-fade uses smoothstep applied
+   in JS via two stacked custom props (--wp, --sp) so the midpoint isn't
+   muddy. CSS variable based on --p as fallback if JS doesn't set them. */
+/* Lines stack in a single grid cell. The staggered cross-fade in the
+   JS ensures only one phase is visible at any moment, so the vertical
+   lift can stay modest (8vh) — it's a stylistic flourish, not a
+   collision-avoidance mechanism. Winter lifts off the top as it
+   fades; summer rises in from below. */
+.home-feature-phase-winter {
+  opacity: var(--wp, calc(1 - var(--p)));
+  transform: translateY(calc((1 - var(--wp, calc(1 - var(--p)))) * -8vh));
+}
+.home-feature-phase-summer {
+  opacity: var(--sp, var(--p));
+  transform: translateY(calc((1 - var(--sp, var(--p))) * 8vh));
 }
 
-/* ── Section 08: Plan + Get Involved (split) ──────────────────────── */
+.ja .home-feature-phase {
+  font-family: "Fruit Viesta", "Zen Maru Gothic", "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
+  font-size: clamp(28px, 5.6vw, 80px);
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* Thin scroll-progress bar at the bottom of the stage. Affordance that
+   the section is scroll-driven without dominating the composition. */
+.home-feature-progress {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.08);
+}
+.home-feature-progress-fill {
+  display: block;
+  height: 100%;
+  width: calc(var(--p) * 100%);
+  background: linear-gradient(90deg, rgba(230, 238, 248, 0.85) 0%, var(--color-accent) 100%);
+  transition: width 120ms linear;
+}
+
+/* Mobile / reduced-motion: un-stick the stage and show both phases
+   stacked statically. Matches The Build precedent (mobile bails out of
+   the scrub). */
+@media (max-width: 767px), (prefers-reduced-motion: reduce) {
+  .home-feature {
+    --p: 1;
+    height: auto;
+    min-height: 70vh;
+    padding: 80px 0;
+  }
+  .home-feature-stage {
+    position: relative;
+    top: auto;
+    height: auto;
+    min-height: 70vh;
+    padding: 64px 0;
+  }
+  .home-feature-quote {
+    display: block;
+    text-align: center;
+  }
+  .home-feature-phase {
+    display: block;
+    opacity: 1;
+    transform: none;
+    margin-bottom: 24px;
+    font-size: clamp(28px, 7vw, 48px);
+  }
+  .home-feature-phase:last-child { margin-bottom: 0; }
+  .home-feature-bg-img { transform: none; }
+  .home-feature-tint-winter { opacity: 0.35; }
+  .home-feature-tint-summer { opacity: 0.85; }
+  .home-feature-progress { display: none; }
+}
+
+/* ── Section 08: Ride / Build diptych (full-bleed photographic) ───── */
+/* Each half is a full-bleed photographic panel with a coloured tint
+   (forest green for Ride, rust orange for Build), a slow Ken-Burns
+   drift on the image, and a slide-in-from-the-edge reveal when the
+   section enters viewport. The reveal hooks into the existing .fade-up
+   IO observer — no new JS. */
 .home-action {
   background: var(--color-bg-panel);
   color: var(--color-text);
 }
-.home-action-grid { display: grid; grid-template-columns: 1fr 1fr; min-height: 60vh; }
+.home-action-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 80vh;
+}
 .home-action-half {
-  padding: clamp(64px, 10vh, 140px) clamp(28px, 5vw, 80px);
+  position: relative;
+  padding: clamp(80px, 12vh, 180px) clamp(32px, 6vw, 96px);
   display: flex;
   align-items: center;
+  overflow: hidden;
+  isolation: isolate;
 }
-/* Tints are bumped from the previous 0.08/0.02 so the colour
-   coding reads more clearly on dark backgrounds. */
-.home-action-ride  { background: linear-gradient(180deg, rgba(53, 150, 93, 0.14), rgba(53, 150, 93, 0.04)); }   /* forest green tint (--color-secondary) */
-.home-action-build {
-  background: linear-gradient(180deg, rgba(179, 79, 36, 0.14), rgba(179, 79, 36, 0.04));     /* rust orange tint (--color-primary) */
-  border-left: 1px solid rgba(255, 255, 255, 0.06);
+.home-action-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
 }
-.home-action-inner { max-width: 480px; width: 100%; margin: 0 auto; }
+.home-action-bg picture,
+.home-action-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.home-action-bg-img {
+  object-fit: cover;
+  object-position: center;
+  /* Slow continuous Ken-Burns. Subtle enough to feel cinematic
+     rather than restless. Disabled under reduced-motion below. */
+  animation: home-action-bg-drift 24s ease-in-out infinite alternate;
+  will-change: transform;
+}
+@keyframes home-action-bg-drift {
+  from { transform: scale(1.04) translate(0, 0); }
+  to   { transform: scale(1.10) translate(-1.5%, -1%); }
+}
+.home-action-tint {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+}
+.home-action-tint-ride {
+  background:
+    linear-gradient(180deg, rgba(20, 50, 30, 0.55) 0%, rgba(53, 150, 93, 0.45) 100%);
+}
+.home-action-tint-build {
+  background:
+    linear-gradient(180deg, rgba(50, 22, 10, 0.55) 0%, rgba(179, 79, 36, 0.50) 100%);
+}
+.home-action-scrim {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.55) 100%);
+}
+/* Edge gradient: deepens the outer edge of each half so the inner
+   seam feels lighter than the page edges, giving the diptych a soft
+   vignette around the whole composition. */
+.home-action-ride .home-action-scrim {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.20) 60%, rgba(0, 0, 0, 0.30) 100%);
+}
+.home-action-build .home-action-scrim {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.20) 40%, rgba(0, 0, 0, 0.45) 100%);
+}
+
+.home-action-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 520px;
+  width: 100%;
+  margin: 0 auto;
+  color: #fff;
+}
 .home-action-title {
   font-family: "Fruit Viesta", "Zen Maru Gothic", "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 500;
-  font-size: clamp(32px, 4vw, 56px);
-  line-height: 1.05;
-  margin: 0 0 20px;
-  color: var(--color-text-heading);
+  font-size: clamp(40px, 5.6vw, 88px);
+  line-height: 1.0;
+  letter-spacing: -0.01em;
+  margin: 0 0 24px;
+  color: #fff;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.45);
 }
 html[lang="ja"] .home-action-title { letter-spacing: normal; text-transform: none; }
 .home-action-body {
-  font-size: clamp(15px, 1.4vw, 17px);
-  line-height: 1.55;
-  color: var(--color-text-light);
-  margin: 0 0 28px;
+  font-size: clamp(15px, 1.5vw, 18px);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.88);
+  margin: 0 0 32px;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
+  max-width: 440px;
 }
 .home-action-ctas {
   display: flex;
@@ -899,7 +1165,7 @@ html[lang="ja"] .home-action-title { letter-spacing: normal; text-transform: non
   margin-bottom: 16px;
 }
 .home-action-ctas .btn { flex: 0 0 auto; }
-.home-action-tertiary { margin: 8px 0 0; font-size: 14px; }
+.home-action-tertiary { margin: 12px 0 0; font-size: 14px; }
 .home-action-tertiary a {
   color: #fff;
   text-decoration: none;
@@ -908,10 +1174,39 @@ html[lang="ja"] .home-action-title { letter-spacing: normal; text-transform: non
 }
 .home-action-tertiary a:hover { color: var(--color-accent); border-color: var(--color-accent); }
 
+/* Slide-in reveal: each half is pre-translated outward and the parent
+   section's .fade-up.in toggles them home. The two halves enter from
+   opposite edges and meet at the seam. */
+.home-action-diptych .home-action-half {
+  opacity: 0;
+  transition: opacity 900ms ease-out, transform 900ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.home-action-diptych .home-action-ride  { transform: translateX(-40px); }
+.home-action-diptych .home-action-build { transform: translateX( 40px); }
+.home-action-diptych.in .home-action-half {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 @media (max-width: 767px) {
   .home-action-grid { grid-template-columns: 1fr; min-height: 0; }
-  .home-action-build { border-left: none; border-top: 1px solid rgba(255, 255, 255, 0.06); }
-  .home-action-half { padding: clamp(48px, 8vh, 80px) 24px; }
+  .home-action-half { padding: clamp(64px, 10vh, 120px) 24px; min-height: 60vh; }
+  .home-action-title { font-size: clamp(36px, 9vw, 56px); }
+  .home-action-body { font-size: 16px; }
+  /* On mobile the halves stack vertically; slide-in from top/bottom
+     reads better than left/right at narrow widths. */
+  .home-action-diptych .home-action-ride  { transform: translateY(-20px); }
+  .home-action-diptych .home-action-build { transform: translateY( 20px); }
+  .home-action-diptych.in .home-action-half { transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-action-bg-img { animation: none; transform: scale(1.04); }
+  .home-action-diptych .home-action-half {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 /* ── Section 09: Jobs strip ───────────────────────────────────────── */
@@ -976,3 +1271,38 @@ html[lang="ja"] .home-partners-title { letter-spacing: normal; text-transform: n
 .home-partners-link { text-align: center; margin: 18px 0 0; font-size: 14px; }
 .home-partners-link a { color: #fff; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 200ms ease, color 200ms ease; }
 .home-partners-link a:hover { color: var(--color-accent); border-color: var(--color-accent); }
+
+/* Partners curtain reveal: each partner wrapper fades in with a small
+   left-to-right wipe, staggered so the wall feels like a curtain
+   raising rather than a single block dropping in. The shared partner
+   img keeps its own grayscale + 0.35 opacity rest state and full-
+   colour hover — we only animate the wrapper, so existing behaviour
+   stays untouched. Hooks into the section's existing .fade-up. */
+.home-partners.fade-up .partners-wall .partner {
+  opacity: 0;
+  transform: translateX(-14px);
+  transition: opacity 700ms ease-out, transform 700ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.home-partners.fade-up.in .partners-wall .partner {
+  opacity: 1;
+  transform: translateX(0);
+}
+/* Stagger waves: 45ms per item, looped every 8 items so longer walls
+   don't take a noticeably longer time to settle. */
+.home-partners.fade-up.in .partners-wall .partner:nth-child(8n+1) { transition-delay:   0ms; }
+.home-partners.fade-up.in .partners-wall .partner:nth-child(8n+2) { transition-delay:  45ms; }
+.home-partners.fade-up.in .partners-wall .partner:nth-child(8n+3) { transition-delay:  90ms; }
+.home-partners.fade-up.in .partners-wall .partner:nth-child(8n+4) { transition-delay: 135ms; }
+.home-partners.fade-up.in .partners-wall .partner:nth-child(8n+5) { transition-delay: 180ms; }
+.home-partners.fade-up.in .partners-wall .partner:nth-child(8n+6) { transition-delay: 225ms; }
+.home-partners.fade-up.in .partners-wall .partner:nth-child(8n+7) { transition-delay: 270ms; }
+.home-partners.fade-up.in .partners-wall .partner:nth-child(8n+8) { transition-delay: 315ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  .home-partners.fade-up .partners-wall .partner,
+  .home-partners.fade-up.in .partners-wall .partner {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

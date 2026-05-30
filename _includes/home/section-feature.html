@@ -1,10 +1,38 @@
-<!-- _includes/home/section-feature.html: Section 07 (fixed-bg quote band) -->
-<section class="home-feature">
-  <blockquote class="home-feature-quote">
-    {% if page.lang == "en" %}
-      <p>What snowsports did for Niseko&rsquo;s winters, mountain biking will do for its summers.</p>
-    {% else %}
-      <p>スノースポーツが<wbr>ニセコの<wbr>冬を<wbr>変えたように、<wbr>マウンテンバイクが<wbr>夏を<wbr>変える。</p>
-    {% endif %}
-  </blockquote>
+<!-- _includes/home/section-feature.html: Section 07 (sticky-theatre snowsports quote) -->
+{% capture feature_alt %}{% if page.lang == 'en' %}Mount Yotei rising above Niseko{% else %}ニセコにそびえる羊蹄山{% endif %}{% endcapture %}
+<section class="home-feature home-feature-scrub" data-feature-scrub>
+  <div class="home-feature-stage">
+    <div class="home-feature-bg" aria-hidden="true">
+      {% include image.html
+          src="/assets/images/bg/bg-header-yotei.jpg"
+          alt=feature_alt
+          widths="1600,2400"
+          sizes="100vw"
+          class="home-feature-bg-img" %}
+      <div class="home-feature-tint home-feature-tint-winter"></div>
+      <div class="home-feature-tint home-feature-tint-summer"></div>
+      <div class="home-feature-scrim"></div>
+    </div>
+
+    <blockquote class="home-feature-quote">
+      <span class="home-feature-phase home-feature-phase-winter" aria-hidden="false">
+        {% if page.lang == "en" %}
+          What snowsports did for Niseko&rsquo;s <em>winters</em>,
+        {% else %}
+          スノースポーツが<wbr>ニセコの<wbr><em>冬を</em><wbr>変えたように、
+        {% endif %}
+      </span>
+      <span class="home-feature-phase home-feature-phase-summer" aria-hidden="false">
+        {% if page.lang == "en" %}
+          mountain biking will do for its <em>summers</em>.
+        {% else %}
+          <em>マウンテンバイクが</em><wbr>夏を<wbr>変える。
+        {% endif %}
+      </span>
+    </blockquote>
+
+    <div class="home-feature-progress" aria-hidden="true">
+      <span class="home-feature-progress-fill"></span>
+    </div>
+  </div>
 </section>

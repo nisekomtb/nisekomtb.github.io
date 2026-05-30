@@ -1,7 +1,19 @@
-<!-- _includes/home/section-action.html: Section 08 -->
-<section class="home-action fade-up">
+<!-- _includes/home/section-action.html: Section 08 (full-bleed diptych) -->
+{% capture ride_alt %}{% if page.lang == 'en' %}Rider on the Twin Peaks trail{% else %}ツインピークスのトレイルを走るライダー{% endif %}{% endcapture %}
+{% capture build_alt %}{% if page.lang == 'en' %}NAMBA team and community at work{% else %}NAMBAのチームと建設の様子{% endif %}{% endcapture %}
+<section class="home-action home-action-diptych fade-up">
   <div class="home-action-grid">
     <div class="home-action-half home-action-ride">
+      <div class="home-action-bg" aria-hidden="true">
+        {% include image.html
+            src="/assets/images/bg/bg-header-twinpeaks.jpg"
+            alt=ride_alt
+            widths="1600,2400"
+            sizes="(min-width: 768px) 50vw, 100vw"
+            class="home-action-bg-img" %}
+        <div class="home-action-tint home-action-tint-ride"></div>
+        <div class="home-action-scrim"></div>
+      </div>
       <div class="home-action-inner">
         <h2 class="home-action-title">
           {% if page.lang == "en" %}Ride here
@@ -9,7 +21,7 @@
           {% endif %}
         </h2>
         <p class="home-action-body">
-          {% if page.lang == "en" %}Niseko's MTB season runs May through October. Trails are free. Rent bikes locally. Sapporo is a two-hour drive.
+          {% if page.lang == "en" %}Niseko&rsquo;s MTB season runs May through October. Trails are free. Rent bikes locally. Sapporo is a two-hour drive.
           {% else %}ニセコの<wbr>MTB<wbr>シーズンは<wbr>5月から<wbr>10月。<wbr>トレイルは<wbr>無料。<wbr>バイクは<wbr>現地で<wbr>レンタル可能。<wbr>札幌から<wbr>車で<wbr>2時間です。
           {% endif %}
         </p>
@@ -24,6 +36,16 @@
       </div>
     </div>
     <div class="home-action-half home-action-build">
+      <div class="home-action-bg" aria-hidden="true">
+        {% include image.html
+            src="/assets/images/bg/bg-header-team.jpg"
+            alt=build_alt
+            widths="1600,2400"
+            sizes="(min-width: 768px) 50vw, 100vw"
+            class="home-action-bg-img" %}
+        <div class="home-action-tint home-action-tint-build"></div>
+        <div class="home-action-scrim"></div>
+      </div>
       <div class="home-action-inner">
         <h2 class="home-action-title">
           {% if page.lang == "en" %}Build here
