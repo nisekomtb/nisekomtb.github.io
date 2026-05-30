@@ -23,6 +23,7 @@
     initHeroVideo();
     initHeroCue();
     initFadeUps();
+    initFeatureParallax();
     initNetworkScrub();
     initCountUps();
   }
@@ -66,6 +67,72 @@
       });
     }, { threshold: 0.15 });
     document.querySelectorAll('.fade-up').forEach(function (el) { io.observe(el); });
+  }
+
+  /* Section 07: snowsports quote background parallax. As the section
+     scrolls through the viewport, the pre-scaled Yotei photo translates
+     vertically at ~16% of the section's total visible scroll range.
+     The CSS sets transform: scale(1.15) by default so the JS-driven
+     translateY has room to move without revealing the section bg.
+     iOS Safari ignores background-attachment: fixed, so we do it by
+     hand here. Skipped on mobile (small viewports + scroll position
+     fidelity) and on reduced-motion. */
+  function initFeatureParallax() {
+    var section = document.querySelector('.home-feature');
+    if (!section || prefersReducedMotion || isMobile) return;
+    var img = section.querySelector('.home-feature-bg-img');
+    if (!img) return;
+
+    var sectionTop = 0, sectionHeight = 0, vh = window.innerHeight;
+    var armed = false, ticking = false;
+
+    function measure() {
+      var rect = section.getBoundingClientRect();
+      sectionTop = rect.top + (window.scrollY || window.pageYOffset || 0);
+      sectionHeight = section.offsetHeight;
+      vh = window.innerHeight;
+    }
+
+    function update() {
+      if (!armed) return;
+      var scrollY = window.scrollY || window.pageYOffset || 0;
+      /* progress 0 when the section's top edge is just below the
+         viewport (about to enter); 1 when the section's bottom edge
+         is just above the viewport (just left). Clamped to [0,1]. */
+      var range = sectionHeight + vh;
+      var progress = (scrollY + vh - sectionTop) / range;
+      progress = Math.min(Math.max(progress, 0), 1);
+      /* Translate from +8% (down) at entry to -8% (up) at exit.
+         16% total travel against the 15% scale headroom keeps edges
+         from leaking. */
+      var translatePct = (0.5 - progress) * 16;
+      img.style.transform = 'scale(1.15) translateY(' + translatePct.toFixed(2) + '%)';
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', function () {
+      if (!ticking && armed) {
+        window.requestAnimationFrame(update);
+        ticking = true;
+      }
+    }, { passive: true });
+    window.addEventListener('resize', function () {
+      window.requestAnimationFrame(function () { measure(); update(); });
+    }, { passive: true });
+
+    measure();
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          armed = e.isIntersecting;
+          if (armed) update();
+        });
+      }, { rootMargin: '50px 0px 50px 0px' });
+      io.observe(section);
+    } else {
+      armed = true;
+      update();
+    }
   }
 
   function initNetworkScrub() {

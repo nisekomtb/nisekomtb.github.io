@@ -973,12 +973,12 @@ html[lang="ja"] .home-stories-title { letter-spacing: normal; text-transform: no
 .home-feature-bg-img {
   object-fit: cover;
   object-position: center 30%;
-  animation: home-feature-drift 28s ease-in-out infinite alternate;
+  /* Pre-scaled so the JS-driven parallax has room to translate
+     vertically without revealing the section background underneath.
+     The JS sets transform on this element directly via initFeature-
+     Parallax; the inline transform overrides this default. */
+  transform: scale(1.15);
   will-change: transform;
-}
-@keyframes home-feature-drift {
-  from { transform: scale(1.04) translate(0, 0); }
-  to   { transform: scale(1.09) translate(-1%, -0.5%); }
 }
 .home-feature-tint {
   position: absolute;
@@ -1067,7 +1067,7 @@ html[lang="ja"] .home-stories-title { letter-spacing: normal; text-transform: no
   .home-feature { min-height: 56vh; padding: 64px 20px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .home-feature-bg-img { animation: none; transform: scale(1.04); }
+  .home-feature-bg-img { transform: scale(1.04); }
 }
 
 /* ── Section 08: Ride / Build diptych (full-bleed photographic) ───── */
