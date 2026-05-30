@@ -58,12 +58,12 @@
             <span aria-hidden="true" data-tf-icon="" class="dicon_small dblack is-double-black" title="Double Black Diamond"></span> <span class="ddesc ddblblack">Extremely Difficult</span>
         {% endcase %}
       </td>
-      {% if trail.trailforks_id %}
       <td class="cond" aria-hidden="true">
+      {% if trail.trailforks_id %}
         <div class="TrailforksWidgetTrailStatus" data-w="15px" data-h="19px" data-trailid="{{- trail.trailforks_id -}}"
           data-status="1" data-st="0" data-condition="0" data-ct="0" data-date="0" data-description="0"></div>
-      </td>
       {% endif %}
+      </td>
       <td class="left">{% if page.lang == "ja" and trail.ja.name %}{{ trail.ja.name }}{% else %}{{ trail.name }}{% endif %}</td>
       <td class="bike">
         {% case trail.bike %}

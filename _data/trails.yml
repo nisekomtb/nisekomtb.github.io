@@ -682,7 +682,7 @@ hanazono:
       descent: 36
       bike: one-way
       multi_use: true
-      trailforks_rid: 923207
+      # trailforks_id: 923207
     - name: Downhill Course
       ja:
         name: ダウンヒルコース
@@ -692,4 +692,4 @@ hanazono:
       descent: 347
       bike: down-only
       multi_use: false
-      trailforks_rid: 923205
+      # trailforks_id: 923205
