@@ -2,12 +2,48 @@
 {% capture feature_alt %}{% if page.lang == 'en' %}Mount Yotei rising above Niseko{% else %}ニセコにそびえる羊蹄山{% endif %}{% endcapture %}
 <section class="home-feature fade-up">
   <div class="home-feature-bg" aria-hidden="true">
+    {%- comment -%}
+      Static base: original composed Yotei photo. No parallax. Fills any
+      gaps that appear when the three parallax layers above shift past
+      each other. Always present.
+    {%- endcomment -%}
     {% include image.html
         src="/assets/images/bg/bg-header-yotei.jpg"
         alt=feature_alt
         widths="1600,2400"
         sizes="100vw"
-        class="home-feature-bg-img" %}
+        class="home-feature-bg-img home-feature-bg-base" %}
+
+    {%- comment -%}
+      Three parallax layers. Each one is a transparent-cut version of
+      the base Yotei photo. The JS reads data-parallax and translates
+      each layer up at a different rate as the section scrolls through
+      the viewport — closer planes (foreground) move fastest, distant
+      planes (sky) barely move. Missing files are hidden by JS via the
+      onerror path so the static base alone still works.
+      Filenames the user is expected to provide:
+        bg-header-yotei-sky.webp        (sky region, mountain silhouette cut transparent)
+        bg-header-yotei-mountain.webp   (Yotei + ridges, sky and foreground cut transparent)
+        bg-header-yotei-foreground.webp (foliage at bottom, everything above cut transparent)
+      Soft-feathered edges (~20-40px) between layers prevent visible
+      seams when the layers shift.
+    {%- endcomment -%}
+    <img class="home-feature-bg-img home-feature-bg-layer home-feature-bg-sky"
+         data-parallax="0.04"
+         src="/assets/images/bg/bg-header-yotei-sky.webp"
+         alt=""
+         loading="lazy" />
+    <img class="home-feature-bg-img home-feature-bg-layer home-feature-bg-mountain"
+         data-parallax="0.12"
+         src="/assets/images/bg/bg-header-yotei-mountain.webp"
+         alt=""
+         loading="lazy" />
+    <img class="home-feature-bg-img home-feature-bg-layer home-feature-bg-foreground"
+         data-parallax="0.28"
+         src="/assets/images/bg/bg-header-yotei-foreground.webp"
+         alt=""
+         loading="lazy" />
+
     <div class="home-feature-tint"></div>
     <div class="home-feature-scrim"></div>
   </div>
