@@ -490,7 +490,7 @@ layout: base
         <h2 class="module-title">{% if page.lang == "ja" %}イベント詳細{% else %}Event Details{% endif %}</h2>
 
         <div class="detail-item">
-          <h4><span class="fa-solid fa-calendar" style="margin-right:4px;"></span> {% if page.lang == "ja" %}日程{% else %}Dates{% endif %}</h4>
+          <h4><span class="fa-solid fa-calendar"></span> {% if page.lang == "ja" %}日程{% else %}Dates{% endif %}</h4>
           <p>
             {% for i in (1..page.days) %}
               {% assign days = i | minus: 1 | times: 24 | times: 60 | times: 60 %}
@@ -507,14 +507,14 @@ layout: base
 
         {% if page.location %}
         <div class="detail-item">
-          <h4><span class="fa-solid fa-location-dot" style="margin-right:4px;"></span> {% if page.lang == "ja" %}場所{% else %}Location{% endif %}</h4>
+          <h4><span class="fa-solid fa-location-dot"></span> {% if page.lang == "ja" %}場所{% else %}Location{% endif %}</h4>
           <p>{{ page.location }}</p>
         </div>
         {% endif %}
 
         {% if page.price or page.price == 0 %}
         <div class="detail-item">
-          <h4><span class="fa-solid fa-yen-sign" style="margin-right:4px;"></span> {% if page.lang == "ja" %}料金{% else %}Price{% endif %}</h4>
+          <h4><span class="fa-solid fa-yen-sign"></span> {% if page.lang == "ja" %}料金{% else %}Price{% endif %}</h4>
           {% if page.price[0] %}
             <ul>
             {% for price in page.price %}
@@ -539,7 +539,7 @@ layout: base
 
         {% if page.host %}
         <div class="detail-item">
-          <h4><span class="fa-solid fa-building" style="margin-right:4px;"></span> {% if page.lang == "ja" %}イベント主催者{% else %}Host{% endif %}</h4>
+          <h4><span class="fa-solid fa-building"></span> {% if page.lang == "ja" %}イベント主催者{% else %}Host{% endif %}</h4>
           <div class="partners-imgs">
             <a href="{{- page.host.url -}}" target="_blank" rel="sponsored noopener noreferrer">
               <img src="/assets/images/company{{- page.host.img -}}" alt="{{ page.host.name }}{% if page.lang == 'ja' %}、イベント主催者{% else %}, event host{% endif %}" loading="lazy" width="56" height="56">
@@ -550,7 +550,7 @@ layout: base
 
         {% if page.partners %}
         <div class="detail-item">
-          <h4><span class="fa-solid fa-handshake" style="margin-right:4px;"></span> {% if page.lang == "ja" %}イベントパートナー{% else %}Event Partners{% endif %}</h4>
+          <h4><span class="fa-solid fa-handshake"></span> {% if page.lang == "ja" %}イベントパートナー{% else %}Event Partners{% endif %}</h4>
           <div class="partners-imgs">
             {% for partner in page.partners %}
               <a href="{{- partner.url -}}" target="_blank" rel="sponsored noopener noreferrer">
@@ -563,7 +563,7 @@ layout: base
 
         {% if page.moreInfo %}
         <div class="detail-item">
-          <h4><span class="fa-solid fa-circle-info" style="margin-right:4px;"></span> {% if page.lang == "ja" %}詳しくは{% else %}More Info{% endif %}</h4>
+          <h4><span class="fa-solid fa-circle-info"></span> {% if page.lang == "ja" %}詳しくは{% else %}More Info{% endif %}</h4>
           {% for info in page.moreInfo %}
             <p>{{ info }}</p>
           {% endfor %}

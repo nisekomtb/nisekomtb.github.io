@@ -537,7 +537,7 @@ layout: base
 
         {% if park_data.partners %}
         <div class="detail-item">
-          <h3><span class="fa-solid fa-handshake" style="margin-right:4px;"></span> {% if page.lang == 'ja' %}バイクパーク パートナー{% else %}Bike park partners{% endif %}</h3>
+          <h3><span class="fa-solid fa-handshake"></span> {% if page.lang == 'ja' %}バイクパーク パートナー{% else %}Bike park partners{% endif %}</h3>
           <div class="partners-imgs">
             {% for p in park_data.partners %}
               {% assign partner_label = p.title_en %}

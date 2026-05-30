@@ -2501,6 +2501,15 @@ input.invalid {
   margin: 0 0 6px;
 }
 
+.detail-item h3 > .fa-solid,
+.detail-item h3 > .fa-regular,
+.detail-item h3 > .fa-brands,
+.detail-item h4 > .fa-solid,
+.detail-item h4 > .fa-regular,
+.detail-item h4 > .fa-brands {
+  margin-right: 4px;
+}
+
 .park-sidebar-panel .detail-item p {
   margin: 0;
   font-size: 95%;
