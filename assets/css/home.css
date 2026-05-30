@@ -588,12 +588,13 @@ html[lang="ja"] .home-network-parks-title { letter-spacing: normal; text-transfo
 /* Per-card background-image parallax driven by the card's own view
    progress. animation-timeline: view() means each card has its own
    timeline scoped to when it crosses the viewport — no scroll listener
-   needed. Bg-size is bumped to auto 130% so there's vertical headroom
-   to shift bg-position through during the parallax range.
+   needed. Bg-size is bumped to auto 180% so there's enough vertical
+   headroom for a visibly large parallax shift (the previous 130%
+   only gave ~50px of travel; this gives ~160px).
    Firefox doesn't support view-timeline yet; it falls back to the
    static bg-position: center 30%. */
 .home-network-parks-row .ride-card .ride-card-image {
-  background-size: auto 130%;
+  background-size: auto 180%;
   background-position: center 30%;
 }
 @supports (animation-timeline: view()) {
@@ -604,8 +605,8 @@ html[lang="ja"] .home-network-parks-title { letter-spacing: normal; text-transfo
   }
 }
 @keyframes home-ride-card-parallax {
-  from { background-position: center 8%; }
-  to   { background-position: center 92%; }
+  from { background-position: center 0%; }
+  to   { background-position: center 100%; }
 }
 
 /* Mobile (< 768px): convert the 4-up grid to a horizontal scroll-snap
