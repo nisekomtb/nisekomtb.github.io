@@ -7,73 +7,6 @@ masthead:
 og:
   image: /assets/images/bg/bg-header-about.jpg
 ---
-<style>
-  .phase-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 16px;
-    max-width: 1400px;
-    margin: 20px auto;
-  }
-  .phase-grid .phase-tile {
-    position: relative;
-    display: block;
-    background: var(--color-bg-panel);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 3px;
-    overflow: hidden;
-    text-decoration: none;
-    transition: transform 200ms ease, box-shadow 200ms ease;
-  }
-  .phase-grid .phase-tile:hover,
-  .phase-grid .phase-tile:focus-visible {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
-    outline: none;
-  }
-  .phase-grid .phase-tile img {
-    width: 100%;
-    height: auto;
-    display: block;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    transition: transform 400ms ease;
-  }
-  .phase-grid .phase-tile:hover img,
-  .phase-grid .phase-tile:focus-visible img {
-    transform: scale(1.04);
-  }
-  .phase-grid .phase-tile .caption {
-    padding: 14px 16px;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 12px;
-  }
-  .phase-grid .phase-tile .year {
-    font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
-    font-weight: 700;
-    font-size: 13px;
-    color: var(--color-accent);
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-  }
-  .phase-grid .phase-tile .label {
-    font-size: 95%;
-    color: #ddd;
-    line-height: 1.4;
-  }
-  @media (max-width: 1199px) {
-    .phase-grid { grid-template-columns: repeat(3, 1fr); max-width: 900px; }
-  }
-  @media (max-width: 767px) {
-    .phase-grid { grid-template-columns: repeat(2, 1fr); }
-  }
-  @media (max-width: 480px) {
-    .phase-grid { grid-template-columns: 1fr; }
-  }
-</style>
 <div class="t3-section-wrap">
 
   <!-- The NAMBA Story -->
@@ -230,7 +163,7 @@ og:
 
   </div>
 
-  <div class="phase-grid about-pswp">
+  <div class="phase-grid is-wide about-pswp">
     <a class="phase-tile" href="/assets/images/about/network/2022-large.webp"
        data-pswp-width="2400" data-pswp-height="1350" target="_blank" rel="noopener">
       {% include image.html src="/assets/images/about/network/2022.webp" alt="Satellite view of the Niseko mountain bike network in 2022 with the first NAMBA trails traced in gold above Kutchan" loading="lazy" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" width="2400" height="1350" %}
