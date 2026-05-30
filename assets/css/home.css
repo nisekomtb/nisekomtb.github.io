@@ -910,7 +910,7 @@ html[lang="ja"] .home-stories-title { letter-spacing: normal; text-transform: no
   font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
   font-style: italic;
   font-weight: 300;
-  font-size: clamp(24px, 3.6vw, 48px);
+  font-size: clamp(20px, 3vw, 40px);
   line-height: 1.4;
   letter-spacing: 0;
   text-shadow: 0 2px 28px rgba(0, 0, 0, 0.55);
@@ -927,7 +927,7 @@ html[lang="ja"] .home-stories-title { letter-spacing: normal; text-transform: no
   /* JA has no italic equivalent; drop the slant and lean on the
      quote-mark glyphs + larger size to carry the quote register. */
   font-style: normal;
-  font-size: clamp(22px, 3.2vw, 42px);
+  font-size: clamp(18px, 2.6vw, 34px);
   line-height: 1.6;
   letter-spacing: 0.02em;
   word-break: keep-all;
