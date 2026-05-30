@@ -85,13 +85,13 @@ funding:
       marketing_events: 0
       admin_other: 850246
     - year: 2024
-      trail_construction: 27550000
-      trail_maintenance_operation: 7821111
+      trail_construction: 28908933
+      trail_maintenance_operation: 6462178
       marketing_events: 1240222
       admin_other: 921706
     - year: 2025
-      trail_construction: 46825000
-      trail_maintenance_operation: 12450000
+      trail_construction: 48482260
+      trail_maintenance_operation: 10792740
       marketing_events: 1355000
       admin_other: 2882345
   # Aggregate % over FY2022-FY2025. Update if income/outgoings change.
@@ -101,7 +101,7 @@ funding:
     grants_subsidies: 8
     community_fund: 7
   allocation:
-    trail_construction: 82
-    trail_maintenance_operation: 13
+    trail_construction: 84
+    trail_maintenance_operation: 11
     marketing_events: 2
     admin_other: 3
