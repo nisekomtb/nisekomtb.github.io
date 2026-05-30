@@ -137,17 +137,13 @@ Plus the custom-amount input on `/donate/` (`<input id="custom-donation" style="
 
 These all describe the same shape: an unstyled `<ul>` of `<li>` blocks, each with an h3 title and one paragraph. The two variants differ only in font-size + line-height density.
 
-**Proposal: Promote (utility/component).**
+**Implemented as two separate classes** (one per structural shape — the original "single class with variant" proposal didn't survive contact with the markup):
 
 ```css
+/* h3-per-item shape: dirty-dames, projects index */
 .feature-list {
   list-style: none;
   padding-left: 0;
-  line-height: 2.2;
-  font-size: 130%;
-}
-
-.feature-list--compact {
   font-size: 115%;
   line-height: 1.7;
 }
@@ -159,9 +155,17 @@ These all describe the same shape: an unstyled `<ul>` of `<li>` blocks, each wit
 .feature-list > li > h3 {
   margin: 0 0 6px;
 }
+
+/* strong-lead-in shape: plan-your-trip */
+.section-list {
+  list-style: none;
+  padding-left: 0;
+  font-size: 130%;
+  line-height: 2.2;
+}
 ```
 
-One class on the `<ul>`, no per-item inline styles needed. Replaces 57 inline declarations.
+Replaces 57 inline declarations.
 
 ---
 
