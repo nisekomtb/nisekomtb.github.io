@@ -2412,6 +2412,36 @@ input.invalid {
   line-height: 2.2;
 }
 
+.tier-price {
+  font-size: 24px;
+  padding-bottom: 8px;
+}
+
+.tier-price-period {
+  font-size: 14px;
+  color: #aaa;
+}
+
+.tier-meta {
+  margin-top: 10px;
+  font-size: 90%;
+}
+
+.tier-meta.is-muted {
+  color: #aaa;
+}
+
+#custom-donation {
+  font-size: 24px;
+  width: 120px;
+  text-align: center;
+  padding: 8px;
+  background: var(--color-bg-panel);
+  border: 2px solid var(--color-bg-border);
+  color: #fff;
+  border-radius: 4px;
+}
+
 .module-title {
   background: transparent;
   color: var(--color-accent);
