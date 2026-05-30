@@ -2368,15 +2368,30 @@ input.invalid {
 }
 
 .module-title-wrap {
-  max-width: 650px;
+  max-width: 900px;
   margin: auto;
   margin-bottom: 72px;
   text-align: center;
 }
 
+.module-title-wrap.is-narrow {
+  max-width: 650px;
+}
+
+.module-title-wrap.is-wide {
+  max-width: 1100px;
+}
+
+.module-title-wrap.is-flush {
+  margin-bottom: 0;
+}
+
 @media (max-width: 767px) {
   .module-title-wrap {
     margin-bottom: 36px;
+  }
+  .module-title-wrap.is-flush {
+    margin-bottom: 0;
   }
 }
 
