@@ -79,8 +79,8 @@ twinpeaks:
       img: /assets/images/company/nrs.png
       title_en: Trail sponsor
       title_ja: トレイル スポンサー
-    - url_en: https://www.santacruzbicycles.com/
-      img: /assets/images/company/santa-cruz.png
+    - url_en: https://www.norco.com
+      img: /assets/images/company/norco.png
       title_en: Trail sponsor
       title_ja: トレイル スポンサー
     - img: /assets/images/company/taki.png
@@ -172,7 +172,7 @@ twinpeaks:
       descent: 2
       bike: up-only
       multi_use: false
-      sponsor: santa-cruz
+      sponsor: norco
       trailforks_id: 753819
     - name: Mana Skills Park
       ja:
@@ -304,7 +304,7 @@ twinpeaks:
       descent: 185
       bike: down-only
       multi_use: false
-      sponsor: santa-cruz
+      sponsor: norco
       trailforks_id: 753804
     - name: Launch Control
       ja:
@@ -315,7 +315,7 @@ twinpeaks:
       descent: 35
       bike: down-only
       multi_use: false
-      sponsor: santa-cruz
+      sponsor: norco
       trailforks_id: 753818
     - name: Mana Taki
       ja:
@@ -337,7 +337,7 @@ twinpeaks:
       descent: 182
       bike: down-only
       multi_use: false
-      sponsor: santa-cruz
+      sponsor: norco
       trailforks_id: 657436
     - name: Taki Shogun
       ja:
@@ -348,7 +348,7 @@ twinpeaks:
       descent: 4
       bike: one-way
       multi_use: false
-      sponsor: santa-cruz
+      sponsor: norco
       trailforks_id: 789336
     - name: Taki Trail
       ja:

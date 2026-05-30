@@ -62,6 +62,13 @@ special:
       ja:
         url: https://www.grand-hirafu.jp
         label: トレイル スポンサー
+    - name: norco
+      displayName: Norco Bicycles
+      image: /assets/images/company/norco.png
+      url: https://www.norco.com
+      label: Trail sponsor
+      ja:
+        label: トレイル スポンサー
     - name: paydirt
       displayName: Paydirt
       image: /assets/images/company/paydirt.png
@@ -77,13 +84,6 @@ special:
       ja:
         url: https://www.rhythmjapan.com/ja/
         label: メンテナンス スポンサー
-    - name: santa cruz
-      displayName: Santa Cruz Bicycles
-      image: /assets/images/company/santa-cruz.png
-      url: https://sports-w.com/brands/santa-cruz/
-      label: Trail sponsor
-      ja:
-        label: トレイル スポンサー
     - name: specialized
       displayName: Specialized
       image: /assets/images/company/specialized.png
