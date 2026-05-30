@@ -2252,8 +2252,8 @@ input.invalid {
   margin-bottom: 20px;
 }
 
-.status-pill.is-open    { background: #46b414; }
-.status-pill.is-current { background: var(--color-accent); }
+.status-pill.is-open    { background: #2a6e0a; }
+.status-pill.is-current { background: var(--color-accent); color: #1a1a1a; }
 .status-pill.is-future  { background: var(--color-text-light); color: #333; }
 
 .media-narrow {
@@ -2616,7 +2616,7 @@ table.trails .dicon_small.dblack.is-double-black {
   display: block;
   margin-top: 12px;
   text-align: right;
-  opacity: 0.3;
+  opacity: 0.6;
   text-decoration: none;
 }
 
@@ -4944,7 +4944,7 @@ div.modal.fade.in {
 
 .alert.warning,
 .alert.alert-warning {
-  color: #c09853;
+  color: #8a5f0e;
   background-color: #fcf8e3;
   border-color: #faebcc;
 }
@@ -4956,7 +4956,7 @@ div.modal.fade.in {
 
 .alert.warning .alert-link,
 .alert.alert-warning .alert-link {
-  color: #a47e3c;
+  color: #6b4a0b;
 }
 
 #system-message joomla-alert {
@@ -7194,7 +7194,7 @@ joomla-field-custom.field-custom-wrapper .input-group .input-group-btn .btn span
 }
 .job-card .job-title a { color: #fff; }
 .job-card .job-title a:hover { color: var(--color-primary); }
-.job-card .job-meta { font-size: 90%; color: #888; margin: 0; }
+.job-card .job-meta { font-size: 90%; color: #a0a0a0; margin: 0; }
 .job-card .job-badge {
   display: inline-block;
   padding: 3px 10px;
@@ -7205,8 +7205,8 @@ joomla-field-custom.field-custom-wrapper .input-group .input-group-btn .btn span
   letter-spacing: 1px;
   margin-right: 8px;
 }
-.job-badge.paid { background: #46b414; color: #fff; }
-.job-badge.volunteer { background: var(--color-accent); color: #fff; }
+.job-badge.paid { background: #2a6e0a; color: #fff; }
+.job-badge.volunteer { background: var(--color-accent); color: #1a1a1a; }
 .job-card .job-cta { flex-shrink: 0; }
 
 /* ------------------------------------------------------------------
