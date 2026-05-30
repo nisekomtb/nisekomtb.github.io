@@ -1,0 +1,1041 @@
+# CSS Audit Inventory
+Generated: 2026-05-30
+
+## Summary
+
+- Inline `style=` attributes: 835
+- Inline `<style>` blocks: 52
+
+## Inline `style=` attributes by file
+
+  41 plan-your-trip/index.html
+  38 projects/index.html
+  38 ja/projects/index.html
+  38 ja/plan-your-trip/index.html
+  31 partner/index.html
+  31 ja/partner/index.html
+  29 ja/dirty-dames/index.html
+  29 dirty-dames/index.html
+  22 where-to-ride/index.html
+  22 ja/where-to-ride/index.html
+  19 projects/twin-peaks/index.html
+  19 ja/projects/twin-peaks/index.html
+  17 join/index.html
+  17 jobs/index.html
+  17 ja/join/index.html
+  17 ja/jobs/index.html
+  16 ja/donate/index.html
+  16 donate/index.html
+  15 ja/about/index.html
+  15 about/index.html
+  15 _includes/park-stats.html
+  14 team/index.html
+  14 projects/hanazono/index.html
+  14 projects/grand-hirafu/index.html
+  14 ja/team/index.html
+  14 ja/projects/hanazono/index.html
+  14 ja/projects/grand-hirafu/index.html
+  13 _layouts/job.html
+  12 projects/yotei-360/index.html
+  12 ja/projects/yotei-360/index.html
+  11 _includes/trails-table.html
+  10 _layouts/event.html
+   9 ja/impact/index.html
+   9 impact/index.html
+   8 where-to-ride/signage/index.html
+   8 press/index.html
+   8 ja/where-to-ride/signage/index.html
+   8 ja/press/index.html
+   8 _layouts/where-to-ride.html
+   7 where-to-ride/skills-parks/index.html
+   7 ja/where-to-ride/skills-parks/index.html
+   7 _layouts/base.html
+   6 stories/index.html
+   6 ja/stories/index.html
+   6 _includes/trail-difficulty-counts.html
+   5 where-to-ride/gravel/index.html
+   5 thanks/index.html
+   5 ja/where-to-ride/gravel/index.html
+   5 ja/thanks/index.html
+   5 ja/artist-series/index.html
+   5 artist-series/index.html
+   4 _includes/hero.html
+   4 _includes/hero-slides.html
+   3 twin-peaks/index.html
+   3 twin-peaks/commercial-pass/index.html
+   3 twin-peaks/access/index.html
+   3 shop/index.html
+   3 ja/twin-peaks/index.html
+   3 ja/twin-peaks/commercial-pass/index.html
+   3 ja/twin-peaks/access/index.html
+   3 ja/shop/index.html
+   3 _layouts/competition.html
+   3 _includes/contact-form.html
+   2 ja/events/index.html
+   2 ja/contact/index.html
+   2 events/index.html
+   2 contact/index.html
+   2 _includes/sponsors.html
+   2 _includes/home/section-stories.html
+   1 where-to-ride/hanazono/index.html
+   1 twin-peaks/emergency/index.html
+   1 ja/where-to-ride/hanazono/index.html
+   1 ja/twin-peaks/emergency/index.html
+   1 ja/code-conduct/index.html
+   1 code-conduct/index.html
+   1 _includes/ride-card.html
+   1 _includes/pdf.html
+   1 _includes/nav.html
+   1 _includes/masthead.html
+   1 _includes/masthead-crowdfund.html
+   1 _includes/image.html
+   1 _includes/home/hero-parallax.html
+   1 _includes/event-card.html
+
+## Inline `<style>` blocks by file
+
+   2 where-to-ride/index.html
+   2 partner/index.html
+   2 ja/where-to-ride/index.html
+   2 ja/partner/index.html
+   1 where-to-ride/signage/index.html
+   1 twin-peaks/index.html
+   1 twin-peaks/guides/index.html
+   1 twin-peaks/emergency/index.html
+   1 twin-peaks/commercial-pass/index.html
+   1 team/index.html
+   1 shop/index.html
+   1 projects/yotei-360/index.html
+   1 projects/twin-peaks/index.html
+   1 projects/hanazono/index.html
+   1 projects/grand-hirafu/index.html
+   1 press/index.html
+   1 ja/where-to-ride/signage/index.html
+   1 ja/twin-peaks/index.html
+   1 ja/twin-peaks/guides/index.html
+   1 ja/twin-peaks/emergency/index.html
+   1 ja/twin-peaks/commercial-pass/index.html
+   1 ja/team/index.html
+   1 ja/shop/index.html
+   1 ja/projects/yotei-360/index.html
+   1 ja/projects/twin-peaks/index.html
+   1 ja/projects/hanazono/index.html
+   1 ja/projects/grand-hirafu/index.html
+   1 ja/press/index.html
+   1 ja/impact/index.html
+   1 ja/events/index.html
+   1 ja/artist-series/index.html
+   1 ja/about/index.html
+   1 impact/index.html
+   1 events/index.html
+   1 artist-series/index.html
+   1 about/index.html
+   1 _layouts/where-to-ride.html
+   1 _layouts/job.html
+   1 _layouts/event.html
+   1 _layouts/competition.html
+   1 _layouts/base.html
+   1 _includes/sponsors.html
+   1 _includes/partners-wall.html
+   1 _includes/partners-footer.html
+   1 _includes/hero.html
+   1 _includes/hero-slides.html
+   1 _includes/ecwid-styles.html
+   1 _includes/contact-form.html
+
+---
+
+## All `style=` matches (raw)
+
+_includes/hero.html:21:    <div class="acm-features style-1" style="background-image: url('/assets/images/bg/bg-header-yotei.jpg');">
+_includes/hero.html:41:            style="margin-top: 30px;"
+_includes/hero.html:56:          <span style="font-size:1.5em;">Click here to win a</span><br/>
+_includes/hero.html:70:          <span class="ja" style="font-size:1.5em;">ここを<wbr>クリックして<wbr>応募</span><br/>
+_includes/pdf.html:1:<div id="pdf" style="width:100%;"></div>
+_includes/image.html:37:  <img src="{{ include.src }}" alt="{{ include.alt }}" loading="{{ include.loading | default: 'lazy' }}"{% if include.width %} width="{{ include.width }}"{% endif %}{% if include.height %} height="{{ include.height }}"{% endif %}{% if include.class %} class="{{ include.class }}"{% endif %}{% if include.style %} style="{{ include.style }}"{% endif %}{% if include.attrs %} {{ include.attrs }}{% endif %} />
+_includes/masthead.html:35:      <div style="text-align:center; margin-top:30px;">
+_includes/trails-table.html:14:        style="color: #225f06;"></span> {% if page.lang == "ja" %}問題なし{% else %}All Clear{% endif %}</li>
+_includes/trails-table.html:16:        style="color: #fc0;"></span> {% if page.lang == "ja" %}軽微な問題{% else %}Minor Issue{% endif %}</li>
+_includes/trails-table.html:18:        style="color: #ff8500;"></span> {% if page.lang == "ja" %}重大な問題{% else %}Significant Issue{% endif %}</li>
+_includes/trails-table.html:20:        style="color: #be0014;"></span> {% if page.lang == "ja" %}クローズ{% else %}Closed{% endif %}</li>
+_includes/trails-table.html:102:  <div style="background:var(--color-bg-panel); border-radius:3px; overflow:hidden;">
+_includes/trails-table.html:103:    <div style="display:flex; flex-wrap:wrap; align-items:center;">
+_includes/trails-table.html:104:      <div style="flex:1; min-width:250px;">
+_includes/trails-table.html:106:        {% include image.html src="/assets/images/twinpeaks/trailsign.jpg" alt=trailsign_alt widths="800,1600" sizes="(min-width: 768px) 50vw, 100vw" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;" width="3244" height="2000" %}
+_includes/trails-table.html:108:      <div style="flex:1; min-width:250px; padding:32px;">
+_includes/trails-table.html:109:        <h2 class="module-title" style="margin-bottom:12px;">{% if page.lang == 'ja' %}トレイル標識ガイド{% else %}Trail Signage Guide{% endif %}</h2>
+_includes/trails-table.html:110:        <p style="font-size:110%; margin-bottom:20px;">{% if page.lang == 'ja' %}ニセコ全域で統一された標識システムの読み方：難易度、方向コード、位置マーカー。{% else %}Learn how to read the unified signage system used across all Niseko riding areas: difficulty ratings, direction codes, location markers.{% endif %}</p>
+_includes/masthead-crowdfund.html:3:  <div class="ja-masthead" style="background-image: url('/assets/images/bg/bg-header-twinpeaks.jpg')">
+_includes/contact-form.html:56:  <input type="checkbox" name="botcheck" class="hidden" style="display:none;">
+_includes/contact-form.html:98:  <div style="display:flex; justify-content:center; margin:10px 0;">
+_includes/contact-form.html:102:  <div style="text-align:center; margin-top:10px;">
+_includes/hero-slides.html:177:      <div class="carousel-item active" style="background-image: url('/assets/images/bg/bg-header-yotei.jpg');">
+_includes/hero-slides.html:196:            style="margin-top: 30px;"
+_includes/hero-slides.html:222:          style="background-image: url('{{ event.masthead.img }}');">
+_includes/hero-slides.html:244:        <div class="carousel-item {% if slide.align == 'left' %}left-grad{% else if slide.align == 'right' %}right-grad{% endif %}" style="background-image: url('{{ slide.img }}');">
+_includes/trail-difficulty-counts.html:16:<span class="trail-counts" style="display:inline-flex; gap:10px; justify-content:center; flex-wrap:wrap; margin:8px 0;">
+_includes/trail-difficulty-counts.html:17:  {% unless park_d.lifts == nil %}<span style="font-size:12px; text-align:center; display:inline-flex; flex-direction:column; align-items:center;"><span aria-hidden="true" data-tf-icon="" class="dicon_small" title="{% if page.lang == "ja" %}リフト{% else %}Lifts{% endif %}" style="font-size:18px; color:#666;"></span> <strong>{{ park_d.lifts }}</strong></span>{% endunless %}
+_includes/trail-difficulty-counts.html:18:  {% if gc > 0 %}<span style="font-size:12px; text-align:center; display:inline-flex; flex-direction:column; align-items:center;"><span aria-hidden="true" data-tf-icon="" class="dicon_small dgreen tip" title="{% if page.lang == "ja" %}初級 (グリーン){% else %}Easy (Green){% endif %}" style="font-size:18px;"></span> <strong>{{ gc }}</strong></span>{% endif %}
+_includes/trail-difficulty-counts.html:19:  {% if bc > 0 %}<span style="font-size:12px; text-align:center; display:inline-flex; flex-direction:column; align-items:center;"><span aria-hidden="true" data-tf-icon="" class="dicon_small dblue tip" title="{% if page.lang == "ja" %}中級 (ブルー){% else %}More Difficult (Blue){% endif %}" style="font-size:18px;"></span> <strong>{{ bc }}</strong></span>{% endif %}
+_includes/trail-difficulty-counts.html:20:  {% if bkc > 0 %}<span style="font-size:12px; text-align:center; display:inline-flex; flex-direction:column; align-items:center;"><span aria-hidden="true" data-tf-icon="" class="dicon_small dblack tip is-black" title="{% if page.lang == "ja" %}上級 (ブラック){% else %}Very Difficult (Black){% endif %}" style="font-size:18px;"></span> <strong>{{ bkc }}</strong></span>{% endif %}
+_includes/trail-difficulty-counts.html:21:  {% if dbc > 0 %}<span style="font-size:12px; text-align:center; display:inline-flex; flex-direction:column; align-items:center;"><span aria-hidden="true" data-tf-icon="" class="dicon_small dblack is-double-black" title="{% if page.lang == "ja" %}超上級 (ダブルブラック){% else %}Extremely Difficult (Double Black){% endif %}" style="font-size:18px;"></span> <strong>{{ dbc }}</strong></span>{% endif %}
+_includes/sponsors.html:8:      <div class="row" style="width: {{ width }}%;">
+_includes/sponsors.html:12:            style="width:{{ 100 | divided_by: sponsors_size }}%;{% if sponsor.label and include.class == "special" %}padding-bottom:20px;{% endif %}"
+_includes/event-card.html:35:      <div class="event-card-badge ended" style="display:none;" name="ended" data-end-date="{{ endDate }}">{% if page.lang == "en" %}Ended{% else %}終了{% endif %}</div>
+_includes/ride-card.html:24:  <div class="ride-card-image" style="background-image:url('{{ include.image }}');{% if include.image_height %} height:{{ include.image_height }};{% endif %}">
+_includes/nav.html:17:    style="">
+_includes/park-stats.html:10:    <h3><span class="fa-solid fa-tag" style="margin-right:4px;"></span> コスト</h3>
+_includes/park-stats.html:13:    <h3><span class="fa-solid fa-tag" style="margin-right:4px;"></span> Cost</h3>
+_includes/park-stats.html:20:    <h3><span class="fa-solid fa-cable-car" style="margin-right:4px;"></span> 上りのタイプ</h3>
+_includes/park-stats.html:25:    <h3><span class="fa-solid fa-cable-car" style="margin-right:4px;"></span> Uplift type</h3>
+_includes/park-stats.html:34:    <h3><span class="fa-solid fa-location-dot" style="margin-right:4px;"></span> ロケーション</h3>
+_includes/park-stats.html:37:    <h3><span class="fa-solid fa-location-dot" style="margin-right:4px;"></span> Location</h3>
+_includes/park-stats.html:45:    <h3><span class="fa-solid fa-chart-simple" style="margin-right:4px;"></span> トレイルステータス</h3>
+_includes/park-stats.html:47:    <h3><span class="fa-solid fa-chart-simple" style="margin-right:4px;"></span> Trail stats</h3>
+_includes/park-stats.html:119:    <h3><span class="fa-solid fa-circle-info" style="margin-right:4px;"></span> バイクパークステータス</h3>
+_includes/park-stats.html:121:    <h3><span class="fa-solid fa-circle-info" style="margin-right:4px;"></span> Bike Park status</h3>
+_includes/park-stats.html:124:    style="margin-top:3px;"
+_includes/park-stats.html:140:    <h3><span class="fa-solid fa-calendar" style="margin-right:4px;"></span> 開放日＆時間</h3>
+_includes/park-stats.html:144:    <h3><span class="fa-solid fa-calendar" style="margin-right:4px;"></span> Opening dates & times</h3>
+_includes/park-stats.html:153:    <h3><span class="fa-solid fa-people-group" style="margin-right:4px;"></span> 管理・運営</h3>
+_includes/park-stats.html:156:    <h3><span class="fa-solid fa-people-group" style="margin-right:4px;"></span> Managed by</h3>
+_includes/home/section-stories.html:23:            <div class="home-story-thumb" style="background-image: url('{{ st.thumbnail }}');"></div>
+_includes/home/section-stories.html:25:            <div class="home-story-thumb" style="background-image: url('{{ st.masthead.img }}');"></div>
+_includes/home/hero-parallax.html:4:    <div class="home-hero-bg" style="background-image: url('/assets/images/home/hero-video-poster.jpg');"></div>
+contact/index.html:26:    <div class="module-title-wrap" style="max-width:900px;">
+contact/index.html:35:        <div style="font-size:130%;"><span>Whether it's about partnership, volunteering, media, or anything else, we'd love to hear from you.</span></div>
+dirty-dames/index.html:16:    <div style="text-align:center; margin-bottom:30px;" class="ja-animate" data-animation="move-from-bottom" data-delay="200">
+dirty-dames/index.html:17:      <img src="/assets/images/company/dirty-dames.png" alt="Dirty Dames logo" style="max-width:280px; width:100%; height:auto;" />
+dirty-dames/index.html:20:    <div class="module-title-wrap" style="max-width:900px;">
+dirty-dames/index.html:25:        <div style="font-size:130%;"><span>Dirty Dames is NAMBA's women's mountain biking programme in the Niseko area. Since launching in 2024, over 200 women have joined our rides, skills sessions, and community events.</span></div>
+dirty-dames/index.html:31:  <div style="max-width:900px; margin:20px auto;">
+dirty-dames/index.html:32:    {% include image.html src="/assets/images/dirty-dames/group-forest.jpg" alt="Five Dirty Dames riders in the Hanazono forest with bikes, arms raised, smiling after a group ride" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" loading="lazy" style="width:100%; height:auto; border-radius:3px; display:block;" width="1800" height="1200" %}
+dirty-dames/index.html:38:    <div class="module-title-wrap" style="max-width:900px;">
+dirty-dames/index.html:47:        <div style="font-size:130%;"><span>A place for women to ride together, pick up skills, and build confidence on the trails. Whether it's your first time on a mountain bike or you want a faster group, Dirty Dames is for you.</span></div>
+dirty-dames/index.html:56:        <ul style="list-style:none; padding-left:0; font-size:115%; line-height:1.7;">
+dirty-dames/index.html:57:          <li style="margin-bottom: 28px;">
+dirty-dames/index.html:58:            <h3 style="margin:0 0 6px;">Group rides</h3>
+dirty-dames/index.html:61:          <li style="margin-bottom: 28px;">
+dirty-dames/index.html:62:            <h3 style="margin:0 0 6px;">Skills sessions</h3>
+dirty-dames/index.html:65:          <li style="margin-bottom: 28px;">
+dirty-dames/index.html:66:            <h3 style="margin:0 0 6px;">Social events</h3>
+dirty-dames/index.html:69:          <li style="margin-bottom: 28px;">
+dirty-dames/index.html:70:            <h3 style="margin:0 0 6px;">Open to all</h3>
+dirty-dames/index.html:73:          <li style="margin-bottom: 28px;">
+dirty-dames/index.html:74:            <h3 style="margin:0 0 6px;">Free to join</h3>
+dirty-dames/index.html:86:    <div class="module-title-wrap" style="max-width:900px;">
+dirty-dames/index.html:95:        <div style="font-size:130%;"><span>Mountain biking has historically been male-dominated, especially in Japan. Dirty Dames is changing that in Niseko, with a programme built for women across all abilities and ages.</span></div>
+dirty-dames/index.html:127:  <div style="max-width:900px; margin:20px auto;">
+dirty-dames/index.html:128:    {% include image.html src="/assets/images/dirty-dames/skills-session.jpg" alt="Dirty Dames riders gathered around a Niseko trail map at the trailhead before a group ride" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" loading="lazy" style="width:100%; height:auto; border-radius:3px; display:block;" width="1800" height="1350" %}
+dirty-dames/index.html:134:    <div class="module-title-wrap" style="max-width:900px;">
+dirty-dames/index.html:143:        <div style="font-size:130%;"><span>A hand-dyed tie-dye t-shirt with the Dirty Dames graffiti logo embroidered on the chest. Real tie-dye, so every shirt is one of a kind. Every sale goes back into NAMBA's trails and the Dirty Dames programme.</span></div>
+dirty-dames/index.html:147:    <div class="ja-animate" data-animation="move-from-bottom" data-delay="600" style="max-width:320px; margin:30px auto;">
+dirty-dames/index.html:148:    <a class="dd-shop-card" style="margin:0;" href="/shop/#!/dirty-dames-tie-dye-t-shirt">
+dirty-dames/index.html:172:    <div class="module-title-wrap" style="max-width:900px;">
+dirty-dames/index.html:181:        <div style="font-size:130%;"><span>Follow <a href="https://www.instagram.com/dirtydamesniseko/" target="_blank" rel="noopener">@dirtydamesniseko</a> on Instagram for upcoming Dirty Dames rides and events, or check our events page.</span></div>
+donate/index.html:13:    <div class="module-title-wrap" style="max-width:900px;">
+donate/index.html:22:        <div style="font-size:130%;"><span>Every yen goes to trails. Your donation builds and maintains Niseko's free mountain bike network. Here's where it goes.</span></div>
+donate/index.html:37:            <p><div style="font-size: 24px; padding-bottom:8px;">&yen;500</div></p>
+donate/index.html:38:            <p style="margin-top:10px; font-size:90%;">A can of fuel for the chainsaw.</p>
+donate/index.html:48:            <p><div style="font-size: 24px; padding-bottom:8px;">&yen;2,500</div></p>
+donate/index.html:49:            <p style="margin-top:10px; font-size:90%;">A day of trail maintenance supplies.</p>
+donate/index.html:59:            <p><div style="font-size: 24px; padding-bottom:8px;">&yen;5,000</div></p>
+donate/index.html:60:            <p style="margin-top:10px; font-size:90%;">A load of gravel and drainage material.</p>
+donate/index.html:70:            <p><div style="font-size: 24px; padding-bottom:8px;">&yen;10,000</div></p>
+donate/index.html:71:            <p style="margin-top:10px; font-size:90%;">A day's pay for a professional trail crew.</p>
+donate/index.html:81:            <p><div style="font-size: 24px; padding-bottom:8px;">&yen;50,000</div></p>
+donate/index.html:82:            <p style="margin-top:10px; font-size:90%;">A day on the excavator.</p>
+donate/index.html:92:            <p><input id="custom-donation" type="number" placeholder="&yen;" min="500" step="500" style="font-size:24px; width:120px; text-align:center; padding:8px; background:var(--color-bg-panel); border:2px solid var(--color-bg-border); color:#fff; border-radius:4px;"></p>
+donate/index.html:93:            <p style="margin-top:10px; font-size:90%;">You choose the amount.</p>
+donate/index.html:115:    <div class="module-title-wrap" style="max-width:900px;">
+donate/index.html:124:        <div style="font-size:130%;"><span>Financial donations aren't the only way to support NAMBA. Your time, voice, skills, and creativity all build trails too.</span></div>
+join/index.html:13:    <div class="module-title-wrap" style="max-width:900px;">
+join/index.html:22:        <div style="font-size:130%;"><span>Your membership is your vote for the future of mountain biking in Niseko. Every member strengthens NAMBA's voice when we work with resorts, government, and partners to build what comes next.</span></div>
+join/index.html:31:    <div class="module-title-wrap" style="max-width:900px;">
+join/index.html:72:      style="max-width:900px; margin:0 auto;">
+join/index.html:73:      {% include image.html src="/assets/images/join/dig-day.webp" alt="Multi-generational group on a NAMBA dig day, raking and shaping a forest trail together" loading="lazy" style="width:100%; height:auto; border-radius:3px; display:block;" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" width="1600" height="1066" %}
+join/index.html:80:    <div class="module-title-wrap" style="max-width:900px;">
+join/index.html:89:        <div style="font-size:130%;"><span>NAMBA keeps overheads minimal. Your membership goes directly to trails, events, and community.</span></div>
+join/index.html:92:    <div style="position:relative; width:100%; max-width:400px; height:460px; margin:0 auto;" class="ja-animate" data-animation="move-from-bottom" data-delay="600">
+join/index.html:146:          <div style="font-size:110%;"><span>Annual subscription. Cancel anytime.</span></div>
+join/index.html:159:            <div style="font-size: 24px; padding-bottom:8px;">¥5,000<span style="font-size:14px; color:#aaa;">/year</span></div>
+join/index.html:160:            <p style="margin-top:10px; font-size:90%; color:#aaa;">Ages 19+</p>
+join/index.html:176:            <div style="font-size: 24px; padding-bottom:8px;">¥2,500<span style="font-size:14px; color:#aaa;">/year</span></div>
+join/index.html:177:            <p style="margin-top:10px; font-size:90%; color:#aaa;">Ages 13-18</p>
+join/index.html:193:            <div style="font-size: 24px; padding-bottom:8px;">FREE</div>
+join/index.html:194:            <p style="margin-top:10px; font-size:90%; color:#aaa;">Ages 3-12</p>
+join/index.html:210:            <div style="font-size: 24px; padding-bottom:8px;">¥9,000<span style="font-size:14px; color:#aaa;">/year</span></div>
+join/index.html:211:            <p style="margin-top:10px; font-size:90%; color:#aaa;">Up to 6 family members</p>
+ja/contact/index.html:26:    <div class="module-title-wrap" style="max-width:900px;">
+ja/contact/index.html:35:        <div style="font-size:130%;"><span>パートナーシップ、ボランティア、メディアのお問い合わせ、その他ご質問がありましたらお気軽にどうぞ。</span></div>
+ja/dirty-dames/index.html:16:    <div style="text-align:center; margin-bottom:30px;" class="ja-animate" data-animation="move-from-bottom" data-delay="200">
+ja/dirty-dames/index.html:17:      <img src="/assets/images/company/dirty-dames.png" alt="ダーティーデイムズのロゴ" style="max-width:280px; width:100%; height:auto;" />
+ja/dirty-dames/index.html:20:    <div class="module-title-wrap" style="max-width:900px;">
+ja/dirty-dames/index.html:25:        <div style="font-size:130%;"><span>ダーティーデイムズは、ニセコエリアにおけるNAMBAの女性向けマウンテンバイクプログラムです。2024年の開始以来、200人以上の女性がグループライド、スキルセッション、コミュニティイベントに参加しています。</span></div>
+ja/dirty-dames/index.html:31:  <div style="max-width:900px; margin:20px auto;">
+ja/dirty-dames/index.html:32:    {% include image.html src="/assets/images/dirty-dames/group-forest.jpg" alt="花園の森のトレイルで自転車を持ち、腕を上げて笑顔を見せるダーティーデイムズの5人のライダー" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" loading="lazy" style="width:100%; height:auto; border-radius:3px; display:block;" width="1800" height="1200" %}
+ja/dirty-dames/index.html:38:    <div class="module-title-wrap" style="max-width:900px;">
+ja/dirty-dames/index.html:47:        <div style="font-size:130%;"><span>女性が一緒に走り、スキルを身につけ、トレイルでの自信をつけるための場です。マウンテンバイクが初めての方も、もう少しペースの速いグループを探している方も、ダーティーデイムズはあなたのための場所です。</span></div>
+ja/dirty-dames/index.html:56:        <ul style="list-style:none; padding-left:0; font-size:115%; line-height:1.7;">
+ja/dirty-dames/index.html:57:          <li style="margin-bottom: 28px;">
+ja/dirty-dames/index.html:58:            <h3 style="margin:0 0 6px;">グループライド</h3>
+ja/dirty-dames/index.html:61:          <li style="margin-bottom: 28px;">
+ja/dirty-dames/index.html:62:            <h3 style="margin:0 0 6px;">スキルセッション</h3>
+ja/dirty-dames/index.html:65:          <li style="margin-bottom: 28px;">
+ja/dirty-dames/index.html:66:            <h3 style="margin:0 0 6px;">ソーシャルイベント</h3>
+ja/dirty-dames/index.html:69:          <li style="margin-bottom: 28px;">
+ja/dirty-dames/index.html:70:            <h3 style="margin:0 0 6px;">オープン参加</h3>
+ja/dirty-dames/index.html:73:          <li style="margin-bottom: 28px;">
+ja/dirty-dames/index.html:74:            <h3 style="margin:0 0 6px;">参加無料</h3>
+ja/dirty-dames/index.html:86:    <div class="module-title-wrap" style="max-width:900px;">
+ja/dirty-dames/index.html:95:        <div style="font-size:130%;"><span>マウンテンバイクは歴史的に男性中心のスポーツでした。特に日本ではその傾向が強くあります。ダーティーデイムズは、すべてのレベル・すべての年齢の女性のためにつくられたプログラムで、ニセコでその状況を変えています。</span></div>
+ja/dirty-dames/index.html:127:  <div style="max-width:900px; margin:20px auto;">
+ja/dirty-dames/index.html:128:    {% include image.html src="/assets/images/dirty-dames/skills-session.jpg" alt="グループライド前にトレイルヘッドでニセコのトレイルマップを囲むダーティーデイムズのライダーたち" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" loading="lazy" style="width:100%; height:auto; border-radius:3px; display:block;" width="1800" height="1350" %}
+ja/dirty-dames/index.html:134:    <div class="module-title-wrap" style="max-width:900px;">
+ja/dirty-dames/index.html:143:        <div style="font-size:130%;"><span>胸元にダーティーデイムズのグラフィティロゴを刺繍した、本格的なハンドダイのタイダイTシャツ。本物のタイダイ染めなので、一枚ごとに異なる表情が楽しめます。売上はNAMBAのトレイル整備とダーティーデイムズプログラムを支えます。</span></div>
+ja/dirty-dames/index.html:147:    <div class="ja-animate" data-animation="move-from-bottom" data-delay="600" style="max-width:320px; margin:30px auto;">
+ja/dirty-dames/index.html:148:    <a class="dd-shop-card" style="margin:0;" href="/ja/shop/#!/dirty-dames-tie-dye-t-shirt">
+ja/dirty-dames/index.html:172:    <div class="module-title-wrap" style="max-width:900px;">
+ja/dirty-dames/index.html:181:        <div style="font-size:130%;"><span>今後のダーティーデイムズのライドやイベント情報は、Instagramの<a href="https://www.instagram.com/dirtydamesniseko/" target="_blank" rel="noopener">@dirtydamesniseko</a>をフォローするか、イベントページをご確認ください。</span></div>
+ja/donate/index.html:13:    <div class="module-title-wrap" style="max-width:900px;">
+ja/donate/index.html:22:        <div style="font-size:130%;"><span>すべての​寄付が​トレイルに​使われます。​あなたの​寄付が​ニセコの​無料マウンテンバイクネットワークの​整備に​直接活かされます。​寄付が​どこに​使われるかを​ご紹介します。</span></div>
+ja/donate/index.html:37:            <p><div style="font-size: 24px; padding-bottom:8px;">&yen;500</div></p>
+ja/donate/index.html:38:            <p style="margin-top:10px; font-size:90%;">チェーンソー1缶分の​燃料代。</p>
+ja/donate/index.html:48:            <p><div style="font-size: 24px; padding-bottom:8px;">&yen;2,500</div></p>
+ja/donate/index.html:49:            <p style="margin-top:10px; font-size:90%;">1日分の​整備用資材費。</p>
+ja/donate/index.html:59:            <p><div style="font-size: 24px; padding-bottom:8px;">&yen;5,000</div></p>
+ja/donate/index.html:60:            <p style="margin-top:10px; font-size:90%;">砂利と​排水材1台分。</p>
+ja/donate/index.html:70:            <p><div style="font-size: 24px; padding-bottom:8px;">&yen;10,000</div></p>
+ja/donate/index.html:71:            <p style="margin-top:10px; font-size:90%;">プロの​トレイルクルー1日分の​賃金。</p>
+ja/donate/index.html:81:            <p><div style="font-size: 24px; padding-bottom:8px;">&yen;50,000</div></p>
+ja/donate/index.html:82:            <p style="margin-top:10px; font-size:90%;">重機を​1日動かす費用。</p>
+ja/donate/index.html:92:            <p><input id="custom-donation" type="number" placeholder="&yen;" min="500" step="500" style="font-size:24px; width:120px; text-align:center; padding:8px; background:var(--color-bg-panel); border:2px solid var(--color-bg-border); color:#fff; border-radius:4px;"></p>
+ja/donate/index.html:93:            <p style="margin-top:10px; font-size:90%;">金額を​自由に​設定。</p>
+ja/donate/index.html:115:    <div class="module-title-wrap" style="max-width:900px;">
+ja/donate/index.html:124:        <div style="font-size:130%;"><span>金銭的な​寄付だけが​NAMBAを​支援する​方法では​ありません。​あなたの​時間、​声、​スキル、​クリエイティビティも​トレイルを​作る​力に​なります。</span></div>
+ja/join/index.html:13:    <div class="module-title-wrap" style="max-width:900px;">
+ja/join/index.html:22:        <div style="font-size:130%;"><span>NAMBAの​メンバーに​なる​ことは、​ニセコの​マウンテンバイクの​未来に​対する​あなたの​投票です。​あなたの​参加が、​リゾート、​行政、​パートナーとの​交渉に​おける​私たちの​声を​強くします。</span></div>
+ja/join/index.html:31:    <div class="module-title-wrap" style="max-width:900px;">
+ja/join/index.html:72:      style="max-width:900px; margin:0 auto;">
+ja/join/index.html:73:      {% include image.html src="/assets/images/join/dig-day.webp" alt="NAMBAの​ディグデイで、​老若男女が​一緒に​森の​トレイルを​整備して​いる" loading="lazy" style="width:100%; height:auto; border-radius:3px; display:block;" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" width="1600" height="1066" %}
+ja/join/index.html:80:    <div class="module-title-wrap" style="max-width:900px;">
+ja/join/index.html:89:        <div style="font-size:130%;"><span>NAMBAは​運営コストを​最小限に​抑えています。​会費は​トレイル、​イベント、​コミュニティに​直接​使われます。</span></div>
+ja/join/index.html:92:    <div style="position:relative; width:100%; max-width:400px; height:460px; margin:0 auto;" class="ja-animate" data-animation="move-from-bottom" data-delay="600">
+ja/join/index.html:146:          <div style="font-size:110%;"><span>年間サブスクリプション。​いつでも​キャンセル可能。</span></div>
+ja/join/index.html:159:            <div style="font-size: 24px; padding-bottom:8px;">¥5,000<span style="font-size:14px; color:#aaa;">/年</span></div>
+ja/join/index.html:160:            <p style="margin-top:10px; font-size:90%; color:#aaa;">19歳以上</p>
+ja/join/index.html:176:            <div style="font-size: 24px; padding-bottom:8px;">¥2,500<span style="font-size:14px; color:#aaa;">/年</span></div>
+ja/join/index.html:177:            <p style="margin-top:10px; font-size:90%; color:#aaa;">13〜18歳</p>
+ja/join/index.html:193:            <div style="font-size: 24px; padding-bottom:8px;">無料</div>
+ja/join/index.html:194:            <p style="margin-top:10px; font-size:90%; color:#aaa;">3〜12歳</p>
+ja/join/index.html:210:            <div style="font-size: 24px; padding-bottom:8px;">¥9,000<span style="font-size:14px; color:#aaa;">/年</span></div>
+ja/join/index.html:211:            <p style="margin-top:10px; font-size:90%; color:#aaa;">家族6人まで</p>
+ja/projects/index.html:16:    <div class="module-title-wrap" style="max-width:900px;">
+ja/projects/index.html:25:        <div style="font-size:130%;"><span>単なる​バイクパーク​では​ありません。​私たち​は​ニセコ​全域​で​トレイル​を​つくります:​ ツインピークス、​グラン・ヒラフ、​ハナゾノ、​そして​その先​へ。​それぞれ​が​ひとつ​の​つながった​地図​の​一部​です。</span></div>
+ja/projects/index.html:31:        <div style="font-size:115%; color: var(--color-text-light);"><span>4つ​の​ライディング​エリア​に​30km​超​の​トレイル。​2022年​以来​100%​コミュニティ​資金。</span></div>
+ja/projects/index.html:40:    <div class="module-title-wrap" style="max-width:900px;">
+ja/projects/index.html:49:        <div style="font-size:130%;"><span>ニセコ​の​トレイル​が​ひとつ​の​ネットワーク​として​感じられる​理由​は、​調整​に​あります。​各​リゾート​や​土地所有者​が​それぞれ​単独​で​建設​する​の​で​は​なく、​NAMBAが​地域全体​を​一体​と​して​計画​し、​新しい​プロジェクト​すべて​が​ひとつ​の​つながった​地図​に​組み​込まれます。</span></div>
+ja/projects/index.html:55:        <div style="font-size:130%;"><span>そうしなければ、​難易度​の​重複、​つながらない​ネットワーク、​そして​ライダー​が​本当​に​必要​と​する​バランス​の​欠落​が​生まれます。​マスタープラン​は​それを​防ぐ​ため​に​存在​します。</span></div>
+ja/projects/index.html:64:        <ul style="list-style:none; padding-left:0; font-size:115%; line-height:1.7;">
+ja/projects/index.html:65:          <li style="margin-bottom: 28px;">
+ja/projects/index.html:66:            <h3 style="margin:0 0 6px;">接続性</h3>
+ja/projects/index.html:69:          <li style="margin-bottom: 28px;">
+ja/projects/index.html:70:            <h3 style="margin:0 0 6px;">多様性</h3>
+ja/projects/index.html:73:          <li style="margin-bottom: 28px;">
+ja/projects/index.html:74:            <h3 style="margin:0 0 6px;">総距離​目標</h3>
+ja/projects/index.html:77:          <li style="margin-bottom: 28px;">
+ja/projects/index.html:78:            <h3 style="margin:0 0 6px;">統一された​体験</h3>
+ja/projects/index.html:81:          <li style="margin-bottom: 28px;">
+ja/projects/index.html:82:            <h3 style="margin:0 0 6px;">地形​の​有効活用</h3>
+ja/projects/index.html:93:      style="max-width:900px; margin:20px auto;">
+ja/projects/index.html:94:      {% include image.html src="/assets/images/projects/masterplan.webp" alt="ニセコ地域​の​空撮画像​に、​アンヌプリ、​グラン・ヒラフ、​ハナゾノ、​ツインピークス​を​結ぶ​NAMBAの​トレイル​ネットワーク計画​が​金色​で​重ねられた​マップ" loading="lazy" style="width:100%; height:auto; display:block; border-radius:3px;" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" width="2400" height="1350" %}
+ja/projects/index.html:95:      <p style="text-align:center; font-size:90%; color:#999; margin:12px 0 0;">コンセプト​マップ:​ ニセコ​全域​の​トレイル​ネットワーク、​既存​トレイル​と​拡張​計画。</p>
+ja/projects/index.html:98:    <div class="module-title-wrap" style="max-width:900px;">
+ja/projects/index.html:103:        <div style="font-size:130%;"><span>これ​が、​リゾート、​土地所有者、​行政​が​私たち​に​戻って​きて​くれる​理由​です。​トレイル​建設​は​私たち​の​仕事​の​一部。​より​大きな​部分​は、​ニセコ​の​山々​を​夏​も​活かす​ネットワーク全体​の​デザイン​です。</span></div>
+ja/projects/index.html:122:            <div class="img-icon"><img src="/assets/images/logos/twin-peaks.svg" alt="ツインピークスバイクパーク" style="height:96px; width:auto; object-fit:contain;" /></div>
+ja/projects/index.html:123:            <div style="display:inline-block; padding:6px 16px; border-radius:4px; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:1px; background:#46b414; color:#fff; margin-bottom:20px;">運営中</div>
+ja/projects/index.html:131:            <div class="img-icon"><img src="/assets/images/company/grand-hirafu.png" alt="グラン・ヒラフバイクパーク" style="height:96px; width:auto; object-fit:contain;" /></div>
+ja/projects/index.html:132:            <div style="display:inline-block; padding:6px 16px; border-radius:4px; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:1px; background:#46b414; color:#fff; margin-bottom:20px;">運営中</div>
+ja/projects/index.html:140:            <div class="img-icon"><img src="/assets/images/company/hanazono.png" alt="ニセコHANAZONOバイクパーク" style="height:96px; width:auto; object-fit:contain;" /></div>
+ja/projects/index.html:141:            <div style="display:inline-block; padding:6px 16px; border-radius:4px; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:1px; background:var(--color-accent); color:#fff; margin-bottom:20px;">2026年夏​オープン</div>
+ja/projects/index.html:150:            <div style="display:inline-block; padding:6px 16px; border-radius:4px; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:1px; background:var(--color-text-light); color:#333; margin-bottom:20px;">計画中</div>
+ja/projects/index.html:164:    <div class="module-title-wrap" style="max-width:900px;">
+ja/projects/index.html:173:        <div style="font-size:130%;"><span>NAMBA​の​どの​パーク​でも​同じ​サイネージ​システム:​ トレイル名、​難易度、​進行方向、​スポンサー、​緊急時用​の​位置​コード。​ツインピークス、​グラン・ヒラフ、​ハナゾノ、​どこ​でも​同じ​フォーマット。</span></div>
+ja/projects/index.html:175:      <div style="text-align:center; margin:30px 0;" class="ja-animate" data-animation="move-from-bottom" data-delay="600">
+ja/projects/index.html:185:    <div class="module-title-wrap" style="max-width:900px;">
+ja/projects/index.html:194:        <div style="font-size:130%;"><span>現在​の​パーク​の​先​に​は、​ニセコ​の​山々​を​つなぎ、​現在​バイク​で​入れない​地形​を​開放​する​アルパイン​トレイル​の​構想​が​あります。​羊蹄​ループ​と​各​リゾート​の​継続​的​な​成長​を​合わせれば、​アジア​で​他​に​見られない​規模​の​トレイル​システム​が​見えて​きます。</span></div>
+ja/projects/index.html:200:  <div style="max-width:900px; margin:20px auto;">
+ja/projects/index.html:201:    {% include image.html src="/assets/images/projects/annupuri-aerial.jpg" alt="アンヌプリ山頂​と​ゲレンデ、​ニセコ連峰​へ​と​続く​森林​の​尾根​を​捉えた​空撮​パノラマ" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" loading="lazy" style="width:100%; height:auto; border-radius:3px; display:block;" width="1600" height="900" %}
+ja/projects/index.html:207:    <div class="module-title-wrap" style="max-width:900px;">
+ja/projects/index.html:216:        <div style="font-size:130%;"><span>NAMBA​ネットワーク​の​すべて​の​トレイル​は​コミュニティ​の​支援​で​築かれて​きました。​次​に​来る​もの​を​一緒​に​支えて​ください。</span></div>
+ja/projects/grand-hirafu/index.html:99:    <div class="module-title-wrap" style="max-width:900px;">
+ja/projects/grand-hirafu/index.html:104:        <div style="display:inline-block; padding:6px 16px; border-radius:4px; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:1px; background:#46b414; color:#fff; margin-bottom:20px;">運営中</div>
+ja/projects/grand-hirafu/index.html:114:        <div style="font-size:130%;"><span>NAMBAは​グラン・ヒラフ​の​バイクパーク​拡張​に​参加​して​います:​ トレイル​の​設計、​サイネージ、​建設​を​ニセコ最大​の​リゾート村​で。​将来​的​に​は、​これらの​トレイル​が​地域全体​の​ネットワーク​に​つながります。</span></div>
+ja/projects/grand-hirafu/index.html:123:    <div class="module-title-wrap" style="max-width:900px;">
+ja/projects/grand-hirafu/index.html:170:    <div class="module-title-wrap" style="max-width:900px;">
+ja/projects/grand-hirafu/index.html:179:        <div style="font-size:130%;"><span>東急は​2023年に​グラン・ヒラフで​最初の​フロートレイルを​建設し、​バイクパーク再開に​合わせて​2024年に​一般​公開しました。​2023年の​終わりに​ツインピークスが​開業するのを​見て、​今後の​トレイル設計、​建設、​サイネージに​NAMBAとの​協働を​呼びかける​ことを​決定。​グラン・ヒラフは、​地域マスタープランに​組み込まれた​2番目の​リゾートと​なりました。</span></div>
+ja/projects/grand-hirafu/index.html:188:    <div class="module-title-wrap" style="max-width:900px;">
+ja/projects/grand-hirafu/index.html:197:        <div style="font-size:115%;"><span>各年​に​建設​した​内容​と、​次​に​計画​している​こと。​画像​を​タップ​すると​拡大表示​されます。</span></div>
+ja/projects/grand-hirafu/index.html:241:    <div class="module-title-wrap" style="max-width:900px;">
+ja/projects/grand-hirafu/index.html:264:    <div class="module-title-wrap" style="max-width:900px;">
+ja/projects/grand-hirafu/index.html:273:        <div style="font-size:130%;"><span>NAMBAは​グラン・ヒラフ​の​トレイル​サイネージ​を、​ツインピークス​と​ハナゾノ​と​同じ​システム​で​設計​します。​私たち​が​管理​する​どこ​で​も、​同じ​サイネージ​が​並びます。</span></div>
+ja/projects/grand-hirafu/index.html:282:    <div class="module-title-wrap" style="max-width:900px;">
+ja/projects/grand-hirafu/index.html:294:        <a class="btn btn-secondary" href="/ja/partner/" style="margin-left: 10px;">パートナー​に​なる</a>
+ja/projects/grand-hirafu/index.html:295:        <a class="btn btn-secondary" href="/ja/projects/" style="margin-left: 10px;">プロジェクト​一覧​に​戻る</a>
+ja/projects/twin-peaks/index.html:102:    <div class="module-title-wrap" style="max-width:900px;">
+ja/projects/twin-peaks/index.html:107:        <div style="display:inline-block; padding:6px 16px; border-radius:4px; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:1px; background:#46b414; color:#fff; margin-bottom:20px;">運営中</div>
+ja/projects/twin-peaks/index.html:117:        <div style="font-size:130%;"><span>ツインピークス​は​NAMBAの​旗艦:​ 日本最大​の​無料​で​楽しめる​マウンテンバイク​パーク。​スイス設計​の​トレイル​17km超、​20以上​の​ルート、​初心者​向け​フロー​から​上級​テクニカル​まで。​シーズン中​は​毎日​オープン。​料金​なし、​登録不要。</span></div>
+ja/projects/twin-peaks/index.html:126:    <div class="module-title-wrap" style="max-width:900px;">
+ja/projects/twin-peaks/index.html:181:    <div class="module-title-wrap" style="max-width:900px;">
+ja/projects/twin-peaks/index.html:190:        <div style="font-size:115%;"><span>各年​に​建設​した​内容​と、​次​に​計画​している​こと。​画像​を​タップ​すると​拡大表示​されます。</span></div>
+ja/projects/twin-peaks/index.html:242:    <div class="module-title-wrap" style="max-width:900px;">
+ja/projects/twin-peaks/index.html:265:    <div class="module-title-wrap" style="max-width:900px;">
+ja/projects/twin-peaks/index.html:274:        <div style="font-size:130%;"><span>ツインピークスの​すべての​トレイルは、​ヨーロッパと​アジアの​有名な​バイクパークの​多くを​手がけた​スイスの​アレグラと​協働で​設計・​建設されています。​アレグラ​は、​ツインピークス​を「これまでに​手がけた、​あるいは​世界中​で​見聞き​した​中​で​最も​急速​に​成長​して​いる​トレイル​ネットワーク​プロジェクト」と​語って​います。</span></div>
+ja/projects/twin-peaks/index.html:280:        <div style="font-size:130%;"><span>現場​で​は、​NAMBAの​シーズン​トレイル​クルー​が​建設​を​担い、​コミュニティ​の​ボランティア​が​定期的​な​ディグ​デー​で​手​を​貸して​います。</span></div>
+ja/projects/twin-peaks/index.html:289:    <div class="module-title-wrap" style="max-width:900px;">
+ja/projects/twin-peaks/index.html:298:        <div style="font-size:130%;"><span>ツインピークス​は​100%​コミュニティ​資金。​2022年​から​2025年​まで、​資金​の​92%​が​民間・​コミュニティ、​74%​は​地元​企業​だけ​から。​1円​の​うち​82%​が​直接​トレイル​建設​に、​メンテナンス​を​含めれば​95%。​パーク​の​すべて​の​トレイル​に​スポンサー​が​付いて​います。</span></div>
+ja/projects/twin-peaks/index.html:304:        <div style="font-size:130%;"><span>来場​者​数​も​ネットワーク​と​共​に​伸び​て​います:​ 2024年​7,747人、​2025年​11,500人​超。</span></div>
+ja/projects/twin-peaks/index.html:310:  <div style="max-width:900px; margin:20px auto;">
+ja/projects/twin-peaks/index.html:311:    {% include image.html src="/assets/images/partner/trail-map-board.webp" alt="ツインピークスバイクパーク​の​トレイル​マップ​ボード​の​前​に​立つ​2人​の​ライダー、​下部​に​スポンサー​ロゴ​が​並ぶ" loading="lazy" style="width:100%; height:auto; border-radius:3px; display:block;" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" width="1600" height="1066" %}
+ja/projects/twin-peaks/index.html:317:    <div class="module-title-wrap" style="max-width:900px;">
+ja/projects/twin-peaks/index.html:326:        <div style="font-size:130%;"><span>ツインピークス​は​シーズン中​毎日​オープン。​料金​なし、​予約​なし。​あるいは​次​に​来る​もの​を​支える​パートナー​に​なって​ください。</span></div>
+ja/projects/twin-peaks/index.html:335:        <a class="btn btn-secondary" href="/ja/partner/" style="margin-left: 10px;">パートナー​に​なる</a>
+ja/projects/twin-peaks/index.html:336:        <a class="btn btn-secondary" href="/ja/projects/" style="margin-left: 10px;">プロジェクト​一覧​に​戻る</a>
+ja/projects/hanazono/index.html:99:    <div class="module-title-wrap" style="max-width:900px;">
+ja/projects/hanazono/index.html:104:        <div style="display:inline-block; padding:6px 16px; border-radius:4px; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:1px; background:var(--color-accent); color:#fff; margin-bottom:20px;">建設中 | 2026年夏オープン</div>
+ja/projects/hanazono/index.html:114:        <div style="font-size:130%;"><span>NAMBAは​ハナゾノ​初​の​マウンテンバイク​トレイル​を​建設中。​ニセコ​の​他​の​リゾート​に​も​リフト​アクセス​の​ダウンヒル​は​あります​が、​上級​の​ブラック​トレイル​や​ブラック​区間​を​含む​部分的​な​中級​に​限定。​ハナゾノ​は、​中級​ライダー​が​リフト​で​上​まで​上がり、​頂上​から​ベース​まで​一気​に​滑れる​初​の​パーク​に​なります。</span></div>
+ja/projects/hanazono/index.html:120:        <div style="font-size:130%;"><span>フェーズ​1​は、​4,200mの​リフト​アクセス​の​ブルー​フロー​トレイル(​トップ​トゥ​ボトム)と、​ベース​の​スキル​パーク​で、​今夏​オープン。​次​に​来る​もの​の​計画​も​すでに​進めて​います。</span></div>
+ja/projects/hanazono/index.html:129:    <div class="module-title-wrap" style="max-width:900px;">
+ja/projects/hanazono/index.html:168:    <div class="module-title-wrap" style="max-width:900px;">
+ja/projects/hanazono/index.html:177:        <div style="font-size:115%;"><span>各年​に​建設​した​内容​と、​次​に​計画​している​こと。​画像​を​タップ​すると​拡大表示​されます。</span></div>
+ja/projects/hanazono/index.html:213:    <div class="module-title-wrap" style="max-width:900px;">
+ja/projects/hanazono/index.html:236:    <div class="module-title-wrap" style="max-width:900px;">
+ja/projects/hanazono/index.html:260:    <div class="module-title-wrap" style="max-width:900px;">
+ja/projects/hanazono/index.html:269:        <div style="font-size:130%;"><span>NAMBAは​ハナゾノ​の​トレイル​サイネージ​を、​ツインピークス​と​グラン・ヒラフ​と​同じ​システム​で​設計​します。​私たち​が​管理​する​どこ​で​も、​同じ​サイネージ​が​並びます。</span></div>
+ja/projects/hanazono/index.html:278:    <div class="module-title-wrap" style="max-width:900px;">
+ja/projects/hanazono/index.html:287:        <div style="font-size:130%;"><span>ライディング​開始​は​2026年夏。​トレイル​情報​と​コンディション​は、​オープン​と​同時​に​<a href="/ja/where-to-ride/hanazono/">ライディング​エリア</a>​ページ​で​公開​されます。</span></div>
+ja/projects/hanazono/index.html:296:        <a class="btn btn-secondary" href="/ja/projects/" style="margin-left: 10px;">プロジェクト​一覧​に​戻る</a>
+ja/projects/yotei-360/index.html:40:    <div class="module-title-wrap" style="max-width:900px;">
+ja/projects/yotei-360/index.html:45:        <div style="display:inline-block; padding:6px 16px; border-radius:4px; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:1px; background:var(--color-text-light); color:#333; margin-bottom:20px;">計画中</div>
+ja/projects/yotei-360/index.html:55:        <div style="font-size:130%;"><span>伝説​の​マウンテンバイク​の​目的地​には、​必ず​シグネチャー​ライド​が​あります。​モアブ​の「Whole Enchilada」、​ウィスラー​の「Peak to Creek」。​羊蹄360は​ニセコ​の​それに​なります。​羊蹄山​の​裾野​を​一周​する​50km​超​の​ループ​で、​森林、​田園、​そして​火山​を​常に​視界​の​端​に​感じながら​走る​ルート。</span></div>
+ja/projects/yotei-360/index.html:61:        <div style="font-size:130%;"><span>ループ自体は​スタートに​過ぎません。​第​一​段階​は、​現在​は​荒れ​て​使われ​て​いない​古い​森林道​を、​再び​走行​可能​な​グラベル道​に​戻す​こと。​次​に、​それらの​グラベル​区間​を​新しい​シングルトラック​で​つなぎ、​ループ​を​閉じる。​そこから、​裾野​の​各町​へ​スパー​を​のばし、​途中​に​スモール​トレイル​センター​を​置く。​各拠点​に​2〜3本​の​ダウンヒル​トレイル​の​クラスター​と​いった​イメージ。</span></div>
+ja/projects/yotei-360/index.html:68:    <div class="ja-animate" data-animation="move-from-bottom" data-delay="600" style="max-width:900px; margin:20px auto;">
+ja/projects/yotei-360/index.html:69:      {% include image.html src="/assets/images/projects/yotei-360/concept.webp" alt="羊蹄山​の​空撮​コンセプト​ビュー。​火山​の​裾野​を​一周​する​ヨーテイ360ループ​の​計画​が​金色​で​描かれている" loading="lazy" style="width:100%; height:auto; display:block; border-radius:3px;" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" width="2400" height="1350" %}
+ja/projects/yotei-360/index.html:70:      <p style="text-align:center; font-size:90%; color:#999; margin:12px 0 0;">コンセプト​ルート​のみ:​ 羊蹄山​の​裾野​を​一周​する​50km​超​の​ループ。​実際​の​ルート​は​現在​計画中。</p>
+ja/projects/yotei-360/index.html:77:    <div class="module-title-wrap" style="max-width:900px;">
+ja/projects/yotei-360/index.html:99:    <div class="module-title-wrap" style="max-width:900px;">
+ja/projects/yotei-360/index.html:108:        <div style="font-size:130%;"><span>まだ​初期​計画​段階​です。​新しい​セクション​が​公開​される​たびに​Instagram​で​お知らせ​します。</span></div>
+ja/projects/yotei-360/index.html:125:    <div class="module-title-wrap" style="max-width:900px;">
+ja/projects/yotei-360/index.html:137:        <a class="btn btn-secondary" href="/ja/projects/" style="margin-left: 10px;">プロジェクト一覧に戻る</a>
+ja/shop/index.html:526:              <div class="shop-callout-image" style="background-image:url('/assets/images/artists/header.jpg');"></div>
+ja/shop/index.html:536:              <div class="shop-callout-image" style="background-image:url('/assets/images/bg/bg-header-donate.jpg');"></div>
+ja/shop/index.html:549:      <div id="shop-categories" style="min-height:32px;"></div>
+ja/press/index.html:107:    <div class="module-title-wrap" style="max-width:900px;">
+ja/press/index.html:112:        <p style="font-size:130%;">NAMBAは、日本最大の無料で楽しめるマウンテンバイクパーク、ツインピークスバイクパークを運営する非営利団体です。ツインピークスに加え、地元リゾートとの協働により、グラン・ヒラフとニセコHANAZONOでリフトアクセス可能なトレイルを設計・建設しています。2026年夏には、ニセコエリア全体で33kmのネットワークがつながります。以下に、主な事実、ストーリーの切り口、ダウンロード可能なアセットを掲載しています。</p>
+ja/press/index.html:121:    <div class="module-title-wrap" style="max-width:900px;">
+ja/press/index.html:146:  <div style="max-width:900px; margin:20px auto;">
+ja/press/index.html:147:    {% include image.html src="/assets/images/press/hero-action.jpg" alt="ツインピークスバイクパークのニセコの白樺の森を抜ける、木漏れ日のフロートレイルを走るマウンテンバイカー" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" loading="lazy" style="width:100%; height:auto; border-radius:3px; display:block;" width="1800" height="1200" %}
+ja/press/index.html:186:    <div class="module-title-wrap" style="max-width:900px;">
+ja/press/index.html:199:    <div class="row equal-height equal-height-child" style="margin-top:20px;">
+ja/press/index.html:250:    <div class="module-title-wrap" style="max-width:900px;">
+ja/about/index.html:82:    <div class="module-title-wrap" style="max-width:900px;">
+ja/about/index.html:91:        <div style="font-size:130%;"><span>2021年、​ニセコの​熱心な​マウンテンバイカー6人が​周囲の​山々を​見渡し、​夏には​誰も​使っていないことに​気づきました。​ニセコは​有名な​冬の​デスティネーションでしたが、​雪が​溶けると​トレイルは​止まって​いました。​彼らは​それを​変える​ことに​しました。</span></div>
+ja/about/index.html:97:        <div style="font-size:130%;"><span>2021年に​6人で​始めた​取り組みが、​日本最大の​無料アクセス・​非営利の​マウンテンバイクトレイルネットワークへと​成長しました。​スイス設計の​21キロメートル以上の​トレイルが、​ニセコ地域の​複数のパークに​またがります。​シーズン中は​いつでも、​会員登録や​事前申請なしで​自由に​走る​ことが​できます。</span></div>
+ja/about/index.html:103:        <div style="font-size:130%;"><span>NAMBAは​単なる​バイクパークでは​ありません。​私たちは​ニセコエリア全体の​マウンテンバイクを​支えて​います。​ツインピークスバイクパークの​建設・​運営、​グランヒラフの​拡張への​コンサルティング、​花園の​最初の​トレイル開設、​統一された​サイネージシステムの​設計、​そして​羊蹄山ループの​計画を​進めて​います。​この​規模で​取り組んで​いる​団体は、​日本に​他に​ありません。</span></div>
+ja/about/index.html:109:  <div style="max-width:900px; margin:20px auto;">
+ja/about/index.html:110:    {% include image.html src="/assets/images/about/group-dig-day.jpg" alt="森の神社前で整備日のあとに集まる、多世代のNAMBAボランティアたち" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" loading="lazy" style="width:100%; height:auto; border-radius:3px; display:block;" width="2048" height="1152" %}
+ja/about/index.html:116:    <div class="module-title-wrap" style="max-width:900px;">
+ja/about/index.html:125:        <div style="font-size:130%;"><span>私たちは、​誰かが​造って​くれるのを​待つ​ことに​飽きた​ライダーです。​雪が​溶けると​ニセコは​閉まる、​だから​自分たちで​始めました。</span></div>
+ja/about/index.html:131:        <div style="font-size:130%;"><span>私たちの​バイクパークは​いつでも​無料です。​今は​ツインピークス、​次は​羊蹄360と​アルペントレイル。​会員制も​ゲートも​ありません。​リゾートパートナーでも​トレイルを​建設し、​彼らの​リフトから​そのまま​トレイルへ​繋がる​ように​しています。</span></div>
+ja/about/index.html:137:        <div style="font-size:130%;"><span>私たちが​目指す​もの：​アジア有数の​マウンテンバイクリージョン。​パークごとに、​シーズンごとに。</span></div>
+ja/about/index.html:146:    <div class="module-title-wrap" style="max-width:900px;">
+ja/about/index.html:155:        <div style="font-size:130%;"><span>私たちの​トレイルは、​ヨーロッパと​アジアの​有名な​バイクパークの​多くを​手がけた​スイスの​トレイル建設会社、​アレグラと​共同で​設計・​建設されています。​その​経験が、​ツインピークスの​一本​一本の​トレイルに​反映されています。</span></div>
+ja/about/index.html:161:  <div style="max-width:900px; margin:20px auto;">
+ja/about/index.html:162:    {% include image.html src="/assets/images/about/allegra-trail-building.jpg" alt="森の中で、バームをツルハシで仕上げるスタッフと、背景で稼働するミニショベル" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" loading="lazy" style="width:100%; height:auto; border-radius:3px; display:block;" width="1600" height="1066" %}
+ja/about/index.html:168:    <div class="module-title-wrap" style="max-width:900px;">
+ja/partner/index.html:258:      <div class="module-title-wrap" style="max-width:900px;">
+ja/partner/index.html:263:          <p style="font-size:130%;">NAMBAは、​ニセコを​通年の​デスティネーションへと​変える​インフラを​構築しています。​パートナーシップは、​トレイル建設、​イベント支援、​そしてあなたの​ビジネスに​来場者を​もたらすコミュニティの​成長に​直接貢献します。</p>
+ja/partner/index.html:319:    <div class="module-title-wrap" style="max-width:900px;">
+ja/partner/index.html:324:        <div style="background:var(--color-bg-panel); border-left:4px solid var(--color-accent); padding:30px 40px; border-radius:3px; margin:20px 0; max-width:900px;">
+ja/partner/index.html:325:          <p style="font-size:140%; font-style:italic; line-height:1.6; margin-bottom:16px;">「Shogun Syndicateトレイルの​スポンサーに​なれた​こと、​そして​日本に​世界クラスの​マウンテンバイクデスティネーションを​築くと​いう​NAMBAの​ビジョンに​参加できている​ことを​誇りに​思います。」</p>
+ja/partner/index.html:326:          <p style="color:var(--color-accent); font-weight:700; margin:0;">Chris Selig</p>
+ja/partner/index.html:327:          <p style="color:#aaa; margin:0;">Norco Japan</p>
+ja/partner/index.html:337:    <div class="module-title-wrap" style="max-width:900px;">
+ja/partner/index.html:346:        <p style="font-size:130%;">パートナーロゴは、​各トレイル標識、​大型トレイルマップボード、​トレイル入口の​看板に​表示されます。​パークを​訪れる​すべての​来場者の​目に​留まります。</p>
+ja/partner/index.html:355:    <div style="max-width:900px; margin:20px auto;">
+ja/partner/index.html:377:    <div class="module-title-wrap" style="max-width:900px;">
+ja/partner/index.html:399:      style="max-width:900px; margin:20px auto;">
+ja/partner/index.html:415:      <div class="module-title-wrap" style="max-width:900px;">
+ja/partner/index.html:420:          <p style="font-size:130%;">地元企業・団体向けの​年間パートナーシップ。​すべての​ティアで、​ニセコの​未来に​投資する​60以上の​パートナーネットワークと​並んで​ブランドを​掲載できます。</p>
+ja/partner/index.html:436:                    style="width:100px;"
+ja/partner/index.html:444:                    style="width:100px;"
+ja/partner/index.html:452:                    style="width:100px;"
+ja/partner/index.html:459:                  <span class="fa-solid fa-route" style="font-size:80px; color:var(--color-secondary);"></span>
+ja/partner/index.html:600:    <div class="module-title-wrap" style="max-width:900px;">
+ja/partner/index.html:609:        <p style="font-size:130%;">マウンテンバイクおよび​アウトドア業界ブランド向けに、​商品ベースの​パートナーシップを​ご提供しています。​機材、​アパレル、​サービスを​ご提供いただく​ことで、​コミュニティパートナーと​同等の​露出メリットを​得られます。​Specialized、​Peatysや​Smithなどの​ブランドが​すでに​参加しています。</p>
+ja/partner/index.html:630:      <div class="module-title-wrap" style="max-width:900px;">
+ja/partner/index.html:639:          <p style="font-size:130%;">トレイル建設に​資金を​提供すると、​ブランドが​永続的に​風景の​一部に​なります。​トレイルスポンサーは​羆レベルの​すべての​メリットに​加え、​広範な​標識露出を​得られます。​トレイルの​看板、​マップボード、​500mごとの​トレイル標識に​ロゴが​掲載されます。​トレイルスポンサーシップには​生涯コマーシャルオペレーターパスも​含まれます。</p>
+ja/partner/index.html:648:      <div style="max-width:900px; margin:0 auto;">
+ja/partner/index.html:689:    <div class="module-title-wrap" style="max-width:900px;">
+ja/partner/index.html:698:        <p style="font-size:130%;">ビジネスは​それぞれ異なります。​サービス、​リソース、​創造的な​コラボレーションなど、​ブランドや​ビジネスが​NAMBAを​どのように​支援できるか​アイデアが​あれば、​ぜひ​お聞か​せください。​最高の​パートナーシップの​多くは、​会話から​始まりました。</p>
+ja/partner/index.html:707:    <div class="module-title-wrap" style="max-width:900px;">
+ja/partner/index.html:716:        <div style="font-size:130%;"><span>お問い​合わせフォームから​ご連絡いただければ、​次の​ステップに​ついて​ご返信いたします。</span></div>
+ja/partner/index.html:733:    <div class="module-title-wrap" style="max-width:900px;">
+ja/partner/index.html:792:        <i class="fa-solid fa-handshake" style="font-size:28px; color:var(--color-secondary); margin-bottom:6px;"></i>
+ja/partner/index.html:797:          <div style="display:flex; flex-direction:column; align-items:center; width:100px;">
+ja/partner/index.html:806:              <span style="font-size:8px; color:#444; margin-top:8px; text-transform:uppercase; letter-spacing:0.5px; font-family:'Metropolis', 'Metropolis Fallback',Helvetica,Arial,sans-serif; font-weight:500; text-align:center;">{% if page.lang == 'ja' and sponsor.ja.label %}{{ sponsor.ja.label }}{% else %}{{ sponsor.label }}{% endif %}</span>
+ja/stories/index.html:27:    <div class="module-title-wrap" style="max-width:900px;">
+ja/stories/index.html:52:          style="max-width:900px;"
+ja/stories/index.html:56:            <div style="margin-bottom:20px;">
+ja/stories/index.html:58:                <img src="{{ post.thumbnail }}" alt="{{ post.title }}" style="width:100%; border-radius:3px;">
+ja/stories/index.html:65:          <p style="color:#999;">{{ post.date | date: "%Y年%-m月%-d日" }}</p>
+ja/stories/index.html:75:      <div class="module-title-wrap" style="max-width:900px;">
+ja/twin-peaks/index.html:27:  <img style="width:150px; margin:0 auto; margin-bottom:24px; display: flex;" src="/assets/images/logos/twin-peaks.svg?d={{ site.time | date: " %s" }}" alt="ツインピークスバイクパーク" />
+ja/twin-peaks/index.html:28:  <p style="text-align:center;">無料で​利用できる、​ニセコの​ペダルアクセスコミュニティバイクパークです。</p>
+ja/twin-peaks/index.html:29:  <p style="text-align:center;">
+ja/twin-peaks/access/index.html:27:  <div style="width:100%; height:600px;" id="map"></div>
+ja/twin-peaks/access/index.html:114:        el.innerHTML = `<i class="fa ${icon}" style="color:#fff; font-size:14px;"></i>`;
+ja/twin-peaks/access/index.html:192:    <div class="float-start item-image" style="margin-top:24px;">
+ja/twin-peaks/emergency/index.html:69:      <p style="margin-bottom:0;">
+ja/twin-peaks/commercial-pass/index.html:77:                  <p style="margin-bottom:0;">2024年シーズンは<wbr>トレイルスポンサー及びスペシャルスポンサーにのみ商業事業パスを<wbr>試験的に<wbr>導入する<wbr>予定です。</p>
+ja/twin-peaks/commercial-pass/index.html:91:    <div style="text-align:center; margin:50px 0;">
+ja/twin-peaks/commercial-pass/index.html:92:      <h2 style="margin-bottom: 40px;">商業利用パスのお申し込み</h2>
+ja/team/index.html:146:    <div class="module-title-wrap" style="max-width:900px;">
+ja/team/index.html:151:        <p style="font-size:130%;">
+ja/team/index.html:161:    <div class="module-title-wrap" style="max-width:900px;">
+ja/team/index.html:179:      <div style="display:flex; gap:24px; flex-wrap:wrap; justify-content:center;">
+ja/team/index.html:180:        <div class="leader-card ja-animate" style="flex:1; min-width:280px;" data-animation="move-from-bottom" data-delay="600">
+ja/team/index.html:189:        <div class="leader-card ja-animate" style="flex:1; min-width:280px;" data-animation="move-from-bottom" data-delay="800">
+ja/team/index.html:205:    <div class="module-title-wrap" style="max-width:900px;">
+ja/team/index.html:233:    <div class="module-title-wrap" style="max-width:900px;">
+ja/team/index.html:261:    <div class="module-title-wrap" style="max-width:900px;">
+ja/team/index.html:270:        <p style="font-size:130%;">
+ja/team/index.html:273:        <p style="font-size:130%;">
+ja/team/index.html:297:    <div class="module-title-wrap" style="max-width:900px;">
+ja/team/index.html:306:        <p style="font-size:130%;">NAMBAでは<wbr>常に、<wbr>有給の<wbr>トレイルクルー、<wbr>プロジェクトコーディネーター、<wbr>ボランティア委員を<wbr>募集しています。<wbr>現在の<wbr>募集を<wbr>ご覧ください。</p>
+ja/team/index.html:308:      <div style="text-align:center; margin:30px 0;" class="ja-animate" data-animation="move-from-bottom" data-delay="600">
+ja/artist-series/index.html:359:<div class="module-title-wrap" style="max-width:900px;">
+ja/artist-series/index.html:376:  <div class="artist-header" style="background-image: url('{{ header_webp }}');">
+ja/artist-series/index.html:424:      <div style="text-align:center; margin:50px 0;">
+ja/artist-series/index.html:467:<div class="module-title-wrap" style="max-width:900px;">
+ja/artist-series/index.html:469:  <div style="text-align:center; margin:50px 0;">
+ja/thanks/index.html:10:    <div class="acm-features style-1" style="padding:0px; min-height:auto;">
+ja/thanks/index.html:27:    <div class="module-title-wrap" style="max-width:900px;">
+ja/thanks/index.html:32:        <div style="font-size:150%;">
+ja/thanks/index.html:37:    <div class="module-title-wrap" style="margin-bottom:0;">
+ja/thanks/index.html:42:        <div style="font-size:150%;">
+ja/code-conduct/index.html:20:<div style="max-width:500px; margin:0 auto;">
+ja/jobs/index.html:12:    <div class="module-title-wrap" style="max-width:900px;">
+ja/jobs/index.html:21:        <div style="font-size:130%;"><span>NAMBAは​トレイルと​コミュニティを​大切に​する​人々で​成り​立っています。​夏季の​有給トレイルクルーを​雇用し、​サブコミッティでは​ボランティアを​募集しています。</span></div>
+ja/jobs/index.html:27:    <div class="module-title-wrap" style="max-width:900px;">
+ja/jobs/index.html:38:      <div style="max-width:900px; margin:0 auto;">
+ja/jobs/index.html:70:      <div class="module-title-wrap" style="max-width:900px;">
+ja/jobs/index.html:75:          <div style="font-size:130%;"><span>現在募集中の​ポジションは​ありません。​Instagramの​<a href="https://www.instagram.com/nisekomtb/" target="_blank">@nisekomtb</a>を​フォローするか、​定期的に​チェックしてください。</span></div>
+ja/jobs/index.html:95:    <div class="module-title-wrap" style="max-width:900px;">
+ja/jobs/index.html:102:    <div style="max-width:900px; margin:0 auto;">
+ja/jobs/index.html:110:          style="opacity:0.6;"
+ja/jobs/index.html:114:            <p class="job-title"><a href="{{ job.url }}" style="color:#999;">{{ job.title }}</a></p>
+ja/jobs/index.html:116:              <span class="job-badge" style="background:rgba(255,255,255,0.1); color:#888;">終了</span>
+ja/jobs/index.html:118:                <span class="job-badge paid" style="opacity:0.5;">有給</span>
+ja/jobs/index.html:120:                <span class="job-badge volunteer" style="opacity:0.5;">ボランティア</span>
+ja/jobs/index.html:126:            <a class="action" href="{{ job.url }}" style="color:#888;">
+ja/jobs/index.html:137:    <div class="module-title-wrap" style="max-width:900px;">
+ja/jobs/index.html:146:        <div style="font-size:130%;"><span>正式な​ポジションを​探していなくても、​貢献する​方法は​あります。​ディグデイに​参加したり、​NAMBAメンバーに​なったり、​活かせる​スキルが​あれば​お問い​合わせください。</span></div>
+ja/jobs/index.html:155:        <a class="btn btn-secondary" href="/ja/contact/?topic=volunteering" style="margin-left:10px;">ボランティア</a>
+ja/events/index.html:39:    <div class="module-title-wrap" style="max-width:900px;">
+ja/events/index.html:44:        <div style="font-size:130%;"><span>コミュニティライドや​トレイル整備日から​レースや​グラベルイベントまで、​NAMBAの​カレンダーは​シーズンを​通じて​ライダーを​つなぎます。​一緒に​イベントを​企画しませんか？<a href="/ja/contact/?topic=events">お問い合わせ</a>ください。</span></div>
+ja/plan-your-trip/index.html:13:    <div class="module-title-wrap" style="max-width:900px;">
+ja/plan-your-trip/index.html:22:        <div style="font-size:130%;"><span>ニセコは北海道西部、羊蹄山と火山地形に抱かれたエリア。トレイル、温泉、自然のすべて。マウンテンバイク旅行に必要な情報をまとめました。</span></div>
+ja/plan-your-trip/index.html:28:  <div style="max-width:900px; margin:20px auto;">
+ja/plan-your-trip/index.html:29:    {% include image.html src="/assets/images/plan-your-trip/hero-yotei.webp" alt="羊蹄山を​背景に​ニセコの​トレイルを​走る​ライダー、​夏の​風景" style="width:100%; height:auto; border-radius:3px; display:block;" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" width="1600" height="1066" %}
+ja/plan-your-trip/index.html:35:    <div class="module-title-wrap" style="max-width:900px;">
+ja/plan-your-trip/index.html:44:        <div style="font-size:130%;"><span>ライディングシーズンは5月下旬から10月下旬。月ごとにコンディションが変わります。</span></div>
+ja/plan-your-trip/index.html:50:        <ul style="list-style:none; line-height:2.2; font-size:130%; padding-left:0;">
+ja/plan-your-trip/index.html:77:        <div style="font-size:130%;"><span>ビジター数のピークは6月と9月。7月と8月は最も気温が高く、全てのトレイルが利用可能です。</span></div>
+ja/plan-your-trip/index.html:86:    <div class="module-title-wrap" style="max-width:900px;">
+ja/plan-your-trip/index.html:95:        <div style="font-size:130%;"><span>ニセコは北海道西部、札幌から車で約2〜2.5時間。</span></div>
+ja/plan-your-trip/index.html:101:        <ul style="list-style:none; line-height:2.2; font-size:130%; padding-left:0;">
+ja/plan-your-trip/index.html:107:      <div style="width:100%; max-width:900px; margin:20px auto 0;">
+ja/plan-your-trip/index.html:108:        <div style="height:380px; border-radius:3px; overflow:hidden;" id="directions-map"></div>
+ja/plan-your-trip/index.html:109:        <div style="text-align:right; margin-top:10px;">
+ja/plan-your-trip/index.html:110:          <a href="https://www.google.com/maps/dir/?api=1&amp;origin=42.7752,141.6927&amp;destination=42.8612,140.7009&amp;travelmode=driving" target="_blank" rel="noopener" style="font-size:90%; color: var(--color-text-light);">
+ja/plan-your-trip/index.html:111:            Googleマップで開く <span class="fa-solid fa-arrow-up-right-from-square" style="margin-left:4px;"></span>
+ja/plan-your-trip/index.html:202:    <div class="module-title-wrap" style="max-width:900px;">
+ja/plan-your-trip/index.html:211:        <div style="font-size:130%;"><span>ニセコエリアの複数のショップでマウンテンバイクをレンタル可能です。ハードテイルからフルサスのエンデューロバイクまで揃います。Rhythm JapanやNACなど地元のショップが、ニセコの地形に合うバイク選びをサポートします。</span></div>
+ja/plan-your-trip/index.html:217:        <div style="font-size:130%;"><span>自分のバイクを持ち込む場合、国内線および多くの国際線で輪行袋の預け入れが可能です。各航空会社のスポーツ用品取扱規定をご確認ください。</span></div>
+ja/plan-your-trip/index.html:219:      <div style="max-width:900px; margin:20px auto;">
+ja/plan-your-trip/index.html:220:        <img src="/assets/images/plan-your-trip/bike-rental.webp" alt="ニセコの​レンタルショップに​並ぶ​マウンテンバイク" style="width:100%; height:auto; border-radius:3px; display:block;" />
+ja/plan-your-trip/index.html:229:    <div class="module-title-wrap" style="max-width:900px;">
+ja/plan-your-trip/index.html:238:        <div style="font-size:130%;"><span>ニセコにはリゾートホテルから小さなペンション、自炊型のコンドミニアムまで、幅広い宿泊施設があります。多くはヒラフ村周辺に集まっており、すべてのライディングエリアへ車でアクセスしやすい立地です。</span></div>
+ja/plan-your-trip/index.html:244:        <div style="font-size:130%;"><span>コミュニティパートナーの多くが宿泊施設を運営しています。パートナーを応援することが、あなたが走るトレイルを支えることにもつながります。</span></div>
+ja/plan-your-trip/index.html:250:        <div style="font-size:130%;"><span>可能であれば温泉のある宿を選んでください。ライドの後に湧き出る天然温泉に浸かるのが、地元流の過ごし方です。宿に温泉がない場合も、公衆浴場や日帰り入浴を受け付けているホテルの温泉が多数あります。</span></div>
+ja/plan-your-trip/index.html:252:      <div style="max-width:900px; margin:20px auto;">
+ja/plan-your-trip/index.html:253:        {% include image.html src="/assets/images/plan-your-trip/accommodation.webp" alt="山並みを​望むニセコの​宿泊施設" style="width:100%; height:auto; border-radius:3px; display:block;" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" width="1600" height="900" %}
+ja/plan-your-trip/index.html:262:    <div class="module-title-wrap" style="max-width:900px;">
+ja/plan-your-trip/index.html:271:        <ul style="list-style:none; line-height:2.2; font-size:130%; padding-left:0;">
+ja/plan-your-trip/index.html:285:    <div class="module-title-wrap" style="max-width:900px;">
+ja/plan-your-trip/index.html:294:        <ul style="list-style:none; line-height:2.2; font-size:130%; padding-left:0;">
+ja/plan-your-trip/index.html:307:    <div class="module-title-wrap" style="max-width:900px;">
+ja/plan-your-trip/index.html:316:        <div style="font-size:130%;"><span>ニセコはトレイルだけではありません。食とウェルネスの目的地でもあります。</span></div>
+ja/plan-your-trip/index.html:322:        <ul style="list-style:none; line-height:2.2; font-size:130%; padding-left:0;">
+ja/plan-your-trip/index.html:326:      <div style="max-width:900px; margin:20px auto;">
+ja/plan-your-trip/index.html:327:        {% include image.html src="/assets/images/plan-your-trip/onsen.webp" alt="山並みを​望む露天温泉、​ライドの​締めくくり" style="width:100%; height:auto; border-radius:3px; display:block;" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" width="1200" height="630" %}
+ja/plan-your-trip/index.html:333:        <ul style="list-style:none; line-height:2.2; font-size:130%; padding-left:0;">
+ja/plan-your-trip/index.html:362:        <a class="btn btn-secondary" href="/ja/join/" style="margin-left: 10px;">コミュニティに参加</a>
+ja/where-to-ride/index.html:14:    <div class="module-title-wrap" style="max-width:900px;">
+ja/where-to-ride/index.html:23:        <div style="font-size:130%;"><span>4つのバイクパーク、30km以上のトレイル。無料のペダルアクセス・シングルトラックから、ゴンドラ利用のダウンヒルまで。北海道ニセコのグラベルルートとスキルパークも。</span></div>
+ja/where-to-ride/index.html:70:    <div class="module-title-wrap" style="max-width:900px;">
+ja/where-to-ride/index.html:87:      <div style="width:100%; height:500px; border-radius:3px; overflow:hidden;" id="area-map"></div>
+ja/where-to-ride/index.html:202:          + '<div class="map-popup-image" style="background-image:url(' + poi.photo + ');">'
+ja/where-to-ride/index.html:438:            <div class="ride-card-image" style="background-image:url('/assets/images/events/2025/niseko-gravel-autumn-ride/header.jpg');">
+ja/where-to-ride/index.html:443:              <span style="display:inline-flex; gap:10px; justify-content:center; flex-wrap:wrap; margin:8px 0;">
+ja/where-to-ride/index.html:444:                <span style="font-size:12px; text-align:center; display:inline-flex; flex-direction:column; align-items:center;"><span class="fa-solid fa-ruler-horizontal" style="font-size:18px; color:#aaa; padding:4px 0;"></span> <strong>1,200km+</strong></span>
+ja/where-to-ride/index.html:455:            <div class="ride-card-image" style="background-image:url('/assets/images/events/2024/akaigawa-pump-track-reopens/header.jpg');">
+ja/where-to-ride/index.html:460:              <span style="display:inline-flex; gap:10px; justify-content:center; flex-wrap:wrap; margin:8px 0;">
+ja/where-to-ride/index.html:461:                <span style="font-size:12px; text-align:center; display:inline-flex; flex-direction:column; align-items:center;"><span class="fa-solid fa-location-dot" style="font-size:18px; color:#aaa; padding:4px 0;"></span> <strong>6</strong></span>
+ja/where-to-ride/index.html:483:      <div style="background:var(--color-bg-panel); border-radius:3px; overflow:hidden; max-width:900px; margin:0 auto;">
+ja/where-to-ride/index.html:484:        <div style="display:flex; flex-wrap:wrap; align-items:center;">
+ja/where-to-ride/index.html:485:          <div style="flex:1; min-width:250px;">
+ja/where-to-ride/index.html:486:            {% include image.html src="/assets/images/twinpeaks/trailsign.jpg" alt="ツインピークスバイクパークの統一NAMBAトレイル標識：難易度、方向、位置マーカーを表示" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;" width="3244" height="2000" %}
+ja/where-to-ride/index.html:488:          <div style="flex:1; min-width:250px; padding:32px;">
+ja/where-to-ride/index.html:489:            <h2 style="margin-bottom:12px;">トレイル標識ガイド</h2>
+ja/where-to-ride/index.html:490:            <p style="font-size:110%; margin-bottom:20px;">ニセコ全域で​統一された​標識システムの​読み方​：難易度、​方向コード、​位置マーカー。</p>
+ja/where-to-ride/index.html:547:      <div class="module-title-wrap" style="max-width:900px;">
+ja/where-to-ride/index.html:556:          <div style="font-size:115%;"><span>NAMBAは​トレイルの​建設と​整備を​担当しています。​ガイドツアー、​レッスン、​バイクレンタルは​ニセコの​各事業者が​提供しています。</span></div>
+ja/where-to-ride/index.html:606:    <div class="module-title-wrap" style="max-width:900px;">
+ja/where-to-ride/index.html:615:        <div style="font-size:130%;"><span>シーズンは5月中旬から10月下旬まで：春の桜、夏のフロー、秋の紅葉。トレイル状況の最新情報は<a href="https://www.instagram.com/nisekomtb/" target="_blank">Instagram</a>で配信。</span></div>
+ja/where-to-ride/signage/index.html:311:    <div class="module-title-wrap" style="max-width:900px;">
+ja/where-to-ride/signage/index.html:320:        <div style="font-size:130%;"><span>NAMBAが​管理する​すべての​パークでは、​同じ​トレイルサインを​使用しています。<a href="/ja/twin-peaks/">​ツインピークス</a>、<a href="/ja/where-to-ride/grand-hirafu/">​グラン・ヒラフ</a>、<a href="/ja/where-to-ride/hanazono/">​ニセコHANAZONO</a>で、​アイコン、​色、​レイアウトは​すべて​共通です。​一度​読み方を​覚えれば、​どの​パークでも​同じように​読めます。​以下、​サインの​各部分の​意味を​解説します。</span></div>
+ja/where-to-ride/signage/index.html:329:    <div class="module-title-wrap" style="max-width:1000px;">
+ja/where-to-ride/signage/index.html:365:    <div class="module-title-wrap" style="max-width:1100px;">
+ja/where-to-ride/signage/index.html:372:      <p style="max-width:900px; margin:0 auto; text-align:center; font-size:15px; color:var(--color-text);">難易度は​IMBAの​国際基準に​準拠しており、​世界中の​バイクパークや​スキーリゾートで​使われているのと​同じ​カラースケールです。</p>
+ja/where-to-ride/signage/index.html:423:    <div class="module-title-wrap" style="max-width:1100px;">
+ja/where-to-ride/signage/index.html:467:    <div class="module-title-wrap" style="max-width:1100px;">
+ja/where-to-ride/signage/index.html:505:    <div class="module-title-wrap" style="max-width:1100px;">
+ja/where-to-ride/gravel/index.html:9:<div style="max-width:900px; margin:0 auto;">
+ja/where-to-ride/gravel/index.html:17:    {% include image.html src="/assets/images/gravel/sunset-road-mountains.webp" alt="夕暮れの​グラベルロードを​走る​ライダー、​遠くに​ニセコ連峰の​山並み" width="1800" height="1200" style="width:100%; height:auto; border-radius:3px; display:block;" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" %}
+ja/where-to-ride/gravel/index.html:27:    {% include image.html src="/assets/images/gravel/rider-rice-paddies.webp" alt="水を​張った​田んぼの​脇で​ニセコの​山々を​望むライダー" width="1800" height="1350" style="width:100%; height:auto; border-radius:3px; display:block;" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" %}
+ja/where-to-ride/gravel/index.html:36:    {% include image.html src="/assets/images/events/2024/niseko-gravel-autumn-ride/header.jpg" alt="夏の​緑に​包まれた​林道の​トンネルを​走る​グラベルライダーたち" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" loading="lazy" style="width:100%; height:auto; border-radius:3px; display:block;" width="1500" height="800" %}
+ja/where-to-ride/gravel/index.html:44:  <section class="article-content" style="text-align:center;">
+ja/where-to-ride/hanazono/index.html:13:  <div style="display:inline-block; padding:6px 16px; border-radius:4px; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:1px; background:var(--color-accent); color:#fff; margin-bottom:20px;">2026年夏オープン</div>
+ja/where-to-ride/skills-parks/index.html:8:<div style="max-width:900px; margin:0 auto;">
+ja/where-to-ride/skills-parks/index.html:19:    {% include image.html src="/assets/images/skills-parks/twin-peaks-skills.webp" alt="ツインピークススキルセンターで​ウッドフィーチャーを​越える​ライダー、​白樺の​森が​背景" style="width:100%; height:auto; border-radius:3px; display:block; margin:18px 0 36px;" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" width="1600" height="1066" %}
+ja/where-to-ride/skills-parks/index.html:22:    {% include image.html src="/assets/images/skills-parks/grand-hirafu-skills.webp" alt="グラン・ヒラフ スキルアップエリアの​全景、​芝の​丘陵に​複数の​練習ループが​刻まれている" style="width:100%; height:auto; border-radius:3px; display:block; margin:18px 0 36px;" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" width="1600" height="1200" %}
+ja/where-to-ride/skills-parks/index.html:31:    {% include image.html src="/assets/images/events/2024/akaigawa-pump-track-reopens/riders.jpg" alt="秋色に​染まる​木々を​背景に​Tomo Playparkの​パンプトラックで​ジャンプを​決める​BMXライダー" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" loading="lazy" style="width:100%; height:auto; border-radius:3px; display:block; margin:18px 0 36px;" width="1160" height="700" %}
+ja/where-to-ride/skills-parks/index.html:34:    <img src="/assets/images/skills-parks/rhythm-japan.webp" alt="ヒラフ村の​Rhythm Japan店舗外に​ある​モジュラー式パンプトラックを​走る​子ども" style="width:100%; height:auto; border-radius:3px; display:block; margin:18px 0 36px;" />
+ja/where-to-ride/skills-parks/index.html:37:    {% include image.html src="/assets/images/skills-parks/rusutsu.webp" alt="白樺の​木立に​囲まれた​ルスツの​フロートレイルで​ジャンプを​決める​ライダー" style="width:100%; height:auto; border-radius:3px; display:block; margin:18px 0 0;" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" width="1600" height="874" %}
+ja/where-to-ride/skills-parks/index.html:40:  <section class="article-content" style="text-align:center;">
+ja/impact/index.html:150:    <div class="module-title-wrap" style="max-width:900px;">
+ja/impact/index.html:159:        <p style="font-size:130%;">2024年の7,750人から2025年の11,500人へ。前年比約48%の成長。</p>
+ja/impact/index.html:171:    <div class="module-title-wrap" style="max-width:900px;">
+ja/impact/index.html:191:    <div class="module-title-wrap" style="max-width:900px;">
+ja/impact/index.html:205:    <div class="module-title-wrap" style="max-width:900px;">
+ja/impact/index.html:245:    <div class="module-title-wrap" style="max-width:900px;">
+ja/impact/index.html:254:        style="font-size:130%;">6人の​ライダーと​シャベルから、​北海道最大の​マウンテンバイクネットワークへ。</p>
+ja/impact/index.html:318:    <div class="module-title-wrap" style="max-width:900px;">
+ja/impact/index.html:327:        <p style="font-size:130%;">NAMBAと​提携して、​ニセコの​マウンテンバイクネットワークを​一緒に​育てましょう。​すべての​貢献が​トレイル、​イベント、​コミュニティに​直接​使われます。</p>
+projects/index.html:16:    <div class="module-title-wrap" style="max-width:900px;">
+projects/index.html:25:        <div style="font-size:130%;"><span>Not just a bike park. We build trails across the whole Niseko region: Twin Peaks, Grand Hirafu, Hanazono, and what comes next. Each one is part of a single connected map.</span></div>
+projects/index.html:31:        <div style="font-size:115%; color: var(--color-text-light);"><span>30km+ of trail across four riding areas. 100% community-funded since 2022.</span></div>
+projects/index.html:40:    <div class="module-title-wrap" style="max-width:900px;">
+projects/index.html:49:        <div style="font-size:130%;"><span>What makes Niseko's trails feel like a network is coordination. Instead of each resort or landowner building on their own, NAMBA plans the region as a whole, so every new project plugs into one connected map.</span></div>
+projects/index.html:55:        <div style="font-size:130%;"><span>Without that, you get duplicate difficulty levels, disconnected networks, and gaps where the riding mix should be. The masterplan exists to stop that.</span></div>
+projects/index.html:64:        <ul style="list-style:none; padding-left:0; font-size:115%; line-height:1.7;">
+projects/index.html:65:          <li style="margin-bottom: 28px;">
+projects/index.html:66:            <h3 style="margin:0 0 6px;">Connectivity</h3>
+projects/index.html:69:          <li style="margin-bottom: 28px;">
+projects/index.html:70:            <h3 style="margin:0 0 6px;">Diversity</h3>
+projects/index.html:73:          <li style="margin-bottom: 28px;">
+projects/index.html:74:            <h3 style="margin:0 0 6px;">Distance targets</h3>
+projects/index.html:77:          <li style="margin-bottom: 28px;">
+projects/index.html:78:            <h3 style="margin:0 0 6px;">Unified experience</h3>
+projects/index.html:81:          <li style="margin-bottom: 28px;">
+projects/index.html:82:            <h3 style="margin:0 0 6px;">Efficient use of terrain</h3>
+projects/index.html:93:      style="max-width:900px; margin:20px auto;">
+projects/index.html:94:      {% include image.html src="/assets/images/projects/masterplan.webp" alt="Aerial view of the Niseko region with the planned NAMBA trail network traced in gold across Mount Annupuri, Grand Hirafu, Hanazono, and Twin Peaks" loading="lazy" style="width:100%; height:auto; display:block; border-radius:3px;" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" width="2400" height="1350" %}
+projects/index.html:95:      <p style="text-align:center; font-size:90%; color:#999; margin:12px 0 0;">Concept map of Niseko's trail network: existing trails and planned expansion.</p>
+projects/index.html:98:    <div class="module-title-wrap" style="max-width:900px;">
+projects/index.html:103:        <div style="font-size:130%;"><span>This is the reason resorts, landowners, and the local government keep coming back to us. Trail building is one part of what we do. The bigger part is designing the network that makes Niseko's mountains work for summer.</span></div>
+projects/index.html:122:            <div class="img-icon"><img src="/assets/images/logos/twin-peaks.svg" alt="Twin Peaks Bike Park" style="height:96px; width:auto; object-fit:contain;" /></div>
+projects/index.html:123:            <div style="display:inline-block; padding:6px 16px; border-radius:4px; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:1px; background:#46b414; color:#fff; margin-bottom:20px;">Operational</div>
+projects/index.html:131:            <div class="img-icon"><img src="/assets/images/company/grand-hirafu.png" alt="Grand Hirafu Bike Park" style="height:96px; width:auto; object-fit:contain;" /></div>
+projects/index.html:132:            <div style="display:inline-block; padding:6px 16px; border-radius:4px; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:1px; background:#46b414; color:#fff; margin-bottom:20px;">Operational</div>
+projects/index.html:140:            <div class="img-icon"><img src="/assets/images/company/hanazono.png" alt="Niseko Hanazono Bike Park" style="height:96px; width:auto; object-fit:contain;" /></div>
+projects/index.html:141:            <div style="display:inline-block; padding:6px 16px; border-radius:4px; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:1px; background:var(--color-accent); color:#fff; margin-bottom:20px;">Opening Summer 2026</div>
+projects/index.html:150:            <div style="display:inline-block; padding:6px 16px; border-radius:4px; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:1px; background:var(--color-text-light); color:#333; margin-bottom:20px;">Planning</div>
+projects/index.html:164:    <div class="module-title-wrap" style="max-width:900px;">
+projects/index.html:173:        <div style="font-size:130%;"><span>One consistent signage system across every NAMBA park: trail name, difficulty, direction of travel, sponsor, and a location code for emergencies. Same format whether you're at Twin Peaks, Grand Hirafu, or Hanazono.</span></div>
+projects/index.html:175:      <div style="text-align:center; margin:30px 0;" class="ja-animate" data-animation="move-from-bottom" data-delay="600">
+projects/index.html:185:    <div class="module-title-wrap" style="max-width:900px;">
+projects/index.html:194:        <div style="font-size:130%;"><span>Beyond the current parks, we're looking at alpine trails that would connect Niseko's peaks and open up terrain that's currently off-limits to bikes. Add the Mt Yotei loop and continued growth at the resort parks, and you've got a trail system at a scale not seen anywhere else in Asia.</span></div>
+projects/index.html:200:  <div style="max-width:900px; margin:20px auto;">
+projects/index.html:201:    {% include image.html src="/assets/images/projects/annupuri-aerial.jpg" alt="Aerial panorama of Annupuri's peak with ski runs and forested ridge stretching across the Niseko range" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" loading="lazy" style="width:100%; height:auto; border-radius:3px; display:block;" width="1600" height="900" %}
+projects/index.html:207:    <div class="module-title-wrap" style="max-width:900px;">
+projects/index.html:216:        <div style="font-size:130%;"><span>Every trail in the NAMBA network has been community-funded. Partner with us to fund what comes next.</span></div>
+projects/grand-hirafu/index.html:99:    <div class="module-title-wrap" style="max-width:900px;">
+projects/grand-hirafu/index.html:104:        <div style="display:inline-block; padding:6px 16px; border-radius:4px; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:1px; background:#46b414; color:#fff; margin-bottom:20px;">Operational</div>
+projects/grand-hirafu/index.html:114:        <div style="font-size:130%;"><span>NAMBA works with Grand Hirafu on the bike park expansion: trail design, signage, and trail building at Niseko's largest resort village. In time, these trails will link into the wider regional network.</span></div>
+projects/grand-hirafu/index.html:123:    <div class="module-title-wrap" style="max-width:900px;">
+projects/grand-hirafu/index.html:170:    <div class="module-title-wrap" style="max-width:900px;">
+projects/grand-hirafu/index.html:179:        <div style="font-size:130%;"><span>Tokyu built their first flow trail at Grand Hirafu in 2023, opening it to the public in 2024 when the bike park reopened. After watching Twin Peaks open at the end of 2023, they invited NAMBA in to collaborate on future trail design, building, and signage. Grand Hirafu became the second resort to plug into the regional masterplan.</span></div>
+projects/grand-hirafu/index.html:188:    <div class="module-title-wrap" style="max-width:900px;">
+projects/grand-hirafu/index.html:197:        <div style="font-size:115%;"><span>What was built each year, and what's planned next. Tap any image for full size.</span></div>
+projects/grand-hirafu/index.html:241:    <div class="module-title-wrap" style="max-width:900px;">
+projects/grand-hirafu/index.html:264:    <div class="module-title-wrap" style="max-width:900px;">
+projects/grand-hirafu/index.html:273:        <div style="font-size:130%;"><span>NAMBA designs Grand Hirafu's trail signage using the same system we use at Twin Peaks and Hanazono. Riders see the same signs everywhere we manage.</span></div>
+projects/grand-hirafu/index.html:282:    <div class="module-title-wrap" style="max-width:900px;">
+projects/grand-hirafu/index.html:294:        <a class="btn btn-secondary" href="/partner/" style="margin-left: 10px;">Partner with us</a>
+projects/grand-hirafu/index.html:295:        <a class="btn btn-secondary" href="/projects/" style="margin-left: 10px;">Back to projects</a>
+projects/twin-peaks/index.html:102:    <div class="module-title-wrap" style="max-width:900px;">
+projects/twin-peaks/index.html:107:        <div style="display:inline-block; padding:6px 16px; border-radius:4px; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:1px; background:#46b414; color:#fff; margin-bottom:20px;">Operational</div>
+projects/twin-peaks/index.html:117:        <div style="font-size:130%;"><span>Twin Peaks is NAMBA's flagship: Japan's largest free-to-ride mountain bike park. Over 17km of Swiss-designed trails across 20+ routes, beginner flow lines through to expert technical terrain. Open every day of the riding season. No fees, no registration.</span></div>
+projects/twin-peaks/index.html:126:    <div class="module-title-wrap" style="max-width:900px;">
+projects/twin-peaks/index.html:181:    <div class="module-title-wrap" style="max-width:900px;">
+projects/twin-peaks/index.html:190:        <div style="font-size:115%;"><span>What was built each year, and what's planned next. Tap any image for full size.</span></div>
+projects/twin-peaks/index.html:242:    <div class="module-title-wrap" style="max-width:900px;">
+projects/twin-peaks/index.html:265:    <div class="module-title-wrap" style="max-width:900px;">
+projects/twin-peaks/index.html:274:        <div style="font-size:130%;"><span>Every trail at Twin Peaks is designed and built with Allegra, the Swiss firm behind some of the best-known parks in Europe and Asia. Allegra say Twin Peaks is the fastest-growing trail network project they've ever worked on, or known of anywhere in the world.</span></div>
+projects/twin-peaks/index.html:280:        <div style="font-size:130%;"><span>On the ground, NAMBA's seasonal trail crew handle the build, alongside community volunteers on regular dig days.</span></div>
+projects/twin-peaks/index.html:289:    <div class="module-title-wrap" style="max-width:900px;">
+projects/twin-peaks/index.html:298:        <div style="font-size:130%;"><span>Twin Peaks is 100% community-funded. From 2022 to 2025, 92% of funding came from private and community sources, with 74% from local businesses alone. 82% of every yen goes straight into trail construction; 95% if you count maintenance. Every trail in the park has a sponsor.</span></div>
+projects/twin-peaks/index.html:304:        <div style="font-size:130%;"><span>Visitor numbers have grown with the network: 7,747 in 2024, 11,500+ in 2025.</span></div>
+projects/twin-peaks/index.html:310:  <div style="max-width:900px; margin:20px auto;">
+projects/twin-peaks/index.html:311:    {% include image.html src="/assets/images/partner/trail-map-board.webp" alt="Two riders at the Twin Peaks Bike Park trail map board, sponsor logos visible along the bottom" loading="lazy" style="width:100%; height:auto; border-radius:3px; display:block;" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" width="1600" height="1066" %}
+projects/twin-peaks/index.html:317:    <div class="module-title-wrap" style="max-width:900px;">
+projects/twin-peaks/index.html:326:        <div style="font-size:130%;"><span>Twin Peaks is open every day of the riding season. Free to ride, no booking. Or partner with us to fund what comes next.</span></div>
+projects/twin-peaks/index.html:335:        <a class="btn btn-secondary" href="/partner/" style="margin-left: 10px;">Partner with us</a>
+projects/twin-peaks/index.html:336:        <a class="btn btn-secondary" href="/projects/" style="margin-left: 10px;">Back to projects</a>
+projects/hanazono/index.html:99:    <div class="module-title-wrap" style="max-width:900px;">
+projects/hanazono/index.html:104:        <div style="display:inline-block; padding:6px 16px; border-radius:4px; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:1px; background:var(--color-accent); color:#fff; margin-bottom:20px;">Under Construction | Opening Summer 2026</div>
+projects/hanazono/index.html:114:        <div style="font-size:130%;"><span>NAMBA is building Hanazono's first mountain bike trails. Other resorts in Niseko have lift-served downhill, but only on advanced black trails or runs with black sections mixed in. Hanazono will be the first park where intermediate riders can ride lift to base, top to bottom.</span></div>
+projects/hanazono/index.html:120:        <div style="font-size:130%;"><span>Phase 1 opens this summer with a 4,200m blue flow trail running top to bottom, plus a skills park at the base. We're already planning what comes after.</span></div>
+projects/hanazono/index.html:129:    <div class="module-title-wrap" style="max-width:900px;">
+projects/hanazono/index.html:168:    <div class="module-title-wrap" style="max-width:900px;">
+projects/hanazono/index.html:177:        <div style="font-size:115%;"><span>What was built each year, and what's planned next. Tap any image for full size.</span></div>
+projects/hanazono/index.html:213:    <div class="module-title-wrap" style="max-width:900px;">
+projects/hanazono/index.html:236:    <div class="module-title-wrap" style="max-width:900px;">
+projects/hanazono/index.html:260:    <div class="module-title-wrap" style="max-width:900px;">
+projects/hanazono/index.html:269:        <div style="font-size:130%;"><span>NAMBA designs Hanazono's trail signage using the same system we use at Twin Peaks and Grand Hirafu. Riders see the same signs everywhere we manage.</span></div>
+projects/hanazono/index.html:278:    <div class="module-title-wrap" style="max-width:900px;">
+projects/hanazono/index.html:287:        <div style="font-size:130%;"><span>Riding starts summer 2026. Trail details and conditions go live at <a href="/where-to-ride/hanazono/">where to ride</a> when the park opens.</span></div>
+projects/hanazono/index.html:296:        <a class="btn btn-secondary" href="/projects/" style="margin-left: 10px;">Back to projects</a>
+projects/yotei-360/index.html:40:    <div class="module-title-wrap" style="max-width:900px;">
+projects/yotei-360/index.html:45:        <div style="display:inline-block; padding:6px 16px; border-radius:4px; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:1px; background:var(--color-text-light); color:#333; margin-bottom:20px;">Planning</div>
+projects/yotei-360/index.html:55:        <div style="font-size:130%;"><span>Every legendary mountain bike destination has a signature ride: the Whole Enchilada in Moab, Peak to Creek in Whistler. Yotei 360 will be Niseko's. A 50km+ loop circling the base of Mt Yotei, with forests, farmland, and the volcano in your peripheral vision the whole way around.</span></div>
+projects/yotei-360/index.html:61:        <div style="font-size:130%;"><span>The loop itself is just the start. The first stage is restoring old forest roads, currently overgrown and unused, back into rideable gravel. Then we connect those gravel sections with new singletrack to close the loop. From there, spurs run into each of the townships around the base, with small trail centres at points along the way: maybe a cluster of two or three downhill trails at each.</span></div>
+projects/yotei-360/index.html:68:    <div class="ja-animate" data-animation="move-from-bottom" data-delay="600" style="max-width:900px; margin:20px auto;">
+projects/yotei-360/index.html:69:      {% include image.html src="/assets/images/projects/yotei-360/concept.webp" alt="Aerial concept view of Mt Yotei with the planned Yotei 360 loop traced in gold around the volcano's base" loading="lazy" style="width:100%; height:auto; display:block; border-radius:3px;" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" width="2400" height="1350" %}
+projects/yotei-360/index.html:70:      <p style="text-align:center; font-size:90%; color:#999; margin:12px 0 0;">Concept route only: a 50km+ loop circling the base of Mt Yotei. The actual route is still in planning.</p>
+projects/yotei-360/index.html:77:    <div class="module-title-wrap" style="max-width:900px;">
+projects/yotei-360/index.html:99:    <div class="module-title-wrap" style="max-width:900px;">
+projects/yotei-360/index.html:108:        <div style="font-size:130%;"><span>This is still in early planning. Follow us on Instagram for updates as new sections come online.</span></div>
+projects/yotei-360/index.html:125:    <div class="module-title-wrap" style="max-width:900px;">
+projects/yotei-360/index.html:137:        <a class="btn btn-secondary" href="/projects/" style="margin-left: 10px;">Back to projects</a>
+shop/index.html:526:              <div class="shop-callout-image" style="background-image:url('/assets/images/artists/header.jpg');"></div>
+shop/index.html:536:              <div class="shop-callout-image" style="background-image:url('/assets/images/bg/bg-header-donate.jpg');"></div>
+shop/index.html:549:      <div id="shop-categories" style="min-height:32px;"></div>
+press/index.html:107:    <div class="module-title-wrap" style="max-width:900px;">
+press/index.html:112:        <p style="font-size:130%;">NAMBA is the nonprofit behind Twin Peaks Bike Park, Japan's largest free-to-ride mountain bike park. Beyond Twin Peaks, NAMBA designs and builds lift-accessed trails with local resorts at Grand Hirafu and Hanazono. By summer 2026 the connected network reaches 33km across the Niseko region. Below you'll find key facts, story angles, and downloadable assets.</p>
+press/index.html:121:    <div class="module-title-wrap" style="max-width:900px;">
+press/index.html:146:  <div style="max-width:900px; margin:20px auto;">
+press/index.html:147:    {% include image.html src="/assets/images/press/hero-action.jpg" alt="Mountain biker riding a sun-dappled flow trail through Niseko's birch forest at Twin Peaks Bike Park" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" loading="lazy" style="width:100%; height:auto; border-radius:3px; display:block;" width="1800" height="1200" %}
+press/index.html:186:    <div class="module-title-wrap" style="max-width:900px;">
+press/index.html:199:    <div class="row equal-height equal-height-child" style="margin-top:20px;">
+press/index.html:250:    <div class="module-title-wrap" style="max-width:900px;">
+about/index.html:82:    <div class="module-title-wrap" style="max-width:900px;">
+about/index.html:91:        <div style="font-size:130%;"><span>In 2021, six keen mountain bikers in Niseko looked at the mountains around them and asked why nobody was using them in summer. Niseko was a famous winter destination, but when the snow melted, the trails stopped. They decided to change that.</span></div>
+about/index.html:97:        <div style="font-size:130%;"><span>What six riders started in 2021 has become Japan's largest free-access, nonprofit-built mountain bike trail network. Over 21 kilometres of Swiss-designed trails, spanning multiple parks across the Niseko region. All free to ride, every day of the season, no membership or registration required.</span></div>
+about/index.html:103:        <div style="font-size:130%;"><span>NAMBA is not just a bike park. We're behind mountain biking across the entire Niseko area: building and managing Twin Peaks Bike Park, consulting on Grand Hirafu's expansion, opening Hanazono's first trails, designing unified signage systems, and planning the Mt Yotei loop. No other organisation in Japan is doing this at this scale.</span></div>
+about/index.html:109:  <div style="max-width:900px; margin:20px auto;">
+about/index.html:110:    {% include image.html src="/assets/images/about/group-dig-day.jpg" alt="Multi-generational NAMBA volunteers gathered after a dig day at the forest shrine" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" loading="lazy" style="width:100%; height:auto; border-radius:3px; display:block;" width="2048" height="1152" %}
+about/index.html:116:    <div class="module-title-wrap" style="max-width:900px;">
+about/index.html:125:        <div style="font-size:130%;"><span>We're riders who got tired of waiting for someone else to build. When the snow melted, Niseko shut down, so we started.</span></div>
+about/index.html:131:        <div style="font-size:130%;"><span>Our own bike parks are free, always: Twin Peaks now, Yotei 360 and alpine trails next, no membership and no gates. We also build at resort partners, where trails ride off their lifts.</span></div>
+about/index.html:137:        <div style="font-size:130%;"><span>What we're working towards: Asia's premier mountain bike region, park by park, season by season.</span></div>
+about/index.html:146:    <div class="module-title-wrap" style="max-width:900px;">
+about/index.html:155:        <div style="font-size:130%;"><span>Our trails are designed and built with Allegra, the Swiss trail-building firm behind some of the best-known parks in Europe and Asia. That experience shapes every metre of trail at Twin Peaks.</span></div>
+about/index.html:161:  <div style="max-width:900px; margin:20px auto;">
+about/index.html:162:    {% include image.html src="/assets/images/about/allegra-trail-building.jpg" alt="Trail crew hand-finishing a berm with a mattock while a mini-excavator works behind in the forest" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" loading="lazy" style="width:100%; height:auto; border-radius:3px; display:block;" width="1600" height="1066" %}
+about/index.html:168:    <div class="module-title-wrap" style="max-width:900px;">
+_layouts/competition.html:485:              <p style="font-size:125%;">
+_layouts/competition.html:492:              {% if prize.subtitle %}<p class="gold" style="margin-top:30px; margin-bottom:15px;">{{ prize.subtitle }}</p>{% endif %}
+_layouts/competition.html:493:              {% if prize.desc %}<p style="margin-bottom:15px;">{{ prize.desc }}</p>{% endif %}
+_layouts/where-to-ride.html:406:        <img style="width:150px; margin:0 auto; margin-bottom:24px; display:flex;"
+_layouts/where-to-ride.html:410:        <p style="text-align:center;">
+_layouts/where-to-ride.html:418:        <p style="text-align:center;">
+_layouts/where-to-ride.html:437:          data-trailstyle="difficulty"
+_layouts/where-to-ride.html:447:          style="position:relative; min-height:600px;">
+_layouts/where-to-ride.html:488:        <div id="getting-here-map" style="width:100%; height:450px; border-radius:3px; overflow:hidden;"></div>
+_layouts/where-to-ride.html:540:          <h3><span class="fa-solid fa-handshake" style="margin-right:4px;"></span> {% if page.lang == 'ja' %}バイクパーク パートナー{% else %}Bike park partners{% endif %}</h3>
+_layouts/where-to-ride.html:623:          <a class="btn btn-secondary" href="{% if page.lang == 'ja' %}/ja{% endif %}{{ park_data.project_path }}" style="margin-left: 10px;">{% if page.lang == 'ja' %}プロジェクトページ{% else %}Project page{% endif %}</a>
+_layouts/job.html:123:        {% if page.description %}<p style="font-size:120%; color:#aaa; max-width:700px; margin:0 auto;">{{ page.description }}</p>{% endif %}
+_layouts/job.html:142:        <h2 style="margin-top:36px;">{% if page.lang == "ja" %}特典{% else %}Perks{% endif %}</h2>
+_layouts/job.html:157:      <div style="text-align:center; margin:48px 0;" class="ja-animate" data-animation="move-from-bottom" data-delay="800">
+_layouts/job.html:159:          <a class="btn btn-primary{% if cta_disabled %} disabled{% endif %}" href="{{ page.applyUrl }}" style="margin:5px;"{% if cta_disabled %} aria-disabled="true" tabindex="-1"{% endif %}>{% if page.lang == "ja" %}応募する{% else %}Apply now{% endif %}</a>
+_layouts/job.html:161:        <a class="btn btn-{% if has_primary_cta %}secondary{% else %}primary{% endif %}" href="{% if page.lang == 'ja' %}/ja{% endif %}/jobs/" style="margin:5px;">{% if page.lang == "ja" %}求人一覧に戻る{% else %}Back to jobs{% endif %}</a>
+_layouts/job.html:172:          <h4><span class="fa-solid fa-location-dot" style="margin-right:4px;"></span> {% if page.lang == "ja" %}場所{% else %}Location{% endif %}</h4>
+_layouts/job.html:178:          <h4><span class="fa-solid fa-yen-sign" style="margin-right:4px;"></span> {% if page.lang == "ja" %}報酬{% else %}Remuneration{% endif %}</h4>
+_layouts/job.html:184:          <h4><span class="fa-solid fa-gift" style="margin-right:4px;"></span> {% if page.lang == "ja" %}成果報酬{% else %}Bonus{% endif %}</h4>
+_layouts/job.html:191:          <h4><span class="fa-solid fa-calendar" style="margin-right:4px;"></span> {% if page.lang == "ja" %}開始日{% else %}Start date{% endif %}</h4>
+_layouts/job.html:206:          <h4><span class="fa-solid fa-calendar-check" style="margin-right:4px;"></span> {% if page.lang == "ja" %}終了日{% else %}End date{% endif %}</h4>
+_layouts/job.html:220:          <h4><span class="fa-solid fa-clock" style="margin-right:4px;"></span> {% if page.lang == "ja" %}雇用期間{% else %}Term{% endif %}</h4>
+_layouts/job.html:228:          <h4><span class="fa-solid fa-business-time" style="margin-right:4px;"></span> {% if page.lang == "ja" %}労働時間{% else %}Working hours{% endif %}</h4>
+_layouts/job.html:235:          <h4><span class="fa-solid fa-circle-info" style="margin-right:4px;"></span> {% if page.lang == "ja" %}詳しくは{% else %}More Info{% endif %}</h4>
+partner/index.html:262:      <div class="module-title-wrap" style="max-width:900px;">
+partner/index.html:267:          <p style="font-size:130%;">NAMBA is building the infrastructure that transforms Niseko into a year-round destination. Your partnership directly builds trails, supports events, and grows a community that brings visitors to your doorstep.</p>
+partner/index.html:323:    <div class="module-title-wrap" style="max-width:900px;">
+partner/index.html:328:        <div style="background:var(--color-bg-panel); border-left:4px solid var(--color-accent); padding:30px 40px; border-radius:3px; margin:20px 0; max-width:900px;">
+partner/index.html:329:          <p style="font-size:140%; font-style:italic; line-height:1.6; margin-bottom:16px;">"We are proud to have sponsored the Shogun Syndicate trail and to be part of NAMBA's vision of building a world class mountain bike destination in Japan."</p>
+partner/index.html:330:          <p style="color:var(--color-accent); font-weight:700; margin:0;">Chris Selig</p>
+partner/index.html:331:          <p style="color:#aaa; margin:0;">Norco Japan</p>
+partner/index.html:341:    <div class="module-title-wrap" style="max-width:900px;">
+partner/index.html:350:        <p style="font-size:130%;">Partner logos are displayed on individual trail signs, large trail map boards, and trailhead signage. Every visitor to the park sees them.</p>
+partner/index.html:359:    <div style="max-width:900px; margin:20px auto;">
+partner/index.html:381:    <div class="module-title-wrap" style="max-width:900px;">
+partner/index.html:403:      style="max-width:900px; margin:20px auto;">
+partner/index.html:419:      <div class="module-title-wrap" style="max-width:900px;">
+partner/index.html:424:          <p style="font-size:130%;">Annual partnerships for local businesses and organisations. Every tier puts your brand alongside a growing network of 60+ partners investing in Niseko's future.</p>
+partner/index.html:440:                    style="width:100px;"
+partner/index.html:448:                    style="width:100px;"
+partner/index.html:456:                    style="width:100px;"
+partner/index.html:463:                  <span class="fa-solid fa-route" style="font-size:80px; color:var(--color-secondary);"></span>
+partner/index.html:604:    <div class="module-title-wrap" style="max-width:900px;">
+partner/index.html:613:        <p style="font-size:130%;">For mountain bike and outdoor industry brands, we offer partnership on a product basis. Provide equipment, apparel, or services in exchange for the same exposure benefits as our community partners. Brands like Specialized, Peatys and Smith have already joined the network.</p>
+partner/index.html:634:      <div class="module-title-wrap" style="max-width:900px;">
+partner/index.html:643:          <p style="font-size:130%;">Fund the building of a trail and your brand becomes permanently part of the landscape. Trail sponsors receive all Higuma-level benefits plus extensive signage exposure: your logo on the trail's sign, on map boards, and on trail markers at least every 500m. Trail sponsorship also includes a lifetime commercial operator pass.</p>
+partner/index.html:652:      <div style="max-width:900px; margin:0 auto;">
+partner/index.html:693:    <div class="module-title-wrap" style="max-width:900px;">
+partner/index.html:702:        <p style="font-size:130%;">Every business is different. If you have an idea for how your brand or business could support NAMBA, whether through services, resources, or a creative collaboration, we'd love to hear from you. Some of our best partnerships have started with a conversation.</p>
+partner/index.html:711:    <div class="module-title-wrap" style="max-width:900px;">
+partner/index.html:720:        <div style="font-size:130%;"><span>Get in touch via our contact form and we'll be back to you with the next steps.</span></div>
+partner/index.html:737:    <div class="module-title-wrap" style="max-width:900px;">
+partner/index.html:796:        <i class="fa-solid fa-handshake" style="font-size:28px; color:var(--color-secondary); margin-bottom:6px;"></i>
+partner/index.html:801:          <div style="display:flex; flex-direction:column; align-items:center; width:100px;">
+partner/index.html:810:              <span style="font-size:8px; color:#444; margin-top:8px; text-transform:uppercase; letter-spacing:0.5px; font-family:'Metropolis', 'Metropolis Fallback',Helvetica,Arial,sans-serif; font-weight:500; text-align:center;">{% if page.lang == 'ja' and sponsor.ja.label %}{{ sponsor.ja.label }}{% else %}{{ sponsor.label }}{% endif %}</span>
+stories/index.html:27:    <div class="module-title-wrap" style="max-width:900px;">
+stories/index.html:52:          style="max-width:900px;"
+stories/index.html:56:            <div style="margin-bottom:20px;">
+stories/index.html:58:                <img src="{{ post.thumbnail }}" alt="{{ post.title }}" style="width:100%; border-radius:3px;">
+stories/index.html:65:          <p style="color:#999;">{{ post.date | date: "%-d %B %Y" }}</p>
+stories/index.html:75:      <div class="module-title-wrap" style="max-width:900px;">
+_layouts/base.html:153:    <noscript><img height="1" width="1" style="display:none"
+_layouts/base.html:346:              <div class="mod-footer" style="margin-top:12px;">
+_layouts/base.html:347:                <div style="font-size:12px; margin-bottom:8px;">
+_layouts/base.html:348:                  <a href="{% if page.lang == 'ja' %}/ja{% endif %}/contact/" style="color:#888; margin:0 8px;">{% if page.lang == "ja" %}お問い合わせ{% else %}Contact{% endif %}</a>
+_layouts/base.html:349:                  <a href="{% if page.lang == 'ja' %}/ja{% endif %}/privacy/" style="color:#888; margin:0 8px;">{% if page.lang == "ja" %}プライバシー{% else %}Privacy{% endif %}</a>
+_layouts/base.html:350:                  <a href="{% if page.lang == 'ja' %}/ja{% endif %}/terms/" style="color:#888; margin:0 8px;">{% if page.lang == "ja" %}利用規約{% else %}Terms{% endif %}</a>
+_layouts/base.html:351:                  <a href="{% if page.lang == 'ja' %}/ja{% endif %}/code-conduct/" style="color:#888; margin:0 8px;">{% if page.lang == "ja" %}行動規範{% else %}Code of Conduct{% endif %}</a>
+_layouts/event.html:476:      <div style="text-align:center; margin:48px 0;" class="ja-animate" data-animation="move-from-bottom" data-delay="800">
+_layouts/event.html:478:          <a class="btn btn-{% if page.link.isSignup %}primary{% else %}secondary{% endif %}{% if cta_disabled %} disabled{% endif %}" href="{{ page.link.url }}" target="_blank" rel="noopener" style="margin:5px;"{% if cta_disabled %} aria-disabled="true" tabindex="-1"{% endif %}>{{ page.link.text }}</a>
+_layouts/event.html:481:          <a class="btn btn-primary{% if cta_disabled %} disabled{% endif %}" href="/{% if page.lang == 'ja' %}ja/{% endif %}shop/#!/{{ page.storeProductSlug }}" style="margin:5px;"{% if cta_disabled %} aria-disabled="true" tabindex="-1"{% endif %}>{% if page.lang == "ja" %}チケットを購入{% else %}Buy ticket{% endif %}</a>
+_layouts/event.html:483:        <a class="btn btn-{% if has_primary_cta %}secondary{% else %}primary{% endif %}" href="{% if page.lang == 'ja' %}/ja{% endif %}/events/" style="margin:5px;">{% if page.lang == "ja" %}イベント一覧に戻る{% else %}Back to events{% endif %}</a>
+_layouts/event.html:493:          <h4><span class="fa-solid fa-calendar" style="margin-right:4px;"></span> {% if page.lang == "ja" %}日程{% else %}Dates{% endif %}</h4>
+_layouts/event.html:510:          <h4><span class="fa-solid fa-location-dot" style="margin-right:4px;"></span> {% if page.lang == "ja" %}場所{% else %}Location{% endif %}</h4>
+_layouts/event.html:517:          <h4><span class="fa-solid fa-yen-sign" style="margin-right:4px;"></span> {% if page.lang == "ja" %}料金{% else %}Price{% endif %}</h4>
+_layouts/event.html:542:          <h4><span class="fa-solid fa-building" style="margin-right:4px;"></span> {% if page.lang == "ja" %}イベント主催者{% else %}Host{% endif %}</h4>
+_layouts/event.html:553:          <h4><span class="fa-solid fa-handshake" style="margin-right:4px;"></span> {% if page.lang == "ja" %}イベントパートナー{% else %}Event Partners{% endif %}</h4>
+_layouts/event.html:566:          <h4><span class="fa-solid fa-circle-info" style="margin-right:4px;"></span> {% if page.lang == "ja" %}詳しくは{% else %}More Info{% endif %}</h4>
+twin-peaks/index.html:26:  <img style="width:150px; margin:0 auto; margin-bottom:24px; display: flex;"
+twin-peaks/index.html:29:  <p style="text-align:center;">A free, pedal-access community bike park in Niseko.</p>
+twin-peaks/index.html:30:  <p style="text-align:center;"><strong>Bike Park status:</strong>
+twin-peaks/access/index.html:25:  <div style="width:100%; height:600px;" id="map"></div>
+twin-peaks/access/index.html:111:        el.innerHTML = `<i class="fa ${icon}" style="color:#fff; font-size:14px;"></i>`;
+twin-peaks/access/index.html:189:    <div class="float-start item-image" style="margin-top:24px;">
+twin-peaks/emergency/index.html:67:      <p style="margin-bottom:0;">
+twin-peaks/commercial-pass/index.html:69:      <p style="margin-bottom:0;">For the 2024 season commercial passes are being introduced as part of a closed pilot program, and participation is
+twin-peaks/commercial-pass/index.html:83:    <div style="text-align:center; margin:50px 0;">
+twin-peaks/commercial-pass/index.html:84:      <h2 style="margin-bottom: 40px;">Get a Commercial Operator Pass</h2>
+team/index.html:146:    <div class="module-title-wrap" style="max-width:900px;">
+team/index.html:151:        <p style="font-size:130%;">Founded in 2021 by six riders, <a href="/about/">NAMBA</a> is now led by a 24-person board: men and women, Japanese and international, mountain bikers and not, all working toward the same vision for Niseko.</p>
+team/index.html:159:    <div class="module-title-wrap" style="max-width:900px;">
+team/index.html:177:      <div style="display:flex; gap:24px; flex-wrap:wrap; justify-content:center;">
+team/index.html:178:        <div class="leader-card ja-animate" style="flex:1; min-width:280px;" data-animation="move-from-bottom" data-delay="600">
+team/index.html:187:        <div class="leader-card ja-animate" style="flex:1; min-width:280px;" data-animation="move-from-bottom" data-delay="800">
+team/index.html:203:    <div class="module-title-wrap" style="max-width:900px;">
+team/index.html:231:    <div class="module-title-wrap" style="max-width:900px;">
+team/index.html:259:    <div class="module-title-wrap" style="max-width:900px;">
+team/index.html:268:        <p style="font-size:130%;">Our paid trail crew. While the rest of NAMBA runs on volunteers, prepping new trails and maintaining existing ones is full-time work.</p>
+team/index.html:269:        <p style="font-size:130%;">Led by Pierre and Dan, the team runs day-to-day operations at Twin Peaks and maintains the network across Grand Hirafu and Hanazono too. They also prep new trails before construction begins.</p>
+team/index.html:291:    <div class="module-title-wrap" style="max-width:900px;">
+team/index.html:300:        <p style="font-size:130%;">NAMBA is always looking for paid trail crew, project coordinators, and sub-committee volunteers. See current openings.</p>
+team/index.html:302:      <div style="text-align:center; margin:30px 0;" class="ja-animate" data-animation="move-from-bottom" data-delay="600">
+artist-series/index.html:390:<div class="module-title-wrap" style="max-width:900px;">
+artist-series/index.html:407:  <div class="artist-header" style="background-image: url('{{ header_webp }}');">
+artist-series/index.html:455:      <div style="text-align:center; margin:50px 0;">
+artist-series/index.html:498:<div class="module-title-wrap" style="max-width:900px;">
+artist-series/index.html:500:  <div style="text-align:center; margin:50px 0;">
+thanks/index.html:11:    <div class="acm-features style-1" style="padding:0px; min-height:auto;">
+thanks/index.html:28:    <div class="module-title-wrap" style="max-width:900px;">
+thanks/index.html:33:        <div style="font-size:150%;">
+thanks/index.html:38:    <div class="module-title-wrap" style="margin-bottom:0;">
+thanks/index.html:43:        <div style="font-size:150%;">
+code-conduct/index.html:20:<div style="max-width:500px; margin:0 auto;">
+jobs/index.html:13:    <div class="module-title-wrap" style="max-width:900px;">
+jobs/index.html:22:        <div style="font-size:130%;"><span>NAMBA runs on people who care about trails and community. We hire paid seasonal trail crew and recruit volunteers across our subcommittees.</span></div>
+jobs/index.html:29:    <div class="module-title-wrap" style="max-width:900px;">
+jobs/index.html:40:      <div style="max-width:900px; margin:0 auto;">
+jobs/index.html:72:      <div class="module-title-wrap" style="max-width:900px;">
+jobs/index.html:77:          <div style="font-size:130%;"><span>There are no open positions right now. Follow <a href="https://www.instagram.com/nisekomtb/" target="_blank">@nisekomtb</a> on Instagram or check back for updates.</span></div>
+jobs/index.html:98:    <div class="module-title-wrap" style="max-width:900px;">
+jobs/index.html:105:    <div style="max-width:900px; margin:0 auto;">
+jobs/index.html:113:          style="opacity:0.6;"
+jobs/index.html:117:            <p class="job-title"><a href="{{ job.url }}" style="color:#999;">{{ job.title }}</a></p>
+jobs/index.html:119:              <span class="job-badge" style="background:rgba(255,255,255,0.1); color:#888;">Closed</span>
+jobs/index.html:121:                <span class="job-badge paid" style="opacity:0.5;">Paid</span>
+jobs/index.html:123:                <span class="job-badge volunteer" style="opacity:0.5;">Volunteer</span>
+jobs/index.html:129:            <a class="action" href="{{ job.url }}" style="color:#888;">
+jobs/index.html:141:    <div class="module-title-wrap" style="max-width:900px;">
+jobs/index.html:150:        <div style="font-size:130%;"><span>Not looking for a formal role? Join a dig day, become a NAMBA member, or get in touch if you've got skills we could use.</span></div>
+jobs/index.html:159:        <a class="btn btn-secondary" href="/contact/?topic=volunteering" style="margin-left:10px;">Volunteer</a>
+events/index.html:39:    <div class="module-title-wrap" style="max-width:900px;">
+events/index.html:44:        <div style="font-size:130%;"><span>From community rides and trail building days to races and gravel events, NAMBA's calendar brings riders together through the riding season. Want to organise an event with us? <a href="/contact/?topic=events">Get in touch</a>.</span></div>
+plan-your-trip/index.html:13:    <div class="module-title-wrap" style="max-width:900px;">
+plan-your-trip/index.html:22:        <div style="font-size:130%;"><span>Niseko is in western Hokkaido, Japan. Mountain bike trails, onsen, and the volcanic landscape of Mount Yotei. Here's what you need to plan your trip.</span></div>
+plan-your-trip/index.html:28:  <div style="max-width:900px; margin:20px auto;">
+plan-your-trip/index.html:29:    {% include image.html src="/assets/images/plan-your-trip/hero-yotei.webp" alt="Rider on a Niseko trail with Mount Yotei rising behind in a summer landscape" style="width:100%; height:auto; border-radius:3px; display:block;" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" width="1600" height="1066" %}
+plan-your-trip/index.html:35:    <div class="module-title-wrap" style="max-width:900px;">
+plan-your-trip/index.html:44:        <div style="font-size:130%;"><span>The riding season runs from late May to late October, with conditions varying by month.</span></div>
+plan-your-trip/index.html:50:        <ul style="list-style:none; line-height:2.2; font-size:130%; padding-left:0;">
+plan-your-trip/index.html:77:        <div style="font-size:130%;"><span>Peak visitor months are June and September. July and August are the warmest, with every trail open.</span></div>
+plan-your-trip/index.html:83:        <div style="font-size:130%;"><span>Travelling from Australia or New Zealand? Niseko's season runs May to October, which is winter at home. Useful timing if your local trails are buried in snow.</span></div>
+plan-your-trip/index.html:92:    <div class="module-title-wrap" style="max-width:900px;">
+plan-your-trip/index.html:101:        <div style="font-size:130%;"><span>Niseko is in western Hokkaido, Japan, approximately 2 to 2.5 hours from Sapporo.</span></div>
+plan-your-trip/index.html:107:        <ul style="list-style:none; line-height:2.2; font-size:130%; padding-left:0;">
+plan-your-trip/index.html:113:      <div style="width:100%; max-width:900px; margin:20px auto 0;">
+plan-your-trip/index.html:114:        <div style="height:380px; border-radius:3px; overflow:hidden;" id="directions-map"></div>
+plan-your-trip/index.html:115:        <div style="text-align:right; margin-top:10px;">
+plan-your-trip/index.html:116:          <a href="https://www.google.com/maps/dir/?api=1&amp;origin=42.7752,141.6927&amp;destination=42.8612,140.7009&amp;travelmode=driving" target="_blank" rel="noopener" style="font-size:90%; color: var(--color-text-light);">
+plan-your-trip/index.html:117:            Open in Google Maps <span class="fa-solid fa-arrow-up-right-from-square" style="margin-left:4px;"></span>
+plan-your-trip/index.html:208:    <div class="module-title-wrap" style="max-width:900px;">
+plan-your-trip/index.html:217:        <ul style="list-style:none; line-height:2.2; font-size:130%; padding-left:0;">
+plan-your-trip/index.html:232:    <div class="module-title-wrap" style="max-width:900px;">
+plan-your-trip/index.html:241:        <div style="font-size:130%;"><span>Several shops in the Niseko area offer mountain bike rentals, from hardtails to full-suspension enduro rigs. Local shops like Rhythm Japan and NAC can help you find the right bike for Niseko's terrain.</span></div>
+plan-your-trip/index.html:247:        <div style="font-size:130%;"><span>If you're bringing your own bike, bike bags are accepted on domestic flights and most international carriers. Check your airline's sports equipment policy.</span></div>
+plan-your-trip/index.html:249:      <div style="max-width:900px; margin:20px auto;">
+plan-your-trip/index.html:250:        <img src="/assets/images/plan-your-trip/bike-rental.webp" alt="Mountain bikes lined up at a Niseko rental shop" style="width:100%; height:auto; border-radius:3px; display:block;" />
+plan-your-trip/index.html:259:    <div class="module-title-wrap" style="max-width:900px;">
+plan-your-trip/index.html:268:        <div style="font-size:130%;"><span>Niseko has a range of accommodation, from resort hotels to small pensions and self-catered apartments. Most is in Hirafu village, within easy driving distance of every riding area.</span></div>
+plan-your-trip/index.html:274:        <div style="font-size:130%;"><span>Many of our community partners offer accommodation, and supporting them supports the trails you ride.</span></div>
+plan-your-trip/index.html:280:        <div style="font-size:130%;"><span>Stay somewhere with an onsen (hot spring bath) if you can. A post-ride soak in mineral spring water is part of the local rhythm. If your accommodation doesn't have one, plenty of public bath houses and hotel onsens accept walk-ins.</span></div>
+plan-your-trip/index.html:282:      <div style="max-width:900px; margin:20px auto;">
+plan-your-trip/index.html:283:        {% include image.html src="/assets/images/plan-your-trip/accommodation.webp" alt="Niseko accommodation with mountain views" style="width:100%; height:auto; border-radius:3px; display:block;" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" width="1600" height="900" %}
+plan-your-trip/index.html:292:    <div class="module-title-wrap" style="max-width:900px;">
+plan-your-trip/index.html:301:        <ul style="list-style:none; line-height:2.2; font-size:130%; padding-left:0;">
+plan-your-trip/index.html:315:    <div class="module-title-wrap" style="max-width:900px;">
+plan-your-trip/index.html:324:        <ul style="list-style:none; line-height:2.2; font-size:130%; padding-left:0;">
+plan-your-trip/index.html:337:    <div class="module-title-wrap" style="max-width:900px;">
+plan-your-trip/index.html:346:        <div style="font-size:130%;"><span>Niseko isn't just trails. It's also a food and wellness destination.</span></div>
+plan-your-trip/index.html:352:        <ul style="list-style:none; line-height:2.2; font-size:130%; padding-left:0;">
+plan-your-trip/index.html:356:      <div style="max-width:900px; margin:20px auto;">
+plan-your-trip/index.html:357:        {% include image.html src="/assets/images/plan-your-trip/onsen.webp" alt="Outdoor onsen with mountain views, where a Niseko ride ends" style="width:100%; height:auto; border-radius:3px; display:block;" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" width="1200" height="630" %}
+plan-your-trip/index.html:363:        <ul style="list-style:none; line-height:2.2; font-size:130%; padding-left:0;">
+plan-your-trip/index.html:392:        <a class="btn btn-secondary" href="/join/" style="margin-left: 10px;">Join the community</a>
+where-to-ride/index.html:14:    <div class="module-title-wrap" style="max-width:900px;">
+where-to-ride/index.html:23:        <div style="font-size:130%;"><span>Four bike parks. Over 30km of trail, from free pedal-access singletrack to gondola-served downhill. Plus gravel routes and skills parks across Niseko, Hokkaido.</span></div>
+where-to-ride/index.html:70:    <div class="module-title-wrap" style="max-width:900px;">
+where-to-ride/index.html:87:      <div style="width:100%; height:500px; border-radius:3px; overflow:hidden;" id="area-map"></div>
+where-to-ride/index.html:202:          + '<div class="map-popup-image" style="background-image:url(' + poi.photo + ');">'
+where-to-ride/index.html:438:            <div class="ride-card-image" style="background-image:url('/assets/images/events/2025/niseko-gravel-autumn-ride/header.jpg');">
+where-to-ride/index.html:443:              <span style="display:inline-flex; gap:10px; justify-content:center; flex-wrap:wrap; margin:8px 0;">
+where-to-ride/index.html:444:                <span style="font-size:12px; text-align:center; display:inline-flex; flex-direction:column; align-items:center;"><span class="fa-solid fa-ruler-horizontal" style="font-size:18px; color:#aaa; padding:4px 0;"></span> <strong>1,200km+</strong></span>
+where-to-ride/index.html:455:            <div class="ride-card-image" style="background-image:url('/assets/images/events/2024/akaigawa-pump-track-reopens/header.jpg');">
+where-to-ride/index.html:460:              <span style="display:inline-flex; gap:10px; justify-content:center; flex-wrap:wrap; margin:8px 0;">
+where-to-ride/index.html:461:                <span style="font-size:12px; text-align:center; display:inline-flex; flex-direction:column; align-items:center;"><span class="fa-solid fa-location-dot" style="font-size:18px; color:#aaa; padding:4px 0;"></span> <strong>6</strong></span>
+where-to-ride/index.html:483:      <div style="background:var(--color-bg-panel); border-radius:3px; overflow:hidden; max-width:900px; margin:0 auto;">
+where-to-ride/index.html:484:        <div style="display:flex; flex-wrap:wrap; align-items:center;">
+where-to-ride/index.html:485:          <div style="flex:1; min-width:250px;">
+where-to-ride/index.html:486:            {% include image.html src="/assets/images/twinpeaks/trailsign.jpg" alt="Unified NAMBA trail sign at Twin Peaks Bike Park showing difficulty, direction, and location markers" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;" width="3244" height="2000" %}
+where-to-ride/index.html:488:          <div style="flex:1; min-width:250px; padding:32px;">
+where-to-ride/index.html:489:            <h2 style="margin-bottom:12px;">Trail Signage Guide</h2>
+where-to-ride/index.html:490:            <p style="font-size:110%; margin-bottom:20px;">Learn how to read the unified signage system used across all Niseko riding areas: difficulty ratings, direction codes, location markers.</p>
+where-to-ride/index.html:547:      <div class="module-title-wrap" style="max-width:900px;">
+where-to-ride/index.html:556:          <div style="font-size:115%;"><span>NAMBA builds and maintains the trails. Guided tours, lessons, and bike rentals are run by Niseko operators.</span></div>
+where-to-ride/index.html:606:    <div class="module-title-wrap" style="max-width:900px;">
+where-to-ride/index.html:615:        <div style="font-size:130%;"><span>The season runs mid-May to late October: spring sakura, summer flow, autumn colours. Trail status updates post to <a href="https://www.instagram.com/nisekomtb/" target="_blank">Instagram</a>.</span></div>
+where-to-ride/signage/index.html:311:    <div class="module-title-wrap" style="max-width:900px;">
+where-to-ride/signage/index.html:320:        <div style="font-size:130%;"><span>Every NAMBA-managed park uses the same trail signs. The icons, colours, and layout match at <a href="/twin-peaks/">Twin Peaks</a>, <a href="/where-to-ride/grand-hirafu/">Grand Hirafu</a>, and <a href="/where-to-ride/hanazono/">Niseko Hanazono</a>, so once you can read one, you can read them all. Below, we break down what each part of the sign means.</span></div>
+where-to-ride/signage/index.html:329:    <div class="module-title-wrap" style="max-width:1000px;">
+where-to-ride/signage/index.html:365:    <div class="module-title-wrap" style="max-width:1100px;">
+where-to-ride/signage/index.html:372:      <p style="max-width:900px; margin:0 auto; text-align:center; font-size:15px; color:var(--color-text);">Difficulty follows the IMBA international system, the same colour scale you'll see at bike parks and ski resorts worldwide.</p>
+where-to-ride/signage/index.html:423:    <div class="module-title-wrap" style="max-width:1100px;">
+where-to-ride/signage/index.html:467:    <div class="module-title-wrap" style="max-width:1100px;">
+where-to-ride/signage/index.html:505:    <div class="module-title-wrap" style="max-width:1100px;">
+where-to-ride/gravel/index.html:9:<div style="max-width:900px; margin:0 auto;">
+where-to-ride/gravel/index.html:17:    {% include image.html src="/assets/images/gravel/sunset-road-mountains.webp" alt="A solo rider on a gravel road at sunset with the Niseko range in the distance" width="1800" height="1200" style="width:100%; height:auto; border-radius:3px; display:block;" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" %}
+where-to-ride/gravel/index.html:27:    {% include image.html src="/assets/images/gravel/rider-rice-paddies.webp" alt="A rider beside flooded rice paddies, looking out toward the Niseko mountains" width="1800" height="1350" style="width:100%; height:auto; border-radius:3px; display:block;" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" %}
+where-to-ride/gravel/index.html:36:    {% include image.html src="/assets/images/events/2024/niseko-gravel-autumn-ride/header.jpg" alt="Gravel riders pedalling through a tunnel of summer-green trees on a Niseko forest road" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" loading="lazy" style="width:100%; height:auto; border-radius:3px; display:block;" width="1500" height="800" %}
+where-to-ride/gravel/index.html:44:  <section class="article-content" style="text-align:center;">
+where-to-ride/hanazono/index.html:13:  <div style="display:inline-block; padding:6px 16px; border-radius:4px; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:1px; background:var(--color-accent); color:#fff; margin-bottom:20px;">Opening Summer 2026</div>
+where-to-ride/skills-parks/index.html:8:<div style="max-width:900px; margin:0 auto;">
+where-to-ride/skills-parks/index.html:19:    {% include image.html src="/assets/images/skills-parks/twin-peaks-skills.webp" alt="A rider clearing a wooden feature at the Twin Peaks Skills Centre, second rider following behind in a birch grove" style="width:100%; height:auto; border-radius:3px; display:block; margin:18px 0 36px;" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" width="1600" height="1066" %}
+where-to-ride/skills-parks/index.html:22:    {% include image.html src="/assets/images/skills-parks/grand-hirafu-skills.webp" alt="Aerial view across the Grand Hirafu Skill-up Area showing multiple practice loops carved into the grassy hillside" style="width:100%; height:auto; border-radius:3px; display:block; margin:18px 0 36px;" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" width="1600" height="1200" %}
+where-to-ride/skills-parks/index.html:31:    {% include image.html src="/assets/images/events/2024/akaigawa-pump-track-reopens/riders.jpg" alt="A BMX rider catching air on the Tomo Playpark pump track at Akaigawa with autumn colour in the trees behind" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" loading="lazy" style="width:100%; height:auto; border-radius:3px; display:block; margin:18px 0 36px;" width="1160" height="700" %}
+where-to-ride/skills-parks/index.html:34:    <img src="/assets/images/skills-parks/rhythm-japan.webp" alt="A young rider on the modular pump track outside the Rhythm Japan store in Hirafu Village" style="width:100%; height:auto; border-radius:3px; display:block; margin:18px 0 36px;" />
+where-to-ride/skills-parks/index.html:37:    {% include image.html src="/assets/images/skills-parks/rusutsu.webp" alt="A rider mid-jump on the Rusutsu flow trail with birch trees on both sides" style="width:100%; height:auto; border-radius:3px; display:block; margin:18px 0 0;" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" width="1600" height="874" %}
+where-to-ride/skills-parks/index.html:40:  <section class="article-content" style="text-align:center;">
+impact/index.html:150:    <div class="module-title-wrap" style="max-width:900px;">
+impact/index.html:159:        <p style="font-size:130%;">From 7,750 visitors in 2024 to 11,500 in 2025. Growth of nearly 50% year-on-year.</p>
+impact/index.html:171:    <div class="module-title-wrap" style="max-width:900px;">
+impact/index.html:191:    <div class="module-title-wrap" style="max-width:900px;">
+impact/index.html:205:    <div class="module-title-wrap" style="max-width:900px;">
+impact/index.html:245:    <div class="module-title-wrap" style="max-width:900px;">
+impact/index.html:254:        style="font-size:130%;">From six riders with shovels to Hokkaido's largest mountain bike network.</p>
+impact/index.html:318:    <div class="module-title-wrap" style="max-width:900px;">
+impact/index.html:327:        <p style="font-size:130%;">Partner with NAMBA and help grow Niseko's mountain bike network. Every contribution goes directly to trails, events, and community.</p>
+
+---
+
+## All `<style>` matches (raw)
+
+_includes/hero.html:3:  <style>
+_includes/partners-wall.html:7:<style>
+_includes/ecwid-styles.html:2:<style>
+_includes/hero-slides.html:4:  <style>
+_includes/contact-form.html:8:<style>
+_includes/partners-footer.html:6:<style>
+_includes/sponsors.html:39:    <style>
+ja/projects/grand-hirafu/index.html:10:<style>
+ja/projects/twin-peaks/index.html:13:<style>
+ja/projects/hanazono/index.html:10:<style>
+ja/projects/yotei-360/index.html:10:<style>
+ja/shop/index.html:30:<style>
+ja/press/index.html:10:<style>
+ja/about/index.html:10:<style>
+ja/partner/index.html:8:<style>
+ja/partner/index.html:740:    <style>
+ja/twin-peaks/index.html:9:<style>
+ja/twin-peaks/emergency/index.html:24:<style>
+ja/twin-peaks/guides/index.html:39:<style>
+ja/twin-peaks/commercial-pass/index.html:24:<style>
+ja/team/index.html:10:<style>
+ja/artist-series/index.html:173:<style>
+ja/events/index.html:9:<style>
+ja/where-to-ride/index.html:259:  <style>
+ja/where-to-ride/index.html:500:  <style>
+ja/where-to-ride/signage/index.html:8:<style>
+ja/impact/index.html:10:<style>
+projects/grand-hirafu/index.html:10:<style>
+projects/twin-peaks/index.html:13:<style>
+projects/hanazono/index.html:10:<style>
+projects/yotei-360/index.html:10:<style>
+shop/index.html:30:<style>
+press/index.html:10:<style>
+about/index.html:10:<style>
+_layouts/competition.html:49:<style>
+_layouts/where-to-ride.html:29:<style>
+_layouts/job.html:6:<style>
+partner/index.html:8:<style>
+partner/index.html:744:    <style>
+_layouts/base.html:111:    <style>
+_layouts/event.html:6:<style>
+twin-peaks/index.html:8:<style>
+twin-peaks/emergency/index.html:23:<style>
+twin-peaks/guides/index.html:38:<style>
+twin-peaks/commercial-pass/index.html:23:<style>
+team/index.html:10:<style>
+artist-series/index.html:204:<style>
+events/index.html:9:<style>
+where-to-ride/index.html:259:  <style>
+where-to-ride/index.html:500:  <style>
+where-to-ride/signage/index.html:8:<style>
+impact/index.html:10:<style>

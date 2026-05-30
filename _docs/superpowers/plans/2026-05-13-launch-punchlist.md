@@ -928,47 +928,56 @@ Apply this template to:
 ### Task C.1: Inventory inline CSS
 
 Steps:
-- [ ] Run `grep -rn 'style="' --include="*.html" .` excluding `_site/` and `node_modules/` to inventory inline `style=` attributes.
-- [ ] Run `grep -rn '<style' --include="*.html" .` excluding `_site/` to inventory inline `<style>` blocks.
-- [ ] Save the inventory output to `_docs/css-audit-inventory.txt` (gitignored or temporary; do not commit unless useful as reference).
-- [ ] Pattern P-COMMIT only if inventory file is committed.
+- [x] Run `grep -rn 'style="' --include="*.html" .` excluding `_site/` and `node_modules/` to inventory inline `style=` attributes. **835 hits.**
+- [x] Run `grep -rn '<style' --include="*.html" .` excluding `_site/` to inventory inline `<style>` blocks. **52 hits.**
+- [x] Save the inventory output to `_docs/css-audit-inventory.txt` (1,041 lines, kept as reference per C.4 decision).
+- [x] Pattern P-COMMIT — bundled with C.5 first cluster commit.
 
 Notes:
+Of 132 distinct inline style values, 98 repeat (≥2 uses) and 34 are one-offs. Top duplicates: `max-width:900px` (195×), `font-size:130%` (145×), rounded image pattern (30×).
 
 ---
 
 ### Task C.2: Cluster repeated patterns
 
 Steps:
-- [ ] Review the inventory. Group inline rules by pattern: card hover, section padding, heading scale, button variants, image frames, etc.
-- [ ] For each cluster, note: how many occurrences, which pages, the rule values.
-- [ ] Save cluster analysis as `_docs/css-audit-clusters.md` for review.
-- [ ] No commit until C.3 decision.
+- [x] Review the inventory. Grouped inline rules by pattern.
+- [x] For each cluster, note: how many occurrences, which pages, the rule values.
+- [x] Save cluster analysis as `_docs/css-audit-clusters.md` for review.
+- [x] No commit until C.3 decision.
 
 Notes:
+12 clusters identified. Top 9 are actionable promotions; cluster 10 (page-specific `<style>` blocks) and cluster 12 (one-off inline) stay as-is. Estimated ~1,000-line net reduction across the codebase.
 
 ---
 
 ### Task C.3: Propose promotion list
 
 Steps:
-- [ ] For each cluster, propose: promote to shared utility class (e.g., `.namba-card-hover`) OR promote to component class (e.g., `.partner-card`) OR leave inline (one-off, justified).
-- [ ] Draft new entries for the brand stylesheet.
-- [ ] Present the promotion list to Tom for approval.
+- [x] For each cluster, propose: promote to shared utility class OR promote to component class OR fix existing default OR leave inline.
+- [x] Draft new entries for the brand stylesheet.
+- [x] Present the promotion list to Tom for approval.
 
 Notes:
-Decide: promotion list approval
+Proposal lives in `_docs/css-audit-clusters.md` alongside the cluster analysis. 9 actionable clusters, projected ~250 new utility CSS lines, ~1,317 inline-style removals.
+Decide: (resolved) Tom approved 2026-05-30 — see C.4.
 
 ---
 
 ### Task C.4: Tom approves promotion list
 
 Steps:
-- [ ] Tom reviews and approves/edits the proposed promotion list.
-- [ ] Record decisions in `_docs/css-audit-clusters.md`.
-- [ ] No commit.
+- [x] Tom reviews and approves/edits the proposed promotion list.
+- [x] Record decisions in `_docs/css-audit-clusters.md`.
+- [x] No commit (plan ticks bundled with C.1 commit).
 
 Notes:
+Resolved 2026-05-30:
+- **Commit strategy:** one commit per cluster (9 commits on `overhaul/website-restructure`).
+- **image.html `rounded` flag:** rejected — hand-class each call site instead.
+- **`.section-lede` mobile rule:** add `font-size: 115%` mobile rule.
+- **Audit docs:** keep both `css-audit-inventory.txt` + `css-audit-clusters.md` in the repo as reference.
+- **`.module-title-wrap` default change** — 61 bare uses identified; most are inconsistencies (sister sections on the same page use 900px), a handful (`privacy`, `thanks`, CTA blocks) may genuinely want narrower — handle case-by-case in C.5 cluster 1 with explicit `.is-narrow` where appropriate.
 
 ---
 
