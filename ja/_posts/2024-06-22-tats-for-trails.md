@@ -3,6 +3,7 @@ layout: competition
 categories: competitions
 title: トレイルのためのタトゥーコンペ
 titleHtml: トレイルの<wbr>ための<wbr>タトゥーコンペ
+needsCarousel: true
 permalink: /ja/tats-for-trails-2024/
 description: ニセコのトレイル建設を支援する「Tats for Trails」コンペティションに参加して、あなたの創造力を発揮しませんか？　次のタトゥーを考えている方も、素晴らしい目的に貢献したい方も、どなたでも参加できます。
 startDate: 2024-06-22 09:00:00 +0900

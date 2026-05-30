@@ -3,6 +3,7 @@ layout: competition
 categories: competitions
 title: Tats for Trails
 noindex: true
+needsCarousel: true
 permalink: /tats-for-trails-2024/
 description: Enter the Tats for Trails fundraiser — buy a raffle ticket for a chance to win tattoo vouchers from 59 Niseko, supporting trail building.
 startDate: 2024-06-22 09:00:00 +0900
