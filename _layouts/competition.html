@@ -361,10 +361,10 @@ baseCss: view-article
       <!-- Aside -->
       <div class="section">
         <div class="project-info ja-animate" data-animation="move-from-right" data-delay="200">
-          <h4>{% if page.lang == "en" %}Competition Details{% else %}コンペティションの詳細{% endif %}</h4>
+          <h2 class="module-title">{% if page.lang == "en" %}Competition Details{% else %}コンペティションの詳細{% endif %}</h2>
 
           <div class="list-group">
-            <h4 class="list-group-item-heading">{% if page.lang == "en" %}Start date{% else %}開始日{% endif %}</h4>
+            <h3 class="list-group-item-heading">{% if page.lang == "en" %}Start date{% else %}開始日{% endif %}</h3>
             <p class="list-group-item-text">
               {% if page.lang == "en" %}
               {{ page.startDate | date: "%A %e %B %Y" }}
@@ -376,7 +376,7 @@ baseCss: view-article
           </div>
 
           <div class="list-group">
-            <h4 class="list-group-item-heading">{% if page.lang == "en" %}End date{% else %}終了日{% endif %}</h4>
+            <h3 class="list-group-item-heading">{% if page.lang == "en" %}End date{% else %}終了日{% endif %}</h3>
             <p class="list-group-item-text">
               {% if page.lang == "en" %}
               {{ page.endDate | date: "%A %e %B %Y" }}
@@ -389,14 +389,14 @@ baseCss: view-article
 
           {% if page.location %}
           <div class="list-group">
-            <h4 class="list-group-item-heading">{% if page.lang == "en" %}Location{% else %}場所{% endif %}</h4>
+            <h3 class="list-group-item-heading">{% if page.lang == "en" %}Location{% else %}場所{% endif %}</h3>
             <p class="list-group-item-text">{{ page.location }}</p>
           </div>
           {% endif %}
 
           {% if page.price %}
           <div class="list-group price">
-            <h4 class="list-group-item-heading">{% if page.lang == "en" %}Price{% else %}料金{% endif %}</h4>
+            <h3 class="list-group-item-heading">{% if page.lang == "en" %}Price{% else %}料金{% endif %}</h3>
               {% if page.price[0] %}
                 <ul>
                 {% for price in page.price %}
@@ -430,7 +430,7 @@ baseCss: view-article
 
           {% if page.partners %}
           <div class="list-group">
-            <h4 class="list-group-item-heading">{% if page.lang == "en" %}Competition Partners{% else %}コンペティションのパートナー{% endif %}</h4>
+            <h3 class="list-group-item-heading">{% if page.lang == "en" %}Competition Partners{% else %}コンペティションのパートナー{% endif %}</h3>
             <p class="list-group-item-text partners">
               {% for partner in page.partners %}
                 <a href="{{- partner.url -}}" target="_blank" rel="sponsored noopener noreferrer">
@@ -443,7 +443,7 @@ baseCss: view-article
 
           {% if page.moreInfo %}
           <div class="list-group">
-            <h4 class="list-group-item-heading">{% if page.lang == "en" %}More Info{% else %}詳しくは{% endif %}</h4>
+            <h3 class="list-group-item-heading">{% if page.lang == "en" %}More Info{% else %}詳しくは{% endif %}</h3>
             {% for info in page.moreInfo %}
             <p>{{ info }}</p>
             {% endfor %}
@@ -472,7 +472,7 @@ baseCss: view-article
                   <span class="num">{{ forloop.index }}</span>
                 </span>
               </div>
-              <h4>{{ prize.title }}</h4>
+              <h3>{{ prize.title }}</h3>
               <div class="products">
                 {% for imgSrc in prize.imgs %}
                 <div class="prodwrap">

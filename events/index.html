@@ -46,6 +46,8 @@ masthead:
     </div>
   </div>
 
+  <h2 class="visually-hidden">Events</h2>
+
   {% assign events = site.categories.events | where: "lang", "en" | where: "draft", "false" %}
   {% assign eventsSize = events | size %}
   {% assign firstPastEventIndex = nil %}
