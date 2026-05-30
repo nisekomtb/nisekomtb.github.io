@@ -554,7 +554,7 @@ html[lang="ja"] .home-network-parks-title { letter-spacing: normal; text-transfo
   border-bottom: 1px solid transparent;
   transition: border-color 200ms ease, color 200ms ease;
 }
-.home-network-parks-all a:hover { color: var(--color-primary); border-color: var(--color-primary); }
+.home-network-parks-all a:hover { color: var(--color-accent); border-color: var(--color-accent); }
 
 /* Mobile (< 768px): un-stick. Show the 2026 frame as a static preview
    above the stacked timeline cards, no scrub. */
@@ -716,7 +716,7 @@ html[lang="ja"] .home-impact-title { letter-spacing: normal; text-transform: non
   border-bottom: 1px solid transparent;
   transition: border-color 200ms ease, color 200ms ease;
 }
-.home-impact-link a:hover { color: var(--color-primary); border-color: var(--color-primary); }
+.home-impact-link a:hover { color: var(--color-accent); border-color: var(--color-accent); }
 
 
 /* ── Section 06: Events ───────────────────────────────────────────── */
@@ -744,7 +744,7 @@ html[lang="ja"] .home-events-title { letter-spacing: normal; text-transform: non
 .home-events-feature { max-width: 760px; margin: 0 auto; }
 .home-events-all { text-align: right; margin-top: 24px; font-size: 14px; }
 .home-events-all a { color: #fff; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 200ms ease, color 200ms ease; }
-.home-events-all a:hover { color: var(--color-primary); border-color: var(--color-primary); }
+.home-events-all a:hover { color: var(--color-accent); border-color: var(--color-accent); }
 .home-events-empty { font-size: 15px; color: var(--color-text); }
 .home-events-empty a { color: var(--color-primary); }
 .home-events-empty a:hover { color: var(--color-primary-hover); }
@@ -793,7 +793,7 @@ html[lang="ja"] .home-stories-title { letter-spacing: normal; text-transform: no
 .home-story-action { font-size: 13px; font-weight: 500; letter-spacing: 0.04em; color: var(--color-primary); }
 .home-stories-all { text-align: right; margin-top: 24px; font-size: 14px; }
 .home-stories-all a { color: #fff; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 200ms ease, color 200ms ease; }
-.home-stories-all a:hover { color: var(--color-primary); border-color: var(--color-primary); }
+.home-stories-all a:hover { color: var(--color-accent); border-color: var(--color-accent); }
 @media (max-width: 1023px) { .home-stories-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 600px) { .home-stories-grid { grid-template-columns: 1fr; } }
 
@@ -906,7 +906,7 @@ html[lang="ja"] .home-action-title { letter-spacing: normal; text-transform: non
   border-bottom: 1px solid transparent;
   transition: border-color 200ms ease, color 200ms ease;
 }
-.home-action-tertiary a:hover { color: var(--color-primary); border-color: var(--color-primary); }
+.home-action-tertiary a:hover { color: var(--color-accent); border-color: var(--color-accent); }
 
 @media (max-width: 767px) {
   .home-action-grid { grid-template-columns: 1fr; min-height: 0; }
@@ -941,7 +941,7 @@ html[lang="ja"] .home-jobs-title { letter-spacing: normal; text-transform: none;
 .home-jobs-cards { max-width: 900px; margin: 0 auto; }
 .home-jobs-all { text-align: right; margin-top: 24px; font-size: 13px; max-width: 900px; margin-left: auto; margin-right: auto; }
 .home-jobs-all a { color: #fff; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 200ms ease, color 200ms ease; }
-.home-jobs-all a:hover { color: var(--color-primary); border-color: var(--color-primary); }
+.home-jobs-all a:hover { color: var(--color-accent); border-color: var(--color-accent); }
 
 /* ── Section 10: Partners ─────────────────────────────────────────── */
 .home-partners {
@@ -972,7 +972,7 @@ html[lang="ja"] .home-partners-title { letter-spacing: normal; text-transform: n
   border-bottom: 1px solid currentColor;
   transition: color 200ms ease, border-color 200ms ease;
 }
-.home-partners-intro a:hover { color: var(--color-primary); border-color: var(--color-primary); }
+.home-partners-intro a:hover { color: var(--color-accent); border-color: var(--color-accent); }
 .home-partners-link { text-align: center; margin: 18px 0 0; font-size: 14px; }
 .home-partners-link a { color: #fff; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 200ms ease, color 200ms ease; }
-.home-partners-link a:hover { color: var(--color-primary); border-color: var(--color-primary); }
+.home-partners-link a:hover { color: var(--color-accent); border-color: var(--color-accent); }

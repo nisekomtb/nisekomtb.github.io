@@ -3525,6 +3525,7 @@ address a {
 #t3-content > ul > li > a:hover,
 #t3-content > ol > li > a:hover,
 address a:hover {
+  color: var(--color-accent);
   text-decoration: none;
 }
 
@@ -6173,7 +6174,7 @@ div.t3-wrapper {
 
 .nav>li.action>a:after {
   content: "\f054";
-  font-family: "Font Awesome 6 Free";
+  font-family: "Font Awesome 7 Free";
   font-weight: 900;
   margin-left: 3px;
   position: relative;
@@ -6211,7 +6212,7 @@ div.t3-wrapper {
 
 .headright .menu>li:last-child>a:after {
   content: "\f054";
-  font-family: "Font Awesome 6 Free";
+  font-family: "Font Awesome 7 Free";
   font-weight: 900;
   margin-left: 3px;
   position: relative;
