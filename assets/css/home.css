@@ -972,12 +972,17 @@ html[lang="ja"] .home-stories-title { letter-spacing: normal; text-transform: no
 }
 .home-feature-bg-img {
   object-fit: cover;
-  object-position: center 30%;
-  /* Pre-scaled so the JS-driven parallax has room to translate
-     vertically without revealing the section background underneath.
-     The JS sets transform on this element directly via initFeature-
-     Parallax; the inline transform overrides this default. */
-  transform: scale(1.15);
+  /* Anchor the image's top edge to the container's top so the iconic
+     Yotei summit (composed at the top of the source) is always the
+     first thing in view. */
+  object-position: center top;
+  /* Pre-scaled so the JS-driven parallax has room to translate. With
+     transform-origin at the top, the 20% scale headroom sits entirely
+     at the BOTTOM of the container — the top stays put even when
+     scaled, and the parallax translation reveals more of the lower
+     foliage as the user scrolls. */
+  transform-origin: top center;
+  transform: scale(1.20);
   will-change: transform;
 }
 .home-feature-tint {
@@ -1067,7 +1072,7 @@ html[lang="ja"] .home-stories-title { letter-spacing: normal; text-transform: no
   .home-feature { min-height: 56vh; padding: 64px 20px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .home-feature-bg-img { transform: scale(1.04); }
+  .home-feature-bg-img { transform: scale(1.04); transform-origin: top center; }
 }
 
 /* ── Section 08: Ride / Build diptych (full-bleed photographic) ───── */

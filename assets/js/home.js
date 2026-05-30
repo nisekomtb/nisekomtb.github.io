@@ -102,11 +102,14 @@
       var range = sectionHeight + vh;
       var progress = (scrollY + vh - sectionTop) / range;
       progress = Math.min(Math.max(progress, 0), 1);
-      /* Translate from +8% (down) at entry to -8% (up) at exit.
-         16% total travel against the 15% scale headroom keeps edges
-         from leaking. */
-      var translatePct = (0.5 - progress) * 16;
-      img.style.transform = 'scale(1.15) translateY(' + translatePct.toFixed(2) + '%)';
+      /* Translate only downward, so the top of the image (Yotei
+         summit) stays anchored at the container's top. Bottom-only
+         reveal: at entry the image sits at 0 (top flush), at exit
+         it's translated up to -15% (revealing the lower 15% scale
+         headroom). transform-origin: top center keeps the top in
+         place during the scale. */
+      var translatePct = -progress * 15;
+      img.style.transform = 'scale(1.20) translateY(' + translatePct.toFixed(2) + '%)';
       ticking = false;
     }
 
