@@ -14,14 +14,23 @@
     </script>
     <meta charset="utf-8">
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-    <title>{{- page.title }}{% if page.subtitle %}: {{ page.subtitle }}{% endif %} - NAMBA</title>
+    {%- if page.seoTitle -%}
+      {%- assign seo_title = page.seoTitle -%}
+    {%- else -%}
+      {%- assign seo_title = page.title -%}
+      {%- if page.subtitle -%}
+        {%- assign seo_title = seo_title | append: ": " | append: page.subtitle -%}
+      {%- endif -%}
+    {%- endif -%}
+    {%- assign og_image = page.og.image | default: page.masthead.img | default: "/assets/images/og/hero.jpg" -%}
+    <title>{{ seo_title }} - NAMBA</title>
     {% if page.description %}<meta name="description" content="{{ page.description }}"/>{% endif %}
     <meta name="robots" content="{% if page.noindex %}noindex, nofollow{% else %}index, follow, max-image-preview:large{% endif %}"/>
-    <meta property="og:title" content="{{ page.title }}{% if page.subtitle %}: {{ page.subtitle }}{% endif %}"/>
+    <meta property="og:title" content="{{ seo_title }}"/>
     <meta property="og:type" content="{% if page.layout == 'event' or page.layout == 'competition' %}event{% else %}website{% endif %}"/>
-    <meta property="og:image" content="https://namba.ngo{{ page.og.image }}?d={{ site.time | date: "%s" }}"/>
-    <meta property="og:image:url" content="https://namba.ngo{{ page.og.image }}?d={{ site.time | date: "%s" }}"/>
-    <meta property="og:image:secure_url" content="https://namba.ngo{{ page.og.image }}?d={{ site.time | date: "%s" }}"/>
+    <meta property="og:image" content="https://namba.ngo{{ og_image }}?d={{ site.time | date: "%s" }}"/>
+    <meta property="og:image:url" content="https://namba.ngo{{ og_image }}?d={{ site.time | date: "%s" }}"/>
+    <meta property="og:image:secure_url" content="https://namba.ngo{{ og_image }}?d={{ site.time | date: "%s" }}"/>
     <meta property="og:url" content="https://namba.ngo{% if page.lang == 'ja' %}/ja{% endif %}{{ path }}"/>
     {% if page.description %}<meta property="og:description" content="{{ page.description }}"/>{% endif %}
     {% if page.lang == 'en' %}<meta property="og:locale" content="en_GB"/>
@@ -32,9 +41,9 @@
       <meta property="og:locale:alternate" content="en_GB"/>
     {% endif %}
     <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:title" content="{{ page.title }}{% if page.subtitle %}: {{ page.subtitle }}{% endif %}"/>
+    <meta name="twitter:title" content="{{ seo_title }}"/>
     {% if page.description %}<meta name="twitter:description" content="{{ page.description }}"/>{% endif %}
-    <meta name="twitter:image" content="https://namba.ngo{{ page.og.image }}?d={{ site.time | date: '%s' }}"/>
+    <meta name="twitter:image" content="https://namba.ngo{{ og_image }}?d={{ site.time | date: '%s' }}"/>
     <link rel="alternate" hreflang="en" href="https://namba.ngo{{ path }}"/>
     <link rel="alternate" hreflang="ja" href="https://namba.ngo/ja{{ path }}"/>
     <link rel="alternate" hreflang="x-default" href="https://namba.ngo{{ path }}"/>

@@ -1,7 +1,8 @@
 ---
 title: Niseko Mountain Bike Trails & Bike Parks
 subtitle: Where to Ride in Hokkaido
-description: "Interactive map of Niseko's mountain bike trails and bike parks across Hokkaido: Twin Peaks (Japan's largest free-to-ride park), Grand Hirafu, Hanazono, Annupuri, plus gravel routes and skills parks."
+seoTitle: Niseko Mountain Bike Trails & Bike Parks
+description: "Niseko's mountain bike trails and bike parks: Twin Peaks (Japan's largest free-to-ride), Grand Hirafu, Hanazono, Annupuri, plus gravel and skills parks."
 masthead:
   img: /assets/images/bg/bg-header-where-to-ride.jpg
 ---
@@ -390,7 +391,7 @@ masthead:
   </div>
 
   <!-- Tours, Guides & Rentals -->
-  <div class="section">
+  <div class="section" id="tours-guides-rentals">
 
     <div class="t3-section acm-features style-2">
       <div class="module-title-wrap">
@@ -491,8 +492,8 @@ masthead:
       "@type": "WebPage",
       "@id": "https://namba.ngo/where-to-ride/#webpage",
       "url": "https://namba.ngo/where-to-ride/",
-      "name": "Where to Mountain Bike in Niseko: Bike Parks & Trails",
-      "description": "Mountain bike across Niseko, Hokkaido: Twin Peaks (Japan's largest free-to-ride bike park), Grand Hirafu, Hanazono, Annupuri, plus gravel and skills parks.",
+      "name": "{{ page.title }}",
+      "description": {{ page.description | jsonify }},
       "inLanguage": "en",
       "primaryImageOfPage": "https://namba.ngo/assets/images/bg/bg-header-where-to-ride.jpg",
       "isPartOf": { "@id": "https://namba.ngo/#website" },

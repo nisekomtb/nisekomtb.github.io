@@ -27,8 +27,6 @@ defaults:
     values:
       layout: default
       lang: en
-      og:
-        image: /assets/images/og/hero.jpg
   - scope:
       path: ja
     values:

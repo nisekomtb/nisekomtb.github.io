@@ -1,7 +1,8 @@
 ---
 title: ニセコ マウンテンバイク コース
 subtitle: 北海道のバイクパークとトレイル
-description: "ニセコ マウンテンバイクのコース・バイクパーク・トレイルをインタラクティブマップで総覧。ツインピークス（日本最大の無料バイクパーク）、グラン・ヒラフ、ニセコHANAZONO、ニセコアンヌプリ、グラベルとスキルパーク。"
+seoTitle: ニセコ マウンテンバイク コース・バイクパーク
+description: "ニセコのマウンテンバイクコースとバイクパーク。ツインピークス（日本最大の無料バイクパーク）、グラン・ヒラフ、HANAZONO、アンヌプリ、グラベル、スキルパーク。"
 masthead:
   img: /assets/images/bg/bg-header-where-to-ride.jpg
 ---
@@ -390,7 +391,7 @@ masthead:
   </div>
 
   <!-- Tours, Guides & Rentals -->
-  <div class="section">
+  <div class="section" id="tours-guides-rentals">
 
     <div class="t3-section acm-features style-2">
       <div class="module-title-wrap">
@@ -491,8 +492,8 @@ masthead:
       "@type": "WebPage",
       "@id": "https://namba.ngo/ja/where-to-ride/#webpage",
       "url": "https://namba.ngo/ja/where-to-ride/",
-      "name": "ニセコでマウンテンバイク｜バイクパークとトレイル",
-      "description": "北海道ニセコでマウンテンバイク：ツインピークス（日本最大の無料バイクパーク）、グラン・ヒラフ、ニセコHANAZONO、ニセコアンヌプリ、グラベルルートとスキルパーク。",
+      "name": "{{ page.title }}",
+      "description": {{ page.description | jsonify }},
       "inLanguage": "ja",
       "primaryImageOfPage": "https://namba.ngo/assets/images/bg/bg-header-where-to-ride.jpg",
       "isPartOf": { "@id": "https://namba.ngo/#website" },
