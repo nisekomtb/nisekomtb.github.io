@@ -2380,6 +2380,16 @@ input.invalid {
   }
 }
 
+.section-lede {
+  font-size: 130%;
+}
+
+@media (max-width: 767px) {
+  .section-lede {
+    font-size: 115%;
+  }
+}
+
 .module-title {
   background: transparent;
   color: var(--color-accent);
