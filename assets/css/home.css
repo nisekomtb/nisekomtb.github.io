@@ -234,14 +234,15 @@ html[lang="ja"] .home-hero-title { letter-spacing: normal; }
   color: var(--color-text-light);
 }
 
-/* Editorial intro panel: photographic backdrop carries the visual
-   weight; the editorial statement sits centred over a dark scrim with
-   line-by-line stagger reveal. Same aesthetic family as Section 08
-   (Ride/Build diptych): tinted photo + Ken-Burns drift + bold copy. */
+/* Editorial intro panel: asymmetric magazine spread. The photographic
+   backdrop dominates the right; the editorial statement sits in a
+   left-side column with a strong dark gradient creating a "text well"
+   so the panel reads as photo-and-caption rather than text-on-photo.
+   Differentiates this panel from Section 07's centred quote band. */
 .home-intro-editorial {
   position: relative;
-  padding: clamp(96px, 14vh, 180px) 0 clamp(96px, 14vh, 180px);
-  min-height: 60vh;
+  padding: clamp(96px, 16vh, 200px) 0 clamp(96px, 16vh, 200px);
+  min-height: 64vh;
   overflow: hidden;
   isolation: isolate;
   background: var(--color-bg);
@@ -261,7 +262,9 @@ html[lang="ja"] .home-hero-title { letter-spacing: normal; }
 }
 .home-intro-bg-img {
   object-fit: cover;
-  object-position: center;
+  /* Anchor the photo toward the right so the dominant subject sits in
+     the visible half once the left-side text well covers ~45% of it. */
+  object-position: 70% center;
   animation: home-intro-drift 28s ease-in-out infinite alternate;
   will-change: transform;
 }
@@ -274,31 +277,47 @@ html[lang="ja"] .home-hero-title { letter-spacing: normal; }
   inset: 0;
   pointer-events: none;
   mix-blend-mode: multiply;
+  /* Light overall tint — the scrim does the heavy lifting on the text
+     side, so the photo stays clearer on the right than in the centred
+     panels. */
   background:
-    linear-gradient(180deg, rgba(20, 30, 40, 0.55) 0%, rgba(15, 25, 35, 0.70) 100%);
+    linear-gradient(180deg, rgba(20, 30, 40, 0.35) 0%, rgba(15, 25, 35, 0.45) 100%);
 }
 .home-intro-scrim {
   position: absolute;
   inset: 0;
   pointer-events: none;
+  /* Asymmetric gradient: dark "text well" on the left fading to mostly
+     clear on the right, so the photo dominates outside the type. */
   background:
-    radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.55) 80%);
+    linear-gradient(90deg,
+      rgba(0, 0, 0, 0.78) 0%,
+      rgba(0, 0, 0, 0.65) 30%,
+      rgba(0, 0, 0, 0.30) 55%,
+      rgba(0, 0, 0, 0.05) 80%,
+      rgba(0, 0, 0, 0.15) 100%);
 }
 .home-intro-editorial .home-intro-wrap {
   position: relative;
   z-index: 1;
-  max-width: 1000px;
+  max-width: 1320px;
+  margin: 0 auto;
   padding: 0 clamp(20px, 4vw, 56px);
 }
 .home-intro-statement {
   margin: 0;
+  max-width: 580px;
   font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
   font-weight: 300;
   font-size: clamp(22px, 3.2vw, 44px);
   line-height: 1.25;
   letter-spacing: -0.005em;
   color: #fff;
-  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.45);
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.55);
+  /* Vertical accent rule on the left, sitting in the text well. Reads
+     as an editorial pull-quote marker. */
+  border-left: 3px solid var(--color-accent);
+  padding-left: clamp(20px, 2.4vw, 32px);
 }
 .home-intro-line {
   display: block;
@@ -325,6 +344,21 @@ html[lang="ja"] .home-hero-title { letter-spacing: normal; }
   overflow-wrap: break-word;
 }
 .home-intro-line + .home-intro-line { margin-top: clamp(8px, 1.2vh, 18px); }
+
+/* Mobile: asymmetric text-well doesn't make sense at narrow widths.
+   Collapse to uniform scrim and full-width statement. */
+@media (max-width: 767px) {
+  .home-intro-bg-img { object-position: center; }
+  .home-intro-scrim {
+    background:
+      linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.70) 100%);
+  }
+  .home-intro-statement {
+    max-width: none;
+    border-left: 0;
+    padding-left: 0;
+  }
+}
 
 @media (prefers-reduced-motion: reduce) {
   .home-intro-bg-img { animation: none; transform: scale(1.04); }
