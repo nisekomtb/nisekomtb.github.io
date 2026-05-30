@@ -840,27 +840,17 @@ html[lang="ja"] .home-stories-title { letter-spacing: normal; text-transform: no
      first thing in view. */
   object-position: center top;
   /* Pre-scaled so the JS-driven parallax has room to translate. With
-     transform-origin at the top, the scale headroom sits entirely at
-     the BOTTOM of the container — the top stays put even when scaled,
-     and parallax translation reveals more of the lower foliage as the
-     user scrolls. All layers share the same scale so their content
-     positions stay aligned at translateY(0%). */
+     transform-origin at the top, the 20% scale headroom sits entirely
+     at the BOTTOM of the container — the top stays put even when
+     scaled, and the parallax translation reveals more of the lower
+     foliage as the user scrolls. */
   transform-origin: top center;
-  transform: scale(1.30);
+  transform: scale(1.20);
   will-change: transform;
 }
-/* Three transparent-cut layers stack on top of the base. The base is
-   below so any gaps that open up as layers shift past each other are
-   covered by the original composed photo. Pointer events disabled —
-   these are decorative. */
-.home-feature-bg-base { z-index: 0; }
-.home-feature-bg-layer { z-index: 1; pointer-events: none; }
-.home-feature-bg-mountain { z-index: 2; }
-.home-feature-bg-foreground { z-index: 3; }
 .home-feature-tint {
   position: absolute;
   inset: 0;
-  z-index: 4;
   pointer-events: none;
   mix-blend-mode: multiply;
   background:
@@ -870,7 +860,6 @@ html[lang="ja"] .home-stories-title { letter-spacing: normal; text-transform: no
 .home-feature-scrim {
   position: absolute;
   inset: 0;
-  z-index: 5;
   pointer-events: none;
   background:
     radial-gradient(ellipse at center, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.55) 80%);

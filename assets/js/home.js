@@ -69,33 +69,19 @@
     document.querySelectorAll('.fade-up').forEach(function (el) { io.observe(el); });
   }
 
-  /* Section 07: multi-layer parallax. The Yotei composition is split
-     across a static base + three transparent-cut layers (sky, mountain,
-     foreground). Each layer translates upward at its own rate as the
-     section scrolls — closer planes (foreground) move fastest, distant
-     planes (sky) barely move. The static base sits below all layers
-     and covers any seams that open as they shift past each other.
-     iOS Safari ignores background-attachment: fixed, so we do this
-     by hand. Skipped on mobile and reduced-motion (CSS fallback). */
+  /* Section 07: snowsports quote background parallax. As the section
+     scrolls through the viewport, the pre-scaled Yotei photo translates
+     vertically at ~16% of the section's total visible scroll range.
+     The CSS sets transform: scale(1.15) by default so the JS-driven
+     translateY has room to move without revealing the section bg.
+     iOS Safari ignores background-attachment: fixed, so we do it by
+     hand here. Skipped on mobile (small viewports + scroll position
+     fidelity) and on reduced-motion. */
   function initFeatureParallax() {
     var section = document.querySelector('.home-feature');
     if (!section || prefersReducedMotion || isMobile) return;
-    /* Each layer carries its own parallax rate via data-parallax,
-       expressed as fraction of section-visible scroll. e.g. 0.04 for
-       sky (almost static), 0.28 for foreground (whooshes by). The
-       static base has no data-parallax and stays anchored. */
-    var layers = section.querySelectorAll('.home-feature-bg-img[data-parallax]');
-    if (!layers.length) return;
-
-    /* Hide layers that fail to load (e.g. user hasn't uploaded the
-       cut images yet) so the static base shows alone. */
-    layers.forEach(function (img) {
-      if (img.complete && img.naturalWidth === 0) {
-        img.style.display = 'none';
-      } else {
-        img.addEventListener('error', function () { img.style.display = 'none'; });
-      }
-    });
+    var img = section.querySelector('.home-feature-bg-img');
+    if (!img) return;
 
     var sectionTop = 0, sectionHeight = 0, vh = window.innerHeight;
     var armed = false, ticking = false;
@@ -111,19 +97,19 @@
       if (!armed) return;
       var scrollY = window.scrollY || window.pageYOffset || 0;
       /* progress 0 when the section's top edge is just below the
-         viewport; 1 when the section's bottom edge is just above the
-         viewport. Clamped to [0,1]. */
+         viewport (about to enter); 1 when the section's bottom edge
+         is just above the viewport (just left). Clamped to [0,1]. */
       var range = sectionHeight + vh;
       var progress = (scrollY + vh - sectionTop) / range;
       progress = Math.min(Math.max(progress, 0), 1);
-      /* Each layer translates upward by (progress × its rate × 100)%.
-         transform-origin: top center keeps the top in place during
-         the scale, so the Yotei summit stays anchored as layers shift. */
-      layers.forEach(function (img) {
-        var rate = parseFloat(img.dataset.parallax) || 0;
-        var translatePct = -progress * rate * 100;
-        img.style.transform = 'scale(1.30) translateY(' + translatePct.toFixed(2) + '%)';
-      });
+      /* Translate only downward, so the top of the image (Yotei
+         summit) stays anchored at the container's top. Bottom-only
+         reveal: at entry the image sits at 0 (top flush), at exit
+         it's translated up to -15% (revealing the lower 15% scale
+         headroom). transform-origin: top center keeps the top in
+         place during the scale. */
+      var translatePct = -progress * 15;
+      img.style.transform = 'scale(1.20) translateY(' + translatePct.toFixed(2) + '%)';
       ticking = false;
     }
 
