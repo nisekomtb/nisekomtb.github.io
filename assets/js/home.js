@@ -72,7 +72,7 @@
   /* Section 07: snowsports quote background parallax. As the section
      scrolls through the viewport, the pre-scaled Yotei photo translates
      vertically at ~16% of the section's total visible scroll range.
-     The CSS sets transform: scale(1.15) by default so the JS-driven
+     The CSS sets transform: scale(1.20) by default so the JS-driven
      translateY has room to move without revealing the section bg.
      iOS Safari ignores background-attachment: fixed, so we do it by
      hand here. Skipped on mobile (small viewports + scroll position
