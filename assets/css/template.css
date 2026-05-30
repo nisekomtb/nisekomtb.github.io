@@ -2390,6 +2390,28 @@ input.invalid {
   }
 }
 
+.feature-list {
+  list-style: none;
+  padding-left: 0;
+  font-size: 115%;
+  line-height: 1.7;
+}
+
+.feature-list > li {
+  margin-bottom: 28px;
+}
+
+.feature-list > li > h3 {
+  margin: 0 0 6px;
+}
+
+.section-list {
+  list-style: none;
+  padding-left: 0;
+  font-size: 130%;
+  line-height: 2.2;
+}
+
 .module-title {
   background: transparent;
   color: var(--color-accent);
