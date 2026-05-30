@@ -561,6 +561,95 @@ html[lang="ja"] .home-network-parks-title { letter-spacing: normal; text-transfo
 }
 .home-network-parks-all a:hover { color: var(--color-accent); border-color: var(--color-accent); }
 
+/* Act 5: immersive grid.
+   The row carries .fade-up so the existing IO observer toggles .in
+   on it, but we suppress fade-up's own block-level visual (so the
+   row itself doesn't translate) and stagger the cards inside instead.
+   Each card gets a :nth-child transition-delay for the cascade. */
+.home-network-parks-row.fade-up {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+.home-network-parks-row .ride-card {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 700ms ease-out, transform 700ms cubic-bezier(0.2, 0.7, 0.2, 1), border-color 200ms ease;
+}
+.home-network-parks-row.in .ride-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+.home-network-parks-row.in .col:nth-child(1) .ride-card { transition-delay:   0ms; }
+.home-network-parks-row.in .col:nth-child(2) .ride-card { transition-delay:  90ms; }
+.home-network-parks-row.in .col:nth-child(3) .ride-card { transition-delay: 180ms; }
+.home-network-parks-row.in .col:nth-child(4) .ride-card { transition-delay: 270ms; }
+
+/* Per-card background-image parallax driven by the card's own view
+   progress. animation-timeline: view() means each card has its own
+   timeline scoped to when it crosses the viewport — no scroll listener
+   needed. Bg-size is bumped to auto 130% so there's vertical headroom
+   to shift bg-position through during the parallax range.
+   Firefox doesn't support view-timeline yet; it falls back to the
+   static bg-position: center 30%. */
+.home-network-parks-row .ride-card .ride-card-image {
+  background-size: auto 130%;
+  background-position: center 30%;
+}
+@supports (animation-timeline: view()) {
+  .home-network-parks-row .ride-card .ride-card-image {
+    animation: home-ride-card-parallax linear both;
+    animation-timeline: view();
+    animation-range: cover;
+  }
+}
+@keyframes home-ride-card-parallax {
+  from { background-position: center 8%; }
+  to   { background-position: center 92%; }
+}
+
+/* Mobile (< 768px): convert the 4-up grid to a horizontal scroll-snap
+   track. Each card becomes ~80vw wide with snap-align: start so the
+   user swipes through parks like a carousel. */
+@media (max-width: 767px) {
+  .home-network-parks-row {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 12px;
+    /* Bleed the track to the viewport edges so the last card can
+       fully snap into view, then offset the first card with padding. */
+    margin-left: calc(-1 * clamp(20px, 5vw, 32px));
+    margin-right: calc(-1 * clamp(20px, 5vw, 32px));
+    padding-left: clamp(20px, 5vw, 32px);
+    padding-right: clamp(20px, 5vw, 32px);
+  }
+  .home-network-parks-row::-webkit-scrollbar { display: none; }
+  .home-network-parks-row > .col {
+    flex: 0 0 80%;
+    max-width: 320px;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+  /* Mobile staggered rise stays subtle since horizontal cards reveal
+     one or two at a time anyway. */
+  .home-network-parks-row .ride-card { transform: translateY(20px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-network-parks-row .ride-card {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .home-network-parks-row .ride-card .ride-card-image {
+    animation: none;
+  }
+}
+
 /* Mobile (< 768px): un-stick. Show the 2026 frame as a static preview
    above the stacked timeline cards, no scrub. */
 @media (max-width: 767px) {
