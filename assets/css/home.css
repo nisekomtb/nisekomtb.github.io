@@ -1016,8 +1016,10 @@ html[lang="ja"] .home-stories-title { letter-spacing: normal; text-transform: no
   font-size: clamp(30px, 4.8vw, 68px);
   line-height: 1.18;
   letter-spacing: -0.005em;
+  text-transform: uppercase;
   text-shadow: 0 2px 28px rgba(0, 0, 0, 0.55);
 }
+html[lang="ja"] .home-feature-quote p { text-transform: none; }
 .home-feature-quote em {
   font-style: normal;
   font-weight: 600;
