@@ -1,12 +1,12 @@
 <!-- _includes/home/section-action.html: Section 08 (full-bleed diptych) -->
-{% capture ride_alt %}{% if page.lang == 'en' %}Rider on the Twin Peaks trail{% else %}ツインピークスのトレイルを走るライダー{% endif %}{% endcapture %}
-{% capture build_alt %}{% if page.lang == 'en' %}NAMBA team and community at work{% else %}NAMBAのチームと建設の様子{% endif %}{% endcapture %}
+{% capture ride_alt %}{% if page.lang == 'en' %}Niseko trail riding{% else %}ニセコでのトレイルライディング{% endif %}{% endcapture %}
+{% capture build_alt %}{% if page.lang == 'en' %}NAMBA partners and supporters{% else %}NAMBAのパートナーとサポーター{% endif %}{% endcapture %}
 <section class="home-action home-action-diptych fade-up">
   <div class="home-action-grid">
     <div class="home-action-half home-action-ride">
       <div class="home-action-bg" aria-hidden="true">
         {% include image.html
-            src="/assets/images/bg/bg-header-twinpeaks.jpg"
+            src="/assets/images/bg/bg-header-where-to-ride.jpg"
             alt=ride_alt
             widths="1600,2400"
             sizes="(min-width: 768px) 50vw, 100vw"
@@ -38,7 +38,7 @@
     <div class="home-action-half home-action-build">
       <div class="home-action-bg" aria-hidden="true">
         {% include image.html
-            src="/assets/images/bg/bg-header-team.jpg"
+            src="/assets/images/bg/bg-header-partner.jpg"
             alt=build_alt
             widths="1600,2400"
             sizes="(min-width: 768px) 50vw, 100vw"
