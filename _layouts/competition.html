@@ -477,7 +477,7 @@ baseCss: view-article
                 {% for imgSrc in prize.imgs %}
                 <div class="prodwrap">
                   <div class="prod">
-                    <img src="{{ imgSrc }}" />
+                    <img src="{{ imgSrc }}" alt="{{ prize.title }}{% if forloop.length > 1 %} — image {{ forloop.index }}{% endif %}" />
                   </div>
                 </div>
                 {% endfor %}
