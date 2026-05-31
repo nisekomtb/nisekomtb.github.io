@@ -10,10 +10,10 @@
   <div class="trails-key">
     <h3>{% if page.lang == "ja" %}トレイルキー{% else %}Trail key{% endif %}</h3>
     <ul>
-      <li><span aria-hidden="true"  class="tf tf-status-clear" title="All Clear / Green"></span> {% if page.lang == "ja" %}問題なし{% else %}All Clear{% endif %}</li>
-      <li><span aria-hidden="true"  class="tf tf-status-minor" title="Minor Issue / Yellow"></span> {% if page.lang == "ja" %}軽微な問題{% else %}Minor Issue{% endif %}</li>
-      <li><span aria-hidden="true"  class="tf tf-status-major" title="Significant Issue / Amber"></span> {% if page.lang == "ja" %}重大な問題{% else %}Significant Issue{% endif %}</li>
-      <li><span aria-hidden="true"  class="tf tf-status-closed" title="Closed / Red"></span> {% if page.lang == "ja" %}クローズ{% else %}Closed{% endif %}</li>
+      <li>{% include trail-icon.html type="status-clear" title="All Clear" %} {% if page.lang == "ja" %}問題なし{% else %}All Clear{% endif %}</li>
+      <li>{% include trail-icon.html type="status-minor" title="Minor Issue" %} {% if page.lang == "ja" %}軽微な問題{% else %}Minor Issue{% endif %}</li>
+      <li>{% include trail-icon.html type="status-major" title="Significant Issue" %} {% if page.lang == "ja" %}重大な問題{% else %}Significant Issue{% endif %}</li>
+      <li>{% include trail-icon.html type="status-closed" title="Closed" %} {% if page.lang == "ja" %}クローズ{% else %}Closed{% endif %}</li>
     </ul>
     <ul class="key-access">
       <li><div><img class="access" src="/assets/images/trails/one-way.png" />&nbsp;{% if page.lang == "ja" %}一方通行{% else %}One way traffic{% endif %}</div></li>
@@ -45,13 +45,13 @@
       <td class="difficulty left">
         {% case trail.difficulty %}
           {% when 'green' %}
-            <span aria-hidden="true"  class="tf tf-green" title="Green"></span> <span class="ddesc dgreen">Easy</span>
+            {% include trail-icon.html type="green" title="Green" %} <span class="ddesc dgreen">Easy</span>
           {% when 'blue' %}
-            <span aria-hidden="true"  class="tf tf-blue" title="Blue"></span> <span class="ddesc dblue">More Difficult</span>
+            {% include trail-icon.html type="blue" title="Blue" %} <span class="ddesc dblue">More Difficult</span>
           {% when 'black' %}
-            <span aria-hidden="true"  class="tf tf-black" title="Black"></span> <span class="ddesc dblack">Very Difficult</span>
+            {% include trail-icon.html type="black" title="Black" %} <span class="ddesc dblack">Very Difficult</span>
           {% when 'double-black' %}
-            <span aria-hidden="true"  class="tf tf-double-black" title="Double Black Diamond"></span> <span class="ddesc ddblblack">Extremely Difficult</span>
+            {% include trail-icon.html type="double-black" title="Double Black Diamond" %} <span class="ddesc ddblblack">Extremely Difficult</span>
         {% endcase %}
       </td>
       <td class="cond" aria-hidden="true">

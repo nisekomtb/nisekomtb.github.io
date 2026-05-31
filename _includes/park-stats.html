@@ -46,6 +46,11 @@
   {% else %}
     <h3><span class="fa-solid fa-chart-simple"></span> Trail stats</h3>
   {% endif %}
+  {% if page.lang == 'ja' %}
+    {% assign tla_green = 'グリーン' %}{% assign tla_blue = 'ブルー' %}{% assign tla_black = 'ブラック' %}{% assign tla_dblack = 'ダブルブラック' %}
+  {% else %}
+    {% assign tla_green = 'Green' %}{% assign tla_blue = 'Blue' %}{% assign tla_black = 'Black' %}{% assign tla_dblack = 'Double Black' %}
+  {% endif %}
   {% assign greenTrailCount = 0 %}
   {% assign blueTrailCount = 0 %}
   {% assign blackTrailCount = 0 %}
@@ -74,35 +79,19 @@
   {% endfor %}
   <ul class="trail-difficulty-counts">
     <li class="stat">
-      <span
-        aria-hidden="true"
-        
-        class="tf tf-green"
-        title="{% if page.lang == 'ja' %}グリーン{% else %}Green{% endif %}"></span>
+      {% include trail-icon.html type="green" title=tla_green %}
       <span class="stat-count">{{ greenTrailCount }}</span>
     </li>
     <li class="stat">
-      <span
-        aria-hidden="true"
-        
-        class="tf tf-blue"
-        title="{% if page.lang == 'ja' %}ブルー{% else %}Blue{% endif %}"></span>
+      {% include trail-icon.html type="blue" title=tla_blue %}
       <span class="stat-count">{{ blueTrailCount }}</span>
     </li>
     <li class="stat">
-      <span
-        aria-hidden="true"
-        
-        class="tf tf-black"
-        title="{% if page.lang == 'ja' %}ブラック{% else %}Black{% endif %}"></span>
+      {% include trail-icon.html type="black" title=tla_black %}
       <span class="stat-count">{{ blackTrailCount }}</span>
     </li>
     <li class="stat">
-      <span
-        aria-hidden="true"
-        
-        class="tf tf-double-black"
-        title="{% if page.lang == 'ja' %}ダブルブラック{% else %}Double Black{% endif %}"></span>
+      {% include trail-icon.html type="double-black" title=tla_dblack %}
       <span class="stat-count">{{ doubleBlackTrailCount }}</span>
     </li>
   </ul>

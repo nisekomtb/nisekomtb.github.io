@@ -38,37 +38,11 @@ masthead:
     margin: 0 auto 18px;
     flex-shrink: 0;
   }
-  .difficulty-card-icon .tf {
+  .difficulty-card-icon {
     font-size: 52px;
-    line-height: 1;
+  }
+  .difficulty-card-icon .trail-icon {
     display: block;
-  }
-  .difficulty-card.is-black .difficulty-card-icon .tf,
-  .difficulty-card.is-double-black .difficulty-card-icon .tf {
-    background-color: transparent;
-    border-radius: 0;
-  }
-  .difficulty-card.is-black .difficulty-card-icon .tf {
-    text-shadow:
-       2.0px  0    0 #ffffff,  1.8px  0.8px 0 #ffffff,
-       1.4px  1.4px 0 #ffffff, 0.8px  1.8px 0 #ffffff,
-       0     2.0px 0 #ffffff, -0.8px  1.8px 0 #ffffff,
-      -1.4px  1.4px 0 #ffffff,-1.8px  0.8px 0 #ffffff,
-      -2.0px  0    0 #ffffff,-1.8px -0.8px 0 #ffffff,
-      -1.4px -1.4px 0 #ffffff,-0.8px -1.8px 0 #ffffff,
-       0    -2.0px 0 #ffffff, 0.8px -1.8px 0 #ffffff,
-       1.4px -1.4px 0 #ffffff, 1.8px -0.8px 0 #ffffff;
-  }
-  .difficulty-card.is-double-black .difficulty-card-icon .tf {
-    text-shadow:
-       2.0px  0    0 #be0014,  1.8px  0.8px 0 #be0014,
-       1.4px  1.4px 0 #be0014, 0.8px  1.8px 0 #be0014,
-       0     2.0px 0 #be0014, -0.8px  1.8px 0 #be0014,
-      -1.4px  1.4px 0 #be0014,-1.8px  0.8px 0 #be0014,
-      -2.0px  0    0 #be0014,-1.8px -0.8px 0 #be0014,
-      -1.4px -1.4px 0 #be0014,-0.8px -1.8px 0 #be0014,
-       0    -2.0px 0 #be0014, 0.8px -1.8px 0 #be0014,
-       1.4px -1.4px 0 #be0014, 1.8px -0.8px 0 #be0014;
   }
   .difficulty-card .difficulty-card-name {
     color: var(--color-text-heading);
@@ -379,7 +353,7 @@ masthead:
 
         <div class="difficulty-card">
           <span class="difficulty-card-icon">
-            <span aria-hidden="true"  class="tf tf-green"></span>
+            {% include trail-icon.html type="green" title="グリーン" %}
           </span>
           <h3 class="difficulty-card-name">グリーン</h3>
           <p class="difficulty-card-label">初級</p>
@@ -388,7 +362,7 @@ masthead:
 
         <div class="difficulty-card">
           <span class="difficulty-card-icon">
-            <span aria-hidden="true"  class="tf tf-blue"></span>
+            {% include trail-icon.html type="blue" title="ブルー" %}
           </span>
           <h3 class="difficulty-card-name">ブルー</h3>
           <p class="difficulty-card-label">中級</p>
@@ -397,7 +371,7 @@ masthead:
 
         <div class="difficulty-card is-black">
           <span class="difficulty-card-icon">
-            <span aria-hidden="true"  class="tf tf-black"></span>
+            {% include trail-icon.html type="black" title="ブラック" %}
           </span>
           <h3 class="difficulty-card-name">ブラック</h3>
           <p class="difficulty-card-label">上級</p>
@@ -406,7 +380,7 @@ masthead:
 
         <div class="difficulty-card is-double-black">
           <span class="difficulty-card-icon">
-            <span aria-hidden="true"  class="tf tf-double-black"></span>
+            {% include trail-icon.html type="double-black" title="ダブルブラック" %}
           </span>
           <h3 class="difficulty-card-name">ダブルブラック</h3>
           <p class="difficulty-card-label">超上級</p>
