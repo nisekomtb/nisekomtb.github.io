@@ -3,7 +3,6 @@ title: Niseko MTB Trail Signage Guide
 description: "How to read the unified trail signage system at NAMBA's Niseko mountain bike parks: difficulty ratings, direction codes, and location markers."
 masthead:
   img: /assets/images/twinpeaks/trailsign.jpg
-needsTrailforks: true
 ---
 
 <style>
@@ -39,17 +38,17 @@ needsTrailforks: true
     margin: 0 auto 18px;
     flex-shrink: 0;
   }
-  .difficulty-card-icon .dicon_small {
+  .difficulty-card-icon .tf {
     font-size: 52px;
     line-height: 1;
     display: block;
   }
-  .difficulty-card.is-black .difficulty-card-icon .dicon_small,
-  .difficulty-card.is-double-black .difficulty-card-icon .dicon_small {
+  .difficulty-card.is-black .difficulty-card-icon .tf,
+  .difficulty-card.is-double-black .difficulty-card-icon .tf {
     background-color: transparent;
     border-radius: 0;
   }
-  .difficulty-card.is-black .difficulty-card-icon .dicon_small {
+  .difficulty-card.is-black .difficulty-card-icon .tf {
     text-shadow:
        2.0px  0    0 #ffffff,  1.8px  0.8px 0 #ffffff,
        1.4px  1.4px 0 #ffffff, 0.8px  1.8px 0 #ffffff,
@@ -60,7 +59,7 @@ needsTrailforks: true
        0    -2.0px 0 #ffffff, 0.8px -1.8px 0 #ffffff,
        1.4px -1.4px 0 #ffffff, 1.8px -0.8px 0 #ffffff;
   }
-  .difficulty-card.is-double-black .difficulty-card-icon .dicon_small {
+  .difficulty-card.is-double-black .difficulty-card-icon .tf {
     text-shadow:
        2.0px  0    0 #be0014,  1.8px  0.8px 0 #be0014,
        1.4px  1.4px 0 #be0014, 0.8px  1.8px 0 #be0014,
@@ -380,7 +379,7 @@ needsTrailforks: true
 
         <div class="difficulty-card">
           <span class="difficulty-card-icon">
-            <span aria-hidden="true" data-tf-icon="" class="dicon_small dgreen tip"></span>
+            <span aria-hidden="true"  class="tf tf-green"></span>
           </span>
           <h3 class="difficulty-card-name">Green</h3>
           <p class="difficulty-card-label">Easy</p>
@@ -389,7 +388,7 @@ needsTrailforks: true
 
         <div class="difficulty-card">
           <span class="difficulty-card-icon">
-            <span aria-hidden="true" data-tf-icon="" class="dicon_small dblue tip"></span>
+            <span aria-hidden="true"  class="tf tf-blue"></span>
           </span>
           <h3 class="difficulty-card-name">Blue</h3>
           <p class="difficulty-card-label">More Difficult</p>
@@ -398,7 +397,7 @@ needsTrailforks: true
 
         <div class="difficulty-card is-black">
           <span class="difficulty-card-icon">
-            <span aria-hidden="true" data-tf-icon="" class="dicon_small dblack tip"></span>
+            <span aria-hidden="true"  class="tf tf-black"></span>
           </span>
           <h3 class="difficulty-card-name">Black</h3>
           <p class="difficulty-card-label">Very Difficult</p>
@@ -407,7 +406,7 @@ needsTrailforks: true
 
         <div class="difficulty-card is-double-black">
           <span class="difficulty-card-icon">
-            <span aria-hidden="true" data-tf-icon="" class="dicon_small dblack"></span>
+            <span aria-hidden="true"  class="tf tf-double-black"></span>
           </span>
           <h3 class="difficulty-card-name">Double Black</h3>
           <p class="difficulty-card-label">Extremely Difficult</p>

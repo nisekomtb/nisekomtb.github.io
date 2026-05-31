@@ -14,3 +14,4 @@ _docs/superpowers/
 assets/images/_triage/
 .playwright-mcp/
 node_modules/
+.lighthouse/

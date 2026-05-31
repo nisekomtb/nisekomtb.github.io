@@ -7668,6 +7668,50 @@ joomla-field-custom.field-custom-wrapper .input-group .input-group-btn .btn span
 @font-face { font-family: "Font Awesome 5 Brands"; font-display: swap; }
 @font-face { font-family: "FontAwesome"; font-display: swap; }
 
+/* ============================================================
+   Trailforks difficulty icons — Font Awesome-style class API.
+   Use: <span class="tf tf-green" aria-hidden="true"></span>
+   Browser only fetches the WOFF when a .tf element renders,
+   so unused pages pay nothing. No conditional <link> needed.
+   ============================================================ */
+@font-face {
+  font-family: "trailforks";
+  src: url("/assets/fonts/trailforks/trailforks.woff?v=2") format("woff"),
+       url("/assets/fonts/trailforks/trailforks.ttf?v=2") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+.tf {
+  font-family: "trailforks";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  display: inline-block;
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+}
+.tf-lift::before          { content: "\E015"; }
+.tf-lift                  { color: var(--color-text-light, #666); }
+.tf-green::before         { content: "\E007"; }
+.tf-green                 { color: #46b414; }
+.tf-blue::before          { content: "\E012"; }
+.tf-blue                  { color: #148cf0; }
+.tf-black::before         { content: "\E023"; }
+.tf-black                 { color: var(--color-bg); background-color: var(--color-text); border-radius: 3px; }
+.tf-double-black::before  { content: "\E00A"; }
+.tf-double-black          { color: #be0014; background-color: var(--color-text); border-radius: 3px; }
+
+/* Trail status indicators (clear / minor / major / closed) */
+.tf-status-clear::before  { content: "\E902"; }
+.tf-status-clear          { color: #225f06; }
+.tf-status-minor::before  { content: "\E903"; }
+.tf-status-minor          { color: #fc0; }
+.tf-status-major::before  { content: "\E903"; }
+.tf-status-major          { color: #ff8500; }
+.tf-status-closed::before { content: "\E904"; }
+.tf-status-closed         { color: #be0014; }
+
 /* Shop card teaser. Used on content pages (e.g. /dirty-dames/) to link to
    a single product on the Ecwid storefront. Mirrors the shop's own card. */
 .dd-shop-card {

@@ -1,6 +1,8 @@
 {% comment %}
   Usage: {% include trail-difficulty-counts.html data_key="twinpeaks" %}
   Renders compact inline difficulty icons with counts for a park.
+  Uses the .tf-* class API defined in template.css. Browser only fetches
+  the WOFF when these classes actually render — no page-level gating.
 {% endcomment %}
 {% assign park_d = site.data.trails[include.data_key] %}
 {% if park_d.trails %}
@@ -14,10 +16,10 @@
   {% endcase %}
 {% endfor %}
 <span class="trail-counts">
-  {% unless park_d.lifts == nil %}<span class="trail-count-col"><span aria-hidden="true" data-tf-icon="" class="dicon_small is-muted" title="{% if page.lang == "ja" %}リフト{% else %}Lifts{% endif %}"></span> <strong>{{ park_d.lifts }}</strong></span>{% endunless %}
-  {% if gc > 0 %}<span class="trail-count-col"><span aria-hidden="true" data-tf-icon="" class="dicon_small dgreen tip" title="{% if page.lang == "ja" %}初級 (グリーン){% else %}Easy (Green){% endif %}"></span> <strong>{{ gc }}</strong></span>{% endif %}
-  {% if bc > 0 %}<span class="trail-count-col"><span aria-hidden="true" data-tf-icon="" class="dicon_small dblue tip" title="{% if page.lang == "ja" %}中級 (ブルー){% else %}More Difficult (Blue){% endif %}"></span> <strong>{{ bc }}</strong></span>{% endif %}
-  {% if bkc > 0 %}<span class="trail-count-col"><span aria-hidden="true" data-tf-icon="" class="dicon_small dblack tip is-black" title="{% if page.lang == "ja" %}上級 (ブラック){% else %}Very Difficult (Black){% endif %}"></span> <strong>{{ bkc }}</strong></span>{% endif %}
-  {% if dbc > 0 %}<span class="trail-count-col"><span aria-hidden="true" data-tf-icon="" class="dicon_small dblack is-double-black" title="{% if page.lang == "ja" %}超上級 (ダブルブラック){% else %}Extremely Difficult (Double Black){% endif %}"></span> <strong>{{ dbc }}</strong></span>{% endif %}
+  {% unless park_d.lifts == nil %}<span class="trail-count-col"><span aria-hidden="true" class="tf tf-lift" title="{% if page.lang == "ja" %}リフト{% else %}Lifts{% endif %}"></span> <strong>{{ park_d.lifts }}</strong></span>{% endunless %}
+  {% if gc > 0 %}<span class="trail-count-col"><span aria-hidden="true" class="tf tf-green" title="{% if page.lang == "ja" %}初級 (グリーン){% else %}Easy (Green){% endif %}"></span> <strong>{{ gc }}</strong></span>{% endif %}
+  {% if bc > 0 %}<span class="trail-count-col"><span aria-hidden="true" class="tf tf-blue" title="{% if page.lang == "ja" %}中級 (ブルー){% else %}More Difficult (Blue){% endif %}"></span> <strong>{{ bc }}</strong></span>{% endif %}
+  {% if bkc > 0 %}<span class="trail-count-col"><span aria-hidden="true" class="tf tf-black" title="{% if page.lang == "ja" %}上級 (ブラック){% else %}Very Difficult (Black){% endif %}"></span> <strong>{{ bkc }}</strong></span>{% endif %}
+  {% if dbc > 0 %}<span class="trail-count-col"><span aria-hidden="true" class="tf tf-double-black" title="{% if page.lang == "ja" %}超上級 (ダブルブラック){% else %}Extremely Difficult (Double Black){% endif %}"></span> <strong>{{ dbc }}</strong></span>{% endif %}
 </span>
 {% endif %}

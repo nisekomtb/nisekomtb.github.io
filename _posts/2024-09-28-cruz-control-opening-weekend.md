@@ -77,7 +77,6 @@ itinerary:
           name: Event ends
 parking: false
 about: false
-needsTrailforks: true
 ---
 ## Trail information
 
