@@ -7686,8 +7686,9 @@ joomla-field-custom.field-custom-wrapper .input-group .input-group-btn .btn span
 .trail-icon-lift              { color: var(--color-text-light, #666); }
 .trail-icon-green             { color: #46b414; }
 .trail-icon-blue              { color: #148cf0; }
-.trail-icon-black             { color: var(--color-text); }
-.trail-icon-double-black      { color: #be0014; }
+/* .trail-icon-black and .trail-icon-double-black carry IMBA-standard
+   fill/stroke directly in the SVG (black diamond w/ white outline,
+   double black w/ red outline). No color rules here. */
 .trail-icon-status-clear      { color: #225f06; }
 .trail-icon-status-minor      { color: #fc0; }
 .trail-icon-status-major      { color: #ff8500; }

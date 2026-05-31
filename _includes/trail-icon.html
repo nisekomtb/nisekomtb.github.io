@@ -28,10 +28,10 @@
     <svg class="{{ cls }}" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" focusable="false" role="img"{% if include.title %} title="{{ include.title }}"{% endif %}><rect x="1" y="1" width="14" height="14" rx="1"/></svg>
 
   {%- when "black" -%}
-    <svg class="{{ cls }}" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" focusable="false" role="img"{% if include.title %} title="{{ include.title }}"{% endif %}><path d="M8 0.5 L15.5 8 L8 15.5 L0.5 8 Z"/></svg>
+    <svg class="{{ cls }}" viewBox="0 0 16 16" aria-hidden="true" focusable="false" role="img"{% if include.title %} title="{{ include.title }}"{% endif %}><path d="M8 1 L15 8 L8 15 L1 8 Z" fill="#000" stroke="#fff" stroke-width="1" stroke-linejoin="round"/></svg>
 
   {%- when "double-black" -%}
-    <svg class="{{ cls }} trail-icon--wide" viewBox="0 0 24 16" fill="currentColor" aria-hidden="true" focusable="false" role="img"{% if include.title %} title="{{ include.title }}"{% endif %}><path d="M6 0.5 L11.5 8 L6 15.5 L0.5 8 Z M18 0.5 L23.5 8 L18 15.5 L12.5 8 Z"/></svg>
+    <svg class="{{ cls }} trail-icon--wide" viewBox="0 0 24 16" aria-hidden="true" focusable="false" role="img"{% if include.title %} title="{{ include.title }}"{% endif %}><path d="M6 1 L11 8 L6 15 L1 8 Z M18 1 L23 8 L18 15 L13 8 Z" fill="#000" stroke="#be0014" stroke-width="1" stroke-linejoin="round"/></svg>
 
   {%- when "status-clear" -%}
     <svg class="{{ cls }}" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" focusable="false" role="img"{% if include.title %} title="{{ include.title }}"{% endif %}><path d="M8 0a8 8 0 100 16A8 8 0 008 0zm-1 11.5l-3.5-3.5 1.4-1.4L7 8.7l4.6-4.6 1.4 1.4L7 11.5z"/></svg>
