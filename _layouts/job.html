@@ -22,7 +22,7 @@ layout: base
     margin-bottom: 16px;
   }
   .job-status.open {
-    background: #2a6e0a;
+    background: #46b414;
     color: #fff;
   }
   .job-status.closed {
@@ -54,7 +54,7 @@ layout: base
   .job-sidebar .detail-item {
     margin-bottom: 16px;
   }
-  .job-sidebar .detail-item h3 {
+  .job-sidebar .detail-item h4 {
     color: var(--color-accent);
     font-size: 11px;
     font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
@@ -88,7 +88,7 @@ layout: base
     flex: 1;
     min-width: 200px;
   }
-  .job-perk h3 {
+  .job-perk h4 {
     color: var(--color-accent);
     font-size: 11px;
     font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
@@ -143,7 +143,7 @@ layout: base
         <div class="job-perks">
           {% for perk in page.perks %}
             <div class="job-perk">
-              <h3>{{ perk.title }}</h3>
+              <h4>{{ perk.title }}</h4>
               <p>{{ perk.perk }}</p>
             </div>
           {% endfor %}
@@ -169,26 +169,26 @@ layout: base
 
         {% if page.location %}
         <div class="detail-item">
-          <h3><span class="fa-solid fa-location-dot"></span> {% if page.lang == "ja" %}場所{% else %}Location{% endif %}</h3>
+          <h4><span class="fa-solid fa-location-dot"></span> {% if page.lang == "ja" %}場所{% else %}Location{% endif %}</h4>
           <p>{{ page.location }}</p>
         </div>
         {% endif %}
 
         <div class="detail-item">
-          <h3><span class="fa-solid fa-yen-sign"></span> {% if page.lang == "ja" %}報酬{% else %}Remuneration{% endif %}</h3>
+          <h4><span class="fa-solid fa-yen-sign"></span> {% if page.lang == "ja" %}報酬{% else %}Remuneration{% endif %}</h4>
           <p>{{ page.pay }}</p>
         </div>
 
         {% if page.bonus %}
         <div class="detail-item">
-          <h3><span class="fa-solid fa-gift"></span> {% if page.lang == "ja" %}成果報酬{% else %}Bonus{% endif %}</h3>
+          <h4><span class="fa-solid fa-gift"></span> {% if page.lang == "ja" %}成果報酬{% else %}Bonus{% endif %}</h4>
           <p>{{ page.bonus }}</p>
         </div>
         {% endif %}
 
         {% if page.startDate %}
         <div class="detail-item">
-          <h3><span class="fa-solid fa-calendar"></span> {% if page.lang == "ja" %}開始日{% else %}Start date{% endif %}</h3>
+          <h4><span class="fa-solid fa-calendar"></span> {% if page.lang == "ja" %}開始日{% else %}Start date{% endif %}</h4>
           <p>
             {% if page.startDate == "IMMEDIATE" %}
               {% if page.lang == "ja" %}即日{% else %}Immediate{% endif %}
@@ -203,7 +203,7 @@ layout: base
 
         {% if page.endDate %}
         <div class="detail-item">
-          <h3><span class="fa-solid fa-calendar-check"></span> {% if page.lang == "ja" %}終了日{% else %}End date{% endif %}</h3>
+          <h4><span class="fa-solid fa-calendar-check"></span> {% if page.lang == "ja" %}終了日{% else %}End date{% endif %}</h4>
           <p>
             {% if page.lang == "ja" %}
               {{ page.endDate | date: "%Y年%m月%d日" }}
@@ -217,7 +217,7 @@ layout: base
         {% unless page.startDate and page.endDate %}
         {% if page.term %}
         <div class="detail-item">
-          <h3><span class="fa-solid fa-clock"></span> {% if page.lang == "ja" %}雇用期間{% else %}Term{% endif %}</h3>
+          <h4><span class="fa-solid fa-clock"></span> {% if page.lang == "ja" %}雇用期間{% else %}Term{% endif %}</h4>
           <p>{{ page.term }}</p>
         </div>
         {% endif %}
@@ -225,14 +225,14 @@ layout: base
 
         {% if page.workingHours %}
         <div class="detail-item">
-          <h3><span class="fa-solid fa-business-time"></span> {% if page.lang == "ja" %}労働時間{% else %}Working hours{% endif %}</h3>
+          <h4><span class="fa-solid fa-business-time"></span> {% if page.lang == "ja" %}労働時間{% else %}Working hours{% endif %}</h4>
           <p>{{ page.workingHours }}</p>
         </div>
         {% endif %}
 
         {% if page.moreInfo %}
         <div class="detail-item">
-          <h3><span class="fa-solid fa-circle-info"></span> {% if page.lang == "ja" %}詳しくは{% else %}More Info{% endif %}</h3>
+          <h4><span class="fa-solid fa-circle-info"></span> {% if page.lang == "ja" %}詳しくは{% else %}More Info{% endif %}</h4>
           {% for info in page.moreInfo %}
             <p>{{ info }}</p>
           {% endfor %}

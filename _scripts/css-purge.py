@@ -21,18 +21,8 @@ import sys
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
-DEFAULT_SRC = REPO / "assets" / "css" / "template.css"
-DEFAULT_DST = REPO / "assets" / "css" / "template.purged.css"
-
-if len(sys.argv) >= 3:
-    SRC = Path(sys.argv[1])
-    DST = Path(sys.argv[2])
-elif len(sys.argv) == 2:
-    SRC = Path(sys.argv[1])
-    DST = SRC.with_suffix(".purged" + SRC.suffix)
-else:
-    SRC = DEFAULT_SRC
-    DST = DEFAULT_DST
+SRC = REPO / "assets" / "css" / "template.css"
+DST = REPO / "assets" / "css" / "template.purged.css"
 
 # Used-class inventory: written by the surrounding shell pipeline. To rebuild:
 #   grep -rohE 'class="[^"]+"' _site --include="*.html" | \
@@ -53,8 +43,6 @@ ALWAYS_KEEP = {
     "splide__arrow", "splide__pagination",
     # Bootstrap row/col grid — base utility on lots of templates
     "row", "col", "container", "wrap",
-    # Bootstrap JS-toggled transient classes (collapse, dropdown sub, etc.)
-    "collapsing", "dropdown-submenu",
     # Layout hooks that JS may toggle
     "scrolled", "menu-open", "nav-open",
     # Runtime-injected DOM (Google Maps, reCAPTCHA, Ecwid, choice widgets)

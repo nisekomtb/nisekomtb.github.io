@@ -23,7 +23,6 @@ masthead:
 thumbnail: /assets/images/competitions/2024/strava-contest/thumb.jpg
 og:
   image: /assets/images/competitions/2024/strava-contest/header.jpg
-needsTrailforks: true
 ---
 ## NAMBA Strava Competition: Race for the Title of King and Queen of the Mountain
 
