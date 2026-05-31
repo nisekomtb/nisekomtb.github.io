@@ -7405,9 +7405,18 @@ joomla-field-custom.field-custom-wrapper .input-group .input-group-btn .btn span
 }
 .ride-card .ride-card-image {
   height: 200px;
-  background-size: cover;
-  background-position: center;
   position: relative;
+  overflow: hidden;
+}
+.ride-card .ride-card-image > picture,
+.ride-card .ride-card-image > picture > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 .ride-card .ride-card-image::after {
   content: '';
