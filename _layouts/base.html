@@ -88,7 +88,7 @@
     <link href="/assets/css/masthead.css?d={{ build }}" rel="stylesheet" type="text/css"/>
     {% if page.masthead.img %}
       {% assign mh_base = page.masthead.img | replace: ".jpg", "" | replace: ".jpeg", "" | replace: ".png", "" | replace: ".webp", "" %}
-      <link rel="preload" as="image" type="image/webp" imagesrcset="{{ mh_base }}-mobile.webp 400w, {{ mh_base }}.webp 800w, {{ mh_base }}-large.webp 1600w" imagesizes="100vw" fetchpriority="high"/>
+      <link rel="preload" as="image" type="image/webp" imagesrcset="{{ mh_base }}-mobile.webp 400w, {{ mh_base }}.webp 800w, {{ mh_base }}-medium.webp 1200w, {{ mh_base }}-large.webp 1600w" imagesizes="100vw" fetchpriority="high"/>
     {% endif %}
     {% if page.path == "index.html" or page.path == "ja/index.html" %}
       <link rel="preload" as="image" href="/assets/images/home/hero-video-poster.jpg?d={{ build }}"/>

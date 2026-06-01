@@ -6,10 +6,11 @@
   in front matter. CSS forces object-fit: cover, so these attrs only feed
   Lighthouse's aspect-ratio reservation, not visual layout.
 
-  Masthead images ship as a 3-tier responsive WebP set, generated alongside
+  Masthead images ship as a 4-tier responsive WebP set, generated alongside
   the source JPG/PNG by hand (see _docs/responsive-images.md):
     <base>-mobile.webp   400w  — small mobile viewports
     <base>.webp          800w  — mobile-retina / tablet
+    <base>-medium.webp  1200w  — high-DPR mobile / small desktop
     <base>-large.webp   1600w  — desktop / desktop-retina
   The JPG/PNG is the final fallback for browsers without WebP support.
 {% endcomment %}
@@ -21,7 +22,7 @@
     <div class="ja-masthead-bg" aria-hidden="true">
       <picture>
         <source type="image/webp"
-                srcset="{{ mh_base }}-mobile.webp 400w, {{ mh_base }}.webp 800w, {{ mh_base }}-large.webp 1600w"
+                srcset="{{ mh_base }}-mobile.webp 400w, {{ mh_base }}.webp 800w, {{ mh_base }}-medium.webp 1200w, {{ mh_base }}-large.webp 1600w"
                 sizes="100vw">
         <img src="{{ masthead_img }}" alt=""
              width="{{ masthead_width }}" height="{{ masthead_height }}"
