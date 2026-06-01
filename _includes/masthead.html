@@ -1,26 +1,32 @@
 <!-- MASTHEAD -->
 {% assign masthead_img = page.masthead.img | default: "/assets/images/bg/bg-header.jpg" %}
-{% assign masthead_widths = page.masthead.widths | default: "800,1600" %}
 {% comment %}
   Default to 3:2 (the source aspect of nearly every masthead image). Pages
   with a different aspect can override via `masthead.width` + `masthead.height`
   in front matter. CSS forces object-fit: cover, so these attrs only feed
   Lighthouse's aspect-ratio reservation, not visual layout.
+
+  Masthead images ship as a 3-tier responsive WebP set, generated alongside
+  the source JPG/PNG by hand (see _docs/responsive-images.md):
+    <base>-mobile.webp   400w  — small mobile viewports
+    <base>.webp          800w  — mobile-retina / tablet
+    <base>-large.webp   1600w  — desktop / desktop-retina
+  The JPG/PNG is the final fallback for browsers without WebP support.
 {% endcomment %}
 {% assign masthead_width = page.masthead.width | default: 1600 %}
 {% assign masthead_height = page.masthead.height | default: 1067 %}
+{% assign mh_base = masthead_img | replace: ".jpg", "" | replace: ".jpeg", "" | replace: ".png", "" | replace: ".webp", "" %}
 <div class="wrap t3-masthead">
   <div class="ja-masthead">
     <div class="ja-masthead-bg" aria-hidden="true">
-      {% include image.html
-         src=masthead_img
-         alt=""
-         widths=masthead_widths
-         width=masthead_width
-         height=masthead_height
-         sizes="100vw"
-         loading="eager"
-         attrs='fetchpriority="high" decoding="async"' %}
+      <picture>
+        <source type="image/webp"
+                srcset="{{ mh_base }}-mobile.webp 400w, {{ mh_base }}.webp 800w, {{ mh_base }}-large.webp 1600w"
+                sizes="100vw">
+        <img src="{{ masthead_img }}" alt=""
+             width="{{ masthead_width }}" height="{{ masthead_height }}"
+             loading="eager" fetchpriority="high" decoding="async">
+      </picture>
     </div>
     <div class="ja-masthead-detail">
       {% if page.subtitle %}
