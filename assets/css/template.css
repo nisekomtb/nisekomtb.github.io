@@ -7713,9 +7713,23 @@ joomla-field-custom.field-custom-wrapper .input-group .input-group-btn .btn span
 .tf-blue::before          { content: "\E012"; }
 .tf-blue                  { color: #148cf0; }
 .tf-black::before         { content: "\E023"; }
-.tf-black                 { color: var(--color-bg); background-color: var(--color-text); border-radius: 3px; }
+.tf-black                 {
+  color: #000;
+  text-shadow:
+     1px  0    0 #fff,  0.7px  0.7px 0 #fff,
+     0    1px  0 #fff, -0.7px  0.7px 0 #fff,
+    -1px  0    0 #fff, -0.7px -0.7px 0 #fff,
+     0   -1px  0 #fff,  0.7px -0.7px 0 #fff;
+}
 .tf-double-black::before  { content: "\E00A"; }
-.tf-double-black          { color: #be0014; background-color: var(--color-text); border-radius: 3px; }
+.tf-double-black          {
+  color: #000;
+  text-shadow:
+     1px  0    0 #be0014,  0.7px  0.7px 0 #be0014,
+     0    1px  0 #be0014, -0.7px  0.7px 0 #be0014,
+    -1px  0    0 #be0014, -0.7px -0.7px 0 #be0014,
+     0   -1px  0 #be0014,  0.7px -0.7px 0 #be0014;
+}
 
 /* Trail status indicators (clear / minor / major / closed) */
 .tf-status-clear::before  { content: "\E902"; }
