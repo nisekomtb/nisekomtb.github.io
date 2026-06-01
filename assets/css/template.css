@@ -2470,12 +2470,12 @@ input.invalid {
   display: inline-flex;
   flex-direction: column;
   align-items: center;
+  gap: 4px;
 }
 
 .trail-counts .tf,
 .trail-difficulty-counts .tf {
   font-size: 18px;
-  line-height: 1;
 }
 
 .trail-counts .tf.is-muted {
@@ -7377,7 +7377,8 @@ joomla-field-custom.field-custom-wrapper .input-group .input-group-btn .btn span
 .ride-card .ride-card-image {
   height: 200px;
   position: relative;
-  overflow: hidden;
+  background-size: cover;
+  background-position: center;
 }
 /* Background picture (always the first child) fills the card. The
    logo picture (when present) uses display:contents so the img can
