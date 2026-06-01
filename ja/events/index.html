@@ -97,21 +97,3 @@ masthead:
   {% endif %}
 
 </div>
-
-<script type="text/javascript">
-  (function () {
-    var now = new Date();
-    document.querySelectorAll('div[name="ended"]').forEach(function (el) {
-      var endDate = new Date(el.dataset.endDate);
-      if (endDate.getTime() < now.getTime()) {
-        el.style.display = '';
-      }
-    });
-    document.querySelectorAll('div[name="cancelled"]').forEach(function (el) {
-      var endDate = new Date(el.dataset.endDate);
-      if (endDate.getTime() < now.getTime()) {
-        el.style.display = 'none';
-      }
-    });
-  })();
-</script>
