@@ -22,7 +22,7 @@
 <article class="event-card{% if include.variant %} event-card-{{ include.variant }}{% endif %}{% if include.disabled or event.cancelled %} disabled{% endif %}">
   <div class="event-card-thumb">
     {% if event.thumbnail %}
-      <img src="{{ event.thumbnail }}?d={{ site.time | date: '%s' }}" alt="" itemprop="thumbnailUrl">
+      <img src="{{ event.thumbnail }}" alt="" itemprop="thumbnailUrl">
     {% else %}
       <div class="event-card-thumb-fallback"></div>
     {% endif %}

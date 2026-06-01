@@ -88,10 +88,10 @@ description: ツインピークスバイクパークでのガイドと指導。�
         <li>
           {% if guide.url %}
             <a href="{% if guide.ja.url %}{{ guide.ja.url }}{% else %}{{ guide.url }}{% endif %}" target="_blank">
-              <img class="img-fluid" src="{{ guide.image }}?d={{ site.time | date: " %s" }}" alt="{{ guide.displayName | default: guide.name }}のロゴ">
+              <img class="img-fluid" src="{{ guide.image }}" alt="{{ guide.displayName | default: guide.name }}のロゴ">
             </a>
           {% else %}
-            <img class="img-fluid" src="{{ guide.image }}?d={{ site.time | date: " %s" }}" alt="{{ guide.displayName | default: guide.name }}のロゴ">
+            <img class="img-fluid" src="{{ guide.image }}" alt="{{ guide.displayName | default: guide.name }}のロゴ">
           {% endif %}
         </li>
       {% endfor %}

@@ -424,7 +424,7 @@ layout: base
       <section class="intro">
         {% if park_data.logo %}
         <img style="width:150px; margin:0 auto; margin-bottom:24px; display:flex;"
-          src="{{ park_data.logo }}?d={{ site.time | date: '%s' }}"
+          src="{{ park_data.logo }}"
           alt="{% if page.lang == 'ja' %}{{ park_data.ja.name | default: park_data.name }}{% else %}{{ park_data.name }}{% endif %}" />
         {% endif %}
         <p style="text-align:center;">
@@ -548,7 +548,7 @@ layout: base
         {% if park_data.logo %}
         <img
           class="tp-logo"
-          src="{{ park_data.logo }}?d={{ site.time | date: '%s' }}"
+          src="{{ park_data.logo }}"
           alt="{% if page.lang == 'ja' %}{{ park_data.ja.name | default: park_data.name }}{% else %}{{ park_data.name }}{% endif %}"
           width="200" height="124" />
         {% endif %}

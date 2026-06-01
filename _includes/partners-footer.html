@@ -37,10 +37,10 @@
   {% for sponsor in footer_sponsors %}
     {% if sponsor.url %}
       <a href="{% if sponsor.ja.url and page.lang == 'ja' %}{{ sponsor.ja.url }}{% else %}{{ sponsor.url }}{% endif %}" target="_blank" rel="sponsored noopener noreferrer">
-        <picture><source type="image/webp" srcset="{{ sponsor.image | replace: '.png', '.webp' }}?d={{ site.time | date: '%s' }}"><img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{% if sponsor.displayName %}{{ sponsor.displayName }}{% else %}{{ sponsor.name | capitalize }}{% endif %}{% if sponsor.label %}, {{ sponsor.label }}{% endif %}" loading="lazy" width="80" height="60" /></picture>
+        <picture><source type="image/webp" srcset="{{ sponsor.image | replace: '.png', '.webp' }}"><img src="{{ sponsor.image }}" alt="{% if sponsor.displayName %}{{ sponsor.displayName }}{% else %}{{ sponsor.name | capitalize }}{% endif %}{% if sponsor.label %}, {{ sponsor.label }}{% endif %}" loading="lazy" width="80" height="60" /></picture>
       </a>
     {% else %}
-      <span><picture><source type="image/webp" srcset="{{ sponsor.image | replace: '.png', '.webp' }}?d={{ site.time | date: '%s' }}"><img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{% if sponsor.displayName %}{{ sponsor.displayName }}{% else %}{{ sponsor.name | capitalize }}{% endif %}{% if sponsor.label %}, {{ sponsor.label }}{% endif %}" loading="lazy" width="80" height="60" /></picture></span>
+      <span><picture><source type="image/webp" srcset="{{ sponsor.image | replace: '.png', '.webp' }}"><img src="{{ sponsor.image }}" alt="{% if sponsor.displayName %}{{ sponsor.displayName }}{% else %}{{ sponsor.name | capitalize }}{% endif %}{% if sponsor.label %}, {{ sponsor.label }}{% endif %}" loading="lazy" width="80" height="60" /></picture></span>
     {% endif %}
   {% endfor %}
 </div>

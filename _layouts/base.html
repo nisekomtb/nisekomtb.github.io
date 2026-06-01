@@ -28,9 +28,9 @@
     <meta name="robots" content="{% if page.noindex %}noindex, nofollow{% else %}index, follow, max-image-preview:large{% endif %}"/>
     <meta property="og:title" content="{{ seo_title }}"/>
     <meta property="og:type" content="{% if page.layout == 'event' or page.layout == 'competition' %}event{% else %}website{% endif %}"/>
-    <meta property="og:image" content="https://namba.ngo{{ og_image }}?d={{ site.time | date: "%s" }}"/>
-    <meta property="og:image:url" content="https://namba.ngo{{ og_image }}?d={{ site.time | date: "%s" }}"/>
-    <meta property="og:image:secure_url" content="https://namba.ngo{{ og_image }}?d={{ site.time | date: "%s" }}"/>
+    <meta property="og:image" content="https://namba.ngo{{ og_image }}"/>
+    <meta property="og:image:url" content="https://namba.ngo{{ og_image }}"/>
+    <meta property="og:image:secure_url" content="https://namba.ngo{{ og_image }}"/>
     <meta property="og:url" content="https://namba.ngo{% if page.lang == 'ja' %}/ja{% endif %}{{ path }}"/>
     {% if page.description %}<meta property="og:description" content="{{ page.description }}"/>{% endif %}
     {% if page.lang == 'en' %}<meta property="og:locale" content="en_GB"/>
@@ -43,7 +43,7 @@
     <meta name="twitter:card" content="summary_large_image"/>
     <meta name="twitter:title" content="{{ seo_title }}"/>
     {% if page.description %}<meta name="twitter:description" content="{{ page.description }}"/>{% endif %}
-    <meta name="twitter:image" content="https://namba.ngo{{ og_image }}?d={{ site.time | date: '%s' }}"/>
+    <meta name="twitter:image" content="https://namba.ngo{{ og_image }}"/>
     <link rel="alternate" hreflang="en" href="https://namba.ngo{{ path }}"/>
     <link rel="alternate" hreflang="ja" href="https://namba.ngo/ja{{ path }}"/>
     <link rel="alternate" hreflang="x-default" href="https://namba.ngo{{ path }}"/>
@@ -55,37 +55,43 @@
     {% else %}
       <link rel="canonical" href="https://namba.ngo{% if page.lang == 'ja' %}/ja{% endif %}{{ path }}"/>
     {% endif %}
-    {% assign build = site.time | date: "%s" %}
-    <link rel="icon" type="image/svg+xml" href="/assets/images/ico/favicon.svg?d={{ build }}"/>
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/ico/favicon-32.png?d={{ build }}"/>
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/ico/favicon-16.png?d={{ build }}"/>
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/ico/apple-touch-icon.png?d={{ build }}"/>
-    <link rel="shortcut icon" href="/assets/images/ico/favicon.ico?d={{ build }}"/>
+    <link rel="icon" type="image/svg+xml" href="/assets/images/ico/favicon.svg"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/ico/favicon-32.png"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/ico/favicon-16.png"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/ico/apple-touch-icon.png"/>
+    <link rel="shortcut icon" href="/assets/images/ico/favicon.ico"/>
 
     <!-- Preload Metropolis Medium (used by every masthead H1) so the font
          arrives early enough to render before first paint, cutting the
          font-swap CLS window. Regular/light/bold are not preloaded - they
          are usually below the fold and load in parallel anyway. -->
-    <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/metropolis/metropolis-medium-webfont.woff2?d={{ build }}" crossorigin/>
+    <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/metropolis/metropolis-medium-webfont.woff2" crossorigin/>
 
-    <link href="/assets/css/bootstrap.min.css?d={{ build }}" rel="stylesheet" type="text/css"/>
-    <link href="/assets/css/bs3-compat.css?d={{ build }}" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" href="/assets/fonts/font-awesome-subset/fa-subset.css?d={{ build }}" media="print" onload="this.media='all'"/>
-    <noscript><link rel="stylesheet" href="/assets/fonts/font-awesome-subset/fa-subset.css?d={{ build }}"/></noscript>
-    <link href="/assets/css/template.css?d={{ build }}" rel="stylesheet" type="text/css"/>
-    <link href="/assets/css/megamenu.css?d={{ build }}" rel="stylesheet" type="text/css"/>
-    <link href="/assets/css/mobile-nav.css?d={{ build }}" rel="stylesheet" type="text/css"/>
-    <link href="/assets/fonts/metropolis/stylesheet.css?d={{ build }}" rel="stylesheet" type="text/css"/>
-    <link href="/assets/fonts/fruit-viesta/stylesheet.css?d={{ build }}" rel="stylesheet" type="text/css"/>
+    {%- comment -%}
+      Cache-busting: CSS/JS use a manual ?v=N. Bump the N when the file
+      changes so returning visitors fetch the new bytes immediately.
+      Images, fonts, and favicons rely on ETag/Last-Modified (GH Pages
+      sets max-age=600 so a stale asset is at most 10 min stale). If
+      an image genuinely needs a hard bust, rename the file.
+    {%- endcomment -%}
+    <link href="/assets/css/bootstrap.min.css?v=1" rel="stylesheet" type="text/css"/>
+    <link href="/assets/css/bs3-compat.css?v=1" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="/assets/fonts/font-awesome-subset/fa-subset.css?v=1" media="print" onload="this.media='all'"/>
+    <noscript><link rel="stylesheet" href="/assets/fonts/font-awesome-subset/fa-subset.css?v=1"/></noscript>
+    <link href="/assets/css/template.css?v=1" rel="stylesheet" type="text/css"/>
+    <link href="/assets/css/megamenu.css?v=1" rel="stylesheet" type="text/css"/>
+    <link href="/assets/css/mobile-nav.css?v=1" rel="stylesheet" type="text/css"/>
+    <link href="/assets/fonts/metropolis/stylesheet.css?v=1" rel="stylesheet" type="text/css"/>
+    <link href="/assets/fonts/fruit-viesta/stylesheet.css?v=1" rel="stylesheet" type="text/css"/>
     {% if page.lang == 'ja' %}
       <link rel="preconnect" href="https://fonts.googleapis.com"/>
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
       <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@900&display=swap" rel="stylesheet"/>
     {% endif %}
     {% if page.needsCarousel %}
-      <link href="/assets/js/splide/splide.min.css?d={{ build }}" rel="stylesheet" type="text/css"/>
+      <link href="/assets/js/splide/splide.min.css?v=1" rel="stylesheet" type="text/css"/>
     {% endif %}
-    <link href="/assets/css/masthead.css?d={{ build }}" rel="stylesheet" type="text/css"/>
+    <link href="/assets/css/masthead.css?v=1" rel="stylesheet" type="text/css"/>
     {%- comment -%}
       Masthead preload removed: Chrome's preload-discovery picks the
       largest tier (1600w/-large.webp) while the <picture> element
@@ -95,22 +101,22 @@
       gets discovered fast enough without a separate preload.
     {%- endcomment -%}
     {% if page.path == "index.html" or page.path == "ja/index.html" %}
-      <link rel="preload" as="image" href="/assets/images/home/hero-video-poster.jpg?d={{ build }}"/>
-      <link href="/assets/css/home.css?d={{ build }}" rel="stylesheet" type="text/css"/>
+      <link rel="preload" as="image" href="/assets/images/home/hero-video-poster.jpg"/>
+      <link href="/assets/css/home.css?v=1" rel="stylesheet" type="text/css"/>
     {% endif %}
     <!-- block links endblock -->
-    <script src="/assets/js/caption.js?d={{ build }}" type="text/javascript" defer></script>
-    <script src="/assets/js/bootstrap.bundle.min.js?d={{ build }}" type="text/javascript" defer></script>
-    <script src="/assets/js/t3.js?d={{ build }}" type="text/javascript" defer></script>
-    <script src="/assets/js/mobile-nav.js?d={{ build }}" type="text/javascript" defer></script>
-    <script src="/assets/js/menu.js?d={{ build }}" type="text/javascript" defer></script>
+    <script src="/assets/js/caption.js?v=1" type="text/javascript" defer></script>
+    <script src="/assets/js/bootstrap.bundle.min.js?v=1" type="text/javascript" defer></script>
+    <script src="/assets/js/t3.js?v=1" type="text/javascript" defer></script>
+    <script src="/assets/js/mobile-nav.js?v=1" type="text/javascript" defer></script>
+    <script src="/assets/js/menu.js?v=1" type="text/javascript" defer></script>
     {% if page.needsCarousel %}
-      <script src="/assets/js/splide/splide.min.js?d={{ build }}" type="text/javascript" defer></script>
+      <script src="/assets/js/splide/splide.min.js?v=1" type="text/javascript" defer></script>
     {% endif %}
-    <script src="/assets/js/script.js?d={{ build }}" type="text/javascript" defer></script>
-    <script src="/assets/js/acm/script.js?d={{ build }}" type="text/javascript" defer></script>
+    <script src="/assets/js/script.js?v=1" type="text/javascript" defer></script>
+    <script src="/assets/js/acm/script.js?v=1" type="text/javascript" defer></script>
     {% if page.path == "index.html" or page.path == "ja/index.html" %}
-      <script src="/assets/js/home.js?d={{ build }}" type="text/javascript" defer></script>
+      <script src="/assets/js/home.js?v=1" type="text/javascript" defer></script>
     {% endif %}
     <script type="text/javascript">
       window.addEventListener('load', function () {

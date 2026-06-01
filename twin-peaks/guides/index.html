@@ -93,10 +93,10 @@ description: Guiding and instruction at Twin Peaks Bike Park. The companies list
           {% if guide.url %}
           <a href="{{ guide.url }}"
             target="_blank">
-            <img class="img-fluid" src="{{ guide.image }}?d={{ site.time | date: " %s" }}" alt="{{ guide.displayName | default: guide.name }} logo">
+            <img class="img-fluid" src="{{ guide.image }}" alt="{{ guide.displayName | default: guide.name }} logo">
           </a>
           {% else %}
-          <img class="img-fluid" src="{{ guide.image }}?d={{ site.time | date: " %s" }}" alt="{{ guide.displayName | default: guide.name }} logo">
+          <img class="img-fluid" src="{{ guide.image }}" alt="{{ guide.displayName | default: guide.name }} logo">
           {% endif %}
         </li>
       {% endfor %}

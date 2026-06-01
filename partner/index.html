@@ -776,10 +776,10 @@ masthead:
           <div style="display:flex; flex-direction:column; align-items:center; width:100px;">
             {% if sponsor.url %}
               <a href="{% if sponsor.ja.url and page.lang == 'ja' %}{{ sponsor.ja.url }}{% else %}{{ sponsor.url }}{% endif %}" target="_blank">
-                <img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name }}" />
+                <img src="{{ sponsor.image }}" alt="{{ sponsor.name }}" />
               </a>
             {% else %}
-              <img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name }}" />
+              <img src="{{ sponsor.image }}" alt="{{ sponsor.name }}" />
             {% endif %}
             {% if sponsor.label %}
               <span style="font-size:8px; color:#444; margin-top:8px; text-transform:uppercase; letter-spacing:0.5px; font-family:'Metropolis', 'Metropolis Fallback',Helvetica,Arial,sans-serif; font-weight:500; text-align:center;">{% if page.lang == 'ja' and sponsor.ja.label %}{{ sponsor.ja.label }}{% else %}{{ sponsor.label }}{% endif %}</span>
@@ -802,10 +802,10 @@ masthead:
         {% for sponsor in site.data.sponsors.higuma.sponsors %}
           {% if sponsor.url %}
             <a href="{% if sponsor.ja.url and page.lang == 'ja' %}{{ sponsor.ja.url }}{% else %}{{ sponsor.url }}{% endif %}" target="_blank" title="{{ sponsor.name }}">
-              <img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name }}" />
+              <img src="{{ sponsor.image }}" alt="{{ sponsor.name }}" />
             </a>
           {% else %}
-            <span title="{{ sponsor.name }}"><img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name }}" /></span>
+            <span title="{{ sponsor.name }}"><img src="{{ sponsor.image }}" alt="{{ sponsor.name }}" /></span>
           {% endif %}
         {% endfor %}
       </div>
@@ -824,10 +824,10 @@ masthead:
         {% for sponsor in site.data.sponsors.shika.sponsors %}
           {% if sponsor.url %}
             <a href="{% if sponsor.ja.url and page.lang == 'ja' %}{{ sponsor.ja.url }}{% else %}{{ sponsor.url }}{% endif %}" target="_blank" title="{{ sponsor.name }}">
-              <img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name }}" />
+              <img src="{{ sponsor.image }}" alt="{{ sponsor.name }}" />
             </a>
           {% else %}
-            <span title="{{ sponsor.name }}"><img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name }}" /></span>
+            <span title="{{ sponsor.name }}"><img src="{{ sponsor.image }}" alt="{{ sponsor.name }}" /></span>
           {% endif %}
         {% endfor %}
       </div>
@@ -846,10 +846,10 @@ masthead:
         {% for sponsor in site.data.sponsors.tanuki.sponsors %}
           {% if sponsor.url %}
             <a href="{% if sponsor.ja.url and page.lang == 'ja' %}{{ sponsor.ja.url }}{% else %}{{ sponsor.url }}{% endif %}" target="_blank" title="{{ sponsor.name }}">
-              <img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name }}" />
+              <img src="{{ sponsor.image }}" alt="{{ sponsor.name }}" />
             </a>
           {% else %}
-            <span title="{{ sponsor.name }}"><img src="{{ sponsor.image }}?d={{ site.time | date: '%s' }}" alt="{{ sponsor.name }}" /></span>
+            <span title="{{ sponsor.name }}"><img src="{{ sponsor.image }}" alt="{{ sponsor.name }}" /></span>
           {% endif %}
         {% endfor %}
       </div>
