@@ -840,9 +840,9 @@ html[lang="ja"] .home-events-title { letter-spacing: normal; text-transform: non
 .home-events-all { text-align: right; margin-top: 24px; font-size: 14px; }
 .home-events-all a { color: #fff; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 200ms ease, color 200ms ease; }
 .home-events-all a:hover { color: var(--color-accent); border-color: var(--color-accent); }
-.home-events-empty { font-size: 15px; color: var(--color-text); }
-.home-events-empty a { color: var(--color-primary); }
-.home-events-empty a:hover { color: var(--color-primary-hover); }
+.home-events-empty { font-size: 15px; color: var(--color-text); text-align: center; }
+.home-events-empty a { color: #fff; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 200ms ease, color 200ms ease; }
+.home-events-empty a:hover { color: var(--color-accent); border-color: var(--color-accent); }
 @media (max-width: 1023px) { .home-events-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 600px)  { .home-events-grid { grid-template-columns: 1fr; } }
 
