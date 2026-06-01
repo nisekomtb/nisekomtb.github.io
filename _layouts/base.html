@@ -97,9 +97,11 @@
         used by H1/section-heading display text on JA pages; system JA
         fallback (Hiragino Sans / Yu Gothic / Noto Sans JP) handles the
         first paint, then Zen Maru Gothic swaps in via font-display:swap.
+        No <noscript> fallback: Chrome's preload-scanner fetches it
+        unconditionally, producing a duplicate CSS request. JS-disabled
+        visitors see the system JA fallback, which is fine for display.
       {%- endcomment -%}
       <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@900&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
-      <noscript><link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@900&display=swap" rel="stylesheet"/></noscript>
     {% endif %}
     {% if page.needsCarousel %}
       <link href="/assets/js/splide/splide.min.css?v=1" rel="stylesheet" type="text/css"/>
