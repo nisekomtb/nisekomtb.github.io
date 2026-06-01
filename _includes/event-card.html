@@ -28,7 +28,7 @@
 <article class="event-card{% if include.variant %} event-card-{{ include.variant }}{% endif %}{% if include.disabled or event.cancelled %} disabled{% endif %}">
   <div class="event-card-thumb">
     {% if event.thumbnail %}
-      <img src="{{ event.thumbnail }}" alt="" itemprop="thumbnailUrl">
+      <img src="{{ event.thumbnail }}" alt="">
     {% else %}
       <div class="event-card-thumb-fallback"></div>
     {% endif %}
@@ -49,8 +49,8 @@
     <div class="event-card-date">
       {% if page.lang == "en" %}{{ event.startDate | date: "%-d %B %Y" }}{% else %}{{ event.startDate | date: "%Y年%m月%d日" }}{% endif %}
     </div>
-    <h3 class="event-card-title" itemprop="headline">
-      <a class="event-card-link" href="{{ event_url }}" itemprop="url" title="{{ event.title }}"{% if event.override_url %} target="_blank"{% endif %}>{{ event.titleHtml | default: event.title }}</a>
+    <h3 class="event-card-title">
+      <a class="event-card-link" href="{{ event_url }}" title="{{ event.title }}"{% if event.override_url %} target="_blank"{% endif %}>{{ event.titleHtml | default: event.title }}</a>
     </h3>
     {% if event.location or event.days > 1 %}
       <div class="event-card-meta">
