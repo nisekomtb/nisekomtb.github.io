@@ -65,7 +65,7 @@
           io.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.15 });
+    }, { threshold: 0, rootMargin: '0px 0px -15% 0px' });
     document.querySelectorAll('.fade-up').forEach(function (el) { io.observe(el); });
   }
 
