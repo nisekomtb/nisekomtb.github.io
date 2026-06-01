@@ -36,7 +36,7 @@ about: false
 
 9月21〜22日の​2日間、​ニセコの​秋の​景色の​中を​舗装路と​未舗装路を​組み合わせて​走る​グラベルライド。
 
-![グラベルライドのルートから望むニセコの色鮮やかな秋の風景](/assets/images/events/2024/niseko-gravel-autumn-ride/view.jpg)
+{% include image.html src="/assets/images/events/2024/niseko-gravel-autumn-ride/view.jpg" alt="グラベルライドのルートから望むニセコの色鮮やかな秋の風景" widths="800,1600" sizes="(min-width: 768px) 720px, 100vw" %}
 
 ## コース
 

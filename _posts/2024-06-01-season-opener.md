@@ -59,7 +59,7 @@ about: false
 
 The debut of the Dirty Dames women's group ride, postponed from last year. Coffee at Rhythm from 9am, ride from 10am to 11am. All skill levels welcome.
 
-![Dirty Dames women's group ride at the Twin Peaks season opener](/assets/images/events/2024/season-opener/dirtydames.jpg)
+{% include image.html src="/assets/images/events/2024/season-opener/dirtydames.jpg" alt="Dirty Dames women's group ride at the Twin Peaks season opener" widths="800,1600" sizes="(min-width: 768px) 720px, 100vw" %}
 
 ## Strava contest launch
 

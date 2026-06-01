@@ -36,7 +36,7 @@ about: false
 - メンテナンスツール​（シャベル推奨。​クラブの​スペアは​限り​あり、​できれば​持参を）
 - 整備後に​走る​ための​自転車と​ヘルメット
 
-![ルスツでトレイル整備を行うボランティアたち](/assets/images/events/2024/rusutsu-dig-ride/dig.jpg)
+{% include image.html src="/assets/images/events/2024/rusutsu-dig-ride/dig.jpg" alt="ルスツでトレイル整備を行うボランティアたち" widths="800,1600" sizes="(min-width: 768px) 720px, 100vw" %}
 
 ## 天候
 

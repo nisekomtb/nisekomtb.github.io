@@ -99,4 +99,4 @@ var script = document.createElement("script"); script.setAttribute("src", "https
 - **Dirty Dames group ride:** Saturday women's ride, led by a Santa Cruz pro.
 - **Afterparty at Rhythm:** Saturday evening with food, DJ, and giveaways.
 
-![Mountain bikers riding the new Cruz Control trail at Twin Peaks](/assets/images/events/2024/cruz-control-opening-weekend/riders.jpg)
+{% include image.html src="/assets/images/events/2024/cruz-control-opening-weekend/riders.jpg" alt="Mountain bikers riding the new Cruz Control trail at Twin Peaks" widths="800,1600" sizes="(min-width: 768px) 720px, 100vw" %}

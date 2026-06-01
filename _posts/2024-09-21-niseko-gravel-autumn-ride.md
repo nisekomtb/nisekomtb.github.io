@@ -36,7 +36,7 @@ about: false
 
 A two-day gravel ride through Niseko on 21-22 September, weaving paved and unpaved roads through the area's autumn colour.
 
-![Scenic autumn view of Niseko's colourful landscape from the gravel ride route](/assets/images/events/2024/niseko-gravel-autumn-ride/view.jpg)
+{% include image.html src="/assets/images/events/2024/niseko-gravel-autumn-ride/view.jpg" alt="Scenic autumn view of Niseko's colourful landscape from the gravel ride route" widths="800,1600" sizes="(min-width: 768px) 720px, 100vw" %}
 
 ## Course options
 

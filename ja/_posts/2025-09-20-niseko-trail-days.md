@@ -98,4 +98,4 @@ Specialized Japanが​毎年​全国で​開催している​Trail Days。�
 定員が​あります。​上記の​申し込みから​参加登録を​お願いします。
 
 
-![ニセコトレイルデイズでSpecialized Levo電動マウンテンバイクに乗る子どもたち](/assets/images/events/2025/niseko-trail-days/levo-kids.jpg)
+{% include image.html src="/assets/images/events/2025/niseko-trail-days/levo-kids.jpg" alt="ニセコトレイルデイズでSpecialized Levo電動マウンテンバイクに乗る子どもたち" widths="800,1600" sizes="(min-width: 768px) 720px, 100vw" %}

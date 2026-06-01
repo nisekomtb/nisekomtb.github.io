@@ -96,4 +96,4 @@ He recently joined Red Bull Japan, with Loic Bruni and Brook MacDonald handing h
 
 Spaces are limited. Reserve a spot via the application above.
 
-![Kids riding Specialized Levo electric mountain bikes at Niseko Trail Days](/assets/images/events/2025/niseko-trail-days/levo-kids.jpg)
+{% include image.html src="/assets/images/events/2025/niseko-trail-days/levo-kids.jpg" alt="Kids riding Specialized Levo electric mountain bikes at Niseko Trail Days" widths="800,1600" sizes="(min-width: 768px) 720px, 100vw" %}

@@ -111,7 +111,7 @@ Halloween is around the corner. Show up in costume, ride the trails, prizes for 
 
 The first Dirty Dames group ride. Women-only, all skill levels welcome.
 
-![Dirty Dames women-only group ride at the closing weekend](/assets/images/events/2023/closing-weekend/dirtydames.jpg)
+{% include image.html src="/assets/images/events/2023/closing-weekend/dirtydames.jpg" alt="Dirty Dames women-only group ride at the closing weekend" widths="800,1600" sizes="(min-width: 768px) 720px, 100vw" %}
 
 ## NAMBA open house
 

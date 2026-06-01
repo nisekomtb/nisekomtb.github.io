@@ -111,7 +111,7 @@ Stravaはライドを​GPS記録する​アプリです。​当日、​対�
 
 初の​Dirty Dames グループライド。​女性限定、​全スキルレベル歓迎。
 
-![クロージングウィークエンドでのDirty Dames女性限定グループライド](/assets/images/events/2023/closing-weekend/dirtydames.jpg)
+{% include image.html src="/assets/images/events/2023/closing-weekend/dirtydames.jpg" alt="クロージングウィークエンドでのDirty Dames女性限定グループライド" widths="800,1600" sizes="(min-width: 768px) 720px, 100vw" %}
 
 ## NAMBAオープンハウス
 

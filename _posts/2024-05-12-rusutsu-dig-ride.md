@@ -37,7 +37,7 @@ Snow is clear and the trail is ready for its season prep. We dig in the morning,
 - Maintenance tools (shovels preferred; the club has a few spares but bring your own if you can)
 - Bike and helmet for the post-dig ride
 
-![Volunteers digging and maintaining trails at Rusutsu](/assets/images/events/2024/rusutsu-dig-ride/dig.jpg)
+{% include image.html src="/assets/images/events/2024/rusutsu-dig-ride/dig.jpg" alt="Volunteers digging and maintaining trails at Rusutsu" widths="800,1600" sizes="(min-width: 768px) 720px, 100vw" %}
 
 ## Weather
 

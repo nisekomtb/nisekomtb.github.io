@@ -101,4 +101,4 @@ Guest riders Hajime Imoto and Yuki Kushima, both UCI Mountain Bike World Series 
 
 Thanks to Allegra for spearheading the park's design and construction, and to our sponsors, supporters, and community for helping create this free and open trail network.
 
-![Riders at the Twin Peaks Bike Park grand opening celebration](/assets/images/events/2023/grand-opening/riders.jpg)
+{% include image.html src="/assets/images/events/2023/grand-opening/riders.jpg" alt="Riders at the Twin Peaks Bike Park grand opening celebration" widths="800,1600" sizes="(min-width: 768px) 720px, 100vw" %}

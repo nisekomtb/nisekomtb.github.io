@@ -58,7 +58,7 @@ about: false
 
 昨年から​延期された​Dirty Dames女性グループライドの​デビュー。​9:00から​Rhythmで​コーヒー、​10:00〜11:00に​ライド。​全スキルレベル歓迎。
 
-![ツインピークスシーズンオープナーでのDirty Dames女性グループライド](/assets/images/events/2024/season-opener/dirtydames.jpg)
+{% include image.html src="/assets/images/events/2024/season-opener/dirtydames.jpg" alt="ツインピークスシーズンオープナーでのDirty Dames女性グループライド" widths="800,1600" sizes="(min-width: 768px) 720px, 100vw" %}
 
 ## Stravaコンテスト開始
 
