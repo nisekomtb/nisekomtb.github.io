@@ -653,7 +653,34 @@ layout: base
 </div>
 
 <script type="text/javascript">
-  var script = document.createElement("script"); script.setAttribute("src", "https://es.pinkbike.org/ttl-86400/sprt/j/trailforks/widget.js?units=metric"); document.getElementsByTagName("head")[0].appendChild(script);
+  // Lazy-load the Trailforks widget script when the map scrolls near viewport.
+  // The widget pulls Mapbox (~265KB), Pinkbike GA, and other JS we don't want
+  // to pay for upfront on the critical path. Observer disconnects after first
+  // load; falls back to immediate load if IntersectionObserver is unavailable.
+  (function() {
+    var loaded = false;
+    function loadWidget() {
+      if (loaded) return;
+      loaded = true;
+      var script = document.createElement('script');
+      script.src = 'https://es.pinkbike.org/ttl-86400/sprt/j/trailforks/widget.js?units=metric';
+      document.head.appendChild(script);
+    }
+    var target = document.querySelector('.TrailforksWidgetMap');
+    if (!target || !('IntersectionObserver' in window)) {
+      // Defer to load event so we don't block initial paint either way.
+      if (document.readyState === 'complete') loadWidget();
+      else window.addEventListener('load', loadWidget);
+      return;
+    }
+    var io = new IntersectionObserver(function(entries) {
+      if (entries.some(function(e) { return e.isIntersecting; })) {
+        io.disconnect();
+        loadWidget();
+      }
+    }, { rootMargin: '500px' });
+    io.observe(target);
+  })();
 </script>
 
 <script>
