@@ -46,56 +46,62 @@ masthead:
     </div>
   </div>
 
-  {% assign events = site.categories.events | where: "lang", "en" | where: "draft", "false" %}
-  {% assign eventsSize = events | size %}
-  {% assign firstPastEventIndex = nil %}
-  {% for event in events %}
-    {% assign days = event.days | times: 24 | times: 60 | times: 60 %}
-    {% assign endDate = event.startDate | date: "%s" | plus: days | date: "%F" %}
-    {% assign today = "today" | date: "%F" %}
-    {% if endDate > today %}
-      {% continue %}
+  {%- comment -%}
+    Split events into upcoming (endDate >= today) and past (endDate < today).
+    site.categories.events comes in DESC post-date order, so:
+      - upcoming_desc is naturally DESC; reverse it for ASC display
+      - past_desc is naturally DESC; use it as-is
+    Cannot use Liquid's `sort: "startDate"` here because some posts use the
+    date-only format (parses to Date) and others use the date+time form
+    (parses to Time), which raises "comparison of Array with Array failed".
+  {%- endcomment -%}
+  {% assign today = site.time | date: "%F" %}
+  {% assign all_events = site.categories.events | where: "lang", "en" | where: "draft", "false" %}
+
+  {% assign upcoming_desc = "" | split: "" %}
+  {% assign past_desc = "" | split: "" %}
+  {% for ev in all_events %}
+    {% assign days_sec = ev.days | default: 1 | times: 86400 %}
+    {% assign end_date = ev.startDate | date: "%s" | plus: days_sec | date: "%F" %}
+    {% if end_date > today %}
+      {% assign upcoming_desc = upcoming_desc | push: ev %}
     {% else %}
-      {% assign firstPastEventIndex = forloop.index0 %}
-      {% break %}
+      {% assign past_desc = past_desc | push: ev %}
     {% endif %}
   {% endfor %}
+  {% assign upcoming = upcoming_desc | reverse %}
 
-  {% assign pastEvents = events | slice: firstPastEventIndex, eventsSize %}
-  {% assign sliceStart = eventsSize | minus: firstPastEventIndex %}
-  {% assign events = events | reverse | concat: pastEvents | slice: sliceStart, eventsSize %}
+  {% assign past_years = "" | split: "" %}
+  {% for ev in past_desc %}
+    {% assign yr = ev.startDate | date: "%Y" %}
+    {% unless past_years contains yr %}
+      {% assign past_years = past_years | push: yr %}
+    {% endunless %}
+  {% endfor %}
 
   <div class="section">
-  {% for event in events %}
-
-    {% assign indexModulo4 = forloop.index0 | modulo: 4 %}
-    {% if indexModulo4 == 0 %}
-      <div class="items-row cols-4 row-{{- forloop.index0 | divided_by: 4 }} row equal-height equal-height-child">
-      {% endif %}
-
-
-      {% assign isDisabled = false %}
-      {% if forloop.index0 >= firstPastEventIndex %}{% assign isDisabled = true %}{% endif %}
-      <div class="col col-12 col-md-6 col-lg-3">
-        <div
-          class="item column-{{ indexModulo4 }} ja-animate"
-          itemprop="blogPost"
-          data-animation="move-from-bottom"
-          data-delay="item-{{ forloop.index0 }}"
-          itemscope=""
-          itemtype="https://schema.org/BlogPosting"
-          >
-          {% include event-card.html event=event disabled=isDisabled %}
-        </div>
-        <!-- end item -->
-      </div>
-      {% if indexModulo4 == 3 or forloop.last %}
-      </div>
-      <!-- end row -->
+    <h2 class="events-section-title">Upcoming</h2>
+    {% if upcoming.size > 0 %}
+      {% include event-grid.html events=upcoming %}
+    {% else %}
+      <p class="events-empty">No events scheduled. Follow <a href="https://www.instagram.com/nisekomtb/">@nisekomtb</a> for updates.</p>
     {% endif %}
-
-  {% endfor %}
   </div>
+
+  {% if past_desc.size > 0 %}
+  <div class="section">
+    <h2 class="events-section-title">Past events</h2>
+    {% for yr in past_years %}
+      {% assign year_events = "" | split: "" %}
+      {% for ev in past_desc %}
+        {% assign ev_yr = ev.startDate | date: "%Y" %}
+        {% if ev_yr == yr %}{% assign year_events = year_events | push: ev %}{% endif %}
+      {% endfor %}
+      <h3 class="events-year-heading">{{ yr }}</h3>
+      {% include event-grid.html events=year_events disabled=true show_ended_badge=false %}
+    {% endfor %}
+  </div>
+  {% endif %}
 
 </div>
 

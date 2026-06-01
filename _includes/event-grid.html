@@ -1,0 +1,44 @@
+{%- comment -%}
+  4-column responsive grid of event cards. Used by /events/ and /ja/events/
+  for both the "Upcoming" section and each year-group under "Past events".
+
+  Restarts the modulo-4 row batching on every invocation, so multiple grids
+  can be rendered on the same page without the row index leaking between
+  them.
+
+  Parameters:
+    include.events            — array of event Post objects (required)
+    include.disabled          — passed through to event-card; pass true for
+                                past-section grids
+    include.show_ended_badge  — passed through to event-card; pass false for
+                                past-section grids (the section heading
+                                already conveys the state)
+{%- endcomment -%}
+{%- assign grid_events = include.events -%}
+{%- assign grid_disabled = include.disabled | default: false -%}
+{%- assign grid_show_ended = include.show_ended_badge -%}
+{%- if grid_show_ended == nil -%}{%- assign grid_show_ended = true -%}{%- endif -%}
+
+{% for event in grid_events %}
+  {% assign indexModulo4 = forloop.index0 | modulo: 4 %}
+  {% if indexModulo4 == 0 %}
+    <div class="items-row cols-4 row-{{- forloop.index0 | divided_by: 4 }} row equal-height equal-height-child">
+  {% endif %}
+
+  <div class="col col-12 col-md-6 col-lg-3">
+    <div
+      class="item column-{{ indexModulo4 }} ja-animate"
+      itemprop="blogPost"
+      data-animation="move-from-bottom"
+      data-delay="item-{{ forloop.index0 }}"
+      itemscope=""
+      itemtype="https://schema.org/BlogPosting"
+      >
+      {% include event-card.html event=event disabled=grid_disabled show_ended_badge=grid_show_ended %}
+    </div>
+  </div>
+
+  {% if indexModulo4 == 3 or forloop.last %}
+    </div>
+  {% endif %}
+{% endfor %}

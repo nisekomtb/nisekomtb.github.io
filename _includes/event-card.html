@@ -5,14 +5,20 @@
   the article and its content.
 
   Parameters:
-    include.event     — the event Post object (required)
-    include.disabled  — true if the event has already ended (used on
-                        /events/ for past-event entries; home never
-                        passes this since it filters past events out)
-    include.variant   — optional layout variant. Currently supports
-                        "feature" (horizontal layout used by the home
-                        "What's on" section when only one event is
-                        upcoming).
+    include.event             — the event Post object (required)
+    include.disabled          — true if the event has already ended (used
+                                on /events/ for past-event entries; home
+                                never passes this since it filters past
+                                events out)
+    include.variant           — optional layout variant. Currently
+                                supports "feature" (horizontal layout
+                                used by the home "What's on" section when
+                                only one event is upcoming).
+    include.show_ended_badge  — optional; default true. Set to false to
+                                suppress the "Ended" / "終了" badge even
+                                when disabled is true. Used by /events/
+                                "Past events" sections where the heading
+                                already conveys the state.
 {%- endcomment -%}
 {% assign event = include.event %}
 {% if event.override_url %}{% assign event_url = event.override_url %}{% else %}{% assign event_url = event.url %}{% endif %}
@@ -27,10 +33,14 @@
       <div class="event-card-thumb-fallback"></div>
     {% endif %}
     <div class="event-card-thumb-fade"></div>
+    {%- assign show_ended_badge = include.show_ended_badge -%}
+    {%- if show_ended_badge == nil -%}{%- assign show_ended_badge = true -%}{%- endif -%}
     {% if event.cancelled %}
       <div class="event-card-badge cancelled">{% if page.lang == "en" %}Cancelled{% else %}キャンセル{% endif %}</div>
     {% elsif include.disabled %}
-      <div class="event-card-badge ended">{% if page.lang == "en" %}Ended{% else %}終了{% endif %}</div>
+      {% if show_ended_badge %}
+        <div class="event-card-badge ended">{% if page.lang == "en" %}Ended{% else %}終了{% endif %}</div>
+      {% endif %}
     {% else %}
       <div class="event-card-badge ended" style="display:none;" name="ended" data-end-date="{{ endDate }}">{% if page.lang == "en" %}Ended{% else %}終了{% endif %}</div>
     {% endif %}
