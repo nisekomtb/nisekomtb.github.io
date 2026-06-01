@@ -63,7 +63,7 @@ logo: /assets/images/events/2023/soil-searching/soil-searching.png
 
 Two days of trail work and riding at Twin Peaks Bike Park, before the bike park's grand opening to the public. Volunteers join NAMBA and Specialized's builders and riders to finish the trails. A chance to contribute to the project and ride lines that aren't yet open.
 
-![Volunteers working together on trail construction at Soil Searching Niseko](/assets/images/events/2023/soil-searching/ss02.jpg)
+{% include image.html src="/assets/images/events/2023/soil-searching/ss02.jpg" alt="Volunteers working together on trail construction at Soil Searching Niseko" widths="800,1600" sizes="(min-width: 768px) 720px, 100vw" %}
 
 ## About Soil Searching
 
@@ -75,5 +75,5 @@ Soil Searching is proud to be supporting NAMBA’s trail builders, kitting them 
 
 Dig days, such as Soil Searching in Niseko, create community, impart knowledge and welcome riders of all ages and abilities to the sport. These outcomes align with NAMBA’s mission of creating, enhancing, maintaining, and protecting great places to ride in Niseko.
 
-![Specialized Soil Searching team building trails at Twin Peaks Bike Park](/assets/images/events/2023/soil-searching/ss03.jpg)
+{% include image.html src="/assets/images/events/2023/soil-searching/ss03.jpg" alt="Specialized Soil Searching team building trails at Twin Peaks Bike Park" widths="800,1600" sizes="(min-width: 768px) 720px, 100vw" %}
 

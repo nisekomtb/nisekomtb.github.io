@@ -99,4 +99,4 @@ var script = document.createElement("script"); script.setAttribute("src", "https
 - **ダーティ・デームズ グループライド：** 土曜の​女性専用ライド、​サンタクルーズの​プロが​引率。
 - **Rhythmでの​アフターパーティー：** 土曜夕方、​食事、​DJ、​プレゼントあり。
 
-![ツインピークスの新しいクルーズ・コントロールトレイルを走るライダーたち](/assets/images/events/2024/cruz-control-opening-weekend/riders.jpg)
+{% include image.html src="/assets/images/events/2024/cruz-control-opening-weekend/riders.jpg" alt="ツインピークスの新しいクルーズ・コントロールトレイルを走るライダーたち" widths="800,1600" sizes="(min-width: 768px) 720px, 100vw" %}

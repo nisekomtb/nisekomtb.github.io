@@ -70,7 +70,7 @@ storeProductSlug: soil-searching-2024
 
 Specializedの​Soil Searchingイベントが​ニセコで​2年目の​開催。​今年は​NAMBAクルーと​一緒に​ハンズオンの​トレイル建設、​フィーチャー造成、​メンテナンスに​取り組みます。
 
-![Soil Searching Niseko 2024でトレイル構築を学ぶ参加者たち](/assets/images/events/2024/soil-searching/learn.jpg)
+{% include image.html src="/assets/images/events/2024/soil-searching/learn.jpg" alt="Soil Searching Niseko 2024でトレイル構築を学ぶ参加者たち" widths="800,1600" sizes="(min-width: 768px) 720px, 100vw" %}
 
 ## 含まれるもの
 
@@ -84,6 +84,6 @@ Specializedの​Soil Searchingイベントが​ニセコで​2年目の​開
 - **1日目、​Dig：** トレイル・フィーチャー造成。​ランチ提供。​Rhythm Hirafuで​夕方の​パーティー。​子ども向けの​アクティビティもあります。
 - **2日目、​Ride：** 前日に​造ったトレイル​・フィーチャーを​走ります。​Specializedアンバサダーと​のグループライド。
 
-![Soil Searching Niseko 2024でトレイルを楽しむライダーたち](/assets/images/events/2024/soil-searching/riders.jpg)
+{% include image.html src="/assets/images/events/2024/soil-searching/riders.jpg" alt="Soil Searching Niseko 2024でトレイルを楽しむライダーたち" widths="800,1600" sizes="(min-width: 768px) 720px, 100vw" %}
 
-![Soil Searchingイベントで使用されるトレイル構築ツール](/assets/images/events/2024/soil-searching/tools.jpg)
+{% include image.html src="/assets/images/events/2024/soil-searching/tools.jpg" alt="Soil Searchingイベントで使用されるトレイル構築ツール" widths="800,1600" sizes="(min-width: 768px) 720px, 100vw" %}

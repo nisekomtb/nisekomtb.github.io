@@ -7,7 +7,12 @@
   Parameters:
     include.id            (optional) — id attribute for anchor links
     include.title         (required) — area or park name
-    include.image         (required) — header image path
+    include.image         (required) — header image path (.jpg). The
+                                       include emits a <picture> that
+                                       serves matching .webp variants
+                                       via srcset, falling back to the
+                                       supplied JPG. Variants resolved:
+                                         base.jpg / base.webp / base-large.webp
     include.image_height  (optional) — override the 200px image height
                                        (used for the larger Twin Peaks
                                        card on /where-to-ride/)
@@ -20,11 +25,16 @@
     include.stats_key     (optional) — if set, renders trail-difficulty-counts
     include.delay         (optional) — ja-animate delay e.g. "item-0"
 {%- endcomment -%}
+{%- assign rc_base = include.image | replace: ".jpg", "" | replace: ".jpeg", "" | replace: ".png", "" -%}
 <div{% if include.id %} id="{{ include.id }}"{% endif %} class="ride-card{% if include.delay %} ja-animate{% endif %}"{% if include.delay %} data-animation="move-from-bottom" data-delay="{{ include.delay }}"{% endif %}>
-  <div class="ride-card-image" style="background-image:url('{{ include.image }}');{% if include.image_height %} height:{{ include.image_height }};{% endif %}">
+  <div class="ride-card-image"{% if include.image_height %} style="height:{{ include.image_height }}"{% endif %}>
+    <picture>
+      <source type="image/webp" srcset="{{ rc_base }}.webp 800w, {{ rc_base }}-large.webp 1600w" sizes="(min-width: 992px) 33vw, (min-width: 768px) 50vw, 100vw">
+      <img src="{{ include.image }}" alt="" loading="lazy" decoding="async" width="1600" height="1067">
+    </picture>
     {% if include.badge %}<span class="ride-card-badge">{{ include.badge }}</span>{% endif %}
     {% if include.logo %}
-      <img class="ride-card-logo" src="{{ include.logo }}" alt="{{ include.title }}" />
+      <picture><source type="image/webp" srcset="{{ include.logo | replace: '.png', '.webp' }}"><img class="ride-card-logo" src="{{ include.logo }}" alt="{{ include.title }}" loading="lazy" /></picture>
     {% elsif include.icon %}
       <span class="ride-card-icon fa-solid {{ include.icon }}"></span>
     {% endif %}

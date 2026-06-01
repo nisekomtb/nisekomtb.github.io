@@ -72,7 +72,7 @@ layout: base
     border: 0;
   }
 
-  .t3-sidebar .stat span.dicon_small {
+  .t3-sidebar .stat span.tf {
     font-size: 20px;
   }
 
@@ -597,13 +597,16 @@ layout: base
           {% assign pswp_href = tile.img_large | default: tile.img %}
           {% assign pswp_w = tile.width | default: 1600 %}
           {% assign pswp_h = tile.height | default: 1067 %}
+          {% assign tile_thumb = tile.img | replace: ".webp", "-thumb.webp" %}
           <a class="gallery-tile"
             href="{{ pswp_href }}"
             data-pswp-width="{{ pswp_w }}"
             data-pswp-height="{{ pswp_h }}"
             target="_blank"
             rel="noopener">
-            <img src="{{ tile.img }}"
+            <img src="{{ tile_thumb }}"
+              srcset="{{ tile_thumb }} 800w, {{ tile.img }} 1600w"
+              sizes="(min-width: 992px) 33vw, 100vw"
               alt="{% if page.lang == 'ja' %}{{ tile.alt_ja | default: tile.alt_en }}{% else %}{{ tile.alt_en }}{% endif %}"
               loading="lazy">
           </a>

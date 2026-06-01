@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html prefix="og: https://ogp.me/ns#" lang="{{ page.lang }}" dir="ltr" class='com_content mm-hover no-touch {{ layout.baseCss }} {{ page.baseCss }}'>
   <head>
-    <script async="async" fetchpriority="low" src="https://www.googletagmanager.com/gtag/js?id=G-XWZ6MXLBEJ"></script>
+    <script async="async" fetchpriority="low" src="https://www.googletagmanager.com/gtag/js?id=G-7X7QGG26RB"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -82,17 +82,13 @@
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
       <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@900&display=swap" rel="stylesheet"/>
     {% endif %}
-    <link href="/assets/fonts/trailforks/stylesheet.css?d={{ build }}" rel="stylesheet" type="text/css" />
     {% if page.needsCarousel %}
       <link href="/assets/js/splide/splide.min.css?d={{ build }}" rel="stylesheet" type="text/css"/>
     {% endif %}
     <link href="/assets/css/masthead.css?d={{ build }}" rel="stylesheet" type="text/css"/>
     {% if page.masthead.img %}
-      {% assign mh_widths = page.masthead.widths | default: "800,1600" | split: "," %}
-      {% assign mh_base = page.masthead.img | replace: ".jpg", "" | replace: ".png", "" | replace: ".jpeg", "" %}
-      {% assign mh_suffixes = "|-large|-xlarge" | split: "|" %}
-      {% capture mh_srcset %}{% for w in mh_widths %}{% unless forloop.first %}, {% endunless %}{{ mh_base }}{{ mh_suffixes[forloop.index0] }}.webp {{ w | strip }}w{% endfor %}{% endcapture %}
-      <link rel="preload" as="image" type="image/webp" imagesrcset="{{ mh_srcset }}" imagesizes="100vw" fetchpriority="high"/>
+      {% assign mh_base = page.masthead.img | replace: ".jpg", "" | replace: ".jpeg", "" | replace: ".png", "" | replace: ".webp", "" %}
+      <link rel="preload" as="image" type="image/webp" imagesrcset="{{ mh_base }}-mobile.webp 400w, {{ mh_base }}.webp 800w, {{ mh_base }}-large.webp 1600w" imagesizes="100vw" fetchpriority="high"/>
     {% endif %}
     {% if page.path == "index.html" or page.path == "ja/index.html" %}
       <link rel="preload" as="image" href="/assets/images/home/hero-video-poster.jpg?d={{ build }}"/>

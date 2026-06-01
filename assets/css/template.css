@@ -2470,13 +2470,15 @@ input.invalid {
   display: inline-flex;
   flex-direction: column;
   align-items: center;
+  gap: 4px;
 }
 
-.trail-counts .dicon_small {
+.trail-counts .tf,
+.trail-difficulty-counts .tf {
   font-size: 18px;
 }
 
-.trail-counts .dicon_small.is-muted {
+.trail-counts .tf.is-muted {
   color: #666;
 }
 
@@ -2484,37 +2486,6 @@ input.invalid {
   font-size: 18px;
   color: #aaa;
   padding: 4px 0;
-}
-
-/* Outlined black / double-black icons in trail count totals and the
-   trails table, matching the signage guide treatment: white outline
-   for black, red outline for double black. */
-.trail-counts .dicon_small.dblack.is-black,
-.trail-counts .dicon_small.dblack.is-double-black,
-.trail-difficulty-counts .dicon_small.dblack.is-black,
-.trail-difficulty-counts .dicon_small.dblack.is-double-black,
-table.trails .dicon_small.dblack.is-black,
-table.trails .dicon_small.dblack.is-double-black {
-  background-color: transparent;
-  border-radius: 0;
-}
-.trail-counts .dicon_small.dblack.is-black,
-.trail-difficulty-counts .dicon_small.dblack.is-black,
-table.trails .dicon_small.dblack.is-black {
-  text-shadow:
-    1px  0   0 #ffffff,  1px  1px 0 #ffffff,
-    0    1px 0 #ffffff, -1px  1px 0 #ffffff,
-   -1px  0   0 #ffffff, -1px -1px 0 #ffffff,
-    0   -1px 0 #ffffff,  1px -1px 0 #ffffff;
-}
-.trail-counts .dicon_small.dblack.is-double-black,
-.trail-difficulty-counts .dicon_small.dblack.is-double-black,
-table.trails .dicon_small.dblack.is-double-black {
-  text-shadow:
-    1px  0   0 #be0014,  1px  1px 0 #be0014,
-    0    1px 0 #be0014, -1px  1px 0 #be0014,
-   -1px  0   0 #be0014, -1px -1px 0 #be0014,
-    0   -1px 0 #be0014,  1px -1px 0 #be0014;
 }
 
 /* "Very Difficult" label in the trails table: drop the boxed
@@ -7405,9 +7376,25 @@ joomla-field-custom.field-custom-wrapper .input-group .input-group-btn .btn span
 }
 .ride-card .ride-card-image {
   height: 200px;
+  position: relative;
   background-size: cover;
   background-position: center;
-  position: relative;
+}
+/* Background picture (always the first child) fills the card. The
+   logo picture (when present) uses display:contents so the img can
+   be positioned by .ride-card-logo without the picture intercepting. */
+.ride-card .ride-card-image > picture:first-child,
+.ride-card .ride-card-image > picture:first-child > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+.ride-card .ride-card-image > picture:not(:first-child) {
+  display: contents;
 }
 .ride-card .ride-card-image::after {
   content: '';
@@ -7667,6 +7654,64 @@ joomla-field-custom.field-custom-wrapper .input-group .input-group-btn .btn span
 @font-face { font-family: "Font Awesome 5 Free"; font-display: swap; }
 @font-face { font-family: "Font Awesome 5 Brands"; font-display: swap; }
 @font-face { font-family: "FontAwesome"; font-display: swap; }
+
+/* ============================================================
+   Trailforks difficulty icons — Font Awesome-style class API.
+   Use: <span class="tf tf-green" aria-hidden="true"></span>
+   Browser only fetches the WOFF when a .tf element renders,
+   so unused pages pay nothing. No conditional <link> needed.
+   ============================================================ */
+@font-face {
+  font-family: "trailforks";
+  src: url("/assets/fonts/trailforks/trailforks.woff?v=2") format("woff"),
+       url("/assets/fonts/trailforks/trailforks.ttf?v=2") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+.tf {
+  font-family: "trailforks";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  display: inline-block;
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+}
+.tf-lift::before          { content: "\E015"; }
+.tf-lift                  { color: var(--color-text-light, #666); }
+.tf-green::before         { content: "\E007"; }
+.tf-green                 { color: #46b414; }
+.tf-blue::before          { content: "\E012"; }
+.tf-blue                  { color: #148cf0; }
+.tf-black::before         { content: "\E023"; }
+.tf-black                 {
+  color: #000;
+  text-shadow:
+     1px  0    0 #fff,  0.7px  0.7px 0 #fff,
+     0    1px  0 #fff, -0.7px  0.7px 0 #fff,
+    -1px  0    0 #fff, -0.7px -0.7px 0 #fff,
+     0   -1px  0 #fff,  0.7px -0.7px 0 #fff;
+}
+.tf-double-black::before  { content: "\E00A"; }
+.tf-double-black          {
+  color: #000;
+  text-shadow:
+     1px  0    0 #be0014,  0.7px  0.7px 0 #be0014,
+     0    1px  0 #be0014, -0.7px  0.7px 0 #be0014,
+    -1px  0    0 #be0014, -0.7px -0.7px 0 #be0014,
+     0   -1px  0 #be0014,  0.7px -0.7px 0 #be0014;
+}
+
+/* Trail status indicators (clear / minor / major / closed) */
+.tf-status-clear::before  { content: "\E902"; }
+.tf-status-clear          { color: #225f06; }
+.tf-status-minor::before  { content: "\E903"; }
+.tf-status-minor          { color: #fc0; }
+.tf-status-major::before  { content: "\E903"; }
+.tf-status-major          { color: #ff8500; }
+.tf-status-closed::before { content: "\E904"; }
+.tf-status-closed         { color: #be0014; }
 
 /* Shop card teaser. Used on content pages (e.g. /dirty-dames/) to link to
    a single product on the Ecwid storefront. Mirrors the shop's own card. */

@@ -64,7 +64,7 @@ logo: /assets/images/events/2023/soil-searching/soil-searching.png
 
 ツインピークス・バイクパークが一般公開される前の2日間、トレイル整備とライドを行います。ボランティアがNAMBAとスペシャライズドのビルダー・ライダーチームと一緒にトレイルを仕上げます。プロジェクトに貢献しつつ、まだ公開されていないラインを走るチャンスです。
 
-![Soil Searchingニセコでトレイル建設に取り組むボランティアたち](/assets/images/events/2023/soil-searching/ss02.jpg)
+{% include image.html src="/assets/images/events/2023/soil-searching/ss02.jpg" alt="Soil Searchingニセコでトレイル建設に取り組むボランティアたち" widths="800,1600" sizes="(min-width: 768px) 720px, 100vw" %}
 
 ## ソイル・サーチングについて
 
@@ -76,4 +76,4 @@ logo: /assets/images/events/2023/soil-searching/soil-searching.png
 
 ニセコでのソイル・サーチングのようなディグ・デイは、コミュニティを作り、知識を与え、あらゆる年齢や能力のライダーをこのスポーツに迎え入レることができます。これらの成果は、ニセコで素晴らしいライディング・プレイスを創造し、向上させ、維持し、保護するというNAMBAの使命と一致しています。
 
-![ツインピークスバイクパークでトレイルを整備するSpecialized Soil Searchingチーム](/assets/images/events/2023/soil-searching/ss03.jpg)
+{% include image.html src="/assets/images/events/2023/soil-searching/ss03.jpg" alt="ツインピークスバイクパークでトレイルを整備するSpecialized Soil Searchingチーム" widths="800,1600" sizes="(min-width: 768px) 720px, 100vw" %}
