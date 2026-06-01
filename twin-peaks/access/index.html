@@ -149,7 +149,12 @@ description: "How to get to Twin Peaks Bike Park: parking at Hirafu Gondola, Wel
     });
   }
 
-  initMap();
+  // Defer map initialisation until after LCP measurement. The Google Maps
+  // API + WASM (~650KB) competes with the masthead for bandwidth, pushing
+  // LCP up. Loading after window.load keeps the page paint snappy; the
+  // map renders 1-2s later, which is fine for a static reference map.
+  if (document.readyState === 'complete') initMap();
+  else window.addEventListener('load', initMap);
 </script>
 
 

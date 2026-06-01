@@ -667,8 +667,9 @@ layout: base
       document.head.appendChild(script);
     }
     var target = document.querySelector('.TrailforksWidgetMap');
-    if (!target || !('IntersectionObserver' in window)) {
-      // Defer to load event so we don't block initial paint either way.
+    if (!target) return; // No map on this page (e.g. /twin-peaks/guides/, /emergency/)
+    if (!('IntersectionObserver' in window)) {
+      // No IntersectionObserver — defer to load event so we don't block paint.
       if (document.readyState === 'complete') loadWidget();
       else window.addEventListener('load', loadWidget);
       return;

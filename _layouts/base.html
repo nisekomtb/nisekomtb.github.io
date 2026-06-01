@@ -92,7 +92,14 @@
     {% if page.lang == 'ja' %}
       <link rel="preconnect" href="https://fonts.googleapis.com"/>
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-      <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@900&display=swap" rel="stylesheet"/>
+      {%- comment -%}
+        Load Zen Maru Gothic CSS non-render-blocking. The font is only
+        used by H1/section-heading display text on JA pages; system JA
+        fallback (Hiragino Sans / Yu Gothic / Noto Sans JP) handles the
+        first paint, then Zen Maru Gothic swaps in via font-display:swap.
+      {%- endcomment -%}
+      <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@900&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+      <noscript><link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@900&display=swap" rel="stylesheet"/></noscript>
     {% endif %}
     {% if page.needsCarousel %}
       <link href="/assets/js/splide/splide.min.css?v=1" rel="stylesheet" type="text/css"/>
