@@ -2472,11 +2472,13 @@ input.invalid {
   align-items: center;
 }
 
-.trail-counts .dicon_small {
+.trail-counts .tf,
+.trail-difficulty-counts .tf {
   font-size: 18px;
+  line-height: 1;
 }
 
-.trail-counts .dicon_small.is-muted {
+.trail-counts .tf.is-muted {
   color: #666;
 }
 
@@ -2484,37 +2486,6 @@ input.invalid {
   font-size: 18px;
   color: #aaa;
   padding: 4px 0;
-}
-
-/* Outlined black / double-black icons in trail count totals and the
-   trails table, matching the signage guide treatment: white outline
-   for black, red outline for double black. */
-.trail-counts .dicon_small.dblack.is-black,
-.trail-counts .dicon_small.dblack.is-double-black,
-.trail-difficulty-counts .dicon_small.dblack.is-black,
-.trail-difficulty-counts .dicon_small.dblack.is-double-black,
-table.trails .dicon_small.dblack.is-black,
-table.trails .dicon_small.dblack.is-double-black {
-  background-color: transparent;
-  border-radius: 0;
-}
-.trail-counts .dicon_small.dblack.is-black,
-.trail-difficulty-counts .dicon_small.dblack.is-black,
-table.trails .dicon_small.dblack.is-black {
-  text-shadow:
-    1px  0   0 #ffffff,  1px  1px 0 #ffffff,
-    0    1px 0 #ffffff, -1px  1px 0 #ffffff,
-   -1px  0   0 #ffffff, -1px -1px 0 #ffffff,
-    0   -1px 0 #ffffff,  1px -1px 0 #ffffff;
-}
-.trail-counts .dicon_small.dblack.is-double-black,
-.trail-difficulty-counts .dicon_small.dblack.is-double-black,
-table.trails .dicon_small.dblack.is-double-black {
-  text-shadow:
-    1px  0   0 #be0014,  1px  1px 0 #be0014,
-    0    1px 0 #be0014, -1px  1px 0 #be0014,
-   -1px  0   0 #be0014, -1px -1px 0 #be0014,
-    0   -1px 0 #be0014,  1px -1px 0 #be0014;
 }
 
 /* "Very Difficult" label in the trails table: drop the boxed
