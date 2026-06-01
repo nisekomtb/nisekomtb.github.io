@@ -80,7 +80,7 @@ masthead:
   {% endfor %}
 
   <div class="section">
-    <h2 class="events-section-title">Upcoming</h2>
+    <h2 class="module-title">Upcoming</h2>
     {% if upcoming.size > 0 %}
       {% include event-grid.html events=upcoming %}
     {% else %}
@@ -90,7 +90,7 @@ masthead:
 
   {% if past_desc.size > 0 %}
   <div class="section">
-    <h2 class="events-section-title">Past events</h2>
+    <h2 class="module-title">Past events</h2>
     {% for yr in past_years %}
       {% assign year_events = "" | split: "" %}
       {% for ev in past_desc %}

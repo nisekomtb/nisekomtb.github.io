@@ -7802,28 +7802,11 @@ joomla-field-custom.field-custom-wrapper .input-group .input-group-btn .btn span
 }
 
 /* ------------------------------------------------------------------
- * Events index — section headings (Upcoming / Past events) and
- * per-year sub-headings inside Past events. Brand-aligned to the
- * home "What's on" heading: Fruit Viesta display font, medium
- * weight, heading color (white-ish, not gold accent — the gold is
- * reserved for the .module-title pattern used elsewhere). Year
- * headings are a quieter Metropolis variant. Margins create the
- * visual break between Upcoming and Past events and between years.
+ * Events index — per-year sub-headings inside Past events, and the
+ * empty-state copy shown when no events are upcoming. Section H2s
+ * (Upcoming / Past events) reuse the global .module-title pattern
+ * directly, so no styles for them live here.
  * ------------------------------------------------------------------ */
-.events-section-title {
-  color: var(--color-text-heading);
-  font-family: "Fruit Viesta", "Zen Maru Gothic", "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
-  font-weight: 500;
-  font-size: clamp(22px, 2.4vw, 32px);
-  line-height: 1.1;
-  letter-spacing: 0.5px;
-  margin: 8px 0 24px;
-  padding: 0;
-}
-html[lang="ja"] .events-section-title { letter-spacing: normal; text-transform: none; }
-.section + .section > .events-section-title { margin-top: 32px; }
-
 .events-year-heading {
   color: var(--color-text-light, rgba(255, 255, 255, 0.7));
   font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
