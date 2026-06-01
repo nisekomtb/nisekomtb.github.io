@@ -1,0 +1,11 @@
+/* Self-hosted Zen Maru Gothic 900, subset to Joyo + Jinmeiyo kanji + kana
+   + Latin + content-scan chars. Built from
+   github.com/googlefonts/zen-marugothic ZenMaruGothic-Black.ttf via
+   pyftsubset. Regenerate via _scripts/subset-ja-font.py. */
+@font-face {
+  font-family: 'Zen Maru Gothic';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('zen-maru-gothic-900.woff2') format('woff2');
+}

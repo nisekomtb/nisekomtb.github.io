@@ -90,18 +90,15 @@
     <link href="/assets/fonts/metropolis/stylesheet.css?v=1" rel="stylesheet" type="text/css"/>
     <link href="/assets/fonts/fruit-viesta/stylesheet.css?v=1" rel="stylesheet" type="text/css"/>
     {% if page.lang == 'ja' %}
-      <link rel="preconnect" href="https://fonts.googleapis.com"/>
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
       {%- comment -%}
-        Load Zen Maru Gothic CSS non-render-blocking. The font is only
-        used by H1/section-heading display text on JA pages; system JA
-        fallback (Hiragino Sans / Yu Gothic / Noto Sans JP) handles the
-        first paint, then Zen Maru Gothic swaps in via font-display:swap.
-        No <noscript> fallback: Chrome's preload-scanner fetches it
-        unconditionally, producing a duplicate CSS request. JS-disabled
-        visitors see the system JA fallback, which is fine for display.
+        Self-hosted Zen Maru Gothic 900, subset to Joyo+Jinmeiyo kanji
+        + kana + Latin + content-scan chars (~720KB woff2). System JA
+        fallback (Hiragino Sans / Yu Gothic / Noto Sans JP) handles
+        first paint via font-display:swap. CSS is async (media=print
+        swap) so the woff2 doesn't compete with the masthead for
+        bandwidth during LCP.
       {%- endcomment -%}
-      <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@900&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+      <link href="/assets/fonts/zen-maru-gothic/stylesheet.css?v=1" rel="stylesheet" media="print" onload="this.media='all'"/>
     {% endif %}
     {% if page.needsCarousel %}
       <link href="/assets/js/splide/splide.min.css?v=1" rel="stylesheet" type="text/css"/>
