@@ -33,8 +33,6 @@ link:
 masthead:
   img: /assets/images/events/2023/grand-opening/header.jpg
 thumbnail: /assets/images/events/2023/grand-opening/thumb.jpg
-og:
-  image: /assets/images/og/twinpeaks.jpg
 itinerary:
   days:
     - hasLocations: true

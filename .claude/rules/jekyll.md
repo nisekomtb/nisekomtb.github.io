@@ -18,7 +18,7 @@ ja/_posts.     - Japanese mirror of _posts
 - Every page needs at minimum: `layout`, `title`
 - Lang is set via `_config.yml` defaults — `en` for root, `ja` for `ja/` path — do not
   manually set `lang` in front matter unless overriding the default
-- OG image defaults to `/assets/images/og/hero.jpg` — override per-page when page has a main image
+- OG image defaults to `/assets/images/og/hero-2026.jpg` (set in `_layouts/base.html`), override per-page via `og.image` only when the page has a main image distinct enough to warrant its own preview
 - Available custom front matter keys: `masthead.img`, `masthead.credit.url`,
   `masthead.credit.name`, `og.image`
 

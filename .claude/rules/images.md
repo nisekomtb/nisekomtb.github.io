@@ -44,7 +44,7 @@ convention, ImageMagick resize commands, `sizes` attribute guide).
 
 ## OG images
 
-- Default OG image is `/assets/images/og/hero.jpg` (set in `_config.yml`)
+- Default OG image is `/assets/images/og/hero-2026.jpg` (set in `_layouts/base.html`). Rename with a fresh year suffix (e.g. `hero-2027.jpg`) when refreshing so the file URL changes and external scrapers (LinkedIn, Slack, etc.) re-fetch.
 - Override per page using `og.image` in front matter, using the main image of the page as the open
   graph image:
 

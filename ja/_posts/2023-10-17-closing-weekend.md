@@ -25,8 +25,6 @@ masthead:
     name: Liam Larnach
     url: https://www.liamlarnach.com
 thumbnail: /assets/images/events/2023/closing-weekend/thumb.jpg
-og:
-  image: /assets/images/og/twinpeaks.jpg
 itinerary:
   days:
     - hasLocations: true

@@ -31,46 +31,6 @@ defaults:
       path: ja
     values:
       lang: ja
-  - scope:
-      path: projects/twin-peaks
-    values:
-      og:
-        image: /assets/images/og/twinpeaks.jpg
-  - scope:
-      path: ja/projects/twin-peaks
-    values:
-      og:
-        image: /assets/images/og/twinpeaks.jpg
-  - scope:
-      path: twin-peaks
-    values:
-      masthead:
-        img: /assets/images/twinpeaks/header.jpg
-        credit:
-          url: https://www.liamlarnach.com
-          name: Liam Larnach
-      og:
-        image: /assets/images/og/twinpeaks-2024.jpg
-  - scope:
-      path: ja/twin-peaks
-    values:
-      masthead:
-        img: /assets/images/twinpeaks/header.jpg
-        credit:
-          url: https://www.liamlarnach.com
-          name: Liam Larnach
-      og:
-        image: /assets/images/og/twinpeaks-2024.jpg
-  - scope:
-      path: where-to-ride
-    values:
-      masthead:
-        img: /assets/images/bg/bg-header-twinpeaks.jpg
-  - scope:
-      path: ja/where-to-ride
-    values:
-      masthead:
-        img: /assets/images/bg/bg-header-twinpeaks.jpg
 
 exclude:
   - CLAUDE.md

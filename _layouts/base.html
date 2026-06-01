@@ -22,7 +22,7 @@
         {%- assign seo_title = seo_title | append: ": " | append: page.subtitle -%}
       {%- endif -%}
     {%- endif -%}
-    {%- assign og_image = page.og.image | default: page.masthead.img | default: "/assets/images/og/hero.jpg" -%}
+    {%- assign og_image = page.og.image | default: page.masthead.img | default: "/assets/images/og/hero-2026.jpg" -%}
     <title>{{ seo_title }} - NAMBA</title>
     {% if page.description %}<meta name="description" content="{{ page.description }}"/>{% endif %}
     <meta name="robots" content="{% if page.noindex %}noindex, nofollow{% else %}index, follow, max-image-preview:large{% endif %}"/>
@@ -32,7 +32,7 @@
     <meta property="og:image:url" content="https://namba.ngo{{ og_image }}"/>
     <meta property="og:image:secure_url" content="https://namba.ngo{{ og_image }}"/>
     <meta property="og:image:alt" content="{{ seo_title }}"/>
-    {%- if og_image == "/assets/images/og/hero.jpg" %}
+    {%- if og_image == "/assets/images/og/hero-2026.jpg" %}
     <meta property="og:image:width" content="2000"/>
     <meta property="og:image:height" content="1100"/>
     {%- endif %}
@@ -264,7 +264,7 @@
       "publisher": { "@id": "https://namba.ngo/#organization" },
       "primaryImageOfPage": {
         "@type": "ImageObject",
-        "url": "https://namba.ngo/assets/images/og/hero.jpg",
+        "url": "https://namba.ngo/assets/images/og/hero-2026.jpg",
         "width": 2000,
         "height": 1100
       },
