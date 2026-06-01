@@ -34,7 +34,7 @@
     </picture>
     {% if include.badge %}<span class="ride-card-badge">{{ include.badge }}</span>{% endif %}
     {% if include.logo %}
-      <img class="ride-card-logo" src="{{ include.logo }}" alt="{{ include.title }}" loading="lazy" />
+      <picture><source type="image/webp" srcset="{{ include.logo | replace: '.png', '.webp' }}"><img class="ride-card-logo" src="{{ include.logo }}" alt="{{ include.title }}" loading="lazy" /></picture>
     {% elsif include.icon %}
       <span class="ride-card-icon fa-solid {{ include.icon }}"></span>
     {% endif %}

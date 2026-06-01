@@ -542,7 +542,7 @@ layout: base
           <h3><span class="fa-solid fa-building"></span> {% if page.lang == "ja" %}イベント主催者{% else %}Host{% endif %}</h3>
           <div class="partners-imgs">
             <a href="{{- page.host.url -}}" target="_blank" rel="sponsored noopener noreferrer">
-              <img src="/assets/images/company{{- page.host.img -}}" alt="{{ page.host.name }}{% if page.lang == 'ja' %}、イベント主催者{% else %}, event host{% endif %}" loading="lazy" width="56" height="56">
+              {% capture webp_src %}/assets/images/company{{- page.host.img -}}{% endcapture %}<picture><source type="image/webp" srcset="{{ webp_src | replace: '.png', '.webp' }}"><img src="/assets/images/company{{- page.host.img -}}" alt="{{ page.host.name }}{% if page.lang == 'ja' %}、イベント主催者{% else %}, event host{% endif %}" loading="lazy" width="56" height="56"></picture>
             </a>
           </div>
         </div>
@@ -554,7 +554,7 @@ layout: base
           <div class="partners-imgs">
             {% for partner in page.partners %}
               <a href="{{- partner.url -}}" target="_blank" rel="sponsored noopener noreferrer">
-                <img src="/assets/images/company{{- partner.img -}}" alt="{{ partner.name }}{% if page.lang == 'ja' %}、イベントパートナー{% else %}, event partner{% endif %}" loading="lazy" width="56" height="56">
+                {% capture webp_src %}/assets/images/company{{- partner.img -}}{% endcapture %}<picture><source type="image/webp" srcset="{{ webp_src | replace: '.png', '.webp' }}"><img src="/assets/images/company{{- partner.img -}}" alt="{{ partner.name }}{% if page.lang == 'ja' %}、イベントパートナー{% else %}, event partner{% endif %}" loading="lazy" width="56" height="56"></picture>
               </a>
             {% endfor %}
           </div>

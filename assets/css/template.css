@@ -7408,8 +7408,11 @@ joomla-field-custom.field-custom-wrapper .input-group .input-group-btn .btn span
   position: relative;
   overflow: hidden;
 }
-.ride-card .ride-card-image > picture,
-.ride-card .ride-card-image > picture > img {
+/* Background picture (always the first child) fills the card. The
+   logo picture (when present) uses display:contents so the img can
+   be positioned by .ride-card-logo without the picture intercepting. */
+.ride-card .ride-card-image > picture:first-child,
+.ride-card .ride-card-image > picture:first-child > img {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -7417,6 +7420,9 @@ joomla-field-custom.field-custom-wrapper .input-group .input-group-btn .btn span
   object-fit: cover;
   object-position: center;
   display: block;
+}
+.ride-card .ride-card-image > picture:not(:first-child) {
+  display: contents;
 }
 .ride-card .ride-card-image::after {
   content: '';
