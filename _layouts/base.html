@@ -31,6 +31,11 @@
     <meta property="og:image" content="https://namba.ngo{{ og_image }}"/>
     <meta property="og:image:url" content="https://namba.ngo{{ og_image }}"/>
     <meta property="og:image:secure_url" content="https://namba.ngo{{ og_image }}"/>
+    <meta property="og:image:alt" content="{{ seo_title }}"/>
+    {%- if og_image == "/assets/images/og/hero.jpg" %}
+    <meta property="og:image:width" content="2000"/>
+    <meta property="og:image:height" content="1100"/>
+    {%- endif %}
     <meta property="og:url" content="https://namba.ngo{% if page.lang == 'ja' %}/ja{% endif %}{{ path }}"/>
     {% if page.description %}<meta property="og:description" content="{{ page.description }}"/>{% endif %}
     {% if page.lang == 'en' %}<meta property="og:locale" content="en_GB"/>
@@ -44,6 +49,7 @@
     <meta name="twitter:title" content="{{ seo_title }}"/>
     {% if page.description %}<meta name="twitter:description" content="{{ page.description }}"/>{% endif %}
     <meta name="twitter:image" content="https://namba.ngo{{ og_image }}"/>
+    <meta name="twitter:image:alt" content="{{ seo_title }}"/>
     <link rel="alternate" hreflang="en" href="https://namba.ngo{{ path }}"/>
     <link rel="alternate" hreflang="ja" href="https://namba.ngo/ja{{ path }}"/>
     <link rel="alternate" hreflang="x-default" href="https://namba.ngo{{ path }}"/>
@@ -250,8 +256,8 @@
       "primaryImageOfPage": {
         "@type": "ImageObject",
         "url": "https://namba.ngo/assets/images/og/hero.jpg",
-        "width": 1200,
-        "height": 630
+        "width": 2000,
+        "height": 1100
       },
       "video": {
         "@type": "VideoObject",
@@ -259,7 +265,7 @@
         "description": "{% if page.lang == 'ja' %}北海道ニセコのNAMBAマウンテンバイクトレイルネットワークのハイライトリール。{% else %}Highlight reel of NAMBA's mountain bike trail network in Niseko, Hokkaido.{% endif %}",
         "thumbnailUrl": "https://namba.ngo/assets/images/home/hero-video-poster.jpg",
         "embedUrl": "https://player.vimeo.com/video/1195232610",
-        "uploadDate": "2026-05-25",
+        "uploadDate": "2026-05-25T00:00:00+09:00",
         "duration": "PT1M",
         "publisher": { "@id": "https://namba.ngo/#organization" }
       },

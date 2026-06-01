@@ -2,6 +2,7 @@
 layout: competition
 categories: competitions
 title: イージー・ライダー ストラバ コンテスト
+noindex: true
 permalink: /ja/strava-contest-2024/
 description: ツインピークスバイクパークのイージー・ライダーで開催されるシーズン通しのStravaセグメントチャレンジ。KOM・QOMを目指そう。
 startDate: 2024-06-01 09:00:00 +0900

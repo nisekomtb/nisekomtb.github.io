@@ -2,6 +2,7 @@
 layout: competition
 categories: competitions
 title: Easy Ryder Strava Contest
+noindex: true
 permalink: /strava-contest-2024/
 description: Season-long Strava segment challenge on Easy Ryder trail at Twin Peaks Bike Park, Niseko. Compete for KOM and QOM titles.
 startDate: 2024-06-01 09:00:00 +0900

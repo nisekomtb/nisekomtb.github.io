@@ -269,10 +269,28 @@ layout: base
     "width": "auto"
   },
   {% endif %}
-  "datePosted": "{{ page.date }}",
+  "datePosted": "{{ page.date | date: "%Y-%m-%dT%H:%M:%S%z" }}",
   {% if page.og.startDate %}"jobStartDate": "{{ page.og.startDate }}", {% endif %}
   {% if page.workingHours %}"workHours": "{{ page.workingHours }}", {% endif %}
-  {% unless page.isOpen %}"validThrough" : "{{ site.time }}",{% endunless %}
+  {%- comment -%}
+    validThrough must always be present and ISO 8601 with timezone, or
+    Google flags the rich result as invalid. Source priority:
+      1. explicit page.validThrough
+      2. explicit page.endDate
+      3. open jobs: site.time + 30 days (refreshes on every build,
+         per Google's guidance for evergreen postings)
+      4. closed jobs: site.time (expired now)
+  {%- endcomment -%}
+  {% if page.validThrough %}
+    "validThrough": "{{ page.validThrough | date: "%Y-%m-%dT%H:%M:%S%z" }}",
+  {% elsif page.endDate %}
+    "validThrough": "{{ page.endDate | date: "%Y-%m-%dT%H:%M:%S%z" }}",
+  {% elsif page.isOpen %}
+    {%- assign expiry_ts = site.time | date: "%s" | plus: 2592000 -%}
+    "validThrough": "{{ expiry_ts | date: "%Y-%m-%dT%H:%M:%S%z" }}",
+  {% else %}
+    "validThrough": "{{ site.time | date: "%Y-%m-%dT%H:%M:%S%z" }}",
+  {% endif %}
   "applicantLocationRequirements": {
     "@type": "Country",
     "name": "Japan"
