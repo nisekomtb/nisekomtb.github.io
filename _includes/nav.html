@@ -32,7 +32,7 @@
       data-responsive="true">
       <ul
         itemscope="itemscope"
-        itemtype="http://www.schema.org/SiteNavigationElement"
+        itemtype="https://schema.org/SiteNavigationElement"
         class="nav navbar-nav level0">
 
         {% for nav in site.data.nav %}
@@ -80,7 +80,7 @@
                       <div class="mega-inner">
                         <ul
                           itemscope="itemscope"
-                          itemtype="http://www.schema.org/SiteNavigationElement"
+                          itemtype="https://schema.org/SiteNavigationElement"
                           class="mega-nav level1">
                           {% for subNav in nav.sub %}
                             {% assign subNavPath = subNav.path | append: "/" %}
@@ -202,7 +202,7 @@
                 class="mobile-nav-group-items"
                 aria-labelledby="mobile-nav-group-{{ navId }}"
                 itemscope
-                itemtype="http://www.schema.org/SiteNavigationElement">
+                itemtype="https://schema.org/SiteNavigationElement">
                 {% for subNav in nav.sub %}
                   {% assign subNavPath = subNav.path | append: "/" %}
                   {% assign subNavActive = false %}

@@ -352,7 +352,7 @@ baseCss: view-article
   <article>
 
     {% if page.img %}<div class="float-start item-image">
-      <img src="{{ page.img }}" alt="" itemprop="image">
+      <img src="{{ page.img }}" alt="">
       {% if page.imgCredit %}<span class="credit"><a href="{{ page.imgCredit.url }}" target="_blank"> 📸 {{ page.imgCredit.name }}</a></span>{% endif %}
     </div>{% endif %}
 
@@ -454,7 +454,7 @@ baseCss: view-article
       <!-- // Aside -->
 
       <div class="section">
-        <section class="article-content clearfix ja-animate" data-animation="move-from-right" data-delay="400" itemprop="articleBody">
+        <section class="article-content clearfix ja-animate" data-animation="move-from-right" data-delay="400">
           {{ content }}
           <!-- // Item tags -->
         </section>
