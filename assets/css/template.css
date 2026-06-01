@@ -7679,7 +7679,7 @@ joomla-field-custom.field-custom-wrapper .input-group .input-group-btn .btn span
   -webkit-font-smoothing: antialiased;
 }
 .tf-lift::before          { content: "\E015"; }
-.tf-lift                  { color: var(--color-text-light, #666); }
+.tf-lift                  { color: #666; }
 .tf-green::before         { content: "\E007"; }
 .tf-green                 { color: #46b414; }
 .tf-blue::before          { content: "\E012"; }
