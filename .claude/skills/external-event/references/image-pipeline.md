@@ -10,8 +10,10 @@ mkdir -p assets/images/events/<year>/<slug>
 
 ## 1. Resize source to 2000px wide JPG (the masthead base)
 
+`-s format jpeg` forces conversion to JPG (matters if the source is a WebP or PNG):
+
 ```bash
-sips -Z 2000 "assets/images/_triage/<source>" \
+sips -s format jpeg -Z 2000 "assets/images/_triage/<source>" \
   --out "assets/images/events/<year>/<slug>/header.jpg"
 ```
 
@@ -19,32 +21,30 @@ sips -Z 2000 "assets/images/_triage/<source>" \
 
 ## 2. Generate the four WebP variants
 
-The masthead include (`_includes/masthead.html`) expects these exact names:
+The masthead include (`_includes/masthead.html`) expects these exact names. Run from repo root (do NOT `cd` into the subdir, working dir persists between tool calls and breaks subsequent steps):
 
 ```bash
-cd assets/images/events/<year>/<slug>
+DIR="assets/images/events/<year>/<slug>"
 
 # 400w mobile
-sips -Z 400 header.jpg --out /tmp/h400.jpg >/dev/null
-cwebp -q 82 /tmp/h400.jpg -o header-mobile.webp
+sips -Z 400 "$DIR/header.jpg" --out /tmp/h400.jpg >/dev/null
+cwebp -q 82 /tmp/h400.jpg -o "$DIR/header-mobile.webp"
 rm /tmp/h400.jpg
 
 # 800w base
-sips -Z 800 header.jpg --out /tmp/h800.jpg >/dev/null
-cwebp -q 82 /tmp/h800.jpg -o header.webp
+sips -Z 800 "$DIR/header.jpg" --out /tmp/h800.jpg >/dev/null
+cwebp -q 82 /tmp/h800.jpg -o "$DIR/header.webp"
 rm /tmp/h800.jpg
 
 # 1200w medium
-sips -Z 1200 header.jpg --out /tmp/h1200.jpg >/dev/null
-cwebp -q 82 /tmp/h1200.jpg -o header-medium.webp
+sips -Z 1200 "$DIR/header.jpg" --out /tmp/h1200.jpg >/dev/null
+cwebp -q 82 /tmp/h1200.jpg -o "$DIR/header-medium.webp"
 rm /tmp/h1200.jpg
 
 # 1600w large
-sips -Z 1600 header.jpg --out /tmp/h1600.jpg >/dev/null
-cwebp -q 82 /tmp/h1600.jpg -o header-large.webp
+sips -Z 1600 "$DIR/header.jpg" --out /tmp/h1600.jpg >/dev/null
+cwebp -q 82 /tmp/h1600.jpg -o "$DIR/header-large.webp"
 rm /tmp/h1600.jpg
-
-cd -
 ```
 
 ## 3. Generate the 600×600 centre-cropped thumbnail
