@@ -41,14 +41,39 @@ layout: base
     position: relative;
   }
 
-  .widget .widget-cover {
+  /* Mobile: single-finger drags scroll the page; two fingers pan/zoom
+     the map. Mimics Google Maps' cooperative gesture handling so the
+     map doesn't trap the page when it grows past the viewport. */
+  @media (max-width: 767.98px) {
+    .TrailforksWidgetMap iframe {
+      touch-action: pan-y;
+    }
+  }
+
+  .widget .widget-hint {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    background: rgba(0, 0, 0, 0.45);
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.3;
+    text-align: center;
+    padding: 0 24px;
+    opacity: 0;
+    transition: opacity 0.18s ease;
+    z-index: 2;
+  }
+
+  .widget .widget-hint.is-visible {
+    opacity: 1;
   }
 
   @media (min-width: 768px) {
-    .widget .widget-cover {
+    .widget .widget-hint {
       display: none;
     }
   }
@@ -465,7 +490,9 @@ layout: base
           {% if park_data.map_lat %}data-lat="{{ park_data.map_lat }}"{% endif %}
           {% if park_data.map_lon %}data-lon="{{ park_data.map_lon }}"{% endif %}
           style="position:relative; min-height:600px;">
-          <div class="widget-cover"></div>
+          <div class="widget-hint" aria-hidden="true">
+            {% if page.lang == 'ja' %}2本の指でマップを操作してください{% else %}Use two fingers to navigate the map{% endif %}
+          </div>
         </div>
         <script>
           (function() {
@@ -685,12 +712,40 @@ layout: base
 </script>
 
 <script>
+  // Cooperative gesture handling for the Trailforks map on mobile.
+  // touch-action:pan-y on the iframe (set in CSS) lets one-finger
+  // vertical drags scroll the page. This script flashes a hint when
+  // the user starts a one-finger drag on the map, then hides it on
+  // touchend or as soon as a second finger lands.
   document.addEventListener('DOMContentLoaded', function () {
-    var covers = document.querySelectorAll('.widget-cover');
-    covers.forEach(function (cover) {
-      cover.addEventListener('click', function () {
-        cover.style.display = 'none';
-      });
+    var widgets = document.querySelectorAll('.TrailforksWidgetMap');
+    if (!widgets.length) return;
+    var HIDE_DELAY = 1200;
+    widgets.forEach(function (widget) {
+      var hint = widget.querySelector('.widget-hint');
+      if (!hint) return;
+      var hideTimer = null;
+      function show() {
+        if (hideTimer) { clearTimeout(hideTimer); hideTimer = null; }
+        hint.classList.add('is-visible');
+      }
+      function scheduleHide() {
+        if (hideTimer) clearTimeout(hideTimer);
+        hideTimer = setTimeout(function () {
+          hint.classList.remove('is-visible');
+          hideTimer = null;
+        }, HIDE_DELAY);
+      }
+      widget.addEventListener('touchstart', function (e) {
+        if (e.touches.length >= 2) {
+          hint.classList.remove('is-visible');
+          if (hideTimer) { clearTimeout(hideTimer); hideTimer = null; }
+        } else {
+          show();
+        }
+      }, { passive: true });
+      widget.addEventListener('touchend', scheduleHide, { passive: true });
+      widget.addEventListener('touchcancel', scheduleHide, { passive: true });
     });
   });
 </script>
