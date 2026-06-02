@@ -37,6 +37,19 @@
     outline: none;
     border-color: var(--color-accent);
   }
+  /* Browser autofill (name/email) forces a pale background via UA styles.
+     background-color can't be overridden on autofilled inputs in WebKit/Blink,
+     so paint over it with an inset box-shadow and keep the text light. */
+  .contact-form input:-webkit-autofill,
+  .contact-form input:-webkit-autofill:hover,
+  .contact-form input:-webkit-autofill:focus,
+  .contact-form input:-webkit-autofill:active {
+    -webkit-text-fill-color: #fff;
+    caret-color: #fff;
+    -webkit-box-shadow: 0 0 0 1000px var(--color-bg-panel) inset;
+    box-shadow: 0 0 0 1000px var(--color-bg-panel) inset;
+    transition: background-color 9999s ease-in-out 0s;
+  }
   .contact-form textarea { min-height: 150px; resize: vertical; }
   .contact-form select { appearance: auto; height: 55.5px; }
   .contact-form .form-row {
