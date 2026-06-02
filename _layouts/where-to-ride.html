@@ -201,9 +201,15 @@ layout: base
     text-transform: uppercase;
     letter-spacing: 0;
     text-align: center;
-    padding: 12px 0;
+    padding: 12px 4px;
     border: 0;
     border-bottom: 1px solid var(--color-bg-border);
+  }
+
+  @media (max-width: 549px) {
+    table.trails th {
+      font-size: 10px;
+    }
   }
 
   table.trails th:first-child {
@@ -356,26 +362,6 @@ layout: base
     }
   }
 
-  /* Trails header row visibility: hidden visually at widths where the
-     remaining columns are self-explanatory (icons + numbers), shown again
-     where text wrapping or layout shifts make column meaning ambiguous.
-     Kept in the DOM (clipped, not display:none) so screen readers still
-     associate each td with its th. */
-  @media (max-width: 991px) and (min-width: 769px),
-         (max-width: 499px) and (min-width: 431px) {
-    table.trails thead {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
-    }
-  }
-
   table.trails td img.access {
     width: 20px;
     padding: 2px 1px 1px 2px;
@@ -431,6 +417,25 @@ layout: base
   .tp-tabs li.active a {
     color: #fff;
     border-bottom-color: var(--color-primary);
+  }
+
+  /* Trails-table sits in its own full-width row below the two-column header.
+     Restore top margin (the .t3-content scope no longer applies) and cap the
+     signage callout so it doesn't visually drift in a wide container. */
+  .park-trails-row section.article-content {
+    margin-top: 54px;
+  }
+
+  @media (max-width: 767px) {
+    .park-trails-row section.article-content {
+      margin-top: 32px;
+    }
+  }
+
+  .park-trails-row section.article-content + section.article-content > div {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
   }
 </style>
 
@@ -599,6 +604,15 @@ layout: base
   </div>
 
   {% unless is_park_subpage %}
+  {% if park_data.trails %}
+  {% if park_data.signage_card == false %}{% assign signage_flag = "false" %}{% else %}{% assign signage_flag = "true" %}{% endif %}
+  <div class="row park-trails-row">
+    <div class="col col-12">
+      {% include trails-table.html data_key=page.trail_data_key signage_card=signage_flag %}
+    </div>
+  </div>
+  {% endif %}
+
   {% if park_data.gallery and park_data.gallery.size > 0 and park_data.gallery.first.img %}
   <div class="row">
     <div class="col col-12">

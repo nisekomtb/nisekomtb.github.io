@@ -523,6 +523,7 @@ annupuri:
   season: Mid-July - Mid-October
   hours: 9:00am - 4:00pm
   managed_by: Niseko Annupuri
+  signage_card: false
   ja:
     name: ニセコアンヌプリバイクパーク
     cost: "¥1,000〜¥5,000（ゴンドラパス）"
