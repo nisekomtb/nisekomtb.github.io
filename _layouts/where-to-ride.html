@@ -41,39 +41,45 @@ layout: base
     position: relative;
   }
 
-  /* Mobile: single-finger drags scroll the page; two fingers pan/zoom
-     the map. Mimics Google Maps' cooperative gesture handling so the
-     map doesn't trap the page when it grows past the viewport. */
-  @media (max-width: 767.98px) {
-    .TrailforksWidgetMap iframe {
-      touch-action: pan-y;
-    }
-  }
-
-  .widget .widget-hint {
+  /* Mobile: a blocking cover sits over the Trailforks iframe so the map
+     doesn't trap the page scroll. Tapping it hides the cover (map is then
+     fully interactive). The cover re-arms via IntersectionObserver when
+     the map scrolls out of viewport, so returning to the map gives the
+     same scroll-past behaviour again. Hidden on desktop where mouse-wheel
+     scrolling on the map already escapes to the page. */
+  .widget .widget-cover {
     position: absolute;
     inset: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    pointer-events: none;
-    background: rgba(0, 0, 0, 0.45);
+    background: rgba(0, 0, 0, 0.18);
     color: #fff;
     font-size: 16px;
+    font-weight: 500;
     line-height: 1.3;
     text-align: center;
     padding: 0 24px;
-    opacity: 0;
+    cursor: pointer;
     transition: opacity 0.18s ease;
     z-index: 2;
   }
 
-  .widget .widget-hint.is-visible {
-    opacity: 1;
+  .widget .widget-cover.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .widget .widget-cover .widget-cover-pill {
+    background: rgba(0, 0, 0, 0.65);
+    padding: 10px 18px;
+    border-radius: 999px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
   }
 
   @media (min-width: 768px) {
-    .widget .widget-hint {
+    .widget .widget-cover {
       display: none;
     }
   }
@@ -490,8 +496,9 @@ layout: base
           {% if park_data.map_lat %}data-lat="{{ park_data.map_lat }}"{% endif %}
           {% if park_data.map_lon %}data-lon="{{ park_data.map_lon }}"{% endif %}
           style="position:relative; min-height:600px;">
-          <div class="widget-hint" aria-hidden="true">
-            {% if page.lang == 'ja' %}2本の指でマップを操作してください{% else %}Use two fingers to navigate the map{% endif %}
+          <div class="widget-cover" role="button" tabindex="0"
+               aria-label="{% if page.lang == 'ja' %}マップを操作するにはタップしてください{% else %}Tap to interact with the map{% endif %}">
+            <span class="widget-cover-pill">{% if page.lang == 'ja' %}タップして操作{% else %}Tap to interact{% endif %}</span>
           </div>
         </div>
         <script>
@@ -712,40 +719,31 @@ layout: base
 </script>
 
 <script>
-  // Cooperative gesture handling for the Trailforks map on mobile.
-  // touch-action:pan-y on the iframe (set in CSS) lets one-finger
-  // vertical drags scroll the page. This script flashes a hint when
-  // the user starts a one-finger drag on the map, then hides it on
-  // touchend or as soon as a second finger lands.
+  // Trailforks map cover: blocks touch on mobile so single-finger
+  // scrolls bypass the iframe and reach the page. Tap dismisses;
+  // an IntersectionObserver re-arms the cover when the map leaves
+  // the viewport so returning to it gets the same scroll-past
+  // behaviour again.
   document.addEventListener('DOMContentLoaded', function () {
     var widgets = document.querySelectorAll('.TrailforksWidgetMap');
     if (!widgets.length) return;
-    var HIDE_DELAY = 1200;
     widgets.forEach(function (widget) {
-      var hint = widget.querySelector('.widget-hint');
-      if (!hint) return;
-      var hideTimer = null;
-      function show() {
-        if (hideTimer) { clearTimeout(hideTimer); hideTimer = null; }
-        hint.classList.add('is-visible');
+      var cover = widget.querySelector('.widget-cover');
+      if (!cover) return;
+      function reveal() { cover.classList.add('is-hidden'); }
+      function rearm() { cover.classList.remove('is-hidden'); }
+      cover.addEventListener('click', reveal);
+      cover.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); reveal(); }
+      });
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) rearm();
+          });
+        }, { threshold: 0 });
+        io.observe(widget);
       }
-      function scheduleHide() {
-        if (hideTimer) clearTimeout(hideTimer);
-        hideTimer = setTimeout(function () {
-          hint.classList.remove('is-visible');
-          hideTimer = null;
-        }, HIDE_DELAY);
-      }
-      widget.addEventListener('touchstart', function (e) {
-        if (e.touches.length >= 2) {
-          hint.classList.remove('is-visible');
-          if (hideTimer) { clearTimeout(hideTimer); hideTimer = null; }
-        } else {
-          show();
-        }
-      }, { passive: true });
-      widget.addEventListener('touchend', scheduleHide, { passive: true });
-      widget.addEventListener('touchcancel', scheduleHide, { passive: true });
     });
   });
 </script>
