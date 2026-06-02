@@ -14,6 +14,7 @@
       <li><span aria-hidden="true"  class="tf tf-status-minor" title="Minor Issue / Yellow"></span> {% if page.lang == "ja" %}軽微な問題{% else %}Minor Issue{% endif %}</li>
       <li><span aria-hidden="true"  class="tf tf-status-major" title="Significant Issue / Amber"></span> {% if page.lang == "ja" %}重大な問題{% else %}Significant Issue{% endif %}</li>
       <li><span aria-hidden="true"  class="tf tf-status-closed" title="Closed / Red"></span> {% if page.lang == "ja" %}クローズ{% else %}Closed{% endif %}</li>
+      <li><span aria-hidden="true" class="fa-solid fa-road-barrier under-construction"></span> {% if page.lang == "ja" %}工事中{% else %}Under construction{% endif %}</li>
     </ul>
     <ul class="key-access">
       <li><div><img class="access" src="/assets/images/trails/one-way.png" />&nbsp;{% if page.lang == "ja" %}一方通行{% else %}One way traffic{% endif %}</div></li>
@@ -58,6 +59,8 @@
       {% if trail.trailforks_id %}
         <div class="TrailforksWidgetTrailStatus" data-w="15px" data-h="19px" data-trailid="{{- trail.trailforks_id -}}"
           data-status="1" data-st="0" data-condition="0" data-ct="0" data-date="0" data-description="0"></div>
+      {% else %}
+        <span class="fa-solid fa-road-barrier under-construction" title="{% if page.lang == 'ja' %}工事中{% else %}Under construction{% endif %}"></span>
       {% endif %}
       </td>
       <td class="left">{% if page.lang == "ja" and trail.ja.name %}{{ trail.ja.name }}{% else %}{{ trail.name }}{% endif %}</td>

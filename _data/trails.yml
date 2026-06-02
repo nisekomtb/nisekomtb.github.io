@@ -499,7 +499,7 @@ grand-hirafu:
       descent: 170
       bike: down-only
       multi_use: false
-      trailforks_id: 0
+      # trailforks_id: 0
     - name: Kuro Obi
       ja:
         name: クロオビ

@@ -27,16 +27,6 @@ layout: base
 {% include masthead.html %}
 
 <style>
-  section.intro {
-    display: block;
-  }
-
-  @media (min-width: 768px) {
-    section.intro {
-      display: none;
-    }
-  }
-
   .widget {
     position: relative;
   }
@@ -276,11 +266,22 @@ layout: base
     overflow: hidden;
     width: 15px;
     height: 19px;
+    margin: 0 auto;
   }
 
   table.trails td .TrailforksWidgetTrailStatus iframe {
     overflow: hidden;
     vertical-align: middle;
+  }
+
+  .trails-key .under-construction,
+  table.trails td .under-construction {
+    color: #fbc02d;
+    font-size: 14px;
+  }
+
+  .trails-key .under-construction {
+    margin-right: 4px;
   }
 
   table.trails td .ddesc {
@@ -449,29 +450,6 @@ layout: base
           {% endfor %}
         </ul>
       </nav>
-      {% endif %}
-
-      {% if park_data and park_data.subnav == nil %}
-      <section class="intro">
-        {% if park_data.logo %}
-        <img style="width:150px; margin:0 auto; margin-bottom:24px; display:flex;"
-          src="{{ park_data.logo }}"
-          alt="{% if page.lang == 'ja' %}{{ park_data.ja.name | default: park_data.name }}{% else %}{{ park_data.name }}{% endif %}" />
-        {% endif %}
-        <p style="text-align:center;">
-          <strong>{% if page.lang == 'ja' %}コスト：{% else %}Cost:{% endif %}</strong>
-          {% if page.lang == 'ja' %}{{ park_data.ja.cost | default: park_data.cost }}{% else %}{{ park_data.cost }}{% endif %}
-          &nbsp;|&nbsp;
-          <strong>{% if page.lang == 'ja' %}リフト：{% else %}Lift:{% endif %}</strong>
-          {% if park_data.lift_access %}{% if page.lang == 'ja' %}有{% else %}Yes{% endif %}{% else %}{% if page.lang == 'ja' %}無{% else %}No{% endif %}{% endif %}
-        </p>
-        {% if park_data.trailforks_rid %}
-        <p style="text-align:center;">
-          <strong>{% if page.lang == 'ja' %}ステータス：{% else %}Status:{% endif %}</strong>
-          <span class="TrailforksWidgetRegionStatus" aria-hidden="true" data-w="100px" data-h="15px" data-rid="{{ park_data.trailforks_rid }}" data-activitytype="1" data-status="1" data-st="1" data-ct="0" data-date="0"></span>
-        </p>
-        {% endif %}
-      </section>
       {% endif %}
 
       {% unless is_park_subpage %}
