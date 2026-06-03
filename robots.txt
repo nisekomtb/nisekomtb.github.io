@@ -1,3 +1,5 @@
+# robots.txt for namba.ngo
+# Default: open to all crawlers.
 User-agent: *
 Allow: /
 
@@ -6,5 +8,56 @@ Allow: /
 # deprecated AJAX crawling scheme (sunset 2015). Indexing them wastes crawl budget
 # and clutters search results.
 Disallow: /*_escaped_fragment_*
+
+# --- AI crawlers ---
+# NAMBA is a nonprofit and wants its trails, events, and mission to be discoverable
+# in AI search and answer engines. We have no content to withhold from training, so
+# every AI agent is explicitly welcomed. Listing them by name documents that intent
+# (and clears "no AI rules" audit warnings) even though the wildcard above already
+# allows them.
+
+# Answer / search engines (these drive citations and discovery)
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Model-training crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: Bytespider
+Allow: /
 
 Sitemap: https://namba.ngo/sitemap.xml

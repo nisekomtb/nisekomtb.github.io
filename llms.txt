@@ -1,0 +1,23 @@
+---
+noindex: true
+permalink: /llms.txt
+layout: blank
+---
+# {{ site.title }} (NAMBA)
+
+> NAMBA is a volunteer-led nonprofit in Niseko, Hokkaido, Japan, building Asia's premier mountain bike destination: 21km+ of free-to-ride, Swiss-designed singletrack and a growing trail-building community.
+
+The Niseko Area Mountain Bike Association (NAMBA) builds and maintains free-access mountain bike trails in the Niseko area of Hokkaido, Japan. This site is bilingual: the English pages are listed below, and a Japanese mirror of every page is served under the `/ja/` prefix (for example, https://namba.ngo/ja/twin-peaks/). Events, jobs, and competitions are published as dated posts under their sections.
+{% for item in site.data.nav %}{% if item.sub %}
+## {{ item.en }}
+{% for sub in item.sub %}{% if sub.path %}{% assign target = "/" | append: sub.path | append: "/" %}{% assign p = site.pages | where_exp: "pg", "pg.url == target" | first %}- [{{ sub.en }}](https://namba.ngo{{ target }}){% if p.description %}: {{ p.description | strip_newlines | strip }}{% endif %}
+{% endif %}{% endfor %}{% else %}{% assign target = "/" | append: item.path | append: "/" %}{% assign p = site.pages | where_exp: "pg", "pg.url == target" | first %}
+## {{ item.en }}
+- [{{ item.en }}](https://namba.ngo{{ target }}){% if p.description %}: {{ p.description | strip_newlines | strip }}{% endif %}
+{% endif %}{% endfor %}
+## More
+{% assign extras = "contact" | split: "," %}{% for path in extras %}{% assign target = "/" | append: path | append: "/" %}{% assign p = site.pages | where_exp: "pg", "pg.url == target" | first %}- [{{ p.title | default: path }}](https://namba.ngo{{ target }}){% if p.description %}: {{ p.description | strip_newlines | strip }}{% endif %}
+{% endfor %}
+## Optional
+- [XML sitemap](https://namba.ngo/sitemap.xml): every indexable page, English and Japanese, with hreflang.
+- [Japanese site (日本語)](https://namba.ngo/ja/): full Japanese mirror of this site.
