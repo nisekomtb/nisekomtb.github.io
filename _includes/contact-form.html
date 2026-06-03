@@ -17,8 +17,11 @@
     color: var(--color-accent);
     margin-bottom: 6px;
   }
-  .contact-form input[type="text"],
-  .contact-form input[type="email"],
+  /* Match by element, not type="text": the production HTML minifier strips
+     the redundant type="text" attribute, so an input[type="text"] selector
+     would miss the name/company fields once deployed. :not([type="hidden"])
+     keeps the hidden web3forms inputs unstyled. */
+  .contact-form input:not([type="hidden"]):not([type="checkbox"]),
   .contact-form select,
   .contact-form textarea {
     width: 100%;
