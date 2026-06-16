@@ -1,195 +1,256 @@
+- image: /assets/images/team/paulw.jpg
+  name: Paul Wright
+  leader: true
+  namba_role: President
+  title: General Manager at Park Hyatt Niseko Hanazono
+  ja:
+    name: ポール・ライト
+    namba_role: 会長
+    title: パーク ハイアット ニセコ HANAZONO 総支配人
+
+- image: /assets/images/team/shunichi.jpg
+  name: Shunichi Kimura
+  leader: true
+  namba_role: Vice President
+  title: Kimura Restaurant Owner & Yotei Niseko Cycling Association Vice President
+  ja:
+    name: 木村 俊一
+    namba_role: 副会長
+    title: お食事バー木村 オーナー & 羊蹄ニセコ自転車走行協議会 副会長
+
 - image: /assets/images/team/ross.jpg
   name: Ross Carty
   cofounder: true
-  title: Head of Access
-  sub_title: NOASC Adventures Founder / Owner
+  namba_role: Head of Access
+  sig_roles:
+    - Co-founder
+    - Vice President
+    - Head of Access
+  title: NOASC Adventures Founder / Owner
   ja:
     name: カーティ・ロス
-    title: アクセス責任者
-    sub_title: NOASCアドベンチャーズ 創業者／オーナー
+    namba_role: アクセス責任者
+    title: NOASCアドベンチャーズ 創業者／オーナー
 
 - image: /assets/images/team/andy.jpg
   name: Andy Meadows
   cofounder: true
-  title: Head of Trail Building
-  sub_title: Rhythm Japan Head of Operations
+  namba_role: Head of Trail Building
+  title: Rhythm Japan Head of Operations
   ja:
     name: メドーズ・アンディー
-    title: トレイル造成責任者
-    sub_title: リズムジャパン オペレーション部門長
+    namba_role: トレイル造成責任者
+    title: リズムジャパン オペレーション部門長
 
 - image: /assets/images/team/tom.jpg
   name: Tom Mortiboy
   cofounder: true
-  title: Head of Marketing & Communication
-  sub_title: Senior Software Engineer at Coursebase
+  namba_role: Head of Marketing & Communication
+  title: Senior Software Engineer at Coursebase
   ja:
     name: モーティーボーイ・トーマス
-    title: マーケティングとコミュニケーション責任者
-    sub_title: コースベース シニアソフトウェアエンジニア
+    namba_role: マーケティングとコミュニケーション責任者
+    title: コースベース シニアソフトウェアエンジニア
 
 - image: /assets/images/team/angharad.jpg
   name: Angharad Mortiboy
   cofounder: true
-  title: Head of Events, Competitions & Races
-  sub_title: Nutrition & Lifestyle Coach
+  namba_role: Head of Events, Competitions & Races
+  title: Nutrition & Lifestyle Coach
   ja:
     name: モーティーボーイ・アンバラード
-    title: イベント・大会・レース責任者
-    sub_title: 栄養とライフスタイルのコーチ
+    namba_role: イベント・大会・レース責任者
+    title: 栄養とライフスタイルのコーチ
 
 - image: /assets/images/team/miles.jpg
   name: Miles Zeorlin
   cofounder: true
-  title: Head of Community & Partner Engagement
-  sub_title: Niseko Real Estate Sales Consultant
+  namba_role: Head of Community & Partner Engagement
+  title: Niseko Real Estate Sales Consultant
   ja:
     name: ゼオリン・マイルズ
-    title: コミュニティ＆パートナーエンゲージメント責任者
-    sub_title: 株式会社ニセコリアルエステート・営業部
+    namba_role: コミュニティ＆パートナーエンゲージメント責任者
+    title: 株式会社ニセコリアルエステート・営業部
 
 - image: /assets/images/team/ashley.jpg
   name: Ashley Nicholls
   cofounder: true
-  title: Head of Administration & Funding
-  sub_title: Holiday Niseko KK Managing Director / Owner & Niseko Tourism Director
+  namba_role: Head of Administration & Funding
+  title: Holiday Niseko KK Managing Director / Owner & Niseko Tourism Director
   ja:
     name: ニコルズ・アシュリー
-    title: 共同設立者・事務・資金調達責任者
-    sub_title: ホリデーニセコ株式会社 常務取締役・オーナー & ニセコツーリズム理事
+    namba_role: 共同設立者・事務・資金調達責任者
+    title: ホリデーニセコ株式会社 常務取締役・オーナー & ニセコツーリズム理事
 
+# namba_role defaults to Director for board members. Append the sub-committee
+# when known, e.g. namba_role: Director — Trails  (TODO: Tom to supply).
 - image: /assets/images/team/chie.jpg
   name: Chie Seino
+  namba_role: Administration Officer
   title: Administration Officer
   sub_title: Kaba Niseko Property Manager
   ja:
     name: 清野 千絵
+    namba_role: 事務局長
     title: 事務局長
     sub_title: 樺ニセコ プロパティーマネージャー
 
 - image: /assets/images/team/mayumi.jpg
   name: Mayumi Honda
+  # TODO: confirm board Director vs administration
+  namba_role: Director
   title: H2 Group Office Manager & Executive Project Manager
   ja:
     name: 本多 真弓
+    namba_role: 理事
     title: H2グループ オフィス マネージャー
     sub_title: エグゼクティブプロジェクト マネージャー
 
 - image: /assets/images/team/sachi.jpg
   name: Sachi Yelle
+  namba_role: Director
   title: EZObase / ezobike Owner
   ja:
     name: イェル 紗知
+    namba_role: 理事
     title: EZObase / ezobike 代表
 
 - image: /assets/images/team/chika.jpg
   name: Chika Lund
+  namba_role: Director
   title: Niseko Powderlife Magazine Director
   ja:
     name: ランド 千佳
+    namba_role: 理事
     title: ニセコパウダーライフマガジン ディレクター
 
 - image: /assets/images/team/kobe.jpg
   name: Satoshi Kobayashi
+  namba_role: Director
   title: DT Swiss Country Manager
   ja:
     name: 小林 聡
+    namba_role: 理事
     title: DT Swiss カントリーマネージャー
 
 - image: /assets/images/team/yukihiro.jpg
   name: Yukihiro Tochigi
+  namba_role: Director
   title: Chitose Ringyo Forestry President
   sub_title: (Large-scale forest owners in Hokkaido)
   ja:
     name: 栃木 幸広
+    namba_role: 理事
     title: 千歳林業㈱ 代表取締役社長
     sub_title: 北海道の大規模森林所有者
 
 - image: /assets/images/team/shinji.jpg
   name: Shinji Furuya
+  namba_role: Director
   title: Kutchan Council Member
   sub_title: Niseko Environment Management Office Manager
   ja:
     name: 古谷 真司
+    namba_role: 理事
     title: 倶知安町議会議員
     sub_title: ニセコ環境㈱ 管理室長
 
 - image: /assets/images/team/yui.jpg
   name: Yui Spragg
+  namba_role: Director
   title: Rising Sun Guides General Affairs
   ja:
     name: スプラグ 結
+    namba_role: 理事
     title: ライジングサンガイド 総務
 
 - image: /assets/images/team/ben.jpg
   name: Ben Kerr
+  namba_role: Director
   title: Niseko Tourism & Kutchan Tourism Association Director
   sub_title: Niseko Real Estate Founder / Owner
   ja:
     name: ベン・カー
+    namba_role: 理事
     title: 倶知安町及びニセコ町観光協会理事
     sub_title: ニセコリアルエステート 創業者／オーナー
 
 - image: /assets/images/team/namikata.jpg
   name: Makoto Namikata
+  namba_role: Director
   title: Kutchan Council Member
   sub_title: North Sled Snowmobiles Owner
   ja:
     name: 波方 誠
+    namba_role: 理事
     title: 倶知安町議会議員
     sub_title: ノーススレッドスノーモービル オーナー
 
 - image: /assets/images/team/masaya.jpg
   name: Masaya Yoshimura
+  namba_role: Director
   sub_title: Niseko Moiwa Ski Resort General Manager
   ja:
     name: 吉村 政哉
+    namba_role: 理事
     title: ニセコモイワスキーリゾート総支配人
 
 - image: /assets/images/team/paulb.jpg
   name: Paul Butkovich
+  namba_role: Director
   title: H2 Group Director of Real Estate Sales
   ja:
     name: ブトゥビッチ・ポール
+    namba_role: 理事
     title: H2グループ 不動産部門ディレクター
 
 - image: /assets/images/team/riccardo.jpg
   name: Riccardo Tossani
+  namba_role: Director
   title: Riccardo Tossani Architecture Founder / Owner
   ja:
     name: トッサーニ・リカルド
+    namba_role: 理事
     title: リカルド・トッサーニ建築事務所 創業者／オーナー
 
 - image: /assets/images/team/hiroshi.jpg
   name: Hiroshi Yamada
+  namba_role: Director
   title: Kutchan Tourism Association Vice President
   sub_title: North Design KK Founder / Owner
   ja:
     name: 山田 洋
+    namba_role: 理事
     title: 倶知安町観光協会副会長
     sub_title: North Design 株式会社 創業者／オーナー
 
 - image: /assets/images/team/yoshihito.jpg
   name: Yoshihito Tanaka
+  namba_role: Director
   title: Kutchan Council Member. Kutchan Tourism Association Director
   sub_title: Niseko Resort Service Founder
   ja:
     name: 田中 義人
+    namba_role: 理事
     title: 倶知安町議会議員. 倶知安町観光協会理事
     sub_title: ニセコリゾートサービス 創業者／オーナー
 
 - image: /assets/images/team/mizuno.jpg
   name: Manabu Mizuno
+  namba_role: Director
   title: Mizuno Bikes Owner
   ja:
     name: 水野 学
+    namba_role: 理事
     title: 水野自転車店 オーナー
 
 - image: /assets/images/team/satoshi.jpg
-  name: Satoshi Yoshida (Auditor)
+  name: Satoshi Yoshida
+  namba_role: Auditor
   title: Kutchan Tourism Association President
   sub_title: Mina-Kamuy Legal Services Founder / Owner
   ja:
-    name: 吉田 聡 (監事)
+    name: 吉田 聡
+    namba_role: 監事
     title: 倶知安町観光協会会長
     sub_title: 司法書士法人ミナカムイ 創業者／オーナー
