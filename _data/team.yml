@@ -83,7 +83,7 @@
     title: ホリデーニセコ株式会社 常務取締役・オーナー & ニセコツーリズム理事
 
 # namba_role defaults to Director for board members. Append the sub-committee
-# when known, e.g. namba_role: Director — Trails  (TODO: Tom to supply).
+# when known, e.g. namba_role: "Director, Trails"  (TODO: Tom to supply).
 - image: /assets/images/team/chie.jpg
   name: Chie Seino
   namba_role: Administration Officer

@@ -148,7 +148,10 @@
       '\nnamba.ngo | Instagram | Facebook';
 
     function done() {
-      if (status) { status.textContent = 'Copied! Paste into Gmail (see steps below).'; }
+      if (status) { status.style.color = '#2e7d32'; status.textContent = 'Copied! Paste into Gmail (see steps below).'; }
+    }
+    function failed() {
+      if (status) { status.style.color = '#b34f24'; status.textContent = 'Copy failed. Select the preview manually and press Cmd/Ctrl+C.'; }
     }
     function fallback() {
       var range = document.createRange();
@@ -157,7 +160,7 @@
       sel.removeAllRanges();
       sel.addRange(range);
       try { document.execCommand('copy'); done(); }
-      catch (e) { if (status) { status.textContent = 'Copy failed. Select the preview manually and press Cmd/Ctrl+C.'; } }
+      catch (e) { failed(); }
       sel.removeAllRanges();
     }
 
