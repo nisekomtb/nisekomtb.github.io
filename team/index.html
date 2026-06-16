@@ -211,14 +211,17 @@ og:
 
       {% for member in site.data.team %}
         {% unless member.cofounder %}{% continue %}{% endunless %}
+        {% if member.leader %}{% continue %}{% endif %}
         {% assign name = member.name %}
-        {% assign title = member.title %}
-        {% assign sub_title = member.sub_title %}
+        {% assign role = member.namba_role %}
+        {% assign affil = member.title %}
+        {% assign affil2 = member.sub_title %}
         <div class="board-card ja-animate" data-animation="move-from-bottom" data-delay="item-{{ forloop.index0 }}">
           <img class="board-photo" src="{{ member.image }}" alt="{{ name }}" />
           <p class="board-name">{{ name }}</p>
-          {% if title %}<p class="board-title">{{ title }}</p>{% endif %}
-          {% if sub_title %}<p class="board-subtitle">{{ sub_title }}</p>{% endif %}
+          {% if role %}<p class="board-title">{{ role }}</p>{% endif %}
+          {% if affil %}<p class="board-subtitle">{{ affil }}</p>{% endif %}
+          {% if affil2 %}<p class="board-subtitle">{{ affil2 }}</p>{% endif %}
         </div>
       {% endfor %}
 
@@ -239,6 +242,7 @@ og:
 
       {% for member in site.data.team %}
         {% if member.cofounder %}{% continue %}{% endif %}
+        {% if member.leader %}{% continue %}{% endif %}
         {% assign name = member.name %}
         {% assign title = member.title %}
         {% assign sub_title = member.sub_title %}
@@ -274,7 +278,7 @@ og:
 
       {% for member in site.data.staff %}
         {% assign name = member.name %}
-        {% assign title = member.title %}
+        {% assign title = member.namba_role %}
         <div class="board-card ja-animate" data-animation="move-from-bottom" data-delay="item-{{ forloop.index0 }}">
           <img class="board-photo" src="{{ member.image }}" alt="{{ name }}" />
           <p class="board-name">{{ name }}</p>
