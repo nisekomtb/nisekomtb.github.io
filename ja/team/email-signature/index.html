@@ -1,0 +1,64 @@
+---
+title: メール署名ジェネレーター
+subtitle: 名前を選んで署名をコピー
+description: "NAMBAのメール署名を作成する内部ツール。"
+noindex: true
+sitemap: false
+masthead:
+  img: /assets/images/bg/bg-header-team.jpg
+---
+<style>
+  .sig-tool { max-width: 760px; margin: 0 auto; }
+  .sig-tool .sig-field { margin-bottom: 24px; }
+  .sig-tool label { display: block; font-weight: bold; margin-bottom: 8px; }
+  .sig-tool select { width: 100%; max-width: 360px; padding: 10px 12px; font-size: 16px; border: 1px solid #ccc; border-radius: 6px; background: #fff; }
+  .sig-preview-wrap { background: #ececec; padding: 28px 20px; border-radius: 8px; overflow-x: auto; }
+  #sig-preview { min-height: 134px; }
+  .sig-actions { display: flex; align-items: center; gap: 16px; margin: 20px 0 8px; flex-wrap: wrap; }
+  #sig-copy { padding: 12px 22px; font-size: 16px; font-weight: bold; color: #fff; background: #b34f24; border: 0; border-radius: 6px; cursor: pointer; }
+  #sig-copy:disabled { background: #c9a98f; cursor: default; }
+  #sig-status { color: #2e7d32; font-size: 14px; }
+  .sig-howto { margin-top: 48px; }
+  .sig-howto ol { padding-left: 20px; line-height: 1.7; }
+</style>
+
+<div class="container">
+  <div class="section sig-tool">
+
+    <div class="sig-field">
+      <label for="sig-person">あなたは誰ですか？</label>
+      <select id="sig-person">
+        <option value="">お名前を選択...</option>
+      </select>
+    </div>
+
+    <div class="sig-preview-wrap">
+      <div id="sig-preview"></div>
+    </div>
+
+    <div class="sig-actions">
+      <button id="sig-copy" type="button" disabled>署名をコピー</button>
+      <span id="sig-status" role="status" aria-live="polite"></span>
+    </div>
+
+    <div class="sig-howto">
+      <h2>Gmailへの設定方法</h2>
+      <ol>
+        <li>上で名前を選び、<strong>署名をコピー</strong>をクリックします。</li>
+        <li>Gmailの右上の<strong>設定</strong>（歯車アイコン）を開き、<strong>すべての設定を表示</strong>をクリックします。</li>
+        <li><strong>全般</strong>タブで<strong>署名</strong>までスクロールし、<strong>新規作成</strong>をクリックします（既存の署名を編集してもかまいません）。</li>
+        <li>署名の入力欄をクリックし、<strong>Cmd/Ctrl + V</strong>で貼り付けます。カード、写真、ロゴが表示されます。</li>
+        <li>入力欄の下で、<strong>新規メール用</strong>と<strong>返信／転送用</strong>に設定します。</li>
+        <li>ページ下部の<strong>変更を保存</strong>をクリックします。</li>
+      </ol>
+      <p>画像はサイトのデプロイ後に表示されます。写真やロゴが表示されない場合は、最新のデプロイを待ってから貼り付け直してください。</p>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  window.NAMBA_TEAM = {{ site.data.team | jsonify }};
+  window.NAMBA_STAFF = {{ site.data.staff | jsonify }};
+</script>
+<script src="/assets/js/email-signature.js?v=1" type="text/javascript" defer></script>
