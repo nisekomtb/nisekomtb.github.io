@@ -1,0 +1,64 @@
+---
+title: Email Signature Generator
+subtitle: Pick your name, copy your signature
+description: "Internal tool to generate your NAMBA email signature."
+noindex: true
+sitemap: false
+masthead:
+  img: /assets/images/bg/bg-header-team.jpg
+---
+<style>
+  .sig-tool { max-width: 760px; margin: 0 auto; }
+  .sig-tool .sig-field { margin-bottom: 24px; }
+  .sig-tool label { display: block; font-weight: bold; margin-bottom: 8px; }
+  .sig-tool select { width: 100%; max-width: 360px; padding: 10px 12px; font-size: 16px; border: 1px solid #ccc; border-radius: 6px; background: #fff; }
+  .sig-preview-wrap { background: #ececec; padding: 28px 20px; border-radius: 8px; overflow-x: auto; }
+  #sig-preview { min-height: 134px; }
+  .sig-actions { display: flex; align-items: center; gap: 16px; margin: 20px 0 8px; flex-wrap: wrap; }
+  #sig-copy { padding: 12px 22px; font-size: 16px; font-weight: bold; color: #fff; background: #b34f24; border: 0; border-radius: 6px; cursor: pointer; }
+  #sig-copy:disabled { background: #c9a98f; cursor: default; }
+  #sig-status { color: #2e7d32; font-size: 14px; }
+  .sig-howto { margin-top: 48px; }
+  .sig-howto ol { padding-left: 20px; line-height: 1.7; }
+</style>
+
+<div class="container">
+  <div class="section sig-tool">
+
+    <div class="sig-field">
+      <label for="sig-person">Who are you?</label>
+      <select id="sig-person">
+        <option value="">Select your name...</option>
+      </select>
+    </div>
+
+    <div class="sig-preview-wrap">
+      <div id="sig-preview"></div>
+    </div>
+
+    <div class="sig-actions">
+      <button id="sig-copy" type="button" disabled>Copy signature</button>
+      <span id="sig-status" role="status" aria-live="polite"></span>
+    </div>
+
+    <div class="sig-howto">
+      <h2>How to add it to Gmail</h2>
+      <ol>
+        <li>Pick your name above, then click <strong>Copy signature</strong>.</li>
+        <li>In Gmail, open <strong>Settings</strong> (the gear icon, top right) and click <strong>See all settings</strong>.</li>
+        <li>On the <strong>General</strong> tab, scroll to <strong>Signature</strong> and click <strong>Create new</strong> (or pick an existing one to edit).</li>
+        <li>Click into the signature box and paste with <strong>Cmd/Ctrl + V</strong>. The card, photo, and logo should appear.</li>
+        <li>Under the box, set the defaults so it is used <strong>For new emails</strong> and <strong>On reply/forward</strong>.</li>
+        <li>Scroll to the bottom and click <strong>Save Changes</strong>.</li>
+      </ol>
+      <p>Images only show once the site has deployed; if the photo or logo is blank, wait for the latest deploy and re-paste.</p>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  window.NAMBA_TEAM = {{ site.data.team | jsonify }};
+  window.NAMBA_STAFF = {{ site.data.staff | jsonify }};
+</script>
+<script src="/assets/js/email-signature.js?v=1" type="text/javascript" defer></script>
