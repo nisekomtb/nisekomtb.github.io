@@ -3,42 +3,42 @@
 
 - image: /assets/images/team/pierre.jpg
   name: Pierre Monnier
-  title: Operations Manager
+  namba_role: Operations Manager
   ja:
     name: ピエール・モニエ
-    title: オペレーションマネージャー
+    namba_role: オペレーションマネージャー
 
 - image: /assets/images/team/dan.jpg
   name: Dan Graham
-  title: Assistant Operations Manager
+  namba_role: Assistant Operations Manager
   ja:
     name: ダン・グラハム
-    title: アシスタントオペレーションマネージャー
+    namba_role: アシスタントオペレーションマネージャー
 
 - image: /assets/images/team/rj.jpg
   name: RJ McGechie
-  title: Trail Crew
+  namba_role: Trail Crew
   ja:
     name: RJ・マッギーチ
-    title: トレイルクルー
+    namba_role: トレイルクルー
 
 - image: /assets/images/team/seiko.jpg
   name: Seiko Doi
-  title: Trail Crew
+  namba_role: Trail Crew
   ja:
     name: 土井 世光
-    title: トレイルクルー
+    namba_role: トレイルクルー
 
 - image: /assets/images/team/danny.jpg
   name: Danny Sopp
-  title: Trail Crew
+  namba_role: Trail Crew
   ja:
     name: ダニー・ソップ
-    title: トレイルクルー
+    namba_role: トレイルクルー
 
 - image: /assets/images/team/harry.jpg
   name: Harry Tomkinson
-  title: Trail Crew
+  namba_role: Trail Crew
   ja:
     name: ハリー・トンキンソン
-    title: トレイルクルー
+    namba_role: トレイルクルー
