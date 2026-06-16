@@ -11,9 +11,14 @@ masthead:
   .sig-tool { max-width: 760px; margin: 0 auto; }
   .sig-tool .sig-field { margin-bottom: 24px; }
   .sig-tool label { display: block; font-weight: bold; margin-bottom: 8px; }
-  .sig-tool select { width: 100%; max-width: 360px; padding: 10px 12px; font-size: 16px; border: 1px solid #ccc; border-radius: 6px; background: #fff; }
+  .sig-tool select { width: 100%; max-width: 360px; padding: 12px 16px; font-size: 16px; font-family: inherit; color: #fff; background: var(--color-bg-panel); border: 2px solid var(--color-accent); border-radius: 4px; appearance: auto; }
+  .sig-tool select:focus { outline: none; border-color: var(--color-accent); }
   .sig-preview-wrap { background: #ececec; padding: 28px 20px; border-radius: 8px; overflow-x: auto; }
   #sig-preview { min-height: 134px; }
+  /* The site's global `td { border-top }` rule leaks into the injected signature
+     table (preview only; Gmail strips page CSS). The card/ring/divider borders are
+     inline, so they survive this reset. */
+  .sig-preview-wrap td { border-top: 0; }
   .sig-actions { display: flex; align-items: center; gap: 16px; margin: 20px 0 8px; flex-wrap: wrap; }
   #sig-copy { padding: 12px 22px; font-size: 16px; font-weight: bold; color: #fff; background: #b34f24; border: 0; border-radius: 6px; cursor: pointer; }
   #sig-copy:disabled { background: #c9a98f; cursor: default; }
