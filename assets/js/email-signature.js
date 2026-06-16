@@ -18,6 +18,11 @@
     if (member.cofounder) { lines.push('Co-founder'); }
     var role = member.namba_role;
     if (!role && group === 'board') { role = 'Director'; }
+    // Bare Directors gain their sub-committee for context; people with a specific
+    // role (Head of X, Officer, Auditor, President/VP) never show the committee.
+    if (role === 'Director' && member.committee) {
+      role = 'Director, ' + member.committee + ' Subcommittee';
+    }
     if (role) { lines.push(role); }
     return lines;
   }
