@@ -56,9 +56,7 @@
     });
   });
 
-  var ORDER = { leader: 0, cofounder: 1, board: 2, staff: 3 };
   people.sort(function (a, b) {
-    if (ORDER[a.group] !== ORDER[b.group]) { return ORDER[a.group] - ORDER[b.group]; }
     return a.name.localeCompare(b.name);
   });
 

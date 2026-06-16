@@ -15,6 +15,9 @@ masthead:
   .sig-tool select:focus { outline: none; border-color: var(--color-accent); }
   .sig-preview-wrap { background: #ececec; padding: 28px 20px; border-radius: 8px; overflow-x: auto; }
   #sig-preview { min-height: 134px; }
+  /* Hold the card at its natural width on narrow screens; the wrapper scrolls
+     horizontally rather than letting the business-card layout squash. */
+  #sig-preview > table { min-width: 560px; }
   /* The site's global `td { border-top }` rule leaks into the injected signature
      table (preview only; Gmail strips page CSS). The card/ring/divider borders are
      inline, so they survive this reset. */
@@ -56,7 +59,6 @@ masthead:
         <li>Under the box, set the defaults so it is used <strong>For new emails</strong> and <strong>On reply/forward</strong>.</li>
         <li>Scroll to the bottom and click <strong>Save Changes</strong>.</li>
       </ol>
-      <p>Images appear only after the site has deployed. If the photo or logo shows up blank, wait for the latest deploy and paste again.</p>
     </div>
 
   </div>

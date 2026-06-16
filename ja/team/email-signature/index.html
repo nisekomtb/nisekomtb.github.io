@@ -15,6 +15,9 @@ masthead:
   .sig-tool select:focus { outline: none; border-color: var(--color-accent); }
   .sig-preview-wrap { background: #ececec; padding: 28px 20px; border-radius: 8px; overflow-x: auto; }
   #sig-preview { min-height: 134px; }
+  /* Hold the card at its natural width on narrow screens; the wrapper scrolls
+     horizontally rather than letting the business-card layout squash. */
+  #sig-preview > table { min-width: 560px; }
   /* The site's global `td { border-top }` rule leaks into the injected signature
      table (preview only; Gmail strips page CSS). The card/ring/divider borders are
      inline, so they survive this reset. */
@@ -56,7 +59,6 @@ masthead:
         <li>入力欄の下で、<strong>新規メール用</strong>と<strong>返信／転送用</strong>に設定します。</li>
         <li>ページ下部の<strong>変更を保存</strong>をクリックします。</li>
       </ol>
-      <p>画像はサイトのデプロイ後に表示されます。写真やロゴが表示されない場合は、最新のデプロイを待ってから貼り付け直してください。</p>
     </div>
 
   </div>
