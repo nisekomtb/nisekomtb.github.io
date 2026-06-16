@@ -22,6 +22,7 @@ partner: { en: Partner, ja: 協賛 }
 auction: { en: Auction, ja: オークション }
 code-conduct: { en: Code of Conduct, ja: 行動規範 }
 contact: { en: Contact, ja: お問い合わせ }
+email-signature: { en: Email Signature, ja: メール署名 }
 get-involved: { en: Get Involved, ja: 参加する }
 privacy: { en: Privacy, ja: プライバシー }
 proposal: { en: Proposal, ja: プロポーザル }
