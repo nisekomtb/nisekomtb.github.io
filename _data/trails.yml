@@ -460,56 +460,56 @@ grand-hirafu:
     #   descent: 5
     #   bike: two-way
     #   multi_use: true
-    - name: Kings High
-      ja:
-        name:
-      difficulty: green
-      distance: 694
-      climb: 26
-      descent: 10
-      bike: up-only
-      multi_use: false
-      trailforks_id: 753823
-    - name: Key Path
-      ja:
-        name:
-      difficulty: blue
-      distance: 819
-      climb: 3
-      descent: 52
-      bike: down-only
-      multi_use: false
-      trailforks_id: 753822
-    - name: Kamiwaza
-      ja:
-        name: カミワザ
-      difficulty: blue
-      distance: "1,218"
-      climb: 13
-      descent: 111
-      bike: down-only
-      multi_use: false
-      trailforks_id: 753803
-    - name: Hirafu Flow
-      ja:
-        name: ヒラフフロー
-      difficulty: blue
-      distance: "1,986"
-      climb: 38
-      descent: 170
-      bike: down-only
-      multi_use: false
-      # trailforks_id: 0
-    - name: Kuro Obi
-      ja:
-        name: クロオビ
-      difficulty: black
-      distance: "2,103"
-      climb: 33
-      descent: 225
-      bike: down-only
-      multi_use: false
-      trailforks_id: 775402
+    # - name: Kings High
+    #   ja:
+    #     name:
+    #   difficulty: green
+    #   distance: 694
+    #   climb: 26
+    #   descent: 10
+    #   bike: up-only
+    #   multi_use: false
+    #   trailforks_id: 753823
+    # - name: Key Path
+    #   ja:
+    #     name:
+    #   difficulty: blue
+    #   distance: 819
+    #   climb: 3
+    #   descent: 52
+    #   bike: down-only
+    #   multi_use: false
+    #   trailforks_id: 753822
+    # - name: Kamiwaza
+    #   ja:
+    #     name: カミワザ
+    #   difficulty: blue
+    #   distance: "1,218"
+    #   climb: 13
+    #   descent: 111
+    #   bike: down-only
+    #   multi_use: false
+    #   trailforks_id: 753803
+    # - name: Hirafu Flow
+    #   ja:
+    #     name: ヒラフフロー
+    #   difficulty: blue
+    #   distance: "1,315"
+    #   climb: 8
+    #   descent: 84
+    #   bike: down-only
+    #   multi_use: false
+    #   # trailforks_id: 0
+    # - name: Hirafu DH
+    #   ja:
+    #     name: ヒラフ DH
+    #   difficulty: black
+    #   distance: "1,554"
+    #   climb: 3
+    #   descent: 242
+    #   bike: down-only
+    #   multi_use: false
+    #   # trailforks_id: 775402
 
 annupuri:
   logo: /assets/images/company/annupuri.png
@@ -597,7 +597,7 @@ annupuri:
 
 hanazono:
   logo: /assets/images/company/hanazono.png
-  name: Niseko Hanazono Bike Park
+  name: Hanazono Mountain Bike Park
   project_path: /projects/hanazono/
   cost: TBC
   lifts: 1
@@ -609,7 +609,7 @@ hanazono:
   hours: TBC
   managed_by: Hanazono Resort / NAMBA
   ja:
-    name: ニセコHANAZONOバイクパーク
+    name: HANAZONOマウンテンバイクパーク
     cost: 未定
     location: 花園
     season: 2026年夏以降
@@ -623,8 +623,8 @@ hanazono:
       img_large: /assets/images/trails/hanazono/gallery/flow-trail-yotei-large.webp
       width: 3000
       height: 2000
-      alt_en: Riders descending a flow trail at Niseko Hanazono Bike Park with Mount Yotei in the distance
-      alt_ja: ニセコHANAZONOバイクパークのフロートレイルを下るライダー、遠くに羊蹄山
+      alt_en: Riders descending a flow trail at Hanazono Mountain Bike Park with Mount Yotei in the distance
+      alt_ja: HANAZONOマウンテンバイクパークのフロートレイルを下るライダー、遠くに羊蹄山
     - img: /assets/images/trails/hanazono/gallery/base-area.webp
       img_large: /assets/images/trails/hanazono/gallery/base-area-large.webp
       width: 3000
@@ -635,14 +635,14 @@ hanazono:
       img_large: /assets/images/trails/hanazono/gallery/airborne-rider-large.webp
       width: 2667
       height: 1778
-      alt_en: Rider airborne off a dirt jump at Niseko Hanazono Bike Park
-      alt_ja: ニセコHANAZONOバイクパークのダートジャンプで宙を舞うライダー
+      alt_en: Rider airborne off a dirt jump at Hanazono Mountain Bike Park
+      alt_ja: HANAZONOマウンテンバイクパークのダートジャンプで宙を舞うライダー
     - img: /assets/images/trails/hanazono/gallery/forest-singletrack.webp
       img_large: /assets/images/trails/hanazono/gallery/forest-singletrack-large.webp
       width: 3000
       height: 2000
-      alt_en: Two riders flowing through autumn forest singletrack at Niseko Hanazono Bike Park
-      alt_ja: ニセコHANAZONOバイクパークの秋の森のシングルトラックを走る2人のライダー
+      alt_en: Two riders flowing through autumn forest singletrack at Hanazono Mountain Bike Park
+      alt_ja: HANAZONOマウンテンバイクパークの秋の森のシングルトラックを走る2人のライダー
     - img: /assets/images/trails/hanazono/gallery/gondola-cabin.webp
       img_large: /assets/images/trails/hanazono/gallery/gondola-cabin-large.webp
       width: 2667
@@ -659,8 +659,8 @@ hanazono:
       img_large: /assets/images/trails/hanazono/gallery/riders-flow-berms-large.webp
       width: 3556
       height: 2000
-      alt_en: Four riders railing banked berms on a flow trail at Niseko Hanazono Bike Park, Mount Yotei behind
-      alt_ja: ニセコHANAZONOバイクパークのフロートレイルでバームを駆け抜ける4人のライダー、奥に羊蹄山
+      alt_en: Four riders railing banked berms on a flow trail at Hanazono Mountain Bike Park, Mount Yotei behind
+      alt_ja: HANAZONOマウンテンバイクパークのフロートレイルでバームを駆け抜ける4人のライダー、奥に羊蹄山
     - img: /assets/images/trails/hanazono/gallery/rider-cornering-gondola.webp
       img_large: /assets/images/trails/hanazono/gallery/rider-cornering-gondola-large.webp
       width: 3000
@@ -674,9 +674,9 @@ hanazono:
       alt_en: Trail winding through autumn susuki grasses with Mount Yotei in the distance
       alt_ja: 秋のススキ草原を抜けるトレイル、遠くに羊蹄山
   trails:
-    - name: Forest Loop Course
+    - name: Mori Loop
       ja:
-        name: フォレストループコース
+        name: モリ・ループ
       difficulty: green
       distance: "1,360"
       climb: 39
@@ -684,9 +684,9 @@ hanazono:
       bike: one-way
       multi_use: true
       # trailforks_id: 923207
-    - name: Downhill Course
+    - name: Hanazono Skyline
       ja:
-        name: ダウンヒルコース
+        name: ハナゾノ・スカイライン
       difficulty: blue
       distance: "4,212"
       climb: 0

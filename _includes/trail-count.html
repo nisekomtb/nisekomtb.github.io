@@ -1,0 +1,20 @@
+{%- comment -%}
+  Outputs a count of OPEN trails. A trail counts as open when it has a
+  trailforks_id; trails without one are treated as under construction and
+  excluded. Emits a bare integer (no markup, no surrounding whitespace) so it
+  can be dropped inline into copy or JS strings.
+
+    {% include trail-count.html data_key="grand-hirafu" %}  -> open trails in one park
+    {% include trail-count.html %}                          -> open trails across all parks
+{%- endcomment -%}
+{%- assign tc_n = 0 -%}
+{%- if include.data_key -%}
+  {%- assign tc_park = site.data.trails[include.data_key] -%}
+  {%- for tc_t in tc_park.trails -%}{%- if tc_t.trailforks_id -%}{%- assign tc_n = tc_n | plus: 1 -%}{%- endif -%}{%- endfor -%}
+{%- else -%}
+  {%- for tc_pair in site.data.trails -%}
+    {%- assign tc_park = tc_pair[1] -%}
+    {%- for tc_t in tc_park.trails -%}{%- if tc_t.trailforks_id -%}{%- assign tc_n = tc_n | plus: 1 -%}{%- endif -%}{%- endfor -%}
+  {%- endfor -%}
+{%- endif -%}
+{{- tc_n -}}

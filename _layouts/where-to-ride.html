@@ -240,6 +240,13 @@ layout: base
     text-align: left;
   }
 
+  table.trails td.trails-empty {
+    padding: 28px 20px;
+    color: #888;
+    font-weight: 500;
+    font-style: italic;
+  }
+
   table.trails td.right {
     text-align: right;
   }
@@ -604,7 +611,7 @@ layout: base
   </div>
 
   {% unless is_park_subpage %}
-  {% if park_data.trails %}
+  {% if page.trail_data_key %}
   {% if park_data.signage_card == false %}{% assign signage_flag = "false" %}{% else %}{% assign signage_flag = "true" %}{% endif %}
   <div class="row park-trails-row">
     <div class="col col-12">

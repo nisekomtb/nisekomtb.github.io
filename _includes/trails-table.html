@@ -41,7 +41,13 @@
       </tr>
     </thead>
     <tbody>
-    {% for trail in site.data.trails[trail_key].trails %}
+    {% assign trail_list = site.data.trails[trail_key].trails %}
+    {% if trail_list == nil or trail_list.size == 0 %}
+    <tr>
+      <td colspan="9" class="trails-empty">{% if page.lang == 'ja' %}トレイル情報は近日公開{% else %}Trail info coming soon{% endif %}</td>
+    </tr>
+    {% else %}
+    {% for trail in trail_list %}
     <tr>
       <td class="difficulty left">
         {% case trail.difficulty %}
@@ -92,6 +98,7 @@
       <td class="right">{{ trail.distance -}}m <span class="fa fa-ruler-horizontal" title="Distance"></span></td>
     </tr>
     {% endfor %}
+    {% endif %}
     </tbody>
   </table>
 </section>

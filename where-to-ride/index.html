@@ -42,7 +42,7 @@ masthead:
         <div class="col col-12 col-md-6 col-lg-3">
           <div class="features-item ja-animate" data-animation="move-from-bottom" data-delay="item-1">
             <div class="font-icon"><span class="fa-solid fa-signs-post"></span></div>
-            <h3>24 Trails</h3>
+            <h3>{% include trail-count.html %} Trails</h3>
             <p>Beginner flow to expert tech.</p>
           </div>
         </div>
@@ -120,7 +120,7 @@ masthead:
           anchor: "twin-peaks",
           photo: "/assets/images/twinpeaks/header.jpg",
           logo: "/assets/images/logos/twin-peaks.svg",
-          blurb: "20 trails &middot; 17km &middot; Free, every day",
+          blurb: "{% include trail-count.html data_key='twinpeaks' %} trails &middot; 17km &middot; Free, every day",
           stats: {{ stats_twin_peaks | strip_newlines | jsonify }}
         },
         {
@@ -129,12 +129,12 @@ masthead:
           anchor: "grand-hirafu",
           photo: "/assets/images/trails/grand-hirafu/01.jpg",
           logo: "/assets/images/company/grand-hirafu.png",
-          blurb: "3 trails &middot; Lift access in Hirafu Village",
+          blurb: "{% include trail-count.html data_key='grand-hirafu' %} trails &middot; Lift access in Hirafu Village",
           stats: {{ stats_grand_hirafu | strip_newlines | jsonify }}
         },
         {
           position: { lat: 42.893118993617485, lng: 140.70017232900975 },
-          title: "Niseko Hanazono Bike Park",
+          title: "Hanazono Mountain Bike Park",
           anchor: "hanazono",
           photo: "/assets/images/trails/hanazono/01.jpg",
           logo: "/assets/images/company/hanazono.png",
@@ -301,7 +301,7 @@ masthead:
         <div class="col col-12 col-md-6 col-lg-6">
           {% include ride-card.html
               id="ride-hanazono"
-              title="Niseko Hanazono Bike Park"
+              title="Hanazono Mountain Bike Park"
               image="/assets/images/trails/hanazono/01.jpg"
               logo="/assets/images/company/hanazono.png"
               badge="Opening Summer 2026"
@@ -534,7 +534,7 @@ masthead:
           "position": 3,
           "item": {
             "@type": "TouristAttraction",
-            "name": "Niseko Hanazono Bike Park",
+            "name": "Hanazono Mountain Bike Park",
             "description": "Opening summer 2026: Niseko's first lift-accessed top-to-bottom intermediate descent, plus a beginner forest loop.",
             "url": "https://namba.ngo/where-to-ride/hanazono/",
             "image": "https://namba.ngo/assets/images/trails/hanazono/01.jpg",

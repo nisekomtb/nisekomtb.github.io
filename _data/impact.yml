@@ -19,6 +19,10 @@ visitors:
           august: 1997
           september: 2530
           october: 1568
+      - year: 2026
+        total: 419
+        months:
+          may: 419
 
 trails:
   # Cumulative km of open trail at end of each year.
@@ -34,8 +38,8 @@ trails:
     niseko_km: 29.04
   # 2026 projection, re-enable once trails open this season.
   # - year: 2026
-  #   namba_km: 25.39
-  #   niseko_km: 32.96
+  #   namba_km: 24.72
+  #   niseko_km: 32.03
 
 twin_peaks:
   # Twin Peaks Bike Park. NAMBA-built cumulative trail km and visitor counts.

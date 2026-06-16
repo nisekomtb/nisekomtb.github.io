@@ -42,7 +42,7 @@ masthead:
         <div class="col col-12 col-md-6 col-lg-3">
           <div class="features-item ja-animate" data-animation="move-from-bottom" data-delay="item-1">
             <div class="font-icon"><span class="fa-solid fa-signs-post"></span></div>
-            <h3>24本の​トレイル</h3>
+            <h3>{% include trail-count.html %}本の​トレイル</h3>
             <p>初心者フローから​上級テクニカルまで。</p>
           </div>
         </div>
@@ -120,7 +120,7 @@ masthead:
           anchor: "twin-peaks",
           photo: "/assets/images/twinpeaks/header.jpg",
           logo: "/assets/images/logos/twin-peaks.svg",
-          blurb: "20本のトレイル ・ 17km ・ 毎日無料",
+          blurb: "{% include trail-count.html data_key='twinpeaks' %}本のトレイル ・ 17km ・ 毎日無料",
           stats: {{ stats_twin_peaks | strip_newlines | jsonify }}
         },
         {
@@ -129,12 +129,12 @@ masthead:
           anchor: "grand-hirafu",
           photo: "/assets/images/trails/grand-hirafu/01.jpg",
           logo: "/assets/images/company/grand-hirafu.png",
-          blurb: "3本のトレイル ・ ヒラフ村でリフトアクセス",
+          blurb: "{% include trail-count.html data_key='grand-hirafu' %}本のトレイル ・ ヒラフ村でリフトアクセス",
           stats: {{ stats_grand_hirafu | strip_newlines | jsonify }}
         },
         {
           position: { lat: 42.893118993617485, lng: 140.70017232900975 },
-          title: "ニセコHANAZONOバイクパーク",
+          title: "HANAZONOマウンテンバイクパーク",
           anchor: "hanazono",
           photo: "/assets/images/trails/hanazono/01.jpg",
           logo: "/assets/images/company/hanazono.png",
@@ -301,7 +301,7 @@ masthead:
         <div class="col col-12 col-md-6 col-lg-6">
           {% include ride-card.html
               id="ride-hanazono"
-              title="ニセコHANAZONOバイクパーク"
+              title="HANAZONOマウンテンバイクパーク"
               image="/assets/images/trails/hanazono/01.jpg"
               logo="/assets/images/company/hanazono.png"
               badge="2026年夏オープン"
@@ -534,7 +534,7 @@ masthead:
           "position": 3,
           "item": {
             "@type": "TouristAttraction",
-            "name": "ニセコHANAZONOバイクパーク",
+            "name": "HANAZONOマウンテンバイクパーク",
             "description": "2026年夏オープン：ニセコ初のリフトアクセスによるトップトゥボトムの中級トレイル、そして初心者向けのフォレストループ。",
             "url": "https://namba.ngo/ja/where-to-ride/hanazono/",
             "image": "https://namba.ngo/assets/images/trails/hanazono/01.jpg",
