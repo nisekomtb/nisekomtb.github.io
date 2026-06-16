@@ -189,6 +189,10 @@ shika:
     #   url: https://www.nisekocentral.com
     #   ja:
     #     url: https://www.nisekocentral.com/ja/
+    - name: niseko ski lodge
+      displayName: Niseko Ski Lodge
+      image: /assets/images/company/niseko-ski-lodge.png
+      url: https://nisekoskilodge.com
     - name: noasc
       displayName: NOASC
       image: /assets/images/company/noasc.png
