@@ -52,13 +52,13 @@
       <td class="difficulty left">
         {% case trail.difficulty %}
           {% when 'green' %}
-            <span aria-hidden="true"  class="tf tf-green" title="Green"></span> <span class="ddesc dgreen">Easy</span>
+            <span aria-hidden="true"  class="tf tf-green" title="Green"></span> <span class="ddesc dgreen">{% if page.lang == 'ja' %}初級{% else %}Easy{% endif %}</span>
           {% when 'blue' %}
-            <span aria-hidden="true"  class="tf tf-blue" title="Blue"></span> <span class="ddesc dblue">More Difficult</span>
+            <span aria-hidden="true"  class="tf tf-blue" title="Blue"></span> <span class="ddesc dblue">{% if page.lang == 'ja' %}中級{% else %}More Difficult{% endif %}</span>
           {% when 'black' %}
-            <span aria-hidden="true"  class="tf tf-black" title="Black"></span> <span class="ddesc dblack">Very Difficult</span>
+            <span aria-hidden="true"  class="tf tf-black" title="Black"></span> <span class="ddesc dblack">{% if page.lang == 'ja' %}上級{% else %}Very Difficult{% endif %}</span>
           {% when 'double-black' %}
-            <span aria-hidden="true"  class="tf tf-double-black" title="Double Black Diamond"></span> <span class="ddesc ddblblack">Extremely Difficult</span>
+            <span aria-hidden="true"  class="tf tf-double-black" title="Double Black Diamond"></span> <span class="ddesc ddblblack">{% if page.lang == 'ja' %}最上級{% else %}Extremely Difficult{% endif %}</span>
         {% endcase %}
       </td>
       <td class="cond" aria-hidden="true">
