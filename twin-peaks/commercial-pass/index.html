@@ -3,9 +3,11 @@ layout: where-to-ride
 trail_data_key: twinpeaks
 title: Twin Peaks Bike Park
 subtitle: Commercial Operator Pass
-description: Running a guided tour, lesson, or commercial bike business at Twin Peaks Bike Park in Niseko? Contact NAMBA about the commercial operator pass.
+description: "Guiding, instructing, or running paid tours at Twin Peaks Bike Park in Niseko? Here's who needs a commercial operator pass, the rules that apply, and how to get one."
 masthead:
   img: /assets/images/twinpeaks/header.jpg
+og:
+  image: /assets/images/og/trails.jpg
 ---
 
 <script type="application/ld+json">
@@ -15,77 +17,318 @@ masthead:
   "@id": "https://namba.ngo/twin-peaks/commercial-pass/#webpage",
   "url": "https://namba.ngo/twin-peaks/commercial-pass/",
   "name": "Twin Peaks Bike Park: Commercial Operator Pass",
-  "description": "Running a guided tour, lesson, or commercial bike business at Twin Peaks Bike Park in Niseko? Contact NAMBA about the commercial operator pass.",
+  "description": "Guiding, instructing, or running paid tours at Twin Peaks Bike Park in Niseko? Here's who needs a commercial operator pass, the rules that apply, and how to get one.",
   "inLanguage": "en",
   "isPartOf": { "@id": "https://namba.ngo/#website" },
   "about": { "@id": "https://namba.ngo/#organization" },
   "mainEntity": { "@id": "https://namba.ngo/twin-peaks/#bikepark" }
 }
 </script>
+
 <style>
-  /* .overview .col {
-    width: 100%;
+  /* Yes / No cards */
+  .need-pass-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 28px 0 16px;
   }
-  .overview .col .features-item {
-    padding: 72px 54px;
-  } */
-  @media(min-width: 992px) {
-    .overview .col {
-      /* width: 25%; */
-    }
-    .overview .col .features-item {
-      padding: 62px 35px;
-    }
-    .overview .col .features-item .font-icon span:before {
-      font-size: 96px;
-    }
-    .overview .col .features-item h4 {
-      min-height: 115px;
-    }
+  @media (min-width: 768px) {
+    .need-pass-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
   }
-  @media(min-width: 768px) {
-    .overview .col {
-      padding-right: 8px;
-      padding-left: 8px;
-    }
-    .overview .col .features-item {
-      padding: 62px 25px;
-    }
-    .overview .col .features-item .font-icon span:before {
-      font-size: 76px;
-    }
-    .overview .col .features-item h4 {
-      font-size: 18px;
-    }
+  .need-card {
+    background: var(--color-bg-panel);
+    border: 1px solid var(--color-bg-border);
+    border-radius: 6px;
+    padding: 28px 26px;
+  }
+  .need-card.is-yes {
+    border-color: var(--color-accent);
+  }
+  .need-card .need-icon {
+    font-size: 32px;
+    margin-bottom: 14px;
+    display: block;
+  }
+  .need-card.is-yes .need-icon { color: var(--color-accent); }
+  .need-card.is-no .need-icon { color: var(--color-secondary); }
+  .need-card h3 { margin: 0 0 10px; font-size: 20px; color: #fff; }
+  .need-card p { margin: 0; font-size: 16px; color: #ccc; }
+
+  /* Rules icon grid */
+  .rules-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 28px 0;
+  }
+  @media (min-width: 600px) {
+    .rules-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (min-width: 992px) {
+    .rules-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  .rule-card {
+    background: var(--color-bg-panel);
+    border: 1px solid var(--color-bg-border);
+    border-radius: 6px;
+    padding: 24px 22px;
+    transition: background 300ms;
+  }
+  .rule-card:hover { background: var(--color-bg-border); }
+  .rule-card .rule-icon {
+    font-size: 28px;
+    color: var(--color-secondary);
+    margin-bottom: 12px;
+    display: block;
+  }
+  .rule-card h3 { margin: 0 0 8px; font-size: 17px; color: #fff; }
+  .rule-card p { margin: 0; font-size: 15px; color: #bbb; line-height: 1.5; }
+
+  /* FAQ accordion */
+  .faq { margin: 28px 0 8px; }
+  .faq details {
+    border-bottom: 1px solid var(--color-bg-border);
+  }
+  .faq details:first-of-type { border-top: 1px solid var(--color-bg-border); }
+  .faq summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 20px 44px 20px 0;
+    position: relative;
+    font-weight: 700;
+    font-size: 17px;
+    color: #fff;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after {
+    content: "+";
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--color-accent);
+    line-height: 1;
+  }
+  .faq details.is-open summary::after { content: "\2212"; }
+  .faq .faq-answer-wrap {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 280ms ease;
+  }
+  .faq details.is-open .faq-answer-wrap { grid-template-rows: 1fr; }
+  .faq .faq-answer-inner { overflow: hidden; min-height: 0; }
+  .faq .faq-answer {
+    margin: 0;
+    padding: 0 0 22px;
+    font-size: 16px;
+    color: #ccc;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .faq .faq-answer-wrap { transition: none; }
   }
 </style>
+
 <div class="float-start item-image">
   {% include image.html src="/assets/images/twinpeaks/commercial-pass.jpg" alt="Guided group ride at Twin Peaks Bike Park" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" loading="lazy" width="2000" height="1333" %}
   <span class="credit"><a href="https://instagram.com/jingypsy" target="_blank"> 📸 Jinya Nishiwaki</a></span>
 </div>
 
-
 <div class="article-detail">
-  <section class="article-content clearfix acm-features style-2">
-    {% comment %} <div class="alert alert-warning">
-      <p style="margin-bottom:0;">For the 2024 season commercial passes are being introduced as part of a closed pilot program, and participation is
-      limited to trail sponsors, and other special sponsors.</p>
-    </div> {% endcomment %}
-    {% comment %} <p>NAMBA is testing a commercial operator pass for instructors, guides, tours, and other commercial operators looking
-    to operate within the Twin Peaks Bike Park. As a non-profit organization, NAMBA strives to maintain our trails for the
-    enjoyment of all users, and this program is a positive step towards ensuring their sustainability and quality.</p>
+  <section class="article-content clearfix">
 
-    <p>Commercial operators conducting instruction, guiding, tours or providing any other services within the bike park must
-    have a Commercial Operator Pass to operate within the park. Violations may result in suspensions or bans from the park
-    for staff and/or the entire organization.</p> {% endcomment %}
+    <p><a href="/twin-peaks/">Twin Peaks Bike Park</a> is free for everyone to ride. No membership, no booking, no gate. That free access is paid for by sponsors and the community, and it's something NAMBA works hard to protect.</p>
 
-    <p>Twin Peaks Bike Park is free to the general public. Businesses operating within the park in order to
-    provide instruction, tours, or other such services within the Twin Peaks Bike Park must first contact NAMBA. </p>
+    <p>The Commercial Operator Pass is how we keep it that way. Any business running guided tours, lessons, or other paid activities inside the park needs one. It holds commercial guiding to a shared safety standard and stops big groups from crowding out everyday riders. The fees go straight back into the trails.</p>
+
+    <h2>Why the pass exists</h2>
+    <p>NAMBA is a nonprofit, and Twin Peaks is built and maintained for the whole community. The pass lets us:</p>
+    <ul>
+      <li>Hold guiding and instruction to a consistent standard of safety, qualification, and insurance.</li>
+      <li>Keep the park welcoming for the public by limiting how much space commercial groups take up.</li>
+      <li>Put operator contributions back into building and maintaining the trails businesses rely on.</li>
+    </ul>
+
+    <h2>Do you need a pass?</h2>
+    <div class="need-pass-grid">
+      <div class="need-card is-yes">
+        <span class="need-icon"><i class="fa-solid fa-circle-check"></i></span>
+        <h3>Yes, if you charge riders</h3>
+        <p>Guides, instructors, coaches and kids' programmes, photo tours, guided hikes, and bike shops running paid rides or sessions. If money changes hands for activity in the park, you need a pass.</p>
+      </div>
+      <div class="need-card is-no">
+        <span class="need-icon"><i class="fa-solid fa-person-biking"></i></span>
+        <h3>No, for everyday riding</h3>
+        <p>The public rides free, and always will. Free group rides open to everyone, including club and shop rides, don't pay the fee either, but they're still expected to follow the same safety and trail etiquette.</p>
+      </div>
+    </div>
+    <p>Not sure where you land? <a href="/contact/?topic=commercial-operator-pass">Get in touch</a> and we'll help you work it out.</p>
+
+    <h2>The rules at a glance</h2>
+    <p>Pass holders run their operations within a few simple standards that keep the park safe and fair for everyone.</p>
+    <div class="rules-grid">
+      <div class="rule-card">
+        <span class="rule-icon"><i class="fa-solid fa-people-group"></i></span>
+        <h3>Group size</h3>
+        <p>One guide per six clients, and no more than eight people in a group, support staff included.</p>
+      </div>
+      <div class="rule-card">
+        <span class="rule-icon"><i class="fa-solid fa-clock"></i></span>
+        <h3>Opening hours</h3>
+        <p>Operate only within the park's posted hours. No guiding while the park is closed for weather, maintenance, or events.</p>
+      </div>
+      <div class="rule-card">
+        <span class="rule-icon"><i class="fa-solid fa-certificate"></i></span>
+        <h3>Insurance</h3>
+        <p>Carry comprehensive liability insurance for your business.</p>
+      </div>
+      <div class="rule-card">
+        <span class="rule-icon"><i class="fa-solid fa-handshake"></i></span>
+        <h3>Trail etiquette</h3>
+        <p>Follow NAMBA's <a href="/code-conduct/">Code of Conduct</a>, yield and pass with care, and skip "convoy guiding" (groups running in quick succession).</p>
+      </div>
+      <div class="rule-card">
+        <span class="rule-icon"><i class="fa-solid fa-phone"></i></span>
+        <h3>Emergencies</h3>
+        <p>Bring your own emergency response plan for injuries, missing persons, weather, and wildlife.</p>
+      </div>
+      <div class="rule-card">
+        <span class="rule-icon"><i class="fa-solid fa-calendar-check"></i></span>
+        <h3>Your pass</h3>
+        <p>Covers one guide at a time, transfers between guides at the same company, and renews each season.</p>
+      </div>
+    </div>
+    <p>These are the essentials. The full program agreement, including environmental standards and the conduct expected of operators, comes to you when you apply.</p>
+
+    {% comment %}
+      Article 10 of the program (display proof of pass at all times) and the
+      identification requirement are intentionally left off this page: NAMBA does
+      not currently issue a physical pass to display. Add these back when a
+      physical pass artefact exists. See memory: project_no_physical_passes.
+    {% endcomment %}
+
+    <h2>What you get</h2>
+    <p>A commercial pass is more than permission to operate. Your fee is a cooperation fee, so it goes straight into the dirt:</p>
+    <ul>
+      <li><strong>You fund the trails you ride for a living.</strong> Operator fees help build and maintain the network your business depends on.</li>
+      <li><strong>Your logo on our site.</strong> Pass-holding companies are listed on the <a href="/twin-peaks/guides/">authorised guides</a> page, seen by riders planning their trip.</li>
+      <li><strong>The exclusive right to operate.</strong> Only pass holders may run commercial activities at Twin Peaks.</li>
+    </ul>
+    <p>Want your brand to go further? <a href="/partner/">Trail sponsors</a> receive a lifetime commercial operator pass alongside signage across the park.</p>
+
+    <h2>Common questions</h2>
+    <div class="faq">
+      <details>
+        <summary>Do I need a commercial operator pass?</summary>
+        <div class="faq-answer-wrap"><div class="faq-answer-inner"><p class="faq-answer">If you charge riders for activity in the park, yes. That covers guides, instructors, bike shops running paid rides or sessions, coaching and kids' programmes, photo tours, and guided hikes. The public rides free and needs nothing.</p></div></div>
+      </details>
+      <details>
+        <summary>Do free club or shop group rides need a pass?</summary>
+        <div class="faq-answer-wrap"><div class="faq-answer-inner"><p class="faq-answer">If a ride is free to join and open to the public, it's exempt from the cooperation fee, even when a club or shop organises it. Those rides are still expected to follow the program's principles, including trail etiquette, safety, and group limits. As soon as you charge riders, a pass is required.</p></div></div>
+      </details>
+      <details>
+        <summary>What are the group size limits?</summary>
+        <div class="faq-answer-wrap"><div class="faq-answer-inner"><p class="faq-answer">One guide to six clients, and no more than eight people in a group, counting guides and any support staff such as tail guides or photographers.</p></div></div>
+      </details>
+      <details>
+        <summary>How do I get a pass?</summary>
+        <div class="faq-answer-wrap"><div class="faq-answer-inner"><p class="faq-answer">Get in touch through the contact form. We'll talk through your business, insurance, and qualifications, send you the full program agreement, and confirm current pricing. Passes renew each season.</p></div></div>
+      </details>
+    </div>
+
+    <script>
+      (function () {
+        var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var items = document.querySelectorAll('.faq details');
+        for (var i = 0; i < items.length; i++) {
+          (function (d) {
+            var summary = d.querySelector('summary');
+            var wrap = d.querySelector('.faq-answer-wrap');
+            if (!summary || !wrap) return;
+            if (d.open) d.classList.add('is-open');
+            summary.addEventListener('click', function (e) {
+              e.preventDefault();
+              if (d.dataset.busy) return;
+              if (!d.open) {
+                if (reduce) { d.open = true; d.classList.add('is-open'); return; }
+                d.dataset.busy = '1';
+                d.open = true;
+                requestAnimationFrame(function () { d.classList.add('is-open'); });
+                var openEnd = function () {
+                  wrap.removeEventListener('transitionend', openEnd);
+                  clearTimeout(openTimer);
+                  delete d.dataset.busy;
+                };
+                wrap.addEventListener('transitionend', openEnd);
+                var openTimer = setTimeout(openEnd, 360);
+              } else {
+                if (reduce) { d.classList.remove('is-open'); d.open = false; return; }
+                d.dataset.busy = '1';
+                d.classList.remove('is-open');
+                var closeEnd = function () {
+                  wrap.removeEventListener('transitionend', closeEnd);
+                  clearTimeout(closeTimer);
+                  d.open = false;
+                  delete d.dataset.busy;
+                };
+                wrap.addEventListener('transitionend', closeEnd);
+                var closeTimer = setTimeout(closeEnd, 360);
+              }
+            });
+          })(items[i]);
+        }
+      })();
+    </script>
 
     <div style="text-align:center; margin:50px 0;">
-      <h2 style="margin-bottom: 40px;">Get a Commercial Operator Pass</h2>
+      <h2 style="margin-bottom: 30px;">Get a commercial operator pass</h2>
+      <p style="margin-bottom: 30px;">Tell us about your business and we'll be back to you with the next steps, including current pricing.</p>
       <a class="btn btn-primary" href="/contact/?topic=commercial-operator-pass">Get in touch</a>
     </div>
   </section>
 </div>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://namba.ngo/twin-peaks/commercial-pass/#faq",
+  "isPartOf": { "@id": "https://namba.ngo/twin-peaks/commercial-pass/#webpage" },
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do I need a commercial operator pass for Twin Peaks Bike Park?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If you charge riders for activity in the park, yes. That covers guides, instructors, bike shops running paid rides or sessions, coaching and kids' programmes, photo tours, and guided hikes. The public rides free and needs nothing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do free club or shop group rides need a pass?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If a ride is free to join and open to the public, it is exempt from the cooperation fee, even when a club or shop organises it. Those rides are still expected to follow the program's principles, including trail etiquette, safety, and group limits. As soon as you charge riders, a pass is required."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the group size limits for guided rides at Twin Peaks?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "One guide to six clients, and no more than eight people in a group, counting guides and any support staff such as tail guides or photographers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I get a commercial operator pass?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Get in touch through the contact form. We'll talk through your business, insurance, and qualifications, send you the full program agreement, and confirm current pricing. Passes renew each season."
+      }
+    }
+  ]
+}
+</script>

@@ -376,6 +376,12 @@ p {
   margin-bottom: 30px;
 }
 
+/* Match list text to body paragraph size; <li> otherwise falls back to the
+   14px body base, leaving list copy smaller than the prose around it. */
+.article-detail li {
+  font-size: 16px;
+}
+
 .lead {
   margin-bottom: 24px;
   font-size: 16px;

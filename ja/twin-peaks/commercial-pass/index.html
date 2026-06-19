@@ -4,9 +4,11 @@ trail_data_key: twinpeaks
 title: ツインピークスバイクパーク
 titleHtml: ツインピークス<wbr>バイクパーク
 subtitle: 商業利用パス
-description: ニセコのツインピークスバイクパークでガイドツアー、レッスン、商業バイク事業を運営する方へ。NAMBAに商業利用パスについてお問い合わせください。
+description: ニセコのツインピークスバイクパークでガイド、インストラクション、有料ツアーを行う方へ。商業利用パスが必要な対象者、適用されるルール、取得方法をご案内します。
 masthead:
   img: /assets/images/twinpeaks/header.jpg
+og:
+  image: /assets/images/og/trails.jpg
 ---
 
 <script type="application/ld+json">
@@ -16,83 +18,319 @@ masthead:
   "@id": "https://namba.ngo/ja/twin-peaks/commercial-pass/#webpage",
   "url": "https://namba.ngo/ja/twin-peaks/commercial-pass/",
   "name": "ツインピークスバイクパーク: 商業利用パス",
-  "description": "ニセコのツインピークスバイクパークでガイドツアー、レッスン、商業バイク事業を運営する方へ。NAMBAに商業利用パスについてお問い合わせください。",
+  "description": "ニセコのツインピークスバイクパークでガイド、インストラクション、有料ツアーを行う方へ。商業利用パスが必要な対象者、適用されるルール、取得方法をご案内します。",
   "inLanguage": "ja",
   "isPartOf": { "@id": "https://namba.ngo/#website" },
   "about": { "@id": "https://namba.ngo/#organization" },
   "mainEntity": { "@id": "https://namba.ngo/twin-peaks/#bikepark" }
 }
 </script>
+
 <style>
+  /* Yes / No cards */
+  .need-pass-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 28px 0 16px;
+  }
+  @media (min-width: 768px) {
+    .need-pass-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+  }
+  .need-card {
+    background: var(--color-bg-panel);
+    border: 1px solid var(--color-bg-border);
+    border-radius: 6px;
+    padding: 28px 26px;
+  }
+  .need-card.is-yes {
+    border-color: var(--color-accent);
+  }
+  .need-card .need-icon {
+    font-size: 32px;
+    margin-bottom: 14px;
+    display: block;
+  }
+  .need-card.is-yes .need-icon { color: var(--color-accent); }
+  .need-card.is-no .need-icon { color: var(--color-secondary); }
+  .need-card h3 { margin: 0 0 10px; font-size: 20px; color: #fff; }
+  .need-card p { margin: 0; font-size: 16px; color: #ccc; }
 
+  /* Rules icon grid */
+  .rules-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 28px 0;
+  }
+  @media (min-width: 600px) {
+    .rules-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (min-width: 992px) {
+    .rules-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  .rule-card {
+    background: var(--color-bg-panel);
+    border: 1px solid var(--color-bg-border);
+    border-radius: 6px;
+    padding: 24px 22px;
+    transition: background 300ms;
+  }
+  .rule-card:hover { background: var(--color-bg-border); }
+  .rule-card .rule-icon {
+    font-size: 28px;
+    color: var(--color-secondary);
+    margin-bottom: 12px;
+    display: block;
+  }
+  .rule-card h3 { margin: 0 0 8px; font-size: 17px; color: #fff; }
+  .rule-card p { margin: 0; font-size: 15px; color: #bbb; line-height: 1.5; }
 
-  /*
-   .overview .col {
-   width: 100%;
-   }
-   .overview .col .features-item {
-   padding: 72px 54px;
-   }
-*/
-  @media(min-width: 992px) {
-    .overview .col {
-    ;
-    /* width: 25%; */
+  /* FAQ accordion */
+  .faq { margin: 28px 0 8px; }
+  .faq details {
+    border-bottom: 1px solid var(--color-bg-border);
   }
-  .overview .col .features-item {
-    padding: 62px 35px;
+  .faq details:first-of-type { border-top: 1px solid var(--color-bg-border); }
+  .faq summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 20px 44px 20px 0;
+    position: relative;
+    font-weight: 700;
+    font-size: 17px;
+    color: #fff;
   }
-  .overview .col .features-item .font-icon span:before {
-    font-size: 96px;
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after {
+    content: "+";
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--color-accent);
+    line-height: 1;
   }
-  .overview .col .features-item h4 {
-    min-height: 115px;
+  .faq details.is-open summary::after { content: "\2212"; }
+  .faq .faq-answer-wrap {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 280ms ease;
   }
-}
-@media(min-width: 768px) {
-  .overview .col {
-    padding-right: 8px;
-    padding-left: 8px;
+  .faq details.is-open .faq-answer-wrap { grid-template-rows: 1fr; }
+  .faq .faq-answer-inner { overflow: hidden; min-height: 0; }
+  .faq .faq-answer {
+    margin: 0;
+    padding: 0 0 22px;
+    font-size: 16px;
+    color: #ccc;
   }
-  .overview .col .features-item {
-    padding: 62px 25px;
+  @media (prefers-reduced-motion: reduce) {
+    .faq .faq-answer-wrap { transition: none; }
   }
-  .overview .col .features-item .font-icon span:before {
-    font-size: 76px;
-  }
-  .overview .col .features-item h4 {
-    font-size: 18px;
-  }
-}
 </style>
+
 <div class="float-start item-image">
   {% include image.html src="/assets/images/twinpeaks/commercial-pass.jpg" alt="ツインピークスバイクパークでのガイドツアー" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" loading="lazy" width="2000" height="1333" %}
-  <span class="credit">
-    <a href="https://instagram.com/jingypsy" target="_blank">
-      📸 Jinya Nishiwaki</a>
-  </span>
+  <span class="credit"><a href="https://instagram.com/jingypsy" target="_blank"> 📸 Jinya Nishiwaki</a></span>
 </div>
 
 <div class="article-detail">
-  <section class="article-content clearfix acm-features style-2">
-    {% comment %} <div class="alert alert-warning">
-                  <p style="margin-bottom:0;">2024年シーズンは<wbr>トレイルスポンサー及びスペシャルスポンサーにのみ商業事業パスを<wbr>試験的に<wbr>導入する<wbr>予定です。</p>
-            </div> {% endcomment %}
-    {% comment %} <p>NAMBA
-                  は、<wbr>ツイン ピークス バイク パーク内で<wbr>活動する<wbr>インストラクター、<wbr>ガイド、<wbr>ツアー、<wbr>その<wbr>他の<wbr>商業運営者向けに<wbr>商業事業者 パスを<wbr>導入しています。<wbr>NAMBA は<wbr>非営利団体と<wbr>して、<wbr>すべての<wbr>ユーザーが<wbr>楽しめるようトレイルの<wbr>維持に<wbr>努めており、<wbr>商業事業者パスの<wbr>導入は<wbr>トレイルの<wbr>持続可能性と<wbr>品質を<wbr>確保する<wbr>ために<wbr>必要な<wbr>ステップと<wbr>考えております。
-                </p>
+  <section class="article-content clearfix">
 
-                <p>
-                  バイクパーク内で<wbr>指導、<wbr>ガイド、<wbr>ツアー、<wbr>または<wbr>その<wbr>他の<wbr>営利目的の<wbr>サービスを<wbr>提供する<wbr>事業者は、<wbr>パーク内で<wbr>上記の<wbr>行為を<wbr>行うことに<wbr>対して<wbr>商業事業者パスを<wbr>購入する<wbr>必要が<wbr>あります。<wbr>違反した<wbr>場合は、<wbr>スタッフおよび/または<wbr>組織全体の<wbr>バイクパーク内への<wbr>一時停止または<wbr>出入り禁止が<wbr>科せられる<wbr>場合が<wbr>あります。
-            </p> {% endcomment %}
+    <p><a href="/ja/twin-peaks/">ツインピークスバイクパーク</a>は、​どなたでも​無料で​楽しめます。​会員登録も、​予約も、​ゲートも​ありません。​この​無料開放は​スポンサーと​地域コミュニティに​よって​支えられており、​NAMBAが​大切に​守り続けている​ものです。</p>
 
-    <p>
-      ツインピークスバイクパークは<wbr>一般の<wbr>方々に<wbr>無料で<wbr>開放されています。<wbr>ツインピークスバイクパーク内で<wbr>指導、<wbr>ツアー、<wbr>または<wbr>その<wbr>他の<wbr>サービスを<wbr>提供する<wbr>事業者は、<wbr>まず<wbr>NAMBAに<wbr>連絡する<wbr>必要が<wbr>あります。
-    </p>
+    <p>商業利用パスは、​その​無料開放を​守る​ための​仕組みです。​パーク内で​ガイドツアーや​レッスン、​その​他の​有料サービスを​行う​事業者は、​この​パスを​取得する​必要が​あります。​パスは​商業ガイドに​共通の​安全基準を​求め、​大人数の​グループが​一般の​ライダーの​妨げに​なるのを​防ぎます。​費用は​そのまま​トレイルに​還元されます。</p>
+
+    <h2>パスが​必要な​理由</h2>
+    <p>NAMBAは​非営利団体であり、​ツインピークスは​地域全体の​ために​整備・​維持されています。​この​パスに​よって、​私たちは​次の​ことを​実現します。</p>
+    <ul>
+      <li>ガイドや​インストラクションに​ついて、​安全・​資格・保険の​一貫した​基準を​保ちます。</li>
+      <li>商業グループが​占有する​スペースを​制限し、​一般の​方​々が​利用しやすいパークを​保ちます。</li>
+      <li>事業者からの​協力金を、​事業の​基盤と​なる​トレイルの​整備と​維持に​還元します。</li>
+    </ul>
+
+    <h2>パスは​必要ですか？</h2>
+    <div class="need-pass-grid">
+      <div class="need-card is-yes">
+        <span class="need-icon"><i class="fa-solid fa-circle-check"></i></span>
+        <h3>料金を​受け取る​場合は​必要です</h3>
+        <p>ガイド、​インストラクター、​コーチや​キッズプログラム、​フォトツアー、​ガイド付きハイキング、​有料の​ライドや​レッスンを​行う​バイクショップなど。​パーク内での​活動で​料金が​発生する​場合は、​パスが​必要です。</p>
+      </div>
+      <div class="need-card is-no">
+        <span class="need-icon"><i class="fa-solid fa-person-biking"></i></span>
+        <h3>通常の​ライドには​必要ありません</h3>
+        <p>一般の​方々は​無料で​楽しめますし、​それは​今後も​変わりません。​クラブや​ショップの​ライドを​含め、​誰でも​参加できる​無料の​グループライドも​協力金は​かかりませんが、​同じ​安全基準と​トレイルマナーを​守る​ことが​求められます。</p>
+      </div>
+    </div>
+    <p>どちらに​当てはまるか​分からない​場合は、<a href="/ja/contact/?topic=commercial-operator-pass">お気軽に​お問い​合わせください</a>。​一緒に​確認させていただきます。</p>
+
+    <h2>主な​ルール</h2>
+    <p>パス保有者は、​パークを​すべての​人に​とって​安全で​公平に​保つための、​いく​つかの​シンプルな​基準に​従って​運営します。</p>
+    <div class="rules-grid">
+      <div class="rule-card">
+        <span class="rule-icon"><i class="fa-solid fa-people-group"></i></span>
+        <h3>グループの​人数</h3>
+        <p>ガイド1名に​つきクライアントは​最大6名、​サポートスタッフを​含めて​グループ全体で​8名まで。</p>
+      </div>
+      <div class="rule-card">
+        <span class="rule-icon"><i class="fa-solid fa-clock"></i></span>
+        <h3>営業時間</h3>
+        <p>パークの​定められた​営業時間内のみ​運営できます。​天候・整備・イベントなどに​よる​閉鎖中の​ガイドは​禁止です。</p>
+      </div>
+      <div class="rule-card">
+        <span class="rule-icon"><i class="fa-solid fa-certificate"></i></span>
+        <h3>保険</h3>
+        <p>事業と​して​総合的な​賠償責任保険に​加入している​こと。</p>
+      </div>
+      <div class="rule-card">
+        <span class="rule-icon"><i class="fa-solid fa-handshake"></i></span>
+        <h3>トレイルマナー</h3>
+        <p>NAMBAの<a href="/ja/code-conduct/">行動規範</a>に​従い、​注意して​道を​譲り、​「コンボイガイディング」​（グループを​短い​間隔で​連続して​走らせる​こと）は​避けてください。</p>
+      </div>
+      <div class="rule-card">
+        <span class="rule-icon"><i class="fa-solid fa-phone"></i></span>
+        <h3>緊急時の​対応</h3>
+        <p>けが、​行方​不明、​天候、​野生動物などに​備えた​独自の​緊急対応計画を​用意してください。</p>
+      </div>
+      <div class="rule-card">
+        <span class="rule-icon"><i class="fa-solid fa-calendar-check"></i></span>
+        <h3>パスに​ついて</h3>
+        <p>一度に​1名の​ガイドが​使用でき、​同じ​会社の​ガイド間で​移譲でき、​毎シーズン更新します。</p>
+      </div>
+    </div>
+    <p>これらは​基本的な​事項です。​環境基準や​事業者に​求められる​行動を​含む完全な​プログラム規約は、​お申し込みの​際に​お渡しします。</p>
+
+    {% comment %}
+      Article 10 of the program (display proof of pass at all times) and the
+      identification requirement are intentionally left off this page: NAMBA does
+      not currently issue a physical pass to display. Add these back when a
+      physical pass artefact exists. See memory: project_no_physical_passes.
+    {% endcomment %}
+
+    <h2>パスの​メリット</h2>
+    <p>商業利用パスは、​単なる​営業許可では​ありません。​お支払いいただく​費用は​協力金であり、​そのまま​トレイルづくりに​使われます。</p>
+    <ul>
+      <li><strong>あなたの​仕事の​場と​なる​トレイルを​支えます。</strong>事業者からの​費用は、​あなたの​ビジネスが​頼りに​する​トレイル網の​整備と​維持に​役立てられます。</li>
+      <li><strong>ウェブサイトに​ロゴを​掲載。</strong>パスを​保有する​企業は、​旅行を​計画する​ライダーが​見る<a href="/ja/twin-peaks/guides/">公認ガイド</a>の​ページに​掲載されます。</li>
+      <li><strong>独占的な​営業権。</strong>ツインピークスで​商業活動を​行えるのは​パス保有者のみです。</li>
+    </ul>
+    <p>さらに​ブランドを​広げたい方へ。<a href="/ja/partner/">トレイルスポンサー</a>には、​パーク内各所の​サイン掲出に​加え、​生涯有効の​商業利用パスが​付与されます。</p>
+
+    <h2>よく​ある​質問</h2>
+    <div class="faq">
+      <details>
+        <summary>商業利用パスは​必要ですか？</summary>
+        <div class="faq-answer-wrap"><div class="faq-answer-inner"><p class="faq-answer">パーク内での​活動で​料金を​受け取る​場合は​必要です。​ガイド、​インストラクター、​有料の​ライドや​レッスンを​行う​バイクショップ、​コーチングや​キッズプログラム、​フォトツアー、​ガイド付きハイキングなどが​含まれます。​一般の​方々は​無料で​利用でき、​何も​必要ありません。</p></div></div>
+      </details>
+      <details>
+        <summary>無料の​クラブライドや​ショップライドに​パスは​必要ですか？</summary>
+        <div class="faq-answer-wrap"><div class="faq-answer-inner"><p class="faq-answer">参加費が​無料で​一般に​公開されている​ライドは、​クラブや​ショップが​主催する​場合でも​協力金は​免除されます。​ただし、​トレイルマナーや​安全、​グループ人数など、​本プログラムの​原則に​従うことが​求められます。​ライダーから​料金を​受け取った​時点で、​パスが​必要に​なります。</p></div></div>
+      </details>
+      <details>
+        <summary>グループの​人数の​上限は？</summary>
+        <div class="faq-answer-wrap"><div class="faq-answer-inner"><p class="faq-answer">ガイド1名に​つきクライアントは​最大6名、​テールガイドや​フォトグラファーなどの​サポートスタッフを​含め、​グループ全体で​8名までです。</p></div></div>
+      </details>
+      <details>
+        <summary>どうやって​取得しますか？</summary>
+        <div class="faq-answer-wrap"><div class="faq-answer-inner"><p class="faq-answer">お問い​合わせフォームから​ご連絡ください。​事業内容、​保険、​資格に​ついて​確認し、​完全な​プログラム規約を​お渡しして、​現在の​料金を​ご案内します。​パスは​毎シーズン更新します。</p></div></div>
+      </details>
+    </div>
+
+    <script>
+      (function () {
+        var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var items = document.querySelectorAll('.faq details');
+        for (var i = 0; i < items.length; i++) {
+          (function (d) {
+            var summary = d.querySelector('summary');
+            var wrap = d.querySelector('.faq-answer-wrap');
+            if (!summary || !wrap) return;
+            if (d.open) d.classList.add('is-open');
+            summary.addEventListener('click', function (e) {
+              e.preventDefault();
+              if (d.dataset.busy) return;
+              if (!d.open) {
+                if (reduce) { d.open = true; d.classList.add('is-open'); return; }
+                d.dataset.busy = '1';
+                d.open = true;
+                requestAnimationFrame(function () { d.classList.add('is-open'); });
+                var openEnd = function () {
+                  wrap.removeEventListener('transitionend', openEnd);
+                  clearTimeout(openTimer);
+                  delete d.dataset.busy;
+                };
+                wrap.addEventListener('transitionend', openEnd);
+                var openTimer = setTimeout(openEnd, 360);
+              } else {
+                if (reduce) { d.classList.remove('is-open'); d.open = false; return; }
+                d.dataset.busy = '1';
+                d.classList.remove('is-open');
+                var closeEnd = function () {
+                  wrap.removeEventListener('transitionend', closeEnd);
+                  clearTimeout(closeTimer);
+                  d.open = false;
+                  delete d.dataset.busy;
+                };
+                wrap.addEventListener('transitionend', closeEnd);
+                var closeTimer = setTimeout(closeEnd, 360);
+              }
+            });
+          })(items[i]);
+        }
+      })();
+    </script>
 
     <div style="text-align:center; margin:50px 0;">
-      <h2 style="margin-bottom: 40px;">商業利用パスのお申し込み</h2>
+      <h2 style="margin-bottom: 30px;">商業利用パスのお申し込み</h2>
+      <p style="margin-bottom: 30px;">あなたの​事業に​ついてお聞か​せください。​現在の​料金を​含め、​次の​ステップを​ご案内します。</p>
       <a class="btn btn-primary" href="/ja/contact/?topic=commercial-operator-pass">お問合せ</a>
     </div>
   </section>
 </div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://namba.ngo/ja/twin-peaks/commercial-pass/#faq",
+  "isPartOf": { "@id": "https://namba.ngo/ja/twin-peaks/commercial-pass/#webpage" },
+  "inLanguage": "ja",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "ツインピークスバイクパークで商業利用パスは必要ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "パーク内での活動で料金を受け取る場合は必要です。ガイド、インストラクター、有料のライドやレッスンを行うバイクショップ、コーチングやキッズプログラム、フォトツアー、ガイド付きハイキングなどが含まれます。一般の方々は無料で利用でき、何も必要ありません。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "無料のクラブライドやショップライドにパスは必要ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "参加費が無料で一般に公開されているライドは、クラブやショップが主催する場合でも協力金は免除されます。ただし、トレイルマナーや安全、グループ人数など、本プログラムの原則に従うことが求められます。ライダーから料金を受け取った時点で、パスが必要になります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ツインピークスでのガイド付きライドのグループ人数の上限は？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ガイド1名につきクライアントは最大6名、テールガイドやフォトグラファーなどのサポートスタッフを含め、グループ全体で8名までです。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "商業利用パスはどうやって取得しますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "お問い合わせフォームからご連絡ください。事業内容、保険、資格について確認し、完全なプログラム規約をお渡しして、現在の料金をご案内します。パスは毎シーズン更新します。"
+      }
+    }
+  ]
+}
+</script>
