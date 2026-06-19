@@ -699,8 +699,12 @@ layout: base
       script.src = 'https://es.pinkbike.org/ttl-86400/sprt/j/trailforks/widget.js?units=metric';
       document.head.appendChild(script);
     }
-    var target = document.querySelector('.TrailforksWidgetMap');
-    if (!target) return; // No map on this page (e.g. /twin-peaks/guides/, /emergency/)
+    // widget.js activates every Trailforks widget on the page. The map only
+    // renders on the park root, but the sidebar "Bike Park status" widget
+    // appears on every park page (incl. sub-pages like /commercial-pass/,
+    // /rules/, /guides/), so trigger the load from any of them, not just the map.
+    var targets = document.querySelectorAll('.TrailforksWidgetMap, .TrailforksWidgetRegionStatus, .TrailforksWidgetTrailStatus');
+    if (!targets.length) return; // No Trailforks widgets on this page (e.g. /emergency/)
     if (!('IntersectionObserver' in window)) {
       // No IntersectionObserver — defer to load event so we don't block paint.
       if (document.readyState === 'complete') loadWidget();
@@ -713,7 +717,7 @@ layout: base
         loadWidget();
       }
     }, { rootMargin: '500px' });
-    io.observe(target);
+    for (var i = 0; i < targets.length; i++) { io.observe(targets[i]); }
   })();
 </script>
 
