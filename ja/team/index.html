@@ -1,7 +1,7 @@
 ---
 title: チーム紹介
 subtitle: NAMBAの創設者と理事会
-description: "NAMBA（ニセコエリアマウンテンバイク協会）の24人の理事会、共同創設者、トレイルクルーをご紹介します。日本人と海外メンバーが集まる多様なチーム。"
+description: "NAMBA（ニセコエリアマウンテンバイク協会）の22人の理事会、共同創設者、トレイルクルーをご紹介します。日本人と海外メンバーが集まる多様なチーム。"
 masthead:
   img: /assets/images/bg/bg-header-team.jpg
 og:
@@ -148,8 +148,9 @@ og:
         class="features-desc ja-animate"
         data-animation="move-from-bottom"
         data-delay="200">
+        {%- assign board_count = site.data.team | where_exp: "m", "m.namba_role != 'Auditor'" | size -%}
         <p class="section-lede">
-          2021年に<wbr>6人の<wbr>ライダーが<wbr>設立した<wbr><a href="/ja/about/">NAMBA</a>は、<wbr>現在24名の<wbr>理事会で<wbr>運営されています。<wbr>男女、<wbr>日本人と<wbr>外国人、<wbr>MTB経験者と<wbr>未経験者。<wbr>ニセコへの<wbr>同じ<wbr>ビジョンに<wbr>向かって<wbr>動いています。
+          2021年に<wbr>6人の<wbr>ライダーが<wbr>設立した<wbr><a href="/ja/about/">NAMBA</a>は、<wbr>現在{{ board_count }}名の<wbr>理事会で<wbr>運営されています。<wbr>男女、<wbr>日本人と<wbr>外国人、<wbr>MTB経験者と<wbr>未経験者。<wbr>ニセコへの<wbr>同じ<wbr>ビジョンに<wbr>向かって<wbr>動いています。
         </p>
       </div>
     </div>
@@ -327,7 +328,7 @@ og:
       "@id": "https://namba.ngo/ja/team/#webpage",
       "url": "https://namba.ngo/ja/team/",
       "name": "チーム：NAMBAの創設者と理事会",
-      "description": "NAMBA（ニセコエリアマウンテンバイク協会）の24人の理事会、共同創設者、トレイルクルーをご紹介します。日本人と海外メンバーが集まる多様なチーム。",
+      "description": "NAMBA（ニセコエリアマウンテンバイク協会）の{{ board_count }}人の理事会、共同創設者、トレイルクルーをご紹介します。日本人と海外メンバーが集まる多様なチーム。",
       "inLanguage": "ja",
       "primaryImageOfPage": "https://namba.ngo/assets/images/bg/bg-header-team.jpg",
       "about": { "@id": "https://namba.ngo/#organization" },

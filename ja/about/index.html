@@ -221,7 +221,7 @@ og:
           <div class="features-item ja-animate" data-animation="move-from-bottom" data-delay="item-0">
             <div class="font-icon"><span class="fa-solid fa-people-group"></span></div>
             <h3>メンバー紹介</h3>
-            <p>NAMBAを​支える​24人の​理事会メンバー。</p>
+            <p>{%- assign board_count = site.data.team | where_exp: "m", "m.namba_role != 'Auditor'" | size -%}NAMBAを​支える​{{ board_count }}人の​理事会メンバー。</p>
             <a class="action" href="/ja/team/">チームを​見る <span class="fa-solid fa-circle-arrow-right"></span></a>
           </div>
         </div>

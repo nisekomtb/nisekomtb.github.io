@@ -1,3 +1,10 @@
+# BOARD COUNT — when you add or remove people here, the "N-person board" /
+# "N名の理事会" counts in page BODY copy and in-body JSON-LD update automatically
+# (computed as team entries minus anyone with namba_role: Auditor). But Jekyll does
+# NOT run Liquid in YAML front matter, so the static `description:` fields on
+# team/index.html and ja/team/index.html (which feed the meta/OG/Twitter tags) must
+# be updated BY HAND. Current count: 22 (23 entries minus 1 Auditor).
+
 - image: /assets/images/team/paulw.jpg
   name: Paul Wright
   leader: true
@@ -245,26 +252,26 @@
     title: 倶知安町観光協会副会長
     sub_title: North Design 株式会社 創業者／オーナー
 
-- image: /assets/images/team/yoshihito.jpg
-  name: Yoshihito Tanaka
-  namba_role: Director
-  title: Kutchan Council Member. Kutchan Tourism Association Director
-  sub_title: Niseko Resort Service Founder
-  ja:
-    name: 田中 義人
-    namba_role: 理事
-    title: 倶知安町議会議員. 倶知安町観光協会理事
-    sub_title: ニセコリゾートサービス 創業者／オーナー
+# - image: /assets/images/team/yoshihito.jpg
+#   name: Yoshihito Tanaka
+#   namba_role: Director
+#   title: Kutchan Council Member. Kutchan Tourism Association Director
+#   sub_title: Niseko Resort Service Founder
+#   ja:
+#     name: 田中 義人
+#     namba_role: 理事
+#     title: 倶知安町議会議員. 倶知安町観光協会理事
+#     sub_title: ニセコリゾートサービス 創業者／オーナー
 
-- image: /assets/images/team/mizuno.jpg
-  name: Manabu Mizuno
-  namba_role: Director
-  committee: Trail
-  title: Mizuno Bikes Owner
-  ja:
-    name: 水野 学
-    namba_role: 理事
-    title: 水野自転車店 オーナー
+# - image: /assets/images/team/mizuno.jpg
+#   name: Manabu Mizuno
+#   namba_role: Director
+#   committee: Trail
+#   title: Mizuno Bikes Owner
+#   ja:
+#     name: 水野 学
+#     namba_role: 理事
+#     title: 水野自転車店 オーナー
 
 - image: /assets/images/team/satoshi.jpg
   name: Satoshi Yoshida

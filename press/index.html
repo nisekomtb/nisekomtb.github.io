@@ -134,7 +134,7 @@ og:
           <li><i class="fa-solid fa-circle-check"></i><span>¥86M raised in 2025 alone. 100% trail funding success rate, every trail community-funded.</span></li>
           <li><i class="fa-solid fa-circle-check"></i><span>20,000+ community volunteer hours donated to date.</span></li>
           <li><i class="fa-solid fa-circle-check"></i><span>Swiss-designed trails, built in partnership with Allegra.</span></li>
-          <li><i class="fa-solid fa-circle-check"></i><span>Founded in 2021 by six mountain bikers. Now a 24-person board.</span></li>
+          <li><i class="fa-solid fa-circle-check"></i><span>{%- assign board_count = site.data.team | where_exp: "m", "m.namba_role != 'Auditor'" | size -%}Founded in 2021 by six mountain bikers. Now a {{ board_count }}-person board.</span></li>
           <li><i class="fa-solid fa-circle-check"></i><span>Twin Peaks is Japan's only truly open-access mountain bike park. No membership, no registration, no fees.</span></li>
         </ul>
       </div>

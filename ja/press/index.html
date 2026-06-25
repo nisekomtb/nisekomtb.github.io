@@ -134,7 +134,7 @@ og:
           <li><i class="fa-solid fa-circle-check"></i><span>2025年単独で8,600万円調達。トレイル資金調達100%達成、すべてのトレイルがコミュニティ資金で建設。</span></li>
           <li><i class="fa-solid fa-circle-check"></i><span>これまでにコミュニティから寄付されたボランティア活動20,000時間以上。</span></li>
           <li><i class="fa-solid fa-circle-check"></i><span>アレグラと協働するスイス設計のトレイル。</span></li>
-          <li><i class="fa-solid fa-circle-check"></i><span>2021年にマウンテンバイカー6人が設立。現在は24人の理事会。</span></li>
+          <li><i class="fa-solid fa-circle-check"></i><span>{%- assign board_count = site.data.team | where_exp: "m", "m.namba_role != 'Auditor'" | size -%}2021年にマウンテンバイカー6人が設立。現在は{{ board_count }}人の理事会。</span></li>
           <li><i class="fa-solid fa-circle-check"></i><span>ツインピークスは、日本で唯一の完全自由アクセスのマウンテンバイクパーク。会員制度なし、登録なし、料金なし。</span></li>
         </ul>
       </div>

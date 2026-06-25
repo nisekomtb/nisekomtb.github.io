@@ -221,7 +221,7 @@ og:
           <div class="features-item ja-animate" data-animation="move-from-bottom" data-delay="item-0">
             <div class="font-icon"><span class="fa-solid fa-people-group"></span></div>
             <h3>Our Team</h3>
-            <p>Meet the 24-person board behind NAMBA.</p>
+            <p>{%- assign board_count = site.data.team | where_exp: "m", "m.namba_role != 'Auditor'" | size -%}Meet the {{ board_count }}-person board behind NAMBA.</p>
             <a class="action" href="/team/">Meet the team <span class="fa-solid fa-circle-arrow-right"></span></a>
           </div>
         </div>
