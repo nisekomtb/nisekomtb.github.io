@@ -609,7 +609,7 @@ hanazono:
   hours: TBC
   managed_by: Hanazono Resort / NAMBA
   ja:
-    name: HANAZONOマウンテンバイクパーク
+    name: HANAZONO マウンテンバイクパーク
     cost: 未定
     location: 花園
     season: 2026年夏以降
@@ -624,7 +624,7 @@ hanazono:
       width: 3000
       height: 2000
       alt_en: Riders descending a flow trail at Hanazono Mountain Bike Park with Mount Yotei in the distance
-      alt_ja: HANAZONOマウンテンバイクパークのフロートレイルを下るライダー、遠くに羊蹄山
+      alt_ja: HANAZONO マウンテンバイクパークのフロートレイルを下るライダー、遠くに羊蹄山
     - img: /assets/images/trails/hanazono/gallery/base-area.webp
       img_large: /assets/images/trails/hanazono/gallery/base-area-large.webp
       width: 3000
@@ -636,13 +636,13 @@ hanazono:
       width: 2667
       height: 1778
       alt_en: Rider airborne off a dirt jump at Hanazono Mountain Bike Park
-      alt_ja: HANAZONOマウンテンバイクパークのダートジャンプで宙を舞うライダー
+      alt_ja: HANAZONO マウンテンバイクパークのダートジャンプで宙を舞うライダー
     - img: /assets/images/trails/hanazono/gallery/forest-singletrack.webp
       img_large: /assets/images/trails/hanazono/gallery/forest-singletrack-large.webp
       width: 3000
       height: 2000
       alt_en: Two riders flowing through autumn forest singletrack at Hanazono Mountain Bike Park
-      alt_ja: HANAZONOマウンテンバイクパークの秋の森のシングルトラックを走る2人のライダー
+      alt_ja: HANAZONO マウンテンバイクパークの秋の森のシングルトラックを走る2人のライダー
     - img: /assets/images/trails/hanazono/gallery/gondola-cabin.webp
       img_large: /assets/images/trails/hanazono/gallery/gondola-cabin-large.webp
       width: 2667
@@ -660,7 +660,7 @@ hanazono:
       width: 3556
       height: 2000
       alt_en: Four riders railing banked berms on a flow trail at Hanazono Mountain Bike Park, Mount Yotei behind
-      alt_ja: HANAZONOマウンテンバイクパークのフロートレイルでバームを駆け抜ける4人のライダー、奥に羊蹄山
+      alt_ja: HANAZONO マウンテンバイクパークのフロートレイルでバームを駆け抜ける4人のライダー、奥に羊蹄山
     - img: /assets/images/trails/hanazono/gallery/rider-cornering-gondola.webp
       img_large: /assets/images/trails/hanazono/gallery/rider-cornering-gondola-large.webp
       width: 3000
@@ -676,7 +676,7 @@ hanazono:
   trails:
     - name: Mori Loop
       ja:
-        name: モリ・ループ
+        name: 森ループ
       difficulty: green
       distance: "1,360"
       climb: 39
@@ -686,7 +686,7 @@ hanazono:
       # trailforks_id: 923207
     - name: Hanazono Skyline
       ja:
-        name: ハナゾノ・スカイライン
+        name: HANAZONO スカイライン
       difficulty: blue
       distance: "4,212"
       climb: 0
