@@ -518,24 +518,6 @@ layout: base
             <span class="widget-cover-pill">{% if page.lang == 'ja' %}タップして操作{% else %}Tap to interact{% endif %}</span>
           </div>
         </div>
-        <script>
-          (function() {
-            // Add a title to the Trailforks-injected iframe so it has an accessible name.
-            var widget = document.currentScript.previousElementSibling;
-            if (!widget) return;
-            var label = widget.getAttribute('aria-label') || 'Interactive trail map';
-            var observer = new MutationObserver(function() {
-              var iframe = widget.querySelector('iframe');
-              if (iframe && !iframe.title) {
-                iframe.title = label;
-                observer.disconnect();
-              }
-            });
-            observer.observe(widget, { childList: true, subtree: true });
-            // Safety: stop watching after 10s
-            setTimeout(function() { observer.disconnect(); }, 10000);
-          })();
-        </script>
       </section>
       {% endif %}
       {% endunless %}
@@ -713,51 +695,48 @@ layout: base
 </div>
 
 <script type="text/javascript">
-  // Lazy-load the Trailforks widget script when the map scrolls near viewport.
-  // The widget pulls Mapbox (~265KB), Pinkbike GA, and other JS we don't want
-  // to pay for upfront on the critical path. Observer disconnects after first
-  // load; falls back to immediate load if IntersectionObserver is unavailable.
+  // Trailforks loading. The heavy interactive MAP (~3MB Mapbox) loads only on
+  // user click (facade, below). The lightweight "Bike Park status" sidebar widget
+  // still lazy-loads widget.js when it nears the viewport. Both share one loader
+  // so widget.js is never injected twice.
   (function() {
-    var loaded = false;
-    function loadWidget() {
-      if (loaded) return;
-      loaded = true;
-      var script = document.createElement('script');
-      script.src = 'https://es.pinkbike.org/ttl-86400/sprt/j/trailforks/widget.js?units=metric';
-      document.head.appendChild(script);
+    // ---- One-time widget.js loader, shared by status widgets + the map facade ----
+    var WJS = 'https://es.pinkbike.org/ttl-86400/sprt/j/trailforks/widget.js?units=metric';
+    var wjsState = 0; // 0 = unloaded, 1 = loading, 2 = loaded
+    var wjsCbs = [];
+    function drain() { while (wjsCbs.length) { try { wjsCbs.shift()(); } catch (e) {} } }
+    function ensureWidgetJs(cb) {
+      if (cb) wjsCbs.push(cb);
+      if (wjsState === 2) { drain(); return; }
+      if (wjsState === 1) return;
+      wjsState = 1;
+      var s = document.createElement('script');
+      s.src = WJS;
+      s.onload = function () { wjsState = 2; drain(); };
+      document.head.appendChild(s);
     }
-    // widget.js activates every Trailforks widget on the page. The map only
-    // renders on the park root, but the sidebar "Bike Park status" widget
-    // appears on every park page (incl. sub-pages like /commercial-pass/,
-    // /rules/, /guides/), so trigger the load from any of them, not just the map.
-    var targets = document.querySelectorAll('.TrailforksWidgetMap, .TrailforksWidgetRegionStatus, .TrailforksWidgetTrailStatus');
-    if (!targets.length) return; // No Trailforks widgets on this page (e.g. /emergency/)
-    if (!('IntersectionObserver' in window)) {
-      // No IntersectionObserver — defer to load event so we don't block paint.
-      if (document.readyState === 'complete') loadWidget();
-      else window.addEventListener('load', loadWidget);
-      return;
-    }
-    var io = new IntersectionObserver(function(entries) {
-      if (entries.some(function(e) { return e.isIntersecting; })) {
-        io.disconnect();
-        loadWidget();
-      }
-    }, { rootMargin: '500px' });
-    for (var i = 0; i < targets.length; i++) { io.observe(targets[i]); }
-  })();
-</script>
 
-<script>
-  // Trailforks map cover: blocks touch on mobile so single-finger
-  // scrolls bypass the iframe and reach the page. Tap dismisses;
-  // an IntersectionObserver re-arms the cover when the map leaves
-  // the viewport so returning to it gets the same scroll-past
-  // behaviour again.
-  document.addEventListener('DOMContentLoaded', function () {
-    var widgets = document.querySelectorAll('.TrailforksWidgetMap');
-    if (!widgets.length) return;
-    widgets.forEach(function (widget) {
+    // ---- Status widgets: lazy-load on scroll-near (the map is intentionally excluded) ----
+    var statusTargets = document.querySelectorAll('.TrailforksWidgetRegionStatus, .TrailforksWidgetTrailStatus');
+    if (statusTargets.length) {
+      if (!('IntersectionObserver' in window)) {
+        if (document.readyState === 'complete') ensureWidgetJs();
+        else window.addEventListener('load', function () { ensureWidgetJs(); });
+      } else {
+        var sio = new IntersectionObserver(function(entries) {
+          if (entries.some(function(e) { return e.isIntersecting; })) {
+            sio.disconnect();
+            ensureWidgetJs();
+          }
+        }, { rootMargin: '500px' });
+        for (var i = 0; i < statusTargets.length; i++) { sio.observe(statusTargets[i]); }
+      }
+    }
+
+    // ---- Mobile touch-shield: bound AFTER the map goes live (it doesn't exist before) ----
+    // Blocks single-finger touch on mobile so page scroll bypasses the iframe; tap
+    // dismisses; re-arms when the map scrolls out of view. Hidden on desktop via CSS.
+    function bindMapCover(widget) {
       var cover = widget.querySelector('.widget-cover');
       if (!cover) return;
       function reveal() { cover.classList.add('is-hidden'); }
@@ -767,13 +746,49 @@ layout: base
         if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); reveal(); }
       });
       if ('IntersectionObserver' in window) {
-        var io = new IntersectionObserver(function (entries) {
-          entries.forEach(function (entry) {
-            if (!entry.isIntersecting) rearm();
-          });
+        var cio = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) { if (!entry.isIntersecting) rearm(); });
         }, { threshold: 0 });
-        io.observe(widget);
+        cio.observe(widget);
       }
-    });
-  });
+    }
+
+    // ---- Facade -> live map on user click ----
+    // check_widget_map() is NOT idempotent (it builds an iframe for every
+    // .TrailforksWidgetMap). widget.js also auto-activates on load. So: if widget.js
+    // is already loaded, its load-time scan ran while the map was still inert, so we
+    // must scan now; if it isn't loaded yet, loading it will activate the (now
+    // promoted) map for us, so we must NOT scan again or we'd get two iframes.
+    var facades = document.querySelectorAll('.tf-map-facade');
+    for (var j = 0; j < facades.length; j++) {
+      (function(facade) {
+        var loader = facade.querySelector('.tf-map-loader');
+        if (!loader) return;
+        loader.addEventListener('click', function () {
+          loader.classList.add('is-loading');
+          facade.classList.add('TrailforksWidgetMap');
+          facade.classList.remove('tf-map-facade');
+          // When the iframe appears, drop the loader and arm the mobile touch-shield.
+          if ('MutationObserver' in window) {
+            var mo = new MutationObserver(function () {
+              var iframe = facade.querySelector('iframe');
+              if (iframe) {
+                // Give the Trailforks-injected iframe an accessible name.
+                if (!iframe.title) iframe.title = facade.getAttribute('aria-label') || 'Interactive trail map';
+                loader.parentNode && loader.parentNode.removeChild(loader);
+                bindMapCover(facade);
+                mo.disconnect();
+              }
+            });
+            mo.observe(facade, { childList: true });
+          }
+          if (wjsState === 2) {
+            if (typeof window.check_widget_map === 'function') window.check_widget_map();
+          } else {
+            ensureWidgetJs(); // load-time scan will activate the promoted map
+          }
+        });
+      })(facades[j]);
+    }
+  })();
 </script>
