@@ -91,6 +91,13 @@ layout: base
     -webkit-backdrop-filter: blur(4px);
   }
 
+  /* Before the map loads the element is a facade and only the loader shows.
+     The touch-shield cover is for AFTER the map is live, so keep it hidden
+     until then (otherwise both overlays stack and the text overlaps). */
+  .tf-map-facade .widget-cover {
+    display: none;
+  }
+
   @media (min-width: 768px) {
     .widget .widget-cover {
       display: none;
