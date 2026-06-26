@@ -467,7 +467,7 @@ layout: base
       {% unless is_park_subpage %}
       {% if park_data.trailforks_rid %}
       <section>
-        <div class="widget TrailforksWidgetMap"
+        <div class="widget tf-map-facade"
           role="region"
           aria-label="{% if page.lang == 'ja' %}{{ park_data.ja.name | default: park_data.name }}トレイルマップ{% else %}{{ park_data.name }} trail map{% endif %}"
           data-w="100%"
@@ -486,6 +486,10 @@ layout: base
           {% if park_data.map_lat %}data-lat="{{ park_data.map_lat }}"{% endif %}
           {% if park_data.map_lon %}data-lon="{{ park_data.map_lon }}"{% endif %}
           style="position:relative; min-height:600px;">
+          <button type="button" class="tf-map-loader"
+               aria-label="{% if page.lang == 'ja' %}インタラクティブマップを読み込む{% else %}Load interactive trail map{% endif %}">
+            <span class="widget-cover-pill">{% if page.lang == 'ja' %}マップを読み込む{% else %}Load interactive map{% endif %}</span>
+          </button>
           <div class="widget-cover" role="button" tabindex="0"
                aria-label="{% if page.lang == 'ja' %}マップを操作するにはタップしてください{% else %}Tap to interact with the map{% endif %}">
             <span class="widget-cover-pill">{% if page.lang == 'ja' %}タップして操作{% else %}Tap to interact{% endif %}</span>
