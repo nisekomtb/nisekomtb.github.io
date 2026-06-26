@@ -31,6 +31,29 @@ layout: base
     position: relative;
   }
 
+  /* Facade loader: covers the inert map on all viewports until the user
+     clicks to load the (~3MB) Trailforks map. Sits above .widget-cover. */
+  .widget .tf-map-loader {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border: 0;
+    background: rgba(0, 0, 0, 0.18);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    z-index: 3;
+  }
+
+  .widget .tf-map-loader.is-loading {
+    cursor: progress;
+    pointer-events: none;
+  }
+
   /* Mobile: a blocking cover sits over the Trailforks iframe so the map
      doesn't trap the page scroll. Tapping it hides the cover (map is then
      fully interactive). The cover re-arms via IntersectionObserver when
