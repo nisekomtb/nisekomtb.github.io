@@ -26,7 +26,7 @@
 <article class="event-card{% if include.variant %} event-card-{{ include.variant }}{% endif %}{% if include.disabled or event.cancelled %} disabled{% endif %}">
   <div class="event-card-thumb">
     {% if event.thumbnail %}
-      <img src="{{ event.thumbnail }}" alt="">
+      <picture><source type="image/webp" srcset="{{ event.thumbnail | replace: '.jpg', '.webp' }}"><img src="{{ event.thumbnail }}" alt="" loading="lazy"></picture>
     {% else %}
       <div class="event-card-thumb-fallback"></div>
     {% endif %}
