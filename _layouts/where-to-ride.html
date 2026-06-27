@@ -506,8 +506,8 @@ layout: base
           style="position:relative; min-height:600px;">
           {% if park_data.map_preview %}<img class="tf-map-preview" src="{{ park_data.map_preview }}" alt="" width="915" height="608" loading="lazy">{% endif %}
           <div class="widget-cover" role="button" tabindex="0"
-               aria-label="{% if page.lang == 'ja' %}マップを操作するにはタップしてください{% else %}Tap to interact with the map{% endif %}">
-            <span class="widget-cover-pill">{% if page.lang == 'ja' %}タップして操作{% else %}Tap to interact{% endif %}</span>
+               aria-label="{% if page.lang == 'ja' %}インタラクティブなトレイルマップを表示{% else %}View the interactive trail map{% endif %}">
+            <span class="widget-cover-pill">{% if page.lang == 'ja' %}マップを表示{% else %}View interactive map{% endif %}</span>
           </div>
         </div>
       </section>
