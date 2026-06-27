@@ -688,9 +688,12 @@ layout: base
 
 <script type="text/javascript">
   // Trailforks loading. The heavy interactive MAP (~3MB Mapbox) loads only on
-  // user click (facade, below). The lightweight "Bike Park status" sidebar widget
-  // still lazy-loads widget.js when it nears the viewport. Both share one loader
-  // so widget.js is never injected twice.
+  // user click (facade, below). The status widgets (the "Bike Park status"
+  // sidebar panel + one dot per trail row) load widget.js only once a status
+  // element actually scrolls into view. widget.js auto-scans and activates every
+  // .TrailforksWidget* on the page in one go, so on a no-scroll load (incl. a
+  // synthetic Lighthouse run) it is never injected and zero status iframes load.
+  // Both paths share one loader so widget.js is never injected twice.
   (function() {
     // ---- One-time widget.js loader, shared by status widgets + the map facade ----
     var WJS = 'https://es.pinkbike.org/ttl-86400/sprt/j/trailforks/widget.js?units=metric';
@@ -708,7 +711,10 @@ layout: base
       document.head.appendChild(s);
     }
 
-    // ---- Status widgets: lazy-load on scroll-near (the map is intentionally excluded) ----
+    // ---- Status widgets: load widget.js only when a status element scrolls
+    // into view (the map is intentionally excluded). rootMargin is 0 so nothing
+    // below the fold triggers without a scroll, regardless of how each park's
+    // sidebar height places the status panel. ----
     var statusTargets = document.querySelectorAll('.TrailforksWidgetRegionStatus, .TrailforksWidgetTrailStatus');
     if (statusTargets.length) {
       if (!('IntersectionObserver' in window)) {
@@ -720,7 +726,7 @@ layout: base
             sio.disconnect();
             ensureWidgetJs();
           }
-        }, { rootMargin: '500px' });
+        }, { rootMargin: '0px' });
         for (var i = 0; i < statusTargets.length; i++) { sio.observe(statusTargets[i]); }
       }
     }
