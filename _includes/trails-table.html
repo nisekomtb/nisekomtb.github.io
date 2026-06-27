@@ -17,12 +17,12 @@
       <li><span aria-hidden="true" class="fa-solid fa-road-barrier under-construction"></span> {% if page.lang == "ja" %}工事中{% else %}Under construction{% endif %}</li>
     </ul>
     <ul class="key-access">
-      <li><div><img class="access" src="/assets/images/trails/one-way.png" />&nbsp;{% if page.lang == "ja" %}一方通行{% else %}One way traffic{% endif %}</div></li>
-      <li><div><img class="access" src="/assets/images/trails/two-way.png" />&nbsp;{% if page.lang == "ja" %}双方向{% else %}Two way traffic{% endif %}</div></li>
-      <li><div><img class="access" src="/assets/images/trails/down-only.png" />&nbsp;{% if page.lang == "ja" %}下りのみ{% else %}Downhill only{% endif %}</div></li>
-      <li><div><img class="access" src="/assets/images/trails/up-only.png" />&nbsp;{% if page.lang == "ja" %}上りのみ{% else %}Uphill only{% endif %}</div></li>
-      <li><div><img class="access" src="/assets/images/trails/multiuse.png" />&nbsp;{% if page.lang == "ja" %}複合利用{% else %}Multi use{% endif %}</div></li>
-      <li><div><img class="access restrict" src="/assets/images/trails/bikes-only.png" />&nbsp;{% if page.lang == "ja" %}自転車専用{% else %}Bikes only{% endif %}</div></li>
+      <li><div><img loading="lazy" class="access" src="/assets/images/trails/one-way.png" alt="" />&nbsp;{% if page.lang == "ja" %}一方通行{% else %}One way traffic{% endif %}</div></li>
+      <li><div><img loading="lazy" class="access" src="/assets/images/trails/two-way.png" alt="" />&nbsp;{% if page.lang == "ja" %}双方向{% else %}Two way traffic{% endif %}</div></li>
+      <li><div><img loading="lazy" class="access" src="/assets/images/trails/down-only.png" alt="" />&nbsp;{% if page.lang == "ja" %}下りのみ{% else %}Downhill only{% endif %}</div></li>
+      <li><div><img loading="lazy" class="access" src="/assets/images/trails/up-only.png" alt="" />&nbsp;{% if page.lang == "ja" %}上りのみ{% else %}Uphill only{% endif %}</div></li>
+      <li><div><img loading="lazy" class="access" src="/assets/images/trails/multiuse.png" alt="" />&nbsp;{% if page.lang == "ja" %}複合利用{% else %}Multi use{% endif %}</div></li>
+      <li><div><img loading="lazy" class="access restrict" src="/assets/images/trails/bikes-only.png" alt="" />&nbsp;{% if page.lang == "ja" %}自転車専用{% else %}Bikes only{% endif %}</div></li>
     </ul>
   </div>
   <table class="trails">
@@ -73,23 +73,25 @@
       <td class="bike">
         {% case trail.bike %}
         {% when "one-way" %}
-          {% assign bikeToolTip = "One way traffic" %}
+          {% assign bikeToolTip = "One way traffic" %}{% if page.lang == "ja" %}{% assign bikeToolTip = "一方通行" %}{% endif %}
         {% when "two-way" %}
-          {% assign bikeToolTip = "Two way traffic" %}
+          {% assign bikeToolTip = "Two way traffic" %}{% if page.lang == "ja" %}{% assign bikeToolTip = "双方向" %}{% endif %}
         {% when "down-only" %}
-          {% assign bikeToolTip = "Downhill only" %}
+          {% assign bikeToolTip = "Downhill only" %}{% if page.lang == "ja" %}{% assign bikeToolTip = "下りのみ" %}{% endif %}
         {% when "up-only" %}
-          {% assign bikeToolTip = "Uphill only" %}
+          {% assign bikeToolTip = "Uphill only" %}{% if page.lang == "ja" %}{% assign bikeToolTip = "上りのみ" %}{% endif %}
         {% else %}
           {% assign bikeToolTip = "" %}
         {% endcase %}
-        <img class="access" src="/assets/images/trails/{{- trail.bike -}}.png" title="{{ bikeToolTip }}" />
+        <img loading="lazy" class="access" src="/assets/images/trails/{{- trail.bike -}}.png" alt="{{ bikeToolTip }}" title="{{ bikeToolTip }}" />
       </td>
       <td class="hike">
         {% if trail.multi_use %}
-          <img class="access" src="/assets/images/trails/multiuse.png" title="Multi use (hiking & trail running allowed)" />
+          {% if page.lang == "ja" %}{% assign hikeAlt = "複合利用" %}{% assign hikeTitle = "複合利用（ハイキング・トレイルランニング可）" %}{% else %}{% assign hikeAlt = "Multi-use" %}{% assign hikeTitle = "Multi use (hiking & trail running allowed)" %}{% endif %}
+          <img loading="lazy" class="access" src="/assets/images/trails/multiuse.png" alt="{{ hikeAlt }}" title="{{ hikeTitle }}" />
         {% else %}
-          <img class="access restrict" src="/assets/images/trails/bikes-only.png" title="Bikes only (no hiking or trail running)" />
+          {% if page.lang == "ja" %}{% assign hikeAlt = "自転車専用" %}{% assign hikeTitle = "自転車専用（ハイキング・トレイルランニング不可）" %}{% else %}{% assign hikeAlt = "Bikes only" %}{% assign hikeTitle = "Bikes only (no hiking or trail running)" %}{% endif %}
+          <img loading="lazy" class="access restrict" src="/assets/images/trails/bikes-only.png" alt="{{ hikeAlt }}" title="{{ hikeTitle }}" />
         {% endif %}
       </td>
       <td class="right climb">{% unless trail.climb == 0 %}{{ trail.climb -}}m <span class="fa fa-arrow-up" title="Climb"></span>{% endunless %}</td>
