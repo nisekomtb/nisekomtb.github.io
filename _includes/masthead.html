@@ -21,9 +21,19 @@
   <div class="ja-masthead">
     <div class="ja-masthead-bg" aria-hidden="true">
       <picture>
+        {%- comment -%}
+          The masthead is a decorative hero sitting behind a dark scrim + the
+          title text, so it does not need full retina density on phones. Declare
+          a 60vw slot below 768px so high-DPR phones pull the 800w tier (~half
+          the bytes of the 1200w tier) instead of over-fetching for a dimmed
+          background. The image still displays full-width (CSS width:100%); the
+          slight upscale is imperceptible behind the scrim. Tablet/desktop keep
+          100vw (full res) and already hit a fast LCP. This is the mobile-LCP
+          lever, applied site-wide via this partial.
+        {%- endcomment -%}
         <source type="image/webp"
                 srcset="{{ mh_base }}-mobile.webp 400w, {{ mh_base }}.webp 800w, {{ mh_base }}-medium.webp 1200w, {{ mh_base }}-large.webp 1600w"
-                sizes="100vw">
+                sizes="(max-width: 768px) 60vw, 100vw">
         <img src="{{ masthead_img }}" alt=""
              width="{{ masthead_width }}" height="{{ masthead_height }}"
              loading="eager" fetchpriority="high" decoding="async">
