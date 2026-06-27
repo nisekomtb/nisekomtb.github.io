@@ -504,7 +504,7 @@ layout: base
           {% if park_data.map_lat %}data-lat="{{ park_data.map_lat }}"{% endif %}
           {% if park_data.map_lon %}data-lon="{{ park_data.map_lon }}"{% endif %}
           style="position:relative; min-height:600px;">
-          {% if park_data.map_preview %}<img class="tf-map-preview" src="{{ park_data.map_preview }}" alt="" width="915" height="608" loading="lazy">{% endif %}
+          {% if park_data.map_preview %}<img class="tf-map-preview" src="{{ park_data.map_preview }}" alt="" width="915" height="608" loading="lazy" fetchpriority="low">{% endif %}
           <div class="widget-cover" role="button" tabindex="0"
                aria-label="{% if page.lang == 'ja' %}インタラクティブなトレイルマップを表示{% else %}View the interactive trail map{% endif %}">
             <span class="widget-cover-pill">{% if page.lang == 'ja' %}マップを表示{% else %}View interactive map{% endif %}</span>
@@ -575,7 +575,7 @@ layout: base
           class="tp-logo"
           src="{{ park_data.logo }}"
           alt="{% if page.lang == 'ja' %}{{ park_data.ja.name | default: park_data.name }}{% else %}{{ park_data.name }}{% endif %}"
-          width="200" height="124" />
+          width="200" height="124" loading="lazy" fetchpriority="low" />
         {% endif %}
         <h2 class="module-title">{% if page.lang == "ja" %}基本データ{% else %}Key stats{% endif %}</h2>
         {% include park-stats.html data_key=page.trail_data_key %}
