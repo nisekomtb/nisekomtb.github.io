@@ -1,3 +1,10 @@
+# Trail data for each bike park.
+#
+# Each park with a `trailforks_rid` also has a static `map_preview` image shown
+# on its page's "View interactive map" facade (see _layouts/where-to-ride.html).
+# The preview is a snapshot, so REGENERATE IT whenever a park's trail network
+# changes - adding, removing, or renaming trails - or whenever asked to update
+# the map. How: _docs/trailforks-map-previews.md
 twinpeaks:
   logo: /assets/images/logos/twin-peaks.svg
   name: Twin Peaks Bike Park

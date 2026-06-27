@@ -9,6 +9,19 @@ These previews are snapshots, so they go stale if the trail map changes
 substantially. Regenerate them with the procedure below (no live third-party
 dependency, no API key — the previews are plain WebP files in the repo).
 
+## When to regenerate
+
+Regenerate the affected park's preview (and commit the new `.webp`) whenever:
+
+- **Trails change** for that park in `_data/trails.yml` or in Trailforks itself —
+  adding, removing, or renaming trails, or anything that visibly changes the map
+  (re-routes, new regions, status changes).
+- **You're asked to "update the map"** for a park.
+
+Only the changed park needs regenerating, not all four. If unsure whether the
+visible map changed, regenerate — it's cheap and the snapshot should match what
+the live widget shows.
+
 ## Where they live
 
 Wired via `map_preview:` in `_data/trails.yml` per park:
