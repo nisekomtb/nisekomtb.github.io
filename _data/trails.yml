@@ -21,6 +21,7 @@ twinpeaks:
   location_lat: 42.866
   location_lng: 140.710
   trailforks_rid: 58775
+  map_preview: /assets/images/twinpeaks/map-preview.webp
   map_zoom: 14.664296754902944
   map_lat: 42.869698363944394
   map_lon: 140.70963367125432
@@ -450,6 +451,7 @@ grand-hirafu:
       alt_ja: ヒラフ村へと下るグラン・ヒラフのリフトと下部トレイルを走るライダー
   trailforks_rid: 58866
   # 58780
+  map_preview: /assets/images/trails/grand-hirafu/map-preview.webp
   trails:
     # - name: Hirafu Skills Area
     #   ja:
@@ -583,6 +585,7 @@ annupuri:
       alt_en: Two riders push their bikes up through a wildflower meadow with Mount Annupuri and the gondola line behind
       alt_ja: 野草の咲く草原を自転車を押して登る2人のライダー、奥にはアンヌプリ山とゴンドラ
   trailforks_rid: 66231
+  map_preview: /assets/images/trails/annupuri/map-preview.webp
   trails:
   - name: Downhill course
     ja:
@@ -618,6 +621,7 @@ hanazono:
   location_lat: 42.89317852818024
   location_lng: 140.70017501899656
   trailforks_rid: 74136
+  map_preview: /assets/images/trails/hanazono/map-preview.webp
   gallery:
     - img: /assets/images/trails/hanazono/gallery/flow-trail-yotei.webp
       img_large: /assets/images/trails/hanazono/gallery/flow-trail-yotei-large.webp
