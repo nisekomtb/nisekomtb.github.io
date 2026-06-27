@@ -80,7 +80,17 @@
       sets max-age=600 so a stale asset is at most 10 min stale). If
       an image genuinely needs a hard bust, rename the file.
     {%- endcomment -%}
-    <link href="/assets/css/bootstrap.min.css?v=1" rel="stylesheet" type="text/css"/>
+    {%- comment -%}
+      bootstrap.min.css (~232KB) is used only for below-the-fold components
+      (cards, accordions, carousels, badges), so load it async to take it off the
+      render-blocking path. The inline critical block below covers the only
+      above-the-fold rules it provides: keeping the mobile nav collapsed and the
+      masthead CTA button shaped. bs3-compat.css stays render-blocking - it holds
+      the :root design tokens (--color-primary etc.) used by every sheet.
+    {%- endcomment -%}
+    <style>.collapse:not(.show){display:none}.btn{display:inline-block}</style>
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css?v=1" media="print" onload="this.media='all'"/>
+    <noscript><link rel="stylesheet" href="/assets/css/bootstrap.min.css?v=1"/></noscript>
     <link href="/assets/css/bs3-compat.css?v=1" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="/assets/fonts/font-awesome-subset/fa-subset.css?v=3" media="print" onload="this.media='all'"/>
     <noscript><link rel="stylesheet" href="/assets/fonts/font-awesome-subset/fa-subset.css?v=3"/></noscript>
