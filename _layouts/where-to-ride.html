@@ -31,9 +31,9 @@ layout: base
     position: relative;
   }
 
-  /* Static map preview behind the facade loader: a lightweight (~70KB) snapshot
-     of the Trailforks map so the user sees the real map before loading the
-     ~3MB interactive widget. The semi-transparent loader sits on top of it. */
+  /* Static map preview behind the cover: a lightweight (~70KB) snapshot of the
+     Trailforks map so the user sees the real map before loading the ~3MB
+     interactive widget. Removed once the live map loads. */
   .widget .tf-map-preview {
     position: absolute;
     inset: 0;
@@ -43,35 +43,12 @@ layout: base
     z-index: 0;
   }
 
-  /* Facade loader: covers the inert map on all viewports until the user
-     clicks to load the (~3MB) Trailforks map. Sits above .widget-cover. */
-  .widget .tf-map-loader {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    border: 0;
-    background: rgba(0, 0, 0, 0.18);
-    color: #fff;
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
-    z-index: 3;
-  }
-
-  .widget .tf-map-loader.is-loading {
-    cursor: progress;
-    pointer-events: none;
-  }
-
-  /* Mobile: a blocking cover sits over the Trailforks iframe so the map
-     doesn't trap the page scroll. Tapping it hides the cover (map is then
-     fully interactive). The cover re-arms via IntersectionObserver when
-     the map scrolls out of viewport, so returning to the map gives the
-     same scroll-past behaviour again. Hidden on desktop where mouse-wheel
-     scrolling on the map already escapes to the page. */
+  /* A single "Tap to interact" cover over the map. Before load it sits over the
+     static preview and the first tap loads + reveals the live map in one action.
+     After load on mobile it doubles as a touch-shield so single-finger scrolls
+     bypass the iframe and reach the page; it re-arms via IntersectionObserver
+     when the map scrolls out of view. Hidden on desktop after load, where
+     mouse-wheel scrolling on the map already escapes to the page. */
   .widget .widget-cover {
     position: absolute;
     inset: 0;
@@ -103,11 +80,10 @@ layout: base
     -webkit-backdrop-filter: blur(4px);
   }
 
-  /* Before the map loads the element is a facade and only the loader shows.
-     The touch-shield cover is for AFTER the map is live, so keep it hidden
-     until then (otherwise both overlays stack and the text overlaps). */
-  .tf-map-facade .widget-cover {
-    display: none;
+  /* Before load the cover is the single load+interact trigger, so show it on
+     every viewport (the desktop-hidden rule below only applies once loaded). */
+  .widget.tf-map-facade .widget-cover {
+    display: flex;
   }
 
   @media (min-width: 768px) {
@@ -529,10 +505,6 @@ layout: base
           {% if park_data.map_lon %}data-lon="{{ park_data.map_lon }}"{% endif %}
           style="position:relative; min-height:600px;">
           {% if park_data.map_preview %}<img class="tf-map-preview" src="{{ park_data.map_preview }}" alt="" width="915" height="608" loading="lazy">{% endif %}
-          <button type="button" class="tf-map-loader"
-               aria-label="{% if page.lang == 'ja' %}インタラクティブマップを読み込む{% else %}Load interactive trail map{% endif %}">
-            <span class="widget-cover-pill">{% if page.lang == 'ja' %}マップを読み込む{% else %}Load interactive map{% endif %}</span>
-          </button>
           <div class="widget-cover" role="button" tabindex="0"
                aria-label="{% if page.lang == 'ja' %}マップを操作するにはタップしてください{% else %}Tap to interact with the map{% endif %}">
             <span class="widget-cover-pill">{% if page.lang == 'ja' %}タップして操作{% else %}Tap to interact{% endif %}</span>
@@ -753,61 +725,59 @@ layout: base
       }
     }
 
-    // ---- Mobile touch-shield: bound AFTER the map goes live (it doesn't exist before) ----
-    // Blocks single-finger touch on mobile so page scroll bypasses the iframe; tap
-    // dismisses; re-arms when the map scrolls out of view. Hidden on desktop via CSS.
-    function bindMapCover(widget) {
-      var cover = widget.querySelector('.widget-cover');
-      if (!cover) return;
-      function reveal() { cover.classList.add('is-hidden'); }
-      function rearm() { cover.classList.remove('is-hidden'); }
-      cover.addEventListener('click', reveal);
-      cover.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); reveal(); }
-      });
-      if ('IntersectionObserver' in window) {
-        var cio = new IntersectionObserver(function (entries) {
-          entries.forEach(function (entry) { if (!entry.isIntersecting) rearm(); });
-        }, { threshold: 0 });
-        cio.observe(widget);
-      }
-    }
-
-    // ---- Facade -> live map on user click ----
+    // ---- Map cover: single "Tap to interact" overlay that loads + reveals ----
+    // First tap loads the ~3MB map and reveals it interactive in one action.
     // check_widget_map() is NOT idempotent (it builds an iframe for every
-    // .TrailforksWidgetMap). widget.js also auto-activates on load. So: if widget.js
-    // is already loaded, its load-time scan ran while the map was still inert, so we
-    // must scan now; if it isn't loaded yet, loading it will activate the (now
-    // promoted) map for us, so we must NOT scan again or we'd get two iframes.
+    // .TrailforksWidgetMap) and widget.js also auto-activates on load. So: if
+    // widget.js is already loaded, its load-time scan ran while the map was still a
+    // facade, so we must scan now; if it isn't loaded yet, loading it will activate
+    // the (now promoted) map for us, so we must NOT scan again or we'd get two
+    // iframes. After load on mobile the cover re-arms on scroll-out as a
+    // touch-shield (desktop hides it via CSS).
     var facades = document.querySelectorAll('.tf-map-facade');
     for (var j = 0; j < facades.length; j++) {
-      (function(facade) {
-        var loader = facade.querySelector('.tf-map-loader');
-        if (!loader) return;
-        loader.addEventListener('click', function () {
-          loader.classList.add('is-loading');
-          facade.classList.add('TrailforksWidgetMap');
-          facade.classList.remove('tf-map-facade');
-          // When the iframe appears, drop the loader and arm the mobile touch-shield.
+      (function(widget) {
+        var cover = widget.querySelector('.widget-cover');
+        if (!cover) return;
+        var loaded = false;
+        function reveal() { cover.classList.add('is-hidden'); }
+        function rearm() { cover.classList.remove('is-hidden'); }
+        function load() {
+          if (loaded) return;
+          loaded = true;
+          widget.classList.add('TrailforksWidgetMap');
+          widget.classList.remove('tf-map-facade');
           if ('MutationObserver' in window) {
             var mo = new MutationObserver(function () {
-              var iframe = facade.querySelector('iframe');
-              if (iframe) {
-                // Give the Trailforks-injected iframe an accessible name.
-                if (!iframe.title) iframe.title = facade.getAttribute('aria-label') || 'Interactive trail map';
-                loader.parentNode && loader.parentNode.removeChild(loader);
-                bindMapCover(facade);
-                mo.disconnect();
-              }
+              var iframe = widget.querySelector('iframe');
+              if (!iframe) return;
+              if (!iframe.title) iframe.title = widget.getAttribute('aria-label') || 'Interactive trail map';
+              // Drop the static preview so the live iframe is visible + interactive.
+              var preview = widget.querySelector('.tf-map-preview');
+              if (preview && preview.parentNode) preview.parentNode.removeChild(preview);
+              mo.disconnect();
             });
-            mo.observe(facade, { childList: true });
+            mo.observe(widget, { childList: true });
           }
           if (wjsState === 2) {
             if (typeof window.check_widget_map === 'function') window.check_widget_map();
           } else {
             ensureWidgetJs(); // load-time scan will activate the promoted map
           }
+        }
+        function activate() { load(); reveal(); }
+        cover.addEventListener('click', activate);
+        cover.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(); }
         });
+        // Once loaded, re-arm the touch-shield when the map scrolls out of view
+        // (mobile only in effect; desktop keeps the cover hidden via CSS).
+        if ('IntersectionObserver' in window) {
+          var cio = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) { if (!entry.isIntersecting && loaded) rearm(); });
+          }, { threshold: 0 });
+          cio.observe(widget);
+        }
       })(facades[j]);
     }
   })();
