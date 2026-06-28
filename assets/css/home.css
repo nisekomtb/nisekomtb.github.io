@@ -1012,7 +1012,7 @@ html[lang="ja"] .home-stories-title { letter-spacing: normal; text-transform: no
      in the corners — single visual signature for this section. */
   color: var(--color-accent);
 }
-.ja .home-feature-quote p {
+:lang(ja) .home-feature-quote p {
   font-family: "Zen Maru Gothic", "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
   /* JA has no italic equivalent; drop the slant and lean on the
      quote-mark glyphs + larger size to carry the quote register. */
@@ -1023,7 +1023,7 @@ html[lang="ja"] .home-stories-title { letter-spacing: normal; text-transform: no
   word-break: keep-all;
   overflow-wrap: break-word;
 }
-.ja .home-feature-quote em {
+:lang(ja) .home-feature-quote em {
   font-style: normal;
 }
 
@@ -1046,7 +1046,7 @@ html[lang="ja"] .home-stories-title { letter-spacing: normal; text-transform: no
   font-weight: 700;
   color: #fff;
 }
-.ja .home-feature-intro {
+:lang(ja) .home-feature-intro {
   font-size: clamp(14px, 1.5vw, 18px);
   line-height: 1.85;
   letter-spacing: 0.02em;
