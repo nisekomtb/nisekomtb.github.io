@@ -52,6 +52,12 @@ jobs:
           node-version: '20'
           cache: npm
 
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
@@ -62,6 +68,16 @@ jobs:
         env:
           JEKYLL_ENV: production
         run: bundle exec jekyll build --trace
+
+      - name: Subset JA font
+        # Trim the self-hosted Zen Maru Gothic woff2 in _site down to the
+        # glyphs that actually render (headings). Build output only; the repo
+        # master is untouched. Fail-safe: leaves the full font in place on any
+        # error.
+        run: |
+          set -euo pipefail
+          python3 -m pip install --quiet fonttools brotli beautifulsoup4
+          python3 _scripts/subset-ja-font.py --site-dir _site
 
       - name: Minify CSS
         # Skip anything already named *.min.css (vendor bundles).
