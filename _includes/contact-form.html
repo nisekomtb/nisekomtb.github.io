@@ -119,4 +119,28 @@
     <button type="submit" class="btn btn-primary">{% if page.lang == "ja" %}送信する{% else %}Send message{% endif %}</button>
   </div>
 </form>
-<script src="https://web3forms.com/client/script.js" async defer></script>
+<script>
+  // The web3forms client pulls in ~850KB of hCaptcha (hsw.js alone runs ~1.3s
+  // on the main thread), which tanks this page's TBT/LCP when loaded eagerly.
+  // Defer it until the user first engages with the form. The captcha is a
+  // visible "compact" checkbox they must click before submitting, so loading
+  // on first interaction leaves ample time to render, with no submit race.
+  (function () {
+    var form = document.currentScript.previousElementSibling;
+    if (!form || !form.classList.contains("contact-form")) {
+      form = document.querySelector(".contact-form");
+    }
+    if (!form) return;
+    var events = ["focusin", "pointerdown", "touchstart"];
+    function load() {
+      events.forEach(function (e) { form.removeEventListener(e, load); });
+      var s = document.createElement("script");
+      s.src = "https://web3forms.com/client/script.js";
+      s.async = true;
+      document.body.appendChild(s);
+    }
+    events.forEach(function (e) {
+      form.addEventListener(e, load, { once: true, passive: true });
+    });
+  })();
+</script>
