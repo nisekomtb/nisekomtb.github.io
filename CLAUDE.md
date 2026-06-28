@@ -38,10 +38,11 @@ GitHub Pages is configured to deploy from the `Build and deploy` workflow in
 
 1. Checks out the repo and sets up Ruby + Node (with bundler-cache + npm-cache).
 2. Runs `bundle exec jekyll build` with `JEKYLL_ENV=production`.
-3. Minifies every non-vendor CSS file in `_site/` via `lightningcss --minify --error-recovery`.
-4. Minifies every non-vendor JS file via `terser -c -m`.
-5. Collapses whitespace and strips comments from every `_site/**/*.html` via `html-minifier-terser` (conservative settings — does not touch inline `<script>`/`<style>` content; preserves `<pre>`/`<textarea>`/JSON-LD).
-6. Uploads `_site/` as the Pages artifact and deploys via `actions/deploy-pages`.
+3. Subsets the self-hosted JA font (`_site/assets/fonts/zen-maru-gothic/zen-maru-gothic-900.woff2`) down to the glyphs that actually render in heading elements via `_scripts/subset-ja-font.py` (~704KB → ~60KB). Build output only; the repo master is untouched. Fail-safe: leaves the full font in place on any error.
+4. Minifies every non-vendor CSS file in `_site/` via `lightningcss --minify --error-recovery`.
+5. Minifies every non-vendor JS file via `terser -c -m`.
+6. Collapses whitespace and strips comments from every `_site/**/*.html` via `html-minifier-terser` (conservative settings — does not touch inline `<script>`/`<style>` content; preserves `<pre>`/`<textarea>`/JSON-LD).
+7. Uploads `_site/` as the Pages artifact and deploys via `actions/deploy-pages`.
 
 The trigger is `push` to `main` (and manual dispatch). Concurrency is capped at one
 deploy in flight; subsequent pushes queue.
@@ -50,7 +51,7 @@ Source files in `assets/css/` and `assets/js/` stay readable. Minification only
 runs against the build output — never against the working tree. Vendor files
 already minified (`*.min.css`, `*.min.js`) are skipped.
 
-**To re-run locally**: `npm install && bundle exec jekyll build && npm run minify:css && npm run minify:js && npm run minify:html`.
+**To re-run locally**: `npm install && bundle exec jekyll build && npm run subset:font && npm run minify:css && npm run minify:js && npm run minify:html`.
 
 ## What to do when starting a task
 
