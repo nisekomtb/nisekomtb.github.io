@@ -78,6 +78,14 @@ jobs:
           python3 -m pip install --quiet fonttools brotli beautifulsoup4
           python3 _scripts/subset-ja-font.py --site-dir _site
 
+      - name: Prune CSS
+        # Remove unused rules from non-vendor CSS in _site (build output only;
+        # source untouched). Runs before Minify CSS so lightningcss re-minifies
+        # the pruned result. Fail-safe: ships full CSS on any prune error.
+        run: |
+          set -euo pipefail
+          npm run purge:css
+
       - name: Minify CSS
         # Skip anything already named *.min.css (vendor bundles).
         run: |
