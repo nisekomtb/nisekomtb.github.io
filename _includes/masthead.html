@@ -12,7 +12,9 @@
     <base>.webp          800w  — mobile-retina / tablet
     <base>-medium.webp  1200w  — high-DPR mobile / small desktop
     <base>-large.webp   1600w  — desktop / desktop-retina
-  The JPG/PNG is the final fallback for browsers without WebP support.
+  Each WebP tier has a matching AVIF tier (served first via <source>; see
+  _scripts/gen-masthead-avif.py). Order is AVIF -> WebP -> JPG/PNG, so the
+  JPG/PNG remains the final fallback for browsers without AVIF or WebP.
 {% endcomment %}
 {% assign masthead_width = page.masthead.width | default: 1600 %}
 {% assign masthead_height = page.masthead.height | default: 1067 %}

@@ -139,3 +139,23 @@ The include emits a single original JPG/PNG as the `<img>` fallback for browsers
 don't support WebP (~3% globally and shrinking). We do not produce responsive variants
 of the JPG fallback — the cost of triple-encoding every image outweighs the benefit for
 that small a slice of users.
+
+## Masthead AVIF tiers
+
+Mastheads (anything rendered via `_includes/masthead.html`) additionally ship an
+AVIF tier per WebP tier, served as the first `<source>` (AVIF → WebP → JPG). AVIF
+roughly halves the LCP hero on supporting browsers; the dark scrim hides any
+low-quality artifacts, so q40 is the target.
+
+After adding a new masthead's WebP tiers, generate the AVIF siblings:
+
+```bash
+python3 _scripts/gen-masthead-avif.py
+```
+
+It is idempotent (skips existing `.avif`), encodes from the JPG/JPEG/PNG master at
+q40 resized to each WebP tier's width, and discards any AVIF that isn't smaller
+than its WebP. A new masthead needs the full 4-tier WebP set first (`-mobile` 400w,
+base 800w, `-medium` 1200w, `-large` 1600w): the partial's srcset assumes all four,
+and the AVIF set must mirror it exactly (a missing AVIF tier 404s and breaks the
+masthead for AVIF browsers).
