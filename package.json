@@ -6,6 +6,7 @@
     "minify:css": "find _site -type f -name '*.css' ! -name '*.min.css' -exec sh -c 'npx lightningcss --minify --error-recovery --browserslist \"$1\" -o \"$1.tmp\" && mv \"$1.tmp\" \"$1\"' _ {} \\;",
     "minify:js": "find _site -type f -name '*.js' ! -name '*.min.js' -exec sh -c 'npx terser \"$1\" -c -m -o \"$1\"' _ {} \\;",
     "minify:html": "find _site -type f -name '*.html' -exec npx html-minifier-terser --collapse-whitespace --conservative-collapse --remove-comments --remove-redundant-attributes --remove-script-type-attributes --remove-style-link-type-attributes --use-short-doctype -o {} {} \\;",
+    "purge:css": "bash _scripts/purge-css.sh",
     "subset:font": "python3 _scripts/subset-ja-font.py"
   },
   "devDependencies": {
@@ -14,6 +15,7 @@
     "@capsizecss/unpack": "^4.0.0",
     "html-minifier-terser": "^7.2.0",
     "lightningcss-cli": "^1.30.1",
+    "purgecss": "^8.0.0",
     "terser": "^5.36.0"
   }
 }
