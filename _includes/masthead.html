@@ -31,6 +31,9 @@
           100vw (full res) and already hit a fast LCP. This is the mobile-LCP
           lever, applied site-wide via this partial.
         {%- endcomment -%}
+        <source type="image/avif"
+                srcset="{{ mh_base }}-mobile.avif 400w, {{ mh_base }}.avif 800w, {{ mh_base }}-medium.avif 1200w, {{ mh_base }}-large.avif 1600w"
+                sizes="(max-width: 768px) 60vw, 100vw">
         <source type="image/webp"
                 srcset="{{ mh_base }}-mobile.webp 400w, {{ mh_base }}.webp 800w, {{ mh_base }}-medium.webp 1200w, {{ mh_base }}-large.webp 1600w"
                 sizes="(max-width: 768px) 60vw, 100vw">
