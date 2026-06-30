@@ -17,10 +17,15 @@ layout: blank
       rel="stylesheet"
       href="/assets/css/error.css"
       type="text/css" />
-    <link
-      rel="stylesheet"
-      href="/assets/fonts/metropolis/stylesheet.css"
-      type="text/css" />
+    <!-- Metropolis @font-face inlined (mirrors the block in _layouts/base.html)
+         so this standalone error page has no font-CSS request chain. -->
+    <style>
+      @font-face{font-family:'Metropolis';src:url('/assets/fonts/metropolis/metropolis-bold-webfont.woff2') format('woff2'),url('/assets/fonts/metropolis/metropolis-bold-webfont.woff') format('woff');font-weight:700;font-style:normal;font-display:swap}
+      @font-face{font-family:'Metropolis';src:url('/assets/fonts/metropolis/metropolis-light-webfont.woff2') format('woff2'),url('/assets/fonts/metropolis/metropolis-light-webfont.woff') format('woff');font-weight:300;font-style:normal;font-display:swap}
+      @font-face{font-family:'Metropolis';src:url('/assets/fonts/metropolis/metropolis-medium-webfont.woff2') format('woff2'),url('/assets/fonts/metropolis/metropolis-medium-webfont.woff') format('woff');font-weight:500;font-style:normal;font-display:swap}
+      @font-face{font-family:'Metropolis';src:url('/assets/fonts/metropolis/metropolis-regular-webfont.woff2') format('woff2'),url('/assets/fonts/metropolis/metropolis-regular-webfont.woff') format('woff');font-weight:400;font-style:normal;font-display:swap}
+      @font-face{font-family:'Metropolis Fallback';src:local('Arial'),local('ArialMT');ascent-override:88.98%;descent-override:27.1533%;line-gap-override:0%;size-adjust:108.4337%}
+    </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body class="page-error">
