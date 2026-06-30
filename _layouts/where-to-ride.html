@@ -589,18 +589,18 @@ layout: base
               {% if page.lang == 'ja' %}{% assign partner_label = p.title_ja | default: p.title_en %}{% endif %}
               {% if p.url_en %}
               <a href="{% if page.lang == 'ja' %}{{ p.url_ja | default: p.url_en }}{% else %}{{ p.url_en }}{% endif %}" target="_blank" rel="sponsored noopener noreferrer">
-                <img src="{{ p.img }}"
+                <picture>{% if p.img contains '.png' %}<source type="image/webp" srcset="{{ p.img | replace: '.png', '.webp' }}">{% endif %}<img src="{{ p.img }}"
                   alt="{{ partner_label }}"
                   title="{{ partner_label }}"
                   loading="lazy"
-                  width="56" height="56">
+                  width="56" height="56"></picture>
               </a>
               {% else %}
-              <img src="{{ p.img }}"
+              <picture>{% if p.img contains '.png' %}<source type="image/webp" srcset="{{ p.img | replace: '.png', '.webp' }}">{% endif %}<img src="{{ p.img }}"
                 alt="{{ partner_label }}"
                 title="{{ partner_label }}"
                 loading="lazy"
-                width="56" height="56">
+                width="56" height="56"></picture>
               {% endif %}
             {% endfor %}
           </div>
