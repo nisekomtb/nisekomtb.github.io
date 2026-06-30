@@ -12,6 +12,7 @@ module.exports = {
     '_site/assets/css/megamenu.css',
     '_site/assets/css/mobile-nav.css',
     '_site/assets/css/home.css',
+    '_site/assets/css/bootstrap.min.css',
   ],
   output: '_site/.purged/',
   // Conservative: never strip keyframes, @font-face, or CSS variables — they are
