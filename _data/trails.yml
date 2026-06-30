@@ -609,22 +609,22 @@ hanazono:
   logo: /assets/images/company/hanazono.png
   name: Hanazono Mountain Bike Park
   project_path: /projects/hanazono/
-  cost: TBC
+  cost: "¥1,000-¥3,800 (gondola pass)"
   lifts: 1
   lift_access: true
   shuttle_access: false
   pedal_access: true
   location: Hanazono
-  season: Summer 2026 onwards
-  hours: TBC
-  managed_by: Hanazono Resort / NAMBA
+  season: July - October
+  hours: 9:00am - 4:00pm
+  managed_by: Hanazono Resort
   ja:
     name: HANAZONO マウンテンバイクパーク
-    cost: 未定
-    location: 花園
-    season: 2026年夏以降
-    hours: 未定
-    managed_by: 花園リゾート / NAMBA
+    cost: "¥1,000〜¥3,800（ゴンドラパス）"
+    location: HANAZONO
+    season: 7月 - 10月
+    hours: 9:00am - 4:00pm
+    managed_by: HANAZONO リゾート
   location_lat: 42.89317852818024
   location_lng: 140.70017501899656
   trailforks_rid: 74136
@@ -641,7 +641,7 @@ hanazono:
       width: 3000
       height: 2000
       alt_en: Trail dropping down toward the Hanazono base area, Park Hyatt Niseko Hanazono behind
-      alt_ja: 花園ベースエリアへ下るトレイル、奥にパーク ハイアット ニセコ HANAZONO
+      alt_ja: HANAZONOベースエリアへ下るトレイル、奥にパーク ハイアット ニセコ HANAZONO
     - img: /assets/images/trails/hanazono/gallery/airborne-rider.webp
       img_large: /assets/images/trails/hanazono/gallery/airborne-rider-large.webp
       width: 2667
@@ -659,13 +659,13 @@ hanazono:
       width: 2667
       height: 1778
       alt_en: Riders on a singletrack trail with the Hanazono gondola cabin overhead
-      alt_ja: 花園ゴンドラのキャビンの下、シングルトラックを走るライダー
+      alt_ja: HANAZONOゴンドラのキャビンの下、シングルトラックを走るライダー
     - img: /assets/images/trails/hanazono/gallery/lift-line-grasses.webp
       img_large: /assets/images/trails/hanazono/gallery/lift-line-grasses-large.webp
       width: 3000
       height: 2000
       alt_en: A rider on the trail alongside susuki grass and the Hanazono lift line
-      alt_ja: ススキの脇、花園リフト沿いのトレイルを走るライダー
+      alt_ja: ススキの脇、HANAZONOリフト沿いのトレイルを走るライダー
     - img: /assets/images/trails/hanazono/gallery/riders-flow-berms.webp
       img_large: /assets/images/trails/hanazono/gallery/riders-flow-berms-large.webp
       width: 3556
@@ -677,7 +677,7 @@ hanazono:
       width: 3000
       height: 2000
       alt_en: Rider cornering hard on a flow berm with the Hanazono gondola overhead
-      alt_ja: 花園ゴンドラを背に、フロートレイルのバームをコーナリングするライダー
+      alt_ja: HANAZONOゴンドラを背に、フロートレイルのバームをコーナリングするライダー
     - img: /assets/images/trails/hanazono/gallery/trail-yotei-autumn.webp
       img_large: /assets/images/trails/hanazono/gallery/trail-yotei-autumn-large.webp
       width: 3000
@@ -694,14 +694,14 @@ hanazono:
       descent: 36
       bike: one-way
       multi_use: true
-      # trailforks_id: 923207
+      trailforks_id: 923207
     - name: Hanazono Skyline
       ja:
         name: HANAZONO スカイライン
       difficulty: blue
-      distance: "4,212"
-      climb: 0
-      descent: 347
+      distance: "4,421"
+      climb: 9
+      descent: 358
       bike: down-only
       multi_use: false
-      # trailforks_id: 923205
+      trailforks_id: 923205
