@@ -56,7 +56,9 @@ Load `references/image-pipeline.md` and run the commands. Outputs:
 - `assets/images/events/<year>/<slug>/header.webp` (800w)
 - `assets/images/events/<year>/<slug>/header-medium.webp` (1200w)
 - `assets/images/events/<year>/<slug>/header-large.webp` (1600w)
+- `assets/images/events/<year>/<slug>/header-mobile.avif`, `header.avif`, `header-medium.avif`, `header-large.avif` (AVIF mirror of each WebP tier; the masthead partial serves these first and renders blank if missing)
 - `assets/images/events/<year>/<slug>/thumb.jpg` (600×600 centre-cropped)
+- `assets/images/events/<year>/<slug>/thumb.webp` (WebP sibling; the event card serves this first)
 
 Delete the source file from `_triage/` after the pipeline finishes.
 
@@ -151,7 +153,14 @@ grep -l 'application/ld+json' _site/events/<slug>-<year>/index.html
 # Expected: match (the Event JSON-LD block)
 
 ls assets/images/events/<year>/<slug>/
-# Expected: header.jpg  header-mobile.webp  header.webp  header-medium.webp  header-large.webp  thumb.jpg
+# Expected: header.jpg
+#           header-mobile.webp  header.webp  header-medium.webp  header-large.webp
+#           header-mobile.avif  header.avif  header-medium.avif  header-large.avif
+#           thumb.jpg  thumb.webp
+
+grep -o '<slug>/header[^" ]*\.avif' _site/events/<slug>-<year>/index.html | sort -u \
+  | while read f; do test -f "_site/assets/images/events/<year>/$f" || echo "MISSING: $f"; done
+# Expected: no MISSING lines (every AVIF the masthead references exists, else the hero renders blank)
 ```
 
 ### 11. Stop before commit
