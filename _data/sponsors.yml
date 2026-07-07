@@ -79,7 +79,7 @@ special:
     - name: rhythm
       displayName: Rhythm Japan
       image: /assets/images/company/rhythm.png
-      url: https://rhythmjapan.com
+      url: https://www.rhythmjapan.com
       label: Maintenance sponsor
       ja:
         url: https://www.rhythmjapan.com/ja/
@@ -183,7 +183,7 @@ shika:
     - name: mori no takumi
       displayName: Mori no Takumi
       image: /assets/images/company/mori-no-takumi.png
-      url: https://www.nisekocustomwoodwork.com/
+      url: https://www.morinotakumi.jp
     # - name: niseko central
     #   image: /assets/images/company/niseko-central.png
     #   url: https://www.nisekocentral.com
