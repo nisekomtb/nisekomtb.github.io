@@ -57,10 +57,9 @@ special:
     - name: niseko tokyu grand hirafu
       displayName: Niseko Tokyu Grand Hirafu
       image: /assets/images/company/grand-hirafu.png
-      url: https://www.grand-hirafu.jp/en/
+      url: https://www.grand-hirafu.jp
       label: Trail sponsor
       ja:
-        url: https://www.grand-hirafu.jp
         label: トレイル スポンサー
     - name: norco
       displayName: Norco Bicycles
