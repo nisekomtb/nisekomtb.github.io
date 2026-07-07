@@ -36,3 +36,9 @@ about: false
 - **持ち物:** 手ぶらで​OK。​ご自身の​バイクは​お持ち込みいただけません。​必要な​道具は​すべて​リズムが​用意します。
 
 クリニックの​運営は​リズム。​定員は​20名なので、​お早めに​お申し込みください。​バイクの​知識が​少し​あるだけで、​次の[ツインピークス](/ja/twin-peaks/)の​ライドや[ハナゾノ・バイクパーク](/ja/where-to-ride/hanazono/)での​一日が​もっと​快適に​なります。
+
+{% include image.html
+   src="/assets/images/events/2026/rhythm-bike-care-tune-up-clinic/poster.jpg"
+   alt="リズム・チューンズ・ワークショップのポスター。リズム・ヒラフで2026年7月17日18時開催の無料バイクケア＆基本チューンナップ・クリニック。英語での指導、定員20名、QRコードからお申し込み。"
+   width="722" height="1000"
+   style="display:block;width:100%;max-width:460px;margin:2rem auto;border-radius:8px;" %}

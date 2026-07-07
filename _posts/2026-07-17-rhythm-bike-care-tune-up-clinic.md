@@ -36,3 +36,9 @@ Bikes take a beating on the Niseko trails, and a bit of regular care keeps them 
 - **Bring:** Just yourself. Please do not bring your own bike; Rhythm has everything you need on the night
 
 Rhythm runs the clinic and places are capped at 20, so book early. A bit of bike know-how goes a long way before your next lap on [Twin Peaks](/twin-peaks/) or a day at the [Hanazono bike park](/where-to-ride/hanazono/).
+
+{% include image.html
+   src="/assets/images/events/2026/rhythm-bike-care-tune-up-clinic/poster.jpg"
+   alt="Rhythm Tunes Workshop poster: free bike care and basic tune-up clinic at Rhythm Hirafu, Niseko, on 17 July 2026 from 6pm. English instruction, limited to 20 places, sign up via the QR code."
+   width="722" height="1000"
+   style="display:block;width:100%;max-width:460px;margin:2rem auto;border-radius:8px;" %}
