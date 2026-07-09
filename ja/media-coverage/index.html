@@ -1,0 +1,51 @@
+---
+title: メディア掲載
+subtitle: メディアで見るNAMBAとニセコMTB
+description: "NAMBAとニセコのマウンテンバイクに関するメディア掲載。ツインピークス・バイクパークとニセコのトレイルネットワークを紹介する記事、動画、特集。"
+baseCss: view-category
+masthead:
+  img: /assets/images/bg/bg-header-press.jpg
+og:
+  image: /assets/images/bg/bg-header-press.jpg
+---
+<style>
+  @media (max-width: 991px) {
+    .items-row .item { min-height: auto !important; }
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://namba.ngo/ja/media-coverage/#webpage",
+      "url": "https://namba.ngo/ja/media-coverage/",
+      "name": "メディア掲載: メディアで見るNAMBAとニセコMTB",
+      "description": "NAMBAとニセコのマウンテンバイクに関するメディア掲載。ツインピークス・バイクパークとニセコのトレイルネットワークを紹介する記事、動画、特集。",
+      "inLanguage": "ja",
+      "primaryImageOfPage": "https://namba.ngo/assets/images/bg/bg-header-press.jpg",
+      "about": { "@id": "https://namba.ngo/#organization" },
+      "isPartOf": { "@id": "https://namba.ngo/#website" }
+    }
+  ]
+}
+</script>
+
+<div class="blog style-1 project-view t3-section-wrap">
+
+  <div class="section">
+    <div class="module-title-wrap">
+      <div
+        class="features-desc ja-animate"
+        data-animation="move-from-bottom"
+        data-delay="200">
+        <div class="section-lede"><span>NAMBA、ツインピークス・バイクパーク、ニセコのマウンテンバイクがメディアで紹介された記事や動画をまとめています。各項目は掲載元へ直接リンクします。取材のご相談は<a href="/ja/contact/?topic=media">こちら</a>。</span></div>
+      </div>
+    </div>
+  </div>
+
+  {% assign items = site.data['media-coverage'] | sort: "date" | reverse %}
+  {% include media-grid.html items=items %}
+
+</div>
