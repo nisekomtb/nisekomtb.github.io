@@ -1,0 +1,27 @@
+# Media coverage items for /media-coverage/ and the Press "In the News" strip.
+# Newest first (the templates also sort by `date` descending as a safety net).
+# Managed by the `media-coverage` skill. See the skill's data-entry.md for the
+# field contract. Each item carries BOTH languages so the JA card can never
+# drift from the EN card.
+#
+# type:       article | video | podcast | print | tv
+# source:     lowercase key -> assets/images/media-coverage/sources/<source>.png
+# title/quote: our display text, per page language. JA values are BudouX-
+#             tokenised with <wbr>.
+# url:        source article URL per language actually available (>=1 required).
+
+- slug: sample-remove-me
+  date: 2024-01-01
+  type: article
+  source: sample
+  sourceName: Sample Source
+  thumb: /assets/images/press/hero-action.jpg
+  title:
+    en: "Sample coverage item (remove after first real item)"
+    ja: "サンプル<wbr>記事"
+  quote:
+    en: "This placeholder proves the card and grid render. Delete it in Task 10."
+    ja: "これは<wbr>プレースホルダーです。"
+  url:
+    en: https://example.com/
+    ja:
