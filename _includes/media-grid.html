@@ -1,0 +1,29 @@
+{%- comment -%}
+  4-column responsive grid of media-coverage cards. Used by /media-coverage/,
+  /ja/media-coverage/ and the Press "In the News" strip. Restarts modulo-4 row
+  batching on every invocation so multiple grids can share a page.
+
+  Parameters:
+    include.items — array of media-coverage data entries (required)
+{%- endcomment -%}
+{%- assign grid_items = include.items -%}
+{% for item in grid_items %}
+  {% assign indexModulo4 = forloop.index0 | modulo: 4 %}
+  {% if indexModulo4 == 0 %}
+    <div class="items-row cols-4 row-{{- forloop.index0 | divided_by: 4 }} row equal-height equal-height-child">
+  {% endif %}
+
+  <div class="col col-12 col-md-6 col-lg-3">
+    <div
+      class="item column-{{ indexModulo4 }} ja-animate"
+      data-animation="move-from-bottom"
+      data-delay="item-{{ forloop.index0 }}"
+      >
+      {% include media-card.html item=item %}
+    </div>
+  </div>
+
+  {% if indexModulo4 == 3 or forloop.last %}
+    </div>
+  {% endif %}
+{% endfor %}
