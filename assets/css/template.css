@@ -7364,6 +7364,62 @@ joomla-field-custom.field-custom-wrapper .input-group .input-group-btn .btn span
 }
 
 /* ------------------------------------------------------------------
+ * .media-card — extends .event-card for the /media-coverage/ grid and
+ * the Press page "In the News" strip. Adds a content-type badge, a
+ * source row (publication logo + name + language indicator) and a
+ * pull-quote. All other chrome (thumb, fade, hover, card-wide click
+ * target) is inherited from .event-card.
+ * ------------------------------------------------------------------ */
+.event-card-badge.media {
+  background: var(--color-accent);
+  color: #111;
+  border: none;
+}
+.media-card-source {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.media-card-source-logo {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.06);
+}
+.media-card-source-name {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--color-text-heading);
+}
+.media-card-lang {
+  margin-left: auto;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+  padding: 2px 6px;
+  white-space: nowrap;
+}
+:lang(ja) .media-card-lang { letter-spacing: normal; }
+.media-card-quote {
+  font-size: 13px;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+  margin: 0 0 12px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ------------------------------------------------------------------
  * .ride-card — shared between /where-to-ride/, /ja/where-to-ride/,
  * and the home page "Network" parks row. Image with logo or icon
  * overlay, fade-to-panel gradient, body with title + optional trail
