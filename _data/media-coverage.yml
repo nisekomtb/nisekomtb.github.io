@@ -11,21 +11,6 @@
 # url:        source article URL per language actually available (>=1 required).
 
 
-- slug: pinkbike-cruise-control-niseko
-  date: 2026-07-08
-  type: article
-  source: pinkbike
-  sourceName: Pinkbike
-  thumb: /assets/images/media-coverage/2026/pinkbike-cruise-control-niseko/thumb.jpg
-  title:
-    en: "Trail of the Month: Cruise Control in Niseko, Japan"
-    ja: "今月の<wbr>トレイル：日本・<wbr>ニセコの<wbr>「クルーズコントロール」"
-  quote:
-    en: "Beneath one of the snowiest, sought-after places on Earth sits one of Japan's fastest-growing mountain bike destinations."
-    ja: "世界有数の<wbr>豪雪地帯の<wbr>麓に、<wbr>日本で<wbr>急成長する<wbr>マウンテンバイクの<wbr>聖地が<wbr>ある。"
-  url:
-    en: https://www.pinkbike.com/news/trail-of-the-month-cruise-control-in-niseko-japan.html
-
 - slug: powderlife-hanazono-joins-niseko
   date: 2026-07-08
   type: article
@@ -40,6 +25,21 @@
     ja: "HANAZONOマウンテンバイクパークが<wbr>2本の<wbr>トレイルで<wbr>開業。<wbr>全長<wbr>4,212mの<wbr>フロートレイル<wbr>「花園スカイライン」を<wbr>含む。"
   url:
     en: https://www.powderlife.com/blog/hanazono-joins-nisekos-mountain-biking-scene/
+
+- slug: pinkbike-cruise-control-niseko
+  date: 2026-07-08
+  type: article
+  source: pinkbike
+  sourceName: Pinkbike
+  thumb: /assets/images/media-coverage/2026/pinkbike-cruise-control-niseko/thumb.jpg
+  title:
+    en: "Trail of the Month: Cruise Control in Niseko, Japan"
+    ja: "今月の<wbr>トレイル：日本・<wbr>ニセコの<wbr>「クルーズコントロール」"
+  quote:
+    en: "Beneath one of the snowiest, sought-after places on Earth sits one of Japan's fastest-growing mountain bike destinations."
+    ja: "世界有数の<wbr>豪雪地帯の<wbr>麓に、<wbr>日本で<wbr>急成長する<wbr>マウンテンバイクの<wbr>聖地が<wbr>ある。"
+  url:
+    en: https://www.pinkbike.com/news/trail-of-the-month-cruise-control-in-niseko-japan.html
 
 - slug: aspect-niseko-mtb-guide-australians
   date: 2026-01-04
@@ -70,6 +70,22 @@
     ja: "ニセコの<wbr>ユニークな<wbr>MTBプロジェクト。<wbr>現場での<wbr>取り組み、<wbr>トレイル、<wbr>そして<wbr>未来を<wbr>ご紹介します。"
   url:
     en: https://www.helloallegra.com/en/twin-peaks-bike-park-niseko/
+
+- slug: niseko-united-grand-hirafu-connects-twin-peaks
+  date: 2024-06-17
+  type: article
+  source: nisekounited
+  sourceName: Niseko United
+  thumb: /assets/images/media-coverage/2024/niseko-united-grand-hirafu-connects-twin-peaks/thumb.jpg
+  title:
+    en: "Grand Hirafu Connects with Twin Peaks Mountain Bike Park"
+    ja: "グラン・ヒラフが<wbr>ツインピークス・バイクパークと<wbr>接続"
+  quote:
+    en: "A new trail links Grand Hirafu's lift-accessed riding with the Twin Peaks Bike Park network."
+    ja: "新しい<wbr>トレイルが、<wbr>グラン・ヒラフの<wbr>リフトアクセスライドと<wbr>ツインピークス・バイクパークを<wbr>つなぐ。"
+  url:
+    en: https://www.niseko.ne.jp/en/news/grand-hirafu-connects-with-twin-peaks-mountain-bike-park/
+    ja: https://www.niseko.ne.jp/ja/news/%e3%83%8b%e3%82%bb%e3%82%b3%e6%9d%b1%e6%80%a5-%e3%82%b0%e3%83%a9%e3%83%b3%e3%83%bb%e3%83%92%e3%83%a9%e3%83%95%e3%81%a8%e3%83%84%e3%82%a4%e3%83%b3%e3%83%94%e3%83%bc%e3%82%af%e3%82%b9%e3%81%aemtb/
 
 - slug: setsu-niseko-cycling-summer
   date: 2024-06-07
@@ -116,7 +132,7 @@
     ja: "ニセコが<wbr>アジア有数の<wbr>マウンテンバイク・デスティネーションに<wbr>なりつつある<wbr>理由。"
   url:
     en: https://www.niseko.ne.jp/en/news/niseko-the-new-mecca-of-mountain-biking/
-    ja: https://www.niseko.ne.jp/ja/news/niseko-the-new-mecca-of-mountain-biking/
+    ja: https://www.niseko.ne.jp/ja/news/%E3%83%8B%E3%82%BB%E3%82%B3%E3%81%AF%E3%83%9E%E3%82%A6%E3%83%B3%E3%83%86%E3%83%B3%E3%83%90%E3%82%A4%E3%82%AF%E3%81%AE%E6%96%B0%E8%81%96%E5%9C%B0%EF%BC%81/
 
 - slug: powderlife-rise-of-mountain-biking
   date: 2024-04-29
@@ -177,3 +193,63 @@
     ja: "日本でも<wbr>最も<wbr>新しく、<wbr>最先端の<wbr>マウンテンバイクトレイルの<wbr>ひとつ。"
   url:
     en: https://holidayniseko.com/blog/twin-peaks-mountain-biking-niseko
+
+- slug: holidayniseko-mountain-biking-niseko
+  date: 2022-09-21
+  type: article
+  source: holidayniseko
+  sourceName: Holiday Niseko
+  thumb: /assets/images/media-coverage/2022/holidayniseko-mountain-biking-niseko/thumb.jpg
+  title:
+    en: "Mountain Biking in Niseko"
+    ja: "ニセコの<wbr>マウンテンバイク"
+  quote:
+    en: "A guide to Niseko's emerging mountain bike scene and the trails taking shape."
+    ja: "ニセコで<wbr>広がる<wbr>マウンテンバイクシーンと、<wbr>形に<wbr>なりつつある<wbr>トレイルの<wbr>ガイド。"
+  url:
+    en: https://holidayniseko.com/blog/mountain-biking-niseko
+
+- slug: skiasia-niseko-bike-park-free-20km
+  date: 2022-07-06
+  type: article
+  source: skiasia
+  sourceName: Ski Asia
+  thumb: /assets/images/media-coverage/2022/skiasia-niseko-bike-park-free-20km/thumb.jpg
+  title:
+    en: "Niseko's New Mountain Bike Park Will Be Free to Use, With More Than 20km of Trails"
+    ja: "ニセコの<wbr>新しい<wbr>マウンテンバイクパークは<wbr>無料開放、<wbr>20km超の<wbr>トレイルを<wbr>整備"
+  quote:
+    en: "Kutchan Town has approved more than 20km of pedal-accessed trails for a new Niseko bike park."
+    ja: "倶知安町が、<wbr>ニセコの<wbr>新しい<wbr>バイクパークに<wbr>向けて<wbr>20km超の<wbr>ペダルアクセス・トレイルを<wbr>承認した。"
+  url:
+    en: https://skiasia.com/news/nisekos-new-mountain-bike-park-will-be-free-to-use-with-more-than-20km-of-trails/
+
+- slug: vacationniseko-mtb-developments-continue
+  date: 2022-06-23
+  type: article
+  source: vacationniseko
+  sourceName: Vacation Niseko
+  thumb: /assets/images/media-coverage/2022/vacationniseko-mtb-developments-continue/thumb.jpg
+  title:
+    en: "Mountain Bike Developments Continue in Niseko"
+    ja: "ニセコで<wbr>マウンテンバイク開発が<wbr>続く"
+  quote:
+    en: "Many believe mountain biking will play a key role in Niseko's path to becoming a year-round destination."
+    ja: "マウンテンバイクは、<wbr>ニセコが<wbr>通年型リゾートへと<wbr>歩む上で<wbr>重要な<wbr>役割を<wbr>果たすと<wbr>多くの<wbr>人が<wbr>考えている。"
+  url:
+    en: https://vacationniseko.com/en/news/mountain-bike-developments-continue-in-niseko/
+
+- slug: vacationniseko-namtba-future-mtb
+  date: 2022-03-16
+  type: article
+  source: vacationniseko
+  sourceName: Vacation Niseko
+  thumb: /assets/images/media-coverage/2022/vacationniseko-namtba-future-mtb/thumb.jpg
+  title:
+    en: "NAMTBA & the Future of Mountain Biking in Niseko"
+    ja: "NAMTBAと<wbr>ニセコの<wbr>マウンテンバイクの<wbr>未来"
+  quote:
+    en: "A new Niseko nonprofit with a lofty goal: to transform Niseko into Asia's premier mountain bike destination."
+    ja: "壮大な<wbr>目標を<wbr>掲げる<wbr>ニセコの<wbr>新しい<wbr>非営利団体。<wbr>ニセコを<wbr>アジア随一の<wbr>マウンテンバイクの<wbr>聖地へと<wbr>変える<wbr>ことを<wbr>目指す。"
+  url:
+    en: https://vacationniseko.com/en/news/namtba-the-future-of-mountain-biking-in-niseko/
