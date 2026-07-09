@@ -38,6 +38,13 @@ Use the Playwright MCP tools:
 The `og:image` and logo URLs are usually on an open CDN, so `curl` can download
 them even when the article page itself is protected.
 
+**Pinkbike tip:** their `og:image` is often the 800px variant (URL prefix
+`p4pb`), which fails the >=1200px thumbnail gate. The same photo at 1600px uses
+prefix `p6pb`, e.g. `.../p4pb29949538/p4pb29949538.jpg` ->
+`.../p6pb29949538/p6pb29949538.jpg`. Grab the `p6pb` version. In the browser,
+`document.querySelectorAll('img')` filtered to `naturalWidth >= 1200` surfaces
+the large in-article variants.
+
 ## 3. Manual paste (final fallback)
 
 If both fail, ask the user for: headline, publish date, publication name, and
