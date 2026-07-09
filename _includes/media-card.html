@@ -51,7 +51,7 @@
       {% if page.lang == "en" %}{{ item.date | date: "%-d %B %Y" }}{% else %}{{ item.date | date: "%Y年%m月%d日" }}{% endif %}
     </div>
     <h3 class="event-card-title">
-      <a class="event-card-link" href="{{ href }}" title="{{ card_title }}" target="_blank" rel="noopener">{{ card_title }}</a>
+      <a class="event-card-link" href="{{ href }}" title="{{ card_title | strip_html }}" target="_blank" rel="noopener">{{ card_title }}</a>
     </h3>
     {% if card_quote %}<p class="media-card-quote">{{ card_quote }}</p>{% endif %}
     <div class="event-card-action">{% if page.lang == "en" %}Read on {{ item.sourceName }}{% else %}{{ item.sourceName }}で読む{% endif %} <span class="event-card-action-arrow fa-solid fa-arrow-up-right-from-square"></span></div>
