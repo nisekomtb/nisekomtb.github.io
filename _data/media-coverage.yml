@@ -10,17 +10,17 @@
 #             tokenised with <wbr>.
 # url:        source article URL per language actually available (>=1 required).
 
-- slug: sample-remove-me
-  date: 2024-01-01
+- slug: pinkbike-cruise-control-niseko
+  date: 2026-07-08
   type: article
-  sourceName: Sample Source
-  thumb: /assets/images/press/hero-action.jpg
+  source: pinkbike
+  sourceName: Pinkbike
+  thumb: /assets/images/media-coverage/2026/pinkbike-cruise-control-niseko/thumb.jpg
   title:
-    en: "Sample coverage item (remove after first real item)"
-    ja: "サンプル<wbr>記事"
+    en: "Trail of the Month: Cruise Control in Niseko, Japan"
+    ja: "今月の<wbr>トレイル：<wbr>日本・<wbr>ニセコの<wbr>「クルーズ<wbr>コントロール」"
   quote:
-    en: "This placeholder proves the card and grid render. Delete it in Task 10."
-    ja: "これは<wbr>プレースホルダーです。"
+    en: "Beneath one of the snowiest, sought-after places on Earth sits one of Japan's fastest-growing mountain bike destinations."
+    ja: "世界有数の<wbr>豪雪地帯の<wbr>麓に、<wbr>日本で<wbr>急成長する<wbr>マウンテンバイクの<wbr>聖地が<wbr>ある。"
   url:
-    en: https://example.com/
-    ja:
+    en: https://www.pinkbike.com/news/trail-of-the-month-cruise-control-in-niseko-japan.html
