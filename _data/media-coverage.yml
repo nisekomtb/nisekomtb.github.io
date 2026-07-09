@@ -10,21 +10,6 @@
 #             tokenised with <wbr>.
 # url:        source article URL per language actually available (>=1 required).
 
-- slug: powderlife-hanazono-joins-niseko
-  date: 2026-07-08
-  type: article
-  source: powderlife
-  sourceName: Powderlife
-  thumb: /assets/images/media-coverage/2026/powderlife-hanazono-joins-niseko/thumb.jpg
-  title:
-    en: "Hanazono Joins Niseko's Mountain Biking Scene"
-    ja: "HANAZONOが<wbr>ニセコの<wbr>マウンテンバイクシーンに<wbr>仲間入り"
-  quote:
-    en: "The Hanazono Mountain Bike Park debuts with two trails, including the 4,212m Hanazono Skyline flow ride."
-    ja: "HANAZONOマウンテンバイクパークが<wbr>2本の<wbr>トレイルで<wbr>開業。<wbr>全長<wbr>4,212mの<wbr>フロートレイル<wbr>「花園スカイライン」を<wbr>含む。"
-  url:
-    en: https://www.powderlife.com/blog/hanazono-joins-nisekos-mountain-biking-scene/
-
 - slug: pinkbike-cruise-control-niseko
   date: 2026-07-08
   type: article
@@ -39,6 +24,21 @@
     ja: "世界有数の<wbr>豪雪地帯の<wbr>麓に、<wbr>日本で<wbr>急成長する<wbr>マウンテンバイクの<wbr>聖地が<wbr>ある。"
   url:
     en: https://www.pinkbike.com/news/trail-of-the-month-cruise-control-in-niseko-japan.html
+
+- slug: powderlife-hanazono-joins-niseko
+  date: 2026-07-08
+  type: article
+  source: powderlife
+  sourceName: Powderlife
+  thumb: /assets/images/media-coverage/2026/powderlife-hanazono-joins-niseko/thumb.jpg
+  title:
+    en: "Hanazono Joins Niseko's Mountain Biking Scene"
+    ja: "HANAZONOが<wbr>ニセコの<wbr>マウンテンバイクシーンに<wbr>仲間入り"
+  quote:
+    en: "The Hanazono Mountain Bike Park debuts with two trails, including the 4,212m Hanazono Skyline flow ride."
+    ja: "HANAZONOマウンテンバイクパークが<wbr>2本の<wbr>トレイルで<wbr>開業。<wbr>全長<wbr>4,212mの<wbr>フロートレイル<wbr>「花園スカイライン」を<wbr>含む。"
+  url:
+    en: https://www.powderlife.com/blog/hanazono-joins-nisekos-mountain-biking-scene/
 
 - slug: aspect-niseko-mtb-guide-australians
   date: 2026-01-04
@@ -342,3 +342,111 @@
     ja: "日本ハーモニー・リゾートが、<wbr>道内最大級と<wbr>なる<wbr>ニセコHANAZONOの<wbr>新マウンテンバイクトレイルを<wbr>7月1日に<wbr>開業すると<wbr>発表。"
   url:
     ja: https://prtimes.jp/main/html/rd/p/000000016.000098698.html
+
+- slug: summerlife-63-hanazono-mtb-footprint
+  date: 2026-05-01
+  type: print
+  source: powderlife
+  sourceName: Summerlife
+  thumb: /assets/images/media-coverage/2026/summerlife-63-hanazono-mtb-footprint/thumb.jpg
+  title:
+    en: "Hanazono Expands Niseko's MTB Footprint"
+    ja: "HANAZONO、<wbr>ニセコの<wbr>MTBエリアを<wbr>拡大"
+  quote:
+    en: "Hanazono launches the first phase of a bike-park vision built with NAMBA: a 4.2km blue trail and a beginner-friendly Forest Loop."
+    ja: "HANAZONOが<wbr>NAMBAと<wbr>共同で<wbr>描く<wbr>バイクパーク構想の<wbr>第一弾を<wbr>始動。<wbr>4.2kmの<wbr>ブルートレイルと<wbr>初心者向けの<wbr>フォレストループを<wbr>開設する。"
+  url:
+    en: https://issuu.com/powderlife/docs/summerlife_2025_issue_63_english_jap/33
+    ja: https://issuu.com/powderlife/docs/summerlife_2025_issue_63_english_jap/33
+
+- slug: summerlife-59-twin-peaks-namba
+  date: 2023-06-01
+  type: print
+  source: powderlife
+  sourceName: Summerlife
+  thumb: /assets/images/media-coverage/2023/summerlife-59-twin-peaks-namba/thumb.jpg
+  title:
+    en: "Twin Peaks & NAMBA: Building Niseko's MTB Community"
+    ja: "ツインピークスと<wbr>NAMBA：ニセコの<wbr>MTBコミュニティを<wbr>築く"
+  quote:
+    en: "The community-born Twin Peaks Bike Park, run by NAMBA, aims to make Niseko one of Asia's premier mountain bike destinations, with trails by Swiss builder Allegra."
+    ja: "地元コミュニティから<wbr>生まれ、<wbr>NAMBAが<wbr>運営する<wbr>ツインピークス・バイクパーク。<wbr>スイスの<wbr>アレグラ社が<wbr>手がける<wbr>トレイルで、<wbr>ニセコを<wbr>アジア有数の<wbr>MTBの<wbr>聖地へ。"
+  url:
+    en: https://issuu.com/powderlife/docs/59-sl-digital-en-jp/29
+    ja: https://issuu.com/powderlife/docs/59-sl-digital-en-jp/29
+
+- slug: powderlife-62-grand-hirafu-connects
+  date: 2025-01-15
+  type: print
+  source: powderlife
+  sourceName: Powderlife
+  thumb: /assets/images/media-coverage/2025/powderlife-62-grand-hirafu-connects/thumb.jpg
+  title:
+    en: "Grand Hirafu Connects with Twin Peaks"
+    ja: "グラン・ヒラフが<wbr>ツインピークスと<wbr>接続"
+  quote:
+    en: "Work has started on a connector trail linking the Hirafu Bike Park into NAMBA's 100-hectare, free-to-use Twin Peaks trail network."
+    ja: "ヒラフ・バイクパークと、<wbr>NAMBAが<wbr>運営する<wbr>100ヘクタール・<wbr>無料開放の<wbr>ツインピークス・トレイルネットワークを<wbr>つなぐ<wbr>連絡トレイルの<wbr>工事が<wbr>始まった。"
+  url:
+    en: https://issuu.com/powderlife/docs/powderlife_2025_issue_62_english_chi/43
+
+- slug: powderlife-60-green-season-mtb
+  date: 2024-01-15
+  type: print
+  source: powderlife
+  sourceName: Powderlife
+  thumb: /assets/images/media-coverage/2024/powderlife-60-green-season-mtb/thumb.jpg
+  title:
+    en: "Niseko's Green Season Boom, Built on New MTB Trails"
+    ja: "ニセコの<wbr>グリーンシーズン、<wbr>新たな<wbr>MTBトレイルが<wbr>牽引"
+  quote:
+    en: "The creation of 15km of master-planned mountain bike trails is expected to drive a significant summer MTB tourism industry in Niseko."
+    ja: "15kmに<wbr>及ぶ計画的な<wbr>マウンテンバイクトレイルの<wbr>整備が、<wbr>ニセコの<wbr>夏の<wbr>MTB観光を<wbr>大きく<wbr>押し上げると<wbr>期待される。"
+  url:
+    en: https://issuu.com/powderlife/docs/60-pl-digital-enjp/168
+    ja: https://issuu.com/powderlife/docs/60-pl-digital-enjp/168
+
+- slug: wineanddine-2025-26-namba-advert
+  date: 2025-12-01
+  type: print
+  source: wineanddine
+  sourceName: Niseko Wine & Dine
+  thumb: /assets/images/media-coverage/2025/wineanddine-2025-26-namba-advert/thumb.jpg
+  title:
+    en: "Asia's Fastest Growing Trail Network"
+    ja: "アジアで<wbr>最も<wbr>急成長する<wbr>トレイルネットワーク"
+  quote:
+    en: "NAMBA's full-page advert in Niseko's Wine & Dine guide: 25km of trails and counting."
+    ja: "ニセコの<wbr>ワイン＆ダイングガイドに<wbr>掲載された<wbr>NAMBAの<wbr>全面<wbr>広告。<wbr>25kmの<wbr>トレイル、<wbr>そして<wbr>拡大中。"
+  url:
+    en: https://issuu.com/powderlife/docs/niseko_area_guide_-_wine_dine_2025-26/25
+
+- slug: wineanddine-2023-24-namba-advert
+  date: 2023-12-01
+  type: print
+  source: wineanddine
+  sourceName: Niseko Wine & Dine
+  thumb: /assets/images/media-coverage/2023/wineanddine-2023-24-namba-advert/thumb.jpg
+  title:
+    en: "Ride Niseko's Trail Network"
+    ja: "ニセコの<wbr>トレイルネットワークを<wbr>走ろう"
+  quote:
+    en: "NAMBA's full-page advert in Niseko's Wine & Dine guide."
+    ja: "ニセコの<wbr>ワイン＆ダイングガイドに<wbr>掲載された<wbr>NAMBAの<wbr>全面<wbr>広告。"
+  url:
+    en: https://issuu.com/powderlife/docs/_2023ebook_/214
+
+- slug: wineanddine-2022-23-namtba-advert
+  date: 2022-12-01
+  type: print
+  source: wineanddine
+  sourceName: Niseko Wine & Dine
+  thumb: /assets/images/media-coverage/2022/wineanddine-2022-23-namtba-advert/thumb.jpg
+  title:
+    en: "Building Trails and Community"
+    ja: "トレイルと<wbr>コミュニティを<wbr>築く"
+  quote:
+    en: "NAMTBA's advert in Niseko's Wine & Dine guide."
+    ja: "ニセコの<wbr>ワイン＆ダイングガイドに<wbr>掲載された<wbr>NAMTBAの<wbr>広告。"
+  url:
+    en: https://issuu.com/powderlife/docs/_2022ebook_/100
