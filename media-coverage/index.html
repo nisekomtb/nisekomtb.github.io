@@ -1,13 +1,14 @@
 ---
 title: In the News
 subtitle: NAMBA & Niseko MTB in the Media
-description: "Press coverage of NAMBA and Niseko mountain biking: articles, videos and features on Twin Peaks Bike Park and the Niseko trail network."
+description: "Press coverage of NAMBA and Niseko mountain biking: articles and magazine features on Twin Peaks Bike Park and the Niseko trail network."
 baseCss: view-category
 masthead:
   img: /assets/images/bg/bg-header-press.jpg
 og:
   image: /assets/images/bg/bg-header-press.jpg
 ---
+{% assign items = site.data['media-coverage'] | sort: "date" | reverse %}
 <style>
   @media (max-width: 991px) {
     .items-row .item { min-height: auto !important; }
@@ -22,11 +23,26 @@ og:
       "@id": "https://namba.ngo/media-coverage/#webpage",
       "url": "https://namba.ngo/media-coverage/",
       "name": "In the News: NAMBA & Niseko MTB in the Media",
-      "description": "Press coverage of NAMBA and Niseko mountain biking: articles, videos and features on Twin Peaks Bike Park and the Niseko trail network.",
+      "description": "Press coverage of NAMBA and Niseko mountain biking: articles and magazine features on Twin Peaks Bike Park and the Niseko trail network.",
       "inLanguage": "en",
+      "dateModified": "{{ items.first.date | date: '%Y-%m-%d' }}",
       "primaryImageOfPage": "https://namba.ngo/assets/images/bg/bg-header-press.jpg",
       "about": { "@id": "https://namba.ngo/#organization" },
-      "isPartOf": { "@id": "https://namba.ngo/#website" }
+      "isPartOf": { "@id": "https://namba.ngo/#website" },
+      "mainEntity": {
+        "@type": "ItemList",
+        "numberOfItems": {{ items.size }},
+        "itemListElement": [
+          {%- for item in items -%}
+          {
+            "@type": "ListItem",
+            "position": {{ forloop.index }},
+            "url": {{ item.url.en | default: item.url.ja | jsonify }},
+            "name": {{ item.title.en | strip_html | jsonify }}
+          }{%- unless forloop.last -%},{%- endunless -%}
+          {%- endfor -%}
+        ]
+      }
     }
   ]
 }
@@ -40,12 +56,12 @@ og:
         class="features-desc ja-animate"
         data-animation="move-from-bottom"
         data-delay="200">
-        <div class="section-lede"><span>Where NAMBA, <a href="/twin-peaks/">Twin Peaks Bike Park</a> and Niseko mountain biking have appeared in the press, on screen, and in print. Each item links straight to the source. Covering NAMBA in a story? <a href="/contact/?topic=media">Get in touch</a>.</span></div>
+        <div class="section-lede"><span>Where NAMBA, <a href="/twin-peaks/">Twin Peaks Bike Park</a> and Niseko mountain biking have appeared online and in print. Each item links straight to the source. Writing about NAMBA? See the <a href="/press/">press kit</a> or <a href="/contact/?topic=media">get in touch</a>.</span></div>
       </div>
     </div>
   </div>
 
-  {% assign items = site.data['media-coverage'] | sort: "date" | reverse %}
+  <h2 class="visually-hidden">All coverage</h2>
   {% include media-grid.html items=items %}
 
 </div>

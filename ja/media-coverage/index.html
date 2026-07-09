@@ -1,13 +1,14 @@
 ---
 title: メディア掲載
 subtitle: メディアで見るNAMBAとニセコMTB
-description: "NAMBAとニセコのマウンテンバイクに関するメディア掲載。ツインピークス・バイクパークとニセコのトレイルネットワークを紹介する記事、動画、特集。"
+description: "NAMBAとニセコのマウンテンバイクに関するメディア掲載。ツインピークス・バイクパークとニセコのトレイルネットワークを紹介する記事や雑誌特集。"
 baseCss: view-category
 masthead:
   img: /assets/images/bg/bg-header-press.jpg
 og:
   image: /assets/images/bg/bg-header-press.jpg
 ---
+{% assign items = site.data['media-coverage'] | sort: "date" | reverse %}
 <style>
   @media (max-width: 991px) {
     .items-row .item { min-height: auto !important; }
@@ -22,11 +23,26 @@ og:
       "@id": "https://namba.ngo/ja/media-coverage/#webpage",
       "url": "https://namba.ngo/ja/media-coverage/",
       "name": "メディア掲載: メディアで見るNAMBAとニセコMTB",
-      "description": "NAMBAとニセコのマウンテンバイクに関するメディア掲載。ツインピークス・バイクパークとニセコのトレイルネットワークを紹介する記事、動画、特集。",
+      "description": "NAMBAとニセコのマウンテンバイクに関するメディア掲載。ツインピークス・バイクパークとニセコのトレイルネットワークを紹介する記事や雑誌特集。",
       "inLanguage": "ja",
+      "dateModified": "{{ items.first.date | date: '%Y-%m-%d' }}",
       "primaryImageOfPage": "https://namba.ngo/assets/images/bg/bg-header-press.jpg",
       "about": { "@id": "https://namba.ngo/#organization" },
-      "isPartOf": { "@id": "https://namba.ngo/#website" }
+      "isPartOf": { "@id": "https://namba.ngo/#website" },
+      "mainEntity": {
+        "@type": "ItemList",
+        "numberOfItems": {{ items.size }},
+        "itemListElement": [
+          {%- for item in items -%}
+          {
+            "@type": "ListItem",
+            "position": {{ forloop.index }},
+            "url": {{ item.url.ja | default: item.url.en | jsonify }},
+            "name": {{ item.title.ja | strip_html | jsonify }}
+          }{%- unless forloop.last -%},{%- endunless -%}
+          {%- endfor -%}
+        ]
+      }
     }
   ]
 }
@@ -40,12 +56,12 @@ og:
         class="features-desc ja-animate"
         data-animation="move-from-bottom"
         data-delay="200">
-        <div class="section-lede"><span>NAMBA、<a href="/ja/twin-peaks/">ツインピークス・バイクパーク</a>、​ニセコの​マウンテンバイクが​メディアで​紹介された​記事や​動画を​まとめています。​各項目は​掲載元へ​直接リンクします。​取材の​ご相談は<a href="/ja/contact/?topic=media">こちら</a>。</span></div>
+        <div class="section-lede"><span>NAMBA、<a href="/ja/twin-peaks/">ツインピークス・バイクパーク</a>​、​ニセコの​マウンテンバイクが​オンラインや​雑誌で​紹介された​記事を​まとめています。​各項目は​掲載元へ​直接リンクします。​NAMBAの​取材を​ご検討の​方は、<a href="/ja/press/">プレスキット</a>または<a href="/ja/contact/?topic=media">お問い合わせページ</a>を​ご覧ください。</span></div>
       </div>
     </div>
   </div>
 
-  {% assign items = site.data['media-coverage'] | sort: "date" | reverse %}
+  <h2 class="visually-hidden">すべての掲載</h2>
   {% include media-grid.html items=items %}
 
 </div>

@@ -9,7 +9,7 @@
   (publication logo + name + language indicator) and a pull-quote.
 
   Parameters:
-    include.item — one entry from site.data['media-coverage'] (required)
+    include.item: one entry from site.data['media-coverage'] (required)
 {%- endcomment -%}
 {%- assign item = include.item -%}
 {%- if page.lang == "ja" -%}
@@ -23,7 +23,7 @@
 <article class="event-card media-card">
   <div class="event-card-thumb">
     {% if item.thumb %}
-      <picture><source type="image/webp" srcset="{{ item.thumb | replace: '.jpg', '.webp' }}"><img src="{{ item.thumb }}" alt="" loading="lazy"></picture>
+      <picture><source type="image/webp" srcset="{{ item.thumb | replace: '.jpg', '.webp' }}"><img src="{{ item.thumb }}" alt="{{ card_title | strip_html }}" loading="lazy"></picture>
     {% else %}
       <div class="event-card-thumb-fallback"></div>
     {% endif %}
