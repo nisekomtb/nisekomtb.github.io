@@ -17,7 +17,11 @@
     <div
       class="item column-{{ indexModulo4 }} ja-animate"
       data-animation="move-from-bottom"
-      data-delay="item-{{ forloop.index0 }}"
+      {%- comment -%} Stagger per row (0-3), not by global index: each .items-row
+          is observed independently for the reveal, so a global index would give
+          lower rows multi-second animation-delays and they'd appear well after
+          scrolling into view. {%- endcomment -%}
+      data-delay="item-{{ indexModulo4 }}"
       >
       {% include media-card.html item=item %}
     </div>
