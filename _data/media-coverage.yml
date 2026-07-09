@@ -10,6 +10,7 @@
 #             tokenised with <wbr>.
 # url:        source article URL per language actually available (>=1 required).
 
+
 - slug: pinkbike-cruise-control-niseko
   date: 2026-07-08
   type: article
@@ -18,9 +19,161 @@
   thumb: /assets/images/media-coverage/2026/pinkbike-cruise-control-niseko/thumb.jpg
   title:
     en: "Trail of the Month: Cruise Control in Niseko, Japan"
-    ja: "今月の<wbr>トレイル：<wbr>日本・<wbr>ニセコの<wbr>「クルーズ<wbr>コントロール」"
+    ja: "今月の<wbr>トレイル：日本・<wbr>ニセコの<wbr>「クルーズコントロール」"
   quote:
     en: "Beneath one of the snowiest, sought-after places on Earth sits one of Japan's fastest-growing mountain bike destinations."
     ja: "世界有数の<wbr>豪雪地帯の<wbr>麓に、<wbr>日本で<wbr>急成長する<wbr>マウンテンバイクの<wbr>聖地が<wbr>ある。"
   url:
     en: https://www.pinkbike.com/news/trail-of-the-month-cruise-control-in-niseko-japan.html
+
+- slug: powderlife-hanazono-joins-niseko
+  date: 2026-07-08
+  type: article
+  source: powderlife
+  sourceName: Powderlife
+  thumb: /assets/images/media-coverage/2026/powderlife-hanazono-joins-niseko/thumb.jpg
+  title:
+    en: "Hanazono Joins Niseko's Mountain Biking Scene"
+    ja: "HANAZONOが<wbr>ニセコの<wbr>マウンテンバイクシーンに<wbr>仲間入り"
+  quote:
+    en: "The Hanazono Mountain Bike Park debuts with two trails, including the 4,212m Hanazono Skyline flow ride."
+    ja: "HANAZONOマウンテンバイクパークが<wbr>2本の<wbr>トレイルで<wbr>開業。<wbr>全長<wbr>4,212mの<wbr>フロートレイル<wbr>「花園スカイライン」を<wbr>含む。"
+  url:
+    en: https://www.powderlife.com/blog/hanazono-joins-nisekos-mountain-biking-scene/
+
+- slug: aspect-niseko-mtb-guide-australians
+  date: 2026-01-04
+  type: article
+  source: aspect
+  sourceName: Aspect Niseko
+  thumb: /assets/images/media-coverage/2026/aspect-niseko-mtb-guide-australians/thumb.jpg
+  title:
+    en: "Niseko MTB Guide for Australians"
+    ja: "オーストラリア人の<wbr>ための<wbr>ニセコMTBガイド"
+  quote:
+    en: "Why Niseko is Japan's next big MTB hotspot: free trails, lift access, and family fun."
+    ja: "ニセコが<wbr>日本の<wbr>次なる<wbr>MTBの<wbr>聖地である<wbr>理由。<wbr>無料トレイル、<wbr>リフトアクセス、<wbr>家族で<wbr>楽しめる<wbr>魅力。"
+  url:
+    en: https://aspectniseko.com/niseko-mtb-guide-for-australians/
+
+- slug: allegra-twin-peaks-bike-park
+  date: 2025-02-24
+  type: article
+  source: allegra
+  sourceName: Allegra
+  thumb: /assets/images/media-coverage/2025/allegra-twin-peaks-bike-park/thumb.jpg
+  title:
+    en: "From Vision to MTB Destination: Twin Peaks Bike Park"
+    ja: "構想から<wbr>MTBデスティネーションへ<wbr>：ツインピークス・バイクパーク"
+  quote:
+    en: "Learn about the work on site, the trails, and the future of this unique Niseko MTB project."
+    ja: "ニセコの<wbr>ユニークな<wbr>MTBプロジェクト。<wbr>現場での<wbr>取り組み、<wbr>トレイル、<wbr>そして<wbr>未来を<wbr>ご紹介します。"
+  url:
+    en: https://www.helloallegra.com/en/twin-peaks-bike-park-niseko/
+
+- slug: setsu-niseko-cycling-summer
+  date: 2024-06-07
+  type: article
+  source: setsu
+  sourceName: Setsu Niseko
+  thumb: /assets/images/media-coverage/2024/setsu-niseko-cycling-summer/thumb.jpg
+  title:
+    en: "Niseko Cycling: A Must-Try in Summer"
+    ja: "ニセコサイクリング：夏に<wbr>試したい<wbr>アクティビティ"
+  quote:
+    en: "Lush nature, scenic mountains, low humidity, and clean air make Niseko an excellent summer cycling destination."
+    ja: "豊かな<wbr>自然、<wbr>美しい<wbr>山々、<wbr>低い<wbr>湿度と<wbr>清らかな<wbr>空気。<wbr>ニセコは<wbr>夏の<wbr>サイクリングに<wbr>最適な<wbr>場所です。"
+  url:
+    en: https://setsuniseko.com/en/blog/niseko-cycling/
+    ja: https://setsuniseko.com/ja/blog/niseko-cycling/
+
+- slug: japan-travel-ride-through-niseko
+  date: 2024-06-01
+  type: article
+  source: japantravel
+  sourceName: Travel Japan
+  thumb: /assets/images/media-coverage/2024/japan-travel-ride-through-niseko/thumb.jpg
+  title:
+    en: "Ride Through Nature's Beauty in Niseko"
+    ja: "ニセコの<wbr>美しい<wbr>自然を<wbr>駆け抜ける"
+  quote:
+    en: "Cycle beneath Mt Yotei and the Niseko Range, enjoying fresh mountain air, scenic views, and thrilling summer trails."
+    ja: "羊蹄山と<wbr>ニセコ連峰の<wbr>麓を<wbr>走り、<wbr>澄んだ<wbr>山の<wbr>空気と<wbr>絶景、<wbr>スリルあふれる<wbr>夏の<wbr>トレイルを<wbr>楽しむ。"
+  url:
+    en: https://www.japan.travel/en/japans-local-treasures/ride-through-natures-beauty-niseko-2024/
+
+- slug: niseko-united-new-mecca-mountain-biking
+  date: 2024-05-29
+  type: article
+  source: nisekounited
+  sourceName: Niseko United
+  thumb: /assets/images/media-coverage/2024/niseko-united-new-mecca-mountain-biking/thumb.jpg
+  title:
+    en: "Niseko, the New Mecca of Mountain Biking"
+    ja: "ニセコ、<wbr>マウンテンバイクの<wbr>新たな<wbr>聖地"
+  quote:
+    en: "How Niseko is becoming one of Asia's premier mountain bike destinations."
+    ja: "ニセコが<wbr>アジア有数の<wbr>マウンテンバイク・デスティネーションに<wbr>なりつつある<wbr>理由。"
+  url:
+    en: https://www.niseko.ne.jp/en/news/niseko-the-new-mecca-of-mountain-biking/
+    ja: https://www.niseko.ne.jp/ja/news/niseko-the-new-mecca-of-mountain-biking/
+
+- slug: powderlife-rise-of-mountain-biking
+  date: 2024-04-29
+  type: article
+  source: powderlife
+  sourceName: Powderlife
+  thumb: /assets/images/media-coverage/2024/powderlife-rise-of-mountain-biking/thumb.jpg
+  title:
+    en: "More Than Just Powder: The Rise of Mountain Biking in Niseko"
+    ja: "パウダーだけじゃない<wbr>：ニセコで<wbr>高まる<wbr>マウンテンバイク人気"
+  quote:
+    en: "Niseko's mountain biking renaissance traces back to 2020, when local riders began forming a community."
+    ja: "ニセコの<wbr>マウンテンバイク<wbr>人気は、<wbr>地元ライダーが<wbr>コミュニティを<wbr>築き始めた<wbr>2020年に<wbr>さかのぼる。"
+  url:
+    en: https://www.powderlife.com/blog/more-than-just-powder-the-rise-of-mountain-biking-in-niseko/
+
+- slug: powderlife-twin-peaks-opens
+  date: 2023-09-15
+  type: article
+  source: powderlife
+  sourceName: Powderlife
+  thumb: /assets/images/media-coverage/2023/powderlife-twin-peaks-opens/thumb.jpg
+  title:
+    en: "Niseko's Twin Peaks Bike Park Opens Today"
+    ja: "ニセコの<wbr>ツインピークス・バイクパーク、<wbr>本日オープン"
+  quote:
+    en: "Twin Peaks is the first stage of NAMBA's masterplan for a world-class, sustainable mountain bike community."
+    ja: "ツインピークスは、<wbr>世界水準の<wbr>持続可能な<wbr>マウンテンバイクコミュニティを<wbr>目指すNAMBAの<wbr>マスタープランの<wbr>第一段階。"
+  url:
+    en: https://www.powderlife.com/blog/nisekos-twin-peaks-bike-park-opens-today/
+
+- slug: powderlife-many-hands-make-light-dirt
+  date: 2023-09-13
+  type: article
+  source: powderlife
+  sourceName: Powderlife
+  thumb: /assets/images/media-coverage/2023/powderlife-many-hands-make-light-dirt/thumb.jpg
+  title:
+    en: "NAMBA: Many Hands Make Light Dirt"
+    ja: "NAMBA：<wbr>多くの<wbr>手が<wbr>土仕事を<wbr>軽く<wbr>する"
+  quote:
+    en: "NAMBA's mission is to make Niseko Asia's premier mountain bike destination, working with Swiss trail builder Allegra."
+    ja: "NAMBAの<wbr>使命は、<wbr>スイスの<wbr>トレイルビルダー、<wbr>アレグラとともに<wbr>ニセコを<wbr>アジア随一の<wbr>マウンテンバイクの<wbr>聖地に<wbr>変える<wbr>こと。"
+  url:
+    en: https://www.powderlife.com/blog/namba-many-hands-make-light-dirt/
+
+- slug: holidayniseko-twin-peaks-mountain-biking
+  date: 2023-06-23
+  type: article
+  source: holidayniseko
+  sourceName: Holiday Niseko
+  thumb: /assets/images/media-coverage/2023/holidayniseko-twin-peaks-mountain-biking/thumb.jpg
+  title:
+    en: "Twin Peaks: Mountain Biking in Niseko"
+    ja: "ツインピークス：ニセコの<wbr>マウンテンバイク"
+  quote:
+    en: "One of Japan's newest and most progressive series of mountain bike trails."
+    ja: "日本でも<wbr>最も<wbr>新しく、<wbr>最先端の<wbr>マウンテンバイクトレイルの<wbr>ひとつ。"
+  url:
+    en: https://holidayniseko.com/blog/twin-peaks-mountain-biking-niseko
