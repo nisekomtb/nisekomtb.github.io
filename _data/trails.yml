@@ -693,7 +693,7 @@ hanazono:
       climb: 39
       descent: 36
       bike: one-way
-      multi_use: true
+      multi_use: false
       trailforks_id: 923207
     - name: Hanazono Skyline
       ja:
