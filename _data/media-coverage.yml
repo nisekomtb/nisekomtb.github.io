@@ -10,6 +10,22 @@
 #             tokenised with <wbr>.
 # url:        source article URL per language actually available (>=1 required).
 
+- slug: hbc-summer-niseko-mtb
+  date: 2026-07-12
+  type: tv
+  source: hbc
+  sourceName: HBC
+  thumb: /assets/images/media-coverage/2026/hbc-summer-niseko-mtb/thumb.jpg
+  title:
+    en: "Summer Niseko: a mountain biking mecca, and Asia's first cycling World Championships"
+    ja: "「夏の<wbr>ニセコ」<wbr>マウンテンバイクの<wbr>聖地に、<wbr>今夏アジア初の<wbr>自転車世界大会"
+  quote:
+    en: "Mountain biking is the ideal summer sport for a winter tourist destination."
+    ja: "マウンテンバイクは、<wbr>冬の<wbr>観光地に<wbr>とって<wbr>理想的な<wbr>夏の<wbr>スポーツです。"
+  url:
+    en: https://www.youtube.com/watch?v=V1BHbjnrOQg
+    ja: https://www.youtube.com/watch?v=V1BHbjnrOQg
+
 - slug: pinkbike-cruise-control-niseko
   date: 2026-07-08
   type: article
