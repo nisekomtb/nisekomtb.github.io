@@ -1,8 +1,8 @@
 {% comment %}
   Usage: {% include contact-form.html subject="Partnership Enquiry" %}
-  Optional params: subject (default: "⛩️ NAMBA Website Inquiry"), redirect (relative path, default: "/thanks/"; site.url is prepended)
+  Optional params: subject (default: "⛩️ NAMBA Website Enquiry"), redirect (relative path, default: "/thanks/"; site.url is prepended)
 {% endcomment %}
-{% assign form_subject = include.subject | default: "⛩️ NAMBA Website Inquiry" %}
+{% assign form_subject = include.subject | default: "⛩️ NAMBA Website Enquiry" %}
 {% assign form_redirect = include.redirect | default: "/thanks/" %}
 
 <style>
