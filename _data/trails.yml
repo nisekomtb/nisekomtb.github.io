@@ -391,14 +391,14 @@ grand-hirafu:
   shuttle_access: false
   pedal_access: false
   location: Hirafu Village
-  season: June - October
+  season: July - September
   hours: Check resort website
   managed_by: Grand Hirafu Resort
   ja:
     name: グラン・ヒラフバイクパーク
     cost: リフト券が必要
     location: ヒラフ
-    season: 6月 - 10月
+    season: 7月 - 9月
     hours: リゾートウェブサイトをご確認ください
     managed_by: グランヒラフリゾート
   location_lat: 42.861887017044324
@@ -460,65 +460,26 @@ grand-hirafu:
   # 58780
   map_preview: /assets/images/trails/grand-hirafu/map-preview.webp
   trails:
-    # - name: Hirafu Skills Area
-    #   ja:
-    #     name: ヒラフスキルエリア
-    #   difficulty: green
-    #   distance: 400
-    #   climb: 5
-    #   descent: 5
-    #   bike: two-way
-    #   multi_use: true
-    # - name: Kings High
-    #   ja:
-    #     name:
-    #   difficulty: green
-    #   distance: 694
-    #   climb: 26
-    #   descent: 10
-    #   bike: up-only
-    #   multi_use: false
-    #   trailforks_id: 753823
-    # - name: Key Path
-    #   ja:
-    #     name:
-    #   difficulty: blue
-    #   distance: 819
-    #   climb: 3
-    #   descent: 52
-    #   bike: down-only
-    #   multi_use: false
-    #   trailforks_id: 753822
-    # - name: Kamiwaza
-    #   ja:
-    #     name: カミワザ
-    #   difficulty: blue
-    #   distance: "1,218"
-    #   climb: 13
-    #   descent: 111
-    #   bike: down-only
-    #   multi_use: false
-    #   trailforks_id: 753803
-    # - name: Hirafu Flow
-    #   ja:
-    #     name: ヒラフフロー
-    #   difficulty: blue
-    #   distance: "1,315"
-    #   climb: 8
-    #   descent: 84
-    #   bike: down-only
-    #   multi_use: false
-    #   # trailforks_id: 0
-    # - name: Hirafu DH
-    #   ja:
-    #     name: ヒラフ DH
-    #   difficulty: black
-    #   distance: "1,554"
-    #   climb: 3
-    #   descent: 242
-    #   bike: down-only
-    #   multi_use: false
-    #   # trailforks_id: 775402
+    - name: Hirafu Skill Up
+      ja:
+        name: ヒラフ スキルアップ
+      difficulty: green
+      distance: 387
+      climb: 14
+      descent: 12
+      bike: one-way
+      multi_use: false
+      trailforks_id: 846931
+    - name: Hirafu DH Course
+      ja:
+        name: ヒラフ DHコース
+      difficulty: black
+      distance: "4,644"
+      climb: 21
+      descent: 516
+      bike: down-only
+      multi_use: false
+      trailforks_id: 408758
 
 annupuri:
   logo: /assets/images/company/annupuri.png
