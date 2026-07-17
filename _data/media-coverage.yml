@@ -10,6 +10,36 @@
 #             tokenised with <wbr>.
 # url:        source article URL per language actually available (>=1 required).
 
+- slug: powderlife-japans-biggest-mtb-park
+  date: 2025-06-04
+  type: article
+  source: powderlife
+  sourceName: Powderlife
+  thumb: /assets/images/media-coverage/2025/powderlife-japans-biggest-mtb-park/thumb.jpg
+  title:
+    en: "Niseko Soon To Be Japan's Biggest MTB Park"
+    ja: "ニセコ、<wbr>まもなく<wbr>日本最大の<wbr>MTBパークへ"
+  quote:
+    en: "This green season NAMBA is building a new Santa Cruz-sponsored intermediate jump trail and new climbing trail at their Twin Peaks Bike Park."
+    ja: "この<wbr>グリーンシーズン、<wbr>NAMBAは<wbr>ツインピークス・バイクパークに、<wbr>サンタクルーズが<wbr>スポンサーする<wbr>新しい<wbr>中級者向けジャンプトレイルと<wbr>クライミングトレイルを<wbr>建設している。"
+  url:
+    en: https://www.powderlife.com/blog/niseko-soon-to-be-japans-biggest-mtb-park/
+
+- slug: straitstimes-niseko-year-round-destination
+  date: 2023-03-27
+  type: article
+  source: straitstimes
+  sourceName: The Straits Times
+  thumb: /assets/images/media-coverage/2023/straitstimes-niseko-year-round-destination/thumb.jpg
+  title:
+    en: "Japan's Niseko wants to become a year-round destination by growing its summer tourism"
+    ja: "日本の<wbr>ニセコ、<wbr>夏の<wbr>観光を<wbr>拡大し<wbr>通年型リゾートを<wbr>目指す"
+  quote:
+    en: "Niseko aims to one day be an all-year tourist destination that is as famous for its powder snow as its mountain biking trails."
+    ja: "ニセコは、<wbr>パウダースノーと<wbr>同じくらい<wbr>マウンテンバイクトレイルでも<wbr>有名な、<wbr>通年型の<wbr>観光地に<wbr>なる<wbr>ことを<wbr>目指している。"
+  url:
+    en: https://www.straitstimes.com/life/travel/japan-s-niseko-wants-to-become-a-year-round-destination-by-growing-its-summer-tourism
+
 - slug: hbc-summer-niseko-mtb
   date: 2026-07-12
   type: tv
