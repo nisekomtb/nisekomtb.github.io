@@ -531,6 +531,8 @@ layout: base
             </ul>
           {% elsif page.price == 0 %}
             <p>{% if page.lang == "en" %}Free{% else %}無料{% endif %}</p>
+          {% elsif page.price == "TBC" %}
+            <p>{% if page.lang == "en" %}TBC{% else %}未定{% endif %}</p>
           {% else %}
             <p>{{ page.price }}</p>
           {% endif %}
@@ -604,7 +606,7 @@ layout: base
   },
   "inLanguage": "{{ page.lang }}",
   "isAccessibleForFree": {% if page.price == 0 %}true{% else %}false{% endif %},
-  {% if page.price %}
+  {% if page.price and page.price != "TBC" %}
     {% if page.price[0] %}
       "offers": [
         {% for price in page.price %}
