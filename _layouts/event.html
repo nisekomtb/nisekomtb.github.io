@@ -655,15 +655,6 @@ layout: base
           "validFrom": "{{ page.date | date: "%Y" }}-01-01"
         },
       {% endif %}
-  {% else %}
-    "offers": {
-      "@type": "Offer",
-      "url": "https://namba.ngo{{ page.url }}",
-      "price": "",
-      "priceCurrency": "JPY",
-      "availability": "https://schema.org/InStock",
-      "validFrom": "{{ page.date | date: "%Y" }}-01-01"
-    },
   {% endif %}
   "performer": {
     "@type": "PerformingGroup",
