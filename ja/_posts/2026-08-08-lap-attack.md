@@ -8,10 +8,10 @@ subtitleHtml: "チーム・<wbr>エンデューロ・<wbr>リレー"
 description: "ラップアタック・チーム・エンデューロ・リレーが2026年8月8日（土）、ニセコのツインピークス・バイクパークで開催。4人1組で6時間、最多ラップを競います。7月31日までにお申し込みを。"
 startDate: 2026-08-08 09:00:00 +0900
 days: 1
-time: "9:00am - 3:00pm"
+time: "8:00am - 7:00pm"
 location: ツインピークス・<wbr>バイクパーク、<wbr>ニセコ
 address: 150, 2 Aza-150-1 Yamada, Kutchan, Abuta District, Hokkaido 044-0081
-price: TBC
+price: 0
 host:
   name: Rhythm Japan
   img: /rhythm.png
@@ -56,7 +56,7 @@ about: false
 
 - **4人1組、​7月31日までに​お申し込みを。​** 代表者が​[エントリーフォーム](https://docs.google.com/forms/d/e/1FAIpQLSddRhMzArxQNdrqI3QJtUy_1uVfofN-SjgGRN8pgLaxE1QCjw/viewform)から​チームを​登録すると、​リズムから​ルールと​ウェイバー​（同意書）の​リンクが​メールで​届きます。​7月31日までに​メンバー全員が​ウェイバーに​記入してください。
 - **カテゴリーを​選択。​** 「フルペダル」は​ペダル自転車のみ​（E-バイク不可）。​「混合」は​1名以上が​E-バイクの​チーム。​各ライダーの​自転車の​種類は​フォームで​申告してください。
-- **遅れての​エントリーや​ご質問。​** ジョージー​（[josie.stent@rhythmjapan.com](mailto:josie.stent@rhythmjapan.com)）まで​ご連絡ください。
+- **遅れての​エントリーや​ご質問。​** 詳しくは​[エントリーフォーム](https://docs.google.com/forms/d/e/1FAIpQLSddRhMzArxQNdrqI3QJtUy_1uVfofN-SjgGRN8pgLaxE1QCjw/viewform)を​ご確認ください。
 
 仲間を​集めて、​準備を​整えてお越しください。​夜には​Rhythm & Beansで​表彰式も​あります。​この​夏​ツインピークスで​開催される​ほかの​イベントは、[イベントページ](/ja/events/)を​ご覧ください。
 

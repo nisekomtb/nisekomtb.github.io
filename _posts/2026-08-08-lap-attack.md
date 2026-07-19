@@ -6,10 +6,10 @@ subtitle: "Team Enduro Relay"
 description: "Lap Attack Team Enduro Relay hits Twin Peaks Bike Park, Niseko on Saturday 8 August 2026. Teams of four, most laps in six hours. Register by 31 July."
 startDate: 2026-08-08 09:00:00 +0900
 days: 1
-time: "9:00am - 3:00pm"
+time: "8:00am - 7:00pm"
 location: Twin Peaks Bike Park, Niseko
 address: 150, 2 Aza-150-1 Yamada, Kutchan, Abuta District, Hokkaido 044-0081
-price: TBC
+price: 0
 host:
   name: Rhythm Japan
   img: /rhythm.png
@@ -54,7 +54,7 @@ Teams of four ride in relay from 9:00am to 3:00pm. One rider laps the park while
 
 - **Teams of four, register by 31 July.** One rider signs the team up through the [entry form](https://docs.google.com/forms/d/e/1FAIpQLSddRhMzArxQNdrqI3QJtUy_1uVfofN-SjgGRN8pgLaxE1QCjw/viewform). Rhythm then emails the rules and a waiver link, and every rider completes the waiver by 31 July.
 - **Pick your category.** Full Pedal is push bikes only, no e-bikes. Mixed is any team with one or more riders on an e-bike. You declare each rider's bike type on the form.
-- **Late entries or questions.** Email Josie at [josie.stent@rhythmjapan.com](mailto:josie.stent@rhythmjapan.com).
+- **Late entries or questions.** The [entry form](https://docs.google.com/forms/d/e/1FAIpQLSddRhMzArxQNdrqI3QJtUy_1uVfofN-SjgGRN8pgLaxE1QCjw/viewform) has the contact details.
 
 Round up your crew and come ready to lap. We wrap up with prize giving at Rhythm & Beans that evening. For the rest of what is on at Twin Peaks this summer, see our [events page](/events/).
 
