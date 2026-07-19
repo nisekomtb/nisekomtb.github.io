@@ -23,12 +23,23 @@ masthead:
 thumbnail: /assets/images/events/2026/lap-attack/thumb.jpg
 og:
   image: /assets/images/events/2026/lap-attack/poster.jpg
-# STUB: interim registration route is Rhythm Japan's Instagram (link in bio).
-# Swap link.url for the direct sign-up form when Rhythm provides it.
 link:
-  url: https://www.instagram.com/rhythmjapan/
+  url: https://docs.google.com/forms/d/e/1FAIpQLSddRhMzArxQNdrqI3QJtUy_1uVfofN-SjgGRN8pgLaxE1QCjw/viewform
   text: Sign up
   isSignup: true
+itinerary:
+  days:
+    - hasLocations: true
+      events:
+        - time: "8:00am - 8:45am"
+          name: Team registration
+          location: Rhythm Hirafu
+        - time: "9:00am - 3:00pm"
+          name: Racing
+          location: Twin Peaks Bike Park
+        - time: "5:30pm - 7:00pm"
+          name: Prize giving
+          location: Rhythm & Beans Bar & Cafe, Rhythm Hirafu
 moreInfo:
   - Registrations close 31 July.
 parking: false
@@ -39,7 +50,13 @@ Grab three teammates, name your squad, and see how many laps of the park you can
 
 Teams of four ride in relay from 9:00am to 3:00pm. One rider laps the park while the rest of the crew catches their breath, then tags the next teammate at the bottom to send them off. Whichever team stacks up the most laps across the six hours takes the win. How you split the riding is up to you, whether that is even rotations or saving your fastest rider for the final push.
 
-The entry fee, exactly how the relay works and the full run of day will all go up on this page closer to the event, so check back nearer the time. For now, the main thing is to lock in your four before registration closes on 31 July. Round up your crew, then keep an eye on our [events page](/events/) for the rest of what is on at Twin Peaks this summer.
+## Before you enter
+
+- **Teams of four, register by 31 July.** One rider signs the team up through the [entry form](https://docs.google.com/forms/d/e/1FAIpQLSddRhMzArxQNdrqI3QJtUy_1uVfofN-SjgGRN8pgLaxE1QCjw/viewform). Rhythm then emails the rules and a waiver link, and every rider completes the waiver by 31 July.
+- **Pick your category.** Full Pedal is push bikes only, no e-bikes. Mixed is any team with one or more riders on an e-bike. You declare each rider's bike type on the form.
+- **Late entries or questions.** Email Josie at [josie.stent@rhythmjapan.com](mailto:josie.stent@rhythmjapan.com).
+
+Round up your crew and come ready to lap. We wrap up with prize giving at Rhythm & Beans that evening. For the rest of what is on at Twin Peaks this summer, see our [events page](/events/).
 
 {% include image.html
    src="/assets/images/events/2026/lap-attack/poster.jpg"

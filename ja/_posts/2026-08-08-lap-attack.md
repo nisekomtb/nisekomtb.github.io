@@ -25,12 +25,23 @@ masthead:
 thumbnail: /assets/images/events/2026/lap-attack/thumb.jpg
 og:
   image: /assets/images/events/2026/lap-attack/poster.jpg
-# STUB: 暫定の申し込み導線はリズム・ジャパンのInstagram（プロフィールのリンク）。
-# リズムから直接の申し込みフォームが届いたら link.url を差し替えること。
 link:
-  url: https://www.instagram.com/rhythmjapan/
+  url: https://docs.google.com/forms/d/e/1FAIpQLSddRhMzArxQNdrqI3QJtUy_1uVfofN-SjgGRN8pgLaxE1QCjw/viewform
   text: お申し込み
   isSignup: true
+itinerary:
+  days:
+    - hasLocations: true
+      events:
+        - time: "8:00am - 8:45am"
+          name: チーム<wbr>受付
+          location: リズム<wbr>ヒラフ店
+        - time: "9:00am - 3:00pm"
+          name: レース
+          location: ツインピークス
+        - time: "5:30pm - 7:00pm"
+          name: 表彰式
+          location: Rhythm & Beans <wbr>Bar & Cafe、<wbr>リズム<wbr>ヒラフ店
 moreInfo:
   - 申し込み<wbr>締め切りは<wbr>7月31日。
 parking: false
@@ -41,7 +52,13 @@ about: false
 
 4人1組の​チームが、​午前9時から​午後3時まで​リレー形式で​走ります。​1人が​パークを​ラップしている​間、​ほかの​メンバーは​休憩し、​コース下部で​次の​仲間に​タッチして​送り出します。​6時間で​最も​多くの​ラップを​重ねた​チームが​勝ち。​走りの​分担は​チーム次第。​均等に​回しても、​一番​速い​ライダーを​最後の​勝負に​取っておいても​かまいません。
 
-参加費、​レースの​詳しい​進め方、​当日の​詳しい​スケジュールは、​イベントが​近づいたら​この​ページで​公開します。​近くなったら​改めて​ご確認ください。​今の​ところ​大切なのは、​7月31日の​申し込み締め切りまでに​4人を​揃える​こと。​仲間を​集めたら、​この​夏​ツインピークスで​開催される​ほかの​イベントも、[イベントページ](/ja/events/)で​チェックしてください。
+## エントリー前に
+
+- **4人1組、​7月31日までに​お申し込みを。​** 代表者が​[エントリーフォーム](https://docs.google.com/forms/d/e/1FAIpQLSddRhMzArxQNdrqI3QJtUy_1uVfofN-SjgGRN8pgLaxE1QCjw/viewform)から​チームを​登録すると、​リズムから​ルールと​ウェイバー​（同意書）の​リンクが​メールで​届きます。​7月31日までに​メンバー全員が​ウェイバーに​記入してください。
+- **カテゴリーを​選択。​** 「フルペダル」は​ペダル自転車のみ​（E-バイク不可）。​「混合」は​1名以上が​E-バイクの​チーム。​各ライダーの​自転車の​種類は​フォームで​申告してください。
+- **遅れての​エントリーや​ご質問。​** ジョージー​（[josie.stent@rhythmjapan.com](mailto:josie.stent@rhythmjapan.com)）まで​ご連絡ください。
+
+仲間を​集めて、​準備を​整えてお越しください。​夜には​Rhythm & Beansで​表彰式も​あります。​この​夏​ツインピークスで​開催される​ほかの​イベントは、[イベントページ](/ja/events/)を​ご覧ください。
 
 {% include image.html
    src="/assets/images/events/2026/lap-attack/poster.jpg"
