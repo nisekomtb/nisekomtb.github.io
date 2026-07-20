@@ -10,6 +10,51 @@
 #             tokenised with <wbr>.
 # url:        source article URL per language actually available (>=1 required).
 
+- slug: rhythmjapan-twin-peaks-to-hirafu
+  date: 2024-07-01
+  type: article
+  source: rhythmjapan
+  sourceName: Rhythm Japan
+  thumb: /assets/images/media-coverage/2024/rhythmjapan-twin-peaks-to-hirafu/thumb.jpg
+  title:
+    en: "You'll Soon Be Able To Ride Between Twin Peaks and Grand Hirafu"
+    ja: "まもなく<wbr>ツインピークスと<wbr>グラン・<wbr>ひらふを<wbr>バイクで<wbr>直接<wbr>つなげる"
+  quote:
+    en: "NAMBA's vision has long been to connect all four Niseko United resorts together through beginner-friendly mountain bike trails, and it seems this collaboration with Tokyu is the first step in bringing that idea to fruition."
+    ja: "NAMBAは<wbr>長年、<wbr>ニセコユナイテッドの<wbr>4つの<wbr>リゾートすべてを<wbr>初心者に<wbr>やさしい<wbr>マウンテンバイクトレイルで<wbr>つなぐ<wbr>ことを<wbr>ビジョンと<wbr>してきた。<wbr>東急との<wbr>この<wbr>コラボレーションは、<wbr>その<wbr>構想を<wbr>実現する<wbr>第一歩の<wbr>ようだ。"
+  url:
+    en: https://rhythmjapan.com/our-stories/from-twin-peaks-to-hirafu
+
+- slug: rhythmjapan-riding-your-way-niseko
+  date: 2024-06-24
+  type: article
+  source: rhythmjapan
+  sourceName: Rhythm Japan
+  thumb: /assets/images/media-coverage/2024/rhythmjapan-riding-your-way-niseko/thumb.jpg
+  title:
+    en: "Riding Your Way Through Niseko"
+    ja: "ニセコを、<wbr>自分らしく<wbr>走る"
+  quote:
+    en: "This year, don't be expecting the same old runs, with NAMBA working tirelessly over the springtime months, adding in a huge collection of jump and tech features."
+    ja: "今年は、<wbr>これまでと<wbr>同じ<wbr>コースだと<wbr>思ってはいけない。<wbr>NAMBAが<wbr>春の<wbr>数ヶ月間に<wbr>わたり<wbr>精力的に<wbr>取り組み、<wbr>ジャンプや<wbr>テクニカルな<wbr>フィーチャーを<wbr>数多く<wbr>追加している。"
+  url:
+    en: https://rhythmjapan.com/our-stories/riding-your-way-through-niseko
+
+- slug: rhythmjapan-big-summer-mtb
+  date: 2024-06-11
+  type: article
+  source: rhythmjapan
+  sourceName: Rhythm Japan
+  thumb: /assets/images/media-coverage/2024/rhythmjapan-big-summer-mtb/thumb.jpg
+  title:
+    en: "Big Summer Ahead For Mountain Biking Enthusiasts"
+    ja: "マウンテンバイク愛好家に、<wbr>最高の<wbr>夏が<wbr>到来"
+  quote:
+    en: "Twin Peaks is really only the beginning for what NAMBA has actually got planned for the area."
+    ja: "ツインピークスは、<wbr>NAMBAが<wbr>この<wbr>エリアに<wbr>実際に<wbr>計画している<wbr>ことの、<wbr>ほんの<wbr>始まりに<wbr>すぎない。"
+  url:
+    en: https://rhythmjapan.com/our-stories/big-summer-for-bike
+
 - slug: powderlife-japans-biggest-mtb-park
   date: 2025-06-04
   type: article
