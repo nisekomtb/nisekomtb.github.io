@@ -113,6 +113,24 @@ h4.ja {
   overflow-wrap: break-word;
 }
 
+/* Plain (un-tokenised) JA lead/subtitle copy — e.g. the event masthead
+   description, which stays plain text because it also feeds meta/OG/Schema.
+   The keep-all rule above treats the whole untokenised sentence as one
+   unbreakable word; overflow-wrap then force-breaks it in emergency mode,
+   bypassing kinsoku and dropping the sentence-final 。/、 onto its own line.
+   Standard breaking restores kinsoku so trailing punctuation never orphans. */
+html[lang="ja"] .lead {
+  word-break: normal;
+}
+
+/* When a tokenised twin (e.g. descriptionHtml) supplies <wbr> break points,
+   restore keep-all so wrapping follows phrase boundaries rather than breaking
+   mid-word. The final token keeps its trailing 。 so nothing orphans. Equal
+   specificity to the rule above, so this must stay after it to win. */
+html[lang="ja"] .lead-tokenised {
+  word-break: keep-all;
+}
+
 html[lang="ja"] h1,
 h1.ja {
   letter-spacing: -8px;

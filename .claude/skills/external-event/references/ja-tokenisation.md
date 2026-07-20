@@ -8,6 +8,7 @@ Two different rules apply: BudouX zero-width spaces for body paragraphs, `<wbr>`
 |---|---|
 | `title` | Plain JA text (used in `<title>` tag, OG tags, Schema.org `name`) |
 | `description` | Plain JA text (meta description, OG, Schema.org `description`) |
+| `descriptionHtml` | Same sentence tokenised with `<wbr>` — the masthead renders this for phrase-aware wrapping; keep `description` plain alongside it. Generate with `budoux --lang ja -s '<wbr>' -d "" "<sentence>"` |
 | `address` | Plain JA text in Japanese postal format (used for Schema.org / postal data) |
 | `location` | JA text with `<wbr>` tags at word boundaries |
 | `price[].name` | JA text with `<wbr>` tags at word boundaries |

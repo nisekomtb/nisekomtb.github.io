@@ -54,7 +54,8 @@ masthead:
 layout: event
 categories: events
 title: <Event name in Japanese, plain text>
-description: <One sentence in Japanese, under 160 chars>
+description: <One sentence in Japanese, under 160 chars — PLAIN text, feeds meta/OG/Schema>
+descriptionHtml: <Same sentence tokenised with <wbr> — the masthead renders this for phrase-aware wrapping; falls back to `description` if omitted>
 startDate: <Same as EN>
 days: <Same as EN>
 location: <Venue name in Japanese with <wbr> tokens at word boundaries>

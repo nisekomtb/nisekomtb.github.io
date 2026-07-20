@@ -355,7 +355,7 @@ layout: base
         {% endif %}
         {% if page.logo %}<img class="event-logo" src="{{ page.logo }}" alt="{{ page.title }} logo">{% endif %}
         {% if page.rescheduled %}<div class="rescheduled">{{ page.rescheduled | markdownify }}</div>{% endif %}
-        {% if page.description %}<p class="lead">{{ page.description }}</p>{% endif %}
+        {% if page.descriptionHtml %}<p class="lead lead-tokenised">{{ page.descriptionHtml }}</p>{% elsif page.description %}<p class="lead">{{ page.description }}</p>{% endif %}
         {% if page.link and page.link.url %}
           <div class="event-signup-top">
             <a class="btn btn-{% if page.link.isSignup %}primary{% else %}secondary{% endif %}{% if cta_disabled %} disabled{% endif %}" href="{{ page.link.url }}" target="_blank" rel="noopener"{% if cta_disabled %} aria-disabled="true" tabindex="-1"{% endif %}>{{ page.link.text }}</a>
@@ -602,7 +602,7 @@ layout: base
       "name": "{{ page.address }}"
     },
     {% endif %}
-    "name": "{{ page.location }}"
+    "name": "{{ page.location | strip_html }}"
   },
   "inLanguage": "{{ page.lang }}",
   "isAccessibleForFree": {% if page.price == 0 %}true{% else %}false{% endif %},
@@ -619,7 +619,7 @@ layout: base
               "availability": "https://schema.org/InStock",
               "validFrom": "{{ page.date | date: "%Y" }}-01-01",
               "category": "Adult"{% if price.name %},
-              "description": "{{ price.name }}"{% endif %}
+              "description": "{{ price.name | strip_html }}"{% endif %}
             },
             {
               "@type": "Offer",
@@ -629,7 +629,7 @@ layout: base
               "availability": "https://schema.org/InStock",
               "validFrom": "{{ page.date | date: "%Y" }}-01-01",
               "category": "Child"{% if price.name %},
-              "description": "{{ price.name }}"{% endif %}
+              "description": "{{ price.name | strip_html }}"{% endif %}
             }
           {% else %}
             {
@@ -639,7 +639,7 @@ layout: base
               "priceCurrency": "JPY",
               "availability": "https://schema.org/InStock",
               "validFrom": "{{ page.date | date: "%Y" }}-01-01",
-              "description": "{{ price.name }}"
+              "description": "{{ price.name | strip_html }}"
             }
           {% endif %}
           {% unless forloop.last %},{% endunless %}
