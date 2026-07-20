@@ -10,6 +10,96 @@
 #             tokenised with <wbr>.
 # url:        source article URL per language actually available (>=1 required).
 
+- slug: forza-santa-cruz-twin-peaks
+  date: 2024-10-04
+  type: article
+  source: forza
+  sourceName: Bike Shop Forza
+  thumb: /assets/images/media-coverage/2024/forza-santa-cruz-twin-peaks/thumb.jpg
+  title:
+    en: "Santa Cruz's First Hokkaido Demo Day, at Twin Peaks Niseko"
+    ja: "風間<wbr>北海道初上陸！<wbr>SANTACRUZ試乗会in TWIN PEAKS<wbr>ニセコ"
+  quote:
+    en: "To build these trails from scratch in just two years is truly remarkable."
+    ja: "たった<wbr>2年で<wbr>この<wbr>トレイルを<wbr>ゼロから<wbr>作ってしまうのですから<wbr>恐れ入りました。"
+  url:
+    ja: https://note.com/forza_tsukuba/n/n9c18046b08c4
+
+- slug: meigaya-niseko-twin-peaks
+  date: 2024-08-20
+  type: article
+  source: meigaya
+  sourceName: Meigaya
+  thumb: /assets/images/media-coverage/2024/meigaya-niseko-twin-peaks/thumb.jpg
+  title:
+    en: "Niseko: The Twin Peaks Chapter"
+    ja: "ニセコ<wbr>ツインピークス編"
+  quote:
+    en: "With NAMBA's sizeable full-time trail-building team, it's easy to imagine a trail network on a completely different scale within a year or two."
+    ja: "NAMBAの<wbr>トレイルビルドチームは<wbr>かなりの<wbr>人数が<wbr>フルタイムで<wbr>活動している<wbr>ことからも、<wbr>来年<wbr>もしくは<wbr>2年後には<wbr>全く<wbr>違う<wbr>スケールの<wbr>トレイルネットワークが<wbr>広がっている<wbr>ことは<wbr>想像に<wbr>難くありません。"
+  url:
+    ja: https://meigaya.hatenablog.com/entry/2024/08/20/095824
+
+- slug: mtbbiyori-twin-peaks-field-guide
+  date: 2024-07-23
+  type: article
+  source: mtbbiyori
+  sourceName: MTB Biyori
+  thumb: /assets/images/media-coverage/2024/mtbbiyori-twin-peaks-field-guide/thumb.jpg
+  title:
+    en: "Twin Peaks Bike Park, Niseko: Field Guide"
+    ja: "ツインピークスバイクパーク<wbr>（双子山ニセコ）"
+  quote:
+    en: "Twin Peaks is growing into one of Japan's largest MTB fields, with a new trail network of around 20km."
+    ja: "ツインピークスは<wbr>日本最大級の<wbr>MTBフィールドへ！<wbr>全長約20kmの<wbr>トレイルネットワークを<wbr>新たに<wbr>オープン。"
+  url:
+    ja: https://field.jitensha-biyori.jp/introduce/introduce-1648/
+
+- slug: whiteline-twin-peaks
+  date: 2024-06-15
+  type: article
+  source: whiteline
+  sourceName: Whiteline Bicycle
+  thumb: /assets/images/media-coverage/2024/whiteline-twin-peaks/thumb.jpg
+  title:
+    en: "Niseko's Twin Peaks Bike Park"
+    ja: "ニセコ<wbr>「ツインピークスバイクパーク」"
+  quote:
+    en: "Twin Peaks is operated and managed by the Niseko Area Mountain Bike Association (NAMBA)."
+    ja: "ツインピークスの<wbr>運営・<wbr>管理は<wbr>「ニセコエリアマウンテンバイク協会（NAMBA）」が<wbr>行なっています。"
+  url:
+    ja: https://whiteline-bicycle.com/blog/?p=8697
+
+- slug: holidayniseko-niseko-mtb-2024
+  date: 2024-05-17
+  type: article
+  source: holidayniseko
+  sourceName: Holiday Niseko
+  thumb: /assets/images/media-coverage/2024/holidayniseko-niseko-mtb-2024/thumb.jpg
+  title:
+    en: "Niseko Mountain Biking 2024"
+    ja: "ニセコの<wbr>マウンテンバイク<wbr>2024"
+  quote:
+    en: "This will be the first full summer of operation for Twin Peaks, spanning two days with an awesome schedule to celebrate."
+    ja: "ツインピークスに<wbr>とって<wbr>初めての<wbr>本格的な<wbr>夏。<wbr>2日間に<wbr>わたり、<wbr>記念すべき<wbr>スケジュールで<wbr>お祝いします。"
+  url:
+    en: https://holidayniseko.com/blog/niseko-mountain-biking-2024
+
+- slug: northbicycle-twin-peaks-niseko
+  date: 2023-09-21
+  type: article
+  source: northbicycle
+  sourceName: North Bicycle
+  thumb: /assets/images/media-coverage/2023/northbicycle-twin-peaks-niseko/thumb.jpg
+  title:
+    en: "Making the Most of Twin Peaks Bike Park Niseko"
+    ja: "TWIN PEAKS BIKE PARK NISEKOを<wbr>堪能してきました！"
+  quote:
+    en: "I honestly can't believe a bike park this good is free to ride."
+    ja: "これが<wbr>無料の<wbr>バイクパークなんて<wbr>信じられません。"
+  url:
+    ja: https://northbicycle.co.jp/2023/09/4178/
+
 - slug: rhythmjapan-twin-peaks-to-hirafu
   date: 2024-07-01
   type: article

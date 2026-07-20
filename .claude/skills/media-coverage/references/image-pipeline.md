@@ -8,6 +8,17 @@ All commands run from repo root. `<source>` is the file dropped into `_triage/`.
 The card serves the thumb as `<picture>` with a WebP `<source>` (swapping
 `.jpg` -> `.webp`), so BOTH files must exist.
 
+**ALWAYS remove black letterbox bars.** Many `og:image`s are video-style
+thumbnails (YouTube/Vimeo/note.com) padded with solid black bars top+bottom (or
+sides). Black bars must NEVER survive into a thumb. Before cropping, eyeball the
+source; if it has bars, trim them first with `sharp-cli` (trims borders matching
+the top-left pixel), then crop the trimmed file:
+
+```bash
+npx sharp-cli -i "assets/images/_triage/<source>" -o /tmp/mc-trim.png trim 15
+# use /tmp/mc-trim.png as the crop input below
+```
+
 ```bash
 DIR="assets/images/media-coverage/<year>/<slug>"
 mkdir -p "$DIR"
@@ -20,6 +31,17 @@ rm -f /tmp/mc-src.jpg /tmp/mc-900.jpg
 
 cwebp -q 82 "$DIR/thumb.jpg" -o "$DIR/thumb.webp"
 ```
+
+Alternatively, `npx sharp-cli -i <src> -o "$DIR/thumb.jpg" resize 600 600 --fit
+cover --position attention` produces a clean square crop in one step (use
+`attention` to keep the subject, `centre` for maps/graphics).
+
+**ALWAYS eyeball the finished `thumb.jpg`.** Two things to catch:
+- **Black bars** left behind (trim harder, or grab a `noPad`/original variant).
+- **Wrong rotation.** Some phone photos carry an EXIF orientation tag that `sips`
+  and `sharp` honour differently, yielding an upside-down/sideways thumb. Fix the
+  finished file in place with `sips -r 180 "$DIR/thumb.jpg" --out "$DIR/thumb.jpg"`
+  (or `-r 90` / `-r 270`), then regenerate the `.webp`.
 
 If the crop lands badly (face or logo cut off), re-crop from a different offset
 or ask the user for a better source. Apply the keep-smaller / quality guard from
