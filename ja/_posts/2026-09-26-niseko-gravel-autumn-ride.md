@@ -3,6 +3,7 @@ layout: event
 categories: events
 title: ニセコ グラベル オータムライド
 description: 羊蹄山の麓でグラベルライド2日間。日曜は50・100・120kmから選べる3コースのラリー。森林トラックと農道を巡ります。
+descriptionHtml: 羊蹄山の<wbr>麓で<wbr>グラベルライド2日間。<wbr>日曜は<wbr>50・100・120kmから<wbr>選べる<wbr>3コースの<wbr>ラリー。<wbr>森林トラックと<wbr>農道を<wbr>巡ります。
 startDate: 2026-09-26 09:00:00 +0900
 days: 2
 location: ニセコ<wbr>中央倉庫群

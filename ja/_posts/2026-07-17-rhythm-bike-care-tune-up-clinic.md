@@ -3,6 +3,7 @@ layout: event
 categories: events
 title: リズム・ヒラフのバイクケア＆基本チューンナップ・クリニック
 description: リズム・ヒラフが2026年7月17日にニセコで無料のバイクケア＆基本チューンナップ・クリニックを開催。英語での指導、定員20名。お早めにお申し込みを。
+descriptionHtml: リズム・ヒラフが<wbr>2026年7月17日に<wbr>ニセコで<wbr>無料の<wbr>バイクケア＆基本チューンナップ・クリニックを<wbr>開催。<wbr>英語での<wbr>指導、<wbr>定員20名。<wbr>お早めに<wbr>お申し込みを。
 startDate: 2026-07-17 18:00:00 +0900
 days: 1
 location: リズム<wbr>ヒラフ

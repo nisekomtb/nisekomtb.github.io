@@ -2,7 +2,7 @@
 layout: event
 categories: events
 title: Niseko Twin Trail Ride
-description: One-day MTB event across Grand Hirafu and Twin Peaks Bike Park, with guided rides, skills work, and maintenance tips. Pro rider Fumiya Kurose leads. Cap of 15 riders.
+description: "One-day MTB event across Grand Hirafu and Twin Peaks Bike Park: guided rides, skills work and maintenance tips, led by pro rider Fumiya Kurose. Cap of 15."
 startDate: 2025-07-21 09:00:00 +0900
 days: 1
 time: 9:00am - 1:00pm

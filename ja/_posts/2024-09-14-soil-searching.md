@@ -3,6 +3,7 @@ layout: event
 categories: events
 title: ソイル・サーチング
 description: 9月14〜15日、ツインピークス・バイクパークで開催される2日間のDig&Rideイベント。スペシャライズドとNAMBAの共催。事前登録制。
+descriptionHtml: 9月14〜15日、<wbr>ツインピークス・バイクパークで<wbr>開催される<wbr>2日間の<wbr>Dig&Rideイベント。<wbr>スペシャライズドと<wbr>NAMBAの<wbr>共催。<wbr>事前登録制。
 startDate: 2024-09-14 09:00:00 +0900
 days: 2
 location: ツインピークス・​バイクパーク、​ニセコ

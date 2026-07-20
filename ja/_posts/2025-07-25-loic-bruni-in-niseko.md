@@ -3,7 +3,8 @@ layout: event
 categories: events
 title: ロイック・ブルーニ、ニセコに登場
 titleHtml: ロイック・​ブルーニ、​ニセコに登場
-description: 7月25日、UCIダウンヒル世界選手権6回優勝のLoic Bruniとツインピークス・バイクパークでのグループライド&ミート&グリート。ゲストにNico Vink、井本はじめ、櫛間悠樹、長田淳也も参加。
+description: 7月25日、UCIダウンヒル世界選手権6回優勝のLoic Bruniとツインピークス・バイクパークでのグループライド＆ミート＆グリート。ゲストにNico Vink、井本はじめも参加。
+descriptionHtml: 7月25日、<wbr>UCIダウンヒル世界選手権6回優勝の<wbr>Loic Bruniと<wbr>ツインピークス・バイクパークでの<wbr>グループライド＆ミート＆グリート。<wbr>ゲストに<wbr>Nico Vink、<wbr>井本<wbr>はじめも<wbr>参加。
 startDate: 2025-07-25 16:30:00 +0900
 days: 1
 time: 2:30pm - 6:00pm

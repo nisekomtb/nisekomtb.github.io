@@ -4,6 +4,7 @@ categories: events
 title: ニセコでソイル・サーチング
 titleHtml: ニセコでソイル・​サーチング
 description: 9月2〜3日、まだ一般公開前のツインピークス・バイクパークで2日間のDig&Rideイベント。スペシャライズドとNAMBAの共催。事前登録制、抽選選考。
+descriptionHtml: 9月2〜3日、<wbr>まだ<wbr>一般<wbr>公開前の<wbr>ツインピークス・バイクパークで<wbr>2日間の<wbr>Dig&Rideイベント。<wbr>スペシャライズドと<wbr>NAMBAの<wbr>共催。<wbr>事前登録制、<wbr>抽選選考。
 startDate: 2023-09-02 09:00:00 +0900
 days: 2
 location: ツインピークス・バイクパーク、ニセコ

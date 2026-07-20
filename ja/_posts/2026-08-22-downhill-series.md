@@ -3,6 +3,7 @@ layout: event
 categories: events
 title: ダウンヒル シリーズ
 description: 全日本ダウンヒルシリーズ第5戦がニセコアンヌプリで開催。土曜シーディング、日曜決勝。JCF登録・オープン・キッズクラスが南斜面のコースに集結します。
+descriptionHtml: 全日本ダウンヒルシリーズ第5戦が<wbr>ニセコアンヌプリで<wbr>開催。<wbr>土曜シーディング、<wbr>日曜決勝。<wbr>JCF登録・オープン・キッズクラスが<wbr>南斜面の<wbr>コースに<wbr>集結します。
 startDate: 2026-08-22 09:00:00 +0900
 days: 2
 location: ニセコ<wbr>アンヌプリ<wbr>国際スキー場

@@ -2,7 +2,8 @@
 layout: event
 categories: events
 title: クルーズ・コントロール オープニングウィークエンド
-description: ツインピークス・バイクパークの新トレイル「クルーズ・コントロール」のオープニングウィークエンド。NAMBAとサンタクルーズの共催。最初の1.1kmが開通。デモバイク、プロ引率ライド、Rhythmでのアフターパーティー。
+description: NAMBAとサンタクルーズによるツインピークスの新トレイル「クルーズ・コントロール」のオープニングウィークエンド。最初の1.1kmが開通。デモバイク、プロ引率ライド、Rhythmでのアフターパーティーも。
+descriptionHtml: NAMBAと<wbr>サンタクルーズに<wbr>よる<wbr>ツインピークスの<wbr>新トレイル<wbr>「クルーズ・<wbr>コントロール」の<wbr>オープニングウィークエンド。<wbr>最初の<wbr>1.1kmが<wbr>開通。<wbr>デモバイク、<wbr>プロ引率ライド、<wbr>Rhythmでの<wbr>アフターパーティーも。
 startDate: 2024-09-28 09:00:00 +0900
 days: 2
 location: ツインピークス・​バイクパーク、​ニセコ

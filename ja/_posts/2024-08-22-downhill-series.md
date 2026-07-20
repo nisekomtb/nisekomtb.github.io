@@ -3,6 +3,7 @@ layout: event
 categories: events
 title: ダウンヒル シリーズ
 description: ニセコアンヌプリで開催される2024年ダウンヒルシリーズに合わせ、NAMBAが3つのサイドイベントを開催。スケートジャム、ツインピークスのファンライド、Rhythmでのウェルカムパーティー。
+descriptionHtml: ニセコアンヌプリで<wbr>開催される<wbr>2024年ダウンヒルシリーズに<wbr>合わせ、<wbr>NAMBAが<wbr>3つの<wbr>サイドイベントを<wbr>開催。<wbr>スケートジャム、<wbr>ツインピークスの<wbr>ファンライド、<wbr>Rhythmでの<wbr>ウェルカムパーティー。
 startDate: 2024-08-22 09:00:00 +0900
 days: 4
 location: Niseko

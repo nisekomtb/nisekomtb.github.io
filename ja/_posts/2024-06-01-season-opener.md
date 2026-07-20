@@ -2,7 +2,8 @@
 layout: event
 categories: events
 title: ツイン・ピークス　今シーズンのオープン情報
-description: ツインピークス・バイクパーク2024シーズンオープナー。NAMBAにとって初めての本格的なフルサマー。Dirty Dames女性グループライド、シーズン通しのStravaコンテスト開始、Rhythmのサマーオープニングパーティー。
+description: ツインピークス・バイクパーク2024シーズンオープナー。NAMBAにとって初めての本格的なフルサマー。Dirty Dames女性ライド、シーズン通しのStravaコンテスト、Rhythmのサマーパーティー。
+descriptionHtml: ツインピークス・バイクパーク2024シーズンオープナー。<wbr>NAMBAに<wbr>とって<wbr>初めての<wbr>本格的な<wbr>フルサマー。<wbr>Dirty Dames女性ライド、<wbr>シーズン通しの<wbr>Stravaコンテスト、<wbr>Rhythmの<wbr>サマーパーティー。
 startDate: 2024-06-01 09:00:00 +0900
 days: 2
 location: ツインピークス・バイクパーク、​ニセコ

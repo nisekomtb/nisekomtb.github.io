@@ -2,7 +2,8 @@
 layout: event
 categories: events
 title: ニセコ MTB ウィークエンド
-description: ニセコMTBの4日間：Rhythmヒラフでのサンタクルーズ試乗、プロライダーHajime Imoto・Yuki Kushimaとのグループライド、そしてニセコアンヌプリでのダウンヒルシリーズレース。
+description: ニセコMTBの4日間。Rhythmヒラフでのサンタクルーズ試乗車、プロとのグループライド、そしてニセコアンヌプリでのダウンヒルシリーズレース。
+descriptionHtml: ニセコMTBの<wbr>4日間。<wbr>Rhythmヒラフでの<wbr>サンタクルーズ試乗車、<wbr>プロとの<wbr>グループライド、<wbr>そして<wbr>ニセコアンヌプリでの<wbr>ダウンヒルシリーズレース。
 startDate: 2025-08-22 09:00:00 +0900
 days: 4
 location: ニセコ

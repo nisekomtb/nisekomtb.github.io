@@ -3,6 +3,7 @@ layout: event
 categories: events
 title: NISEKO GRAVEL Autumn Ride
 description: 9月21〜22日、紅葉のニセコを走る2日間のグラベルライド。5,000円のライドツアーからXL PAS Ex Long Courseまで、4つのコースから選べます。
+descriptionHtml: 9月21〜22日、<wbr>紅葉の<wbr>ニセコを<wbr>走る<wbr>2日間の<wbr>グラベルライド。<wbr>5,000円の<wbr>ライドツアーから<wbr>XL PAS Ex Long Courseまで、<wbr>4つの<wbr>コースから<wbr>選べます。
 startDate: 2024-09-21
 days: 2
 location: ニセコ

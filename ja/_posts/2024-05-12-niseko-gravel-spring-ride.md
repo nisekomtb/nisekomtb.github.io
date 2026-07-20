@@ -2,7 +2,8 @@
 layout: event
 categories: events
 title: NISEKO GRAVEL Spring Ride
-description: 2024年5月開催、ニセコの春を走るグラベルサイクリングイベント。
+description: 2024年5月開催、ニセコの農道と林道を巡る1日のグラベルサイクリングイベント。
+descriptionHtml: 2024年5月開催、<wbr>ニセコの<wbr>農道と<wbr>林道を<wbr>巡る<wbr>1日の<wbr>グラベルサイクリングイベント。
 startDate: 2024-05-12
 days: 1
 time: 6:30am - 5:00pm

@@ -2,7 +2,7 @@
 layout: event
 categories: events
 title: Twin Peaks Season Opener
-description: Twin Peaks Bike Park's 2024 season opener, NAMBA's first full summer. Dirty Dames women's group ride, season-long Strava competition launch, and the Rhythm summer opening party.
+description: Twin Peaks Bike Park's 2024 season opener, NAMBA's first full summer. Dirty Dames women's ride, a season-long Strava competition, and Rhythm's summer party.
 startDate: 2024-06-01 09:00:00 +0900
 days: 2
 location: Twin Peaks Bike Park, Niseko

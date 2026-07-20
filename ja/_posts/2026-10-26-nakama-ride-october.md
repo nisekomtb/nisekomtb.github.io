@@ -4,6 +4,7 @@ categories: events
 title: 仲間ライド：10月
 titleHtml: 仲間ライド：<wbr>10月
 description: 2026年最後の仲間ライド。ニセコのツインピークスでのんびり楽しむ社交的なグループライドです。10月26日（月）16時、ベースに集合。紅葉の中を、どなたでも歓迎します。
+descriptionHtml: 2026年<wbr>最後の<wbr>仲間ライド。<wbr>ニセコの<wbr>ツインピークスでのんびり<wbr>楽しむ社交的な<wbr>グループライドです。<wbr>10月26日<wbr>（月）<wbr>16時、<wbr>ベースに<wbr>集合。<wbr>紅葉の<wbr>中を、どなたでも<wbr>歓迎します。
 startDate: 2026-10-26 16:00:00 +0900
 days: 1
 time: "4:00pm"

@@ -2,7 +2,7 @@
 layout: event
 categories: events
 title: Twin Peaks Summer Kick Off
-description: All 17km of trails reopen for the 2026 summer. Join the NAMBA community on Sunday 31 May for skills clinics, orientation rides, food truck, kids fun.
+description: All 17km of trails reopen for summer 2026. Join the NAMBA community on Sunday 31 May for skills clinics, orientation rides, a food truck and kids' activities.
 startDate: 2026-05-31 09:00:00 +0900
 days: 1
 time: "9:00am - 3:00pm"

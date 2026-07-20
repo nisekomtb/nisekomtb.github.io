@@ -2,7 +2,7 @@
 layout: event
 categories: events
 title: Niseko Gravel Autumn Ride
-description: Two-day gravel ride through Niseko's forest tracks and farm roads under Mt Yotei, with a 45km, 100km, or 120km course for Sunday and a 55km group session on Saturday. Beginner-friendly options included.
+description: Two-day gravel ride under Mt Yotei through Niseko's forest tracks and farm roads. Sunday offers 45, 100 or 120km courses; Saturday a 55km group session.
 startDate: 2025-09-13 09:00:00 +0900
 days: 2
 location: Niseko Central Warehouse Group

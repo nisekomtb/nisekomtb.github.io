@@ -2,7 +2,8 @@
 layout: event
 categories: events
 title: ニセコ グラベル オータムライド
-description: 羊蹄山の麓、ニセコの林道と農道を巡る2日間のグラベルライド。日曜は45km・100km・120kmから選べる3コース、土曜は55kmのグループライドセッション。初心者向けオプションあり。
+description: 羊蹄山の麓、ニセコの林道と農道を巡る2日間のグラベルライド。日曜は45km・100km・120kmの3コース、土曜は55kmのグループセッション。
+descriptionHtml: 羊蹄山の<wbr>麓、<wbr>ニセコの<wbr>林道と<wbr>農道を<wbr>巡る<wbr>2日間の<wbr>グラベルライド。<wbr>日曜は<wbr>45km・100km・120kmの<wbr>3コース、<wbr>土曜は<wbr>55kmの<wbr>グループセッション。
 startDate: 2025-09-13 09:00:00 +0900
 days: 2
 location: ニセコ中央倉庫群

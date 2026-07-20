@@ -2,7 +2,7 @@
 layout: event
 categories: events
 title: Dirty Dames Ladies Info Session
-description: Meet the Dirty Dames crew, hear what we've got planned for the season, and put your hand up to help. Sunday 24 May, 10am to 12pm at Lily Hall, Kutchan. No bike needed.
+description: Meet the Dirty Dames crew, hear the season's plans, and put your hand up to help. Sunday 24 May, 10am to 12pm at Lily Hall, Kutchan. No bike needed.
 startDate: 2026-05-24 10:00:00 +0900
 days: 1
 time: "10:00am - 12:00pm"

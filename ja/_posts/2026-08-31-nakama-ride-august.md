@@ -4,6 +4,7 @@ categories: events
 title: 仲間ライド：8月
 titleHtml: 仲間ライド：<wbr>8月
 description: NAMBAの毎月恒例、仲間ライド。ニセコのツインピークスでのんびり楽しむ社交的なグループライドです。8月31日（月）16時、ベースに集合。ゆったりペースで、どなたでも歓迎します。
+descriptionHtml: NAMBAの<wbr>毎月<wbr>恒例、<wbr>仲間ライド。<wbr>ニセコの<wbr>ツインピークスでのんびり<wbr>楽しむ社交的な<wbr>グループライドです。<wbr>8月31日<wbr>（月）<wbr>16時、<wbr>ベースに<wbr>集合。<wbr>ゆったりペースで、<wbr>どなたでも<wbr>歓迎します。
 startDate: 2026-08-31 16:00:00 +0900
 days: 1
 time: "4:00pm"

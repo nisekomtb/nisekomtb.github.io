@@ -2,7 +2,7 @@
 layout: event
 categories: events
 title: Monitor Tour
-description: Two-day monitor tour at Twin Peaks Bike Park, 15-16 October. Ride the trails with the builders, hear how they were designed, and share feedback to shape what comes next.
+description: Two-day monitor tour at Twin Peaks Bike Park, 15-16 October. Ride with the trail builders, hear how the trails were designed, and give feedback on what's next.
 startDate: 2024-10-15 10:00:00 +0900
 days: 2
 location: Twin Peaks Bike Park, Niseko

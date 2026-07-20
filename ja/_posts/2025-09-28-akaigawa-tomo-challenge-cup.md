@@ -3,6 +3,7 @@ layout: event
 categories: events
 title: 赤井川 トモ チャレンジ カップ
 description: 子どもから大人まで楽しめるMTB・BMXチャレンジ。クラスごとにタイムを競うタイムアタックライド（男子・女子・キッズ）と、指定タイムへの近さを競うターゲットタイムライド。
+descriptionHtml: 子どもから<wbr>大人まで<wbr>楽しめる<wbr>MTB・BMXチャレンジ。<wbr>クラスごとに<wbr>タイムを<wbr>競う<wbr>タイムアタックライド（男子・女子・キッズ）と、<wbr>指定タイムへの<wbr>近さを<wbr>競う<wbr>ターゲットタイムライド。
 startDate: 2025-09-28 09:00:00 +0900
 days: 1
 time: 9:00am - 3:00pm
