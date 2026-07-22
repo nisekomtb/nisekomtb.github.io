@@ -10,6 +10,21 @@
 #             tokenised with <wbr>.
 # url:        source article URL per language actually available (>=1 required).
 
+- slug: jp01-kutchan-niseko-summer
+  date: 2026-07-16
+  type: print
+  source: jp01
+  sourceName: JP01
+  thumb: /assets/images/media-coverage/2026/jp01-kutchan-niseko-summer/thumb.jpg
+  title:
+    en: "Summer in the Kutchan & Niseko Area"
+    ja: "夏の<wbr>倶知安・<wbr>ニセコエリア"
+  quote:
+    en: "As epitomised by the free-to-ride public trail 'Twin Peaks Bike Park', the area's mountain biking scene keeps evolving."
+    ja: "無料で<wbr>利用できる<wbr>公共の<wbr>トレイル<wbr>「ツインピークスバイクパーク」に<wbr>代表されるように、<wbr>マウンテンバイクの<wbr>ライド環境も<wbr>進化を<wbr>続ける。"
+  url:
+    ja: https://jp01.jp/dbook/jp01_2026summer/book/#target/page_no=4
+
 - slug: forza-santa-cruz-twin-peaks
   date: 2024-10-04
   type: article
