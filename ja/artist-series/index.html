@@ -11,6 +11,7 @@ og:
   image: /assets/images/artists/header.jpg
 artists:
   - name: 相川みつぐ
+    slug: aikawa-mitsugu
     title: 画家 & イラストレーター
     img: /assets/images/artists/aikawa-mitsugu/avatar.jpg
     header: /assets/images/artists/aikawa-mitsugu/header.jpg
@@ -40,6 +41,7 @@ artists:
       <p>1976年生まれ、<wbr>札幌市在住。<wbr>北海道造形デザイン専門学校を<wbr>卒業後、<wbr>2008年に<wbr>本格的に<wbr>活動を<wbr>開始。<wbr>白老町の<wbr>飛生芸術祭では<wbr>ビジュアルディレクターを<wbr>務め、<wbr>個展や<wbr>グループ展<wbr>（Silkio Project、<wbr>Geso Portraito、<wbr>Stopero Pinks、<wbr>春の<wbr>グループ展<wbr>「ハルウララ」など）に<wbr>加え、<wbr>野外音楽フェスでの<wbr>ライブペインティング、<wbr>店舗や<wbr>商業施設の<wbr>壁画制作、<wbr>受注作品、<wbr>書籍の<wbr>装画など<wbr>幅<wbr>広く<wbr>活動しています。</p>
 
   - name: フランシス・トレヴィル
+    slug: frances-treveil
     title: 絵画 & 衣類のリペア
     img: /assets/images/artists/frances-treveil/avatar.png
     header: /assets/images/artists/frances-treveil/header.jpg
@@ -66,6 +68,7 @@ artists:
       <p>彼女の<wbr>作品には、<wbr>登山、<wbr>スノーボード、<wbr>マウンテンバイクと<wbr>いった<wbr>自然との<wbr>対話から<wbr>生まれる<wbr>「畏敬の<wbr>念」と<wbr>「感動」が<wbr>込められています。<wbr>作品を<wbr>通じて、<wbr>日本の<wbr>山々の<wbr>スピリットを<wbr>少しでも<wbr>感じて<wbr>もらえる<wbr>ことを<wbr>願っています。</p>
 
   - name: ジョー・スコット
+    slug: joe-scott
     title: デザイナー & イラストレーター
     img: /assets/images/artists/joe-scott/avatar.png
     header: /assets/images/artists/joe-scott/header.png
@@ -87,6 +90,7 @@ artists:
       <p>大学卒業後に<wbr>移り<wbr>住んだ<wbr>北海道の<wbr>自然は、<wbr>彼の<wbr>作品の<wbr>最大の<wbr>インスピレーション源です。<wbr>現在は<wbr>札幌を<wbr>拠点に、<wbr>地域企業との<wbr>ブランディングや<wbr>デザインの<wbr>仕事を<wbr>行いながら、<wbr>北海道の<wbr>山々や<wbr>名所を<wbr>題材に<wbr>した<wbr>ナショナルパーク風の<wbr>作品シリーズを<wbr>制作しています。</p>
 
   - name: ルーク・サンダルズ
+    slug: luke-sandalls
     title: デザイナー & イラストレーター
     img: /assets/images/artists/luke-sandalls/avatar.jpg
     header: /assets/images/artists/luke-sandalls/header.png
@@ -116,6 +120,7 @@ artists:
       <p>彼の<wbr>作品は、<wbr>スケッチブックであり、<wbr>ビジュアルダイアリーでもあります。<wbr>ドローイング、<wbr>ペインティング、<wbr>そして<wbr>文章表現を<wbr>通じて、<wbr>「流れ」<wbr>「遊び」<wbr>「瞑想」を<wbr>探求しています。<wbr>アイデンティティ、<wbr>スピリット、<wbr>孤独と<wbr>つながり、<wbr>生と<wbr>死の<wbr>バランスと<wbr>いった<wbr>テーマが<wbr>彼の<wbr>多様な<wbr>作品群を<wbr>貫いており、<wbr>創作は<wbr>今もな<wbr>お「存在」を<wbr>探る<wbr>旅と<wbr>して<wbr>進化し続けています。</p>
 
   - name: ピーター・マーティン
+    slug: peter-martin
     title: 北海道でアートやいろいろ作ってます
     img: /assets/images/artists/peter-martin/avatar.png
     header: /assets/images/artists/peter-martin/header.png
@@ -141,6 +146,7 @@ artists:
       <p>また、<wbr>アナログ技法を<wbr>用いた<wbr>手作りの<wbr>おみや<wbr>げ<wbr>（Omiyage）<wbr>シリーズも<wbr>展開しており、<wbr>クラフトマンシップ、<wbr>ユーモア、<wbr>ノスタルジーを<wbr>融合させた<wbr>一点物の<wbr>アクセサリーや<wbr>トリンケットを<wbr>制作しています。<wbr>新しい<wbr>コラボレーションや<wbr>作品も<wbr>随時発表予定です。</p>
 
   - name: スコット・ウェントワース
+    slug: scott-wentworth
     title: 伝統的なタトゥーアーティスト
     img: /assets/images/artists/scott-wentworth/avatar.jpg
     header: /assets/images/artists/scott-wentworth/header.jpg
@@ -364,7 +370,7 @@ artists:
   <ol>
     {% for artist in page.artists %}
     <li data-target="#artists" data-slide-to="{{ forloop.index0 }}">
-      <a href="#artists-{{ forloop.index0 }}">{% include image.html src=artist.img alt=artist.name width="300" height="300" %}</a>
+      <a href="#{{ artist.slug }}">{% include image.html src=artist.img alt=artist.name width="300" height="300" %}</a>
     </li>
   {% endfor %}
   </ol>
@@ -372,7 +378,7 @@ artists:
 
 {% for artist in page.artists %}
 {% assign header_webp = artist.header | replace: '.jpg', '-large.webp' | replace: '.png', '-large.webp' %}
-<div id="artists-{{ forloop.index0 }}" class="artist-card">
+<div id="{{ artist.slug }}" class="artist-card">
   <div class="artist-header" style="background-image: url('{{ header_webp }}');">
     {% include image.html src=artist.img alt=artist.name class="artist-avatar" width="300" height="300" %}
   </div>
