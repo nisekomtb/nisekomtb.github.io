@@ -16,7 +16,7 @@ og:
   .beer-quote footer {
     margin-top: 12px;
     font-size: 0.9em;
-    color: #999;
+    color: var(--color-text-muted);
   }
   .beer-label-media {
     max-width: 480px;
@@ -24,8 +24,16 @@ og:
   }
   .beer-smallprint {
     font-size: 0.85em;
-    color: #999;
+    color: var(--color-text-muted);
     margin-top: 16px;
+  }
+  .btn.disabled,
+  .btn[aria-disabled="true"] {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #888 !important;
+    border-color: transparent !important;
+    pointer-events: none;
+    cursor: not-allowed;
   }
 </style>
 
