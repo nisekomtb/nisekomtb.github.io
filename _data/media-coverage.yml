@@ -10,6 +10,81 @@
 #             tokenised with <wbr>.
 # url:        source article URL per language actually available (>=1 required).
 
+- slug: allegra-niseko-mtb-trail-projects
+  date: 2025-10-28
+  type: article
+  source: allegra
+  sourceName: Allegra
+  thumb: /assets/images/media-coverage/2025/allegra-niseko-mtb-trail-projects/thumb.jpg
+  title:
+    en: "MTB Trail Projects Taking Shape in the Niseko Area"
+    ja: "ニセコエリアで<wbr>進むMTBトレイルプロジェクト"
+  quote:
+    en: "NAMBA rallied funding from local businesses, and that support is what keeps the trails free to ride."
+    ja: "この<wbr>パークでは、<wbr>NAMBAの<wbr>呼びかけに<wbr>より<wbr>多くの<wbr>地元企業などから<wbr>資金協力を<wbr>得る<wbr>ことで<wbr>トレイルの<wbr>無料開放が<wbr>実現しています。"
+  url:
+    ja: https://helloallegra.jp/news/1174/
+
+- slug: sportsw-niseko-mtb-weekend-2025
+  date: 2025-08-06
+  type: article
+  source: sportsw
+  sourceName: Sports-W
+  thumb: /assets/images/media-coverage/2025/sportsw-niseko-mtb-weekend-2025/thumb.jpg
+  title:
+    en: "Santa Cruz Niseko Mountain Bike Weekend"
+    ja: "【Santa Cruz】ニセコ マウンテンバイク ウィークエンド開催！"
+  quote:
+    en: "Santa Cruz Bicycles Japan is the trail sponsor for Shogun Syndicate, the toughest trail at Twin Peaks, covering its build and upkeep."
+    ja: "Santa Cruz Bicycles Japanは、<wbr>ツインピークス最難関コース<wbr>「Shogun Syndicate」の<wbr>造成費・維持費を<wbr>負担する<wbr>トレイルスポンサーです。"
+  url:
+    ja: https://sports-w.com/news/ion/santa-cruz-niseko-mtb-weekend-2025/
+
+- slug: mtbbiyori-niseko-area-mtb-fields
+  date: 2025-05-09
+  type: article
+  source: mtbbiyori
+  sourceName: MTB Biyori
+  thumb: /assets/images/media-coverage/2025/mtbbiyori-niseko-area-mtb-fields/thumb.jpg
+  title:
+    en: "Go Ride Hokkaido's Niseko Area MTB Fields"
+    ja: "北海道ニセコエリアの<wbr>MTBフィールドへ<wbr>GO"
+  quote:
+    en: "At Twin Peaks Bike Park you can ride 14km of world-class trails, designed with the world-famous Swiss trail builders Allegra Tourismus."
+    ja: "ツインピークスバイクパークでは、<wbr>世界的に<wbr>有名な<wbr>スイスの<wbr>トレイル建設会社<wbr>アレグラツーリズムとの<wbr>協働で<wbr>設計された、<wbr>総延長14キロに<wbr>渡る<wbr>世界クラスの<wbr>トレイルを<wbr>走行可能。"
+  url:
+    ja: https://field.jitensha-biyori.jp/1927/
+
+- slug: vacationniseko-twin-peaks-bike-park
+  date: 2024-05-22
+  type: article
+  source: vacationniseko
+  sourceName: Vacation Niseko
+  thumb: /assets/images/media-coverage/2024/vacationniseko-twin-peaks-bike-park/thumb.jpg
+  title:
+    en: "Twin Peaks Bike Park"
+    ja: "ツインピークス・バイクパーク"
+  quote:
+    en: "A free community bike park in the Niseko Hirafu environs. A vision realized through dedication and determination."
+    ja: "ニセコ・<wbr>ひらふエリアに<wbr>ある<wbr>無料開放の<wbr>コミュニティバイクパーク。<wbr>情熱と<wbr>粘り強さが<wbr>実現させた<wbr>構想です。"
+  url:
+    en: https://vacationniseko.com/en/news/twin-peaks-bike-park/
+
+- slug: outdoorjapan-twin-peaks-bike-park
+  date: 2022-10-04
+  type: article
+  source: outdoorjapan
+  sourceName: Outdoor Japan
+  thumb: /assets/images/media-coverage/2022/outdoorjapan-twin-peaks-bike-park/thumb.jpg
+  title:
+    en: "Niseko's Twin Peaks Bike Park"
+    ja: "ニセコの<wbr>ツインピークス・バイクパーク"
+  quote:
+    en: "We were really put under a microscope. But it feels good to have earned their support."
+    ja: "「かなり<wbr>厳しく<wbr>見られました」。<wbr>それでも、<wbr>その<wbr>信頼を<wbr>勝ち取れた<wbr>ことが<wbr>嬉しいのです。"
+  url:
+    en: https://www.outdoorjapan.com/activities/outdoors-mountain-sports/mountain-biking-in-japan/nisekos-twin-peaks-bike-park/
+
 - slug: jp01-kutchan-niseko-summer
   date: 2026-07-16
   type: print
