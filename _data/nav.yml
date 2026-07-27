@@ -72,6 +72,9 @@
     - path: artist-series
       en: Artist Series
       ja: アーティストシリーズ
+    - path: beer
+      en: Beer
+      ja: ビール
     - url: /shop/#!/~/account
       icon: fa-solid fa-user
       en: My Account
