@@ -1177,3 +1177,57 @@
   }
   .story .story-author-card .story-avatar { width: 48px; height: 48px; }
 }
+
+/* --------------------------------------------------------------------------
+   8. Calls to action, and the end-of-story links
+   Migrated out of beer/index.html, which is where these were first written.
+   They are kit-level, not page-level: any story ending in an action needs
+   them, so a second story would have copied the same rules into a second
+   <style> block.
+
+   `.story-cta` is a WRAPPER around buttons, never a button itself
+   (convention 3). Grid items are blockified, so a bare `.btn` as a direct
+   child of `.story` stretches to the full track width and stops reading as
+   a button at all.
+
+   The smallprint takes `flex-basis: 100%` so it drops onto its own line
+   under the buttons rather than sitting beside them. Without it a legal
+   note becomes a third flex item competing with the CTAs.
+
+   `.story-readnext` is the "More: a, b, c" line. It needs an explicit
+   margin-top because the browser's default <p> margin computes to 0 here:
+   measured 0px between the wholesale button and the links, which read as
+   one block. 34px matches `.story-cta`'s own top margin, so an action and a
+   nav line are separated by the same distance whichever order they appear
+   in.
+
+   NO DISABLED-BUTTON RULE HERE, deliberately. /beer/ carried one for its
+   pre-launch CTA and it went when that CTA went live. `_layouts/job.html`
+   and `_layouts/event.html` each define their own; if a story ever needs
+   one, take it from there rather than adding a third variant, and note that
+   a `#888` text colour would be this file's third raw colour literal, which
+   convention 12 calls a bug. Use a token.
+   -------------------------------------------------------------------------- */
+.story .story-cta {
+  margin: 34px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+.story .story-cta .story-smallprint {
+  flex-basis: 100%;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  margin: 6px 0 0;
+}
+/* JA runs looser here as it does across the kit (convention 11: the JA rule
+   sits beside the rule it modifies). Last compound is a class, so this is
+   (0,4,0) and safely outranks the (0,3,0) above; see convention 1. */
+:lang(ja) .story .story-cta .story-smallprint {
+  line-height: 1.7;
+}
+.story .story-readnext {
+  margin: 34px 0 0;
+}

@@ -23,33 +23,11 @@ og:
     max-width: 480px;
     margin: 0 auto;
   }
-  /* Page-level for now. These three rules belong in a section 8 of
-     assets/css/story.css; that file is being edited elsewhere as this page
-     lands. Move them there and drop the `!important` flags with the move:
-     scoped as `.story .btn.disabled` the rule is (0,3,0) and needs none. The
-     smallprint runs 1.7 here against 1.6 in EN, as JA does across the kit. */
-  .story .story-cta {
-    margin: 34px 0 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    align-items: center;
-  }
-  .story .story-cta .story-smallprint {
-    flex-basis: 100%;
-    font-size: 13px;
-    line-height: 1.7;
-    color: var(--color-text-muted);
-    margin: 6px 0 0;
-  }
-  .btn.disabled,
-  .btn[aria-disabled="true"] {
-    background: rgba(255, 255, 255, 0.1) !important;
-    color: #888 !important;
-    border-color: transparent !important;
-    pointer-events: none;
-    cursor: not-allowed;
-  }
+  /* `.story-cta`, `.story-smallprint` and `.story-readnext` now live in
+     section 8 of assets/css/story.css, including the `:lang(ja)` rule that
+     runs this page's smallprint at 1.7 against the EN 1.6. The disabled-CTA
+     rule went with the pre-launch button it styled. Only the rule above is
+     genuinely page-specific. */
 </style>
 
 <p class="story-lede">ツインピークスバイクパークに、<wbr>パークの<wbr>名前を<wbr>冠した<wbr>ビールが<wbr>生まれました。<wbr>「ツインピークスバイクパーク ペールエール」は、<wbr>ヨーテイブルーイングが<wbr>醸造する<wbr>ニセコの<wbr>クラフトビール。<wbr>売上の<wbr>一部は<wbr>トレイルに<wbr>還元されます。</p>
@@ -64,7 +42,7 @@ og:
 
 <h2>パークの<wbr>ための<wbr>ビール</h2>
 
-<p>ヨーテイブルーイングは<wbr>以前から<wbr>NAMBAの<wbr>スポンサーと<wbr>して<wbr>活動を<wbr>支えてくれており、<wbr>醸造所は<wbr>ニセコ町に<wbr>あります。<wbr>コラボビールの<wbr>話が<wbr>持ち上がると、<wbr>実現までは<wbr>早い<wbr>ものでした。<wbr>ベースと<wbr>なったのは、<wbr>グリーンエネルギーを<wbr>一部<wbr>利用して<wbr>醸造される<wbr>同社の<wbr>ペールエール<wbr>「A Greener World」。<wbr>そこに<wbr>パークの<wbr>ために<wbr>描き下ろされた<wbr>ラベルを<wbr>まと<wbr>いました。</p>
+<p>ヨーテイブルーイングは、<wbr>ニセコ町に<wbr>拠点を<wbr>置く<wbr>家族経営の<wbr>独立系<wbr>ブルワリー。<wbr>以前から<wbr>NAMBAの<wbr>スポンサーと<wbr>して<wbr>活動を<wbr>支えてくれています。<wbr>コラボビールの<wbr>話が<wbr>持ち上がると、<wbr>実現までは<wbr>早い<wbr>ものでした。<wbr>ベースと<wbr>なったのは、<wbr>グリーンエネルギーを<wbr>一部<wbr>利用して<wbr>醸造される<wbr>同社の<wbr>ペールエール<wbr>「A Greener World」。<wbr>そこに<wbr>パークの<wbr>ために<wbr>描き下ろされた<wbr>ラベルを<wbr>まと<wbr>いました。</p>
 
 {% capture quote_ja %}私たちは、<wbr>地域の<wbr>自然環境を<wbr>守りながら、<wbr>安全に<wbr>アウトドアを<wbr>楽しめる<wbr>環境づくりを<wbr>続ける<wbr>NAMBAの<wbr>活動に<wbr>深く<wbr>共感しています。<wbr>この<wbr>コラボレーションを<wbr>きっかけに、<wbr>より<wbr>多くの方に<wbr>その<wbr>活動を<wbr>知っていただき、<wbr>ニセコの<wbr>グリーンシーズンの<wbr>魅力を<wbr>広く<wbr>発信していきたいと<wbr>考えています。{% endcapture %}
 {% include story/quote.html
@@ -106,7 +84,7 @@ og:
    k7="価格" v7="¥658"
    k8="発売日" v8="2026年8月6日（木）" %}
 
-<p>醸造は<wbr>ニセコ町の<wbr>ヨーテイブルーイング。<wbr>品目は<wbr>発泡酒<wbr>（麦芽使用率50％以上）です。<wbr>販売は<wbr>同社の<a href="https://yotei.beer/" target="_blank" rel="noopener">オンラインショップ</a>にて。</p>
+<p>醸造は<wbr>ニセコ町の<wbr>ヨーテイブルーイング。<wbr>販売は<wbr>同社の<a href="https://yotei.beer/" target="_blank" rel="noopener">オンラインショップ</a>にて。</p>
 
 <h2>売上の<wbr>使い道</h2>
 
@@ -129,7 +107,7 @@ og:
 
 <h2>購入に<wbr>ついて</h2>
 
-<p>ペールエールは<wbr>2026年8月6日<wbr>（木）より、<wbr>ヨーテイブルーイングの<a href="https://yotei.beer/" target="_blank" rel="noopener">オンラインショップ</a>で<wbr>発売されます。<wbr>毎週<wbr>木曜日は<wbr>全国<wbr>送料無料です。</p>
+<p>ペールエールは<wbr>2026年8月6日<wbr>（木）の<wbr>正式発売を<wbr>前に、<wbr>ヨーテイブルーイングの<a href="https://yotei.beer/" target="_blank" rel="noopener">オンラインショップ</a>に<wbr>登場しています。<wbr>毎週<wbr>木曜日は<wbr>全国<wbr>送料無料です。</p>
 
 {% include story/figure.html
    tier="wide"
@@ -140,9 +118,7 @@ og:
    widths="800,1600" %}
 
 <div class="story-block story-cta">
-  <!-- ON-SALE SWAP: on/after 6 Aug 2026, replace the <span> below with:
-       <a class="btn btn-primary" href="https://yotei.beer/products/twin-peaks-bike-park-pale-ale" target="_blank" rel="noopener">ペールエールを購入</a> -->
-  <span class="btn btn-primary disabled" aria-disabled="true">8月6日発売</span>
+  <a class="btn btn-primary" href="https://yotei.beer/products/twin-peaks-bike-park-pale-ale" target="_blank" rel="noopener">ペールエールを購入</a>
   <p class="story-smallprint">飲むのは<wbr>ライドの<wbr>後で。<wbr>日本では<wbr>自転車も<wbr>飲酒運転が<wbr>法律で<wbr>禁止されています。</p>
 </div>
 
@@ -182,10 +158,10 @@ og:
     "priceCurrency": "JPY",
     {%- comment -%}
       PreOrder, not InStock. Mirrors the EN page; see the note there for the
-      full argument. Yotei's shop already accepts orders, but general
-      availability is 2026-08-06, which is also `releaseDate` above, and
-      schema.org PreOrder means orderable before general availability.
-      On 6 August: change this to InStock and make the CTA a live buy link.
+      full argument. Yotei Brewing's shop already accepts orders, which is why
+      the CTA above is live, but general availability is 2026-08-06, which is
+      also `releaseDate` above, and schema.org PreOrder means orderable before
+      general availability. Switch to InStock on 6 August.
     {%- endcomment -%}
     "availability": "https://schema.org/PreOrder",
     "seller": {

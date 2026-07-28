@@ -21,32 +21,10 @@ og:
     max-width: 480px;
     margin: 0 auto;
   }
-  /* Page-level for now. These three rules belong in a section 8 of
-     assets/css/story.css; that file is being edited elsewhere as this page
-     lands. Move them there and drop the `!important` flags with the move:
-     scoped as `.story .btn.disabled` the rule is (0,3,0) and needs none. */
-  .story .story-cta {
-    margin: 34px 0 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    align-items: center;
-  }
-  .story .story-cta .story-smallprint {
-    flex-basis: 100%;
-    font-size: 13px;
-    line-height: 1.6;
-    color: var(--color-text-muted);
-    margin: 6px 0 0;
-  }
-  .btn.disabled,
-  .btn[aria-disabled="true"] {
-    background: rgba(255, 255, 255, 0.1) !important;
-    color: #888 !important;
-    border-color: transparent !important;
-    pointer-events: none;
-    cursor: not-allowed;
-  }
+  /* `.story-cta`, `.story-smallprint` and `.story-readnext` now live in
+     section 8 of assets/css/story.css, since they are kit-level rather than
+     specific to this page. The disabled-CTA rule went with the pre-launch
+     button it styled. Only the rule above is genuinely page-specific. */
 </style>
 
 <p class="story-lede">Twin Peaks Bike Park has its own beer. The Twin Peaks Bike Park Pale Ale is a
@@ -62,10 +40,10 @@ Niseko craft beer brewed by Yotei Brewing, with a donation to the trails built i
 
 <h2>A beer for the bike park</h2>
 
-<p>Yotei Brewing has backed NAMBA as a sponsor for years, and their brewery is in Niseko Town. When
-the idea of a collaboration beer came up, neither side needed much convincing. The base is A
-Greener World, Yotei Brewing's pale ale brewed partly with green energy, wearing a new label drawn
-for the park.</p>
+<p>Yotei Brewing is a family-run independent brewery in Niseko Town, and they have backed NAMBA as a
+sponsor for years. When the idea of a collaboration beer came up, neither side needed much
+convincing. The base is A Greener World, Yotei Brewing's pale ale brewed partly with green energy,
+wearing a new label drawn for the park.</p>
 
 {% include story/quote.html
    text="We have real respect for what NAMBA does: looking after the local environment while building somewhere people can enjoy the outdoors safely. We hope this collaboration introduces more people to their work, and shows what Niseko's green season has to offer."
@@ -109,8 +87,7 @@ Hirafu, and the mountain needs no introduction. Joe also designed the Twin Peaks
    k7="Price" v7="¥658"
    k8="Release" v8="Thursday 6 August 2026" %}
 
-<p>Yotei Brewing brew it at their Niseko Town brewery. In Japan it is classified as happoshu,
-brewed with 50% or more malt. It's sold through the
+<p>Yotei Brewing brew it at their Niseko Town brewery. It's sold through the
 <a href="https://yotei.beer/en/" target="_blank" rel="noopener">Yotei Brewing online shop</a>.</p>
 
 <h2>Where the money goes</h2>
@@ -138,9 +115,9 @@ big part of why it can stay that way. The full numbers are on our <a href="/impa
 
 <h2>Get one</h2>
 
-<p>The Pale Ale goes on sale on Thursday 6 August 2026 at the
-<a href="https://yotei.beer/en/" target="_blank" rel="noopener">Yotei Brewing online shop</a>. They
-ship nationwide, free on Thursdays.</p>
+<p>The Pale Ale is up on the
+<a href="https://yotei.beer/en/" target="_blank" rel="noopener">Yotei Brewing online shop</a> now,
+ahead of its official launch on Thursday 6 August 2026. They ship nationwide, free on Thursdays.</p>
 
 {% include story/figure.html
    tier="wide"
@@ -151,9 +128,7 @@ ship nationwide, free on Thursdays.</p>
    widths="800,1600" %}
 
 <div class="story-block story-cta">
-  <!-- ON-SALE SWAP: on/after 6 Aug 2026, replace the <span> below with:
-       <a class="btn btn-primary" href="https://yotei.beer/en/products/twin-peaks-bike-park-pale-ale" target="_blank" rel="noopener">Buy the Pale Ale</a> -->
-  <span class="btn btn-primary disabled" aria-disabled="true">Available 6 August</span>
+  <a class="btn btn-primary" href="https://yotei.beer/en/products/twin-peaks-bike-park-pale-ale" target="_blank" rel="noopener">Order the Pale Ale</a>
   <p class="story-smallprint">One for after the ride. Riding under the influence is illegal in
   Japan, and that includes bicycles.</p>
 </div>
@@ -196,14 +171,18 @@ Kutchan they will point you to their wholesaler, M Pocket.</p>
     "price": 658,
     "priceCurrency": "JPY",
     {%- comment -%}
-      PreOrder, not InStock, and the two are not interchangeable here. Yotei Brewing's
-      shop already shows an active "Add to Cart" at this price, but the press
-      release puts general availability at 6 August 2026, which is also the
-      `releaseDate` above. schema.org defines PreOrder as orderable and
-      deliverable before general availability, which is exactly this state.
-      Declaring InStock alongside a future releaseDate contradicts itself, and
-      contradicts our own CTA, which is still the disabled "Available 6 August".
-      On 6 August: change this to InStock and make the CTA a live buy link.
+      PreOrder, not InStock, and the two are not interchangeable here. Yotei
+      Brewing's shop shows an active "Add to Cart" at this price, which is why
+      the CTA above is a live order link rather than a disabled one. But the
+      press release puts general availability at 6 August 2026, which is also
+      the `releaseDate` above, and schema.org defines PreOrder as orderable and
+      deliverable BEFORE general availability. That is exactly this state, and
+      it is the one value that fits both facts.
+
+      InStock would assert we know the shop ships immediately, and we do not:
+      the product page states no dispatch date. If Yotei confirm they are
+      shipping now, InStock becomes correct. Either way, switch to InStock on
+      6 August, when general availability makes it true regardless.
     {%- endcomment -%}
     "availability": "https://schema.org/PreOrder",
     "seller": {
