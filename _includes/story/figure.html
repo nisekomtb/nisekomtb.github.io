@@ -30,7 +30,7 @@
 {%- endcomment -%}
 {%- assign tier = include.tier | default: "wide" -%}
 {%- unless tier == "text" or tier == "wide" or tier == "full" -%}
-{%- include story/BUILD-ERROR-tier-must-be-text-wide-or-full.html -%}
+{%- include story/BUILD-ERROR-figure-tier-must-be-text-wide-or-full.html -%}
 {%- endunless -%}
 {%- assign src = include.src | strip -%}
 {%- if src == "" -%}{%- include story/BUILD-ERROR-figure-requires-src.html -%}{%- endif -%}

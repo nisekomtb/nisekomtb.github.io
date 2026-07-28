@@ -10,10 +10,24 @@
            sentence around it, so it belongs at the prose measure unless it
            has many long values.
 
-  VALUES ARE PLAIN TEXT. Do not put a link in one: link styling in this kit is
-  scoped to prose containers and captions (section 2 of story.css), so an
-  anchor inside .story-row-val would render in the value colour with no
-  underline and no hover state. A value that needs a link belongs in prose.
+  MARKUP: `<wbr>` IS ALLOWED AND EXPECTED on JA pages, since it is this
+  project's standard remedy for JA line breaking (see .claude/rules/bilingual.md
+  for the BudouX workflow). Values are not escaped, and the `strip` plus
+  `!= ""` guards are unaffected by tags. LINKS ARE NOT allowed: link styling in
+  this kit is scoped to prose containers and captions (section 2 of story.css),
+  and <dd> is not one of them, so an anchor here renders in the value colour
+  with no underline and no hover state. A value needing a link belongs in prose.
+
+  THE MARKUP IS A <dl>, not a stack of <div>s, for two reasons. A screen reader
+  announces the item count on entry and offers list-jump commands, so a reader
+  hunting for one spec can skip the rest instead of arrowing through it. And a
+  <dt>/<dd> pair escapes `html[lang="ja"] span` at template.css:94, which sets
+  `word-break: keep-all` plus `overflow-wrap: break-word`: on an untokenised JA
+  value that combination treats the whole sentence as one unbreakable word and
+  then emergency-breaks it, bypassing kinsoku and orphaning a sentence-final 。
+  onto its own line. Measured before the change: 14 of 111 value-box widths
+  between 120px and 340px orphaned a 。 or 、. The <div> wrapper around each
+  pair is valid HTML5 and is what carries the flex row.
 
   Eight slots because /beer/ needs eight (style, ABV, IBU, hops, malt,
   brewery, volume, availability). A spec sheet longer than that is a table.
@@ -95,12 +109,12 @@
 {%- if keys.size == 0 -%}
 {%- include story/BUILD-ERROR-table-requires-at-least-one-row.html -%}
 {%- endif -%}
-<div class="story-block story-table story-{{ tier }}">
+<dl class="story-block story-table story-{{ tier }}">
   {%- for k in keys %}
   {%- assign v = vals[forloop.index0] -%}
   <div class="story-row">
-    <span class="story-row-key">{{ k }}</span>
-    <span class="story-row-val">{{ v }}</span>
+    <dt class="story-row-key">{{ k }}</dt>
+    <dd class="story-row-val">{{ v }}</dd>
   </div>
   {%- endfor %}
-</div>
+</dl>

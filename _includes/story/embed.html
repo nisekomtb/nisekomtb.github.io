@@ -30,7 +30,7 @@
 {%- endcomment -%}
 {%- assign tier = include.tier | default: "wide" -%}
 {%- unless tier == "text" or tier == "wide" or tier == "full" -%}
-{%- include story/BUILD-ERROR-tier-must-be-text-wide-or-full.html -%}
+{%- include story/BUILD-ERROR-embed-tier-must-be-text-wide-or-full.html -%}
 {%- endunless -%}
 {%- assign url = include.url | strip -%}
 {%- if url == "" -%}{%- include story/BUILD-ERROR-embed-requires-url.html -%}{%- endif -%}

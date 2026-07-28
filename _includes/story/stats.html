@@ -41,7 +41,7 @@
   String `"[\"km\"]"` (`units.size` reported 6, not 1). Indexing a String by an
   integer resolves to nil in Liquid, because a String has neither `key?` nor
   `fetch`, so every `u` came out nil, `nil != ""` passed, and all five cards
-  rendered an empty <span class="stat-unit"></span> with the units discarded.
+  rendered an empty <span class="story-stat-unit"></span> with the units discarded.
   Stripping the scalar first also normalises an absent unit to "", which is
   what makes the `u != ""` test suppress the span.
 {%- endcomment -%}
@@ -99,9 +99,9 @@
   {%- for n in nums %}
   {%- assign u = units[forloop.index0] -%}
   {%- assign l = lbls[forloop.index0] -%}
-  <div class="stat-card">
-    <div class="stat-num">{{ n }}{% if u != "" %}<span class="stat-unit">{{ u }}</span>{% endif %}</div>
-    <div class="stat-lbl">{{ l }}</div>
+  <div class="story-stat">
+    <div class="story-stat-num">{{ n }}{% if u != "" %}<span class="story-stat-unit">{{ u }}</span>{% endif %}</div>
+    <div class="story-stat-lbl">{{ l }}</div>
   </div>
   {%- endfor %}
 </div>

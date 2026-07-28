@@ -30,8 +30,14 @@
        never needs adding to a selector list in section 2.
      - Captions come from `_includes/story/caption.html` as <figcaption>
        inside <figure>. Never hand-rolled, never a <div> plus a <p>.
-     - Colours come from tokens. The one raw hex is the decorative caption
-       separator, which is not text.
+     - Colours come from tokens, with exactly two documented exceptions, both
+       argued at the point of use: the decorative caption separator in
+       section 3, and the gold hairline border in section 5 that reproduces the
+       homepage stat card. Neither is body text. Any third one is a bug.
+     - Class names carry the `story-` prefix. `.stat-card`, `.stat-number` and
+       `.stat-label` are already used by /impact/ and /partner/ with a
+       different design, so an unprefixed name here becomes a live collision
+       the moment one of those pages adopts this layout. See section 5.
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -410,48 +416,82 @@
 
 /* --------------------------------------------------------------------------
    5. Data blocks
-   .stat-card mirrors .home-impact-stat in home.css:762-797. Duplicated on
-   purpose so the homepage is never touched by story work. Keep the two in
-   sync by hand.
+   .story-stat mirrors .home-impact-stat in home.css:762-800 (the whole group:
+   .home-impact-stat, -num, -num .value, -num .unit, -lbl). Duplicated on
+   purpose so the performance-tuned homepage is never touched by story work.
+
+   THE CLASS IS `.story-stat`, NOT `.stat-card`. `.stat-card`, `.stat-number`
+   and `.stat-label` are already taken: /impact/ and /partner/ define them in
+   content-level <style> blocks, four files including the JA twins, with a
+   different design (text-align centre, 30px 0 padding, no panel, no border).
+   Nothing collides today because story.css only loads on `layout: story`
+   pages, but the moment /impact/ or /partner/ becomes a story, `.story
+   .stat-card` at (0,2,0) would beat their (0,1,0) rules and silently impose a
+   panel, a gold border, a radius, tabular numerals and flex-column on ten
+   cards. The `story-` prefix makes that impossible and makes the class read as
+   part of this kit.
 
    No count-up animation here. A counter earns its place in a hero band that
    the reader arrives at; mid-article it pulls the eye off the sentence being
    read, and it dates fast.
 
-   THREE DELIBERATE DIFFERENCES from the homepage card, all about context
-   rather than taste. The homepage runs five cards across a full-width hero
-   band; a story runs two to four across the 1180px wide tier, so the numerals
-   drop from clamp(28px, 2.8vw, 44px) to clamp(26px, 2.6vw, 40px) and the
-   padding from clamp(32px, 4vw, 56px) to clamp(24px, 3vw, 40px).
+   FIVE DELIBERATE DIFFERENCES from the homepage card. This list is the
+   hand-sync checklist, so it enumerates every property-level delta, not just
+   the interesting ones:
 
-   The third is `justify-content`, and it is a fix rather than a resize.
-   home.css uses `center`. Equal card heights come from the grid's default
-   `align-items: stretch`, not from the flex, so `center` then centres each
-   card's own num + label group inside that shared height, and a label wrapping
-   to a second line LIFTS its numeral by half the extra line. Measured on 180px
-   cards with one label on two lines and two on one: numeral tops
-   357.97 / 357.97 / 348.88, a 9.09px spread. `flex-start` measured 0px.
+     1. numerals    clamp(28px, 2.8vw, 44px) -> clamp(26px, 2.6vw, 40px)
+     2. padding     clamp(32px, 4vw, 56px)   -> clamp(24px, 3vw, 40px)
+     3. justify-content  center -> flex-start   (see below)
+     4. height: 100%     dropped. home.css needs it to fill a Bootstrap col;
+                         here the grid's `align-items: stretch` does the job.
+     5. .home-impact-num .value inner span   dropped. It existed only to hold
+                         a JS-set min-width during the count-up, which this
+                         block does not have.
 
-   A row of figures exists to be scanned across, so numerals that do not share
-   a baseline defeat the block's whole purpose. On a bilingual site the uneven
-   case is the norm and not the exception: JA labels wrap at different points
-   from their EN twins, so the same three cards misalign in one language and
-   not the other. Spec §4.1 asks for the homepage card reproduced exactly, and
-   this is the one place that is not honoured; "exactly" is read as the visual
-   identity of the card (panel, gold hairline, gold tabular numerals, muted
-   label) rather than as a layout property whose only effect here is a defect.
+   Differences 1 and 2 are context: the homepage runs five cards across a
+   full-width hero band, a story runs two to four across the 1180px wide tier.
+   Differences 4 and 5 are consequences of the surrounding layout and of
+   dropping the animation.
 
-   home.css has the same latent misalignment. It is left alone on purpose:
-   spec §8 puts the homepage out of scope, and the hero band is a different
+   DIFFERENCE 3 IS A FIX, and it is the one to understand before touching this.
+   Equal card heights come from the grid's `align-items: stretch`, not from the
+   flex. `center` then centres each card's own num + label group inside that
+   shared height, so a label wrapping to a second line LIFTS its numeral by half
+   the extra line. Measured at viewport widths below 1300px, where the label
+   clamp resolves to 13px and its line-height 1.4 gives an 18.2px line: three
+   cards with one label on two lines had numeral tops 357.97 / 357.97 / 348.88,
+   a 9.09px spread, exactly half a line. `flex-start` measured 0px.
+
+   A row of figures exists to be scanned across, so numerals off a shared
+   baseline defeat the block's purpose. The decisive argument is bilingual, not
+   cosmetic: JA labels wrap at different points from their EN twins, so with
+   `center` the same three cards align in one language and misalign in the
+   other, which means the defect passes review in whichever language you happen
+   to open. Spec §4.1 enumerates what "exactly" covers, and every item on that
+   list is a visual identity property (panel background, gold hairline border,
+   6px radius, gold numerals with 0.6em units, muted label, tabular-nums).
+   `justify-content` is not on it, and neither are the two clamps.
+
+   THE COST, so nobody trades it back by accident: `flex-start` pools the
+   leftover height under the short-label cards instead of splitting it. At
+   1440px with four cards and one label wrapping, the gap between label and card
+   bottom measured 41.00px on the wrapped card and 61.16px on the other three,
+   so three of four read slightly bottom-heavy. That is the trade: perfect
+   numerals against uneven bottom padding. DO NOT set this back to `center` to
+   tidy the padding; it re-breaks JA alignment.
+
+   home.css has the same latent misalignment and is deliberately left alone:
+   spec §8 puts the homepage out of scope and the hero band is a different
    composition. Fixing it there is a separate decision.
 
-   THE ONE RAW COLOUR IN THIS SECTION is the gold hairline border. Convention
-   5 says colours come from tokens; this is a documented exception, not an
-   oversight. `rgba(200, 169, 81, 0.18)` is the homepage card's border and
-   there is no token for it: home.css uses the literal in ten places and
-   spec §4.1 requires reproducing the card exactly. Promoting it to a token in
+   THE ONE RAW COLOUR IN THIS SECTION is the gold hairline border, a documented
+   exception to the tokens convention rather than an oversight.
+   `rgba(200, 169, 81, 0.18)` is the homepage card's border and there is no
+   token for it: `--color-accent` is #d4a843 while this is #c8a951 at 18%,
+   genuinely different golds. home.css uses this exact literal in 2 places and
+   the same gold at other alphas in 11. Promoting it to a token in
    bs3-compat.css would edit a global file to serve one caller and would still
-   leave home.css on the literal, so the two definitions would drift anyway.
+   leave home.css on the literal, so the two would drift anyway.
    -------------------------------------------------------------------------- */
 .story .story-stats {
   margin: 2.4em 0;
@@ -459,8 +499,14 @@
   gap: 14px;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 }
+/* Nested grid items default to min-width: auto exactly as the top-level ones
+   do, so they get the same guard the gallery and split grids get in section 4.
+   Without it a long unbroken label overflowed its card by 11px at 320px:
+   inside the viewport, so not a page-scroll bug, but text crossing the gold
+   hairline. */
+.story .story-stats > * { min-width: 0; }
 
-.story .stat-card {
+.story .story-stat {
   background: var(--color-bg-panel);
   border: 1px solid rgba(200, 169, 81, 0.18);
   border-radius: 6px;
@@ -472,14 +518,14 @@
   justify-content: flex-start;
   align-items: center;
 }
-.story .stat-card .stat-num {
+.story .story-stat .story-stat-num {
   font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
   font-size: clamp(26px, 2.6vw, 40px);
   font-weight: 700;
   color: var(--color-accent);
   line-height: 1.1;
 }
-.story .stat-card .stat-unit {
+.story .story-stat .story-stat-unit {
   font-size: 0.6em;
   font-weight: 700;
   margin-left: 2px;
@@ -487,7 +533,7 @@
 /* The label sets its own family and weight rather than inheriting. Story prose
    is the site body font; the homepage card's label is Metropolis, and the
    whole point of this block is that the two cards look identical. */
-.story .stat-card .stat-lbl {
+.story .story-stat .story-stat-lbl {
   margin-top: 10px;
   font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
   font-size: clamp(13px, 1vw, 15px);
@@ -497,9 +543,23 @@
 }
 
 /* A spec sheet, which is what a bullet list of specifications wants to be.
-   Deliberately NOT a <table>: there is no column of comparable values, only
-   key/value pairs, and a real <table> would need the scroll container that
-   section 1 gives raw Markdown tables. */
+   The markup is a <dl> of <dt>/<dd> pairs, each pair wrapped in a <div> that
+   carries the flex row (valid HTML5, and the only way to lay a pair out as a
+   row). Deliberately NOT a <table>: there is no column of comparable values,
+   only key/value pairs, and a real <table> would need the scroll container
+   section 1 gives raw Markdown tables.
+
+   <dl> rather than plain <div>s buys two things. A screen reader announces the
+   item count on entry and offers list-jump commands, so a reader hunting one
+   spec can skip the rest instead of arrowing through every line. And <dt>/<dd>
+   escape `html[lang="ja"] span` at template.css:94, which sets
+   `word-break: keep-all` with `overflow-wrap: break-word`: on untokenised JA
+   that pair treats a whole sentence as one unbreakable word and then
+   emergency-breaks it, bypassing kinsoku and orphaning a sentence-final 。 on
+   its own line. Measured with spans: 14 of 111 value-box widths between 120px
+   and 340px orphaned a 。 or 、. template.css:117 documents the same trap and
+   fixes it for `.lead` the same way.
+   -------------------------------------------------------------------------- */
 .story .story-table {
   margin: 2.2em 0;
   background: var(--color-bg-panel);
@@ -515,12 +575,27 @@
   border-bottom: 1px solid var(--color-bg-border);
 }
 .story .story-table .story-row:last-child { border-bottom: 0; }
+/* <dd> carries a UA `margin-inline-start: 40px` and both <dt> and <dd> are
+   reset by bootstrap at (0,0,1). These selectors are (0,3,0) and win
+   comfortably, but the margin is zeroed explicitly rather than left to depend
+   on which vendor sheet loads last. */
+.story .story-table .story-row-key,
+.story .story-table .story-row-val { margin: 0; }
+/* `overflow-wrap` for the same reason the value has it, below. The key is in
+   fact MORE exposed than the value, because `flex: none` means it cannot even
+   shrink: measured at 320px with a 41-character unbroken key, the document
+   went to 347px against a 320px viewport, 27px of horizontal page scroll. The
+   threshold is about 29 unbroken characters at 12px with 0.08em tracking in a
+   248px box. Real keys are "Style" and "ABV", so this is a guard rather than a
+   live bug, but the guard costs one declaration. */
 .story .story-table .story-row-key {
   font-size: 12px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-text-muted);
   flex: none;
+  min-width: 0;
+  overflow-wrap: break-word;
 }
 /* `min-width: 0` for the same reason the grid children need it in section 1:
    a flex item defaults to min-width auto and refuses to shrink below its
@@ -553,21 +628,29 @@
   letter-spacing: normal;
   text-transform: none;
 }
+/* JA needs more leading than EN at the same size, as it does for prose in
+   section 2 (1.95) and captions in section 3 (1.7). Without this a JA value
+   wrapping to two or three lines is tighter than every other multi-line JA
+   text in the kit, because these two elements set no line-height of their own
+   and inherit the site base. */
+:lang(ja) .story .story-table .story-row-key,
+:lang(ja) .story .story-table .story-row-val { line-height: 1.7; }
 
-/* Below 480px the text track is 280px wide. A key and a value on one line
-   leaves too little for either, so the pair stacks.
+/* Below 480px a key and a value side by side leave too little for either, so
+   the pair stacks. The track is 439px at a 479px viewport and 280px at 320px;
+   the stack is chosen for the bottom of that range, where a spec value like
+   "Amarillo, Mosaic, Simcoe" wraps to three lines against a right edge.
 
-   THE KEY AND THE VALUE NEED `display: block` OF THEIR OWN. Taking the row out
-   of flex is not enough on its own: both children are <span>, so in a block row
-   they simply resume inline layout and run on the same line, and `margin-top`
-   is ignored on a non-replaced inline box. Measured at 320px with the row
-   blockified but the spans left inline: the value's box sat at top 862.23 and
-   left 77.28 against the key's top 865.23 and left 36, on the same line rather
-   than beneath it, with the 3px margin dropped. */
+   TAKING THE ROW OUT OF FLEX IS ENOUGH ONLY BECAUSE <dt> AND <dd> ARE ALREADY
+   BLOCK-LEVEL. When this block used two <span>s, blockifying the row alone left
+   them resuming inline layout on the same line, with `margin-top` silently
+   ignored on a non-replaced inline box: measured at 320px, the value's box sat
+   at top 862.23 / left 77.28 against the key's top 865.23 / left 36, beside it
+   rather than beneath, and the 3px gap gone. The <dl> markup removes the whole
+   problem. If this ever goes back to inline elements, the pair needs an explicit
+   `display: block` here again. */
 @media (max-width: 479px) {
   .story .story-table { padding: 4px 16px; }
   .story .story-table .story-row { display: block; }
-  .story .story-table .story-row-key,
-  .story .story-table .story-row-val { display: block; }
   .story .story-table .story-row-val { text-align: left; margin-top: 3px; }
 }

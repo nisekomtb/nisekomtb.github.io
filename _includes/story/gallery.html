@@ -47,7 +47,7 @@
 {%- endcomment -%}
 {%- assign tier = include.tier | default: "wide" -%}
 {%- unless tier == "text" or tier == "wide" or tier == "full" -%}
-{%- include story/BUILD-ERROR-tier-must-be-text-wide-or-full.html -%}
+{%- include story/BUILD-ERROR-gallery-tier-must-be-text-wide-or-full.html -%}
 {%- endunless -%}
 {%- assign srcs = "" | split: "" -%}
 {%- assign alts = "" | split: "" -%}
