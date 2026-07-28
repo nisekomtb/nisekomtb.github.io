@@ -2,42 +2,90 @@
    Story layout: namba.ngo
    Loaded only on pages with `layout: story` (see _layouts/base.html).
    Spec: _docs/superpowers/specs/2026-07-28-story-layout-design.md
+
+   Conventions this file establishes, binding on every block added later
+   (see "CSS conventions" in the plan):
+     - No bare single-class utility selectors. `.story p` is (0,1,1) and
+       silently outranks a (0,1,0) rule that shares a property with it, so
+       every utility is scoped as `.story .story-x`.
+     - Grid items do not collapse margins. Vertical gaps are the sum of the
+       upper sibling's margin-bottom and the lower one's margin-top.
+     - Every direct child needs `min-width: 0`, or wide content forces
+       horizontal page scroll.
+     - Colours come from tokens. The one raw hex is the decorative caption
+       separator, which is not text.
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
    1. The grid
    Three width tiers. Everything defaults to `text`, so plain Markdown lands
-   at the right measure with no author effort. Named lines rather than
-   negative margins + 100vw, which causes horizontal scroll when a scrollbar
-   is present.
+   at the right measure with no author effort.
+
+     text   660px           All prose, headings, quotes, captions.
+     wide   1180px          Photography, stats, tables, splits. The workhorse.
+     full   edge to edge    Opening image, chapter breaks.
+
+   The measure is px, not `ch`. A `ch` unit resolves against `.story`'s own
+   inherited font-size (14px, from bs3-compat.css), not the 17px prose, so
+   the `68ch` used in the first draft measured 650px, about 56 characters.
+   Explicit px is deterministic and cannot drift if the body size changes.
+
+   Named lines rather than negative margins + 100vw, which causes horizontal
+   scroll when a scrollbar is present.
    -------------------------------------------------------------------------- */
 .story {
   display: grid;
   grid-template-columns:
     [full-start] minmax(20px, 1fr)
     [wide-start] minmax(0, 260px)
-    [text-start] min(68ch, 100% - 40px) [text-end]
+    [text-start] min(660px, 100% - 40px) [text-end]
     minmax(0, 260px)  [wide-end]
     minmax(20px, 1fr) [full-end];
   padding-bottom: 80px;
+  /* The rest of the site centres body text via .module-title-wrap. Stories
+     are left-aligned, set once here so descendants inherit it. */
+  text-align: left;
 }
 
-.story > *            { grid-column: text; }
+/* `min-width: 0` is load-bearing: grid items default to `min-width: auto`,
+   so a wide table, <pre> or iframe refuses to shrink and pushes the page
+   into horizontal scroll. Blocks that can hold wide content also need
+   their own `overflow-x: auto`. */
+.story > * {
+  grid-column: text;
+  min-width: 0;
+}
+
 .story > .story-wide  { grid-column: wide; }
 .story > .story-full  { grid-column: full; }
 
+/* `min-width: 0` alone is not enough. It lets the grid item shrink to the
+   column, but an element whose min-content width is wider then overflows
+   that item and still scrolls the page: a plain Markdown 8-column table
+   measured 462px inside a 280px item, giving a 482px document against a
+   320px viewport. Tables and <pre> are the two things plain Markdown can
+   emit that refuse to shrink, so they get their own scroll container.
+   `display: block` is required for a table to honour overflow at all.
+   Blocks added in later tasks wrap their own wide content and set
+   overflow-x on that wrapper. */
+.story > table,
+.story > pre {
+  display: block;
+  overflow-x: auto;
+}
+
 /* --------------------------------------------------------------------------
    2. Typography
-   Body copy is left-aligned here, unlike the rest of the site where
-   .module-title-wrap centres everything. Centred prose is the main reason
-   long pages read as a wall.
+   Story content starts at h2. The masthead supplies the page's only h1, so a
+   Markdown `#` inside a story would both duplicate that h1 and inherit the
+   global 80px heading size. h2 and h3 are the whole range; there is
+   deliberately no `.story h1` rule, because styling one would invite its use.
    -------------------------------------------------------------------------- */
 .story p,
 .story ul,
 .story ol {
   font-size: 17px;
   line-height: 1.75;
-  text-align: left;
   color: var(--color-text);
 }
 
@@ -46,25 +94,30 @@
 .story > ol { margin: 0 0 1.35em; padding-left: 1.3em; }
 .story li   { margin-bottom: 0.4em; }
 
+/* Heading top margins look small for the type size because margins SUM in
+   grid: the gap above an h2 is the preceding paragraph's 1.35em bottom
+   margin PLUS this top margin. The flow-layout values (1.9em / 1.6em)
+   measured 87.5px of dead space. Do not "restore" them. */
 .story h2 {
   font-size: clamp(24px, 3.2vw, 34px);
   line-height: 1.22;
   color: var(--color-text-heading);
-  margin: 1.9em 0 0.55em;
-  text-align: left;
+  margin: 1.1em 0 0.55em;
 }
 
 .story h3 {
   font-size: clamp(18px, 2.2vw, 22px);
   line-height: 1.35;
   color: var(--color-text-light);
-  margin: 1.6em 0 0.45em;
-  text-align: left;
+  margin: 0.9em 0 0.45em;
 }
 
 .story > :first-child { margin-top: 0; }
+.story > :last-child  { margin-bottom: 0; }
 
-.story-lede {
+/* Scoped to (0,2,0) so it outranks `.story p` at (0,1,1). Unscoped, every
+   one of these declarations loses. */
+.story .story-lede {
   font-size: 20px;
   line-height: 1.65;
   color: var(--color-text-light);
@@ -78,41 +131,58 @@
 }
 .story a:hover { color: var(--color-primary-hover); }
 
+/* Buttons are anchors, so the rules above would repaint `.btn-primary` as
+   underlined rust text on a rust background. Hand the colour back to
+   Bootstrap's own per-variant custom properties rather than using
+   `inherit`, which would pick up the grey prose colour. */
+.story a.btn {
+  color: var(--bs-btn-color);
+  text-decoration: none;
+}
+.story a.btn:hover,
+.story a.btn:focus {
+  color: var(--bs-btn-hover-color);
+}
+
+/* Japanese prose needs more leading than English at the same size. */
+:lang(ja) .story p,
+:lang(ja) .story ul,
+:lang(ja) .story ol { line-height: 1.95; }
+:lang(ja) .story h2,
+:lang(ja) .story h3 { line-height: 1.5; }
+
 @media (max-width: 767px) {
   .story p, .story ul, .story ol { font-size: 16px; }
-  .story-lede { font-size: 18px; }
+  .story .story-lede { font-size: 18px; }
   .story { padding-bottom: 52px; }
 }
 
 /* --------------------------------------------------------------------------
    3. Captions
    The site has never had a caption style. Used by figure, gallery and embed.
+   Scoped because Task 2 emits captions as both <figcaption> and
+   <p class="story-caption">, and the <p> form loses when unscoped.
    -------------------------------------------------------------------------- */
-.story-caption {
+.story .story-caption {
   font-size: 13px;
   line-height: 1.5;
   color: var(--color-text-muted);
   margin: 10px 0 0;
-  text-align: left;
 }
-.story-caption .story-credit {
-  color: #7d7873;
+.story .story-credit {
+  color: var(--color-text-muted);
 }
-.story-caption .story-credit::before {
+/* Decorative separator, so it carries an empty alt string to keep it out of
+   the accessibility tree. The unprefixed `content` is the fallback for
+   engines without alt-text support, which would otherwise drop the whole
+   declaration and lose the separator. The one raw hex in this file: it is
+   not text, so the 4.5:1 minimum does not apply and no token is close. */
+.story .story-caption .story-credit::before {
   content: " · ";
+  content: " · " / "";
   color: #5f5a55;
 }
 /* Full-bleed captions must not touch the viewport edge. */
-.story-full > .story-caption { padding: 0 20px; }
+.story .story-full > .story-caption { padding: 0 20px; }
 
-/* --------------------------------------------------------------------------
-   4. Japanese
-   :lang(ja), never `.ja`, because that class is applied per element, so
-   `.ja .story` never matches.
-   -------------------------------------------------------------------------- */
-:lang(ja) .story p,
-:lang(ja) .story ul,
-:lang(ja) .story ol { line-height: 1.95; }
-:lang(ja) .story h2,
-:lang(ja) .story h3 { line-height: 1.5; }
-:lang(ja) .story-caption { line-height: 1.7; }
+:lang(ja) .story .story-caption { line-height: 1.7; }

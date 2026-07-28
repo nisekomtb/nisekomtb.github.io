@@ -10,7 +10,7 @@ layout: base
   supplies its own Product schema.
 {%- endcomment -%}
 
-<article class="story">
+<article class="story" aria-labelledby="masthead-title">
   {% if page.author %}{% include story/byline.html slug=page.author %}{% endif %}
   {{ content }}
   {% if page.author %}{% include story/author-card.html slug=page.author %}{% endif %}
@@ -52,6 +52,13 @@ layout: base
     "@type": "Person",
     "name": {%- if page.lang == "ja" %}{{ a.ja.name | default: a.name | jsonify }}{% else %}{{ a.name | jsonify }}{% endif %}
   }
+  {%- else %},
+  {%- comment -%}
+    Organization fallback. BlogPosting requires an author, and Search Console
+    flags the node as incomplete without one. Every story is NAMBA's own work,
+    so the organisation is the honest default when no person is credited.
+  {%- endcomment %}
+  "author": { "@id": "https://namba.ngo/#organization" }
   {%- endif %},
   "publisher": { "@id": "https://namba.ngo/#organization" }
 }

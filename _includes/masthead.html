@@ -45,13 +45,19 @@
       </picture>
     </div>
     <div class="ja-masthead-detail">
+      {%- comment -%}
+        `id` is referenced by _layouts/story.html, which points the story
+        <article> at this heading via aria-labelledby so the article has an
+        accessible name. Harmless on every other layout: the masthead is
+        included once per page, so the id stays unique.
+      {%- endcomment -%}
       {% if page.subtitle %}
-        <h1 class="ja-masthead-title">
+        <h1 class="ja-masthead-title" id="masthead-title">
           <span class="title-primary">{{ page.titleHtml | default: page.title }}</span>
           <span class="title-secondary">{{ page.subtitleHtml | default: page.subtitle }}</span>
         </h1>
       {% else %}
-        <h1 class="ja-masthead-title">{{ page.titleHtml | default: page.title }}</h1>
+        <h1 class="ja-masthead-title" id="masthead-title">{{ page.titleHtml | default: page.title }}</h1>
       {% endif %}
       {% if page.action %}
       <div style="text-align:center; margin-top:30px;">
