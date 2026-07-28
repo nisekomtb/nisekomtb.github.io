@@ -1,0 +1,47 @@
+---
+layout: base
+---
+{% include masthead.html %}
+
+{%- comment -%}
+  Presentational layout only. The byline renders when `author` is set in front
+  matter; the BlogPosting JSON-LD renders unless `story_schema: none` is set.
+  /beer/ uses this layout with neither, because it is a product page that
+  supplies its own Product schema.
+{%- endcomment -%}
+
+<article class="story">
+  {% if page.author %}{% include story/byline.html slug=page.author %}{% endif %}
+  {{ content }}
+  {% if page.author %}{% include story/author-card.html slug=page.author %}{% endif %}
+</article>
+
+{% if page.story_schema != "none" %}
+{%- assign a = site.data.team | where: "slug", page.author | first -%}
+{%- unless a -%}{%- assign a = site.data.staff | where: "slug", page.author | first -%}{%- endunless -%}
+{%- if page.lang == "ja" -%}
+  {%- assign author_name = a.ja.name | default: a.name -%}
+{%- else -%}
+  {%- assign author_name = a.name -%}
+{%- endif -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "https://namba.ngo{{ page.url }}#article",
+  "headline": {{ page.title | jsonify }},
+  "description": {{ page.description | jsonify }},
+  "url": "https://namba.ngo{{ page.url }}",
+  "inLanguage": "{{ page.lang }}",
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "image": "https://namba.ngo{{ page.og.image | default: page.masthead.img | default: '/assets/images/og/hero-2026.jpg' }}"
+  {%- if a %},
+  "author": {
+    "@type": "Person",
+    "name": {{ author_name | jsonify }}
+  }
+  {%- endif %},
+  "publisher": { "@id": "https://namba.ngo/#organization" }
+}
+</script>
+{% endif %}

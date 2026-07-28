@@ -1,0 +1,118 @@
+/* ==========================================================================
+   Story layout: namba.ngo
+   Loaded only on pages with `layout: story` (see _layouts/base.html).
+   Spec: _docs/superpowers/specs/2026-07-28-story-layout-design.md
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. The grid
+   Three width tiers. Everything defaults to `text`, so plain Markdown lands
+   at the right measure with no author effort. Named lines rather than
+   negative margins + 100vw, which causes horizontal scroll when a scrollbar
+   is present.
+   -------------------------------------------------------------------------- */
+.story {
+  display: grid;
+  grid-template-columns:
+    [full-start] minmax(20px, 1fr)
+    [wide-start] minmax(0, 260px)
+    [text-start] min(68ch, 100% - 40px) [text-end]
+    minmax(0, 260px)  [wide-end]
+    minmax(20px, 1fr) [full-end];
+  padding-bottom: 80px;
+}
+
+.story > *            { grid-column: text; }
+.story > .story-wide  { grid-column: wide; }
+.story > .story-full  { grid-column: full; }
+
+/* --------------------------------------------------------------------------
+   2. Typography
+   Body copy is left-aligned here, unlike the rest of the site where
+   .module-title-wrap centres everything. Centred prose is the main reason
+   long pages read as a wall.
+   -------------------------------------------------------------------------- */
+.story p,
+.story ul,
+.story ol {
+  font-size: 17px;
+  line-height: 1.75;
+  text-align: left;
+  color: var(--color-text);
+}
+
+.story > p  { margin: 0 0 1.35em; }
+.story > ul,
+.story > ol { margin: 0 0 1.35em; padding-left: 1.3em; }
+.story li   { margin-bottom: 0.4em; }
+
+.story h2 {
+  font-size: clamp(24px, 3.2vw, 34px);
+  line-height: 1.22;
+  color: var(--color-text-heading);
+  margin: 1.9em 0 0.55em;
+  text-align: left;
+}
+
+.story h3 {
+  font-size: clamp(18px, 2.2vw, 22px);
+  line-height: 1.35;
+  color: var(--color-text-light);
+  margin: 1.6em 0 0.45em;
+  text-align: left;
+}
+
+.story > :first-child { margin-top: 0; }
+
+.story-lede {
+  font-size: 20px;
+  line-height: 1.65;
+  color: var(--color-text-light);
+  margin: 0 0 1.5em;
+}
+
+.story a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.story a:hover { color: var(--color-primary-hover); }
+
+@media (max-width: 767px) {
+  .story p, .story ul, .story ol { font-size: 16px; }
+  .story-lede { font-size: 18px; }
+  .story { padding-bottom: 52px; }
+}
+
+/* --------------------------------------------------------------------------
+   3. Captions
+   The site has never had a caption style. Used by figure, gallery and embed.
+   -------------------------------------------------------------------------- */
+.story-caption {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+  margin: 10px 0 0;
+  text-align: left;
+}
+.story-caption .story-credit {
+  color: #7d7873;
+}
+.story-caption .story-credit::before {
+  content: " · ";
+  color: #5f5a55;
+}
+/* Full-bleed captions must not touch the viewport edge. */
+.story-full > .story-caption { padding: 0 20px; }
+
+/* --------------------------------------------------------------------------
+   4. Japanese
+   :lang(ja), never `.ja`, because that class is applied per element, so
+   `.ja .story` never matches.
+   -------------------------------------------------------------------------- */
+:lang(ja) .story p,
+:lang(ja) .story ul,
+:lang(ja) .story ol { line-height: 1.95; }
+:lang(ja) .story h2,
+:lang(ja) .story h3 { line-height: 1.5; }
+:lang(ja) .story-caption { line-height: 1.7; }

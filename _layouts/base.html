@@ -144,6 +144,13 @@
       <link rel="preload" as="image" href="/assets/images/home/hero-video-poster.jpg"/>
       <link href="/assets/css/home.css?v=2" rel="stylesheet" type="text/css"/>
     {% endif %}
+    {%- comment -%}
+      Story pages only. Page-scoped like home.css above, so the ~7KB never
+      reaches the other 60-odd pages and the FCP budget is untouched.
+    {%- endcomment -%}
+    {% if page.layout == "story" %}
+      <link href="/assets/css/story.css?v=1" rel="stylesheet" type="text/css"/>
+    {% endif %}
     <!-- block links endblock -->
     <script src="/assets/js/caption.js?v=1" type="text/javascript" defer></script>
     <script src="/assets/js/bootstrap.bundle.min.js?v=1" type="text/javascript" defer></script>
