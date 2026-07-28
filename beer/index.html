@@ -3,7 +3,13 @@ layout: story
 story_schema: none
 title: Twin Peaks Bike Park Pale Ale
 subtitle: A Yotei Brewing × NAMBA Collaboration
-description: "A collaboration pale ale from Yotei Brewing and NAMBA, with label art by Joe Scott. Brewed in Niseko. A portion of every can funds Twin Peaks trails."
+# Without this, base.html builds the <title> as "title: subtitle - NAMBA", which
+# runs to 76 characters and gets truncated in search results. This keeps it at 55
+# and front-loads the product name, which is what anyone looking for this beer
+# actually types. Only affects <title> and the og/twitter titles; the visible H1
+# still comes from `title`.
+seoTitle: "Twin Peaks Bike Park Pale Ale: Niseko Craft Beer"
+description: "A collaboration pale ale from Yotei Brewing and NAMBA, with label art by Joe Scott. Brewed in Niseko. A portion of every sale funds Twin Peaks trails."
 permalink: /beer/
 masthead:
   img: /assets/images/bg/bg-header-beer.jpg
@@ -27,8 +33,8 @@ og:
      button it styled. Only the rule above is genuinely page-specific. */
 </style>
 
-<p class="story-lede">Twin Peaks Bike Park has its own beer. The Twin Peaks Bike Park Pale Ale is a
-Niseko craft beer brewed by Yotei Brewing, with a donation to the trails built into every can.</p>
+<p class="story-lede">Twin Peaks Bike Park has its own beer, brewed in Niseko by Yotei Brewing.
+Every can sold puts money back into the trails.</p>
 
 {% include story/figure.html
    tier="wide"
@@ -40,10 +46,10 @@ Niseko craft beer brewed by Yotei Brewing, with a donation to the trails built i
 
 <h2>A beer for the bike park</h2>
 
-<p>Yotei Brewing is a family-run independent brewery in Niseko Town, and they have backed NAMBA as a
-sponsor for years. When the idea of a collaboration beer came up, neither side needed much
-convincing. The base is A Greener World, Yotei Brewing's pale ale brewed partly with green energy,
-wearing a new label drawn for the park.</p>
+<p>Yotei Brewing is a family-run independent brewery in Niseko Town. They have backed NAMBA as a
+sponsor for years, so when the idea of a collaboration beer came up, neither side needed much
+convincing. The base is A Greener World, their pale ale brewed partly with green energy. It wears a
+new label drawn for the park.</p>
 
 {% include story/quote.html
    text="We have real respect for what NAMBA does: looking after the local environment while building somewhere people can enjoy the outdoors safely. We hope this collaboration introduces more people to their work, and shows what Niseko's green season has to offer."
@@ -87,12 +93,12 @@ Hirafu, and the mountain needs no introduction. Joe also designed the Twin Peaks
    k7="Price" v7="¥658"
    k8="Release" v8="Thursday 6 August 2026" %}
 
-<p>Yotei Brewing brew it at their Niseko Town brewery. It's sold through the
-<a href="https://yotei.beer/en/" target="_blank" rel="noopener">Yotei Brewing online shop</a>.</p>
+<p>Yotei Brewing brew it in Niseko Town and sell it through their
+<a href="https://yotei.beer/en/" target="_blank" rel="noopener">online shop</a>.</p>
 
 <h2>Where the money goes</h2>
 
-<p>A portion of every sale is donated to NAMBA. That money buys trail work: drainage, resurfacing,
+<p>Yotei Brewing donate a portion of every sale to NAMBA. That money buys trail work: drainage, resurfacing,
 new features, and the unglamorous digging that keeps 17km+ of singletrack running. Maintenance cost
 ¥6.5 million in 2024 and ¥10.8 million in 2025, and it climbs as the network grows.
 <a href="/twin-peaks/">Twin Peaks</a> is free to ride, and local businesses like Yotei Brewing are a
