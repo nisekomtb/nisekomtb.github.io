@@ -17,12 +17,20 @@ layout: base
 </article>
 
 {% if page.story_schema != "none" %}
-{%- assign a = site.data.team | where: "slug", page.author | first -%}
-{%- unless a -%}{%- assign a = site.data.staff | where: "slug", page.author | first -%}{%- endunless -%}
-{%- if page.lang == "ja" -%}
-  {%- assign author_name = a.ja.name | default: a.name -%}
-{%- else -%}
-  {%- assign author_name = a.name -%}
+{%- comment -%}
+  The author lookup MUST be guarded by `if page.author`. Liquid's `where` filter
+  with a nil argument does not filter: it passes the whole array through, so
+  `site.data.team | where: "slug", nil | first` returns the FIRST person in
+  team.yml. Without this guard, any story omitting `author` publishes a
+  fabricated byline in its structured data.
+
+  `datePublished` and `description` are likewise conditional. Pages (as opposed
+  to posts) have no `page.date`, and an empty string or null is an invalid
+  schema value that Google flags.
+{%- endcomment -%}
+{%- if page.author -%}
+  {%- assign a = site.data.team | where: "slug", page.author | first -%}
+  {%- unless a -%}{%- assign a = site.data.staff | where: "slug", page.author | first -%}{%- endunless -%}
 {%- endif -%}
 <script type="application/ld+json">
 {
@@ -30,15 +38,19 @@ layout: base
   "@type": "BlogPosting",
   "@id": "https://namba.ngo{{ page.url }}#article",
   "headline": {{ page.title | jsonify }},
-  "description": {{ page.description | jsonify }},
   "url": "https://namba.ngo{{ page.url }}",
   "inLanguage": "{{ page.lang }}",
-  "datePublished": "{{ page.date | date_to_xmlschema }}",
   "image": "https://namba.ngo{{ page.og.image | default: page.masthead.img | default: '/assets/images/og/hero-2026.jpg' }}"
+  {%- if page.description %},
+  "description": {{ page.description | jsonify }}
+  {%- endif %}
+  {%- if page.date %},
+  "datePublished": "{{ page.date | date_to_xmlschema }}"
+  {%- endif %}
   {%- if a %},
   "author": {
     "@type": "Person",
-    "name": {{ author_name | jsonify }}
+    "name": {%- if page.lang == "ja" %}{{ a.ja.name | default: a.name | jsonify }}{% else %}{{ a.name | jsonify }}{% endif %}
   }
   {%- endif %},
   "publisher": { "@id": "https://namba.ngo/#organization" }
