@@ -7262,6 +7262,11 @@ joomla-field-custom.field-custom-wrapper .input-group .input-group-btn .btn span
   height: 100%;
   object-fit: cover;
 }
+/* No-thumb placeholder: muted NAMBA logo watermark (e.g. text-only articles). */
+.event-card-thumb-fallback {
+  background: var(--color-bg) url("/assets/images/logos/logo.png") center / 55% auto no-repeat;
+  filter: grayscale(1) opacity(0.28);
+}
 
 .event-card-thumb-fade {
   position: absolute;

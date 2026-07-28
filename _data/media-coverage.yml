@@ -10,6 +10,224 @@
 #             tokenised with <wbr>.
 # url:        source article URL per language actually available (>=1 required).
 
+- slug: rhythmjapan-epic-summer-events
+  date: 2025-08-27
+  type: article
+  source: rhythmjapan
+  sourceName: Rhythm Japan
+  thumb: /assets/images/media-coverage/2025/rhythmjapan-epic-summer-events/thumb.jpg
+  title:
+    en: "Epic Activities And Events To Round Out Your Japanese Summer Adventures"
+    ja: "日本の<wbr>夏の<wbr>締めくくりに<wbr>楽しみたい<wbr>アクティビティ＆<wbr>イベント"
+  quote:
+    en: "For 2025, in collaboration with Niseko's NAMBA, we will be throwing a huge Specialized Trail Day!"
+    ja: "2025年は<wbr>ニセコの<wbr>NAMBAと<wbr>コラボし、<wbr>盛大な<wbr>Specialized<wbr>トレイルデーを<wbr>開催します！"
+  url:
+    en: https://rhythmjapan.com/our-stories/epic-summer-events-japan
+
+- slug: rhythmjapan-japan-best-bike-trails
+  date: 2025-05-30
+  type: article
+  source: rhythmjapan
+  sourceName: Rhythm Japan
+  thumb: /assets/images/media-coverage/2025/rhythmjapan-japan-best-bike-trails/thumb.jpg
+  title:
+    en: "Exploring Japan's Best Mountain Bike Trails"
+    ja: "日本最高の<wbr>マウンテンバイク<wbr>トレイルを<wbr>探る"
+  quote:
+    en: "Niseko's best and most extensive downhill mountain biking trails, Twin Peaks serves up kilometres of trails, offering options for all skillsets and styles of rider."
+    ja: "ニセコ最高・<wbr>最大規模の<wbr>ダウンヒルトレイルを<wbr>誇る<wbr>ツインピークスでは、<wbr>何キロにも<wbr>及ぶ<wbr>トレイルが<wbr>あらゆる<wbr>スキルと<wbr>スタイルの<wbr>ライダーを<wbr>迎えます。"
+  url:
+    en: https://rhythmjapan.com/our-stories/japan-best-bike-trails
+
+- slug: grandhirafu-world-class-mtb-destination
+  date: 2025-04-01
+  type: article
+  source: grandhirafu
+  sourceName: Grand HIRAFU
+  thumb: /assets/images/media-coverage/2025/grandhirafu-world-class-mtb-destination/thumb.jpg
+  title:
+    en: "Niseko as a world-class mountain biking destination"
+    ja: "ニセコを<wbr>世界的な<wbr>マウンテンバイクの<wbr>フィールドに"
+  quote:
+    en: "Simply put, we are an NPO dedicated to building trails and community. Supported by partnerships and donations from sponsors, most members volunteer their time."
+    ja: "簡単にいうと<wbr>トレイルと<wbr>コミュニティの<wbr>構築を<wbr>目的とした<wbr>NPO団体です。<wbr>パートナーシップや<wbr>スポンサーからの<wbr>寄付に<wbr>支えられ、<wbr>ほとんどの<wbr>メンバーは<wbr>ボランティアで<wbr>活動しています。"
+  url:
+    en: https://www.grand-hirafu.jp/lp/en/snowandwind/
+    ja: https://www.grand-hirafu.jp/lp/snowandwind/
+
+- slug: dirtraction-slopes-to-trails
+  date: 2024-09-13
+  type: article
+  source: dirtraction
+  sourceName: DirTraction
+  thumb: /assets/images/media-coverage/2024/dirtraction-slopes-to-trails/thumb.jpg
+  title:
+    en: "Niseko's Move from Slopes to Trails: Eight Years of Mountain Biking Trail Development"
+    ja: "ゲレンデから<wbr>トレイルへ：<wbr>ニセコ<wbr>MTBトレイル開発の<wbr>8年"
+  quote:
+    en: "The Twin Peaks trail system, spearheaded by NAMBA (partnering with Allegra Tourismus), is designed to cater to a wide range of users, offering a variety of trails to suit different skill levels."
+    ja: "NAMBAが<wbr>主導する<wbr>ツインピークスの<wbr>トレイルシステムは、<wbr>幅広い<wbr>ユーザーに<wbr>向けて<wbr>設計され、<wbr>スキルレベルに<wbr>応じた<wbr>多彩な<wbr>トレイルを<wbr>提供しています。"
+  url:
+    en: https://dirtraction.com/trailwork/nisekos-move-from-slopes-to-trails-eight-years-of-mountain-biking-trail-development/
+
+- slug: keikei-hirafu-good-place-to-invest
+  date: 2024-08-19
+  type: article
+  source: keikei
+  sourceName: Kei Kei Real Estate
+  thumb: /assets/images/media-coverage/2024/keikei-hirafu-good-place-to-invest/thumb.jpg
+  title:
+    en: "Is Hirafu still a good place to invest?"
+    ja: "ヒラフは<wbr>今も<wbr>投資に<wbr>適した<wbr>場所か？"
+  quote:
+    en: "With Hirafu opening their first seriously built and maintained mountain bike trails this summer, along with the unbelievably dedicated team at Namba putting in some incredible free-to-use MTB trails, a scene is building."
+    ja: "今夏<wbr>ヒラフ初の<wbr>本格的な<wbr>MTBトレイルが<wbr>オープンし、<wbr>NAMBAの<wbr>熱心な<wbr>チームが<wbr>無料で<wbr>走れる<wbr>素晴らしい<wbr>トレイルを<wbr>造り続けるなど、<wbr>シーンが<wbr>育ちつつ<wbr>あります。"
+  url:
+    en: https://www.keikeirealestate.com/is-hirafu-still-a-good-place-to-invest/
+
+- slug: kyubispiritlodge-downhill-series
+  date: 2024-08-14
+  type: article
+  source: kyubispiritlodge
+  sourceName: Kyubi Spirit Lodge
+  thumb: /assets/images/media-coverage/2024/kyubispiritlodge-downhill-series/thumb.jpg
+  title:
+    en: "The speed race at Twin Peaks Bike Park: The Downhill Series is approaching!"
+    ja: "ツインピークスバイクパークの<wbr>スピードレース：<wbr>ダウンヒルシリーズが<wbr>やってくる！"
+  quote:
+    en: "The Niseko Area Mountain Bike Association (NAMBA) is about to host a special event at Twin Peaks Bike Park next weekend: the Downhill Series!"
+    ja: "ニセコエリアマウンテンバイク協会<wbr>（NAMBA）が<wbr>来週末、<wbr>ツインピークスバイクパークで<wbr>特別イベント<wbr>「ダウンヒルシリーズ」を<wbr>開催します！"
+  url:
+    en: https://kyubispiritlodge.com/the-downhill-series-is-approaching.html
+
+- slug: yamainfo-soil-searching-niseko
+  date: 2024-08-01
+  type: article
+  sourceName: 北海道の山info
+  title:
+    en: "Soil Searching Event in Niseko (14-15 Sep)"
+    ja: "(9/14-15)<wbr>ニセコで<wbr>ソイル・サーチング<wbr>イベント開催"
+  quote:
+    en: "A chance for anyone to learn real trail work."
+    ja: "誰でも<wbr>本場の<wbr>トレイルワークを<wbr>学ぶ<wbr>チャンスです。"
+  url:
+    ja: https://trailmachinegun.blog.fc2.com/blog-entry-976.html
+
+- slug: hokkaidowilds-donation-namba
+  date: 2024-04-05
+  type: article
+  source: hokkaidowilds
+  sourceName: HokkaidoWilds.org
+  thumb: /assets/images/media-coverage/2024/hokkaidowilds-donation-namba/thumb.jpg
+  title:
+    en: "PRESS RELEASE | HokkaidoWilds.org donates $9,500 to the Hokkaido outdoors"
+    ja: "HokkaidoWilds.orgが<wbr>北海道の<wbr>アウトドアに<wbr>9,500ドルを<wbr>寄付"
+  quote:
+    en: "Hokkaido lacks good mountain bike trails. The Niseko Area Mountain Bike Association (NAMBA) is changing that, with a comprehensive network of trails in the Niseko area for a start."
+    ja: "北海道には<wbr>良質な<wbr>MTBトレイルが<wbr>不足しています。<wbr>ニセコエリアマウンテンバイク協会<wbr>（NAMBA）は、<wbr>まず<wbr>ニセコエリアの<wbr>充実した<wbr>トレイルネットワークづくりから、<wbr>その<wbr>状況を<wbr>変えようとしています。"
+  url:
+    en: https://hokkaidowilds.org/press-release-hokkaidowilds-org-donates-9500-to-the-hokkaido-outdoors
+
+- slug: bridges-asia-property-awards-niseko
+  date: 2023-12-14
+  type: article
+  source: bridges
+  sourceName: Bridges Magazine
+  thumb: /assets/images/media-coverage/2023/bridges-asia-property-awards-niseko/thumb.jpg
+  title:
+    en: "Award-winning Escapes and Culinary Gems in Niseko"
+    ja: "ニセコ、<wbr>受賞に<wbr>輝く<wbr>滞在先と<wbr>美食の<wbr>数々"
+  quote:
+    en: "NAMBA won Special Recognition for Public Recreation Facility at the PropertyGuru Asia Property Awards (Greater Niseko)."
+    ja: "NAMBAは<wbr>プロパティグルー・<wbr>アジア不動産アワード<wbr>（グレーターニセコ）で<wbr>公共レクリエーション施設の<wbr>特別賞を<wbr>受賞しました。"
+  url:
+    en: https://sms-bridges.com/award-winning-escapes-and-culinary-gems-in-niseko/
+
+- slug: yamainfo-twin-peaks-birth-story
+  date: 2023-09-28
+  type: article
+  sourceName: 北海道の山info
+  title:
+    en: "How Niseko's Twin Peaks Bike Park Was Born"
+    ja: "ニセコ<wbr>ツインピークス・<wbr>バイクパーク<wbr>誕生秘話！"
+  quote:
+    en: "In June 2021, six local riders set out to grow the trail network in the Niseko area."
+    ja: "2021年6月、<wbr>6人の<wbr>ローカルライダーが<wbr>ニセコエリアで<wbr>トレイルネットワークを<wbr>広げるべく<wbr>立ち上がった"
+  url:
+    ja: https://trailmachinegun.blog.fc2.com/blog-entry-898.html
+
+- slug: yamainfo-kutchan-trail-park-opens
+  date: 2023-09-04
+  type: article
+  sourceName: 北海道の山info
+  title:
+    en: "Trail Park Opens in Kutchan (from 16 Sep)"
+    ja: "倶知安に<wbr>トレイルパークが<wbr>オープン<wbr>（9/16~）"
+  quote:
+    en: "If it eventually grows into a 35km course, it could be the finest in the whole country."
+    ja: "将来的に<wbr>35kにも<wbr>及ぶ<wbr>ロングコースに<wbr>なれば、<wbr>全国的に<wbr>みても<wbr>随一の<wbr>コースに<wbr>なるのでは<wbr>ないでしょうか。"
+  url:
+    ja: https://trailmachinegun.blog.fc2.com/blog-entry-895.html
+
+- slug: vacationniseko-future-cycling-hub
+  date: 2022-07-19
+  type: article
+  source: vacationniseko
+  sourceName: Vacation Niseko
+  thumb: /assets/images/media-coverage/2022/vacationniseko-future-cycling-hub/thumb.jpg
+  title:
+    en: "Is Niseko the Future Cycling Hub of Japan?"
+    ja: "ニセコは<wbr>日本の<wbr>サイクリング拠点に<wbr>なるのか？"
+  quote:
+    en: "Creating a world class sustainable mountain bike community and off-road biking ecosystem. That is the vision of NAMBA."
+    ja: "世界レベルの<wbr>サステナブルな<wbr>MTBコミュニティと<wbr>オフロードバイクの<wbr>エコシステムを<wbr>創る。<wbr>それが<wbr>NAMBAの<wbr>ビジョンです。"
+  url:
+    en: https://vacationniseko.com/en/news/is-niseko-the-future-cycling-hub-of-japan/
+
+- slug: yamainfo-kutchan-mtb-trail-park
+  date: 2022-05-28
+  type: article
+  sourceName: 北海道の山info
+  title:
+    en: "An MTB Trail Park Is Coming to Kutchan This Autumn!"
+    ja: "今秋、<wbr>倶知安に<wbr>MTBトレイルパークが<wbr>誕生！"
+  quote:
+    en: "It finally feels like mountain biking is properly getting moving in Hokkaido."
+    ja: "いよいよ<wbr>北海道でも<wbr>MTBが<wbr>本格的に<wbr>動き出した<wbr>感が<wbr>ありますね。"
+  url:
+    ja: https://trailmachinegun.blog.fc2.com/blog-entry-611.html
+
+- slug: hajimeimoto-twin-peaks-cruise-control
+  date: 2024-10-03
+  type: video
+  source: hajimeimoto
+  sourceName: Hajime Imoto
+  thumb: /assets/images/media-coverage/2024/hajimeimoto-twin-peaks-cruise-control/thumb.jpg
+  title:
+    en: "Riding Cruise Control, Twin Peaks' Newest Trail"
+    ja: "今<wbr>最も<wbr>話題の<wbr>トレイル、<wbr>「ニセコ ツインピークス」に<wbr>新しく<wbr>オープンした<wbr>「Cruz Control」を<wbr>走ってきた！"
+  quote:
+    en: "A lap of Cruise Control, the newest trail at Twin Peaks, where the free trail network now runs past 27km."
+    ja: "ツインピークスに<wbr>新しく<wbr>オープンした<wbr>トレイルを<wbr>走行。<wbr>無料開放の<wbr>ネットワークは<wbr>27km以上に。"
+  url:
+    ja: https://www.youtube.com/watch?v=jWj4s3qYBi4
+
+- slug: hajimeimoto-niseko-twin-peaks-trails
+  date: 2023-09-21
+  type: video
+  source: hajimeimoto
+  sourceName: Hajime Imoto
+  thumb: /assets/images/media-coverage/2023/hajimeimoto-niseko-twin-peaks-trails/thumb.jpg
+  title:
+    en: "Introducing Niseko's Superb New Trails"
+    ja: "ニセコに<wbr>誕生した極上トレイルを<wbr>ご紹介！"
+  quote:
+    en: "Twin Peaks Bike Park, built by the Niseko Area Mountain Bike Association: over 20km of world-class trails, free to use."
+    ja: "ニセコエリアマウンテンバイク協会<wbr>（NAMBA）の<wbr>手がける、<wbr>ツインピークスバイクパーク。<wbr>ニセコエリアに<wbr>20km以上に<wbr>なる<wbr>世界クラスの<wbr>マウンテンバイクコース。<wbr>使用料無料の<wbr>公共の<wbr>バイクパーク。"
+  url:
+    ja: https://www.youtube.com/watch?v=WXc9Hc9Th1U
+
 - slug: allegra-niseko-mtb-trail-projects
   date: 2025-10-28
   type: article
