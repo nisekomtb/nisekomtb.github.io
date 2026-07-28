@@ -1,0 +1,45 @@
+{%- comment -%}
+  Author card at the foot of a story.
+
+  Params:
+    slug (required): matches the `slug` field on a team or staff entry
+
+  The second line prefers `byline_title` over `title`, so the wording can be
+  softened per person later without touching this layout. No entry sets
+  `byline_title` today, in either language; it is an opt-in override, not a
+  required field.
+
+  THE THIRD LINE IS OPTIONAL BY DESIGN. All six staff entries have no `title`
+  in either language, and one team entry (Masaya Yoshimura) has none in EN, so
+  those cards render as two lines, name and role. That is correct, not a data
+  gap to fill. Note the asymmetry on Masaya: he DOES carry `ja.title`, so his
+  card is two lines in EN and three in JA. Checked against the data, not
+  assumed.
+
+  THE SLUG LOOKUP, THE UNKNOWN-SLUG BUILD FAILURE, THE RAW <img> AND THE EMPTY
+  ALT all work exactly as in byline.html. Read the note there before changing
+  any of them; each one is there because of a specific measured failure.
+{%- endcomment -%}
+{%- assign slug = include.slug | strip -%}
+{%- if slug == "" -%}{%- include story/BUILD-ERROR-author-card-requires-slug.html -%}{%- endif -%}
+{%- assign a = site.data.team | where: "slug", slug | first -%}
+{%- unless a -%}{%- assign a = site.data.staff | where: "slug", slug | first -%}{%- endunless -%}
+{%- unless a -%}{%- include story/BUILD-ERROR-author-card-slug-not-found-in-team-or-staff.html -%}{%- endunless -%}
+{%- if page.lang == "ja" -%}
+  {%- assign a_name  = a.ja.name | default: a.name -%}
+  {%- assign a_role  = a.ja.namba_role | default: a.namba_role -%}
+  {%- assign a_title = a.ja.byline_title | default: a.ja.title -%}
+{%- else -%}
+  {%- assign a_name  = a.name -%}
+  {%- assign a_role  = a.namba_role -%}
+  {%- assign a_title = a.byline_title | default: a.title -%}
+{%- endif -%}
+{%- assign a_img = a.image | strip -%}
+<div class="story-block story-author-card">
+  {%- if a_img != "" %}<img src="{{ a_img }}" alt="" loading="lazy" width="64" height="64">{% endif %}
+  <div>
+    <div class="story-author-name">{{ a_name }}</div>
+    <div class="story-author-role">{{ a_role }}</div>
+    {%- if a_title %}<p class="story-author-title">{{ a_title }}</p>{% endif %}
+  </div>
+</div>

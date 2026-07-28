@@ -6,6 +6,7 @@
 # be updated BY HAND. Current count: 22 (23 entries minus 1 Auditor).
 
 - image: /assets/images/team/paulw.jpg
+  slug: paul-wright
   name: Paul Wright
   leader: true
   namba_role: President
@@ -16,6 +17,7 @@
     title: パーク ハイアット ニセコ HANAZONO 総支配人
 
 - image: /assets/images/team/shunichi.jpg
+  slug: shunichi-kimura
   name: Shunichi Kimura
   leader: true
   namba_role: Vice President
@@ -27,6 +29,7 @@
     title: お食事バー木村 オーナー & 羊蹄ニセコ自転車走行協議会 副会長
 
 - image: /assets/images/team/ross.jpg
+  slug: ross-carty
   name: Ross Carty
   cofounder: true
   namba_role: Head of Access
@@ -42,6 +45,7 @@
     title: NOASCアドベンチャーズ 創業者／オーナー
 
 - image: /assets/images/team/andy.jpg
+  slug: andy-meadows
   name: Andy Meadows
   cofounder: true
   namba_role: Head of Trail Building
@@ -53,6 +57,7 @@
     title: リズムジャパン オペレーション部門長
 
 - image: /assets/images/team/tom.jpg
+  slug: tom-mortiboy
   name: Tom Mortiboy
   cofounder: true
   namba_role: Head of Marketing & Communication
@@ -64,6 +69,7 @@
     title: コースベース シニアソフトウェアエンジニア
 
 - image: /assets/images/team/angharad.jpg
+  slug: angharad-mortiboy
   name: Angharad Mortiboy
   cofounder: true
   namba_role: Head of Events, Competitions & Races
@@ -75,6 +81,7 @@
     title: 栄養とライフスタイルのコーチ
 
 - image: /assets/images/team/miles.jpg
+  slug: miles-zeorlin
   name: Miles Zeorlin
   cofounder: true
   namba_role: Head of Community & Partner Engagement
@@ -86,6 +93,7 @@
     title: 株式会社ニセコリアルエステート・営業部
 
 - image: /assets/images/team/ashley.jpg
+  slug: ashley-nicholls
   name: Ashley Nicholls
   cofounder: true
   namba_role: Head of Administration & Funding
@@ -101,6 +109,7 @@
 # "Director, <committee> Subcommittee". People with a specific role (Head of X,
 # Officer, Auditor, President/VP) carry committee for reference but never display it.
 - image: /assets/images/team/chie.jpg
+  slug: chie-seino
   name: Chie Seino
   namba_role: Administration Officer
   committee: Admin
@@ -113,6 +122,7 @@
     sub_title: 樺ニセコ プロパティーマネージャー
 
 - image: /assets/images/team/mayumi.jpg
+  slug: mayumi-honda
   name: Mayumi Honda
   namba_role: Director
   committee: Events, Competitions & Races
@@ -124,6 +134,7 @@
     sub_title: エグゼクティブプロジェクト マネージャー
 
 - image: /assets/images/team/sachi.jpg
+  slug: sachi-yelle
   name: Sachi Yelle
   namba_role: Director
   committee: Admin
@@ -134,6 +145,7 @@
     title: EZObase / ezobike 代表
 
 - image: /assets/images/team/chika.jpg
+  slug: chika-lund
   name: Chika Lund
   namba_role: Director
   committee: Marketing & Communication
@@ -144,6 +156,7 @@
     title: ニセコパウダーライフマガジン ディレクター
 
 - image: /assets/images/team/kobe.jpg
+  slug: satoshi-kobayashi
   name: Satoshi Kobayashi
   namba_role: Director
   committee: Events, Competitions & Races
@@ -154,6 +167,7 @@
     title: DT Swiss カントリーマネージャー
 
 - image: /assets/images/team/yukihiro.jpg
+  slug: yukihiro-tochigi
   name: Yukihiro Tochigi
   namba_role: Director
   committee: Access
@@ -166,6 +180,7 @@
     sub_title: 北海道の大規模森林所有者
 
 - image: /assets/images/team/shinji.jpg
+  slug: shinji-furuya
   name: Shinji Furuya
   namba_role: Director
   committee: Access
@@ -178,6 +193,7 @@
     sub_title: ニセコ環境㈱ 管理室長
 
 - image: /assets/images/team/yui.jpg
+  slug: yui-spragg
   name: Yui Spragg
   namba_role: Director
   committee: Trail
@@ -188,6 +204,7 @@
     title: ライジングサンガイド 総務
 
 - image: /assets/images/team/ben.jpg
+  slug: ben-kerr
   name: Ben Kerr
   namba_role: Director
   committee: Access
@@ -200,6 +217,7 @@
     sub_title: ニセコリアルエステート 創業者／オーナー
 
 - image: /assets/images/team/namikata.jpg
+  slug: makoto-namikata
   name: Makoto Namikata
   namba_role: Director
   committee: Trail
@@ -212,6 +230,7 @@
     sub_title: ノーススレッドスノーモービル オーナー
 
 - image: /assets/images/team/masaya.jpg
+  slug: masaya-yoshimura
   name: Masaya Yoshimura
   namba_role: Director
   sub_title: Niseko Moiwa Ski Resort General Manager
@@ -221,6 +240,7 @@
     title: ニセコモイワスキーリゾート総支配人
 
 - image: /assets/images/team/paulb.jpg
+  slug: paul-butkovich
   name: Paul Butkovich
   namba_role: Director
   committee: Marketing & Communication
@@ -231,6 +251,7 @@
     title: H2グループ 不動産部門ディレクター
 
 - image: /assets/images/team/riccardo.jpg
+  slug: riccardo-tossani
   name: Riccardo Tossani
   namba_role: Director
   committee: Access
@@ -241,6 +262,7 @@
     title: リカルド・トッサーニ建築事務所 創業者／オーナー
 
 - image: /assets/images/team/hiroshi.jpg
+  slug: hiroshi-yamada
   name: Hiroshi Yamada
   namba_role: Director
   committee: Marketing & Communication
@@ -274,6 +296,7 @@
 #     title: 水野自転車店 オーナー
 
 - image: /assets/images/team/satoshi.jpg
+  slug: satoshi-yoshida
   name: Satoshi Yoshida
   namba_role: Auditor
   committee: Access

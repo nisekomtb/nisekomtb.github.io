@@ -1,0 +1,51 @@
+{%- comment -%}
+  Byline under the story title. Resolves the person from _data/team.yml, then
+  _data/staff.yml, so trail crew can author a build report without being moved
+  onto the board.
+
+  Params:
+    slug (required): matches the `slug` field on a team or staff entry
+
+  THE SLUG IS RESOLVED TO A STRING BEFORE IT REACHES `where`, and that is
+  load-bearing. Jekyll's `where` filter returns the input UNFILTERED when its
+  value argument is nil, so `site.data.team | where: "slug", nil | first`
+  returns the first person in team.yml rather than nothing. That exact bug
+  shipped on this branch once, publishing a fabricated author in a story's
+  structured data. `| strip` turns nil into "", which `where` filters normally
+  and which matches nobody.
+
+  AN UNKNOWN SLUG FAILS THE BUILD rather than rendering nothing. A typo in
+  `author:` would otherwise drop the byline silently and the story would
+  publish with no attribution, which is the failure nobody notices. The
+  BUILD-ERROR mechanism is the only way to abort a Jekyll build from Liquid
+  without a plugin; the missing filename IS the message. Never create the file
+  an error names. deploy.yml fails the build if any
+  _includes/story/BUILD-ERROR-*.html exists.
+
+  THE AVATAR IS A RAW <img>, NOT image.html: assets/images/team/ holds 32 .jpg
+  files and zero .webp, and image.html emits a <picture> with a WebP <source>
+  that a supporting browser would take and fail to load.
+
+  ALT IS DELIBERATELY EMPTY. The name sits immediately beside the portrait, so
+  alt text would make a screen reader announce it twice.
+{%- endcomment -%}
+{%- assign slug = include.slug | strip -%}
+{%- if slug == "" -%}{%- include story/BUILD-ERROR-byline-requires-slug.html -%}{%- endif -%}
+{%- assign a = site.data.team | where: "slug", slug | first -%}
+{%- unless a -%}{%- assign a = site.data.staff | where: "slug", slug | first -%}{%- endunless -%}
+{%- unless a -%}{%- include story/BUILD-ERROR-byline-slug-not-found-in-team-or-staff.html -%}{%- endunless -%}
+{%- if page.lang == "ja" -%}
+  {%- assign a_name = a.ja.name | default: a.name -%}
+  {%- assign a_role = a.ja.namba_role | default: a.namba_role -%}
+{%- else -%}
+  {%- assign a_name = a.name -%}
+  {%- assign a_role = a.namba_role -%}
+{%- endif -%}
+{%- assign a_img = a.image | strip -%}
+<div class="story-block story-byline">
+  {%- if a_img != "" %}<img src="{{ a_img }}" alt="" loading="lazy" width="40" height="40">{% endif %}
+  <div>
+    <div class="story-byline-name">{{ a_name }}</div>
+    <div class="story-byline-meta">{{ a_role }}{% if page.date %}<span class="story-byline-sep">·</span>{% if page.lang == "ja" %}{{ page.date | date: "%Y年%-m月%-d日" }}{% else %}{{ page.date | date: "%-d %B %Y" }}{% endif %}{% endif %}</div>
+  </div>
+</div>
