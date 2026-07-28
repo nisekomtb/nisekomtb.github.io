@@ -10,9 +10,17 @@
        every utility is scoped as `.story .story-x`, which is (0,2,0).
        Know the limit: (0,2,0) beats `.story p` but does NOT beat
        `:lang(ja) .story p` at (0,2,1), so a JA prose declaration still wins
-       over a block utility. Fine for line-height, where JA wants more
-       leading anyway, but check any new `:lang(ja)` prose rule against the
-       blocks it could override.
+       over a block utility.
+       THE MECHANICAL RULE, which is easier to apply than the arithmetic: a
+       `:lang(ja)` selector whose last compound is an ELEMENT NAME lands at
+       (0,2,1) and beats every block utility in this file, present and future.
+       One whose last compound is a CLASS lands at (0,3,0) or higher and
+       cannot. This file has exactly two of the dangerous kind, both in
+       section 2 (`:lang(ja) .story p, ul, ol` and `:lang(ja) .story h2, h3`),
+       and both have already silently overridden a block: the lede's
+       line-height (fixed in section 2 with a class-tailed override) and the
+       chapter marker's (accepted, 1.2px, documented in section 6). Before
+       adding a `:lang(ja)` rule, check which kind it is.
      - Never style `a` broadly in here. A blanket `.story a` beats
        Bootstrap's `.btn` and repaints every button. Link styling is scoped
        to prose containers instead.
@@ -196,6 +204,13 @@
   color: var(--color-text-light);
   margin: 0 0 1.5em;
 }
+/* The lede's own line-height loses to `:lang(ja) .story p` at (0,2,1), which is
+   the exact collision the file header warns about. Measured before this rule: a
+   JA lede computed 35.1px (1.95 at 18px) against the EN lede's 29.7px (1.65),
+   18% looser and 5.4px per line, so the lede stopped reading as a distinct
+   voice from the prose under it. 1.8 keeps JA looser than EN, as every other JA
+   rule in this file does, without handing it the full prose leading. */
+:lang(ja) .story .story-lede { line-height: 1.8; }
 
 /* Link styling is scoped to prose containers, never a blanket `.story a`.
    Buttons are anchors too, so a blanket rule repaints all of them, and the
@@ -557,7 +572,7 @@
    that pair treats a whole sentence as one unbreakable word and then
    emergency-breaks it, bypassing kinsoku and orphaning a sentence-final 。 on
    its own line. Measured with spans: 14 of 111 value-box widths between 120px
-   and 340px orphaned a 。 or 、. template.css:117 documents the same trap and
+   and 340px orphaned a 。 or 、. template.css:122 documents the same trap and
    fixes it for `.lead` the same way.
    -------------------------------------------------------------------------- */
 .story .story-table {
@@ -581,19 +596,31 @@
    on which vendor sheet loads last. */
 .story .story-table .story-row-key,
 .story .story-table .story-row-val { margin: 0; }
-/* `overflow-wrap` for the same reason the value has it, below. The key is in
-   fact MORE exposed than the value, because `flex: none` means it cannot even
-   shrink: measured at 320px with a 41-character unbroken key, the document
-   went to 347px against a 320px viewport, 27px of horizontal page scroll. The
-   threshold is about 29 unbroken characters at 12px with 0.08em tracking in a
-   248px box. Real keys are "Style" and "ABV", so this is a guard rather than a
-   live bug, but the guard costs one declaration. */
+/* `flex: 0 1 auto`, NOT `flex: none`, and this is the correction to an earlier
+   version of this rule. With `flex: none` (computed `0 0 auto`) the key holds
+   its max-content width no matter what `min-width` or `overflow-wrap` say,
+   because nothing is allowed to shrink it, so BOTH guards below were inert
+   above 480px: measured at 1440px with a 120-character key, the document went
+   to 1640px, and allowing shrink brought it back to 1440px. They did work below
+   480px, but only because the media query at the end of this section takes the
+   row out of flex entirely, which is why the original 320px measurement looked
+   like a pass.
+
+   Allowing shrink changes nothing for real content. Keys are "Style", "ABV",
+   "Hops"; with `justify-content: space-between` there is free space in the row,
+   so `flex-shrink: 1` never engages. It engages only in the pathological case
+   the guards exist for.
+
+   `overflow-wrap: break-word` is still needed alongside it: shrinking the box
+   does not break the word inside it. The pair is independent, which the file
+   header states as a convention because it has now been got wrong three
+   times. */
 .story .story-table .story-row-key {
   font-size: 12px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-text-muted);
-  flex: none;
+  flex: 0 1 auto;
   min-width: 0;
   overflow-wrap: break-word;
 }
@@ -695,7 +722,25 @@
   line-height: 1.6;
   color: var(--color-text-light);
   font-weight: 500;
+  /* Measured at 320px: a 34 character unbroken word took the document to
+     363px. Same guard as the attribution below and the spec rows in
+     section 5. */
+  overflow-wrap: break-word;
 }
+/* The figure is a grid item, so it needs the same guard section 1 gives every
+   direct child of `.story`. Its margin is zeroed explicitly rather than left to
+   depend on which vendor sheet loads last, matching what section 4 does for
+   `.story-split-media`: bs3-compat.css:488 sets `figure { margin: 0 }` and
+   bootstrap.min.css sets `figure { margin: 0 0 1rem }`, both (0,0,1). */
+.story .story-quote figure {
+  margin: 0;
+  min-width: 0;
+}
+/* A quote at the wide tier is 1106px at 1440px, which measured 106 characters
+   per line against 56 at the text tier: far past a readable measure. The tier
+   still widens the block, so a portrait sits further out and the quote reads as
+   a bigger moment, but the text itself stays at the prose measure. */
+.story .story-quote.story-wide blockquote { max-width: 660px; }
 /* Defensive, for the hand-authored path. The include emits the quote as a bare
    string with no <p>, but /beer/ is hand-authored HTML and an author may well
    write <blockquote><p>...</p></blockquote>. Without this,
@@ -713,37 +758,47 @@
   line-height: inherit;
   color: inherit;
 }
-.story .story-quote.is-plain blockquote {
+/* The rust rule and its padding sit on the FIGURE, not the blockquote, so the
+   quote and its attribution are offset together and cannot drift apart. An
+   earlier version put them on the blockquote and indented the attribution with
+   a matching `padding-left: 22px`, which worked (measured 0px delta) but
+   hardcoded the sum of two values three lines above it: changing either one
+   silently desynced the attribution. Measured before that fix, the attribution
+   hung 22px left of its own quote text, x=390 against x=412 at 1440px.
+
+   The rule now runs the full height of the quote unit rather than stopping at
+   the end of the blockquote, 131.27px against 81.59px, which reads as marking
+   the whole quote including who said it. */
+.story .story-quote.is-plain figure {
   border-left: 2px solid var(--color-primary);
   padding-left: 20px;
 }
-/* The attribution has to be indented to match, because it is a SIBLING of the
-   blockquote rather than a child, so it inherits neither the 2px rule nor the
-   20px padding. Without this the plain variant's attribution hangs 22px to the
-   left of the quote it belongs to: measured at 1440px, quote text starting at
-   x=412 against the attribution at x=390. The avatar variant does not have the
-   problem, since there both sit in the same grid column and measured x=464. */
-.story .story-quote.is-plain footer { padding-left: 22px; }
 
-/* The attribution is a SIBLING of the blockquote, never a child. This is not
-   stylistic: template.css:712 sets
+/* The attribution is a <figcaption> and a SIBLING of the blockquote, never a
+   child of it. Not stylistic: template.css:712 sets
    `blockquote footer:before { content: '\2014 \00A0' }` and \2014 is an em
-   dash, the one character this project forbids in copy. Nesting the footer
-   inside the blockquote would inject one before every attribution, which is
-   what /beer/ does today. Keeping it outside also sidesteps `blockquote
-   footer`'s 80% font-size at (0,0,2), which never matches at all here. */
-.story .story-quote footer {
+   dash, the one character this project forbids in copy. /beer/ nests its
+   attribution inside the blockquote today and renders one. A figcaption is not
+   matched by that selector at all.
+
+   `overflow-wrap: break-word` for the reason section 1 and section 5 both give:
+   an unbroken string in a grid or flex item overflows and scrolls the page even
+   when the box can shrink. Measured at 320px on the plain variant, a 56
+   character unbroken role took the document to 443px, 123px of horizontal
+   scroll; with this declaration, 320px. */
+.story .story-quote .story-quote-attr {
   margin-top: 12px;
   font-size: 13px;
   line-height: 1.45;
   color: var(--color-text-muted);
+  overflow-wrap: break-word;
 }
 /* The name is a <span>, so on a JA page it picks up `word-break: keep-all`
    from template.css:94. That is left alone deliberately: `keep-all` stops a
    personal name breaking between characters, and a name carries no sentence
    punctuation, so the kinsoku problem that forced <dt>/<dd> in section 5 and
    `word-break: normal` on the chapter label does not apply. */
-.story .story-quote footer .story-quote-name {
+.story .story-quote .story-quote-attr .story-quote-name {
   display: block;
   color: var(--color-primary);
   font-weight: 600;
@@ -819,8 +874,8 @@
    `content: ""` still generates a flex item. */
 /* `min-width: 24px` so the rule never vanishes. With `flex: 1 1 0` and a
    zero min-width it takes only leftover space, and a JA label long enough to
-   fill the row leaves none: measured 0px on a JA harness at 320px, where the
-   EN twin had 513px of rule. The marker then lost its one piece of visual
+   fill the row leaves none: measured 0px on a JA harness at 320px, where the EN
+   twin at the same 320px measured 133.4px of rule (and 513.4px at 1440px). The marker then lost its one piece of visual
    punctuation in one language and kept it in the other. 24px is enough to read
    as deliberate and small enough that the label still wraps rather than being
    squeezed, since `flex: 0 1 auto` lets the label shrink first. */
@@ -831,6 +886,15 @@
   height: 1px;
   background: var(--color-bg-border);
 }
+/* JA needs more leading than EN at the same size: prose gets 1.95 in section 2,
+   captions 1.7 in section 3, spec rows 1.7 in section 5. Without this a 19px JA
+   pull quote at 1.6 is the tightest multi-line JA text in the whole kit.
+   Class-tailed, so (0,4,0) and (0,3,0): see the specificity note in the file
+   header about why an element-tailed :lang(ja) selector would be the dangerous
+   kind. */
+:lang(ja) .story .story-quote blockquote { line-height: 1.8; }
+:lang(ja) .story .story-quote .story-quote-attr { line-height: 1.7; }
+
 /* Uppercase and wide letter-spacing are EN typographic devices. On Japanese
    they do nothing to kana and force gaps that read as broken spacing
    (convention 6: JA rules sit beside their block).
@@ -848,7 +912,7 @@
    a leading 、 or 。 onto its own line. Measured on a label carrying both, box
    widths swept 60px to 240px in 4px steps: `keep-all` plus `overflow-wrap`
    orphaned a 、 or 。 at 10 of 46 widths, `word-break: normal` at 0 of 46. Same
-   trap template.css:117 fixes for `.lead` and that section 5 avoids by using
+   trap template.css:122 fixes for `.lead` and that section 5 avoids by using
    <dt>/<dd> instead of spans, where 14 of 111 value-box widths orphaned a 。 */
 :lang(ja) .story .story-chapter .story-chapter-label {
   letter-spacing: 0.08em;

@@ -42,6 +42,30 @@
   block boundaries, so a literal opening tag in here has to be closed or the
   build dies with "'endcomment' is not a valid delimiter for unless tags".
   Measured: the braced version above failed the build at line 39 of this file.
+
+  THE MARKUP IS figure + blockquote + figcaption, which is the HTML spec's
+  pattern for an attributed quotation. It gives the block role="figure" with an
+  accessible name taken from the attribution, so assistive technology announces
+  who said the words instead of leaving the association to reading order. The
+  previous version used a plain div plus a footer, which conveyed nothing
+  programmatic about the speaker.
+
+  The figcaption carries `story-quote-attr`, NOT `story-caption`. Convention 9
+  reserves `story-caption` and `caption.html` for captions describing adjacent
+  content, and section 3 of story.css states outright that a pull-quote
+  attribution is not a caption. That still holds: this is a second, sanctioned
+  use of the figcaption ELEMENT with its own class, not a reuse of the caption
+  treatment.
+
+  The avatar stays outside the figure, in its own grid column, so promoting the
+  inner wrapper to a figure needed no grid changes at all: measured, the
+  blockquote and the attribution land on exactly the same coordinates they did
+  as a div and a footer.
+
+  WHY NOT A footer INSIDE THE blockquote: template.css:712 sets
+  `blockquote footer:before { content: '\2014 \00A0' }`, and \2014 is an em
+  dash, which this project forbids in copy. /beer/ nests its attribution that
+  way today and renders one. A figcaption is not matched by that selector.
 {%- endcomment -%}
 {%- assign tier = include.tier | default: "text" -%}
 {%- unless tier == "text" or tier == "wide" -%}
@@ -53,14 +77,15 @@
 {%- assign role = include.role | strip -%}
 {%- if name == "" and role != "" -%}{%- include story/BUILD-ERROR-quote-role-supplied-without-name.html -%}{%- endif -%}
 {%- assign avatar = include.avatar | strip -%}
+{%- if avatar != "" and name == "" -%}{%- include story/BUILD-ERROR-quote-avatar-supplied-without-name.html -%}{%- endif -%}
 <div class="story-block story-quote story-{{ tier }}{% if avatar == "" %} is-plain{% endif %}">
   {%- if avatar != "" %}
   <img class="story-quote-avatar" src="{{ avatar }}" alt="" loading="lazy" width="56" height="56">
   {%- endif %}
-  <div>
+  <figure>
     <blockquote>{{ text }}</blockquote>
     {%- if name != "" %}
-    <footer><span class="story-quote-name">{{ name }}</span>{{ role }}</footer>
+    <figcaption class="story-quote-attr"><span class="story-quote-name">{{ name }}</span>{{ role }}</figcaption>
     {%- endif %}
-  </div>
+  </figure>
 </div>
