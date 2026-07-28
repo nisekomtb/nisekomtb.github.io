@@ -1,4 +1,6 @@
 ---
+layout: story
+story_schema: none
 title: ツインピークスバイクパーク ペールエール
 titleHtml: ツインピークス<wbr>バイクパーク<wbr>ペールエール
 subtitle: ヨーテイブルーイング × NAMBA コラボレーション
@@ -11,23 +13,34 @@ og:
   image: /assets/images/og/beer.jpg
 ---
 <style>
-  .beer-quote {
-    max-width: 720px;
-    margin: 40px auto;
-  }
-  .beer-quote footer {
-    margin-top: 12px;
-    font-size: 0.9em;
-    color: var(--color-text-muted);
-  }
+  /* The label is a 1200x1800 portrait: at the 660px text tier it renders about
+     990px tall and takes over the page. `width: 100%` is load-bearing here.
+     Auto inline margins on a grid item suppress `justify-self: stretch`, so the
+     wrapper shrink-to-fits around an <img> sized at 100% of an indefinite
+     width: measured 0px wide, image 0px tall, before this line. */
   .beer-label-media {
+    width: 100%;
     max-width: 480px;
     margin: 0 auto;
   }
-  .beer-smallprint {
-    font-size: 0.85em;
+  /* Page-level for now. These three rules belong in a section 8 of
+     assets/css/story.css; that file is being edited elsewhere as this page
+     lands. Move them there and drop the `!important` flags with the move:
+     scoped as `.story .btn.disabled` the rule is (0,3,0) and needs none. The
+     smallprint runs 1.7 here against 1.6 in EN, as JA does across the kit. */
+  .story .story-cta {
+    margin: 34px 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+  }
+  .story .story-cta .story-smallprint {
+    flex-basis: 100%;
+    font-size: 13px;
+    line-height: 1.7;
     color: var(--color-text-muted);
-    margin-top: 16px;
+    margin: 6px 0 0;
   }
   .btn.disabled,
   .btn[aria-disabled="true"] {
@@ -39,184 +52,114 @@ og:
   }
 </style>
 
-<div class="t3-section-wrap">
+<p class="story-lede">ツインピークスバイクパークに、<wbr>パークの<wbr>名前を<wbr>冠した<wbr>ビールが<wbr>生まれました。<wbr>「ツインピークスバイクパーク ペールエール」は、<wbr>ヨーテイブルーイングが<wbr>醸造する<wbr>ニセコの<wbr>クラフトビール。<wbr>ラベルアートは<wbr>ジョー・スコットが<wbr>手がけ、<wbr>売上の<wbr>一部は<wbr>トレイルに<wbr>還元されます。</p>
 
-  <!-- Lede -->
-  <div class="section">
+{% include story/figure.html
+   tier="wide"
+   src="/assets/images/beer/forest-log.jpg"
+   alt="ニセコの森の倒木に置かれたツインピークスバイクパーク ペールエールの缶"
+   width="1800"
+   height="1200"
+   widths="800,1600" %}
 
-    <div class="module-title-wrap">
-      <div
-        class="features-desc ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="200">
-        <div class="section-lede"><span>ツインピークスバイクパークに、​パークの​名前を​冠した​ビールが​生まれました。​「ツインピークスバイクパーク ペールエール」は、​ヨーテイブルーイングが​醸造する​ニセコの​クラフトビール。​ラベルアートは​ジョー・スコットが​手がけ、​売上の​一部は​トレイルに​還元されます。</span></div>
-      </div>
-    </div>
+<h2>パークの<wbr>ための<wbr>ビール</h2>
 
-  </div>
+<p>ヨーテイブルーイングは<wbr>以前から<wbr>NAMBAの<wbr>スポンサーと<wbr>して<wbr>活動を<wbr>支えてくれており、<wbr>醸造所は<wbr>パークから<wbr>すぐの<wbr>ニセコ町に<wbr>あります。<wbr>コラボビールの<wbr>話が<wbr>持ち上がると、<wbr>実現までは<wbr>早い<wbr>ものでした。<wbr>ベースと<wbr>なったのは、<wbr>グリーンエネルギーを<wbr>一部<wbr>利用して<wbr>醸造される<wbr>同社の<wbr>ペールエール<wbr>「A Greener World」。<wbr>そこに<wbr>パークの<wbr>ために<wbr>描き下ろされた<wbr>ラベルを<wbr>まと<wbr>いました。</p>
 
-  <div class="media-narrow">
-    {% include image.html src="/assets/images/beer/forest-log.jpg" alt="ニセコの森の倒木に置かれたツインピークスバイクパーク ペールエールの缶" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" loading="lazy" class="img-fluid-rounded" width="1800" height="1200" %}
-  </div>
+{% capture quote_ja %}私たちは、<wbr>地域の<wbr>自然環境を<wbr>守りながら、<wbr>安全に<wbr>アウトドアを<wbr>楽しめる<wbr>環境づくりを<wbr>続ける<wbr>NAMBAの<wbr>活動に<wbr>深く<wbr>共感しています。<wbr>この<wbr>コラボレーションを<wbr>きっかけに、<wbr>より<wbr>多くの方に<wbr>その<wbr>活動を<wbr>知っていただき、<wbr>ニセコの<wbr>グリーンシーズンの<wbr>魅力を<wbr>広く<wbr>発信していきたいと<wbr>考えています。{% endcapture %}
+{% include story/quote.html
+   text=quote_ja
+   name="ヨーテイブルーイング株式会社"
+   role="プレスリリースより" %}
 
-  <!-- パークのためのビール -->
-  <div class="section">
+<h2>ラベルに<wbr>ついて</h2>
 
-    <div class="module-title-wrap">
-      <h2
-        class="module-title ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="200">パークのためのビール</h2>
-      <div
-        class="features-desc ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="400">
-        <div class="section-lede"><span>ヨーテイブルーイングは​以前から​NAMBAの​スポンサーと​して​活動を​支えてくれており、​醸造所は​パークから​すぐの​ニセコ町に​あります。​コラボビールの​話が​持ち上がると、​実現までは​早い​ものでした。​ベースと​なったのは、​グリーンエネルギーを​一部​利用して​醸造される​同社の​ペールエール​「A Greener World」。​そこに​パークの​ために​描き下ろされた​ラベルを​まと​いました。</span></div>
-      </div>
-      <blockquote class="beer-quote ja-animate" data-animation="move-from-bottom" data-delay="600">
-        <p>ニセコの​マウンテンバイクシーンは​急速に​成長しています。​スイス設計の​トレイルは、​地元企業の​支えが​あってこそ形に​なる​ものです。​ヨーテイブルーイングさんには​以前から​NAMBAを​応援していただいているので、​今回の​コラボビールの​話も​すぐに​まとまりました。​ジョー・スコットに​よる​ラベルデザインも、​ニセコならではの​一本に​仕上がっています。​売上の​一部は​そのまま​トレイルの​土へ、​そして​これから​作る​新しい​トレイルへと​還っていきます。</p>
-        <footer>NPO法人NAMBA 共同設立者 兼 マーケティングとコミュニケーション責任者 モーティーボーイ・トーマス</footer>
-      </blockquote>
-    </div>
+<p>ジョー・スコットが<wbr>描いたのは、<wbr>羊蹄山を<wbr>背に<wbr>した<wbr>ツインピークスバイクパークの<wbr>入口ゲート。<wbr>彼が<wbr>得意と<wbr>する<wbr>ナショナルパークポスター風の<wbr>スタイルです。<wbr>どちらも<wbr>実在します。<wbr>ゲートは<wbr>ヒラフの<wbr>上の<wbr>トレイルヘッドに<wbr>立っており、<wbr>羊蹄山は<wbr>言うまでもありません。<wbr>ジョーは<wbr>アーティストシリーズで<wbr>ツインピークスバッジも<wbr>デザインしています。<wbr>彼の<wbr>作品は<a href="/ja/artist-series/#joe-scott">アーティストプロフィール</a>で<wbr>ご覧いただけます。</p>
 
-  </div>
+{% include story/figure.html
+   tier="wide"
+   src="/assets/images/beer/gate.jpg"
+   alt="ツインピークスバイクパークの入口ゲート前の草地に置かれたペールエール缶"
+   width="1800"
+   height="1200"
+   widths="800,1600" %}
 
-  <!-- ラベルについて -->
-  <div class="section">
+<div class="beer-label-media">
+  {% include story/figure.html
+     tier="text"
+     src="/assets/images/beer/label.jpg"
+     alt="ジョー・スコットが描いたゲートと羊蹄山のラベルアートのクローズアップ"
+     width="1200"
+     height="1800"
+     widths="800,1600"
+     sizes="(min-width: 768px) 480px, 100vw" %}
+</div>
 
-    <div class="module-title-wrap">
-      <h2
-        class="module-title ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="200">ラベルについて</h2>
-      <div
-        class="features-desc ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="400">
-        <div class="section-lede"><span>ジョー・スコットが​描いたのは、​羊蹄山を​背に​した​ツインピークスバイクパークの​入口ゲート。​彼が​得意と​する​ナショナルパークポスター風の​スタイルです。​どちらも​実在します。​ゲートは​ヒラフの​上の​トレイルヘッドに​立っており、​羊蹄山は​言うまでもありません。​ジョーは​アーティストシリーズで​ツインピークスバッジも​デザインしています。​彼の​作品は​<a href="/ja/artist-series/#joe-scott">アーティストプロフィール</a>で​ご覧いただけます。</span></div>
-      </div>
-    </div>
+<h2>ビールに<wbr>ついて</h2>
 
-    <div class="media-narrow">
-      {% include image.html src="/assets/images/beer/gate.jpg" alt="ツインピークスバイクパークの入口ゲート前の草地に置かれたペールエール缶" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" loading="lazy" class="img-fluid-rounded" width="1800" height="1200" %}
-    </div>
+{% include story/table.html
+   tier="wide"
+   k1="スタイル" v1="ペールエール"
+   k2="アルコール分" v2="4.5%"
+   k3="IBU" v3="20"
+   k4="ホップ" v4="シトラ、モザイク、アマリロ（クライオ）"
+   k5="容量" v5="350ml缶"
+   k6="ベースビール" v6="A Greener World"
+   k7="価格" v7="¥658"
+   k8="発売日" v8="2026年8月6日（木）" %}
 
-    <div class="beer-label-media">
-      {% include image.html src="/assets/images/beer/label.jpg" alt="ジョー・スコットが描いたゲートと羊蹄山のラベルアートのクローズアップ" widths="800,1600" sizes="(min-width: 768px) 480px, 100vw" loading="lazy" class="img-fluid-rounded" width="1200" height="1800" %}
-    </div>
+<p>醸造は<wbr>ニセコ町の<wbr>ヨーテイブルーイング、<wbr>ラベルアートは<wbr>ジョー・スコット。<wbr>品目は<wbr>発泡酒<wbr>（麦芽使用率50％以上）です。<wbr>販売は<wbr>ヨーテイブルーイングの<a href="https://yotei.beer/" target="_blank" rel="noopener">オンラインショップ</a>にて。</p>
 
-  </div>
+<h2>売上の<wbr>使い道</h2>
 
-  <!-- ビールについて -->
-  <div class="section">
+<p>売上の<wbr>一部は<wbr>NAMBAに<wbr>寄付され、<wbr>トレイルの<wbr>整備に<wbr>使われます。<wbr>排水処理や<wbr>路面の<wbr>補修、<wbr>新しい<wbr>セクションの<wbr>造成など、<wbr>17kmの<wbr>シングルトラックを<wbr>走れる<wbr>状態に<wbr>保つための<wbr>地道な<wbr>作業に<wbr>充てられます。<wbr>トレイル維持費は<wbr>2024年の<wbr>約650万円から<wbr>2025年には<wbr>約1,080万円に<wbr>増えており、<wbr>ネットワークの<wbr>拡大とともに<wbr>年々<wbr>増えていきます。<a href="/ja/twin-peaks/">ツインピークス</a>は<wbr>無料で<wbr>走れる<wbr>パークです。<wbr>それを<wbr>支えているのが、<wbr>ヨーテイブルーイングのような<wbr>地元企業です。<wbr>詳しい<wbr>数字は<a href="/ja/impact/">実績ページ</a>を<wbr>ご覧ください。</p>
 
-    <div class="module-title-wrap">
-      <h2
-        class="module-title ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="200">ビールについて</h2>
-      <div
-        class="features-desc ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="400">
-        <ul class="section-list">
-          <li><strong>スタイル</strong>: ペールエール</li>
-          <li><strong>アルコール分</strong>: 4.5%</li>
-          <li><strong>IBU</strong>: 35</li>
-          <li><strong>ホップ</strong>: アマリロ、モザイク、シムコー</li>
-          <li><strong>容量</strong>: 350ml缶</li>
-          <li><strong>ベースビール</strong>: A Greener World</li>
-          <li><strong>醸造</strong>: ヨーテイブルーイング（ニセコ町）</li>
-          <li><strong>ラベルアート</strong>: ジョー・スコット</li>
-        </ul>
-      </div>
-      <div
-        class="features-desc ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="600">
-        <p>販売は​ヨーテイブルーイングの​<a href="https://yotei.beer/" target="_blank" rel="noopener">オンラインショップ</a>にて。</p>
-      </div>
-    </div>
+<!-- Figures from _data/impact.yml: visitors twin-peaks 2024 (7747) and 2025 (11500).
+     11500 / 7747 = 1.484, so +48% year on year, the figure /ja/impact/ and /ja/press/ both publish. -->
+{% include story/stats.html
+   n1="7,747" l1="2024年の<wbr>来場者数"
+   n2="11,500" l2="2025年の<wbr>来場者数"
+   n3="48" u3="%" l3="前年比の<wbr>伸び" %}
 
-  </div>
+{% include story/figure.html
+   tier="wide"
+   src="/assets/images/beer/riders.jpg"
+   alt="トレイルを走るライダーの手前、丸太に置かれたペールエール缶"
+   width="1800"
+   height="1200"
+   widths="800,1600" %}
 
-  <!-- 売上の使い道 -->
-  <div class="section">
+<h2>購入に<wbr>ついて</h2>
 
-    <div class="module-title-wrap">
-      <h2
-        class="module-title ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="200">売上の使い道</h2>
-      <div
-        class="features-desc ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="400">
-        <div class="section-lede"><span>売上の​一部は​NAMBAに​寄付され、​トレイルの​整備に​使われます。​排水処理や​路面の​補修、​新しい​セクションの​造成など、​17kmの​シングルトラックを​走れる​状態に​保つための​地道な​作業に​充てられます。​トレイル維持費は​2024年の​約650万円から​2025年には​約1,080万円に​増えており、​ネットワークの​拡大とともに​年々​増えていきます。​<a href="/ja/twin-peaks/">ツインピークス</a>は​無料で​走れる​パークです。​それを​支えているのが、​ヨーテイブルーイングのような​地元企業です。​詳しい​数字は​<a href="/ja/impact/">実績ページ</a>を​ご覧ください。</span></div>
-      </div>
-    </div>
+<p>ペールエールは<wbr>2026年8月6日<wbr>（木）より、<wbr>ヨーテイブルーイングの<a href="https://yotei.beer/" target="_blank" rel="noopener">オンラインショップ</a>で<wbr>発売されます。<wbr>毎週<wbr>木曜日は<wbr>全国<wbr>送料無料です。</p>
 
-    <div class="media-narrow">
-      {% include image.html src="/assets/images/beer/riders.jpg" alt="トレイルを走るライダーの手前、丸太に置かれたペールエール缶" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" loading="lazy" class="img-fluid-rounded" width="1800" height="1200" %}
-    </div>
+{% include story/figure.html
+   tier="wide"
+   src="/assets/images/beer/three-cans.jpg"
+   alt="日差しの下、丸太に並んだ3本のペールエール缶"
+   width="1800"
+   height="1200"
+   widths="800,1600" %}
 
-  </div>
+<div class="story-block story-cta">
+  <!-- ON-SALE SWAP: on/after 6 Aug 2026, replace the <span> below with:
+       <a class="btn btn-primary" href="https://yotei.beer/products/twin-peaks-bike-park-pale-ale" target="_blank" rel="noopener">ペールエールを購入</a> -->
+  <span class="btn btn-primary disabled" aria-disabled="true">8月6日発売</span>
+  <p class="story-smallprint">飲むのは<wbr>ライドの<wbr>後で。<wbr>日本では<wbr>自転車も<wbr>飲酒運転が<wbr>法律で<wbr>禁止されています。</p>
+</div>
 
-  <!-- 購入について -->
-  <div class="section">
+<h2>飲食店・酒販店の<wbr>皆様へ</h2>
 
-    <div class="module-title-wrap">
-      <h2
-        class="module-title ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="200">購入について</h2>
-      <div
-        class="features-desc ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="400">
-        <div class="section-lede"><span>ペールエールは​2026年8月1日より、​ヨーテイブルーイングの​<a href="https://yotei.beer/" target="_blank" rel="noopener">オンラインショップ</a>で​発売されます。​毎週​木曜日は​全国​送料無料。​6本単位での​販売です。</span></div>
-      </div>
-    </div>
+<p>バーや<wbr>レストラン、<wbr>酒販店での<wbr>本商品の<wbr>お取り<wbr>扱いを<wbr>ご検討いただけます。<wbr>卸取引は<wbr>ヨーテイブルーイングが<wbr>直接対応しており、<wbr>最小ロットは<wbr>24本、<wbr>混載も<wbr>可能です。<wbr>ニセコ町・倶知安町の<wbr>事業者様は<wbr>卸売業者の<wbr>エムポケットを<wbr>ご案内しています。</p>
 
-    <div class="media-narrow">
-      {% include image.html src="/assets/images/beer/three-cans.jpg" alt="日差しの下、丸太に並んだ3本のペールエール缶" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" loading="lazy" class="img-fluid-rounded" width="1800" height="1200" %}
-    </div>
+<div class="story-block story-cta">
+  <a class="btn btn-secondary" href="https://yotei.beer/pages/wholesale" target="_blank" rel="noopener">卸取引のご案内</a>
+</div>
 
-    <div class="module-title-wrap">
-      <div
-        class="t3-section action ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="600">
-        <!-- ON-SALE SWAP (see spec §7): on/after 1 Aug 2026, replace the <span> below with:
-             <a class="btn btn-primary" href="PRODUCT_URL_FROM_YOTEI_JA" target="_blank" rel="noopener">ペールエールを購入</a> -->
-        <span class="btn btn-primary disabled" aria-disabled="true">8月1日発売</span>
-      </div>
-      <div
-        class="features-desc ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="800">
-        <p class="beer-smallprint">飲むのは​ライドの​後で。​日本では​自転車も​飲酒運転が​法律で​禁止されています。</p>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- Related -->
-  <div class="section">
-
-    <div class="module-title-wrap">
-      <div
-        class="t3-section action ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="200">
-        <a class="btn btn-secondary" href="/ja/artist-series/">アーティストシリーズ</a>
-        <a class="btn btn-secondary" href="/ja/twin-peaks/" style="margin-left: 10px;">ツインピークスバイクパーク</a>
-        <a class="btn btn-secondary" href="/ja/partner/" style="margin-left: 10px;">協賛のご案内</a>
-      </div>
-    </div>
-
-  </div>
-
+<div class="story-block story-cta">
+  <a class="btn btn-secondary" href="/ja/artist-series/">アーティストシリーズ</a>
+  <a class="btn btn-secondary" href="/ja/twin-peaks/">ツインピークスバイクパーク</a>
+  <a class="btn btn-secondary" href="/ja/partner/">協賛のご案内</a>
 </div>
 
 <script type="application/ld+json">
@@ -228,10 +171,29 @@ og:
   "description": "ヨーテイブルーイングとNAMBAのコラボクラフトビール「ツインピークスバイクパーク ペールエール」。ラベルはジョー・スコット。売上の一部はニセコのトレイル整備に役立てられます。",
   "image": "https://namba.ngo/assets/images/og/beer.jpg",
   "url": "https://namba.ngo/ja/beer/",
+  "releaseDate": "2026-08-06",
   "brand": {
     "@type": "Organization",
     "name": "Yotei Brewing",
     "url": "https://yotei.beer"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://yotei.beer/products/twin-peaks-bike-park-pale-ale",
+    "price": 658,
+    "priceCurrency": "JPY",
+    {%- comment -%}
+      PreOrder, not InStock. Mirrors the EN page; see the note there for the
+      full argument. Yotei's shop already accepts orders, but general
+      availability is 2026-08-06, which is also `releaseDate` above, and
+      schema.org PreOrder means orderable before general availability.
+      On 6 August: change this to InStock and make the CTA a live buy link.
+    {%- endcomment -%}
+    "availability": "https://schema.org/PreOrder",
+    "seller": {
+      "@type": "Organization",
+      "name": "Yotei Brewing"
+    }
   }
 }
 </script>

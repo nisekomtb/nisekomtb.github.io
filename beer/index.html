@@ -1,4 +1,6 @@
 ---
+layout: story
+story_schema: none
 title: Twin Peaks Bike Park Pale Ale
 subtitle: A Yotei Brewing × NAMBA Collaboration
 description: "A collaboration pale ale from Yotei Brewing and NAMBA, with label art by Joe Scott. Brewed in Niseko. A portion of every can funds Twin Peaks trails."
@@ -9,23 +11,33 @@ og:
   image: /assets/images/og/beer.jpg
 ---
 <style>
-  .beer-quote {
-    max-width: 720px;
-    margin: 40px auto;
-  }
-  .beer-quote footer {
-    margin-top: 12px;
-    font-size: 0.9em;
-    color: var(--color-text-muted);
-  }
+  /* The label is a 1200x1800 portrait: at the 660px text tier it renders about
+     990px tall and takes over the page. `width: 100%` is load-bearing here.
+     Auto inline margins on a grid item suppress `justify-self: stretch`, so the
+     wrapper shrink-to-fits around an <img> sized at 100% of an indefinite
+     width: measured 0px wide, image 0px tall, before this line. */
   .beer-label-media {
+    width: 100%;
     max-width: 480px;
     margin: 0 auto;
   }
-  .beer-smallprint {
-    font-size: 0.85em;
+  /* Page-level for now. These three rules belong in a section 8 of
+     assets/css/story.css; that file is being edited elsewhere as this page
+     lands. Move them there and drop the `!important` flags with the move:
+     scoped as `.story .btn.disabled` the rule is (0,3,0) and needs none. */
+  .story .story-cta {
+    margin: 34px 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+  }
+  .story .story-cta .story-smallprint {
+    flex-basis: 100%;
+    font-size: 13px;
+    line-height: 1.6;
     color: var(--color-text-muted);
-    margin-top: 16px;
+    margin: 6px 0 0;
   }
   .btn.disabled,
   .btn[aria-disabled="true"] {
@@ -37,184 +49,132 @@ og:
   }
 </style>
 
-<div class="t3-section-wrap">
+<p class="story-lede">Twin Peaks Bike Park has its own beer. The Twin Peaks Bike Park Pale Ale is a
+Niseko craft beer brewed by Yotei Brewing, with label art by Joe Scott and a donation to the trails
+built into every can.</p>
 
-  <!-- Lede -->
-  <div class="section">
+{% include story/figure.html
+   tier="wide"
+   src="/assets/images/beer/forest-log.jpg"
+   alt="Twin Peaks Bike Park Pale Ale can on a mossy log in the Niseko forest"
+   width="1800"
+   height="1200"
+   widths="800,1600" %}
 
-    <div class="module-title-wrap">
-      <div
-        class="features-desc ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="200">
-        <div class="section-lede"><span>Twin Peaks Bike Park has its own beer. The Twin Peaks Bike Park Pale Ale is a Niseko craft beer brewed by Yotei Brewing, with label art by Joe Scott and a donation to the trails built into every can.</span></div>
-      </div>
-    </div>
+<h2>A beer for the bike park</h2>
 
-  </div>
+<p>Yotei Brewing has backed NAMBA as a sponsor for years, and their brewery sits in Niseko Town, a
+short ride from the park. When the idea of a collaboration beer came up, neither side needed much
+convincing. The base is A Greener World, Yotei's pale ale brewed partly with green energy, wearing
+a new label drawn for the park.</p>
 
-  <div class="media-narrow">
-    {% include image.html src="/assets/images/beer/forest-log.jpg" alt="Twin Peaks Bike Park Pale Ale can on a mossy log in the Niseko forest" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" loading="lazy" class="img-fluid-rounded" width="1800" height="1200" %}
-  </div>
+{% include story/quote.html
+   text="We have real respect for what NAMBA does: looking after the local environment while building somewhere people can enjoy the outdoors safely. We hope this collaboration introduces more people to their work, and shows what Niseko's green season has to offer."
+   name="Yotei Brewing"
+   role="from the launch press release" %}
 
-  <!-- A beer for the bike park -->
-  <div class="section">
+<h2>The label</h2>
 
-    <div class="module-title-wrap">
-      <h2
-        class="module-title ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="200">A beer for the bike park</h2>
-      <div
-        class="features-desc ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="400">
-        <div class="section-lede"><span>Yotei Brewing has backed NAMBA as a sponsor for years, and their brewery sits in Niseko Town, a short ride from the park. When the idea of a collaboration beer came up, neither side needed much convincing. The base is A Greener World, Yotei's pale ale brewed partly with green energy, wearing a new label drawn for the park.</span></div>
-      </div>
-      <blockquote class="beer-quote ja-animate" data-animation="move-from-bottom" data-delay="600">
-        <p>Niseko's mountain bike scene is growing fast, and Swiss-designed trails only get built when local businesses back them. Yotei Brewing already supports NAMBA, so a beer together was an easy yes, and Joe Scott's label makes it unmistakably Niseko. Every can sold goes straight back into the dirt, and into whatever we build next.</p>
-        <footer>Tom Mortiboy, Co-founder and Head of Marketing &amp; Communication, NAMBA</footer>
-      </blockquote>
-    </div>
+<p>Joe Scott drew the label: the Twin Peaks entrance gate with Mount Yotei rising behind it, in the
+national park poster style he works in. Both are real. The gate stands at the trailhead above
+Hirafu, and the mountain needs no introduction. Joe also designed the Twin Peaks badge in our
+<a href="/artist-series/#joe-scott">Artist Series</a>, where you can see more of his work.</p>
 
-  </div>
+{% include story/figure.html
+   tier="wide"
+   src="/assets/images/beer/gate.jpg"
+   alt="The Pale Ale can in the grass in front of the real Twin Peaks Bike Park entrance gate"
+   width="1800"
+   height="1200"
+   widths="800,1600" %}
 
-  <!-- The label -->
-  <div class="section">
+<div class="beer-label-media">
+  {% include story/figure.html
+     tier="text"
+     src="/assets/images/beer/label.jpg"
+     alt="Close-up of the Twin Peaks Bike Park Pale Ale label, showing Joe Scott's artwork of the park gate and Mount Yotei"
+     width="1200"
+     height="1800"
+     widths="800,1600"
+     sizes="(min-width: 768px) 480px, 100vw" %}
+</div>
 
-    <div class="module-title-wrap">
-      <h2
-        class="module-title ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="200">The label</h2>
-      <div
-        class="features-desc ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="400">
-        <div class="section-lede"><span>Joe Scott drew the label: the Twin Peaks entrance gate with Mount Yotei rising behind it, in the national park poster style he works in. Both are real. The gate stands at the trailhead above Hirafu, and the mountain needs no introduction. Joe also designed the Twin Peaks badge in our <a href="/artist-series/#joe-scott">Artist Series</a>, where you can see more of his work.</span></div>
-      </div>
-    </div>
+<h2>The beer itself</h2>
 
-    <div class="media-narrow">
-      {% include image.html src="/assets/images/beer/gate.jpg" alt="The Pale Ale can in the grass in front of the real Twin Peaks Bike Park entrance gate" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" loading="lazy" class="img-fluid-rounded" width="1800" height="1200" %}
-    </div>
+{% include story/table.html
+   tier="wide"
+   k1="Style" v1="Pale Ale"
+   k2="ABV" v2="4.5%"
+   k3="IBU" v3="20"
+   k4="Hops" v4="Citra, Mosaic, Amarillo (Cryo)"
+   k5="Volume" v5="350ml can"
+   k6="Base beer" v6="A Greener World"
+   k7="Price" v7="¥658"
+   k8="Release" v8="Thursday 6 August 2026" %}
 
-    <div class="beer-label-media">
-      {% include image.html src="/assets/images/beer/label.jpg" alt="Close-up of the Twin Peaks Bike Park Pale Ale label, showing Joe Scott's artwork of the park gate and Mount Yotei" widths="800,1600" sizes="(min-width: 768px) 480px, 100vw" loading="lazy" class="img-fluid-rounded" width="1200" height="1800" %}
-    </div>
+<p>Yotei Brewing brew it at their Niseko Town brewery, and Joe Scott drew the label. In Japan it is
+classified as happoshu, brewed with 50% or more malt. It's sold through the
+<a href="https://yotei.beer/en/" target="_blank" rel="noopener">Yotei Brewing online shop</a>.</p>
 
-  </div>
+<h2>Where the money goes</h2>
 
-  <!-- The beer itself -->
-  <div class="section">
+<p>A portion of every sale is donated to NAMBA. That money buys trail work: drainage, resurfacing,
+new features, and the unglamorous digging that keeps 17km+ of singletrack running. Maintenance cost
+¥6.5 million in 2024 and ¥10.8 million in 2025, and it climbs as the network grows.
+<a href="/twin-peaks/">Twin Peaks</a> is free to ride, and local businesses like Yotei are a big
+part of why it can stay that way. The full numbers are on our <a href="/impact/">impact page</a>.</p>
 
-    <div class="module-title-wrap">
-      <h2
-        class="module-title ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="200">The beer itself</h2>
-      <div
-        class="features-desc ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="400">
-        <ul class="section-list">
-          <li><strong>Style</strong>: Pale Ale</li>
-          <li><strong>ABV</strong>: 4.5%</li>
-          <li><strong>IBU</strong>: 35</li>
-          <li><strong>Hops</strong>: Amarillo, Mosaic, Simcoe</li>
-          <li><strong>Volume</strong>: 350ml can</li>
-          <li><strong>Base beer</strong>: A Greener World</li>
-          <li><strong>Brewed by</strong>: Yotei Brewing, Niseko</li>
-          <li><strong>Label art</strong>: Joe Scott</li>
-        </ul>
-      </div>
-      <div
-        class="features-desc ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="600">
-        <p>It's sold through the <a href="https://yotei.beer/en/" target="_blank" rel="noopener">Yotei Brewing online shop</a>.</p>
-      </div>
-    </div>
+<!-- Figures from _data/impact.yml: visitors twin-peaks 2024 (7747) and 2025 (11500).
+     11500 / 7747 = 1.484, so +48% year on year, the figure /impact/ and /press/ both publish. -->
+{% include story/stats.html
+   n1="7,747" l1="Riders in 2024"
+   n2="11,500" l2="Riders in 2025"
+   n3="48" u3="%" l3="Growth in one season" %}
 
-  </div>
+{% include story/figure.html
+   tier="wide"
+   src="/assets/images/beer/riders.jpg"
+   alt="A can of Twin Peaks Bike Park Pale Ale resting on a log as two riders pass on the trail behind"
+   width="1800"
+   height="1200"
+   widths="800,1600" %}
 
-  <!-- Where the money goes -->
-  <div class="section">
+<h2>Get one</h2>
 
-    <div class="module-title-wrap">
-      <h2
-        class="module-title ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="200">Where the money goes</h2>
-      <div
-        class="features-desc ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="400">
-        <div class="section-lede"><span>A portion of every sale is donated to NAMBA. That money buys trail work: drainage, resurfacing, new features, and the unglamorous digging that keeps 17km+ of singletrack running. Maintenance cost ¥6.5 million in 2024 and ¥10.8 million in 2025, and it climbs as the network grows. <a href="/twin-peaks/">Twin Peaks</a> is free to ride, and local businesses like Yotei are a big part of why it can stay that way. The full numbers are on our <a href="/impact/">impact page</a>.</span></div>
-      </div>
-    </div>
+<p>The Pale Ale goes on sale on Thursday 6 August 2026 at the
+<a href="https://yotei.beer/en/" target="_blank" rel="noopener">Yotei Brewing online shop</a>. Yotei
+ships nationwide, free on Thursdays.</p>
 
-    <div class="media-narrow">
-      {% include image.html src="/assets/images/beer/riders.jpg" alt="A can of Twin Peaks Bike Park Pale Ale resting on a log as two riders pass on the trail behind" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" loading="lazy" class="img-fluid-rounded" width="1800" height="1200" %}
-    </div>
+{% include story/figure.html
+   tier="wide"
+   src="/assets/images/beer/three-cans.jpg"
+   alt="Three cans of Twin Peaks Bike Park Pale Ale lined up on a sunlit log"
+   width="1800"
+   height="1200"
+   widths="800,1600" %}
 
-  </div>
+<div class="story-block story-cta">
+  <!-- ON-SALE SWAP: on/after 6 Aug 2026, replace the <span> below with:
+       <a class="btn btn-primary" href="https://yotei.beer/en/products/twin-peaks-bike-park-pale-ale" target="_blank" rel="noopener">Buy the Pale Ale</a> -->
+  <span class="btn btn-primary disabled" aria-disabled="true">Available 6 August</span>
+  <p class="story-smallprint">One for after the ride. Riding under the influence is illegal in
+  Japan, and that includes bicycles.</p>
+</div>
 
-  <!-- Get one -->
-  <div class="section">
+<h2>Stock it in your bar or restaurant</h2>
 
-    <div class="module-title-wrap">
-      <h2
-        class="module-title ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="200">Get one</h2>
-      <div
-        class="features-desc ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="400">
-        <div class="section-lede"><span>The Pale Ale goes on sale on 1 August 2026 at the <a href="https://yotei.beer/en/" target="_blank" rel="noopener">Yotei Brewing online shop</a>. Yotei ships nationwide, free on Thursdays, and cans come in packs of six.</span></div>
-      </div>
-    </div>
+<p>Running a bar, restaurant or bottle shop and want the Pale Ale on your list? Yotei Brewing handle
+wholesale directly, with a minimum order of 24 cans and mixed cases welcome. If you are in Niseko or
+Kutchan they will point you to their wholesaler, M Pocket.</p>
 
-    <div class="media-narrow">
-      {% include image.html src="/assets/images/beer/three-cans.jpg" alt="Three cans of Twin Peaks Bike Park Pale Ale lined up on a sunlit log" widths="800,1600" sizes="(min-width: 1200px) 1200px, 100vw" loading="lazy" class="img-fluid-rounded" width="1800" height="1200" %}
-    </div>
+<div class="story-block story-cta">
+  <a class="btn btn-secondary" href="https://yotei.beer/en/pages/wholesale" target="_blank" rel="noopener">Yotei Brewing trade enquiries</a>
+</div>
 
-    <div class="module-title-wrap">
-      <div
-        class="t3-section action ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="600">
-        <!-- ON-SALE SWAP (see spec §7): on/after 1 Aug 2026, replace the <span> below with:
-             <a class="btn btn-primary" href="PRODUCT_URL_FROM_YOTEI" target="_blank" rel="noopener">Buy the Pale Ale</a> -->
-        <span class="btn btn-primary disabled" aria-disabled="true">Available 1 August</span>
-      </div>
-      <div
-        class="features-desc ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="800">
-        <p class="beer-smallprint">One for after the ride. Riding under the influence is illegal in Japan, and that includes bicycles.</p>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- Related -->
-  <div class="section">
-
-    <div class="module-title-wrap">
-      <div
-        class="t3-section action ja-animate"
-        data-animation="move-from-bottom"
-        data-delay="200">
-        <a class="btn btn-secondary" href="/artist-series/">Artist Series</a>
-        <a class="btn btn-secondary" href="/twin-peaks/" style="margin-left: 10px;">Twin Peaks Bike Park</a>
-        <a class="btn btn-secondary" href="/partner/" style="margin-left: 10px;">Partner with Us</a>
-      </div>
-    </div>
-
-  </div>
-
+<div class="story-block story-cta">
+  <a class="btn btn-secondary" href="/artist-series/">Artist Series</a>
+  <a class="btn btn-secondary" href="/twin-peaks/">Twin Peaks Bike Park</a>
+  <a class="btn btn-secondary" href="/partner/">Partner with Us</a>
 </div>
 
 <script type="application/ld+json">
@@ -226,10 +186,32 @@ og:
   "description": "A collaboration pale ale from Yotei Brewing and NAMBA, with label art by Joe Scott. Brewed in Niseko. A portion of every can funds Twin Peaks trails.",
   "image": "https://namba.ngo/assets/images/og/beer.jpg",
   "url": "https://namba.ngo/beer/",
+  "releaseDate": "2026-08-06",
   "brand": {
     "@type": "Organization",
     "name": "Yotei Brewing",
     "url": "https://yotei.beer"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://yotei.beer/en/products/twin-peaks-bike-park-pale-ale",
+    "price": 658,
+    "priceCurrency": "JPY",
+    {%- comment -%}
+      PreOrder, not InStock, and the two are not interchangeable here. Yotei's
+      shop already shows an active "Add to Cart" at this price, but the press
+      release puts general availability at 6 August 2026, which is also the
+      `releaseDate` above. schema.org defines PreOrder as orderable and
+      deliverable before general availability, which is exactly this state.
+      Declaring InStock alongside a future releaseDate contradicts itself, and
+      contradicts our own CTA, which is still the disabled "Available 6 August".
+      On 6 August: change this to InStock and make the CTA a live buy link.
+    {%- endcomment -%}
+    "availability": "https://schema.org/PreOrder",
+    "seller": {
+      "@type": "Organization",
+      "name": "Yotei Brewing"
+    }
   }
 }
 </script>
