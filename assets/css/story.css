@@ -436,6 +436,39 @@
 .story .story-gallery > * { min-width: 0; }
 .story .story-gallery > .story-caption { grid-column: 1 / -1; }
 
+/* The lightbox link wrapping each cell. Scoped to the link's own class and
+   never written as `.story a` (convention 2): a blanket link rule in here beats
+   Bootstrap's `.btn` and repaints every button on the page.
+
+   `display: block` on both the link and the <picture>: a grid item is blockified
+   anyway, but <picture> has no UA display rule, so it is inline while the <img>
+   inside it is block. Declaring both keeps the cell exactly the image's height
+   instead of relying on how the block-in-inline split resolves.
+
+   `cursor: zoom-in` plus a small opacity lift is the whole affordance. No
+   transform: the cell is already cropped to 3:2 and scaling inside it would crop
+   the shot further on hover, which is a worse trade than it looks.
+
+   THE FOCUS RING IS LOAD-BEARING, not decoration. template.css:154 sets
+   `a:focus { outline: none }` sitewide at (0,1,1), and because every
+   `:focus-visible` is also a `:focus`, that rule removes the UA keyboard ring
+   too. Without the declaration below these links are reachable by Tab and give
+   no visible indication, a WCAG 2.4.7 failure that this file introduces the
+   moment a gallery image becomes a link. (0,3,0) settles it.
+   `outline-offset` matters as much as the colour: it lifts the ring off the
+   photograph and into the 10px grid gap, where gold measures 7.86:1 on the page
+   background (convention 14) instead of whatever the photograph happens to be
+   at that edge. */
+.story .story-gallery > .story-gallery-link { display: block; cursor: zoom-in; }
+.story .story-gallery > .story-gallery-link > picture { display: block; }
+.story .story-gallery > .story-gallery-link img { transition: opacity 0.18s ease; }
+.story .story-gallery > .story-gallery-link:hover img,
+.story .story-gallery > .story-gallery-link:focus-visible img { opacity: 0.85; }
+.story .story-gallery > .story-gallery-link:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
 @media (max-width: 639px) {
   .story .story-gallery.is-2,
   .story .story-gallery.is-3,
