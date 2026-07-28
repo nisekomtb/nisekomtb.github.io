@@ -75,6 +75,15 @@
        `.stat-label` are already used by /impact/ and /partner/ with a
        different design, so an unprefixed name here becomes a live collision
        the moment one of those pages adopts this layout. See section 5.
+   14. Three colours, three jobs. Rust `--color-primary` is reserved for primary
+       CTAs and must not appear in this file at all: it measures 3.37:1 on the
+       page background and 3.07:1 on `--color-bg-panel`, both under the 4.5:1
+       minimum for normal-size text, so rust as story text was an accessibility
+       defect and not only an emphasis problem. Gold `--color-accent` carries
+       editorial emphasis and data (7.86:1 and 7.16:1). Green
+       `--color-secondary` carries structural markers only, and only on the page
+       background: it is 4.70:1 there but 4.28:1 on `--color-bg-panel`, so it
+       may never carry normal-size text on a panel.
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -293,14 +302,20 @@
    (0,2,1) and scoped to `.item-page` / `.article-content` / `.event-content`,
    none of which wrap a story, plus `#t3-content > p > a` at (1,0,2), which
    needs an ID ancestor that story pages do not render. Raising the floor can
-   only win more, never less, so the collapse is safe in both directions. */
+   only win more, never less, so the collapse is safe in both directions.
+
+   NO RESTING `color` HERE, DELIBERATELY (convention 14). The link takes
+   #ffffff from `a` in bs3-compat.css:147, which is what every other prose page
+   on the site renders; template.css:3247-3266 sets underline only for the same
+   reason. Measured on a story page, a prose link inside a <p> computes
+   rgb(255, 255, 255), not the inherited stone grey. The hover DOES override
+   `a:hover` in bs3-compat.css:152, which is rust: (0,3,1) beats (0,0,1). */
 .story :is(p, li, td, th, blockquote, figcaption, .story-caption, .story-prose) > a:not(.btn) {
-  color: var(--color-primary);
   text-decoration: underline;
   text-underline-offset: 2px;
 }
 .story :is(p, li, td, th, blockquote, figcaption, .story-caption, .story-prose) > a:not(.btn):hover {
-  color: var(--color-primary-hover);
+  color: var(--color-accent);
 }
 
 /* Backstop, not a licence. Grid items are blockified, so an inline-block
@@ -814,7 +829,7 @@
   line-height: inherit;
   color: inherit;
 }
-/* The rust rule and its padding sit on the FIGURE, not the blockquote, so the
+/* The green rule and its padding sit on the FIGURE, not the blockquote, so the
    quote and its attribution are offset together and cannot drift apart. An
    earlier version put them on the blockquote and indented the attribution with
    a matching `padding-left: 22px`, which worked (measured 0px delta) but
@@ -826,7 +841,7 @@
    the end of the blockquote, 131.27px against 81.59px, which reads as marking
    the whole quote including who said it. */
 .story .story-quote.is-plain figure {
-  border-left: 2px solid var(--color-primary);
+  border-left: 2px solid var(--color-secondary);
   padding-left: 20px;
 }
 
@@ -856,7 +871,7 @@
    `word-break: normal` on the chapter label does not apply. */
 .story .story-quote .story-quote-attr .story-quote-name {
   display: block;
-  color: var(--color-primary);
+  color: var(--color-accent);
   font-weight: 600;
 }
 
@@ -884,7 +899,7 @@
   line-height: 1.4;
 }
 .story .story-chapter .story-chapter-num {
-  color: var(--color-primary);
+  color: var(--color-secondary);
   font-size: 18px;
   font-weight: 700;
   flex: none;
@@ -1078,7 +1093,7 @@
   font-size: 12px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-primary);
+  color: var(--color-accent);
   margin: 4px 0 5px;
 }
 /* A <div>, not a <p>. As a <p> this line was the only thing in section 7 that
