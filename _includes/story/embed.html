@@ -1,0 +1,20 @@
+{%- comment -%}
+  Responsive 16:9 iframe for YouTube, Trailforks, or any embed.
+
+  Params:
+    url    (required): full embed URL (for YouTube use the /embed/ form)
+    title  (required): accessible name for the iframe, localised
+    tier:    wide | full. Default wide.
+    caption, credit: optional
+{%- endcomment -%}
+{%- assign tier = include.tier | default: "wide" -%}
+<div class="story-embed story-{{ tier }}">
+  <div class="story-embed-frame">
+    <iframe src="{{ include.url }}" title="{{ include.title }}" loading="lazy" allowfullscreen
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+  {%- if include.caption or include.credit %}
+  <p class="story-caption">{{ include.caption }}{% if include.credit %}<span class="story-credit">{{ include.credit }}</span>{% endif %}</p>
+  {%- endif %}
+</div>

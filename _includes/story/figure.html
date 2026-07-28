@@ -1,0 +1,28 @@
+{%- comment -%}
+  One image at a width tier, with optional caption and credit.
+
+  Params:
+    src      (required): /assets/images/... .jpg
+    alt      (required): localised alt text
+    tier:      text | wide | full. Default wide.
+    caption:   localised caption
+    credit:    photographer or source
+    widths:    passed through to image.html, e.g. "800,1600"
+    sizes:     passed through to image.html
+    width, height: natural dimensions, for aspect-ratio reservation
+    loading:   default lazy; use eager only above the fold
+{%- endcomment -%}
+{%- assign tier = include.tier | default: "wide" -%}
+<figure class="story-figure story-{{ tier }}">
+  {% include image.html
+     src=include.src
+     alt=include.alt
+     widths=include.widths
+     sizes=include.sizes
+     width=include.width
+     height=include.height
+     loading=include.loading %}
+  {%- if include.caption or include.credit %}
+  <figcaption class="story-caption">{{ include.caption }}{% if include.credit %}<span class="story-credit">{{ include.credit }}</span>{% endif %}</figcaption>
+  {%- endif %}
+</figure>

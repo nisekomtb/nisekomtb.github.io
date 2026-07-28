@@ -1,0 +1,35 @@
+{%- comment -%}
+  2-6 images in a grid. Layout by count: 2 side by side, 3 across, 4-6 wrap at
+  3 per row. Single column below 640px. One caption for the group.
+
+  Params:
+    src1..src6 (src1, src2 required): image paths
+    alt1..alt6: localised alt text, one per image
+    tier:            wide | full. Default wide.
+    caption, credit: for the group
+{%- endcomment -%}
+{%- assign tier = include.tier | default: "wide" -%}
+{%- assign srcs = "" | split: "" -%}
+{%- if include.src1 %}{% assign srcs = srcs | push: include.src1 %}{% endif -%}
+{%- if include.src2 %}{% assign srcs = srcs | push: include.src2 %}{% endif -%}
+{%- if include.src3 %}{% assign srcs = srcs | push: include.src3 %}{% endif -%}
+{%- if include.src4 %}{% assign srcs = srcs | push: include.src4 %}{% endif -%}
+{%- if include.src5 %}{% assign srcs = srcs | push: include.src5 %}{% endif -%}
+{%- if include.src6 %}{% assign srcs = srcs | push: include.src6 %}{% endif -%}
+{%- assign alts = "" | split: "" -%}
+{%- assign alts = alts | push: include.alt1 | push: include.alt2 | push: include.alt3 | push: include.alt4 | push: include.alt5 | push: include.alt6 -%}
+<div class="story-gallery is-{{ srcs.size }} story-{{ tier }}">
+  {%- comment -%}
+    The alt is pulled into its own variable first. Jekyll's include tag
+    validates each param value against `[\w.-]+` or a quoted string, so a
+    bracket subscript written inline (`alt=alts[forloop.index0]`) is a hard
+    build error, not a silent miss.
+  {%- endcomment -%}
+  {%- for s in srcs %}
+  {%- assign a = alts[forloop.index0] -%}
+  {% include image.html src=s alt=a %}
+  {%- endfor %}
+  {%- if include.caption or include.credit %}
+  <p class="story-caption">{{ include.caption }}{% if include.credit %}<span class="story-credit">{{ include.credit }}</span>{% endif %}</p>
+  {%- endif %}
+</div>

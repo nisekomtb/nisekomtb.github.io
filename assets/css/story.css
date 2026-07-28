@@ -160,14 +160,19 @@
    these declarations straight back up.
 
    ANY NEW BLOCK THAT CONTAINS PROSE MUST ADD ITS CONTAINER HERE, or links
-   inside it will render as undifferentiated body text. */
+   inside it will render as undifferentiated body text.
+
+   `.story-split-text` is listed for that reason. Its content is an
+   author-supplied HTML string, so a bare `<a>` with no wrapping `<p>` is a
+   realistic call. Everything else in the list is a leaf text element. */
 .story p > a:not(.btn),
 .story li > a:not(.btn),
 .story td > a:not(.btn),
 .story th > a:not(.btn),
 .story blockquote > a:not(.btn),
 .story figcaption > a:not(.btn),
-.story .story-caption > a:not(.btn) {
+.story .story-caption > a:not(.btn),
+.story .story-split-text > a:not(.btn) {
   color: var(--color-primary);
   text-decoration: underline;
   text-underline-offset: 2px;
@@ -178,7 +183,8 @@
 .story th > a:not(.btn):hover,
 .story blockquote > a:not(.btn):hover,
 .story figcaption > a:not(.btn):hover,
-.story .story-caption > a:not(.btn):hover {
+.story .story-caption > a:not(.btn):hover,
+.story .story-split-text > a:not(.btn):hover {
   color: var(--color-primary-hover);
 }
 
@@ -230,3 +236,105 @@
 .story .story-full > .story-caption { padding: 0 20px; }
 
 :lang(ja) .story .story-caption { line-height: 1.7; }
+
+/* --------------------------------------------------------------------------
+   4. Media blocks
+   figure, gallery, split, embed. Selectors are scoped `.story .story-x`
+   deliberately. See the conventions in the file header before shortening
+   anything here.
+
+   Margins are stated in em against `.story`'s own inherited 14px, not the
+   17px prose, so 2.2em computes to 30.8px and 2.4em to 33.6px. That is
+   intentional: block spacing is its own scale, independent of the prose
+   measure. It is the same resolution trap section 1 documents for `ch`, so
+   do not read these values as multiples of the prose size.
+   -------------------------------------------------------------------------- */
+.story .story-figure { margin: 2.2em 0; }
+.story .story-figure img,
+.story .story-gallery img,
+.story .story-split img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 3px;
+}
+/* Full-bleed images square off; a rounded corner at the viewport edge reads
+   as a mistake. */
+.story .story-figure.story-full img { border-radius: 0; }
+
+.story .story-gallery {
+  margin: 2.2em 0;
+  display: grid;
+  gap: 10px;
+}
+.story .story-gallery.is-2 { grid-template-columns: repeat(2, 1fr); }
+.story .story-gallery.is-3,
+.story .story-gallery.is-4,
+.story .story-gallery.is-5,
+.story .story-gallery.is-6 { grid-template-columns: repeat(3, 1fr); }
+/* Nested grid items also default to min-width: auto, so they need the same
+   guard the top-level grid children get in section 1. */
+.story .story-gallery > * { min-width: 0; }
+.story .story-gallery > .story-caption { grid-column: 1 / -1; }
+
+@media (max-width: 639px) {
+  .story .story-gallery.is-2,
+  .story .story-gallery.is-3,
+  .story .story-gallery.is-4,
+  .story .story-gallery.is-5,
+  .story .story-gallery.is-6 { grid-template-columns: 1fr; }
+}
+
+.story .story-split {
+  margin: 2.4em 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: center;
+}
+.story .story-split > * { min-width: 0; }
+.story .story-split .story-split-text > :first-child { margin-top: 0; }
+.story .story-split .story-split-text > :last-child  { margin-bottom: 0; }
+/* Media first in source order so the mobile stack leads with the image. */
+.story .story-split.is-text-first .story-split-media { order: 2; }
+
+@media (max-width: 767px) {
+  .story .story-split { grid-template-columns: 1fr; gap: 18px; }
+  .story .story-split.is-text-first .story-split-media { order: 0; }
+}
+
+.story .story-embed { margin: 2.2em 0; }
+.story .story-embed .story-embed-frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: var(--color-bg-panel);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.story .story-embed .story-embed-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.story .story-embed.story-full .story-embed-frame { border-radius: 0; }
+
+/* Section 2's `.story > :first-child { margin-top: 0 }` and its `:last-child`
+   twin are both (0,2,0), exactly the specificity of the block selectors above,
+   so source order decides and the block margins win. Measured before this
+   rule existed: a story opening on a full-bleed figure carried 30.8px above
+   it, and one closing on a figure carried 30.8px below, on top of the 80px
+   `.story` padding. Re-asserting at (0,3,0) makes the edge reset hold no
+   matter where a block rule sits in the file.
+
+   ANY BLOCK ADDED IN A LATER SECTION MUST BE LISTED HERE TOO, or it will
+   re-open a gap at the top or bottom of the story. */
+.story > .story-figure:first-child,
+.story > .story-gallery:first-child,
+.story > .story-split:first-child,
+.story > .story-embed:first-child { margin-top: 0; }
+.story > .story-figure:last-child,
+.story > .story-gallery:last-child,
+.story > .story-split:last-child,
+.story > .story-embed:last-child { margin-bottom: 0; }

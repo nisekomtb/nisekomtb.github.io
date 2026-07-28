@@ -1,0 +1,25 @@
+{%- comment -%}
+  Text beside media. Always stacks image-first on mobile.
+
+  Params:
+    src, alt (required): the image
+    text     (required): HTML string for the text side, already tokenised on
+                         JA pages
+    heading:  optional h3 above the text
+    position: "media-right" (default) | "media-left"
+    caption, credit: optional, under the image
+    width, height:   natural dimensions
+{%- endcomment -%}
+{%- assign pos = include.position | default: "media-right" -%}
+<div class="story-split story-wide{% if pos == 'media-right' %} is-text-first{% endif %}">
+  <div class="story-split-media">
+    {% include image.html src=include.src alt=include.alt width=include.width height=include.height %}
+    {%- if include.caption or include.credit %}
+    <p class="story-caption">{{ include.caption }}{% if include.credit %}<span class="story-credit">{{ include.credit }}</span>{% endif %}</p>
+    {%- endif %}
+  </div>
+  <div class="story-split-text">
+    {%- if include.heading %}<h3>{{ include.heading }}</h3>{% endif %}
+    {{ include.text }}
+  </div>
+</div>
