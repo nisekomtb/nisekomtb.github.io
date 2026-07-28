@@ -115,9 +115,9 @@ big part of why it can stay that way. The full numbers are on our <a href="/impa
 
 <h2>Get one</h2>
 
-<p>The Pale Ale is up on the
-<a href="https://yotei.beer/en/" target="_blank" rel="noopener">Yotei Brewing online shop</a> now,
-ahead of its official launch on Thursday 6 August 2026. They ship nationwide, free on Thursdays.</p>
+<p>The Pale Ale goes on sale on Thursday 6 August 2026 at the
+<a href="https://yotei.beer/en/" target="_blank" rel="noopener">Yotei Brewing online shop</a>. They
+ship nationwide, free on Thursdays.</p>
 
 {% include story/figure.html
    tier="wide"
@@ -128,7 +128,12 @@ ahead of its official launch on Thursday 6 August 2026. They ship nationwide, fr
    widths="800,1600" %}
 
 <div class="story-block story-cta">
-  <a class="btn btn-primary" href="https://yotei.beer/en/products/twin-peaks-bike-park-pale-ale" target="_blank" rel="noopener">Order the Pale Ale</a>
+  <!-- ON-SALE SWAP: Yotei Brewing's product page resolves and shows an Add to Cart
+       already, but it is not considered ready to send readers to, so this stays a
+       disabled span. On launch, replace it with:
+       <a class="btn btn-primary" href="https://yotei.beer/en/products/twin-peaks-bike-park-pale-ale" target="_blank" rel="noopener">Order the Pale Ale</a>
+       and change the offers availability below from PreOrder to InStock. -->
+  <span class="btn btn-primary disabled" aria-disabled="true">Available 6 August</span>
   <p class="story-smallprint">One for after the ride. Riding under the influence is illegal in
   Japan, and that includes bicycles.</p>
 </div>

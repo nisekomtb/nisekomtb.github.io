@@ -1201,13 +1201,31 @@
    nav line are separated by the same distance whichever order they appear
    in.
 
-   NO DISABLED-BUTTON RULE HERE, deliberately. /beer/ carried one for its
-   pre-launch CTA and it went when that CTA went live. `_layouts/job.html`
-   and `_layouts/event.html` each define their own; if a story ever needs
-   one, take it from there rather than adding a third variant, and note that
-   a `#888` text colour would be this file's third raw colour literal, which
-   convention 12 calls a bug. Use a token.
+   THE DISABLED CTA is for a story published before the thing it links to is
+   ready, which /beer/ needed twice: once before launch, then again after the
+   partner's product page turned out not to be ready to send readers to. That
+   is why it lives here rather than in the page.
+
+   `--color-text-muted`, NOT the `#888` the page version used: a third raw
+   colour literal in this file is a bug by convention 12. The lift from #888
+   to #a0a0a0 is fine because WCAG 1.4.3 exempts inactive controls from the
+   contrast minimum, and the greyed background plus `not-allowed` carry the
+   state anyway.
+
+   NO `!important`, unlike the page version it replaces. Scoped under `.story`
+   the selector is (0,3,0) against Bootstrap's `.btn-primary` at (0,1,0), so
+   it wins on specificity alone. `_layouts/job.html` and `_layouts/event.html`
+   still carry their own unscoped copies with the flags; those are outside the
+   story layout and were left alone.
    -------------------------------------------------------------------------- */
+.story .btn.disabled,
+.story .btn[aria-disabled="true"] {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-text-muted);
+  border-color: transparent;
+  pointer-events: none;
+  cursor: not-allowed;
+}
 .story .story-cta {
   margin: 34px 0 0;
   display: flex;
