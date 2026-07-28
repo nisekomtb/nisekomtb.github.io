@@ -1,0 +1,1251 @@
+/* ==========================================================================
+   Story layout: namba.ngo
+   Loaded only on pages with `layout: story` (see _layouts/base.html).
+   Spec: _docs/superpowers/specs/2026-07-28-story-layout-design.md
+
+   Conventions this file establishes, binding on every block added later.
+   THIS LIST IS THE SINGLE SOURCE OF TRUTH for "(convention N)" citations in
+   this file and in _includes/story/*.html. The plan's prose expands on these
+   but does not number them; if the two ever disagree, this list wins. Adding a
+   convention means appending it, never renumbering, because the numbers are
+   cited from elsewhere.
+
+    1. No bare single-class utility selectors. `.story p` is (0,1,1) and
+       silently outranks a (0,1,0) rule that shares a property with it, so
+       every utility is scoped as `.story .story-x`, which is (0,2,0).
+       Know the limit: (0,2,0) beats `.story p` but does NOT beat
+       `:lang(ja) .story p` at (0,2,1), so a JA prose declaration still wins
+       over a block utility.
+       THE MECHANICAL RULE, easier to apply than the arithmetic: a `:lang(ja)`
+       selector whose last compound is an ELEMENT NAME lands at (0,2,1) and
+       beats every block utility in this file, present and future. One whose
+       last compound is a CLASS lands at (0,3,0) or higher and cannot. This
+       file has exactly two of the dangerous kind, both in section 2
+       (`:lang(ja) .story p, ul, ol` and `:lang(ja) .story h2, h3`), and both
+       have already silently overridden a block: the lede's line-height (fixed
+       in section 2 with a class-tailed override) and the chapter marker's
+       (accepted, 1.2px, documented in section 6). Before adding a `:lang(ja)`
+       rule, check which kind it is.
+    2. Never style `a` broadly in here. A blanket `.story a` beats Bootstrap's
+       `.btn` and repaints every button. Link styling is scoped to prose
+       containers instead.
+    3. Buttons are wrapped, never direct children. Grid items are blockified,
+       so a bare `.btn` in the grid stretches to the full track.
+    4. Grid items do not collapse margins. Vertical gaps are the sum of the
+       upper sibling's margin-bottom and the lower one's margin-top.
+    5. Every direct child needs `min-width: 0`, or wide content forces
+       horizontal page scroll.
+    6. `min-width: 0` and `overflow-wrap: break-word` are INDEPENDENT. Neither
+       implies the other: `overflow-wrap` does not reduce an element's
+       min-content contribution (only `overflow-wrap: anywhere` or
+       `word-break: break-all` do), so the box still refuses to shrink without
+       `min-width: 0`, and shrinking the box does not break the word inside it.
+       Measured on a 48-character unbroken label at 320px: both present gives a
+       320px document, dropping either gives 547px. This has been got wrong
+       three times in this file.
+    7. `flex: none` makes both of those inert, because it computes to
+       `0 0 auto` and nothing may shrink the item, which then holds max-content
+       whatever `min-width` says. Measured on the spec-table key at 1440px with
+       a 120-character value: 1640px document with `flex: none`, 1440px with
+       `flex: 0 1 auto`. Use `flex: 0 1 auto` when an item needs a shrink
+       guard; with `justify-content: space-between` there is free space and
+       `flex-shrink` never engages for real content. A fixed-size avatar is the
+       legitimate exception and keeps `flex: none`.
+    8. Every block container emits `story-block`. One rule pair in section 2
+       then handles the story's first and last child margins for all blocks,
+       at (0,3,0) so it cannot lose to a block's own (0,2,0) margins.
+    9. Every block wrapping author-supplied prose emits `story-prose`. It keys
+       both the prose-link rule and the nested-prose rhythm, so a new block
+       never needs adding to a selector list in section 2.
+   10. Captions come from `_includes/story/caption.html` as <figcaption> inside
+       <figure>. Never hand-rolled, never a <div> plus a <p>, and
+       `story-caption` is never reused for something that is not a caption.
+       The figcaption ELEMENT has one other sanctioned use: the pull quote's
+       attribution in section 6, which carries `story-quote-attr` and is the
+       HTML spec's pattern for an attributed quotation. That is a reuse of the
+       element, not of the caption treatment.
+   11. `:lang(ja)` rules live inside their own block's section, beside the rule
+       they modify, not collected at the end of the file.
+   12. Colours come from tokens, with exactly two documented raw literals, both
+       argued at the point of use and neither of them body text: `--story-sep`
+       in section 1, the decorative separator shared by captions and bylines,
+       and the gold hairline border in section 5 that reproduces the homepage
+       stat card. Any third one is a bug.
+   13. Class names carry the `story-` prefix. `.stat-card`, `.stat-number` and
+       `.stat-label` are already used by /impact/ and /partner/ with a
+       different design, so an unprefixed name here becomes a live collision
+       the moment one of those pages adopts this layout. See section 5.
+   14. Three colours, three jobs. Rust `--color-primary` is reserved for primary
+       CTAs and must not appear in this file at all: it measures 3.37:1 on the
+       page background and 3.07:1 on `--color-bg-panel`, both under the 4.5:1
+       minimum for normal-size text, so rust as story text was an accessibility
+       defect and not only an emphasis problem. Gold `--color-accent` carries
+       editorial emphasis and data (7.86:1 and 7.16:1). Green
+       `--color-secondary` carries structural markers only, and only on the page
+       background: it is 4.70:1 there but 4.28:1 on `--color-bg-panel`, so it
+       may never carry normal-size text on a panel.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. The grid
+   Three width tiers. Everything defaults to `text`, so plain Markdown lands
+   at the right measure with no author effort.
+
+     text   660px           All prose, headings, quotes, captions.
+     wide   1180px          Photography, stats, tables, splits. The workhorse.
+     full   edge to edge    Opening image, chapter breaks.
+
+   The measure is px, not `ch`. A `ch` unit resolves against `.story`'s own
+   inherited font-size (14px, from bs3-compat.css), not the 17px prose, so
+   the `68ch` used in the first draft measured 650px, about 56 characters.
+   Explicit px is deterministic and cannot drift if the body size changes.
+
+   Named lines rather than negative margins + 100vw, which causes horizontal
+   scroll when a scrollbar is present.
+   -------------------------------------------------------------------------- */
+.story {
+  /* Decorative separator between a caption and its credit, and between a
+     byline's role and its date. Not text, so the 4.5:1 minimum does not apply
+     and no palette token is close. Defined once here and used twice. */
+  --story-sep: #5f5a55;
+  display: grid;
+  grid-template-columns:
+    [full-start] minmax(20px, 1fr)
+    [wide-start] minmax(0, 260px)
+    [text-start] min(660px, 100% - 40px) [text-end]
+    minmax(0, 260px)  [wide-end]
+    minmax(20px, 1fr) [full-end];
+  padding-bottom: 80px;
+  /* The rest of the site centres body text via .module-title-wrap. Stories
+     are left-aligned, set once here so descendants inherit it. */
+  text-align: left;
+}
+
+/* `min-width: 0` is load-bearing: grid items default to `min-width: auto`,
+   so a wide table, <pre> or iframe refuses to shrink and pushes the page
+   into horizontal scroll. Blocks that can hold wide content also need
+   their own `overflow-x: auto`. */
+.story > * {
+  grid-column: text;
+  min-width: 0;
+}
+
+.story > .story-wide  { grid-column: wide; }
+.story > .story-full  { grid-column: full; }
+
+/* `min-width: 0` alone is not enough. It lets the grid item shrink to the
+   column, but an element whose min-content width is wider then overflows
+   that item and still scrolls the page: a plain Markdown 8-column table
+   measured 462px inside a 280px item, giving a 482px document against a
+   320px viewport. Tables and <pre> are the two things plain Markdown can
+   emit that refuse to shrink, so they get their own scroll container.
+   `display: block` is required for a table to honour overflow at all.
+   Blocks added in later tasks wrap their own wide content and set
+   overflow-x on that wrapper.
+
+   Known limitation: a scroll container built this way is not keyboard
+   operable (WCAG 2.1.1), because it takes no focus and so cannot be
+   scrolled without a pointer. Fixing that needs either JS or a
+   `tabindex="0"` wrapper the author has to remember. Accepted for now
+   because it only affects raw Markdown-emitted tables and <pre>, which no
+   story currently uses; the block includes wrap their own content. */
+.story > table,
+.story > pre {
+  display: block;
+  overflow-x: auto;
+}
+
+/* <pre> keeps a UA margin-bottom of 16px otherwise, off the prose rhythm.
+   Stated in px on purpose: `em` on a <pre> resolves against its own smaller
+   monospace font-size, so the 1.35em used for paragraphs would compute to
+   16.5px here and change nothing. 23px is 1.35 x the 17px prose size. */
+.story > pre { margin: 0 0 23px; }
+
+/* The one avatar treatment, shared by the pull quote in section 6 and the
+   byline and author card in section 7. Three blocks previously repeated
+   `border-radius` and `object-fit`, and two of them did it by styling a bare
+   `img` for their own content, the only places in the file that styled an
+   element rather than a class. The shape lives here; each block sets nothing
+   but `width` and `height` in its own section, plus `flex: none` on the byline,
+   which convention 7 names as the legitimate exception.
+
+   Lives in section 1 rather than in either caller's section because it belongs
+   to neither, the same reason `--story-sep` above is defined here.
+
+   (0,2,0), one lower than the (0,2,1) bare-element rules it replaces. Nothing
+   in template.css or bootstrap.min.css sets `border-radius`, `object-fit` or
+   `display` on a descendant img inside a story; measured after the change, all
+   three avatars still compute 50%, cover and block at 1440px and at 320px. */
+.story .story-avatar {
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   2. Typography
+   Story content starts at h2. The masthead supplies the page's only h1, so a
+   Markdown `#` inside a story would both duplicate that h1 and inherit the
+   global 80px heading size. h2 and h3 are the whole range; there is
+   deliberately no `.story h1` rule, because styling one would invite its use.
+   -------------------------------------------------------------------------- */
+.story p,
+.story ul,
+.story ol {
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--color-text);
+}
+
+.story > p  { margin: 0 0 1.35em; }
+.story > ul,
+.story > ol { margin: 0 0 1.35em; padding-left: 1.3em; }
+.story li   { margin-bottom: 0.4em; }
+
+/* Heading top margins look small for the type size because margins SUM in
+   grid: the gap above an h2 is the preceding paragraph's 1.35em bottom
+   margin PLUS this top margin. The flow-layout values (1.9em / 1.6em)
+   measured 87.5px of dead space. Do not "restore" them. */
+.story h2 {
+  font-size: clamp(24px, 3.2vw, 34px);
+  line-height: 1.22;
+  color: var(--color-text-heading);
+  margin: 1.1em 0 0.55em;
+}
+
+.story h3 {
+  font-size: clamp(18px, 2.2vw, 22px);
+  line-height: 1.35;
+  color: var(--color-text-light);
+  margin: 0.9em 0 0.45em;
+}
+
+.story > :first-child { margin-top: 0; }
+.story > :last-child  { margin-bottom: 0; }
+
+/* The two rules above are (0,2,0), exactly the specificity every block uses
+   for its own margins, so they tie and lose on source order: before this pair
+   existed, a story opening on a full-bleed figure measured 30.8px above it and
+   one closing on a figure measured 30.8px below, on top of the 80px `.story`
+   padding. Every block container emits `story-block`, and this pair at (0,3,0)
+   settles it once for all blocks, present and future (convention 8). Nothing
+   to maintain as Tasks 3 to 5 append.
+
+   Do NOT try to solve this by de-specifying the block margins with `:where()`.
+   bs3-compat.css:488 sets `figure { margin: 0 }` and bootstrap.min.css sets
+   `figure { margin: 0 0 1rem }`, both (0,0,1), which would outrank a (0,0,0)
+   rule and strip every figure margin in the kit. */
+.story > .story-block:first-child { margin-top: 0; }
+.story > .story-block:last-child  { margin-bottom: 0; }
+
+/* Prose nested inside a block, as opposed to sitting directly in the grid.
+   The type rules at the top of this section are DESCENDANT selectors, so
+   nested prose already inherits the right size, leading and colour. The
+   margin rules are CHILD selectors, so nested prose does not, and falls back
+   to the vendor defaults: `ol,ul { margin-bottom: 1rem; padding-left: 2rem }`
+   in bootstrap.min.css measured 12px and 32px inside a split, against the
+   22.95px and 22.1px used at top level.
+
+   Any block wrapping author-supplied prose carries `story-prose` and picks the
+   rhythm back up here (convention 9). (0,2,1) clears the vendor (0,0,1) rules.
+   The em values resolve against the 17px prose, matching the top-level pair
+   exactly rather than approximating it. */
+.story .story-prose > p,
+.story .story-prose > ul,
+.story .story-prose > ol { margin: 0 0 1.35em; }
+.story .story-prose > ul,
+.story .story-prose > ol { padding-left: 1.3em; }
+/* A block sizes its own outer spacing, so its prose must not add to it. */
+.story .story-prose > :first-child { margin-top: 0; }
+.story .story-prose > :last-child  { margin-bottom: 0; }
+
+/* Scoped to (0,2,0) so it outranks `.story p` at (0,1,1). Unscoped, every
+   one of these declarations loses. */
+.story .story-lede {
+  font-size: 20px;
+  line-height: 1.65;
+  color: var(--color-text-light);
+  margin: 0 0 1.5em;
+}
+/* The lede's own line-height loses to `:lang(ja) .story p` at (0,2,1), which is
+   the exact collision the file header warns about. Measured before this rule: a
+   JA lede computed 35.1px (1.95 at 18px) against the EN lede's 29.7px (1.65),
+   18% looser and 5.4px per line, so the lede stopped reading as a distinct
+   voice from the prose under it. 1.8 keeps JA looser than EN, as every other JA
+   rule in this file does, without handing it the full prose leading. */
+:lang(ja) .story .story-lede { line-height: 1.8; }
+
+/* Link styling is scoped to prose containers, never a blanket `.story a`.
+   Buttons are anchors too, so a blanket rule repaints all of them, and the
+   obvious counter-rule cannot work: Bootstrap's base `.btn` defines
+   `--bs-btn-color` but not `--bs-btn-hover-color`, so `.btn-default`, bare
+   `.btn` and `.btn-action` would fall back to `inherit` and hover to prose
+   grey. Narrowing the selector removes the whole problem instead.
+   Mirrors how template.css:3260-3266 narrows `#t3-content > p > a`.
+
+   `:not(.btn)` is belt and braces: buttons belong in `.story-cta`, never
+   inside a paragraph, but a button dropped into prose would otherwise pick
+   these declarations straight back up.
+
+   The list ends in `.story-prose`, the marker every block wrapping
+   author-supplied prose carries (convention 9). That is the extension point:
+   a new block does NOT get added to this selector, it emits `story-prose` and
+   is covered. `.story-prose` is needed alongside the element names because a
+   `text` param can legitimately be a bare `<a>` with no wrapping `<p>`.
+
+   SPECIFICITY, checked before collapsing this from eighteen selectors to two:
+   `:is()` takes the specificity of its most specific argument, which here is a
+   class, so every branch is now (0,3,1). The class-bearing branches were
+   already (0,3,1); the element-name branches rise from (0,2,1). Nothing in
+   this file or in template.css competes in that band inside a story. The
+   nearest neighbours are template.css:3247-3266, whose prose-link rules are
+   (0,2,1) and scoped to `.item-page` / `.article-content` / `.event-content`,
+   none of which wrap a story, plus `#t3-content > p > a` at (1,0,2), which
+   needs an ID ancestor that story pages do not render. Raising the floor can
+   only win more, never less, so the collapse is safe in both directions.
+
+   NO RESTING `color` HERE, DELIBERATELY (convention 14). The link takes
+   #ffffff from `a` in bs3-compat.css:147, which is what every other prose page
+   on the site renders; template.css:3247-3266 sets underline only for the same
+   reason. Measured on a story page, a prose link inside a <p> computes
+   rgb(255, 255, 255), not the inherited stone grey. The hover DOES override
+   `a:hover` in bs3-compat.css:152, which is rust: (0,3,1) beats (0,0,1). */
+.story :is(p, li, td, th, blockquote, figcaption, .story-caption, .story-prose) > a:not(.btn) {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.story :is(p, li, td, th, blockquote, figcaption, .story-caption, .story-prose) > a:not(.btn):hover {
+  color: var(--color-accent);
+}
+
+/* Backstop, not a licence. Grid items are blockified, so an inline-block
+   `.btn` placed directly in the grid stretches to the full 660px track
+   (measured 660px bare against 130.8px wrapped). `.story-cta`, a flex
+   container, is the intended wrapper for every CTA. */
+.story > .btn { width: fit-content; }
+
+/* Japanese prose needs more leading than English at the same size. */
+:lang(ja) .story p,
+:lang(ja) .story ul,
+:lang(ja) .story ol { line-height: 1.95; }
+:lang(ja) .story h2,
+:lang(ja) .story h3 { line-height: 1.5; }
+
+@media (max-width: 767px) {
+  .story p, .story ul, .story ol { font-size: 16px; }
+  .story .story-lede { font-size: 18px; }
+  .story { padding-bottom: 52px; }
+}
+
+/* --------------------------------------------------------------------------
+   3. Captions
+   The site has never had a caption style. Every block emits this through
+   `_includes/story/caption.html` as a <figcaption> inside a <figure>, which is
+   the only markup that associates a caption with its content for assistive
+   technology (convention 10).
+
+   SCOPE: `.story-caption` means "a caption for adjacent content" and nothing
+   else. It is not a general small-muted-text utility. A pull-quote attribution
+   or a stats label is not a caption and needs its own class, or this 13px
+   muted treatment spreads to text that should not be de-emphasised and the
+   <figcaption> semantics stop matching the markup.
+
+   Still scoped to (0,2,0) rather than styling `figcaption` bare: the class
+   carries the meaning, and the selector has to beat `.story p` at (0,1,1)
+   wherever a caption sits inside prose-adjacent markup.
+   -------------------------------------------------------------------------- */
+.story .story-caption {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+  margin: 10px 0 0;
+}
+.story .story-credit {
+  color: var(--color-text-muted);
+}
+/* Decorative separator, so it carries an empty alt string to keep it out of
+   the accessibility tree. The unprefixed `content` is the fallback for
+   engines without alt-text support, which would otherwise drop the whole
+   declaration and lose the separator. The colour is `--story-sep`, defined and
+   argued in section 1, because the byline in section 7 needs the same value
+   for the same purpose. */
+.story .story-caption .story-credit::before {
+  content: " · ";
+  content: " · " / "";
+  color: var(--story-sep);
+}
+/* Full-bleed captions must not touch the viewport edge. */
+.story .story-full > .story-caption { padding: 0 20px; }
+
+:lang(ja) .story .story-caption { line-height: 1.7; }
+
+/* --------------------------------------------------------------------------
+   4. Media blocks
+   figure, gallery, split, embed. Selectors are scoped `.story .story-x`
+   deliberately. See the conventions in the file header before shortening
+   anything here.
+
+   Margins are stated in em against `.story`'s own inherited 14px, not the
+   17px prose, so 2.2em computes to 30.8px and 2.4em to 33.6px. That is
+   intentional: block spacing is its own scale, independent of the prose
+   measure. It is the same resolution trap section 1 documents for `ch`, so
+   do not read these values as multiples of the prose size.
+   -------------------------------------------------------------------------- */
+.story .story-figure { margin: 2.2em 0; }
+.story .story-figure img,
+.story .story-gallery img,
+.story .story-split img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 3px;
+}
+/* Full-bleed images square off; a rounded corner at the viewport edge reads
+   as a mistake. Applies to the gallery too: its cells sit flush to the edge at
+   the full tier exactly as a figure does. */
+.story .story-figure.story-full img,
+.story .story-gallery.story-full img { border-radius: 0; }
+
+.story .story-gallery {
+  margin: 2.2em 0;
+  display: grid;
+  gap: 10px;
+}
+/* Cells are cropped to a common ratio rather than left at their natural one.
+   Two things fall out of it. Layout space is reserved whether or not the
+   author passed width and height, so a gallery cannot shift as it loads, and
+   rows come out even when the images do not share an aspect ratio: four
+   photographs at three different ratios previously left ragged whitespace
+   under the shorter ones. `object-fit: cover` fills the cell without
+   distorting. A grid of thumbnails is uniform-cell presentation by nature.
+
+   Deliberately NOT applied to figure or split. Those are single, chosen images
+   where the author framed the shot, and cropping them would silently overrule
+   that. */
+.story .story-gallery img {
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+.story .story-gallery.is-2,
+.story .story-gallery.is-4 { grid-template-columns: repeat(2, 1fr); }
+.story .story-gallery.is-3,
+.story .story-gallery.is-5,
+.story .story-gallery.is-6 { grid-template-columns: repeat(3, 1fr); }
+/* Nested grid items also default to min-width: auto, so they need the same
+   guard the top-level grid children get in section 1. */
+.story .story-gallery > * { min-width: 0; }
+.story .story-gallery > .story-caption { grid-column: 1 / -1; }
+
+/* The lightbox link wrapping each cell. Scoped to the link's own class and
+   never written as `.story a` (convention 2): a blanket link rule in here beats
+   Bootstrap's `.btn` and repaints every button on the page.
+
+   `display: block` on both the link and the <picture>: a grid item is blockified
+   anyway, but <picture> has no UA display rule, so it is inline while the <img>
+   inside it is block. Declaring both keeps the cell exactly the image's height
+   instead of relying on how the block-in-inline split resolves.
+
+   `cursor: zoom-in` plus a small opacity lift is the whole affordance. No
+   transform: the cell is already cropped to 3:2 and scaling inside it would crop
+   the shot further on hover, which is a worse trade than it looks.
+
+   THE FOCUS RING IS LOAD-BEARING, not decoration. template.css:154 sets
+   `a:focus { outline: none }` sitewide at (0,1,1), and because every
+   `:focus-visible` is also a `:focus`, that rule removes the UA keyboard ring
+   too. Without the declaration below these links are reachable by Tab and give
+   no visible indication, a WCAG 2.4.7 failure that this file introduces the
+   moment a gallery image becomes a link. (0,3,0) settles it.
+   `outline-offset` matters as much as the colour: it lifts the ring off the
+   photograph and into the 10px grid gap, where gold measures 7.86:1 on the page
+   background (convention 14) instead of whatever the photograph happens to be
+   at that edge. */
+.story .story-gallery > .story-gallery-link { display: block; cursor: zoom-in; }
+.story .story-gallery > .story-gallery-link > picture { display: block; }
+.story .story-gallery > .story-gallery-link img { transition: opacity 0.18s ease; }
+.story .story-gallery > .story-gallery-link:hover img,
+.story .story-gallery > .story-gallery-link:focus-visible img { opacity: 0.85; }
+.story .story-gallery > .story-gallery-link:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 639px) {
+  .story .story-gallery.is-2,
+  .story .story-gallery.is-3,
+  .story .story-gallery.is-4,
+  .story .story-gallery.is-5,
+  .story .story-gallery.is-6 { grid-template-columns: 1fr; }
+}
+
+.story .story-split {
+  margin: 2.4em 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: center;
+}
+.story .story-split > * { min-width: 0; }
+/* The media side is a <figure> so its caption can be a <figcaption>, which
+   means it arrives carrying `figure { margin: 0 0 1rem }` from
+   bootstrap.min.css. Zeroed explicitly rather than relying on which vendor
+   sheet loads last. The text side gets its rhythm from `story-prose` in
+   section 2. */
+.story .story-split .story-split-media { margin: 0; }
+
+/* The media side is FIRST IN THE DOM for both variants, so the single-column
+   stack below 768px always leads with the image without needing an override.
+   On `media-right` it is then painted second with `order: 2`.
+
+   The cost of that: at desktop widths, DOM order and visual order disagree for
+   the default variant. A keyboard user tabbing through a link inside the
+   right-hand image's caption reaches it BEFORE the text to its left, which is
+   a WCAG 2.4.3 focus-order failure. It is accepted here because leading the
+   mobile stack with the image is the stronger constraint for a photo-led
+   story, and mobile is the majority of this site's traffic.
+
+   Keep caption links off `media-right` splits. Use `media-left`, where DOM and
+   visual order agree, when the caption has to carry a link. */
+.story .story-split.is-media-right .story-split-media { order: 2; }
+
+@media (max-width: 767px) {
+  .story .story-split { grid-template-columns: 1fr; gap: 18px; }
+  .story .story-split.is-media-right .story-split-media { order: 0; }
+}
+
+.story .story-embed { margin: 2.2em 0; }
+.story .story-embed .story-embed-frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: var(--color-bg-panel);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.story .story-embed .story-embed-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.story .story-embed.story-full .story-embed-frame { border-radius: 0; }
+
+/* The story's first and last child margins are handled once in section 2, off
+   the `story-block` marker every block container emits. Nothing to add here. */
+
+/* --------------------------------------------------------------------------
+   5. Data blocks
+   .story-stat mirrors .home-impact-stat in home.css:762-800 (the whole group:
+   .home-impact-stat, -num, -num .value, -num .unit, -lbl). Duplicated on
+   purpose so the performance-tuned homepage is never touched by story work.
+
+   THE CLASS IS `.story-stat`, NOT `.stat-card`. `.stat-card`, `.stat-number`
+   and `.stat-label` are already taken: /impact/ and /partner/ define them in
+   content-level <style> blocks, four files including the JA twins, with a
+   different design (text-align centre, 30px 0 padding, no panel, no border).
+   Nothing collides today because story.css only loads on `layout: story`
+   pages, but the moment /impact/ or /partner/ becomes a story, `.story
+   .stat-card` at (0,2,0) would beat their (0,1,0) rules and silently impose a
+   panel, a gold border, a radius, tabular numerals and flex-column on ten
+   cards. The `story-` prefix makes that impossible and makes the class read as
+   part of this kit.
+
+   No count-up animation here. A counter earns its place in a hero band that
+   the reader arrives at; mid-article it pulls the eye off the sentence being
+   read, and it dates fast.
+
+   FIVE DELIBERATE DIFFERENCES from the homepage card. This list is the
+   hand-sync checklist, so it enumerates every property-level delta, not just
+   the interesting ones:
+
+     1. numerals    clamp(28px, 2.8vw, 44px) -> clamp(26px, 2.6vw, 40px)
+     2. padding     clamp(32px, 4vw, 56px)   -> clamp(24px, 3vw, 40px)
+     3. justify-content  center -> flex-start   (see below)
+     4. height: 100%     dropped. home.css needs it to fill a Bootstrap col;
+                         here the grid's `align-items: stretch` does the job.
+     5. .home-impact-num .value inner span   dropped. It existed only to hold
+                         a JS-set min-width during the count-up, which this
+                         block does not have.
+
+   Differences 1 and 2 are context: the homepage runs five cards across a
+   full-width hero band, a story runs two to four across the 1180px wide tier.
+   Differences 4 and 5 are consequences of the surrounding layout and of
+   dropping the animation.
+
+   DIFFERENCE 3 IS A FIX, and it is the one to understand before touching this.
+   Equal card heights come from the grid's `align-items: stretch`, not from the
+   flex. `center` then centres each card's own num + label group inside that
+   shared height, so a label wrapping to a second line LIFTS its numeral by half
+   the extra line. Measured at viewport widths below 1300px, where the label
+   clamp resolves to 13px and its line-height 1.4 gives an 18.2px line: three
+   cards with one label on two lines had numeral tops 357.97 / 357.97 / 348.88,
+   a 9.09px spread, exactly half a line. `flex-start` measured 0px.
+
+   A row of figures exists to be scanned across, so numerals off a shared
+   baseline defeat the block's purpose. The decisive argument is bilingual, not
+   cosmetic: JA labels wrap at different points from their EN twins, so with
+   `center` the same three cards align in one language and misalign in the
+   other, which means the defect passes review in whichever language you happen
+   to open. Spec §4.1 enumerates what "exactly" covers, and every item on that
+   list is a visual identity property (panel background, gold hairline border,
+   6px radius, gold numerals with 0.6em units, muted label, tabular-nums).
+   `justify-content` is not on it, and neither are the two clamps.
+
+   THE COST, so nobody trades it back by accident: `flex-start` pools the
+   leftover height under the short-label cards instead of splitting it. At
+   1440px with four cards and one label wrapping, the gap between label and card
+   bottom measured 41.00px on the wrapped card and 61.16px on the other three,
+   so three of four read slightly bottom-heavy. That is the trade: perfect
+   numerals against uneven bottom padding. DO NOT set this back to `center` to
+   tidy the padding; it re-breaks JA alignment.
+
+   home.css has the same latent misalignment and is deliberately left alone:
+   spec §8 puts the homepage out of scope and the hero band is a different
+   composition. Fixing it there is a separate decision.
+
+   THE ONE RAW COLOUR IN THIS SECTION is the gold hairline border, a documented
+   exception to the tokens convention rather than an oversight.
+   `rgba(200, 169, 81, 0.18)` is the homepage card's border and there is no
+   token for it: `--color-accent` is #d4a843 while this is #c8a951 at 18%,
+   genuinely different golds. home.css uses this exact literal in 2 places and
+   the same gold at other alphas in 11. Promoting it to a token in
+   bs3-compat.css would edit a global file to serve one caller and would still
+   leave home.css on the literal, so the two would drift anyway.
+   -------------------------------------------------------------------------- */
+.story .story-stats {
+  margin: 2.4em 0;
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+/* Nested grid items default to min-width: auto exactly as the top-level ones
+   do, so they get the same guard the gallery and split grids get in section 4.
+   Without it a long unbroken label overflowed its card by 11px at 320px:
+   inside the viewport, so not a page-scroll bug, but text crossing the gold
+   hairline. */
+.story .story-stats > * { min-width: 0; }
+
+.story .story-stat {
+  background: var(--color-bg-panel);
+  border: 1px solid rgba(200, 169, 81, 0.18);
+  border-radius: 6px;
+  padding: clamp(24px, 3vw, 40px) 16px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.story .story-stat .story-stat-num {
+  font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
+  font-size: clamp(26px, 2.6vw, 40px);
+  font-weight: 700;
+  color: var(--color-accent);
+  line-height: 1.1;
+}
+.story .story-stat .story-stat-unit {
+  font-size: 0.6em;
+  font-weight: 700;
+  margin-left: 2px;
+}
+/* The label sets its own family and weight rather than inheriting. Story prose
+   is the site body font; the homepage card's label is Metropolis, and the
+   whole point of this block is that the two cards look identical. */
+.story .story-stat .story-stat-lbl {
+  margin-top: 10px;
+  font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
+  font-size: clamp(13px, 1vw, 15px);
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--color-text-muted);
+}
+
+/* A spec sheet, which is what a bullet list of specifications wants to be.
+   The markup is a <dl> of <dt>/<dd> pairs, each pair wrapped in a <div> that
+   carries the flex row (valid HTML5, and the only way to lay a pair out as a
+   row). Deliberately NOT a <table>: there is no column of comparable values,
+   only key/value pairs, and a real <table> would need the scroll container
+   section 1 gives raw Markdown tables.
+
+   <dl> rather than plain <div>s buys two things. A screen reader announces the
+   item count on entry and offers list-jump commands, so a reader hunting one
+   spec can skip the rest instead of arrowing through every line. And <dt>/<dd>
+   escape `html[lang="ja"] span` at template.css:94, which sets
+   `word-break: keep-all` with `overflow-wrap: break-word`: on untokenised JA
+   that pair treats a whole sentence as one unbreakable word and then
+   emergency-breaks it, bypassing kinsoku and orphaning a sentence-final 。 on
+   its own line. Measured with spans: 14 of 111 value-box widths between 120px
+   and 340px orphaned a 。 or 、. template.css:122 documents the same trap and
+   fixes it for `.lead` the same way.
+   -------------------------------------------------------------------------- */
+.story .story-table {
+  margin: 2.2em 0;
+  background: var(--color-bg-panel);
+  border-radius: 6px;
+  padding: 4px 22px;
+}
+.story .story-table .story-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 20px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--color-bg-border);
+}
+.story .story-table .story-row:last-child { border-bottom: 0; }
+/* <dd> carries a UA `margin-inline-start: 40px` and both <dt> and <dd> are
+   reset by bootstrap at (0,0,1). These selectors are (0,3,0) and win
+   comfortably, but the margin is zeroed explicitly rather than left to depend
+   on which vendor sheet loads last. */
+.story .story-table .story-row-key,
+.story .story-table .story-row-val { margin: 0; }
+/* `flex: 0 1 auto`, NOT `flex: none`, and this is the correction to an earlier
+   version of this rule. With `flex: none` (computed `0 0 auto`) the key holds
+   its max-content width no matter what `min-width` or `overflow-wrap` say,
+   because nothing is allowed to shrink it, so BOTH guards below were inert
+   above 480px: measured at 1440px with a 120-character key, the document went
+   to 1640px, and allowing shrink brought it back to 1440px. They did work below
+   480px, but only because the media query at the end of this section takes the
+   row out of flex entirely, which is why the original 320px measurement looked
+   like a pass.
+
+   Allowing shrink changes nothing for real content. Keys are "Style", "ABV",
+   "Hops"; with `justify-content: space-between` there is free space in the row,
+   so `flex-shrink: 1` never engages. It engages only in the pathological case
+   the guards exist for.
+
+   `overflow-wrap: break-word` is still needed alongside it: shrinking the box
+   does not break the word inside it. The pair is independent, which the file
+   header states as a convention because it has now been got wrong three
+   times. */
+.story .story-table .story-row-key {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  flex: 0 1 auto;
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+/* `min-width: 0` for the same reason the grid children need it in section 1:
+   a flex item defaults to min-width auto and refuses to shrink below its
+   min-content width, so a long unbroken value would widen the row past the
+   text track.
+
+   `min-width: 0` IS NOT SUFFICIENT ON ITS OWN, measured, and section 1 already
+   says why in the paragraph above `.story > table`: letting the box shrink does
+   nothing about content whose min-content width is wider than the box, which
+   overflows and scrolls the page anyway. A 47-character unbroken value measured
+   a 435px document against a 320px viewport, 115px of horizontal page scroll.
+   `overflow-wrap: break-word` measured 320px. It is the fix rather than an
+   `overflow-x` scroll container because a spec value is a short string that
+   should wrap, not a wide object worth scrolling, and because the stacked
+   layout below 480px blockifies these spans, where `min-width` does not apply
+   at all. */
+.story .story-table .story-row-val {
+  font-size: 15px;
+  color: var(--color-text-light);
+  font-weight: 600;
+  text-align: right;
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+
+/* Uppercase plus letter-spacing is an EN typographic device. Applied to
+   Japanese it does nothing to kana and forces gaps between characters that
+   read as broken spacing (convention 11: JA rules sit beside their block). */
+:lang(ja) .story .story-table .story-row-key {
+  letter-spacing: normal;
+  text-transform: none;
+}
+/* JA needs more leading than EN at the same size, as it does for prose in
+   section 2 (1.95) and the pull quote in section 6 (1.8). These two elements set
+   no line-height of their own, so they inherit the SITE BASE OF 1.72 from `body`
+   at bs3-compat.css:48, and the 1.7 this rule used to set sat below it: measured,
+   the key computed 20.4px with the rule against 20.64px without it, and the
+   value 25.5px against 25.8px, so the rule made JA spec rows 0.24px and 0.3px
+   TIGHTER than plain JA text, the opposite of what it claimed. 1.8 clears the
+   base and matches the JA quote: 21.6px and 27px. */
+:lang(ja) .story .story-table .story-row-key,
+:lang(ja) .story .story-table .story-row-val { line-height: 1.8; }
+
+/* Below 480px a key and a value side by side leave too little for either, so
+   the pair stacks. The track is 439px at a 479px viewport and 280px at 320px;
+   the stack is chosen for the bottom of that range, where a spec value like
+   "Amarillo, Mosaic, Simcoe" wraps to three lines against a right edge.
+
+   TAKING THE ROW OUT OF FLEX IS ENOUGH ONLY BECAUSE <dt> AND <dd> ARE ALREADY
+   BLOCK-LEVEL. When this block used two <span>s, blockifying the row alone left
+   them resuming inline layout on the same line, with `margin-top` silently
+   ignored on a non-replaced inline box: measured at 320px, the value's box sat
+   at top 862.23 / left 77.28 against the key's top 865.23 / left 36, beside it
+   rather than beneath, and the 3px gap gone. The <dl> markup removes the whole
+   problem. If this ever goes back to inline elements, the pair needs an explicit
+   `display: block` here again. */
+@media (max-width: 479px) {
+  .story .story-table { padding: 4px 16px; }
+  .story .story-table .story-row { display: block; }
+  .story .story-table .story-row-val { text-align: left; margin-top: 3px; }
+}
+
+/* --------------------------------------------------------------------------
+   6. Voice and structure
+   quote, chapter.
+
+   Margins here are px, not em, unlike section 4. The chapter marker is an
+   <h2> whose font-size this section overrides, so an em margin would resolve
+   against a value the reader has to go and look up, and would change silently
+   if that override moved. Section 4's em values are documented against
+   `.story`'s own inherited 14px; these are just stated outright.
+   -------------------------------------------------------------------------- */
+.story .story-quote {
+  margin: 34px 0;
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 18px;
+  align-items: start;
+}
+/* (0,3,0), higher than the rule above at (0,2,0), so this holds inside the
+   768px media query too and does not need restating there. */
+.story .story-quote.is-plain { grid-template-columns: 1fr; }
+.story .story-quote > * { min-width: 0; }
+/* Size only. The shape is the shared `.story-avatar` rule in section 1. */
+.story .story-quote .story-avatar {
+  width: 56px;
+  height: 56px;
+}
+
+/* Four resets, not decoration. template.css:686 gives every bare <blockquote>
+   padding, a margin, a 17.5px size and a 5px grey left rule at (0,0,1). Clear
+   all four or the pull quote wears a grey bar it did not ask for. */
+.story .story-quote blockquote {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 19px;
+  line-height: 1.6;
+  color: var(--color-text-light);
+  font-weight: 500;
+  /* Measured at 320px: a 34 character unbroken word took the document to
+     363px. Same guard as the attribution below and the spec rows in
+     section 5. */
+  overflow-wrap: break-word;
+}
+/* The figure is a grid item, so it needs the same guard section 1 gives every
+   direct child of `.story`. Its margin is zeroed explicitly rather than left to
+   depend on which vendor sheet loads last, matching what section 4 does for
+   `.story-split-media`: bs3-compat.css:488 sets `figure { margin: 0 }` and
+   bootstrap.min.css sets `figure { margin: 0 0 1rem }`, both (0,0,1). */
+.story .story-quote figure {
+  margin: 0;
+  min-width: 0;
+}
+/* A quote at the wide tier is 1106px at 1440px, which measured 106 characters
+   per line against 56 at the text tier: far past a readable measure. The tier
+   still widens the block, so a portrait sits further out and the quote reads as
+   a bigger moment, but the text itself stays at the prose measure. */
+.story .story-quote.story-wide blockquote { max-width: 660px; }
+/* Defensive, for the hand-authored path. The include emits the quote as a bare
+   string with no <p>, but /beer/ is hand-authored HTML and an author may well
+   write <blockquote><p>...</p></blockquote>. Without this,
+   `blockquote p { color: rgba(255,255,255,.9) }` at template.css:693 matches
+   that <p> directly at (0,0,2) and beats the colour it would otherwise inherit
+   from the rule above, and `.story p` at (0,1,1) pulls the size back to 17px.
+   This selector is (0,2,2), which clears both.
+
+   `inherit` is safe here, unlike the button case warned about in the file
+   header: it resolves against the explicit token set two rules up, not against
+   an unrelated background colour. */
+.story .story-quote blockquote p {
+  margin: 0;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+/* GOLD, NOT GREEN, AND NOT THE RUST THIS REPLACED. A gold left rule is the
+   site's established treatment for an offset quote or card: team/index.html:47
+   at 4px, home.css:458 and template.css:7064 and :7114 at 3px. Green here made
+   the story kit the only place on the site that did it differently. Convention
+   14 gives green the structural markers, and a quote rule is not one: it marks
+   emphasis, which is gold's job.
+
+   The rule and its padding sit on the FIGURE, not the blockquote, so the quote
+   and its attribution are offset together and cannot drift apart. An earlier
+   version put them on the blockquote and indented the attribution with a
+   matching `padding-left: 22px`, which worked (measured 0px delta) but
+   hardcoded the sum of two values three lines above it: changing either one
+   silently desynced the attribution. Measured before that fix, the attribution
+   hung 22px left of its own quote text, x=390 against x=412 at 1440px.
+
+   The rule now runs the full height of the quote unit rather than stopping at
+   the end of the blockquote, 131.27px against 81.59px, which reads as marking
+   the whole quote including who said it. */
+.story .story-quote.is-plain figure {
+  border-left: 2px solid var(--color-accent);
+  padding-left: 20px;
+}
+
+/* The attribution is a <figcaption> and a SIBLING of the blockquote, never a
+   child of it. Not stylistic: template.css:712 sets
+   `blockquote footer:before { content: '\2014 \00A0' }` and \2014 is an em
+   dash, the one character this project forbids in copy. /beer/ nests its
+   attribution inside the blockquote today and renders one. A figcaption is not
+   matched by that selector at all.
+
+   `overflow-wrap: break-word` for the reason section 1 and section 5 both give:
+   an unbroken string in a grid or flex item overflows and scrolls the page even
+   when the box can shrink. Measured at 320px on the plain variant, a 56
+   character unbroken role took the document to 443px, 123px of horizontal
+   scroll; with this declaration, 320px. */
+.story .story-quote .story-quote-attr {
+  margin-top: 12px;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--color-text-muted);
+  overflow-wrap: break-word;
+}
+/* The name is a <span>, so on a JA page it picks up `word-break: keep-all`
+   from template.css:94. That is left alone deliberately: `keep-all` stops a
+   personal name breaking between characters, and a name carries no sentence
+   punctuation, so the kinsoku problem that forced <dt>/<dd> in section 5 and
+   `word-break: normal` on the chapter label does not apply. */
+.story .story-quote .story-quote-attr .story-quote-name {
+  display: block;
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+/* An <h2>. `.story .story-chapter` at (0,2,0) beats `.story h2` at (0,1,1), so
+   the heading's clamp() size and margins are overridden here and the two spans
+   carry the visible type and colour. font-size is set explicitly rather than
+   left to the h2 clamp so that nothing in this block resolves against a 24px to
+   34px moving target.
+
+   The h2's own `color` is NOT overridden here and does not need to be: both
+   spans set their own, and the ::after rule is a background. Nothing inside the
+   marker paints with the inherited heading white.
+
+   line-height is the one declaration here that a JA page overrules, exactly as
+   the file header warns: `:lang(ja) .story h2` is (0,2,1) and beats this
+   (0,2,0), so a JA chapter computes 18px (1.5) against the EN 16.8px (1.4).
+   Left as is, because JA wants the extra leading and 1.2px on a 12px marker is
+   invisible. */
+.story .story-chapter {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin: 34px 0 12px;
+  font-size: 12px;
+  line-height: 1.4;
+}
+.story .story-chapter .story-chapter-num {
+  color: var(--color-secondary);
+  font-size: 18px;
+  font-weight: 700;
+  flex: none;
+}
+/* Three declarations, three different failures. All three measured on this
+   block, at a 320px viewport, because the earlier drafts of this comment got
+   two of them the wrong way round.
+
+   `flex: 0 1 auto`, NOT `flex: none`. A JA chapter label runs longer than its
+   EN twin and has no spaces to shrink at. With `flex: none` the label refused
+   to shrink and sat 37.97px past the 300px right edge of the 280px text track:
+   a 338px document against a 320px viewport, 18px of horizontal page scroll.
+   `flex: 0 1 auto` measured 320px. Same failure mode as the grid children in
+   section 1. On the JA label this is the ONLY one of the three that is
+   load-bearing.
+
+   `min-width: 0` AND `overflow-wrap: break-word`, and on the EN path NEITHER IS
+   SUFFICIENT ALONE. Measured with a 48-character unbroken EN label: both
+   present, 320px; drop `overflow-wrap`, 547px; drop `min-width` instead, also
+   547px. That is 227px of horizontal page scroll either way. The reason the
+   pair is needed rather than one of them is that `overflow-wrap: break-word`
+   does not reduce an element's min-content contribution (only `anywhere` or
+   `word-break: break-all` do), so with `min-width: auto` the flex item's
+   automatic minimum size is still the whole word. `min-width: 0` lets the box
+   shrink, `overflow-wrap` lets the content inside it break, and the overflow
+   needs both. Third time in this file for that pairing: section 1 documents it
+   for grid children, section 5 for both spec-row cells.
+
+   The 48-character EN label is a guard, not a live case. Real labels are "The
+   collab" and "No number here". The JA shrink above is the live one. */
+.story .story-chapter .story-chapter-label {
+  color: var(--color-accent);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  flex: 0 1 auto;
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+/* The trailing rule is a pseudo-element, not an empty <span>: nothing for
+   assistive technology to walk past and one less node in the include.
+   `content: ""` still generates a flex item. */
+/* `min-width: 24px` so the rule never vanishes. With `flex: 1 1 0` and a
+   zero min-width it takes only leftover space, and a JA label long enough to
+   fill the row leaves none: measured 0px on a JA harness at 320px, where the EN
+   twin at the same 320px measured 133.4px of rule (and 513.4px at 1440px). The marker then lost its one piece of visual
+   punctuation in one language and kept it in the other. 24px is enough to read
+   as deliberate and small enough that the label still wraps rather than being
+   squeezed, since `flex: 0 1 auto` lets the label shrink first. */
+.story .story-chapter::after {
+  content: "";
+  flex: 1 1 0;
+  min-width: 24px;
+  height: 1px;
+  background: var(--color-bg-border);
+}
+/* JA needs more leading than EN at the same size: prose gets 1.95 in section 2,
+   captions 1.7 in section 3, spec rows 1.7 in section 5. Without this a 19px JA
+   pull quote at 1.6 is the tightest multi-line JA text in the whole kit.
+   Class-tailed, so (0,4,0) and (0,3,0): see the specificity note in the file
+   header about why an element-tailed :lang(ja) selector would be the dangerous
+   kind. */
+:lang(ja) .story .story-quote blockquote { line-height: 1.8; }
+:lang(ja) .story .story-quote .story-quote-attr { line-height: 1.7; }
+
+/* Uppercase and wide letter-spacing are EN typographic devices. On Japanese
+   they do nothing to kana and force gaps that read as broken spacing
+   (convention 11: JA rules sit beside their block).
+
+   `word-break: normal` IS A KINSOKU FIX, NOT AN OVERFLOW FIX. Do not reach for
+   it the next time a JA row scrolls the page; that one is `flex-shrink`, above.
+   The label is a <span>, so on a JA page it matches `html[lang="ja"] span` at
+   template.css:94, which sets `word-break: keep-all` plus
+   `overflow-wrap: break-word`. `keep-all` does make a whole untokenised JA
+   label one unbreakable word, but the `overflow-wrap` sitting beside it already
+   breaks that word rather than overflowing, so leaving both as template.css
+   supplies them measured an identical 320px document, an identical 231.84px
+   label box and an identical 2 lines. What that pair costs is kinsoku: it
+   emergency-breaks instead of following JA line-breaking rules, so it will drop
+   a leading 、 or 。 onto its own line. Measured on a label carrying both, box
+   widths swept 60px to 240px in 4px steps: `keep-all` plus `overflow-wrap`
+   orphaned a 、 or 。 at 10 of 46 widths, `word-break: normal` at 0 of 46. Same
+   trap template.css:122 fixes for `.lead` and that section 5 avoids by using
+   <dt>/<dd> instead of spans, where 14 of 111 value-box widths orphaned a 。 */
+:lang(ja) .story .story-chapter .story-chapter-label {
+  letter-spacing: 0.08em;
+  text-transform: none;
+  word-break: normal;
+}
+
+@media (max-width: 767px) {
+  .story .story-quote { grid-template-columns: 44px 1fr; gap: 14px; }
+  .story .story-quote .story-avatar { width: 44px; height: 44px; }
+  .story .story-quote blockquote { font-size: 17px; }
+}
+
+/* --------------------------------------------------------------------------
+   7. Byline and author card
+   Both are rendered INSIDE <article class="story"> by _layouts/story.html
+   (lines 14 and 16), so they are grid children at the text tier and every
+   selector here scopes under `.story` like the rest of the file.
+
+   Margins in px. See the note in section 6.
+   -------------------------------------------------------------------------- */
+.story .story-byline {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 0;
+  margin: 0 0 28px;
+  border-top: 1px solid var(--color-bg-border);
+  border-bottom: 1px solid var(--color-bg-border);
+}
+.story .story-byline > * { min-width: 0; }
+/* Size plus the fixed-size-avatar exception to convention 7. The shape is the
+   shared `.story-avatar` rule in section 1. */
+.story .story-byline .story-avatar {
+  width: 40px;
+  height: 40px;
+  flex: none;
+}
+/* `overflow-wrap` on both, per convention 6: an unbroken string in a grid or
+   flex item overflows and scrolls the page even when the box can shrink, and
+   `min-width: 0` above does not break the word inside. A long single-token
+   name is the realistic case here. */
+.story .story-byline .story-byline-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text-light);
+  line-height: 1.3;
+  overflow-wrap: break-word;
+}
+.story .story-byline .story-byline-meta {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+  overflow-wrap: break-word;
+}
+/* Decorative separator between the role and the date, so it carries an empty
+   alt string to keep it out of the accessibility tree, exactly as the caption
+   credit does in section 3. It was a real <span> of DOM text until now, with the
+   same glyph in the same colour as the caption's but announced by a screen
+   reader, which was a difference with no argument behind it.
+
+   The unprefixed `content` is the fallback for engines without alt-text support,
+   which would otherwise drop the whole declaration and lose the separator.
+
+   THE GLYPH CARRIES NO SPACES, unlike the caption's `" · "`. The spacing here is
+   the 7px margins, and the caption has none. Measured at 1440px, the gap
+   between the end of the role and the start of the date was 18.7px with the old
+   <span>; a `" · "` content string plus these margins measured 26.23px, because
+   a leading and a trailing space in generated content survive white-space
+   collapsing against adjacent text. `"·"` plus the margins reproduces 18.7px
+   exactly. */
+.story .story-byline .story-byline-date::before {
+  content: "·";
+  content: "·" / "";
+  color: var(--story-sep);
+  margin: 0 7px;
+}
+
+.story .story-author-card {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 18px;
+  align-items: center;
+  background: var(--color-bg-panel);
+  border-radius: 6px;
+  padding: 20px 22px;
+  margin: 42px 0 0;
+}
+.story .story-author-card > * { min-width: 0; }
+/* Size only. The shape is the shared `.story-avatar` rule in section 1.
+   The 64px track above assumes the image is always there, and author-card.html
+   guarantees it: a blank `image` on the resolved entry fails the build. Without
+   that guard the text <div> becomes the first grid item and lands in the fixed
+   track. Measured on a three-line card at 1440px with the image removed: text
+   box 534px wide to 64px, card 121.2px tall to 296.7px, content track empty. */
+.story .story-author-card .story-avatar {
+  width: 64px;
+  height: 64px;
+}
+.story .story-author-card .story-author-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-text-heading);
+  overflow-wrap: break-word;
+}
+.story .story-author-card .story-author-role {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin: 4px 0 5px;
+}
+/* A <div>, not a <p>. As a <p> this line was the only thing in section 7 that
+   had to beat `.story p` at (0,1,1), needed an explicit `margin: 0` to clear the
+   vendor paragraph margin that `.story > p` never reaches, and picked up
+   `word-break: keep-all` from `html[lang="ja"] p` at template.css:94 on JA
+   pages, which is the kinsoku trap section 5 avoided with <dt>/<dd> and section
+   6 fixed with `word-break: normal`. Measured on a JA card title as a <p>:
+   `word-break: keep-all`. As a <div>: `normal`. No `ja.title` in the data
+   carries a 。 or 、 today, so nothing was visibly broken; the <div> removes the
+   trap rather than adding a third fix for it. A <div> has no UA margin, verified
+   in the browser, so there is nothing left to clear.
+
+   THE JA LEADING IS NOW EXPLICIT. As a <p> it inherited 1.95 from
+   `:lang(ja) .story p`, which is the wanted value but arrived by accident of the
+   element name. Measured before: 27.3px. After, without the rule below: 24.08px,
+   the site base. With it: 27.3px, unchanged. That rule is class-tailed, so
+   (0,3,0), the harmless kind under convention 1, not the element-tailed (0,2,1)
+   kind that silently outranks a block utility.
+
+   No EN `line-height`: a <p> computed 24.5px here and a <div> computes 24.08px,
+   inheriting `.story`'s 1.72 rather than `.story p`'s 1.75. A 0.42px difference
+   on a single-line affiliation is not worth a declaration. */
+.story .story-author-card .story-author-title {
+  font-size: 14px;
+  color: var(--color-text);
+}
+:lang(ja) .story .story-author-card .story-author-title { line-height: 1.95; }
+/* Uppercase and letter-spacing are EN devices; on Japanese they force gaps
+   that read as broken spacing (convention 11). */
+:lang(ja) .story .story-author-card .story-author-role {
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+@media (max-width: 479px) {
+  .story .story-author-card {
+    grid-template-columns: 48px 1fr;
+    gap: 14px;
+    padding: 16px 18px;
+  }
+  .story .story-author-card .story-avatar { width: 48px; height: 48px; }
+}
+
+/* --------------------------------------------------------------------------
+   8. Calls to action, and the end-of-story links
+   Migrated out of beer/index.html, which is where these were first written.
+   They are kit-level, not page-level: any story ending in an action needs
+   them, so a second story would have copied the same rules into a second
+   <style> block.
+
+   `.story-cta` is a WRAPPER around buttons, never a button itself
+   (convention 3). Grid items are blockified, so a bare `.btn` as a direct
+   child of `.story` stretches to the full track width and stops reading as
+   a button at all.
+
+   The smallprint takes `flex-basis: 100%` so it drops onto its own line
+   under the buttons rather than sitting beside them. Without it a legal
+   note becomes a third flex item competing with the CTAs.
+
+   `.story-readnext` is the "More: a, b, c" line. It needs an explicit
+   margin-top because the browser's default <p> margin computes to 0 here:
+   measured 0px between the wholesale button and the links, which read as
+   one block. 34px matches `.story-cta`'s own top margin, so an action and a
+   nav line are separated by the same distance whichever order they appear
+   in.
+
+   THE DISABLED CTA is for a story published before the thing it links to is
+   ready, which /beer/ needed twice: once before launch, then again after the
+   partner's product page turned out not to be ready to send readers to. That
+   is why it lives here rather than in the page.
+
+   `--color-text-muted`, NOT the `#888` the page version used: a third raw
+   colour literal in this file is a bug by convention 12. The lift from #888
+   to #a0a0a0 is fine because WCAG 1.4.3 exempts inactive controls from the
+   contrast minimum, and the greyed background plus `not-allowed` carry the
+   state anyway.
+
+   NO `!important`, unlike the page version it replaces. Scoped under `.story`
+   the selector is (0,3,0) against Bootstrap's `.btn-primary` at (0,1,0), so
+   it wins on specificity alone. `_layouts/job.html` and `_layouts/event.html`
+   still carry their own unscoped copies with the flags; those are outside the
+   story layout and were left alone.
+   -------------------------------------------------------------------------- */
+.story .btn.disabled,
+.story .btn[aria-disabled="true"] {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-text-muted);
+  border-color: transparent;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+.story .story-cta {
+  margin: 34px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+.story .story-cta .story-smallprint {
+  flex-basis: 100%;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  margin: 6px 0 0;
+}
+/* JA runs looser here as it does across the kit (convention 11: the JA rule
+   sits beside the rule it modifies). Last compound is a class, so this is
+   (0,4,0) and safely outranks the (0,3,0) above; see convention 1. */
+:lang(ja) .story .story-cta .story-smallprint {
+  line-height: 1.7;
+}
+.story .story-readnext {
+  margin: 34px 0 0;
+}

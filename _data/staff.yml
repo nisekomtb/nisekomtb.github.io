@@ -2,6 +2,7 @@
 # operations and maintenance across Twin Peaks, Grand Hirafu, and Hanazono.
 
 - image: /assets/images/team/pierre.jpg
+  slug: pierre-monnier
   name: Pierre Monnier
   namba_role: Operations Manager
   ja:
@@ -9,6 +10,7 @@
     namba_role: オペレーションマネージャー
 
 - image: /assets/images/team/dan.jpg
+  slug: dan-graham
   name: Dan Graham
   namba_role: Assistant Operations Manager
   ja:
@@ -16,6 +18,7 @@
     namba_role: アシスタントオペレーションマネージャー
 
 - image: /assets/images/team/rj.jpg
+  slug: rj-mcgechie
   name: RJ McGechie
   namba_role: Trail Crew
   ja:
@@ -23,6 +26,7 @@
     namba_role: トレイルクルー
 
 - image: /assets/images/team/seiko.jpg
+  slug: seiko-doi
   name: Seiko Doi
   namba_role: Trail Crew
   ja:
@@ -30,6 +34,7 @@
     namba_role: トレイルクルー
 
 - image: /assets/images/team/danny.jpg
+  slug: danny-sopp
   name: Danny Sopp
   namba_role: Trail Crew
   ja:
@@ -37,6 +42,7 @@
     namba_role: トレイルクルー
 
 - image: /assets/images/team/harry.jpg
+  slug: harry-tomkinson
   name: Harry Tomkinson
   namba_role: Trail Crew
   ja:

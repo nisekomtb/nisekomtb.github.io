@@ -1,0 +1,61 @@
+{%- comment -%}
+  PhotoSwipe 5.4.4 loader. Emits the stylesheet and the module init once per
+  page, whatever calls it and however many times.
+
+  Params:
+    selector: CSS selector for the gallery container(s). Default
+              ".story-gallery-pswp". PhotoSwipe runs querySelectorAll on it, so
+              one init covers every matching container on the page; each one is
+              a separate gallery scope.
+    children: CSS selector for the slides inside each container, matched with
+              `closest()` against the click target. Default "a", which is what
+              the thirteen inlined copies use.
+
+  PASS A NARROWER `children` WHEN THE CONTAINER CAN HOLD A NON-SLIDE LINK. The
+  thirteen existing callers get away with "a" because their containers hold
+  nothing but tile anchors. A story gallery is a <figure> whose <figcaption> may
+  carry a prose link, and with `children: "a"` PhotoSwipe swallows the click on
+  that link, calls preventDefault and opens a slide whose source is the linked
+  PAGE. story/gallery.html therefore passes "a.story-gallery-link".
+
+  THE VERSION IS PINNED IN ONE PLACE, here. Thirteen pages currently inline
+  this same block with the same 5.4.4 pin:
+  projects/{twin-peaks,hanazono,grand-hirafu}/index.html, about/index.html,
+  artist-series/index.html, plan-your-trip/index.html,
+  _layouts/where-to-ride.html, and the six ja/ twins. They could all adopt this
+  include later and drop to one pin, but that is a separate change with its own
+  regression surface (each of those pages uses its own hook class, and several
+  sit inside layouts), so it is deliberately not done here.
+
+  ONCE-PER-PAGE relies on Liquid `assign` leaking out of an include, and that is
+  the intended mechanism here rather than an accident. Jekyll wraps a partial in
+  `context.stack`, but Liquid's assign tag writes to `context.scopes.last`, the
+  OUTERMOST scope, which is never popped. So the flag set below survives the
+  include returning and is visible to every later call in the same page render,
+  including calls made from a different partial.
+
+  This is the same behaviour that was a BUG in _includes/story/byline.html and
+  _includes/story/author-card.html, and the difference matters to a future
+  reader. There, short names (`a`, `author`) leaked by accident and collided
+  with a variable _layouts/story.html assigns for its JSON-LD author, which
+  would have published a fabricated byline; the fix was the `story_author_`
+  prefix. Here the leak IS the feature, and the flag is prefixed
+  `story_pswp_loaded` for the same reason: to guarantee it collides with
+  nothing else.
+
+  Two galleries on one page therefore load PhotoSwipe once. Verified by counting
+  <link> and <script type="module"> in the built HTML of a two-gallery page.
+{%- endcomment -%}
+{%- unless story_pswp_loaded -%}
+{%- assign story_pswp_loaded = true -%}
+<link rel="stylesheet" href="https://unpkg.com/photoswipe@5.4.4/dist/photoswipe.css">
+<script type="module">
+  import PhotoSwipeLightbox from 'https://unpkg.com/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.min.js';
+  const lightbox = new PhotoSwipeLightbox({
+    gallery: {{ include.selector | default: ".story-gallery-pswp" | jsonify }},
+    children: {{ include.children | default: "a" | jsonify }},
+    pswpModule: () => import('https://unpkg.com/photoswipe@5.4.4/dist/photoswipe.esm.min.js')
+  });
+  lightbox.init();
+</script>
+{%- endunless -%}

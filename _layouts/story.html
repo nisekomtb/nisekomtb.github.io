@@ -1,0 +1,73 @@
+---
+layout: base
+---
+{% include masthead.html %}
+
+{%- comment -%}
+  Presentational layout only. The byline renders when `author` is set in front
+  matter; the BlogPosting JSON-LD renders unless `story_schema: none` is set.
+  /beer/ uses this layout with neither, because it is a product page that
+  supplies its own Product schema.
+{%- endcomment -%}
+
+<article class="story" aria-labelledby="masthead-title">
+  {% if page.author %}{% include story/byline.html slug=page.author %}{% endif %}
+  {{ content }}
+  {% if page.author %}{% include story/author-card.html slug=page.author %}{% endif %}
+</article>
+
+{% if page.story_schema != "none" %}
+{%- comment -%}
+  The author lookup MUST be guarded by `if page.author`. Liquid's `where` filter
+  with a nil argument does not filter: it passes the whole array through, so
+  `site.data.team | where: "slug", nil | first` returns the FIRST person in
+  team.yml. Without this guard, any story omitting `author` publishes a
+  fabricated byline in its structured data.
+
+  `datePublished` and `description` are likewise conditional. Pages (as opposed
+  to posts) have no `page.date`, and an empty string or null is an invalid
+  schema value that Google flags. `name` cannot go null the same way: the byline
+  include renders under this identical `if page.author` condition and fails the
+  build on a blank name before the build reaches this script.
+
+  THE VARIABLE IS `schema_author`, deliberately not a name either story include
+  uses. Jekyll's `include` shares the caller's scope for `assign`, so an include
+  assigning the same name as this layout would overwrite the author node's
+  source. That held together only on source order while both used `a`.
+{%- endcomment -%}
+{%- if page.author -%}
+  {%- assign schema_author = site.data.team | where: "slug", page.author | first -%}
+  {%- unless schema_author -%}{%- assign schema_author = site.data.staff | where: "slug", page.author | first -%}{%- endunless -%}
+{%- endif -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "https://namba.ngo{{ page.url }}#article",
+  "headline": {{ page.title | jsonify }},
+  "url": "https://namba.ngo{{ page.url }}",
+  "inLanguage": "{{ page.lang }}",
+  "image": "https://namba.ngo{{ page.og.image | default: page.masthead.img | default: '/assets/images/og/hero-2026.jpg' }}"
+  {%- if page.description %},
+  "description": {{ page.description | jsonify }}
+  {%- endif %}
+  {%- if page.date %},
+  "datePublished": "{{ page.date | date_to_xmlschema }}"
+  {%- endif %}
+  {%- if schema_author %},
+  "author": {
+    "@type": "Person",
+    "name": {%- if page.lang == "ja" %}{{ schema_author.ja.name | default: schema_author.name | jsonify }}{% else %}{{ schema_author.name | jsonify }}{% endif %}
+  }
+  {%- else %},
+  {%- comment -%}
+    Organization fallback. BlogPosting requires an author, and Search Console
+    flags the node as incomplete without one. Every story is NAMBA's own work,
+    so the organisation is the honest default when no person is credited.
+  {%- endcomment %}
+  "author": { "@id": "https://namba.ngo/#organization" }
+  {%- endif %},
+  "publisher": { "@id": "https://namba.ngo/#organization" }
+}
+</script>
+{% endif %}

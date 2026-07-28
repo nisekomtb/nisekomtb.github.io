@@ -1,0 +1,29 @@
+{%- comment -%}
+  The one caption partial. Every block that can carry a caption calls this, so
+  caption markup lives in exactly one place (convention 10).
+
+  MUST be called from inside a <figure>. <figcaption> is only valid there, and
+  the point of the exercise is that assistive technology associates the caption
+  with the content it describes. A <div> + <p class="story-caption"> looks
+  identical and associates nothing.
+
+  Emits nothing at all when both params are absent or blank, so callers never
+  need to guard the call.
+
+  Params:
+    caption: localised caption text. Markup is allowed and deliberate, so a
+             caption can carry emphasis or a link. Unescaped because this is
+             repo-authored content at the same trust level as the existing
+             `descriptionHtml` front matter fields, not user input.
+    credit:  photographer or source. Rendered after the caption, separated by
+             the decorative middot defined in section 3 of story.css.
+
+  A note on caption links: on a `media-right` split the media sits first in
+  the DOM and second visually, so a link in that caption receives focus before
+  the text beside it. See the ordering comment in section 4 of story.css.
+{%- endcomment -%}
+{%- assign cap = include.caption | strip -%}
+{%- assign cred = include.credit | strip -%}
+{%- if cap != "" or cred != "" -%}
+<figcaption class="story-caption">{{ cap }}{% if cred != "" %}<span class="story-credit">{{ cred }}</span>{% endif %}</figcaption>
+{%- endif -%}

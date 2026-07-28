@@ -1,0 +1,295 @@
+{%- comment -%}
+  2-6 images in a grid sharing one caption. Layout by count: 2 and 4 go two
+  across (4 as a 2x2, because 3 + 1 orphan reads as broken), 3, 5 and 6 go
+  three across. Single column below 640px. Cells are cropped to 3:2 by CSS,
+  so mixed aspect ratios still produce even rows.
+
+  Params:
+    src1..src6 (src1 and src2 required): image paths
+    alt1..alt6 (required for every src supplied): localised alt text
+    tier:    text | wide | full. Default wide.
+    caption: for the group. Markup allowed, see caption.html.
+    credit:  for the group. Markup allowed.
+    widths:  passed to image.html for every image, e.g. "800,1600". Without it
+             each 387px cell downloads the master WebP.
+    sizes:   passed to image.html. Omit it and the tier plus the column count
+             supply an accurate value; only set it to override.
+    dims:    comma-separated WIDTHxHEIGHT in MASTER-IMAGE pixels, index-aligned
+             with src1..src6, e.g. "1800x1200,1200x1800,1800x1200". Required
+             when the lightbox is on. Each pair feeds both the <img> width and
+             height attributes and the link's data-pswp-width/height.
+    lightbox: default ON. Pass lightbox=false to opt out. A grid of photographs
+             that does nothing on click is the surprising behaviour.
+
+  WHY dims IS PER IMAGE AND NOT ONE SHARED PAIR. The site's other PhotoSwipe
+  galleries repeat a single data-pswp-width/height across every tile, which is
+  correct there only because every tile is the same 16:9 aerial crop. A story
+  gallery mixes orientations by design: the beer set is four 1800x1200
+  landscapes plus one 1200x1800 portrait. PhotoSwipe sizes each slide from the
+  declared ratio, so a shared pair would letterbox or stretch the odd one out.
+
+  dims IS ACCEPTED WITHOUT THE LIGHTBOX TOO, because the width and height
+  attributes are useful on their own: they let the <img> carry an intrinsic
+  ratio if story.css never arrives. They do NOT fix a layout shift. Section 4 of
+  story.css crops every cell to `aspect-ratio: 3 / 2`, and author CSS outranks
+  the UA's `attr(width) / attr(height)` rule, so the cell already reserves its
+  space with or without these attributes and the declared ratio never drives
+  display sizing.
+
+  QUOTING: a double-quoted include param cannot contain a `"`. Build any value
+  carrying markup or nested quotes in a `capture` block first, then pass the
+  variable by name. See figure.html for the full note.
+
+  REQUIRED PARAMS are enforced by including a file that does not exist, the
+  only way to abort a Jekyll build from Liquid without a plugin (GitHub Pages
+  runs a plugin allowlist). The build fails naming the offending slot, e.g.
+  BUILD-ERROR-gallery-src3-supplied-without-alt3.
+
+  NEVER CREATE THE FILE THE ERROR NAMES. Jekyll's message ends "Ensure it
+  exists in one of those directories", which reads as an instruction to do
+  exactly that. Creating it makes the guard a permanent no-op and the fault it
+  names ships silently. Fix the call site. deploy.yml fails the build if any
+  _includes/story/BUILD-ERROR-*.html exists.
+
+  BLANK VALUES: whether a slot was supplied is decided by Liquid truthiness,
+  where nil is false but "" and "   " are TRUE. So each value is validated
+  after that test, not by it. Without the src check, `src3=""` built clean and
+  emitted <img src="">, which resolves against the document URL and makes the
+  browser re-request the page HTML as an image. `srcs.size` does not catch it
+  either, because a blank entry still counts toward the size.
+
+  EVERY LIGHTBOX VARIABLE IS ASSIGNED UNCONDITIONALLY, before anything reads
+  it. Liquid's `assign` inside an include writes to the outermost scope and is
+  never popped, so a value set by the first gallery on a page is still visible to
+  the second. Left conditional, a `lightbox=false` gallery following a lightbox
+  gallery would inherit the previous one's `dim_w`, `dim_h` and `hrefs` and pair
+  them with its own images: the same index-desync failure the note below
+  describes, one scope wider.
+
+  WHY EACH SLOT IS VALIDATED INSIDE ITS OWN `if`: an earlier draft built `srcs`
+  conditionally, so it compacted, and `alts` unconditionally with six pushes,
+  so it did not. Index-matching them then desynced permanently: src1 + alt1 +
+  src3 + alt3 rendered alt1 on image 1 and an empty alt on image 3, discarding
+  alt3. Sparse params produced plausible alt text on the wrong photograph,
+  which is worse than none and invisible on the page. Both arrays are now
+  pushed in the same block, so they cannot drift.
+{%- endcomment -%}
+{%- assign tier = include.tier | default: "wide" -%}
+{%- unless tier == "text" or tier == "wide" or tier == "full" -%}
+{%- include story/BUILD-ERROR-gallery-tier-must-be-text-wide-or-full.html -%}
+{%- endunless -%}
+{%- assign srcs = "" | split: "" -%}
+{%- assign alts = "" | split: "" -%}
+{%- if include.src1 -%}
+  {%- assign s = include.src1 | strip -%}
+  {%- if s == "" -%}{%- include story/BUILD-ERROR-gallery-src1-must-not-be-blank.html -%}{%- endif -%}
+  {%- assign a = include.alt1 | strip -%}
+  {%- if a == "" -%}{%- include story/BUILD-ERROR-gallery-src1-supplied-without-alt1.html -%}{%- endif -%}
+  {%- assign srcs = srcs | push: s -%}
+  {%- assign alts = alts | push: a -%}
+{%- endif -%}
+{%- if include.src2 -%}
+  {%- assign s = include.src2 | strip -%}
+  {%- if s == "" -%}{%- include story/BUILD-ERROR-gallery-src2-must-not-be-blank.html -%}{%- endif -%}
+  {%- assign a = include.alt2 | strip -%}
+  {%- if a == "" -%}{%- include story/BUILD-ERROR-gallery-src2-supplied-without-alt2.html -%}{%- endif -%}
+  {%- assign srcs = srcs | push: s -%}
+  {%- assign alts = alts | push: a -%}
+{%- endif -%}
+{%- if include.src3 -%}
+  {%- assign s = include.src3 | strip -%}
+  {%- if s == "" -%}{%- include story/BUILD-ERROR-gallery-src3-must-not-be-blank.html -%}{%- endif -%}
+  {%- assign a = include.alt3 | strip -%}
+  {%- if a == "" -%}{%- include story/BUILD-ERROR-gallery-src3-supplied-without-alt3.html -%}{%- endif -%}
+  {%- assign srcs = srcs | push: s -%}
+  {%- assign alts = alts | push: a -%}
+{%- endif -%}
+{%- if include.src4 -%}
+  {%- assign s = include.src4 | strip -%}
+  {%- if s == "" -%}{%- include story/BUILD-ERROR-gallery-src4-must-not-be-blank.html -%}{%- endif -%}
+  {%- assign a = include.alt4 | strip -%}
+  {%- if a == "" -%}{%- include story/BUILD-ERROR-gallery-src4-supplied-without-alt4.html -%}{%- endif -%}
+  {%- assign srcs = srcs | push: s -%}
+  {%- assign alts = alts | push: a -%}
+{%- endif -%}
+{%- if include.src5 -%}
+  {%- assign s = include.src5 | strip -%}
+  {%- if s == "" -%}{%- include story/BUILD-ERROR-gallery-src5-must-not-be-blank.html -%}{%- endif -%}
+  {%- assign a = include.alt5 | strip -%}
+  {%- if a == "" -%}{%- include story/BUILD-ERROR-gallery-src5-supplied-without-alt5.html -%}{%- endif -%}
+  {%- assign srcs = srcs | push: s -%}
+  {%- assign alts = alts | push: a -%}
+{%- endif -%}
+{%- if include.src6 -%}
+  {%- assign s = include.src6 | strip -%}
+  {%- if s == "" -%}{%- include story/BUILD-ERROR-gallery-src6-must-not-be-blank.html -%}{%- endif -%}
+  {%- assign a = include.alt6 | strip -%}
+  {%- if a == "" -%}{%- include story/BUILD-ERROR-gallery-src6-supplied-without-alt6.html -%}{%- endif -%}
+  {%- assign srcs = srcs | push: s -%}
+  {%- assign alts = alts | push: a -%}
+{%- endif -%}
+{%- if srcs.size < 2 -%}
+{%- include story/BUILD-ERROR-gallery-requires-at-least-two-images-use-figure-for-one.html -%}
+{%- endif -%}
+{%- comment -%}
+  LIGHTBOX ON UNLESS EXPLICITLY OFF, and both spellings of off are handled.
+  `lightbox=false` unquoted arrives as the Liquid boolean false, because Jekyll
+  resolves an unquoted include param through the context, where `false` is a
+  literal. `lightbox="false"` arrives as the string. A bare `if include.lightbox`
+  would treat the boolean as "not supplied" and quietly leave the lightbox on,
+  which is the wrong way round for an opt-out. Anything else is a typo and fails
+  the build rather than silently defaulting.
+{%- endcomment -%}
+{%- assign lightbox = true -%}
+{%- if include.lightbox == false -%}
+  {%- assign lightbox = false -%}
+{%- elsif include.lightbox -%}
+  {%- assign lb = include.lightbox | append: "" | strip | downcase -%}
+  {%- if lb == "false" -%}{%- assign lightbox = false -%}
+  {%- elsif lb != "true" -%}{%- include story/BUILD-ERROR-gallery-lightbox-must-be-true-or-false.html -%}
+  {%- endif -%}
+{%- endif -%}
+{%- comment -%}
+  dims: parsed into two index-aligned arrays, pushed in the same block so they
+  cannot drift, exactly as srcs and alts are above.
+
+  THERE IS NO REGEX IN LIQUID, so "two positive integers" is checked by round
+  trip: `plus: 0` runs Liquid's to_number, which is String#to_i for anything that
+  is not a decimal, so "18a0" becomes 18 and rendering it back gives "18", which
+  no longer equals the input. Same for "1800e3" and "+1800". `< 1` then rejects
+  "0" and "-5", both of which do round-trip.
+
+  A DECIMAL NEEDS ITS OWN TEST and does not fall out of the round trip, which was
+  the one case that built clean when these guards were first exercised.
+  `to_number` returns a BigDecimal for "1800.5", then Liquid's own arithmetic
+  filter converts that straight back with `to_f`, so it renders as "1800.5" and
+  compares equal to the input. Rejecting a literal "." is the whole fix.
+{%- endcomment -%}
+{%- assign dims_raw = include.dims | append: "" | strip | downcase -%}
+{%- if lightbox and dims_raw == "" -%}
+{%- include story/BUILD-ERROR-gallery-lightbox-requires-dims-eg-1800x1200-per-image.html -%}
+{%- endif -%}
+{%- assign dim_w = "" | split: "" -%}
+{%- assign dim_h = "" | split: "" -%}
+{%- if dims_raw != "" -%}
+  {%- assign dims = dims_raw | split: "," -%}
+  {%- unless dims.size == srcs.size -%}
+  {%- include story/BUILD-ERROR-gallery-dims-count-must-equal-the-number-of-src-params.html -%}
+  {%- endunless -%}
+  {%- for d in dims -%}
+    {%- assign pair = d | strip | split: "x" -%}
+    {%- unless pair.size == 2 -%}
+    {%- include story/BUILD-ERROR-gallery-dims-entry-must-be-width-x-height.html -%}
+    {%- endunless -%}
+    {%- assign dw = pair[0] | strip -%}
+    {%- assign dh = pair[1] | strip -%}
+    {%- assign dwn = dw | plus: 0 -%}
+    {%- assign dhn = dh | plus: 0 -%}
+    {%- capture dwr %}{{ dwn }}{% endcapture -%}
+    {%- capture dhr %}{{ dhn }}{% endcapture -%}
+    {%- if dwr != dw or dhr != dh or dwn < 1 or dhn < 1 or dw contains "." or dh contains "." -%}
+    {%- include story/BUILD-ERROR-gallery-dims-must-be-two-positive-integers-like-1800x1200.html -%}
+    {%- endif -%}
+    {%- assign dim_w = dim_w | push: dw -%}
+    {%- assign dim_h = dim_h | push: dh -%}
+  {%- endfor -%}
+{%- endif -%}
+{%- comment -%}
+  The lightbox href points at the LARGEST variant that actually exists, not at a
+  name derived from the src and hoped for. `-xlarge.webp`, then `-large.webp`,
+  then the master src, each probed against `site.static_files`, which lists every
+  file Jekyll will copy into the build. Guessing instead would ship a link to a
+  404 the moment a set is published without an xlarge, which is the normal case:
+  the beer set has base and -large only.
+
+  The probe is one joined string rather than repeated `where` filters: built once
+  per PAGE RENDER (`capture` leaks out of this include the same way `assign` does,
+  so the second gallery on a page reuses it) and each lookup is then a substring
+  test. The pipes on both sides of every candidate make it an exact match, so a
+  path that is a prefix of another cannot answer for it.
+
+  The variant suffixes and the extension swap mirror _includes/image.html, which
+  is what generates the srcset these files were made for. If that mapping ever
+  changes, both places move together.
+{%- endcomment -%}
+{%- assign hrefs = "" | split: "" -%}
+{%- if lightbox -%}
+  {%- unless story_gallery_files -%}
+  {%- capture story_gallery_files %}|{{ site.static_files | map: "path" | join: "|" }}|{% endcapture -%}
+  {%- endunless -%}
+  {%- for s in srcs -%}
+    {%- assign webp = s | replace: ".jpg", ".webp" | replace: ".jpeg", ".webp" | replace: ".png", ".webp" -%}
+    {%- assign stem = webp | replace: ".webp", "" -%}
+    {%- assign href = "" -%}
+    {%- capture probe %}|{{ stem }}-xlarge.webp|{% endcapture -%}
+    {%- if story_gallery_files contains probe -%}{%- assign href = stem | append: "-xlarge.webp" -%}{%- endif -%}
+    {%- if href == "" -%}
+      {%- capture probe %}|{{ stem }}-large.webp|{% endcapture -%}
+      {%- if story_gallery_files contains probe -%}{%- assign href = stem | append: "-large.webp" -%}{%- endif -%}
+    {%- endif -%}
+    {%- if href == "" -%}
+      {%- capture probe %}|{{ s }}|{% endcapture -%}
+      {%- if story_gallery_files contains probe -%}{%- assign href = s -%}{%- endif -%}
+    {%- endif -%}
+    {%- if href == "" -%}
+    {%- include story/BUILD-ERROR-gallery-lightbox-found-no-image-file-on-disk-for-a-src.html -%}
+    {%- endif -%}
+    {%- assign hrefs = hrefs | push: href -%}
+  {%- endfor -%}
+{%- endif -%}
+{%- comment -%}
+  `sizes` is derived from the tier AND the column count, not the tier alone. A
+  cell is a third or a half of the tier, so a tier-width `sizes` would tell the
+  browser to fetch a 1180px candidate for a 387px slot: the exact over-fetch
+  that made `widths` worth adding. `divided_by` on integers floors, which
+  rounds the hint down, which is the safe direction.
+{%- endcomment -%}
+{%- if srcs.size == 2 or srcs.size == 4 -%}{%- assign cols = 2 -%}{%- else -%}{%- assign cols = 3 -%}{%- endif -%}
+{%- assign gap_total = cols | minus: 1 | times: 10 -%}
+{%- if include.sizes -%}
+{%- assign img_sizes = include.sizes -%}
+{%- elsif tier == "full" -%}
+{%- capture img_sizes -%}(max-width: 639px) 100vw, calc((100vw - {{ gap_total }}px) / {{ cols }}){%- endcapture -%}
+{%- else -%}
+{%- if tier == "text" -%}{%- assign tier_px = 660 -%}{%- assign tier_bp = 700 -%}
+{%- else -%}{%- assign tier_px = 1180 -%}{%- assign tier_bp = 1220 -%}{%- endif -%}
+{%- assign cell_px = tier_px | minus: gap_total | divided_by: cols -%}
+{%- assign inner = gap_total | plus: 40 -%}
+{%- capture img_sizes -%}(max-width: 639px) calc(100vw - 40px), (max-width: {{ tier_bp }}px) calc((100vw - {{ inner }}px) / {{ cols }}), {{ cell_px }}px{%- endcapture -%}
+{%- endif -%}
+{%- comment -%}
+  The loader sits OUTSIDE the <figure>. A <link> between two <a> children of a
+  figure is legal but reads as debris, and both elements are `display: none`, so
+  as direct children of the `.story` grid they generate no grid item at all.
+
+  It also emits at most once per page however many galleries call it; see the
+  note in _includes/photoswipe.html. `children` is narrowed to the link class
+  because the figcaption sitting inside this same figure can carry a prose link.
+{%- endcomment -%}
+{%- if lightbox -%}{% include photoswipe.html selector=".story-gallery-pswp" children="a.story-gallery-link" %}{%- endif -%}
+<figure class="story-block story-gallery is-{{ srcs.size }} story-{{ tier }}{% if lightbox %} story-gallery-pswp{% endif %}">
+  {%- for s in srcs %}
+  {%- comment -%}
+    The alt is pulled into its own variable first. Jekyll's include tag
+    validates each param value against `[\w.-]+` or a quoted string, so a
+    bracket subscript written inline (`alt=alts[forloop.index0]`) is a hard
+    build error, not a silent miss.
+
+    The same applies to the dims pair and the href. `alt` doing double duty is
+    deliberate: the wrapping link takes its accessible name from the image
+    inside it, so a non-empty alt is the only thing standing between this and an
+    unlabelled link (WCAG 2.4.4). Every alt is already checked non-blank above,
+    which is why wrapping these images in links needed no new guard.
+  {%- endcomment -%}
+  {%- assign a = alts[forloop.index0] -%}
+  {%- assign dw = dim_w[forloop.index0] -%}
+  {%- assign dh = dim_h[forloop.index0] -%}
+  {%- if lightbox -%}
+  {%- assign href = hrefs[forloop.index0] -%}
+  <a class="story-gallery-link" href="{{ href }}" data-pswp-width="{{ dw }}" data-pswp-height="{{ dh }}" target="_blank" rel="noopener">{% include image.html src=s alt=a widths=include.widths sizes=img_sizes width=dw height=dh %}</a>
+  {%- else %}
+  {% include image.html src=s alt=a widths=include.widths sizes=img_sizes width=dw height=dh %}
+  {%- endif -%}
+  {%- endfor %}
+  {%- include story/caption.html caption=include.caption credit=include.credit -%}
+</figure>

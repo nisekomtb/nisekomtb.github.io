@@ -1,0 +1,120 @@
+{%- comment -%}
+  Key/value spec rows on a panel. Replaces a plain bullet list used as a spec
+  sheet, which is what /beer/ currently does with the beer's style, ABV and
+  hops.
+
+  Params:
+    k1..k8 (k1 required): row key, localised
+    v1..v8 (required for every k supplied): row value, localised
+    tier:  text | wide. Default text. A spec sheet reads as part of the
+           sentence around it, so it belongs at the prose measure unless it
+           has many long values.
+
+  MARKUP: `<wbr>` IS ALLOWED AND EXPECTED on JA pages, since it is this
+  project's standard remedy for JA line breaking (see .claude/rules/bilingual.md
+  for the BudouX workflow). Values are not escaped, and the `strip` plus
+  `!= ""` guards are unaffected by tags. LINKS ARE NOT allowed: link styling in
+  this kit is scoped to prose containers and captions (section 2 of story.css),
+  and <dd> is not one of them, so an anchor here renders in the value colour
+  with no underline and no hover state. A value needing a link belongs in prose.
+
+  THE MARKUP IS A <dl>, not a stack of <div>s, for two reasons. A screen reader
+  announces the item count on entry and offers list-jump commands, so a reader
+  hunting for one spec can skip the rest instead of arrowing through it. And a
+  <dt>/<dd> pair escapes `html[lang="ja"] span` at template.css:94, which sets
+  `word-break: keep-all` plus `overflow-wrap: break-word`: on an untokenised JA
+  value that combination treats the whole sentence as one unbreakable word and
+  then emergency-breaks it, bypassing kinsoku and orphaning a sentence-final 。
+  onto its own line. Measured before the change: 14 of 111 value-box widths
+  between 120px and 340px orphaned a 。 or 、. The <div> wrapper around each
+  pair is valid HTML5 and is what carries the flex row.
+
+  Eight slots because /beer/ needs eight (style, ABV, IBU, hops, malt,
+  brewery, volume, availability). A spec sheet longer than that is a table.
+
+  REQUIRED PARAMS, BLANK VALUES and the BUILD-ERROR mechanism work exactly as
+  in stats.html and gallery.html. Read the note there. Never create a file
+  named in a BUILD-ERROR message.
+{%- endcomment -%}
+{%- assign tier = include.tier | default: "text" -%}
+{%- unless tier == "text" or tier == "wide" -%}
+{%- include story/BUILD-ERROR-table-tier-must-be-text-or-wide.html -%}
+{%- endunless -%}
+{%- assign keys = "" | split: "" -%}
+{%- assign vals = "" | split: "" -%}
+{%- if include.k1 -%}
+  {%- assign k = include.k1 | strip -%}
+  {%- if k == "" -%}{%- include story/BUILD-ERROR-table-k1-must-not-be-blank.html -%}{%- endif -%}
+  {%- assign v = include.v1 | strip -%}
+  {%- if v == "" -%}{%- include story/BUILD-ERROR-table-k1-supplied-without-v1.html -%}{%- endif -%}
+  {%- assign keys = keys | push: k -%}
+  {%- assign vals = vals | push: v -%}
+{%- endif -%}
+{%- if include.k2 -%}
+  {%- assign k = include.k2 | strip -%}
+  {%- if k == "" -%}{%- include story/BUILD-ERROR-table-k2-must-not-be-blank.html -%}{%- endif -%}
+  {%- assign v = include.v2 | strip -%}
+  {%- if v == "" -%}{%- include story/BUILD-ERROR-table-k2-supplied-without-v2.html -%}{%- endif -%}
+  {%- assign keys = keys | push: k -%}
+  {%- assign vals = vals | push: v -%}
+{%- endif -%}
+{%- if include.k3 -%}
+  {%- assign k = include.k3 | strip -%}
+  {%- if k == "" -%}{%- include story/BUILD-ERROR-table-k3-must-not-be-blank.html -%}{%- endif -%}
+  {%- assign v = include.v3 | strip -%}
+  {%- if v == "" -%}{%- include story/BUILD-ERROR-table-k3-supplied-without-v3.html -%}{%- endif -%}
+  {%- assign keys = keys | push: k -%}
+  {%- assign vals = vals | push: v -%}
+{%- endif -%}
+{%- if include.k4 -%}
+  {%- assign k = include.k4 | strip -%}
+  {%- if k == "" -%}{%- include story/BUILD-ERROR-table-k4-must-not-be-blank.html -%}{%- endif -%}
+  {%- assign v = include.v4 | strip -%}
+  {%- if v == "" -%}{%- include story/BUILD-ERROR-table-k4-supplied-without-v4.html -%}{%- endif -%}
+  {%- assign keys = keys | push: k -%}
+  {%- assign vals = vals | push: v -%}
+{%- endif -%}
+{%- if include.k5 -%}
+  {%- assign k = include.k5 | strip -%}
+  {%- if k == "" -%}{%- include story/BUILD-ERROR-table-k5-must-not-be-blank.html -%}{%- endif -%}
+  {%- assign v = include.v5 | strip -%}
+  {%- if v == "" -%}{%- include story/BUILD-ERROR-table-k5-supplied-without-v5.html -%}{%- endif -%}
+  {%- assign keys = keys | push: k -%}
+  {%- assign vals = vals | push: v -%}
+{%- endif -%}
+{%- if include.k6 -%}
+  {%- assign k = include.k6 | strip -%}
+  {%- if k == "" -%}{%- include story/BUILD-ERROR-table-k6-must-not-be-blank.html -%}{%- endif -%}
+  {%- assign v = include.v6 | strip -%}
+  {%- if v == "" -%}{%- include story/BUILD-ERROR-table-k6-supplied-without-v6.html -%}{%- endif -%}
+  {%- assign keys = keys | push: k -%}
+  {%- assign vals = vals | push: v -%}
+{%- endif -%}
+{%- if include.k7 -%}
+  {%- assign k = include.k7 | strip -%}
+  {%- if k == "" -%}{%- include story/BUILD-ERROR-table-k7-must-not-be-blank.html -%}{%- endif -%}
+  {%- assign v = include.v7 | strip -%}
+  {%- if v == "" -%}{%- include story/BUILD-ERROR-table-k7-supplied-without-v7.html -%}{%- endif -%}
+  {%- assign keys = keys | push: k -%}
+  {%- assign vals = vals | push: v -%}
+{%- endif -%}
+{%- if include.k8 -%}
+  {%- assign k = include.k8 | strip -%}
+  {%- if k == "" -%}{%- include story/BUILD-ERROR-table-k8-must-not-be-blank.html -%}{%- endif -%}
+  {%- assign v = include.v8 | strip -%}
+  {%- if v == "" -%}{%- include story/BUILD-ERROR-table-k8-supplied-without-v8.html -%}{%- endif -%}
+  {%- assign keys = keys | push: k -%}
+  {%- assign vals = vals | push: v -%}
+{%- endif -%}
+{%- if keys.size == 0 -%}
+{%- include story/BUILD-ERROR-table-requires-at-least-one-row.html -%}
+{%- endif -%}
+<dl class="story-block story-table story-{{ tier }}">
+  {%- for k in keys %}
+  {%- assign v = vals[forloop.index0] -%}
+  <div class="story-row">
+    <dt class="story-row-key">{{ k }}</dt>
+    <dd class="story-row-val">{{ v }}</dd>
+  </div>
+  {%- endfor %}
+</dl>

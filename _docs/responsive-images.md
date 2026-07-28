@@ -69,11 +69,19 @@ If ImageMagick isn't available, `cwebp` (from `brew install webp`) + the built-i
 tool covers the same workflow:
 
 ```bash
-# Resize source to target width as JPG, then encode to WebP
-sips -Z 1600 image.jpg --out image-1600.jpg >/dev/null
+# Resize source to target WIDTH as JPG, then encode to WebP
+sips --resampleWidth 1600 image.jpg --out image-1600.jpg >/dev/null
 cwebp -q 82 image-1600.jpg -o image.webp
 rm image-1600.jpg
 ```
+
+**Use `--resampleWidth`, not `-Z`.** `sips -Z` caps the LONGEST side, so it is only
+equivalent to ImageMagick's `-resize 1600x` for landscape images. Given a portrait source
+it constrains the height instead, and every tier comes out short by the aspect ratio:
+resizing an 1800x2700 image with `-Z 1200` produces 800x1200, not the 1200x1800 you asked
+for. The failure is silent, since you still get valid files at plausible sizes, and it only
+shows up later as a blurry image or a `srcset` whose declared widths do not match the files.
+This was got wrong once on the beer shoot.
 
 Going the other direction (WebP back to JPG, e.g. to add a JPG fallback for an existing
 WebP-only image) uses `dwebp` + `sips`:

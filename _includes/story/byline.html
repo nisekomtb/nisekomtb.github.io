@@ -1,0 +1,83 @@
+{%- comment -%}
+  Byline under the story title. Resolves the person from _data/team.yml, then
+  _data/staff.yml, so trail crew can author a build report without being moved
+  onto the board.
+
+  Params:
+    slug (required): matches the `slug` field on a team or staff entry
+
+  THE SLUG IS RESOLVED TO A STRING BEFORE IT REACHES `where`, and that is
+  load-bearing. Jekyll's `where` filter returns the input UNFILTERED when its
+  value argument is nil, so `site.data.team | where: "slug", nil | first`
+  returns the first person in team.yml rather than nothing. That exact bug
+  shipped on this branch once, publishing a fabricated author in a story's
+  structured data. `| strip` turns nil into "", which `where` filters normally
+  and which matches nobody.
+
+  AN UNKNOWN SLUG FAILS THE BUILD rather than rendering nothing. A typo in
+  `author:` would otherwise drop the byline silently and the story would
+  publish with no attribution, which is the failure nobody notices. The
+  BUILD-ERROR mechanism is the only way to abort a Jekyll build from Liquid
+  without a plugin; the missing filename IS the message. Never create the file
+  an error names. deploy.yml fails the build if any
+  _includes/story/BUILD-ERROR-*.html exists.
+
+  THE NAME AND THE IMAGE ARE BOTH REQUIRED and either one blank fails the
+  build. A blank name would publish an attributionless
+  byline and, worse, `"name": null` in the BlogPosting author node in
+  _layouts/story.html, which Google flags as an invalid value. A blank image
+  would hand the text <div> the fixed avatar track in section 7 of story.css:
+  measured on a three-line card at 1440px with the image removed, the text box
+  went from 534px wide to 64px and the card from 121.2px tall to 296.7px, with
+  the 534px content track left empty. All 29 entries in team.yml and staff.yml carry both
+  today; the guards keep it that way rather than making the CSS defensive about
+  a state the data never legitimately reaches.
+
+  THE AVATAR IS A RAW <img>, NOT image.html: assets/images/team/ holds 32 .jpg
+  files and zero .webp, and image.html emits a <picture> with a WebP <source>
+  that a supporting browser would take and fail to load.
+
+  ALT IS DELIBERATELY EMPTY. The name sits immediately beside the portrait, so
+  alt text would make a screen reader announce it twice.
+
+  NO `loading="lazy"` ON THIS AVATAR, unlike the author card's and the pull
+  quote's. Measured at a 870px viewport, with and without a masthead image, the
+  byline avatar's top is at y=485, inside the first viewport, so deferring it
+  only delays a paint the reader is already looking at.
+
+  EVERY VARIABLE IS PREFIXED `story_author_`. Jekyll's `include` shares the
+  caller's scope for `assign`, so short names here leak into the including page.
+  _layouts/story.html assigns its own author for the JSON-LD, and while these
+  two once both used `a` the layout only survived on source order: it assigns
+  after this include runs and overwrites. Moving the JSON-LD above the <article>
+  would have silently published whichever person the byline resolved. Prefixed
+  names remove the collision instead of relying on ordering.
+
+  THE DATE IS WRAPPED so the separator before it can be a ::before with an empty
+  alt string, exactly as the caption credit does it in section 3 of story.css.
+  A separator glyph in real DOM text is announced by a screen reader; a
+  decorative one should not be.
+{%- endcomment -%}
+{%- assign story_author_slug = include.slug | strip -%}
+{%- if story_author_slug == "" -%}{%- include story/BUILD-ERROR-byline-requires-slug.html -%}{%- endif -%}
+{%- assign story_author = site.data.team | where: "slug", story_author_slug | first -%}
+{%- unless story_author -%}{%- assign story_author = site.data.staff | where: "slug", story_author_slug | first -%}{%- endunless -%}
+{%- unless story_author -%}{%- include story/BUILD-ERROR-byline-slug-not-found-in-team-or-staff.html -%}{%- endunless -%}
+{%- if page.lang == "ja" -%}
+  {%- assign story_author_name = story_author.ja.name | default: story_author.name -%}
+  {%- assign story_author_role = story_author.ja.namba_role | default: story_author.namba_role -%}
+{%- else -%}
+  {%- assign story_author_name = story_author.name -%}
+  {%- assign story_author_role = story_author.namba_role -%}
+{%- endif -%}
+{%- assign story_author_name = story_author_name | strip -%}
+{%- if story_author_name == "" -%}{%- include story/BUILD-ERROR-byline-entry-has-no-name.html -%}{%- endif -%}
+{%- assign story_author_img = story_author.image | strip -%}
+{%- if story_author_img == "" -%}{%- include story/BUILD-ERROR-byline-entry-has-no-image.html -%}{%- endif -%}
+<div class="story-block story-byline">
+  <img class="story-avatar" src="{{ story_author_img }}" alt="" width="40" height="40">
+  <div>
+    <div class="story-byline-name">{{ story_author_name }}</div>
+    <div class="story-byline-meta">{{ story_author_role }}{% if page.date %}<span class="story-byline-date">{% if page.lang == "ja" %}{{ page.date | date: "%Y年%-m月%-d日" }}{% else %}{{ page.date | date: "%-d %B %Y" }}{% endif %}</span>{% endif %}</div>
+  </div>
+</div>

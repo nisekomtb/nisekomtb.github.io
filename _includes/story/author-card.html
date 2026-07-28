@@ -1,0 +1,58 @@
+{%- comment -%}
+  Author card at the foot of a story.
+
+  Params:
+    slug (required): matches the `slug` field on a team or staff entry
+
+  THE THIRD LINE IS ONE AFFILIATION, resolved from the first of `byline_title`,
+  `title`, `sub_title` that the entry supplies. `byline_title` is an opt-in
+  override so the wording can be softened per person later without touching this
+  include; no entry sets it today, in either language. `sub_title` is the tail of
+  the chain because one entry, Masaya Yoshimura, stores his employer there in EN
+  and in `ja.title` in JA: before the chain reached `sub_title` his card named
+  Niseko Moiwa Ski Resort in Japanese and nothing at all in English, the same
+  fact present in one language only. Do NOT fix that class of problem by moving
+  data in _data/team.yml: team/index.html:243-249 renders `title` as
+  `.board-title` and `sub_title` as `.board-subtitle`, so moving his string
+  restyles his card on /team/.
+
+  The chain is symmetric across the two languages as of this writing, checked
+  mechanically over all 29 entries in team.yml and staff.yml rather than by
+  reading them: zero entries resolve an affiliation in one language and a blank
+  in the other. All six staff entries supply none of the three keys in either
+  language, so their cards are two lines, name and role. That is correct, not a
+  data gap to fill.
+
+  THE SLUG LOOKUP, THE REQUIRED NAME AND IMAGE, THE BUILD-ERROR MECHANISM, THE
+  RAW <img>, THE EMPTY ALT AND THE `story_author_` VARIABLE PREFIX all work
+  exactly as in byline.html. Read the note there before changing any of them;
+  each one is there because of a specific measured failure. This card keeps
+  `loading="lazy"`, which the byline drops: the card sits at the foot of the
+  story, well below the fold.
+{%- endcomment -%}
+{%- assign story_author_slug = include.slug | strip -%}
+{%- if story_author_slug == "" -%}{%- include story/BUILD-ERROR-author-card-requires-slug.html -%}{%- endif -%}
+{%- assign story_author = site.data.team | where: "slug", story_author_slug | first -%}
+{%- unless story_author -%}{%- assign story_author = site.data.staff | where: "slug", story_author_slug | first -%}{%- endunless -%}
+{%- unless story_author -%}{%- include story/BUILD-ERROR-author-card-slug-not-found-in-team-or-staff.html -%}{%- endunless -%}
+{%- if page.lang == "ja" -%}
+  {%- assign story_author_name  = story_author.ja.name | default: story_author.name -%}
+  {%- assign story_author_role  = story_author.ja.namba_role | default: story_author.namba_role -%}
+  {%- assign story_author_title = story_author.ja.byline_title | default: story_author.ja.title | default: story_author.ja.sub_title -%}
+{%- else -%}
+  {%- assign story_author_name  = story_author.name -%}
+  {%- assign story_author_role  = story_author.namba_role -%}
+  {%- assign story_author_title = story_author.byline_title | default: story_author.title | default: story_author.sub_title -%}
+{%- endif -%}
+{%- assign story_author_name = story_author_name | strip -%}
+{%- if story_author_name == "" -%}{%- include story/BUILD-ERROR-author-card-entry-has-no-name.html -%}{%- endif -%}
+{%- assign story_author_img = story_author.image | strip -%}
+{%- if story_author_img == "" -%}{%- include story/BUILD-ERROR-author-card-entry-has-no-image.html -%}{%- endif -%}
+<div class="story-block story-author-card">
+  <img class="story-avatar" src="{{ story_author_img }}" alt="" loading="lazy" width="64" height="64">
+  <div>
+    <div class="story-author-name">{{ story_author_name }}</div>
+    <div class="story-author-role">{{ story_author_role }}</div>
+    {%- if story_author_title %}<div class="story-author-title">{{ story_author_title }}</div>{% endif %}
+  </div>
+</div>

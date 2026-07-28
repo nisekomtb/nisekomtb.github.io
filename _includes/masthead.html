@@ -45,13 +45,22 @@
       </picture>
     </div>
     <div class="ja-masthead-detail">
+      {%- comment -%}
+        `id="masthead-title"` is the target of the `aria-labelledby` on
+        <article class="story"> in _layouts/story.html, which is how a story
+        gets its accessible name. Any new masthead variant used by a story
+        layout must carry the same id, or that reference dangles silently
+        with no build error. masthead-crowdfund.html does not have it, so it
+        is not safe for stories as it stands. Harmless on every other
+        layout: the masthead is included once per page, so the id is unique.
+      {%- endcomment -%}
       {% if page.subtitle %}
-        <h1 class="ja-masthead-title">
+        <h1 class="ja-masthead-title" id="masthead-title">
           <span class="title-primary">{{ page.titleHtml | default: page.title }}</span>
           <span class="title-secondary">{{ page.subtitleHtml | default: page.subtitle }}</span>
         </h1>
       {% else %}
-        <h1 class="ja-masthead-title">{{ page.titleHtml | default: page.title }}</h1>
+        <h1 class="ja-masthead-title" id="masthead-title">{{ page.titleHtml | default: page.title }}</h1>
       {% endif %}
       {% if page.action %}
       <div style="text-align:center; margin-top:30px;">

@@ -1,0 +1,65 @@
+{%- comment -%}
+  Text beside media at the wide tier. Always stacks image-first on mobile.
+
+  Params:
+    src  (required): the image
+    alt  (required): localised alt text
+    text (required): HTML string for the text side, already tokenised on JA
+                     pages. Rendered unescaped by design: this is repo-authored
+                     content at the same trust level as the existing
+                     `descriptionHtml` front matter fields, not user input.
+    heading: optional h3 above the text
+    position: "media-right" (default) | "media-left"
+    caption: under the image. Markup allowed, see caption.html.
+    credit:  under the image. Markup allowed.
+    widths:  passed to image.html, e.g. "800,1600". Without it the 574px media
+             column downloads the master WebP.
+    sizes:   passed to image.html. Omit it and the media column width is used;
+             only set it to override.
+    width, height: natural dimensions, for aspect-ratio reservation
+
+  QUOTING: a double-quoted include param cannot contain a `"`. `text` almost
+  always needs a `capture` block for that reason, since single-quoting every
+  attribute inside the HTML gets unreadable fast. See figure.html.
+
+  REQUIRED PARAMS are enforced by including a file that does not exist, the
+  only way to abort a Jekyll build from Liquid without a plugin (GitHub Pages
+  runs a plugin allowlist). The build fails naming the missing param, e.g.
+  BUILD-ERROR-split-requires-alt.
+{%- endcomment -%}
+{%- assign pos = include.position | default: "media-right" -%}
+{%- unless pos == "media-right" or pos == "media-left" -%}
+{%- include story/BUILD-ERROR-split-position-must-be-media-right-or-media-left.html -%}
+{%- endunless -%}
+{%- assign src = include.src | strip -%}
+{%- if src == "" -%}{%- include story/BUILD-ERROR-split-requires-src.html -%}{%- endif -%}
+{%- assign alt = include.alt | strip -%}
+{%- if alt == "" -%}{%- include story/BUILD-ERROR-split-requires-alt.html -%}{%- endif -%}
+{%- assign text = include.text | strip -%}
+{%- if text == "" -%}{%- include story/BUILD-ERROR-split-requires-text.html -%}{%- endif -%}
+{%- comment -%}
+  The media column is half the wide tier minus half the 32px gap, so 574px at
+  1440px, not the 1180px a tier-derived `sizes` would claim. Below 768px the
+  split is one column at the full tier width.
+{%- endcomment -%}
+{%- if include.sizes -%}
+{%- assign img_sizes = include.sizes -%}
+{%- else -%}
+{%- assign img_sizes = "(max-width: 767px) calc(100vw - 40px), (max-width: 1220px) calc((100vw - 72px) / 2), 574px" -%}
+{%- endif -%}
+<div class="story-block story-split story-wide{% if pos == 'media-right' %} is-media-right{% endif %}">
+  <figure class="story-split-media">
+    {% include image.html
+       src=include.src
+       alt=include.alt
+       widths=include.widths
+       sizes=img_sizes
+       width=include.width
+       height=include.height %}
+    {%- include story/caption.html caption=include.caption credit=include.credit -%}
+  </figure>
+  <div class="story-split-text story-prose">
+    {%- if include.heading %}<h3>{{ include.heading }}</h3>{% endif %}
+    {{ include.text }}
+  </div>
+</div>

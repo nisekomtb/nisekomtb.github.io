@@ -1,0 +1,47 @@
+{%- comment -%}
+  Responsive 16:9 iframe for YouTube, Trailforks, or any embed.
+
+  Params:
+    url   (required): full embed URL. For YouTube use the /embed/ form.
+    title (required): accessible name for the iframe, localised. This is the
+                      only label a screen reader gets for the frame, so it
+                      describes the content ("Twin Peaks trail map"), not the
+                      technology ("YouTube video player").
+    tier:    text | wide | full. Default wide.
+    caption: below the frame. Markup allowed, see caption.html.
+    credit:  below the frame. Markup allowed.
+    allow:   Permissions Policy for the frame. Defaults to the minimum,
+             "fullscreen; picture-in-picture". YouTube wants more for its full
+             feature set; pass it explicitly when you want it, for example
+             allow="fullscreen; picture-in-picture; encrypted-media; web-share".
+             The default is deliberately short: the previous list was copied
+             from a YouTube snippet and handed clipboard-write and
+             encrypted-media to every Trailforks map as well.
+
+  QUOTING: a double-quoted include param cannot contain a `"`. Build any value
+  carrying markup in a `capture` block first. See figure.html.
+
+  REQUIRED PARAMS are enforced by including a file that does not exist, the
+  only way to abort a Jekyll build from Liquid without a plugin (GitHub Pages
+  runs a plugin allowlist). The build fails naming the missing param, e.g.
+  BUILD-ERROR-embed-requires-title. An empty title="" is worse than no title
+  at all under WCAG 4.1.2, because it presents the frame as deliberately
+  unlabelled.
+{%- endcomment -%}
+{%- assign tier = include.tier | default: "wide" -%}
+{%- unless tier == "text" or tier == "wide" or tier == "full" -%}
+{%- include story/BUILD-ERROR-embed-tier-must-be-text-wide-or-full.html -%}
+{%- endunless -%}
+{%- assign url = include.url | strip -%}
+{%- if url == "" -%}{%- include story/BUILD-ERROR-embed-requires-url.html -%}{%- endif -%}
+{%- assign title = include.title | strip -%}
+{%- if title == "" -%}{%- include story/BUILD-ERROR-embed-requires-title.html -%}{%- endif -%}
+{%- assign allow = include.allow | default: "fullscreen; picture-in-picture" -%}
+<figure class="story-block story-embed story-{{ tier }}">
+  <div class="story-embed-frame">
+    <iframe src="{{ url }}" title="{{ title }}" loading="lazy" allowfullscreen
+            allow="{{ allow }}"
+            referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+  {%- include story/caption.html caption=include.caption credit=include.credit -%}
+</figure>

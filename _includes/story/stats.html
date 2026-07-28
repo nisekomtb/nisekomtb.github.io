@@ -1,0 +1,107 @@
+{%- comment -%}
+  Two to four figures on cards. Numbered params rather than a delimited
+  string: a "value|label, value|label" string breaks on any label containing a
+  comma, and Liquid has no escaping to fix that.
+
+  Params:
+    n1..n4 (n1 and n2 required): the figure, e.g. "17" or "¥10.8"
+    l1..l4 (required for every n supplied): the label under it, localised
+    u1..u4 (optional): unit rendered smaller and tight to the figure, e.g.
+           "km" or "M". Splitting the unit off the figure is what lets
+           "17km" render as a large 17 with a small km, matching the
+           homepage impact band.
+    tier:  text | wide. Default wide. No full tier: a full-bleed row of stat
+           cards has no edge to bleed to, since the cards are panels rather
+           than imagery.
+
+  VALUES ARE LITERAL. Spec §4.1 proposed an optional `key=` that would read
+  the figure from _data/impact.yml; that file is nested arrays keyed by year
+  (funding.outgoings -> [{year: 2025, trail_maintenance_operation: ...}]), not
+  flat key/value, so a generic path resolver in Liquid would be the single
+  most complex piece in the kit serving one caller. Instead: every call site
+  carries an HTML comment naming the source figure and year, so a stale number
+  can be found by grepping for the comment.
+
+  REQUIRED PARAMS are enforced by including a file that does not exist, the
+  only way to abort a Jekyll build from Liquid without a plugin (GitHub Pages
+  runs a plugin allowlist). The build fails naming the offending slot, e.g.
+  BUILD-ERROR-stats-n2-supplied-without-l2. NEVER create the file the error
+  names: it is the message, not a missing dependency. deploy.yml fails the
+  build if any _includes/story/BUILD-ERROR-*.html exists.
+
+  BLANK VALUES: whether a slot was supplied is decided by Liquid truthiness,
+  where nil is false but "" and "   " are TRUE. Each value is therefore
+  validated after that test, not by it.
+
+  EACH UNIT IS STRIPPED IN ITS OWN `assign`, never inline in the push. Do not
+  collapse `assign u = include.u1 | strip` + `push: u` back into
+  `push: include.u1 | strip`. Liquid chains filters left to right, so the
+  `strip` there applies to the ARRAY push returns, not to the unit: Liquid's
+  `strip` is `input.to_s.strip`, so `units` silently became the 6-character
+  String `"[\"km\"]"` (`units.size` reported 6, not 1). Indexing a String by an
+  integer resolves to nil in Liquid, because a String has neither `key?` nor
+  `fetch`, so every `u` came out nil, `nil != ""` passed, and all five cards
+  rendered an empty <span class="story-stat-unit"></span> with the units discarded.
+  Stripping the scalar first also normalises an absent unit to "", which is
+  what makes the `u != ""` test suppress the span.
+{%- endcomment -%}
+{%- assign tier = include.tier | default: "wide" -%}
+{%- unless tier == "text" or tier == "wide" -%}
+{%- include story/BUILD-ERROR-stats-tier-must-be-text-or-wide.html -%}
+{%- endunless -%}
+{%- assign nums = "" | split: "" -%}
+{%- assign units = "" | split: "" -%}
+{%- assign lbls = "" | split: "" -%}
+{%- if include.n1 -%}
+  {%- assign n = include.n1 | strip -%}
+  {%- if n == "" -%}{%- include story/BUILD-ERROR-stats-n1-must-not-be-blank.html -%}{%- endif -%}
+  {%- assign l = include.l1 | strip -%}
+  {%- if l == "" -%}{%- include story/BUILD-ERROR-stats-n1-supplied-without-l1.html -%}{%- endif -%}
+  {%- assign u = include.u1 | strip -%}
+  {%- assign nums = nums | push: n -%}
+  {%- assign units = units | push: u -%}
+  {%- assign lbls = lbls | push: l -%}
+{%- endif -%}
+{%- if include.n2 -%}
+  {%- assign n = include.n2 | strip -%}
+  {%- if n == "" -%}{%- include story/BUILD-ERROR-stats-n2-must-not-be-blank.html -%}{%- endif -%}
+  {%- assign l = include.l2 | strip -%}
+  {%- if l == "" -%}{%- include story/BUILD-ERROR-stats-n2-supplied-without-l2.html -%}{%- endif -%}
+  {%- assign u = include.u2 | strip -%}
+  {%- assign nums = nums | push: n -%}
+  {%- assign units = units | push: u -%}
+  {%- assign lbls = lbls | push: l -%}
+{%- endif -%}
+{%- if include.n3 -%}
+  {%- assign n = include.n3 | strip -%}
+  {%- if n == "" -%}{%- include story/BUILD-ERROR-stats-n3-must-not-be-blank.html -%}{%- endif -%}
+  {%- assign l = include.l3 | strip -%}
+  {%- if l == "" -%}{%- include story/BUILD-ERROR-stats-n3-supplied-without-l3.html -%}{%- endif -%}
+  {%- assign u = include.u3 | strip -%}
+  {%- assign nums = nums | push: n -%}
+  {%- assign units = units | push: u -%}
+  {%- assign lbls = lbls | push: l -%}
+{%- endif -%}
+{%- if include.n4 -%}
+  {%- assign n = include.n4 | strip -%}
+  {%- if n == "" -%}{%- include story/BUILD-ERROR-stats-n4-must-not-be-blank.html -%}{%- endif -%}
+  {%- assign l = include.l4 | strip -%}
+  {%- if l == "" -%}{%- include story/BUILD-ERROR-stats-n4-supplied-without-l4.html -%}{%- endif -%}
+  {%- assign u = include.u4 | strip -%}
+  {%- assign nums = nums | push: n -%}
+  {%- assign units = units | push: u -%}
+  {%- assign lbls = lbls | push: l -%}
+{%- endif -%}
+{%- if nums.size < 2 -%}
+{%- include story/BUILD-ERROR-stats-requires-at-least-two-figures.html -%}
+{%- endif -%}
+<div class="story-block story-stats story-{{ tier }}">
+  {%- for n in nums %}
+  {%- assign u = units[forloop.index0] -%}
+  {%- assign l = lbls[forloop.index0] -%}
+  <div class="story-stat">
+    <div class="story-stat-num">{{ n }}{% if u != "" %}<span class="story-stat-unit">{{ u }}</span>{% endif %}</div>
+    <div class="story-stat-lbl">{{ l }}</div>
+  </div>
+  {%- endfor %}
+</div>

@@ -1,0 +1,91 @@
+{%- comment -%}
+  Pull quote with attribution. The portrait is optional; without one the quote
+  gets a gold left rule instead.
+
+  Params:
+    text (required): the quote, WITHOUT surrounding quotation marks. Markup is
+          allowed, at the same trust level as caption.html. Localised and
+          BudouX-tokenised on JA pages.
+    name: who said it. Required if `role` is supplied, since a role with no
+          name renders as an orphan line.
+    role: their role, rendered after the name.
+    avatar: portrait path, e.g. /assets/images/team/tom.jpg
+    tier: text | wide. Default text.
+
+  THE AVATAR IS A RAW <img>, NOT image.html, deliberately. image.html emits a
+  <picture> with a WebP <source>, and assets/images/team/ holds 32 .jpg files
+  and zero .webp. A browser that supports WebP would take that source and
+  render a broken image. Generate the .webp variants before changing this.
+
+  ALT IS DELIBERATELY EMPTY. The portrait sits beside the person's name in the
+  footer, so alt text would make a screen reader announce the name twice. An
+  image whose information is already carried by adjacent text is decorative.
+
+  KEEP THE ATTRIBUTION PLAIN TEXT. Link styling in this kit is scoped to prose
+  containers and captions, and <footer> is not one of them, so an anchor in
+  `role` renders in the muted body colour with no underline and no hover.
+
+  REQUIRED PARAMS are enforced by including a file that does not exist, the
+  only way to abort a Jekyll build from Liquid without a plugin. NEVER create
+  the file an error names: it is the message, not a missing dependency.
+  deploy.yml fails the build if any _includes/story/BUILD-ERROR-*.html exists.
+
+  BLANK VALUES: whether a param was supplied is decided by Liquid truthiness,
+  where nil is false but "" and "   " are TRUE. Every value is therefore
+  validated after that test, not by it. `is-plain` keys off a positive
+  `avatar == ""` test for that reason: an `unless include.avatar` test would
+  read `avatar=""` as supplied and emit <img src="">, which makes the browser
+  re-request the page HTML as an image.
+
+  Liquid tag delimiters are written WITHOUT their braces in this docstring on
+  purpose. Liquid 4's `comment` is a block tag and still parses its body for
+  block boundaries, so a literal opening tag in here has to be closed or the
+  build dies with "'endcomment' is not a valid delimiter for unless tags".
+  Measured: the braced version above failed the build at line 39 of this file.
+
+  THE MARKUP IS figure + blockquote + figcaption, which is the HTML spec's
+  pattern for an attributed quotation. It gives the block role="figure" with an
+  accessible name taken from the attribution, so assistive technology announces
+  who said the words instead of leaving the association to reading order. The
+  previous version used a plain div plus a footer, which conveyed nothing
+  programmatic about the speaker.
+
+  The figcaption carries `story-quote-attr`, NOT `story-caption`. Convention 10
+  reserves `story-caption` and `caption.html` for captions describing adjacent
+  content, and section 3 of story.css states outright that a pull-quote
+  attribution is not a caption. That still holds: this is a second, sanctioned
+  use of the figcaption ELEMENT with its own class, not a reuse of the caption
+  treatment.
+
+  The avatar stays outside the figure, in its own grid column, so promoting the
+  inner wrapper to a figure needed no grid changes at all: measured, the
+  blockquote and the attribution land on exactly the same coordinates they did
+  as a div and a footer.
+
+  WHY NOT A footer INSIDE THE blockquote: template.css:712 sets
+  `blockquote footer:before { content: '\2014 \00A0' }`, and \2014 is an em
+  dash, which this project forbids in copy. /beer/ nests its attribution that
+  way today and renders one. A figcaption is not matched by that selector.
+{%- endcomment -%}
+{%- assign tier = include.tier | default: "text" -%}
+{%- unless tier == "text" or tier == "wide" -%}
+{%- include story/BUILD-ERROR-quote-tier-must-be-text-or-wide.html -%}
+{%- endunless -%}
+{%- assign text = include.text | strip -%}
+{%- if text == "" -%}{%- include story/BUILD-ERROR-quote-requires-text.html -%}{%- endif -%}
+{%- assign name = include.name | strip -%}
+{%- assign role = include.role | strip -%}
+{%- if name == "" and role != "" -%}{%- include story/BUILD-ERROR-quote-role-supplied-without-name.html -%}{%- endif -%}
+{%- assign avatar = include.avatar | strip -%}
+{%- if avatar != "" and name == "" -%}{%- include story/BUILD-ERROR-quote-avatar-supplied-without-name.html -%}{%- endif -%}
+<div class="story-block story-quote story-{{ tier }}{% if avatar == "" %} is-plain{% endif %}">
+  {%- if avatar != "" %}
+  <img class="story-avatar" src="{{ avatar }}" alt="" loading="lazy" width="56" height="56">
+  {%- endif %}
+  <figure>
+    <blockquote>{{ text }}</blockquote>
+    {%- if name != "" %}
+    <figcaption class="story-quote-attr"><span class="story-quote-name">{{ name }}</span>{{ role }}</figcaption>
+    {%- endif %}
+  </figure>
+</div>
