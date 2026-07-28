@@ -7,7 +7,17 @@
    (see "CSS conventions" in the plan):
      - No bare single-class utility selectors. `.story p` is (0,1,1) and
        silently outranks a (0,1,0) rule that shares a property with it, so
-       every utility is scoped as `.story .story-x`.
+       every utility is scoped as `.story .story-x`, which is (0,2,0).
+       Know the limit: (0,2,0) beats `.story p` but does NOT beat
+       `:lang(ja) .story p` at (0,2,1), so a JA prose declaration still wins
+       over a block utility. Fine for line-height, where JA wants more
+       leading anyway, but check any new `:lang(ja)` prose rule against the
+       blocks it could override.
+     - Never style `a` broadly in here. A blanket `.story a` beats
+       Bootstrap's `.btn` and repaints every button. Link styling is scoped
+       to prose containers instead.
+     - Buttons are wrapped, never direct children. Grid items are blockified,
+       so a bare `.btn` in the grid stretches to the full track.
      - Grid items do not collapse margins. Vertical gaps are the sum of the
        upper sibling's margin-bottom and the lower one's margin-top.
      - Every direct child needs `min-width: 0`, or wide content forces
@@ -67,12 +77,25 @@
    emit that refuse to shrink, so they get their own scroll container.
    `display: block` is required for a table to honour overflow at all.
    Blocks added in later tasks wrap their own wide content and set
-   overflow-x on that wrapper. */
+   overflow-x on that wrapper.
+
+   Known limitation: a scroll container built this way is not keyboard
+   operable (WCAG 2.1.1), because it takes no focus and so cannot be
+   scrolled without a pointer. Fixing that needs either JS or a
+   `tabindex="0"` wrapper the author has to remember. Accepted for now
+   because it only affects raw Markdown-emitted tables and <pre>, which no
+   story currently uses; the block includes wrap their own content. */
 .story > table,
 .story > pre {
   display: block;
   overflow-x: auto;
 }
+
+/* <pre> keeps a UA margin-bottom of 16px otherwise, off the prose rhythm.
+   Stated in px on purpose: `em` on a <pre> resolves against its own smaller
+   monospace font-size, so the 1.35em used for paragraphs would compute to
+   16.5px here and change nothing. 23px is 1.35 x the 17px prose size. */
+.story > pre { margin: 0 0 23px; }
 
 /* --------------------------------------------------------------------------
    2. Typography
@@ -124,25 +147,46 @@
   margin: 0 0 1.5em;
 }
 
-.story a {
+/* Link styling is scoped to prose containers, never a blanket `.story a`.
+   Buttons are anchors too, so a blanket rule repaints all of them, and the
+   obvious counter-rule cannot work: Bootstrap's base `.btn` defines
+   `--bs-btn-color` but not `--bs-btn-hover-color`, so `.btn-default`, bare
+   `.btn` and `.btn-action` would fall back to `inherit` and hover to prose
+   grey. Narrowing the selector removes the whole problem instead.
+   Mirrors how template.css:3260-3266 narrows `#t3-content > p > a`.
+
+   `:not(.btn)` is belt and braces: buttons belong in `.story-cta`, never
+   inside a paragraph, but a button dropped into prose would otherwise pick
+   these declarations straight back up.
+
+   ANY NEW BLOCK THAT CONTAINS PROSE MUST ADD ITS CONTAINER HERE, or links
+   inside it will render as undifferentiated body text. */
+.story p > a:not(.btn),
+.story li > a:not(.btn),
+.story td > a:not(.btn),
+.story th > a:not(.btn),
+.story blockquote > a:not(.btn),
+.story figcaption > a:not(.btn),
+.story .story-caption > a:not(.btn) {
   color: var(--color-primary);
   text-decoration: underline;
   text-underline-offset: 2px;
 }
-.story a:hover { color: var(--color-primary-hover); }
+.story p > a:not(.btn):hover,
+.story li > a:not(.btn):hover,
+.story td > a:not(.btn):hover,
+.story th > a:not(.btn):hover,
+.story blockquote > a:not(.btn):hover,
+.story figcaption > a:not(.btn):hover,
+.story .story-caption > a:not(.btn):hover {
+  color: var(--color-primary-hover);
+}
 
-/* Buttons are anchors, so the rules above would repaint `.btn-primary` as
-   underlined rust text on a rust background. Hand the colour back to
-   Bootstrap's own per-variant custom properties rather than using
-   `inherit`, which would pick up the grey prose colour. */
-.story a.btn {
-  color: var(--bs-btn-color);
-  text-decoration: none;
-}
-.story a.btn:hover,
-.story a.btn:focus {
-  color: var(--bs-btn-hover-color);
-}
+/* Backstop, not a licence. Grid items are blockified, so an inline-block
+   `.btn` placed directly in the grid stretches to the full 660px track
+   (measured 660px bare against 130.8px wrapped). `.story-cta`, a flex
+   container, is the intended wrapper for every CTA. */
+.story > .btn { width: fit-content; }
 
 /* Japanese prose needs more leading than English at the same size. */
 :lang(ja) .story p,
