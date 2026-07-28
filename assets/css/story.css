@@ -3,47 +3,75 @@
    Loaded only on pages with `layout: story` (see _layouts/base.html).
    Spec: _docs/superpowers/specs/2026-07-28-story-layout-design.md
 
-   Conventions this file establishes, binding on every block added later
-   (see "CSS conventions" in the plan):
-     - No bare single-class utility selectors. `.story p` is (0,1,1) and
+   Conventions this file establishes, binding on every block added later.
+   THIS LIST IS THE SINGLE SOURCE OF TRUTH for "(convention N)" citations in
+   this file and in _includes/story/*.html. The plan's prose expands on these
+   but does not number them; if the two ever disagree, this list wins. Adding a
+   convention means appending it, never renumbering, because the numbers are
+   cited from elsewhere.
+
+    1. No bare single-class utility selectors. `.story p` is (0,1,1) and
        silently outranks a (0,1,0) rule that shares a property with it, so
        every utility is scoped as `.story .story-x`, which is (0,2,0).
        Know the limit: (0,2,0) beats `.story p` but does NOT beat
        `:lang(ja) .story p` at (0,2,1), so a JA prose declaration still wins
        over a block utility.
-       THE MECHANICAL RULE, which is easier to apply than the arithmetic: a
-       `:lang(ja)` selector whose last compound is an ELEMENT NAME lands at
-       (0,2,1) and beats every block utility in this file, present and future.
-       One whose last compound is a CLASS lands at (0,3,0) or higher and
-       cannot. This file has exactly two of the dangerous kind, both in
-       section 2 (`:lang(ja) .story p, ul, ol` and `:lang(ja) .story h2, h3`),
-       and both have already silently overridden a block: the lede's
-       line-height (fixed in section 2 with a class-tailed override) and the
-       chapter marker's (accepted, 1.2px, documented in section 6). Before
-       adding a `:lang(ja)` rule, check which kind it is.
-     - Never style `a` broadly in here. A blanket `.story a` beats
-       Bootstrap's `.btn` and repaints every button. Link styling is scoped
-       to prose containers instead.
-     - Buttons are wrapped, never direct children. Grid items are blockified,
+       THE MECHANICAL RULE, easier to apply than the arithmetic: a `:lang(ja)`
+       selector whose last compound is an ELEMENT NAME lands at (0,2,1) and
+       beats every block utility in this file, present and future. One whose
+       last compound is a CLASS lands at (0,3,0) or higher and cannot. This
+       file has exactly two of the dangerous kind, both in section 2
+       (`:lang(ja) .story p, ul, ol` and `:lang(ja) .story h2, h3`), and both
+       have already silently overridden a block: the lede's line-height (fixed
+       in section 2 with a class-tailed override) and the chapter marker's
+       (accepted, 1.2px, documented in section 6). Before adding a `:lang(ja)`
+       rule, check which kind it is.
+    2. Never style `a` broadly in here. A blanket `.story a` beats Bootstrap's
+       `.btn` and repaints every button. Link styling is scoped to prose
+       containers instead.
+    3. Buttons are wrapped, never direct children. Grid items are blockified,
        so a bare `.btn` in the grid stretches to the full track.
-     - Grid items do not collapse margins. Vertical gaps are the sum of the
+    4. Grid items do not collapse margins. Vertical gaps are the sum of the
        upper sibling's margin-bottom and the lower one's margin-top.
-     - Every direct child needs `min-width: 0`, or wide content forces
+    5. Every direct child needs `min-width: 0`, or wide content forces
        horizontal page scroll.
-     - Every block container emits `story-block`. One rule pair in section 2
+    6. `min-width: 0` and `overflow-wrap: break-word` are INDEPENDENT. Neither
+       implies the other: `overflow-wrap` does not reduce an element's
+       min-content contribution (only `overflow-wrap: anywhere` or
+       `word-break: break-all` do), so the box still refuses to shrink without
+       `min-width: 0`, and shrinking the box does not break the word inside it.
+       Measured on a 48-character unbroken label at 320px: both present gives a
+       320px document, dropping either gives 547px. This has been got wrong
+       three times in this file.
+    7. `flex: none` makes both of those inert, because it computes to
+       `0 0 auto` and nothing may shrink the item, which then holds max-content
+       whatever `min-width` says. Measured on the spec-table key at 1440px with
+       a 120-character value: 1640px document with `flex: none`, 1440px with
+       `flex: 0 1 auto`. Use `flex: 0 1 auto` when an item needs a shrink
+       guard; with `justify-content: space-between` there is free space and
+       `flex-shrink` never engages for real content. A fixed-size avatar is the
+       legitimate exception and keeps `flex: none`.
+    8. Every block container emits `story-block`. One rule pair in section 2
        then handles the story's first and last child margins for all blocks,
        at (0,3,0) so it cannot lose to a block's own (0,2,0) margins.
-     - Every block wrapping author-supplied prose emits `story-prose`. It keys
+    9. Every block wrapping author-supplied prose emits `story-prose`. It keys
        both the prose-link rule and the nested-prose rhythm, so a new block
        never needs adding to a selector list in section 2.
-     - Captions come from `_includes/story/caption.html` as <figcaption>
-       inside <figure>. Never hand-rolled, never a <div> plus a <p>.
-     - Colours come from tokens, with exactly two documented raw literals, both
+   10. Captions come from `_includes/story/caption.html` as <figcaption> inside
+       <figure>. Never hand-rolled, never a <div> plus a <p>, and
+       `story-caption` is never reused for something that is not a caption.
+       The figcaption ELEMENT has one other sanctioned use: the pull quote's
+       attribution in section 6, which carries `story-quote-attr` and is the
+       HTML spec's pattern for an attributed quotation. That is a reuse of the
+       element, not of the caption treatment.
+   11. `:lang(ja)` rules live inside their own block's section, beside the rule
+       they modify, not collected at the end of the file.
+   12. Colours come from tokens, with exactly two documented raw literals, both
        argued at the point of use and neither of them body text: `--story-sep`
        in section 1, the decorative separator shared by captions and bylines,
        and the gold hairline border in section 5 that reproduces the homepage
        stat card. Any third one is a bug.
-     - Class names carry the `story-` prefix. `.stat-card`, `.stat-number` and
+   13. Class names carry the `story-` prefix. `.stat-card`, `.stat-number` and
        `.stat-label` are already used by /impact/ and /partner/ with a
        different design, so an unprefixed name here becomes a live collision
        the moment one of those pages adopts this layout. See section 5.
@@ -170,7 +198,7 @@
    existed, a story opening on a full-bleed figure measured 30.8px above it and
    one closing on a figure measured 30.8px below, on top of the 80px `.story`
    padding. Every block container emits `story-block`, and this pair at (0,3,0)
-   settles it once for all blocks, present and future (convention 7). Nothing
+   settles it once for all blocks, present and future (convention 8). Nothing
    to maintain as Tasks 3 to 5 append.
 
    Do NOT try to solve this by de-specifying the block margins with `:where()`.
@@ -189,7 +217,7 @@
    22.95px and 22.1px used at top level.
 
    Any block wrapping author-supplied prose carries `story-prose` and picks the
-   rhythm back up here (convention 8). (0,2,1) clears the vendor (0,0,1) rules.
+   rhythm back up here (convention 9). (0,2,1) clears the vendor (0,0,1) rules.
    The em values resolve against the 17px prose, matching the top-level pair
    exactly rather than approximating it. */
 .story .story-prose > p,
@@ -230,7 +258,7 @@
    these declarations straight back up.
 
    The list ends in `.story-prose`, the marker every block wrapping
-   author-supplied prose carries (convention 8). That is the extension point:
+   author-supplied prose carries (convention 9). That is the extension point:
    a new block does NOT get added to this selector, it emits `story-prose` and
    is covered. `.story-prose` is needed alongside the element names because a
    `text` param can legitimately be a bare `<a>` with no wrapping `<p>`.
@@ -278,7 +306,7 @@
    The site has never had a caption style. Every block emits this through
    `_includes/story/caption.html` as a <figcaption> inside a <figure>, which is
    the only markup that associates a caption with its content for assistive
-   technology (convention 9).
+   technology (convention 10).
 
    SCOPE: `.story-caption` means "a caption for adjacent content" and nothing
    else. It is not a general small-muted-text utility. A pull-quote attribution
@@ -656,7 +684,7 @@
 
 /* Uppercase plus letter-spacing is an EN typographic device. Applied to
    Japanese it does nothing to kana and forces gaps between characters that
-   read as broken spacing (convention 6: JA rules sit beside their block). */
+   read as broken spacing (convention 11: JA rules sit beside their block). */
 :lang(ja) .story .story-table .story-row-key {
   letter-spacing: normal;
   text-transform: none;
@@ -903,7 +931,7 @@
 
 /* Uppercase and wide letter-spacing are EN typographic devices. On Japanese
    they do nothing to kana and force gaps that read as broken spacing
-   (convention 6: JA rules sit beside their block).
+   (convention 11: JA rules sit beside their block).
 
    `word-break: normal` IS A KINSOKU FIX, NOT AN OVERFLOW FIX. Do not reach for
    it the next time a JA row scrolls the page; that one is `flex-shrink`, above.
@@ -957,7 +985,7 @@
   object-fit: cover;
   flex: none;
 }
-/* `overflow-wrap` on both, per convention 11: an unbroken string in a grid or
+/* `overflow-wrap` on both, per convention 6: an unbroken string in a grid or
    flex item overflows and scrolls the page even when the box can shrink, and
    `min-width: 0` above does not break the word inside. A long single-token
    name is the realistic case here. */
@@ -1027,7 +1055,7 @@
   margin: 0;
 }
 /* Uppercase and letter-spacing are EN devices; on Japanese they force gaps
-   that read as broken spacing (convention 6). */
+   that read as broken spacing (convention 11). */
 :lang(ja) .story .story-author-card .story-author-role {
   letter-spacing: normal;
   text-transform: none;
