@@ -717,6 +717,13 @@
   border-left: 2px solid var(--color-primary);
   padding-left: 20px;
 }
+/* The attribution has to be indented to match, because it is a SIBLING of the
+   blockquote rather than a child, so it inherits neither the 2px rule nor the
+   20px padding. Without this the plain variant's attribution hangs 22px to the
+   left of the quote it belongs to: measured at 1440px, quote text starting at
+   x=412 against the attribution at x=390. The avatar variant does not have the
+   problem, since there both sit in the same grid column and measured x=464. */
+.story .story-quote.is-plain footer { padding-left: 22px; }
 
 /* The attribution is a SIBLING of the blockquote, never a child. This is not
    stylistic: template.css:712 sets
@@ -810,10 +817,17 @@
 /* The trailing rule is a pseudo-element, not an empty <span>: nothing for
    assistive technology to walk past and one less node in the include.
    `content: ""` still generates a flex item. */
+/* `min-width: 24px` so the rule never vanishes. With `flex: 1 1 0` and a
+   zero min-width it takes only leftover space, and a JA label long enough to
+   fill the row leaves none: measured 0px on a JA harness at 320px, where the
+   EN twin had 513px of rule. The marker then lost its one piece of visual
+   punctuation in one language and kept it in the other. 24px is enough to read
+   as deliberate and small enough that the label still wraps rather than being
+   squeezed, since `flex: 0 1 auto` lets the label shrink first. */
 .story .story-chapter::after {
   content: "";
   flex: 1 1 0;
-  min-width: 0;
+  min-width: 24px;
   height: 1px;
   background: var(--color-bg-border);
 }
