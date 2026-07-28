@@ -407,3 +407,161 @@
 
 /* The story's first and last child margins are handled once in section 2, off
    the `story-block` marker every block container emits. Nothing to add here. */
+
+/* --------------------------------------------------------------------------
+   5. Data blocks
+   .stat-card mirrors .home-impact-stat in home.css:762-797. Duplicated on
+   purpose so the homepage is never touched by story work. Keep the two in
+   sync by hand.
+
+   No count-up animation here. A counter earns its place in a hero band that
+   the reader arrives at; mid-article it pulls the eye off the sentence being
+   read, and it dates fast.
+
+   TWO DELIBERATE DIFFERENCES from the homepage card, both about context
+   rather than taste. The homepage runs five cards across a full-width hero
+   band; a story runs two to four across the 1180px wide tier, so the numerals
+   drop from clamp(28px, 2.8vw, 44px) to clamp(26px, 2.6vw, 40px) and the
+   padding from clamp(32px, 4vw, 56px) to clamp(24px, 3vw, 40px). Everything
+   else is copied verbatim, including the flex centring.
+
+   THE FLEX CENTRING DOES NOT ALIGN THE NUMERALS, measured, because the first
+   draft of this comment claimed it did. Equal card heights come from the
+   grid's default `align-items: stretch`, not from the flex. `justify-content:
+   center` then centres each card's own num + label group inside that height,
+   so a label wrapping to a second line lifts its numeral by half the extra
+   line. Measured on 180px cards with one label on two lines and two on one:
+   numeral tops 357.97 / 357.97 / 348.88, a 9.09px spread. The same probe with
+   `justify-content: flex-start` measured a 0px spread. It stays `center`
+   because spec §4.1 requires reproducing .home-impact-stat exactly and
+   home.css behaves identically; changing it here alone would desync the two.
+   JA labels wrap at different points from EN, so the uneven case is the norm
+   here rather than the exception. If the 9px lift ever reads as wrong, change
+   both files together.
+
+   THE ONE RAW COLOUR IN THIS SECTION is the gold hairline border. Convention
+   5 says colours come from tokens; this is a documented exception, not an
+   oversight. `rgba(200, 169, 81, 0.18)` is the homepage card's border and
+   there is no token for it: home.css uses the literal in ten places and
+   spec §4.1 requires reproducing the card exactly. Promoting it to a token in
+   bs3-compat.css would edit a global file to serve one caller and would still
+   leave home.css on the literal, so the two definitions would drift anyway.
+   -------------------------------------------------------------------------- */
+.story .story-stats {
+  margin: 2.4em 0;
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.story .stat-card {
+  background: var(--color-bg-panel);
+  border: 1px solid rgba(200, 169, 81, 0.18);
+  border-radius: 6px;
+  padding: clamp(24px, 3vw, 40px) 16px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.story .stat-card .stat-num {
+  font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
+  font-size: clamp(26px, 2.6vw, 40px);
+  font-weight: 700;
+  color: var(--color-accent);
+  line-height: 1.1;
+}
+.story .stat-card .stat-unit {
+  font-size: 0.6em;
+  font-weight: 700;
+  margin-left: 2px;
+}
+/* The label sets its own family and weight rather than inheriting. Story prose
+   is the site body font; the homepage card's label is Metropolis, and the
+   whole point of this block is that the two cards look identical. */
+.story .stat-card .stat-lbl {
+  margin-top: 10px;
+  font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
+  font-size: clamp(13px, 1vw, 15px);
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--color-text-muted);
+}
+
+/* A spec sheet, which is what a bullet list of specifications wants to be.
+   Deliberately NOT a <table>: there is no column of comparable values, only
+   key/value pairs, and a real <table> would need the scroll container that
+   section 1 gives raw Markdown tables. */
+.story .story-table {
+  margin: 2.2em 0;
+  background: var(--color-bg-panel);
+  border-radius: 6px;
+  padding: 4px 22px;
+}
+.story .story-table .story-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 20px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--color-bg-border);
+}
+.story .story-table .story-row:last-child { border-bottom: 0; }
+.story .story-table .story-row-key {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  flex: none;
+}
+/* `min-width: 0` for the same reason the grid children need it in section 1:
+   a flex item defaults to min-width auto and refuses to shrink below its
+   min-content width, so a long unbroken value would widen the row past the
+   text track.
+
+   `min-width: 0` IS NOT SUFFICIENT ON ITS OWN, measured, and section 1 already
+   says why in the paragraph above `.story > table`: letting the box shrink does
+   nothing about content whose min-content width is wider than the box, which
+   overflows and scrolls the page anyway. A 47-character unbroken value measured
+   a 435px document against a 320px viewport, 115px of horizontal page scroll.
+   `overflow-wrap: break-word` measured 320px. It is the fix rather than an
+   `overflow-x` scroll container because a spec value is a short string that
+   should wrap, not a wide object worth scrolling, and because the stacked
+   layout below 480px blockifies these spans, where `min-width` does not apply
+   at all. */
+.story .story-table .story-row-val {
+  font-size: 15px;
+  color: var(--color-text-light);
+  font-weight: 600;
+  text-align: right;
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+
+/* Uppercase plus letter-spacing is an EN typographic device. Applied to
+   Japanese it does nothing to kana and forces gaps between characters that
+   read as broken spacing (convention 6: JA rules sit beside their block). */
+:lang(ja) .story .story-table .story-row-key {
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+/* Below 480px the text track is 280px wide. A key and a value on one line
+   leaves too little for either, so the pair stacks.
+
+   THE KEY AND THE VALUE NEED `display: block` OF THEIR OWN. Taking the row out
+   of flex is not enough on its own: both children are <span>, so in a block row
+   they simply resume inline layout and run on the same line, and `margin-top`
+   is ignored on a non-replaced inline box. Measured at 320px with the row
+   blockified but the spans left inline: the value's box sat at top 862.23 and
+   left 77.28 against the key's top 865.23 and left 36, on the same line rather
+   than beneath it, with the 3px margin dropped. */
+@media (max-width: 479px) {
+  .story .story-table { padding: 4px 16px; }
+  .story .story-table .story-row { display: block; }
+  .story .story-table .story-row-key,
+  .story .story-table .story-row-val { display: block; }
+  .story .story-table .story-row-val { text-align: left; margin-top: 3px; }
+}
