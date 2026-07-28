@@ -418,26 +418,32 @@
    the reader arrives at; mid-article it pulls the eye off the sentence being
    read, and it dates fast.
 
-   TWO DELIBERATE DIFFERENCES from the homepage card, both about context
+   THREE DELIBERATE DIFFERENCES from the homepage card, all about context
    rather than taste. The homepage runs five cards across a full-width hero
    band; a story runs two to four across the 1180px wide tier, so the numerals
    drop from clamp(28px, 2.8vw, 44px) to clamp(26px, 2.6vw, 40px) and the
-   padding from clamp(32px, 4vw, 56px) to clamp(24px, 3vw, 40px). Everything
-   else is copied verbatim, including the flex centring.
+   padding from clamp(32px, 4vw, 56px) to clamp(24px, 3vw, 40px).
 
-   THE FLEX CENTRING DOES NOT ALIGN THE NUMERALS, measured, because the first
-   draft of this comment claimed it did. Equal card heights come from the
-   grid's default `align-items: stretch`, not from the flex. `justify-content:
-   center` then centres each card's own num + label group inside that height,
-   so a label wrapping to a second line lifts its numeral by half the extra
-   line. Measured on 180px cards with one label on two lines and two on one:
-   numeral tops 357.97 / 357.97 / 348.88, a 9.09px spread. The same probe with
-   `justify-content: flex-start` measured a 0px spread. It stays `center`
-   because spec §4.1 requires reproducing .home-impact-stat exactly and
-   home.css behaves identically; changing it here alone would desync the two.
-   JA labels wrap at different points from EN, so the uneven case is the norm
-   here rather than the exception. If the 9px lift ever reads as wrong, change
-   both files together.
+   The third is `justify-content`, and it is a fix rather than a resize.
+   home.css uses `center`. Equal card heights come from the grid's default
+   `align-items: stretch`, not from the flex, so `center` then centres each
+   card's own num + label group inside that shared height, and a label wrapping
+   to a second line LIFTS its numeral by half the extra line. Measured on 180px
+   cards with one label on two lines and two on one: numeral tops
+   357.97 / 357.97 / 348.88, a 9.09px spread. `flex-start` measured 0px.
+
+   A row of figures exists to be scanned across, so numerals that do not share
+   a baseline defeat the block's whole purpose. On a bilingual site the uneven
+   case is the norm and not the exception: JA labels wrap at different points
+   from their EN twins, so the same three cards misalign in one language and
+   not the other. Spec §4.1 asks for the homepage card reproduced exactly, and
+   this is the one place that is not honoured; "exactly" is read as the visual
+   identity of the card (panel, gold hairline, gold tabular numerals, muted
+   label) rather than as a layout property whose only effect here is a defect.
+
+   home.css has the same latent misalignment. It is left alone on purpose:
+   spec §8 puts the homepage out of scope, and the hero band is a different
+   composition. Fixing it there is a separate decision.
 
    THE ONE RAW COLOUR IN THIS SECTION is the gold hairline border. Convention
    5 says colours come from tokens; this is a documented exception, not an
@@ -463,7 +469,7 @@
   font-variant-numeric: tabular-nums;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 .story .stat-card .stat-num {
