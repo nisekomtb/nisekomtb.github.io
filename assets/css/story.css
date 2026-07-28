@@ -829,10 +829,17 @@
   line-height: inherit;
   color: inherit;
 }
-/* The green rule and its padding sit on the FIGURE, not the blockquote, so the
-   quote and its attribution are offset together and cannot drift apart. An
-   earlier version put them on the blockquote and indented the attribution with
-   a matching `padding-left: 22px`, which worked (measured 0px delta) but
+/* GOLD, NOT GREEN, AND NOT THE RUST THIS REPLACED. A gold left rule is the
+   site's established treatment for an offset quote or card: team/index.html:47
+   at 4px, home.css:458 and template.css:7064 and :7114 at 3px. Green here made
+   the story kit the only place on the site that did it differently. Convention
+   14 gives green the structural markers, and a quote rule is not one: it marks
+   emphasis, which is gold's job.
+
+   The rule and its padding sit on the FIGURE, not the blockquote, so the quote
+   and its attribution are offset together and cannot drift apart. An earlier
+   version put them on the blockquote and indented the attribution with a
+   matching `padding-left: 22px`, which worked (measured 0px delta) but
    hardcoded the sum of two values three lines above it: changing either one
    silently desynced the attribution. Measured before that fix, the attribution
    hung 22px left of its own quote text, x=390 against x=412 at 1440px.
@@ -841,7 +848,7 @@
    the end of the blockquote, 131.27px against 81.59px, which reads as marking
    the whole quote including who said it. */
 .story .story-quote.is-plain figure {
-  border-left: 2px solid var(--color-secondary);
+  border-left: 2px solid var(--color-accent);
   padding-left: 20px;
 }
 
