@@ -63,6 +63,24 @@ jobs:
       - name: Install minifier deps
         run: npm ci
 
+      - name: Assert story guard files are absent
+        # The story includes enforce required params by including a file that
+        # does not exist, the only way to abort a Jekyll build from Liquid
+        # without a plugin (GitHub Pages runs a plugin allowlist). Jekyll's own
+        # error text ends "Ensure it exists in one of those directories", which
+        # reads as an instruction to create the named file. Creating it turns
+        # that guard into a permanent no-op and the missing alt text ships
+        # silently. Fail here instead, with an explanation.
+        run: |
+          found=$(find _includes/story -maxdepth 1 -name 'BUILD-ERROR-*.html' 2>/dev/null)
+          if [ -n "$found" ]; then
+            echo "::error::_includes/story/BUILD-ERROR-*.html must never exist."
+            echo "$found"
+            echo "Each filename is a deliberate build failure naming a missing required include param."
+            echo "Creating the file disables the check it names. Fix the include call instead."
+            exit 1
+          fi
+
       - name: Build Jekyll
         env:
           JEKYLL_ENV: production

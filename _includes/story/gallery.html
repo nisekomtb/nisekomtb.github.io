@@ -24,6 +24,19 @@
   runs a plugin allowlist). The build fails naming the offending slot, e.g.
   BUILD-ERROR-gallery-src3-supplied-without-alt3.
 
+  NEVER CREATE THE FILE THE ERROR NAMES. Jekyll's message ends "Ensure it
+  exists in one of those directories", which reads as an instruction to do
+  exactly that. Creating it makes the guard a permanent no-op and the fault it
+  names ships silently. Fix the call site. deploy.yml fails the build if any
+  _includes/story/BUILD-ERROR-*.html exists.
+
+  BLANK VALUES: whether a slot was supplied is decided by Liquid truthiness,
+  where nil is false but "" and "   " are TRUE. So each value is validated
+  after that test, not by it. Without the src check, `src3=""` built clean and
+  emitted <img src="">, which resolves against the document URL and makes the
+  browser re-request the page HTML as an image. `srcs.size` does not catch it
+  either, because a blank entry still counts toward the size.
+
   WHY EACH SLOT IS VALIDATED INSIDE ITS OWN `if`: an earlier draft built `srcs`
   conditionally, so it compacted, and `alts` unconditionally with six pushes,
   so it did not. Index-matching them then desynced permanently: src1 + alt1 +
@@ -39,39 +52,51 @@
 {%- assign srcs = "" | split: "" -%}
 {%- assign alts = "" | split: "" -%}
 {%- if include.src1 -%}
+  {%- assign s = include.src1 | strip -%}
+  {%- if s == "" -%}{%- include story/BUILD-ERROR-gallery-src1-must-not-be-blank.html -%}{%- endif -%}
   {%- assign a = include.alt1 | strip -%}
   {%- if a == "" -%}{%- include story/BUILD-ERROR-gallery-src1-supplied-without-alt1.html -%}{%- endif -%}
-  {%- assign srcs = srcs | push: include.src1 -%}
+  {%- assign srcs = srcs | push: s -%}
   {%- assign alts = alts | push: a -%}
 {%- endif -%}
 {%- if include.src2 -%}
+  {%- assign s = include.src2 | strip -%}
+  {%- if s == "" -%}{%- include story/BUILD-ERROR-gallery-src2-must-not-be-blank.html -%}{%- endif -%}
   {%- assign a = include.alt2 | strip -%}
   {%- if a == "" -%}{%- include story/BUILD-ERROR-gallery-src2-supplied-without-alt2.html -%}{%- endif -%}
-  {%- assign srcs = srcs | push: include.src2 -%}
+  {%- assign srcs = srcs | push: s -%}
   {%- assign alts = alts | push: a -%}
 {%- endif -%}
 {%- if include.src3 -%}
+  {%- assign s = include.src3 | strip -%}
+  {%- if s == "" -%}{%- include story/BUILD-ERROR-gallery-src3-must-not-be-blank.html -%}{%- endif -%}
   {%- assign a = include.alt3 | strip -%}
   {%- if a == "" -%}{%- include story/BUILD-ERROR-gallery-src3-supplied-without-alt3.html -%}{%- endif -%}
-  {%- assign srcs = srcs | push: include.src3 -%}
+  {%- assign srcs = srcs | push: s -%}
   {%- assign alts = alts | push: a -%}
 {%- endif -%}
 {%- if include.src4 -%}
+  {%- assign s = include.src4 | strip -%}
+  {%- if s == "" -%}{%- include story/BUILD-ERROR-gallery-src4-must-not-be-blank.html -%}{%- endif -%}
   {%- assign a = include.alt4 | strip -%}
   {%- if a == "" -%}{%- include story/BUILD-ERROR-gallery-src4-supplied-without-alt4.html -%}{%- endif -%}
-  {%- assign srcs = srcs | push: include.src4 -%}
+  {%- assign srcs = srcs | push: s -%}
   {%- assign alts = alts | push: a -%}
 {%- endif -%}
 {%- if include.src5 -%}
+  {%- assign s = include.src5 | strip -%}
+  {%- if s == "" -%}{%- include story/BUILD-ERROR-gallery-src5-must-not-be-blank.html -%}{%- endif -%}
   {%- assign a = include.alt5 | strip -%}
   {%- if a == "" -%}{%- include story/BUILD-ERROR-gallery-src5-supplied-without-alt5.html -%}{%- endif -%}
-  {%- assign srcs = srcs | push: include.src5 -%}
+  {%- assign srcs = srcs | push: s -%}
   {%- assign alts = alts | push: a -%}
 {%- endif -%}
 {%- if include.src6 -%}
+  {%- assign s = include.src6 | strip -%}
+  {%- if s == "" -%}{%- include story/BUILD-ERROR-gallery-src6-must-not-be-blank.html -%}{%- endif -%}
   {%- assign a = include.alt6 | strip -%}
   {%- if a == "" -%}{%- include story/BUILD-ERROR-gallery-src6-supplied-without-alt6.html -%}{%- endif -%}
-  {%- assign srcs = srcs | push: include.src6 -%}
+  {%- assign srcs = srcs | push: s -%}
   {%- assign alts = alts | push: a -%}
 {%- endif -%}
 {%- if srcs.size < 2 -%}
