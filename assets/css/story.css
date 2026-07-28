@@ -22,6 +22,14 @@
        upper sibling's margin-bottom and the lower one's margin-top.
      - Every direct child needs `min-width: 0`, or wide content forces
        horizontal page scroll.
+     - Every block container emits `story-block`. One rule pair in section 2
+       then handles the story's first and last child margins for all blocks,
+       at (0,3,0) so it cannot lose to a block's own (0,2,0) margins.
+     - Every block wrapping author-supplied prose emits `story-prose`. It keys
+       both the prose-link rule and the nested-prose rhythm, so a new block
+       never needs adding to a selector list in section 2.
+     - Captions come from `_includes/story/caption.html` as <figcaption>
+       inside <figure>. Never hand-rolled, never a <div> plus a <p>.
      - Colours come from tokens. The one raw hex is the decorative caption
        separator, which is not text.
    ========================================================================== */
@@ -138,6 +146,42 @@
 .story > :first-child { margin-top: 0; }
 .story > :last-child  { margin-bottom: 0; }
 
+/* The two rules above are (0,2,0), exactly the specificity every block uses
+   for its own margins, so they tie and lose on source order: before this pair
+   existed, a story opening on a full-bleed figure measured 30.8px above it and
+   one closing on a figure measured 30.8px below, on top of the 80px `.story`
+   padding. Every block container emits `story-block`, and this pair at (0,3,0)
+   settles it once for all blocks, present and future (convention 7). Nothing
+   to maintain as Tasks 3 to 5 append.
+
+   Do NOT try to solve this by de-specifying the block margins with `:where()`.
+   bs3-compat.css:488 sets `figure { margin: 0 }` and bootstrap.min.css sets
+   `figure { margin: 0 0 1rem }`, both (0,0,1), which would outrank a (0,0,0)
+   rule and strip every figure margin in the kit. */
+.story > .story-block:first-child { margin-top: 0; }
+.story > .story-block:last-child  { margin-bottom: 0; }
+
+/* Prose nested inside a block, as opposed to sitting directly in the grid.
+   The type rules at the top of this section are DESCENDANT selectors, so
+   nested prose already inherits the right size, leading and colour. The
+   margin rules are CHILD selectors, so nested prose does not, and falls back
+   to the vendor defaults: `ol,ul { margin-bottom: 1rem; padding-left: 2rem }`
+   in bootstrap.min.css measured 12px and 32px inside a split, against the
+   22.95px and 22.1px used at top level.
+
+   Any block wrapping author-supplied prose carries `story-prose` and picks the
+   rhythm back up here (convention 8). (0,2,1) clears the vendor (0,0,1) rules.
+   The em values resolve against the 17px prose, matching the top-level pair
+   exactly rather than approximating it. */
+.story .story-prose > p,
+.story .story-prose > ul,
+.story .story-prose > ol { margin: 0 0 1.35em; }
+.story .story-prose > ul,
+.story .story-prose > ol { padding-left: 1.3em; }
+/* A block sizes its own outer spacing, so its prose must not add to it. */
+.story .story-prose > :first-child { margin-top: 0; }
+.story .story-prose > :last-child  { margin-bottom: 0; }
+
 /* Scoped to (0,2,0) so it outranks `.story p` at (0,1,1). Unscoped, every
    one of these declarations loses. */
 .story .story-lede {
@@ -159,32 +203,28 @@
    inside a paragraph, but a button dropped into prose would otherwise pick
    these declarations straight back up.
 
-   ANY NEW BLOCK THAT CONTAINS PROSE MUST ADD ITS CONTAINER HERE, or links
-   inside it will render as undifferentiated body text.
+   The list ends in `.story-prose`, the marker every block wrapping
+   author-supplied prose carries (convention 8). That is the extension point:
+   a new block does NOT get added to this selector, it emits `story-prose` and
+   is covered. `.story-prose` is needed alongside the element names because a
+   `text` param can legitimately be a bare `<a>` with no wrapping `<p>`.
 
-   `.story-split-text` is listed for that reason. Its content is an
-   author-supplied HTML string, so a bare `<a>` with no wrapping `<p>` is a
-   realistic call. Everything else in the list is a leaf text element. */
-.story p > a:not(.btn),
-.story li > a:not(.btn),
-.story td > a:not(.btn),
-.story th > a:not(.btn),
-.story blockquote > a:not(.btn),
-.story figcaption > a:not(.btn),
-.story .story-caption > a:not(.btn),
-.story .story-split-text > a:not(.btn) {
+   SPECIFICITY, checked before collapsing this from eighteen selectors to two:
+   `:is()` takes the specificity of its most specific argument, which here is a
+   class, so every branch is now (0,3,1). The class-bearing branches were
+   already (0,3,1); the element-name branches rise from (0,2,1). Nothing in
+   this file or in template.css competes in that band inside a story. The
+   nearest neighbours are template.css:3247-3266, whose prose-link rules are
+   (0,2,1) and scoped to `.item-page` / `.article-content` / `.event-content`,
+   none of which wrap a story, plus `#t3-content > p > a` at (1,0,2), which
+   needs an ID ancestor that story pages do not render. Raising the floor can
+   only win more, never less, so the collapse is safe in both directions. */
+.story :is(p, li, td, th, blockquote, figcaption, .story-caption, .story-prose) > a:not(.btn) {
   color: var(--color-primary);
   text-decoration: underline;
   text-underline-offset: 2px;
 }
-.story p > a:not(.btn):hover,
-.story li > a:not(.btn):hover,
-.story td > a:not(.btn):hover,
-.story th > a:not(.btn):hover,
-.story blockquote > a:not(.btn):hover,
-.story figcaption > a:not(.btn):hover,
-.story .story-caption > a:not(.btn):hover,
-.story .story-split-text > a:not(.btn):hover {
+.story :is(p, li, td, th, blockquote, figcaption, .story-caption, .story-prose) > a:not(.btn):hover {
   color: var(--color-primary-hover);
 }
 
@@ -209,9 +249,20 @@
 
 /* --------------------------------------------------------------------------
    3. Captions
-   The site has never had a caption style. Used by figure, gallery and embed.
-   Scoped because Task 2 emits captions as both <figcaption> and
-   <p class="story-caption">, and the <p> form loses when unscoped.
+   The site has never had a caption style. Every block emits this through
+   `_includes/story/caption.html` as a <figcaption> inside a <figure>, which is
+   the only markup that associates a caption with its content for assistive
+   technology (convention 9).
+
+   SCOPE: `.story-caption` means "a caption for adjacent content" and nothing
+   else. It is not a general small-muted-text utility. A pull-quote attribution
+   or a stats label is not a caption and needs its own class, or this 13px
+   muted treatment spreads to text that should not be de-emphasised and the
+   <figcaption> semantics stop matching the markup.
+
+   Still scoped to (0,2,0) rather than styling `figcaption` bare: the class
+   carries the meaning, and the selector has to beat `.story p` at (0,1,1)
+   wherever a caption sits inside prose-adjacent markup.
    -------------------------------------------------------------------------- */
 .story .story-caption {
   font-size: 13px;
@@ -259,17 +310,34 @@
   border-radius: 3px;
 }
 /* Full-bleed images square off; a rounded corner at the viewport edge reads
-   as a mistake. */
-.story .story-figure.story-full img { border-radius: 0; }
+   as a mistake. Applies to the gallery too: its cells sit flush to the edge at
+   the full tier exactly as a figure does. */
+.story .story-figure.story-full img,
+.story .story-gallery.story-full img { border-radius: 0; }
 
 .story .story-gallery {
   margin: 2.2em 0;
   display: grid;
   gap: 10px;
 }
-.story .story-gallery.is-2 { grid-template-columns: repeat(2, 1fr); }
+/* Cells are cropped to a common ratio rather than left at their natural one.
+   Two things fall out of it. Layout space is reserved whether or not the
+   author passed width and height, so a gallery cannot shift as it loads, and
+   rows come out even when the images do not share an aspect ratio: four
+   photographs at three different ratios previously left ragged whitespace
+   under the shorter ones. `object-fit: cover` fills the cell without
+   distorting. A grid of thumbnails is uniform-cell presentation by nature.
+
+   Deliberately NOT applied to figure or split. Those are single, chosen images
+   where the author framed the shot, and cropping them would silently overrule
+   that. */
+.story .story-gallery img {
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+.story .story-gallery.is-2,
+.story .story-gallery.is-4 { grid-template-columns: repeat(2, 1fr); }
 .story .story-gallery.is-3,
-.story .story-gallery.is-4,
 .story .story-gallery.is-5,
 .story .story-gallery.is-6 { grid-template-columns: repeat(3, 1fr); }
 /* Nested grid items also default to min-width: auto, so they need the same
@@ -293,14 +361,31 @@
   align-items: center;
 }
 .story .story-split > * { min-width: 0; }
-.story .story-split .story-split-text > :first-child { margin-top: 0; }
-.story .story-split .story-split-text > :last-child  { margin-bottom: 0; }
-/* Media first in source order so the mobile stack leads with the image. */
-.story .story-split.is-text-first .story-split-media { order: 2; }
+/* The media side is a <figure> so its caption can be a <figcaption>, which
+   means it arrives carrying `figure { margin: 0 0 1rem }` from
+   bootstrap.min.css. Zeroed explicitly rather than relying on which vendor
+   sheet loads last. The text side gets its rhythm from `story-prose` in
+   section 2. */
+.story .story-split .story-split-media { margin: 0; }
+
+/* The media side is FIRST IN THE DOM for both variants, so the single-column
+   stack below 768px always leads with the image without needing an override.
+   On `media-right` it is then painted second with `order: 2`.
+
+   The cost of that: at desktop widths, DOM order and visual order disagree for
+   the default variant. A keyboard user tabbing through a link inside the
+   right-hand image's caption reaches it BEFORE the text to its left, which is
+   a WCAG 2.4.3 focus-order failure. It is accepted here because leading the
+   mobile stack with the image is the stronger constraint for a photo-led
+   story, and mobile is the majority of this site's traffic.
+
+   Keep caption links off `media-right` splits. Use `media-left`, where DOM and
+   visual order agree, when the caption has to carry a link. */
+.story .story-split.is-media-right .story-split-media { order: 2; }
 
 @media (max-width: 767px) {
   .story .story-split { grid-template-columns: 1fr; gap: 18px; }
-  .story .story-split.is-text-first .story-split-media { order: 0; }
+  .story .story-split.is-media-right .story-split-media { order: 0; }
 }
 
 .story .story-embed { margin: 2.2em 0; }
@@ -320,21 +405,5 @@
 }
 .story .story-embed.story-full .story-embed-frame { border-radius: 0; }
 
-/* Section 2's `.story > :first-child { margin-top: 0 }` and its `:last-child`
-   twin are both (0,2,0), exactly the specificity of the block selectors above,
-   so source order decides and the block margins win. Measured before this
-   rule existed: a story opening on a full-bleed figure carried 30.8px above
-   it, and one closing on a figure carried 30.8px below, on top of the 80px
-   `.story` padding. Re-asserting at (0,3,0) makes the edge reset hold no
-   matter where a block rule sits in the file.
-
-   ANY BLOCK ADDED IN A LATER SECTION MUST BE LISTED HERE TOO, or it will
-   re-open a gap at the top or bottom of the story. */
-.story > .story-figure:first-child,
-.story > .story-gallery:first-child,
-.story > .story-split:first-child,
-.story > .story-embed:first-child { margin-top: 0; }
-.story > .story-figure:last-child,
-.story > .story-gallery:last-child,
-.story > .story-split:last-child,
-.story > .story-embed:last-child { margin-bottom: 0; }
+/* The story's first and last child margins are handled once in section 2, off
+   the `story-block` marker every block container emits. Nothing to add here. */

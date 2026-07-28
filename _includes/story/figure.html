@@ -2,27 +2,62 @@
   One image at a width tier, with optional caption and credit.
 
   Params:
-    src      (required): /assets/images/... .jpg
-    alt      (required): localised alt text
-    tier:      text | wide | full. Default wide.
-    caption:   localised caption
-    credit:    photographer or source
-    widths:    passed through to image.html, e.g. "800,1600"
-    sizes:     passed through to image.html
+    src   (required): /assets/images/... .jpg
+    alt   (required): localised alt text
+    tier:    text | wide | full. Default wide.
+    caption: localised caption. Markup allowed, see caption.html.
+    credit:  photographer or source. Markup allowed.
+    widths:  passed to image.html, e.g. "1600,2400". Without this the master
+             WebP is the only candidate and every viewport downloads it.
+    sizes:   passed to image.html. Omit it and the tier supplies the right
+             value; only set it if this figure is not filling its tier.
     width, height: natural dimensions, for aspect-ratio reservation
-    loading:   default lazy; use eager only above the fold
+    loading: default lazy; use eager only above the fold
+
+  QUOTING: a double-quoted include param cannot contain a `"`, so a caption
+  carrying markup cannot be written inline. Build it in a `capture` block
+  first, then pass the variable by name (caption=cap). Same for any value with
+  nested quotes. This is a constraint of Jekyll's include tag, not a style
+  preference: the param regex accepts a quoted string or `[\w.-]+`, nothing
+  else.
+
+  REQUIRED PARAMS are enforced by including a file that does not exist, which
+  is the only way to abort a Jekyll build from Liquid without a plugin (this
+  repo cannot add plugins: GitHub Pages runs an allowlist). The build fails
+  naming the missing param, e.g. BUILD-ERROR-figure-requires-alt. A silent
+  `alt=""` on a decorative-looking photo is worse than a broken build, because
+  nobody reading the page can see it.
 {%- endcomment -%}
 {%- assign tier = include.tier | default: "wide" -%}
-<figure class="story-figure story-{{ tier }}">
+{%- unless tier == "text" or tier == "wide" or tier == "full" -%}
+{%- include story/BUILD-ERROR-tier-must-be-text-wide-or-full.html -%}
+{%- endunless -%}
+{%- assign src = include.src | strip -%}
+{%- if src == "" -%}{%- include story/BUILD-ERROR-figure-requires-src.html -%}{%- endif -%}
+{%- assign alt = include.alt | strip -%}
+{%- if alt == "" -%}{%- include story/BUILD-ERROR-figure-requires-alt.html -%}{%- endif -%}
+{%- comment -%}
+  A figure fills its tier, so the tier alone gives an accurate `sizes`. The
+  breakpoints are where each tier stops growing: the wide track measures
+  min(1180px, 100vw - 40px) and the text track min(660px, 100vw - 40px).
+{%- endcomment -%}
+{%- if include.sizes -%}
+{%- assign img_sizes = include.sizes -%}
+{%- elsif tier == "text" -%}
+{%- assign img_sizes = "(max-width: 700px) 100vw, 660px" -%}
+{%- elsif tier == "full" -%}
+{%- assign img_sizes = "100vw" -%}
+{%- else -%}
+{%- assign img_sizes = "(max-width: 1220px) 100vw, 1180px" -%}
+{%- endif -%}
+<figure class="story-block story-figure story-{{ tier }}">
   {% include image.html
      src=include.src
      alt=include.alt
      widths=include.widths
-     sizes=include.sizes
+     sizes=img_sizes
      width=include.width
      height=include.height
      loading=include.loading %}
-  {%- if include.caption or include.credit %}
-  <figcaption class="story-caption">{{ include.caption }}{% if include.credit %}<span class="story-credit">{{ include.credit }}</span>{% endif %}</figcaption>
-  {%- endif %}
+  {%- include story/caption.html caption=include.caption credit=include.credit -%}
 </figure>

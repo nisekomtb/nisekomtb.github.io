@@ -1,35 +1,112 @@
 {%- comment -%}
-  2-6 images in a grid. Layout by count: 2 side by side, 3 across, 4-6 wrap at
-  3 per row. Single column below 640px. One caption for the group.
+  2-6 images in a grid sharing one caption. Layout by count: 2 and 4 go two
+  across (4 as a 2x2, because 3 + 1 orphan reads as broken), 3, 5 and 6 go
+  three across. Single column below 640px. Cells are cropped to 3:2 by CSS,
+  so mixed aspect ratios still produce even rows.
 
   Params:
-    src1..src6 (src1, src2 required): image paths
-    alt1..alt6: localised alt text, one per image
-    tier:            wide | full. Default wide.
-    caption, credit: for the group
+    src1..src6 (src1 and src2 required): image paths
+    alt1..alt6 (required for every src supplied): localised alt text
+    tier:    text | wide | full. Default wide.
+    caption: for the group. Markup allowed, see caption.html.
+    credit:  for the group. Markup allowed.
+    widths:  passed to image.html for every image, e.g. "800,1600". Without it
+             each 387px cell downloads the master WebP.
+    sizes:   passed to image.html. Omit it and the tier plus the column count
+             supply an accurate value; only set it to override.
+
+  QUOTING: a double-quoted include param cannot contain a `"`. Build any value
+  carrying markup or nested quotes in a `capture` block first, then pass the
+  variable by name. See figure.html for the full note.
+
+  REQUIRED PARAMS are enforced by including a file that does not exist, the
+  only way to abort a Jekyll build from Liquid without a plugin (GitHub Pages
+  runs a plugin allowlist). The build fails naming the offending slot, e.g.
+  BUILD-ERROR-gallery-src3-supplied-without-alt3.
+
+  WHY EACH SLOT IS VALIDATED INSIDE ITS OWN `if`: an earlier draft built `srcs`
+  conditionally, so it compacted, and `alts` unconditionally with six pushes,
+  so it did not. Index-matching them then desynced permanently: src1 + alt1 +
+  src3 + alt3 rendered alt1 on image 1 and an empty alt on image 3, discarding
+  alt3. Sparse params produced plausible alt text on the wrong photograph,
+  which is worse than none and invisible on the page. Both arrays are now
+  pushed in the same block, so they cannot drift.
 {%- endcomment -%}
 {%- assign tier = include.tier | default: "wide" -%}
+{%- unless tier == "text" or tier == "wide" or tier == "full" -%}
+{%- include story/BUILD-ERROR-tier-must-be-text-wide-or-full.html -%}
+{%- endunless -%}
 {%- assign srcs = "" | split: "" -%}
-{%- if include.src1 %}{% assign srcs = srcs | push: include.src1 %}{% endif -%}
-{%- if include.src2 %}{% assign srcs = srcs | push: include.src2 %}{% endif -%}
-{%- if include.src3 %}{% assign srcs = srcs | push: include.src3 %}{% endif -%}
-{%- if include.src4 %}{% assign srcs = srcs | push: include.src4 %}{% endif -%}
-{%- if include.src5 %}{% assign srcs = srcs | push: include.src5 %}{% endif -%}
-{%- if include.src6 %}{% assign srcs = srcs | push: include.src6 %}{% endif -%}
 {%- assign alts = "" | split: "" -%}
-{%- assign alts = alts | push: include.alt1 | push: include.alt2 | push: include.alt3 | push: include.alt4 | push: include.alt5 | push: include.alt6 -%}
-<div class="story-gallery is-{{ srcs.size }} story-{{ tier }}">
+{%- if include.src1 -%}
+  {%- assign a = include.alt1 | strip -%}
+  {%- if a == "" -%}{%- include story/BUILD-ERROR-gallery-src1-supplied-without-alt1.html -%}{%- endif -%}
+  {%- assign srcs = srcs | push: include.src1 -%}
+  {%- assign alts = alts | push: a -%}
+{%- endif -%}
+{%- if include.src2 -%}
+  {%- assign a = include.alt2 | strip -%}
+  {%- if a == "" -%}{%- include story/BUILD-ERROR-gallery-src2-supplied-without-alt2.html -%}{%- endif -%}
+  {%- assign srcs = srcs | push: include.src2 -%}
+  {%- assign alts = alts | push: a -%}
+{%- endif -%}
+{%- if include.src3 -%}
+  {%- assign a = include.alt3 | strip -%}
+  {%- if a == "" -%}{%- include story/BUILD-ERROR-gallery-src3-supplied-without-alt3.html -%}{%- endif -%}
+  {%- assign srcs = srcs | push: include.src3 -%}
+  {%- assign alts = alts | push: a -%}
+{%- endif -%}
+{%- if include.src4 -%}
+  {%- assign a = include.alt4 | strip -%}
+  {%- if a == "" -%}{%- include story/BUILD-ERROR-gallery-src4-supplied-without-alt4.html -%}{%- endif -%}
+  {%- assign srcs = srcs | push: include.src4 -%}
+  {%- assign alts = alts | push: a -%}
+{%- endif -%}
+{%- if include.src5 -%}
+  {%- assign a = include.alt5 | strip -%}
+  {%- if a == "" -%}{%- include story/BUILD-ERROR-gallery-src5-supplied-without-alt5.html -%}{%- endif -%}
+  {%- assign srcs = srcs | push: include.src5 -%}
+  {%- assign alts = alts | push: a -%}
+{%- endif -%}
+{%- if include.src6 -%}
+  {%- assign a = include.alt6 | strip -%}
+  {%- if a == "" -%}{%- include story/BUILD-ERROR-gallery-src6-supplied-without-alt6.html -%}{%- endif -%}
+  {%- assign srcs = srcs | push: include.src6 -%}
+  {%- assign alts = alts | push: a -%}
+{%- endif -%}
+{%- if srcs.size < 2 -%}
+{%- include story/BUILD-ERROR-gallery-requires-at-least-two-images-use-figure-for-one.html -%}
+{%- endif -%}
+{%- comment -%}
+  `sizes` is derived from the tier AND the column count, not the tier alone. A
+  cell is a third or a half of the tier, so a tier-width `sizes` would tell the
+  browser to fetch a 1180px candidate for a 387px slot: the exact over-fetch
+  that made `widths` worth adding. `divided_by` on integers floors, which
+  rounds the hint down, which is the safe direction.
+{%- endcomment -%}
+{%- if srcs.size == 2 or srcs.size == 4 -%}{%- assign cols = 2 -%}{%- else -%}{%- assign cols = 3 -%}{%- endif -%}
+{%- assign gap_total = cols | minus: 1 | times: 10 -%}
+{%- if include.sizes -%}
+{%- assign img_sizes = include.sizes -%}
+{%- elsif tier == "full" -%}
+{%- capture img_sizes -%}(max-width: 639px) 100vw, calc((100vw - {{ gap_total }}px) / {{ cols }}){%- endcapture -%}
+{%- else -%}
+{%- if tier == "text" -%}{%- assign tier_px = 660 -%}{%- assign tier_bp = 700 -%}
+{%- else -%}{%- assign tier_px = 1180 -%}{%- assign tier_bp = 1220 -%}{%- endif -%}
+{%- assign cell_px = tier_px | minus: gap_total | divided_by: cols -%}
+{%- assign inner = gap_total | plus: 40 -%}
+{%- capture img_sizes -%}(max-width: 639px) calc(100vw - 40px), (max-width: {{ tier_bp }}px) calc((100vw - {{ inner }}px) / {{ cols }}), {{ cell_px }}px{%- endcapture -%}
+{%- endif -%}
+<figure class="story-block story-gallery is-{{ srcs.size }} story-{{ tier }}">
+  {%- for s in srcs %}
   {%- comment -%}
     The alt is pulled into its own variable first. Jekyll's include tag
     validates each param value against `[\w.-]+` or a quoted string, so a
     bracket subscript written inline (`alt=alts[forloop.index0]`) is a hard
     build error, not a silent miss.
   {%- endcomment -%}
-  {%- for s in srcs %}
   {%- assign a = alts[forloop.index0] -%}
-  {% include image.html src=s alt=a %}
+  {% include image.html src=s alt=a widths=include.widths sizes=img_sizes %}
   {%- endfor %}
-  {%- if include.caption or include.credit %}
-  <p class="story-caption">{{ include.caption }}{% if include.credit %}<span class="story-credit">{{ include.credit }}</span>{% endif %}</p>
-  {%- endif %}
-</div>
+  {%- include story/caption.html caption=include.caption credit=include.credit -%}
+</figure>
