@@ -19,15 +19,11 @@ press: { en: Press, ja: プレス }
 partner: { en: Partner, ja: 協賛 }
 
 # --- Pages without a menu entry ---
-auction: { en: Auction, ja: オークション }
 code-conduct: { en: Code of Conduct, ja: 行動規範 }
 contact: { en: Contact, ja: お問い合わせ }
 email-signature: { en: Email Signature, ja: メール署名 }
-get-involved: { en: Get Involved, ja: 参加する }
 media-coverage: { en: In the News, ja: メディア掲載 }
 privacy: { en: Privacy, ja: プライバシー }
-proposal: { en: Proposal, ja: プロポーザル }
-raffle: { en: Raffle, ja: ラッフル }
 stories: { en: Stories, ja: ストーリー }
 terms: { en: Terms, ja: 利用規約 }
 thanks: { en: Thanks, ja: ありがとう }

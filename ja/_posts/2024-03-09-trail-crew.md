@@ -11,8 +11,7 @@ masthead:
 og:
   image: /assets/images/jobs/trail-crew.jpg
 isOpen: false
-canonical: ja/jobs/trail-maintenance-crew-2025/
-redirect: true
+redirect_to: /ja/jobs/trail-maintenance-crew-2025/
 location: ニセコ、<wbr>または<wbr>ニセコ周辺地域
 term: 夏季シーズン
 workingHours: 一日８時間 / 週5日勤務

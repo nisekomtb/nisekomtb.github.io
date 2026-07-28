@@ -53,14 +53,7 @@
     <link rel="alternate" hreflang="en" href="https://namba.ngo{{ path }}"/>
     <link rel="alternate" hreflang="ja" href="https://namba.ngo/ja{{ path }}"/>
     <link rel="alternate" hreflang="x-default" href="https://namba.ngo{{ path }}"/>
-    {% if page.canonical %}
-      <link rel="canonical" href="https://namba.ngo/{{- page.canonical -}}">
-      {% if page.redirect %}
-      <meta http-equiv="refresh" content="0;URL='https://namba.ngo/{{- page.canonical -}}'" />
-      {% endif %}
-    {% else %}
-      <link rel="canonical" href="https://namba.ngo{% if page.lang == 'ja' %}/ja{% endif %}{{ path }}"/>
-    {% endif %}
+    <link rel="canonical" href="https://namba.ngo{% if page.lang == 'ja' %}/ja{% endif %}{{ path }}"/>
     <link rel="icon" type="image/svg+xml" href="/assets/images/ico/favicon.svg"/>
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/ico/favicon-32.png"/>
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/ico/favicon-16.png"/>

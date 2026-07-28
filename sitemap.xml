@@ -11,7 +11,7 @@ layout: blank
 
     {%- if page.lang == "en" -%}
       {% unless page.noindex %}
-        {% unless page.canonical %}
+        {% unless page.redirect or page.sitemap == false %}
           {% if page.url != "/feed.xml" and page.url != "/assets/css/style.css" %}
             {% assign index = true %}
           {% endif %}

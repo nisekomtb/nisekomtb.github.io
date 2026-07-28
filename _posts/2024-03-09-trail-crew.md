@@ -11,8 +11,7 @@ masthead:
 og:
   image: /assets/images/jobs/trail-crew.jpg
 isOpen: false
-canonical: jobs/trail-maintenance-crew-2025/
-redirect: true
+redirect_to: /jobs/trail-maintenance-crew-2025/
 location: Niseko, Japan and surrounding areas
 term: Summer season
 workingHours: 8 hrs a day / 5 days a week

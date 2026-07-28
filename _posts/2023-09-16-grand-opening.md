@@ -1,6 +1,7 @@
 ---
 layout: event
 categories: events
+redirect_from: /events/grand-opening/
 title: Twin Peaks Grand Opening
 description: Twin Peaks Bike Park opens to the public 16-17 September. Monk blessing, Santa Cruz demo bikes, guided rides, and an afterparty at Rhythm with DJ Tama.
 startDate: 2023-09-16 09:00:00 +0900

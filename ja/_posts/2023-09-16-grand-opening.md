@@ -1,6 +1,7 @@
 ---
 layout: event
 categories: events
+redirect_from: /ja/events/grand-opening/
 title: ツイン・ピークス・バイクパーク・グランド・オープン
 titleHtml: ツイン・ピークス​・バイクパーク​・グランド​・オープン
 description: ツインピークス・バイクパークが9月16〜17日に一般公開オープン。安全祈願、Santa Cruzの試乗車、ガイド付きライド、DJ Tamaを迎えたRhythmでのアフターパーティー。

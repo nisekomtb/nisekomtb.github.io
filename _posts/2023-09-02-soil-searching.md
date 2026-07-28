@@ -1,6 +1,7 @@
 ---
 layout: event
 categories: events
+redirect_from: /events/soil-searching/
 title: Soil Searching in Niseko
 description: Two-day dig and ride at the not-yet-opened Twin Peaks Bike Park, 2-3 September. Hosted by Specialized and NAMBA. Registration only, lottery selection.
 startDate: 2023-09-02 09:00:00 +0900

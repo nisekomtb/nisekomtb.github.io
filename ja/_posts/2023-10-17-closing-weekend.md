@@ -1,6 +1,7 @@
 ---
 layout: event
 categories: events
+redirect_from: /ja/events/closing-weekend/
 title: ツイン・ピークス クロージング ウィークエンド
 description: ツインピークスのクロージング・ウィークエンド、10月28〜29日。Strava セグメントチャレンジ、コスチュームコンペ、Dirty Dames 女性グループライド、そしてミッドタウン・ニセコでのNAMBAオープンハウス。
 descriptionHtml: ツインピークスの<wbr>クロージング・ウィークエンド、<wbr>10月28〜29日。<wbr>Strava セグメントチャレンジ、<wbr>コスチュームコンペ、<wbr>Dirty Dames<wbr> 女性グループライド、<wbr>そして<wbr>ミッドタウン・ニセコでの<wbr>NAMBAオープンハウス。

@@ -1,6 +1,7 @@
 ---
 layout: event
 categories: events
+redirect_from: /ja/events/soil-searching/
 title: ニセコでソイル・サーチング
 titleHtml: ニセコでソイル・​サーチング
 description: 9月2〜3日、まだ一般公開前のツインピークス・バイクパークで2日間のDig&Rideイベント。スペシャライズドとNAMBAの共催。事前登録制、抽選選考。

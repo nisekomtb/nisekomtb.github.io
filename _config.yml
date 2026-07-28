@@ -18,6 +18,9 @@ theme: null
 strict_front_matter: true
 permalink: /:categories/:title-:year/
 
+plugins:
+  - jekyll-redirect-from
+
 liquid:
   error_mode: strict
 

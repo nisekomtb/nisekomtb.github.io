@@ -1,6 +1,7 @@
 ---
 layout: event
 categories: events
+redirect_from: /events/closing-weekend/
 title: Twin Peaks Closing Weekend
 description: Twin Peaks closing weekend, 28-29 October. Strava segment challenge, costume comp, Dirty Dames women's group ride, and a NAMBA Open House at Midtown Niseko.
 startDate: 2023-10-28 09:00:00 +0900
