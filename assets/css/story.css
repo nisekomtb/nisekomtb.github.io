@@ -654,3 +654,196 @@
   .story .story-table .story-row { display: block; }
   .story .story-table .story-row-val { text-align: left; margin-top: 3px; }
 }
+
+/* --------------------------------------------------------------------------
+   6. Voice and structure
+   quote, chapter.
+
+   Margins here are px, not em, unlike section 4. The chapter marker is an
+   <h2> whose font-size this section overrides, so an em margin would resolve
+   against a value the reader has to go and look up, and would change silently
+   if that override moved. Section 4's em values are documented against
+   `.story`'s own inherited 14px; these are just stated outright.
+   -------------------------------------------------------------------------- */
+.story .story-quote {
+  margin: 34px 0;
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 18px;
+  align-items: start;
+}
+/* (0,3,0), higher than the rule above at (0,2,0), so this holds inside the
+   768px media query too and does not need restating there. */
+.story .story-quote.is-plain { grid-template-columns: 1fr; }
+.story .story-quote > * { min-width: 0; }
+.story .story-quote .story-quote-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Four resets, not decoration. template.css:686 gives every bare <blockquote>
+   padding, a margin, a 17.5px size and a 5px grey left rule at (0,0,1). Clear
+   all four or the pull quote wears a grey bar it did not ask for. */
+.story .story-quote blockquote {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 19px;
+  line-height: 1.6;
+  color: var(--color-text-light);
+  font-weight: 500;
+}
+/* Defensive, for the hand-authored path. The include emits the quote as a bare
+   string with no <p>, but /beer/ is hand-authored HTML and an author may well
+   write <blockquote><p>...</p></blockquote>. Without this,
+   `blockquote p { color: rgba(255,255,255,.9) }` at template.css:693 matches
+   that <p> directly at (0,0,2) and beats the colour it would otherwise inherit
+   from the rule above, and `.story p` at (0,1,1) pulls the size back to 17px.
+   This selector is (0,2,2), which clears both.
+
+   `inherit` is safe here, unlike the button case warned about in the file
+   header: it resolves against the explicit token set two rules up, not against
+   an unrelated background colour. */
+.story .story-quote blockquote p {
+  margin: 0;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+.story .story-quote.is-plain blockquote {
+  border-left: 2px solid var(--color-primary);
+  padding-left: 20px;
+}
+
+/* The attribution is a SIBLING of the blockquote, never a child. This is not
+   stylistic: template.css:712 sets
+   `blockquote footer:before { content: '\2014 \00A0' }` and \2014 is an em
+   dash, the one character this project forbids in copy. Nesting the footer
+   inside the blockquote would inject one before every attribution, which is
+   what /beer/ does today. Keeping it outside also sidesteps `blockquote
+   footer`'s 80% font-size at (0,0,2), which never matches at all here. */
+.story .story-quote footer {
+  margin-top: 12px;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--color-text-muted);
+}
+/* The name is a <span>, so on a JA page it picks up `word-break: keep-all`
+   from template.css:94. That is left alone deliberately: `keep-all` stops a
+   personal name breaking between characters, and a name carries no sentence
+   punctuation, so the kinsoku problem that forced <dt>/<dd> in section 5 and
+   `word-break: normal` on the chapter label does not apply. */
+.story .story-quote footer .story-quote-name {
+  display: block;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* An <h2>. `.story .story-chapter` at (0,2,0) beats `.story h2` at (0,1,1), so
+   the heading's clamp() size and margins are overridden here and the two spans
+   carry the visible type and colour. font-size is set explicitly rather than
+   left to the h2 clamp so that nothing in this block resolves against a 24px to
+   34px moving target.
+
+   The h2's own `color` is NOT overridden here and does not need to be: both
+   spans set their own, and the ::after rule is a background. Nothing inside the
+   marker paints with the inherited heading white.
+
+   line-height is the one declaration here that a JA page overrules, exactly as
+   the file header warns: `:lang(ja) .story h2` is (0,2,1) and beats this
+   (0,2,0), so a JA chapter computes 18px (1.5) against the EN 16.8px (1.4).
+   Left as is, because JA wants the extra leading and 1.2px on a 12px marker is
+   invisible. */
+.story .story-chapter {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin: 34px 0 12px;
+  font-size: 12px;
+  line-height: 1.4;
+}
+.story .story-chapter .story-chapter-num {
+  color: var(--color-primary);
+  font-size: 18px;
+  font-weight: 700;
+  flex: none;
+}
+/* Three declarations, three different failures. All three measured on this
+   block, at a 320px viewport, because the earlier drafts of this comment got
+   two of them the wrong way round.
+
+   `flex: 0 1 auto`, NOT `flex: none`. A JA chapter label runs longer than its
+   EN twin and has no spaces to shrink at. With `flex: none` the label refused
+   to shrink and sat 37.97px past the 300px right edge of the 280px text track:
+   a 338px document against a 320px viewport, 18px of horizontal page scroll.
+   `flex: 0 1 auto` measured 320px. Same failure mode as the grid children in
+   section 1. On the JA label this is the ONLY one of the three that is
+   load-bearing.
+
+   `min-width: 0` AND `overflow-wrap: break-word`, and on the EN path NEITHER IS
+   SUFFICIENT ALONE. Measured with a 48-character unbroken EN label: both
+   present, 320px; drop `overflow-wrap`, 547px; drop `min-width` instead, also
+   547px. That is 227px of horizontal page scroll either way. The reason the
+   pair is needed rather than one of them is that `overflow-wrap: break-word`
+   does not reduce an element's min-content contribution (only `anywhere` or
+   `word-break: break-all` do), so with `min-width: auto` the flex item's
+   automatic minimum size is still the whole word. `min-width: 0` lets the box
+   shrink, `overflow-wrap` lets the content inside it break, and the overflow
+   needs both. Third time in this file for that pairing: section 1 documents it
+   for grid children, section 5 for both spec-row cells.
+
+   The 48-character EN label is a guard, not a live case. Real labels are "The
+   collab" and "No number here". The JA shrink above is the live one. */
+.story .story-chapter .story-chapter-label {
+  color: var(--color-accent);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  flex: 0 1 auto;
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+/* The trailing rule is a pseudo-element, not an empty <span>: nothing for
+   assistive technology to walk past and one less node in the include.
+   `content: ""` still generates a flex item. */
+.story .story-chapter::after {
+  content: "";
+  flex: 1 1 0;
+  min-width: 0;
+  height: 1px;
+  background: var(--color-bg-border);
+}
+/* Uppercase and wide letter-spacing are EN typographic devices. On Japanese
+   they do nothing to kana and force gaps that read as broken spacing
+   (convention 6: JA rules sit beside their block).
+
+   `word-break: normal` IS A KINSOKU FIX, NOT AN OVERFLOW FIX. Do not reach for
+   it the next time a JA row scrolls the page; that one is `flex-shrink`, above.
+   The label is a <span>, so on a JA page it matches `html[lang="ja"] span` at
+   template.css:94, which sets `word-break: keep-all` plus
+   `overflow-wrap: break-word`. `keep-all` does make a whole untokenised JA
+   label one unbreakable word, but the `overflow-wrap` sitting beside it already
+   breaks that word rather than overflowing, so leaving both as template.css
+   supplies them measured an identical 320px document, an identical 231.84px
+   label box and an identical 2 lines. What that pair costs is kinsoku: it
+   emergency-breaks instead of following JA line-breaking rules, so it will drop
+   a leading 、 or 。 onto its own line. Measured on a label carrying both, box
+   widths swept 60px to 240px in 4px steps: `keep-all` plus `overflow-wrap`
+   orphaned a 、 or 。 at 10 of 46 widths, `word-break: normal` at 0 of 46. Same
+   trap template.css:117 fixes for `.lead` and that section 5 avoids by using
+   <dt>/<dd> instead of spans, where 14 of 111 value-box widths orphaned a 。 */
+:lang(ja) .story .story-chapter .story-chapter-label {
+  letter-spacing: 0.08em;
+  text-transform: none;
+  word-break: normal;
+}
+
+@media (max-width: 767px) {
+  .story .story-quote { grid-template-columns: 44px 1fr; gap: 14px; }
+  .story .story-quote .story-quote-avatar { width: 44px; height: 44px; }
+  .story .story-quote blockquote { font-size: 17px; }
+}

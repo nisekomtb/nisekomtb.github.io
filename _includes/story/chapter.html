@@ -1,0 +1,34 @@
+{%- comment -%}
+  Numbered section marker. Marks a real shift in the story, not every heading.
+
+  RENDERS AS AN <h2>. Story content starts at h2 because the masthead owns the
+  page's only h1, and a story whose section markers are <div>s has no document
+  outline at all: no heading navigation for a screen reader, nothing for search
+  to read as structure. /beer/ uses real <h2> elements for its five section
+  titles today and the retrofit keeps them as headings.
+
+  A story needing sub-sections under a chapter uses a plain <h3>. If a marker
+  wants to be an h3, it is not a chapter.
+
+  Params:
+    label (required): the chapter name, localised
+    num:   optional, e.g. "01"
+    tier:  text | wide. Default text.
+
+  The trailing rule is drawn by `::after` in story.css, so there is no empty
+  <span> here for assistive technology to walk past.
+
+  REQUIRED PARAMS, BLANK VALUES and the BUILD-ERROR mechanism work exactly as
+  in quote.html. Read the note there.
+{%- endcomment -%}
+{%- assign tier = include.tier | default: "text" -%}
+{%- unless tier == "text" or tier == "wide" -%}
+{%- include story/BUILD-ERROR-chapter-tier-must-be-text-or-wide.html -%}
+{%- endunless -%}
+{%- assign label = include.label | strip -%}
+{%- if label == "" -%}{%- include story/BUILD-ERROR-chapter-requires-label.html -%}{%- endif -%}
+{%- assign num = include.num | strip -%}
+<h2 class="story-block story-chapter story-{{ tier }}">
+  {%- if num != "" %}<span class="story-chapter-num">{{ num }}</span>{% endif %}
+  <span class="story-chapter-label">{{ label }}</span>
+</h2>
