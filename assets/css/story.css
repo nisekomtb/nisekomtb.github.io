@@ -152,6 +152,27 @@
    16.5px here and change nothing. 23px is 1.35 x the 17px prose size. */
 .story > pre { margin: 0 0 23px; }
 
+/* The one avatar treatment, shared by the pull quote in section 6 and the
+   byline and author card in section 7. Three blocks previously repeated
+   `border-radius` and `object-fit`, and two of them did it by styling a bare
+   `img` for their own content, the only places in the file that styled an
+   element rather than a class. The shape lives here; each block sets nothing
+   but `width` and `height` in its own section, plus `flex: none` on the byline,
+   which convention 7 names as the legitimate exception.
+
+   Lives in section 1 rather than in either caller's section because it belongs
+   to neither, the same reason `--story-sep` above is defined here.
+
+   (0,2,0), one lower than the (0,2,1) bare-element rules it replaces. Nothing
+   in template.css or bootstrap.min.css sets `border-radius`, `object-fit` or
+   `display` on a descendant img inside a story; measured after the change, all
+   three avatars still compute 50%, cover and block at 1440px and at 320px. */
+.story .story-avatar {
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
 /* --------------------------------------------------------------------------
    2. Typography
    Story content starts at h2. The masthead supplies the page's only h1, so a
@@ -690,12 +711,15 @@
   text-transform: none;
 }
 /* JA needs more leading than EN at the same size, as it does for prose in
-   section 2 (1.95) and captions in section 3 (1.7). Without this a JA value
-   wrapping to two or three lines is tighter than every other multi-line JA
-   text in the kit, because these two elements set no line-height of their own
-   and inherit the site base. */
+   section 2 (1.95) and the pull quote in section 6 (1.8). These two elements set
+   no line-height of their own, so they inherit the SITE BASE OF 1.72 from `body`
+   at bs3-compat.css:48, and the 1.7 this rule used to set sat below it: measured,
+   the key computed 20.4px with the rule against 20.64px without it, and the
+   value 25.5px against 25.8px, so the rule made JA spec rows 0.24px and 0.3px
+   TIGHTER than plain JA text, the opposite of what it claimed. 1.8 clears the
+   base and matches the JA quote: 21.6px and 27px. */
 :lang(ja) .story .story-table .story-row-key,
-:lang(ja) .story .story-table .story-row-val { line-height: 1.7; }
+:lang(ja) .story .story-table .story-row-val { line-height: 1.8; }
 
 /* Below 480px a key and a value side by side leave too little for either, so
    the pair stacks. The track is 439px at a 479px viewport and 280px at 320px;
@@ -737,12 +761,10 @@
    768px media query too and does not need restating there. */
 .story .story-quote.is-plain { grid-template-columns: 1fr; }
 .story .story-quote > * { min-width: 0; }
-.story .story-quote .story-quote-avatar {
+/* Size only. The shape is the shared `.story-avatar` rule in section 1. */
+.story .story-quote .story-avatar {
   width: 56px;
   height: 56px;
-  border-radius: 50%;
-  object-fit: cover;
-  display: block;
 }
 
 /* Four resets, not decoration. template.css:686 gives every bare <blockquote>
@@ -956,7 +978,7 @@
 
 @media (max-width: 767px) {
   .story .story-quote { grid-template-columns: 44px 1fr; gap: 14px; }
-  .story .story-quote .story-quote-avatar { width: 44px; height: 44px; }
+  .story .story-quote .story-avatar { width: 44px; height: 44px; }
   .story .story-quote blockquote { font-size: 17px; }
 }
 
@@ -978,11 +1000,11 @@
   border-bottom: 1px solid var(--color-bg-border);
 }
 .story .story-byline > * { min-width: 0; }
-.story .story-byline img {
+/* Size plus the fixed-size-avatar exception to convention 7. The shape is the
+   shared `.story-avatar` rule in section 1. */
+.story .story-byline .story-avatar {
   width: 40px;
   height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
   flex: none;
 }
 /* `overflow-wrap` on both, per convention 6: an unbroken string in a grid or
@@ -1002,7 +1024,25 @@
   margin-top: 2px;
   overflow-wrap: break-word;
 }
-.story .story-byline .story-byline-sep {
+/* Decorative separator between the role and the date, so it carries an empty
+   alt string to keep it out of the accessibility tree, exactly as the caption
+   credit does in section 3. It was a real <span> of DOM text until now, with the
+   same glyph in the same colour as the caption's but announced by a screen
+   reader, which was a difference with no argument behind it.
+
+   The unprefixed `content` is the fallback for engines without alt-text support,
+   which would otherwise drop the whole declaration and lose the separator.
+
+   THE GLYPH CARRIES NO SPACES, unlike the caption's `" · "`. The spacing here is
+   the 7px margins, and the caption has none. Measured at 1440px, the gap
+   between the end of the role and the start of the date was 18.7px with the old
+   <span>; a `" · "` content string plus these margins measured 26.23px, because
+   a leading and a trailing space in generated content survive white-space
+   collapsing against adjacent text. `"·"` plus the margins reproduces 18.7px
+   exactly. */
+.story .story-byline .story-byline-date::before {
+  content: "·";
+  content: "·" / "";
   color: var(--story-sep);
   margin: 0 7px;
 }
@@ -1018,11 +1058,15 @@
   margin: 42px 0 0;
 }
 .story .story-author-card > * { min-width: 0; }
-.story .story-author-card img {
+/* Size only. The shape is the shared `.story-avatar` rule in section 1.
+   The 64px track above assumes the image is always there, and author-card.html
+   guarantees it: a blank `image` on the resolved entry fails the build. Without
+   that guard the text <div> becomes the first grid item and lands in the fixed
+   track. Measured on a three-line card at 1440px with the image removed: text
+   box 534px wide to 64px, card 121.2px tall to 296.7px, content track empty. */
+.story .story-author-card .story-avatar {
   width: 64px;
   height: 64px;
-  border-radius: 50%;
-  object-fit: cover;
 }
 .story .story-author-card .story-author-name {
   font-size: 16px;
@@ -1037,23 +1081,32 @@
   color: var(--color-primary);
   margin: 4px 0 5px;
 }
-/* A <p>, so it needs to beat `.story p` at (0,1,1). This selector is (0,3,0).
-   The margin also has to be stated: `.story > p` is a child selector and does
-   not reach a nested paragraph, so without this the <p> keeps its vendor
-   margin-bottom and pushes the card's own padding out.
+/* A <div>, not a <p>. As a <p> this line was the only thing in section 7 that
+   had to beat `.story p` at (0,1,1), needed an explicit `margin: 0` to clear the
+   vendor paragraph margin that `.story > p` never reaches, and picked up
+   `word-break: keep-all` from `html[lang="ja"] p` at template.css:94 on JA
+   pages, which is the kinsoku trap section 5 avoided with <dt>/<dd> and section
+   6 fixed with `word-break: normal`. Measured on a JA card title as a <p>:
+   `word-break: keep-all`. As a <div>: `normal`. No `ja.title` in the data
+   carries a 。 or 、 today, so nothing was visibly broken; the <div> removes the
+   trap rather than adding a third fix for it. A <div> has no UA margin, verified
+   in the browser, so there is nothing left to clear.
 
-   NO `line-height` HERE ON PURPOSE, and note what that means on JA pages.
-   `:lang(ja) .story p` is (0,2,1), which this selector at (0,3,0) outranks for
-   every property it sets, but it sets no line-height, so a JA card title
-   inherits the 1.95 prose leading. That is the wanted outcome: JA needs more
-   leading than EN at the same size, exactly as the quote and the spec rows do.
-   Convention 12 is about not being surprised by that rule, not about always
-   beating it. */
+   THE JA LEADING IS NOW EXPLICIT. As a <p> it inherited 1.95 from
+   `:lang(ja) .story p`, which is the wanted value but arrived by accident of the
+   element name. Measured before: 27.3px. After, without the rule below: 24.08px,
+   the site base. With it: 27.3px, unchanged. That rule is class-tailed, so
+   (0,3,0), the harmless kind under convention 1, not the element-tailed (0,2,1)
+   kind that silently outranks a block utility.
+
+   No EN `line-height`: a <p> computed 24.5px here and a <div> computes 24.08px,
+   inheriting `.story`'s 1.72 rather than `.story p`'s 1.75. A 0.42px difference
+   on a single-line affiliation is not worth a declaration. */
 .story .story-author-card .story-author-title {
   font-size: 14px;
   color: var(--color-text);
-  margin: 0;
 }
+:lang(ja) .story .story-author-card .story-author-title { line-height: 1.95; }
 /* Uppercase and letter-spacing are EN devices; on Japanese they force gaps
    that read as broken spacing (convention 11). */
 :lang(ja) .story .story-author-card .story-author-role {
@@ -1067,5 +1120,5 @@
     gap: 14px;
     padding: 16px 18px;
   }
-  .story .story-author-card img { width: 48px; height: 48px; }
+  .story .story-author-card .story-avatar { width: 48px; height: 48px; }
 }

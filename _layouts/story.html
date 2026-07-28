@@ -26,11 +26,18 @@ layout: base
 
   `datePublished` and `description` are likewise conditional. Pages (as opposed
   to posts) have no `page.date`, and an empty string or null is an invalid
-  schema value that Google flags.
+  schema value that Google flags. `name` cannot go null the same way: the byline
+  include renders under this identical `if page.author` condition and fails the
+  build on a blank name before the build reaches this script.
+
+  THE VARIABLE IS `schema_author`, deliberately not a name either story include
+  uses. Jekyll's `include` shares the caller's scope for `assign`, so an include
+  assigning the same name as this layout would overwrite the author node's
+  source. That held together only on source order while both used `a`.
 {%- endcomment -%}
 {%- if page.author -%}
-  {%- assign a = site.data.team | where: "slug", page.author | first -%}
-  {%- unless a -%}{%- assign a = site.data.staff | where: "slug", page.author | first -%}{%- endunless -%}
+  {%- assign schema_author = site.data.team | where: "slug", page.author | first -%}
+  {%- unless schema_author -%}{%- assign schema_author = site.data.staff | where: "slug", page.author | first -%}{%- endunless -%}
 {%- endif -%}
 <script type="application/ld+json">
 {
@@ -47,10 +54,10 @@ layout: base
   {%- if page.date %},
   "datePublished": "{{ page.date | date_to_xmlschema }}"
   {%- endif %}
-  {%- if a %},
+  {%- if schema_author %},
   "author": {
     "@type": "Person",
-    "name": {%- if page.lang == "ja" %}{{ a.ja.name | default: a.name | jsonify }}{% else %}{{ a.name | jsonify }}{% endif %}
+    "name": {%- if page.lang == "ja" %}{{ schema_author.ja.name | default: schema_author.name | jsonify }}{% else %}{{ schema_author.name | jsonify }}{% endif %}
   }
   {%- else %},
   {%- comment -%}

@@ -50,7 +50,7 @@
   previous version used a plain div plus a footer, which conveyed nothing
   programmatic about the speaker.
 
-  The figcaption carries `story-quote-attr`, NOT `story-caption`. Convention 9
+  The figcaption carries `story-quote-attr`, NOT `story-caption`. Convention 10
   reserves `story-caption` and `caption.html` for captions describing adjacent
   content, and section 3 of story.css states outright that a pull-quote
   attribution is not a caption. That still holds: this is a second, sanctioned
@@ -80,7 +80,7 @@
 {%- if avatar != "" and name == "" -%}{%- include story/BUILD-ERROR-quote-avatar-supplied-without-name.html -%}{%- endif -%}
 <div class="story-block story-quote story-{{ tier }}{% if avatar == "" %} is-plain{% endif %}">
   {%- if avatar != "" %}
-  <img class="story-quote-avatar" src="{{ avatar }}" alt="" loading="lazy" width="56" height="56">
+  <img class="story-avatar" src="{{ avatar }}" alt="" loading="lazy" width="56" height="56">
   {%- endif %}
   <figure>
     <blockquote>{{ text }}</blockquote>
