@@ -742,6 +742,21 @@
   url:
     en: https://vacationniseko.com/en/news/namtba-the-future-of-mountain-biking-in-niseko/
 
+- slug: experienceniseko-supporting-namtba
+  date: 2022-03-15
+  type: article
+  source: experienceniseko
+  sourceName: Experience Niseko
+  thumb: /assets/images/media-coverage/2022/experienceniseko-supporting-namtba/thumb.jpg
+  title:
+    en: "Revitalising Niseko's Summer With Mountain Biking, Towards a Year-Round International Resort"
+    ja: "ニセコの<wbr>夏を<wbr>マウンテンバイクで<wbr>活性化し、<wbr>一年を<wbr>通じて<wbr>楽しめる<wbr>国際的リゾートへ。"
+  quote:
+    en: "The first project, Twin Peaks Bike Park, is set to become a free-to-ride bike park with over 30km of trails that welcome beginners too."
+    ja: "目下、<wbr>最初の<wbr>プロジェクトである<wbr>「双子山バイクパーク」は、<wbr>初心者にも<wbr>優しい、<wbr>30km以上の<wbr>トレイルを<wbr>持つ、<wbr>利用無料の<wbr>バイクパークとなる<wbr>予定です。"
+  url:
+    ja: https://www.experienceniseko.com/ja/news/supporting-namtba
+
 - slug: nikkei-asia-niseko-beyond-winter-sports
   date: 2025-08-17
   type: article
