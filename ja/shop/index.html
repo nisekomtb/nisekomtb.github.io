@@ -122,6 +122,15 @@ og:
     margin-top: 35px;
   }
 
+  /* The additional_images_preview_on_click storefront flag only governs the
+     classic thumbnail layout; in IMAGE_FEED every image opens a PhotoSwipe
+     lightbox regardless, so the click is disabled here instead. */
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .details-gallery__picture,
+  html#ecwid_html body#ecwid_body .ec-size .ec-store .details-gallery__image {
+    pointer-events: none;
+    cursor: default;
+  }
+
   html#ecwid_html body#ecwid_body .ec-size .ec-store .label--notice {
     background-color: var(--color-primary);
   }
@@ -579,6 +588,9 @@ og:
   window.ec.storefront.show_breadcrumbs = true;
   window.ec.storefront.product_details_show_breadcrumbs = true;
   window.ec.storefront.product_details_position_breadcrumbs = 25;
+  window.ec.storefront.product_details_gallery_layout = "IMAGE_FEED";
+  window.ec.storefront.product_details_cut_product_description_in_sidebar = false;
+  window.ec.storefront.product_details_additional_images_preview_on_click = false;
   window.ec.storefront.breadcrumbs_separator = "";
 
   Ecwid.OnAPILoaded.add(function() {
