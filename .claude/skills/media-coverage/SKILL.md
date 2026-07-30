@@ -20,6 +20,14 @@ Rigid workflow. Run the steps in order. Create one TodoWrite item per step.
 The user gives one or more source URLs. An item may have an EN source, a JA
 source, or both (pass both URLs).
 
+**First check `_data/media-coverage-ignored.yml`.** If a given URL is on that
+list, tell the user it was previously seen and deliberately skipped (quote the
+`reason`) and stop unless they explicitly want it added anyway. Also check
+`_data/media-coverage.yml` for an existing entry covering the same piece via a
+different URL (e.g. a wire-service copy of a post already linked from the
+publisher's own site). When the user decides a discovered URL should NOT be
+added, record it in the ignored file (`url`, `reason`, `date`).
+
 Load `references/metadata-fetch.md` and follow the fetch cascade
 (curl-with-UA, then Playwright browser, then manual paste). Extract:
 - Headline (verbatim from the source)

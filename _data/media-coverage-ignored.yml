@@ -1,0 +1,14 @@
+# URLs deliberately NOT added to media coverage. The media-coverage skill
+# checks this list before adding an item; anything here has been seen and
+# rejected (or replaced by a better source), so don't re-suggest it.
+#
+# This lives in its own file because _data/media-coverage.yml must stay a
+# plain YAML array for the templates that iterate it.
+#
+# Not rendered anywhere. Fields: url (required), reason, date (when decided).
+
+- url: https://prtimes.jp/main/html/rd/p/000000001.000182742.html
+  reason: Same press release as Yotei Brewing's own blog post, which the
+    yotei-twin-peaks-pale-ale entry links instead. PR Times is just the
+    distribution wire; prefer the partner's own site.
+  date: 2026-07-30

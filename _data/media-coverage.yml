@@ -9,13 +9,16 @@
 # title/quote: our display text, per page language. JA values are BudouX-
 #             tokenised with <wbr>.
 # url:        source article URL per language actually available (>=1 required).
+#
+# Deliberately-skipped URLs live in _data/media-coverage-ignored.yml — check
+# it before adding an item that may have been seen and rejected before.
 
-- slug: prtimes-twin-peaks-pale-ale
+- slug: yotei-twin-peaks-pale-ale
   date: 2026-07-30
   type: article
-  source: prtimes
-  sourceName: PR Times
-  thumb: /assets/images/media-coverage/2026/prtimes-twin-peaks-pale-ale/thumb.jpg
+  source: yotei
+  sourceName: Yotei Brewing
+  thumb: /assets/images/media-coverage/2026/yotei-twin-peaks-pale-ale/thumb.jpg
   title:
     en: "Collaboration craft beer Twin Peaks Bike Park Pale Ale, supporting Niseko's mountain bike culture"
     ja: "ニセコの<wbr>マウンテンバイクカルチャーを<wbr>応援する<wbr>コラボレーションクラフトビール<wbr>「Twin Peaks Bike Park Pale Ale」"
@@ -23,7 +26,8 @@
     en: "Every can sold goes straight back into the dirt, and into whatever we build next."
     ja: "この<wbr>ビールが<wbr>1本売れる<wbr>ごとに、<wbr>売上の<wbr>一部が<wbr>トレイルの<wbr>整備や、<wbr>これから<wbr>生まれる<wbr>新しい<wbr>フィールドづくりへと<wbr>還元されます。"
   url:
-    ja: https://prtimes.jp/main/html/rd/p/000000001.000182742.html
+    en: https://yotei.beer/en/blogs/news/twin-peaks-bike-park-pale-ale
+    ja: https://yotei.beer/blogs/news/twin-peaks-bike-park-pale-ale
 
 - slug: rhythmjapan-epic-summer-events
   date: 2025-08-27
