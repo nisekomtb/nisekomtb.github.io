@@ -10,6 +10,21 @@
 #             tokenised with <wbr>.
 # url:        source article URL per language actually available (>=1 required).
 
+- slug: prtimes-twin-peaks-pale-ale
+  date: 2026-07-30
+  type: article
+  source: prtimes
+  sourceName: PR Times
+  thumb: /assets/images/media-coverage/2026/prtimes-twin-peaks-pale-ale/thumb.jpg
+  title:
+    en: "Collaboration craft beer Twin Peaks Bike Park Pale Ale, supporting Niseko's mountain bike culture"
+    ja: "ニセコの<wbr>マウンテンバイクカルチャーを<wbr>応援する<wbr>コラボレーションクラフトビール<wbr>「Twin Peaks Bike Park Pale Ale」"
+  quote:
+    en: "Every can sold goes straight back into the dirt, and into whatever we build next."
+    ja: "この<wbr>ビールが<wbr>1本売れる<wbr>ごとに、<wbr>売上の<wbr>一部が<wbr>トレイルの<wbr>整備や、<wbr>これから<wbr>生まれる<wbr>新しい<wbr>フィールドづくりへと<wbr>還元されます。"
+  url:
+    ja: https://prtimes.jp/main/html/rd/p/000000001.000182742.html
+
 - slug: rhythmjapan-epic-summer-events
   date: 2025-08-27
   type: article
