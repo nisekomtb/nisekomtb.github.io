@@ -72,13 +72,9 @@
     - path: artist-series
       en: Artist Series
       ja: アーティストシリーズ
-    # Temporarily hidden from the nav ahead of the 6 August 2026 launch. The
-    # page itself stays published and reachable; this only removes the menu
-    # entry. Uncomment to restore. Breadcrumbs fall back to the page title
-    # while this is commented out, so no _data/breadcrumbs.yml entry is needed.
-    # - path: beer
-    #   en: Beer
-    #   ja: ビール
+    - path: beer
+      en: Beer
+      ja: ビール
     - url: /shop/#!/~/account
       icon: fa-solid fa-user
       en: My Account
