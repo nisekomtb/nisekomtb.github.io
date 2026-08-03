@@ -10,8 +10,38 @@
 #             tokenised with <wbr>.
 # url:        source article URL per language actually available (>=1 required).
 #
-# Deliberately-skipped URLs live in _data/media-coverage-ignored.yml — check
+# Deliberately-skipped URLs live in _data/media-coverage-ignored.yml; check
 # it before adding an item that may have been seen and rejected before.
+
+- slug: sportsw-santacruz-twin-peaks-opening
+  date: 2023-09-27
+  type: article
+  source: sportsw
+  sourceName: Sports-W
+  thumb: /assets/images/media-coverage/2023/sportsw-santacruz-twin-peaks-opening/thumb.jpg
+  title:
+    en: "One of Asia's Top MTB Parks Is Born in Niseko: Santa Cruz Sponsors Shogun Syndicate, the Toughest Trail"
+    ja: "【Santa Cruz】北海道ニセコに<wbr>アジア有数の<wbr>MTBパークが<wbr>誕生！<wbr>Santa Cruzが<wbr>最難関コース<wbr>「ショーグン・シンジケート」の<wbr>トレイルスポンサーに"
+  quote:
+    en: "With one of Asia's leading mountain bike fields complete, Niseko could become Japan's finest mountain bike resort, drawing visitors well beyond the snow season."
+    ja: "ここに<wbr>アジア有数の<wbr>マウンテンバイク・フィールドが<wbr>完成すれば、<wbr>スノーシーズン以外も<wbr>集客を<wbr>見込む<wbr>夏場の<wbr>観光資源と<wbr>なり、<wbr>ニセコが<wbr>日本で<wbr>最高峰の<wbr>マウンテンバイクリゾートと<wbr>なる<wbr>可能性も<wbr>あります。"
+  url:
+    ja: https://sports-w.com/news/ion/santacruz-niseko-mtbpark-opening-news/
+
+- slug: uchijapan-niseko-mtb-fundraising
+  date: 2022-09-17
+  type: article
+  source: uchijapan
+  sourceName: Uchi Japan
+  thumb: /assets/images/media-coverage/2022/uchijapan-niseko-mtb-fundraising/thumb.jpg
+  title:
+    en: "Niseko Mountain Biking Fundraising Campaign"
+    ja: "ニセコ・マウンテンバイク<wbr>募金キャンペーン"
+  quote:
+    en: "Every ¥5,000 spent pays for the building of 2 meters of trail."
+    ja: "5,000円の<wbr>ご支援ごとに、<wbr>2メートルの<wbr>トレイルが<wbr>つくられます。"
+  url:
+    en: https://uchijapan.com/news/niseko-mountain-biking-fundraising-campaign
 
 - slug: yotei-twin-peaks-pale-ale
   date: 2026-07-30
