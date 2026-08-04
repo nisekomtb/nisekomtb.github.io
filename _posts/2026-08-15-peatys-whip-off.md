@@ -53,6 +53,7 @@ itinerary_hold:
           location: NAMBA tent
 moreInfo:
   - Limited to 20 riders.
+  - Volunteers wanted. <a href="https://forms.gle/SZiKdziL3ZoiRe9r5">Sign up to help out</a>.
 parking: false
 about: false
 ---
@@ -79,5 +80,11 @@ Judges score every run on the official Style, Height and Intensity matrix. Land 
 - **Categories.** Male and female, under 16 and 16 and over. The minimum age is 12.
 - **Protective gear is required** for every practice and competition run. Helmets are mandatory, a full-face is strongly recommended, and bring proper pads.
 - **Weather.** The running order may shift depending on wind and trail conditions on Launch Control.
+
+## Help out on the day
+
+Events like this run on volunteers, and we need a few more hands on 15 August. We're after a setup crew, a teardown crew, crowd control at the ropes, judging assistants to track riders and scores, and first aiders (you'll need a current certification for that one).
+
+Shifts are flexible: do the full day (roughly 8:00am to 6:00pm), the morning (8:00am to 1:00pm) or the afternoon (1:00pm to 6:00pm). You won't get paid, but you will get the best view of the action. [Sign up to volunteer](https://forms.gle/SZiKdziL3ZoiRe9r5) and we'll be in touch with the details.
 
 Come and throw down, or come and heckle from the hub. Either way, we'll see you at Twin Peaks on 15 August. For the rest of what's on this summer, have a look at our [events page](/events/).
