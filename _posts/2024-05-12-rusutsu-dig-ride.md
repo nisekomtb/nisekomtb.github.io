@@ -4,6 +4,7 @@ categories: events
 title: Rusutsu Dig & Ride Event
 description: Yotei MTB Club's first course maintenance and ride day of the season on the Rusutsu Flow Trail. Early start this year thanks to a warm spring.
 startDate: 2024-05-12 09:00:00 +0900
+endDate: 2024-05-12 15:00:00 +0900
 days: 1
 time: 9:00am - 3:00pm
 location: Rusutsu Furusato Park

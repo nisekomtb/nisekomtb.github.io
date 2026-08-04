@@ -4,6 +4,7 @@ categories: events
 title: Grand HIRAFU Bike Park opens
 description: Grand HIRAFU Bike Park reopens on 13 July, the first time since 2020. New top-to-bottom flow trail, gondola access, and a skill-up area for beginners.
 startDate: 2024-07-13 09:00:00 +0900
+endDate: 2024-07-13 16:00:00 +0900
 days: 1
 time: 9:00am - 4:00pm
 location: Grand HIRAFU Bike Park, Niseko

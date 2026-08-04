@@ -4,6 +4,7 @@ categories: events
 title: Niseko Gravel Autumn Ride
 description: Two-day gravel ride under Mt Yotei through Niseko's forest tracks and farm roads. Sunday offers 45, 100 or 120km courses; Saturday a 55km group session.
 startDate: 2025-09-13 09:00:00 +0900
+endDate: 2025-09-14 15:30:00 +0900
 days: 2
 location: Niseko Central Warehouse Group
 address: 048-1512 60-2 Chuo-dori, Niseko, Abuta-gun, Hokkaido, Japan

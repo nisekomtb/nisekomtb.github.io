@@ -7,6 +7,7 @@ titleHtml: ツイン・ピークス​・バイクパーク​・グランド​
 description: ツインピークス・バイクパークが9月16〜17日に一般公開オープン。安全祈願、Santa Cruzの試乗車、ガイド付きライド、DJ Tamaを迎えたRhythmでのアフターパーティー。
 descriptionHtml: ツインピークス・バイクパークが<wbr>9月16〜17日に<wbr>一般<wbr>公開オープン。<wbr>安全祈願、<wbr>Santa Cruzの<wbr>試乗車、<wbr>ガイド付きライド、<wbr>DJ Tamaを<wbr>迎えた<wbr>Rhythmでの<wbr>アフターパーティー。
 startDate: 2023-09-16 09:00:00 +0900
+endDate: 2023-09-17 16:30:00 +0900
 days: 2
 location: ツインピークス・バイクパーク、ニセコ
 address: 150, 2 Aza-150-1 Yamada, Kutchan, Abuta District, Hokkaido 044-0081

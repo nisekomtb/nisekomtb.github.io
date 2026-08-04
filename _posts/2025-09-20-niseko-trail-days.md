@@ -4,6 +4,7 @@ categories: events
 title: Niseko Trail Days
 description: "Specialized's Trail Days at Twin Peaks Bike Park, its only Hokkaido stop: trail work, riding, demos, a jump clinic with Ayato Kimura and a Rhythm afterparty."
 startDate: 2025-09-20 09:00:00 +0900
+endDate: 2025-09-20 20:30:00 +0900
 days: 1
 time: 9:00am - 8:30pm
 location: Twin Peaks Bike Park, Niseko

@@ -1,0 +1,66 @@
+{%- comment -%}
+  iCalendar (RFC 5545) feed of event posts, one feed per language.
+  Params: include.lang ("en"|"ja"), include.calname, include.caldesc.
+
+  Event shape per post:
+    - endDate present            -> timed event (DTSTART/DTEND, JST)
+    - no endDate, single day with a real start time -> point event (DTSTART only)
+    - otherwise                  -> all-day event spanning `days` (DTEND exclusive)
+  Cancelled events are omitted entirely.
+  Text values escape "," and ";" per RFC 5545 TEXT rules; JA location/title
+  fields are stripped of <wbr> tokenisation tags.
+{%- endcomment -%}
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//NAMBA//namba.ngo//{% if include.lang == "ja" %}JA{% else %}EN{% endif %}
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:{{ include.calname }}
+X-WR-CALDESC:{{ include.caldesc }}
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VTIMEZONE
+TZID:Asia/Tokyo
+BEGIN:STANDARD
+DTSTART:19510909T000000
+TZOFFSETFROM:+0900
+TZOFFSETTO:+0900
+TZNAME:JST
+END:STANDARD
+END:VTIMEZONE
+{%- assign dtstamp_utc = site.time | date: "%s" | minus: 32400 %}
+{%- assign events = site.categories.events | where: "lang", include.lang | where: "draft", "false" %}
+{%- for ev in events %}
+{%- unless ev.cancelled %}
+{%- assign days = ev.days | default: 1 %}
+{%- assign days_sec = days | times: 86400 %}
+{%- assign start_clock = ev.startDate | date: "%H%M%S" %}
+BEGIN:VEVENT
+UID:{{ ev.url }}@namba.ngo
+DTSTAMP:{{ dtstamp_utc | date: "%Y%m%dT%H%M%S" }}Z
+{%- if ev.endDate %}
+DTSTART;TZID=Asia/Tokyo:{{ ev.startDate | date: "%Y%m%dT%H%M%S" }}
+DTEND;TZID=Asia/Tokyo:{{ ev.endDate | date: "%Y%m%dT%H%M%S" }}
+{%- elsif days == 1 and start_clock != "000000" %}
+DTSTART;TZID=Asia/Tokyo:{{ ev.startDate | date: "%Y%m%dT%H%M%S" }}
+{%- else %}
+DTSTART;VALUE=DATE:{{ ev.startDate | date: "%Y%m%d" }}
+{%- assign end_day = ev.startDate | date: "%s" | plus: days_sec %}
+DTEND;VALUE=DATE:{{ end_day | date: "%Y%m%d" }}
+{%- endif %}
+SUMMARY:{{ ev.title | strip_html | strip_newlines | replace: ";", "\;" | replace: ",", "\," }}
+{%- if ev.description %}
+DESCRIPTION:{{ ev.description | strip_html | strip_newlines | replace: ";", "\;" | replace: ",", "\," }}
+{%- endif %}
+{%- if ev.location %}
+{%- assign loc = ev.location | strip_html | strip_newlines %}
+{%- if ev.address %}{% assign loc = loc | append: ", " | append: ev.address %}{% endif %}
+LOCATION:{{ loc | replace: ";", "\;" | replace: ",", "\," }}
+{%- endif %}
+URL:{{ site.url }}{{ ev.url }}
+STATUS:CONFIRMED
+END:VEVENT
+{%- endunless %}
+{%- endfor %}
+END:VCALENDAR

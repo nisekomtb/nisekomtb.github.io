@@ -4,6 +4,7 @@ categories: events
 title: "Nakama Ride: July"
 description: "NAMBA's monthly Nakama Ride: a relaxed social group ride at Twin Peaks, Niseko. Meet at the base 4pm, Monday 27 July 2026. Easy pace, all welcome."
 startDate: 2026-07-27 16:00:00 +0900
+endDate: 2026-07-27 18:00:00 +0900
 days: 1
 time: "4:00pm"
 location: Twin Peaks Bike Park, Niseko

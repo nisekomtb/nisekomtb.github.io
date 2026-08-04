@@ -4,6 +4,7 @@ categories: events
 title: Loic Bruni in Niseko
 description: Group ride and meet and greet with 6x UCI Downhill World Champion Loic Bruni at Twin Peaks Bike Park, 25 July. Guests include Nico Vink and Hajime Imoto.
 startDate: 2025-07-25 16:30:00 +0900
+endDate: 2025-07-25 18:00:00 +0900
 days: 1
 time: 2:30pm - 6:00pm
 location: Twin Peaks Bike Park, Niseko

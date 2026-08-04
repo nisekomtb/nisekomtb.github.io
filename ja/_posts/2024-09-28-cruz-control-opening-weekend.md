@@ -5,6 +5,7 @@ title: クルーズ・コントロール オープニングウィークエンド
 description: NAMBAとサンタクルーズによるツインピークスの新トレイル「クルーズ・コントロール」のオープニングウィークエンド。最初の1.1kmが開通。デモバイク、プロ引率ライド、Rhythmでのアフターパーティーも。
 descriptionHtml: NAMBAと<wbr>サンタクルーズに<wbr>よる<wbr>ツインピークスの<wbr>新トレイル<wbr>「クルーズ・<wbr>コントロール」の<wbr>オープニングウィークエンド。<wbr>最初の<wbr>1.1kmが<wbr>開通。<wbr>デモバイク、<wbr>プロ引率ライド、<wbr>Rhythmでの<wbr>アフターパーティーも。
 startDate: 2024-09-28 09:00:00 +0900
+endDate: 2024-09-29 15:00:00 +0900
 days: 2
 location: ツインピークス・​バイクパーク、​ニセコ
 address: 150, 2 Aza-150-1 Yamada, Kutchan, Abuta District, Hokkaido 044-0081
@@ -50,7 +51,7 @@ itinerary:
             name: Rhythm Hirafu
         - time: 3:00pm
           name: デモバイクの​展示終了
-        - time: 5:00am
+        - time: 5:00pm
           name: DJ、​ケータリング、​プレゼントが​ある​アフターパーティー
           location:
             url: https://goo.gl/maps/78nX9Sryy9c5qXmM8

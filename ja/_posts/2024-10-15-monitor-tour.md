@@ -5,6 +5,7 @@ title: モニターツアー
 description: 10月15日・16日、ツインピークス・バイクパークの2日間モニターツアー。トレイルビルダーと一緒に走り、設計の考え方を聞き、次のフェーズへのフィードバックを届けましょう。
 descriptionHtml: 10月15日・16日、<wbr>ツインピークス・バイクパークの<wbr>2日間モニターツアー。<wbr>トレイルビルダーと<wbr>一緒に<wbr>走り、<wbr>設計の<wbr>考え方を<wbr>聞き、<wbr>次の<wbr>フェーズへの<wbr>フィードバックを<wbr>届けましょう。
 startDate: 2024-10-15 10:00:00 +0900
+endDate: 2024-10-16 12:00:00 +0900
 days: 2
 location: ツインピークス・​バイクパーク、​ニセコ
 address: 150, 2 Aza-150-1 Yamada, Kutchan, Abuta District, Hokkaido 044-0081

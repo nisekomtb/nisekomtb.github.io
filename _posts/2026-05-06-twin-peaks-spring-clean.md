@@ -5,6 +5,7 @@ title: Twin Peaks Spring Clean
 description: "Volunteer trail day at Twin Peaks Bike Park: clear winter debris and rake trails ready for the new season. Morning and afternoon sessions available."
 rescheduled: "⛈️ **Rescheduled:** with rain forecast all day on Monday, we've moved this event to **Wednesday 6 May**, which remains a public holiday (Constitution Day substitute). Same trails, same sessions, drier conditions. ⛈️"
 startDate: 2026-05-06 09:00:00 +0900
+endDate: 2026-05-06 16:00:00 +0900
 days: 1
 time: "9:00am - 4:00pm"
 location: Twin Peaks Bike Park, Niseko

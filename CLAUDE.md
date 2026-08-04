@@ -42,7 +42,8 @@ GitHub Pages is configured to deploy from the `Build and deploy` workflow in
 4. Minifies every non-vendor CSS file in `_site/` via `lightningcss --minify --error-recovery`.
 5. Minifies every non-vendor JS file via `terser -c -m`.
 6. Collapses whitespace and strips comments from every `_site/**/*.html` via `html-minifier-terser` (conservative settings — does not touch inline `<script>`/`<style>` content; preserves `<pre>`/`<textarea>`/JSON-LD).
-7. Uploads `_site/` as the Pages artifact and deploys via `actions/deploy-pages`.
+7. Converts built iCal feeds (`_site/**/*.ics`) to CRLF line endings (RFC 5545). Source files stay LF.
+8. Uploads `_site/` as the Pages artifact and deploys via `actions/deploy-pages`.
 
 The trigger is `push` to `main` (and manual dispatch). Concurrency is capped at one
 deploy in flight; subsequent pushes queue.

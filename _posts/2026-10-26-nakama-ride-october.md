@@ -4,6 +4,7 @@ categories: events
 title: "Nakama Ride: October"
 description: "The final Nakama Ride of 2026: a relaxed social group ride at Twin Peaks, Niseko. Meet at the base 4pm, Monday 26 October. Autumn colours, all welcome."
 startDate: 2026-10-26 16:00:00 +0900
+endDate: 2026-10-26 18:00:00 +0900
 days: 1
 time: "4:00pm"
 location: Twin Peaks Bike Park, Niseko

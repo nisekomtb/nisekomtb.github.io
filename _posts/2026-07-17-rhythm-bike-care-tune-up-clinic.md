@@ -4,6 +4,7 @@ categories: events
 title: "Rhythm Tunes Workshop: Bike Care + Tune-Up Clinic"
 description: "Rhythm Hirafu is running a free bike care and basic tune-up clinic in Niseko on 17 July 2026. English instruction, limited to 20 places. Sign up early."
 startDate: 2026-07-17 18:00:00 +0900
+endDate: 2026-07-17 20:00:00 +0900
 days: 1
 location: Rhythm Hirafu
 address: 3-7-6 Niseko Hirafu 1-jo, Kutchan-cho, Abuta-gun, Hokkaido 044-0080, Japan

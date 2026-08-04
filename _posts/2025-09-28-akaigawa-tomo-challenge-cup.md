@@ -4,6 +4,7 @@ categories: events
 title: Akaigawa Tomo Challenge Cup
 description: An MTB and BMX challenge for all ages. Compete in the Time Attack Ride (Men's, Women's, Kids' classes) or test your pacing in the Target Time Ride.
 startDate: 2025-09-28 09:00:00 +0900
+endDate: 2025-09-28 15:00:00 +0900
 days: 1
 time: 9:00am - 3:00pm
 location: Akaigawa Tomo Playpark

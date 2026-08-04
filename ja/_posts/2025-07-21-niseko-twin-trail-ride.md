@@ -6,6 +6,7 @@ titleHtml: ニセコ・​ツイン・​トレイルライド
 description: グラン・ヒラフとツインピークス・バイクパークを舞台にした1日のMTBイベント。ガイド付きライド、スキルワーク、メンテナンス講座を、プロライダー黒瀬文哉が指導。定員15名。
 descriptionHtml: グラン・ヒラフと<wbr>ツインピークス・バイクパークを<wbr>舞台に<wbr>した<wbr>1日の<wbr>MTBイベント。<wbr>ガイド付きライド、<wbr>スキルワーク、<wbr>メンテナンス講座を、<wbr>プロライダー黒瀬文哉が<wbr>指導。<wbr>定員15名。
 startDate: 2025-07-21 09:00:00 +0900
+endDate: 2025-07-21 13:00:00 +0900
 days: 1
 time: 9:00am - 1:00pm
 location: Niseko Tokyu Grand Hirafu & Twin Peaks Bike Park, Niseko

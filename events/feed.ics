@@ -1,0 +1,7 @@
+---
+layout: blank
+permalink: /events/feed.ics
+sitemap: false
+noindex: true
+---
+{% include ical-feed.ics lang="en" calname="NAMBA Events" caldesc="Mountain bike events in Niseko by NAMBA: community rides, trail days, races and gravel events." %}

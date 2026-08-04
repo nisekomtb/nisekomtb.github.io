@@ -4,6 +4,7 @@ categories: events
 title: "Peaty's Whip Off"
 description: "Peaty's Whip Off hits Twin Peaks Bike Park, Niseko on Saturday 15 August 2026. A whip off contest on the Launch Control jump line. Free to enter and watch."
 startDate: 2026-08-15 09:00:00 +0900
+endDate: 2026-08-15 15:00:00 +0900
 days: 1
 time: "9:00am - 3:00pm"
 location: Twin Peaks Bike Park, Niseko

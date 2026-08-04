@@ -1,0 +1,7 @@
+---
+layout: blank
+permalink: /ja/events/feed.ics
+sitemap: false
+noindex: true
+---
+{% include ical-feed.ics lang="ja" calname="NAMBA イベント" caldesc="NAMBAが主催するニセコのマウンテンバイクイベント：コミュニティライド、トレイルデイ、レース、グラベルイベント。" %}

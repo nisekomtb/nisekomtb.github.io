@@ -6,6 +6,7 @@ titleHtml: "Peaty's <wbr>ホイップオフ"
 description: 8月15日（土）、ニセコのツインピークス・バイクパークでPeaty's ホイップオフを開催。ローンチコントロールのジャンプラインで競うホイップオフ・コンテストです。参加無料、観戦無料。
 descriptionHtml: 8月15日<wbr>（土）、<wbr>ニセコの<wbr>ツインピークス・バイクパークで<wbr>Peaty's ホイップオフを<wbr>開催。<wbr>ローンチコントロールの<wbr>ジャンプラインで<wbr>競う<wbr>ホイップオフ・コンテストです。<wbr>参加無料、<wbr>観戦無料。
 startDate: 2026-08-15 09:00:00 +0900
+endDate: 2026-08-15 15:00:00 +0900
 days: 1
 time: "9:00am - 3:00pm"
 location: ツインピークス・<wbr>バイクパーク、<wbr>ニセコ

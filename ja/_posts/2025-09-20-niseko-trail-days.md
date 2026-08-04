@@ -6,6 +6,7 @@ titleHtml: ニセコ​「Trail Days」
 description: スペシャライズドのTrail Daysが、北海道唯一の開催地ツインピークス・バイクパークに登場。トレイル整備、ライド、デモ、Ayato Kimuraのジャンプクリニック、Rhythmでのアフターパーティー。
 descriptionHtml: スペシャライズドの<wbr>Trail Daysが、<wbr>北海道唯一の<wbr>開催地ツインピークス・バイクパークに<wbr>登場。<wbr>トレイル整備、<wbr>ライド、<wbr>デモ、<wbr>Ayato Kimuraの<wbr>ジャンプクリニック、<wbr>Rhythmでの<wbr>アフターパーティー。
 startDate: 2025-09-20 09:00:00 +0900
+endDate: 2025-09-20 20:30:00 +0900
 days: 1
 time: 9:00am - 8:30pm
 location: ツインピークス・​バイクパーク、​ニセコ

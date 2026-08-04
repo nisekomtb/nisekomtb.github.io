@@ -18,6 +18,11 @@ theme: null
 strict_front_matter: true
 permalink: /:categories/:title-:year/
 
+# All event dates carry a +0900 offset; without this, Liquid `date:` filters
+# format in the build machine's zone (UTC on CI, JST locally) and the two
+# environments render different times. Pin JST so output is deterministic.
+timezone: Asia/Tokyo
+
 plugins:
   - jekyll-redirect-from
 

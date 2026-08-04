@@ -13,7 +13,8 @@ name: Build and deploy to GitHub Pages
 #      html-minifier-terser (conservative settings — no inline JS/CSS
 #      minification because we already minified the linked files and
 #      collapsing inline script content is risky)
-#   5. Upload the minified _site/ as the Pages artifact and deploy
+#   5. Convert iCal feeds (*.ics) to CRLF line endings (RFC 5545)
+#   6. Upload the minified _site/ as the Pages artifact and deploy
 #
 # We never minify the source files in the repo. Source CSS/JS/HTML
 # stays readable and editable; minification happens at deploy time.
@@ -145,6 +146,13 @@ jobs:
               --use-short-doctype \
               -o "$f" "$f"
           done
+
+      - name: Normalise iCal line endings
+        # RFC 5545 requires CRLF. Jekyll writes LF; convert the built .ics
+        # files only (source files in the repo stay LF).
+        run: |
+          set -euo pipefail
+          find _site -type f -name '*.ics' -exec perl -pi -e 's/\r?\n/\r\n/' {} +
 
       - name: Show build size
         run: du -sh _site
