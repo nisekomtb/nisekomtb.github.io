@@ -1,6 +1,7 @@
 ---
 layout: event
 categories: events
+cancelled: true
 title: "ラップアタック"
 titleHtml: "ラップ<wbr>アタック"
 subtitle: "チーム・エンデューロ・リレー"

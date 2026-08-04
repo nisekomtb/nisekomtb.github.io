@@ -1,6 +1,7 @@
 ---
 layout: event
 categories: events
+cancelled: true
 title: "Lap Attack"
 subtitle: "Team Enduro Relay"
 description: "Lap Attack Team Enduro Relay hits Twin Peaks Bike Park, Niseko on Saturday 8 August 2026. Teams of four, most laps in six hours. Register by 31 July."
