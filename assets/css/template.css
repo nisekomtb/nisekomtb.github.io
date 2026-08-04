@@ -7911,3 +7911,35 @@ joomla-field-custom.field-custom-wrapper .input-group .input-group-btn .btn span
   line-height: 1.6;
 }
 .events-empty a { color: var(--color-accent); }
+
+/* Heading row: "Upcoming" title on the left, quiet calendar-subscribe
+ * link on the right. Link inherits the muted small-caps label style and
+ * lifts to the accent gold on hover. */
+.events-heading-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+}
+.calendar-subscribe {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 24px; /* keep the row's rhythm when it wraps under the h2 */
+  font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--color-text-light, rgba(255, 255, 255, 0.7));
+  text-decoration: none;
+  transition: color 200ms ease;
+}
+.calendar-subscribe:hover,
+.calendar-subscribe:focus {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+.calendar-subscribe svg { flex: none; }
