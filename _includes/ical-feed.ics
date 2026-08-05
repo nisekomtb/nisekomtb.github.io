@@ -3,6 +3,9 @@
   Params: include.lang ("en"|"ja"), include.calname, include.caldesc.
 
   Event shape per post:
+    - dayTimes present           -> one timed entry per day, summary suffixed
+                                    "(Day N)" / "（N日目）" to match the layout's
+                                    itinerary day labels
     - endDate present            -> timed event (DTSTART/DTEND, JST)
     - no endDate, single day with a real start time -> point event (DTSTART only)
     - otherwise                  -> all-day event spanning `days` (DTEND exclusive)
@@ -36,6 +39,33 @@ END:VTIMEZONE
 {%- assign days = ev.days | default: 1 %}
 {%- assign days_sec = days | times: 86400 %}
 {%- assign start_clock = ev.startDate | date: "%H%M%S" %}
+{%- assign summary = ev.title | strip_html | strip_newlines | replace: ";", "\;" | replace: ",", "\," %}
+{%- assign desc = ev.description | strip_html | strip_newlines | replace: ";", "\;" | replace: ",", "\," %}
+{%- assign loc = "" %}
+{%- if ev.location %}
+{%- assign loc = ev.location | strip_html | strip_newlines %}
+{%- if ev.address %}{% assign loc = loc | append: ", " | append: ev.address %}{% endif %}
+{%- assign loc = loc | replace: ";", "\;" | replace: ",", "\," %}
+{%- endif %}
+{%- if ev.dayTimes %}
+{%- for day in ev.dayTimes %}
+BEGIN:VEVENT
+UID:{{ ev.url }}day{{ forloop.index }}@namba.ngo
+DTSTAMP:{{ dtstamp_utc | date: "%Y%m%dT%H%M%S" }}Z
+DTSTART;TZID=Asia/Tokyo:{{ day.start | date: "%Y%m%dT%H%M%S" }}
+DTEND;TZID=Asia/Tokyo:{{ day.end | date: "%Y%m%dT%H%M%S" }}
+SUMMARY:{{ summary }}{% if ev.dayTimes.size > 1 %}{% if include.lang == "ja" %}（{{ forloop.index }}日目）{% else %} (Day {{ forloop.index }}){% endif %}{% endif %}
+{%- if ev.description %}
+DESCRIPTION:{{ desc }}
+{%- endif %}
+{%- if loc != "" %}
+LOCATION:{{ loc }}
+{%- endif %}
+URL:{{ site.url }}{{ ev.url }}
+STATUS:CONFIRMED
+END:VEVENT
+{%- endfor %}
+{%- else %}
 BEGIN:VEVENT
 UID:{{ ev.url }}@namba.ngo
 DTSTAMP:{{ dtstamp_utc | date: "%Y%m%dT%H%M%S" }}Z
@@ -49,18 +79,17 @@ DTSTART;VALUE=DATE:{{ ev.startDate | date: "%Y%m%d" }}
 {%- assign end_day = ev.startDate | date: "%s" | plus: days_sec %}
 DTEND;VALUE=DATE:{{ end_day | date: "%Y%m%d" }}
 {%- endif %}
-SUMMARY:{{ ev.title | strip_html | strip_newlines | replace: ";", "\;" | replace: ",", "\," }}
+SUMMARY:{{ summary }}
 {%- if ev.description %}
-DESCRIPTION:{{ ev.description | strip_html | strip_newlines | replace: ";", "\;" | replace: ",", "\," }}
+DESCRIPTION:{{ desc }}
 {%- endif %}
-{%- if ev.location %}
-{%- assign loc = ev.location | strip_html | strip_newlines %}
-{%- if ev.address %}{% assign loc = loc | append: ", " | append: ev.address %}{% endif %}
-LOCATION:{{ loc | replace: ";", "\;" | replace: ",", "\," }}
+{%- if loc != "" %}
+LOCATION:{{ loc }}
 {%- endif %}
 URL:{{ site.url }}{{ ev.url }}
 STATUS:CONFIRMED
 END:VEVENT
+{%- endif %}
 {%- endunless %}
 {%- endfor %}
 END:VCALENDAR

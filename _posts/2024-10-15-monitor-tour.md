@@ -5,6 +5,11 @@ title: Monitor Tour
 description: Two-day monitor tour at Twin Peaks Bike Park, 15-16 October. Ride with the trail builders, hear how the trails were designed, and give feedback on what's next.
 startDate: 2024-10-15 10:00:00 +0900
 endDate: 2024-10-16 12:00:00 +0900
+dayTimes:
+  - start: 2024-10-15 10:00:00 +0900
+    end: 2024-10-15 12:00:00 +0900
+  - start: 2024-10-16 10:00:00 +0900
+    end: 2024-10-16 12:00:00 +0900
 days: 2
 location: Twin Peaks Bike Park, Niseko
 address: 150, 2 Aza-150-1 Yamada, Kutchan, Abuta District, Hokkaido 044-0081

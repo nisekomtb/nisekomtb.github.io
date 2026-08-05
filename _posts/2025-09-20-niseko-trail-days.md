@@ -47,7 +47,7 @@ itinerary:
           name: Trail maintenance begins
         - time: 12:00pm
           name: Lunch break
-        - time:	1:00pm
+        - time: 1:00pm
           name: Free ride & Specialized Turbo Levo Demo Rides
         - time: 2:00pm
           name: Tricks Clinic with Ayato Kimura

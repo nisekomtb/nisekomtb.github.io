@@ -4,8 +4,17 @@ categories: events
 title: ニセコ MTB ウィークエンド
 description: ニセコMTBの4日間。Rhythmヒラフでのサンタクルーズ試乗車、プロとのグループライド、そしてニセコアンヌプリでのダウンヒルシリーズレース。
 descriptionHtml: ニセコMTBの<wbr>4日間。<wbr>Rhythmヒラフでの<wbr>サンタクルーズ試乗車、<wbr>プロとの<wbr>グループライド、<wbr>そして<wbr>ニセコアンヌプリでの<wbr>ダウンヒルシリーズレース。
-startDate: 2025-08-22 09:00:00 +0900
+startDate: 2025-08-22 09:30:00 +0900
 endDate: 2025-08-25 14:00:00 +0900
+dayTimes:
+  - start: 2025-08-22 09:30:00 +0900
+    end: 2025-08-22 15:00:00 +0900
+  - start: 2025-08-23 09:30:00 +0900
+    end: 2025-08-23 15:00:00 +0900
+  - start: 2025-08-24 09:30:00 +0900
+    end: 2025-08-24 15:00:00 +0900
+  - start: 2025-08-25 09:30:00 +0900
+    end: 2025-08-25 14:00:00 +0900
 days: 4
 location: ニセコ
 address: 150, 2 Aza-150-1 Yamada, Kutchan, Abuta District, Hokkaido 044-0081

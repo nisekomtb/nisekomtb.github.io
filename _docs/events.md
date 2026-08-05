@@ -59,6 +59,7 @@ Partner `img` paths are relative to `/assets/images/company/`.
 |---|---|---|
 | `itinerary` | Object | Multi-day schedule — see structure below |
 | `endDate` | DateTime | When the event finishes on its final day, e.g. `2026-08-15 15:00:00 +0900`. Set it whenever the finish time is known (from the `time` field or the itinerary's last item). Feeds the iCal calendars: with `endDate` the event exports with exact start/end times; without it, multi-day events fall back to an all-day entry spanning `days` |
+| `dayTimes` | Array of Objects | Multi-day events with an itinerary: one `{ start, end }` DateTime pair per day, correlated from that day's first and last itinerary times. Must have exactly `days` entries. `startDate` should equal the first day's `start` and `endDate` the last day's `end`. The iCal feeds emit one entry per day ("Title (Day N)" / 「タイトル（N日目）」) instead of one block spanning the whole event |
 
 ### Registration & sales
 
@@ -99,6 +100,7 @@ Every event post is published automatically to the subscribe-able calendar feeds
 `_includes/ical-feed.ics`. No per-post action is needed beyond the fields above:
 
 - `cancelled: true` posts are excluded from the feeds
+- `dayTimes` present → one timed entry per day, titled "Title (Day N)" / 「タイトル（N日目）」
 - `endDate` present → timed calendar entry (`startDate` → `endDate`)
 - no `endDate`, single day, timed `startDate` → start-time-only entry
 - otherwise → all-day entry spanning `days`

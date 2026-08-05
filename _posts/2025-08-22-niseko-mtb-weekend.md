@@ -3,8 +3,17 @@ layout: event
 categories: events
 title: Niseko MTB Weekend
 description: "Four days of Niseko mountain biking: Santa Cruz demo bikes at Rhythm Hirafu, group rides with pros, and the Downhill Series race at Niseko Annupuri."
-startDate: 2025-08-22 09:00:00 +0900
+startDate: 2025-08-22 09:30:00 +0900
 endDate: 2025-08-25 14:00:00 +0900
+dayTimes:
+  - start: 2025-08-22 09:30:00 +0900
+    end: 2025-08-22 15:00:00 +0900
+  - start: 2025-08-23 09:30:00 +0900
+    end: 2025-08-23 15:00:00 +0900
+  - start: 2025-08-24 09:30:00 +0900
+    end: 2025-08-24 15:00:00 +0900
+  - start: 2025-08-25 09:30:00 +0900
+    end: 2025-08-25 14:00:00 +0900
 days: 4
 location: Niseko
 address: 150, 2 Aza-150-1 Yamada, Kutchan, Abuta District, Hokkaido 044-0081

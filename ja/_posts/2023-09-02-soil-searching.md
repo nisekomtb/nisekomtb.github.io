@@ -6,8 +6,13 @@ title: ニセコでソイル・サーチング
 titleHtml: ニセコでソイル・​サーチング
 description: 9月2〜3日、まだ一般公開前のツインピークス・バイクパークで2日間のDig&Rideイベント。スペシャライズドとNAMBAの共催。事前登録制、抽選選考。
 descriptionHtml: 9月2〜3日、<wbr>まだ<wbr>一般<wbr>公開前の<wbr>ツインピークス・バイクパークで<wbr>2日間の<wbr>Dig&Rideイベント。<wbr>スペシャライズドと<wbr>NAMBAの<wbr>共催。<wbr>事前登録制、<wbr>抽選選考。
-startDate: 2023-09-02 09:00:00 +0900
+startDate: 2023-09-02 10:00:00 +0900
 endDate: 2023-09-03 16:00:00 +0900
+dayTimes:
+  - start: 2023-09-02 10:00:00 +0900
+    end: 2023-09-02 21:00:00 +0900
+  - start: 2023-09-03 09:00:00 +0900
+    end: 2023-09-03 16:00:00 +0900
 days: 2
 location: ツインピークス・バイクパーク、ニセコ
 address: 150, 2 Aza-150-1 Yamada, Kutchan, Abuta District, Hokkaido 044-0081

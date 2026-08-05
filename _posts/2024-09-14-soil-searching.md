@@ -5,6 +5,11 @@ title: Soil Searching
 description: Two-day dig and ride at Twin Peaks Bike Park, 14-15 September, hosted by Specialized and NAMBA. Registration only.
 startDate: 2024-09-14 09:00:00 +0900
 endDate: 2024-09-15 16:00:00 +0900
+dayTimes:
+  - start: 2024-09-14 09:00:00 +0900
+    end: 2024-09-14 20:00:00 +0900
+  - start: 2024-09-15 09:00:00 +0900
+    end: 2024-09-15 16:00:00 +0900
 days: 2
 location: Twin Peaks Bike Park, Niseko
 address: 150, 2 Aza-150-1 Yamada, Kutchan, Abuta District, Hokkaido 044-0081

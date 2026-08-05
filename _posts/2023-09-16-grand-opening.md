@@ -6,6 +6,11 @@ title: Twin Peaks Grand Opening
 description: Twin Peaks Bike Park opens to the public 16-17 September. Monk blessing, Santa Cruz demo bikes, guided rides, and an afterparty at Rhythm with DJ Tama.
 startDate: 2023-09-16 09:00:00 +0900
 endDate: 2023-09-17 16:30:00 +0900
+dayTimes:
+  - start: 2023-09-16 09:00:00 +0900
+    end: 2023-09-16 20:00:00 +0900
+  - start: 2023-09-17 09:30:00 +0900
+    end: 2023-09-17 16:30:00 +0900
 days: 2
 location: Twin Peaks Bike Park, Niseko
 address: 150, 2 Aza-150-1 Yamada, Kutchan, Abuta District, Hokkaido 044-0081

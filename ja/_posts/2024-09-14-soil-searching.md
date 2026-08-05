@@ -6,6 +6,11 @@ description: 9月14〜15日、ツインピークス・バイクパークで開�
 descriptionHtml: 9月14〜15日、<wbr>ツインピークス・バイクパークで<wbr>開催される<wbr>2日間の<wbr>Dig&Rideイベント。<wbr>スペシャライズドと<wbr>NAMBAの<wbr>共催。<wbr>事前登録制。
 startDate: 2024-09-14 09:00:00 +0900
 endDate: 2024-09-15 16:00:00 +0900
+dayTimes:
+  - start: 2024-09-14 09:00:00 +0900
+    end: 2024-09-14 20:00:00 +0900
+  - start: 2024-09-15 09:00:00 +0900
+    end: 2024-09-15 16:00:00 +0900
 days: 2
 location: ツインピークス・​バイクパーク、​ニセコ
 address: 150, 2 Aza-150-1 Yamada, Kutchan, Abuta District, Hokkaido 044-0081

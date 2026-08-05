@@ -4,8 +4,13 @@ categories: events
 redirect_from: /events/soil-searching/
 title: Soil Searching in Niseko
 description: Two-day dig and ride at the not-yet-opened Twin Peaks Bike Park, 2-3 September. Hosted by Specialized and NAMBA. Registration only, lottery selection.
-startDate: 2023-09-02 09:00:00 +0900
+startDate: 2023-09-02 10:00:00 +0900
 endDate: 2023-09-03 16:00:00 +0900
+dayTimes:
+  - start: 2023-09-02 10:00:00 +0900
+    end: 2023-09-02 21:00:00 +0900
+  - start: 2023-09-03 09:00:00 +0900
+    end: 2023-09-03 16:00:00 +0900
 days: 2
 location: Twin Peaks Bike Park, Niseko
 address: 150, 2 Aza-150-1 Yamada, Kutchan, Abuta District, Hokkaido 044-0081

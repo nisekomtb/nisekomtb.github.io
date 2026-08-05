@@ -5,6 +5,11 @@ title: Cruz Control Opening Weekend
 description: Opening weekend for Cruz Control, a new Twin Peaks trail from NAMBA and Santa Cruz. First 1.1km open, plus demo bikes, pro-led rides and a Rhythm afterparty.
 startDate: 2024-09-28 09:00:00 +0900
 endDate: 2024-09-29 15:00:00 +0900
+dayTimes:
+  - start: 2024-09-28 09:00:00 +0900
+    end: 2024-09-28 20:00:00 +0900
+  - start: 2024-09-29 09:00:00 +0900
+    end: 2024-09-29 15:00:00 +0900
 days: 2
 location: Twin Peaks Bike Park, Niseko
 address: 150, 2 Aza-150-1 Yamada, Kutchan, Abuta District, Hokkaido 044-0081
