@@ -359,14 +359,22 @@ tanuki:
 artists:
   width: 15
   sponsors:
-    - name: Aikawa Mitsugu
-      displayName: Aikawa Mitsugu
-      image: /assets/images/artists/aikawa-mitsugu.png
-      url: https://aikawamitsugu.com
     - name: 59 Niseko
       displayName: 59 Niseko
       image: /assets/images/artists/59niseko.png
       url: https://www.59niseko.com
+    - name: Aikawa Mitsugu
+      displayName: Aikawa Mitsugu
+      image: /assets/images/artists/aikawa-mitsugu.png
+      url: https://aikawamitsugu.com
+    - name: Chihiro Tamura
+      displayName: Chihiro Tamura
+      image: /assets/images/artists/chihiro-tamura.png
+      url: https://www.instagram.com/chanchii_art
+    - name: DKC
+      displayName: DKC
+      image: /assets/images/artists/yoshida-naohiro.png
+      url: http://www.dkc.life
     - name: Froglet Paintings
       displayName: Froglet Paintings
       image: /assets/images/artists/froglet-paintings.png
@@ -379,19 +387,11 @@ artists:
       displayName: MtnSea
       image: /assets/images/artists/mtnsea.png
       url: https://www.instagram.com/mtn_sea
-    - name: The Rainbow Captain
-      displayName: The Rainbow Captain
-      image: /assets/images/artists/rainbow-captain.png
-      url: https://www.instagram.com/therainbowcaptain
-    - name: Chihiro Tamura
-      displayName: Chihiro Tamura
-      image: /assets/images/artists/chihiro-tamura.png
-      url: https://www.instagram.com/chanchii_art
-    - name: DKC
-      displayName: DKC
-      image: /assets/images/artists/yoshida-naohiro.png
-      url: http://www.dkc.life
     - name: Remi Fukamachi
       displayName: Remi Fukamachi
       image: /assets/images/artists/remi-fukamachi.png
       url: https://www.remifukamachi.com
+    - name: The Rainbow Captain
+      displayName: The Rainbow Captain
+      image: /assets/images/artists/rainbow-captain.png
+      url: https://www.instagram.com/therainbowcaptain
