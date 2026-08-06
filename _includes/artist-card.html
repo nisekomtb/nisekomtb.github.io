@@ -16,7 +16,7 @@
     {% if include.badge %}<span class="artist-badge">{{ include.badge }}</span>{% endif %}
     {% include image.html src=artist.img alt=artist.name class="artist-avatar" width="300" height="300" %}
   </div>
-  <h2 class="artist-title">{{ artist.name }} <small>{{ artist.title }}</small></h2>
+  <h2 class="artist-title">{{ artist.name | replace: '・', '・<wbr>' }} <small>{{ artist.titleHtml | default: artist.title }}</small></h2>
 
   <div class="row clearfix artist-body">
     <div class="artist-side col-lg-4">

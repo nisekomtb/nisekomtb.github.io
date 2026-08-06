@@ -140,6 +140,7 @@ artists:
   - name: フランシス・トレヴィル
     slug: frances-treveil
     title: 絵画 & 衣類のリペア
+    titleHtml: 絵画 & 衣類の<wbr>リペア
     img: /assets/images/artists/frances-treveil/avatar.png
     header: /assets/images/artists/frances-treveil/header.jpg
     instagram: frogletpaintings
@@ -221,6 +222,7 @@ artists:
   - name: ピーター・マーティン
     slug: peter-martin
     title: 北海道でアートやいろいろ作ってます
+    titleHtml: 北海道で<wbr>アートや<wbr>いろいろ<wbr>作ってます
     img: /assets/images/artists/peter-martin/avatar.png
     header: /assets/images/artists/peter-martin/header.png
     instagram: therainbowcaptain
@@ -247,6 +249,7 @@ artists:
   - name: スコット・ウェントワース
     slug: scott-wentworth
     title: 伝統的なタトゥーアーティスト
+    titleHtml: 伝統的な<wbr>タトゥーアーティスト
     img: /assets/images/artists/scott-wentworth/avatar.jpg
     header: /assets/images/artists/scott-wentworth/header.jpg
     instagram:
@@ -559,7 +562,7 @@ artists:
   <details class="artist-row" name="artist" id="{{ artist.slug }}">
     <summary>
       {% include image.html src=artist.img alt="" class="row-avatar" width="120" height="120" %}
-      <span class="row-name">{{ artist.name }} <small>{{ artist.title }}</small></span>
+      <span class="row-name">{{ artist.name | replace: '・', '・<wbr>' }} <small>{{ artist.titleHtml | default: artist.title }}</small></span>
       <span class="row-thumbs" aria-hidden="true">
         {% for img in artist.work limit: 3 %}
         {% assign img_src = img.src | default: img %}
