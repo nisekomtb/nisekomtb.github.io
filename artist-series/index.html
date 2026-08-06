@@ -569,7 +569,7 @@ artists:
   {% unless artist.slug == featured.slug %}
   <details class="artist-row" name="artist" id="{{ artist.slug }}">
     <summary>
-      {% include image.html src=artist.img alt=artist.name class="row-avatar" width="120" height="120" %}
+      {% include image.html src=artist.img alt="" class="row-avatar" width="120" height="120" %}
       <span class="row-name">{{ artist.name }} <small>{{ artist.title }}</small></span>
       <span class="row-thumbs" aria-hidden="true">
         {% for img in artist.work limit: 3 %}
