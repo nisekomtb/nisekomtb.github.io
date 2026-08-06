@@ -479,10 +479,15 @@ artists:
     border-radius: 50%;
     border: 2px solid #fff;
     object-fit: cover;
+    flex-shrink: 0;
   }
 
+  /* min-width + anywhere let long names (esp. unbreakable JA runs)
+     wrap instead of squashing the avatar out of shape */
   .artist-row summary .row-name {
     flex: 1;
+    min-width: 0;
+    overflow-wrap: anywhere;
     font-weight: 700;
     font-size: 18px;
   }
@@ -505,6 +510,8 @@ artists:
     border-radius: 3px;
     object-fit: cover;
   }
+
+  .artist-row summary .row-chevron { flex-shrink: 0; }
 
   .artist-row summary .row-chevron::before {
     content: '▾';
