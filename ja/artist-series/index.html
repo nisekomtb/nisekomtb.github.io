@@ -404,6 +404,8 @@ artists:
   }
 
   /* Accordion roster */
+  .artist-roster { margin-bottom: 80px; }
+
   .artist-roster .artist-row {
     background: var(--color-bg-panel);
     border: 1px solid rgba(255, 255, 255, 0.15);
@@ -419,6 +421,8 @@ artists:
     padding: 12px 20px;
     cursor: pointer;
     list-style: none;
+    -webkit-user-select: none;
+    user-select: none;
   }
 
   .artist-row summary::-webkit-details-marker { display: none; }
@@ -460,9 +464,11 @@ artists:
     content: '▾';
     color: var(--color-secondary);
     font-size: 18px;
+    display: inline-block;
+    transition: transform 200ms ease;
   }
 
-  .artist-row[open] summary .row-chevron::before { content: '▴'; }
+  .artist-row[open] summary .row-chevron::before { transform: rotate(180deg); }
 
   .artist-row[open] summary {
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
@@ -472,6 +478,28 @@ artists:
     border: none;
     border-radius: 0;
     margin-bottom: 0;
+  }
+
+  /* Animated open/close. Progressive enhancement: browsers without
+     ::details-content + interpolate-size support snap open/closed. */
+  .artist-row { interpolate-size: allow-keywords; }
+
+  .artist-row::details-content {
+    opacity: 0;
+    block-size: 0;
+    overflow-y: clip;
+    transition: block-size 300ms ease, opacity 300ms ease,
+                content-visibility 300ms allow-discrete;
+  }
+
+  .artist-row[open]::details-content {
+    opacity: 1;
+    block-size: auto;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .artist-row summary .row-chevron::before,
+    .artist-row::details-content { transition: none; }
   }
 
   @media (max-width: 767px) {
@@ -552,6 +580,21 @@ artists:
     }
     window.addEventListener('hashchange', openFromHash);
     openFromHash();
+
+    // Exclusive accordion: when an open row above collapses, reflow throws
+    // the clicked row towards the top of the page. Pin the clicked summary
+    // at its pre-click viewport position for the length of the transition.
+    document.querySelectorAll('.artist-roster summary').forEach(function (summary) {
+      summary.addEventListener('click', function () {
+        var top = summary.getBoundingClientRect().top;
+        var start = performance.now();
+        requestAnimationFrame(function step(now) {
+          var delta = summary.getBoundingClientRect().top - top;
+          if (delta) window.scrollBy({ top: delta, behavior: 'instant' });
+          if (now - start < 400) requestAnimationFrame(step);
+        });
+      });
+    });
   })();
 </script>
 
