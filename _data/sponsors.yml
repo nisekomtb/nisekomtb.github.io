@@ -391,3 +391,7 @@ artists:
       displayName: DKC
       image: /assets/images/artists/yoshida-naohiro.png
       url: http://www.dkc.life
+    - name: Remi Fukamachi
+      displayName: Remi Fukamachi
+      image: /assets/images/artists/remi-fukamachi.png
+      url: https://www.remifukamachi.com
