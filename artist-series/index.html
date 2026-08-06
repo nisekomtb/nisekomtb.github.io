@@ -593,7 +593,7 @@ artists:
       var el = document.getElementById(location.hash.slice(1));
       if (el && el.tagName === 'DETAILS') {
         el.open = true;
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        el.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
       }
     }
     window.addEventListener('hashchange', openFromHash);
