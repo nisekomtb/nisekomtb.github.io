@@ -476,69 +476,8 @@ artists:
 </div>
 
 {% for artist in page.artists %}
-{% assign header_webp = artist.header | replace: '.jpg', '-large.webp' | replace: '.png', '-large.webp' %}
-<div id="{{ artist.slug }}" class="artist-card">
-  <div class="artist-header" style="background-image: url('{{ header_webp }}');">
-    {% include image.html src=artist.img alt=artist.name class="artist-avatar" width="300" height="300" %}
-  </div>
-  <h2 class="artist-title">{{ artist.name }} <small>{{ artist.title }}</small></h2>
-
-  <div class="row clearfix artist-body">
-    <div class="artist-side col-lg-4">
-      <h3>リンク</h3>
-      <ul>
-        {% for handle in artist.instagram %}
-        <li>
-          <a class="font-icon" href="https://instagram.com/{{ handle }}" target="_blank" rel="noopener">
-            <span class="fa-brands fa-instagram"></span> @{{ handle }}
-          </a>
-        </li>
-        {% endfor %}
-        {% for url in artist.links %}
-        <li>
-          <a class="font-icon" href="{{ url.scheme }}://{{ url.domain }}" target="_blank" rel="noopener">
-            <span class="fa-solid fa-globe"></span> {{ url.domain }}
-          </a>
-        </li>
-        {% endfor %}
-      </ul>
-
-      <h3>その他の<wbr>作品</h3>
-      <div class="artist-gallery" id="artist-gallery-{{ forloop.index0 }}">
-        {% for img in artist.work %}
-        {% assign img_src = img.src | default: img %}
-        {% assign img_w = img.w | default: 1600 %}
-        {% assign img_h = img.h | default: 1600 %}
-        {% capture artwork_alt %}{{ artist.name }}の作品 {{ forloop.index }}{% endcapture %}
-        <a class="gallery-tile"
-           href="{{ img_src }}"
-           data-pswp-width="{{ img_w }}"
-           data-pswp-height="{{ img_h }}"
-           target="_blank"
-           rel="noopener">
-          {% include image.html src=img_src alt=artwork_alt widths="800,1600" sizes="(min-width: 992px) 30vw, 50vw" width=img_w height=img_h %}
-        </a>
-        {% endfor %}
-      </div>
-    </div>
-
-    <div class="artist-bio col-lg-8">
-      <h3>概要</h3>
-      {{ artist.bio }}
-      {% if artist.design %}
-      <h3>コラボレーションデザイン：{{ artist.design.name }}</h3>
-      {% capture design_alt %}{{ artist.name }}による{{ artist.design.name }}デザイン{% endcapture %}
-      {% include image.html src=artist.design.img alt=design_alt class="design-image" widths="800,1600" sizes="(min-width: 992px) 65vw, 100vw" width="1000" height="667" %}
-      {% else %}
-      <h3>コラボレーションデザイン</h3>
-      <p>数量限定の​コラボグッズは​現在製作中です。​公開を​お楽しみに。</p>
-      {% endif %}
-
-      <div style="text-align:center; margin:50px 0;">
-        <a class="btn btn-primary" href="/ja/shop/">シリーズを購入</a>
-      </div>
-    </div>
-  </div>
+<div id="{{ artist.slug }}">
+  {% include artist-card.html artist=artist %}
 </div>
 {% endfor %}
 
