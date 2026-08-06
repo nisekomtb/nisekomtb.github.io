@@ -616,31 +616,41 @@ artists:
 
 <script>
   (function () {
+    var reduceMotion = matchMedia('(prefers-reduced-motion: reduce)');
+
+    // Scroll an opened row to the top of the screen. A plain smooth
+    // scrollIntoView aims at a stale position while the previously open
+    // row above animates closed, so chase the row's live position for
+    // the length of the transition instead.
+    function scrollRowToTop(row) {
+      if (reduceMotion.matches) {
+        row.scrollIntoView({ behavior: 'auto', block: 'start' });
+        return;
+      }
+      var margin = parseFloat(getComputedStyle(row).scrollMarginTop) || 0;
+      var start = performance.now();
+      requestAnimationFrame(function step(now) {
+        var delta = row.getBoundingClientRect().top - margin;
+        var done = now - start >= 450;
+        window.scrollBy({ top: done ? delta : delta * 0.18, behavior: 'instant' });
+        if (!done) requestAnimationFrame(step);
+      });
+    }
+
+    document.querySelectorAll('.artist-roster .artist-row').forEach(function (row) {
+      row.addEventListener('toggle', function () {
+        if (row.open) scrollRowToTop(row);
+      });
+    });
+
+    // Deep links: open the target row; the toggle handler scrolls it.
     function openFromHash() {
       if (!location.hash) return;
       var el = document.getElementById(location.hash.slice(1));
-      if (el && el.tagName === 'DETAILS') {
-        el.open = true;
-        el.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
-      }
+      if (el && el.tagName === 'DETAILS') el.open = true;
     }
     window.addEventListener('hashchange', openFromHash);
     openFromHash();
-
-    // Exclusive accordion: when an open row above collapses, reflow throws
-    // the clicked row towards the top of the page. Pin the clicked summary
-    // at its pre-click viewport position for the length of the transition.
-    document.querySelectorAll('.artist-roster summary').forEach(function (summary) {
-      summary.addEventListener('click', function () {
-        var top = summary.getBoundingClientRect().top;
-        var start = performance.now();
-        requestAnimationFrame(function step(now) {
-          var delta = summary.getBoundingClientRect().top - top;
-          if (delta) window.scrollBy({ top: delta, behavior: 'instant' });
-          if (now - start < 400) requestAnimationFrame(step);
-        });
-      });
-    });
   })();
 </script>
 
