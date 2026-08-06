@@ -110,7 +110,7 @@ og:
 
 <h2>購入に<wbr>ついて</h2>
 
-<p>ペールエールは<wbr>2026年8月6日<wbr>（木）より、<wbr>ヨーテイブルーイングの<a href="https://yotei.beer/" target="_blank" rel="noopener">オンラインショップ</a>で<wbr>発売されます。<wbr>毎週<wbr>木曜日は<wbr>全国<wbr>送料無料です。</p>
+<p>ペールエールは<wbr>ヨーテイブルーイングの<a href="https://yotei.beer/" target="_blank" rel="noopener">オンラインショップ</a>で<wbr>発売中です。<wbr>毎週<wbr>木曜日は<wbr>全国<wbr>送料無料です。</p>
 
 {% include story/figure.html
    tier="wide"
@@ -121,10 +121,7 @@ og:
    widths="800,1600" %}
 
 <div class="story-block story-cta">
-  <!-- ON-SALE SWAP: mirrors the EN page. On launch, replace with:
-       <a class="btn btn-primary" href="https://yotei.beer/products/twin-peaks-bike-park-pale-ale" target="_blank" rel="noopener">ペールエールを購入</a>
-       and change the offers availability below from PreOrder to InStock. -->
-  <span class="btn btn-primary disabled" aria-disabled="true">8月6日発売</span>
+  <a class="btn btn-primary" href="https://yotei.beer/products/twin-peaks-bike-park-pale-ale" target="_blank" rel="noopener">ペールエールを購入</a>
   <p class="story-smallprint">飲むのは<wbr>ライドの<wbr>後で。<wbr>日本では<wbr>自転車も<wbr>飲酒運転が<wbr>法律で<wbr>禁止されています。</p>
 </div>
 
@@ -162,14 +159,7 @@ og:
     "url": "https://yotei.beer/products/twin-peaks-bike-park-pale-ale",
     "price": 658,
     "priceCurrency": "JPY",
-    {%- comment -%}
-      PreOrder, not InStock. Mirrors the EN page; see the note there for the
-      full argument. Yotei Brewing's shop already accepts orders, which is why
-      the CTA above is live, but general availability is 2026-08-06, which is
-      also `releaseDate` above, and schema.org PreOrder means orderable before
-      general availability. Switch to InStock on 6 August.
-    {%- endcomment -%}
-    "availability": "https://schema.org/PreOrder",
+    "availability": "https://schema.org/InStock",
     "seller": {
       "@type": "Organization",
       "name": "Yotei Brewing"

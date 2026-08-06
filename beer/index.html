@@ -121,7 +121,7 @@ big part of why it can stay that way. The full numbers are on our <a href="/impa
 
 <h2>Get one</h2>
 
-<p>The Pale Ale goes on sale on Thursday 6 August 2026 at the
+<p>The Pale Ale is on sale now at the
 <a href="https://yotei.beer/en/" target="_blank" rel="noopener">Yotei Brewing online shop</a>. They
 ship nationwide, free on Thursdays.</p>
 
@@ -134,12 +134,7 @@ ship nationwide, free on Thursdays.</p>
    widths="800,1600" %}
 
 <div class="story-block story-cta">
-  <!-- ON-SALE SWAP: Yotei Brewing's product page resolves and shows an Add to Cart
-       already, but it is not considered ready to send readers to, so this stays a
-       disabled span. On launch, replace it with:
-       <a class="btn btn-primary" href="https://yotei.beer/en/products/twin-peaks-bike-park-pale-ale" target="_blank" rel="noopener">Order the Pale Ale</a>
-       and change the offers availability below from PreOrder to InStock. -->
-  <span class="btn btn-primary disabled" aria-disabled="true">Available 6 August</span>
+  <a class="btn btn-primary" href="https://yotei.beer/en/products/twin-peaks-bike-park-pale-ale" target="_blank" rel="noopener">Order the Pale Ale</a>
   <p class="story-smallprint">One for after the ride. Riding under the influence is illegal in
   Japan, and that includes bicycles.</p>
 </div>
@@ -181,21 +176,7 @@ Kutchan they will point you to their wholesaler, M Pocket.</p>
     "url": "https://yotei.beer/en/products/twin-peaks-bike-park-pale-ale",
     "price": 658,
     "priceCurrency": "JPY",
-    {%- comment -%}
-      PreOrder, not InStock, and the two are not interchangeable here. Yotei
-      Brewing's shop shows an active "Add to Cart" at this price, which is why
-      the CTA above is a live order link rather than a disabled one. But the
-      press release puts general availability at 6 August 2026, which is also
-      the `releaseDate` above, and schema.org defines PreOrder as orderable and
-      deliverable BEFORE general availability. That is exactly this state, and
-      it is the one value that fits both facts.
-
-      InStock would assert we know the shop ships immediately, and we do not:
-      the product page states no dispatch date. If Yotei confirm they are
-      shipping now, InStock becomes correct. Either way, switch to InStock on
-      6 August, when general availability makes it true regardless.
-    {%- endcomment -%}
-    "availability": "https://schema.org/PreOrder",
+    "availability": "https://schema.org/InStock",
     "seller": {
       "@type": "Organization",
       "name": "Yotei Brewing"
