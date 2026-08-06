@@ -1,22 +1,24 @@
 {% comment %}
   Full artist card for the artist-series pages (EN + JA).
   Params:
-    artist — one entry from page.artists
+    artist — one entry from site.data.artists (name/title/bio/design.name are
+             lang-keyed maps resolved here via page.lang)
     badge  — optional badge text overlaid on the header (featured hero)
-  Strings resolve from page.lang. No anchor id on the card root — wrappers own anchors.
+  No anchor id on the card root — wrappers own anchors.
   The gallery id inside is for PhotoSwipe binding, not navigation.
   Note: Jekyll includes share the caller's scope — assigns made here (artist, ja,
-  header_webp, img_*) leak to the calling page after the include runs.
+  artist_name, header_webp, img_*) leak to the calling page after the include runs.
 {% endcomment %}
 {% assign artist = include.artist %}
 {% assign ja = false %}{% if page.lang == 'ja' %}{% assign ja = true %}{% endif %}
+{% assign artist_name = artist.name[page.lang] %}
 {% assign header_webp = artist.header | replace: '.jpg', '-large.webp' | replace: '.png', '-large.webp' %}
 <div class="artist-card">
   <div class="artist-header" style="background-image: url('{{ header_webp }}');">
     {% if include.badge %}<span class="artist-badge">{{ include.badge }}</span>{% endif %}
-    {% include image.html src=artist.img alt=artist.name class="artist-avatar" width="300" height="300" %}
+    {% include image.html src=artist.img alt=artist_name class="artist-avatar" width="300" height="300" %}
   </div>
-  <h2 class="artist-title">{{ artist.name | replace: '・', '・<wbr>' }} <small>{{ artist.titleHtml | default: artist.title }}</small></h2>
+  <h2 class="artist-title">{{ artist_name | replace: '・', '・<wbr>' }} <small>{{ artist.titleHtml[page.lang] | default: artist.title[page.lang] }}</small></h2>
 
   <div class="row clearfix artist-body">
     <div class="artist-side col-lg-4">
@@ -44,7 +46,7 @@
         {% assign img_src = img.src | default: img %}
         {% assign img_w = img.w | default: 1600 %}
         {% assign img_h = img.h | default: 1600 %}
-        {% if ja %}{% capture artwork_alt %}{{ artist.name }}の作品 {{ forloop.index }}{% endcapture %}{% else %}{% capture artwork_alt %}{{ artist.name }} artwork {{ forloop.index }}{% endcapture %}{% endif %}
+        {% if ja %}{% capture artwork_alt %}{{ artist_name }}の作品 {{ forloop.index }}{% endcapture %}{% else %}{% capture artwork_alt %}{{ artist_name }} artwork {{ forloop.index }}{% endcapture %}{% endif %}
         <a class="gallery-tile"
            href="{{ img_src }}"
            data-pswp-width="{{ img_w }}"
@@ -59,14 +61,15 @@
 
     <div class="artist-bio col-lg-8">
       <h3>{% if ja %}概要{% else %}About{% endif %}</h3>
-      {{ artist.bio }}
+      {{ artist.bio[page.lang] }}
       {% if artist.design %}
-      <h3>{% if ja %}コラボレーションデザイン：{{ artist.design.name }}{% else %}Collaboration design: {{ artist.design.name }}{% endif %}</h3>
-      {% if ja %}{% capture design_alt %}{{ artist.name }}による{{ artist.design.name }}デザイン{% endcapture %}{% else %}{% capture design_alt %}{{ artist.design.name }} design by {{ artist.name }}{% endcapture %}{% endif %}
+      {% assign design_name = artist.design.name[page.lang] %}
+      <h3>{% if ja %}コラボレーションデザイン：{{ design_name }}{% else %}Collaboration design: {{ design_name }}{% endif %}</h3>
+      {% if ja %}{% capture design_alt %}{{ artist_name }}による{{ design_name }}デザイン{% endcapture %}{% else %}{% capture design_alt %}{{ design_name }} design by {{ artist_name }}{% endcapture %}{% endif %}
       {% include image.html src=artist.design.img alt=design_alt class="design-image" widths="800,1600" sizes="(min-width: 992px) 65vw, 100vw" width="1000" height="667" %}
       {% else %}
       <h3>{% if ja %}コラボレーションデザイン{% else %}Collaboration design{% endif %}</h3>
-      {% if ja %}<p>数量限定の​コラボグッズは​現在製作中です。​公開を​お楽しみに。</p>{% else %}<p>{{ artist.name }}'s limited-edition NAMBA collaboration is in the works. Watch this space.</p>{% endif %}
+      {% if ja %}<p>数量限定の​コラボグッズは​現在製作中です。​公開を​お楽しみに。</p>{% else %}<p>{{ artist_name }}'s limited-edition NAMBA collaboration is in the works. Watch this space.</p>{% endif %}
       {% endif %}
 
       <div style="text-align:center; margin:50px 0;">
