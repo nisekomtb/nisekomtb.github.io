@@ -5,150 +5,151 @@
 # covers both languages). Lang-keyed fields follow the _data/nav.yml en/ja convention.
 # JA text is BudouX-tokenised (zero-width spaces / <wbr>) — do not retype by hand.
 
-- slug: chihiro-tamura
-  img: /assets/images/artists/chihiro-tamura/avatar.jpg
-  header: /assets/images/artists/chihiro-tamura/header.jpg
-  instagram: chanchii_art
-  work:
-    - /assets/images/artists/chihiro-tamura/artwork-01.jpg
-    - /assets/images/artists/chihiro-tamura/artwork-02.jpg
-    - /assets/images/artists/chihiro-tamura/artwork-03.jpg
-    - /assets/images/artists/chihiro-tamura/artwork-04.jpg
-    - /assets/images/artists/chihiro-tamura/artwork-05.jpg
-    - /assets/images/artists/chihiro-tamura/artwork-06.jpg
-    - /assets/images/artists/chihiro-tamura/artwork-07.jpg
-    - /assets/images/artists/chihiro-tamura/artwork-08.jpg
-  name:
-    en: Chihiro Tamura
-    ja: 田村ちひろ
-  title:
-    en: Painter & Printmaker
-    ja: 画家 & 版画作家
-  bio:
-    en: |
-      <p>Chihiro Tamura is an artist based in Sapporo and Niseko. Her work begins with the lines that nature has shaped
-      over time: mountain ridges, wood grain, flowing water. She translates the tokimeki, the small thrill those moments
-      spark, into vibrant colour, and Mount Yotei returns again and again as a motif.</p>
+# - slug: chihiro-tamura
+#   featured: true
+#   img: /assets/images/artists/chihiro-tamura/avatar.jpg
+#   header: /assets/images/artists/chihiro-tamura/header.jpg
+#   instagram: chanchii_art
+#   work:
+#     - /assets/images/artists/chihiro-tamura/artwork-01.jpg
+#     - /assets/images/artists/chihiro-tamura/artwork-02.jpg
+#     - /assets/images/artists/chihiro-tamura/artwork-03.jpg
+#     - /assets/images/artists/chihiro-tamura/artwork-04.jpg
+#     - /assets/images/artists/chihiro-tamura/artwork-05.jpg
+#     - /assets/images/artists/chihiro-tamura/artwork-06.jpg
+#     - /assets/images/artists/chihiro-tamura/artwork-07.jpg
+#     - /assets/images/artists/chihiro-tamura/artwork-08.jpg
+#   name:
+#     en: Chihiro Tamura
+#     ja: 田村ちひろ
+#   title:
+#     en: Painter & Printmaker
+#     ja: 画家 & 版画作家
+#   bio:
+#     en: |
+#       <p>Chihiro Tamura is an artist based in Sapporo and Niseko. Her work begins with the lines that nature has shaped
+#       over time: mountain ridges, wood grain, flowing water. She translates the tokimeki, the small thrill those moments
+#       spark, into vibrant colour, and Mount Yotei returns again and again as a motif.</p>
 
-      <p>Raised in a family with ties to a Shinto shrine, Chihiro grew up practising Japanese calligraphy, which still
-      guides her sense of line. Before becoming an artist she worked in the travel industry and experienced landscapes in
-      more than 40 countries.</p>
+#       <p>Raised in a family with ties to a Shinto shrine, Chihiro grew up practising Japanese calligraphy, which still
+#       guides her sense of line. Before becoming an artist she worked in the travel industry and experienced landscapes in
+#       more than 40 countries.</p>
 
-      <p>In 2025 she was selected for an artist residency in Kutchan, holding solo exhibitions at the Shu Ogawara Museum
-      of Art and Camp & Go. Away from the studio she finds inspiration road cycling, skiing, and camping with her
-      family.</p>
-    ja: |
-      <p>田村ちひろは、​札幌と​ニセコを​拠点に​活動する​アーティスト。​山の​稜線、​木目、​水の​流れなど、​自然が​長い​時間を​かけてかたちづくった​「線」から​制作を​始め、​その​瞬間に​感じた​ときめきを​鮮やかな​色彩で​表現しています。​羊蹄山は​作品に​繰り返し登場する​モチーフの​ひとつです。</p>
+#       <p>In 2025 she was selected for an artist residency in Kutchan, holding solo exhibitions at the Shu Ogawara Museum
+#       of Art and Camp & Go. Away from the studio she finds inspiration road cycling, skiing, and camping with her
+#       family.</p>
+#     ja: |
+#       <p>田村ちひろは、​札幌と​ニセコを​拠点に​活動する​アーティスト。​山の​稜線、​木目、​水の​流れなど、​自然が​長い​時間を​かけてかたちづくった​「線」から​制作を​始め、​その​瞬間に​感じた​ときめきを​鮮やかな​色彩で​表現しています。​羊蹄山は​作品に​繰り返し登場する​モチーフの​ひとつです。</p>
 
-      <p>神社に​ゆかりの​ある​家庭に​育ち、​幼い​頃から​親しん​できた​書道が、​いまも​線の​感覚に​息づいています。​アーティストに​なる前は​旅行業界で​働き、​40カ国以上の​風景を​体験しました。</p>
+#       <p>神社に​ゆかりの​ある​家庭に​育ち、​幼い​頃から​親しん​できた​書道が、​いまも​線の​感覚に​息づいています。​アーティストに​なる前は​旅行業界で​働き、​40カ国以上の​風景を​体験しました。</p>
 
-      <p>2025年には​倶知安町の​アーティスト・イン・レジデンスに​選出され、​小川原脩記念美術館と​Camp & Goで​個展を​開催。​制作の​合間には、​ロードバイクや​スキー、​キャンプなど​家族と​屋外で​過ごす時間から、​次の​作品の​インスピレーションを​得ています。</p>
+#       <p>2025年には​倶知安町の​アーティスト・イン・レジデンスに​選出され、​小川原脩記念美術館と​Camp & Goで​個展を​開催。​制作の​合間には、​ロードバイクや​スキー、​キャンプなど​家族と​屋外で​過ごす時間から、​次の​作品の​インスピレーションを​得ています。</p>
 
-- slug: remi-fukamachi
-  img: /assets/images/artists/remi-fukamachi/avatar.jpg
-  header: /assets/images/artists/remi-fukamachi/header.jpg
-  instagram: fukamachiremi
-  links:
-    - scheme: https
-      domain: www.remifukamachi.com
-  work:
-    - src: /assets/images/artists/remi-fukamachi/artwork-01.jpg
-      w: 1600
-      h: 1067
-    - src: /assets/images/artists/remi-fukamachi/artwork-02.jpg
-      w: 1067
-      h: 1600
-    - src: /assets/images/artists/remi-fukamachi/artwork-03.jpg
-      w: 1600
-      h: 1067
-    - src: /assets/images/artists/remi-fukamachi/artwork-04.jpg
-      w: 1067
-      h: 1600
-    - src: /assets/images/artists/remi-fukamachi/artwork-05.jpg
-      w: 1067
-      h: 1600
-  name:
-    en: Remi Fukamachi
-    ja: 深町レミ
-  title:
-    en: Photographer & Adventurer
-    ja: フォトグラファー & 冒険家
-  bio:
-    en: |
-      <p>Remi Fukamachi is a photographer and adventurer whose work bridges cultures and landscapes.</p>
+# - slug: remi-fukamachi
+#   img: /assets/images/artists/remi-fukamachi/avatar.jpg
+#   header: /assets/images/artists/remi-fukamachi/header.jpg
+#   instagram: fukamachiremi
+#   links:
+#     - scheme: https
+#       domain: www.remifukamachi.com
+#   work:
+#     - src: /assets/images/artists/remi-fukamachi/artwork-01.jpg
+#       w: 1600
+#       h: 1067
+#     - src: /assets/images/artists/remi-fukamachi/artwork-02.jpg
+#       w: 1067
+#       h: 1600
+#     - src: /assets/images/artists/remi-fukamachi/artwork-03.jpg
+#       w: 1600
+#       h: 1067
+#     - src: /assets/images/artists/remi-fukamachi/artwork-04.jpg
+#       w: 1067
+#       h: 1600
+#     - src: /assets/images/artists/remi-fukamachi/artwork-05.jpg
+#       w: 1067
+#       h: 1600
+#   name:
+#     en: Remi Fukamachi
+#     ja: 深町レミ
+#   title:
+#     en: Photographer & Adventurer
+#     ja: フォトグラファー & 冒険家
+#   bio:
+#     en: |
+#       <p>Remi Fukamachi is a photographer and adventurer whose work bridges cultures and landscapes.</p>
 
-      <p>Born in Tokyo to a Chinese father and Japanese mother, Remi lived with Indigenous communities in Australia and
-      filmed documentaries about their way of life before turning professional in 2017. After a spell in Austin, Texas,
-      she settled in Niseko, drawn by snowboarding and the outdoor life.</p>
+#       <p>Born in Tokyo to a Chinese father and Japanese mother, Remi lived with Indigenous communities in Australia and
+#       filmed documentaries about their way of life before turning professional in 2017. After a spell in Austin, Texas,
+#       she settled in Niseko, drawn by snowboarding and the outdoor life.</p>
 
-      <p>Her photography, shot for luxury hotels and resorts as well as riders in the backcountry, captures the raw
-      energy of nature and the spirit of adventure in Japan's mountains. Off camera she practises survival training and
-      hunting, reflecting her connection to nature and self-reliance.</p>
-    ja: |
-      <p>深町レミは、​文化と​風景を​つなぐ​フォトグラファー・冒険家です。</p>
+#       <p>Her photography, shot for luxury hotels and resorts as well as riders in the backcountry, captures the raw
+#       energy of nature and the spirit of adventure in Japan's mountains. Off camera she practises survival training and
+#       hunting, reflecting her connection to nature and self-reliance.</p>
+#     ja: |
+#       <p>深町レミは、​文化と​風景を​つなぐ​フォトグラファー・冒険家です。</p>
 
-      <p>東京で​中国人の​父と​日本人の​母のもとに​生まれ、​オーストラリアでは​先住民の​コミュニティとともに​暮らし、​その​生活を​記録する​ドキュメンタリーの​撮影に​携わりました。​2017年から​プロの​フォトグラファーと​して​活動を​開始。​テキサス州オースティンでの​生活を​経て、​スノーボードと​アウトドアライフに​惹かれてニセコに​移住しました。</p>
+#       <p>東京で​中国人の​父と​日本人の​母のもとに​生まれ、​オーストラリアでは​先住民の​コミュニティとともに​暮らし、​その​生活を​記録する​ドキュメンタリーの​撮影に​携わりました。​2017年から​プロの​フォトグラファーと​して​活動を​開始。​テキサス州オースティンでの​生活を​経て、​スノーボードと​アウトドアライフに​惹かれてニセコに​移住しました。</p>
 
-      <p>ラグジュアリーホテルやリゾートの​撮影から​山での​ライディングまで、​自然の​荒々しい​エネルギーと​冒険の​精神を​捉え続けています。​カメラを​置けば、​サバイバル訓練や​狩猟にも​取り組むなど、​自然との​深いつながりと​自立心を​大切に​しています。</p>
+#       <p>ラグジュアリーホテルやリゾートの​撮影から​山での​ライディングまで、​自然の​荒々しい​エネルギーと​冒険の​精神を​捉え続けています。​カメラを​置けば、​サバイバル訓練や​狩猟にも​取り組むなど、​自然との​深いつながりと​自立心を​大切に​しています。</p>
 
-- slug: yoshida-naohiro
-  img: /assets/images/artists/yoshida-naohiro/avatar.jpg
-  header: /assets/images/artists/yoshida-naohiro/header.jpg
-  instagram:
-    - dkc71
-    - horizon_the_art_get_into
-  links:
-    - scheme: http
-      domain: www.dkc.life
-  work:
-    - src: /assets/images/artists/yoshida-naohiro/artwork-01.jpg
-      w: 1286
-      h: 1000
-    - src: /assets/images/artists/yoshida-naohiro/artwork-02.jpg
-      w: 1183
-      h: 1200
-    - src: /assets/images/artists/yoshida-naohiro/artwork-03.jpg
-      w: 884
-      h: 1353
-    - src: /assets/images/artists/yoshida-naohiro/artwork-04.jpg
-      w: 495
-      h: 1500
-    - src: /assets/images/artists/yoshida-naohiro/artwork-05.jpg
-      w: 341
-      h: 1500
-    - src: /assets/images/artists/yoshida-naohiro/artwork-06.jpg
-      w: 310
-      h: 1600
-    - src: /assets/images/artists/yoshida-naohiro/artwork-07.jpg
-      w: 1024
-      h: 683
-    - src: /assets/images/artists/yoshida-naohiro/artwork-08.jpg
-      w: 1160
-      h: 1160
-  name:
-    en: Yoshida Naohiro
-    ja: 吉田ナオヒロ
-  title:
-    en: Designer & Pro Snowboarder
-    ja: デザイナー & プロスノーボーダー
-  bio:
-    en: |
-      <p>Yoshida Naohiro, better known as DKC, is a graphic designer and professional snowboarder. Born in 1971 and
-      based in Sapporo, he works out of the studio Northern Graphics.</p>
+# - slug: yoshida-naohiro
+#   img: /assets/images/artists/yoshida-naohiro/avatar.jpg
+#   header: /assets/images/artists/yoshida-naohiro/header.jpg
+#   instagram:
+#     - dkc71
+#     - horizon_the_art_get_into
+#   links:
+#     - scheme: http
+#       domain: www.dkc.life
+#   work:
+#     - src: /assets/images/artists/yoshida-naohiro/artwork-01.jpg
+#       w: 1286
+#       h: 1000
+#     - src: /assets/images/artists/yoshida-naohiro/artwork-02.jpg
+#       w: 1183
+#       h: 1200
+#     - src: /assets/images/artists/yoshida-naohiro/artwork-03.jpg
+#       w: 884
+#       h: 1353
+#     - src: /assets/images/artists/yoshida-naohiro/artwork-04.jpg
+#       w: 495
+#       h: 1500
+#     - src: /assets/images/artists/yoshida-naohiro/artwork-05.jpg
+#       w: 341
+#       h: 1500
+#     - src: /assets/images/artists/yoshida-naohiro/artwork-06.jpg
+#       w: 310
+#       h: 1600
+#     - src: /assets/images/artists/yoshida-naohiro/artwork-07.jpg
+#       w: 1024
+#       h: 683
+#     - src: /assets/images/artists/yoshida-naohiro/artwork-08.jpg
+#       w: 1160
+#       h: 1160
+#   name:
+#     en: Yoshida Naohiro
+#     ja: 吉田ナオヒロ
+#   title:
+#     en: Designer & Pro Snowboarder
+#     ja: デザイナー & プロスノーボーダー
+#   bio:
+#     en: |
+#       <p>Yoshida Naohiro, better known as DKC, is a graphic designer and professional snowboarder. Born in 1971 and
+#       based in Sapporo, he works out of the studio Northern Graphics.</p>
 
-      <p>DKC has spent decades shaping the look of Japanese snowboarding. He rides for and art-directs the snowboard
-      brand UNIT MFG., and his gear graphics appear on FLUX bindings, Deeluxe boots, and Revolt Optical goggles. His
-      visuals have featured everywhere from TOYOTA BIG AIR and PARK AIR to the TV programme NO MATTER BOARD, and he
-      also produces snowboard events and snow parks and edits the culture magazine king garage magazine.</p>
+#       <p>DKC has spent decades shaping the look of Japanese snowboarding. He rides for and art-directs the snowboard
+#       brand UNIT MFG., and his gear graphics appear on FLUX bindings, Deeluxe boots, and Revolt Optical goggles. His
+#       visuals have featured everywhere from TOYOTA BIG AIR and PARK AIR to the TV programme NO MATTER BOARD, and he
+#       also produces snowboard events and snow parks and edits the culture magazine king garage magazine.</p>
 
-      <p>His paintings, released under his own label horizon the art get into, carry the same energy as his riding:
-      swirling suns, breaking waves, and Hokkaido's mountains drawn in bold lines and colour.</p>
-    ja: |
-      <p>吉田ナオヒロ​（DKC）は、​1971年生まれ、​札幌在住の​グラフィックデザイナー兼プロスノーボーダー。​札幌の​デザインスタジオ​「Northern Graphics」を​拠点に​活動しています。</p>
+#       <p>His paintings, released under his own label "horizon the art get into", carry the same energy as his riding:
+#       swirling suns, breaking waves, and Hokkaido's mountains drawn in bold lines and colour.</p>
+#     ja: |
+#       <p>吉田ナオヒロ​（DKC）は、​1971年生まれ、​札幌在住の​グラフィックデザイナー兼プロスノーボーダー。​札幌の​デザインスタジオ​「Northern Graphics」を​拠点に​活動しています。</p>
 
-      <p>スノーボードブランド​「UNIT MFG.」の​ライダー兼アートディレクターを​務める​ほか、​「FLUX」​ビンディングや​「DEELUXE」​ブーツ、​「REVOLT」​ゴーグルなどの​ギアグラフィック、​「TOYOTA BIG AIR」​「PARK AIR」や​TV番組​「NO MATTER BOARD」の​ビジュアル制作、​イベントや​スノーパークの​プロデュース、​カルチャー雑誌​「king garage magazine」の​編集長と、​日本の​スノーボードカルチャーを​幅広く​彩ってきました。</p>
+#       <p>スノーボードブランド​「UNIT MFG.」の​ライダー兼アートディレクターを​務める​ほか、​「FLUX」​ビンディングや​「DEELUXE」​ブーツ、​「REVOLT」​ゴーグルなどの​ギアグラフィック、​「TOYOTA BIG AIR」​「PARK AIR」や​TV番組​「NO MATTER BOARD」の​ビジュアル制作、​イベントや​スノーパークの​プロデュース、​カルチャー雑誌​「king garage magazine」の​編集長と、​日本の​スノーボードカルチャーを​幅広く​彩ってきました。</p>
 
-      <p>自身の​レーベル​「horizon the art get into」から​発表される​絵画作品では、​渦巻く​太陽、​砕ける​波、​北海道の​山々が、​ライディング​そのままの​エネルギーで、​大胆な​線と​色彩に​よって​描かれています。</p>
+#       <p>自身の​レーベル​「horizon the art get into」から​発表される​絵画作品では、​渦巻く​太陽、​砕ける​波、​北海道の​山々が、​ライディング​そのままの​エネルギーで、​大胆な​線と​色彩に​よって​描かれています。</p>
 
 - slug: aikawa-mitsugu
   img: /assets/images/artists/aikawa-mitsugu/avatar.jpg
