@@ -495,7 +495,7 @@ artists:
       <span class="row-thumbs" aria-hidden="true">
         {% for img in artist.work limit: 3 %}
         {% assign img_src = img.src | default: img %}
-        {% assign thumb_webp = img_src | replace: '.jpg', '.webp' %}
+        {% assign thumb_webp = img_src | replace: '.jpg', '-thumb.webp' | replace: '.png', '-thumb.webp' %}
         <img src="{{ thumb_webp }}" alt="" loading="lazy" width="48" height="48">
         {% endfor %}
       </span>
