@@ -523,6 +523,24 @@ artists:
   @media (max-width: 767px) {
     .artist-row summary .row-thumbs { display: none; }
   }
+
+  /* Featured hero */
+  .artist-featured { margin-bottom: 40px; }
+
+  .artist-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 1;
+    padding: 4px 12px;
+    background: var(--color-secondary);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border-radius: 3px;
+  }
 </style>
 
 <div class="module-title-wrap">
@@ -532,8 +550,15 @@ artists:
   <p>We work with local artists on limited-edition gear inspired by riding in Niseko. Every purchase funds trail building and maintenance.</p>
 </div>
 
+{% assign featured = page.artists | where: "featured", true | first %}
+{% if featured %}
+<div id="{{ featured.slug }}" class="artist-featured">
+  {% include artist-card.html artist=featured badge="Now dropping" %}
+</div>
+{% endif %}
 <div class="artist-roster">
   {% for artist in page.artists %}
+  {% unless artist.featured %}
   <details class="artist-row" name="artist" id="{{ artist.slug }}">
     <summary>
       {% include image.html src=artist.img alt=artist.name class="row-avatar" width="120" height="120" %}
@@ -549,6 +574,7 @@ artists:
     </summary>
     {% include artist-card.html artist=artist %}
   </details>
+  {% endunless %}
   {% endfor %}
 </div>
 

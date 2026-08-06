@@ -477,6 +477,24 @@ artists:
   @media (max-width: 767px) {
     .artist-row summary .row-thumbs { display: none; }
   }
+
+  /* Featured hero */
+  .artist-featured { margin-bottom: 40px; }
+
+  .artist-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 1;
+    padding: 4px 12px;
+    background: var(--color-secondary);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border-radius: 3px;
+  }
 </style>
 
 <div class="module-title-wrap">
@@ -486,8 +504,15 @@ artists:
   <p>地元アーティストと<wbr>協力し、<wbr>ニセコの<wbr>ライディングを<wbr>モチーフにした<wbr>数量限定の<wbr>グッズを<wbr>制作しています。<wbr>売上は<wbr>トレイルの<wbr>整備と<wbr>維持に<wbr>還元されます。</p>
 </div>
 
+{% assign featured = page.artists | where: "featured", true | first %}
+{% if featured %}
+<div id="{{ featured.slug }}" class="artist-featured">
+  {% include artist-card.html artist=featured badge="新作発売中" %}
+</div>
+{% endif %}
 <div class="artist-roster">
   {% for artist in page.artists %}
+  {% unless artist.featured %}
   <details class="artist-row" name="artist" id="{{ artist.slug }}">
     <summary>
       {% include image.html src=artist.img alt=artist.name class="row-avatar" width="120" height="120" %}
@@ -503,6 +528,7 @@ artists:
     </summary>
     {% include artist-card.html artist=artist %}
   </details>
+  {% endunless %}
   {% endfor %}
 </div>
 
