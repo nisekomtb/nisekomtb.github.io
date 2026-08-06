@@ -541,6 +541,14 @@ artists:
     text-transform: uppercase;
     border-radius: 3px;
   }
+
+  /* Deep-link targets: clear the fixed mobile logo/pill (top: 72px,
+     44px tall = 116px at 768-991px, the largest fixed overlay on
+     the site) plus ~10px breathing room. */
+  .artist-featured,
+  .artist-roster .artist-row {
+    scroll-margin-top: 126px;
+  }
 </style>
 
 <div class="module-title-wrap">
@@ -577,6 +585,21 @@ artists:
   {% endunless %}
   {% endfor %}
 </div>
+
+<script>
+  (function () {
+    function openFromHash() {
+      if (!location.hash) return;
+      var el = document.getElementById(location.hash.slice(1));
+      if (el && el.tagName === 'DETAILS') {
+        el.open = true;
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+    window.addEventListener('hashchange', openFromHash);
+    openFromHash();
+  })();
+</script>
 
 <script type="application/ld+json">
 {
