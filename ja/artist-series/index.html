@@ -276,60 +276,6 @@ artists:
 
 ---
 <style>
-  /* Sticky avatar nav */
-  .avatars {
-    position: sticky;
-    top: 0;
-    background: linear-gradient(to bottom, var(--color-bg) 70%, transparent);
-    padding-bottom: 50px;
-    margin-bottom: 20px;
-    z-index: 9999;
-  }
-
-  .avatars ol {
-    position: relative;
-    z-index: 15;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-    list-style: none;
-  }
-
-  .avatars ol li {
-    position: relative;
-    display: inline-block;
-    width: 100px;
-    height: 100px;
-    margin: 20px 10px;
-    cursor: pointer;
-    background-color: transparent;
-    border: none;
-  }
-
-  .avatars ol li:hover {
-    width: 120px;
-    height: 120px;
-    margin: 0;
-  }
-
-  @media (max-width: 1199px) {
-    .avatars ol li { width: 75px; height: 75px; margin: 20px 10px; }
-    .avatars ol li:hover { width: 90px; height: 90px; margin: -5px 2.5px; }
-  }
-
-  @media (max-width: 991px) {
-    .avatars ol li { width: 50px; height: 50px; margin: 20px 10px; }
-    .avatars ol li:hover { width: 60px; height: 60px; margin: 15px 5px; }
-  }
-
-  .avatars ol li img {
-    border-radius: 50%;
-    border: 2px solid #ccc;
-  }
-
-  .avatars ol li.active img { border-color: #fff; }
-
   /* Artist card — matches .ride-card pattern from /where-to-ride/ */
   .artist-card {
     background: var(--color-bg-panel);
@@ -456,6 +402,81 @@ artists:
     width: 100%;
     border-radius: 3px;
   }
+
+  /* Accordion roster */
+  .artist-roster .artist-row {
+    background: var(--color-bg-panel);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 3px;
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+
+  .artist-row summary {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 20px;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .artist-row summary::-webkit-details-marker { display: none; }
+
+  .artist-row summary .row-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    object-fit: cover;
+  }
+
+  .artist-row summary .row-name {
+    flex: 1;
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  .artist-row summary .row-name small {
+    display: block;
+    font-weight: 400;
+    font-size: 14px;
+    opacity: 0.75;
+  }
+
+  .artist-row summary .row-thumbs {
+    display: flex;
+    gap: 6px;
+  }
+
+  .artist-row summary .row-thumbs img {
+    width: 48px;
+    height: 48px;
+    border-radius: 3px;
+    object-fit: cover;
+  }
+
+  .artist-row summary .row-chevron::before {
+    content: '▾';
+    color: var(--color-secondary);
+    font-size: 18px;
+  }
+
+  .artist-row[open] summary .row-chevron::before { content: '▴'; }
+
+  .artist-row[open] summary {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .artist-row .artist-card {
+    border: none;
+    border-radius: 0;
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 767px) {
+    .artist-row summary .row-thumbs { display: none; }
+  }
 </style>
 
 <div class="module-title-wrap">
@@ -465,21 +486,25 @@ artists:
   <p>地元アーティストと<wbr>協力し、<wbr>ニセコの<wbr>ライディングを<wbr>モチーフにした<wbr>数量限定の<wbr>グッズを<wbr>制作しています。<wbr>売上は<wbr>トレイルの<wbr>整備と<wbr>維持に<wbr>還元されます。</p>
 </div>
 
-<div class="avatars">
-  <ol>
-    {% for artist in page.artists %}
-    <li data-target="#artists" data-slide-to="{{ forloop.index0 }}">
-      <a href="#{{ artist.slug }}">{% include image.html src=artist.img alt=artist.name width="300" height="300" %}</a>
-    </li>
+<div class="artist-roster">
+  {% for artist in page.artists %}
+  <details class="artist-row" name="artist" id="{{ artist.slug }}">
+    <summary>
+      {% include image.html src=artist.img alt=artist.name class="row-avatar" width="120" height="120" %}
+      <span class="row-name">{{ artist.name }} <small>{{ artist.title }}</small></span>
+      <span class="row-thumbs" aria-hidden="true">
+        {% for img in artist.work limit: 3 %}
+        {% assign img_src = img.src | default: img %}
+        {% assign thumb_webp = img_src | replace: '.jpg', '.webp' %}
+        <img src="{{ thumb_webp }}" alt="" loading="lazy" width="48" height="48">
+        {% endfor %}
+      </span>
+      <span class="row-chevron" aria-hidden="true"></span>
+    </summary>
+    {% include artist-card.html artist=artist %}
+  </details>
   {% endfor %}
-  </ol>
 </div>
-
-{% for artist in page.artists %}
-<div id="{{ artist.slug }}">
-  {% include artist-card.html artist=artist %}
-</div>
-{% endfor %}
 
 <script type="application/ld+json">
 {

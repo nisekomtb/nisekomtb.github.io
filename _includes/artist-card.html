@@ -3,7 +3,10 @@
   Params:
     artist — one entry from page.artists
     badge  — optional badge text overlaid on the header (featured hero)
-  Strings resolve from page.lang. No id is set here — wrappers own anchors.
+  Strings resolve from page.lang. No anchor id on the card root — wrappers own anchors.
+  The gallery id inside is for PhotoSwipe binding, not navigation.
+  Note: Jekyll includes share the caller's scope — assigns made here (artist, ja,
+  header_webp, img_*) leak to the calling page after the include runs.
 {% endcomment %}
 {% assign artist = include.artist %}
 {% assign ja = false %}{% if page.lang == 'ja' %}{% assign ja = true %}{% endif %}
