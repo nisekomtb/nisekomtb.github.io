@@ -80,7 +80,7 @@
 #     img: /assets/images/artists/remi-fukamachi/design.jpg  # image TBC — add on launch day
 #     name:
 #       en: Niseko in Motion
-#       ja: Niseko in Motion
+#       ja: ニセコ・イン・モーション
 #   quote:
 #     en: |
 #       Niseko is best known for its winters and incredible snow, but there’s so much more to this
@@ -89,6 +89,10 @@
 
 #       Through ‘Niseko in Motion,’ I hope more people can discover just how beautiful and exciting
 #       summer in Niseko can be.
+#     ja: |
+#       ニセコといえば冬と素晴らしい雪で知られていますが、夏のこの場所にはそれ以上の魅力があります。涼しく緑豊かな森の中をマウンテンバイクで走り、まったく違うかたちで山のエネルギーを感じられるのは、本当に特別な体験です。
+
+#       「ニセコ・イン・モーション」を通じて、ニセコの夏がどれほど美しく、エキサイティングなものかを、より多くの人に発見してもらえたら嬉しいです。
 #   bio:
 #     en: |
 #       <p>Remi Fukamachi is a photographer and adventurer whose work bridges cultures and landscapes.</p>
@@ -151,7 +155,7 @@
 #     img: /assets/images/artists/yoshida-naohiro/design.jpg  # image TBC — add on launch day
 #     name:
 #       en: Riders on the Mountain
-#       ja: Riders on the Mountain
+#       ja: ライダーズ・オン・ザ・マウンテン
 #   bio:
 #     en: |
 #       <p>Yoshida Naohiro, better known as DKC, is a graphic designer and professional snowboarder. Born in 1971 and
