@@ -4,8 +4,9 @@
 # Launch day: set `featured: true` and add `design:` on the dropping artist (one edit here
 # covers both languages). Lang-keyed fields follow the _data/nav.yml en/ja convention.
 # JA text is BudouX-tokenised (zero-width spaces / <wbr>) — do not retype by hand.
-# `quote:` is a per-artist launch quote (verbatim, artist's own punctuation). Not rendered
-# on the site yet — collected for Instagram launch posts and possibly store descriptions.
+# `quote:` is a per-artist launch quote (EN verbatim, artist's own punctuation; JA is
+# BudouX-tokenised like all web-bound JA text). Not rendered anywhere yet — kept for
+# possible web store / site use. Instagram launch copy is managed separately, not from here.
 
 # - slug: chihiro-tamura
 #   featured: true
@@ -90,9 +91,9 @@
 #       Through ‘Niseko in Motion,’ I hope more people can discover just how beautiful and exciting
 #       summer in Niseko can be.
 #     ja: |
-#       ニセコといえば冬と素晴らしい雪で知られていますが、夏のこの場所にはそれ以上の魅力があります。涼しく緑豊かな森の中をマウンテンバイクで走り、まったく違うかたちで山のエネルギーを感じられるのは、本当に特別な体験です。
+#       ニセコと​いえば​冬と​素晴らしい​雪で​知られていますが、​夏の​この​場所には​それ以上の​魅力が​あります。​涼しく​緑豊かな​森の​中を​マウンテンバイクで​走り、​まったく​違うかたちで​山の​エネルギーを​感じられるのは、​本当に​特別な​体験です。
 
-#       「ニセコ・イン・モーション」を通じて、ニセコの夏がどれほど美しく、エキサイティングなものかを、より多くの人に発見してもらえたら嬉しいです。
+#       「ニセコ・イン・モーション」を​通じて、​ニセコの​夏が​どれほど​美しく、​エキサイティングな​ものかを、より​多くの​人に​発見して​もらえたら​嬉しいです。
 #   bio:
 #     en: |
 #       <p>Remi Fukamachi is a photographer and adventurer whose work bridges cultures and landscapes.</p>
