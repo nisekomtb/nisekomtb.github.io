@@ -4,6 +4,8 @@
 # Launch day: set `featured: true` and add `design:` on the dropping artist (one edit here
 # covers both languages). Lang-keyed fields follow the _data/nav.yml en/ja convention.
 # JA text is BudouX-tokenised (zero-width spaces / <wbr>) — do not retype by hand.
+# `quote:` is a per-artist launch quote (verbatim, artist's own punctuation). Not rendered
+# on the site yet — collected for Instagram launch posts and possibly store descriptions.
 
 # - slug: chihiro-tamura
 #   featured: true
@@ -74,6 +76,19 @@
 #   title:
 #     en: Photographer & Adventurer
 #     ja: フォトグラファー & 冒険家
+#   design:
+#     img: /assets/images/artists/remi-fukamachi/design.jpg  # image TBC — add on launch day
+#     name:
+#       en: Niseko in Motion
+#       ja: Niseko in Motion
+#   quote:
+#     en: |
+#       Niseko is best known for its winters and incredible snow, but there’s so much more to this
+#       place in summer. There’s something truly special about riding a mountain bike through the
+#       cool, green forests and feeling the energy of the mountains in a completely different way.
+
+#       Through ‘Niseko in Motion,’ I hope more people can discover just how beautiful and exciting
+#       summer in Niseko can be.
 #   bio:
 #     en: |
 #       <p>Remi Fukamachi is a photographer and adventurer whose work bridges cultures and landscapes.</p>
@@ -132,6 +147,11 @@
 #   title:
 #     en: Designer & Pro Snowboarder
 #     ja: デザイナー & プロスノーボーダー
+#   design:
+#     img: /assets/images/artists/yoshida-naohiro/design.jpg  # image TBC — add on launch day
+#     name:
+#       en: Riders on the Mountain
+#       ja: Riders on the Mountain
 #   bio:
 #     en: |
 #       <p>Yoshida Naohiro, better known as DKC, is a graphic designer and professional snowboarder. Born in 1971 and
