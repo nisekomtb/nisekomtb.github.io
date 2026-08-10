@@ -8,6 +8,30 @@
 # BudouX-tokenised like all web-bound JA text). Not rendered anywhere yet — kept for
 # possible web store / site use. Instagram launch copy is managed separately, not from here.
 
+# Skeleton — awaiting Hironori's material (photos, artwork, bio, quote).
+# - slug: hironori-machida
+#   img: /assets/images/artists/hironori-machida/avatar.jpg  # image TBC
+#   header: /assets/images/artists/hironori-machida/header.jpg  # image TBC
+#   instagram: naturalbicycle011
+#   links:
+#     - scheme: https
+#       domain: www.naturalbicycle.com
+#   work: []  # artwork TBC
+#   name:
+#     en: Hironori Machida
+#     ja: 町田ヒロノリ  # given-name rendering TBC — confirm kanji/kana with the artist
+#   title:
+#     en: Natural bicycle  # clothing brand, Sapporo — refine title wording when bio arrives
+#     ja: Natural bicycle
+#   design:
+#     img: /assets/images/artists/hironori-machida/design.jpg  # image TBC — add on launch day
+#     name:
+#       en: EZOBAND
+#       ja: エゾバンド
+#   bio:  # TBC
+#     en: |
+#     ja: |
+
 # - slug: chihiro-tamura
 #   featured: true
 #   img: /assets/images/artists/chihiro-tamura/avatar.jpg
