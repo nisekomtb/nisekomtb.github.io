@@ -32,56 +32,56 @@
 #     en: |
 #     ja: |
 
-# - slug: chihiro-tamura
-#   featured: true
-#   img: /assets/images/artists/chihiro-tamura/avatar.jpg
-#   header: /assets/images/artists/chihiro-tamura/header.jpg
-#   instagram: chanchii_art
-#   work:
-#     - /assets/images/artists/chihiro-tamura/artwork-01.jpg
-#     - /assets/images/artists/chihiro-tamura/artwork-02.jpg
-#     - /assets/images/artists/chihiro-tamura/artwork-03.jpg
-#     - /assets/images/artists/chihiro-tamura/artwork-04.jpg
-#     - /assets/images/artists/chihiro-tamura/artwork-05.jpg
-#     - /assets/images/artists/chihiro-tamura/artwork-06.jpg
-#     - /assets/images/artists/chihiro-tamura/artwork-07.jpg
-#     - /assets/images/artists/chihiro-tamura/artwork-08.jpg
-#   name:
-#     en: Chihiro Tamura
-#     ja: 田村ちひろ
-#   title:
-#     en: Painter & Printmaker
-#     ja: 画家 & 版画作家
-#   design:
-#     img: /assets/images/artists/chihiro-tamura/design.jpg  # image TBC — add on launch day
-#     name:
-#       en: Ride with Yotei
-#       ja: ライド・ウィズ・ヨウテイ
-#   quote:
-#     en: |
-#       Riding through Niseko with Mt. Yotei in the distance - it almost feels like Yotei is riding
-#       along with you. I wanted to capture that joy in this artwork.
-#     ja: |
-#       羊蹄山を​遠くに​眺めながら​ニセコを​走っていると、​まるで​羊蹄山が​一緒に​走ってくれているような​気持ちに​なります。​その​楽しさを​この​作品に​込めました。
-#   bio:
-#     en: |
-#       <p>Chihiro Tamura is an artist based in Sapporo and Niseko. Her work begins with the lines that nature has shaped
-#       over time: mountain ridges, wood grain, flowing water. She translates the tokimeki, the small thrill those moments
-#       spark, into vibrant colour, and Mount Yotei returns again and again as a motif.</p>
+- slug: chihiro-tamura
+  # featured: true  # flip on launch day
+  img: /assets/images/artists/chihiro-tamura/avatar.jpg
+  header: /assets/images/artists/chihiro-tamura/header.jpg
+  instagram: chanchii_art
+  work:
+    - /assets/images/artists/chihiro-tamura/artwork-01.jpg
+    - /assets/images/artists/chihiro-tamura/artwork-02.jpg
+    - /assets/images/artists/chihiro-tamura/artwork-03.jpg
+    - /assets/images/artists/chihiro-tamura/artwork-04.jpg
+    - /assets/images/artists/chihiro-tamura/artwork-05.jpg
+    - /assets/images/artists/chihiro-tamura/artwork-06.jpg
+    - /assets/images/artists/chihiro-tamura/artwork-07.jpg
+    - /assets/images/artists/chihiro-tamura/artwork-08.jpg
+  name:
+    en: Chihiro Tamura
+    ja: 田村ちひろ
+  title:
+    en: Painter & Printmaker
+    ja: 画家 & 版画作家
+  # design:  # uncomment when design.jpg is in place — until then the card shows the coming-soon teaser
+  #   img: /assets/images/artists/chihiro-tamura/design.jpg
+  #   name:
+  #     en: Ride with Yotei
+  #     ja: ライド・ウィズ・ヨウテイ
+  quote:
+    en: |
+      Riding through Niseko with Mt. Yotei in the distance - it almost feels like Yotei is riding
+      along with you. I wanted to capture that joy in this artwork.
+    ja: |
+      羊蹄山を​遠くに​眺めながら​ニセコを​走っていると、​まるで​羊蹄山が​一緒に​走ってくれているような​気持ちに​なります。​その​楽しさを​この​作品に​込めました。
+  bio:
+    en: |
+      <p>Chihiro Tamura is an artist based in Sapporo and Niseko. Her work begins with the lines that nature has shaped
+      over time: mountain ridges, wood grain, flowing water. She translates the tokimeki, the small thrill those moments
+      spark, into vibrant colour, and Mount Yotei returns again and again as a motif.</p>
 
-#       <p>Raised in a family with ties to a Shinto shrine, Chihiro grew up practising Japanese calligraphy, which still
-#       guides her sense of line. Before becoming an artist she worked in the travel industry and experienced landscapes in
-#       more than 40 countries.</p>
+      <p>Raised in a family with ties to a Shinto shrine, Chihiro grew up practising Japanese calligraphy, which still
+      guides her sense of line. Before becoming an artist she worked in the travel industry and experienced landscapes in
+      more than 40 countries.</p>
 
-#       <p>In 2025 she was selected for an artist residency in Kutchan, holding solo exhibitions at the Shu Ogawara Museum
-#       of Art and Camp & Go. Away from the studio she finds inspiration road cycling, skiing, and camping with her
-#       family.</p>
-#     ja: |
-#       <p>田村ちひろは、​札幌と​ニセコを​拠点に​活動する​アーティスト。​山の​稜線、​木目、​水の​流れなど、​自然が​長い​時間を​かけてかたちづくった​「線」から​制作を​始め、​その​瞬間に​感じた​ときめきを​鮮やかな​色彩で​表現しています。​羊蹄山は​作品に​繰り返し登場する​モチーフの​ひとつです。</p>
+      <p>In 2025 she was selected for an artist residency in Kutchan, holding solo exhibitions at the Shu Ogawara Museum
+      of Art and Camp & Go. Away from the studio she finds inspiration road cycling, skiing, and camping with her
+      family.</p>
+    ja: |
+      <p>田村ちひろは、​札幌と​ニセコを​拠点に​活動する​アーティスト。​山の​稜線、​木目、​水の​流れなど、​自然が​長い​時間を​かけてかたちづくった​「線」から​制作を​始め、​その​瞬間に​感じた​ときめきを​鮮やかな​色彩で​表現しています。​羊蹄山は​作品に​繰り返し登場する​モチーフの​ひとつです。</p>
 
-#       <p>神社に​ゆかりの​ある​家庭に​育ち、​幼い​頃から​親しん​できた​書道が、​いまも​線の​感覚に​息づいています。​アーティストに​なる前は​旅行業界で​働き、​40カ国以上の​風景を​体験しました。</p>
+      <p>神社に​ゆかりの​ある​家庭に​育ち、​幼い​頃から​親しん​できた​書道が、​いまも​線の​感覚に​息づいています。​アーティストに​なる前は​旅行業界で​働き、​40カ国以上の​風景を​体験しました。</p>
 
-#       <p>2025年には​倶知安町の​アーティスト・イン・レジデンスに​選出され、​小川原脩記念美術館と​Camp & Goで​個展を​開催。​制作の​合間には、​ロードバイクや​スキー、​キャンプなど​家族と​屋外で​過ごす時間から、​次の​作品の​インスピレーションを​得ています。</p>
+      <p>2025年には​倶知安町の​アーティスト・イン・レジデンスに​選出され、​小川原脩記念美術館と​Camp & Goで​個展を​開催。​制作の​合間には、​ロードバイクや​スキー、​キャンプなど​家族と​屋外で​過ごす時間から、​次の​作品の​インスピレーションを​得ています。</p>
 
 # - slug: remi-fukamachi
 #   img: /assets/images/artists/remi-fukamachi/avatar.jpg
