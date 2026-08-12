@@ -33,7 +33,7 @@
 #     ja: |
 
 - slug: chihiro-tamura
-  # featured: true  # flip on launch day
+  featured: true
   img: /assets/images/artists/chihiro-tamura/avatar.jpg
   header: /assets/images/artists/chihiro-tamura/header.jpg
   instagram: chanchii_art
