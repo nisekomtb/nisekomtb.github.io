@@ -52,11 +52,11 @@
   title:
     en: Painter & Printmaker
     ja: 画家 & 版画作家
-  # design:  # uncomment when design.jpg is in place — until then the card shows the coming-soon teaser
-  #   img: /assets/images/artists/chihiro-tamura/design.jpg
-  #   name:
-  #     en: Ride with Yotei
-  #     ja: ライド・ウィズ・ヨウテイ
+  design:
+    img: /assets/images/artists/chihiro-tamura/design.jpg
+    name:
+      en: Ride with Yotei
+      ja: ライド・ウィズ・ヨウテイ
   quote:
     en: |
       Riding through Niseko with Mt. Yotei in the distance - it almost feels like Yotei is riding
