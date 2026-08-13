@@ -167,13 +167,14 @@ site stylesheet:
 ```html
 <div style="background: #242220; border-left: 4px solid #d4a843; padding: 30px 40px; margin: 24px 0; border-radius: 3px;">
   <div aria-hidden="true" style="font-family: Georgia, serif; font-weight: 700; font-size: 56px; line-height: 0.5; color: #a0a0a0; margin-bottom: 10px;">“</div>
-  <p style="font-style: italic; line-height: 1.6; margin: 0 0 12px;">…quote, no quotation marks…</p>
+  <p style="font-style: italic; font-weight: 500; color: #cccccc; line-height: 1.6; margin: 0 0 12px;">…quote, no quotation marks…</p>
   <p style="font-style: normal; color: #d4a843; font-weight: 700; margin: 0;">Artist Name</p>
 </div>
 ```
 
 Same markup in the JA description (no 「」 either; JA name in the gold line).
-Don't set body text colour; let the storefront theme decide.
+Quote text colour is explicit (#cccccc = --color-text-light) so it matches the
+site's quote cards; the rest of the description still inherits the theme.
 
 ## Notes and gotchas
 
