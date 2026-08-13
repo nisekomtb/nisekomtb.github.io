@@ -149,6 +149,22 @@
     {% if page.lang == 'en' %}日本語{% else %}English{% endif %}
   </a>
 </div>
+<script>
+  // Carry the URL hash across the language switch. Hash routes are real
+  // locations here: Ecwid product pages (/shop#!/slug) and artist-series
+  // deep links (#artist-slug) would otherwise land on the mirrored page's
+  // top. Synced on click as well as hashchange because Ecwid updates the
+  // hash via replaceState, which fires no hashchange event.
+  (function () {
+    var link = document.querySelector('.languageswitcherload a');
+    if (!link) return;
+    var base = link.getAttribute('href');
+    function sync() { link.href = base + location.hash; }
+    link.addEventListener('click', sync);
+    window.addEventListener('hashchange', sync);
+    sync();
+  })();
+</script>
 
 <!-- HEADRIGHT -->
 <div class="headright">
