@@ -153,6 +153,22 @@ click an image) to confirm the *Default*, EN, and JA alt text are populated.
   staging).
 - Either clear the `ECWID_TOKEN` line in `.env` or have Tom revoke it.
 
+## Artist quote style in product descriptions
+
+Artist Series products carry the artist's launch quote (source of truth:
+`_data/artists.yml` `quote:` field, ZWSP stripped for Ecwid). Style it to match
+the site's gold-bar quote (`.leader-quote` on /team/) using inline styles,
+since Ecwid descriptions can't reach the site stylesheet:
+
+```html
+<blockquote style="border-left: 4px solid #d4a843; padding: 16px 24px; margin: 0 0 24px; border-radius: 3px;">
+  <p style="font-style: italic; line-height: 1.6; margin: 0;">“…quote…” (Artist Name)</p>
+</blockquote>
+```
+
+Same markup in the JA description with 「」 quotes and （アーティスト名）.
+Don't set text colour; let the storefront theme decide.
+
 ## Notes and gotchas
 
 - **`alt.main` vs `alt.translated.en`**: `main` is a separate field, not a
