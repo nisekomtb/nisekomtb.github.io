@@ -880,10 +880,13 @@
 }
 /* GOLD, NOT GREEN, AND NOT THE RUST THIS REPLACED. A gold left rule is the
    site's established treatment for an offset quote or card: team/index.html:47
-   at 4px, home.css:458 and template.css:7064 and :7114 at 3px. Green here made
-   the story kit the only place on the site that did it differently. Convention
-   14 gives green the structural markers, and a quote rule is not one: it marks
-   emphasis, which is gold's job.
+   and /partner/ at 4px. Green here made the story kit the only place on the
+   site that did it differently. Convention 14 gives green the structural
+   markers, and a quote rule is not one: it marks emphasis, which is gold's job.
+
+   The whole treatment is the site-wide quote card (Aug 2026): panel
+   background, 4px gold rule, 30/40 padding, matching /partner/ and the Ecwid
+   product descriptions. Panel colour is the token, no raw literal.
 
    The rule and its padding sit on the FIGURE, not the blockquote, so the quote
    and its attribution are offset together and cannot drift apart. An earlier
@@ -893,12 +896,14 @@
    silently desynced the attribution. Measured before that fix, the attribution
    hung 22px left of its own quote text, x=390 against x=412 at 1440px.
 
-   The rule now runs the full height of the quote unit rather than stopping at
-   the end of the blockquote, 131.27px against 81.59px, which reads as marking
-   the whole quote including who said it. */
+   The rule runs the full height of the quote unit rather than stopping at
+   the end of the blockquote, which reads as marking the whole quote
+   including who said it. */
 .story .story-quote.is-plain figure {
-  border-left: 2px solid var(--color-accent);
-  padding-left: 20px;
+  background: var(--color-bg-panel);
+  border-left: 4px solid var(--color-accent);
+  border-radius: 3px;
+  padding: 30px 40px;
 }
 
 /* The attribution is a <figcaption> and a SIBLING of the blockquote, never a
