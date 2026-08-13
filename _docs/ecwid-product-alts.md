@@ -159,15 +159,17 @@ Artist Series products carry the artist's launch quote (source of truth:
 `_data/artists.yml` `quote:` field, ZWSP stripped for Ecwid). Site-wide quote
 standard (Aug 2026, also on /team/, /partner/, and the story kit): decorative
 “ icon, italic text, NO surrounding quotation marks, attribution as a gold
-name line. In Ecwid the storefront theme already adds the “ icon to
-blockquotes, so don't add another. Inline styles only, since Ecwid
-descriptions can't reach the site stylesheet:
+name line. Use a DIV, not <blockquote>: Ecwid's theme pins its own “ icon to
+blockquotes with absolute positioning that ignores padding, so it can't be
+spaced properly. Inline styles only, since Ecwid descriptions can't reach the
+site stylesheet:
 
 ```html
-<blockquote style="background: #242220; border-left: 4px solid #d4a843; padding: 40px 40px 30px; margin: 24px 0; border-radius: 3px;">
+<div style="background: #242220; border-left: 4px solid #d4a843; padding: 30px 40px; margin: 24px 0; border-radius: 3px;">
+  <div aria-hidden="true" style="font-family: Georgia, serif; font-weight: 700; font-size: 56px; line-height: 0.5; color: #a0a0a0; margin-bottom: 10px;">“</div>
   <p style="font-style: italic; line-height: 1.6; margin: 0 0 12px;">…quote, no quotation marks…</p>
   <p style="font-style: normal; color: #d4a843; font-weight: 700; margin: 0;">Artist Name</p>
-</blockquote>
+</div>
 ```
 
 Same markup in the JA description (no 「」 either; JA name in the gold line).
