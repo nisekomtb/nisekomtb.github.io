@@ -156,15 +156,16 @@ click an image) to confirm the *Default*, EN, and JA alt text are populated.
 ## Artist quote style in product descriptions
 
 Artist Series products carry the artist's launch quote (source of truth:
-`_data/artists.yml` `quote:` field, ZWSP stripped for Ecwid). Follow the story
-kit's quote conventions (`_includes/story/quote.html`): NO surrounding
-quotation marks (Ecwid's storefront adds a decorative “ icon to blockquotes),
-NO italics, attribution as a gold name line. Inline styles only, since Ecwid
+`_data/artists.yml` `quote:` field, ZWSP stripped for Ecwid). Site-wide quote
+standard (Aug 2026, also on /team/, /partner/, and the story kit): decorative
+“ icon, italic text, NO surrounding quotation marks, attribution as a gold
+name line. In Ecwid the storefront theme already adds the “ icon to
+blockquotes, so don't add another. Inline styles only, since Ecwid
 descriptions can't reach the site stylesheet:
 
 ```html
 <blockquote style="border-left: 4px solid #d4a843; padding: 16px 24px; margin: 0 0 24px; border-radius: 3px;">
-  <p style="line-height: 1.6; margin: 0 0 12px;">…quote, no quotation marks…</p>
+  <p style="font-style: italic; line-height: 1.6; margin: 0 0 12px;">…quote, no quotation marks…</p>
   <p style="color: #d4a843; font-weight: 700; margin: 0;">Artist Name</p>
 </blockquote>
 ```

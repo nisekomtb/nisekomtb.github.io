@@ -826,10 +826,26 @@
   line-height: 1.6;
   color: var(--color-text-light);
   font-weight: 500;
+  font-style: italic;
   /* Measured at 320px: a 34 character unbroken word took the document to
      363px. Same guard as the attribution below and the spec rows in
      section 5. */
   overflow-wrap: break-word;
+}
+/* Decorative opening-quote glyph, the site-wide quote marker (matches the
+   Ecwid storefront's blockquote icon and the team/partner pages). It replaces
+   textual quotation marks, which quote text must not carry. Colour is the
+   muted token, so this adds no raw literal (convention 12). Punctuation-only
+   generated content is not announced by screen readers. */
+.story .story-quote blockquote::before {
+  content: '\201C';
+  display: block;
+  font-family: Georgia, serif;
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 0.5;
+  color: var(--color-text-muted);
+  margin-bottom: 10px;
 }
 /* The figure is a grid item, so it needs the same guard section 1 gives every
    direct child of `.story`. Its margin is zeroed explicitly rather than left to
