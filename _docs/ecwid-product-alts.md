@@ -166,7 +166,7 @@ descriptions can't reach the site stylesheet:
 ```html
 <blockquote style="border-left: 4px solid #d4a843; padding: 16px 24px; margin: 0 0 24px; border-radius: 3px;">
   <p style="font-style: italic; line-height: 1.6; margin: 0 0 12px;">…quote, no quotation marks…</p>
-  <p style="color: #d4a843; font-weight: 700; margin: 0;">Artist Name</p>
+  <p style="font-style: normal; color: #d4a843; font-weight: 700; margin: 0;">Artist Name</p>
 </blockquote>
 ```
 
