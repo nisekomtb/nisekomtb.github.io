@@ -156,18 +156,21 @@ click an image) to confirm the *Default*, EN, and JA alt text are populated.
 ## Artist quote style in product descriptions
 
 Artist Series products carry the artist's launch quote (source of truth:
-`_data/artists.yml` `quote:` field, ZWSP stripped for Ecwid). Style it to match
-the site's gold-bar quote (`.leader-quote` on /team/) using inline styles,
-since Ecwid descriptions can't reach the site stylesheet:
+`_data/artists.yml` `quote:` field, ZWSP stripped for Ecwid). Follow the story
+kit's quote conventions (`_includes/story/quote.html`): NO surrounding
+quotation marks (Ecwid's storefront adds a decorative “ icon to blockquotes),
+NO italics, attribution as a gold name line. Inline styles only, since Ecwid
+descriptions can't reach the site stylesheet:
 
 ```html
 <blockquote style="border-left: 4px solid #d4a843; padding: 16px 24px; margin: 0 0 24px; border-radius: 3px;">
-  <p style="font-style: italic; line-height: 1.6; margin: 0;">“…quote…” (Artist Name)</p>
+  <p style="line-height: 1.6; margin: 0 0 12px;">…quote, no quotation marks…</p>
+  <p style="color: #d4a843; font-weight: 700; margin: 0;">Artist Name</p>
 </blockquote>
 ```
 
-Same markup in the JA description with 「」 quotes and （アーティスト名）.
-Don't set text colour; let the storefront theme decide.
+Same markup in the JA description (no 「」 either; JA name in the gold line).
+Don't set body text colour; let the storefront theme decide.
 
 ## Notes and gotchas
 
