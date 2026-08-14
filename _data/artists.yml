@@ -1,6 +1,7 @@
 # Artist Series roster — single source of truth for BOTH language pages
 # (artist-series/index.html + ja/artist-series/index.html + _includes/artist-card.html).
-# Array order = display order; prepend new artists to the top (newest first).
+# Roster display order is alphabetical by EN name (sorted in the index templates);
+# array order only matters for the featured pick (first `featured: true` entry wins).
 # Launch day: set `featured: true` and add `design:` on the dropping artist (one edit here
 # covers both languages). Lang-keyed fields follow the _data/nav.yml en/ja convention.
 # JA text is BudouX-tokenised (zero-width spaces / <wbr>) — do not retype by hand.

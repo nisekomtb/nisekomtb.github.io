@@ -289,7 +289,8 @@ og:
 </div>
 {% endif %}
 <div class="artist-roster">
-  {% for artist in site.data.artists %}
+  {% assign roster = site.data.artists | sort: "name.en" %}
+  {% for artist in roster %}
   {% unless artist.slug == featured.slug %}
   <details class="artist-row" name="artist" id="{{ artist.slug }}">
     <summary>
