@@ -153,6 +153,23 @@ click an image) to confirm the *Default*, EN, and JA alt text are populated.
   staging).
 - Either clear the `ECWID_TOKEN` line in `.env` or have Tom revoke it.
 
+## Free shipping line in product descriptions
+
+Every physical merchandise product's description starts with a one-line gold
+shipping note, matching the shop homepage badges ("Free worldwide shipping" /
+「世界中どこでも送料無料」). It goes on merch only, not memberships, donations,
+or event entries. Prepend to both EN and JA descriptions:
+
+```html
+<p style="color: #d4a843; font-weight: 700; margin: 0 0 16px;">Free worldwide shipping</p>
+```
+
+```html
+<p style="color: #d4a843; font-weight: 700; margin: 0 0 16px;">世界中どこでも送料無料</p>
+```
+
+Don't add it to `seoDescription`; that field stays product-copy only.
+
 ## Artist quote style in product descriptions
 
 Artist Series products carry the artist's launch quote (source of truth:
