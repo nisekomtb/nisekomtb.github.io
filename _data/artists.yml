@@ -32,8 +32,59 @@
 #     en: |
 #     ja: |
 
-- slug: chihiro-tamura
+- slug: joe-scott
   featured: true
+  img: /assets/images/artists/joe-scott/avatar.png
+  header: /assets/images/artists/joe-scott/header.png
+  instagram: joekkaido
+  work:
+    - /assets/images/artists/joe-scott/artwork-01.jpg
+    - /assets/images/artists/joe-scott/artwork-02.jpg
+    - /assets/images/artists/joe-scott/artwork-03.jpg
+    - /assets/images/artists/joe-scott/artwork-04.jpg
+    - /assets/images/artists/joe-scott/artwork-05.jpg
+  name:
+    en: Joe Scott
+    ja: ジョー・スコット
+  title:
+    en: Designer & Illustrator
+    ja: デザイナー & イラストレーター
+  design:
+    img: /assets/images/artists/joe-scott/design.jpg
+    name:
+      en: Twin Peaks badge
+      ja: Twin Peaks badge
+  quote:
+    en: |
+      Trips to Niseko during the summer have become something of a tradition, and I’m endlessly
+      inspired by the far-reaching greens of its landscapes contrasted against the wide blue skies.
+      Then there’s Yōtei. If I could only illustrate Yōtei for rest of my life, I’d be happy. And
+      even better when it’s for NAMBA.
+    ja: |
+      夏に​ニセコを​訪れる​ことは、​いつしか​私の​恒例行事に​なりました。​どこまでも​広がる​緑の​風景と、​大きな​青空との​コントラストから、​尽きる​ことのない​インスピレーションを​もらっています。​そして、​羊蹄山。​残りの​人生ずっと​羊蹄山だけを​描く​ことになっても、​私は​幸せです。​それが​NAMBAの​ためなら、​なおさらです。
+  bio:
+    en: |
+      <p>Joe Scott was born and raised in Birmingham, England, but found his artistic home in Sapporo.</p>
+
+      <p>A passionate sketcher since childhood, Joe rediscovered his creative side in his twenties through vector art. Influenced
+      by vintage travel posters and national park illustrations, his work explores the idea of art as a form of
+      discovery - creating imagined worlds or celebrating those just beyond reach.</p>
+
+      <p>After moving to Hokkaido straight out of university, Joe found endless inspiration in the landscapes outside his window.
+      Now based permanently in Sapporo, he collaborates with local businesses on branding and design while creating National
+      Park–style artwork celebrating Hokkaido’s mountains and landmarks.</p>
+
+      <p>Joe's latest collaboration with NAMBA is the label for the <a href="/beer/">Twin Peaks Bike Park Pale Ale</a>, brewed by Yotei Brewing.</p>
+    ja: |
+      <p>ジョー・スコットは、<wbr>イギリス・バーミンガム出身の<wbr>アーティストで、<wbr>現在は<wbr>札幌を<wbr>拠点に<wbr>活動しています。</p>
+
+      <p>幼少期から<wbr>絵を<wbr>描く<wbr>ことが<wbr>好きでしたが、<wbr>大学時代を<wbr>経て<wbr>20代の<wbr>頃に<wbr>ベクターアートと<wbr>出会い、<wbr>再び創作への<wbr>情熱を<wbr>取り戻しました。<wbr>トラベルポスターや<wbr>ナショナルパークの<wbr>イラストに<wbr>影響を<wbr>受け、<wbr>アートと<wbr>デザインを<wbr>通して<wbr>「世界を<wbr>探検する」<wbr>ことを<wbr>テーマに、<wbr>実在する<wbr>風景や<wbr>想像上の<wbr>世界を<wbr>描いています。</p>
+
+      <p>大学卒業後に<wbr>移り<wbr>住んだ<wbr>北海道の<wbr>自然は、<wbr>彼の<wbr>作品の<wbr>最大の<wbr>インスピレーション源です。<wbr>現在は<wbr>札幌を<wbr>拠点に、<wbr>地域企業との<wbr>ブランディングや<wbr>デザインの<wbr>仕事を<wbr>行いながら、<wbr>北海道の<wbr>山々や<wbr>名所を<wbr>題材に<wbr>した<wbr>ナショナルパーク風の<wbr>作品シリーズを<wbr>制作しています。</p>
+
+      <p>最新の<wbr>コラボレーションは、<wbr>ヨーテイブルーイングが<wbr>醸造する<wbr><a href="/ja/beer/">ツインピークスバイクパーク ペールエール</a>の<wbr>ラベルデザインです。</p>
+
+- slug: chihiro-tamura
   img: /assets/images/artists/chihiro-tamura/avatar.jpg
   header: /assets/images/artists/chihiro-tamura/header.jpg
   instagram: chanchii_art
@@ -309,57 +360,6 @@
       <p>イギリス出身で<wbr>現在は<wbr>フランス・アルプスに<wbr>在住。<wbr>以前は<wbr>ニセコに<wbr>1年間滞在し、<wbr>日本の<wbr>パウダースノーや<wbr>山々、<wbr>そして<wbr>食文化を<wbr>探求しました。<wbr>日本で<wbr>アルプススタイルの<wbr>バイクパークが<wbr>発展しつつある<wbr>こと、<wbr>そして<wbr>NAMBAを<wbr>はじめと<wbr>する<wbr>多くの<wbr>ライダーた<wbr>ちが<wbr>コミュニティを<wbr>築き、<wbr>発展に<wbr>尽力している<wbr>姿に<wbr>強く<wbr>感銘を<wbr>受けています。</p>
 
       <p>彼女の<wbr>作品には、<wbr>登山、<wbr>スノーボード、<wbr>マウンテンバイクと<wbr>いった<wbr>自然との<wbr>対話から<wbr>生まれる<wbr>「畏敬の<wbr>念」と<wbr>「感動」が<wbr>込められています。<wbr>作品を<wbr>通じて、<wbr>日本の<wbr>山々の<wbr>スピリットを<wbr>少しでも<wbr>感じて<wbr>もらえる<wbr>ことを<wbr>願っています。</p>
-
-- slug: joe-scott
-  img: /assets/images/artists/joe-scott/avatar.png
-  header: /assets/images/artists/joe-scott/header.png
-  instagram: joekkaido
-  work:
-    - /assets/images/artists/joe-scott/artwork-01.jpg
-    - /assets/images/artists/joe-scott/artwork-02.jpg
-    - /assets/images/artists/joe-scott/artwork-03.jpg
-    - /assets/images/artists/joe-scott/artwork-04.jpg
-    - /assets/images/artists/joe-scott/artwork-05.jpg
-  name:
-    en: Joe Scott
-    ja: ジョー・スコット
-  title:
-    en: Designer & Illustrator
-    ja: デザイナー & イラストレーター
-  design:
-    img: /assets/images/artists/joe-scott/design.jpg
-    name:
-      en: Twin Peaks badge
-      ja: Twin Peaks badge
-  quote:
-    en: |
-      Trips to Niseko during the summer have become something of a tradition, and I’m endlessly
-      inspired by the far-reaching greens of its landscapes contrasted against the wide blue skies.
-      Then there’s Yōtei. If I could only illustrate Yōtei for rest of my life, I’d be happy. And
-      even better when it’s for NAMBA.
-    ja: |
-      夏に​ニセコを​訪れる​ことは、​いつしか​私の​恒例行事に​なりました。​どこまでも​広がる​緑の​風景と、​大きな​青空との​コントラストから、​尽きる​ことのない​インスピレーションを​もらっています。​そして、​羊蹄山。​残りの​人生ずっと​羊蹄山だけを​描く​ことになっても、​私は​幸せです。​それが​NAMBAの​ためなら、​なおさらです。
-  bio:
-    en: |
-      <p>Joe Scott was born and raised in Birmingham, England, but found his artistic home in Sapporo.</p>
-
-      <p>A passionate sketcher since childhood, Joe rediscovered his creative side in his twenties through vector art. Influenced
-      by vintage travel posters and national park illustrations, his work explores the idea of art as a form of
-      discovery - creating imagined worlds or celebrating those just beyond reach.</p>
-
-      <p>After moving to Hokkaido straight out of university, Joe found endless inspiration in the landscapes outside his window.
-      Now based permanently in Sapporo, he collaborates with local businesses on branding and design while creating National
-      Park–style artwork celebrating Hokkaido’s mountains and landmarks.</p>
-
-      <p>Joe's latest collaboration with NAMBA is the label for the <a href="/beer/">Twin Peaks Bike Park Pale Ale</a>, brewed by Yotei Brewing.</p>
-    ja: |
-      <p>ジョー・スコットは、<wbr>イギリス・バーミンガム出身の<wbr>アーティストで、<wbr>現在は<wbr>札幌を<wbr>拠点に<wbr>活動しています。</p>
-
-      <p>幼少期から<wbr>絵を<wbr>描く<wbr>ことが<wbr>好きでしたが、<wbr>大学時代を<wbr>経て<wbr>20代の<wbr>頃に<wbr>ベクターアートと<wbr>出会い、<wbr>再び創作への<wbr>情熱を<wbr>取り戻しました。<wbr>トラベルポスターや<wbr>ナショナルパークの<wbr>イラストに<wbr>影響を<wbr>受け、<wbr>アートと<wbr>デザインを<wbr>通して<wbr>「世界を<wbr>探検する」<wbr>ことを<wbr>テーマに、<wbr>実在する<wbr>風景や<wbr>想像上の<wbr>世界を<wbr>描いています。</p>
-
-      <p>大学卒業後に<wbr>移り<wbr>住んだ<wbr>北海道の<wbr>自然は、<wbr>彼の<wbr>作品の<wbr>最大の<wbr>インスピレーション源です。<wbr>現在は<wbr>札幌を<wbr>拠点に、<wbr>地域企業との<wbr>ブランディングや<wbr>デザインの<wbr>仕事を<wbr>行いながら、<wbr>北海道の<wbr>山々や<wbr>名所を<wbr>題材に<wbr>した<wbr>ナショナルパーク風の<wbr>作品シリーズを<wbr>制作しています。</p>
-
-      <p>最新の<wbr>コラボレーションは、<wbr>ヨーテイブルーイングが<wbr>醸造する<wbr><a href="/ja/beer/">ツインピークスバイクパーク ペールエール</a>の<wbr>ラベルデザインです。</p>
 
 - slug: luke-sandalls
   img: /assets/images/artists/luke-sandalls/avatar.jpg
