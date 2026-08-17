@@ -36,7 +36,12 @@ budoux --lang ja -s $'​' -d "" "<paragraph>"
 - `-s $'​'` is the separator (zero-width space)
 - `-d ""` is the empty delimiter between sentences
 
-The output replaces the original paragraph in the JA post. Headings with JA prose get the same treatment. Markdown structure (lists, headings, bold) survives, only paragraph text is tokenised.
+The output replaces the original paragraph in the JA post. Markdown structure (lists, headings, bold) survives, only paragraph text is tokenised.
+
+Leave short section headings plain. They are set large and never wrap, so a break
+opportunity buys nothing, and BudouX will sometimes split a compound mid-word
+(`エントリー方法` → `エントリー方 / 法`), which reads as a typo if the line ever
+does wrap. Tokenise a heading only when it is a full phrase long enough to wrap.
 
 Example:
 

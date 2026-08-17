@@ -64,22 +64,34 @@ Delete the source file from `_triage/` after the pipeline finishes.
 
 ### 4. Draft EN copy
 
-Body shape (target 150-250 words):
+**The body must not repeat the sidebar.** The `event` layout already renders
+date, time, location, address, price, host, partners and itinerary from front
+matter into the Event Details panel. Restating them in a "What you need to know"
+list makes the page say everything twice, and the two copies drift apart when
+the partner updates a detail.
+
+Write only what front matter cannot carry, under headings specific to that
+content. Typical sections, named for what they actually contain:
 
 ```
 {NAMBA-perspective intro paragraph: why this event matters for the Niseko MTB
-community. Welcoming, community-focused, grounded in place. ~50-80 words.}
+community. Welcoming, community-focused, grounded in place. ~50-80 words.
+A geographic anchor ("about an hour from Niseko") belongs here, not in a bullet.}
 
-## What you need to know
+## {Race format}      — categories, classes, how the competition runs, awards
+## {Who can enter}    — age/ability requirements, bike and safety gear rules
+## {Signing up}       — entry method, what registration does NOT require
+## {If the weather turns} — cancellation policy and how it is announced
 
-- **Date:** {date range}
-- **Venue:** {location}, {short geographic anchor}
-- **Format:** {one-line summary}
-- **Who it's for:** {one-line audience cue}
-
-{Optional closing paragraph: NAMBA's connection to the event. The link out is
+{Closing: sponsors, then NAMBA's connection to the event. The link out is
 auto-rendered by the layout from the `link.url` frontmatter, so no in-body CTA needed.}
 ```
+
+Name headings for the specific content, not generic containers. "Who can enter"
+beats "Requirements"; "If the weather turns" beats "Other information". Drop any
+section the source has no content for rather than padding it.
+
+Target 150-250 words, excluding anything the sidebar already states.
 
 `description` (frontmatter): one sentence under 160 chars summarising the event for meta tags.
 
