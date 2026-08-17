@@ -5,9 +5,11 @@
 # Launch day: set `featured: true` and add `design:` on the dropping artist (one edit here
 # covers both languages). Lang-keyed fields follow the _data/nav.yml en/ja convention.
 # JA text is BudouX-tokenised (zero-width spaces / <wbr>) — do not retype by hand.
-# `quote:` is a per-artist launch quote (EN verbatim, artist's own punctuation; JA is
-# BudouX-tokenised like all web-bound JA text). Not rendered anywhere yet — kept for
-# possible web store / site use. Instagram launch copy is managed separately, not from here.
+# `quote:` is a per-artist launch quote. Keep whichever language the artist wrote in verbatim,
+# with their own punctuation, and treat the other language as our translation — for JA artists
+# that means JA is the source and EN is translated. JA is always BudouX-tokenised (zero-width
+# spaces) like all web-bound JA text. Not rendered anywhere yet — kept for possible web store /
+# site use. Instagram launch copy is managed separately, not from here.
 
 # Skeleton — awaiting Hironori's material (photos, artwork, bio, quote).
 # - slug: hironori-machida
@@ -244,6 +246,14 @@
 #     name:
 #       en: Riders on the Mountain
 #       ja: ライダーズ・オン・ザ・マウンテン
+#   quote:  # JA is the artist's own words; EN is our translation (reverse of the usual direction)
+#     en: |
+#       I have carved down Niseko's mountains countless times, on good snow and with the timing
+#       just right, but I have never ridden them in summer. That exhilarating, dynamic feeling of
+#       carving is surely the same either way, so I worked from what I know of the mountain in
+#       winter and brought that into this artwork.
+#     ja: |
+#       いい​雪の​いい​タイミングで​ニセコの​山を​滑る​経験は​幾度も​ありましたが、​夏山を​下る​経験は​まだ​ありません。​ただ​あの​爽快で​ダイナミックな​滑走感は​きっと​変わらないと​思い、​雪山での​イメージから​今回の​アートに​落とし込みました。
 #   bio:
 #     en: |
 #       <p>Yoshida Naohiro, better known as DKC, is a graphic designer and professional snowboarder. Born in 1971 and
