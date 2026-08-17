@@ -36,7 +36,6 @@
 #     ja: |
 
 - slug: joe-scott
-  featured: true
   img: /assets/images/artists/joe-scott/avatar.png
   header: /assets/images/artists/joe-scott/header.png
   instagram: joekkaido
@@ -137,69 +136,70 @@
 
       <p>2025年には​倶知安町の​アーティスト・イン・レジデンスに​選出され、​小川原脩記念美術館と​Camp & Goで​個展を​開催。​制作の​合間には、​ロードバイクや​スキー、​キャンプなど​家族と​屋外で​過ごす時間から、​次の​作品の​インスピレーションを​得ています。</p>
 
-# - slug: remi-fukamachi
-#   img: /assets/images/artists/remi-fukamachi/avatar.jpg
-#   header: /assets/images/artists/remi-fukamachi/header.jpg
-#   instagram: fukamachiremi
-#   links:
-#     - scheme: https
-#       domain: www.remifukamachi.com
-#   work:
-#     - src: /assets/images/artists/remi-fukamachi/artwork-01.jpg
-#       w: 1600
-#       h: 1067
-#     - src: /assets/images/artists/remi-fukamachi/artwork-02.jpg
-#       w: 1067
-#       h: 1600
-#     - src: /assets/images/artists/remi-fukamachi/artwork-03.jpg
-#       w: 1600
-#       h: 1067
-#     - src: /assets/images/artists/remi-fukamachi/artwork-04.jpg
-#       w: 1067
-#       h: 1600
-#     - src: /assets/images/artists/remi-fukamachi/artwork-05.jpg
-#       w: 1067
-#       h: 1600
-#   name:
-#     en: Remi Fukamachi
-#     ja: 深町レミ
-#   title:
-#     en: Photographer & Adventurer
-#     ja: フォトグラファー & 冒険家
-#   design:
-#     img: /assets/images/artists/remi-fukamachi/design.jpg  # image TBC — add on launch day
-#     name:
-#       en: Niseko in Motion
-#       ja: ニセコ・イン・モーション
-#   quote:
-#     en: |
-#       Niseko is best known for its winters and incredible snow, but there’s so much more to this
-#       place in summer. There’s something truly special about riding a mountain bike through the
-#       cool, green forests and feeling the energy of the mountains in a completely different way.
+- slug: remi-fukamachi
+  featured: true
+  img: /assets/images/artists/remi-fukamachi/avatar.jpg
+  header: /assets/images/artists/remi-fukamachi/header.jpg
+  instagram: fukamachiremi
+  links:
+    - scheme: https
+      domain: www.remifukamachi.com
+  work:
+    - src: /assets/images/artists/remi-fukamachi/artwork-01.jpg
+      w: 1600
+      h: 1067
+    - src: /assets/images/artists/remi-fukamachi/artwork-02.jpg
+      w: 1067
+      h: 1600
+    - src: /assets/images/artists/remi-fukamachi/artwork-03.jpg
+      w: 1600
+      h: 1067
+    - src: /assets/images/artists/remi-fukamachi/artwork-04.jpg
+      w: 1067
+      h: 1600
+    - src: /assets/images/artists/remi-fukamachi/artwork-05.jpg
+      w: 1067
+      h: 1600
+  name:
+    en: Remi Fukamachi
+    ja: 深町レミ
+  title:
+    en: Photographer & Adventurer
+    ja: フォトグラファー & 冒険家
+  design:
+    img: /assets/images/artists/remi-fukamachi/design.jpg
+    name:
+      en: Niseko in Motion
+      ja: ニセコ・イン・モーション
+  quote:
+    en: |
+      Niseko is best known for its winters and incredible snow, but there’s so much more to this
+      place in summer. There’s something truly special about riding a mountain bike through the
+      cool, green forests and feeling the energy of the mountains in a completely different way.
 
-#       Through ‘Niseko in Motion,’ I hope more people can discover just how beautiful and exciting
-#       summer in Niseko can be.
-#     ja: |
-#       ニセコと​いえば​冬と​素晴らしい​雪で​知られていますが、​夏の​この​場所には​それ以上の​魅力が​あります。​涼しく​緑豊かな​森の​中を​マウンテンバイクで​走り、​まったく​違うかたちで​山の​エネルギーを​感じられるのは、​本当に​特別な​体験です。
+      Through ‘Niseko in Motion,’ I hope more people can discover just how beautiful and exciting
+      summer in Niseko can be.
+    ja: |
+      ニセコと​いえば​冬と​素晴らしい​雪で​知られていますが、​夏の​この​場所には​それ以上の​魅力が​あります。​涼しく​緑豊かな​森の​中を​マウンテンバイクで​走り、​まったく​違うかたちで​山の​エネルギーを​感じられるのは、​本当に​特別な​体験です。
 
-#       「ニセコ・イン・モーション」を​通じて、​ニセコの​夏が​どれほど​美しく、​エキサイティングな​ものかを、より​多くの​人に​発見して​もらえたら​嬉しいです。
-#   bio:
-#     en: |
-#       <p>Remi Fukamachi is a photographer and adventurer whose work bridges cultures and landscapes.</p>
+      「ニセコ・イン・モーション」を​通じて、​ニセコの​夏が​どれほど​美しく、​エキサイティングな​ものかを、より​多くの​人に​発見して​もらえたら​嬉しいです。
+  bio:
+    en: |
+      <p>Remi Fukamachi is a photographer and adventurer whose work bridges cultures and landscapes.</p>
 
-#       <p>Born in Tokyo to a Chinese father and Japanese mother, Remi lived with Indigenous communities in Australia and
-#       filmed documentaries about their way of life before turning professional in 2017. After a spell in Austin, Texas,
-#       she settled in Niseko, drawn by snowboarding and the outdoor life.</p>
+      <p>Born in Tokyo to a Chinese father and Japanese mother, Remi lived with Indigenous communities in Australia and
+      filmed documentaries about their way of life before turning professional in 2017. After a spell in Austin, Texas,
+      she settled in Niseko, drawn by snowboarding and the outdoor life.</p>
 
-#       <p>Her photography, shot for luxury hotels and resorts as well as riders in the backcountry, captures the raw
-#       energy of nature and the spirit of adventure in Japan's mountains. Off camera she practises survival training and
-#       hunting, reflecting her connection to nature and self-reliance.</p>
-#     ja: |
-#       <p>深町レミは、​文化と​風景を​つなぐ​フォトグラファー・冒険家です。</p>
+      <p>Her photography, shot for luxury hotels and resorts as well as riders in the backcountry, captures the raw
+      energy of nature and the spirit of adventure in Japan's mountains. Off camera she practises survival training and
+      hunting, reflecting her connection to nature and self-reliance.</p>
+    ja: |
+      <p>深町レミは、​文化と​風景を​つなぐ​フォトグラファー・冒険家です。</p>
 
-#       <p>東京で​中国人の​父と​日本人の​母のもとに​生まれ、​オーストラリアでは​先住民の​コミュニティとともに​暮らし、​その​生活を​記録する​ドキュメンタリーの​撮影に​携わりました。​2017年から​プロの​フォトグラファーと​して​活動を​開始。​テキサス州オースティンでの​生活を​経て、​スノーボードと​アウトドアライフに​惹かれてニセコに​移住しました。</p>
+      <p>東京で​中国人の​父と​日本人の​母のもとに​生まれ、​オーストラリアでは​先住民の​コミュニティとともに​暮らし、​その​生活を​記録する​ドキュメンタリーの​撮影に​携わりました。​2017年から​プロの​フォトグラファーと​して​活動を​開始。​テキサス州オースティンでの​生活を​経て、​スノーボードと​アウトドアライフに​惹かれてニセコに​移住しました。</p>
 
-#       <p>ラグジュアリーホテルやリゾートの​撮影から​山での​ライディングまで、​自然の​荒々しい​エネルギーと​冒険の​精神を​捉え続けています。​カメラを​置けば、​サバイバル訓練や​狩猟にも​取り組むなど、​自然との​深いつながりと​自立心を​大切に​しています。</p>
+      <p>ラグジュアリーホテルやリゾートの​撮影から​山での​ライディングまで、​自然の​荒々しい​エネルギーと​冒険の​精神を​捉え続けています。​カメラを​置けば、​サバイバル訓練や​狩猟にも​取り組むなど、​自然との​深いつながりと​自立心を​大切に​しています。</p>
 
 # - slug: yoshida-naohiro
 #   img: /assets/images/artists/yoshida-naohiro/avatar.jpg
