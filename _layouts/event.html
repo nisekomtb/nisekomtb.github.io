@@ -550,11 +550,18 @@ layout: base
         </div>
         {% endif %}
 
-        {% if page.partners %}
+        {%- comment -%}
+          Only partners with a logo get a tile. Entries without `img` are
+          metadata-only (they still feed Event.sponsor in the JSON-LD below),
+          which is how external events credit an organiser's sponsors without
+          implying they are NAMBA partners.
+        {%- endcomment -%}
+        {% assign logo_partners = page.partners | where_exp: "partner", "partner.img" %}
+        {% if logo_partners.size > 0 %}
         <div class="detail-item">
           <h4><span class="fa-solid fa-handshake"></span> {% if page.lang == "ja" %}イベントパートナー{% else %}Event Partners{% endif %}</h4>
           <div class="partners-imgs">
-            {% for partner in page.partners %}
+            {% for partner in logo_partners %}
               <a href="{{- partner.url -}}" target="_blank" rel="sponsored noopener noreferrer">
                 {% capture webp_src %}/assets/images/company{{- partner.img -}}{% endcapture %}<picture><source type="image/webp" srcset="{{ webp_src | replace: '.png', '.webp' }}"><img src="/assets/images/company{{- partner.img -}}" alt="{{ partner.name }}{% if page.lang == 'ja' %}、イベントパートナー{% else %}, event partner{% endif %}" loading="lazy" width="56" height="56"></picture>
               </a>
@@ -664,6 +671,17 @@ layout: base
     "https://namba.ngo{{ page.img | default: page.masthead.img }}"
   ],
   "description": "{{ page.description }}",
+  {% if page.partners %}
+  "sponsor": [
+    {%- for partner in page.partners %}
+    {
+      "@type": "Organization",
+      "name": {{ partner.name | strip_html | jsonify }}{% if partner.url %},
+      "url": {{ partner.url | jsonify }}{% endif %}
+    }{% unless forloop.last %},{% endunless %}
+    {%- endfor %}
+  ],
+  {% endif %}
   "organizer": {
     "@id": "https://namba.ngo/#organization",
     "@type": "Organization",
