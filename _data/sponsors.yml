@@ -1,5 +1,5 @@
 special:
-  width: 14
+  width: 13
   sponsors:
     - name: allegra
       displayName: Allegra
@@ -32,14 +32,6 @@ special:
       ja:
         url: https://www.mnkniseko.com/ja
         label: トレイル スポンサー
-    - name: nisade
-      displayName: NISADE
-      image: /assets/images/company/nisade.png
-      url: https://nisade.com
-      label: Headline sponsor
-      ja:
-        url: https://nisade.com/ja/
-        label: ヘッドライン スポンサー
     - name: niseko realty
       displayName: Niseko Realty
       image: /assets/images/company/niseko-realty.png

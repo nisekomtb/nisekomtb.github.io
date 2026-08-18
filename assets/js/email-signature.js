@@ -107,7 +107,7 @@
           '</td>' +
           '<td valign="middle">' +
             '<a href="https://namba.ngo" style="text-decoration:none; border:0;">' +
-              '<img src="' + SITE + '/assets/images/logos/email-logo.png" alt="NAMBA, Niseko Area Mountain Bike Association, supported by NISADE" width="150" height="110" style="display:block; width:150px; height:110px; border:0;">' +
+              '<img src="' + SITE + '/assets/images/logos/email-logo.png" alt="NAMBA, Niseko Area Mountain Bike Association" width="150" height="87" style="display:block; width:150px; height:87px; border:0;">' +
             '</a>' +
           '</td>' +
         '</tr>' +
