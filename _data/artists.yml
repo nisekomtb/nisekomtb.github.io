@@ -288,17 +288,17 @@
 #       w: 495
 #       h: 1500
 #     - src: /assets/images/artists/yoshida-naohiro/artwork-05.jpg
-#       w: 341
-#       h: 1500
-#     - src: /assets/images/artists/yoshida-naohiro/artwork-06.jpg
-#       w: 310
-#       h: 1600
-#     - src: /assets/images/artists/yoshida-naohiro/artwork-07.jpg
 #       w: 1024
 #       h: 683
-#     - src: /assets/images/artists/yoshida-naohiro/artwork-08.jpg
+#     - src: /assets/images/artists/yoshida-naohiro/artwork-06.jpg
 #       w: 1160
 #       h: 1160
+#     - src: /assets/images/artists/yoshida-naohiro/artwork-07.jpg
+#       w: 362
+#       h: 1600
+#     - src: /assets/images/artists/yoshida-naohiro/artwork-08.jpg
+#       w: 1125
+#       h: 1500
 #   name:
 #     en: Yoshida Naohiro
 #     ja: 吉田ナオヒロ
@@ -306,7 +306,7 @@
 #     en: Designer & Pro Snowboarder
 #     ja: デザイナー & プロスノーボーダー
 #   design:
-#     img: /assets/images/artists/yoshida-naohiro/design.jpg  # image TBC — add on launch day
+#     img: /assets/images/artists/yoshida-naohiro/design.jpg  # product shot, Tanuki Productions
 #     name:
 #       en: Riders on the Mountain
 #       ja: ライダーズ・オン・ザ・マウンテン
