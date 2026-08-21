@@ -12,94 +12,93 @@
 # site use. Instagram launch copy is managed separately, not from here.
 
 # Naturalbicycle is the in-house brand of North Graphic (Sapporo); Sumi is its designer.
-# Ready to launch: uncomment the entry, add `featured: true`, and drop that flag from whoever
-# is currently featured. Copy, images and the design product shot are all in place; the Ecwid
-# products (MTB EZOBAND T-Shirt / Kids T-Shirt) are written up but still disabled.
-# - slug: sumi-akemi
-#   img: /assets/images/artists/sumi-akemi/avatar.jpg
-#   header: /assets/images/artists/sumi-akemi/header.jpg
-#   instagram:
-#     - smear_kemmy
-#     - naturalbicycle011
-#   links:
-#     - scheme: https
-#       domain: www.naturalbicycle.com
-#   work:
-#     # The drop artwork itself, rendered from the A3 she supplied.
-#     - src: /assets/images/artists/sumi-akemi/ezoband.jpg
-#       w: 1600
-#       h: 2263
-#     - src: /assets/images/artists/sumi-akemi/artwork-01.jpg
-#       w: 1400
-#       h: 1400
-#     - src: /assets/images/artists/sumi-akemi/artwork-02.jpg
-#       w: 840
-#       h: 1120
-#     - src: /assets/images/artists/sumi-akemi/artwork-03.jpg
-#       w: 842
-#       h: 1191
-#     - src: /assets/images/artists/sumi-akemi/artwork-04.jpg
-#       w: 1140
-#       h: 1200
-#     - src: /assets/images/artists/sumi-akemi/artwork-05.jpg
-#       w: 1136
-#       h: 1137
-#   name:
-#     en: Sumi Akemi
-#     ja: 須見明美
-#   title:
-#     en: Fashion Designer & Artist
-#     ja: ファッションデザイナー & アーティスト
-#   design:
-#     img: /assets/images/artists/sumi-akemi/design.jpg  # product shot, Tanuki Productions
-#     name:
-#       en: MTB EZOBAND
-#       ja: MTB EZOBAND
-#   quote:  # JA is the artist's own words; EN is our translation (reverse of the usual direction)
-#     en: |
-#       Born and raised in Hokkaido, and 23 years in as a brand.
-#       Our main characters are the animals that stand for Hokkaido, the brown bear, Ezo sika deer,
-#       red fox, Ezo squirrel and Blakiston's fish owl, cast as the band of EZO in homage to the
-#       Bremen Town Musicians, and we send them out into fashion, art, music and the outdoors.
-#       Sapporo has small pockets of nature close at hand, Mount Moiwa and the Toyohira River, and no
-#       extreme climbs or descents, and I have kept creating there with the wind on my bike.
-#       To mark being connected with the mountain bikers of Niseko, wild country that stands up
-#       anywhere in the world, an image came to me of the EZOBAND running light and quick down the
-#       mountain, and I put it into this design.
-#     ja: |
-#       北海道で​生まれ育ち、​ブランドと​して​23年が​経過。
-#       北海道を​代表する​動物​「ヒグマ・エゾシカ・キタキツネ・エゾリス・シマフクロウ」を、​童話ブレーメンの​音楽隊を​オマージュした​北海道(EZO)の​音楽隊​（BAND）を​メインキャラクターとし、​ファッションや​アートの​世界、​音楽界や​アウトドア界など​様々な​ジャンルで​発信しています。
-#       藻岩山や​豊平川など​小さな​自然が​身近に​あり、​極端な​アップダウンの​無い​札幌の​街で​自転車で​風を​感じながら​創作を​続けてきました。
-#       世界に​通用する​大自然・​ニセコの​マウンテンバイカーの​皆さんと​繋がれた​記念に、​軽快に​山を​走る​EZOBANDを​イメージが​湧いて​デザインに​落とし込みました。
-#   bio:
-#     en: |
-#       <p>Sumi Akemi is a fashion designer and artist at North Graphic in Sapporo, and the designer
-#       behind Naturalbicycle, the street and outdoor brand she helped start in 2003.</p>
+# Live from 21 Aug 2026. Ecwid products: MTB EZOBAND T-Shirt / MTB EZOBAND Kids T-Shirt.
+- slug: sumi-akemi
+  featured: true
+  img: /assets/images/artists/sumi-akemi/avatar.jpg
+  header: /assets/images/artists/sumi-akemi/header.jpg
+  instagram:
+    - smear_kemmy
+    - naturalbicycle011
+  links:
+    - scheme: https
+      domain: www.naturalbicycle.com
+  work:
+    # The drop artwork itself, rendered from the A3 she supplied.
+    - src: /assets/images/artists/sumi-akemi/ezoband.jpg
+      w: 1600
+      h: 2263
+    - src: /assets/images/artists/sumi-akemi/artwork-01.jpg
+      w: 1400
+      h: 1400
+    - src: /assets/images/artists/sumi-akemi/artwork-02.jpg
+      w: 840
+      h: 1120
+    - src: /assets/images/artists/sumi-akemi/artwork-03.jpg
+      w: 842
+      h: 1191
+    - src: /assets/images/artists/sumi-akemi/artwork-04.jpg
+      w: 1140
+      h: 1200
+    - src: /assets/images/artists/sumi-akemi/artwork-05.jpg
+      w: 1136
+      h: 1137
+  name:
+    en: Sumi Akemi
+    ja: 須見明美
+  title:
+    en: Fashion Designer & Artist
+    ja: ファッションデザイナー & アーティスト
+  design:
+    img: /assets/images/artists/sumi-akemi/design.jpg  # product shot, Tanuki Productions
+    name:
+      en: MTB EZOBAND
+      ja: MTB EZOBAND
+  quote:  # JA is the artist's own words; EN is our translation (reverse of the usual direction)
+    en: |
+      Born and raised in Hokkaido, and 23 years in as a brand.
+      Our main characters are the animals that stand for Hokkaido, the brown bear, Ezo sika deer,
+      red fox, Ezo squirrel and Blakiston's fish owl, cast as the band of EZO in homage to the
+      Bremen Town Musicians, and we send them out into fashion, art, music and the outdoors.
+      Sapporo has small pockets of nature close at hand, Mount Moiwa and the Toyohira River, and no
+      extreme climbs or descents, and I have kept creating there with the wind on my bike.
+      To mark being connected with the mountain bikers of Niseko, wild country that stands up
+      anywhere in the world, an image came to me of the EZOBAND running light and quick down the
+      mountain, and I put it into this design.
+    ja: |
+      北海道で​生まれ育ち、​ブランドと​して​23年が​経過。
+      北海道を​代表する​動物​「ヒグマ・エゾシカ・キタキツネ・エゾリス・シマフクロウ」を、​童話ブレーメンの​音楽隊を​オマージュした​北海道(EZO)の​音楽隊​（BAND）を​メインキャラクターとし、​ファッションや​アートの​世界、​音楽界や​アウトドア界など​様々な​ジャンルで​発信しています。
+      藻岩山や​豊平川など​小さな​自然が​身近に​あり、​極端な​アップダウンの​無い​札幌の​街で​自転車で​風を​感じながら​創作を​続けてきました。
+      世界に​通用する​大自然・​ニセコの​マウンテンバイカーの​皆さんと​繋がれた​記念に、​軽快に​山を​走る​EZOBANDを​イメージが​湧いて​デザインに​落とし込みました。
+  bio:
+    en: |
+      <p>Sumi Akemi is a fashion designer and artist at North Graphic in Sapporo, and the designer
+      behind Naturalbicycle, the street and outdoor brand she helped start in 2003.</p>
 
-#       <p>She got into graffiti art while studying at Sapporo Designer Gakuin, and after graduating
-#       in 1999 she and a few friends designed t-shirts and sold them online and at events. That
-#       turned into Naturalbicycle, named for the natural speed of a bicycle and the wider view that
-#       speed opens up. Sumi plans and designs the range, from prints to the shape of a hat, and has
-#       worked on collaborations with the outdoor magazine GO OUT and Columbia.</p>
+      <p>She got into graffiti art while studying at Sapporo Designer Gakuin, and after graduating
+      in 1999 she and a few friends designed t-shirts and sold them online and at events. That
+      turned into Naturalbicycle, named for the natural speed of a bicycle and the wider view that
+      speed opens up. Sumi plans and designs the range, from prints to the shape of a hat, and has
+      worked on collaborations with the outdoor magazine GO OUT and Columbia.</p>
 
-#       <p>At the centre of the brand is the EZOBAND: a brown bear, an Ezo sika deer, a red fox, an
-#       Ezo squirrel and a Blakiston's fish owl, stacked up as Hokkaido's answer to the Bremen Town
-#       Musicians. Twenty-three years in, the band turns up across fashion, art, music and the
-#       outdoors.</p>
+      <p>At the centre of the brand is the EZOBAND: a brown bear, an Ezo sika deer, a red fox, an
+      Ezo squirrel and a Blakiston's fish owl, stacked up as Hokkaido's answer to the Bremen Town
+      Musicians. Twenty-three years in, the band turns up across fashion, art, music and the
+      outdoors.</p>
 
-#       <p>Sumi also paints murals for restaurants and bars around Sapporo and live-paints at
-#       outdoor festivals. She has always worked close to home, with Mount Moiwa and the Toyohira
-#       River nearby and a city flat enough to ride across while an idea takes shape. Her design for
-#       NAMBA sends the band out of the city and down a Niseko mountain, the kind of descent riders
-#       make at <a href="/twin-peaks/">Twin Peaks</a>.</p>
-#     ja: |
-#       <p>須見明美は、​札幌の​株式会社ノースグラフィックに​所属する​ファッションデザイナー兼アーティスト。​2003年の​立ち上げから​携わる​ストリート・アウトドアブランド​「Naturalbicycle」の​デザインを​担当しています。</p>
+      <p>Sumi also paints murals for restaurants and bars around Sapporo and live-paints at
+      outdoor festivals. She has always worked close to home, with Mount Moiwa and the Toyohira
+      River nearby and a city flat enough to ride across while an idea takes shape. Her design for
+      NAMBA sends the band out of the city and down a Niseko mountain, the kind of descent riders
+      make at <a href="/twin-peaks/">Twin Peaks</a>.</p>
+    ja: |
+      <p>須見明美は、​札幌の​株式会社ノースグラフィックに​所属する​ファッションデザイナー兼アーティスト。​2003年の​立ち上げから​携わる​ストリート・アウトドアブランド​「Naturalbicycle」の​デザインを​担当しています。</p>
 
-#       <p>札幌デザイナー学院では​グラフィティアートに​没頭し、​1999年の​卒業後は​仲間と​オリジナルの​Tシャツを​デザインして、​ネットや​イベントで​販売していました。​それが​「Naturalbicycle」へと​つながります。​ブランド名には、​自転車のような​自然な​スピード感と、​そこから​得られる​豊かな​視界・発想が​込められています。​プリントから​帽子の​型まで​商品の​企画デザインを​担当し、​アウトドア雑誌​「GO OUT」や​アウトドアブランド​「Columbia」との​コラボレーションにも​携わってきました。</p>
+      <p>札幌デザイナー学院では​グラフィティアートに​没頭し、​1999年の​卒業後は​仲間と​オリジナルの​Tシャツを​デザインして、​ネットや​イベントで​販売していました。​それが​「Naturalbicycle」へと​つながります。​ブランド名には、​自転車のような​自然な​スピード感と、​そこから​得られる​豊かな​視界・発想が​込められています。​プリントから​帽子の​型まで​商品の​企画デザインを​担当し、​アウトドア雑誌​「GO OUT」や​アウトドアブランド​「Columbia」との​コラボレーションにも​携わってきました。</p>
 
-#       <p>ブランドの​主役は​「EZOBAND」。​ヒグマ、​エゾシカ、​キタキツネ、​エゾリス、​シマフクロウが​積み重なる、​童話​「ブレーメンの​音楽隊」を​オマージュした​北海道​（EZO）の​音楽隊です。​ブランドと​して​23年、​その​メンバーは​ファッションや​アート、​音楽や​アウトドアなど、​さまざまな​ジャンルに​登場してきました。</p>
+      <p>ブランドの​主役は​「EZOBAND」。​ヒグマ、​エゾシカ、​キタキツネ、​エゾリス、​シマフクロウが​積み重なる、​童話​「ブレーメンの​音楽隊」を​オマージュした​北海道​（EZO）の​音楽隊です。​ブランドと​して​23年、​その​メンバーは​ファッションや​アート、​音楽や​アウトドアなど、​さまざまな​ジャンルに​登場してきました。</p>
 
-#       <p>ブランドの​仕事の​ほかに、​飲食店の​壁画や​イベントでの​ライブペインティングも​手がけています。​藻岩山や​豊平川など​小さな​自然が​身近に​あり、​極端な​アップダウンの​ない​札幌の​街で、​自転車で​風を​感じながら​創作を​続けてきました。​今回の​NAMBAの​ための​デザインでは、​ライダーが​<a href="/ja/twin-peaks/">ツインピークス</a>で​描くように、​EZOBANDが​街を​出て、​ニセコの​山を​軽快に​駆け下ります。</p>
+      <p>ブランドの​仕事の​ほかに、​飲食店の​壁画や​イベントでの​ライブペインティングも​手がけています。​藻岩山や​豊平川など​小さな​自然が​身近に​あり、​極端な​アップダウンの​ない​札幌の​街で、​自転車で​風を​感じながら​創作を​続けてきました。​今回の​NAMBAの​ための​デザインでは、​ライダーが​<a href="/ja/twin-peaks/">ツインピークス</a>で​描くように、​EZOBANDが​街を​出て、​ニセコの​山を​軽快に​駆け下ります。</p>
 
 - slug: joe-scott
   img: /assets/images/artists/joe-scott/avatar.png
@@ -203,7 +202,6 @@
       <p>2025年には​倶知安町の​アーティスト・イン・レジデンスに​選出され、​小川原脩記念美術館と​Camp & Goで​個展を​開催。​制作の​合間には、​ロードバイクや​スキー、​キャンプなど​家族と​屋外で​過ごす時間から、​次の​作品の​インスピレーションを​得ています。</p>
 
 - slug: remi-fukamachi
-  featured: true
   img: /assets/images/artists/remi-fukamachi/avatar.jpg
   header: /assets/images/artists/remi-fukamachi/header.jpg
   instagram: fukamachiremi
