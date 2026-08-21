@@ -56,24 +56,21 @@ html[lang="ja"] .home-section-title { letter-spacing: normal; }
    Sized to crop-fill the hero at any viewport aspect ratio. Fades in
    once the iframe loads so the static poster paints first (LCP win).
 
-   The reel is a 2.35:1 edit letterboxed inside a 16:9 raster: 2560x1440
-   with 176px of baked-in black at top and bottom, leaving 2560x1088 of
-   picture. So the box has to stay exactly 16:9, or the player letterboxes
-   a second time, while being oversized by 1440/1088 = 1.3235 so those
-   baked-in bars land outside the hero. 1.01 is overscan, enough to
-   swallow the part-blended pixel row at each bar edge.
-     1.3235 * 1.01              = 1.3368  -> 133.68% of the hero height
-     1.3368 * 16/9              = 2.3765  -> matching width
-   Each max() picks up whichever axis is short; only one is ever active,
-   so the box lands on 16:9 either way. The width's second term needs the
-   hero height as a length, hence --hero-height: a plain vh here would go
-   wrong wherever the hero isn't 100vh (mobile, and short viewports). */
+   The reel is a full-frame 16:9 raster (2560x1440, no letterbox), so the
+   box just has to cover the hero while staying exactly 16:9: any other
+   ratio and the player pads the difference with its own black bars. Each
+   max() picks up whichever axis is short, and only one is ever active.
+   The width's second term needs the hero height as a length, hence
+   --hero-height. A plain vh there goes wrong wherever the hero isn't
+   100vh, which is every viewport under the 767px breakpoint (85vh) and
+   anything shorter than the min-height, and the visible result is the
+   bars this is meant to avoid. */
 .home-hero-video {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: max(100%, calc(var(--hero-height) * 2.3765)); /* crop sides on tall viewports */
-  height: max(133.68%, 56.25vw);                       /* crop top/bottom on wide viewports */
+  width: max(100%, calc(var(--hero-height) * 1.7778)); /* crop sides on tall viewports */
+  height: max(100%, 56.25vw);                          /* crop top/bottom on wide viewports */
   /* Stays at opacity 0 until the player confirms itself (see home.js), so a
      blocked embed never paints its blank document over the poster. */
   transform: translate(-50%, -50%);
