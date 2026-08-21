@@ -141,8 +141,8 @@
       gets discovered fast enough without a separate preload.
     {%- endcomment -%}
     {% if page.path == "index.html" or page.path == "ja/index.html" %}
-      <link rel="preload" as="image" href="/assets/images/home/hero-video-poster.jpg"/>
-      <link href="/assets/css/home.css?v=2" rel="stylesheet" type="text/css"/>
+      <link rel="preload" as="image" href="/assets/images/home/hero-video-poster-2026-08.jpg"/>
+      <link href="/assets/css/home.css?v=3" rel="stylesheet" type="text/css"/>
     {% endif %}
     {%- comment -%}
       Story pages only. Page-scoped like home.css above, so the ~7KB never
@@ -163,7 +163,7 @@
     <script src="/assets/js/script.js?v=1" type="text/javascript" defer></script>
     <script src="/assets/js/acm/script.js?v=1" type="text/javascript" defer></script>
     {% if page.path == "index.html" or page.path == "ja/index.html" %}
-      <script src="/assets/js/home.js?v=2" type="text/javascript" defer></script>
+      <script src="/assets/js/home.js?v=3" type="text/javascript" defer></script>
     {% endif %}
     <script type="text/javascript">
       window.addEventListener('load', function () {
@@ -323,7 +323,7 @@
         "@type": "VideoObject",
         "name": "{% if page.lang == 'ja' %}NAMBA 2026年リール{% else %}NAMBA 2026 reel{% endif %}",
         "description": "{% if page.lang == 'ja' %}北海道ニセコのNAMBAマウンテンバイクトレイルネットワークのハイライトリール。{% else %}Highlight reel of NAMBA's mountain bike trail network in Niseko, Hokkaido.{% endif %}",
-        "thumbnailUrl": "https://namba.ngo/assets/images/home/hero-video-poster.jpg",
+        "thumbnailUrl": "https://namba.ngo/assets/images/home/hero-video-poster-2026-08.jpg",
         "embedUrl": "https://player.vimeo.com/video/1195232610",
         "uploadDate": "2026-05-25T00:00:00+09:00",
         "duration": "PT1M",

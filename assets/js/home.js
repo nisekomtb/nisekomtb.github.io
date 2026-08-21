@@ -28,13 +28,55 @@
     initCountUps();
   }
 
+  // Reveal the hero video only once the Vimeo player itself confirms it is
+  // alive. The iframe's own load event is no proof: it fires for a blocked or
+  // errored embed too, which used to fade an opaque blank document over the
+  // poster and leave anyone with Vimeo blocked looking at a flat grey hero.
+  // The player posts {"event":"ready"} from its own origin as soon as it
+  // mounts, so that is the signal. No player, no reveal: the poster stays,
+  // which is the right thing to look at anyway.
   function initHeroVideo() {
     var hero = document.querySelector('.home-hero');
     var iframe = hero && hero.querySelector('.home-hero-video');
     if (!hero || !iframe) return;
     if (prefersReducedMotion) return;
-    iframe.addEventListener('load', function () {
+
+    var PLAYER_ORIGIN = 'https://player.vimeo.com';
+    var GRACE_MS = 6000;
+    var revealed = false;
+    var timer = null;
+
+    function reveal() {
+      if (revealed) return;
+      revealed = true;
+      if (timer) { clearTimeout(timer); }
+      window.removeEventListener('message', onMessage);
+      hero.classList.remove('video-failed');
       hero.classList.add('video-ready');
+    }
+
+    function onMessage(e) {
+      if (e.origin !== PLAYER_ORIGIN) return;
+      if (e.source !== iframe.contentWindow) return;
+      var data = e.data;
+      if (typeof data === 'string') {
+        try { data = JSON.parse(data); } catch (err) { return; }
+      }
+      if (data && data.event === 'ready') { reveal(); }
+    }
+
+    window.addEventListener('message', onMessage);
+
+    // Arm the watchdog once the iframe has loaded something, whatever that
+    // something is: a blocked embed still fires load. All it does is retire
+    // the loading cue so it can't pulse forever over a video that is never
+    // coming. The message listener stays live, so a player that is merely
+    // slow rather than blocked still gets to reveal itself afterwards.
+    iframe.addEventListener('load', function () {
+      if (revealed || timer) return;
+      timer = setTimeout(function () {
+        hero.classList.add('video-failed');
+      }, GRACE_MS);
     }, { once: true });
   }
 

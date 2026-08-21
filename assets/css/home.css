@@ -29,10 +29,13 @@ html[lang="ja"] .home-section-title { letter-spacing: normal; }
 }
 
 .home-hero {
+  /* Single source of truth for the hero height: the video crop math below
+     needs it as a length, and CSS can't read one axis from the other. Keep
+     --hero-height and height in step, here and in every breakpoint. */
+  --hero-height: max(100vh, 540px);
   position: relative;
   width: 100%;
-  height: 100vh;
-  min-height: 540px;
+  height: var(--hero-height);
   overflow: hidden;
   color: var(--color-text-heading);
 }
@@ -51,15 +54,28 @@ html[lang="ja"] .home-section-title { letter-spacing: normal; }
 }
 /* Vimeo background-mode iframe layered over the still poster.
    Sized to crop-fill the hero at any viewport aspect ratio. Fades in
-   once the iframe loads so the static poster paints first (LCP win). */
+   once the iframe loads so the static poster paints first (LCP win).
+
+   The reel is a 2.35:1 edit letterboxed inside a 16:9 raster: 2560x1440
+   with 176px of baked-in black at top and bottom, leaving 2560x1088 of
+   picture. So the box has to stay exactly 16:9, or the player letterboxes
+   a second time, while being oversized by 1440/1088 = 1.3235 so those
+   baked-in bars land outside the hero. 1.01 is overscan, enough to
+   swallow the part-blended pixel row at each bar edge.
+     1.3235 * 1.01              = 1.3368  -> 133.68% of the hero height
+     1.3368 * 16/9              = 2.3765  -> matching width
+   Each max() picks up whichever axis is short; only one is ever active,
+   so the box lands on 16:9 either way. The width's second term needs the
+   hero height as a length, hence --hero-height: a plain vh here would go
+   wrong wherever the hero isn't 100vh (mobile, and short viewports). */
 .home-hero-video {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 100%;
-  height: 100%;
-  min-width: 177.78vh;   /* 16:9 of viewport height — crop sides on tall viewports */
-  min-height: 56.25vw;   /* 9:16 of viewport width — crop top/bottom on wide viewports */
+  width: max(100%, calc(var(--hero-height) * 2.3765)); /* crop sides on tall viewports */
+  height: max(133.68%, 56.25vw);                       /* crop top/bottom on wide viewports */
+  /* Stays at opacity 0 until the player confirms itself (see home.js), so a
+     blocked embed never paints its blank document over the poster. */
   transform: translate(-50%, -50%);
   border: 0;
   pointer-events: none;
@@ -68,8 +84,10 @@ html[lang="ja"] .home-section-title { letter-spacing: normal; }
 }
 .home-hero.video-ready .home-hero-video { opacity: 1; }
 /* Subtle loading cue while the deferred Vimeo iframe is still mounting.
-   Sits bottom-right of the hero; fades out once .video-ready is set, and
-   is suppressed entirely under prefers-reduced-motion (no video then). */
+   Sits bottom-right of the hero; fades out once .video-ready is set, or
+   .video-failed if the player never announced itself (blocked embed, dead
+   network), so it can't pulse forever over a video that isn't coming.
+   Suppressed entirely under prefers-reduced-motion (no video then). */
 .home-hero-loader {
   position: absolute;
   z-index: 1;
@@ -104,7 +122,8 @@ html[lang="ja"] .home-section-title { letter-spacing: normal; }
   animation: home-hero-loader-pulse 1.6s ease-in-out infinite;
 }
 html[lang="ja"] .home-hero-loader-label { letter-spacing: 0.5px; }
-.home-hero.video-ready .home-hero-loader { opacity: 0; }
+.home-hero.video-ready .home-hero-loader,
+.home-hero.video-failed .home-hero-loader { opacity: 0; }
 @keyframes home-hero-loader-pulse {
   0%, 100% { transform: scale(1);    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.55); }
   50%      { transform: scale(0.85); box-shadow: 0 0 0 6px rgba(255, 255, 255, 0); }
@@ -213,7 +232,8 @@ html[lang="ja"] .home-hero-title { letter-spacing: normal; }
 }
 
 @media (max-width: 767px) {
-  .home-hero { height: 85vh; min-height: 480px; }
+  /* --hero-height must track height: the video crop math reads it. */
+  .home-hero { --hero-height: max(85vh, 480px); height: var(--hero-height); }
 }
 
 /* ── Section 02: Mission intro + pull quote ───────────────────────── */
