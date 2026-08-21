@@ -58,7 +58,55 @@ EN+JA together with a translator and paste through the admin UI under
 
 If you'd rather script it, the `descriptionTranslated`, `seoTitleTranslated`,
 `seoDescriptionTranslated`, `subtitleTranslated` fields all take a
-`{"en": "...", "ja": "..."}` object.
+`{"en": "...", "ja": "..."}` object, and `apply-fields` will PUT them:
+
+```bash
+python3 _scripts/ecwid-helpers.py apply-fields /tmp/ecwid-fields.json
+```
+
+Each key is a product id; each value is whatever the product API accepts on
+PUT, plus an optional `_name` used only for log readability. Scripting is the
+better option for a whole drop, because the description HTML (gold shipping
+line, quote block, size-guide table) is long and easy to mangle by hand.
+
+Gotchas:
+
+- `nameTranslated.ja` and `seoTitleTranslated.ja` come through **empty** on
+  products synced in from Printful. The JA storefront falls back to the English
+  name, so fill them. House convention (see the live products) transliterates
+  English design names: `Niseko in Motion` → `ニセコ・イン・モーション`,
+  `Riders on the Mountain` → `ライダーズ・オン・ザ・マウンテン`. Roman-letter
+  brand names stay roman (`MTB EZOBAND Tシャツ`, `Twin Peaks Badge Tシャツ`).
+- Printful also names the option `Color` with no JA. House style is `Colour` →
+  `色` and `Size` → `サイズ`, with localised choice text. Send the whole
+  `options` array; it is replaced wholesale. Renaming an option is safe:
+  Ecwid rewrites the matching `combinations` entries, so SKUs and variants
+  survive. Verify with `show` afterwards anyway.
+- `subtitle` is the short line under the product name. It describes material
+  and fit, not the artwork: `Unisex, organic cotton` /
+  `ユニセックス オーガニックコットン`.
+
+### 3b. Upload new product photography (if Tom has shot any)
+
+Ecwid derives its 160 / 400 / 800 / 1500px variants from whatever you upload,
+so resize to ~2000px on the long edge first and keep each file under ~1MB:
+
+```bash
+npx sharp-cli -i "src.jpg" -o "01-src.jpg" resize 2000 2000 \
+  --fit inside --withoutEnlargement -f jpeg -q 82
+python3 _scripts/ecwid-helpers.py upload-gallery <product_id> 01-*.jpg 02-*.jpg ...
+```
+
+`upload-gallery` appends in the order given, after the images already on the
+product. Name the files with a numeric prefix so the shell glob orders them.
+
+Ordering convention on the artist-series products (follow it):
+
+1. Printful mockup(s), one per colourway. These stay as the main image, since
+   the shop grid reads better with a clean front/back on a plain background.
+2. Flat lays and folded shots.
+3. Macro print detail.
+4. Lifestyle shots on the trail.
 
 ### 4. Download thumbnails so you can actually see the images
 
@@ -218,6 +266,35 @@ site's quote cards; the rest of the description still inherits the theme.
 - **Rate limiting**: the apply script sleeps 300ms between products. Hasn't
   hit any limits with 15 products. If we ever scale to hundreds, switch to
   Ecwid's batch endpoint.
+
+## Artist-series description structure
+
+Order of blocks in an Artist Series product description (see the Twin Peaks
+Badge T-Shirt (Full Colour) or any Riders on the Mountain product for the
+canonical markup):
+
+1. Gold free-shipping line.
+2. One paragraph: what the artwork shows, where it sits on the garment, the
+   colourways, a sentence on who the artist is, the material, "limited
+   edition", and "Profits fund the trails."
+3. The artist quote block, on the flagship adult garment only. Kids tees and
+   caps get short copy with no quote.
+4. Fit note in `<p><i>…</i></p>`.
+5. `Size guide` heading, measurement table, the measurement diagram image, and
+   the A / B / C how-to-measure lines.
+
+Reuse the measurement diagram URL from an existing product of the same type
+rather than re-uploading. The tee and cap diagrams are Ecwid WYSIWYG assets;
+the EN and JA tee descriptions point at two different URLs, but the files are
+byte-identical (the diagram is just A / B / C letters, nothing to localise), so
+either one is fine.
+
+Ecwid's WYSIWYG uploader has no public API, so a diagram for a new product type
+goes in the repo instead: `assets/images/shop/<type>-size-guide.png`, referenced
+by absolute URL (`https://namba.ngo/assets/images/shop/…`). The hoodie diagram
+works that way. Note the ordering trap: the description goes live in Ecwid the
+moment you PUT it, but the image only resolves once the repo is deployed, so
+either deploy first or keep the product disabled until you do.
 
 ## File reference
 

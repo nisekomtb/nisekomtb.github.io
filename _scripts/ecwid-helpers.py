@@ -23,6 +23,24 @@ Write commands (require ECWID_TOKEN and an alts JSON):
         #   }
         # }
 
+    python3 _scripts/ecwid-helpers.py apply-fields <fields.json>
+        # PUTs arbitrary product fields. Schema of fields.json:
+        # {
+        #   "<product_id>": {
+        #     "_name": "<for log readability, stripped before the PUT>",
+        #     "subtitle": "...", "subtitleTranslated": {"en": "...", "ja": "..."},
+        #     "description": "...", "descriptionTranslated": {...},
+        #     "nameTranslated": {...}, "seoTitleTranslated": {...}, ...
+        #   }
+        # }
+        # Anything the Ecwid product API accepts on PUT works here, including
+        # `options` (send the whole array, it is replaced wholesale).
+
+    python3 _scripts/ecwid-helpers.py upload-gallery <product_id> <img.jpg> [img.jpg ...]
+        # Appends each JPEG to the product's gallery, in the order given, after
+        # any images already on the product. Resize to ~2000px on the long edge
+        # first; Ecwid derives its 160/400/800/1500px variants from the upload.
+
 The token is read from $ECWID_TOKEN or from a .env line `ECWID_TOKEN=...`.
 The token is never echoed to stdout.
 
@@ -199,6 +217,50 @@ def cmd_apply_alts(alts_path: str):
     print(f"\nUpdated {total} images across {len(alts)} products")
 
 
+def cmd_apply_fields(fields_path: str):
+    """PUT arbitrary product fields (name/subtitle/description/seo/options + *Translated)."""
+    payloads = json.load(open(fields_path))
+    by_id = {str(p["id"]): p for p in fetch_products()}
+    for pid, entry in payloads.items():
+        if pid not in by_id:
+            print(f"  SKIP {pid}: not found")
+            continue
+        label = entry.pop("_name", by_id[pid]["name"])
+        if not entry:
+            print(f"  SKIP {pid} ({label}): no fields")
+            continue
+        status, resp = api("PUT", f"/products/{pid}", body=entry)
+        if status == 200:
+            print(f"  OK   {pid}  {label:<40} {', '.join(sorted(entry))}")
+        else:
+            print(f"  FAIL {pid}  {label}  status={status}  {resp}")
+        time.sleep(0.3)
+
+
+def cmd_upload_gallery(pid: str, paths: list):
+    """POST each file to /products/{pid}/gallery, appended in the order given."""
+    for path in paths:
+        with open(path, "rb") as f:
+            data = f.read()
+        req = urllib.request.Request(
+            f"{BASE}/products/{pid}/gallery",
+            method="POST",
+            data=data,
+            headers={
+                "Authorization": f"Bearer {token()}",
+                "Content-Type": "image/jpeg",
+                "Accept": "application/json",
+            },
+        )
+        try:
+            with urllib.request.urlopen(req) as resp:
+                body = json.loads(resp.read())
+            print(f"  OK   {os.path.basename(path):<44} id={body.get('id')} ({len(data) // 1024} KB)")
+        except urllib.error.HTTPError as e:
+            sys.exit(f"  FAIL {os.path.basename(path)}: {e.code} {e.read().decode()}")
+        time.sleep(0.3)
+
+
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         print(__doc__)
@@ -221,5 +283,13 @@ if __name__ == "__main__":
         if not rest:
             sys.exit("apply-alts requires a path to alts.json")
         cmd_apply_alts(rest[0])
+    elif cmd == "apply-fields":
+        if not rest:
+            sys.exit("apply-fields requires a path to fields.json")
+        cmd_apply_fields(rest[0])
+    elif cmd == "upload-gallery":
+        if len(rest) < 2:
+            sys.exit("upload-gallery requires <product_id> <image.jpg> [image.jpg ...]")
+        cmd_upload_gallery(rest[0], rest[1:])
     else:
         sys.exit(f"unknown cmd: {cmd}")
