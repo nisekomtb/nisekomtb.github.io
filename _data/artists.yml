@@ -14,7 +14,6 @@
 # Naturalbicycle is the in-house brand of North Graphic (Sapporo); Sumi is its designer.
 # Live from 21 Aug 2026. Ecwid products: MTB EZOBAND T-Shirt / MTB EZOBAND Kids T-Shirt.
 - slug: sumi-akemi
-  featured: true
   img: /assets/images/artists/sumi-akemi/avatar.jpg
   header: /assets/images/artists/sumi-akemi/header.jpg
   instagram:
@@ -265,77 +264,81 @@
 
       <p>ラグジュアリーホテルやリゾートの​撮影から​山での​ライディングまで、​自然の​荒々しい​エネルギーと​冒険の​精神を​捉え続けています。​カメラを​置けば、​サバイバル訓練や​狩猟にも​取り組むなど、​自然との​深いつながりと​自立心を​大切に​しています。</p>
 
-# - slug: yoshida-naohiro
-#   img: /assets/images/artists/yoshida-naohiro/avatar.jpg
-#   header: /assets/images/artists/yoshida-naohiro/header.jpg
-#   instagram:
-#     - dkc71
-#     - horizon_the_art_get_into
-#   links:
-#     - scheme: http
-#       domain: www.dkc.life
-#   work:
-#     - src: /assets/images/artists/yoshida-naohiro/artwork-01.jpg
-#       w: 1286
-#       h: 1000
-#     - src: /assets/images/artists/yoshida-naohiro/artwork-02.jpg
-#       w: 1183
-#       h: 1200
-#     - src: /assets/images/artists/yoshida-naohiro/artwork-03.jpg
-#       w: 884
-#       h: 1353
-#     - src: /assets/images/artists/yoshida-naohiro/artwork-04.jpg
-#       w: 495
-#       h: 1500
-#     - src: /assets/images/artists/yoshida-naohiro/artwork-05.jpg
-#       w: 1024
-#       h: 683
-#     - src: /assets/images/artists/yoshida-naohiro/artwork-06.jpg
-#       w: 1160
-#       h: 1160
-#     - src: /assets/images/artists/yoshida-naohiro/artwork-07.jpg
-#       w: 362
-#       h: 1600
-#     - src: /assets/images/artists/yoshida-naohiro/artwork-08.jpg
-#       w: 1125
-#       h: 1500
-#   name:
-#     en: Yoshida Naohiro
-#     ja: 吉田ナオヒロ
-#   title:
-#     en: Designer & Pro Snowboarder
-#     ja: デザイナー & プロスノーボーダー
-#   design:
-#     img: /assets/images/artists/yoshida-naohiro/design.jpg  # product shot, Tanuki Productions
-#     name:
-#       en: Riders on the Mountain
-#       ja: ライダーズ・オン・ザ・マウンテン
-#   quote:  # JA is the artist's own words; EN is our translation (reverse of the usual direction)
-#     en: |
-#       I have carved down Niseko's mountains countless times, on good snow and with the timing
-#       just right, but I have never ridden them in summer. That exhilarating, dynamic feeling of
-#       carving is surely the same either way, so I worked from what I know of the mountain in
-#       winter and brought that into this artwork.
-#     ja: |
-#       いい​雪の​いい​タイミングで​ニセコの​山を​滑る​経験は​幾度も​ありましたが、​夏山を​下る​経験は​まだ​ありません。​ただ​あの​爽快で​ダイナミックな​滑走感は​きっと​変わらないと​思い、​雪山での​イメージから​今回の​アートに​落とし込みました。
-#   bio:
-#     en: |
-#       <p>Yoshida Naohiro, better known as DKC, is a graphic designer and professional snowboarder. Born in 1971 and
-#       based in Sapporo, he works out of the studio Northern Graphics.</p>
+# DKC works out of Northern Graphics (Sapporo); his label is horizon the art get into.
+# Live from 24 Aug 2026. Ecwid products: Riders on the Mountain T-Shirt / Kids T-Shirt /
+# Hoodie / Trucker Cap.
+- slug: yoshida-naohiro
+  featured: true
+  img: /assets/images/artists/yoshida-naohiro/avatar.jpg
+  header: /assets/images/artists/yoshida-naohiro/header.jpg
+  instagram:
+    - dkc71
+    - horizon_the_art_get_into
+  links:
+    - scheme: http
+      domain: www.dkc.life
+  work:
+    - src: /assets/images/artists/yoshida-naohiro/artwork-01.jpg
+      w: 1286
+      h: 1000
+    - src: /assets/images/artists/yoshida-naohiro/artwork-02.jpg
+      w: 1183
+      h: 1200
+    - src: /assets/images/artists/yoshida-naohiro/artwork-03.jpg
+      w: 884
+      h: 1353
+    - src: /assets/images/artists/yoshida-naohiro/artwork-04.jpg
+      w: 495
+      h: 1500
+    - src: /assets/images/artists/yoshida-naohiro/artwork-05.jpg
+      w: 1024
+      h: 683
+    - src: /assets/images/artists/yoshida-naohiro/artwork-06.jpg
+      w: 1160
+      h: 1160
+    - src: /assets/images/artists/yoshida-naohiro/artwork-07.jpg
+      w: 362
+      h: 1600
+    - src: /assets/images/artists/yoshida-naohiro/artwork-08.jpg
+      w: 1125
+      h: 1500
+  name:
+    en: Yoshida Naohiro
+    ja: 吉田ナオヒロ
+  title:
+    en: Designer & Pro Snowboarder
+    ja: デザイナー & プロスノーボーダー
+  design:
+    img: /assets/images/artists/yoshida-naohiro/design.jpg  # product shot, Tanuki Productions
+    name:
+      en: Riders on the Mountain
+      ja: ライダーズ・オン・ザ・マウンテン
+  quote:  # JA is the artist's own words; EN is our translation (reverse of the usual direction)
+    en: |
+      I have carved down Niseko's mountains countless times, on good snow and with the timing
+      just right, but I have never ridden them in summer. That exhilarating, dynamic feeling of
+      carving is surely the same either way, so I worked from what I know of the mountain in
+      winter and brought that into this artwork.
+    ja: |
+      いい​雪の​いい​タイミングで​ニセコの​山を​滑る​経験は​幾度も​ありましたが、​夏山を​下る​経験は​まだ​ありません。​ただ​あの​爽快で​ダイナミックな​滑走感は​きっと​変わらないと​思い、​雪山での​イメージから​今回の​アートに​落とし込みました。
+  bio:
+    en: |
+      <p>Yoshida Naohiro, better known as DKC, is a graphic designer and professional snowboarder. Born in 1971 and
+      based in Sapporo, he works out of the studio Northern Graphics.</p>
 
-#       <p>DKC has spent decades shaping the look of Japanese snowboarding. He rides for and art-directs the snowboard
-#       brand UNIT MFG., and his gear graphics appear on FLUX bindings, Deeluxe boots, and Revolt Optical goggles. His
-#       visuals have featured everywhere from TOYOTA BIG AIR and PARK AIR to the TV programme NO MATTER BOARD, and he
-#       also produces snowboard events and snow parks and edits the culture magazine king garage magazine.</p>
+      <p>DKC has spent decades shaping the look of Japanese snowboarding. He rides for and art-directs the snowboard
+      brand UNIT MFG., and his gear graphics appear on FLUX bindings, Deeluxe boots, and Revolt Optical goggles. His
+      visuals have featured everywhere from TOYOTA BIG AIR and PARK AIR to the TV programme NO MATTER BOARD, and he
+      also produces snowboard events and snow parks and edits the culture magazine king garage magazine.</p>
 
-#       <p>His paintings, released under his own label "horizon the art get into", carry the same energy as his riding:
-#       swirling suns, breaking waves, and Hokkaido's mountains drawn in bold lines and colour.</p>
-#     ja: |
-#       <p>吉田ナオヒロ​（DKC）は、​1971年生まれ、​札幌在住の​グラフィックデザイナー兼プロスノーボーダー。​札幌の​デザインスタジオ​「Northern Graphics」を​拠点に​活動しています。</p>
+      <p>His paintings, released under his own label "horizon the art get into", carry the same energy as his riding:
+      swirling suns, breaking waves, and Hokkaido's mountains drawn in bold lines and colour.</p>
+    ja: |
+      <p>吉田ナオヒロ​（DKC）は、​1971年生まれ、​札幌在住の​グラフィックデザイナー兼プロスノーボーダー。​札幌の​デザインスタジオ​「Northern Graphics」を​拠点に​活動しています。</p>
 
-#       <p>スノーボードブランド​「UNIT MFG.」の​ライダー兼アートディレクターを​務める​ほか、​「FLUX」​ビンディングや​「DEELUXE」​ブーツ、​「REVOLT」​ゴーグルなどの​ギアグラフィック、​「TOYOTA BIG AIR」​「PARK AIR」や​TV番組​「NO MATTER BOARD」の​ビジュアル制作、​イベントや​スノーパークの​プロデュース、​カルチャー雑誌​「king garage magazine」の​編集長と、​日本の​スノーボードカルチャーを​幅広く​彩ってきました。</p>
+      <p>スノーボードブランド​「UNIT MFG.」の​ライダー兼アートディレクターを​務める​ほか、​「FLUX」​ビンディングや​「DEELUXE」​ブーツ、​「REVOLT」​ゴーグルなどの​ギアグラフィック、​「TOYOTA BIG AIR」​「PARK AIR」や​TV番組​「NO MATTER BOARD」の​ビジュアル制作、​イベントや​スノーパークの​プロデュース、​カルチャー雑誌​「king garage magazine」の​編集長と、​日本の​スノーボードカルチャーを​幅広く​彩ってきました。</p>
 
-#       <p>自身の​レーベル​「horizon the art get into」から​発表される​絵画作品では、​渦巻く​太陽、​砕ける​波、​北海道の​山々が、​ライディング​そのままの​エネルギーで、​大胆な​線と​色彩に​よって​描かれています。</p>
+      <p>自身の​レーベル​「horizon the art get into」から​発表される​絵画作品では、​渦巻く​太陽、​砕ける​波、​北海道の​山々が、​ライディング​そのままの​エネルギーで、​大胆な​線と​色彩に​よって​描かれています。</p>
 
 - slug: aikawa-mitsugu
   img: /assets/images/artists/aikawa-mitsugu/avatar.jpg
