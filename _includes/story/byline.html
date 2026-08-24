@@ -5,6 +5,9 @@
 
   Params:
     slug (required): matches the `slug` field on a team or staff entry
+    content: rendered page content. Supply it and the byline gains a reading
+             time after the date; omit it and the byline is unchanged. Passed
+             through to story/read-time.html, which does the counting.
 
   THE SLUG IS RESOLVED TO A STRING BEFORE IT REACHES `where`, and that is
   load-bearing. Jekyll's `where` filter returns the input UNFILTERED when its
@@ -57,6 +60,15 @@
   alt string, exactly as the caption credit does it in section 3 of story.css.
   A separator glyph in real DOM text is announced by a screen reader; a
   decorative one should not be.
+
+  THE STORY TYPE IS READ FROM `page.storyType`, NOT PASSED IN. Every other value
+  here arrives as a param because the caller might want a byline for someone who
+  is not the page author; the type belongs to the page and there is no case where
+  a story renders a byline carrying a different story's category. Label text comes
+  from _data/story-types.yml so this and the /stories/ index card cannot drift.
+  Bracket access on the data file: Liquid parses `site.data.story-types` as a
+  subtraction and silently yields nil. A key with no entry prints the key itself,
+  which is visible on the page rather than blank.
 {%- endcomment -%}
 {%- assign story_author_slug = include.slug | strip -%}
 {%- if story_author_slug == "" -%}{%- include story/BUILD-ERROR-byline-requires-slug.html -%}{%- endif -%}
@@ -78,6 +90,6 @@
   <img class="story-avatar" src="{{ story_author_img }}" alt="" width="40" height="40">
   <div>
     <div class="story-byline-name">{{ story_author_name }}</div>
-    <div class="story-byline-meta">{{ story_author_role }}{% if page.date %}<span class="story-byline-date">{% if page.lang == "ja" %}{{ page.date | date: "%Y年%-m月%-d日" }}{% else %}{{ page.date | date: "%-d %B %Y" }}{% endif %}</span>{% endif %}</div>
+    <div class="story-byline-meta">{{ story_author_role }}{% if page.date %}<span class="story-byline-date">{% if page.lang == "ja" %}{{ page.date | date: "%Y年%-m月%-d日" }}{% else %}{{ page.date | date: "%-d %B %Y" }}{% endif %}</span>{% endif %}{% if include.content %}<span class="story-byline-readtime">{% include story/read-time.html content=include.content %}</span>{% endif %}{% if page.storyType %}{%- assign story_byline_type = site.data['story-types'][page.storyType] -%}<span class="story-byline-type">{% if story_byline_type %}{% if page.lang == "ja" %}{{ story_byline_type.ja }}{% else %}{{ story_byline_type.en }}{% endif %}{% else %}{{ page.storyType }}{% endif %}</span>{% endif %}</div>
   </div>
 </div>

@@ -11,7 +11,23 @@ chrome
 .claude/projects
 .superpowers/
 _docs/superpowers/
+# Candid interview material. Not published (Jekyll skips leading-underscore dirs),
+# but this repo is public, so it stays local. Master audio + transcript live in
+# ~/Documents/namba-audio/, deliberately outside the working tree.
+_docs/namba-background.md
+*.m4a
+# Contact sheets are regenerable binaries; the .yml manifests beside them are kept.
+# The glob must be *-contact*.jpg, not *-contact.jpg: --preview writes paged sheets
+# named -contact-01.jpg upwards, which the narrower pattern silently let through.
+_docs/story-manifests/*-contact*.jpg
 assets/images/_triage/
 .playwright-mcp/
 node_modules/
 .lighthouse/
+__pycache__/
+# Source video for the Whip Off story. 58.5MB of HEVC at 14.3 Mbps, which is far more
+# than the 720x1280 needs and would sit in git history permanently, where a later
+# re-encode cannot remove it. Kept locally, out of the repo. If a video ships, transcode
+# to H.264 at a sane bitrate first and then decide deliberately whether to commit it or
+# host it off-repo; delete this rule at that point rather than working around it.
+assets/video/

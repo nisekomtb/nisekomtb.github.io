@@ -1,0 +1,45 @@
+# Sub-categories for /stories/ posts, set per post via `storyType:` in front matter.
+#
+# `categories: stories` is what puts a post on the index and gives it its URL. This is
+# the layer below that: what KIND of story it is. Posts carry the KEY, not the label, so
+# the wording can be revised in one place and so a future filtered view (/stories/?type=
+# or a set of tabs) has something stable to match on. The same shape as
+# _data/breadcrumbs.yml: slug -> {en, ja}.
+#
+# ADDING A TYPE: add the key here with both languages before using it in front matter.
+# masthead.html falls back to printing the raw key if the lookup misses, so a typo or a
+# missing entry shows up as "event-recapp" on the page rather than as a build error.
+#
+# KEEP THIS LIST SHORT. A taxonomy with a type per post is not a taxonomy. If a story
+# does not fit an existing type, first ask whether it is really one of these wearing a
+# different hat. Six or seven is about the ceiling before the labels stop meaning
+# anything to a reader scanning the index.
+#
+# JA labels are plain text, deliberately NOT BudouX-tokenised. They render in a short
+# single-line eyebrow above the H1 and on the index cards, both of which have room; a
+# <wbr> in a two-word label buys nothing and would have to be stripped again for the
+# JSON-LD articleSection.
+
+event-recap:
+  en: Event recap
+  ja: イベントレポート
+
+trail-report:
+  en: Trail report
+  ja: トレイルレポート
+
+trip-guide:
+  en: Trip guide
+  ja: 旅のガイド
+
+rider-story:
+  en: Rider story
+  ja: ライダーストーリー
+
+trail-building:
+  en: Trail building
+  ja: トレイル作り
+
+news:
+  en: News
+  ja: ニュース

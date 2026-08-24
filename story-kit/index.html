@@ -1,0 +1,268 @@
+---
+layout: story
+title: Story kit reference
+description: Every block in the namba.ngo story kit, rendered on one page so the design can be judged as a whole.
+permalink: /story-kit/
+author: tom-mortiboy
+noindex: true
+sitemap: false
+masthead:
+  img: /assets/images/bg/bg-header-beer.jpg
+---
+<p class="story-lede">This page is a working reference, not a story. It renders every block in the
+story kit once, at every tier and variation that changes how the block looks, so the whole set can
+be judged together instead of one block at a time.</p>
+
+<p>The photographs all come from the Twin Peaks Bike Park Pale Ale shoot, so the page reads as a
+real article rather than grey boxes. If you want the actual story behind these cans, it lives on
+the <a href="/beer/">beer page</a>. Everything below is here to be looked at.</p>
+
+{% include story/chapter.html num="01" label="Figure" %}
+
+<p>A figure is one image at one of three width tiers. The text tier matches the prose measure, the
+wide tier steps out past it, and the full tier runs to the viewport edge. Captions and credits are
+both optional.</p>
+
+{% include story/figure.html
+   tier="text"
+   src="/assets/images/beer/three-cans.jpg"
+   alt="Three cans of Twin Peaks Bike Park Pale Ale on a weathered log in a birch forest"
+   width="1800"
+   height="1200"
+   widths="800,1600"
+   loading="eager"
+   caption="Text tier, 660px. The same measure as the paragraph above, so an image at this tier reads as part of the sentence around it."
+   credit="NAMBA" %}
+
+{% capture cap_wide %}Wide tier, 1180px. This caption carries a link to the <a href="/twin-peaks/">Twin Peaks Bike Park</a> page, which is how caption link styling can be checked.{% endcapture %}
+{% include story/figure.html
+   tier="wide"
+   src="/assets/images/beer/riders.jpg"
+   alt="A can of pale ale on a log with two riders climbing the trail behind it"
+   width="1800"
+   height="1200"
+   widths="800,1600"
+   caption=cap_wide %}
+
+{% include story/figure.html
+   tier="full"
+   src="/assets/images/beer/gate.jpg"
+   alt="A can of pale ale in the grass below the Twin Peaks trailhead gate"
+   width="1800"
+   height="1200"
+   widths="800,1600" %}
+
+<p>The figure above has no caption and no credit at all, which is the case the caption partial has
+to handle by emitting nothing rather than an empty box.</p>
+
+{% include story/chapter.html num="02" label="Gallery" %}
+
+<p>A gallery takes two to six images and shares one caption between them. Two and four images go
+two across, three, five and six go three across, and every count collapses to a single column on
+a phone. Cells are cropped to a common ratio so rows stay even. Click any cell to open it full
+size; the fourth image below is a portrait, so the two orientations can be compared.</p>
+
+{% include story/gallery.html
+   tier="wide"
+   src1="/assets/images/beer/three-cans.jpg"
+   alt1="Three cans of pale ale on a log in the forest"
+   src2="/assets/images/beer/riders.jpg"
+   alt2="A can on a log with two riders on the trail behind"
+   src3="/assets/images/beer/gate.jpg"
+   alt3="A can in the grass below the Twin Peaks gate"
+   src4="/assets/images/beer/label.jpg"
+   alt4="Close-up of the label artwork showing the park gate and Mount Yotei"
+   src5="/assets/images/beer/forest-log.jpg"
+   alt5="A single can standing on a log in dappled forest light"
+   dims="1800x1200,1800x1200,1800x1200,1200x1800,1800x1200"
+   widths="800,1600"
+   caption="Five images at the wide tier: three across, then two, with the portrait label shot cropped to the same 3:2 cell as the rest."
+   credit="NAMBA" %}
+
+{% capture cap_gal_text %}Two images at the text tier, so a pair can sit at the prose measure without stepping out of the column. This caption carries a <a href="/twin-peaks/">link</a>, which the lightbox has to leave alone.{% endcapture %}
+{% include story/gallery.html
+   tier="text"
+   src1="/assets/images/beer/gate.jpg"
+   alt1="A can in the grass below the Twin Peaks gate"
+   src2="/assets/images/beer/forest-log.jpg"
+   alt2="A single can standing on a log in dappled forest light"
+   dims="1800x1200,1800x1200"
+   widths="800,1600"
+   caption=cap_gal_text %}
+
+<p>The pair below passes <code>lightbox=false</code>. Its images are not wrapped in links at all,
+which is the setting for a gallery of diagrams or screenshots where a full-size view adds nothing.</p>
+
+{% include story/gallery.html
+   tier="text"
+   lightbox="false"
+   src1="/assets/images/beer/three-cans.jpg"
+   alt1="Three cans of pale ale on a log in the forest"
+   src2="/assets/images/beer/riders.jpg"
+   alt2="A can on a log with two riders on the trail behind"
+   dims="1800x1200,1800x1200"
+   widths="800,1600"
+   caption="Two images with the lightbox off, so nothing happens on click." %}
+
+{% include story/chapter.html num="03" label="Split" %}
+
+<p>A split puts text beside media at the wide tier. The image leads on mobile in both variations,
+so the reader always meets the photograph first on a phone.</p>
+
+{% capture split_right %}
+<p>Yotei Brewing has backed NAMBA as a sponsor for years, and the brewery sits in Niseko Town, a
+short ride from the park. When a collaboration beer came up, neither side needed convincing.</p>
+<p>The base is A Greener World, Yotei's pale ale brewed partly with green energy, wearing a new
+label drawn for the park.</p>
+{% endcapture %}
+{% include story/split.html
+   src="/assets/images/beer/label.jpg"
+   alt="Close-up of the pale ale label, showing the park gate with Mount Yotei behind it"
+   width="1200"
+   height="1800"
+   widths="800,1600"
+   heading="Media right, the default"
+   text=split_right
+   caption="Joe Scott drew the label in the national park poster style he works in."
+   credit="NAMBA" %}
+
+{% capture split_left %}
+<p>Every can sold sends money back into the dirt. Maintenance cost ¥6.5 million in 2024 and ¥10.8
+million in 2025, and the bill climbs as the network grows.</p>
+<p>Twin Peaks is free to ride, and local businesses are a large part of why it can stay that
+way.</p>
+{% endcapture %}
+{% include story/split.html
+   position="media-left"
+   src="/assets/images/beer/forest-log.jpg"
+   alt="A can of pale ale standing on a log in dappled forest light"
+   width="1800"
+   height="1200"
+   widths="800,1600"
+   heading="Media left"
+   text=split_left %}
+
+{% include story/chapter.html num="04" label="Embed" %}
+
+<p>An embed is a responsive 16:9 frame for a video or a map. The frame reserves its own space, so
+nothing shifts when the third party finally answers.</p>
+
+{% include story/embed.html
+   tier="wide"
+   url="https://player.vimeo.com/video/1195232610?dnt=1"
+   title="Riding the Twin Peaks Bike Park trails"
+   caption="Wide tier, 16:9. The accessible name describes the footage, not the player."
+   credit="NAMBA" %}
+
+{% include story/chapter.html num="05" label="Stats" %}
+
+<p>Stats put two to four figures on cards, matching the impact band on the homepage. Units are
+split off the numeral so they render small and tight against it.</p>
+
+<!-- Figures from _data/impact.yml: trails 2026 (niseko_km 32.24, namba_km 24.93),
+     visitors twin-peaks 2025 (11500), growth 2024 to 2025 (7747 to 11500, +48%). -->
+{% include story/stats.html
+   n1="32.2" u1="km" l1="Trail open across Niseko"
+   n2="24.9" u2="km" l2="Built by NAMBA"
+   n3="11,500" l3="Twin Peaks visits in 2025"
+   n4="48" u4="%" l4="Visitor growth year on year" %}
+
+{% include story/stats.html
+   n1="¥10.8" u1="M" l1="Spent on trail maintenance in 2025"
+   n2="4.5" u2="%" l2="ABV"
+   n3="350" u3="ml" l3="Can" %}
+
+{% include story/stats.html
+   tier="text"
+   n1="11,500" l1="Visits to the park in 2025"
+   n2="7,747" l2="Visits in 2024" %}
+
+<p>The set above sits at the text tier with no units at all, which is the plainest the block gets.
+The four-card set at the top mixes units and bare numerals in the same row.</p>
+
+{% include story/chapter.html num="06" label="Table" %}
+
+<p>A table is a key and value spec sheet on a panel, up to eight rows. It defaults to the text
+tier, because a spec sheet reads as part of the sentence around it.</p>
+
+{% include story/table.html
+   k1="Style" v1="Pale ale"
+   k2="ABV" v2="4.5%"
+   k3="Volume" v3="350ml can"
+   k4="Brewed by" v4="Yotei Brewing, Niseko"
+   k5="Label art" v5="Joe Scott" %}
+
+<p>The wide version below carries values long enough to wrap, including an unbroken address, which
+is the case the wrapping guards exist for.</p>
+
+{% include story/table.html
+   tier="wide"
+   k1="Hops" v1="Amarillo, Mosaic and Simcoe, added late in the boil and again as a dry hop on day five of fermentation"
+   k2="Where to buy" v2="https://yotei.beer/en/collections/twin-peaks-bike-park-pale-ale"
+   k3="Availability" v3="On sale from 1 August 2026, shipped nationwide from Niseko Town in packs of six, free postage on Thursdays"
+   k4="ABV" v4="4.5%" %}
+
+{% include story/chapter.html num="07" label="Quote" %}
+
+<p>A pull quote takes an optional portrait. With one, the portrait sits in its own column. Without
+one, the quote gets a gold left rule instead.</p>
+
+{% include story/quote.html
+   text="Swiss-designed trails only get built when local businesses back them. A beer together was an easy yes."
+   name="Andy Meadows"
+   role="Head of Trail Building, NAMBA"
+   avatar="/assets/images/team/andy.jpg" %}
+
+{% include story/quote.html
+   tier="wide"
+   text="Niseko already has the mountains, the food and the onsen. Trails are the thing that turns a winter town into a place worth flying to in summer."
+   name="Paul Wright"
+   role="President, NAMBA" %}
+
+<p>The plain quote above sits at the wide tier, so the rule moves further out while the text stays
+at a readable measure.</p>
+
+{% include story/chapter.html num="08" label="Chapter" %}
+
+<p>A chapter marker is the block dividing this page into sections. It renders as a real heading, so
+a screen reader and a search crawler both read the page as structured. The number is optional.</p>
+
+{% include story/chapter.html label="No number here" %}
+
+<p>That one carries a label and no number, which is the variation to use when a story has sections
+but counting them adds nothing.</p>
+
+{% include story/chapter.html num="09" label="Prose and links" %}
+
+<p>Between the blocks sits ordinary prose, and the rhythm between the two is the thing this page
+exists to show. Paragraphs run at 17px on a 1.75 leading. A link inside a paragraph rests white
+with an underline and turns gold on hover, so you can tell a link from bold text without hovering
+it. Here is one to the <a href="/impact/">impact page</a> and another to
+<a href="/join/">become a member</a>.</p>
+
+<h2>A plain heading, not a chapter</h2>
+
+<p>This is a normal h2. A chapter marker is also an h2, so the two have to look clearly different
+at a glance, and the difference is the whole point of having both.</p>
+
+<h3>And an h3 under it</h3>
+
+<p>An h3 is the level for sub-sections inside a chapter. If a marker wants to be an h3, it is not a
+chapter.</p>
+
+<p>Lists get the same measure and leading as paragraphs:</p>
+
+<ul>
+  <li>Unordered lists sit at the text tier with the prose above them.</li>
+  <li>Items are spaced a little more tightly than paragraphs.</li>
+  <li>A list item can carry a <a href="/where-to-ride/">link to the trail list</a> too.</li>
+</ul>
+
+<ol>
+  <li>Ordered lists take the same treatment.</li>
+  <li>Numbers come from the browser, not the kit.</li>
+  <li>Which is one less thing to keep in sync.</li>
+</ol>
+
+<p>Below this paragraph, the layout adds the author card on its own from the front matter. The
+byline at the top of the page comes from the same single line of front matter.</p>

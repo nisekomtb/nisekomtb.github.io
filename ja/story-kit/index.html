@@ -1,0 +1,236 @@
+---
+layout: story
+title: ストーリーキット リファレンス
+description: namba.ngoのストーリーキットの全ブロックを1ページにまとめ、デザイン全体をまとめて確認できるリファレンスです。
+permalink: /ja/story-kit/
+author: tom-mortiboy
+noindex: true
+sitemap: false
+masthead:
+  img: /assets/images/bg/bg-header-beer.jpg
+---
+<p class="story-lede">この<wbr>ページは<wbr>ストーリーではなく、<wbr>作業用の<wbr>リファレンスです。<wbr>ストーリーキットの<wbr>すべての<wbr>ブロックを、<wbr>見た<wbr>目が<wbr>変わる<wbr>ティアと<wbr>バリエーションごとに<wbr>一度ずつ<wbr>並べています。<wbr>ブロックを<wbr>1つずつ<wbr>見るのではなく、<wbr>全体を<wbr>まとめて<wbr>判断できます。</p>
+
+<p>写真は<wbr>すべて<wbr>ツインピークスバイクパーク ペールエールの<wbr>撮影から<wbr>使っています。<wbr>灰色の<wbr>箱ではなく、<wbr>実際の<wbr>記事と<wbr>して<wbr>読めるように<wbr>する<wbr>ためです。<wbr>缶の<wbr>背景に<wbr>ある<wbr>本当の<wbr>話は<a href="/ja/beer/"><wbr>ビールの<wbr>ページ</a>に<wbr>あります。<wbr>以下は<wbr>すべて、<wbr>見る<wbr>ために<wbr>ここに<wbr>あります。</p>
+
+{% include story/chapter.html num="01" label="フィギュア" %}
+
+<p>フィギュアは、<wbr>3つの<wbr>幅ティアの<wbr>いずれかに<wbr>1枚の<wbr>画像を<wbr>置く<wbr>ブロックです。<wbr>テキストティアは<wbr>本文と<wbr>同じ幅、<wbr>ワイドティアは<wbr>そこから<wbr>外側に<wbr>広がり、<wbr>フルティアは<wbr>ビューポートの<wbr>端まで<wbr>届きます。<wbr>キャプションと<wbr>クレジットは<wbr>どちらも<wbr>任意です。</p>
+
+{% include story/figure.html
+   tier="text"
+   src="/assets/images/beer/three-cans.jpg"
+   alt="森の丸太に並ぶツインピークスバイクパーク ペールエールの缶3本"
+   width="1800"
+   height="1200"
+   widths="800,1600"
+   loading="eager"
+   caption="テキストティア、<wbr>660px。<wbr>上の<wbr>段落と<wbr>同じ<wbr>幅なので、<wbr>この<wbr>ティアの<wbr>画像は<wbr>前後の<wbr>文章の<wbr>一部と<wbr>して<wbr>読めます。"
+   credit="NAMBA" %}
+
+{% capture cap_wide %}ワイドティア、<wbr>1180px。<wbr>この<wbr>キャプションには<a href="/ja/twin-peaks/"><wbr>ツインピークスバイクパーク</a>への<wbr>リンクを<wbr>入れているので、<wbr>キャプション内リンクの<wbr>スタイルを<wbr>確認できます。{% endcapture %}
+{% include story/figure.html
+   tier="wide"
+   src="/assets/images/beer/riders.jpg"
+   alt="丸太に置かれたペールエールの缶と、その奥でトレイルを登る2人のライダー"
+   width="1800"
+   height="1200"
+   widths="800,1600"
+   caption=cap_wide %}
+
+{% include story/figure.html
+   tier="full"
+   src="/assets/images/beer/gate.jpg"
+   alt="ツインピークスのトレイルヘッドのゲートの下、草むらに置かれたペールエールの缶"
+   width="1800"
+   height="1200"
+   widths="800,1600" %}
+
+<p>上の<wbr>フィギュアには<wbr>キャプションも<wbr>クレジットも<wbr>ありません。<wbr>キャプションの<wbr>パーシャルが<wbr>空の<wbr>箱を<wbr>出さず、<wbr>何も<wbr>出力しない<wbr>ことを<wbr>確認できます。</p>
+
+{% include story/chapter.html num="02" label="ギャラリー" %}
+
+<p>ギャラリーは<wbr>2枚から<wbr>6枚の<wbr>画像を<wbr>並べ、<wbr>1つの<wbr>キャプションを<wbr>共有します。<wbr>2枚と<wbr>4枚は<wbr>2列、<wbr>3枚・5枚・6枚は<wbr>3列に<wbr>なり、<wbr>スマートフォンでは<wbr>どの<wbr>枚数でも<wbr>1列に<wbr>なります。<wbr>セルは<wbr>共通の<wbr>比率に<wbr>切り抜かれるので、<wbr>行の<wbr>高さが<wbr>そろいます。<wbr>セルを<wbr>クリックすると<wbr>フルサイズで<wbr>開きます。<wbr>下の<wbr>4枚目は<wbr>縦向きなので、<wbr>横向きとの<wbr>違いを<wbr>比べられます。</p>
+
+{% include story/gallery.html
+   tier="wide"
+   src1="/assets/images/beer/three-cans.jpg"
+   alt1="森の丸太に並ぶペールエールの缶3本"
+   src2="/assets/images/beer/riders.jpg"
+   alt2="丸太に置かれた缶と、その奥でトレイルを走る2人のライダー"
+   src3="/assets/images/beer/gate.jpg"
+   alt3="ツインピークスのゲートの下、草むらに置かれた缶"
+   src4="/assets/images/beer/label.jpg"
+   alt4="公園のゲートと羊蹄山が描かれたラベルアートのクローズアップ"
+   src5="/assets/images/beer/forest-log.jpg"
+   alt5="木漏れ日の森で丸太に立つ缶1本"
+   dims="1800x1200,1800x1200,1800x1200,1200x1800,1800x1200"
+   widths="800,1600"
+   caption="ワイドティアに<wbr>5枚。<wbr>3枚並んだ<wbr>あとに<wbr>2枚が<wbr>続き、<wbr>縦向きの<wbr>ラベル写真も<wbr>ほかと<wbr>同じ<wbr>3:2の<wbr>セルに<wbr>切り抜かれます。"
+   credit="NAMBA" %}
+
+{% capture cap_gal_text %}テキストティアに<wbr>2枚。<wbr>本文と<wbr>同じ<wbr>幅に<wbr>収まるので、<wbr>2枚<wbr>並べても<wbr>列の<wbr>外に<wbr>出ません。<wbr>このキャプションには<a href="/ja/twin-peaks/">リンク</a>が<wbr>あり、<wbr>ライトボックスは<wbr>これを<wbr>開いては<wbr>いけません。{% endcapture %}
+{% include story/gallery.html
+   tier="text"
+   src1="/assets/images/beer/gate.jpg"
+   alt1="ツインピークスのゲートの下、草むらに置かれた缶"
+   src2="/assets/images/beer/forest-log.jpg"
+   alt2="木漏れ日の森で丸太に立つ缶1本"
+   dims="1800x1200,1800x1200"
+   widths="800,1600"
+   caption=cap_gal_text %}
+
+<p>下の<wbr>2枚は<code>lightbox=false</code>を<wbr>渡しています。<wbr>画像は<wbr>リンクで<wbr>包まれないので、<wbr>フルサイズ表示が<wbr>役に<wbr>立たない<wbr>図や<wbr>スクリーンショットの<wbr>ギャラリーには<wbr>この<wbr>設定を<wbr>使います。</p>
+
+{% include story/gallery.html
+   tier="text"
+   lightbox="false"
+   src1="/assets/images/beer/three-cans.jpg"
+   alt1="森の丸太に並ぶペールエールの缶3本"
+   src2="/assets/images/beer/riders.jpg"
+   alt2="丸太に置かれた缶と、その奥でトレイルを走る2人のライダー"
+   dims="1800x1200,1800x1200"
+   widths="800,1600"
+   caption="ライトボックスを<wbr>切った<wbr>2枚。<wbr>クリックしても<wbr>何も<wbr>起きません。" %}
+
+{% include story/chapter.html num="03" label="スプリット" %}
+
+<p>スプリットは、<wbr>ワイドティアで<wbr>テキストと<wbr>画像を<wbr>並べます。<wbr>どちらの<wbr>配置でも<wbr>モバイルでは<wbr>画像が<wbr>先に<wbr>来るので、<wbr>スマートフォンの<wbr>読者は<wbr>必ず<wbr>写真から<wbr>入ります。</p>
+
+{% capture split_right %}
+<p>ヨーテイブルーイングは<wbr>長年NAMBAを<wbr>スポンサーと<wbr>して<wbr>支えてきました。<wbr>醸造所は<wbr>ニセコ町に<wbr>あり、<wbr>パークから<wbr>自転車で<wbr>少しの<wbr>距離です。<wbr>コラボビールの<wbr>話が<wbr>出た<wbr>とき、<wbr>どちらも<wbr>説明は<wbr>いりませんでした。</p>
+<p>ベースは<wbr>ヨーテイの<wbr>ペールエール<wbr>「A Greener World」。<wbr>一部を<wbr>グリーン電力で<wbr>醸造した<wbr>ビールに、<wbr>パークの<wbr>ために<wbr>描かれた<wbr>新しい<wbr>ラベルを<wbr>まとっています。</p>
+{% endcapture %}
+{% include story/split.html
+   src="/assets/images/beer/label.jpg"
+   alt="公園のゲートと羊蹄山が描かれたペールエールのラベルのクローズアップ"
+   width="1200"
+   height="1800"
+   widths="800,1600"
+   heading="画像を<wbr>右に<wbr>（デフォルト）"
+   text=split_right
+   caption="ラベルは<wbr>ジョー・スコットが、<wbr>得意な<wbr>国立公園ポスター風の<wbr>スタイルで<wbr>描きました。"
+   credit="NAMBA" %}
+
+{% capture split_left %}
+<p>缶が<wbr>1本売れる<wbr>ごとに、<wbr>お金は<wbr>土に<wbr>戻ります。<wbr>トレイル整備の<wbr>費用は<wbr>2024年に<wbr>650万円、<wbr>2025年に<wbr>1,080万円かかり、<wbr>ネットワークが<wbr>広がるに<wbr>つれて<wbr>増えています。</p>
+<p>ツインピークスは<wbr>無料で<wbr>走れます。<wbr>それを<wbr>続けられる<wbr>理由の<wbr>大きな<wbr>部分は、<wbr>地元の<wbr>ビジネスの<wbr>支えです。</p>
+{% endcapture %}
+{% include story/split.html
+   position="media-left"
+   src="/assets/images/beer/forest-log.jpg"
+   alt="木漏れ日の森で丸太に立つペールエールの缶"
+   width="1800"
+   height="1200"
+   widths="800,1600"
+   heading="画像を<wbr>左に"
+   text=split_left %}
+
+{% include story/chapter.html num="04" label="埋め込み" %}
+
+<p>埋め込みは、<wbr>動画や<wbr>地図の<wbr>ための<wbr>レスポンシブな<wbr>16:9の<wbr>フレームです。<wbr>フレームが<wbr>先に<wbr>場所を<wbr>確保するので、<wbr>外部<wbr>サービスの<wbr>読み込みが<wbr>遅れても<wbr>レイアウトは<wbr>ずれません。</p>
+
+{% include story/embed.html
+   tier="wide"
+   url="https://player.vimeo.com/video/1195232610?dnt=1"
+   title="ツインピークスバイクパークのトレイルを走る映像"
+   caption="ワイドティア、<wbr>16:9。<wbr>読み上げ用の<wbr>名前は<wbr>プレーヤーではなく<wbr>映像の<wbr>内容を<wbr>説明します。"
+   credit="NAMBA" %}
+
+{% include story/chapter.html num="05" label="数値カード" %}
+
+<p>数値カードは<wbr>2つから<wbr>4つの<wbr>数字を<wbr>カードに<wbr>並べ、<wbr>トップページの<wbr>インパクトバンドと<wbr>同じ<wbr>見た<wbr>目に<wbr>そろえます。<wbr>単位は<wbr>数字から<wbr>切り離してあるので、<wbr>小さく、<wbr>数字に<wbr>ぴったり寄せて<wbr>表示されます。</p>
+
+<!-- Figures from _data/impact.yml: trails 2026 (niseko_km 32.24, namba_km 24.93),
+     visitors twin-peaks 2025 (11500), growth 2024 to 2025 (7747 to 11500, +48%). -->
+{% include story/stats.html
+   n1="32.2" u1="km" l1="ニセコ全域で<wbr>開通した<wbr>トレイル"
+   n2="24.9" u2="km" l2="NAMBAが<wbr>造成"
+   n3="11,500" l3="2025年の<wbr>ツインピークス来場者数"
+   n4="48" u4="%" l4="前年比の<wbr>来場者増加率" %}
+
+{% include story/stats.html
+   n1="¥10.8" u1="M" l1="2025年の<wbr>トレイル整備費"
+   n2="4.5" u2="%" l2="アルコール度数"
+   n3="350" u3="ml" l3="1缶" %}
+
+{% include story/stats.html
+   tier="text"
+   n1="11,500" l1="2025年の<wbr>パーク来場者数"
+   n2="7,747" l2="2024年の<wbr>来場者数" %}
+
+<p>上の<wbr>セットは<wbr>テキストティアで<wbr>単位もなく、<wbr>この<wbr>ブロックの<wbr>もっとも<wbr>素朴な形です。<wbr>いちばん上の<wbr>4枚の<wbr>セットでは、<wbr>単位の<wbr>ある<wbr>数字と<wbr>ない<wbr>数字が<wbr>同じ行に<wbr>並んでいます。</p>
+
+{% include story/chapter.html num="06" label="スペック<wbr>表" %}
+
+<p>スペック表は、<wbr>パネルの<wbr>上に<wbr>キーと<wbr>値を<wbr>並べる<wbr>仕様表で、<wbr>行は<wbr>最大8つです。<wbr>仕様表は<wbr>前後の<wbr>文章の<wbr>一部と<wbr>して<wbr>読むものなので、<wbr>既定は<wbr>テキストティアです。</p>
+
+{% include story/table.html
+   k1="スタイル" v1="ペールエール"
+   k2="アルコール度数" v2="4.5%"
+   k3="容量" v3="350ml缶"
+   k4="醸造" v4="ヨーテイブルーイング<wbr>（ニセコ町）"
+   k5="ラベルアート" v5="ジョー・スコット" %}
+
+<p>下の<wbr>ワイド版には、<wbr>折り返すほど<wbr>長い値と、<wbr>途中で<wbr>切れない<wbr>アドレスを<wbr>入れています。<wbr>折り返しの<wbr>ガードが<wbr>用意されているのは<wbr>この<wbr>ためです。</p>
+
+{% include story/table.html
+   tier="wide"
+   k1="ホップ" v1="アマリロ、<wbr>モザイク、<wbr>シムコー。<wbr>煮沸の<wbr>終盤に<wbr>加え、<wbr>発酵5日目に<wbr>ドライホップと<wbr>して<wbr>もう<wbr>一度<wbr>加えています。"
+   k2="購入先" v2="https://yotei.beer/en/collections/twin-peaks-bike-park-pale-ale"
+   k3="発売" v3="2026年8月1日発売。<wbr>ニセコ町から<wbr>全国へ<wbr>発送し、<wbr>6本パックで、<wbr>木曜日は<wbr>送料が<wbr>無料です。"
+   k4="アルコール度数" v4="4.5%" %}
+
+{% include story/chapter.html num="07" label="引用" %}
+
+<p>引用ブロックには<wbr>顔写真を<wbr>任意で<wbr>付けられます。<wbr>写真が<wbr>あれば<wbr>専用の<wbr>列に<wbr>入り、<wbr>なければ<wbr>代わりに<wbr>金色の<wbr>縦罫が<wbr>付きます。</p>
+
+{% include story/quote.html
+   text="スイスの<wbr>設計者が<wbr>引く<wbr>トレイルは、<wbr>地元の<wbr>ビジネスが<wbr>支えてくれて<wbr>初めて<wbr>できます。<wbr>一緒に<wbr>ビールを<wbr>作る<wbr>話は、<wbr>迷う<wbr>余地が<wbr>ありませんでした。"
+   name="メドーズ・アンディー"
+   role="NAMBA トレイル造成責任者"
+   avatar="/assets/images/team/andy.jpg" %}
+
+{% include story/quote.html
+   tier="wide"
+   text="ニセコには<wbr>山も<wbr>食も<wbr>温泉もすでに<wbr>あります。<wbr>冬の<wbr>町を、<wbr>夏にも<wbr>飛んでくる<wbr>価値の<wbr>ある<wbr>場所に<wbr>変えるのが<wbr>トレイルです。"
+   name="ポール・ライト"
+   role="NAMBA 会長" %}
+
+<p>上の<wbr>プレーンな<wbr>引用は<wbr>ワイドティアなので、<wbr>縦罫は<wbr>外側に<wbr>動き、<wbr>文章は<wbr>読みやすい幅のままです。</p>
+
+{% include story/chapter.html num="08" label="チャプター" %}
+
+<p>チャプターマーカーは、<wbr>この<wbr>ページを<wbr>セクションに<wbr>分けている<wbr>ブロックです。<wbr>実際の<wbr>見出しと<wbr>して<wbr>出力されるので、<wbr>スクリーンリーダーも<wbr>検索エンジンも<wbr>ページの<wbr>構造と<wbr>して<wbr>読み取れます。<wbr>番号は<wbr>任意です。</p>
+
+{% include story/chapter.html label="番号なしの<wbr>チャプター" %}
+
+<p>これは<wbr>ラベルだけで<wbr>番号が<wbr>ない形です。<wbr>セクションは<wbr>あるけれど、<wbr>数えても<wbr>意味が<wbr>ない<wbr>ときに<wbr>使います。</p>
+
+{% include story/chapter.html num="09" label="本文と<wbr>リンク" %}
+
+<p>ブロックの<wbr>あいだには<wbr>普通の<wbr>本文が<wbr>入ります。<wbr>この<wbr>ページが<wbr>あるのは、<wbr>その<wbr>2つの<wbr>リズムを<wbr>見る<wbr>ためです。<wbr>段落は<wbr>17px、<wbr>行送りは<wbr>1.75です。<wbr>段落の<wbr>中の<wbr>リンクは<wbr>白い<wbr>下線付きで、<wbr>ホバーすると<wbr>金色に<wbr>なります。<wbr>マウスを<wbr>乗せなくても<wbr>太字と<wbr>区別できます。<wbr>ひとつは<a href="/ja/impact/"><wbr>インパクトの<wbr>ページ</a>へ、<wbr>もう<wbr>ひとつは<a href="/ja/join/"><wbr>会員に<wbr>なる</a>への<wbr>リンクです。</p>
+
+<h2>チャプターではない<wbr>普通の<wbr>見出し</h2>
+
+<p>これは<wbr>普通の<wbr>h2です。<wbr>チャプターマーカーも<wbr>h2なので、<wbr>ふたつは<wbr>ひと目で<wbr>違って<wbr>見える<wbr>必要が<wbr>あります。<wbr>その<wbr>違いが、<wbr>両方を<wbr>持っている<wbr>理由<wbr>その<wbr>ものです。</p>
+
+<h3>その下の<wbr>h3</h3>
+
+<p>h3は<wbr>チャプターの<wbr>中の<wbr>小見出しに<wbr>使う<wbr>階層です。<wbr>マーカーが<wbr>h3に<wbr>なりたがるなら、<wbr>それは<wbr>チャプターでは<wbr>ありません。</p>
+
+<p>リストは<wbr>段落と<wbr>同じ幅、<wbr>同じ<wbr>行送りです。</p>
+
+<ul>
+  <li>箇条<wbr>書きは<wbr>上の<wbr>本文と<wbr>同じ<wbr>テキストティアに<wbr>並びます。</li>
+  <li>項目の<wbr>間隔は<wbr>段落よりも<wbr>少し<wbr>詰まっています。</li>
+  <li>項目の<wbr>中に<a href="/ja/where-to-ride/"><wbr>トレイル一覧への<wbr>リンク</a>も<wbr>入れられます。</li>
+</ul>
+
+<ol>
+  <li>番号付きリストも<wbr>同じ<wbr>扱いです。</li>
+  <li>番号は<wbr>キットではなく<wbr>ブラウザが<wbr>付けます。</li>
+  <li>同期させる<wbr>ものが<wbr>1つ減ります。</li>
+</ol>
+
+<p>この<wbr>段落の<wbr>下に、<wbr>レイアウトが<wbr>フロントマターから<wbr>著者カードを<wbr>自動で<wbr>追加します。<wbr>ページ上部の<wbr>バイラインも、<wbr>同じ<wbr>1行の<wbr>フロントマターから<wbr>出ています。</p>

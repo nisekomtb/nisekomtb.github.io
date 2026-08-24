@@ -1,0 +1,88 @@
+{% comment %}
+  Usage: {% include event-stats.html years="3" %}
+
+  Twin Peaks milestone panel for event posts. Every figure is computed from
+  _data/trails.yml and _data/impact.yml rather than typed in, so the panel
+  tracks the park instead of going stale between events. `years` is the only
+  literal, since "how many birthdays" is a property of the event, not the data.
+
+  Classes carry an `evstat-` prefix on purpose. `.stat-card`, `.stat-number`
+  and `.stat-label` are already claimed by content-level <style> blocks on
+  /impact/ and /partner/ (four files, JA twins included) with a different
+  design. See the note in assets/css/story.css section 5 for why prefixing is
+  the house rule here rather than reusing those names.
+{% endcomment %}
+
+{%- assign park = site.data.trails.twinpeaks -%}
+{%- assign trail_count = 0 -%}
+{%- assign total_distance = 0 -%}
+{%- for trail in park.trails -%}
+  {%- assign trail_count = trail_count | plus: 1 -%}
+  {%- assign distance = trail.distance | remove: "," -%}
+  {%- assign total_distance = total_distance | plus: distance -%}
+{%- endfor -%}
+{%- assign trail_km = total_distance | divided_by: 1000.0 | round: 1 -%}
+
+{%- assign visitors = 0 -%}
+{%- for year in site.data.impact.twin_peaks.years -%}
+  {%- if year.visitors -%}
+    {%- assign visitors = visitors | plus: year.visitors -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- assign visitor_thousands = visitors | divided_by: 1000 -%}
+
+<style>
+  .evstat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+    margin: 32px 0;
+    padding: 0;
+    list-style: none;
+  }
+  .evstat-grid li {
+    background: var(--color-bg-panel);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 3px;
+    padding: 24px 12px;
+    text-align: center;
+  }
+  .evstat-num {
+    display: block;
+    font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
+    font-size: 240%;
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--color-accent);
+    font-variant-numeric: tabular-nums;
+  }
+  .evstat-num .evstat-unit {
+    font-size: 50%;
+  }
+  .evstat-lbl {
+    display: block;
+    margin-top: 8px;
+    font-size: 85%;
+    line-height: 1.4;
+    color: #aaa;
+  }
+</style>
+
+<ul class="evstat-grid">
+  <li>
+    <span class="evstat-num">{{ include.years }}</span>
+    <span class="evstat-lbl">{% if page.lang == "ja" %}歳{% else %}years old{% endif %}</span>
+  </li>
+  <li>
+    <span class="evstat-num">{{ trail_km }}<span class="evstat-unit">km</span></span>
+    <span class="evstat-lbl">{% if page.lang == "ja" %}トレイル総距離{% else %}of trail, from nothing{% endif %}</span>
+  </li>
+  <li>
+    <span class="evstat-num">{{ trail_count }}</span>
+    <span class="evstat-lbl">{% if page.lang == "ja" %}本の<wbr>トレイル{% else %}trails, green to double black{% endif %}</span>
+  </li>
+  <li>
+    <span class="evstat-num">{{ visitor_thousands }},000<span class="evstat-unit">+</span></span>
+    <span class="evstat-lbl">{% if page.lang == "ja" %}2024年<wbr>以降の<wbr>来場者数{% else %}rider visits since 2024{% endif %}</span>
+  </li>
+</ul>

@@ -1,12 +1,20 @@
 {%- comment -%}
-  2-6 images in a grid sharing one caption. Layout by count: 2 and 4 go two
-  across (4 as a 2x2, because 3 + 1 orphan reads as broken), 3, 5 and 6 go
-  three across. Single column below 640px. Cells are cropped to 3:2 by CSS,
-  so mixed aspect ratios still produce even rows.
+  2-12 images in a grid sharing one caption. Layout by count: 2 and 4 go two
+  across (4 as a 2x2, because 3 + 1 orphan reads as broken), everything else
+  goes three across. Single column below 640px. Cells are cropped to 3:2 by
+  CSS, so mixed aspect ratios still produce even rows.
+
+  PREFER A COUNT THAT FILLS ITS ROWS. In three columns, 7 and 10 leave a single
+  cell alone on the last row, which is the same defect the 4-as-2x2 rule exists
+  to avoid; the layout does not correct for it, because at those counts there is
+  no column count that divides evenly and dropping to two would make the cells
+  huge. 6, 8, 9 and 12 all fill. 12 is the ceiling, and it is a soft one: past
+  about a dozen the grid stops being a gallery attached to a paragraph and starts
+  being an archive, which wants its own page rather than more slots here.
 
   Params:
-    src1..src6 (src1 and src2 required): image paths
-    alt1..alt6 (required for every src supplied): localised alt text
+    src1..src12 (src1 and src2 required): image paths
+    alt1..alt12 (required for every src supplied): localised alt text
     tier:    text | wide | full. Default wide.
     caption: for the group. Markup allowed, see caption.html.
     credit:  for the group. Markup allowed.
@@ -125,6 +133,54 @@
   {%- if s == "" -%}{%- include story/BUILD-ERROR-gallery-src6-must-not-be-blank.html -%}{%- endif -%}
   {%- assign a = include.alt6 | strip -%}
   {%- if a == "" -%}{%- include story/BUILD-ERROR-gallery-src6-supplied-without-alt6.html -%}{%- endif -%}
+  {%- assign srcs = srcs | push: s -%}
+  {%- assign alts = alts | push: a -%}
+{%- endif -%}
+{%- if include.src7 -%}
+  {%- assign s = include.src7 | strip -%}
+  {%- if s == "" -%}{%- include story/BUILD-ERROR-gallery-src7-must-not-be-blank.html -%}{%- endif -%}
+  {%- assign a = include.alt7 | strip -%}
+  {%- if a == "" -%}{%- include story/BUILD-ERROR-gallery-src7-supplied-without-alt7.html -%}{%- endif -%}
+  {%- assign srcs = srcs | push: s -%}
+  {%- assign alts = alts | push: a -%}
+{%- endif -%}
+{%- if include.src8 -%}
+  {%- assign s = include.src8 | strip -%}
+  {%- if s == "" -%}{%- include story/BUILD-ERROR-gallery-src8-must-not-be-blank.html -%}{%- endif -%}
+  {%- assign a = include.alt8 | strip -%}
+  {%- if a == "" -%}{%- include story/BUILD-ERROR-gallery-src8-supplied-without-alt8.html -%}{%- endif -%}
+  {%- assign srcs = srcs | push: s -%}
+  {%- assign alts = alts | push: a -%}
+{%- endif -%}
+{%- if include.src9 -%}
+  {%- assign s = include.src9 | strip -%}
+  {%- if s == "" -%}{%- include story/BUILD-ERROR-gallery-src9-must-not-be-blank.html -%}{%- endif -%}
+  {%- assign a = include.alt9 | strip -%}
+  {%- if a == "" -%}{%- include story/BUILD-ERROR-gallery-src9-supplied-without-alt9.html -%}{%- endif -%}
+  {%- assign srcs = srcs | push: s -%}
+  {%- assign alts = alts | push: a -%}
+{%- endif -%}
+{%- if include.src10 -%}
+  {%- assign s = include.src10 | strip -%}
+  {%- if s == "" -%}{%- include story/BUILD-ERROR-gallery-src10-must-not-be-blank.html -%}{%- endif -%}
+  {%- assign a = include.alt10 | strip -%}
+  {%- if a == "" -%}{%- include story/BUILD-ERROR-gallery-src10-supplied-without-alt10.html -%}{%- endif -%}
+  {%- assign srcs = srcs | push: s -%}
+  {%- assign alts = alts | push: a -%}
+{%- endif -%}
+{%- if include.src11 -%}
+  {%- assign s = include.src11 | strip -%}
+  {%- if s == "" -%}{%- include story/BUILD-ERROR-gallery-src11-must-not-be-blank.html -%}{%- endif -%}
+  {%- assign a = include.alt11 | strip -%}
+  {%- if a == "" -%}{%- include story/BUILD-ERROR-gallery-src11-supplied-without-alt11.html -%}{%- endif -%}
+  {%- assign srcs = srcs | push: s -%}
+  {%- assign alts = alts | push: a -%}
+{%- endif -%}
+{%- if include.src12 -%}
+  {%- assign s = include.src12 | strip -%}
+  {%- if s == "" -%}{%- include story/BUILD-ERROR-gallery-src12-must-not-be-blank.html -%}{%- endif -%}
+  {%- assign a = include.alt12 | strip -%}
+  {%- if a == "" -%}{%- include story/BUILD-ERROR-gallery-src12-supplied-without-alt12.html -%}{%- endif -%}
   {%- assign srcs = srcs | push: s -%}
   {%- assign alts = alts | push: a -%}
 {%- endif -%}

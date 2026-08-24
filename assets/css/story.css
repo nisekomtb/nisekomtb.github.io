@@ -430,7 +430,13 @@
 .story .story-gallery.is-4 { grid-template-columns: repeat(2, 1fr); }
 .story .story-gallery.is-3,
 .story .story-gallery.is-5,
-.story .story-gallery.is-6 { grid-template-columns: repeat(3, 1fr); }
+.story .story-gallery.is-6,
+.story .story-gallery.is-7,
+.story .story-gallery.is-8,
+.story .story-gallery.is-9,
+.story .story-gallery.is-10,
+.story .story-gallery.is-11,
+.story .story-gallery.is-12 { grid-template-columns: repeat(3, 1fr); }
 /* Nested grid items also default to min-width: auto, so they need the same
    guard the top-level grid children get in section 1. */
 .story .story-gallery > * { min-width: 0; }
@@ -474,7 +480,13 @@
   .story .story-gallery.is-3,
   .story .story-gallery.is-4,
   .story .story-gallery.is-5,
-  .story .story-gallery.is-6 { grid-template-columns: 1fr; }
+  .story .story-gallery.is-6,
+  .story .story-gallery.is-7,
+  .story .story-gallery.is-8,
+  .story .story-gallery.is-9,
+  .story .story-gallery.is-10,
+  .story .story-gallery.is-11,
+  .story .story-gallery.is-12 { grid-template-columns: 1fr; }
 }
 
 .story .story-split {
@@ -787,6 +799,162 @@
   .story .story-table .story-row { display: block; }
   .story .story-table .story-row-val { text-align: left; margin-top: 3px; }
 }
+
+/* A podium. One card per placing, sharing the panel, gold hairline, radius and
+   tabular numerals of `.story-stat` above, because both are the same object: a
+   row of small data cards mid-article. The grid, the `min-width: 0` guard and
+   the reason for `justify-content: flex-start` are all argued at
+   `.story-stats`; this block does not restate them.
+
+   THE NUMBER IS KNOCKED OUT OF THE TROPHY, which is the device
+   `_layouts/competition.html:471` uses for prize tiers, and reproducing it here
+   is the point: a reader who has seen a NAMBA competition page recognises the
+   card. What is NOT reproduced is that layout's positioning. There the number
+   is pushed onto the glyph with `margin-left: -47px` against a fixed 96px
+   `font-size` set three files away in template.css, so it holds at exactly one
+   size. Here the glyph and the number are siblings in a `position: relative`
+   box and the number is centred in the cup with percentages, so the whole
+   medal scales off one clamp.
+
+   THE TROPHY IS GOLD, NOT GREEN. Convention 14 gives green `--color-secondary`
+   to structural markers and only on the page background, where it measures
+   4.70:1 against 4.28:1 on `--color-bg-panel`. These cards ARE panels, so green
+   is out by that rule. Gold `--color-accent` is the token for data and
+   editorial emphasis at 7.16:1 on panel, it is what `.story-stat-num` already
+   uses on the identical card, and a gold medal is the obvious reading. The
+   knockout number then sits at 7.16:1 against the glyph it is cut from.
+
+   62% AND 0.36em ARE MEASURED AGAINST THE GLYPH, not chosen. Font Awesome's
+   trophy (\f091) puts the cup in the upper portion of the em box and the stem
+   and base below it, so a number centred in the full box lands on the stem.
+   Bounding the number's box to the top 62% centres it in the cup, and 0.36em
+   is the largest size that clears the cup's inner walls at the narrow end of
+   the clamp. Both are tied to that specific glyph: swapping the icon means
+   re-measuring, and both must be checked at the clamp's bottom (52px) and top
+   (70px), since a value that fits one end can overflow the other.
+
+   `list-style: none` PLUS `list-style-position: inside` is not redundant. With
+   the marker suppressed but positioned outside, Safari still reserved the
+   marker box and indented the first card, so the row of three sat off-centre
+   against the prose above it. The <ol> keeps its element and its semantics;
+   only the visible marker goes, since the placing is drawn in the trophy.
+   -------------------------------------------------------------------------- */
+.story .story-podium {
+  margin: 2.4em 0;
+  padding: 0;
+  list-style: none;
+  list-style-position: inside;
+  display: grid;
+  gap: 14px;
+  /* 120px, not the 180px `.story-stats` uses. A podium is not a set of
+     independent figures that can reflow to any count per row: three placings
+     wrapping to 2 + 1 reads as a two-horse race with an afterthought, and the
+     orphan is what a reader notices first. 120px holds all three across down to
+     a 390px viewport, and below 480px the media query at the end of this section
+     takes over with a layout built for one card per row. Measured at 390px:
+     `minmax(160px, 1fr)` gave 2 + 1. */
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+}
+.story .story-podium > * { min-width: 0; }
+
+.story .story-podium .story-podium-place {
+  background: var(--color-bg-panel);
+  border: 1px solid rgba(200, 169, 81, 0.18);
+  border-radius: 6px;
+  padding: clamp(20px, 2.4vw, 30px) 14px clamp(18px, 2.2vw, 26px);
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.story .story-podium .story-podium-medal {
+  position: relative;
+  display: block;
+  font-size: clamp(52px, 5.5vw, 70px);
+  line-height: 1;
+  color: var(--color-accent);
+}
+/* The glyph is the sizing element, so it stays in normal flow and the number is
+   the absolute one. Reversing that leaves the medal box with no height. */
+.story .story-podium .story-podium-medal .fa-trophy { display: block; }
+.story .story-podium .story-podium-num {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 62%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
+  font-size: 0.36em;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-bg-panel);
+}
+
+/* The name and the age are <span>s inside a <span>, so all three need
+   blockifying; none of them can rely on a UA default. */
+.story .story-podium .story-podium-text { display: block; min-width: 0; }
+.story .story-podium .story-podium-name {
+  display: block;
+  margin-top: 14px;
+  font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
+  font-size: clamp(15px, 1.3vw, 18px);
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--color-text-light);
+  overflow-wrap: break-word;
+}
+.story .story-podium .story-podium-sub {
+  display: block;
+  margin-top: 5px;
+  font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
+  font-size: clamp(12px, 0.95vw, 14px);
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--color-text-muted);
+}
+
+/* Below 480px the card turns on its side: trophy on the left, name and age
+   stacked to the right of it, one card per row. Three cards across survives to
+   390px, but the text track is 280px at a 320px viewport, so each card gets 93px
+   and 65px of it inside the padding. "Stephanie Watanabe" sets to about 75px at
+   the clamp's 15px floor, so `overflow-wrap: break-word` engages and hyphenless
+   mid-word breaks appear in a rider's name. Breaking a person's name in half is
+   the one outcome worth restructuring the layout to avoid.
+
+   Measured at 320px with the row layout: 280px cards inside a 280px track, no
+   horizontal overflow, and all three names on one line, 255px for the whole
+   block. The alternative of keeping the cards vertical and stacking them one
+   per row was not measured, and is rejected on the reading rather than the
+   numbers: a vertical card puts the trophy on its own line and then spends most
+   of the extra height on padding.
+
+   `text-align: left` on the card and `align-items: center` on the flex both
+   have to be restated: the wide layout centres each, and neither is inherited
+   back to a sensible default by the grid change alone. */
+@media (max-width: 479px) {
+  .story .story-podium { grid-template-columns: 1fr; gap: 10px; }
+  .story .story-podium .story-podium-place {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 14px;
+    padding: 12px 16px;
+  }
+  .story .story-podium .story-podium-medal { font-size: 46px; flex: 0 0 auto; }
+  .story .story-podium .story-podium-name { margin-top: 0; }
+}
+
+/* JA needs the leading the spec rows above get, for the same reason: these
+   elements set their own line-height, and the EN values are tuned to Latin
+   ascenders (convention 11 keeps the rule beside the block it modifies). */
+:lang(ja) .story .story-podium .story-podium-name { line-height: 1.6; }
+:lang(ja) .story .story-podium .story-podium-sub { line-height: 1.7; }
 
 /* --------------------------------------------------------------------------
    6. Voice and structure
@@ -1116,11 +1284,27 @@
    a leading and a trailing space in generated content survive white-space
    collapsing against adjacent text. `"·"` plus the margins reproduces 18.7px
    exactly. */
-.story .story-byline .story-byline-date::before {
+.story .story-byline .story-byline-date::before,
+.story .story-byline .story-byline-readtime::before,
+.story .story-byline .story-byline-type::before {
   content: "·";
   content: "·" / "";
   color: var(--story-sep);
   margin: 0 7px;
+}
+/* The story type is the one item in this row that is a category rather than a
+   fact about the author, so it takes the gold the kit uses for editorial
+   emphasis. It is NOT uppercased or letter-spaced the way the same label is on
+   the index card: those are devices for a standalone eyebrow, and inside a
+   13px metadata run they would make the type shout over the name above it.
+
+   Colour is the only difference, deliberately. Adding weight as well was tried
+   and read as a link, which it is not.
+
+   The ::before separator is shared with the date and read time above, so this
+   sits last in the row and needs no spacing rules of its own. */
+.story .story-byline .story-byline-type {
+  color: var(--color-accent);
 }
 
 .story .story-author-card {

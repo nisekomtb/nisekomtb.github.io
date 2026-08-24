@@ -1,0 +1,50 @@
+{%- comment -%}
+  Estimated reading time for a story, computed at build time.
+
+  Params:
+    content (required): rendered page content, e.g. `content` in a layout or
+             `post.content` in an index loop. Markup is stripped here, so pass
+             it raw.
+    format:  label | number. Default label, which emits a localised string
+             ("6 min read" / "約6分"). `number` emits the bare integer, which is
+             what the JSON-LD `timeRequired` needs.
+
+  IT IS COMPUTED, NEVER STORED IN FRONT MATTER. A `readTime: 6` field goes stale
+  the first time anyone edits a paragraph and nothing catches it. The index page
+  has `post.content` available, so it can call this include and get the same
+  answer as the story itself.
+
+  THE JA BRANCH IS NOT OPTIONAL AND NOT COSMETIC. This repo is on Jekyll 3.10,
+  where `number_of_words` is `input.split.length` with no CJK mode (that arrived
+  in Jekyll 4.1). Japanese does not put spaces between words, so a whole JA
+  paragraph counts as ONE word and every JA story would render "1 min read".
+  Japanese is therefore counted in characters instead. If this project ever moves
+  to Jekyll 4.1+, `number_of_words: "auto"` replaces the whole branch.
+
+  RATES. 200 words per minute for English and 400 characters per minute for
+  Japanese, both at the conservative end of the usual ranges, because a story
+  page is read rather than skimmed. `plus:` half the rate before `divided_by:`
+  rounds to nearest, since Liquid's `divided_by` floors on integers.
+
+  IMAGES ARE NOT COUNTED. This story carries 31 photographs, and adding the
+  usual 12 seconds per image would roughly double the figure. "6 min read" is a
+  promise about reading, not about how long someone lingers on the pictures.
+  Caption text does count, because captions are prose and `strip_html` keeps
+  text nodes while discarding tags and their attributes (so alt text is out).
+{%- endcomment -%}
+{%- assign rt_text = include.content | strip_html | strip_newlines -%}
+{%- if page.lang == "ja" -%}
+  {%- assign rt_chars = rt_text | replace: " ", "" | size -%}
+  {%- assign rt_mins = rt_chars | plus: 200 | divided_by: 400 -%}
+{%- else -%}
+  {%- assign rt_words = rt_text | number_of_words -%}
+  {%- assign rt_mins = rt_words | plus: 100 | divided_by: 200 -%}
+{%- endif -%}
+{%- if rt_mins < 1 -%}{%- assign rt_mins = 1 -%}{%- endif -%}
+{%- if include.format == "number" -%}
+{{- rt_mins -}}
+{%- elsif page.lang == "ja" -%}
+{{- rt_mins }}分で読めます
+{%- else -%}
+{{- rt_mins }} min read
+{%- endif -%}

@@ -292,6 +292,15 @@ twinpeaks:
       multi_use: false
       sponsor: grand-hirafu
       trailforks_id: 793071
+    # BUILT AND RIDEABLE, BUT NOT OPENABLE. Do not uncomment on the assumption that this
+    # was an oversight. Creek 'n' Peak carries the Twin Peaks end of the planned Grand
+    # Hirafu connection, over the river on land held under a river easement. Hokkaido
+    # Forest ruled that trails in a ski resort must connect the top and bottom of the lift
+    # named in the application, which blocks a trail running out of the resort into Twin
+    # Peaks. The bridge was in and the trail was physically connected when that landed.
+    # The current plan is to bring the two networks close together with a rest area
+    # between them rather than joining them, on Hokkaido Forest's own recommendation.
+    # Uncomment only once that is permitted and open.
     # - name: Creek 'n' Peak
     #   ja:
     #     name: クリーク・ン・ピーク

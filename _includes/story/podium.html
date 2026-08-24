@@ -1,0 +1,99 @@
+{%- comment -%}
+  A podium: one card per placing, each with the placing number knocked out of a
+  trophy. Three cards is the normal case; two and four are supported because a
+  category can tie or fall short of three finishers.
+
+  Params:
+    n1..n4 (n1 required): rider or team name, localised
+    s1..s4 (optional): the small line under the name, localised. Written out in
+           full by the caller rather than assembled here, so EN can say "16"
+           and JA "16歳" without this file knowing what the value means.
+    tier:  text | wide. Default wide. Three cards across want the wide track;
+           `text` exists for a two-card podium sitting inside a paragraph run.
+
+  THE HEADING STAYS IN THE DOCUMENT, NOT IN HERE. A results section is several
+  podiums under several category headings, and those headings carry the page
+  outline that schema-breadcrumb and the SEO pass both read. A `title` param
+  would move them inside a block-level include where they are easy to lose
+  track of, and would tempt a caller into rendering the only heading for a
+  section as a <div>. Call this after an <h3>, the way table.html is called.
+
+  THE PLACING NUMBER IS REAL TEXT, and the trophy glyph beside it is
+  `aria-hidden`. Font Awesome renders through `content` on a pseudo-element, so
+  an unhidden glyph is announced as the private-use codepoint it actually is.
+  The <ol> carries the ordering semantically, so a screen reader announces "1
+  of 3" regardless, but the visible number is still the thing a sighted reader
+  scans for and it should be in the accessibility tree too.
+
+  THE `story-podium-text` WRAPPER EXISTS FOR THE NARROW LAYOUT, and is not
+  decoration. Below 480px the card turns into a row with the trophy beside the
+  text rather than above it, and the name and the age have to travel together as
+  one flex item to do that. Without the wrapper they become two siblings of the
+  medal and lay out as trophy | name | age across a 288px card. Removing it
+  breaks only the narrow breakpoint, which is exactly the case a desktop review
+  misses.
+
+  <ol> RATHER THAN THE <dl> table.html USES. A podium is an ordered list in the
+  literal sense: the order IS the information, and reversing it changes the
+  facts. table.html's <dl> is right for key/value pairs whose order is
+  editorial. Do not consolidate the two.
+
+  REQUIRED PARAMS, BLANK VALUES and the BUILD-ERROR mechanism work exactly as
+  in stats.html, gallery.html and table.html. Read the note in stats.html.
+  Never create a file named in a BUILD-ERROR message: the missing file IS the
+  error message, and deploy.yml fails the build if one ever appears.
+{%- endcomment -%}
+{%- assign tier = include.tier | default: "wide" -%}
+{%- unless tier == "text" or tier == "wide" -%}
+{%- include story/BUILD-ERROR-podium-tier-must-be-text-or-wide.html -%}
+{%- endunless -%}
+{%- assign names = "" | split: "" -%}
+{%- assign subs = "" | split: "" -%}
+{%- if include.n1 -%}
+  {%- assign n = include.n1 | strip -%}
+  {%- if n == "" -%}{%- include story/BUILD-ERROR-podium-n1-must-not-be-blank.html -%}{%- endif -%}
+  {%- assign s = include.s1 | strip -%}
+  {%- assign names = names | push: n -%}
+  {%- assign subs = subs | push: s -%}
+{%- endif -%}
+{%- if include.n2 -%}
+  {%- assign n = include.n2 | strip -%}
+  {%- if n == "" -%}{%- include story/BUILD-ERROR-podium-n2-must-not-be-blank.html -%}{%- endif -%}
+  {%- assign s = include.s2 | strip -%}
+  {%- assign names = names | push: n -%}
+  {%- assign subs = subs | push: s -%}
+{%- endif -%}
+{%- if include.n3 -%}
+  {%- assign n = include.n3 | strip -%}
+  {%- if n == "" -%}{%- include story/BUILD-ERROR-podium-n3-must-not-be-blank.html -%}{%- endif -%}
+  {%- assign s = include.s3 | strip -%}
+  {%- assign names = names | push: n -%}
+  {%- assign subs = subs | push: s -%}
+{%- endif -%}
+{%- if include.n4 -%}
+  {%- assign n = include.n4 | strip -%}
+  {%- if n == "" -%}{%- include story/BUILD-ERROR-podium-n4-must-not-be-blank.html -%}{%- endif -%}
+  {%- assign s = include.s4 | strip -%}
+  {%- assign names = names | push: n -%}
+  {%- assign subs = subs | push: s -%}
+{%- endif -%}
+{%- if names.size < 1 -%}
+{%- include story/BUILD-ERROR-podium-requires-at-least-one-place.html -%}
+{%- endif -%}
+<ol class="story-block story-podium story-{{ tier }}">
+  {%- for n in names %}
+  {%- assign s = subs[forloop.index0] -%}
+  <li class="story-podium-place">
+    <span class="story-podium-medal">
+      <span class="fa-solid fa-trophy" aria-hidden="true"></span>
+      <span class="story-podium-num">{{ forloop.index }}</span>
+    </span>
+    <span class="story-podium-text">
+      <span class="story-podium-name">{{ n }}</span>
+      {%- if s != "" %}
+      <span class="story-podium-sub">{{ s }}</span>
+      {%- endif %}
+    </span>
+  </li>
+  {%- endfor %}
+</ol>
