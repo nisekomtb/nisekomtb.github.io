@@ -4,7 +4,12 @@ subtitle: トリップガイドとニセコMTBニュース
 description: "NAMBAのストーリー：トレイルガイド、トリップレポート、コミュニティニュース、ニセコのマウンテンバイクネットワークの舞台裏。"
 noindex: true
 masthead:
-  img: /assets/images/bg/bg-header-twinpeaks.jpg
+  img: /assets/images/bg/bg-header-stories.jpg
+  # The master is 2000x732 (2.73:1), not the 3:2 the partial assumes, so width and
+  # height are set explicitly. They only feed the aspect-ratio reservation, but
+  # leaving the 3:2 default would declare a box half again as tall as the image.
+  width: 2000
+  height: 732
 ---
 
 <script type="application/ld+json">
@@ -20,6 +25,144 @@ masthead:
   "about": { "@id": "https://namba.ngo/#organization" }
 }
 </script>
+<style>
+  /* /stories/ cards. Every story sits in a contained card: panel background, hairline
+     border, media flush to the card edges, text on padding. Separation now comes from
+     the card's own chrome rather than from whitespace, which is why the gap between
+     cards is smaller than it was when they were bare image-over-text stacks.
+
+     The chrome is deliberately the same as .ride-card and .event-card in template.css
+     (panel fill, 1px rgba(255,255,255,0.15), 3px radius, hover to green border plus a
+     2px lift). A fourth card treatment on a site that already has three would read as
+     an accident. Only the sizes and the internal layout are specific to this page.
+
+     Two sizes on purpose: the newest story gets a full-width hero card, everything
+     after it a horizontal row card. With one story published you see one big card and
+     nothing looks unfinished. THE ROW CARD IS PROVISIONAL: it exists so the page does
+     not break the moment a second story lands, and the real decision about how a
+     multi-story archive should look gets made with two real stories on screen rather
+     than one story and a guess.
+
+     Page-scoped rather than added to template.css because it serves two pages, and
+     story.css is not available: that loads only on `layout: story` and this page uses
+     the default layout. The same content-level <style> pattern /impact/ and /partner/
+     use for their stat cards.
+
+     THE WHOLE CARD IS THE LINK, one <a> wrapping media and text, so the target is the
+     card rather than the headline alone. That is also why nothing inside carries its
+     own <a>: nested anchors are invalid and the browser's repair puts them as
+     siblings, which silently breaks the layout.
+
+     Aspect ratios are set on the media box and the <img> is `object-fit: cover`, so a
+     portrait thumbnail crops instead of making one card twice the height of the rest.
+     16:9 for the hero, 3:2 for the rows: the hero is wide enough that 3:2 would push
+     the text below the fold on a laptop. */
+  .stories-list { display: flex; flex-direction: column; gap: 32px; }
+
+  .story-card {
+    display: block;
+    background: var(--color-bg-panel);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 3px;
+    overflow: hidden;
+    color: inherit;
+    text-decoration: none;
+    transition: border-color 200ms ease, transform 200ms ease;
+  }
+  .story-card:hover,
+  .story-card:focus { color: inherit; text-decoration: none; }
+  .story-card:hover { border-color: var(--color-secondary); transform: translateY(-2px); }
+
+  /* `overflow: hidden` here as well as on the card. The card clips the rounded
+     corners; this clips the hover zoom so a scaled image cannot bleed over the text
+     below it. */
+  .story-card-media { overflow: hidden; background: var(--color-bg-panel); }
+  .story-card-media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 500ms ease;
+  }
+  /* Hover moves the image inside its own clipped box, on top of the border colour
+     change the card shares with every other card on the site. Not a box-shadow: the
+     cards sit on a dark page with photographs as most of their area, and a shadow
+     behind a photograph is invisible. `will-change` is deliberately absent, it would
+     promote every card on the page to its own layer for an effect that only ever runs
+     on one. */
+  .story-card:hover .story-card-media img { transform: scale(1.03); }
+  @media (prefers-reduced-motion: reduce) {
+    .story-card-media img { transition: none; }
+    .story-card:hover .story-card-media img { transform: none; }
+    .story-card { transition: border-color 200ms ease; }
+    .story-card:hover { transform: none; }
+  }
+
+  .story-card-body { padding: 26px 28px 28px; }
+
+  .story-card-type {
+    margin: 0 0 6px;
+    font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--color-accent);
+  }
+  :lang(ja) .story-card-type {
+    text-transform: none;
+    letter-spacing: 0.04em;
+    font-size: 13px;
+  }
+  .story-card-title {
+    margin: 0 0 8px;
+    font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--color-text-light);
+  }
+  .story-card-meta {
+    margin: 0 0 10px;
+    font-size: 13px;
+    color: var(--color-text-muted);
+  }
+  .story-card-desc { margin: 0; }
+
+  /* Hero: media above, text below, both full width. */
+  .story-card-hero .story-card-media { aspect-ratio: 16 / 9; }
+  .story-card-hero .story-card-title { font-size: clamp(26px, 3.4vw, 42px); }
+  .story-card-hero .story-card-desc { font-size: 17px; max-width: 44em; }
+
+  /* Row: media beside text from 768px up, stacked above it below that. The media
+     column stretches to the card's full height instead of holding a 3:2 box, so the
+     image reaches all four edges on its side and there is no strip of bare panel under
+     it. That is why the aspect ratio is dropped at this breakpoint rather than kept:
+     with `align-items: start` and a fixed ratio the image floats in the corner of a
+     taller card. `min-height` stops a short story from producing a letterbox crop. */
+  .story-card-row .story-card-media { aspect-ratio: 3 / 2; }
+  .story-card-row .story-card-title { font-size: clamp(20px, 2vw, 26px); }
+  @media (min-width: 768px) {
+    .story-card-row {
+      display: grid;
+      grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+      align-items: stretch;
+    }
+    .story-card-row .story-card-media {
+      aspect-ratio: auto;
+      height: 100%;
+      min-height: 260px;
+    }
+    .story-card-row .story-card-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+  @media (max-width: 767px) {
+    .stories-list { gap: 24px; }
+    .story-card-body { padding: 20px 20px 22px; }
+  }
+</style>
 <div class="t3-section-wrap">
 
   <div class="section">
@@ -41,46 +184,83 @@ masthead:
 
   <div class="section">
 
-    {% assign stories = site.posts | where: "categories", "stories" %}
-    {% assign has_stories = false %}
-    {% for post in stories %}
-      {% assign is_ja = post.path | slice: 0, 3 %}
-      {% if is_ja == "ja/" %}
-        {% assign has_stories = true %}
-        <div
-          class="module-title-wrap ja-animate"
-          style="max-width:900px;"
-          data-animation="move-from-bottom"
-          data-delay="200">
+  {%- comment -%}
+    The JA twin of every story lives in ja/_posts, and `site.posts` holds both, so the
+    list is filtered by path before anything else looks at it. Doing that inside the
+    render loop, which is what this page used to do, means `forloop.first` counts the
+    unfiltered list: with a JA post sorted ahead of its EN twin the hero card silently
+    became a row card and no story got the large treatment.
+  {%- endcomment -%}
+  {% assign all_stories = site.posts | where: "categories", "stories" %}
+  {% assign stories = "" | split: "" %}
+  {% for post in all_stories %}
+    {% assign is_ja = post.path | slice: 0, 3 %}
+    {%- comment -%}
+      MIRROR OF stories/index.html WITH THE TEST INVERTED. The EN index keeps posts
+      whose path does NOT start with ja/; this one keeps only those that DO. Copying
+      the EN file verbatim is how this page shipped listing the ENGLISH story, which
+      stayed invisible for as long as /stories/ had no posts in it at all.
+    {%- endcomment -%}
+    {% if is_ja == "ja/" %}{% assign stories = stories | push: post %}{% endif %}
+  {% endfor %}
+
+  {% if stories.size > 0 %}
+    <div class="stories-list">
+      {% for post in stories %}
+        {%- assign st = site.data['story-types'][post.storyType] -%}
+        {%- if forloop.first -%}{%- assign card = "story-card-hero" -%}{%- else -%}{%- assign card = "story-card-row" -%}{%- endif -%}
+        <a class="story-card {{ card }} ja-animate" href="{{ post.url }}"
+           data-animation="move-from-bottom" data-delay="item-{{ forloop.index0 }}">
           {% if post.thumbnail %}
-            <div style="margin-bottom:20px;">
-              <a href="{{ post.url }}">
-                <img src="{{ post.thumbnail }}" alt="{{ post.title }}" style="width:100%; border-radius:3px;">
-              </a>
+            <div class="story-card-media">
+              {%- comment -%}
+                `sizes` is the card's real rendered width, not 100vw. Telling the
+                browser 100vw makes it fetch the 2400px tier for a 572px box.
+
+                The width is a STEP FUNCTION, not one formula, because the card sits in
+                a Bootstrap `.container` whose max-width bs3-compat overrides per
+                breakpoint. Card width = min(container-max, 100vw) - 36px of container
+                padding; the card's own 1px border takes the media 2px narrower again:
+
+                  viewport     container-max   card    media
+                  <768px       100%            100vw-36  100vw-38
+                  768-991px    756px           720px     718px
+                  992-1199px   976px           940px     938px
+                  >=1200px     1296px          1260px    1258px
+
+                CONFIRMED by measuring three of the four rows in the browser (354px
+                card at 390px, 940px at 1000px, 1260px at 1440px). Note this is NOT
+                the 1180px track the story layout uses: /stories/ runs the default
+                layout, not `layout: story`.
+
+                A row card's media column is 5/11 of the media width with no gap
+                subtracted, the row grid having closed its gap to 0 when the media went
+                flush to the card edge. 5/11 of 1258 is 571.8px, and the measured
+                column is 571.8px.
+              {%- endcomment -%}
+              {% if forloop.first %}
+                {% include image.html src=post.thumbnail alt=post.thumbnailAlt widths="800,1600,2400" sizes="(max-width: 767px) calc(100vw - 38px), (max-width: 991px) 718px, (max-width: 1199px) 938px, 1258px" loading="eager" width="2400" height="1600" %}
+              {% else %}
+                {% include image.html src=post.thumbnail alt=post.thumbnailAlt widths="800,1600,2400" sizes="(max-width: 767px) calc(100vw - 38px), (max-width: 991px) 326px, (max-width: 1199px) 426px, 572px" width="2400" height="1600" %}
+              {% endif %}
             </div>
           {% endif %}
-          <h2 class="module-title">
-            <a href="{{ post.url }}">{{ post.title }}</a>
-          </h2>
-          <p style="color:#999;">{{ post.date | date: "%Y年%-m月%-d日" }}</p>
-          {% if post.description %}
-            <div class="features-desc">
-              <p>{{ post.description }}</p>
-            </div>
-          {% endif %}
-        </div>
-      {% endif %}
-    {% endfor %}
-    {% unless has_stories %}
-      <div class="module-title-wrap">
-        <div
-          class="features-desc ja-animate"
-          data-animation="move-from-bottom"
-          data-delay="200">
-          <p>ストーリーは<wbr>近日公開予定です。<wbr>シーズンが<wbr>始まったら<wbr>また<wbr>お越しください！</p>
-        </div>
+          <div class="story-card-body">
+            {% if post.storyType %}<p class="story-card-type">{% if st %}{{ st.ja }}{% else %}{{ post.storyType }}{% endif %}</p>{% endif %}
+            <h2 class="story-card-title">{{ post.title }}</h2>
+            <p class="story-card-meta">{{ post.date | date: "%Y年%-m月%-d日" }} &middot; {% include story/read-time.html content=post.content %}</p>
+            {% if post.description %}<p class="story-card-desc">{{ post.description }}</p>{% endif %}
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+  {% else %}
+    <div class="module-title-wrap">
+      <div class="features-desc ja-animate" data-animation="move-from-bottom" data-delay="200">
+        <p>ストーリーは近日公開。シーズンが始まる頃にまた見にきてください。</p>
       </div>
-    {% endunless %}
+    </div>
+  {% endif %}
 
   </div>
 
