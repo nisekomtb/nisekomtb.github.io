@@ -58,6 +58,12 @@ og:
 
 ## Partner images
 
-- Partner images require transparency, and should we good enough quality to be viewed as large icons.
-- Each partner icon requires a grey scale version, suffixed with `.g` which is displayed initially,
-  with colour version displayed on hover.
+- Partner images require transparency, and should be good enough quality to be viewed as
+  large icons.
+- **Greyscale is done in CSS, not with a second file.** `_includes/partners-wall.html`
+  carries a scoped `<style>` block that rests every logo at `filter: grayscale(100%)` and
+  `opacity: 0.35`, then returns it to `grayscale(0%)` and full opacity on
+  `.partners-wall .partner:hover`. Supply one colour file per partner and nothing else.
+- Do **not** add `.g`-suffixed greyscale variants. That convention was retired on
+  2026-08-24 and the 24 remaining `.g` files were removed: an audit of the built site
+  found none of them referenced, because the CSS filter had already replaced them.
