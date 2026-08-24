@@ -11,9 +11,34 @@ layout: base
 {%- endcomment -%}
 
 <article class="story" aria-labelledby="masthead-title">
-  {% if page.author %}{% include story/byline.html slug=page.author %}{% endif %}
+  {% if page.author %}{% include story/byline.html slug=page.author content=content %}{% endif %}
   {{ content }}
-  {% if page.author %}{% include story/author-card.html slug=page.author %}{% endif %}
+  {%- comment -%}
+    NO AUTHOR CARD AT THE FOOT. `story/byline.html` above already names the author
+    and their role, so a card repeating both at the end credited the same person
+    twice on every story. The include still exists and still works: a guest-authored
+    story that wants a bio can call it from its own body, where the decision is
+    visible in the post rather than applied to every story by the layout.
+
+    What goes at the end instead is a CTA, and it belongs in the POST, not here. A
+    layout-level CTA would be identical on every story; .claude/rules/copy.md asks
+    for one that matches the post's topic. See `.story-cta` in story.css section 8.
+
+    THE BACK LINK BELOW IS NOT A CTA, which is why it does live here. It is
+    navigation, and navigation SHOULD be identical on every story; the rule above
+    is about topical calls to action, not about the way out of the page.
+
+    It mirrors the idiom in `_layouts/event.html` and `_layouts/job.html`: primary
+    when the story carried no CTA of its own, secondary when it did, so a story
+    never shows two primary buttons competing and never ends on a lone orphaned
+    secondary. Those layouts read front matter to decide; a story's CTA is authored
+    in the post body, so the test here is the rendered content instead.
+  {%- endcomment -%}
+  {%- assign story_has_cta = false -%}
+  {%- if content contains 'story-cta' %}{% assign story_has_cta = true %}{% endif -%}
+  <div class="story-cta">
+    <a class="btn btn-{% if story_has_cta %}secondary{% else %}primary{% endif %}" href="{% if page.lang == 'ja' %}/ja{% endif %}/stories/">{% if page.lang == "ja" %}ストーリー一覧に戻る{% else %}Back to stories{% endif %}</a>
+  </div>
 </article>
 
 {% if page.story_schema != "none" %}
@@ -47,6 +72,28 @@ layout: base
   "headline": {{ page.title | jsonify }},
   "url": "https://namba.ngo{{ page.url }}",
   "inLanguage": "{{ page.lang }}",
+  {%- comment -%}
+    timeRequired is an ISO 8601 duration. Same include as the visible byline, so
+    the two can never disagree. `story_rt` is prefixed for the same reason
+    `schema_author` is: Liquid's assign writes to the outermost scope and would
+    otherwise collide with a variable of the same name inside an include.
+  {%- endcomment -%}
+  {%- capture story_rt %}{% include story/read-time.html content=content format="number" %}{% endcapture -%}
+  "timeRequired": "PT{{ story_rt | strip }}M",
+  {%- comment -%}
+    articleSection is the schema field for the section of a publication a piece sits
+    in, which is exactly what `storyType` is. Emitted in the page language, matching
+    the visible eyebrow, and taken from _data/story-types.yml so the two cannot drift.
+    Bracket access on the data file: Liquid reads `site.data.story-types` as a
+    subtraction. Omitted entirely when a story has no type rather than emitted empty,
+    since an empty string is a value Google will flag.
+  {%- endcomment -%}
+  {%- if page.storyType -%}
+  {%- assign schema_section = site.data['story-types'][page.storyType] -%}
+  {%- if schema_section -%}
+  {%- if page.lang == 'ja' %}"articleSection": {{ schema_section.ja | jsonify }},{% else %}"articleSection": {{ schema_section.en | jsonify }},{% endif -%}
+  {%- endif -%}
+  {%- endif %}
   "image": "https://namba.ngo{{ page.og.image | default: page.masthead.img | default: '/assets/images/og/hero-2026-08.jpg' }}"
   {%- if page.description %},
   "description": {{ page.description | jsonify }}
