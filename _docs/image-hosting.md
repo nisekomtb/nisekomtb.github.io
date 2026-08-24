@@ -128,10 +128,11 @@ orphaned when `twin-peaks/index.html` moved its masthead to `/assets/images/twin
 
 - **OG images** (2 files). Unreferenced in the build, but external scrapers may still
   re-fetch them for previously shared links. Cheap to keep, ugly to break.
-- **Greyscale partner-logo variants** (24 `.g.*` files). `.claude/rules/images.md` requires
-  a `.g` variant per partner icon for a hover swap, but **zero are referenced in the built
-  output**, so the mechanism is not currently wired up. Either the rule is stale or the
-  feature regressed. Resolve that question before removing the files.
+- ~~**Greyscale partner-logo variants** (24 `.g.*` files).~~ **Resolved 2026-08-24 and
+  since removed.** The rule was stale, not the feature: `_includes/partners-wall.html`
+  does the swap in a scoped `<style>` block with `filter: grayscale(100%)` at rest and
+  `grayscale(0%)` on `.partners-wall .partner:hover`, so the second file was redundant.
+  `.claude/rules/images.md` has been corrected.
 
 ### Verification
 
