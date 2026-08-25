@@ -839,6 +839,18 @@
    against the prose above it. The <ol> keeps its element and its semantics;
    only the visible marker goes, since the placing is drawn in the trophy.
    -------------------------------------------------------------------------- */
+/* A CATEGORY HEADING SITTING DIRECTLY ON A PODIUM is centred to match the cards
+   under it. Scoped with `:has(+ .story-podium)` rather than a class on the h3,
+   because podium.html deliberately keeps the heading in the document (see its
+   note: the headings carry the page outline that the SEO pass reads) and a class
+   the author has to remember is a class the author will forget. An h3 used as an
+   ordinary subheading elsewhere in a story is untouched.
+
+   `:has()` is Baseline across Chrome, Safari and Firefox. Where it is missing the
+   heading simply stays left-aligned, which is the current design, so the fallback
+   costs nothing. */
+.story h3:has(+ .story-podium) { text-align: center; }
+
 .story .story-podium {
   margin: 2.4em 0;
   padding: 0;
@@ -1437,6 +1449,15 @@
   flex-wrap: wrap;
   gap: 10px;
   align-items: center;
+  /* CENTRED, unlike the rest of the story. `.story` sets `text-align: left` once
+     and lets descendants inherit it, which is right for prose; this row is not
+     prose. It is the same centred button row `_layouts/event.html` and
+     `_layouts/job.html` already end on, so a reader who reaches the foot of an
+     event page and the foot of a story sees the same thing in the same place.
+     `justify-content` handles the buttons, `text-align` the smallprint, which
+     is a flex-basis:100% item and so is not moved by justify-content at all. */
+  justify-content: center;
+  text-align: center;
 }
 .story .story-cta .story-smallprint {
   flex-basis: 100%;
