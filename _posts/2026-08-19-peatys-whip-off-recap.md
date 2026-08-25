@@ -25,6 +25,12 @@ masthead:
   img: /assets/images/bg/bg-header-whip-off.jpg
 og:
   image: /assets/images/og/whip-off.jpg
+# Rendered by _layouts/story.html beside the back-to-stories link, as one button row.
+# Points at /events/ rather than /join/: this is an event recap, so the next step we
+# actually want from a reader is the next event, not a membership form.
+cta:
+  text: Get involved with future events
+  url: /events/
 ---
 
 <p class="story-lede">On 15 August we held the <a href="/events/peatys-whip-off-2026/">Peaty's Whip Off</a> at
@@ -400,9 +406,3 @@ see what you were riding for. Waivers were signed in advance, so it was turn up,
    dims="2400x1600,2400x1600,1600x2400"
    widths="800,1600"
    caption="Harry from the trail crew, Sen at the side of the trail, and Dan." %}
-
-<div class="story-block story-cta">
-  <a class="btn btn-primary" href="/join/">Become a member</a>
-  <p class="story-smallprint">The trails and days like this one are paid for by members, sponsors
-  and donations. Riding Twin Peaks is free and we want to keep it that way.</p>
-</div>

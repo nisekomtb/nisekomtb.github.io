@@ -24,21 +24,36 @@ layout: base
     layout-level CTA would be identical on every story; .claude/rules/copy.md asks
     for one that matches the post's topic. See `.story-cta` in story.css section 8.
 
-    THE BACK LINK BELOW IS NOT A CTA, which is why it does live here. It is
-    navigation, and navigation SHOULD be identical on every story; the rule above
-    is about topical calls to action, not about the way out of the page.
+    THE BUTTON ROW BELOW IS THE EXCEPTION, and it is one row on purpose. The topical
+    CTA and the way back out belong beside each other, so the layout owns the whole
+    row and the post supplies only the CTA's words and destination via front matter:
 
-    It mirrors the idiom in `_layouts/event.html` and `_layouts/job.html`: primary
-    when the story carried no CTA of its own, secondary when it did, so a story
-    never shows two primary buttons competing and never ends on a lone orphaned
-    secondary. Those layouts read front matter to decide; a story's CTA is authored
-    in the post body, so the test here is the rendered content instead.
+      cta:
+        text: Get involved with future events
+        url: /events/
+
+    WHY FRONT MATTER RATHER THAN HTML IN THE POST. An earlier version had the post
+    write its own `.story-cta` div and the layout append a second one underneath. That
+    produced two stacked rows instead of two adjacent buttons, and it made the back
+    link forgettable: any story that hand-rolled a CTA row owned the responsibility
+    for putting a way out in it. Declaring the CTA instead means the row cannot be
+    assembled wrongly and the back link cannot go missing.
+
+    A post with no `cta` still gets the row, with the back link promoted to primary,
+    so a story never ends on a lone orphaned secondary. Same idiom as
+    `_layouts/event.html` and `_layouts/job.html`.
+
+    GATED ON THE CATEGORY, NOT THE LAYOUT. `/beer/` and `/story-kit/` both use this
+    layout without being stories: beer is a product page borrowing the presentation,
+    story-kit is an internal reference. Both shipped a "Back to stories" button
+    pointing readers somewhere they had never been until this gate was added.
   {%- endcomment -%}
-  {%- assign story_has_cta = false -%}
-  {%- if content contains 'story-cta' %}{% assign story_has_cta = true %}{% endif -%}
+  {%- if page.categories contains 'stories' -%}
   <div class="story-cta">
-    <a class="btn btn-{% if story_has_cta %}secondary{% else %}primary{% endif %}" href="{% if page.lang == 'ja' %}/ja{% endif %}/stories/">{% if page.lang == "ja" %}ストーリー一覧に戻る{% else %}Back to stories{% endif %}</a>
+    {%- if page.cta %}<a class="btn btn-primary" href="{{ page.cta.url }}">{{ page.cta.text }}</a>{% endif %}
+    <a class="btn btn-{% if page.cta %}secondary{% else %}primary{% endif %}" href="{% if page.lang == 'ja' %}/ja{% endif %}/stories/">{% if page.lang == "ja" %}ストーリー一覧に戻る{% else %}Back to stories{% endif %}</a>
   </div>
+  {%- endif -%}
 </article>
 
 {% if page.story_schema != "none" %}

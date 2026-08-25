@@ -21,6 +21,12 @@ masthead:
   img: /assets/images/bg/bg-header-whip-off.jpg
 og:
   image: /assets/images/og/whip-off.jpg
+# ボタン列は _layouts/story.html が「ストーリー一覧に戻る」と並べて描画します。
+# 遷移先は /join/ ではなく /ja/events/: イベントレポートなので、読み終えた人に
+# 次に取ってほしい行動は入会申込ではなく「次のイベント」です。
+cta:
+  text: 今後のイベントに参加する
+  url: /ja/events/
 ---
 
 <p class="story-lede">8月15日、<a href="/ja/twin-peaks/">ツインピークス</a>で<a href="/ja/events/peatys-whip-off-2026/">Peaty's ホイップオフ</a>を​開催しました。​NAMBAに​とって​初めての​コンテストです。​13名の​ライダー、​3カテゴリー。​もちろん、​これで​最後に​する​つもりは​ありません。</p>
@@ -368,8 +374,3 @@ og:
    dims="2400x1600,2400x1600,1600x2400"
    widths="800,1600"
    caption="トレイルクルーの​Harry、​トレイル脇の​Sen、​そして​Dan。" %}
-
-<div class="story-block story-cta">
-  <a class="btn btn-primary" href="/ja/join/">NAMBAの仲間になる</a>
-  <p class="story-smallprint">トレイルも、​この​日のような​イベントも、​会員・スポンサー・​寄付に​よって​支えられています。​ツインピークスは​無料で​走れます。​これからも、​そう​あり続けたいと​思っています。</p>
-</div>
