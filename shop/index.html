@@ -480,6 +480,14 @@ og:
     color: #fff !important;
     border-bottom: 1px solid var(--color-primary) !important;
   }
+
+  /* Event tickets: no quantity selector. Each ticket carries per-participant
+     options (name, t-shirt size, dietary requirements), so a quantity of 2
+     would attach one set of answers to two people. Buyers add the product
+     again for each attendee instead. Toggled per product in the JS below. */
+  body.ec-ticket-product .details-product-purchase__qty {
+    display: none !important;
+  }
 </style>
 
 <script
@@ -600,6 +608,13 @@ og:
       var cats = document.getElementById('shop-categories-section');
       if (intro) intro.hidden = !showOnListing;
       if (cats) cats.hidden = !showOnListing;
+
+      // Products sold one-per-attendee. See the .ec-ticket-product rule above.
+      // Add an id here when a new ticketed event product goes live.
+      var TICKET_PRODUCT_IDS = [859390827];
+      var isTicket = page.type === 'PRODUCT' &&
+        TICKET_PRODUCT_IDS.indexOf(Number(page.productId)) !== -1;
+      document.body.classList.toggle('ec-ticket-product', isTicket);
     });
 
     var donateAmount = parseInt(new URLSearchParams(window.location.search).get('donate'), 10);
