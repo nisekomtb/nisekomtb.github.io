@@ -3,7 +3,7 @@ layout: event
 categories: events
 title: Twin Peaks Birthday
 subtitle: Three years of Twin Peaks
-description: "Twin Peaks Bike Park turns three. Trail building in the morning, BBQ lunch, bike games all afternoon and a raffle. Saturday 19 September 2026, Niseko."
+description: "Twin Peaks Bike Park turns three. Come celebrate with us: a full day of trail building, BBQ lunch, bike games and a raffle. Saturday 19 September 2026, Niseko."
 startDate: 2026-09-19 09:00:00 +0900
 endDate: 2026-09-19 17:00:00 +0900
 days: 1
@@ -73,7 +73,7 @@ That's worth a party. Dig with us in the morning, eat with us at lunch, then sta
 - NAMBA and Twin Peaks stickers.
 - Hands-on trail building with the NAMBA crew.
 - Five raffle tickets, plus more to earn through the afternoon games.
-- BBQ lunch, a Pow Bar, soft drinks and a local beer from Yotei Brewery for the adults.
+- BBQ lunch, a Pow Bar, soft drinks and a [Twin Peaks Bike Park Pale Ale](/beer/) from Yotei Brewing for the adults.
 
 ## Out come the shovels
 
