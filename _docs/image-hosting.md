@@ -10,7 +10,7 @@ repo, no vendor. Three image-heavy stories are expected to close out the season:
 
 1. Peaty's Whip Off (63 images, already ingested)
 2. Downhill Series
-3. Twin Peaks Tanjosai / anniversary (draft exists at `_posts/2026-09-19-twin-peaks-tanjosai.md`, no images yet)
+3. Twin Peaks Birthday (`_posts/2026-09-19-twin-peaks-birthday.md`, 26 files / 5.0 MB ingested)
 
 The projection below shows all three fit with room to spare, provided the trim in
 "Required before the next story" is done first. Winter is when to reopen this,

@@ -1,0 +1,105 @@
+{% comment %}
+  Figure for event post bodies. Two modes:
+
+  Single, full width, with an optional photo credit:
+    {% include event-figure.html
+       src="/assets/images/.../monk.jpg" alt="..."
+       credit="Jinya Nishiwaki" creditUrl="https://instagram.com/jingypsy" %}
+
+  Pair, two wide on desktop and stacked on mobile:
+    {% include event-figure.html
+       src="/assets/images/.../dig.jpg"   alt="..."
+       src2="/assets/images/.../dig-2.jpg" alt2="..." %}
+
+  Params: src, alt (required) · src2, alt2 (adds the second column)
+          credit, creditUrl (renders a figcaption) · widths (default "800,1600")
+          sizes (defaults per mode, override only if the column width changes)
+
+  Each source needs its WebP tiers alongside it, same as image.html, which this
+  delegates to. See _docs/responsive-images.md.
+
+  Classes carry an `evfig-` prefix for the same reason event-stats.html uses
+  `evstat-`: the story kit documents that unprefixed figure and caption classes
+  are already spoken for elsewhere. See assets/css/story.css section 5.
+{% endcomment %}
+
+{%- comment -%}
+  Default `sizes` track the measured width of .event-content in the event
+  layout (col-12 col-md-8 col-lg-9): 920px at >=1200, 700px at >=992, 470px at
+  >=768, full-bleed below that. A pair is half of each, less the 12px gap.
+  Older posts calling image.html directly hardcode 720px, which does not match
+  any breakpoint; that is why their images render narrower than the column.
+{%- endcomment -%}
+{%- assign is_pair = false -%}
+{%- if include.src2 -%}{%- assign is_pair = true -%}{%- endif -%}
+{%- if is_pair -%}
+  {%- assign default_sizes = "(min-width: 1200px) 455px, (min-width: 992px) 345px, (min-width: 768px) 230px, 100vw" -%}
+{%- else -%}
+  {%- assign default_sizes = "(min-width: 1200px) 920px, (min-width: 992px) 700px, (min-width: 768px) 470px, 100vw" -%}
+{%- endif -%}
+{%- assign fig_sizes = include.sizes | default: default_sizes -%}
+{%- assign fig_widths = include.widths | default: "800,1600" -%}
+
+<style>
+  .evfig {
+    margin: 32px 0;
+  }
+  .evfig-pair {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  @media (min-width: 768px) {
+    .evfig-pair {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .evfig img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 3px;
+  }
+  .evfig-pair img {
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+  }
+  .evfig-credit {
+    margin-top: 8px;
+    font-size: 80%;
+    color: #888;
+  }
+  .evfig-credit a {
+    color: inherit;
+    text-decoration: underline;
+  }
+  .evfig-credit a:hover {
+    color: var(--color-accent);
+  }
+</style>
+
+<figure class="evfig">
+  {%- if is_pair -%}
+  <div class="evfig-pair">
+    {% include image.html src=include.src alt=include.alt widths=fig_widths sizes=fig_sizes %}
+    {% include image.html src=include.src2 alt=include.alt2 widths=fig_widths sizes=fig_sizes %}
+  </div>
+  {%- else -%}
+    {% include image.html src=include.src alt=include.alt widths=fig_widths sizes=fig_sizes %}
+  {%- endif -%}
+  {%- if include.credit -%}
+  {%- comment -%}
+    `creditLabel` overrides the default wording. Needed when only one image in a
+    pair is being credited, so the caption does not imply both are by the same
+    photographer. Pass the label in the page's own language.
+  {%- endcomment -%}
+  {%- if page.lang == "ja" -%}
+    {%- assign credit_label = include.creditLabel | default: "写真" -%}
+  {%- else -%}
+    {%- assign credit_label = include.creditLabel | default: "Photos by" -%}
+  {%- endif -%}
+  <figcaption class="evfig-credit">📸 {{ credit_label }}
+    {%- if include.creditUrl %} <a href="{{ include.creditUrl }}" target="_blank" rel="noopener">{{ include.credit }}</a>
+    {%- else %} {{ include.credit }}{% endif %}</figcaption>
+  {%- endif -%}
+</figure>

@@ -121,6 +121,10 @@ layout: base
   .event-content h2:first-child {
     margin-top: 0;
   }
+  /* Clears the itinerary table above it; matches the 48px of the button row below. */
+  .event-outro {
+    margin-top: 48px;
+  }
 
   span.cancelled {
     color: #fc0000;
@@ -467,6 +471,17 @@ layout: base
           {% endif %}
         {% endif %}
 
+        {%- comment -%}
+          `outro` is markdown in front matter, rendered after the itinerary,
+          parking and about blocks. The post body (`{{ content }}`) is emitted
+          above the itinerary, so a closing line written in the body ends up
+          stranded under whatever the last heading happened to be. Use this for
+          sign-off copy and CTAs that should read as the last thing on the page.
+        {%- endcomment -%}
+        {% if page.outro %}
+          <div class="event-outro">{{ page.outro | markdownify }}</div>
+        {% endif %}
+
       </div>
 
       <!-- Bottom button row -->
@@ -597,8 +612,14 @@ layout: base
   {% endif %}
   "name": "{{ page.title }}",
   "startDate": "{{ page.startDate | date: "%FT%T%z"}}",
+  {%- comment -%}
+    Prefer the real finish time when the post declares one, matching the
+    precision of startDate above. Without `endDate` this falls back to a
+    date-only value derived from `days`, which is all a multi-day event with no
+    stated finish time can honestly claim.
+  {%- endcomment -%}
   {% assign days = page.days | minus: 1 | times: 24 | times: 60 | times: 60 %}
-  "endDate": "{{ page.startDate | date: "%s" | plus: days | date: "%F" }}",
+  "endDate": "{% if page.endDate %}{{ page.endDate | date: "%FT%T%z" }}{% else %}{{ page.startDate | date: "%s" | plus: days | date: "%F" }}{% endif %}",
   "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
   "eventStatus": "https://schema.org/EventScheduled",
   "location": {
