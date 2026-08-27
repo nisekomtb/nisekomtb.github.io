@@ -96,6 +96,14 @@ The afternoon is bike challenges and mini games, spread out across the park. Eac
 
 We'll announce what the challenges are closer to the day.
 
+{% include event-figure.html
+   src="/assets/images/events/2026/twin-peaks-birthday/games-high-jump.jpg"
+   alt="A rider in mid-air clearing an elastic bar strung between two measured wooden posts at a bike park"
+   src2="/assets/images/events/2026/twin-peaks-birthday/games-big-kids.jpg"
+   alt2="An adult rider in a full-face helmet racing down a dirt track on a tiny kids' BMX"
+   src3="/assets/images/events/2026/twin-peaks-birthday/games-track-stand.jpg"
+   alt3="Two riders holding a track stand on their bikes in a grassy clearing, feet off the ground" %}
+
 ## The raffle
 
 Draw is at 4:00pm at the base of the park. Grab a drink, cross your fingers, and see what you go home with.

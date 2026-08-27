@@ -1,5 +1,5 @@
 {% comment %}
-  Figure for event post bodies. Two modes:
+  Figure for event post bodies. Three modes:
 
   Single, full width, with an optional photo credit:
     {% include event-figure.html
@@ -11,7 +11,13 @@
        src="/assets/images/.../dig.jpg"   alt="..."
        src2="/assets/images/.../dig-2.jpg" alt2="..." %}
 
-  Params: src, alt (required) · src2, alt2 (adds the second column)
+  Trio, three wide on desktop and stacked on mobile:
+    {% include event-figure.html
+       src="/assets/images/.../games-a.jpg"  alt="..."
+       src2="/assets/images/.../games-b.jpg" alt2="..."
+       src3="/assets/images/.../games-c.jpg" alt3="..." %}
+
+  Params: src, alt (required) · src2, alt2 · src3, alt3 (src3 needs src2)
           credit, creditUrl (renders a figcaption) · widths (default "800,1600")
           sizes (defaults per mode, override only if the column width changes)
 
@@ -26,13 +32,17 @@
 {%- comment -%}
   Default `sizes` track the measured width of .event-content in the event
   layout (col-12 col-md-8 col-lg-9): 920px at >=1200, 700px at >=992, 470px at
-  >=768, full-bleed below that. A pair is half of each, less the 12px gap.
-  Older posts calling image.html directly hardcode 720px, which does not match
-  any breakpoint; that is why their images render narrower than the column.
+  >=768, full-bleed below that. A pair is half of each and a trio a third, both
+  less the 12px gaps. Older posts calling image.html directly hardcode 720px,
+  which does not match any breakpoint; that is why their images render narrower
+  than the column.
 {%- endcomment -%}
-{%- assign is_pair = false -%}
-{%- if include.src2 -%}{%- assign is_pair = true -%}{%- endif -%}
-{%- if is_pair -%}
+{%- assign count = 1 -%}
+{%- if include.src2 -%}{%- assign count = 2 -%}{%- endif -%}
+{%- if include.src2 and include.src3 -%}{%- assign count = 3 -%}{%- endif -%}
+{%- if count == 3 -%}
+  {%- assign default_sizes = "(min-width: 1200px) 298px, (min-width: 992px) 225px, (min-width: 768px) 148px, 100vw" -%}
+{%- elsif count == 2 -%}
   {%- assign default_sizes = "(min-width: 1200px) 455px, (min-width: 992px) 345px, (min-width: 768px) 230px, 100vw" -%}
 {%- else -%}
   {%- assign default_sizes = "(min-width: 1200px) 920px, (min-width: 992px) 700px, (min-width: 768px) 470px, 100vw" -%}
@@ -44,7 +54,7 @@
   .evfig {
     margin: 32px 0;
   }
-  .evfig-pair {
+  .evfig-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 12px;
@@ -53,6 +63,9 @@
     .evfig-pair {
       grid-template-columns: 1fr 1fr;
     }
+    .evfig-trio {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
   }
   .evfig img {
     display: block;
@@ -60,7 +73,7 @@
     height: auto;
     border-radius: 3px;
   }
-  .evfig-pair img {
+  .evfig-grid img {
     aspect-ratio: 3 / 2;
     object-fit: cover;
   }
@@ -79,10 +92,11 @@
 </style>
 
 <figure class="evfig">
-  {%- if is_pair -%}
-  <div class="evfig-pair">
+  {%- if count > 1 -%}
+  <div class="evfig-grid {% if count == 3 %}evfig-trio{% else %}evfig-pair{% endif %}">
     {% include image.html src=include.src alt=include.alt widths=fig_widths sizes=fig_sizes %}
     {% include image.html src=include.src2 alt=include.alt2 widths=fig_widths sizes=fig_sizes %}
+    {%- if count == 3 %}{% include image.html src=include.src3 alt=include.alt3 widths=fig_widths sizes=fig_sizes %}{% endif -%}
   </div>
   {%- else -%}
     {% include image.html src=include.src alt=include.alt widths=fig_widths sizes=fig_sizes %}

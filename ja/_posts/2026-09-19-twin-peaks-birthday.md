@@ -98,6 +98,14 @@ NAMBAが​[ツインピークス・バイクパーク](/ja/twin-peaks/)を​�
 
 チャレンジの​内容は​開催日が​近づいたら​お知らせします。
 
+{% include event-figure.html
+   src="/assets/images/events/2026/twin-peaks-birthday/games-high-jump.jpg"
+   alt="バイクパークで、目盛りの付いた2本の木製ポールに張られたゴムバーを飛び越えるライダー"
+   src2="/assets/images/events/2026/twin-peaks-birthday/games-big-kids.jpg"
+   alt2="フルフェイスヘルメットをかぶった大人のライダーが、子ども用の小さなBMXでダートコースを下る様子"
+   src3="/assets/images/events/2026/twin-peaks-birthday/games-track-stand.jpg"
+   alt3="草地で足を地面に着けずにトラックスタンドでバランスを取る2人のライダー" %}
+
 ## 抽選会
 
 抽選は​16時、​パークの​ベースエリアで​行います。​飲み物を​片手に、​幸運を​祈りながら​お待ちください。
