@@ -13,6 +13,13 @@ address: 150, 2 Aza-150-1 Yamada, Kutchan, Abuta District, Hokkaido 044-0081
 price:
   - adult: ¥5,000
     child: ¥2,500
+partners:
+  - name: Pow Bar
+    img: /powbar.png
+    url: https://thepowbar.com
+  - name: Yotei Brewing
+    img: /yotei-brewing.png
+    url: https://yotei.beer/
 masthead:
   img: /assets/images/events/2026/twin-peaks-birthday/header.jpg
   credit:
@@ -25,6 +32,8 @@ moreInfo:
   - "Under 12s must be accompanied by a paying adult."
   - "T-shirts are adult sizes, S to XXL. Sign up before 4 September to guarantee your size."
   - "If Saturday looks wet, the event moves to Sunday 20 September."
+  - 'Volunteers wanted. <a href="https://forms.gle/BfY99gqawBNdQ23GA">Sign up to help out</a>.'
+  - 'Bike shops, food trucks, makers and community groups can <a href="https://forms.gle/Kpk1TkqoUtQ3CLrP8">apply for a booth</a>.'
 itinerary:
   days:
     - hasLocations: false
@@ -119,6 +128,30 @@ Prizes are still landing from some big names, and we'll list them here as they'r
 <!-- TODO: prize grid goes here once Tom sends the prize list. Pattern to follow:
      the 2025 raffle page, recoverable with `git show 008acbf:raffle/index.html`
      (rows of cards with title, desc, inclusions, images, sponsors, quantity, note). -->
+
+## Help out on the day {#volunteers}
+
+A day this size takes more hands than the NAMBA crew has. We need a setup crew, a teardown crew, and event staff in between. First aiders too, though you'll need a current certification for that.
+
+Take the whole day, the morning or the afternoon, whichever suits. [Sign up to volunteer](https://forms.gle/BfY99gqawBNdQ23GA) and we'll be in touch with the details.
+
+## Bring a booth {#booths}
+
+Everything happens at the base area: registration in the morning, lunch, the afternoon games, the raffle draw at 4:00pm. Everyone comes through it more than once.
+
+We're opening it up to local bike shops and brands, food trucks and stalls, makers and artists, and community groups. Pitches are free and you're welcome to sell. We take no commission.
+
+{% include event-figure.html
+   src="/assets/images/events/2026/twin-peaks-birthday/booth-bike-shop.jpg"
+   alt="Two bike shop tents pitched on grass, with riders and families looking over gear laid out on tables"
+   src2="/assets/images/events/2026/twin-peaks-birthday/booth-market-stall.jpg"
+   alt2="Two people looking over handmade bike accessories hanging in a market stall tent"
+   src3="/assets/images/events/2026/twin-peaks-birthday/booth-food-truck.jpg"
+   alt3="A food truck and a NAMBA tent set up under the trees, with riders waiting for lunch" %}
+
+One pitch is 6m x 6m of bare ground, so bring your own tent, tables and weights. There's no power on site.
+
+Applications close on Friday 11 September. [Apply for a booth](https://forms.gle/Kpk1TkqoUtQ3CLrP8), or [get in touch](/contact/) if you want to talk it through first.
 
 ## Weather
 

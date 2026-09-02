@@ -15,6 +15,13 @@ address: 150, 2 Aza-150-1 Yamada, Kutchan, Abuta District, Hokkaido 044-0081
 price:
   - adult: 5,000円
     child: 2,500円
+partners:
+  - name: Pow Bar
+    img: /powbar.png
+    url: https://thepowbar.com
+  - name: Yotei Brewing
+    img: /yotei-brewing.png
+    url: https://yotei.beer/
 masthead:
   img: /assets/images/events/2026/twin-peaks-birthday/header.jpg
   credit:
@@ -27,6 +34,8 @@ moreInfo:
   - "12歳未満の<wbr>お子様は、<wbr>有料参加の<wbr>保護者の<wbr>同伴が<wbr>必要です。"
   - "Tシャツは<wbr>大人用の<wbr>S〜XXLサイズです。<wbr>サイズを<wbr>確実に<wbr>確保するには、<wbr>9月4日までに<wbr>お申し込みください。"
   - "土曜日の<wbr>天候が<wbr>悪い<wbr>場合は、<wbr>9月20日<wbr>（日）に<wbr>順延します。"
+  - 'ボランティア<wbr>募集中。<wbr><a href="https://forms.gle/BfY99gqawBNdQ23GA">こちらから<wbr>ご登録<wbr>ください</a>。'
+  - '自転車ショップ、<wbr>フードトラック、<wbr>作家、<wbr>地域の<wbr>団体の<wbr>皆さまへ。<wbr><a href="https://forms.gle/8NhsTLg9wPF6Xnv47">ブース出展の<wbr>お申し込みは<wbr>こちら</a>。'
 itinerary:
   days:
     - hasLocations: false
@@ -121,6 +130,30 @@ NAMBAが​[ツインピークス・バイクパーク](/ja/twin-peaks/)を​�
 <!-- TODO: prize grid goes here once Tom sends the prize list. Pattern to follow:
      the 2025 raffle page, recoverable with `git show 008acbf:ja/raffle/index.html`
      (rows of cards with title, desc, inclusions, images, sponsors, quantity, note). -->
+
+## 当日の​運営を​手伝いませんか {#volunteers}
+
+この​規模の​一日は、​NAMBAクルーだけでは​手が​足りません。​設営、​撤収、​そして​その間の​運営スタッフを​募集しています。​応急手当の​できる方も​歓迎です。​ただし​有効な​資格が​必要です。
+
+終日、​午前のみ、​午後のみから、​都合に​合わせて​選べます。​[ボランティアの​お申し込みは​こちら](https://forms.gle/BfY99gqawBNdQ23GA)。​追って​詳細を​ご連絡します。
+
+## ブースを​出しませんか {#booths}
+
+一日の​中心は​ベースエリアです。​朝の​受付、​ランチ、​午後の​バイクゲーム、​16時の​抽選会。​参加者全員が​何度も​行き来します。
+
+地元の​自転車ショップや​ブランド、​フードトラックや​屋台、​ものづくりの​作家や​アーティスト、​地域の​団体の​皆さまの​ブース出展を​募集します。​出展料は​無料で、​物販も​可能です。​手数料も​いただきません。
+
+{% include event-figure.html
+   src="/assets/images/events/2026/twin-peaks-birthday/booth-bike-shop.jpg"
+   alt="芝生に張られた2つの自転車ショップのテント。テーブルに並んだ用品をライダーや家族が見ている"
+   src2="/assets/images/events/2026/twin-peaks-birthday/booth-market-stall.jpg"
+   alt2="マーケットのテントに吊られたハンドメイドの自転車アクセサリーを見る2人"
+   src3="/assets/images/events/2026/twin-peaks-birthday/booth-food-truck.jpg"
+   alt3="木立の下に並んだフードトラックとNAMBAのテント。ランチを待つライダーたち" %}
+
+1区画は​6m×6mの​更地です。​テント、​テーブル、​ウェイトは​ご持参ください。​電源は​ありません。
+
+申込締切は​9月11日​（金）です。​[ブース出展の​お申し込みは​こちら](https://forms.gle/8NhsTLg9wPF6Xnv47)。​ご相談は​[お問い合わせページ](/ja/contact/)から​どうぞ。
 
 ## 天候に​ついて
 
