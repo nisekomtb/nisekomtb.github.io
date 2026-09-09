@@ -169,18 +169,27 @@ prizes:
       - name: POC
   - title: Burton gear
     quantityText: To be confirmed
+    images:
+      - /assets/images/events/2026/twin-peaks-birthday/prize-burton.jpg
+    imageAlt: A rider on a forest trail wearing a blue Burton backpack
     desc: Burton are sending a selection through. Same again, we'll list it once we know.
     sponsors:
       - name: Burton
         img: /assets/images/company/burton.png
         url: https://www.burton.com
   - title: Twin Peaks badge t-shirts
+    images:
+      - /assets/images/events/2026/twin-peaks-birthday/prize-tp-tee.jpg
+    imageAlt: Front and back of the white tee, the full colour Twin Peaks badge across the back
     desc: The full colour badge, drawn for us by Sapporo illustrator <a href="/artist-series/#joe-scott">Joe Scott</a>.
     sponsors:
       - name: Twin Peaks
         img: /assets/images/company/twin-peaks.png
         url: /twin-peaks/
   - title: Twin Peaks enamel mugs
+    images:
+      - /assets/images/events/2026/twin-peaks-birthday/prize-tp-mug.jpg
+    imageAlt: White enamel mug with a silver rim carrying the colour Twin Peaks badge
     desc: Same badge, on a mug that can take a knock.
     sponsors:
       - name: Twin Peaks

@@ -36,10 +36,35 @@
         sponsors: [...]
         note: ...
 
+  Every card gets a "Buy a ticket" CTA pointing at the page's own ticket
+  product, taken from `tickets` or `storeProductSlug`. Override the wording with
+  `prizeCtaLabel` in front matter. A post that sells no ticket renders no CTA.
+
   Sponsor logo paths are absolute here (unlike the event `partners` field, which
   is relative to /assets/images/company/) so a prize can credit a logo stored
   anywhere, including the Twin Peaks mark in /assets/images/logos/.
 {%- endcomment -%}
+
+{%- comment -%}
+  Every card carries a ticket CTA, the way the 2025 raffle page pointed every
+  prize at "How to win". The target is the page's own ticket product rather
+  than a page anchor, because a prize is only winnable by buying one. Taken
+  from `tickets` first, falling back to `storeProductSlug`, so it follows
+  whichever the post is using and disappears when the post sells nothing.
+{%- endcomment -%}
+{%- assign cta_slug = "" -%}
+{%- if page.tickets -%}{%- assign cta_slug = page.tickets[0].slug -%}
+{%- elsif page.storeProductSlug -%}{%- assign cta_slug = page.storeProductSlug -%}{%- endif -%}
+{%- if cta_slug != "" -%}
+  {%- capture cta_href -%}/{% if page.lang == "ja" %}ja/{% endif %}shop/#!/{{ cta_slug }}{%- endcapture -%}
+  {%- if page.prizeCtaLabel -%}
+    {%- assign cta_label = page.prizeCtaLabel -%}
+  {%- elsif page.lang == "ja" -%}
+    {%- assign cta_label = "チケットを購入" -%}
+  {%- else -%}
+    {%- assign cta_label = "Buy a ticket" -%}
+  {%- endif -%}
+{%- endif -%}
 
 {% if page.featuredPrize or page.prizes %}
 <style>
@@ -168,6 +193,45 @@
     margin-top: 24px;
   }
   .prize-grid .row > .col > .features-item {
+    display: flex;
+    flex-direction: column;
+  }
+  /* `.prize-grid` is itself the `.acm-features.style-2` element, so naming both
+     here clears template.css's `.acm-features.style-2 .features-item .action`,
+     which sets margin-top: 24px and would otherwise beat the auto. */
+  .acm-features.style-2.prize-grid .features-item .prize-cta {
+    margin-top: auto;
+    padding-top: 24px;
+    border: 0;
+    color: var(--color-accent);
+    font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+  }
+  .prize-grid .prize-cta:hover,
+  .prize-grid .prize-cta:focus {
+    color: var(--color-primary);
+  }
+  /* The featured card is a two-column flex row, so `margin-top: auto` there
+     would push the CTA to the foot of a column it does not own. */
+  .acm-features.style-2.prize-grid .features-item.prize-featured .prize-cta {
+    margin-top: 24px;
+    padding-top: 0;
+  }
+  /* The template offsets .action's inner span to clear an icon this button does
+     not have, which reads as an off-centre label in a centred card. */
+  .acm-features.style-2.prize-grid .features-item .prize-cta span {
+    margin-left: 0;
+    letter-spacing: inherit;
+  }
+  .acm-features.style-2.prize-grid .features-item .prize-cta:hover span,
+  .acm-features.style-2.prize-grid .features-item .prize-cta:focus span {
+    margin-left: 0;
+  }
+  .prize-grid .row > .col > .features-item {
     height: 100%;
   }
   .acm-features.style-2 .features-item.prize-featured .prize-featured-body {
@@ -240,6 +304,9 @@
                 </div>
               {% endif %}
               {% if fp.desc %}{{ fp.desc | markdownify }}{% endif %}
+              {% if cta_slug != "" %}
+                <a class="btn action prize-cta" href="{{ cta_href }}"><span>{{ cta_label }}</span></a>
+              {% endif %}
               {% if fp.note %}<p class="small">{{ fp.note }}</p>{% endif %}
             </div>
 
@@ -307,6 +374,9 @@
                   {% endif %}
                 {% endfor %}
               </div>
+            {% endif %}
+            {% if cta_slug != "" %}
+              <a class="btn action prize-cta" href="{{ cta_href }}"><span>{{ cta_label }}</span></a>
             {% endif %}
             {% if prize.note %}<p class="small">{{ prize.note }}</p>{% endif %}
           </div>

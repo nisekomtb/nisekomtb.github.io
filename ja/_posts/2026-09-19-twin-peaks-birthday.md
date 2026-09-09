@@ -171,18 +171,27 @@ prizes:
       - name: POC
   - title: Burtonの<wbr>ギア
     quantityText: 内容は<wbr>確認中
+    images:
+      - /assets/images/events/2026/twin-peaks-birthday/prize-burton.jpg
+    imageAlt: 森のトレイルで青いBurtonのバックパックを背負ったライダー
     desc: Burtonからも​一式届く​予定です。​内容が​分かり次第、​掲載します。
     sponsors:
       - name: Burton
         img: /assets/images/company/burton.png
         url: https://www.burton.com
   - title: ツインピークス<wbr>バッジTシャツ
+    images:
+      - /assets/images/events/2026/twin-peaks-birthday/prize-tp-tee.jpg
+    imageAlt: 白いTシャツの前面と背面。背中にフルカラー版Twin Peaksバッジ
     desc: 札幌の​イラストレーター、<a href="/ja/artist-series/#joe-scott">ジョー・スコット</a>が​描いた​フルカラーの​バッジ。
     sponsors:
       - name: Twin Peaks
         img: /assets/images/company/twin-peaks.png
         url: /ja/twin-peaks/
   - title: ツインピークス<wbr>ホーローマグ
+    images:
+      - /assets/images/events/2026/twin-peaks-birthday/prize-tp-mug.jpg
+    imageAlt: シルバーリムの白いホーローマグ。カラー版Twin Peaksバッジ入り
     desc: 同じ​バッジの​マグ。​多少ぶつけても​平気です。
     sponsors:
       - name: Twin Peaks
