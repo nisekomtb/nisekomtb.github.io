@@ -86,7 +86,7 @@ storeProductSlug: twin-peaks-birthday-2026
 #     label: 夕方のみパスを購入
 featuredPrize:
   title: Specialized Stumpjumper 15 Expert
-  subtitle: Satin Doppio / Moss
+  subtitle: Gloss Pistachio / Dark Moss
   value: 990,000円
   images:
     - /assets/images/events/2026/twin-peaks-birthday/bike-0.jpg
@@ -95,7 +95,7 @@ featuredPrize:
     - /assets/images/events/2026/twin-peaks-birthday/bike-3.jpg
     - /assets/images/events/2026/twin-peaks-birthday/bike-4.jpg
     - /assets/images/events/2026/twin-peaks-birthday/bike-5.jpg
-  imageAlt: Satin Doppio / Mossカラーのスペシャライズド Stumpjumper 15 Expert
+  imageAlt: Gloss Pistachio / Dark Mossカラーのスペシャライズド Stumpjumper 15 Expert
   specs:
     - FACT 11m カーボンフレーム
     - FOX FLOAT 36 Performance Elite、GRIP X2、160mm
@@ -111,7 +111,7 @@ featuredPrize:
       img: /assets/images/company/specialized.png
       url: https://www.specialized-onlinestore.jp/
   desc: |
-    スペシャライズドから、​トップ賞と​して​Stumpjumper 15 Expertが​届きました。​Satin Doppio / Mossの​カラーは​日本で​販売されていないので、​当選した方は​国内で​唯一の​1台を​手に​する​ことになります。
+    スペシャライズドから、​トップ賞と​して​Stumpjumper 15 Expertが​届きました。​Gloss Pistachio / Dark Mossの​カラーは​日本で​販売されていないので、​当選した方は​国内で​唯一の​1台を​手に​する​ことになります。
 
     アフターパーティーが​復活したのも、​この​自転車の​おかげです。​それまでは​パークで​静かに​抽選を​して​終わる​予定でした。
   note: 自転車は<wbr>当日ニセコで<wbr>お渡しする<wbr>ほか、<wbr>日本国内への<wbr>発送も<wbr>可能です。<wbr>すぐに<wbr>受け取れない<wbr>場合は、<wbr>ニセコで<wbr>最長6か月<wbr>お預かりできます。

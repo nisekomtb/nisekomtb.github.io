@@ -188,7 +188,7 @@ Japanese. Same rule applies to the Ecwid product copy and anything on social.
 
 | Prize | Qty | Sponsor |
 |---|---|---|
-| Specialized Stumpjumper 15 Expert, Satin Doppio / Moss | 1 | Specialized |
+| Specialized Stumpjumper 15 Expert, Gloss Pistachio / Dark Moss | 1 | Specialized |
 | Helmet and ride glasses combo | 4 | Smith |
 | T-shirts | 6 | Smith |
 | Hoodies | 17 | Fox |
