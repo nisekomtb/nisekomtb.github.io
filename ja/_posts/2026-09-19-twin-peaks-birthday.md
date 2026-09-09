@@ -150,6 +150,9 @@ prizes:
         url: https://ridefox.com
   - title: Race Faceの<wbr>ヒップバッグ
     quantity: 6
+    images:
+      - /assets/images/events/2026/twin-peaks-birthday/prize-race-face.jpg
+    imageAlt: RFロゴ入りの黒いRace Faceヒップバッグが積まれた様子
     desc: チューブ、​マルチツール、​行動食が​入る​大きさ。​バックパックなしで​走れます。
     sponsors:
       - name: Race Face

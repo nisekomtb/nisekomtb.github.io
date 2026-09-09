@@ -148,6 +148,9 @@ prizes:
         url: https://ridefox.com
   - title: Race Face hip bags
     quantity: 6
+    images:
+      - /assets/images/events/2026/twin-peaks-birthday/prize-race-face.jpg
+    imageAlt: A pile of black Race Face hip bags, the RF logo on each flap
     desc: Enough room for a tube, a multi-tool and a snack, without a pack on your back.
     sponsors:
       - name: Race Face
