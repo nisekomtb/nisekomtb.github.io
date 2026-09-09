@@ -1,0 +1,279 @@
+{%- comment -%}
+  Prize grid for event pages, driven entirely by front matter.
+
+  `featuredPrize` renders a single full-width hero card above the grid, for the
+  one prize that carries the event. `prizes` renders the rest as a three-across
+  grid of cards. Either can be used without the other.
+
+  Every field below `title` is optional, so a prize can be announced as a line
+  of text on the day the sponsor confirms it and gain photos later without any
+  markup change.
+
+    featuredPrize:
+      title: Specialized Stumpjumper 15 Expert
+      subtitle: Satin Doppio / Moss             # gold line under the title
+      value: ¥990,000                           # "A value of ¥990,000"
+      desc: One or more paragraphs of prose.
+      specs:                                    # gold lines, one per row
+        - FOX FLOAT 36 Rhythm
+      images:                                   # optional, first is the hero
+        - /assets/images/.../bike-01.jpg
+      sponsors:
+        - name: Specialized
+          img: /assets/images/company/specialized.png   # omit for a text credit
+          url: https://www.specialized-onlinestore.jp/
+      note: Small print, rendered italic at the foot of the card.
+
+    prizes:
+      - title: Smith helmet and glasses
+        quantity: 4                             # "4 prizes available"
+        quantityText: Numerous                  # overrides quantity when exact
+                                                # numbers are not being published
+        desc: ...
+        inclusions:                             # gold lines, one per row
+          - Forefront 3 helmet
+        images: [...]
+        sponsors: [...]
+        note: ...
+
+  Sponsor logo paths are absolute here (unlike the event `partners` field, which
+  is relative to /assets/images/company/) so a prize can credit a logo stored
+  anywhere, including the Twin Peaks mark in /assets/images/logos/.
+{%- endcomment -%}
+
+{% if page.featuredPrize or page.prizes %}
+<style>
+  .prize-grid {
+    margin-top: 24px;
+  }
+  .prize-grid .features-item {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+  }
+  .prize-grid .num {
+    color: var(--color-bg-panel);
+    font-size: 200%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bold;
+    margin-top: 7px;
+  }
+  .prize-grid .gold {
+    color: var(--color-accent);
+    font-size: 12px !important;
+    font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    margin-top: 30px;
+  }
+  .prize-grid .gold + .gold {
+    margin-top: 0;
+  }
+  .prize-grid .prize-count {
+    color: var(--color-accent);
+    font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    margin: 20px 0 0;
+  }
+  .prize-grid .prize-count .n {
+    font-size: 200%;
+    line-height: 1;
+    vertical-align: -2px;
+    margin-right: 4px;
+  }
+  .prize-grid .prize-value {
+    font-size: 125%;
+    margin-top: 8px;
+  }
+  .prize-grid .sponsors {
+    margin: 30px auto 0;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px 16px;
+  }
+  .prize-grid .sponsors img {
+    max-height: 50px;
+    max-width: 150px;
+    width: auto;
+    height: auto;
+  }
+  .prize-grid .sponsors .sponsor-name {
+    color: var(--color-accent);
+    font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+  }
+  .prize-grid .products {
+    margin: 24px auto 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  .prize-grid .products .prod {
+    border: 1px solid var(--color-bg-border);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .prize-grid .products .prod img {
+    display: block;
+  }
+  .prize-grid .small {
+    font-style: italic;
+    font-size: 75%;
+    margin-top: 24px;
+  }
+  .prize-grid .row > .col > .features-item {
+    height: 100%;
+  }
+  .acm-features.style-2 .features-item.prize-featured .prize-featured-body {
+    text-align: left;
+  }
+  .acm-features.style-2 .features-item.prize-featured .prize-featured-body p {
+    margin-bottom: 15px;
+  }
+  .prize-featured > .row {
+    align-items: center;
+  }
+</style>
+
+<div class="section acm-features style-2 prizes prize-grid">
+
+  {% if page.prizesHeading %}
+    <h2 class="ja-animate" data-animation="move-from-bottom" data-delay="200">{{ page.prizesHeading }}</h2>
+  {% endif %}
+  {% if page.prizesIntro %}
+    <p class="ja-animate" data-animation="move-from-bottom" data-delay="200">{{ page.prizesIntro }}</p>
+  {% endif %}
+
+  {% if page.featuredPrize %}
+    {% assign fp = page.featuredPrize %}
+    <div class="row">
+      <div class="col col-md-12 col-lg-12">
+        <div class="features-item no-hover prize-featured ja-animate" data-animation="move-from-bottom" data-delay="item-0">
+          <div class="row">
+
+            <div class="col col-md-12 col-lg-5 prize-featured-meta">
+              <div class="font-icon">
+                <span class="fa-solid fa-trophy"></span>
+              </div>
+              <h3>{{ fp.title }}</h3>
+              {% if fp.subtitle %}<p class="gold">{{ fp.subtitle }}</p>{% endif %}
+              {% if fp.value %}
+                <p class="prize-value">
+                  {% if page.lang == "ja" %}<strong>{{ fp.value }}</strong>相当{% else %}A value of <strong>{{ fp.value }}</strong>{% endif %}
+                </p>
+              {% endif %}
+              {% for spec in fp.specs %}
+                <p class="gold"{% if forloop.first %} style="margin-top:30px;"{% endif %}>{{ spec }}</p>
+              {% endfor %}
+              {% if fp.sponsors %}
+                <div class="sponsors">
+                  {% for sponsor in fp.sponsors %}
+                    {% if sponsor.img %}
+                      <a href="{{ sponsor.url }}" target="_blank" rel="sponsored noopener noreferrer">
+                        <picture>{% if sponsor.img contains '.png' %}<source type="image/webp" srcset="{{ sponsor.img | replace: '.png', '.webp' }}">{% endif %}<img src="{{ sponsor.img }}" alt="{{ sponsor.name }}{% if page.lang == 'ja' %}、賞品スポンサー{% else %}, prize sponsor{% endif %}" loading="lazy"></picture>
+                      </a>
+                    {% elsif sponsor.url %}
+                      <a class="sponsor-name" href="{{ sponsor.url }}">{{ sponsor.name }}</a>
+                    {% else %}
+                      <span class="sponsor-name">{{ sponsor.name }}</span>
+                    {% endif %}
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </div>
+
+            <div class="col col-md-12 col-lg-7 prize-featured-body">
+              {% if fp.images %}
+                <div class="products">
+                  {% for image in fp.images %}
+                    <div class="prod">
+                      <img src="{{ image }}" alt="{{ fp.imageAlt | default: fp.title }}" loading="lazy">
+                    </div>
+                  {% endfor %}
+                </div>
+              {% endif %}
+              {% if fp.desc %}{{ fp.desc | markdownify }}{% endif %}
+              {% if fp.note %}<p class="small">{{ fp.note }}</p>{% endif %}
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+  {% if page.prizes %}
+    <div class="row">
+      {% for prize in page.prizes %}
+        <div class="col col-md-6 col-lg-4">
+          <div class="features-item no-hover ja-animate" data-animation="move-from-bottom" data-delay="item-{{ forloop.index0 }}">
+            <div class="font-icon">
+              <span class="fa-solid fa-trophy">
+                {% unless prize.hidePrizeNumber %}<span class="num">{{ forloop.index }}</span>{% endunless %}
+              </span>
+            </div>
+            <h4>{{ prize.title }}</h4>
+            {% if prize.images %}
+              <div class="products">
+                {% for image in prize.images %}
+                  <div class="prod">
+                    <img src="{{ image }}" alt="{{ prize.imageAlt | default: prize.title }}" loading="lazy">
+                  </div>
+                {% endfor %}
+              </div>
+            {% endif %}
+            {% if prize.quantityText %}
+              <p class="prize-count">{{ prize.quantityText }}</p>
+            {% elsif prize.quantity %}
+              <p class="prize-count">
+                <span class="n">{{ prize.quantity }}</span>
+                {% if page.lang == "ja" %}点{% elsif prize.quantity == 1 %}prize{% else %}prizes{% endif %}
+              </p>
+            {% endif %}
+            {% if prize.value %}
+              <p class="prize-value">
+                {% if page.lang == "ja" %}<strong>{{ prize.value }}</strong>相当{% else %}A value of <strong>{{ prize.value }}</strong>{% endif %}
+              </p>
+            {% endif %}
+            {% if prize.subtitle %}<p class="gold">{{ prize.subtitle }}</p>{% endif %}
+            {% if prize.desc %}<p style="margin-top:15px; margin-bottom:15px;">{{ prize.desc }}</p>{% endif %}
+            {% for inclusion in prize.inclusions %}
+              <p class="gold"{% if forloop.first %} style="margin-top:30px;"{% endif %}>{{ inclusion }}</p>
+            {% endfor %}
+            {% if prize.sponsors %}
+              <div class="sponsors">
+                {% for sponsor in prize.sponsors %}
+                  {% if sponsor.img %}
+                    <a href="{{ sponsor.url }}" target="_blank" rel="sponsored noopener noreferrer">
+                      <picture>{% if sponsor.img contains '.png' %}<source type="image/webp" srcset="{{ sponsor.img | replace: '.png', '.webp' }}">{% endif %}<img src="{{ sponsor.img }}" alt="{{ sponsor.name }}{% if page.lang == 'ja' %}、賞品スポンサー{% else %}, prize sponsor{% endif %}" loading="lazy"></picture>
+                    </a>
+                  {% elsif sponsor.url %}
+                    <a class="sponsor-name" href="{{ sponsor.url }}">{{ sponsor.name }}</a>
+                  {% else %}
+                    <span class="sponsor-name">{{ sponsor.name }}</span>
+                  {% endif %}
+                {% endfor %}
+              </div>
+            {% endif %}
+            {% if prize.note %}<p class="small">{{ prize.note }}</p>{% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+</div>
+{% endif %}

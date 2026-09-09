@@ -365,13 +365,25 @@ layout: base
             <a class="btn btn-{% if page.link.isSignup %}primary{% else %}secondary{% endif %}{% if cta_disabled %} disabled{% endif %}" href="{{ page.link.url }}" target="_blank" rel="noopener"{% if cta_disabled %} aria-disabled="true" tabindex="-1"{% endif %}>{{ page.link.text }}</a>
           </div>
         {% endif %}
-        {% if page.storeProductSlug %}
+        {%- comment -%}
+          `tickets` is the multi-product form: one shop button per entry, first
+          primary and the rest secondary. Use it when an event sells more than
+          one pass (day vs evening). `storeProductSlug` stays the single-product
+          shorthand and keeps its built-in bilingual label.
+        {%- endcomment -%}
+        {% if page.tickets %}
+          <div class="event-signup-top">
+            {% for ticket in page.tickets %}
+              <a class="btn btn-{% if forloop.first %}primary{% else %}secondary{% endif %}{% if cta_disabled %} disabled{% endif %}" href="/{% if page.lang == 'ja' %}ja/{% endif %}shop/#!/{{ ticket.slug }}" style="margin:5px;"{% if cta_disabled %} aria-disabled="true" tabindex="-1"{% endif %}>{{ ticket.label }}</a>
+            {% endfor %}
+          </div>
+        {% elsif page.storeProductSlug %}
           <div class="event-signup-top">
             <a class="btn btn-primary{% if cta_disabled %} disabled{% endif %}" href="/{% if page.lang == 'ja' %}ja/{% endif %}shop/#!/{{ page.storeProductSlug }}"{% if cta_disabled %} aria-disabled="true" tabindex="-1"{% endif %}>{% if page.lang == "ja" %}チケットを<wbr>購入{% else %}Buy ticket{% endif %}</a>
           </div>
         {% endif %}
         {% assign show_signup_terms = false %}
-        {% if page.storeProductSlug %}{% assign show_signup_terms = true %}{% endif %}
+        {% if page.storeProductSlug or page.tickets %}{% assign show_signup_terms = true %}{% endif %}
         {% if page.link and page.link.url and page.link.isSignup %}{% assign show_signup_terms = true %}{% endif %}
         {% if show_signup_terms and cta_disabled == false %}
           <p class="event-signup-terms">
@@ -487,12 +499,16 @@ layout: base
       <!-- Bottom button row -->
       {% assign has_primary_cta = false %}
       {% if page.link and page.link.url and page.link.isSignup %}{% assign has_primary_cta = true %}{% endif %}
-      {% if page.storeProductSlug %}{% assign has_primary_cta = true %}{% endif %}
+      {% if page.storeProductSlug or page.tickets %}{% assign has_primary_cta = true %}{% endif %}
       <div style="text-align:center; margin:48px 0;" class="ja-animate" data-animation="move-from-bottom" data-delay="800">
         {% if page.link and page.link.url %}
           <a class="btn btn-{% if page.link.isSignup %}primary{% else %}secondary{% endif %}{% if cta_disabled %} disabled{% endif %}" href="{{ page.link.url }}" target="_blank" rel="noopener" style="margin:5px;"{% if cta_disabled %} aria-disabled="true" tabindex="-1"{% endif %}>{{ page.link.text }}</a>
         {% endif %}
-        {% if page.storeProductSlug %}
+        {% if page.tickets %}
+          {% for ticket in page.tickets %}
+            <a class="btn btn-{% if forloop.first %}primary{% else %}secondary{% endif %}{% if cta_disabled %} disabled{% endif %}" href="/{% if page.lang == 'ja' %}ja/{% endif %}shop/#!/{{ ticket.slug }}" style="margin:5px;"{% if cta_disabled %} aria-disabled="true" tabindex="-1"{% endif %}>{{ ticket.label }}</a>
+          {% endfor %}
+        {% elsif page.storeProductSlug %}
           <a class="btn btn-primary{% if cta_disabled %} disabled{% endif %}" href="/{% if page.lang == 'ja' %}ja/{% endif %}shop/#!/{{ page.storeProductSlug }}" style="margin:5px;"{% if cta_disabled %} aria-disabled="true" tabindex="-1"{% endif %}>{% if page.lang == "ja" %}チケットを購入{% else %}Buy ticket{% endif %}</a>
         {% endif %}
         <a class="btn btn-{% if has_primary_cta %}secondary{% else %}primary{% endif %}" href="{% if page.lang == 'ja' %}/ja{% endif %}/events/" style="margin:5px;">{% if page.lang == "ja" %}イベント一覧に戻る{% else %}Back to events{% endif %}</a>

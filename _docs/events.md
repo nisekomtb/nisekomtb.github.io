@@ -52,6 +52,10 @@ Partner `img` paths are relative to `/assets/images/company/`.
 |---|---|---|
 | `about` | Boolean | Show NAMBA about section |
 | `moreInfo` | Array of Strings | Additional info items (can contain HTML) |
+| `featuredPrize` | Object | Single full-width hero prize card. See prize grid below |
+| `prizes` | Array of Objects | Three-across grid of prize cards. See prize grid below |
+| `prizesHeading` | String | Optional heading rendered above the prize grid |
+| `prizesIntro` | String | Optional paragraph rendered under `prizesHeading` |
 
 ### Schedule
 
@@ -68,6 +72,8 @@ Partner `img` paths are relative to `/assets/images/company/`.
 | `signup` | String | External sign-up URL — renders a centred primary button after content, before itinerary. Button text is bilingual ("Sign up here" / "申し込みはこちら") |
 | `form` | Object | Embedded form — `url` (Google Form embed URL), `height` (px) |
 | `storeProductId` | Integer | Ecwid product ID for ticket/merchandise sales |
+| `storeProductSlug` | String | Ecwid product slug. Renders a single "Buy ticket" button above the content and again in the bottom button row |
+| `tickets` | Array of Objects | Multi-product form of `storeProductSlug`, for events selling more than one pass. Each entry needs `slug` and `label`; the first renders as the primary button, the rest as secondary. Takes precedence over `storeProductSlug` when both are present |
 
 ### Special behaviour
 
@@ -154,6 +160,62 @@ itinerary:
 ```
 
 `location` in itinerary events can be a plain string or an object with `name` and `url`.
+
+### Prize grid
+
+Rendered by `_includes/prize-grid.html`. The include is **called from the post
+body**, not the layout, so the grid lands wherever the prizes belong in the copy:
+
+```liquid
+{% include prize-grid.html %}
+```
+
+Only `title` is required on a prize. Everything else is optional, so a prize can
+go up as a line of text the day a sponsor confirms it and gain photos later
+without touching the markup.
+
+```yaml
+featuredPrize:
+  title: Specialized Stumpjumper 15 Expert
+  subtitle: Satin Doppio / Moss     # gold line under the title
+  value: ¥990,000                   # "A value of ¥990,000" / 「990,000円相当」
+  specs:                            # gold lines, one per row
+    - Size S2
+  images:                           # optional
+    - /assets/images/.../bike-01.jpg
+  imageAlt: Alt text for the images  # falls back to `title`
+  desc: |
+    Markdown. Rendered as prose beside the meta column.
+  note: Small print, italic, at the foot of the card.
+  sponsors:
+    - name: Specialized
+      img: /assets/images/company/specialized.png
+      url: https://www.specialized-onlinestore.jp/
+
+prizes:
+  - title: Smith helmet and glasses
+    quantity: 4                     # "4 prizes" / 「4点」
+    quantityText: Plenty to go round # overrides `quantity` when the exact
+                                     # number is not being published
+    hidePrizeNumber: true            # drop the numeral from the trophy icon
+    desc: One sentence of plain text.
+    inclusions:                      # gold lines, one per row
+      - Dakine hold-all
+    images: [...]
+    sponsors: [...]
+    note: ...
+```
+
+Sponsor entries degrade in three steps: `img` renders the logo (a `.webp`
+sibling is picked up automatically), `url` without `img` renders the name as a
+link, and a bare `name` renders as gold text. That last form is how a prize goes
+live before its sponsor has sent a usable logo.
+
+Prize logo paths are absolute, unlike the event-level `partners` field which is
+relative to `/assets/images/company/`.
+
+Cards size to the tallest in their own row, not the tallest in the grid, so a
+short card next to a long one is padded only as far as its neighbours.
 
 ### `host` and `partners`
 

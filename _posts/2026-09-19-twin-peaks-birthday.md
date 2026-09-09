@@ -3,17 +3,26 @@ layout: event
 categories: events
 title: Twin Peaks Birthday
 subtitle: Three years of Twin Peaks
-description: "Twin Peaks Bike Park turns three. Come celebrate with us: a full day of trail building, BBQ lunch, bike games and a raffle. Saturday 19 September 2026, Niseko."
+description: "Twin Peaks Bike Park turns three. Trail building, BBQ lunch and bike games, then an after party at Rhythm with a Specialized Stumpjumper to give away."
 startDate: 2026-09-19 09:00:00 +0900
-endDate: 2026-09-19 17:00:00 +0900
+endDate: 2026-09-19 18:00:00 +0900
 days: 1
-time: 9:00am - 5:00pm
+time: 9:00am - 6:00pm
 location: Twin Peaks Bike Park, Niseko
 address: 150, 2 Aza-150-1 Yamada, Kutchan, Abuta District, Hokkaido 044-0081
 price:
-  - adult: ¥5,000
+  - name: Day pass
+    adult: ¥5,000
     child: ¥2,500
+  - name: Evening only pass
+    adult: ¥1,000
 partners:
+  - name: Specialized
+    img: /specialized.png
+    url: https://www.specialized-onlinestore.jp/
+  - name: Rhythm Japan
+    img: /rhythm.png
+    url: https://rhythmjapan.com
   - name: Pow Bar
     img: /powbar.png
     url: https://thepowbar.com
@@ -30,7 +39,8 @@ og:
   image: /assets/images/events/2026/twin-peaks-birthday/header.jpg
 moreInfo:
   - "Under 12s must be accompanied by a paying adult."
-  - "T-shirts are adult sizes, S to XXL. Sign up before 4 September to guarantee your size."
+  - "T-shirts are adult sizes, S to XXL. Sign-ups from 5 September onwards can't be size-guaranteed."
+  - "Evening only pass is ¥1,000 and covers the after party at Rhythm plus one game ticket."
   - "If Saturday looks wet, the event moves to Sunday 20 September."
   - 'Volunteers wanted. <a href="https://forms.gle/BfY99gqawBNdQ23GA">Sign up to help out</a>.'
   - 'Bike shops, food trucks, makers and community groups can <a href="https://forms.gle/Kpk1TkqoUtQ3CLrP8">apply for a booth</a>.'
@@ -49,10 +59,14 @@ itinerary:
         - time: 12:30pm
           name: BBQ lunch
         - time: 1:00pm
-          name: Bike challenge
+          name: Bike games
+        - time: 3:30pm
+          name: Games finish
         - time: 4:00pm
-          name: Raffle draw
+          name: After party at Rhythm, happy hour until 6:00pm
         - time: 5:00pm
+          name: Giveaway draw
+        - time: 6:00pm
           name: Event ends
 outro: >-
   Twin Peaks is free to ride all season, whether you make this one or not. If you want to put something back into it, [join NAMBA](/join/) or come along to one of the [other events](/events/) we run through the year.
@@ -60,13 +74,116 @@ parking: false
 about: false
 storeProductId: 859390827
 storeProductSlug: twin-peaks-birthday-2026
+# Swap `storeProductSlug` above for this block once the evening pass product
+# (Ecwid 863342047, created disabled on 9 September 2026) is enabled. It renders
+# two shop buttons instead of one.
+# tickets:
+#   - slug: twin-peaks-birthday-2026
+#     label: Buy day ticket
+#   - slug: twin-peaks-birthday-2026-evening
+#     label: Buy evening ticket
+featuredPrize:
+  title: Specialized Stumpjumper 15 Expert
+  subtitle: Satin Doppio / Moss
+  value: ¥990,000
+  specs:
+    - Size S2
+    - SRAM AXS wireless shifting
+  sponsors:
+    - name: Specialized
+      img: /assets/images/company/specialized.png
+      url: https://www.specialized-onlinestore.jp/
+  desc: |
+    Specialized have put up a Stumpjumper 15 Expert as the top prize. The Satin Doppio / Moss colourway isn't sold in Japan, so whoever wins it ends up with the only one in the country.
+
+    It's also the reason the after party is back on. We'd planned a quiet draw at the park until this turned up.
+  note: The bike can be collected in Niseko on the night or posted anywhere in Japan. If the winner can't collect straight away, we can store it in Niseko for up to six months.
+prizes:
+  - title: Smith helmet and glasses
+    quantity: 4
+    desc: A helmet and a set of riding glasses together, paired up the way we did in previous years.
+    sponsors:
+      - name: Smith
+        img: /assets/images/company/smith.png
+        url: https://smithjapan.co.jp/
+  - title: Smith t-shirts
+    quantity: 6
+    sponsors:
+      - name: Smith
+        img: /assets/images/company/smith.png
+        url: https://smithjapan.co.jp/
+  - title: Fox hoodies
+    quantityText: Plenty to go round
+    desc: Fox have sent a stack of hoodies, so a good number of people are going home with one.
+    sponsors:
+      - name: Fox
+        img: /assets/images/company/fox.png
+        url: https://ridefox.com
+  - title: Fox baseball caps
+    quantity: 2
+    sponsors:
+      - name: Fox
+        img: /assets/images/company/fox.png
+        url: https://ridefox.com
+  - title: Race Face hip bags
+    quantity: 6
+    desc: Enough room for a tube, a multi-tool and a snack, without a pack on your back.
+    sponsors:
+      - name: Race Face
+        img: /assets/images/company/raceface.svg
+        url: https://www.raceface.com
+  - title: DT Swiss bottles and caps
+    quantity: 8
+    inclusions:
+      - 4 water bottles
+      - 2 baseball caps
+      - 2 cycling caps
+    sponsors:
+      - name: DT Swiss
+        img: /assets/images/company/dt-swiss.png
+        url: https://www.dtswiss.com
+  - title: Rhythm ride kit
+    quantity: 3
+    desc: Three separate prizes from the crew hosting the after party.
+    inclusions:
+      - Dakine hold-all
+      - Smith MTB goggles
+      - Dharco MTB pants
+    sponsors:
+      - name: Rhythm Japan
+        img: /assets/images/company/rhythm.png
+        url: https://rhythmjapan.com
+  - title: POC gear
+    quantityText: To be confirmed
+    desc: A box of POC kit is on its way to us. We'll list what's in it here once it lands.
+    sponsors:
+      - name: POC
+  - title: Burton gear
+    quantityText: To be confirmed
+    desc: Burton are sending a selection through. Same again, we'll list it once we know.
+    sponsors:
+      - name: Burton
+        img: /assets/images/company/burton.png
+        url: https://www.burton.com
+  - title: Twin Peaks badge t-shirts
+    desc: The full colour badge, drawn for us by Sapporo illustrator <a href="/artist-series/#joe-scott">Joe Scott</a>.
+    sponsors:
+      - name: Twin Peaks
+        img: /assets/images/company/twin-peaks.png
+        url: /twin-peaks/
+  - title: Twin Peaks enamel mugs
+    desc: Same badge, on a mug that can take a knock.
+    sponsors:
+      - name: Twin Peaks
+        img: /assets/images/company/twin-peaks.png
+        url: /twin-peaks/
 ---
 
 ## What three years built
 
 NAMBA opened [Twin Peaks Bike Park](/twin-peaks/) in Niseko on 16 September 2023 with 10.4km of trail. It's now Japan's largest free-to-ride mountain bike park, almost 18km of it, built and looked after by this community.
 
-That's worth a party. Dig with us in the morning, eat with us at lunch, then stay for an afternoon of bike games and a raffle.
+That's worth a party. Dig with us in the morning, eat with us at lunch, take on the bike games in the afternoon, then come down to Rhythm for a beer and the prize draw.
 
 {% include event-stats.html years="3" %}
 
@@ -78,11 +195,16 @@ That's worth a party. Dig with us in the morning, eat with us at lunch, then sta
 
 ## What's included
 
+The day pass, ¥5,000 for adults and ¥2,500 for under 16s, covers everything from 9:00am to close:
+
 - A limited edition t-shirt, made for this event and not sold afterwards.
 - NAMBA and Twin Peaks stickers.
 - Hands-on trail building with the NAMBA crew.
-- Five raffle tickets, plus more to earn through the afternoon games.
 - BBQ lunch, a Pow Bar, soft drinks and a [Twin Peaks Bike Park Pale Ale](/beer/) from Yotei Brewing for the adults.
+- Entry to the after party at Rhythm.
+- Five game tickets, plus more to earn through the afternoon games.
+
+The evening only pass is ¥1,000 and gets you into the after party at Rhythm with one game ticket, so you're in the draw at 5:00pm.
 
 ## Out come the shovels
 
@@ -101,9 +223,9 @@ We split into groups and take on different jobs across the park. Bring gloves, a
 
 ## Let the games begin
 
-The afternoon is bike challenges and mini games, spread out across the park. Each one you finish earns extra raffle tickets, so the more you take on, the better your odds at 4:00pm.
+The afternoon is bike challenges and mini games, spread out across the park. Each one you finish earns extra game tickets, so the more you take on, the better your odds in the draw.
 
-We'll announce what the challenges are closer to the day.
+We'll announce what the challenges are closer to the day. Games finish around 3:30pm, which leaves time to pack up and get down the hill.
 
 {% include event-figure.html
    src="/assets/images/events/2026/twin-peaks-birthday/games-high-jump.jpg"
@@ -113,21 +235,25 @@ We'll announce what the challenges are closer to the day.
    src3="/assets/images/events/2026/twin-peaks-birthday/games-track-stand.jpg"
    alt3="Two riders holding a track stand on their bikes in a grassy clearing, feet off the ground" %}
 
-## The raffle
+## After party at Rhythm {#after-party}
 
-Draw is at 4:00pm at the base of the park. Grab a drink, cross your fingers, and see what you go home with.
+Doors open at 4:00pm and happy hour runs until 6:00pm. Come and grab a beer with us and celebrate Twin Peaks turning three.
 
-Prizes are still landing from some big names, and we'll list them here as they're confirmed. Only participants go in the draw and we don't sell tickets separately, so get your ticket early. Announcements go out here and on [Instagram](https://www.instagram.com/nisekomtb/).
+The draw is at 5:00pm, an hour in, while the room is still full. Your day pass already covers the evening. If the daytime doesn't work for you, the ¥1,000 evening only pass gets you in with a game ticket.
+
+## The giveaway {#giveaway}
+
+Every prize below goes to someone on the night. Day pass holders start with five game tickets and earn more through the afternoon games. Evening only pass holders get one.
+
+Game tickets only come with event entry. We don't sell them separately. More prizes are still landing, and we'll add them here and on [Instagram](https://www.instagram.com/nisekomtb/) as they're confirmed.
 
 {% include event-figure.html
    src="/assets/images/events/2026/twin-peaks-birthday/prizes.jpg"
-   alt="Raffle prizes laid out on a NAMBA table: helmets, suspension forks, bike care kits and apparel"
+   alt="Prizes laid out on a NAMBA table: helmets, suspension forks, bike care kits and apparel"
    src2="/assets/images/events/2026/twin-peaks-birthday/prizes-2.jpg"
-   alt2="A crowd of riders gathered around the prize table as NAMBA staff hand out raffle winnings" %}
+   alt2="A crowd of riders gathered around the prize table as NAMBA staff hand out winnings" %}
 
-<!-- TODO: prize grid goes here once Tom sends the prize list. Pattern to follow:
-     the 2025 raffle page, recoverable with `git show 008acbf:raffle/index.html`
-     (rows of cards with title, desc, inclusions, images, sponsors, quantity, note). -->
+{% include prize-grid.html %}
 
 ## Help out on the day {#volunteers}
 
@@ -137,7 +263,7 @@ Take the whole day, the morning or the afternoon, whichever suits. [Sign up to v
 
 ## Bring a booth {#booths}
 
-Everything happens at the base area: registration in the morning, lunch, the afternoon games, the raffle draw at 4:00pm. Everyone comes through it more than once.
+Everything at the park happens at the base area: registration in the morning, lunch, and the afternoon games through to 3:30pm. Everyone comes through it more than once.
 
 We're opening it up to local bike shops and brands, food trucks and stalls, makers and artists, and community groups. Pitches are free and you're welcome to sell. We take no commission.
 
