@@ -103,6 +103,9 @@ featuredPrize:
 prizes:
   - title: Smithの<wbr>ヘルメットと<wbr>ライドグラス
     quantity: 4
+    images:
+      - /assets/images/events/2026/twin-peaks-birthday/prize-smith.jpg
+    imageAlt: マットブラックのSmithヘルメット、赤ミラーのSmithライドグラス、SmithのTシャツ
     desc: ヘルメットと​ライドグラスの​セット。​これまでの​年と​同じ​組み合わせです。
     sponsors:
       - name: Smith
@@ -123,6 +126,9 @@ prizes:
         url: https://ridefox.com
   - title: Foxの<wbr>キャップ
     quantity: 2
+    images:
+      - /assets/images/events/2026/twin-peaks-birthday/prize-fox-caps.jpg
+    imageAlt: 木道に並べられた5つのFoxスナップバックキャップ
     sponsors:
       - name: Fox
         img: /assets/images/company/fox.png
@@ -136,6 +142,9 @@ prizes:
         url: https://www.raceface.com
   - title: DT Swissの<wbr>ボトルと<wbr>キャップ
     quantity: 8
+    images:
+      - /assets/images/events/2026/twin-peaks-birthday/prize-dt-swiss.jpg
+    imageAlt: 黒のDT Swissウォーターボトル
     inclusions:
       - ウォーターボトル4本
       - ベースボールキャップ2個

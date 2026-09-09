@@ -16,8 +16,8 @@
       desc: One or more paragraphs of prose.
       specs:                                    # gold lines, one per row
         - FOX FLOAT 36 Rhythm
-      images:                                   # optional, first is the hero
-        - /assets/images/.../bike-01.jpg
+      images:                                   # optional. A .webp sibling of a
+        - /assets/images/.../bike-01.jpg        # .jpg or .png is served for free
       sponsors:
         - name: Specialized
           img: /assets/images/company/specialized.png   # omit for a text credit
@@ -50,16 +50,44 @@
     padding-left: 30px !important;
     padding-right: 30px !important;
   }
-  .prize-grid .num {
-    color: var(--color-bg-panel);
-    font-size: 200%;
+  /* Same medal construction as _includes/story/podium.html: the glyph is the
+     sizing element and stays in flow, the number is the absolute one centred in
+     the trophy's bowl. The template paints .font-icon glyphs green, so the gold
+     is set here on the :before that actually carries the colour. */
+  .prize-grid .prize-medal {
+    position: relative;
+    display: block;
+    /* The template puts 96px on the glyph's :before, not on any element the
+       number can inherit from. Restating it here is what makes the number's
+       0.36em resolve against the trophy, the way it does in podium.html. */
+    font-size: 96px;
+    line-height: 1;
+  }
+  .prize-grid .prize-medal .fa-trophy {
+    display: block;
+  }
+  /* Five classes deep on purpose. template.css paints these glyphs green at
+     `.acm-features.style-2 .features-item .font-icon span:before`, which is
+     (0,4,2); anything lighter than this loses and the trophy stays green. */
+  .prize-grid .features-item .font-icon.prize-medal .fa-trophy:before {
+    display: block;
+    color: var(--color-accent);
+    line-height: 1;
+  }
+  .prize-grid .prize-medal .num {
     position: absolute;
+    top: 0;
     left: 0;
     right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    font-weight: bold;
-    margin-top: 7px;
+    height: 62%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
+    font-size: 0.36em;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--color-bg-panel);
   }
   .prize-grid .gold {
     color: var(--color-accent);
@@ -128,6 +156,11 @@
   }
   .prize-grid .products .prod img {
     display: block;
+    width: 100%;
+    height: auto;
+  }
+  .prize-grid .row > .col .products .prod {
+    width: 100%;
   }
   .prize-grid .small {
     font-style: italic;
@@ -165,8 +198,9 @@
           <div class="row">
 
             <div class="col col-md-12 col-lg-5 prize-featured-meta">
-              <div class="font-icon">
-                <span class="fa-solid fa-trophy"></span>
+              <div class="font-icon prize-medal">
+                <span class="fa-solid fa-trophy" aria-hidden="true"></span>
+                {% unless fp.hidePrizeNumber %}<span class="num">1</span>{% endunless %}
               </div>
               <h3>{{ fp.title }}</h3>
               {% if fp.subtitle %}<p class="gold">{{ fp.subtitle }}</p>{% endif %}
@@ -200,7 +234,7 @@
                 <div class="products">
                   {% for image in fp.images %}
                     <div class="prod">
-                      <img src="{{ image }}" alt="{{ fp.imageAlt | default: fp.title }}" loading="lazy">
+                      <picture>{% if image contains '.jpg' %}<source type="image/webp" srcset="{{ image | replace: '.jpg', '.webp' }}">{% elsif image contains '.png' %}<source type="image/webp" srcset="{{ image | replace: '.png', '.webp' }}">{% endif %}<img src="{{ image }}" alt="{{ fp.imageAlt | default: fp.title }}" loading="lazy"></picture>
                     </div>
                   {% endfor %}
                 </div>
@@ -215,22 +249,28 @@
     </div>
   {% endif %}
 
+  {%- comment -%}
+    The featured prize is number 1, so the grid counts on from there rather than
+    restarting. Without a featured prize the grid is the whole list and starts at 1.
+  {%- endcomment -%}
+  {% assign number_offset = 0 %}
+  {% if page.featuredPrize %}{% assign number_offset = 1 %}{% endif %}
+
   {% if page.prizes %}
     <div class="row">
       {% for prize in page.prizes %}
         <div class="col col-md-6 col-lg-4">
           <div class="features-item no-hover ja-animate" data-animation="move-from-bottom" data-delay="item-{{ forloop.index0 }}">
-            <div class="font-icon">
-              <span class="fa-solid fa-trophy">
-                {% unless prize.hidePrizeNumber %}<span class="num">{{ forloop.index }}</span>{% endunless %}
-              </span>
+            <div class="font-icon prize-medal">
+              <span class="fa-solid fa-trophy" aria-hidden="true"></span>
+              {% unless prize.hidePrizeNumber %}<span class="num">{{ forloop.index | plus: number_offset }}</span>{% endunless %}
             </div>
             <h4>{{ prize.title }}</h4>
             {% if prize.images %}
               <div class="products">
                 {% for image in prize.images %}
                   <div class="prod">
-                    <img src="{{ image }}" alt="{{ prize.imageAlt | default: prize.title }}" loading="lazy">
+                    <picture>{% if image contains '.jpg' %}<source type="image/webp" srcset="{{ image | replace: '.jpg', '.webp' }}">{% elsif image contains '.png' %}<source type="image/webp" srcset="{{ image | replace: '.png', '.webp' }}">{% endif %}<img src="{{ image }}" alt="{{ prize.imageAlt | default: prize.title }}" loading="lazy"></picture>
                   </div>
                 {% endfor %}
               </div>

@@ -101,6 +101,9 @@ featuredPrize:
 prizes:
   - title: Smith helmet and glasses
     quantity: 4
+    images:
+      - /assets/images/events/2026/twin-peaks-birthday/prize-smith.jpg
+    imageAlt: A matte black Smith helmet, red-mirrored Smith riding glasses and a Smith t-shirt
     desc: A helmet and a set of riding glasses together, paired up the way we did in previous years.
     sponsors:
       - name: Smith
@@ -121,6 +124,9 @@ prizes:
         url: https://ridefox.com
   - title: Fox baseball caps
     quantity: 2
+    images:
+      - /assets/images/events/2026/twin-peaks-birthday/prize-fox-caps.jpg
+    imageAlt: Five Fox snapback caps lined up on a boardwalk
     sponsors:
       - name: Fox
         img: /assets/images/company/fox.png
@@ -134,6 +140,9 @@ prizes:
         url: https://www.raceface.com
   - title: DT Swiss bottles and caps
     quantity: 8
+    images:
+      - /assets/images/events/2026/twin-peaks-birthday/prize-dt-swiss.jpg
+    imageAlt: A black DT Swiss water bottle
     inclusions:
       - 4 water bottles
       - 2 baseball caps
