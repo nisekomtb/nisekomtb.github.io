@@ -86,9 +86,24 @@ featuredPrize:
   title: Specialized Stumpjumper 15 Expert
   subtitle: Satin Doppio / Moss
   value: ¥990,000
+  images:
+    - /assets/images/events/2026/twin-peaks-birthday/bike-0.jpg
+    - /assets/images/events/2026/twin-peaks-birthday/bike-1.jpg
+    - /assets/images/events/2026/twin-peaks-birthday/bike-2.jpg
+    - /assets/images/events/2026/twin-peaks-birthday/bike-3.jpg
+    - /assets/images/events/2026/twin-peaks-birthday/bike-4.jpg
+    - /assets/images/events/2026/twin-peaks-birthday/bike-5.jpg
+  imageAlt: Specialized Stumpjumper 15 Expert in Satin Doppio and Moss green, studio shot
   specs:
-    - Size S2
-    - SRAM AXS wireless shifting
+    - FACT 11m carbon chassis and rear-end
+    - FOX FLOAT 36 Performance Elite, GRIP X2, 160mm
+    - FOX FLOAT X Performance Elite with GENIE, 145mm rear
+    - SRAM GX Eagle AXS T-Type wireless, 12-speed
+    - SRAM Maven Silver 4-piston brakes
+    - Roval Traverse wheels on DT Swiss 370 hubs
+    - Specialized Butcher front, Eliminator rear
+    - PNW Loam dropper
+    - S2 size, 29in front and 27.5in rear
   sponsors:
     - name: Specialized
       img: /assets/images/company/specialized.png

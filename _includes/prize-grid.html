@@ -17,7 +17,9 @@
       specs:                                    # gold lines, one per row
         - FOX FLOAT 36 Rhythm
       images:                                   # optional. A .webp sibling of a
-        - /assets/images/.../bike-01.jpg        # .jpg or .png is served for free
+        - /assets/images/.../bike-0.jpg         # .jpg or .png is served for free.
+        - /assets/images/.../bike-1.jpg         # Two or more turns the featured
+                                                # card into a hero + thumb strip
       sponsors:
         - name: Specialized
           img: /assets/images/company/specialized.png   # omit for a text credit
@@ -192,47 +194,77 @@
     font-size: 75%;
     margin-top: 24px;
   }
+  /* Sponsors, small print and the button travel together as one footer block.
+     `margin-top: auto` drops the block to the card foot, so across a row the
+     logos sit on one line and the buttons sit on another, however much copy
+     each prize carries above them. */
   .prize-grid .row > .col > .features-item {
     display: flex;
     flex-direction: column;
   }
-  /* `.prize-grid` is itself the `.acm-features.style-2` element, so naming both
-     here clears template.css's `.acm-features.style-2 .features-item .action`,
-     which sets margin-top: 24px and would otherwise beat the auto. */
-  .acm-features.style-2.prize-grid .features-item .prize-cta {
+  .prize-grid .prize-foot {
     margin-top: auto;
-    padding-top: 24px;
-    border: 0;
-    color: var(--color-accent);
-    font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 12px;
-    letter-spacing: 0.5px;
+  }
+  /* Reserves the tallest logo's height whether a sponsor supplied a mark or is
+     credited as text, which is what keeps the button line straight. */
+  .prize-grid .prize-foot .sponsors {
+    min-height: 50px;
+  }
+  .acm-features.style-2.prize-grid .features-item .prize-cta {
+    display: inline-block;
+    margin-top: 20px;
     white-space: nowrap;
   }
-  .prize-grid .prize-cta:hover,
-  .prize-grid .prize-cta:focus {
-    color: var(--color-primary);
-  }
-  /* The featured card is a two-column flex row, so `margin-top: auto` there
-     would push the CTA to the foot of a column it does not own. */
-  .acm-features.style-2.prize-grid .features-item.prize-featured .prize-cta {
-    margin-top: 24px;
-    padding-top: 0;
-  }
-  /* The template offsets .action's inner span to clear an icon this button does
-     not have, which reads as an off-centre label in a centred card. */
-  .acm-features.style-2.prize-grid .features-item .prize-cta span {
-    margin-left: 0;
-    letter-spacing: inherit;
-  }
-  .acm-features.style-2.prize-grid .features-item .prize-cta:hover span,
-  .acm-features.style-2.prize-grid .features-item .prize-cta:focus span {
-    margin-left: 0;
-  }
+
   .prize-grid .row > .col > .features-item {
     height: 100%;
+  }
+  .prize-carousel-hero {
+    border: 1px solid var(--color-bg-border);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .prize-carousel-hero img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .prize-carousel-thumbs {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 6px;
+    margin-top: 6px;
+  }
+  .prize-carousel-thumb {
+    flex: 0 0 calc((100% - 30px) / 6);
+    padding: 0;
+    background: none;
+    border: 1px solid var(--color-bg-border);
+    border-radius: 3px;
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 0.55;
+    transition: opacity 200ms, border-color 200ms;
+  }
+  .prize-carousel-thumb img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .prize-carousel-thumb:hover,
+  .prize-carousel-thumb:focus-visible {
+    opacity: 1;
+  }
+  .prize-carousel-thumb.active {
+    opacity: 1;
+    border-color: var(--color-accent);
+  }
+  @media (max-width: 480px) {
+    /* Six across is 45px a thumb on a phone and four is 39px tall, both under
+       the 44px minimum tap target. Three across clears it at ~59px. */
+    .prize-carousel-thumb {
+      flex-basis: calc((100% - 12px) / 3);
+    }
   }
   .acm-features.style-2 .features-item.prize-featured .prize-featured-body {
     text-align: left;
@@ -294,7 +326,28 @@
             </div>
 
             <div class="col col-md-12 col-lg-7 prize-featured-body">
-              {% if fp.images %}
+              {% if fp.images.size > 1 %}
+                {%- comment -%}
+                  Hero plus thumb strip, the shape both previous bike prizes used.
+                  Thumbs point at the same files as the hero, so a click swaps to
+                  an image the browser already has and nothing loads on tap.
+                {%- endcomment -%}
+                <div class="prize-carousel">
+                  <div class="prize-carousel-hero">
+                    <picture>{% if fp.images[0] contains '.jpg' %}<source type="image/webp" srcset="{{ fp.images[0] | replace: '.jpg', '.webp' }}">{% endif %}<img id="prize-carousel-hero-img" src="{{ fp.images[0] }}" alt="{{ fp.imageAlt | default: fp.title }}" width="1600" height="900"></picture>
+                  </div>
+                  <div class="prize-carousel-thumbs" role="group" aria-label="{{ fp.title }}">
+                    {% for image in fp.images %}
+                      <button type="button" class="prize-carousel-thumb{% if forloop.first %} active{% endif %}"
+                              data-full="{{ image }}"
+                              data-webp="{{ image | replace: '.jpg', '.webp' }}"
+                              aria-label="{% if page.lang == 'ja' %}画像{{ forloop.index }}を表示{% else %}Show image {{ forloop.index }}{% endif %}">
+                        <picture>{% if image contains '.jpg' %}<source type="image/webp" srcset="{{ image | replace: '.jpg', '.webp' }}">{% endif %}<img src="{{ image }}" alt="" loading="lazy" width="1600" height="900"></picture>
+                      </button>
+                    {% endfor %}
+                  </div>
+                </div>
+              {% elsif fp.images %}
                 <div class="products">
                   {% for image in fp.images %}
                     <div class="prod">
@@ -305,7 +358,7 @@
               {% endif %}
               {% if fp.desc %}{{ fp.desc | markdownify }}{% endif %}
               {% if cta_slug != "" %}
-                <a class="btn action prize-cta" href="{{ cta_href }}"><span>{{ cta_label }}</span></a>
+                <a class="btn btn-secondary btn-sm prize-cta" href="{{ cta_href }}">{{ cta_label }}</a>
               {% endif %}
               {% if fp.note %}<p class="small">{{ fp.note }}</p>{% endif %}
             </div>
@@ -360,25 +413,27 @@
             {% for inclusion in prize.inclusions %}
               <p class="gold"{% if forloop.first %} style="margin-top:30px;"{% endif %}>{{ inclusion }}</p>
             {% endfor %}
-            {% if prize.sponsors %}
-              <div class="sponsors">
-                {% for sponsor in prize.sponsors %}
-                  {% if sponsor.img %}
-                    <a href="{{ sponsor.url }}" target="_blank" rel="sponsored noopener noreferrer">
-                      <picture>{% if sponsor.img contains '.png' %}<source type="image/webp" srcset="{{ sponsor.img | replace: '.png', '.webp' }}">{% endif %}<img src="{{ sponsor.img }}" alt="{{ sponsor.name }}{% if page.lang == 'ja' %}、賞品スポンサー{% else %}, prize sponsor{% endif %}" loading="lazy"></picture>
-                    </a>
-                  {% elsif sponsor.url %}
-                    <a class="sponsor-name" href="{{ sponsor.url }}">{{ sponsor.name }}</a>
-                  {% else %}
-                    <span class="sponsor-name">{{ sponsor.name }}</span>
-                  {% endif %}
-                {% endfor %}
-              </div>
-            {% endif %}
-            {% if cta_slug != "" %}
-              <a class="btn action prize-cta" href="{{ cta_href }}"><span>{{ cta_label }}</span></a>
-            {% endif %}
-            {% if prize.note %}<p class="small">{{ prize.note }}</p>{% endif %}
+            <div class="prize-foot">
+              {% if prize.sponsors %}
+                <div class="sponsors">
+                  {% for sponsor in prize.sponsors %}
+                    {% if sponsor.img %}
+                      <a href="{{ sponsor.url }}" target="_blank" rel="sponsored noopener noreferrer">
+                        <picture>{% if sponsor.img contains '.png' %}<source type="image/webp" srcset="{{ sponsor.img | replace: '.png', '.webp' }}">{% endif %}<img src="{{ sponsor.img }}" alt="{{ sponsor.name }}{% if page.lang == 'ja' %}、賞品スポンサー{% else %}, prize sponsor{% endif %}" loading="lazy"></picture>
+                      </a>
+                    {% elsif sponsor.url %}
+                      <a class="sponsor-name" href="{{ sponsor.url }}">{{ sponsor.name }}</a>
+                    {% else %}
+                      <span class="sponsor-name">{{ sponsor.name }}</span>
+                    {% endif %}
+                  {% endfor %}
+                </div>
+              {% endif %}
+              {% if prize.note %}<p class="small">{{ prize.note }}</p>{% endif %}
+              {% if cta_slug != "" %}
+                <a class="btn btn-secondary btn-sm prize-cta" href="{{ cta_href }}">{{ cta_label }}</a>
+              {% endif %}
+            </div>
           </div>
         </div>
       {% endfor %}
@@ -386,4 +441,24 @@
   {% endif %}
 
 </div>
+
+<script>
+  // Scoped to this block: swaps the hero to the clicked thumb, and moves the
+  // active marker. Both <source> and <img> are updated, or Safari keeps
+  // showing the first WebP it resolved.
+  (function () {
+    var hero = document.getElementById('prize-carousel-hero-img');
+    if (!hero) return;
+    var heroSource = hero.parentNode.querySelector('source');
+    var thumbs = document.querySelectorAll('.prize-carousel-thumb');
+    Array.prototype.forEach.call(thumbs, function (thumb) {
+      thumb.addEventListener('click', function () {
+        if (heroSource) heroSource.srcset = thumb.dataset.webp;
+        hero.src = thumb.dataset.full;
+        Array.prototype.forEach.call(thumbs, function (t) { t.classList.remove('active'); });
+        thumb.classList.add('active');
+      });
+    });
+  })();
+</script>
 {% endif %}
