@@ -220,6 +220,7 @@
     height: 100%;
   }
   .prize-carousel-hero {
+    position: relative;
     border: 1px solid var(--color-bg-border);
     border-radius: 3px;
     overflow: hidden;
@@ -229,6 +230,40 @@
     width: 100%;
     height: auto;
   }
+  /* The thumb strip sits below the hero and, on a phone, below the fold of the
+     card. These give the hero its own controls, and pair with the swipe
+     handler so the gesture people actually try on a photo does something. */
+  .prize-carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    /* The images sit on the panel colour now, so a dark translucent disc has
+       almost nothing to contrast against. The hairline is what makes the
+       control read as a control against the bike. */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.45);
+    color: #fff;
+    font-size: 15px;
+    line-height: 1;
+    cursor: pointer;
+    opacity: 0.85;
+    transition: opacity 200ms, background-color 200ms, border-color 200ms;
+  }
+  .prize-carousel-nav:hover,
+  .prize-carousel-nav:focus-visible {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.75);
+    border-color: var(--color-accent);
+  }
+  .prize-carousel-nav.prev { left: 8px; }
+  .prize-carousel-nav.next { right: 8px; }
   .prize-carousel-thumbs {
     display: flex;
     flex-flow: row wrap;
@@ -293,7 +328,7 @@
         <div class="features-item no-hover prize-featured ja-animate" data-animation="move-from-bottom" data-delay="item-0">
           <div class="row">
 
-            <div class="col col-md-12 col-lg-5 prize-featured-meta">
+            <div class="col-12 col-lg-5 prize-featured-meta">
               <div class="font-icon prize-medal">
                 <span class="fa-solid fa-trophy" aria-hidden="true"></span>
                 {% unless fp.hidePrizeNumber %}<span class="num">1</span>{% endunless %}
@@ -325,7 +360,7 @@
               {% endif %}
             </div>
 
-            <div class="col col-md-12 col-lg-7 prize-featured-body">
+            <div class="col-12 col-lg-7 prize-featured-body">
               {% if fp.images.size > 1 %}
                 {%- comment -%}
                   Hero plus thumb strip, the shape both previous bike prizes used.
@@ -335,6 +370,14 @@
                 <div class="prize-carousel">
                   <div class="prize-carousel-hero">
                     <picture>{% if fp.images[0] contains '.jpg' %}<source type="image/webp" srcset="{{ fp.images[0] | replace: '.jpg', '.webp' }}">{% endif %}<img id="prize-carousel-hero-img" src="{{ fp.images[0] }}" alt="{{ fp.imageAlt | default: fp.title }}" width="1600" height="900"></picture>
+                    <button type="button" class="prize-carousel-nav prev">
+                      <span class="fa-solid fa-chevron-left" aria-hidden="true"></span>
+                      <span class="visually-hidden">{% if page.lang == 'ja' %}前の画像{% else %}Previous image{% endif %}</span>
+                    </button>
+                    <button type="button" class="prize-carousel-nav next">
+                      <span class="fa-solid fa-chevron-right" aria-hidden="true"></span>
+                      <span class="visually-hidden">{% if page.lang == 'ja' %}次の画像{% else %}Next image{% endif %}</span>
+                    </button>
                   </div>
                   <div class="prize-carousel-thumbs" role="group" aria-label="{{ fp.title }}">
                     {% for image in fp.images %}
@@ -443,22 +486,57 @@
 </div>
 
 <script>
-  // Scoped to this block: swaps the hero to the clicked thumb, and moves the
+  // Scoped to this block: swaps the hero to the selected image and moves the
   // active marker. Both <source> and <img> are updated, or Safari keeps
-  // showing the first WebP it resolved.
+  // showing the first WebP it resolved. Reachable four ways: the thumb strip,
+  // the arrows on the hero, arrow keys while the carousel holds focus, and a
+  // swipe across the hero.
   (function () {
     var hero = document.getElementById('prize-carousel-hero-img');
     if (!hero) return;
+    var carousel = hero.closest('.prize-carousel');
     var heroSource = hero.parentNode.querySelector('source');
-    var thumbs = document.querySelectorAll('.prize-carousel-thumb');
-    Array.prototype.forEach.call(thumbs, function (thumb) {
-      thumb.addEventListener('click', function () {
-        if (heroSource) heroSource.srcset = thumb.dataset.webp;
-        hero.src = thumb.dataset.full;
-        Array.prototype.forEach.call(thumbs, function (t) { t.classList.remove('active'); });
-        thumb.classList.add('active');
-      });
+    var thumbs = Array.prototype.slice.call(carousel.querySelectorAll('.prize-carousel-thumb'));
+    if (!thumbs.length) return;
+    var current = 0;
+
+    function show(index) {
+      current = (index + thumbs.length) % thumbs.length;
+      var thumb = thumbs[current];
+      if (heroSource) heroSource.srcset = thumb.dataset.webp;
+      hero.src = thumb.dataset.full;
+      thumbs.forEach(function (t) { t.classList.remove('active'); });
+      thumb.classList.add('active');
+    }
+
+    thumbs.forEach(function (thumb, i) {
+      thumb.addEventListener('click', function () { show(i); });
     });
+
+    carousel.querySelector('.prize-carousel-nav.prev')
+      .addEventListener('click', function () { show(current - 1); });
+    carousel.querySelector('.prize-carousel-nav.next')
+      .addEventListener('click', function () { show(current + 1); });
+
+    carousel.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') { show(current - 1); e.preventDefault(); }
+      if (e.key === 'ArrowRight') { show(current + 1); e.preventDefault(); }
+    });
+
+    // Horizontal swipe on the hero. The 40px threshold and the axis check keep
+    // a vertical page scroll that starts on the image from changing the slide.
+    var startX = null, startY = null;
+    hero.addEventListener('touchstart', function (e) {
+      startX = e.changedTouches[0].clientX;
+      startY = e.changedTouches[0].clientY;
+    }, { passive: true });
+    hero.addEventListener('touchend', function (e) {
+      if (startX === null) return;
+      var dx = e.changedTouches[0].clientX - startX;
+      var dy = e.changedTouches[0].clientY - startY;
+      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) show(current + (dx < 0 ? 1 : -1));
+      startX = startY = null;
+    }, { passive: true });
   })();
 </script>
 {% endif %}
