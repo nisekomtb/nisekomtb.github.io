@@ -473,9 +473,18 @@ Both product descriptions were rewritten on 9 September to drop "raffle", carry 
 new schedule and name the afterparty. The evening description's closing pointer
 was changed to "buy the all day pass instead" when the products were renamed.
 
-Neither product has a JA name: `translations.name` is empty on both, so Japanese
-shoppers see the English name in the storefront. The site's own JA labels were
-already right, 終日パス and 夕方のみパス.
+Both products are fully bilingual, and the field to read is **not**
+`translations`, which is null on both and says nothing. The real ones are
+`nameTranslated`, `descriptionTranslated`, `seoTitleTranslated` and
+`seoDescriptionTranslated`, each an object keyed by locale.
+
+That matters because renaming a product through `name` updates only the default
+locale. The 10 September rename left `nameTranslated.ja` on the old wording, so
+the JA storefront kept showing the previous name until it was set explicitly.
+**Rename through `nameTranslated` and `seoTitleTranslated`, not `name` alone.**
+The JA names are `Twin Peaks Birthday 2026 終日パス` and
+`Twin Peaks Birthday 2026 夕方のみパス`, matching the site's own labels. The JA
+descriptions needed no edit: the evening one already pointed at 終日パス.
 
 Still to do:
 
