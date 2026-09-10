@@ -114,12 +114,12 @@ featuredPrize:
     It's also the reason the after party is back on. We'd planned a quiet draw at the park until this turned up.
   note: The bike can be collected in Niseko on the night or posted anywhere in Japan. If the winner can't collect straight away, we can store it in Niseko for up to six months.
 prizes:
-  - title: Smith helmet, glasses and tee
+  - title: Smith set, grey and gold
     quantity: 1
     images:
-      - /assets/images/events/2026/twin-peaks-birthday/prize-smith.jpg
-    imageAlt: A matte black Smith helmet, red-mirrored Smith riding glasses and a Smith t-shirt
-    desc: One of four Smith sets, each one different.
+      - /assets/images/events/2026/twin-peaks-birthday/prize-smith-1.jpg
+    imageAlt: A grey and gold Smith Pivot helmet, a mint Smith tee and rose-lensed Smith glasses on a boardwalk
+    desc: Mint tee and a rose mirror lens.
     inclusions:
       - Pivot helmet
       - Ultralight ride glasses
@@ -128,12 +128,12 @@ prizes:
       - name: Smith
         img: /assets/images/company/smith.png
         url: https://smithjapan.co.jp/
-  - title: Smith helmet, glasses and tee
+  - title: Smith set, lilac
     quantity: 1
     images:
-      - /assets/images/events/2026/twin-peaks-birthday/prize-smith.jpg
-    imageAlt: A matte black Smith helmet, red-mirrored Smith riding glasses and a Smith t-shirt
-    desc: One of four Smith sets, each one different.
+      - /assets/images/events/2026/twin-peaks-birthday/prize-smith-2.jpg
+    imageAlt: A lilac Smith Pivot helmet, a cream Smith tee and violet-lensed Smith glasses on a boardwalk
+    desc: Cream tee and a violet mirror lens.
     inclusions:
       - Pivot helmet
       - Ultralight ride glasses
@@ -142,12 +142,12 @@ prizes:
       - name: Smith
         img: /assets/images/company/smith.png
         url: https://smithjapan.co.jp/
-  - title: Smith helmet, glasses and tee
+  - title: Smith set, white
     quantity: 1
     images:
-      - /assets/images/events/2026/twin-peaks-birthday/prize-smith.jpg
-    imageAlt: A matte black Smith helmet, red-mirrored Smith riding glasses and a Smith t-shirt
-    desc: One of four Smith sets, each one different.
+      - /assets/images/events/2026/twin-peaks-birthday/prize-smith-3.jpg
+    imageAlt: A white Smith Pivot helmet, a charcoal Smith tee and magenta-lensed Smith glasses on a boardwalk
+    desc: Charcoal tee and a magenta mirror lens.
     inclusions:
       - Pivot helmet
       - Ultralight ride glasses
@@ -156,12 +156,12 @@ prizes:
       - name: Smith
         img: /assets/images/company/smith.png
         url: https://smithjapan.co.jp/
-  - title: Smith helmet, glasses and tee
+  - title: Smith set, graphite
     quantity: 1
     images:
-      - /assets/images/events/2026/twin-peaks-birthday/prize-smith.jpg
-    imageAlt: A matte black Smith helmet, red-mirrored Smith riding glasses and a Smith t-shirt
-    desc: One of four Smith sets, each one different.
+      - /assets/images/events/2026/twin-peaks-birthday/prize-smith-4.jpg
+    imageAlt: A graphite Smith Pivot helmet, a mauve Smith tee and smoke-lensed Smith glasses on a boardwalk
+    desc: Mauve tee and a smoke lens.
     inclusions:
       - Pivot helmet
       - Ultralight ride glasses
@@ -173,8 +173,8 @@ prizes:
   - title: Fox hoodie, socks and a Race Face hip bag
     quantity: 10
     images:
-      - /assets/images/events/2026/twin-peaks-birthday/prize-race-face.jpg
-    imageAlt: A pile of black Race Face hip bags, the RF logo on each flap
+      - /assets/images/events/2026/twin-peaks-birthday/prize-fox-combo.jpg
+    imageAlt: A charcoal Fox hoodie with an orange fox logo, a blue Race Face hip bag and a pack of Fox socks
     desc: The bag takes a tube, a multi-tool and a snack, so you can leave the pack at home.
     inclusions:
       - Fox hoodie
@@ -191,32 +191,11 @@ prizes:
     quantity: 2
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-fox-caps.jpg
-    imageAlt: Five Fox snapback caps lined up on a boardwalk
+    imageAlt: Two Fox trucker caps, one black and one grey, on a boardwalk
     sponsors:
       - name: Fox
         img: /assets/images/company/fox.png
         url: https://ridefox.com
-  - title: Dakine hold-all
-    quantity: 1
-    desc: A big kit bag from the crew hosting the after party.
-    sponsors:
-      - name: Rhythm Japan
-        img: /assets/images/company/rhythm.png
-        url: https://rhythmjapan.com
-  - title: Smith MTB goggles
-    quantity: 1
-    desc: For the dusty days, and the wet ones.
-    sponsors:
-      - name: Rhythm Japan
-        img: /assets/images/company/rhythm.png
-        url: https://rhythmjapan.com
-  - title: Dharco MTB pants
-    quantity: 1
-    desc: Trail trousers, cut for riding.
-    sponsors:
-      - name: Rhythm Japan
-        img: /assets/images/company/rhythm.png
-        url: https://rhythmjapan.com
   - title: DT Swiss cap and bottle
     quantity: 4
     images:
@@ -230,6 +209,36 @@ prizes:
       - name: DT Swiss
         img: /assets/images/company/dt-swiss.png
         url: https://www.dtswiss.com
+  - title: Dakine Ranger duffle
+    quantity: 1
+    images:
+      - /assets/images/events/2026/twin-peaks-birthday/prize-dakine.jpg
+    imageAlt: A khaki Dakine Ranger duffle bag with the tag still on it
+    desc: A big kit bag from the crew hosting the after party.
+    sponsors:
+      - name: Rhythm Japan
+        img: /assets/images/company/rhythm.png
+        url: https://rhythmjapan.com
+  - title: Smith MTB goggles
+    quantity: 1
+    images:
+      - /assets/images/events/2026/twin-peaks-birthday/prize-smith-goggles.jpg
+    imageAlt: Red-framed Smith MTB goggles in their box on a wooden rail
+    desc: For the dusty days, and the wet ones.
+    sponsors:
+      - name: Rhythm Japan
+        img: /assets/images/company/rhythm.png
+        url: https://rhythmjapan.com
+  - title: Dharco MTB pants
+    quantity: 1
+    images:
+      - /assets/images/events/2026/twin-peaks-birthday/prize-dharco.jpg
+    imageAlt: Camo-patterned Dharco MTB pants with the tag still attached
+    desc: Trail trousers, cut for riding.
+    sponsors:
+      - name: Rhythm Japan
+        img: /assets/images/company/rhythm.png
+        url: https://rhythmjapan.com
   - title: Twin Peaks badge t-shirts
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-tp-tee.jpg
@@ -250,9 +259,14 @@ prizes:
         url: /twin-peaks/
   - title: POC swag
     quantityText: Announced soon
+    images:
+      - /assets/images/events/2026/twin-peaks-birthday/prize-poc.jpg
+    imageAlt: A rider in a POC helmet cornering hard on an open hillside trail
     desc: A box of POC kit is on its way over. We'll say what's in it closer to the day.
     sponsors:
       - name: POC
+        img: /assets/images/company/poc.png
+        url: https://www.pocsports.com
   - title: Burton swag
     quantityText: Announced soon
     images:

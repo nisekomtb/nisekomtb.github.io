@@ -116,12 +116,12 @@ featuredPrize:
     アフターパーティーが​復活したのも、​この​自転車の​おかげです。​それまでは​パークで​静かに​抽選を​して​終わる​予定でした。
   note: 自転車は<wbr>当日ニセコで<wbr>お渡しする<wbr>ほか、<wbr>日本国内への<wbr>発送も<wbr>可能です。<wbr>すぐに<wbr>受け取れない<wbr>場合は、<wbr>ニセコで<wbr>最長6か月<wbr>お預かりできます。
 prizes:
-  - title: Smithの<wbr>ヘルメット、<wbr>グラス、<wbr>Tシャツ
+  - title: Smithセット、<wbr>グレーと<wbr>ゴールド
     quantity: 1
     images:
-      - /assets/images/events/2026/twin-peaks-birthday/prize-smith.jpg
-    imageAlt: マットブラックのSmithヘルメット、赤ミラーのSmithライドグラス、SmithのTシャツ
-    desc: 4つある​Smithセットの​1つ。​内容は​それぞれ異なります。
+      - /assets/images/events/2026/twin-peaks-birthday/prize-smith-1.jpg
+    imageAlt: グレーとゴールドのSmith Pivotヘルメット、ミントのSmith Tシャツ、ローズレンズのSmithグラス
+    desc: ミントの​Tシャツと​ローズミラーレンズ。
     inclusions:
       - Pivotヘルメット
       - Ultralightライドグラス
@@ -130,12 +130,12 @@ prizes:
       - name: Smith
         img: /assets/images/company/smith.png
         url: https://smithjapan.co.jp/
-  - title: Smithの<wbr>ヘルメット、<wbr>グラス、<wbr>Tシャツ
+  - title: Smithセット、<wbr>ライラック
     quantity: 1
     images:
-      - /assets/images/events/2026/twin-peaks-birthday/prize-smith.jpg
-    imageAlt: マットブラックのSmithヘルメット、赤ミラーのSmithライドグラス、SmithのTシャツ
-    desc: 4つある​Smithセットの​1つ。​内容は​それぞれ異なります。
+      - /assets/images/events/2026/twin-peaks-birthday/prize-smith-2.jpg
+    imageAlt: ライラックのSmith Pivotヘルメット、クリームのSmith Tシャツ、バイオレットレンズのSmithグラス
+    desc: クリームの​Tシャツと​バイオレットミラーレンズ。
     inclusions:
       - Pivotヘルメット
       - Ultralightライドグラス
@@ -144,12 +144,12 @@ prizes:
       - name: Smith
         img: /assets/images/company/smith.png
         url: https://smithjapan.co.jp/
-  - title: Smithの<wbr>ヘルメット、<wbr>グラス、<wbr>Tシャツ
+  - title: Smithセット、<wbr>ホワイト
     quantity: 1
     images:
-      - /assets/images/events/2026/twin-peaks-birthday/prize-smith.jpg
-    imageAlt: マットブラックのSmithヘルメット、赤ミラーのSmithライドグラス、SmithのTシャツ
-    desc: 4つある​Smithセットの​1つ。​内容は​それぞれ異なります。
+      - /assets/images/events/2026/twin-peaks-birthday/prize-smith-3.jpg
+    imageAlt: ホワイトのSmith Pivotヘルメット、チャコールのSmith Tシャツ、マゼンタレンズのSmithグラス
+    desc: チャコールの​Tシャツと​マゼンタミラーレンズ。
     inclusions:
       - Pivotヘルメット
       - Ultralightライドグラス
@@ -158,12 +158,12 @@ prizes:
       - name: Smith
         img: /assets/images/company/smith.png
         url: https://smithjapan.co.jp/
-  - title: Smithの<wbr>ヘルメット、<wbr>グラス、<wbr>Tシャツ
+  - title: Smithセット、<wbr>グラファイト
     quantity: 1
     images:
-      - /assets/images/events/2026/twin-peaks-birthday/prize-smith.jpg
-    imageAlt: マットブラックのSmithヘルメット、赤ミラーのSmithライドグラス、SmithのTシャツ
-    desc: 4つある​Smithセットの​1つ。​内容は​それぞれ異なります。
+      - /assets/images/events/2026/twin-peaks-birthday/prize-smith-4.jpg
+    imageAlt: グラファイトのSmith Pivotヘルメット、モーヴのSmith Tシャツ、スモークレンズのSmithグラス
+    desc: モーヴの​Tシャツと​スモークレンズ。
     inclusions:
       - Pivotヘルメット
       - Ultralightライドグラス
@@ -175,8 +175,8 @@ prizes:
   - title: Foxの<wbr>フーディーと<wbr>ソックス、<wbr>Race Faceの<wbr>ヒップバッグ
     quantity: 10
     images:
-      - /assets/images/events/2026/twin-peaks-birthday/prize-race-face.jpg
-    imageAlt: RFロゴ入りの黒いRace Faceヒップバッグが積まれた様子
+      - /assets/images/events/2026/twin-peaks-birthday/prize-fox-combo.jpg
+    imageAlt: オレンジのFoxロゴが入ったチャコールのFoxフーディー、青いRace Faceヒップバッグ、Foxのソックス
     desc: バッグには​チューブ、​マルチツール、​行動食が​入るので、​バックパックは​置いていけます。
     inclusions:
       - Foxの<wbr>フーディー
@@ -193,32 +193,11 @@ prizes:
     quantity: 2
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-fox-caps.jpg
-    imageAlt: 木道に並べられた5つのFoxスナップバックキャップ
+    imageAlt: 木道に置かれた黒とグレーのFoxトラッカーキャップ2個
     sponsors:
       - name: Fox
         img: /assets/images/company/fox.png
         url: https://ridefox.com
-  - title: Dakineの<wbr>ホールドオール
-    quantity: 1
-    desc: アフターパーティー会場の​Rhythmから、​大きめの​ギアバッグ。
-    sponsors:
-      - name: Rhythm Japan
-        img: /assets/images/company/rhythm.png
-        url: https://rhythmjapan.com
-  - title: Smithの<wbr>MTBゴーグル
-    quantity: 1
-    desc: 土埃の​日も、​雨の​日も。
-    sponsors:
-      - name: Rhythm Japan
-        img: /assets/images/company/rhythm.png
-        url: https://rhythmjapan.com
-  - title: Dharcoの<wbr>MTBパンツ
-    quantity: 1
-    desc: ライド用に​仕立てられた​トレイルパンツ。
-    sponsors:
-      - name: Rhythm Japan
-        img: /assets/images/company/rhythm.png
-        url: https://rhythmjapan.com
   - title: DT Swissの<wbr>キャップと<wbr>ボトル
     quantity: 4
     images:
@@ -232,6 +211,36 @@ prizes:
       - name: DT Swiss
         img: /assets/images/company/dt-swiss.png
         url: https://www.dtswiss.com
+  - title: Dakineの<wbr>Ranger Duffle
+    quantity: 1
+    images:
+      - /assets/images/events/2026/twin-peaks-birthday/prize-dakine.jpg
+    imageAlt: タグが付いたままのカーキ色のDakine Ranger Duffleバッグ
+    desc: アフターパーティー会場の​Rhythmから、​大きめの​ギアバッグ。
+    sponsors:
+      - name: Rhythm Japan
+        img: /assets/images/company/rhythm.png
+        url: https://rhythmjapan.com
+  - title: Smithの<wbr>MTBゴーグル
+    quantity: 1
+    images:
+      - /assets/images/events/2026/twin-peaks-birthday/prize-smith-goggles.jpg
+    imageAlt: 木の手すりに置かれた、箱入りの赤いフレームのSmith MTBゴーグル
+    desc: 土埃の​日も、​雨の​日も。
+    sponsors:
+      - name: Rhythm Japan
+        img: /assets/images/company/rhythm.png
+        url: https://rhythmjapan.com
+  - title: Dharcoの<wbr>MTBパンツ
+    quantity: 1
+    images:
+      - /assets/images/events/2026/twin-peaks-birthday/prize-dharco.jpg
+    imageAlt: タグが付いたままのカモ柄のDharco MTBパンツ
+    desc: ライド用に​仕立てられた​トレイルパンツ。
+    sponsors:
+      - name: Rhythm Japan
+        img: /assets/images/company/rhythm.png
+        url: https://rhythmjapan.com
   - title: ツインピークス<wbr>バッジTシャツ
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-tp-tee.jpg
@@ -252,9 +261,14 @@ prizes:
         url: /ja/twin-peaks/
   - title: POCの<wbr>グッズ
     quantityText: 近日発表
-    desc: POCから​グッズの​箱が​届く​予定です。​内容は​分かり次第お知らせします。
+    images:
+      - /assets/images/events/2026/twin-peaks-birthday/prize-poc.jpg
+    imageAlt: POCのヘルメットをかぶり、見晴らしのよい斜面のトレイルでコーナーを攻めるライダー
+    desc: POCから​グッズが​届く​予定です。​内容は​分かり次第お知らせします。
     sponsors:
       - name: POC
+        img: /assets/images/company/poc.png
+        url: https://www.pocsports.com
   - title: Burtonの<wbr>グッズ
     quantityText: 近日発表
     images:

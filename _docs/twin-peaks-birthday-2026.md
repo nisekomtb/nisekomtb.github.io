@@ -186,46 +186,48 @@ Japanese. Same rule applies to the Ecwid product copy and anything on social.
 
 ### Prizes
 
-Rearranged 10 September 2026. The order below is the order on the page, and the
-card numbers follow it: the bike is 1, so these run 2 to 15.
+Rearranged 10 September 2026, then photographed. The order below is the order on
+the page, and the card numbers follow it: the bike is 1, so these run 2 to 15.
 
 | # | Prize | Qty | Sponsor |
 |---|---|---|---|
 | 1 | Specialized Stumpjumper 15 EVO Expert, Gloss Pistachio | 1 | Specialized |
-| 2 | Set: Pivot helmet, Ultralight ride glasses, Essential tee | 1 | Smith |
-| 3 | Set: Pivot helmet, Ultralight ride glasses, Essential tee | 1 | Smith |
-| 4 | Set: Pivot helmet, Ultralight ride glasses, Essential tee | 1 | Smith |
-| 5 | Set: Pivot helmet, Ultralight ride glasses, Essential tee | 1 | Smith |
+| 2 | Smith set, grey and gold: Pivot helmet, Ultralight glasses, Essential tee | 1 | Smith |
+| 3 | Smith set, lilac | 1 | Smith |
+| 4 | Smith set, white | 1 | Smith |
+| 5 | Smith set, graphite | 1 | Smith |
 | 6 | Combo: hoodie, socks, hip bag | 10 | Fox and Race Face |
 | 7 | Baseball caps | 2 | Fox |
-| 8 | Dakine hold-all | 1 | Rhythm |
-| 9 | Smith MTB goggles | 1 | Rhythm |
-| 10 | Dharco MTB pants | 1 | Rhythm |
-| 11 | Combo: one bottle, one cap | 4 | DT Swiss |
+| 8 | Combo: one bottle, one cap | 4 | DT Swiss |
+| 9 | Dakine Ranger duffle | 1 | Rhythm |
+| 10 | Smith MTB goggles | 1 | Rhythm |
+| 11 | Dharco MTB pants | 1 | Rhythm |
 | 12 | Badge t-shirts | not stated | Twin Peaks |
 | 13 | Enamel mugs | not stated | Twin Peaks |
 | 14 | Swag, contents to be announced | to be announced | POC |
 | 15 | Swag, contents to be announced | to be announced | Burton |
 
-**The four Smith cards are placeholders and currently read identically.** They are
-four separate prizes because the sets differ from each other, but nobody has said
-how: same three products in each, presumably different colourways or sizes. Until
-that lands, all four carry the same title, the same photo and the line "One of
-four Smith sets, each one different", which is honest but does not help anyone
-choose. Give each card its own title and inclusions once the four are known.
-
-Smith also supplied 6 t-shirts against 4 sets, so 2 tees are spare and are not
-on the page.
+The four Smith sets are four separate prizes because they genuinely differ. Each
+holds the same three products, a Pivot helmet, Ultralight ride glasses and an
+Essential tee, in a different colourway, so the cards are named by the helmet and
+the description carries the tee and the lens. Smith also supplied 6 t-shirts
+against 4 sets, so 2 tees are spare and are not on the page.
 
 DT Swiss maths: 4 bottles and 4 caps make 4 pairs. Two of the caps are baseball
 and two are cycling, so the pairs are not identical.
 
-The three Rhythm prizes sit together at 8 to 10 on purpose. They are the only
-cards with no photograph, and the grid gives every card in a flex line the height
-of the tallest, so keeping them on one line stops a photo-less card stretching to
-match a card with an image: that row is 632px instead of 929px. It is why DT
-Swiss sits after them rather than before. Adding or removing a card above them
-breaks the grouping, so re-check the rows after any reshuffle.
+Every prize now carries a photograph and a sponsor mark. That is what let the
+order go back to the natural grouping, Smith, Fox, DT Swiss, Rhythm, Twin Peaks,
+then the unannounced. An earlier version deliberately moved DT Swiss below the
+Rhythm prizes because those three had no photo and the grid gives every card in a
+flex line the height of the tallest, which left them stretched with a void under
+the copy. That constraint is gone.
+
+Prize photographs are 800x600, 4:3, JPEG plus a WebP sibling. Keep to that ratio:
+the two Twin Peaks product shots are 1:1 because they come from Ecwid, and the
+mix is visible when a square and a 4:3 card share a row. `prize-dt-swiss` and
+`prize-burton` were 3:2 and are cropped to 4:3 at their native height, 711x533,
+rather than upscaled.
 
 The bike's source of truth is Specialized's own product page for part 93326-33,
 `specialized.com/gb/en/stumpjumper-15-evo-expert-sram-gx-axs-fox-performance-elite/p/4221478`.
@@ -400,19 +402,19 @@ are on the page. What is left:
 | Item | Owner | Urgency |
 |---|---|---|
 | Enable Ecwid product 863342047, then swap `storeProductSlug` for `tickets:` in both posts | Tom | Now. Without it the evening pass is priced but cannot be bought |
-| Re-send the POC logo. The file in `_triage` is hard-cropped on all four edges, so the mark is cut. Race Face and DT Swiss are done | Tom | Low. POC is the only prize still showing a text credit |
 | Confirm the t-shirt size run with the supplier | Tom | Now, the order window has passed |
 | Decide whether to expose or hide stock control | Tom | Low |
-| Say how the four Smith sets differ, so cards 2 to 5 stop reading identically | Tom | Before the prizes get shared |
 | Fill in the POC and Burton prize contents when the boxes arrive | Tom | When they land |
-| Decide on photo credits for Alister Buckingham's four images | Tom | Low |
+| Decide on a photo credit for Alister Buckingham's remaining dig image | Tom | Low |
 | T-shirt design brief to Joe, shirt colour | Angharad | Now |
 | Caterer | Angharad | Now |
 
 Photo credits: the masthead and the monk shot are Jinya Nishiwaki
 (instagram.com/jingypsy) and are credited. The first dig photo is Chad Clark /
-Sea and Summit Media. The second dig photo and both prize-table photos are Alister
-Buckingham. None of those three are credited yet.
+Sea and Summit Media. The second dig photo is Alister Buckingham and is not
+credited yet. His two prize photos, the Fox caps and the Race Face hip bags, were
+replaced on 10 September by Tom's own shots of the actual prizes, so only the one
+image of his remains on the page.
 
 Store-wide, unrelated to this event: Ecwid's legal pages still point at the dead
 namtba.com domain while `requireTermsAgreementAtCheckout` is `true`. The API token
