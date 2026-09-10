@@ -41,10 +41,19 @@ carries its own subtitle:
 | | Title | Subtitle |
 |---|---|---|
 | EN | Twin Peaks Birthday | Three years of Twin Peaks |
-| JA | Twin Peaks Birthday | ツインピークス3周年 |
+| JA | ツインピークス3周年 | 掘って、食べて、走って、祝う1日 |
 
-The Japanese subtitle does the decoding work, so a Japanese reader gets the meaning
-without the name being translated.
+**The JA name was English until 10 September**, on the reasoning that the subtitle
+did the decoding. It is now translated outright, which freed the subtitle to
+describe the day instead of repeating the title.
+
+`title` stays plain for the `<title>` tag, OG and Schema.org; `titleHtml` carries
+the `<wbr>` for masthead wrapping, which `_includes/masthead.html` prefers when it
+is set. **The URL did not move.** Jekyll builds `:title` in the permalink from the
+post filename, not this field, so `/ja/events/twin-peaks-birthday-2026/` and its
+hreflang pairing with the EN page are untouched. Verified after the change, along
+with the Event JSON-LD name, the breadcrumb and the events index card, all of
+which follow `title` automatically.
 
 ### Options considered and dropped
 
@@ -474,13 +483,14 @@ crowding it. They are indoors and at night, which the day product's forest group
 shot was not. All four carry EN and JA alt text. The previous main image is not
 recoverable from Ecwid once replaced, so a copy was kept before the swap.
 
-Options are deliberately shorter than the day product. No t-shirt size, no dietary
-requirements, no trail-build question, because none of them apply to someone
-turning up at 4:00pm. **The product had none of them at all** until 10 September,
-when the pre-launch check found an empty `options` array: it would have sold an
-evening pass without a participant name and without the terms agreement the day
-product requires. All three were copied across from 859390827, JA wording
-included, before the product was enabled:
+**The evening product carries no options at all, and that is deliberate.** The
+pre-launch check on 10 September found the `options` array empty, read it as an
+oversight and copied three across from the day product, a participant name, the
+language question and the terms agreement. Tom removed them again the same day:
+nothing needs recording for an evening arrival, so the pass sells in one click.
+
+Do not re-add them. The table below is what the product would carry if it ever
+needed to collect anything, not what it carries now:
 
 | Option | Type | Required |
 |---|---|---|
@@ -497,7 +507,11 @@ Both products are fully bilingual, and the field to read is **not**
 `nameTranslated`, `descriptionTranslated`, `seoTitleTranslated` and
 `seoDescriptionTranslated`, each an object keyed by locale.
 
-That matters because renaming a product through `name` updates only the default
+The Ecwid products follow the same name: `ツインピークス3周年 2026 終日パス` and
+`…夕方のみパス`, and the sentence inside each JA description that opened
+"Twin Peaks Birthdayの…" was changed to match.
+
+This matters because renaming a product through `name` updates only the default
 locale. The 10 September rename left `nameTranslated.ja` on the old wording, so
 the JA storefront kept showing the previous name until it was set explicitly.
 **Rename through `nameTranslated` and `seoTitleTranslated`, not `name` alone.**
@@ -509,8 +523,8 @@ Still to do:
 
 - [ ] Confirm the t-shirt size run against the actual supplier
 - [ ] Decide whether to expose or hide stock control
-- [x] **Enable product 863342047.** Done 10 September, after adding the three
-      missing options. Both tickets are live and buyable
+- [x] **Enable product 863342047.** Done 10 September. Both tickets are live and
+      buyable, the evening one with no options on it by choice
 
 `tickets:` renders one shop button per entry, first primary and the rest secondary.
 Schema in `_docs/events.md` under "Registration & sales".

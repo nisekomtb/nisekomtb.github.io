@@ -1,9 +1,10 @@
 ---
 layout: event
 categories: events
-title: Twin Peaks Birthday
-subtitle: ツインピークス3周年
-subtitleHtml: ツインピークス<wbr>3周年
+title: ツインピークス3周年
+titleHtml: ツインピークス<wbr>3周年
+subtitle: 掘って、食べて、走って、祝う1日
+subtitleHtml: 掘って、<wbr>食べて、<wbr>走って、<wbr>祝う<wbr>1日
 description: ツインピークス・バイクパークが3周年。トレイル整備、BBQランチ、バイクゲーム、そのあとはRhythmでアフターパーティー。スペシャライズドのStumpjumperがプレゼント抽選会に登場します。
 descriptionHtml: ツインピークス・バイクパークが<wbr>3周年。<wbr>トレイル整備、<wbr>BBQランチ、<wbr>バイクゲーム、<wbr>その<wbr>あとは<wbr>Rhythmで<wbr>アフターパーティー。<wbr>スペシャライズドの<wbr>Stumpjumperが<wbr>プレゼント抽選会に<wbr>登場します。
 startDate: 2026-09-19 09:00:00 +0900
