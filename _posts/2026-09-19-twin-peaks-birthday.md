@@ -76,7 +76,8 @@ tickets:
   - slug: twin-peaks-birthday-2026
     label: Buy day ticket
   - slug: twin-peaks-birthday-2026-evening
-    label: Buy evening ticket
+    label: Buy evening only ticket
+prizesNote: Prizes can be withdrawn or changed at any time.
 featuredPrize:
   title: Specialized Stumpjumper 15 EVO Expert
   subtitle: Gloss Pistachio
@@ -100,15 +101,14 @@ featuredPrize:
       img: /assets/images/company/specialized.png
       url: https://www.specialized-onlinestore.jp/
   desc: |
-    Specialized have stepped up with an enormous prize, and it is the reason the after party is back on. We had planned a quiet draw at the park until this turned up.
-
-    Gloss Pistachio is not a colour Specialized sell in Japan. Nobody here can walk into a shop and buy this bike, so whoever wins it will be riding the only one in the country.
+    Specialized have stepped up with an enormous prize and Gloss Pistachio is not a colour Specialized sell in Japan. Nobody here can walk into a shop and buy this bike, so whoever wins it will be riding the only one in the country.
 
     The rear shock is what sets it apart. Specialized's GENIE air spring behaves like a coil through small bumps and like an air spring at the end of the travel, so 145mm of rear travel takes big hits like a much longer bike. Their own testing puts it at 57% more traction and 39% fewer bottom-outs than a standard air shock.
 
     Geometry adjusts six ways, there is gear storage inside the downtube, and Specialized replace the suspension pivot bearings free for as long as you own it.
 prizes:
   - title: Smith mega combo, Matte Flint
+    wide: true
     quantity: 1
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-smith-1.jpg
@@ -123,6 +123,7 @@ prizes:
         img: /assets/images/company/smith.png
         url: https://smithjapan.co.jp/
   - title: Smith mega combo, Matte Aura
+    wide: true
     quantity: 1
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-smith-2.jpg
@@ -137,6 +138,7 @@ prizes:
         img: /assets/images/company/smith.png
         url: https://smithjapan.co.jp/
   - title: Smith mega combo, Matte White
+    wide: true
     quantity: 1
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-smith-3.jpg
@@ -151,6 +153,7 @@ prizes:
         img: /assets/images/company/smith.png
         url: https://smithjapan.co.jp/
   - title: Smith mega combo, Matte Black
+    wide: true
     quantity: 1
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-smith-4.jpg
@@ -165,6 +168,7 @@ prizes:
         img: /assets/images/company/smith.png
         url: https://smithjapan.co.jp/
   - title: Fox hoodie, socks and a Race Face hip bag
+    wide: true
     quantity: 10
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-fox-combo.jpg
@@ -181,6 +185,70 @@ prizes:
       - name: Race Face
         img: /assets/images/company/raceface.svg
         url: https://www.raceface.com
+  - title: DT Swiss bottle and hat combo
+    wide: true
+    quantity: 4
+    images:
+      - /assets/images/events/2026/twin-peaks-birthday/prize-dt-swiss.jpg
+    imageAlt: A black DT Swiss water bottle
+    # desc: Four pairs, each one a bottle and a cap. Two of the caps are baseball, two are cycling caps.
+    inclusions:
+      - Water bottle
+      - Hat
+    sponsors:
+      - name: DT Swiss
+        img: /assets/images/company/dt-swiss.png
+        url: https://www.dtswiss.com
+  - title: Dakine Ranger Duffle 60L, Stone Ballistic
+    quantity: 1
+    images:
+      - /assets/images/events/2026/twin-peaks-birthday/prize-dakine.jpg
+    imageAlt: A khaki Dakine Ranger Duffle bag with the tag still on it
+    desc: Sixty litres of kit bag from the crew hosting the after party, with Dakine's lifetime warranty on it.
+    sponsors:
+      - name: Rhythm Japan
+        img: /assets/images/company/rhythm.png
+        url: https://rhythmjapan.com
+  - title: Smith Squad MTB goggles, Cinder Haze
+    quantity: 1
+    images:
+      - /assets/images/events/2026/twin-peaks-birthday/prize-smith-goggles.jpg
+    imageAlt: Smith Squad MTB goggles with a Cinder Haze frame, in their box on a wooden rail
+    desc: A clear anti-fog lens, so they still work in the trees and in flat light. Helmet compatible, medium fit.
+    sponsors:
+      - name: Rhythm Japan
+        img: /assets/images/company/rhythm.png
+        url: https://rhythmjapan.com
+  - title: Dharco Ather Pants, Recon
+    quantity: 1
+    images:
+      - /assets/images/events/2026/twin-peaks-birthday/prize-dharco.jpg
+    imageAlt: Dharco Ather Pants in the Recon camo pattern with the tag still attached
+    desc: Water resistant, four-way stretch and three pockets. Size M.
+    sponsors:
+      - name: Rhythm Japan
+        img: /assets/images/company/rhythm.png
+        url: https://rhythmjapan.com
+  - title: Annupuri gondola day pass
+    quantity: 6
+    images:
+      - /assets/images/events/2026/twin-peaks-birthday/prize-annupuri.jpg
+    imageAlt: An Annupuri gondola cabin floating in front of Mount Yotei, framed by trees
+    desc: A day on the gondola at <a href="/where-to-ride/annupuri/">Niseko Annupuri Bike Park</a>.
+    sponsors:
+      - name: Niseko Annupuri
+        img: /assets/images/company/annupuri.png
+        url: https://annupuri.info/en/
+  - title: Grand Hirafu day lift pass
+    quantity: 6
+    images:
+      - /assets/images/events/2026/twin-peaks-birthday/prize-grand-hirafu.jpg
+    imageAlt: The Grand Hirafu chairlift running down towards Hirafu Village with two riders on the trail below
+    desc: A day on the lift at <a href="/where-to-ride/grand-hirafu/">Grand Hirafu Bike Park</a>.
+    sponsors:
+      - name: Grand Hirafu
+        img: /assets/images/company/grand-hirafu.png
+        url: https://www.grand-hirafu.jp
   - title: Fox baseball caps
     quantity: 2
     images:
@@ -190,67 +258,6 @@ prizes:
       - name: Fox
         img: /assets/images/company/fox.png
         url: https://ridefox.com
-  - title: DT Swiss bottle and hat combo
-    quantity: 4
-    images:
-      - /assets/images/events/2026/twin-peaks-birthday/prize-dt-swiss.jpg
-    imageAlt: A black DT Swiss water bottle
-    desc: Four pairs, each one a bottle and a cap. Two of the caps are baseball, two are cycling caps.
-    inclusions:
-      - Water bottle
-      - Hat
-    sponsors:
-      - name: DT Swiss
-        img: /assets/images/company/dt-swiss.png
-        url: https://www.dtswiss.com
-  - title: Twin Peaks t-shirts
-    images:
-      - /assets/images/events/2026/twin-peaks-birthday/prize-tp-tee.jpg
-    imageAlt: A rider in the forest wearing the white Twin Peaks tee, the full colour badge across the back
-    desc: The full colour badge, drawn for us by Sapporo illustrator <a href="/artist-series/#joe-scott">Joe Scott</a>.
-    sponsors:
-      - name: Twin Peaks
-        img: /assets/images/company/twin-peaks.png
-        url: /twin-peaks/
-  - title: Twin Peaks mugs
-    images:
-      - /assets/images/events/2026/twin-peaks-birthday/prize-tp-mug.jpg
-    imageAlt: Three Twin Peaks enamel mugs on a log in the forest, the colour badge on each
-    desc: Same badge, on a mug that can take a knock.
-    sponsors:
-      - name: Twin Peaks
-        img: /assets/images/company/twin-peaks.png
-        url: /twin-peaks/
-  - title: Dakine Ranger duffle
-    quantity: 1
-    images:
-      - /assets/images/events/2026/twin-peaks-birthday/prize-dakine.jpg
-    imageAlt: A khaki Dakine Ranger duffle bag with the tag still on it
-    desc: A big kit bag from the crew hosting the after party.
-    sponsors:
-      - name: Rhythm Japan
-        img: /assets/images/company/rhythm.png
-        url: https://rhythmjapan.com
-  - title: Smith MTB goggles
-    quantity: 1
-    images:
-      - /assets/images/events/2026/twin-peaks-birthday/prize-smith-goggles.jpg
-    imageAlt: Red-framed Smith MTB goggles in their box on a wooden rail
-    desc: For the dusty days, and the wet ones.
-    sponsors:
-      - name: Rhythm Japan
-        img: /assets/images/company/rhythm.png
-        url: https://rhythmjapan.com
-  - title: Dharco MTB pants
-    quantity: 1
-    images:
-      - /assets/images/events/2026/twin-peaks-birthday/prize-dharco.jpg
-    imageAlt: Camo-patterned Dharco MTB pants with the tag still attached
-    desc: Trail trousers, cut for riding.
-    sponsors:
-      - name: Rhythm Japan
-        img: /assets/images/company/rhythm.png
-        url: https://rhythmjapan.com
   - title: POC swag
     quantityText: Announced soon
     images:

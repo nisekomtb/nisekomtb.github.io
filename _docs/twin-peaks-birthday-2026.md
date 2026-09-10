@@ -197,13 +197,13 @@ the page, and the card numbers follow it: the bike is 1, so these run 2 to 15.
 | 4 | Smith mega combo, Matte White | 1 | Smith |
 | 5 | Smith mega combo, Matte Black | 1 | Smith |
 | 6 | Combo: hoodie, socks, hip bag | 10 | Fox and Race Face |
-| 7 | Baseball caps | 2 | Fox |
-| 8 | Combo: one bottle, one cap | 4 | DT Swiss |
-| 9 | Dakine Ranger duffle | 1 | Rhythm |
-| 10 | Smith MTB goggles | 1 | Rhythm |
-| 11 | Dharco MTB pants | 1 | Rhythm |
-| 12 | Badge t-shirts | not stated | Twin Peaks |
-| 13 | Enamel mugs | not stated | Twin Peaks |
+| 7 | Combo: one bottle, one cap | 4 | DT Swiss |
+| 8 | Dakine Ranger Duffle 60L, Stone Ballistic | 1 | Rhythm |
+| 9 | Smith Squad MTB goggles, Cinder Haze | 1 | Rhythm |
+| 10 | Dharco Ather Pants, Recon, size M | 1 | Rhythm |
+| 11 | Gondola day pass | 6 | Niseko Annupuri |
+| 12 | Day lift pass | 6 | Grand Hirafu |
+| 13 | Baseball caps | 2 | Fox |
 | 14 | Swag, contents to be announced | to be announced | POC |
 | 15 | Swag, contents to be announced | to be announced | Burton |
 
@@ -237,9 +237,46 @@ own note, which is about shipping and storage rather than eligibility.
 DT Swiss maths: 4 bottles and 4 caps make 4 pairs. Two of the caps are baseball
 and two are cycling, so the pairs are not identical.
 
+The three Rhythm prizes were named off their own product tags on 10 September,
+having been "Dakine Ranger duffle", "Smith MTB goggles" and "Dharco MTB pants".
+The tags also settle the details the cards now carry: the duffle is 60L in Stone
+Ballistic with a lifetime warranty, the goggles are a Squad MTB in Cinder Haze
+with a clear anti-fog lens, and **the Dharco pants are a size M**, which is on
+the card because it decides who can actually use them.
+
+`prizesNote` carries the small print for the whole list, rendered italic under
+the last card: prizes can be withdrawn or changed at any time. It is a section
+field, unlike the per-prize `note`.
+
+The two language files drifted out of order on 10 September, the Fox baseball
+caps card sitting in a different slot in each. Card order is part of bilingual
+parity, not just wording, and nothing in the build warns when it slips, so
+compare `grep '^  - title:'` across both files after any reordering.
+
+The two resort day passes were added on 10 September, 6 of each. They are the
+only prizes whose photograph is not of the prize itself, because a lift pass has
+nothing to shoot. Both images are reused from the park galleries in
+`_data/trails.yml`, cropped from 3:2 to 4:3 and down to 800x600: Annupuri is the
+gondola-and-Yotei frame, Grand Hirafu is the chairlift above the village. **The
+Annupuri gallery carries a credit, Noriyasu Kato**, shown on
+`/where-to-ride/annupuri/` but not on the event page. Decide whether that credit
+needs to follow the photo across. Grand Hirafu's gallery carries no credit.
+
+Annupuri is lift-served by gondola rather than a chairlift, so its card is named
+"gondola day pass" while Grand Hirafu's is a "day lift pass". Both were asked for
+as "1 day lift pass"; the split follows what each resort actually sells and the
+`cost` fields in `_data/trails.yml`.
+
+The Twin Peaks badge t-shirts and enamel mugs were prizes 12 and 13 until 10
+September, when they came off the page. Their two photographs, by Tanuki
+Productions, went with them. Both items still sell in the shop, so if they ever
+come back it is a prize entry that is needed, not new imagery.
+
 Every prize now carries a photograph and a sponsor mark. That is what let the
-order go back to the natural grouping, Smith, Fox, DT Swiss, Rhythm, Twin Peaks,
-then the unannounced. An earlier version deliberately moved DT Swiss below the
+order go back to the natural grouping, Smith, Fox, DT Swiss, Rhythm, the two
+resorts, then the unannounced. The Fox baseball caps are the exception: they sit
+at 13, away from the other Fox prize, because the first six cards are the wide
+ones and the caps are a slighter prize than the combo. An earlier version deliberately moved DT Swiss below the
 Rhythm prizes because those three had no photo and the grid gives every card in a
 flex line the height of the tallest, which left them stretched with a void under
 the copy. That constraint is gone.
@@ -248,8 +285,7 @@ Prize photographs are 800x600, 4:3, JPEG plus a WebP sibling, and as of 10
 September every one of the fourteen matches. Keep to that ratio: the mix is
 visible whenever two cards with different ratios share a row. `prize-dt-swiss`
 and `prize-burton` were 3:2 and are cropped to 4:3 at their native height,
-711x533, rather than upscaled. The two Twin Peaks cards were 1:1 Ecwid product
-shots until Tanuki Productions' photographs replaced them.
+711x533, rather than upscaled.
 
 Watch for EXIF orientation on anything shot on a phone. The Fox combo photo
 shipped a quarter turn out because PIL reads the stored pixels and ignores the
@@ -268,7 +304,6 @@ pixel for pixel against `assets.specialized.com` (they arrived via a dealer's
 CDN first, and the two copies decode identically across all 12.96M pixels). They
 are cut-outs with real transparency, composited onto `--color-bg-panel` at build
 time so the bike sits on the card rather than in a white box.
-| Badge t-shirts and enamel mugs | ? | Twin Peaks |
 
 The Stumpjumper is model SJ 15 EXPERT AXS PST/DKMOS S2, part 93326-3302, valued at
 ¥990,000. That colourway is not sold in Japan, which is the angle the page leads on.
@@ -282,14 +317,25 @@ Prizes live **inline on the event page**, not on a standalone `/raffle/` page, v
 `featuredPrize` and `prizes` in front matter and `{% include prize-grid.html %}` in
 the body. Full schema in `_docs/events.md` under "Prize grid".
 
-No product photography exists for any of these yet. The cards are text plus a
-sponsor logo, and the section reuses the two generic prize-table photos already in
-`assets/images/events/2026/twin-peaks-birthday/`. Adding `images:` to a prize later
-needs no markup change.
+The featured card is a full-width header, then the carousel across the whole
+card, then a two-column row of specs and description. The carousel used to sit
+in a col-lg-7 beside the meta, which held the hero to just under 500px and left
+a void under the sponsor logo. It renders about 863px now. The colourway and the
+value sit with the specs in the lower left rather than in the header, so the
+header is only the medal and the model name.
 
-Missing sponsor logos: **Race Face, DT Swiss and POC**. Those three render as gold
-text instead of a mark. Logos are partner-provided, so ask rather than scrape. Drop
-a transparent PNG into `assets/images/company/` and add an `img:` line to fix.
+Every card now carries both a photograph and a sponsor mark. All ten logos the
+page references exist in `assets/images/company/` with a `.webp` sibling each, so
+nothing falls back to the gold text credit any more. Logos are partner-provided:
+ask for one, never scrape it.
+
+Six cards carry `wide: true`, which makes them `col-lg-6` instead of `col-lg-4`,
+two to a row rather than three: the four Smith combos, the Fox combo and the DT
+Swiss combo. They are the cards with inclusion lists, and at a third of a row the
+titles and the inclusion lines both wrapped. Keep wide cards in multiples of two
+and at the top of the list, or Bootstrap leaves a gap and pushes the normal cards
+into a ragged line. The current shape is three rows of 2, two rows of 3, then POC
+and Burton on the last.
 
 ---
 
@@ -374,8 +420,14 @@ text, so the description is the only place on a product that takes a link.
 
 **Product 863342047, `twin-peaks-birthday-2026-evening`, created 9 September 2026
 and currently DISABLED.** ¥1,000 flat, no price modifiers, Events category,
-`isShippingRequired: false`, `unlimited: true`, same masthead image and alt text as
-the day product.
+`isShippingRequired: false`, `unlimited: true`.
+
+Its images were replaced on 10 September with four of Alister Buckingham's shots
+from last year's after party: the room in a group photo around the prize bike as
+the main image, then ticket stubs, the bike going up on the table, and the kids
+crowding it. They are indoors and at night, which the day product's forest group
+shot was not. All four carry EN and JA alt text. The previous main image is not
+recoverable from Ecwid once replaced, so a copy was kept before the swap.
 
 Options are deliberately shorter than the day product. No t-shirt size, no dietary
 requirements, no trail-build question, because none of them apply to someone
@@ -394,13 +446,19 @@ Still to do:
 
 - [ ] Confirm the t-shirt size run against the actual supplier
 - [ ] Decide whether to expose or hide stock control
-- [ ] **Enable product 863342047**, then in both post files swap the live
-      `storeProductSlug` line for the commented-out `tickets:` block underneath it.
-      Until that happens the page prices the evening pass in the sidebar but shows
-      only the day-ticket button, because a disabled product 404s in the storefront
+- [ ] **Enable product 863342047.** The `tickets:` block is already live in both
+      posts, so the page renders an evening button that 404s in the storefront
+      until the product is enabled. The prize CTAs point at the Events category,
+      which currently lists the day ticket alone for the same reason
 
 `tickets:` renders one shop button per entry, first primary and the rest secondary.
 Schema in `_docs/events.md` under "Registration & sales".
+
+The prize cards do not use those slugs. Their CTA points at `/shop/#!/events`,
+Ecwid category 200192502, so a reader looking at a prize picks their own ticket
+instead of being handed `tickets[0]`. `tickets`/`storeProductSlug` still decide
+whether the CTA renders at all. Seven older products in that category (the 2024
+and 2025 raffle tickets among them) are disabled and so do not show.
 
 ---
 
@@ -428,11 +486,11 @@ are on the page. What is left:
 
 | Item | Owner | Urgency |
 |---|---|---|
-| Enable Ecwid product 863342047, then swap `storeProductSlug` for `tickets:` in both posts | Tom | Now. Without it the evening pass is priced but cannot be bought |
+| Enable Ecwid product 863342047 | Tom | Now. The evening button and the Events category both need it before anyone can buy an evening pass |
 | Confirm the t-shirt size run with the supplier | Tom | Now, the order window has passed |
 | Decide whether to expose or hide stock control | Tom | Low |
 | Fill in the POC and Burton prize contents when the boxes arrive | Tom | When they land |
-| Decide on photo credits: Alister Buckingham's dig image, Tanuki Productions' two Twin Peaks swag shots | Tom | Low |
+| Decide on photo credits: Alister Buckingham's dig image, Noriyasu Kato's Annupuri gondola shot | Tom | Low |
 | T-shirt design brief to Joe, shirt colour | Angharad | Now |
 | Caterer | Angharad | Now |
 
@@ -441,10 +499,7 @@ Photo credits: the masthead and the monk shot are Jinya Nishiwaki
 Sea and Summit Media. The second dig photo is Alister Buckingham and is not
 credited yet. His two prize photos, the Fox caps and the Race Face hip bags, were
 replaced on 10 September by Tom's own shots of the actual prizes, so only the one
-image of his remains on the page. The two Twin Peaks swag photos, the tee and the
-mugs, are Tanuki Productions and are also uncredited: the same arrangement as the
-artist series product shots, which carry the credit only as a comment in
-`_data/artists.yml`.
+image of his remains on the page.
 
 Store-wide, unrelated to this event: Ecwid's legal pages still point at the dead
 namtba.com domain while `requireTermsAgreementAtCheckout` is `true`. The API token

@@ -38,9 +38,26 @@
         images: [...]
         sponsors: [...]
         note: ...
+        wide: true                              # two per row at lg instead of
+                                                # three. Use it in whole rows,
+                                                # see below.
 
-  Every card gets a "Buy a ticket" CTA pointing at the page's own ticket
-  product, taken from `tickets` or `storeProductSlug`. Override the wording with
+  `wide: true` widens a card from a third of the row to a half at lg and above,
+  for prizes whose titles and inclusion lists are cramped at a third. Below lg
+  nothing changes: md is already two per row and everything stacks on mobile.
+
+  MARK THEM IN MULTIPLES OF TWO, AND KEEP THEM TOGETHER AT THE TOP. Bootstrap
+  wraps on running width, so a lone wide card leaves a third of its row empty
+  and pushes the following normal cards into a ragged line. The four Smith
+  combos are marked wide and sit first, which fills two clean rows before the
+  col-lg-4 cards resume on a fresh line.
+
+  `prizesHeading`, `prizesIntro` and `prizesNote` are the section's own copy,
+  sitting above and below the cards. `prizesNote` is the small print that applies
+  to the whole list rather than to one prize, which per-prize `note` cannot say.
+
+  Every card gets a "Buy a ticket" CTA pointing at the shop's events category,
+  so the reader picks the ticket they want. Override the wording with
   `prizeCtaLabel` in front matter. A post that sells no ticket renders no CTA.
 
   Sponsor logo paths are absolute here (unlike the event `partners` field, which
@@ -50,16 +67,25 @@
 
 {%- comment -%}
   Every card carries a ticket CTA, the way the 2025 raffle page pointed every
-  prize at "How to win". The target is the page's own ticket product rather
-  than a page anchor, because a prize is only winnable by buying one. Taken
-  from `tickets` first, falling back to `storeProductSlug`, so it follows
-  whichever the post is using and disappears when the post sells nothing.
+  prize at "How to win". A prize is only winnable by buying a ticket, so the
+  CTA sells one rather than jumping to a page anchor.
+
+  IT POINTS AT THE SHOP'S EVENTS CATEGORY, NOT AT ONE PRODUCT. An event can
+  sell more than one kind of ticket, and from a prize card there is no way to
+  know which the reader wants: sending everyone to `tickets[0]` picked the day
+  pass for people who only wanted the evening. The category lists whatever is
+  on sale and lets them choose. `/shop/#!/events` is Ecwid category 200192502,
+  which reports exactly that URL.
+
+  `tickets` and `storeProductSlug` are still read, but only as a test of
+  whether the post sells anything at all. A post with no ticket renders no CTA,
+  which is why the assign below survives.
 {%- endcomment -%}
 {%- assign cta_slug = "" -%}
 {%- if page.tickets -%}{%- assign cta_slug = page.tickets[0].slug -%}
 {%- elsif page.storeProductSlug -%}{%- assign cta_slug = page.storeProductSlug -%}{%- endif -%}
 {%- if cta_slug != "" -%}
-  {%- capture cta_href -%}/{% if page.lang == "ja" %}ja/{% endif %}shop/#!/{{ cta_slug }}{%- endcapture -%}
+  {%- capture cta_href -%}/{% if page.lang == "ja" %}ja/{% endif %}shop/#!/events{%- endcapture -%}
   {%- if page.prizeCtaLabel -%}
     {%- assign cta_label = page.prizeCtaLabel -%}
   {%- elsif page.lang == "ja" -%}
@@ -242,9 +268,19 @@
   /* The thumb strip and the prose that follows it were flush at 0px: the
      template zeroes p margins inside a features-item, and neither side brought
      any of its own. Applied to the single-image case too, which sits in the
-     same place and had the same problem. */
+     same place and had the same problem. Both are direct children of the
+     featured card now that the image spans its full width, so the old
+     `.prize-featured-body .products` no longer matched. */
   .prize-carousel,
-  .prize-featured-body .products {
+  .prize-featured > .products {
+    margin-bottom: 24px;
+  }
+  /* The medal and title sit above the image across the whole card. The image
+     used to share a row with them at col-lg-7, which capped it at just under
+     500px and left a void under the sponsor logo on the left. The colourway and
+     the value stayed with the specs in the lower left, where they read as part
+     of the spec list rather than as a second heading. */
+  .prize-featured-head {
     margin-bottom: 24px;
   }
   .prize-carousel-hero {
@@ -367,8 +403,17 @@
   .acm-features.style-2 .features-item.prize-featured .prize-featured-body p {
     margin-bottom: 15px;
   }
+  /* Was `center`, which made sense when the image shared this row and the two
+     columns were a similar height. The row now holds a short spec list against
+     three paragraphs, and centring floated the specs into the middle with a
+     void above them. */
   .prize-featured > .row {
-    align-items: center;
+    align-items: flex-start;
+  }
+  .prize-grid .prizes-note {
+    margin-top: 30px;
+    font-style: italic;
+    font-size: 75%;
   }
 </style>
 
@@ -386,14 +431,86 @@
     <div class="row">
       <div class="col col-md-12 col-lg-12">
         <div class="features-item no-hover prize-featured ja-animate" data-animation="move-from-bottom" data-delay="item-0">
+          <div class="prize-featured-head">
+            <div class="font-icon prize-medal">
+              <span class="fa-solid fa-trophy" aria-hidden="true"></span>
+              {% unless fp.hidePrizeNumber %}<span class="num">1</span>{% endunless %}
+            </div>
+            <h3>{{ fp.title }}</h3>
+          </div>
+
+          {% if fp.images.size > 1 %}
+            {%- comment -%}
+              Hero plus thumb strip, the shape both previous bike prizes used.
+              Thumbs point at the same files as the hero, so a click swaps to
+              an image the browser already has and nothing loads on tap.
+            {%- endcomment -%}
+            {%- comment -%}
+              The thumb strip doubles as the PhotoSwipe gallery: its six
+              anchors are the slide list, in order, so their index is the
+              carousel's index. Our own click handler stops those anchors
+              ever reaching PhotoSwipe, because a thumb click swaps the
+              hero rather than opening anything. The hero is the trigger,
+              and it sits outside the watched container so PhotoSwipe does
+              not read it as a seventh slide.
+            {%- endcomment -%}
+            {% include photoswipe.html selector=".prize-carousel-thumbs" children="a.prize-carousel-thumb" expose="prizeCarouselLightbox" %}
+            <div class="prize-carousel">
+              <div class="prize-carousel-hero">
+                <a id="prize-carousel-zoom" class="prize-carousel-zoom" href="{{ fp.images[0] | replace: '.jpg', '-large.webp' }}" target="_blank" rel="noopener">
+                  <picture>{% if fp.images[0] contains '.jpg' %}<source type="image/webp" srcset="{{ fp.images[0] | replace: '.jpg', '.webp' }}">{% endif %}<img id="prize-carousel-hero-img" src="{{ fp.images[0] }}" alt="{{ fp.imageAlt | default: fp.title }}" width="1600" height="900"></picture>
+                  {%- comment -%}
+                    Inline rather than `fa-magnifying-glass-plus`. The glyph
+                    is in the full Font Awesome bundle but not in the
+                    subset base.html actually loads, and regenerating that
+                    subset rewrites fa-solid-900.woff2 in place, behind a
+                    URL that does not change. Every visitor holding the old
+                    font would render tofu here until it expired. Not worth
+                    it for one decorative icon on one card.
+                  {%- endcomment -%}
+                  <span class="prize-carousel-zoom-hint" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+                      <circle cx="10" cy="10" r="6.5"></circle>
+                      <path d="M15 15l5.5 5.5M10 7.2v5.6M7.2 10h5.6"></path>
+                    </svg>
+                  </span>
+                  <span class="visually-hidden">{% if page.lang == 'ja' %}画像を拡大表示{% else %}View this image larger{% endif %}</span>
+                </a>
+                <button type="button" class="prize-carousel-nav prev">
+                  <span class="fa-solid fa-chevron-left" aria-hidden="true"></span>
+                  <span class="visually-hidden">{% if page.lang == 'ja' %}前の画像{% else %}Previous image{% endif %}</span>
+                </button>
+                <button type="button" class="prize-carousel-nav next">
+                  <span class="fa-solid fa-chevron-right" aria-hidden="true"></span>
+                  <span class="visually-hidden">{% if page.lang == 'ja' %}次の画像{% else %}Next image{% endif %}</span>
+                </button>
+              </div>
+              <div class="prize-carousel-thumbs" role="group" aria-label="{{ fp.title }}">
+                {% for image in fp.images %}
+                  <a class="prize-carousel-thumb{% if forloop.first %} active{% endif %}"
+                     href="{{ image | replace: '.jpg', '-large.webp' }}"
+                     data-pswp-width="2400" data-pswp-height="1350"
+                     data-full="{{ image }}"
+                     data-webp="{{ image | replace: '.jpg', '.webp' }}"
+                     aria-label="{% if page.lang == 'ja' %}画像{{ forloop.index }}を表示{% else %}Show image {{ forloop.index }}{% endif %}">
+                    <picture>{% if image contains '.jpg' %}<source type="image/webp" srcset="{{ image | replace: '.jpg', '.webp' }}">{% endif %}<img src="{{ image }}" alt="" loading="lazy" width="1600" height="900"></picture>
+                  </a>
+                {% endfor %}
+              </div>
+            </div>
+          {% elsif fp.images %}
+            <div class="products">
+              {% for image in fp.images %}
+                <div class="prod">
+                  <picture>{% if image contains '.jpg' %}<source type="image/webp" srcset="{{ image | replace: '.jpg', '.webp' }}">{% elsif image contains '.png' %}<source type="image/webp" srcset="{{ image | replace: '.png', '.webp' }}">{% endif %}<img src="{{ image }}" alt="{{ fp.imageAlt | default: fp.title }}" loading="lazy"></picture>
+                </div>
+              {% endfor %}
+            </div>
+          {% endif %}
+
           <div class="row">
 
             <div class="col-12 col-lg-5 prize-featured-meta">
-              <div class="font-icon prize-medal">
-                <span class="fa-solid fa-trophy" aria-hidden="true"></span>
-                {% unless fp.hidePrizeNumber %}<span class="num">1</span>{% endunless %}
-              </div>
-              <h3>{{ fp.title }}</h3>
               {% if fp.subtitle %}<p class="gold">{{ fp.subtitle }}</p>{% endif %}
               {% if fp.value %}
                 <p class="prize-value">
@@ -421,74 +538,6 @@
             </div>
 
             <div class="col-12 col-lg-7 prize-featured-body">
-              {% if fp.images.size > 1 %}
-                {%- comment -%}
-                  Hero plus thumb strip, the shape both previous bike prizes used.
-                  Thumbs point at the same files as the hero, so a click swaps to
-                  an image the browser already has and nothing loads on tap.
-                {%- endcomment -%}
-                {%- comment -%}
-                  The thumb strip doubles as the PhotoSwipe gallery: its six
-                  anchors are the slide list, in order, so their index is the
-                  carousel's index. Our own click handler stops those anchors
-                  ever reaching PhotoSwipe, because a thumb click swaps the
-                  hero rather than opening anything. The hero is the trigger,
-                  and it sits outside the watched container so PhotoSwipe does
-                  not read it as a seventh slide.
-                {%- endcomment -%}
-                {% include photoswipe.html selector=".prize-carousel-thumbs" children="a.prize-carousel-thumb" expose="prizeCarouselLightbox" %}
-                <div class="prize-carousel">
-                  <div class="prize-carousel-hero">
-                    <a id="prize-carousel-zoom" class="prize-carousel-zoom" href="{{ fp.images[0] | replace: '.jpg', '-large.webp' }}" target="_blank" rel="noopener">
-                      <picture>{% if fp.images[0] contains '.jpg' %}<source type="image/webp" srcset="{{ fp.images[0] | replace: '.jpg', '.webp' }}">{% endif %}<img id="prize-carousel-hero-img" src="{{ fp.images[0] }}" alt="{{ fp.imageAlt | default: fp.title }}" width="1600" height="900"></picture>
-                      {%- comment -%}
-                        Inline rather than `fa-magnifying-glass-plus`. The glyph
-                        is in the full Font Awesome bundle but not in the
-                        subset base.html actually loads, and regenerating that
-                        subset rewrites fa-solid-900.woff2 in place, behind a
-                        URL that does not change. Every visitor holding the old
-                        font would render tofu here until it expired. Not worth
-                        it for one decorative icon on one card.
-                      {%- endcomment -%}
-                      <span class="prize-carousel-zoom-hint" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
-                          <circle cx="10" cy="10" r="6.5"></circle>
-                          <path d="M15 15l5.5 5.5M10 7.2v5.6M7.2 10h5.6"></path>
-                        </svg>
-                      </span>
-                      <span class="visually-hidden">{% if page.lang == 'ja' %}画像を拡大表示{% else %}View this image larger{% endif %}</span>
-                    </a>
-                    <button type="button" class="prize-carousel-nav prev">
-                      <span class="fa-solid fa-chevron-left" aria-hidden="true"></span>
-                      <span class="visually-hidden">{% if page.lang == 'ja' %}前の画像{% else %}Previous image{% endif %}</span>
-                    </button>
-                    <button type="button" class="prize-carousel-nav next">
-                      <span class="fa-solid fa-chevron-right" aria-hidden="true"></span>
-                      <span class="visually-hidden">{% if page.lang == 'ja' %}次の画像{% else %}Next image{% endif %}</span>
-                    </button>
-                  </div>
-                  <div class="prize-carousel-thumbs" role="group" aria-label="{{ fp.title }}">
-                    {% for image in fp.images %}
-                      <a class="prize-carousel-thumb{% if forloop.first %} active{% endif %}"
-                         href="{{ image | replace: '.jpg', '-large.webp' }}"
-                         data-pswp-width="2400" data-pswp-height="1350"
-                         data-full="{{ image }}"
-                         data-webp="{{ image | replace: '.jpg', '.webp' }}"
-                         aria-label="{% if page.lang == 'ja' %}画像{{ forloop.index }}を表示{% else %}Show image {{ forloop.index }}{% endif %}">
-                        <picture>{% if image contains '.jpg' %}<source type="image/webp" srcset="{{ image | replace: '.jpg', '.webp' }}">{% endif %}<img src="{{ image }}" alt="" loading="lazy" width="1600" height="900"></picture>
-                      </a>
-                    {% endfor %}
-                  </div>
-                </div>
-              {% elsif fp.images %}
-                <div class="products">
-                  {% for image in fp.images %}
-                    <div class="prod">
-                      <picture>{% if image contains '.jpg' %}<source type="image/webp" srcset="{{ image | replace: '.jpg', '.webp' }}">{% elsif image contains '.png' %}<source type="image/webp" srcset="{{ image | replace: '.png', '.webp' }}">{% endif %}<img src="{{ image }}" alt="{{ fp.imageAlt | default: fp.title }}" loading="lazy"></picture>
-                    </div>
-                  {% endfor %}
-                </div>
-              {% endif %}
               {% if fp.desc %}{{ fp.desc | markdownify }}{% endif %}
               {% if cta_slug != "" %}
                 <a class="btn btn-secondary btn-sm prize-cta" href="{{ cta_href }}">{{ cta_label }}</a>
@@ -512,7 +561,7 @@
   {% if page.prizes %}
     <div class="row">
       {% for prize in page.prizes %}
-        <div class="col col-md-6 col-lg-4">
+        <div class="col col-md-6 {% if prize.wide %}col-lg-6{% else %}col-lg-4{% endif %}">
           <div class="features-item no-hover ja-animate" data-animation="move-from-bottom" data-delay="item-{{ forloop.index0 }}">
             <div class="font-icon prize-medal">
               <span class="fa-solid fa-trophy" aria-hidden="true"></span>
@@ -576,6 +625,10 @@
         </div>
       {% endfor %}
     </div>
+  {% endif %}
+
+  {% if page.prizesNote %}
+    <p class="prizes-note ja-animate" data-animation="move-from-bottom" data-delay="200">{{ page.prizesNote }}</p>
   {% endif %}
 
 </div>

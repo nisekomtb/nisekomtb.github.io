@@ -84,6 +84,7 @@ tickets:
     label: 終日パスを購入
   - slug: twin-peaks-birthday-2026-evening
     label: 夕方のみパスを購入
+prizesNote: 賞品は​予告なく​変更または​取り下げとなる​場合が​あります。
 featuredPrize:
   title: Specialized Stumpjumper 15 EVO Expert
   subtitle: Gloss Pistachio
@@ -107,15 +108,14 @@ featuredPrize:
       img: /assets/images/company/specialized.png
       url: https://www.specialized-onlinestore.jp/
   desc: |
-    スペシャライズドが、​とんでもない​賞品を​用意してくれました。​アフターパーティーが​復活したのも​この​自転車の​おかげで、​それまでは​パークで​静かに​抽選を​して​終わる​予定でした。
-
-    Gloss Pistachioは、​スペシャライズドが​日本で​展開していない​カラーです。​日本の​店頭では​買えないので、​当選した方は​国内で​唯一の​1台に​乗る​ことになります。
+    スペシャライズドが​とんでもない​賞品を​用意してくれました。​Gloss Pistachioは、​スペシャライズドが​日本で​展開していない​カラーです。​日本の​店頭では​買えないので、​当選した方は​国内で​唯一の​1台に​乗る​ことになります。
 
     この​自転車の​核心は​リアショックです。​スペシャライズド独自の​GENIEエアスプリングは、​小さな​ギャップでは​コイルのように、​ストローク終盤では​エアスプリングのように​作動します。​そのため​リアトラベル145mmでも、​より​長いストロークの​バイクのように​大きな​衝撃を​受け止めます。​同社の​テストでは、​通常の​エアショックと​比べて​トラクションが​57%向上し、​底づきが​39%減ったと​しています。
 
     ジオメトリーは​6通りに​調整でき、​ダウンチューブの​中には​ギアを​収納できます。​サスペンションピボットベアリングは、​所有している​限り​無償で​交換されます。
 prizes:
   - title: Smithメガコンボ、<wbr>Matte Flint
+    wide: true
     quantity: 1
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-smith-1.jpg
@@ -130,6 +130,7 @@ prizes:
         img: /assets/images/company/smith.png
         url: https://smithjapan.co.jp/
   - title: Smithメガコンボ、<wbr>Matte Aura
+    wide: true
     quantity: 1
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-smith-2.jpg
@@ -144,6 +145,7 @@ prizes:
         img: /assets/images/company/smith.png
         url: https://smithjapan.co.jp/
   - title: Smithメガコンボ、<wbr>Matte White
+    wide: true
     quantity: 1
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-smith-3.jpg
@@ -158,6 +160,7 @@ prizes:
         img: /assets/images/company/smith.png
         url: https://smithjapan.co.jp/
   - title: Smithメガコンボ、<wbr>Matte Black
+    wide: true
     quantity: 1
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-smith-4.jpg
@@ -172,6 +175,7 @@ prizes:
         img: /assets/images/company/smith.png
         url: https://smithjapan.co.jp/
   - title: Foxの<wbr>フーディーと<wbr>ソックス、<wbr>Race Faceの<wbr>ヒップバッグ
+    wide: true
     quantity: 10
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-fox-combo.jpg
@@ -188,6 +192,70 @@ prizes:
       - name: Race Face
         img: /assets/images/company/raceface.svg
         url: https://www.raceface.com
+  - title: DT Swissの<wbr>ボトルと<wbr>キャップの<wbr>コンボ
+    wide: true
+    quantity: 4
+    images:
+      - /assets/images/events/2026/twin-peaks-birthday/prize-dt-swiss.jpg
+    imageAlt: 黒のDT Swissウォーターボトル
+    # desc: ボトルと​キャップの​4セット。​キャップは​ベースボール2個、​サイクリング2個です。
+    inclusions:
+      - ウォーターボトル1本
+      - キャップ1個
+    sponsors:
+      - name: DT Swiss
+        img: /assets/images/company/dt-swiss.png
+        url: https://www.dtswiss.com
+  - title: Dakineの<wbr>Ranger Duffle 60L、<wbr>Stone Ballistic
+    quantity: 1
+    images:
+      - /assets/images/events/2026/twin-peaks-birthday/prize-dakine.jpg
+    imageAlt: タグが付いたままのカーキ色のDakine Ranger Duffleバッグ
+    desc: アフターパーティー会場の​Rhythmから、​60Lの​ギアバッグ。​ダカインの​生涯保証付きです。
+    sponsors:
+      - name: Rhythm Japan
+        img: /assets/images/company/rhythm.png
+        url: https://rhythmjapan.com
+  - title: Smithの<wbr>Squad MTBゴーグル、<wbr>Cinder Haze
+    quantity: 1
+    images:
+      - /assets/images/events/2026/twin-peaks-birthday/prize-smith-goggles.jpg
+    imageAlt: 木の手すりに置かれた、箱入りのCinder HazeフレームのSmith Squad MTBゴーグル
+    desc: クリアな​曇り止めレンズで、​木陰でも​フラットな​光でも​見やすい。​ヘルメット対応の​ミディアムフィット。
+    sponsors:
+      - name: Rhythm Japan
+        img: /assets/images/company/rhythm.png
+        url: https://rhythmjapan.com
+  - title: Dharcoの<wbr>Ather Pants、<wbr>Recon
+    quantity: 1
+    images:
+      - /assets/images/events/2026/twin-peaks-birthday/prize-dharco.jpg
+    imageAlt: タグが付いたままの、Reconカモ柄のDharco Ather Pants
+    desc: 撥水性、​4WAYストレッチ、​ポケットは​3つ。​サイズは​Mです。
+    sponsors:
+      - name: Rhythm Japan
+        img: /assets/images/company/rhythm.png
+        url: https://rhythmjapan.com
+  - title: アンヌプリの<wbr>ゴンドラ1日券
+    quantity: 6
+    images:
+      - /assets/images/events/2026/twin-peaks-birthday/prize-annupuri.jpg
+    imageAlt: 木々に囲まれ、羊蹄山を背にして浮かぶアンヌプリゴンドラのキャビン
+    desc: <a href="/ja/where-to-ride/annupuri/">ニセコアンヌプリバイクパーク</a>の​ゴンドラで​1日​遊べます。
+    sponsors:
+      - name: Niseko Annupuri
+        img: /assets/images/company/annupuri.png
+        url: https://annupuri.info
+  - title: グラン・ヒラフの<wbr>1日リフト券
+    quantity: 6
+    images:
+      - /assets/images/events/2026/twin-peaks-birthday/prize-grand-hirafu.jpg
+    imageAlt: ヒラフ村へと下るグラン・ヒラフのリフトと、その下のトレイルを走る2人のライダー
+    desc: <a href="/ja/where-to-ride/grand-hirafu/">グラン・ヒラフバイクパーク</a>の​リフトで​1日​遊べます。
+    sponsors:
+      - name: Grand Hirafu
+        img: /assets/images/company/grand-hirafu.png
+        url: https://www.grand-hirafu.jp
   - title: Foxの<wbr>キャップ
     quantity: 2
     images:
@@ -197,67 +265,6 @@ prizes:
       - name: Fox
         img: /assets/images/company/fox.png
         url: https://ridefox.com
-  - title: DT Swissの<wbr>ボトルと<wbr>キャップの<wbr>コンボ
-    quantity: 4
-    images:
-      - /assets/images/events/2026/twin-peaks-birthday/prize-dt-swiss.jpg
-    imageAlt: 黒のDT Swissウォーターボトル
-    desc: ボトルと​キャップの​4セット。​キャップは​ベースボール2個、​サイクリング2個です。
-    inclusions:
-      - ウォーターボトル1本
-      - キャップ1個
-    sponsors:
-      - name: DT Swiss
-        img: /assets/images/company/dt-swiss.png
-        url: https://www.dtswiss.com
-  - title: ツインピークスの<wbr>Tシャツ
-    images:
-      - /assets/images/events/2026/twin-peaks-birthday/prize-tp-tee.jpg
-    imageAlt: 森の中で、背中にフルカラーのTwin Peaksバッジが入った白いTシャツを着たライダー
-    desc: 札幌の​イラストレーター、<a href="/ja/artist-series/#joe-scott">ジョー・スコット</a>が​描いた​フルカラーの​バッジ。
-    sponsors:
-      - name: Twin Peaks
-        img: /assets/images/company/twin-peaks.png
-        url: /ja/twin-peaks/
-  - title: ツインピークスの<wbr>マグ
-    images:
-      - /assets/images/events/2026/twin-peaks-birthday/prize-tp-mug.jpg
-    imageAlt: 森の中の丸太に並ぶ、カラー版Twin Peaksバッジ入りのホーローマグ3個
-    desc: 同じ​バッジの​マグ。​多少ぶつけても​平気です。
-    sponsors:
-      - name: Twin Peaks
-        img: /assets/images/company/twin-peaks.png
-        url: /ja/twin-peaks/
-  - title: Dakineの<wbr>Ranger Duffle
-    quantity: 1
-    images:
-      - /assets/images/events/2026/twin-peaks-birthday/prize-dakine.jpg
-    imageAlt: タグが付いたままのカーキ色のDakine Ranger Duffleバッグ
-    desc: アフターパーティー会場の​Rhythmから、​大きめの​ギアバッグ。
-    sponsors:
-      - name: Rhythm Japan
-        img: /assets/images/company/rhythm.png
-        url: https://rhythmjapan.com
-  - title: Smithの<wbr>MTBゴーグル
-    quantity: 1
-    images:
-      - /assets/images/events/2026/twin-peaks-birthday/prize-smith-goggles.jpg
-    imageAlt: 木の手すりに置かれた、箱入りの赤いフレームのSmith MTBゴーグル
-    desc: 土埃の​日も、​雨の​日も。
-    sponsors:
-      - name: Rhythm Japan
-        img: /assets/images/company/rhythm.png
-        url: https://rhythmjapan.com
-  - title: Dharcoの<wbr>MTBパンツ
-    quantity: 1
-    images:
-      - /assets/images/events/2026/twin-peaks-birthday/prize-dharco.jpg
-    imageAlt: タグが付いたままのカモ柄のDharco MTBパンツ
-    desc: ライド用に​仕立てられた​トレイルパンツ。
-    sponsors:
-      - name: Rhythm Japan
-        img: /assets/images/company/rhythm.png
-        url: https://rhythmjapan.com
   - title: POCの<wbr>グッズ
     quantityText: 近日発表
     images:
