@@ -114,29 +114,37 @@ featuredPrize:
     It's also the reason the after party is back on. We'd planned a quiet draw at the park until this turned up.
   note: The bike can be collected in Niseko on the night or posted anywhere in Japan. If the winner can't collect straight away, we can store it in Niseko for up to six months.
 prizes:
-  - title: Smith helmet and glasses
+  - title: Smith helmet, glasses and tee
     quantity: 4
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-smith.jpg
     imageAlt: A matte black Smith helmet, red-mirrored Smith riding glasses and a Smith t-shirt
-    desc: A helmet and a set of riding glasses together, paired up the way we did in previous years.
+    desc: One prize, three pieces of kit, and four of them going out on the night.
+    inclusions:
+      - Pivot helmet
+      - Ultralight ride glasses
+      - Essential tee
     sponsors:
       - name: Smith
         img: /assets/images/company/smith.png
         url: https://smithjapan.co.jp/
-  - title: Smith t-shirts
-    quantity: 6
-    sponsors:
-      - name: Smith
-        img: /assets/images/company/smith.png
-        url: https://smithjapan.co.jp/
-  - title: Fox hoodies
+  - title: Fox hoodie, socks and a Race Face hip bag
     quantityText: Plenty to go round
-    desc: Fox have sent a stack of hoodies, so a good number of people are going home with one.
+    images:
+      - /assets/images/events/2026/twin-peaks-birthday/prize-race-face.jpg
+    imageAlt: A pile of black Race Face hip bags, the RF logo on each flap
+    desc: The bag takes a tube, a multi-tool and a snack, so you can leave the pack at home.
+    inclusions:
+      - Fox hoodie
+      - Fox socks
+      - Race Face hip bag
     sponsors:
       - name: Fox
         img: /assets/images/company/fox.png
         url: https://ridefox.com
+      - name: Race Face
+        img: /assets/images/company/raceface.svg
+        url: https://www.raceface.com
   - title: Fox baseball caps
     quantity: 2
     images:
@@ -146,55 +154,40 @@ prizes:
       - name: Fox
         img: /assets/images/company/fox.png
         url: https://ridefox.com
-  - title: Race Face hip bags
-    quantity: 6
-    images:
-      - /assets/images/events/2026/twin-peaks-birthday/prize-race-face.jpg
-    imageAlt: A pile of black Race Face hip bags, the RF logo on each flap
-    desc: Enough room for a tube, a multi-tool and a snack, without a pack on your back.
-    sponsors:
-      - name: Race Face
-        img: /assets/images/company/raceface.svg
-        url: https://www.raceface.com
-  - title: DT Swiss bottles and caps
-    quantity: 8
-    images:
-      - /assets/images/events/2026/twin-peaks-birthday/prize-dt-swiss.jpg
-    imageAlt: A black DT Swiss water bottle
-    inclusions:
-      - 4 water bottles
-      - 2 baseball caps
-      - 2 cycling caps
-    sponsors:
-      - name: DT Swiss
-        img: /assets/images/company/dt-swiss.png
-        url: https://www.dtswiss.com
-  - title: Rhythm ride kit
-    quantity: 3
-    desc: Three separate prizes from the crew hosting the after party.
-    inclusions:
-      - Dakine hold-all
-      - Smith MTB goggles
-      - Dharco MTB pants
+  - title: Dakine hold-all
+    quantity: 1
+    desc: A big kit bag from the crew hosting the after party.
     sponsors:
       - name: Rhythm Japan
         img: /assets/images/company/rhythm.png
         url: https://rhythmjapan.com
-  - title: POC gear
-    quantityText: To be confirmed
-    desc: A box of POC kit is on its way to us. We'll list what's in it here once it lands.
+  - title: Smith MTB goggles
+    quantity: 1
+    desc: For the dusty days, and the wet ones.
     sponsors:
-      - name: POC
-  - title: Burton gear
-    quantityText: To be confirmed
+      - name: Rhythm Japan
+        img: /assets/images/company/rhythm.png
+        url: https://rhythmjapan.com
+  - title: Dharco MTB pants
+    quantity: 1
+    desc: Trail trousers, cut for riding.
+    sponsors:
+      - name: Rhythm Japan
+        img: /assets/images/company/rhythm.png
+        url: https://rhythmjapan.com
+  - title: DT Swiss cap and bottle
+    quantity: 4
     images:
-      - /assets/images/events/2026/twin-peaks-birthday/prize-burton.jpg
-    imageAlt: A rider on a forest trail wearing a blue Burton backpack
-    desc: Burton are sending a selection through. Same again, we'll list it once we know.
+      - /assets/images/events/2026/twin-peaks-birthday/prize-dt-swiss.jpg
+    imageAlt: A black DT Swiss water bottle
+    desc: Four pairs, each one a bottle and a cap. Two of the caps are baseball, two are cycling caps.
+    inclusions:
+      - A water bottle
+      - A cap
     sponsors:
-      - name: Burton
-        img: /assets/images/company/burton.png
-        url: https://www.burton.com
+      - name: DT Swiss
+        img: /assets/images/company/dt-swiss.png
+        url: https://www.dtswiss.com
   - title: Twin Peaks badge t-shirts
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-tp-tee.jpg
@@ -213,6 +206,21 @@ prizes:
       - name: Twin Peaks
         img: /assets/images/company/twin-peaks.png
         url: /twin-peaks/
+  - title: POC swag
+    quantityText: Announced soon
+    desc: A box of POC kit is on its way over. We'll say what's in it closer to the day.
+    sponsors:
+      - name: POC
+  - title: Burton swag
+    quantityText: Announced soon
+    images:
+      - /assets/images/events/2026/twin-peaks-birthday/prize-burton.jpg
+    imageAlt: A rider on a forest trail wearing a blue Burton backpack
+    desc: Burton are sending a selection through too. More on that soon.
+    sponsors:
+      - name: Burton
+        img: /assets/images/company/burton.png
+        url: https://www.burton.com
 ---
 
 ## What three years built

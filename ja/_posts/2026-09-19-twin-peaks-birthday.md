@@ -116,29 +116,37 @@ featuredPrize:
     アフターパーティーが​復活したのも、​この​自転車の​おかげです。​それまでは​パークで​静かに​抽選を​して​終わる​予定でした。
   note: 自転車は<wbr>当日ニセコで<wbr>お渡しする<wbr>ほか、<wbr>日本国内への<wbr>発送も<wbr>可能です。<wbr>すぐに<wbr>受け取れない<wbr>場合は、<wbr>ニセコで<wbr>最長6か月<wbr>お預かりできます。
 prizes:
-  - title: Smithの<wbr>ヘルメットと<wbr>ライドグラス
+  - title: Smithの<wbr>ヘルメット、<wbr>グラス、<wbr>Tシャツ
     quantity: 4
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-smith.jpg
     imageAlt: マットブラックのSmithヘルメット、赤ミラーのSmithライドグラス、SmithのTシャツ
-    desc: ヘルメットと​ライドグラスの​セット。​これまでの​年と​同じ​組み合わせです。
+    desc: 1つの​賞品に​3点セット。​当日は​4セットが​出ます。
+    inclusions:
+      - Pivotヘルメット
+      - Ultralightライドグラス
+      - Essential Tシャツ
     sponsors:
       - name: Smith
         img: /assets/images/company/smith.png
         url: https://smithjapan.co.jp/
-  - title: SmithのTシャツ
-    quantity: 6
-    sponsors:
-      - name: Smith
-        img: /assets/images/company/smith.png
-        url: https://smithjapan.co.jp/
-  - title: Foxの<wbr>フーディー
+  - title: Foxの<wbr>フーディーと<wbr>ソックス、<wbr>Race Faceの<wbr>ヒップバッグ
     quantityText: たくさん<wbr>ご用意
-    desc: Foxから​フーディーが​まとめて​届きました。​かなりの​人数が​持ち帰れます。
+    images:
+      - /assets/images/events/2026/twin-peaks-birthday/prize-race-face.jpg
+    imageAlt: RFロゴ入りの黒いRace Faceヒップバッグが積まれた様子
+    desc: バッグには​チューブ、​マルチツール、​行動食が​入るので、​バックパックは​置いていけます。
+    inclusions:
+      - Foxの<wbr>フーディー
+      - Foxの<wbr>ソックス
+      - Race Faceの<wbr>ヒップバッグ
     sponsors:
       - name: Fox
         img: /assets/images/company/fox.png
         url: https://ridefox.com
+      - name: Race Face
+        img: /assets/images/company/raceface.svg
+        url: https://www.raceface.com
   - title: Foxの<wbr>キャップ
     quantity: 2
     images:
@@ -148,55 +156,40 @@ prizes:
       - name: Fox
         img: /assets/images/company/fox.png
         url: https://ridefox.com
-  - title: Race Faceの<wbr>ヒップバッグ
-    quantity: 6
-    images:
-      - /assets/images/events/2026/twin-peaks-birthday/prize-race-face.jpg
-    imageAlt: RFロゴ入りの黒いRace Faceヒップバッグが積まれた様子
-    desc: チューブ、​マルチツール、​行動食が​入る​大きさ。​バックパックなしで​走れます。
-    sponsors:
-      - name: Race Face
-        img: /assets/images/company/raceface.svg
-        url: https://www.raceface.com
-  - title: DT Swissの<wbr>ボトルと<wbr>キャップ
-    quantity: 8
-    images:
-      - /assets/images/events/2026/twin-peaks-birthday/prize-dt-swiss.jpg
-    imageAlt: 黒のDT Swissウォーターボトル
-    inclusions:
-      - ウォーターボトル4本
-      - ベースボールキャップ2個
-      - サイクリングキャップ2個
-    sponsors:
-      - name: DT Swiss
-        img: /assets/images/company/dt-swiss.png
-        url: https://www.dtswiss.com
-  - title: Rhythmの<wbr>ライドギア
-    quantity: 3
-    desc: アフターパーティー会場の​Rhythmから、​3つの​賞品。
-    inclusions:
-      - Dakineの<wbr>ホールドオール
-      - Smithの<wbr>MTBゴーグル
-      - Dharcoの<wbr>MTBパンツ
+  - title: Dakineの<wbr>ホールドオール
+    quantity: 1
+    desc: アフターパーティー会場の​Rhythmから、​大きめの​ギアバッグ。
     sponsors:
       - name: Rhythm Japan
         img: /assets/images/company/rhythm.png
         url: https://rhythmjapan.com
-  - title: POCの<wbr>ギア
-    quantityText: 内容は<wbr>確認中
-    desc: POCから​荷物が​発送されています。​届き次第、​内容を​ここに​掲載します。
+  - title: Smithの<wbr>MTBゴーグル
+    quantity: 1
+    desc: 土埃の​日も、​雨の​日も。
     sponsors:
-      - name: POC
-  - title: Burtonの<wbr>ギア
-    quantityText: 内容は<wbr>確認中
+      - name: Rhythm Japan
+        img: /assets/images/company/rhythm.png
+        url: https://rhythmjapan.com
+  - title: Dharcoの<wbr>MTBパンツ
+    quantity: 1
+    desc: ライド用に​仕立てられた​トレイルパンツ。
+    sponsors:
+      - name: Rhythm Japan
+        img: /assets/images/company/rhythm.png
+        url: https://rhythmjapan.com
+  - title: DT Swissの<wbr>キャップと<wbr>ボトル
+    quantity: 4
     images:
-      - /assets/images/events/2026/twin-peaks-birthday/prize-burton.jpg
-    imageAlt: 森のトレイルで青いBurtonのバックパックを背負ったライダー
-    desc: Burtonからも​一式届く​予定です。​内容が​分かり次第、​掲載します。
+      - /assets/images/events/2026/twin-peaks-birthday/prize-dt-swiss.jpg
+    imageAlt: 黒のDT Swissウォーターボトル
+    desc: ボトルと​キャップの​4セット。​キャップは​ベースボール2個、​サイクリング2個です。
+    inclusions:
+      - ウォーターボトル1本
+      - キャップ1個
     sponsors:
-      - name: Burton
-        img: /assets/images/company/burton.png
-        url: https://www.burton.com
+      - name: DT Swiss
+        img: /assets/images/company/dt-swiss.png
+        url: https://www.dtswiss.com
   - title: ツインピークス<wbr>バッジTシャツ
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-tp-tee.jpg
@@ -215,6 +208,21 @@ prizes:
       - name: Twin Peaks
         img: /assets/images/company/twin-peaks.png
         url: /ja/twin-peaks/
+  - title: POCの<wbr>グッズ
+    quantityText: 近日発表
+    desc: POCから​グッズの​箱が​届く​予定です。​内容は​分かり次第お知らせします。
+    sponsors:
+      - name: POC
+  - title: Burtonの<wbr>グッズ
+    quantityText: 近日発表
+    images:
+      - /assets/images/events/2026/twin-peaks-birthday/prize-burton.jpg
+    imageAlt: 森のトレイルで青いBurtonのバックパックを背負ったライダー
+    desc: Burtonからも​グッズが​届きます。​こちらも​内容は​近日発表します。
+    sponsors:
+      - name: Burton
+        img: /assets/images/company/burton.png
+        url: https://www.burton.com
 ---
 
 ## 3年間で​作りあげた​もの
