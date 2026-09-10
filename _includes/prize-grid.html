@@ -193,6 +193,20 @@
     font-size: 125%;
     margin-top: 8px;
   }
+  /* Sits straight under the colourway, which is the line it qualifies, so it
+     gets no top margin of its own. */
+  .prize-grid .prize-subtitle-note {
+    margin-top: 2px;
+    font-size: 85%;
+    font-style: italic;
+    opacity: 0.75;
+  }
+  /* `.gold + .gold` zeroes the gap so a run of gold lines reads as one block,
+     which is right in a grid card. The featured spec list is five long lines in
+     a narrow column and needs air between them, so it opts back out. */
+  .prize-featured-meta .gold + .gold {
+    margin-top: 10px;
+  }
   .prize-grid .sponsors {
     margin: 30px auto 0;
     display: flex;
@@ -518,6 +532,7 @@
 
             <div class="col-12 col-lg-5 prize-featured-meta">
               {% if fp.subtitle %}<p class="gold">{{ fp.subtitle }}</p>{% endif %}
+              {% if fp.subtitleNote %}<p class="prize-subtitle-note">{{ fp.subtitleNote }}</p>{% endif %}
               {% if fp.value %}
                 <p class="prize-value">
                   {% if page.lang == "ja" %}<strong>{{ fp.value }}</strong>相当{% else %}A value of <strong>{{ fp.value }}</strong>{% endif %}

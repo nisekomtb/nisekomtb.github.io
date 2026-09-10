@@ -88,6 +88,7 @@ prizesNote: 賞品は​予告なく​変更または​取り下げとなる�
 featuredPrize:
   title: Specialized Stumpjumper 15 EVO Expert
   subtitle: Gloss Pistachio
+  subtitleNote: 日本未展開の​カラー
   value: 990,000円
   images:
     - /assets/images/events/2026/twin-peaks-birthday/bike-1.jpg
@@ -250,7 +251,7 @@ prizes:
     quantity: 6
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-grand-hirafu.jpg
-    imageAlt: ヒラフ村へと下るグラン・ヒラフのリフトと、その下のトレイルを走る2人のライダー
+    imageAlt: 谷の上を進むグラン・ヒラフのゴンドラ、背後に羊蹄山、眼下にヒラフ村
     desc: <a href="/ja/where-to-ride/grand-hirafu/">グラン・ヒラフバイクパーク</a>の​リフトで​1日​遊べます。
     sponsors:
       - name: Grand Hirafu

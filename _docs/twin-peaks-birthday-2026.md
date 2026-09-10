@@ -256,8 +256,10 @@ compare `grep '^  - title:'` across both files after any reordering.
 The two resort day passes were added on 10 September, 6 of each. They are the
 only prizes whose photograph is not of the prize itself, because a lift pass has
 nothing to shoot. Both images are reused from the park galleries in
-`_data/trails.yml`, cropped from 3:2 to 4:3 and down to 800x600: Annupuri is the
-gondola-and-Yotei frame, Grand Hirafu is the chairlift above the village. **The
+`_data/trails.yml`, cropped from 3:2 to 4:3 and down to 800x600. Both are the
+gondola-and-Yotei frame from their own park: Grand Hirafu started as the
+chairlift-above-the-village shot and was swapped on 10 September for the gondola
+one, which carries Yotei and reads better beside the Annupuri card. **The
 Annupuri gallery carries a credit, Noriyasu Kato**, shown on
 `/where-to-ride/annupuri/` but not on the event page. Decide whether that credit
 needs to follow the photo across. Grand Hirafu's gallery carries no credit.

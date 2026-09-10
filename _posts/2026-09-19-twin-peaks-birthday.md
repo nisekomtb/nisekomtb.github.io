@@ -81,6 +81,7 @@ prizesNote: Prizes can be withdrawn or changed at any time.
 featuredPrize:
   title: Specialized Stumpjumper 15 EVO Expert
   subtitle: Gloss Pistachio
+  subtitleNote: Not available in Japan
   value: ¥990,000
   images:
     - /assets/images/events/2026/twin-peaks-birthday/bike-1.jpg
@@ -243,7 +244,7 @@ prizes:
     quantity: 6
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-grand-hirafu.jpg
-    imageAlt: The Grand Hirafu chairlift running down towards Hirafu Village with two riders on the trail below
+    imageAlt: A Grand Hirafu gondola cabin above the valley with Mount Yotei behind it and Hirafu Village below
     desc: A day on the lift at <a href="/where-to-ride/grand-hirafu/">Grand Hirafu Bike Park</a>.
     sponsors:
       - name: Grand Hirafu
