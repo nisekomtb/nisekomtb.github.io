@@ -32,8 +32,9 @@
         quantityText: Numerous                  # overrides quantity when exact
                                                 # numbers are not being published
         desc: ...
-        inclusions:                             # gold lines, one per row
-          - Forefront 3 helmet
+        inclusions:                             # rendered under a gold
+          - Forefront 3 helmet                  # "Includes" heading, in
+                                                # body text, one per row
         images: [...]
         sponsors: [...]
         note: ...
@@ -127,6 +128,25 @@
   }
   .prize-grid .gold + .gold {
     margin-top: 0;
+  }
+  /* A Smith combo lists three items. As three lines of gold uppercase they read
+     as three shouted headings with nothing under them, so the gold now labels
+     the block once and the contents sit below it in body text. Bootstrap gives
+     ul a disc and 2rem of padding, which a centred card does not want. */
+  .prize-grid .prize-includes {
+    margin-top: 30px;
+  }
+  .prize-grid .prize-includes .gold {
+    margin-top: 0;
+    margin-bottom: 4px;
+  }
+  .prize-grid .prize-includes ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .prize-grid .prize-includes li {
+    margin: 0;
   }
   .prize-grid .prize-count {
     color: var(--color-accent);
@@ -515,9 +535,14 @@
             {% endif %}
             {% if prize.subtitle %}<p class="gold">{{ prize.subtitle }}</p>{% endif %}
             {% if prize.desc %}<p style="margin-top:15px; margin-bottom:15px;">{{ prize.desc }}</p>{% endif %}
-            {% for inclusion in prize.inclusions %}
-              <p class="gold"{% if forloop.first %} style="margin-top:30px;"{% endif %}>{{ inclusion }}</p>
-            {% endfor %}
+            {% if prize.inclusions %}
+              <div class="prize-includes">
+                <p class="gold">{% if page.lang == "ja" %}セット内容{% else %}Includes{% endif %}</p>
+                <ul>
+                  {% for inclusion in prize.inclusions %}<li>{{ inclusion }}</li>{% endfor %}
+                </ul>
+              </div>
+            {% endif %}
             <div class="prize-foot">
               {% if prize.sponsors %}
                 <div class="sponsors">

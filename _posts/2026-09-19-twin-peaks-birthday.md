@@ -199,8 +199,8 @@ prizes:
     imageAlt: A black DT Swiss water bottle
     desc: Four pairs, each one a bottle and a cap. Two of the caps are baseball, two are cycling caps.
     inclusions:
-      - A water bottle
-      - A cap
+      - Water bottle
+      - Cap
     sponsors:
       - name: DT Swiss
         img: /assets/images/company/dt-swiss.png
