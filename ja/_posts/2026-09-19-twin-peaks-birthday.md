@@ -180,7 +180,7 @@ prizes:
       - name: Smith
         img: /assets/images/company/smith.png
         url: https://smithjapan.co.jp/
-  - title: Foxの<wbr>フーディーと<wbr>ソックス、<wbr>Race Faceの<wbr>ヒップバッグ
+  - title: フーディーと<wbr>ソックス、<wbr>ヒップバッグの<wbr>コンボ
     wide: true
     quantity: 10
     images:

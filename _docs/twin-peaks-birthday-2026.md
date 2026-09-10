@@ -205,7 +205,7 @@ the page, and the card numbers follow it: the bike is 1, so these run 2 to 15.
 | 3 | Smith mega combo, Matte Aura | 1 | Smith |
 | 4 | Smith mega combo, Matte White | 1 | Smith |
 | 5 | Smith mega combo, Matte Black | 1 | Smith |
-| 6 | Combo: hoodie, socks, hip bag | 10 | Fox and Race Face |
+| 6 | Hoodie, socks and hip bag combo | 10 | Fox and Race Face |
 | 7 | Combo: one bottle, one cap | 4 | DT Swiss |
 | 8 | Dakine Ranger Duffle 60L, Stone Ballistic | 1 | Rhythm |
 | 9 | Smith Squad MTB goggles, Cinder Haze | 1 | Rhythm |

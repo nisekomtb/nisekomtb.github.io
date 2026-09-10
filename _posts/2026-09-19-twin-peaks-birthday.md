@@ -172,7 +172,7 @@ prizes:
       - name: Smith
         img: /assets/images/company/smith.png
         url: https://smithjapan.co.jp/
-  - title: Fox hoodie, socks and a Race Face hip bag
+  - title: Hoodie, socks and hip bag combo
     wide: true
     quantity: 10
     images:
