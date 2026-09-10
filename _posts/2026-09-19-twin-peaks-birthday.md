@@ -83,8 +83,8 @@ storeProductSlug: twin-peaks-birthday-2026
 #   - slug: twin-peaks-birthday-2026-evening
 #     label: Buy evening ticket
 featuredPrize:
-  title: Specialized Stumpjumper 15 Expert
-  subtitle: Gloss Pistachio / Dark Moss
+  title: Specialized Stumpjumper 15 EVO Expert
+  subtitle: Gloss Pistachio
   value: ¥990,000
   images:
     - /assets/images/events/2026/twin-peaks-birthday/bike-0.jpg
@@ -93,7 +93,7 @@ featuredPrize:
     - /assets/images/events/2026/twin-peaks-birthday/bike-3.jpg
     - /assets/images/events/2026/twin-peaks-birthday/bike-4.jpg
     - /assets/images/events/2026/twin-peaks-birthday/bike-5.jpg
-  imageAlt: Specialized Stumpjumper 15 Expert in gloss pistachio green with dark moss detailing, studio shot
+  imageAlt: Specialized Stumpjumper 15 EVO Expert in gloss pistachio green, studio shot
   specs:
     - FACT 11m carbon chassis and rear-end
     - FOX FLOAT 36 Performance Elite, GRIP X2, 160mm
@@ -109,7 +109,7 @@ featuredPrize:
       img: /assets/images/company/specialized.png
       url: https://www.specialized-onlinestore.jp/
   desc: |
-    Specialized have put up a Stumpjumper 15 Expert as the top prize. The Gloss Pistachio / Dark Moss colourway isn't sold in Japan, so whoever wins it ends up with the only one in the country.
+    Specialized have put up a Stumpjumper 15 EVO Expert as the top prize. The Gloss Pistachio colourway isn't sold in Japan, so whoever wins it ends up with the only one in the country.
 
     It's also the reason the after party is back on. We'd planned a quiet draw at the park until this turned up.
   note: The bike can be collected in Niseko on the night or posted anywhere in Japan. If the winner can't collect straight away, we can store it in Niseko for up to six months.

@@ -176,8 +176,8 @@ without touching the markup.
 
 ```yaml
 featuredPrize:
-  title: Specialized Stumpjumper 15 Expert
-  subtitle: Gloss Pistachio / Dark Moss # gold line under the title
+  title: Specialized Stumpjumper 15 EVO Expert
+  subtitle: Gloss Pistachio         # gold line under the title
   value: ¥990,000                   # "A value of ¥990,000" / 「990,000円相当」
   specs:                            # gold lines, one per row
     - Size S2

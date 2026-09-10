@@ -188,7 +188,7 @@ Japanese. Same rule applies to the Ecwid product copy and anything on social.
 
 | Prize | Qty | Sponsor |
 |---|---|---|
-| Specialized Stumpjumper 15 Expert, Gloss Pistachio / Dark Moss | 1 | Specialized |
+| Specialized Stumpjumper 15 EVO Expert, Gloss Pistachio | 1 | Specialized |
 | Helmet and ride glasses combo | 4 | Smith |
 | T-shirts | 6 | Smith |
 | Hoodies | 17 | Fox |
@@ -198,6 +198,19 @@ Japanese. Same rule applies to the Ecwid product copy and anything on social.
 | Dakine hold-all, Smith MTB goggles, Dharco MTB pants | 3 | Rhythm |
 | Swag, contents unknown, in the post | ? | POC |
 | Merch, contents unknown | ? | Burton |
+
+The bike's source of truth is Specialized's own product page for part 93326-33,
+`specialized.com/gb/en/stumpjumper-15-evo-expert-sram-gx-axs-fox-performance-elite/p/4221478`.
+Take the model name, the colour name and the spec highlights from there. Two
+things that page settles and other sources get wrong: it is the **EVO** Expert,
+and Specialized call the colour **Gloss Pistachio** on its own, not "Gloss
+Pistachio / Dark Moss" as retailers list it, and not "Satin Doppio / Moss".
+
+The six carousel images are Specialized's official gallery assets, verified
+pixel for pixel against `assets.specialized.com` (they arrived via a dealer's
+CDN first, and the two copies decode identically across all 12.96M pixels). They
+are cut-outs with real transparency, composited onto `--color-bg-panel` at build
+time so the bike sits on the card rather than in a white box.
 | Badge t-shirts and enamel mugs | ? | Twin Peaks |
 
 The Stumpjumper is model SJ 15 EXPERT AXS PST/DKMOS S2, part 93326-3302, valued at
@@ -359,8 +372,7 @@ are on the page. What is left:
 | Item | Owner | Urgency |
 |---|---|---|
 | Enable Ecwid product 863342047, then swap `storeProductSlug` for `tickets:` in both posts | Tom | Now. Without it the evening pass is priced but cannot be bought |
-| Confirm "Dharco" is the right spelling of the Rhythm MTB pants brand | Tom | Before the prizes get shared |
-| Send Race Face, DT Swiss and POC logos, or confirm text credits are fine | Tom | Low |
+| Re-send the POC logo. The file in `_triage` is hard-cropped on all four edges, so the mark is cut. Race Face and DT Swiss are done | Tom | Low. POC is the only prize still showing a text credit |
 | Confirm the t-shirt size run with the supplier | Tom | Now, the order window has passed |
 | Decide whether to expose or hide stock control | Tom | Low |
 | Fill in the POC and Burton prize contents when the boxes arrive | Tom | When they land |
