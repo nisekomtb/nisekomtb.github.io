@@ -235,7 +235,10 @@ is nobody to re-draw against and nothing to warn anyone about. The bike keeps it
 own note, which is about shipping and storage rather than eligibility.
 
 DT Swiss maths: 4 bottles and 4 caps make 4 pairs. Two of the caps are baseball
-and two are cycling, so the pairs are not identical.
+and two are cycling, so the pairs are not identical. **That split is deliberately
+not on the card**, which says only "stay hydrated and keep the sun off". It was
+put on there on 10 September and taken straight back off. Whoever hands the
+prizes out still needs to know, which is why it is recorded here.
 
 The three Rhythm prizes were named off their own product tags on 10 September,
 having been "Dakine Ranger duffle", "Smith MTB goggles" and "Dharco MTB pants".

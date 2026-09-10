@@ -203,7 +203,7 @@ prizes:
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-dt-swiss.jpg
     imageAlt: 黒のDT Swissウォーターボトル
-    desc: 水分補給と​日よけに。​4セットの​うち2つは​ベースボールキャップ、​2つは​サイクリングキャップです。
+    desc: 水分補給と​日よけに。
     inclusions:
       - ウォーターボトル1本
       - キャップ1個

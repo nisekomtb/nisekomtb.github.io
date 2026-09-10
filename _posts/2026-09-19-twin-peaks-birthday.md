@@ -196,7 +196,7 @@ prizes:
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-dt-swiss.jpg
     imageAlt: A black DT Swiss water bottle
-    desc: Stay hydrated and keep the sun off. Two of the four hats are baseball caps and two are cycling caps.
+    desc: Stay hydrated and keep the sun off.
     inclusions:
       - Water bottle
       - Hat
