@@ -74,16 +74,16 @@ outro: >-
   ツインピークスは​シーズン中いつでも​無料で​走れます。​今回参加できない​方も、​[NAMBAに​参加](/ja/join/)したり、​年間を​通して​開催している​[他の​イベント](/ja/events/)に​ぜひ​お越しください。
 parking: false
 about: false
-storeProductId: 859390827
-storeProductSlug: twin-peaks-birthday-2026
+# storeProductId: 859390827
+# storeProductSlug: twin-peaks-birthday-2026
 # 夕方のみパスの商品（Ecwid 863342047、2026年9月9日に無効状態で作成）を
 # 有効化したら、上の storeProductSlug を下の tickets ブロックに差し替える。
 # ショップボタンが2つ並ぶ。
-# tickets:
-#   - slug: twin-peaks-birthday-2026
-#     label: 終日パスを購入
-#   - slug: twin-peaks-birthday-2026-evening
-#     label: 夕方のみパスを購入
+tickets:
+  - slug: twin-peaks-birthday-2026
+    label: 終日パスを購入
+  - slug: twin-peaks-birthday-2026-evening
+    label: 夕方のみパスを購入
 featuredPrize:
   title: Specialized Stumpjumper 15 EVO Expert
   subtitle: Gloss Pistachio
@@ -97,24 +97,23 @@ featuredPrize:
     - /assets/images/events/2026/twin-peaks-birthday/bike-5.jpg
   imageAlt: Gloss Pistachioカラーのスペシャライズド Stumpjumper 15 EVO Expert
   specs:
-    - FACT 11m カーボンフレーム
-    - FOX FLOAT 36 Performance Elite、GRIP X2、160mm
-    - FOX FLOAT X Performance Elite、GENIE搭載、リア145mm
-    - SRAM GX Eagle AXS T-Type ワイヤレス 12速
-    - SRAM Maven Silver 4ピストンブレーキ
-    - Roval Traverse ホイール、DT Swiss 370ハブ
-    - フロント Butcher、リア Eliminator
-    - PNW Loam ドロッパーポスト
+    - FACT 11m カーボン
+    - FOX FLOAT Performance Elite サスペンション
+    - SRAM GX Eagle AXS T-Type ワイヤレス
+    - SRAM Maven ブレーキ
     - S2サイズ、フロント29インチ／リア27.5インチ
   sponsors:
     - name: Specialized
       img: /assets/images/company/specialized.png
       url: https://www.specialized-onlinestore.jp/
   desc: |
-    スペシャライズドから、​トップ賞と​して​Stumpjumper 15 EVO Expertが​届きました。​Gloss Pistachioの​カラーは​日本で​販売されていないので、​当選した方は​国内で​唯一の​1台を​手に​する​ことになります。
+    スペシャライズドが、​とんでもない​賞品を​用意してくれました。​アフターパーティーが​復活したのも​この​自転車の​おかげで、​それまでは​パークで​静かに​抽選を​して​終わる​予定でした。
 
-    アフターパーティーが​復活したのも、​この​自転車の​おかげです。​それまでは​パークで​静かに​抽選を​して​終わる​予定でした。
-  note: 自転車は<wbr>当日ニセコで<wbr>お渡しする<wbr>ほか、<wbr>日本国内への<wbr>発送も<wbr>可能です。<wbr>すぐに<wbr>受け取れない<wbr>場合は、<wbr>ニセコで<wbr>最長6か月<wbr>お預かりできます。
+    Gloss Pistachioは、​スペシャライズドが​日本で​展開していない​カラーです。​日本の​店頭では​買えないので、​当選した方は​国内で​唯一の​1台に​乗る​ことになります。
+
+    この​自転車の​核心は​リアショックです。​スペシャライズド独自の​GENIEエアスプリングは、​小さな​ギャップでは​コイルのように、​ストローク終盤では​エアスプリングのように​作動します。​そのため​リアトラベル145mmでも、​より​長いストロークの​バイクのように​大きな​衝撃を​受け止めます。​同社の​テストでは、​通常の​エアショックと​比べて​トラクションが​57%向上し、​底づきが​39%減ったと​しています。
+
+    ジオメトリーは​6通りに​調整でき、​ダウンチューブの​中には​ギアを​収納できます。​サスペンションピボットベアリングは、​所有している​限り​無償で​交換されます。
 prizes:
   - title: Smithメガコンボ、<wbr>Matte Flint
     quantity: 1
@@ -123,7 +122,8 @@ prizes:
     imageAlt: Matte FlintのSmith Pilotヘルメット、Frost SkyのEssential Tシャツ、Matte Salt HazeのUltraliteグラス
     inclusions:
       - Pilot Matte Flint ヘルメット
-      - Ultralite Matte Salt Haze（CP Rose Gold Mirror）
+      - Ultralite Matte Salt Haze
+      - CP Rose Gold Mirror レンズ
       - Essential Tシャツ Frost Sky
     sponsors:
       - name: Smith
@@ -136,7 +136,8 @@ prizes:
     imageAlt: Matte AuraのSmith Pilotヘルメット、NaturalのEssential Tシャツ、Matte Meteorite CrystalのUltraliteグラス
     inclusions:
       - Pilot Matte Aura ヘルメット
-      - Ultralite Matte Meteorite Crystal（CP Low Light Rose Blue Mirror）
+      - Ultralite Matte Meteorite Crystal
+      - CP Low Light Rose Blue Mirror レンズ
       - Essential Tシャツ Natural
     sponsors:
       - name: Smith
@@ -149,7 +150,8 @@ prizes:
     imageAlt: Matte WhiteのSmith Pilotヘルメット、Dark GrayのEssential Tシャツ、80s NightのUltraliteグラス
     inclusions:
       - Pilot Matte White ヘルメット
-      - Ultralite 80s Night（CP Violet Mirror）
+      - Ultralite 80s Night
+      - CP Violet Mirror レンズ
       - Essential Tシャツ Dark Gray
     sponsors:
       - name: Smith
@@ -162,7 +164,8 @@ prizes:
     imageAlt: Matte BlackのSmith Pilotヘルメット、BlackのEssential Tシャツ、Matte BlackのUltraliteグラス
     inclusions:
       - Pilot Matte Black ヘルメット
-      - Ultralite Matte Black（CP Black）
+      - Ultralite Matte Black
+      - CP Black レンズ
       - Essential Tシャツ Black
     sponsors:
       - name: Smith
@@ -173,7 +176,7 @@ prizes:
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-fox-combo.jpg
     imageAlt: オレンジのFoxロゴが入ったチャコールのFoxフーディー、青いRace Faceヒップバッグ、Foxのソックス
-    desc: バッグには​チューブ、​マルチツール、​行動食が​入るので、​バックパックは​置いていけます。
+    # desc: バッグには​チューブ、​マルチツール、​行動食が​入るので、​バックパックは​置いていけます。
     inclusions:
       - Foxの<wbr>フーディー
       - Foxの<wbr>ソックス
@@ -194,7 +197,7 @@ prizes:
       - name: Fox
         img: /assets/images/company/fox.png
         url: https://ridefox.com
-  - title: DT Swissの<wbr>キャップと<wbr>ボトル
+  - title: DT Swissの<wbr>ボトルと<wbr>キャップの<wbr>コンボ
     quantity: 4
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-dt-swiss.jpg
@@ -207,6 +210,24 @@ prizes:
       - name: DT Swiss
         img: /assets/images/company/dt-swiss.png
         url: https://www.dtswiss.com
+  - title: ツインピークスの<wbr>Tシャツ
+    images:
+      - /assets/images/events/2026/twin-peaks-birthday/prize-tp-tee.jpg
+    imageAlt: 森の中で、背中にフルカラーのTwin Peaksバッジが入った白いTシャツを着たライダー
+    desc: 札幌の​イラストレーター、<a href="/ja/artist-series/#joe-scott">ジョー・スコット</a>が​描いた​フルカラーの​バッジ。
+    sponsors:
+      - name: Twin Peaks
+        img: /assets/images/company/twin-peaks.png
+        url: /ja/twin-peaks/
+  - title: ツインピークスの<wbr>マグ
+    images:
+      - /assets/images/events/2026/twin-peaks-birthday/prize-tp-mug.jpg
+    imageAlt: 森の中の丸太に並ぶ、カラー版Twin Peaksバッジ入りのホーローマグ3個
+    desc: 同じ​バッジの​マグ。​多少ぶつけても​平気です。
+    sponsors:
+      - name: Twin Peaks
+        img: /assets/images/company/twin-peaks.png
+        url: /ja/twin-peaks/
   - title: Dakineの<wbr>Ranger Duffle
     quantity: 1
     images:
@@ -237,30 +258,12 @@ prizes:
       - name: Rhythm Japan
         img: /assets/images/company/rhythm.png
         url: https://rhythmjapan.com
-  - title: ツインピークス<wbr>バッジTシャツ
-    images:
-      - /assets/images/events/2026/twin-peaks-birthday/prize-tp-tee.jpg
-    imageAlt: 森の中で、背中にフルカラーのTwin Peaksバッジが入った白いTシャツを着たライダー
-    desc: 札幌の​イラストレーター、<a href="/ja/artist-series/#joe-scott">ジョー・スコット</a>が​描いた​フルカラーの​バッジ。
-    sponsors:
-      - name: Twin Peaks
-        img: /assets/images/company/twin-peaks.png
-        url: /ja/twin-peaks/
-  - title: ツインピークス<wbr>ホーローマグ
-    images:
-      - /assets/images/events/2026/twin-peaks-birthday/prize-tp-mug.jpg
-    imageAlt: 森の中の丸太に並ぶ、カラー版Twin Peaksバッジ入りのホーローマグ3個
-    desc: 同じ​バッジの​マグ。​多少ぶつけても​平気です。
-    sponsors:
-      - name: Twin Peaks
-        img: /assets/images/company/twin-peaks.png
-        url: /ja/twin-peaks/
   - title: POCの<wbr>グッズ
     quantityText: 近日発表
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-poc.jpg
     imageAlt: POCのヘルメットをかぶり、見晴らしのよい斜面のトレイルでコーナーを攻めるライダー
-    desc: POCから​グッズが​届く​予定です。​内容は​分かり次第お知らせします。
+    desc:
     sponsors:
       - name: POC
         img: /assets/images/company/poc.png
@@ -270,7 +273,7 @@ prizes:
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-burton.jpg
     imageAlt: 森のトレイルで青いBurtonのバックパックを背負ったライダー
-    desc: Burtonからも​グッズが​届きます。​こちらも​内容は​近日発表します。
+    desc:
     sponsors:
       - name: Burton
         img: /assets/images/company/burton.png

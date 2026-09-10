@@ -72,16 +72,11 @@ outro: >-
   Twin Peaks is free to ride all season, whether you make this one or not. If you want to put something back into it, [join NAMBA](/join/) or come along to one of the [other events](/events/) we run through the year.
 parking: false
 about: false
-storeProductId: 859390827
-storeProductSlug: twin-peaks-birthday-2026
-# Swap `storeProductSlug` above for this block once the evening pass product
-# (Ecwid 863342047, created disabled on 9 September 2026) is enabled. It renders
-# two shop buttons instead of one.
-# tickets:
-#   - slug: twin-peaks-birthday-2026
-#     label: Buy day ticket
-#   - slug: twin-peaks-birthday-2026-evening
-#     label: Buy evening ticket
+tickets:
+  - slug: twin-peaks-birthday-2026
+    label: Buy day ticket
+  - slug: twin-peaks-birthday-2026-evening
+    label: Buy evening ticket
 featuredPrize:
   title: Specialized Stumpjumper 15 EVO Expert
   subtitle: Gloss Pistachio
@@ -95,24 +90,23 @@ featuredPrize:
     - /assets/images/events/2026/twin-peaks-birthday/bike-5.jpg
   imageAlt: Specialized Stumpjumper 15 EVO Expert in gloss pistachio green, studio shot
   specs:
-    - FACT 11m carbon chassis and rear-end
-    - FOX FLOAT 36 Performance Elite, GRIP X2, 160mm
-    - FOX FLOAT X Performance Elite with GENIE, 145mm rear
-    - SRAM GX Eagle AXS T-Type wireless, 12-speed
-    - SRAM Maven Silver 4-piston brakes
-    - Roval Traverse wheels on DT Swiss 370 hubs
-    - Specialized Butcher front, Eliminator rear
-    - PNW Loam dropper
+    - FACT 11m carbon
+    - FOX FLOAT Performance Elite Suspension
+    - SRAM GX Eagle AXS T-Type wireless
+    - SRAM Maven brakes
     - S2 size, 29in front and 27.5in rear
   sponsors:
     - name: Specialized
       img: /assets/images/company/specialized.png
       url: https://www.specialized-onlinestore.jp/
   desc: |
-    Specialized have put up a Stumpjumper 15 EVO Expert as the top prize. The Gloss Pistachio colourway isn't sold in Japan, so whoever wins it ends up with the only one in the country.
+    Specialized have stepped up with an enormous prize, and it is the reason the after party is back on. We had planned a quiet draw at the park until this turned up.
 
-    It's also the reason the after party is back on. We'd planned a quiet draw at the park until this turned up.
-  note: The bike can be collected in Niseko on the night or posted anywhere in Japan. If the winner can't collect straight away, we can store it in Niseko for up to six months.
+    Gloss Pistachio is not a colour Specialized sell in Japan. Nobody here can walk into a shop and buy this bike, so whoever wins it will be riding the only one in the country.
+
+    The rear shock is what sets it apart. Specialized's GENIE air spring behaves like a coil through small bumps and like an air spring at the end of the travel, so 145mm of rear travel takes big hits like a much longer bike. Their own testing puts it at 57% more traction and 39% fewer bottom-outs than a standard air shock.
+
+    Geometry adjusts six ways, there is gear storage inside the downtube, and Specialized replace the suspension pivot bearings free for as long as you own it.
 prizes:
   - title: Smith mega combo, Matte Flint
     quantity: 1
@@ -121,7 +115,8 @@ prizes:
     imageAlt: A Smith Pilot helmet in Matte Flint, a Frost Sky Essential tee and Matte Salt Haze Ultralite glasses on a boardwalk
     inclusions:
       - Pilot Matte Flint helmet
-      - Ultralite Matte Salt Haze, CP Rose Gold Mirror
+      - Ultralite Matte Salt Haze
+      - Chromapop Rose Gold Mirror Lens
       - Essential tee, Frost Sky
     sponsors:
       - name: Smith
@@ -134,7 +129,8 @@ prizes:
     imageAlt: A Smith Pilot helmet in Matte Aura, a Natural Essential tee and Matte Meteorite Crystal Ultralite glasses on a boardwalk
     inclusions:
       - Pilot Matte Aura helmet
-      - Ultralite Matte Meteorite Crystal, CP Low Light Rose Blue Mirror
+      - Ultralite Matte Meteorite Crystal
+      - Chromapop Low Light Rose Blue Mirror Lens
       - Essential tee, Natural
     sponsors:
       - name: Smith
@@ -147,7 +143,8 @@ prizes:
     imageAlt: A Smith Pilot helmet in Matte White, a Dark Gray Essential tee and 80s Night Ultralite glasses on a boardwalk
     inclusions:
       - Pilot Matte White helmet
-      - Ultralite 80s Night, CP Violet Mirror
+      - Ultralite 80s Night
+      - Chromapop Violet Mirror Lens
       - Essential tee, Dark Gray
     sponsors:
       - name: Smith
@@ -160,7 +157,8 @@ prizes:
     imageAlt: A Smith Pilot helmet in Matte Black, a Black Essential tee and Matte Black Ultralite glasses on a boardwalk
     inclusions:
       - Pilot Matte Black helmet
-      - Ultralite Matte Black, CP Black
+      - Ultralite Matte Black
+      - Chromapop Black Lens
       - Essential tee, Black
     sponsors:
       - name: Smith
@@ -171,7 +169,7 @@ prizes:
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-fox-combo.jpg
     imageAlt: A charcoal Fox hoodie with an orange fox logo, a blue Race Face hip bag and a pack of Fox socks
-    desc: The bag takes a tube, a multi-tool and a snack, so you can leave the pack at home.
+    # desc: The bag takes a tube, a multi-tool and a snack, so you can leave the pack at home.
     inclusions:
       - Fox hoodie
       - Fox socks
@@ -192,7 +190,7 @@ prizes:
       - name: Fox
         img: /assets/images/company/fox.png
         url: https://ridefox.com
-  - title: DT Swiss cap and bottle
+  - title: DT Swiss bottle and hat combo
     quantity: 4
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-dt-swiss.jpg
@@ -200,11 +198,29 @@ prizes:
     desc: Four pairs, each one a bottle and a cap. Two of the caps are baseball, two are cycling caps.
     inclusions:
       - Water bottle
-      - Cap
+      - Hat
     sponsors:
       - name: DT Swiss
         img: /assets/images/company/dt-swiss.png
         url: https://www.dtswiss.com
+  - title: Twin Peaks t-shirts
+    images:
+      - /assets/images/events/2026/twin-peaks-birthday/prize-tp-tee.jpg
+    imageAlt: A rider in the forest wearing the white Twin Peaks tee, the full colour badge across the back
+    desc: The full colour badge, drawn for us by Sapporo illustrator <a href="/artist-series/#joe-scott">Joe Scott</a>.
+    sponsors:
+      - name: Twin Peaks
+        img: /assets/images/company/twin-peaks.png
+        url: /twin-peaks/
+  - title: Twin Peaks mugs
+    images:
+      - /assets/images/events/2026/twin-peaks-birthday/prize-tp-mug.jpg
+    imageAlt: Three Twin Peaks enamel mugs on a log in the forest, the colour badge on each
+    desc: Same badge, on a mug that can take a knock.
+    sponsors:
+      - name: Twin Peaks
+        img: /assets/images/company/twin-peaks.png
+        url: /twin-peaks/
   - title: Dakine Ranger duffle
     quantity: 1
     images:
@@ -235,30 +251,12 @@ prizes:
       - name: Rhythm Japan
         img: /assets/images/company/rhythm.png
         url: https://rhythmjapan.com
-  - title: Twin Peaks badge t-shirts
-    images:
-      - /assets/images/events/2026/twin-peaks-birthday/prize-tp-tee.jpg
-    imageAlt: A rider in the forest wearing the white Twin Peaks tee, the full colour badge across the back
-    desc: The full colour badge, drawn for us by Sapporo illustrator <a href="/artist-series/#joe-scott">Joe Scott</a>.
-    sponsors:
-      - name: Twin Peaks
-        img: /assets/images/company/twin-peaks.png
-        url: /twin-peaks/
-  - title: Twin Peaks enamel mugs
-    images:
-      - /assets/images/events/2026/twin-peaks-birthday/prize-tp-mug.jpg
-    imageAlt: Three Twin Peaks enamel mugs on a log in the forest, the colour badge on each
-    desc: Same badge, on a mug that can take a knock.
-    sponsors:
-      - name: Twin Peaks
-        img: /assets/images/company/twin-peaks.png
-        url: /twin-peaks/
   - title: POC swag
     quantityText: Announced soon
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-poc.jpg
     imageAlt: A rider in a POC helmet cornering hard on an open hillside trail
-    desc: A box of POC kit is on its way over. We'll say what's in it closer to the day.
+    desc:
     sponsors:
       - name: POC
         img: /assets/images/company/poc.png
@@ -268,7 +266,7 @@ prizes:
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-burton.jpg
     imageAlt: A rider on a forest trail wearing a blue Burton backpack
-    desc: Burton are sending a selection through too. More on that soon.
+    desc:
     sponsors:
       - name: Burton
         img: /assets/images/company/burton.png
