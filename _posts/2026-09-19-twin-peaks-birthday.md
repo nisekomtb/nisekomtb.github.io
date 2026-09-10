@@ -242,7 +242,7 @@ prizes:
   - title: Twin Peaks badge t-shirts
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-tp-tee.jpg
-    imageAlt: Front and back of the white tee, the full colour Twin Peaks badge across the back
+    imageAlt: A rider in the forest wearing the white Twin Peaks tee, the full colour badge across the back
     desc: The full colour badge, drawn for us by Sapporo illustrator <a href="/artist-series/#joe-scott">Joe Scott</a>.
     sponsors:
       - name: Twin Peaks
@@ -251,7 +251,7 @@ prizes:
   - title: Twin Peaks enamel mugs
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-tp-mug.jpg
-    imageAlt: White enamel mug with a silver rim carrying the colour Twin Peaks badge
+    imageAlt: Three Twin Peaks enamel mugs on a log in the forest, the colour badge on each
     desc: Same badge, on a mug that can take a knock.
     sponsors:
       - name: Twin Peaks

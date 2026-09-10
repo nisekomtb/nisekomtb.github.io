@@ -223,11 +223,17 @@ Rhythm prizes because those three had no photo and the grid gives every card in 
 flex line the height of the tallest, which left them stretched with a void under
 the copy. That constraint is gone.
 
-Prize photographs are 800x600, 4:3, JPEG plus a WebP sibling. Keep to that ratio:
-the two Twin Peaks product shots are 1:1 because they come from Ecwid, and the
-mix is visible when a square and a 4:3 card share a row. `prize-dt-swiss` and
-`prize-burton` were 3:2 and are cropped to 4:3 at their native height, 711x533,
-rather than upscaled.
+Prize photographs are 800x600, 4:3, JPEG plus a WebP sibling, and as of 10
+September every one of the fourteen matches. Keep to that ratio: the mix is
+visible whenever two cards with different ratios share a row. `prize-dt-swiss`
+and `prize-burton` were 3:2 and are cropped to 4:3 at their native height,
+711x533, rather than upscaled. The two Twin Peaks cards were 1:1 Ecwid product
+shots until Tanuki Productions' photographs replaced them.
+
+Watch for EXIF orientation on anything shot on a phone. The Fox combo photo
+shipped a quarter turn out because PIL reads the stored pixels and ignores the
+tag, while every local viewer applies it. `.claude/rules/images.md` carries the
+check.
 
 The bike's source of truth is Specialized's own product page for part 93326-33,
 `specialized.com/gb/en/stumpjumper-15-evo-expert-sram-gx-axs-fox-performance-elite/p/4221478`.
@@ -405,7 +411,7 @@ are on the page. What is left:
 | Confirm the t-shirt size run with the supplier | Tom | Now, the order window has passed |
 | Decide whether to expose or hide stock control | Tom | Low |
 | Fill in the POC and Burton prize contents when the boxes arrive | Tom | When they land |
-| Decide on a photo credit for Alister Buckingham's remaining dig image | Tom | Low |
+| Decide on photo credits: Alister Buckingham's dig image, Tanuki Productions' two Twin Peaks swag shots | Tom | Low |
 | T-shirt design brief to Joe, shirt colour | Angharad | Now |
 | Caterer | Angharad | Now |
 
@@ -414,7 +420,10 @@ Photo credits: the masthead and the monk shot are Jinya Nishiwaki
 Sea and Summit Media. The second dig photo is Alister Buckingham and is not
 credited yet. His two prize photos, the Fox caps and the Race Face hip bags, were
 replaced on 10 September by Tom's own shots of the actual prizes, so only the one
-image of his remains on the page.
+image of his remains on the page. The two Twin Peaks swag photos, the tee and the
+mugs, are Tanuki Productions and are also uncredited: the same arrangement as the
+artist series product shots, which carry the credit only as a comment in
+`_data/artists.yml`.
 
 Store-wide, unrelated to this event: Ecwid's legal pages still point at the dead
 namtba.com domain while `requireTermsAgreementAtCheckout` is `true`. The API token

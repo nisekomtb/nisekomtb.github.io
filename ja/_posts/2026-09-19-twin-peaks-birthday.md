@@ -244,7 +244,7 @@ prizes:
   - title: ツインピークス<wbr>バッジTシャツ
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-tp-tee.jpg
-    imageAlt: 白いTシャツの前面と背面。背中にフルカラー版Twin Peaksバッジ
+    imageAlt: 森の中で、背中にフルカラーのTwin Peaksバッジが入った白いTシャツを着たライダー
     desc: 札幌の​イラストレーター、<a href="/ja/artist-series/#joe-scott">ジョー・スコット</a>が​描いた​フルカラーの​バッジ。
     sponsors:
       - name: Twin Peaks
@@ -253,7 +253,7 @@ prizes:
   - title: ツインピークス<wbr>ホーローマグ
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-tp-mug.jpg
-    imageAlt: シルバーリムの白いホーローマグ。カラー版Twin Peaksバッジ入り
+    imageAlt: 森の中の丸太に並ぶ、カラー版Twin Peaksバッジ入りのホーローマグ3個
     desc: 同じ​バッジの​マグ。​多少ぶつけても​平気です。
     sponsors:
       - name: Twin Peaks
