@@ -453,8 +453,8 @@ text, so the description is the only place on a product that takes a link.
 
 ### Evening pass product
 
-**Product 863342047, `twin-peaks-birthday-2026-evening`, created 9 September 2026
-and currently DISABLED.** Named **Twin Peaks Birthday 2026 Evening Only** since
+**Product 863342047, `twin-peaks-birthday-2026-evening`, created 9 September 2026,
+ENABLED on 10 September.** Named **Twin Peaks Birthday 2026 Evening Only** since
 10 September, paired with **Twin Peaks Birthday 2026 All Day** (859390827), which
 was plain "Twin Peaks Birthday 2026". The pair of names is the point: "evening
 only" says what the all-day pass already covers, so nobody buys the cheaper one
@@ -476,7 +476,11 @@ recoverable from Ecwid once replaced, so a copy was kept before the swap.
 
 Options are deliberately shorter than the day product. No t-shirt size, no dietary
 requirements, no trail-build question, because none of them apply to someone
-turning up at 4:00pm:
+turning up at 4:00pm. **The product had none of them at all** until 10 September,
+when the pre-launch check found an empty `options` array: it would have sold an
+evening pass without a participant name and without the terms agreement the day
+product requires. All three were copied across from 859390827, JA wording
+included, before the product was enabled:
 
 | Option | Type | Required |
 |---|---|---|
@@ -505,10 +509,8 @@ Still to do:
 
 - [ ] Confirm the t-shirt size run against the actual supplier
 - [ ] Decide whether to expose or hide stock control
-- [ ] **Enable product 863342047.** The `tickets:` block is already live in both
-      posts, so the page renders an evening button that 404s in the storefront
-      until the product is enabled. The prize CTAs point at the Events category,
-      which currently lists the day ticket alone for the same reason
+- [x] **Enable product 863342047.** Done 10 September, after adding the three
+      missing options. Both tickets are live and buyable
 
 `tickets:` renders one shop button per entry, first primary and the rest secondary.
 Schema in `_docs/events.md` under "Registration & sales".
@@ -545,7 +547,6 @@ are on the page. What is left:
 
 | Item | Owner | Urgency |
 |---|---|---|
-| Enable Ecwid product 863342047 | Tom | Now. The evening button and the Events category both need it before anyone can buy an evening pass |
 | Confirm the t-shirt size run with the supplier | Tom | Now, the order window has passed |
 | Decide whether to expose or hide stock control | Tom | Low |
 | Fill in the POC and Burton prize contents when the boxes arrive | Tom | When they land |
