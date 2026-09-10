@@ -11,7 +11,7 @@ time: 9:00am - 6:00pm
 location: Twin Peaks Bike Park, Niseko
 address: 150, 2 Aza-150-1 Yamada, Kutchan, Abuta District, Hokkaido 044-0081
 price:
-  - name: Day pass
+  - name: All day pass
     adult: ¥5,000
     child: ¥2,500
   - name: Evening only pass
@@ -74,7 +74,7 @@ parking: false
 about: false
 tickets:
   - slug: twin-peaks-birthday-2026
-    label: Buy day ticket
+    label: Buy all day ticket
   - slug: twin-peaks-birthday-2026-evening
     label: Buy evening only ticket
 prizesNote: Prizes can be withdrawn or changed at any time.
