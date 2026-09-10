@@ -314,6 +314,19 @@
     width: 100%;
     height: auto;
   }
+  .prize-carousel-track {
+    display: flex;
+    transition: transform 400ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+  .prize-carousel-slide {
+    flex: 0 0 100%;
+    min-width: 100%;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .prize-carousel-track {
+      transition: none;
+    }
+  }
   .prize-carousel-zoom {
     display: block;
     position: relative;
@@ -478,7 +491,25 @@
             <div class="prize-carousel">
               <div class="prize-carousel-hero">
                 <a id="prize-carousel-zoom" class="prize-carousel-zoom" href="{{ fp.images[0] | replace: '.jpg', '-large.webp' }}" target="_blank" rel="noopener">
-                  <picture>{% if fp.images[0] contains '.jpg' %}<source type="image/webp" srcset="{{ fp.images[0] | replace: '.jpg', '.webp' }}">{% endif %}<img id="prize-carousel-hero-img" src="{{ fp.images[0] }}" alt="{{ fp.imageAlt | default: fp.title }}" width="1600" height="900"></picture>
+                  {%- comment -%}
+                    Every image is laid out in a flex track and the track is
+                    translated, rather than one <img> having its src swapped.
+                    That is what makes the change slide instead of cut. It costs
+                    no extra bandwidth: the thumb strip below already points at
+                    these exact files, so the six were being fetched anyway.
+
+                    Only the first slide carries the alt. The other five are the
+                    same bike from other angles and we hold no per-image copy for
+                    them, so repeating one description six times would just make
+                    a screen reader say it six times.
+                  {%- endcomment -%}
+                  <div id="prize-carousel-track" class="prize-carousel-track">
+                    {% for image in fp.images %}
+                      <div class="prize-carousel-slide">
+                        <picture>{% if image contains '.jpg' %}<source type="image/webp" srcset="{{ image | replace: '.jpg', '.webp' }}">{% endif %}<img src="{{ image }}" alt="{% if forloop.first %}{{ fp.imageAlt | default: fp.title }}{% endif %}" width="1600" height="900"{% unless forloop.first %} loading="lazy"{% endunless %}></picture>
+                      </div>
+                    {% endfor %}
+                  </div>
                   {%- comment -%}
                     Inline rather than `fa-magnifying-glass-plus`. The glyph
                     is in the full Font Awesome bundle but not in the
@@ -510,8 +541,6 @@
                   <a class="prize-carousel-thumb{% if forloop.first %} active{% endif %}"
                      href="{{ image | replace: '.jpg', '-large.webp' }}"
                      data-pswp-width="2400" data-pswp-height="1350"
-                     data-full="{{ image }}"
-                     data-webp="{{ image | replace: '.jpg', '.webp' }}"
                      aria-label="{% if page.lang == 'ja' %}画像{{ forloop.index }}を表示{% else %}Show image {{ forloop.index }}{% endif %}">
                     <picture>{% if image contains '.jpg' %}<source type="image/webp" srcset="{{ image | replace: '.jpg', '.webp' }}">{% endif %}<img src="{{ image }}" alt="" loading="lazy" width="1600" height="900"></picture>
                   </a>
@@ -655,16 +684,16 @@
 </div>
 
 <script>
-  // Scoped to this block: swaps the hero to the selected image and moves the
-  // active marker. Both <source> and <img> are updated, or Safari keeps
-  // showing the first WebP it resolved. Reachable four ways: the thumb strip,
-  // the arrows on the hero, arrow keys while the carousel holds focus, and a
-  // swipe across the hero.
+  // Scoped to this block: slides the track to the selected image and moves the
+  // active marker. Reachable four ways: the thumb strip, the arrows on the
+  // hero, arrow keys while the carousel holds focus, and a swipe across the
+  // hero. The transition itself is CSS, so a reader who asks for reduced motion
+  // gets the same jump the src swap used to give.
   (function () {
-    var hero = document.getElementById('prize-carousel-hero-img');
-    if (!hero) return;
-    var carousel = hero.closest('.prize-carousel');
-    var heroSource = hero.parentNode.querySelector('source');
+    var track = document.getElementById('prize-carousel-track');
+    if (!track) return;
+    var carousel = track.closest('.prize-carousel');
+    var heroBox = track.closest('.prize-carousel-hero');
     var zoom = document.getElementById('prize-carousel-zoom');
     var thumbs = Array.prototype.slice.call(carousel.querySelectorAll('.prize-carousel-thumb'));
     if (!thumbs.length) return;
@@ -673,8 +702,7 @@
     function show(index) {
       current = (index + thumbs.length) % thumbs.length;
       var thumb = thumbs[current];
-      if (heroSource) heroSource.srcset = thumb.dataset.webp;
-      hero.src = thumb.dataset.full;
+      track.style.transform = 'translateX(' + (current * -100) + '%)';
       // Keeps the no-JS-module fallback honest: if PhotoSwipe never loads, the
       // hero is still a link, and it points at the image on screen.
       if (zoom) zoom.href = thumb.href;
@@ -720,11 +748,11 @@
     // Horizontal swipe on the hero. The 40px threshold and the axis check keep
     // a vertical page scroll that starts on the image from changing the slide.
     var startX = null, startY = null;
-    hero.addEventListener('touchstart', function (e) {
+    heroBox.addEventListener('touchstart', function (e) {
       startX = e.changedTouches[0].clientX;
       startY = e.changedTouches[0].clientY;
     }, { passive: true });
-    hero.addEventListener('touchend', function (e) {
+    heroBox.addEventListener('touchend', function (e) {
       if (startX === null) return;
       var dx = e.changedTouches[0].clientX - startX;
       var dy = e.changedTouches[0].clientY - startY;

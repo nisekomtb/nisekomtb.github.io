@@ -336,6 +336,14 @@ Carousel order matters: `images[0]` is the hero and the first thumb. It is
 `bike-1`, the three-quarter drive-side view, not `bike-0`, which is the flat
 side-on shot and now sits second.
 
+Changing image slides rather than cuts. All six sit in a flex track inside the
+hero and the track is translated by `current * -100%`, a CSS transition doing the
+work. It replaced swapping one `<img>`'s src, which is why the thumbs no longer
+carry `data-full` and `data-webp`. No extra bandwidth: the thumb strip already
+points at the same six files. `prefers-reduced-motion` drops the transition, and
+only the first slide carries alt text, the other five being the same bike from
+angles we have no separate copy for.
+
 Every card now carries both a photograph and a sponsor mark. All ten logos the
 page references exist in `assets/images/company/` with a `.webp` sibling each, so
 nothing falls back to the gold text credit any more. Logos are partner-provided:
