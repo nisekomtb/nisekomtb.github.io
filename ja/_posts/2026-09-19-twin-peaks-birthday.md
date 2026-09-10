@@ -121,7 +121,7 @@ prizes:
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-smith-1.jpg
     imageAlt: Matte FlintのSmith Pilotヘルメット、Frost SkyのEssential Tシャツ、Matte Salt HazeのUltraliteグラス
-    desc: ローズゴールドミラーは​日常使いしやすい​レンズ。​Frost Skyの​Tシャツと​合わせた​1セットです。
+    desc: ローズゴールドミラーは​日常使いしやすい​レンズ。​Frost Skyの​Tシャツで​軽やかに​まとまります。
     inclusions:
       - Pilot Matte Flint ヘルメット
       - Ultralite Matte Salt Haze
@@ -137,7 +137,7 @@ prizes:
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-smith-2.jpg
     imageAlt: Matte AuraのSmith Pilotヘルメット、NaturalのEssential Tシャツ、Matte Meteorite CrystalのUltraliteグラス
-    desc: 4セットで​唯一の​ロウライトレンズ。​曇りの​日や​夕方の​ライドに。
+    desc: ロウライトレンズを​搭載。​曇りの​日や​夕方の​ライドに​向いた​1セットです。
     inclusions:
       - Pilot Matte Aura ヘルメット
       - Ultralite Matte Meteorite Crystal
@@ -153,7 +153,7 @@ prizes:
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-smith-3.jpg
     imageAlt: Matte WhiteのSmith Pilotヘルメット、Dark GrayのEssential Tシャツ、80s NightのUltraliteグラス
-    desc: 白い​ヘルメットに、​ショッキングピンクの​フレームと​バイオレットミラー。​4セットで​一番​派手です。
+    desc: 白い​ヘルメットに、​ショッキングピンクの​フレームと​バイオレットミラー。​派手に、​堂々と。
     inclusions:
       - Pilot Matte White ヘルメット
       - Ultralite 80s Night
@@ -169,7 +169,7 @@ prizes:
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-smith-4.jpg
     imageAlt: Matte BlackのSmith Pilotヘルメット、BlackのEssential Tシャツ、Matte BlackのUltraliteグラス
-    desc: ヘルメットも​フレームも​レンズも​Tシャツも黒。​派手さとは​無縁の​1セットです。
+    desc: ヘルメットも​フレームも​レンズも​Tシャツも黒。​完全ステルス仕様です。
     inclusions:
       - Pilot Matte Black ヘルメット
       - Ultralite Matte Black
@@ -185,7 +185,7 @@ prizes:
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-fox-combo.jpg
     imageAlt: オレンジのFoxロゴが入ったチャコールのFoxフーディー、青いRace Faceヒップバッグ、Foxのソックス
-    desc: 10セット用意しているので、​今回の​賞品で​いちばん​当たりやすいはずです。
+    desc: Foxの​ショックは​おなじみですが、​Foxの​ソックスは​いかがですか。​フーディーと​ヒップバッグも​付いて、​長めの​ライドでも​バックパックなしで​出かけられます。
     inclusions:
       - Foxの<wbr>フーディー
       - Foxの<wbr>ソックス
@@ -203,7 +203,7 @@ prizes:
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-dt-swiss.jpg
     imageAlt: 黒のDT Swissウォーターボトル
-    desc: 4セット。​キャップは​同じではなく、​ベースボール2個と​サイクリング2個です。
+    desc: DT Swissの​ボトルと​キャップの​セットで、​水分補給も​暑さ対策も。
     inclusions:
       - ウォーターボトル1本
       - キャップ1個
@@ -216,7 +216,7 @@ prizes:
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-dakine.jpg
     imageAlt: タグが付いたままのカーキ色のDakine Ranger Duffleバッグ
-    desc: アフターパーティー会場の​Rhythmから、​60Lの​ギアバッグ。​ダカインの​生涯保証付きです。
+    desc: 60Lの​ギアバッグ。​ダカインの​生涯保証付きです。
     sponsors:
       - name: Rhythm Japan
         img: /assets/images/company/rhythm.png
@@ -236,7 +236,7 @@ prizes:
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-dharco.jpg
     imageAlt: タグが付いたままの、Reconカモ柄のDharco Ather Pants
-    desc: 撥水性、​4WAYストレッチ、​ポケットは​3つ。​サイズは​Mです。
+    desc: 撥水性、​4WAYストレッチ、​ポケットは​3つ。
     sponsors:
       - name: Rhythm Japan
         img: /assets/images/company/rhythm.png
@@ -256,7 +256,7 @@ prizes:
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-grand-hirafu.jpg
     imageAlt: 谷の上を進むグラン・ヒラフのゴンドラ、背後に羊蹄山、眼下にヒラフ村
-    desc: <a href="/ja/where-to-ride/grand-hirafu/">グラン・ヒラフバイクパーク</a>の​リフトで​1日​遊べます。
+    desc: <a href="/ja/where-to-ride/grand-hirafu/">グラン・ヒラフバイクパーク</a>の​ゴンドラで​1日​遊べます。
     sponsors:
       - name: Grand Hirafu
         img: /assets/images/company/grand-hirafu.png
@@ -276,7 +276,6 @@ prizes:
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-poc.jpg
     imageAlt: POCのヘルメットをかぶり、見晴らしのよい斜面のトレイルでコーナーを攻めるライダー
-    desc: POCから​箱が​届く​予定です。​中身が​分かり次第、​ここに​掲載します。
     sponsors:
       - name: POC
         img: /assets/images/company/poc.png
@@ -286,7 +285,6 @@ prizes:
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-burton.jpg
     imageAlt: 森のトレイルで青いBurtonのバックパックを背負ったライダー
-    desc: Burtonも​参加します。​詳しい​中身は​イベント前に​発表します。
     sponsors:
       - name: Burton
         img: /assets/images/company/burton.png

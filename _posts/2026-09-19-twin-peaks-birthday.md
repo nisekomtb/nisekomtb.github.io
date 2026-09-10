@@ -114,7 +114,7 @@ prizes:
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-smith-1.jpg
     imageAlt: A Smith Pilot helmet in Matte Flint, a Frost Sky Essential tee and Matte Salt Haze Ultralite glasses on a boardwalk
-    desc: The rose gold mirror is the everyday lens of the four, and the Frost Sky tee keeps it light.
+    desc: The rose gold mirror is an everyday lens, and the Frost Sky tee keeps it light.
     inclusions:
       - Pilot Matte Flint helmet
       - Ultralite Matte Salt Haze
@@ -130,7 +130,7 @@ prizes:
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-smith-2.jpg
     imageAlt: A Smith Pilot helmet in Matte Aura, a Natural Essential tee and Matte Meteorite Crystal Ultralite glasses on a boardwalk
-    desc: The only low light lens of the four, so this is the set for grey days and last laps.
+    desc: Equipped with a low light lens, this is the set for grey days and last laps.
     inclusions:
       - Pilot Matte Aura helmet
       - Ultralite Matte Meteorite Crystal
@@ -146,7 +146,7 @@ prizes:
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-smith-3.jpg
     imageAlt: A Smith Pilot helmet in Matte White, a Dark Gray Essential tee and 80s Night Ultralite glasses on a boardwalk
-    desc: Hot pink frames and a violet mirror against a white helmet. Easily the loudest of the four.
+    desc: Hot pink frames and a violet mirror against a white helmet. Be loud and proud.
     inclusions:
       - Pilot Matte White helmet
       - Ultralite 80s Night
@@ -162,7 +162,7 @@ prizes:
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-smith-4.jpg
     imageAlt: A Smith Pilot helmet in Matte Black, a Black Essential tee and Matte Black Ultralite glasses on a boardwalk
-    desc: Black helmet, black frames, black lens, black tee. Nothing shouty about this one.
+    desc: Black helmet, black frames, black lens, black tee. Full stealth.
     inclusions:
       - Pilot Matte Black helmet
       - Ultralite Matte Black
@@ -178,7 +178,7 @@ prizes:
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-fox-combo.jpg
     imageAlt: A charcoal Fox hoodie with an orange fox logo, a blue Race Face hip bag and a pack of Fox socks
-    desc: Ten of these on the table, so it is the prize you are most likely to walk away with.
+    desc: You've heard of Fox Shocks, but have you got Fox Socks? They come with a casual hoodie and a hip bag, so you can ditch the backpack on those longer rides.
     inclusions:
       - Fox hoodie
       - Fox socks
@@ -196,7 +196,7 @@ prizes:
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-dt-swiss.jpg
     imageAlt: A black DT Swiss water bottle
-    desc: Four to win, and the hats are not all the same. Two are baseball caps and two are cycling caps.
+    desc: Stay hydrated and cool with this great combo from DT Swiss.
     inclusions:
       - Water bottle
       - Hat
@@ -209,7 +209,7 @@ prizes:
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-dakine.jpg
     imageAlt: A khaki Dakine Ranger Duffle bag with the tag still on it
-    desc: Sixty litres of kit bag from the crew hosting the after party, with Dakine's lifetime warranty on it.
+    desc: Sixty litres of kit bag with Dakine's lifetime warranty on it.
     sponsors:
       - name: Rhythm Japan
         img: /assets/images/company/rhythm.png
@@ -229,7 +229,7 @@ prizes:
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-dharco.jpg
     imageAlt: Dharco Ather Pants in the Recon camo pattern with the tag still attached
-    desc: Water resistant, four-way stretch and three pockets. Size M.
+    desc: Water resistant, four-way stretch and three pockets.
     sponsors:
       - name: Rhythm Japan
         img: /assets/images/company/rhythm.png
@@ -249,7 +249,7 @@ prizes:
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-grand-hirafu.jpg
     imageAlt: A Grand Hirafu gondola cabin above the valley with Mount Yotei behind it and Hirafu Village below
-    desc: A day on the lift at <a href="/where-to-ride/grand-hirafu/">Grand Hirafu Bike Park</a>.
+    desc: A day on the gondola at <a href="/where-to-ride/grand-hirafu/">Grand Hirafu Bike Park</a>.
     sponsors:
       - name: Grand Hirafu
         img: /assets/images/company/grand-hirafu.png
@@ -269,7 +269,6 @@ prizes:
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-poc.jpg
     imageAlt: A rider in a POC helmet cornering hard on an open hillside trail
-    desc: POC are sending a box over. We will list what is in it here as soon as it arrives.
     sponsors:
       - name: POC
         img: /assets/images/company/poc.png
@@ -279,7 +278,6 @@ prizes:
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-burton.jpg
     imageAlt: A rider on a forest trail wearing a blue Burton backpack
-    desc: Burton are in too. The contents get announced closer to the day.
     sponsors:
       - name: Burton
         img: /assets/images/company/burton.png
