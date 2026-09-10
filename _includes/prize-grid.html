@@ -239,6 +239,14 @@
   .prize-grid .row > .col > .features-item {
     height: 100%;
   }
+  /* The thumb strip and the prose that follows it were flush at 0px: the
+     template zeroes p margins inside a features-item, and neither side brought
+     any of its own. Applied to the single-image case too, which sits in the
+     same place and had the same problem. */
+  .prize-carousel,
+  .prize-featured-body .products {
+    margin-bottom: 24px;
+  }
   .prize-carousel-hero {
     position: relative;
     border: 1px solid var(--color-bg-border);
