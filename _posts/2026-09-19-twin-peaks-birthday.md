@@ -83,8 +83,8 @@ featuredPrize:
   subtitle: Gloss Pistachio
   value: ¥990,000
   images:
-    - /assets/images/events/2026/twin-peaks-birthday/bike-0.jpg
     - /assets/images/events/2026/twin-peaks-birthday/bike-1.jpg
+    - /assets/images/events/2026/twin-peaks-birthday/bike-0.jpg
     - /assets/images/events/2026/twin-peaks-birthday/bike-2.jpg
     - /assets/images/events/2026/twin-peaks-birthday/bike-3.jpg
     - /assets/images/events/2026/twin-peaks-birthday/bike-4.jpg
@@ -340,7 +340,7 @@ We'll announce what the challenges are closer to the day. Games finish around 3:
 
 Doors open at 4:00pm and happy hour runs until 6:00pm. Come and grab a beer with us and celebrate Twin Peaks turning three.
 
-The draw is at 5:00pm, an hour in, while the room is still full. Your day pass already covers the evening. If the daytime doesn't work for you, the ¥1,000 evening only pass gets you in with a game ticket.
+The draw is at 5:00pm, and the day pass covers entry to the evening. If you cant make the full day, then you can buy an evening only pass for ¥1,000 which gets you in and includes one game ticket.
 
 ## The giveaway {#giveaway}
 

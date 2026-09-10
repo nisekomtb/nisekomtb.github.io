@@ -90,8 +90,8 @@ featuredPrize:
   subtitle: Gloss Pistachio
   value: 990,000円
   images:
-    - /assets/images/events/2026/twin-peaks-birthday/bike-0.jpg
     - /assets/images/events/2026/twin-peaks-birthday/bike-1.jpg
+    - /assets/images/events/2026/twin-peaks-birthday/bike-0.jpg
     - /assets/images/events/2026/twin-peaks-birthday/bike-2.jpg
     - /assets/images/events/2026/twin-peaks-birthday/bike-3.jpg
     - /assets/images/events/2026/twin-peaks-birthday/bike-4.jpg

@@ -275,13 +275,13 @@
   .prize-featured > .products {
     margin-bottom: 24px;
   }
-  /* The medal and title sit above the image across the whole card. The image
-     used to share a row with them at col-lg-7, which capped it at just under
-     500px and left a void under the sponsor logo on the left. The colourway and
-     the value stayed with the specs in the lower left, where they read as part
-     of the spec list rather than as a second heading. */
+  /* Only the medal sits above the image now, across the whole card. The image
+     used to share a row with the meta at col-lg-7, which capped it at just under
+     500px and left a void under the sponsor logo on the left. The model name,
+     colourway, value and specs all moved below it into the left column, so the
+     image follows the trophy directly and the naming reads as one block. */
   .prize-featured-head {
-    margin-bottom: 24px;
+    margin-bottom: 0;
   }
   .prize-carousel-hero {
     position: relative;
@@ -436,7 +436,6 @@
               <span class="fa-solid fa-trophy" aria-hidden="true"></span>
               {% unless fp.hidePrizeNumber %}<span class="num">1</span>{% endunless %}
             </div>
-            <h3>{{ fp.title }}</h3>
           </div>
 
           {% if fp.images.size > 1 %}
@@ -511,6 +510,7 @@
           <div class="row">
 
             <div class="col-12 col-lg-5 prize-featured-meta">
+              <h3>{{ fp.title }}</h3>
               {% if fp.subtitle %}<p class="gold">{{ fp.subtitle }}</p>{% endif %}
               {% if fp.value %}
                 <p class="prize-value">
