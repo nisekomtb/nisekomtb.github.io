@@ -196,7 +196,7 @@ prizes:
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-dt-swiss.jpg
     imageAlt: A black DT Swiss water bottle
-    desc: Stay hydrated and cool with this great combo from DT Swiss.
+    desc: Stay hydrated and keep the sun off. Two of the four hats are baseball caps and two are cycling caps.
     inclusions:
       - Water bottle
       - Hat
@@ -244,7 +244,7 @@ prizes:
       - name: Niseko Annupuri
         img: /assets/images/company/annupuri.png
         url: https://annupuri.info/en/
-  - title: Grand Hirafu day lift pass
+  - title: Grand Hirafu gondola day pass
     quantity: 6
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-grand-hirafu.jpg

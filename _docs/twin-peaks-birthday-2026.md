@@ -202,7 +202,7 @@ the page, and the card numbers follow it: the bike is 1, so these run 2 to 15.
 | 9 | Smith Squad MTB goggles, Cinder Haze | 1 | Rhythm |
 | 10 | Dharco Ather Pants, Recon, size M | 1 | Rhythm |
 | 11 | Gondola day pass | 6 | Niseko Annupuri |
-| 12 | Day lift pass | 6 | Grand Hirafu |
+| 12 | Gondola day pass | 6 | Grand Hirafu |
 | 13 | Baseball caps | 2 | Fox |
 | 14 | Swag, contents to be announced | to be announced | POC |
 | 15 | Swag, contents to be announced | to be announced | Burton |
@@ -275,10 +275,11 @@ Annupuri gallery carries a credit, Noriyasu Kato**, shown on
 `/where-to-ride/annupuri/` but not on the event page. Decide whether that credit
 needs to follow the photo across. Grand Hirafu's gallery carries no credit.
 
-Annupuri is lift-served by gondola rather than a chairlift, so its card is named
-"gondola day pass" while Grand Hirafu's is a "day lift pass". Both were asked for
-as "1 day lift pass"; the split follows what each resort actually sells and the
-`cost` fields in `_data/trails.yml`.
+Both cards say **gondola day pass**, and that is not a stylistic choice. Annupuri
+runs a gondola, and `/where-to-ride/grand-hirafu/` says Grand Hirafu is served top
+to bottom by the Ace Gondola. Both were asked for as "1 day lift pass", and Grand
+Hirafu's card carried that wording until 10 September, when the copy was corrected
+against the park page and the title followed.
 
 The Twin Peaks badge t-shirts and enamel mugs were prizes 12 and 13 until 10
 September, when they came off the page. Their two photographs, by Tanuki

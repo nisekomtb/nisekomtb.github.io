@@ -203,7 +203,7 @@ prizes:
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-dt-swiss.jpg
     imageAlt: 黒のDT Swissウォーターボトル
-    desc: DT Swissの​ボトルと​キャップの​セットで、​水分補給も​暑さ対策も。
+    desc: 水分補給と​日よけに。​4セットの​うち2つは​ベースボールキャップ、​2つは​サイクリングキャップです。
     inclusions:
       - ウォーターボトル1本
       - キャップ1個
@@ -251,7 +251,7 @@ prizes:
       - name: Niseko Annupuri
         img: /assets/images/company/annupuri.png
         url: https://annupuri.info
-  - title: グラン・ヒラフの<wbr>1日リフト券
+  - title: グラン・ヒラフの<wbr>ゴンドラ1日券
     quantity: 6
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-grand-hirafu.jpg
