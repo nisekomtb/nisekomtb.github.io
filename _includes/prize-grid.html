@@ -230,6 +230,37 @@
     width: 100%;
     height: auto;
   }
+  .prize-carousel-zoom {
+    display: block;
+    position: relative;
+    cursor: zoom-in;
+  }
+  /* The bike is the ¥990,000 prize and the hero renders under 500px, so the
+     magnifier is there to say the full-screen view exists at all. */
+  .prize-carousel-zoom-hint {
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.45);
+    color: #fff;
+    font-size: 13px;
+    line-height: 1;
+    opacity: 0.85;
+    transition: opacity 200ms, background-color 200ms, border-color 200ms;
+  }
+  .prize-carousel-zoom:hover .prize-carousel-zoom-hint,
+  .prize-carousel-zoom:focus-visible .prize-carousel-zoom-hint {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.75);
+    border-color: var(--color-accent);
+  }
   /* The thumb strip sits below the hero and, on a phone, below the fold of the
      card. These give the hero its own controls, and pair with the swipe
      handler so the gesture people actually try on a photo does something. */
@@ -272,6 +303,7 @@
   }
   .prize-carousel-thumb {
     flex: 0 0 calc((100% - 30px) / 6);
+    display: block;
     padding: 0;
     background: none;
     border: 1px solid var(--color-bg-border);
@@ -367,9 +399,37 @@
                   Thumbs point at the same files as the hero, so a click swaps to
                   an image the browser already has and nothing loads on tap.
                 {%- endcomment -%}
+                {%- comment -%}
+                  The thumb strip doubles as the PhotoSwipe gallery: its six
+                  anchors are the slide list, in order, so their index is the
+                  carousel's index. Our own click handler stops those anchors
+                  ever reaching PhotoSwipe, because a thumb click swaps the
+                  hero rather than opening anything. The hero is the trigger,
+                  and it sits outside the watched container so PhotoSwipe does
+                  not read it as a seventh slide.
+                {%- endcomment -%}
+                {% include photoswipe.html selector=".prize-carousel-thumbs" children="a.prize-carousel-thumb" expose="prizeCarouselLightbox" %}
                 <div class="prize-carousel">
                   <div class="prize-carousel-hero">
-                    <picture>{% if fp.images[0] contains '.jpg' %}<source type="image/webp" srcset="{{ fp.images[0] | replace: '.jpg', '.webp' }}">{% endif %}<img id="prize-carousel-hero-img" src="{{ fp.images[0] }}" alt="{{ fp.imageAlt | default: fp.title }}" width="1600" height="900"></picture>
+                    <a id="prize-carousel-zoom" class="prize-carousel-zoom" href="{{ fp.images[0] | replace: '.jpg', '-large.webp' }}" target="_blank" rel="noopener">
+                      <picture>{% if fp.images[0] contains '.jpg' %}<source type="image/webp" srcset="{{ fp.images[0] | replace: '.jpg', '.webp' }}">{% endif %}<img id="prize-carousel-hero-img" src="{{ fp.images[0] }}" alt="{{ fp.imageAlt | default: fp.title }}" width="1600" height="900"></picture>
+                      {%- comment -%}
+                        Inline rather than `fa-magnifying-glass-plus`. The glyph
+                        is in the full Font Awesome bundle but not in the
+                        subset base.html actually loads, and regenerating that
+                        subset rewrites fa-solid-900.woff2 in place, behind a
+                        URL that does not change. Every visitor holding the old
+                        font would render tofu here until it expired. Not worth
+                        it for one decorative icon on one card.
+                      {%- endcomment -%}
+                      <span class="prize-carousel-zoom-hint" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+                          <circle cx="10" cy="10" r="6.5"></circle>
+                          <path d="M15 15l5.5 5.5M10 7.2v5.6M7.2 10h5.6"></path>
+                        </svg>
+                      </span>
+                      <span class="visually-hidden">{% if page.lang == 'ja' %}画像を拡大表示{% else %}View this image larger{% endif %}</span>
+                    </a>
                     <button type="button" class="prize-carousel-nav prev">
                       <span class="fa-solid fa-chevron-left" aria-hidden="true"></span>
                       <span class="visually-hidden">{% if page.lang == 'ja' %}前の画像{% else %}Previous image{% endif %}</span>
@@ -381,12 +441,14 @@
                   </div>
                   <div class="prize-carousel-thumbs" role="group" aria-label="{{ fp.title }}">
                     {% for image in fp.images %}
-                      <button type="button" class="prize-carousel-thumb{% if forloop.first %} active{% endif %}"
-                              data-full="{{ image }}"
-                              data-webp="{{ image | replace: '.jpg', '.webp' }}"
-                              aria-label="{% if page.lang == 'ja' %}画像{{ forloop.index }}を表示{% else %}Show image {{ forloop.index }}{% endif %}">
+                      <a class="prize-carousel-thumb{% if forloop.first %} active{% endif %}"
+                         href="{{ image | replace: '.jpg', '-large.webp' }}"
+                         data-pswp-width="2400" data-pswp-height="1350"
+                         data-full="{{ image }}"
+                         data-webp="{{ image | replace: '.jpg', '.webp' }}"
+                         aria-label="{% if page.lang == 'ja' %}画像{{ forloop.index }}を表示{% else %}Show image {{ forloop.index }}{% endif %}">
                         <picture>{% if image contains '.jpg' %}<source type="image/webp" srcset="{{ image | replace: '.jpg', '.webp' }}">{% endif %}<img src="{{ image }}" alt="" loading="lazy" width="1600" height="900"></picture>
-                      </button>
+                      </a>
                     {% endfor %}
                   </div>
                 </div>
@@ -496,6 +558,7 @@
     if (!hero) return;
     var carousel = hero.closest('.prize-carousel');
     var heroSource = hero.parentNode.querySelector('source');
+    var zoom = document.getElementById('prize-carousel-zoom');
     var thumbs = Array.prototype.slice.call(carousel.querySelectorAll('.prize-carousel-thumb'));
     if (!thumbs.length) return;
     var current = 0;
@@ -505,13 +568,37 @@
       var thumb = thumbs[current];
       if (heroSource) heroSource.srcset = thumb.dataset.webp;
       hero.src = thumb.dataset.full;
+      // Keeps the no-JS-module fallback honest: if PhotoSwipe never loads, the
+      // hero is still a link, and it points at the image on screen.
+      if (zoom) zoom.href = thumb.href;
       thumbs.forEach(function (t) { t.classList.remove('active'); });
       thumb.classList.add('active');
     }
 
     thumbs.forEach(function (thumb, i) {
-      thumb.addEventListener('click', function () { show(i); });
+      thumb.addEventListener('click', function (e) {
+        // stopPropagation, not just preventDefault: PhotoSwipe listens on the
+        // strip, and without this a thumb click would swap the hero AND open
+        // the lightbox.
+        e.preventDefault();
+        e.stopPropagation();
+        show(i);
+      });
     });
+
+    // The hero opens the lightbox at whatever the carousel is showing. The
+    // instance is published by _includes/photoswipe.html, which is a module and
+    // so runs after this script; the lookup is deferred to click time for that
+    // reason. If it never arrives, the anchor navigates and the browser shows
+    // the full image on its own.
+    if (zoom) {
+      zoom.addEventListener('click', function (e) {
+        var lb = window.prizeCarouselLightbox;
+        if (!lb) return;
+        e.preventDefault();
+        lb.loadAndOpen(current);
+      });
+    }
 
     carousel.querySelector('.prize-carousel-nav.prev')
       .addEventListener('click', function () { show(current - 1); });

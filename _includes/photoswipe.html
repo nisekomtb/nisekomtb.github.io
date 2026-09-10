@@ -10,6 +10,21 @@
     children: CSS selector for the slides inside each container, matched with
               `closest()` against the click target. Default "a", which is what
               the thirteen inlined copies use.
+    expose:   Optional name to publish the lightbox instance under on `window`.
+              Omit it and nothing is written, which is what every caller but
+              one wants: clicking a slide anchor is the whole interaction.
+              _includes/prize-grid.html passes "prizeCarouselLightbox" because
+              its trigger is NOT the anchor PhotoSwipe binds. The thumb strip
+              supplies the slides, but the click that opens the lightbox lands
+              on the hero, which must open at whichever index the carousel is
+              currently showing, so it calls loadAndOpen(index) itself.
+
+  `expose` IS SUBJECT TO THE ONCE-PER-PAGE GUARD BELOW. A second include call
+  on the same page is skipped whole, so if a page ever holds both a prize grid
+  and a story gallery, whichever renders second gets neither its selector nor
+  its `expose`. Event pages load PhotoSwipe from prize-grid.html and nowhere
+  else today; a page that needs two scopes wants one call listing both
+  selectors, not two calls.
 
   PASS A NARROWER `children` WHEN THE CONTAINER CAN HOLD A NON-SLIDE LINK. The
   thirteen existing callers get away with "a" because their containers hold
@@ -57,5 +72,6 @@
     pswpModule: () => import('https://unpkg.com/photoswipe@5.4.4/dist/photoswipe.esm.min.js')
   });
   lightbox.init();
+  {% if include.expose %}window[{{ include.expose | jsonify }}] = lightbox;{% endif %}
 </script>
 {%- endunless -%}
