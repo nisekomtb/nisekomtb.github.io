@@ -317,13 +317,18 @@ Prizes live **inline on the event page**, not on a standalone `/raffle/` page, v
 `featuredPrize` and `prizes` in front matter and `{% include prize-grid.html %}` in
 the body. Full schema in `_docs/events.md` under "Prize grid".
 
-The featured card is the trophy alone, then the carousel across the whole card,
-then a two-column row: model name, colourway, value, specs and sponsor mark on
-the left, description and CTA on the right. The carousel used to sit in a
+The featured card runs medal and model name across the top, the carousel across
+the whole card, then a two-column row: colourway, value, specs and sponsor mark
+on the left, description and CTA on the right. The carousel used to sit in a
 col-lg-7 beside all of that, which held the hero to just under 500px and left a
-void under the sponsor logo. It renders about 863px now. `.prize-featured-head`
-carries no bottom margin of its own because the medal already brings 36px, which
-was the right gap under a heading and too much under nothing.
+void under the sponsor logo. It renders about 863px now.
+
+Two variants were tried on 10 September and both were worse. Moving the title
+alone into the lower left separated it from the trophy and made it wrap to two
+lines in the narrow column. Moving the trophy down as well kept them together
+but opened the card on a bare image over dead padding, pushed the prize number
+about 600px down the page, and inverted the reading order against the fourteen
+grid cards, which all run medal, title, image. The header stays.
 
 Carousel order matters: `images[0]` is the hero and the first thumb. It is
 `bike-1`, the three-quarter drive-side view, not `bike-0`, which is the flat
