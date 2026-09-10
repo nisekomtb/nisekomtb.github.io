@@ -33,6 +33,26 @@ or note that the JA page needs a localised alt attribute.
 <img src="/assets/images/trails/header.jpg" alt="ツインピークストレイルを下るライダー">
 ```
 
+## Camera photos: apply EXIF orientation first
+
+Phone and camera JPEGs carry an EXIF Orientation tag, and the pixels are stored
+unrotated. Preview, Finder and browsers apply it; PIL's `Image.open()` does not.
+Processing straight from `open()` therefore ships a sideways image that looked
+fine everywhere you checked it.
+
+Always transpose before anything else:
+
+```python
+from PIL import Image, ImageOps
+im = ImageOps.exif_transpose(Image.open(src)).convert('RGB')
+```
+
+Check before you crop, too: a photo that reads as portrait may be landscape once
+the tag is applied, which changes the crop entirely. `sips -g orientation` often
+reports `<nil>` on these files, so read the tag itself:
+`python3 -c "from PIL import Image; print(Image.open('f.jpg').getexif().get(274))"`
+Anything other than `1` or `None` needs transposing.
+
 ## Responsive sizes
 
 For new imagery, prefer `{% include image.html %}` over raw `<img>`. It emits WebP
