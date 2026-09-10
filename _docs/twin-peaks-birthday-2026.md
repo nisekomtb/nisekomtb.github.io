@@ -248,6 +248,17 @@ the card because it decides who can actually use them.
 the last card: prizes can be withdrawn or changed at any time. It is a section
 field, unlike the per-prize `note`.
 
+Every card carries a `desc` as of 10 September. On the cards that also list
+`inclusions`, the description has to earn its place rather than restate the
+model list sitting right under it, so the four Smith cards talk about what
+separates their lenses and the two combos lead on how many are going out. POC
+and Burton say a box is coming, since their contents are still unannounced.
+
+**Watch for a colon in a `desc`.** These are unquoted YAML scalars, so a
+`: ` in one breaks the build with "mapping values are not allowed in this
+context". The DT Swiss line hit exactly that and was rephrased rather than
+quoted, to match every other description in the file.
+
 The two language files drifted out of order on 10 September, the Fox baseball
 caps card sitting in a different slot in each. Card order is part of bilingual
 parity, not just wording, and nothing in the build warns when it slips, so
