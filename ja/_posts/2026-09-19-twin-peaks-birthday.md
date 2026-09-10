@@ -116,58 +116,54 @@ featuredPrize:
     アフターパーティーが​復活したのも、​この​自転車の​おかげです。​それまでは​パークで​静かに​抽選を​して​終わる​予定でした。
   note: 自転車は<wbr>当日ニセコで<wbr>お渡しする<wbr>ほか、<wbr>日本国内への<wbr>発送も<wbr>可能です。<wbr>すぐに<wbr>受け取れない<wbr>場合は、<wbr>ニセコで<wbr>最長6か月<wbr>お預かりできます。
 prizes:
-  - title: Smithセット、<wbr>グレーと<wbr>ゴールド
+  - title: Smithメガコンボ、<wbr>Matte Flint
     quantity: 1
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-smith-1.jpg
-    imageAlt: グレーとゴールドのSmith Pivotヘルメット、ミントのSmith Tシャツ、ローズレンズのSmithグラス
-    desc: ミントの​Tシャツと​ローズミラーレンズ。
+    imageAlt: Matte FlintのSmith Pilotヘルメット、Frost SkyのEssential Tシャツ、Matte Salt HazeのUltraliteグラス
     inclusions:
-      - Pivotヘルメット
-      - Ultralightライドグラス
-      - Essential Tシャツ
+      - Pilot Matte Flint ヘルメット
+      - Ultralite Matte Salt Haze（CP Rose Gold Mirror）
+      - Essential Tシャツ Frost Sky
     sponsors:
       - name: Smith
         img: /assets/images/company/smith.png
         url: https://smithjapan.co.jp/
-  - title: Smithセット、<wbr>ライラック
+  - title: Smithメガコンボ、<wbr>Matte Aura
     quantity: 1
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-smith-2.jpg
-    imageAlt: ライラックのSmith Pivotヘルメット、クリームのSmith Tシャツ、バイオレットレンズのSmithグラス
-    desc: クリームの​Tシャツと​バイオレットミラーレンズ。
+    imageAlt: Matte AuraのSmith Pilotヘルメット、NaturalのEssential Tシャツ、Matte Meteorite CrystalのUltraliteグラス
     inclusions:
-      - Pivotヘルメット
-      - Ultralightライドグラス
-      - Essential Tシャツ
+      - Pilot Matte Aura ヘルメット
+      - Ultralite Matte Meteorite Crystal（CP Low Light Rose Blue Mirror）
+      - Essential Tシャツ Natural
     sponsors:
       - name: Smith
         img: /assets/images/company/smith.png
         url: https://smithjapan.co.jp/
-  - title: Smithセット、<wbr>ホワイト
+  - title: Smithメガコンボ、<wbr>Matte White
     quantity: 1
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-smith-3.jpg
-    imageAlt: ホワイトのSmith Pivotヘルメット、チャコールのSmith Tシャツ、マゼンタレンズのSmithグラス
-    desc: チャコールの​Tシャツと​マゼンタミラーレンズ。
+    imageAlt: Matte WhiteのSmith Pilotヘルメット、Dark GrayのEssential Tシャツ、80s NightのUltraliteグラス
     inclusions:
-      - Pivotヘルメット
-      - Ultralightライドグラス
-      - Essential Tシャツ
+      - Pilot Matte White ヘルメット
+      - Ultralite 80s Night（CP Violet Mirror）
+      - Essential Tシャツ Dark Gray
     sponsors:
       - name: Smith
         img: /assets/images/company/smith.png
         url: https://smithjapan.co.jp/
-  - title: Smithセット、<wbr>グラファイト
+  - title: Smithメガコンボ、<wbr>Matte Black
     quantity: 1
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-smith-4.jpg
-    imageAlt: グラファイトのSmith Pivotヘルメット、モーヴのSmith Tシャツ、スモークレンズのSmithグラス
-    desc: モーヴの​Tシャツと​スモークレンズ。
+    imageAlt: Matte BlackのSmith Pilotヘルメット、BlackのEssential Tシャツ、Matte BlackのUltraliteグラス
     inclusions:
-      - Pivotヘルメット
-      - Ultralightライドグラス
-      - Essential Tシャツ
+      - Pilot Matte Black ヘルメット
+      - Ultralite Matte Black（CP Black）
+      - Essential Tシャツ Black
     sponsors:
       - name: Smith
         img: /assets/images/company/smith.png

@@ -192,10 +192,10 @@ the page, and the card numbers follow it: the bike is 1, so these run 2 to 15.
 | # | Prize | Qty | Sponsor |
 |---|---|---|---|
 | 1 | Specialized Stumpjumper 15 EVO Expert, Gloss Pistachio | 1 | Specialized |
-| 2 | Smith set, grey and gold: Pivot helmet, Ultralight glasses, Essential tee | 1 | Smith |
-| 3 | Smith set, lilac | 1 | Smith |
-| 4 | Smith set, white | 1 | Smith |
-| 5 | Smith set, graphite | 1 | Smith |
+| 2 | Smith mega combo, Matte Flint | 1 | Smith |
+| 3 | Smith mega combo, Matte Aura | 1 | Smith |
+| 4 | Smith mega combo, Matte White | 1 | Smith |
+| 5 | Smith mega combo, Matte Black | 1 | Smith |
 | 6 | Combo: hoodie, socks, hip bag | 10 | Fox and Race Face |
 | 7 | Baseball caps | 2 | Fox |
 | 8 | Combo: one bottle, one cap | 4 | DT Swiss |
@@ -207,11 +207,32 @@ the page, and the card numbers follow it: the bike is 1, so these run 2 to 15.
 | 14 | Swag, contents to be announced | to be announced | POC |
 | 15 | Swag, contents to be announced | to be announced | Burton |
 
-The four Smith sets are four separate prizes because they genuinely differ. Each
-holds the same three products, a Pivot helmet, Ultralight ride glasses and an
-Essential tee, in a different colourway, so the cards are named by the helmet and
-the description carries the tee and the lens. Smith also supplied 6 t-shirts
-against 4 sets, so 2 tees are spare and are not on the page.
+The four Smith combos are four separate prizes because they genuinely differ.
+Each holds a Pilot helmet, Ultralite glasses and an Essential tee in its own
+colourway, so the card is named for the helmet and the inclusions carry the exact
+models. That follows the 2024 raffle page, where the description was identical
+across combos and the inclusions did all the work.
+
+| Card | Helmet | Glasses | Tee |
+|---|---|---|---|
+| 2 | Pilot Matte Flint | Ultralite Matte Salt Haze, CP Rose Gold Mirror | Frost Sky |
+| 3 | Pilot Matte Aura | Ultralite Matte Meteorite Crystal, CP Low Light Rose Blue Mirror | Natural |
+| 4 | Pilot Matte White | Ultralite 80s Night, CP Violet Mirror | Dark Gray |
+| 5 | Pilot Matte Black | Ultralite Matte Black, CP Black | Black |
+
+It is **Pilot** and **Ultralite**, not Pivot and Ultralight. Both were wrong on
+the page between 9 and 10 September, taken from an informal note before Tom
+supplied the model list.
+
+Smith also supplied 6 t-shirts against 4 combos, so 2 tees are spare and are not
+on the page.
+
+The 2024 and 2025 raffle pages put a note on every gear prize: "Product must be
+collected on raffle draw night. If you cannot attend in person or have a
+representative present, the prize will be re-drawn." **That rule is dropped for
+2026** and should not be reinstated. Only people at the event can win, so there
+is nobody to re-draw against and nothing to warn anyone about. The bike keeps its
+own note, which is about shipping and storage rather than eligibility.
 
 DT Swiss maths: 4 bottles and 4 caps make 4 pairs. Two of the caps are baseball
 and two are cycling, so the pairs are not identical.

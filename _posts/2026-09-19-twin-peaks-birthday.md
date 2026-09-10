@@ -114,58 +114,54 @@ featuredPrize:
     It's also the reason the after party is back on. We'd planned a quiet draw at the park until this turned up.
   note: The bike can be collected in Niseko on the night or posted anywhere in Japan. If the winner can't collect straight away, we can store it in Niseko for up to six months.
 prizes:
-  - title: Smith set, grey and gold
+  - title: Smith mega combo, Matte Flint
     quantity: 1
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-smith-1.jpg
-    imageAlt: A grey and gold Smith Pivot helmet, a mint Smith tee and rose-lensed Smith glasses on a boardwalk
-    desc: Mint tee and a rose mirror lens.
+    imageAlt: A Smith Pilot helmet in Matte Flint, a Frost Sky Essential tee and Matte Salt Haze Ultralite glasses on a boardwalk
     inclusions:
-      - Pivot helmet
-      - Ultralight ride glasses
-      - Essential tee
+      - Pilot Matte Flint helmet
+      - Ultralite Matte Salt Haze, CP Rose Gold Mirror
+      - Essential tee, Frost Sky
     sponsors:
       - name: Smith
         img: /assets/images/company/smith.png
         url: https://smithjapan.co.jp/
-  - title: Smith set, lilac
+  - title: Smith mega combo, Matte Aura
     quantity: 1
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-smith-2.jpg
-    imageAlt: A lilac Smith Pivot helmet, a cream Smith tee and violet-lensed Smith glasses on a boardwalk
-    desc: Cream tee and a violet mirror lens.
+    imageAlt: A Smith Pilot helmet in Matte Aura, a Natural Essential tee and Matte Meteorite Crystal Ultralite glasses on a boardwalk
     inclusions:
-      - Pivot helmet
-      - Ultralight ride glasses
-      - Essential tee
+      - Pilot Matte Aura helmet
+      - Ultralite Matte Meteorite Crystal, CP Low Light Rose Blue Mirror
+      - Essential tee, Natural
     sponsors:
       - name: Smith
         img: /assets/images/company/smith.png
         url: https://smithjapan.co.jp/
-  - title: Smith set, white
+  - title: Smith mega combo, Matte White
     quantity: 1
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-smith-3.jpg
-    imageAlt: A white Smith Pivot helmet, a charcoal Smith tee and magenta-lensed Smith glasses on a boardwalk
-    desc: Charcoal tee and a magenta mirror lens.
+    imageAlt: A Smith Pilot helmet in Matte White, a Dark Gray Essential tee and 80s Night Ultralite glasses on a boardwalk
     inclusions:
-      - Pivot helmet
-      - Ultralight ride glasses
-      - Essential tee
+      - Pilot Matte White helmet
+      - Ultralite 80s Night, CP Violet Mirror
+      - Essential tee, Dark Gray
     sponsors:
       - name: Smith
         img: /assets/images/company/smith.png
         url: https://smithjapan.co.jp/
-  - title: Smith set, graphite
+  - title: Smith mega combo, Matte Black
     quantity: 1
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-smith-4.jpg
-    imageAlt: A graphite Smith Pivot helmet, a mauve Smith tee and smoke-lensed Smith glasses on a boardwalk
-    desc: Mauve tee and a smoke lens.
+    imageAlt: A Smith Pilot helmet in Matte Black, a Black Essential tee and Matte Black Ultralite glasses on a boardwalk
     inclusions:
-      - Pivot helmet
-      - Ultralight ride glasses
-      - Essential tee
+      - Pilot Matte Black helmet
+      - Ultralite Matte Black, CP Black
+      - Essential tee, Black
     sponsors:
       - name: Smith
         img: /assets/images/company/smith.png
