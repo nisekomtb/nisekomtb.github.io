@@ -115,11 +115,53 @@ featuredPrize:
   note: The bike can be collected in Niseko on the night or posted anywhere in Japan. If the winner can't collect straight away, we can store it in Niseko for up to six months.
 prizes:
   - title: Smith helmet, glasses and tee
-    quantity: 4
+    quantity: 1
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-smith.jpg
     imageAlt: A matte black Smith helmet, red-mirrored Smith riding glasses and a Smith t-shirt
-    desc: One prize, three pieces of kit, and four of them going out on the night.
+    desc: One of four Smith sets, each one different.
+    inclusions:
+      - Pivot helmet
+      - Ultralight ride glasses
+      - Essential tee
+    sponsors:
+      - name: Smith
+        img: /assets/images/company/smith.png
+        url: https://smithjapan.co.jp/
+  - title: Smith helmet, glasses and tee
+    quantity: 1
+    images:
+      - /assets/images/events/2026/twin-peaks-birthday/prize-smith.jpg
+    imageAlt: A matte black Smith helmet, red-mirrored Smith riding glasses and a Smith t-shirt
+    desc: One of four Smith sets, each one different.
+    inclusions:
+      - Pivot helmet
+      - Ultralight ride glasses
+      - Essential tee
+    sponsors:
+      - name: Smith
+        img: /assets/images/company/smith.png
+        url: https://smithjapan.co.jp/
+  - title: Smith helmet, glasses and tee
+    quantity: 1
+    images:
+      - /assets/images/events/2026/twin-peaks-birthday/prize-smith.jpg
+    imageAlt: A matte black Smith helmet, red-mirrored Smith riding glasses and a Smith t-shirt
+    desc: One of four Smith sets, each one different.
+    inclusions:
+      - Pivot helmet
+      - Ultralight ride glasses
+      - Essential tee
+    sponsors:
+      - name: Smith
+        img: /assets/images/company/smith.png
+        url: https://smithjapan.co.jp/
+  - title: Smith helmet, glasses and tee
+    quantity: 1
+    images:
+      - /assets/images/events/2026/twin-peaks-birthday/prize-smith.jpg
+    imageAlt: A matte black Smith helmet, red-mirrored Smith riding glasses and a Smith t-shirt
+    desc: One of four Smith sets, each one different.
     inclusions:
       - Pivot helmet
       - Ultralight ride glasses
@@ -129,7 +171,7 @@ prizes:
         img: /assets/images/company/smith.png
         url: https://smithjapan.co.jp/
   - title: Fox hoodie, socks and a Race Face hip bag
-    quantityText: Plenty to go round
+    quantity: 10
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-race-face.jpg
     imageAlt: A pile of black Race Face hip bags, the RF logo on each flap

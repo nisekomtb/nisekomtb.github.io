@@ -117,11 +117,53 @@ featuredPrize:
   note: 自転車は<wbr>当日ニセコで<wbr>お渡しする<wbr>ほか、<wbr>日本国内への<wbr>発送も<wbr>可能です。<wbr>すぐに<wbr>受け取れない<wbr>場合は、<wbr>ニセコで<wbr>最長6か月<wbr>お預かりできます。
 prizes:
   - title: Smithの<wbr>ヘルメット、<wbr>グラス、<wbr>Tシャツ
-    quantity: 4
+    quantity: 1
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-smith.jpg
     imageAlt: マットブラックのSmithヘルメット、赤ミラーのSmithライドグラス、SmithのTシャツ
-    desc: 1つの​賞品に​3点セット。​当日は​4セットが​出ます。
+    desc: 4つある​Smithセットの​1つ。​内容は​それぞれ異なります。
+    inclusions:
+      - Pivotヘルメット
+      - Ultralightライドグラス
+      - Essential Tシャツ
+    sponsors:
+      - name: Smith
+        img: /assets/images/company/smith.png
+        url: https://smithjapan.co.jp/
+  - title: Smithの<wbr>ヘルメット、<wbr>グラス、<wbr>Tシャツ
+    quantity: 1
+    images:
+      - /assets/images/events/2026/twin-peaks-birthday/prize-smith.jpg
+    imageAlt: マットブラックのSmithヘルメット、赤ミラーのSmithライドグラス、SmithのTシャツ
+    desc: 4つある​Smithセットの​1つ。​内容は​それぞれ異なります。
+    inclusions:
+      - Pivotヘルメット
+      - Ultralightライドグラス
+      - Essential Tシャツ
+    sponsors:
+      - name: Smith
+        img: /assets/images/company/smith.png
+        url: https://smithjapan.co.jp/
+  - title: Smithの<wbr>ヘルメット、<wbr>グラス、<wbr>Tシャツ
+    quantity: 1
+    images:
+      - /assets/images/events/2026/twin-peaks-birthday/prize-smith.jpg
+    imageAlt: マットブラックのSmithヘルメット、赤ミラーのSmithライドグラス、SmithのTシャツ
+    desc: 4つある​Smithセットの​1つ。​内容は​それぞれ異なります。
+    inclusions:
+      - Pivotヘルメット
+      - Ultralightライドグラス
+      - Essential Tシャツ
+    sponsors:
+      - name: Smith
+        img: /assets/images/company/smith.png
+        url: https://smithjapan.co.jp/
+  - title: Smithの<wbr>ヘルメット、<wbr>グラス、<wbr>Tシャツ
+    quantity: 1
+    images:
+      - /assets/images/events/2026/twin-peaks-birthday/prize-smith.jpg
+    imageAlt: マットブラックのSmithヘルメット、赤ミラーのSmithライドグラス、SmithのTシャツ
+    desc: 4つある​Smithセットの​1つ。​内容は​それぞれ異なります。
     inclusions:
       - Pivotヘルメット
       - Ultralightライドグラス
@@ -131,7 +173,7 @@ prizes:
         img: /assets/images/company/smith.png
         url: https://smithjapan.co.jp/
   - title: Foxの<wbr>フーディーと<wbr>ソックス、<wbr>Race Faceの<wbr>ヒップバッグ
-    quantityText: たくさん<wbr>ご用意
+    quantity: 10
     images:
       - /assets/images/events/2026/twin-peaks-birthday/prize-race-face.jpg
     imageAlt: RFロゴ入りの黒いRace Faceヒップバッグが積まれた様子

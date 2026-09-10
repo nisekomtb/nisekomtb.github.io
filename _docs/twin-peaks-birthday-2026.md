@@ -186,37 +186,46 @@ Japanese. Same rule applies to the Ecwid product copy and anything on social.
 
 ### Prizes
 
-Rearranged 10 September 2026 into combos. The order below is the order on the
-page, and the card numbers follow it: the bike is 1, so these run 2 to 12.
+Rearranged 10 September 2026. The order below is the order on the page, and the
+card numbers follow it: the bike is 1, so these run 2 to 15.
 
 | # | Prize | Qty | Sponsor |
 |---|---|---|---|
 | 1 | Specialized Stumpjumper 15 EVO Expert, Gloss Pistachio | 1 | Specialized |
-| 2 | Combo: Pivot helmet, Ultralight ride glasses, Essential tee | 4 | Smith |
-| 3 | Combo: hoodie, socks, hip bag | see below | Fox and Race Face |
-| 4 | Baseball caps | 2 | Fox |
-| 5 | Dakine hold-all | 1 | Rhythm |
-| 6 | Smith MTB goggles | 1 | Rhythm |
-| 7 | Dharco MTB pants | 1 | Rhythm |
-| 8 | Combo: one bottle, one cap | 4 | DT Swiss |
-| 9 | Badge t-shirts | not stated | Twin Peaks |
-| 10 | Enamel mugs | not stated | Twin Peaks |
-| 11 | Swag, contents to be announced | to be announced | POC |
-| 12 | Swag, contents to be announced | to be announced | Burton |
+| 2 | Set: Pivot helmet, Ultralight ride glasses, Essential tee | 1 | Smith |
+| 3 | Set: Pivot helmet, Ultralight ride glasses, Essential tee | 1 | Smith |
+| 4 | Set: Pivot helmet, Ultralight ride glasses, Essential tee | 1 | Smith |
+| 5 | Set: Pivot helmet, Ultralight ride glasses, Essential tee | 1 | Smith |
+| 6 | Combo: hoodie, socks, hip bag | 10 | Fox and Race Face |
+| 7 | Baseball caps | 2 | Fox |
+| 8 | Dakine hold-all | 1 | Rhythm |
+| 9 | Smith MTB goggles | 1 | Rhythm |
+| 10 | Dharco MTB pants | 1 | Rhythm |
+| 11 | Combo: one bottle, one cap | 4 | DT Swiss |
+| 12 | Badge t-shirts | not stated | Twin Peaks |
+| 13 | Enamel mugs | not stated | Twin Peaks |
+| 14 | Swag, contents to be announced | to be announced | POC |
+| 15 | Swag, contents to be announced | to be announced | Burton |
 
-Two things to settle. The Fox and Race Face combo has no agreed count: it was 17
-hoodies and 6 hip bags separately, and the bags cap the pairs at 6, but the sock
-count is unknown. The card says "Plenty to go round" until someone confirms it.
-And Smith supplied 6 t-shirts against 4 combos, so 2 tees are spare.
+**The four Smith cards are placeholders and currently read identically.** They are
+four separate prizes because the sets differ from each other, but nobody has said
+how: same three products in each, presumably different colourways or sizes. Until
+that lands, all four carry the same title, the same photo and the line "One of
+four Smith sets, each one different", which is honest but does not help anyone
+choose. Give each card its own title and inclusions once the four are known.
+
+Smith also supplied 6 t-shirts against 4 sets, so 2 tees are spare and are not
+on the page.
 
 DT Swiss maths: 4 bottles and 4 caps make 4 pairs. Two of the caps are baseball
 and two are cycling, so the pairs are not identical.
 
-The three Rhythm prizes sit together at 5 to 7 on purpose. They are the only
+The three Rhythm prizes sit together at 8 to 10 on purpose. They are the only
 cards with no photograph, and the grid gives every card in a flex line the height
 of the tallest, so keeping them on one line stops a photo-less card stretching to
-match a card with an image. That is why DT Swiss sits after them rather than
-before.
+match a card with an image: that row is 632px instead of 929px. It is why DT
+Swiss sits after them rather than before. Adding or removing a card above them
+breaks the grouping, so re-check the rows after any reshuffle.
 
 The bike's source of truth is Specialized's own product page for part 93326-33,
 `specialized.com/gb/en/stumpjumper-15-evo-expert-sram-gx-axs-fox-performance-elite/p/4221478`.
@@ -394,6 +403,7 @@ are on the page. What is left:
 | Re-send the POC logo. The file in `_triage` is hard-cropped on all four edges, so the mark is cut. Race Face and DT Swiss are done | Tom | Low. POC is the only prize still showing a text credit |
 | Confirm the t-shirt size run with the supplier | Tom | Now, the order window has passed |
 | Decide whether to expose or hide stock control | Tom | Low |
+| Say how the four Smith sets differ, so cards 2 to 5 stop reading identically | Tom | Before the prizes get shared |
 | Fill in the POC and Burton prize contents when the boxes arrive | Tom | When they land |
 | Decide on photo credits for Alister Buckingham's four images | Tom | Low |
 | T-shirt design brief to Joe, shirt colour | Angharad | Now |
