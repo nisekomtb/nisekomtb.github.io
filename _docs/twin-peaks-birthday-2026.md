@@ -526,12 +526,12 @@ needed to collect anything, not what it carries now:
 Both product descriptions were rewritten on 9 September to drop "raffle", carry the
 new schedule and name the afterparty.
 
-Checked again on 11 September when the prize list came off the page, and neither
-description needed correcting: they never listed individual prizes, and the draw
-and game tickets they do mention are both still on the page. The one thing added
-was a line setting the same expectation the page now sets, "Prizes for the draw
-are announced closer to the event" / 「抽選の賞品はイベント前に発表します。」, in
-both products and both languages.
+Checked again on 11 September when the prize list came off the page. **Neither
+description needed correcting and neither was changed.** They never listed
+individual prizes, and the draw and the game tickets they do mention are both
+still on the page, so nothing in them contradicted the change. A line saying
+prizes would be announced closer to the event was added and then taken straight
+back out: the page already says as much, and the product does not need to.
 
 Two things to know when editing these by API. The two products format their HTML
 differently: 859390827 closes paragraphs as `.</p>` while 863342047 puts a newline
