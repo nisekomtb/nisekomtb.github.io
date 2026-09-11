@@ -524,7 +524,20 @@ needed to collect anything, not what it carries now:
 | Agreement to the Event Participation Terms | radio | yes |
 
 Both product descriptions were rewritten on 9 September to drop "raffle", carry the
-new schedule and name the afterparty. The evening description's closing pointer
+new schedule and name the afterparty.
+
+Checked again on 11 September when the prize list came off the page, and neither
+description needed correcting: they never listed individual prizes, and the draw
+and game tickets they do mention are both still on the page. The one thing added
+was a line setting the same expectation the page now sets, "Prizes for the draw
+are announced closer to the event" / 「抽選の賞品はイベント前に発表します。」, in
+both products and both languages.
+
+Two things to know when editing these by API. The two products format their HTML
+differently: 859390827 closes paragraphs as `.</p>` while 863342047 puts a newline
+first, `.\n</p>`, so an anchor that matches one will silently miss the other. And
+a saved change takes several minutes to reach the storefront through Ecwid's CDN,
+so a page that still shows the old text is not a failed write. Check the API. The evening description's closing pointer
 was changed to "buy the all day pass instead" when the products were renamed.
 
 Both products are fully bilingual, and the field to read is **not**
