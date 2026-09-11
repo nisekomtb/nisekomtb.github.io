@@ -5,8 +5,8 @@ title: ツインピークス3周年
 titleHtml: ツインピークス<wbr>3周年
 subtitle: 掘って、食べて、走って、祝う1日
 subtitleHtml: 掘って、<wbr>食べて、<wbr>走って、<wbr>祝う<wbr>1日
-description: ツインピークス・バイクパークが3周年。トレイル整備、BBQランチ、バイクゲーム、そのあとはRhythmでアフターパーティー。スペシャライズドのStumpjumperがプレゼント抽選会に登場します。
-descriptionHtml: ツインピークス・バイクパークが<wbr>3周年。<wbr>トレイル整備、<wbr>BBQランチ、<wbr>バイクゲーム、<wbr>その<wbr>あとは<wbr>Rhythmで<wbr>アフターパーティー。<wbr>スペシャライズドの<wbr>Stumpjumperが<wbr>プレゼント抽選会に<wbr>登場します。
+description: ツインピークス・バイクパークが3周年。トレイル整備、BBQランチ、バイクゲーム、そのあとはRhythmでアフターパーティー。プレゼント抽選会も行います。
+descriptionHtml: ツインピークス・バイクパークが<wbr>3周年。<wbr>トレイル整備、<wbr>BBQランチ、<wbr>バイクゲーム、<wbr>その<wbr>あとは<wbr>Rhythmで<wbr>アフターパーティー。<wbr>プレゼント抽選会も<wbr>行います。
 startDate: 2026-09-19 09:00:00 +0900
 endDate: 2026-09-19 18:00:00 +0900
 days: 1
@@ -356,7 +356,7 @@ NAMBAが​[ツインピークス・バイクパーク](/ja/twin-peaks/)を​�
 
 ## プレゼント抽選会 {#giveaway}
 
-下の​賞品は​すべて、​その夜に​誰かの​手に​渡ります。​終日パスの​方は​ゲームチケット5枚から​スタートし、​午後の​ゲームで​さらに​増やせます。​夕方のみパスの​方は​1枚です。
+賞品は​すべて、​その夜に​誰かの​手に​渡ります。​終日パスの​方は​ゲームチケット5枚から​スタートし、​午後の​ゲームで​さらに​増やせます。​夕方のみパスの​方は​1枚です。
 
 ゲームチケットは​イベント参加者に​のみ​お渡しします。​単体での​販売は​ありません。​賞品は​まだ​増えていて、​決まり​次第この​ページと[Instagram](https://www.instagram.com/nisekomtb/)で​お知らせします。
 
@@ -366,7 +366,13 @@ NAMBAが​[ツインピークス・バイクパーク](/ja/twin-peaks/)を​�
    src2="/assets/images/events/2026/twin-peaks-birthday/prizes-2.jpg"
    alt2="賞品テーブルを囲むライダーたちと、当選品を手渡すNAMBAスタッフ" %}
 
-{% include prize-grid.html %}
+{%- comment -%}
+  Prizes are off the page for now. The `featuredPrize`, `prizes` and `prizesNote`
+  front matter is left intact and inert: nothing but this include reads it under
+  `layout: event`, so commenting out the one line hides the lot. Uncomment to
+  bring the whole grid back exactly as it was.
+{%- endcomment -%}
+{%- comment -%}{% include prize-grid.html %}{%- endcomment -%}
 
 ## 当日の​運営を​手伝いませんか {#volunteers}
 

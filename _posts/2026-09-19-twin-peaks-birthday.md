@@ -3,7 +3,7 @@ layout: event
 categories: events
 title: Twin Peaks Birthday
 subtitle: Three years of Twin Peaks
-description: "Twin Peaks Bike Park turns three. Trail building, BBQ lunch and bike games, then an after party at Rhythm with a Specialized Stumpjumper to give away."
+description: "Twin Peaks Bike Park turns three. Trail building, BBQ lunch and bike games, then an after party at Rhythm with a giveaway on the night."
 startDate: 2026-09-19 09:00:00 +0900
 endDate: 2026-09-19 18:00:00 +0900
 days: 1
@@ -348,7 +348,7 @@ The draw is at 5:00pm, and the day pass covers entry to the evening. If you cant
 
 ## The giveaway {#giveaway}
 
-Every prize below goes to someone on the night. Day pass holders start with five game tickets and earn more through the afternoon games. Evening only pass holders get one.
+Everything on the prize table goes to someone on the night. Day pass holders start with five game tickets and earn more through the afternoon games. Evening only pass holders get one.
 
 Game tickets only come with event entry. We don't sell them separately. More prizes are still landing, and we'll add them here and on [Instagram](https://www.instagram.com/nisekomtb/) as they're confirmed.
 
@@ -358,7 +358,13 @@ Game tickets only come with event entry. We don't sell them separately. More pri
    src2="/assets/images/events/2026/twin-peaks-birthday/prizes-2.jpg"
    alt2="A crowd of riders gathered around the prize table as NAMBA staff hand out winnings" %}
 
-{% include prize-grid.html %}
+{%- comment -%}
+  Prizes are off the page for now. The `featuredPrize`, `prizes` and `prizesNote`
+  front matter is left intact and inert: nothing but this include reads it under
+  `layout: event`, so commenting out the one line hides the lot. Uncomment to
+  bring the whole grid back exactly as it was.
+{%- endcomment -%}
+{%- comment -%}{% include prize-grid.html %}{%- endcomment -%}
 
 ## Help out on the day {#volunteers}
 

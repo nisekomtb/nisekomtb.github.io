@@ -339,6 +339,21 @@ round" rather than 17, so nobody turns up expecting a specific number.
 
 ### How the grid is built
 
+**The grid is switched off on the live page as of 11 September.** The
+`{% include prize-grid.html %}` line in both posts is wrapped in a Liquid
+comment, and `featuredPrize`, `prizes` and `prizesNote` are left sitting in the
+front matter untouched. Nothing else reads them under `layout: event`, only
+`_layouts/competition.html` looks at `page.prizes` and this is not a competition,
+so commenting out the single include takes the whole section off both pages.
+Uncomment it and everything below comes back exactly as documented.
+
+The rest of the giveaway stays: the section heading, game tickets, the 5:00pm
+draw, the itinerary line and Specialized in the partner row. Only the prize list
+and the Stumpjumper are gone, the latter also out of the EN and JA meta
+descriptions. "Every prize below" became "Everything on the prize table", since
+there is no longer a list below it.
+
+
 Prizes live **inline on the event page**, not on a standalone `/raffle/` page, via
 `featuredPrize` and `prizes` in front matter and `{% include prize-grid.html %}` in
 the body. Full schema in `_docs/events.md` under "Prize grid".
