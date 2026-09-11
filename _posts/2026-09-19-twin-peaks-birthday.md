@@ -14,8 +14,11 @@ price:
   - name: All day pass
     adult: ¥5,000
     child: ¥2,500
-  - name: Evening only pass
-    adult: ¥1,000
+# Evening only pass withdrawn 11 September. Ecwid 863342047 disabled to match.
+# Uncomment this, the moreInfo line, the tickets entry and the two body
+# paragraphs below, then re-enable the product, to put it back.
+#  - name: Evening only pass
+#    adult: ¥1,000
 partners:
   - name: Specialized
     img: /specialized.png
@@ -40,7 +43,7 @@ og:
 moreInfo:
   - "Under 12s must be accompanied by a paying adult."
   - "T-shirts are adult sizes, S to XXL. Sign-ups from 5 September onwards can't be size-guaranteed."
-  - "Evening only pass is ¥1,000 and covers the after party at Rhythm plus one game ticket."
+#  - "Evening only pass is ¥1,000 and covers the after party at Rhythm plus one game ticket."
   - "If Saturday looks wet, the event moves to Sunday 20 September."
   - 'Volunteers wanted. <a href="https://forms.gle/BfY99gqawBNdQ23GA">Sign up to help out</a>.'
   - 'Bike shops, food trucks, makers and community groups can <a href="https://forms.gle/Kpk1TkqoUtQ3CLrP8">apply for a booth</a>.'
@@ -75,8 +78,8 @@ about: false
 tickets:
   - slug: twin-peaks-birthday-2026
     label: Buy all day ticket
-  - slug: twin-peaks-birthday-2026-evening
-    label: Buy evening only ticket
+#  - slug: twin-peaks-birthday-2026-evening
+#    label: Buy evening only ticket
 prizesNote: Prizes can be withdrawn or changed at any time.
 featuredPrize:
   title: Specialized Stumpjumper 15 EVO Expert
@@ -309,7 +312,8 @@ The day pass, ¥5,000 for adults and ¥2,500 for under 16s, covers everything fr
 - Entry to the after party at Rhythm.
 - Five game tickets, plus more to earn through the afternoon games.
 
-The evening only pass is ¥1,000 and gets you into the after party at Rhythm with one game ticket, so you're in the draw at 5:00pm.
+<!-- Evening only pass withdrawn, see the front matter note. -->
+
 
 ## Out come the shovels
 
@@ -344,11 +348,11 @@ We'll announce what the challenges are closer to the day. Games finish around 3:
 
 Doors open at 4:00pm and happy hour runs until 6:00pm. Come and grab a beer with us and celebrate Twin Peaks turning three.
 
-The draw is at 5:00pm, and the day pass covers entry to the evening. If you cant make the full day, then you can buy an evening only pass for ¥1,000 which gets you in and includes one game ticket.
+The draw is at 5:00pm, and the day pass covers entry to the evening.
 
 ## The giveaway {#giveaway}
 
-Everything on the prize table goes to someone on the night. Day pass holders start with five game tickets and earn more through the afternoon games. Evening only pass holders get one.
+Everything on the prize table goes to someone on the night. Day pass holders start with five game tickets and earn more through the afternoon games.
 
 Game tickets only come with event entry. We don't sell them separately. More prizes are still landing, and we'll add them here and on [Instagram](https://www.instagram.com/nisekomtb/) as they're confirmed.
 

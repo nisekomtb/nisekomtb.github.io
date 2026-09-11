@@ -17,8 +17,11 @@ price:
   - name: 終日パス
     adult: 5,000円
     child: 2,500円
-  - name: 夕方のみ<wbr>パス
-    adult: 1,000円
+# 夕方のみパスは2026年9月11日に取り下げ。Ecwid 863342047 も無効化済み。
+# 復活させるときは、この price 項目、moreInfo の行、tickets の項目、
+# および本文の2箇所のコメントを解除し、商品を有効化する。
+#  - name: 夕方のみ<wbr>パス
+#    adult: 1,000円
 partners:
   - name: Specialized
     img: /specialized.png
@@ -43,7 +46,7 @@ og:
 moreInfo:
   - "12歳未満の<wbr>お子様は、<wbr>有料参加の<wbr>保護者の<wbr>同伴が<wbr>必要です。"
   - "Tシャツは<wbr>大人用の<wbr>S〜XXLサイズです。<wbr>9月5日以降の<wbr>お申し込みは、<wbr>サイズを<wbr>お約束できません。"
-  - "夕方のみパスは<wbr>1,000円。<wbr>Rhythmでの<wbr>アフターパーティーと<wbr>ゲームチケット1枚が<wbr>含まれます。"
+#  - "夕方のみパスは<wbr>1,000円。<wbr>Rhythmでの<wbr>アフターパーティーと<wbr>ゲームチケット1枚が<wbr>含まれます。"
   - "土曜日の<wbr>天候が<wbr>悪い<wbr>場合は、<wbr>9月20日<wbr>（日）に<wbr>順延します。"
   - 'ボランティア募集中。<a href="https://forms.gle/BfY99gqawBNdQ23GA">こちらから<wbr>ご登録ください</a>。'
   - '自転車ショップ、<wbr>フードトラック、<wbr>作家、<wbr>地域の<wbr>団体の<wbr>皆さまへ。<a href="https://forms.gle/8NhsTLg9wPF6Xnv47">ブース出展の<wbr>お申し込みは<wbr>こちら</a>。'
@@ -75,16 +78,11 @@ outro: >-
   ツインピークスは​シーズン中いつでも​無料で​走れます。​今回参加できない​方も、​[NAMBAに​参加](/ja/join/)したり、​年間を​通して​開催している​[他の​イベント](/ja/events/)に​ぜひ​お越しください。
 parking: false
 about: false
-# storeProductId: 859390827
-# storeProductSlug: twin-peaks-birthday-2026
-# 夕方のみパスの商品（Ecwid 863342047、2026年9月9日に無効状態で作成）を
-# 有効化したら、上の storeProductSlug を下の tickets ブロックに差し替える。
-# ショップボタンが2つ並ぶ。
 tickets:
   - slug: twin-peaks-birthday-2026
     label: 終日パスを購入
-  - slug: twin-peaks-birthday-2026-evening
-    label: 夕方のみパスを購入
+#  - slug: twin-peaks-birthday-2026-evening
+#    label: 夕方のみパスを購入
 prizesNote: 賞品は​予告なく​変更または​取り下げとなる​場合が​あります。
 featuredPrize:
   title: Specialized Stumpjumper 15 EVO Expert
@@ -317,7 +315,7 @@ NAMBAが​[ツインピークス・バイクパーク](/ja/twin-peaks/)を​�
 - Rhythmでの​アフターパーティーへの​入場。
 - ゲームチケット5枚。​午後の​ゲームで​さらに​追加できます。
 
-夕方のみパスは​1,000円。​Rhythmでの​アフターパーティーに​入場でき、​ゲームチケットが​1枚付くので、​17時の​抽選に​参加できます。
+{%- comment -%} Evening only pass withdrawn, see the front matter note. {%- endcomment -%}
 
 ## シャベルの​出番です
 
@@ -352,11 +350,11 @@ NAMBAが​[ツインピークス・バイクパーク](/ja/twin-peaks/)を​�
 
 16時オープン、​18時まで​ハッピーアワーです。​ビールを​片手に、​ツインピークスの​3周年を​一緒に​お祝いしましょう。
 
-プレゼント抽選会は​17時、​開始から​1時間後。​会場に​人が​そろっている​うちに​行います。​終日パスには​夕方の​参加も​含まれています。​日中の​予定が​合わない方は、​1,000円の​夕方のみパスで​ゲームチケット1枚付きで​ご参加いただけます。
+プレゼント抽選会は​17時、​開始から​1時間後。​会場に​人が​そろっている​うちに​行います。​終日パスには​夕方の​参加も​含まれています。
 
 ## プレゼント抽選会 {#giveaway}
 
-賞品は​すべて、​その夜に​誰かの​手に​渡ります。​終日パスの​方は​ゲームチケット5枚から​スタートし、​午後の​ゲームで​さらに​増やせます。​夕方のみパスの​方は​1枚です。
+賞品は​すべて、​その夜に​誰かの​手に​渡ります。​終日パスの​方は​ゲームチケット5枚から​スタートし、​午後の​ゲームで​さらに​増やせます。
 
 ゲームチケットは​イベント参加者に​のみ​お渡しします。​単体での​販売は​ありません。​賞品は​まだ​増えていて、​決まり​次第この​ページと[Instagram](https://www.instagram.com/nisekomtb/)で​お知らせします。
 

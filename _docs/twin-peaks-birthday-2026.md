@@ -478,7 +478,17 @@ text, so the description is the only place on a product that takes a link.
 ### Evening pass product
 
 **Product 863342047, `twin-peaks-birthday-2026-evening`, created 9 September 2026,
-ENABLED on 10 September.** Named **Twin Peaks Birthday 2026 Evening Only** since
+enabled on 10 September, DISABLED AGAIN on 11 September** along with every mention
+of the pass on both event pages.
+
+Everything needed to bring it back is commented out rather than deleted: the
+`price` entry, the `moreInfo` line, the `tickets` entry and two body paragraphs in
+each language file, each carrying a note pointing at the others. Re-enable the
+product and uncomment those five places and the pass is back as it was.
+
+One sentence survives the removal on purpose. "The draw is at 5:00pm, and the day
+pass covers entry to the evening" is about the evening as a time of day, not the
+pass, and it still holds. Named **Twin Peaks Birthday 2026 Evening Only** since
 10 September, paired with **Twin Peaks Birthday 2026 All Day** (859390827), which
 was plain "Twin Peaks Birthday 2026". The pair of names is the point: "evening
 only" says what the all-day pass already covers, so nobody buys the cheaper one
@@ -538,8 +548,9 @@ Still to do:
 
 - [ ] Confirm the t-shirt size run against the actual supplier
 - [ ] Decide whether to expose or hide stock control
-- [x] **Enable product 863342047.** Done 10 September. Both tickets are live and
-      buyable, the evening one with no options on it by choice
+- [x] **Enable product 863342047.** Done 10 September, disabled again on
+      11 September when the evening pass came off the page. Only the all day
+      ticket is on sale
 
 `tickets:` renders one shop button per entry, first primary and the rest secondary.
 Schema in `_docs/events.md` under "Registration & sales".
