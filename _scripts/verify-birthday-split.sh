@@ -23,8 +23,11 @@ done
 tmp=$(mktemp -d)
 trap 'rm -rf "$tmp"' EXIT
 EN="$tmp/en.html"; JA="$tmp/ja.html"
-perl -pe 's/\x{200b}//g; s/<wbr>//g' "$EN_SRC" > "$EN"
-perl -pe 's/\x{200b}//g; s/<wbr>//g' "$JA_SRC" > "$JA"
+# -CSD is load-bearing: without it perl treats the file as bytes and the
+# \x{200b} substitution silently matches nothing, turning every JA assertion
+# that relies on stripping into a false pass.
+perl -CSD -pe 's/\x{200b}//g; s/<wbr>//g' "$EN_SRC" > "$EN"
+perl -CSD -pe 's/\x{200b}//g; s/<wbr>//g' "$JA_SRC" > "$JA"
 
 ok()  { printf '  \033[32mPASS\033[0m %s\n' "$1"; }
 bad() { printf '  \033[31mFAIL\033[0m %s\n' "$1"; fails=$((fails+1)); }
