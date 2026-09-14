@@ -53,9 +53,8 @@ parking: false
 about: false
 ---
 
-Annupuri hosts a funduro on the Autumn Equinox holiday, with school kids and
-their parents racing the same three stages. ezobike had to call this round off
-last year and has come back for it. The gondola does the climbing.
+ezobike and Annupuri host a funduro on the Autumn Equinox holiday, with school
+kids and their parents racing the same three stages, and access via the gondola.
 
 ## How a funduro runs
 
