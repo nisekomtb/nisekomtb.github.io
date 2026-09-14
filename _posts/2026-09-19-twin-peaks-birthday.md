@@ -30,7 +30,7 @@ parts:
       - NAMBA and Twin Peaks stickers
   - name: Birthday Party
     free: true
-    when: From 1:00pm till late
+    when: 1:00pm to 6:00pm
     cost: Free
     booking: None, just turn up
     includes:
@@ -109,30 +109,42 @@ prizeSponsors:
   - name: Smith
     img: /assets/images/company/smith.png
     url: https://smithjapan.co.jp/
+    height: 46
+    wide: true
   - name: Fox
     img: /assets/images/company/fox.png
     url: https://ridefox.com
+    height: 76
   - name: Race Face
     img: /assets/images/company/raceface.svg
     url: https://www.raceface.com
+    height: 28
+    wide: true
   - name: DT Swiss
     img: /assets/images/company/dt-swiss.png
     url: https://www.dtswiss.com
+    height: 37
+    wide: true
   - name: Rhythm Japan
     img: /assets/images/company/rhythm.png
     url: https://rhythmjapan.com
+    height: 52
   - name: Niseko Annupuri
     img: /assets/images/company/annupuri.png
     url: https://annupuri.info/en/
+    height: 53
   - name: Grand Hirafu
     img: /assets/images/company/grand-hirafu.png
     url: https://www.grand-hirafu.jp
+    height: 92
   - name: POC
     img: /assets/images/company/poc.png
     url: https://www.pocsports.com
+    height: 54
   - name: Burton
     img: /assets/images/company/burton.png
     url: https://www.burton.com
+    height: 83
 faq:
   - q: Do I need a Dig Morning ticket to play the games or enter the draw?
     a: No. The games, the draw and the party are free and open to everyone. Turn up any time from 1:00pm and collect your five game tickets at the Party desk.

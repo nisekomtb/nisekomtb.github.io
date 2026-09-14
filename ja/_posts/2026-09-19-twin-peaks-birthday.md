@@ -33,7 +33,7 @@ parts:
       - NAMBAと<wbr>ツインピークスの<wbr>ステッカー
   - name: 3周年パーティー
     free: true
-    when: 13時から<wbr>夜まで
+    when: 13時〜18時
     cost: 無料
     booking: 予約不要、<wbr>直接<wbr>お越しください
     includes:
@@ -112,30 +112,42 @@ prizeSponsors:
   - name: Smith
     img: /assets/images/company/smith.png
     url: https://smithjapan.co.jp/
+    height: 46
+    wide: true
   - name: Fox
     img: /assets/images/company/fox.png
     url: https://ridefox.com
+    height: 76
   - name: Race Face
     img: /assets/images/company/raceface.svg
     url: https://www.raceface.com
+    height: 28
+    wide: true
   - name: DT Swiss
     img: /assets/images/company/dt-swiss.png
     url: https://www.dtswiss.com
+    height: 37
+    wide: true
   - name: Rhythm Japan
     img: /assets/images/company/rhythm.png
     url: https://rhythmjapan.com
+    height: 52
   - name: Niseko Annupuri
     img: /assets/images/company/annupuri.png
     url: https://annupuri.info
+    height: 53
   - name: Grand Hirafu
     img: /assets/images/company/grand-hirafu.png
     url: https://www.grand-hirafu.jp
+    height: 92
   - name: POC
     img: /assets/images/company/poc.png
     url: https://www.pocsports.com
+    height: 54
   - name: Burton
     img: /assets/images/company/burton.png
     url: https://www.burton.com
+    height: 83
 faq:
   - q: ゲームや抽選会に参加するには、トレイル整備の朝のチケットが必要ですか？
     a: いいえ。ゲーム、抽選会、パーティーはすべて無料で、どなたでもご参加いただけます。13時以降のお好きな時間にお越しいただき、パーティー受付でゲームチケット5枚をお受け取りください。

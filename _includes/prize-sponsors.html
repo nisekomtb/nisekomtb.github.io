@@ -11,6 +11,15 @@
       - name: Smith
         img: /assets/images/company/smith.png
         url: https://smithjapan.co.jp/
+        height: 46          # optional target height in px, default 72
+        wide: true          # optional, spans two grid columns
+
+  Logo marks range from square roundels to 10:1 wordmarks, and capping height
+  alone makes the square ones read five times heavier than the wide ones. So each
+  logo carries a `height` chosen to give it roughly the same optical area
+  (h = sqrt(8500 / aspect)), and the two marks too wide to reach that area inside
+  one column carry `wide: true` for a two-column span. Recompute both when adding
+  a sponsor; do not just eyeball it.
 
   JA copy here uses zero-width spaces, not <wbr>: this include renders into the
   body flow, and `_docs/bilingual.md` reserves <wbr> for front matter. Mixing the
@@ -39,11 +48,14 @@
     align-items: center;
     justify-content: center;
   }
+  .evprz-wall a.is-wide {
+    grid-column: span 2;
+  }
   .evprz-wall img {
-    max-height: 92px;
+    height: var(--logo-h, 72px);
     max-width: 100%;
     width: auto;
-    height: auto;
+    object-fit: contain;
     opacity: 0.92;
     transition: opacity 0.2s ease;
   }
@@ -65,11 +77,11 @@
   </p>
   <div class="evprz-wall">
     {%- for sponsor in page.prizeSponsors %}
-    <a href="{{ sponsor.url }}" target="_blank" rel="sponsored noopener noreferrer">
+    <a href="{{ sponsor.url }}" target="_blank" rel="sponsored noopener noreferrer"{% if sponsor.wide %} class="is-wide"{% endif %}{% if sponsor.height %} style="--logo-h: {{ sponsor.height }}px"{% endif %}>
       {%- capture webp_src %}{{ sponsor.img | replace: '.png', '.webp' }}{% endcapture -%}
       <picture>
         {%- unless sponsor.img contains '.svg' %}<source type="image/webp" srcset="{{ webp_src }}">{% endunless %}
-        <img src="{{ sponsor.img }}" alt="{{ sponsor.name }}{% if page.lang == 'ja' %}、賞品提供{% else %}, prize sponsor{% endif %}" loading="lazy" width="160" height="92">
+        <img src="{{ sponsor.img }}" alt="{{ sponsor.name }}{% if page.lang == 'ja' %}、賞品提供{% else %}, prize sponsor{% endif %}" loading="lazy" width="160" height="72">
       </picture>
     </a>
     {%- endfor %}
