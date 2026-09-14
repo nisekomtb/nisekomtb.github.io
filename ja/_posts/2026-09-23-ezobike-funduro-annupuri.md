@@ -16,9 +16,12 @@ price:
   - name: 高校生<wbr>以上
     adult: ¥3,000
 host:
-  name: ezobike
-  img: /ezobike.png
-  url: https://www.ezobike.com/
+  - name: ezobike
+    img: /ezobike.png
+    url: https://www.ezobike.com/
+  - name: Niseko Annupuri
+    img: /annupuri.png
+    url: https://annupuri.info
 masthead:
   img: /assets/images/events/2026/ezobike-funduro-annupuri/header.jpg
   credit:
@@ -51,7 +54,7 @@ parking: false
 about: false
 ---
 
-アンヌプリの​シーズンを​締めくくるのは、​小学生と​その​親が​同じ​3ステージを​走る​ファンデューロです。​ezobikeは​昨年この​一戦を​見送らざるを​得ませんでしたが、​秋分の日に​リベンジ開催します。​登りは​ゴンドラに​任せましょう。
+秋分の日、​アンヌプリで​ファンデューロが​開催され、​小学生と​その​親が​同じ​3ステージを​走ります。​ezobikeは​昨年この​一戦を​見送らざるを​得ませんでしたが、​今年リベンジ開催します。​登りは​ゴンドラに​任せましょう。
 
 ## ファンデューロとは
 

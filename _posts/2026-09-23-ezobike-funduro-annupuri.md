@@ -15,9 +15,12 @@ price:
   - name: High school and above
     adult: ¥3,000
 host:
-  name: ezobike
-  img: /ezobike.png
-  url: https://www.ezobike.com/
+  - name: ezobike
+    img: /ezobike.png
+    url: https://www.ezobike.com/
+  - name: Niseko Annupuri
+    img: /annupuri.png
+    url: https://annupuri.info/en/
 masthead:
   img: /assets/images/events/2026/ezobike-funduro-annupuri/header.jpg
   credit:
@@ -50,10 +53,9 @@ parking: false
 about: false
 ---
 
-Annupuri closes out the season with a funduro that puts school kids and their
-parents on the same three stages. ezobike had to call this round off last year
-and has come back for it on the Autumn Equinox holiday. The gondola does the
-climbing.
+Annupuri hosts a funduro on the Autumn Equinox holiday, with school kids and
+their parents racing the same three stages. ezobike had to call this round off
+last year and has come back for it. The gondola does the climbing.
 
 ## How a funduro runs
 
