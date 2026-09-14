@@ -608,13 +608,23 @@ layout: base
         </div>
         {% endif %}
 
+        {%- comment -%}
+          `host` takes either a single mapping or a list of them, so a
+          co-hosted event (ezobike x Annupuri) can credit both without a
+          second front-matter key. A mapping has `name`; a list does not,
+          which is how the two shapes are told apart here and at
+          `performer` in the JSON-LD below.
+        {%- endcomment -%}
+        {%- if page.host.name -%}{%- assign primary_host = page.host -%}{%- else -%}{%- assign primary_host = page.host[0] -%}{%- endif -%}
         {% if page.host %}
         <div class="detail-item">
-          <h4><span class="fa-solid fa-building"></span> {% if page.lang == "ja" %}イベント主催者{% else %}Host{% endif %}</h4>
+          <h4><span class="fa-solid fa-building"></span> {% if page.lang == "ja" %}イベント主催者{% else %}Host{% unless page.host.name %}{% if page.host.size > 1 %}s{% endif %}{% endunless %}{% endif %}</h4>
           <div class="partners-imgs">
-            <a href="{{- page.host.url -}}" target="_blank" rel="sponsored noopener noreferrer">
-              {% capture webp_src %}/assets/images/company{{- page.host.img -}}{% endcapture %}<picture><source type="image/webp" srcset="{{ webp_src | replace: '.png', '.webp' }}"><img src="/assets/images/company{{- page.host.img -}}" alt="{{ page.host.name }}{% if page.lang == 'ja' %}、イベント主催者{% else %}, event host{% endif %}" loading="lazy" width="56" height="56"></picture>
-            </a>
+            {% if page.host.name %}
+              {% include event-company-logo.html entry=page.host role="host" %}
+            {% else %}
+              {% for event_host in page.host %}{% include event-company-logo.html entry=event_host role="host" %}{% endfor %}
+            {% endif %}
           </div>
         </div>
         {% endif %}
@@ -753,7 +763,7 @@ layout: base
   {% endif %}
   "performer": {
     "@type": "PerformingGroup",
-    "name": "{{ page.host.name | default: "NAMBA" }}"
+    "name": "{{ primary_host.name | default: "NAMBA" }}"
   },
   "image": [
     "https://namba.ngo{{ page.img | default: page.masthead.img }}"

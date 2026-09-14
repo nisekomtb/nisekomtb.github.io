@@ -1,0 +1,21 @@
+{%- comment -%}
+  One 56x56 company logo tile for the event sidebar, used by the Host and
+  Event Partners blocks in _layouts/event.html.
+
+  Params:
+    entry — mapping with `name`, `img` and `url` (img is relative to
+            /assets/images/company, e.g. "/ezobike.png")
+    role  — "host" or "partner"; picks the alt-text suffix only
+
+  The `.png` -> `.webp` swap is deliberately narrow: a few entries point at a
+  .jpg (dhseries.jpg) and are left alone by it, which is the behaviour this
+  partial was extracted from. Do not widen it without generating the WebP
+  siblings for those files first.
+{%- endcomment -%}
+{%- assign logo_src = "/assets/images/company" | append: include.entry.img -%}
+{%- if include.role == "partner" -%}
+  {%- if page.lang == "ja" -%}{%- assign alt_suffix = "、イベントパートナー" -%}{%- else -%}{%- assign alt_suffix = ", event partner" -%}{%- endif -%}
+{%- else -%}
+  {%- if page.lang == "ja" -%}{%- assign alt_suffix = "、イベント主催者" -%}{%- else -%}{%- assign alt_suffix = ", event host" -%}{%- endif -%}
+{%- endif -%}
+<a href="{{- include.entry.url -}}" target="_blank" rel="sponsored noopener noreferrer"><picture><source type="image/webp" srcset="{{ logo_src | replace: '.png', '.webp' }}"><img src="{{ logo_src }}" alt="{{ include.entry.name }}{{ alt_suffix }}" loading="lazy" width="56" height="56"></picture></a>
