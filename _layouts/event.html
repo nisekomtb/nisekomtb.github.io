@@ -212,6 +212,20 @@ layout: base
     padding: 12px 15px;
   }
 
+  table.timetable tr.is-free td:first-child {
+    box-shadow: inset 3px 0 0 var(--color-accent);
+  }
+  table.timetable tr.free-divider td {
+    background: var(--color-accent);
+    color: #111;
+    font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-align: center;
+  }
+
   table.timetable tr.cancelled {
     text-decoration: line-through;
     opacity: 0.5;
@@ -423,8 +437,21 @@ layout: base
               </tr>
             </thead>
             <tbody>
+            {%- comment -%}
+              An event whose later portion is free to attend marks those rows
+              `free: true`. One divider band is injected above the first of
+              them, per day, so the boundary between a ticketed part and a free
+              part is unmissable in the schedule.
+            {%- endcomment -%}
+            {% assign free_divider_done = false %}
             {% for event in day.events %}
-            <tr {% if event.cancelled %} class="cancelled" {% endif %}>
+            {% if event.free and free_divider_done == false %}
+            <tr class="free-divider">
+              <td colspan="{% if day.hasLocations %}3{% else %}2{% endif %}">{% if page.lang == "ja" %}ここから先は無料。チケットは不要です。{% else %}Free from here. No ticket needed.{% endif %}</td>
+            </tr>
+            {% assign free_divider_done = true %}
+            {% endif %}
+            <tr class="{% if event.cancelled %}cancelled{% endif %}{% if event.free %} is-free{% endif %}">
               <td>{{ event.time | default: '~' }}</td>
               <td>{{ event.name }}</td>
               {% if day.hasLocations %}
@@ -444,6 +471,8 @@ layout: base
           </table>
         {% endfor %}
         {% endif %}
+
+        {% if page.faq %}{% include faq.html %}{% endif %}
 
         {% if page.parking %}
           {% if page.lang == "en" %}
@@ -649,7 +678,20 @@ layout: base
     "name": "{{ page.location | strip_html }}"
   },
   "inLanguage": "{{ page.lang }}",
-  "isAccessibleForFree": {% if page.price == 0 %}true{% else %}false{% endif %},
+  {%- comment -%}
+    True when the event can be attended without paying, which includes an event
+    with a paid component alongside a free one. The Twin Peaks Birthday is the
+    case that drove this: a ticketed morning and a free afternoon, where calling
+    the whole event paid would contradict the page.
+  {%- endcomment -%}
+  {%- assign free_to_attend = false -%}
+  {%- if page.price == 0 %}{% assign free_to_attend = true %}{% endif -%}
+  {%- if page.price[0] -%}
+    {%- for tier in page.price -%}
+      {%- if tier.adult == 0 %}{% assign free_to_attend = true %}{% endif -%}
+    {%- endfor -%}
+  {%- endif -%}
+  "isAccessibleForFree": {{ free_to_attend }},
   {% if page.price and page.price != "TBC" %}
     {% if page.price[0] %}
       "offers": [
