@@ -21,7 +21,7 @@ parts:
     when: 9:00am to 1:00pm
     cost: ¥5,000 adult / ¥2,500 under 16
     booking: Book in advance
-    what: Trail building with the NAMBA crew, BBQ lunch, event t-shirt, sponsor kit
+    what: Trail building with the NAMBA crew, BBQ lunch, event t-shirt
   - name: Birthday Party
     free: true
     when: From 1:00pm till late
@@ -127,7 +127,7 @@ faq:
   - q: Do I need a Dig Morning ticket to play the games or enter the draw?
     a: No. The games, the draw and the party are free and open to everyone. Turn up any time from 1:00pm and collect your five game tickets at the Party desk.
   - q: Do Dig Morning ticket holders get extra game tickets?
-    a: No. Everyone at the Birthday Party gets the same five, and everyone earns more the same way, by playing the games. The Dig Morning ticket covers the morning, lunch, the t-shirt and the sponsor pack.
+    a: No. Everyone at the Birthday Party gets the same five, and everyone earns more the same way, by playing the games. The Dig Morning ticket covers the morning, lunch and the t-shirt.
   - q: Can I buy game tickets?
     a: No. Game tickets are not for sale and never have been. The only way to get them is to be at the Birthday Party.
   - q: Do I need to be there at 5:00pm to win?
@@ -169,7 +169,6 @@ Your ticket covers:
 - A morning of hands-on trail building with the NAMBA crew.
 - BBQ lunch, a Pow Bar, soft drinks, and a [Twin Peaks Bike Park Pale Ale](/beer/) from Yotei Brewing for the adults.
 - The limited edition Twin Peaks Birthday t-shirt, made for this event and not sold afterwards.
-- A pack of kit from our sponsors, handed out at check-in.
 - NAMBA and Twin Peaks stickers.
 
 The ticket covers the morning. Everything from 1:00pm onwards is free and open to
@@ -194,9 +193,10 @@ just came for the party.
 
 ### Mini games, all afternoon
 
-Pump track time trial, dual slalom, log ride, bunny hop, track stand and a few
-dig day classics, spread across the park. Free to enter, as many as you like,
-right through to 3:30pm.
+Small challenges on your own bike, dotted around the park. Nothing technical, and
+no special bike needed. Clear one and you've earned another game ticket. We'll say
+what they are closer to the day. Free to enter, as many as you like, right through
+to 3:30pm.
 
 {% include event-figure.html
    src="/assets/images/events/2026/twin-peaks-birthday/games-high-jump.jpg"

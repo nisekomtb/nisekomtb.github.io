@@ -12,8 +12,12 @@
         img: /assets/images/company/smith.png
         url: https://smithjapan.co.jp/
 
-  Logos rest greyscale and come up to colour on hover, the same CSS-filter
-  treatment `partners-wall.html` uses. Do not add `.g`-suffixed greyscale files;
+  Logos run full colour on the page background with no panel behind them, which
+  differs from `partners-wall.html` (greyscale at rest, colour on hover). Checked
+  before dropping the panels: every current prize sponsor's mark is light or mid
+  luma, so none of them vanish against the dark background. Re-check that before
+  adding a sponsor whose logo is a dark or black mark, and re-tone the mark light
+  rather than reinstating the boxes. Do not add `.g`-suffixed greyscale files;
   that convention was retired on 2026-08-24.
 {%- endcomment -%}
 <style>
@@ -21,30 +25,25 @@
   .evprz-lead { font-size: 105%; margin-bottom: 24px; }
   .evprz-wall {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-    gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 28px 24px;
     align-items: center;
+    justify-items: center;
   }
   .evprz-wall a {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 16px 12px;
-    background: var(--color-bg-panel);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 3px;
   }
   .evprz-wall img {
-    max-height: 64px;
+    max-height: 92px;
     max-width: 100%;
     width: auto;
     height: auto;
-    filter: grayscale(100%);
-    opacity: 0.55;
-    transition: filter 0.2s ease, opacity 0.2s ease;
+    opacity: 0.92;
+    transition: opacity 0.2s ease;
   }
   .evprz-wall a:hover img {
-    filter: grayscale(0%);
     opacity: 1;
   }
   @media (prefers-reduced-motion: reduce) {
@@ -66,7 +65,7 @@
       {%- capture webp_src %}{{ sponsor.img | replace: '.png', '.webp' }}{% endcapture -%}
       <picture>
         {%- unless sponsor.img contains '.svg' %}<source type="image/webp" srcset="{{ webp_src }}">{% endunless %}
-        <img src="{{ sponsor.img }}" alt="{{ sponsor.name }}{% if page.lang == 'ja' %}、賞品提供{% else %}, prize sponsor{% endif %}" loading="lazy" width="120" height="64">
+        <img src="{{ sponsor.img }}" alt="{{ sponsor.name }}{% if page.lang == 'ja' %}、賞品提供{% else %}, prize sponsor{% endif %}" loading="lazy" width="160" height="92">
       </picture>
     </a>
     {%- endfor %}

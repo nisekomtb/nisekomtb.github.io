@@ -169,7 +169,6 @@ Dig Morning ticket, and nothing beyond this list:
 - Limited edition event t-shirt
 - BBQ lunch, Pow Bar, soft drinks
 - One beer, adults only
-- A sponsor kit handed out at check-in
 - NAMBA and Twin Peaks stickers
 
 Free to everyone at the Birthday Party, ticket or no ticket:
@@ -701,7 +700,7 @@ re-bundles the prizes into the paid transaction.
 
 - **One collection point for game tickets: the Party desk, from 13:00.** Dig
   Morning attendees collect there like everyone else. They must not be handed out
-  at the 9:00 paid check-in alongside the tee and the sponsor pack, which would
+  at the 9:00 paid check-in alongside the t-shirt, which would
   make them look like part of the ticket bundle.
 - **No wristband carry-over.** Whatever identifies a Dig Morning attendee buys
   nothing at the Birthday Party: no priority, no queue-jump, no extra tickets.

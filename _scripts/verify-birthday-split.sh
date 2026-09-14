@@ -80,6 +80,13 @@ hasnt "$JA" "終日パス"      "JA: no all-day pass"
 hasnt "$JA" "夕方のみ"      "JA: no evening-only pass"
 hasnt "$EN" "Evening only" "EN: no evening-only pass"
 
+# Accuracy, not lawfulness: the sponsor kit was listed as a ticket inclusion in
+# the original brief and is not one. Guarded because it survived a review once.
+echo "== Ticket inclusions stay accurate =="
+hasnt "$EN" "sponsor kit"      "EN: no sponsor kit claimed in the ticket"
+hasnt "$EN" "sponsor pack"     "EN: no sponsor pack claimed in the ticket"
+hasnt "$JA" "スポンサーグッズ"   "JA: no sponsor kit claimed in the ticket"
+
 echo "== Structured data agrees with the page =="
 has "$EN" '"isAccessibleForFree": true' "EN JSON-LD marks the event free to attend"
 has "$JA" '"isAccessibleForFree": true' "JA JSON-LD marks the event free to attend"
