@@ -60,7 +60,8 @@ thumbnail: /assets/images/events/2026/twin-peaks-birthday/thumb.jpg
 og:
   image: /assets/images/events/2026/twin-peaks-birthday/header.jpg
 moreInfo:
-  - "Under 12s must be accompanied by a paying adult."
+  - "Dig Morning: under 12s must be accompanied by a paying adult."
+  - "Birthday Party: under 12s need a responsible adult with them. It is free, so neither of you needs a ticket."
   - "T-shirts are adult sizes, S to XXL. Sign-ups from 5 September onwards can't be size-guaranteed."
   - "If Saturday looks wet, the event moves to Sunday 20 September."
   - 'Volunteers wanted. <a href="https://forms.gle/BfY99gqawBNdQ23GA">Sign up to help out</a>.'
@@ -98,7 +99,7 @@ itinerary:
           name: Event ends
           free: true
 outro: >-
-  Twin Peaks is free to ride all season, whether you make this one or not. If you want to put something back into it, [join NAMBA](/join/) or come along to one of the [other events](/events/) we run through the year.
+  Whether you make this one or not, you can put something back into the park. [Join NAMBA](/join/), or come along to one of the [other events](/events/) we run through the year.
 parking: false
 about: false
 tickets:
@@ -154,6 +155,8 @@ faq:
     a: No. Game tickets are not for sale and never have been. The only way to get them is to be at the Birthday Party.
   - q: Do I need to be there at 5:00pm to win?
     a: No. Leave your name and we'll get your prize to you.
+  - q: Can my kids come to the afternoon without me?
+    a: Under 12s need a responsible adult with them, morning or afternoon. Over 12s are welcome on their own. The afternoon is free, so nobody needs a ticket either way.
   - q: Is Twin Peaks free to ride?
     a: Yes, always. Twin Peaks Bike Park is free to ride all season, for everyone, with no membership, no booking and no gate. The birthday afternoon is free for the same reason the park is.
 ---
