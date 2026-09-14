@@ -21,13 +21,22 @@ parts:
     when: 9:00am to 1:00pm
     cost: ¥5,000 adult / ¥2,500 under 16
     booking: Book in advance
-    what: Trail building with the NAMBA crew, BBQ lunch, event t-shirt
+    includes:
+      - A morning of hands-on trail building with the NAMBA crew
+      - BBQ lunch, a Pow Bar and soft drinks
+      - A Twin Peaks Bike Park Pale Ale from Yotei Brewing for the adults
+      - The limited edition Twin Peaks Birthday t-shirt
+      - NAMBA and Twin Peaks stickers
   - name: Birthday Party
     free: true
     when: From 1:00pm till late
     cost: Free
     booking: None, just turn up
-    what: Mini games, five game tickets each, prize draw at 5:00pm, party at Rhythm
+    includes:
+      - Five game tickets for everyone who turns up
+      - Mini games all afternoon, with more tickets to earn
+      - The prize draw at 5:00pm
+      - The party at Rhythm
 partners:
   - name: Specialized
     img: /specialized.png
@@ -164,12 +173,7 @@ the good kind of tired all provided. No experience needed, we'll show you how.
 We split into groups and take on different jobs across the park. Bring gloves, and
 wear something you don't mind getting dirty.
 
-Your ticket covers:
-
-- A morning of hands-on trail building with the NAMBA crew.
-- BBQ lunch, a Pow Bar, soft drinks, and a [Twin Peaks Bike Park Pale Ale](/beer/) from Yotei Brewing for the adults.
-- The limited edition Twin Peaks Birthday t-shirt, made for this event and not sold afterwards.
-- NAMBA and Twin Peaks stickers.
+The t-shirt is made for this event and isn't sold afterwards.
 
 The ticket covers the morning. Everything from 1:00pm onwards is free and open to
 everyone.

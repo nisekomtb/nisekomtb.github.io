@@ -8,16 +8,21 @@
         when: 9:00am to 1:00pm
         cost: ¥5,000 adult / ¥2,500 under 16
         booking: Book in advance
-        what: Trail building with the crew, BBQ lunch, event tee
+        includes:
+          - Trail building with the crew
+          - BBQ lunch
       - name: Birthday Party
         free: true          # accent border + "Free, no ticket needed" flag
         when: 13:00 till late
         cost: Free
         booking: None, just turn up
-        what: Mini games, five game tickets each, prize draw at 5pm
+        includes:
+          - Five game tickets for everyone
 
-  `free` drives styling only. Row labels are bilingual here so a post never
-  restates them. Classes carry an `evpart-` prefix for the same reason
+  `free` drives styling and the label above `includes`: a paid part gets
+  "Ticket includes", a free part gets "Free for everyone". Never label a free
+  part's list as an inclusion of anything, or it reads as bought. Row labels are
+  bilingual here so a post never restates them. Classes carry an `evpart-` prefix for the same reason
   `event-stats.html` uses `evstat-`: plainer names are already claimed by
   content-level style blocks elsewhere on the site.
 {%- endcomment -%}
@@ -72,6 +77,25 @@
     font-size: 95%;
     line-height: 1.5;
   }
+  .evpart dd ul {
+    margin: 0;
+    padding-inline-start: 0;
+    list-style: none;
+  }
+  .evpart dd ul li {
+    position: relative;
+    padding-inline-start: 16px;
+    margin-bottom: 5px;
+  }
+  .evpart dd ul li::before {
+    content: "";
+    position: absolute;
+    inset-inline-start: 0;
+    top: 0.6em;
+    width: 6px;
+    height: 1px;
+    background: var(--color-accent);
+  }
 </style>
 
 <div class="evpart-grid">
@@ -88,8 +112,22 @@
       <dd>{{ part.cost }}</dd>
       <dt>{% if page.lang == "ja" %}参加方法{% else %}Booking{% endif %}</dt>
       <dd>{{ part.booking }}</dd>
-      <dt>{% if page.lang == "ja" %}内容{% else %}What{% endif %}</dt>
-      <dd>{{ part.what }}</dd>
+      {%- if part.includes %}
+      <dt>
+        {%- if part.free -%}
+          {% if page.lang == "ja" %}どなたでも<wbr>無料{% else %}Free for everyone{% endif %}
+        {%- else -%}
+          {% if page.lang == "ja" %}チケットに<wbr>含まれる<wbr>もの{% else %}Ticket includes{% endif %}
+        {%- endif -%}
+      </dt>
+      <dd>
+        <ul>
+          {%- for item in part.includes %}
+          <li>{{ item }}</li>
+          {%- endfor %}
+        </ul>
+      </dd>
+      {%- endif %}
     </dl>
   </div>
   {%- endfor %}
