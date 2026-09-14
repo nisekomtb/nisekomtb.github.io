@@ -111,7 +111,6 @@ prizeSponsors:
     img: /assets/images/company/smith.png
     url: https://smithjapan.co.jp/
     height: 46
-    wide: true
   - name: Fox
     img: /assets/images/company/fox.png
     url: https://ridefox.com
@@ -120,12 +119,10 @@ prizeSponsors:
     img: /assets/images/company/raceface.svg
     url: https://www.raceface.com
     height: 28
-    wide: true
   - name: DT Swiss
     img: /assets/images/company/dt-swiss.png
     url: https://www.dtswiss.com
     height: 37
-    wide: true
   - name: Rhythm Japan
     img: /assets/images/company/rhythm.png
     url: https://rhythmjapan.com

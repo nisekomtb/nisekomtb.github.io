@@ -12,14 +12,19 @@
         img: /assets/images/company/smith.png
         url: https://smithjapan.co.jp/
         height: 46          # optional target height in px, default 72
-        wide: true          # optional, spans two grid columns
 
   Logo marks range from square roundels to 10:1 wordmarks, and capping height
   alone makes the square ones read five times heavier than the wide ones. So each
-  logo carries a `height` chosen to give it roughly the same optical area
-  (h = sqrt(8500 / aspect)), and the two marks too wide to reach that area inside
-  one column carry `wide: true` for a two-column span. Recompute both when adding
-  a sponsor; do not just eyeball it.
+  logo carries a `height` chosen to give it the same optical area:
+
+      height = sqrt(8500 / (natural width / natural height))
+
+  Compute it when adding a sponsor rather than eyeballing it. Height is set, not
+  capped, because max-height only ever shrinks and would leave a small SVG at its
+  intrinsic size instead of scaling it up to target.
+
+  The wall is flex, not grid, so a partial last row centres instead of hanging
+  left, and each logo takes exactly the width its height implies.
 
   JA copy here uses zero-width spaces, not <wbr>: this include renders into the
   body flow, and `_docs/bilingual.md` reserves <wbr> for front matter. Mixing the
@@ -37,19 +42,16 @@
   .evprz { margin: 32px 0; }
   .evprz-lead { font-size: 105%; margin-bottom: 24px; }
   .evprz-wall {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 28px 24px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
-    justify-items: center;
+    gap: 28px 32px;
   }
   .evprz-wall a {
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  .evprz-wall a.is-wide {
-    grid-column: span 2;
   }
   .evprz-wall img {
     height: var(--logo-h, 72px);
@@ -77,7 +79,7 @@
   </p>
   <div class="evprz-wall">
     {%- for sponsor in page.prizeSponsors %}
-    <a href="{{ sponsor.url }}" target="_blank" rel="sponsored noopener noreferrer"{% if sponsor.wide %} class="is-wide"{% endif %}{% if sponsor.height %} style="--logo-h: {{ sponsor.height }}px"{% endif %}>
+    <a href="{{ sponsor.url }}" target="_blank" rel="sponsored noopener noreferrer"{% if sponsor.height %} style="--logo-h: {{ sponsor.height }}px"{% endif %}>
       {%- capture webp_src %}{{ sponsor.img | replace: '.png', '.webp' }}{% endcapture -%}
       <picture>
         {%- unless sponsor.img contains '.svg' %}<source type="image/webp" srcset="{{ webp_src }}">{% endunless %}
