@@ -1,0 +1,74 @@
+{%- comment -%}
+  Prize sponsor credit for an event running a free prize activity. Publishes a
+  count and the donors, and deliberately names no individual prize and no value.
+
+  Under 景品表示法 the prize activity has to stay clear of the paid transaction,
+  and the less the page itemises, the less there is to re-bundle by accident.
+  For an event where itemising is fine, use `prize-grid.html` instead.
+
+    prizeCount: 35
+    prizeSponsors:
+      - name: Smith
+        img: /assets/images/company/smith.png
+        url: https://smithjapan.co.jp/
+
+  Logos rest greyscale and come up to colour on hover, the same CSS-filter
+  treatment `partners-wall.html` uses. Do not add `.g`-suffixed greyscale files;
+  that convention was retired on 2026-08-24.
+{%- endcomment -%}
+<style>
+  .evprz { margin: 32px 0; }
+  .evprz-lead { font-size: 105%; margin-bottom: 24px; }
+  .evprz-wall {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    gap: 12px;
+    align-items: center;
+  }
+  .evprz-wall a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 12px;
+    background: var(--color-bg-panel);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 3px;
+  }
+  .evprz-wall img {
+    max-height: 64px;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    filter: grayscale(100%);
+    opacity: 0.55;
+    transition: filter 0.2s ease, opacity 0.2s ease;
+  }
+  .evprz-wall a:hover img {
+    filter: grayscale(0%);
+    opacity: 1;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .evprz-wall img { transition: none; }
+  }
+</style>
+
+<div class="evprz">
+  <p class="evprz-lead">
+    {%- if page.lang == "ja" -%}
+      当日は{{ page.prizeCount }}点を<wbr>超える<wbr>賞品を<wbr>ご用意。<wbr>すべて<wbr>以下の<wbr>皆さまから<wbr>ご提供いただきました。<wbr>参加は<wbr>無料です。<wbr>ゲームに<wbr>挑戦して<wbr>チケットを<wbr>集めて<wbr>ください。<wbr>購入は<wbr>一切<wbr>必要<wbr>ありません。
+    {%- else -%}
+      Over {{ page.prizeCount }} prizes on the table, donated by these legends. Free to enter: play a game, earn a ticket, no purchase at any point.
+    {%- endif -%}
+  </p>
+  <div class="evprz-wall">
+    {%- for sponsor in page.prizeSponsors %}
+    <a href="{{ sponsor.url }}" target="_blank" rel="sponsored noopener noreferrer">
+      {%- capture webp_src %}{{ sponsor.img | replace: '.png', '.webp' }}{% endcapture -%}
+      <picture>
+        {%- unless sponsor.img contains '.svg' %}<source type="image/webp" srcset="{{ webp_src }}">{% endunless %}
+        <img src="{{ sponsor.img }}" alt="{{ sponsor.name }}{% if page.lang == 'ja' %}、賞品提供{% else %}, prize sponsor{% endif %}" loading="lazy" width="120" height="64">
+      </picture>
+    </a>
+    {%- endfor %}
+  </div>
+</div>

@@ -1,0 +1,96 @@
+{%- comment -%}
+  Two-part "at a glance" block, for an event that splits into a ticketed part and
+  a free part. Driven entirely by `parts` in front matter, so the JA mirror is
+  data rather than duplicated markup.
+
+    parts:
+      - name: Dig Morning
+        when: 9:00–13:00
+        cost: ¥5,000 adult / ¥2,500 under 16
+        booking: Book in advance
+        what: Trail building with the crew, BBQ lunch, event tee, sponsor kit
+      - name: Birthday Party
+        free: true          # accent border + "Free, no ticket needed" flag
+        when: 13:00 till late
+        cost: Free
+        booking: None, just turn up
+        what: Mini games, five game tickets each, prize draw at 5pm
+
+  `free` drives styling only. Row labels are bilingual here so a post never
+  restates them. Classes carry an `evpart-` prefix for the same reason
+  `event-stats.html` uses `evstat-`: plainer names are already claimed by
+  content-level style blocks elsewhere on the site.
+{%- endcomment -%}
+<style>
+  .evpart-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    margin: 32px 0;
+  }
+  .evpart {
+    background: var(--color-bg-panel);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 3px;
+    padding: 24px;
+  }
+  .evpart.is-free {
+    border-color: var(--color-accent);
+  }
+  .evpart-name {
+    font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
+    font-size: 125%;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #fff;
+    margin: 0 0 8px;
+  }
+  .evpart-flag {
+    display: inline-block;
+    margin-bottom: 12px;
+    padding: 4px 10px;
+    border-radius: 3px;
+    background: var(--color-accent);
+    color: #111;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .evpart dl { margin: 0; }
+  .evpart dt {
+    color: var(--color-accent);
+    font-family: "Metropolis", "Metropolis Fallback", Helvetica, Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 14px;
+  }
+  .evpart dd {
+    margin: 3px 0 0;
+    font-size: 95%;
+    line-height: 1.5;
+  }
+</style>
+
+<div class="evpart-grid">
+  {%- for part in page.parts %}
+  <div class="evpart{% if part.free %} is-free{% endif %}">
+    <p class="evpart-name">{{ part.name }}</p>
+    {%- if part.free %}
+    <span class="evpart-flag">{% if page.lang == "ja" %}無料・チケット不要{% else %}Free · No ticket needed{% endif %}</span>
+    {%- endif %}
+    <dl>
+      <dt>{% if page.lang == "ja" %}時間{% else %}When{% endif %}</dt>
+      <dd>{{ part.when }}</dd>
+      <dt>{% if page.lang == "ja" %}料金{% else %}Cost{% endif %}</dt>
+      <dd>{{ part.cost }}</dd>
+      <dt>{% if page.lang == "ja" %}参加方法{% else %}Booking{% endif %}</dt>
+      <dd>{{ part.booking }}</dd>
+      <dt>{% if page.lang == "ja" %}内容{% else %}What{% endif %}</dt>
+      <dd>{{ part.what }}</dd>
+    </dl>
+  </div>
+  {%- endfor %}
+</div>
