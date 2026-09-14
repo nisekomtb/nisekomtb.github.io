@@ -93,7 +93,7 @@ This is a grassroots race run on respect ahead of speed. The rider coming from
 behind owns the overtake, and everyone gives the kids space. Bad weather or a
 wrecked course can shorten or cancel the day.
 
-The gondola at [Annupuri](/where-to-ride/annupuri/) stops turning in mid-October,
-so there is not much lift-served riding left after this one. [Twin
-Peaks](/twin-peaks/) stays open to the end of October, and a [few
+The gondola at [Annupuri](/where-to-ride/annupuri/) runs to 12 October, but not
+every day, so check their schedule before you count on a lap. [Twin
+Peaks](/twin-peaks/) stays open to the end of the month, and a [few
 events](/events/) are still to come before the snow.
