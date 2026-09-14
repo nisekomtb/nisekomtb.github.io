@@ -14,7 +14,7 @@ twinpeaks:
   #     label: トレイルクルー スポンサー
   - name: ezo bike
     displayName: EZO Bike
-    image: /assets/images/company/other/ezobike.png
+    image: /assets/images/company/ezobike.png
     url: https://www.ezobasestudies.com
     ja:
       url: https://www.rhythmjapan.com/ja/
