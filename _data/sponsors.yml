@@ -167,6 +167,10 @@ higuma:
 shika:
   width: 17
   sponsors:
+    - name: fox
+      displayName: Fox
+      image: /assets/images/company/fox.png
+      url: https://www.ridefox.jp
     - name: midori
       displayName: Midori Investors
       image: /assets/images/company/midori.png
