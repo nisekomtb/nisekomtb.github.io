@@ -1,11 +1,19 @@
 {%- comment -%}
   A podium: one card per placing, each with the placing number knocked out of a
-  trophy. Three cards is the normal case; two and four are supported because a
-  category can tie or fall short of three finishers.
+  trophy. Three cards is the normal case; two, four and five are supported
+  because a category can tie, fall short of three finishers, or put more than
+  three riders on the boxes. A race series that awards five deep is the reason
+  n5 exists: see the Downhill Series recap, where open men, sport men and elite
+  men all photographed five.
+
+  FIVE IS THE CEILING and the grid is why. `.story-podium` in story.css section 9
+  is `repeat(auto-fit, minmax(120px, 1fr))`, which holds five across the wide
+  tier and collapses to one per row below 480px. A sixth card wraps to 5 + 1 on
+  a narrow desktop, which is the orphan the 120px track was chosen to avoid.
 
   Params:
-    n1..n4 (n1 required): rider or team name, localised
-    s1..s4 (optional): the small line under the name, localised. Written out in
+    n1..n5 (n1 required): rider or team name, localised
+    s1..s5 (optional): the small line under the name, localised. Written out in
            full by the caller rather than assembled here, so EN can say "16"
            and JA "16歳" without this file knowing what the value means.
     tier:  text | wide. Default wide. Three cards across want the wide track;
@@ -74,6 +82,13 @@
   {%- assign n = include.n4 | strip -%}
   {%- if n == "" -%}{%- include story/BUILD-ERROR-podium-n4-must-not-be-blank.html -%}{%- endif -%}
   {%- assign s = include.s4 | strip -%}
+  {%- assign names = names | push: n -%}
+  {%- assign subs = subs | push: s -%}
+{%- endif -%}
+{%- if include.n5 -%}
+  {%- assign n = include.n5 | strip -%}
+  {%- if n == "" -%}{%- include story/BUILD-ERROR-podium-n5-must-not-be-blank.html -%}{%- endif -%}
+  {%- assign s = include.s5 | strip -%}
   {%- assign names = names | push: n -%}
   {%- assign subs = subs | push: s -%}
 {%- endif -%}

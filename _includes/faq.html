@@ -1,0 +1,106 @@
+{%- comment -%}
+  FAQ accordion plus FAQPage JSON-LD, generated from `faq` in front matter:
+
+    faq:
+      - q: Do I need a ticket?
+        a: No. Turn up any time from 13:00.
+
+  `a` is plain text, not markdown: it feeds both the visible answer and the
+  schema, and the schema must not carry markup.
+
+  Rendered by `_layouts/event.html` after the itinerary. `twin-peaks/commercial-pass/`
+  has its own hand-rolled copy of this pattern, written before the include
+  existed. Migrating it is safe but unrelated; do it when next in that file.
+{%- endcomment -%}
+{%- if page.faq -%}
+<style>
+  .faq { margin: 28px 0 8px; }
+  .faq details { border-bottom: 1px solid var(--color-bg-border); }
+  .faq details:first-of-type { border-top: 1px solid var(--color-bg-border); }
+  .faq summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 20px 44px 20px 0;
+    position: relative;
+    font-weight: 700;
+    font-size: 17px;
+    color: #fff;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after {
+    content: "+";
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--color-accent);
+    line-height: 1;
+  }
+  .faq details.is-open summary::after { content: "\2212"; }
+  .faq .faq-answer-wrap {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 280ms ease;
+  }
+  .faq details.is-open .faq-answer-wrap { grid-template-rows: 1fr; }
+  .faq .faq-answer-inner { overflow: hidden; min-height: 0; }
+  .faq .faq-answer { margin: 0; padding: 0 0 22px; font-size: 16px; color: #ccc; }
+  @media (prefers-reduced-motion: reduce) {
+    .faq .faq-answer-wrap { transition: none; }
+  }
+</style>
+
+<h2>{% if page.lang == "ja" %}よく<wbr>ある<wbr>質問{% else %}Questions{% endif %}</h2>
+<div class="faq">
+  {%- for item in page.faq %}
+  <details>
+    <summary>{{ item.q }}</summary>
+    <div class="faq-answer-wrap"><div class="faq-answer-inner"><p class="faq-answer">{{ item.a }}</p></div></div>
+  </details>
+  {%- endfor %}
+</div>
+
+<script>
+  (function () {
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.querySelectorAll('.faq details').forEach(function (d) {
+      if (d.open) d.classList.add('is-open');
+      d.querySelector('summary').addEventListener('click', function (e) {
+        e.preventDefault();
+        if (!d.open) {
+          d.open = true;
+          if (reduce) { d.classList.add('is-open'); return; }
+          requestAnimationFrame(function () { d.classList.add('is-open'); });
+        } else {
+          if (reduce) { d.classList.remove('is-open'); d.open = false; return; }
+          d.classList.remove('is-open');
+          d.querySelector('.faq-answer-wrap').addEventListener('transitionend', function h() {
+            d.open = false;
+            d.querySelector('.faq-answer-wrap').removeEventListener('transitionend', h);
+          });
+        }
+      });
+    });
+  })();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://namba.ngo{{ page.url }}#faq",
+  "inLanguage": "{{ page.lang }}",
+  "mainEntity": [
+    {%- for item in page.faq %}
+    {
+      "@type": "Question",
+      "name": {{ item.q | strip_html | jsonify }},
+      "acceptedAnswer": { "@type": "Answer", "text": {{ item.a | strip_html | jsonify }} }
+    }{% unless forloop.last %},{% endunless %}
+    {%- endfor %}
+  ]
+}
+</script>
+{%- endif -%}

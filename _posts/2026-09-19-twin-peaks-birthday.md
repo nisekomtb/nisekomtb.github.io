@@ -3,7 +3,7 @@ layout: event
 categories: events
 title: Twin Peaks Birthday
 subtitle: Three years of Twin Peaks
-description: "Twin Peaks Bike Park turns three. Trail building, BBQ lunch and bike games, then an after party at Rhythm with a giveaway on the night."
+description: "Twin Peaks Bike Park turns three. A ticket is only needed for the morning dig. The afternoon games, prize draw and party are free and open to everyone."
 startDate: 2026-09-19 09:00:00 +0900
 endDate: 2026-09-19 18:00:00 +0900
 days: 1
@@ -11,14 +11,33 @@ time: 9:00am - 6:00pm
 location: Twin Peaks Bike Park, Niseko
 address: 150, 2 Aza-150-1 Yamada, Kutchan, Abuta District, Hokkaido 044-0081
 price:
-  - name: All day pass
+  - name: Dig Morning (9am to 1pm)
     adult: ¥5,000
     child: ¥2,500
-# Evening only pass withdrawn 11 September. Ecwid 863342047 disabled to match.
-# Uncomment this, the moreInfo line, the tickets entry and the two body
-# paragraphs below, then re-enable the product, to put it back.
-#  - name: Evening only pass
-#    adult: ¥1,000
+    childLabel: Under 16
+  - name: Birthday Party (from 1pm)
+    adult: 0
+parts:
+  - name: Dig Morning
+    when: 9:00am to 1:00pm
+    cost: ¥5,000 adult / ¥2,500 under 16
+    booking: Book in advance
+    includes:
+      - A morning of hands-on trail building with the NAMBA crew
+      - BBQ lunch, a Pow Bar and soft drinks
+      - A Twin Peaks Bike Park Pale Ale from Yotei Brewing for the adults
+      - The limited edition Twin Peaks Birthday t-shirt
+      - NAMBA and Twin Peaks stickers
+  - name: Birthday Party
+    free: true
+    when: 1:00pm to 6:00pm
+    cost: Free
+    booking: None, just turn up
+    includes:
+      - Five game tickets for everyone who turns up
+      - Mini games all afternoon, with more tickets to earn
+      - The prize draw at 5:00pm
+      - The party at Rhythm
 partners:
   - name: Specialized
     img: /specialized.png
@@ -43,7 +62,6 @@ og:
 moreInfo:
   - "Under 12s must be accompanied by a paying adult."
   - "T-shirts are adult sizes, S to XXL. Sign-ups from 5 September onwards can't be size-guaranteed."
-#  - "Evening only pass is ¥1,000 and covers the after party at Rhythm plus one game ticket."
   - "If Saturday looks wet, the event moves to Sunday 20 September."
   - 'Volunteers wanted. <a href="https://forms.gle/BfY99gqawBNdQ23GA">Sign up to help out</a>.'
   - 'Bike shops, food trucks, makers and community groups can <a href="https://forms.gle/Kpk1TkqoUtQ3CLrP8">apply for a booth</a>.'
@@ -52,7 +70,7 @@ itinerary:
     - hasLocations: false
       events:
         - time: 9:00am
-          name: Registration
+          name: Dig Morning registration
         - time: 9:30am
           name: Kick-off talk
         - time: 9:45am
@@ -62,236 +80,91 @@ itinerary:
         - time: 12:30pm
           name: BBQ lunch
         - time: 1:00pm
-          name: Bike games
+          name: Birthday Party opens, game tickets from the Party desk
+          free: true
+        - time: 1:00pm
+          name: Mini games begin
+          free: true
         - time: 3:30pm
           name: Games finish
+          free: true
         - time: 4:00pm
-          name: After party at Rhythm, happy hour until 6:00pm
+          name: Party at Rhythm, happy hour until 6:00pm
+          free: true
         - time: 5:00pm
-          name: Giveaway draw
+          name: Prize draw at Rhythm
+          free: true
         - time: 6:00pm
           name: Event ends
+          free: true
 outro: >-
   Twin Peaks is free to ride all season, whether you make this one or not. If you want to put something back into it, [join NAMBA](/join/) or come along to one of the [other events](/events/) we run through the year.
 parking: false
 about: false
 tickets:
   - slug: twin-peaks-birthday-2026
-    label: Buy all day ticket
-#  - slug: twin-peaks-birthday-2026-evening
-#    label: Buy evening only ticket
-prizesNote: Prizes can be withdrawn or changed at any time.
-featuredPrize:
-  title: Specialized Stumpjumper 15 EVO Expert
-  subtitle: Gloss Pistachio
-  subtitleNote: Not available in Japan
-  value: ¥990,000
-  images:
-    - /assets/images/events/2026/twin-peaks-birthday/bike-1.jpg
-    - /assets/images/events/2026/twin-peaks-birthday/bike-0.jpg
-    - /assets/images/events/2026/twin-peaks-birthday/bike-2.jpg
-    - /assets/images/events/2026/twin-peaks-birthday/bike-3.jpg
-    - /assets/images/events/2026/twin-peaks-birthday/bike-4.jpg
-    - /assets/images/events/2026/twin-peaks-birthday/bike-5.jpg
-  imageAlt: Specialized Stumpjumper 15 EVO Expert in gloss pistachio green, studio shot
-  specs:
-    - FACT 11m carbon
-    - FOX FLOAT Performance Elite Suspension
-    - SRAM GX Eagle AXS T-Type wireless
-    - SRAM Maven brakes
-    - S2 size, 29in front and 27.5in rear
-  sponsors:
-    - name: Specialized
-      img: /assets/images/company/specialized.png
-      url: https://www.specialized-onlinestore.jp/
-  desc: |
-    Specialized have stepped up with an enormous prize and Gloss Pistachio is not a colour Specialized sell in Japan. Nobody here can walk into a shop and buy this bike, so whoever wins it will be riding the only one in the country.
-
-    The rear shock is what sets it apart. Specialized's GENIE air spring behaves like a coil through small bumps and like an air spring at the end of the travel, so 145mm of rear travel takes big hits like a much longer bike. Their own testing puts it at 57% more traction and 39% fewer bottom-outs than a standard air shock.
-
-    Geometry adjusts six ways, there is gear storage inside the downtube, and Specialized replace the suspension pivot bearings free for as long as you own it.
-prizes:
-  - title: Smith mega combo, Matte Flint
+    label: Book the Dig Morning
+prizeCount: 35
+prizeSponsors:
+  - name: Smith
+    img: /assets/images/company/smith.png
+    url: https://smithjapan.co.jp/
+    height: 46
     wide: true
-    quantity: 1
-    images:
-      - /assets/images/events/2026/twin-peaks-birthday/prize-smith-1.jpg
-    imageAlt: A Smith Pilot helmet in Matte Flint, a Frost Sky Essential tee and Matte Salt Haze Ultralite glasses on a boardwalk
-    desc: The rose gold mirror is an everyday lens, and the Frost Sky tee keeps it light.
-    inclusions:
-      - Pilot Matte Flint helmet
-      - Ultralite Matte Salt Haze
-      - Chromapop Rose Gold Mirror Lens
-      - Essential tee, Frost Sky
-    sponsors:
-      - name: Smith
-        img: /assets/images/company/smith.png
-        url: https://smithjapan.co.jp/
-  - title: Smith mega combo, Matte Aura
+  - name: Fox
+    img: /assets/images/company/fox.png
+    url: https://ridefox.com
+    height: 76
+  - name: Race Face
+    img: /assets/images/company/raceface.svg
+    url: https://www.raceface.com
+    height: 28
     wide: true
-    quantity: 1
-    images:
-      - /assets/images/events/2026/twin-peaks-birthday/prize-smith-2.jpg
-    imageAlt: A Smith Pilot helmet in Matte Aura, a Natural Essential tee and Matte Meteorite Crystal Ultralite glasses on a boardwalk
-    desc: Equipped with a low light lens, this is the set for grey days and last laps.
-    inclusions:
-      - Pilot Matte Aura helmet
-      - Ultralite Matte Meteorite Crystal
-      - Chromapop Low Light Rose Blue Mirror Lens
-      - Essential tee, Natural
-    sponsors:
-      - name: Smith
-        img: /assets/images/company/smith.png
-        url: https://smithjapan.co.jp/
-  - title: Smith mega combo, Matte White
+  - name: DT Swiss
+    img: /assets/images/company/dt-swiss.png
+    url: https://www.dtswiss.com
+    height: 37
     wide: true
-    quantity: 1
-    images:
-      - /assets/images/events/2026/twin-peaks-birthday/prize-smith-3.jpg
-    imageAlt: A Smith Pilot helmet in Matte White, a Dark Gray Essential tee and 80s Night Ultralite glasses on a boardwalk
-    desc: Hot pink frames and a violet mirror against a white helmet. Be loud and proud.
-    inclusions:
-      - Pilot Matte White helmet
-      - Ultralite 80s Night
-      - Chromapop Violet Mirror Lens
-      - Essential tee, Dark Gray
-    sponsors:
-      - name: Smith
-        img: /assets/images/company/smith.png
-        url: https://smithjapan.co.jp/
-  - title: Smith mega combo, Matte Black
-    wide: true
-    quantity: 1
-    images:
-      - /assets/images/events/2026/twin-peaks-birthday/prize-smith-4.jpg
-    imageAlt: A Smith Pilot helmet in Matte Black, a Black Essential tee and Matte Black Ultralite glasses on a boardwalk
-    desc: Black helmet, black frames, black lens, black tee. Full stealth.
-    inclusions:
-      - Pilot Matte Black helmet
-      - Ultralite Matte Black
-      - Chromapop Black Lens
-      - Essential tee, Black
-    sponsors:
-      - name: Smith
-        img: /assets/images/company/smith.png
-        url: https://smithjapan.co.jp/
-  - title: Hoodie, socks and hip bag combo
-    wide: true
-    quantity: 10
-    images:
-      - /assets/images/events/2026/twin-peaks-birthday/prize-fox-combo.jpg
-    imageAlt: A charcoal Fox hoodie with an orange fox logo, a blue Race Face hip bag and a pack of Fox socks
-    desc: You've heard of Fox Shocks, but have you got Fox Socks? They come with a casual hoodie and a hip bag, so you can ditch the backpack on those longer rides.
-    inclusions:
-      - Fox hoodie
-      - Fox socks
-      - Race Face hip bag
-    sponsors:
-      - name: Fox
-        img: /assets/images/company/fox.png
-        url: https://ridefox.com
-      - name: Race Face
-        img: /assets/images/company/raceface.svg
-        url: https://www.raceface.com
-  - title: DT Swiss bottle and hat combo
-    wide: true
-    quantity: 4
-    images:
-      - /assets/images/events/2026/twin-peaks-birthday/prize-dt-swiss.jpg
-    imageAlt: A black DT Swiss water bottle
-    desc: Stay hydrated and keep the sun off.
-    inclusions:
-      - Water bottle
-      - Hat
-    sponsors:
-      - name: DT Swiss
-        img: /assets/images/company/dt-swiss.png
-        url: https://www.dtswiss.com
-  - title: Dakine Ranger Duffle 60L, Stone Ballistic
-    quantity: 1
-    images:
-      - /assets/images/events/2026/twin-peaks-birthday/prize-dakine.jpg
-    imageAlt: A khaki Dakine Ranger Duffle bag with the tag still on it
-    desc: Sixty litres of kit bag with Dakine's lifetime warranty on it.
-    sponsors:
-      - name: Rhythm Japan
-        img: /assets/images/company/rhythm.png
-        url: https://rhythmjapan.com
-  - title: Smith Squad MTB goggles, Cinder Haze
-    quantity: 1
-    images:
-      - /assets/images/events/2026/twin-peaks-birthday/prize-smith-goggles.jpg
-    imageAlt: Smith Squad MTB goggles with a Cinder Haze frame, in their box on a wooden rail
-    desc: A clear anti-fog lens, so they still work in the trees and in flat light. Helmet compatible, medium fit.
-    sponsors:
-      - name: Rhythm Japan
-        img: /assets/images/company/rhythm.png
-        url: https://rhythmjapan.com
-  - title: Dharco Ather Pants, Recon
-    quantity: 1
-    images:
-      - /assets/images/events/2026/twin-peaks-birthday/prize-dharco.jpg
-    imageAlt: Dharco Ather Pants in the Recon camo pattern with the tag still attached
-    desc: Water resistant, four-way stretch and three pockets.
-    sponsors:
-      - name: Rhythm Japan
-        img: /assets/images/company/rhythm.png
-        url: https://rhythmjapan.com
-  - title: Annupuri gondola day pass
-    quantity: 6
-    images:
-      - /assets/images/events/2026/twin-peaks-birthday/prize-annupuri.jpg
-    imageAlt: An Annupuri gondola cabin floating in front of Mount Yotei, framed by trees
-    desc: A day on the gondola at <a href="/where-to-ride/annupuri/">Niseko Annupuri Bike Park</a>.
-    sponsors:
-      - name: Niseko Annupuri
-        img: /assets/images/company/annupuri.png
-        url: https://annupuri.info/en/
-  - title: Grand Hirafu gondola day pass
-    quantity: 6
-    images:
-      - /assets/images/events/2026/twin-peaks-birthday/prize-grand-hirafu.jpg
-    imageAlt: A Grand Hirafu gondola cabin above the valley with Mount Yotei behind it and Hirafu Village below
-    desc: A day on the gondola at <a href="/where-to-ride/grand-hirafu/">Grand Hirafu Bike Park</a>.
-    sponsors:
-      - name: Grand Hirafu
-        img: /assets/images/company/grand-hirafu.png
-        url: https://www.grand-hirafu.jp
-  - title: Fox baseball caps
-    quantity: 2
-    images:
-      - /assets/images/events/2026/twin-peaks-birthday/prize-fox-caps.jpg
-    imageAlt: Two Fox trucker caps, one black and one grey, on a boardwalk
-    desc: One black, one grey, and two chances to take one home.
-    sponsors:
-      - name: Fox
-        img: /assets/images/company/fox.png
-        url: https://ridefox.com
-  - title: POC swag
-    quantityText: Announced soon
-    images:
-      - /assets/images/events/2026/twin-peaks-birthday/prize-poc.jpg
-    imageAlt: A rider in a POC helmet cornering hard on an open hillside trail
-    sponsors:
-      - name: POC
-        img: /assets/images/company/poc.png
-        url: https://www.pocsports.com
-  - title: Burton swag
-    quantityText: Announced soon
-    images:
-      - /assets/images/events/2026/twin-peaks-birthday/prize-burton.jpg
-    imageAlt: A rider on a forest trail wearing a blue Burton backpack
-    sponsors:
-      - name: Burton
-        img: /assets/images/company/burton.png
-        url: https://www.burton.com
+  - name: Rhythm Japan
+    img: /assets/images/company/rhythm.png
+    url: https://rhythmjapan.com
+    height: 52
+  - name: Niseko Annupuri
+    img: /assets/images/company/annupuri.png
+    url: https://annupuri.info/en/
+    height: 53
+  - name: Grand Hirafu
+    img: /assets/images/company/grand-hirafu.png
+    url: https://www.grand-hirafu.jp
+    height: 92
+  - name: POC
+    img: /assets/images/company/poc.png
+    url: https://www.pocsports.com
+    height: 54
+  - name: Burton
+    img: /assets/images/company/burton.png
+    url: https://www.burton.com
+    height: 83
+faq:
+  - q: Do I need a Dig Morning ticket to play the games or enter the draw?
+    a: No. The games, the draw and the party are free and open to everyone. Turn up any time from 1:00pm and collect your five game tickets at the Party desk.
+  - q: Do Dig Morning ticket holders get extra game tickets?
+    a: No. Everyone at the Birthday Party gets the same five, and everyone earns more the same way, by playing the games. The Dig Morning ticket covers the morning, lunch and the t-shirt.
+  - q: Can I buy game tickets?
+    a: No. Game tickets are not for sale and never have been. The only way to get them is to be at the Birthday Party.
+  - q: Do I need to be there at 5:00pm to win?
+    a: No. Leave your name and we'll get your prize to you.
+  - q: Is Twin Peaks free to ride?
+    a: Yes, always. Twin Peaks Bike Park is free to ride all season, for everyone, with no membership, no booking and no gate. The birthday afternoon is free for the same reason the park is.
 ---
 
 ## What three years built
 
 NAMBA opened [Twin Peaks Bike Park](/twin-peaks/) in Niseko on 16 September 2023 with 10.4km of trail. It's now Japan's largest free-to-ride mountain bike park, almost 18km of it, built and looked after by this community.
 
-That's worth a party. Dig with us in the morning, eat with us at lunch, take on the bike games in the afternoon, then come down to Rhythm for a beer and the prize draw.
+That's worth a party, so we're doing it in two halves. Book the morning and dig
+with us. Then stick around, or just turn up at lunchtime, because the games, the
+prize draw and the party at Rhythm are free and open to everyone.
 
 {% include event-stats.html years="3" %}
 
@@ -301,25 +174,22 @@ That's worth a party. Dig with us in the morning, eat with us at lunch, take on 
    credit="Jinya Nishiwaki"
    creditUrl="https://instagram.com/jingypsy" %}
 
-## What's included
+{% include event-parts.html %}
 
-The day pass, ¥5,000 for adults and ¥2,500 for under 16s, covers everything from 9:00am to close:
+## Part one: the Dig Morning {#dig-morning}
 
-- A limited edition t-shirt, made for this event and not sold afterwards.
-- NAMBA and Twin Peaks stickers.
-- Hands-on trail building with the NAMBA crew.
-- BBQ lunch, a Pow Bar, soft drinks and a [Twin Peaks Bike Park Pale Ale](/beer/) from Yotei Brewing for the adults.
-- Entry to the after party at Rhythm.
-- Five game tickets, plus more to earn through the afternoon games.
+**9:00am to 1:00pm. ¥5,000 adult, ¥2,500 under 16. Book in advance.**
 
-<!-- Evening only pass withdrawn, see the front matter note. -->
+Spend the morning building trail alongside the NAMBA crew. Tools, instruction and
+the good kind of tired all provided. No experience needed, we'll show you how.
 
+We split into groups and take on different jobs across the park. Bring gloves, and
+wear something you don't mind getting dirty.
 
-## Out come the shovels
+The t-shirt is made for this event and isn't sold afterwards.
 
-The morning is your chance to see what actually goes into a trail. The NAMBA crew will show you how we build and maintain them, and you'll put real work into the ground while you learn.
-
-We split into groups and take on different jobs across the park. Bring gloves, and wear something you don't mind getting dirty.
+The ticket covers the morning. Everything from 1:00pm onwards is free and open to
+everyone.
 
 {% include event-figure.html
    src="/assets/images/events/2026/twin-peaks-birthday/dig.jpg"
@@ -330,11 +200,20 @@ We split into groups and take on different jobs across the park. Bring gloves, a
    credit="Chad Clark / Sea and Summit Media"
    creditUrl="https://seaandsummitmedia.com" %}
 
-## Let the games begin
+## Part two: the Birthday Party {#birthday-party}
 
-The afternoon is bike challenges and mini games, spread out across the park. Each one you finish earns extra game tickets, so the more you take on, the better your odds in the draw.
+**From 1:00pm. Free. No ticket needed.**
 
-We'll announce what the challenges are closer to the day. Games finish around 3:30pm, which leaves time to pack up and get down the hill.
+The afternoon is on us. Twin Peaks is a free public bike park, and the birthday is
+for everyone, whether you dug with us in the morning, rode over at lunchtime, or
+just came for the party.
+
+### Mini games, all afternoon
+
+Small challenges on your own bike, dotted around the park. Nothing technical, and
+no special bike needed. Clear one and you've earned another game ticket. We'll say
+what they are closer to the day. Free to enter, as many as you like, right through
+to 3:30pm.
 
 {% include event-figure.html
    src="/assets/images/events/2026/twin-peaks-birthday/games-high-jump.jpg"
@@ -344,17 +223,22 @@ We'll announce what the challenges are closer to the day. Games finish around 3:
    src3="/assets/images/events/2026/twin-peaks-birthday/games-track-stand.jpg"
    alt3="Two riders holding a track stand on their bikes in a grassy clearing, feet off the ground" %}
 
-## After party at Rhythm {#after-party}
+### How the draw works
 
-Doors open at 4:00pm and happy hour runs until 6:00pm. Come and grab a beer with us and celebrate Twin Peaks turning three.
+Everyone at the Birthday Party gets five game tickets. Pick them up at the Party
+desk any time from 1:00pm, whether you dug with us this morning or just rolled in.
+Play the games to earn more. Game tickets aren't for sale and never have been. The
+only way to get them is to be here.
 
-The draw is at 5:00pm, and the day pass covers entry to the evening.
+The draw is at 5:00pm at Rhythm, once the party's moved down. More people than
+ever this year, so the odds are longer and the party's bigger. Worth it, we reckon.
 
-## The giveaway {#giveaway}
+{% include prize-sponsors.html %}
 
-Everything on the prize table goes to someone on the night. Day pass holders start with five game tickets and earn more through the afternoon games.
-
-Game tickets only come with event entry. We don't sell them separately. More prizes are still landing, and we'll add them here and on [Instagram](https://www.instagram.com/nisekomtb/) as they're confirmed.
+The draw is free to enter and open to everyone, ticket or no ticket. Five game
+tickets each, more earned by playing. Prizes can't be exchanged for cash, and
+winners under 18 claim with a parent or guardian. The full
+[draw rules](/events/waiver/#prize-draws) are in our Event Participation Terms.
 
 {% include event-figure.html
    src="/assets/images/events/2026/twin-peaks-birthday/prizes.jpg"
@@ -362,13 +246,10 @@ Game tickets only come with event entry. We don't sell them separately. More pri
    src2="/assets/images/events/2026/twin-peaks-birthday/prizes-2.jpg"
    alt2="A crowd of riders gathered around the prize table as NAMBA staff hand out winnings" %}
 
-{%- comment -%}
-  Prizes are off the page for now. The `featuredPrize`, `prizes` and `prizesNote`
-  front matter is left intact and inert: nothing but this include reads it under
-  `layout: event`, so commenting out the one line hides the lot. Uncomment to
-  bring the whole grid back exactly as it was.
-{%- endcomment -%}
-{%- comment -%}{% include prize-grid.html %}{%- endcomment -%}
+### The party at Rhythm {#after-party}
+
+Free, everyone welcome. Doors from 4:00pm and happy hour until 6:00pm. Come and
+grab a beer with us and celebrate Twin Peaks turning three.
 
 ## Help out on the day {#volunteers}
 

@@ -1,0 +1,89 @@
+{%- comment -%}
+  Prize sponsor credit for an event running a free prize activity. Publishes a
+  count and the donors, and deliberately names no individual prize and no value.
+
+  Under 景品表示法 the prize activity has to stay clear of the paid transaction,
+  and the less the page itemises, the less there is to re-bundle by accident.
+  For an event where itemising is fine, use `prize-grid.html` instead.
+
+    prizeCount: 35
+    prizeSponsors:
+      - name: Smith
+        img: /assets/images/company/smith.png
+        url: https://smithjapan.co.jp/
+        height: 46          # optional target height in px, default 72
+        wide: true          # optional, spans two grid columns
+
+  Logo marks range from square roundels to 10:1 wordmarks, and capping height
+  alone makes the square ones read five times heavier than the wide ones. So each
+  logo carries a `height` chosen to give it roughly the same optical area
+  (h = sqrt(8500 / aspect)), and the two marks too wide to reach that area inside
+  one column carry `wide: true` for a two-column span. Recompute both when adding
+  a sponsor; do not just eyeball it.
+
+  JA copy here uses zero-width spaces, not <wbr>: this include renders into the
+  body flow, and `_docs/bilingual.md` reserves <wbr> for front matter. Mixing the
+  two in adjacent paragraphs makes one block wrap unlike its neighbours.
+
+  Logos run full colour on the page background with no panel behind them, which
+  differs from `partners-wall.html` (greyscale at rest, colour on hover). Checked
+  before dropping the panels: every current prize sponsor's mark is light or mid
+  luma, so none of them vanish against the dark background. Re-check that before
+  adding a sponsor whose logo is a dark or black mark, and re-tone the mark light
+  rather than reinstating the boxes. Do not add `.g`-suffixed greyscale files;
+  that convention was retired on 2026-08-24.
+{%- endcomment -%}
+<style>
+  .evprz { margin: 32px 0; }
+  .evprz-lead { font-size: 105%; margin-bottom: 24px; }
+  .evprz-wall {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 28px 24px;
+    align-items: center;
+    justify-items: center;
+  }
+  .evprz-wall a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .evprz-wall a.is-wide {
+    grid-column: span 2;
+  }
+  .evprz-wall img {
+    height: var(--logo-h, 72px);
+    max-width: 100%;
+    width: auto;
+    object-fit: contain;
+    opacity: 0.92;
+    transition: opacity 0.2s ease;
+  }
+  .evprz-wall a:hover img {
+    opacity: 1;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .evprz-wall img { transition: none; }
+  }
+</style>
+
+<div class="evprz">
+  <p class="evprz-lead">
+    {%- if page.lang == "ja" -%}
+      当日は{{ page.prizeCount }}点を超える​賞品を​ご用意。​すべて​以下の​皆さまから​ご提供いただきました。​参加は​無料で、​何かを​買っていただく​必要は​ありません。
+    {%- else -%}
+      Over {{ page.prizeCount }} prizes on the table, all donated by these legends. Playing is free and you never have to buy a thing.
+    {%- endif -%}
+  </p>
+  <div class="evprz-wall">
+    {%- for sponsor in page.prizeSponsors %}
+    <a href="{{ sponsor.url }}" target="_blank" rel="sponsored noopener noreferrer"{% if sponsor.wide %} class="is-wide"{% endif %}{% if sponsor.height %} style="--logo-h: {{ sponsor.height }}px"{% endif %}>
+      {%- capture webp_src %}{{ sponsor.img | replace: '.png', '.webp' }}{% endcapture -%}
+      <picture>
+        {%- unless sponsor.img contains '.svg' %}<source type="image/webp" srcset="{{ webp_src }}">{% endunless %}
+        <img src="{{ sponsor.img }}" alt="{{ sponsor.name }}{% if page.lang == 'ja' %}、賞品提供{% else %}, prize sponsor{% endif %}" loading="lazy" width="160" height="72">
+      </picture>
+    </a>
+    {%- endfor %}
+  </div>
+</div>

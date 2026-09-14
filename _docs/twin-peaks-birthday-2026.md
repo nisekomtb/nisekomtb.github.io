@@ -3,8 +3,9 @@
 Event brief. Everything settled in the Tom / Angharad planning call, plus what is
 still open and who it sits with.
 
-**Status:** live and selling. Last updated 9 September 2026, when Specialized
-put up a bike and the afterparty came back.
+**Status:** live and selling. Restructured 14 September 2026 into two separately
+named parts, a ticketed Dig Morning and a free Birthday Party, so the prize
+activity sits outside the paid transaction. See "Why the page is in two parts".
 
 ---
 
@@ -18,10 +19,9 @@ put up a bike and the afterparty came back.
 | Rain date | Sunday 20 September 2026 |
 | Time | 9:00am to 6:00pm, afterparty at Rhythm from 4:00pm |
 | Venue | Twin Peaks Bike Park, Niseko |
-| Format | One day, two halves: dig in the morning, games in the afternoon |
+| Format | One day, two separately named parts: a ticketed Dig Morning (9:00–13:00) and a free Birthday Party (from 13:00) |
 | Adult day pass | ¥5,000 |
 | Child day pass (under 16) | ¥2,500 |
-| Evening only pass | ¥1,000 |
 | Sales channel | Ecwid |
 | Capacity | No published cap. Internal target ~80 |
 | Pages | `/events/twin-peaks-birthday-2026/` · `/ja/events/twin-peaks-birthday-2026/` |
@@ -29,6 +29,37 @@ put up a bike and the afterparty came back.
 The park opened 16 September 2023, so the 19th is genuinely the third-anniversary
 weekend. The 21st is Respect for the Aged Day, which is why there is room to slip
 to Sunday without wrecking anyone's plans.
+
+---
+
+## Why the page is in two parts
+
+Japan's 景品表示法 caps prizes given in connection with a paid transaction at
+roughly ¥50,000 per prize and 2% of ticket revenue, which for this event is about
+¥4,000 in total. Prizes given through an activity requiring no purchase are not
+capped.
+
+So the ticket buys the Dig Morning and nothing else, and the games, the draw and
+the party are free and open to anyone, with no ticket, no registration and no
+advantage for ticket holders. **Do not tidy the two parts back together.** If the
+copy re-bundles them, the prize activity stops being lawful.
+
+Hard rules, in both languages:
+
+- Never list game tickets, prizes, the draw or party entry among what the ticket
+  includes. The five game tickets are given to *everyone at the Birthday Party*,
+  never *included with the Dig Morning ticket*.
+- Never imply a ticket buys any advantage, priority or extra entries.
+- Never use one combined "what's included" list mixing paid and free.
+
+`_scripts/verify-birthday-split.sh` asserts all of this against the built HTML of
+both pages. Run it after any edit to either post.
+
+Names were chosen for maximum categorical distance: one is a job of work you book
+onto, the other a celebration you turn up to. "Dig Day" was rejected because
+naming a 9:00–13:00 block a "Day" invites the reading that the ticket covers the
+whole day. "Birthday Jam" was rejected because ジャム reads as fruit jam to most
+Japanese speakers.
 
 ---
 
@@ -79,18 +110,22 @@ loanword, "Birthday" does not carry the kids-party association in Japanese that
 
 ## Schedule
 
-| Time | Activity |
-|---|---|
-| 9:00am | Registration |
-| 9:30am | Kick-off talk |
-| 9:45am | Trail building begins |
-| 12:00pm | Tools down |
-| 12:30pm | BBQ lunch |
-| 1:00pm | Bike games |
-| 3:30pm | Games finish |
-| 4:00pm | After party at Rhythm, happy hour until 6:00pm |
-| 5:00pm | Giveaway draw |
-| 6:00pm | Event ends |
+| Time | Activity | Free |
+|---|---|---|
+| 9:00am | Dig Morning registration | |
+| 9:30am | Kick-off talk | |
+| 9:45am | Trail building begins | |
+| 12:00pm | Tools down | |
+| 12:30pm | BBQ lunch | |
+| 1:00pm | Birthday Party opens, game tickets from the Party desk | yes |
+| 1:00pm | Mini games begin | yes |
+| 3:30pm | Games finish | yes |
+| 4:00pm | Party at Rhythm, happy hour until 6:00pm | yes |
+| 5:00pm | Prize draw | yes |
+| 6:00pm | Event ends | yes |
+
+Lunch stays at 12:30, inside the Dig Morning window, so it remains a paid
+inclusion and does not cross the boundary.
 
 Crew arrive earlier than the published 9:00am. Tents and setup happen while the
 dig groups are up on the hill, so nothing needs to be finished before registration.
@@ -113,13 +148,12 @@ now close at 3:30pm and everyone moves down to Rhythm.
 |---|---|
 | Adult day pass | ¥5,000 |
 | Child day pass (under 16) | ¥2,500 |
-| Evening only pass | ¥1,000 |
 
 - Under 16 counts as a child.
 - Under 12 must be accompanied by a paying adult.
-- Day passes are unchanged and now include afterparty entry.
-- The evening only pass matches Trail Days 2025: ¥1,000, afterparty entry and one
-  game ticket, no t-shirt, no lunch, no dig.
+- **The ticket buys the morning only.** It does not cover the afternoon or the
+  evening, because those are free to everyone and need no ticket.
+- The evening only pass was withdrawn on 11 September and stays withdrawn.
 - Children get the t-shirt and lunch, no beer, which is what gets them to roughly
   half the adult price.
 
@@ -130,19 +164,22 @@ was ¥5,000 all-day and ¥1,000 evening-only.
 
 ## What's included
 
-Day pass:
+Dig Morning ticket, and nothing beyond this list:
 
 - Limited edition event t-shirt
-- BBQ lunch
-- Pow Bar
+- BBQ lunch, Pow Bar, soft drinks
 - One beer, adults only
-- Afterparty entry
-- Five game tickets, with more earned through the afternoon games
+- NAMBA and Twin Peaks stickers
 
-Evening only pass:
+Free to everyone at the Birthday Party, ticket or no ticket:
 
-- Afterparty entry
-- One game ticket
+- Five game tickets, collected at the Party desk from 13:00
+- The mini games, and more game tickets earned by playing them
+- The 17:00 draw
+- The party at Rhythm
+
+**Game tickets are not a ticket inclusion.** They are given to everyone at the
+Jam on identical terms. Never write them the other way round.
 
 Volunteers get lunch free.
 
@@ -189,14 +226,26 @@ Japanese gambling law makes them the wrong words for this. The page says
 Japanese. Same rule applies to the Ecwid product copy and anything on social.
 
 - Drawn at 5:00pm at Rhythm, in the middle of the afterparty.
-- Only participants are entered. No tickets sold separately.
-- Day pass holders start with five game tickets and earn more through the games.
-  Evening only pass holders get one.
+- Free to enter and open to anyone at the park. No purchase at any point.
+- Everyone at the Birthday Party gets five game tickets and earns more by playing.
+  Identical terms for everyone, ticket holder or not.
+- **The prize list is no longer published.** From 14 September the page carries a
+  count and the donors' logos and names no prize and no value. Fewer itemised
+  claims means less to re-bundle by accident. `prizes` and `featuredPrize` front
+  matter were deleted from both posts; `_includes/prize-grid.html` stays in the
+  repo for other events.
 
 ### Prizes
 
-Rearranged 10 September 2026, then photographed. The order below is the order on
-the page, and the card numbers follow it: the bike is 1, so these run 2 to 15.
+**Internal record only. None of this is published on the page any more**, and the
+order no longer corresponds to anything a reader sees. Kept because the draw still
+has to be run against a real list, and because the photography and the sponsor
+credits are worth not losing.
+
+The bike is listed for completeness but belongs to the separate Specialized
+campaign and must not appear on this event page in any form. Row 1 is the bike,
+so the rest run 2 to 15. Confirmed rows 2 to 13 total 35 items, which is the
+figure `prizeCount` publishes; POC and Burton are unconfirmed and excluded.
 
 | # | Prize | Qty | Sponsor |
 |---|---|---|---|
@@ -585,7 +634,11 @@ and 2025 raffle tickets among them) are disabled and so do not show.
 | `_includes/event-stats.html` | Three-years stat panel, figures computed from data |
 | `assets/images/events/2026/twin-peaks-birthday/` | Images: masthead 4-tier WebP + AVIF, thumb, monk, dig ×2, games ×3, booths ×3, prizes ×2 |
 | `_includes/event-figure.html` | Two-up image pairs and inline photo credits |
-| `_includes/prize-grid.html` | Prize cards, front-matter driven. Shared, not specific to this event |
+| `_includes/prize-grid.html` | Prize cards, front-matter driven. Shared. **Not used by this event any more**, kept for others |
+| `_includes/event-parts.html` | Two-part at-a-glance block, from `parts` front matter |
+| `_includes/prize-sponsors.html` | Prize count and donor logo wall, names no prize |
+| `_includes/faq.html` | FAQ accordion plus FAQPage JSON-LD, from `faq` front matter |
+| `_scripts/verify-birthday-split.sh` | Asserts the two-part separation against the built HTML |
 
 The stat panel pulls trail km and trail count from `_data/trails.yml` and visitor
 numbers from `_data/impact.yml`, so it will not go stale. It currently shows
@@ -602,7 +655,6 @@ are on the page. What is left:
 |---|---|---|
 | Confirm the t-shirt size run with the supplier | Tom | Now, the order window has passed |
 | Decide whether to expose or hide stock control | Tom | Low |
-| Fill in the POC and Burton prize contents when the boxes arrive | Tom | When they land |
 | Decide on photo credits: Alister Buckingham's dig image, Noriyasu Kato's Annupuri gondola shot | Tom | Low |
 | T-shirt design brief to Joe, shirt colour | Angharad | Now |
 | Caterer | Angharad | Now |
@@ -637,3 +689,28 @@ stays a list of who is actually running the day.
 
 Reversed on 9 September 2026: a separate evening-only ticket, and skipping the
 afterparty. Both came back once Specialized put up the bike.
+
+
+---
+
+## On the day, non-negotiable
+
+The page copy is only true if these hold. Each exists because breaking it
+re-bundles the prizes into the paid transaction.
+
+- **One collection point for game tickets: the Party desk, from 13:00.** Dig
+  Morning attendees collect there like everyone else. They must not be handed out
+  at the 9:00 paid check-in alongside the t-shirt, which would
+  make them look like part of the ticket bundle.
+- **No wristband carry-over.** Whatever identifies a Dig Morning attendee buys
+  nothing at the Birthday Party: no priority, no queue-jump, no extra tickets.
+- **Print for the bigger crowd.** Five each across a historical evening crowd of
+  200 to 250 is well over a thousand tickets. Plain cloakroom rolls.
+- **Bilingual signage at the Party desk:** free for everyone, no ticket needed,
+  five game tickets each. In Japanese it is パーティー受付, never plain 受付: the
+  morning check-in is トレイル整備の受付 and the two must not read as one desk.
+- **A way to capture a winner's name.** Both pages promise that you do not need
+  to be present at the draw: "leave your name and we'll get your prize to you."
+  Nothing currently collects it. Either put a name line on the ticket stub or
+  take names at the Party desk on collection. Without one of those the page makes
+  a promise the day cannot keep.
