@@ -707,4 +707,10 @@ re-bundles the prizes into the paid transaction.
 - **Print for the bigger crowd.** Five each across a historical evening crowd of
   200 to 250 is well over a thousand tickets. Plain cloakroom rolls.
 - **Bilingual signage at the Party desk:** free for everyone, no ticket needed,
-  five game tickets each.
+  five game tickets each. In Japanese it is パーティー受付, never plain 受付: the
+  morning check-in is トレイル整備の受付 and the two must not read as one desk.
+- **A way to capture a winner's name.** Both pages promise that you do not need
+  to be present at the draw: "leave your name and we'll get your prize to you."
+  Nothing currently collects it. Either put a name line on the ticket stub or
+  take names at the Party desk on collection. Without one of those the page makes
+  a promise the day cannot keep.

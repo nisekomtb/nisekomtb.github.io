@@ -95,6 +95,17 @@ has "$EN" '"price": 5000'     "EN JSON-LD carries the paid offer"
 has "$EN" '"@type": "FAQPage"' "EN emits FAQ schema"
 has "$JA" '"@type": "FAQPage"' "JA emits FAQ schema"
 
+# YAML 1.1 reads an unquoted 9:00 as sexagesimal (540). Times must stay strings.
+echo "== Schedule times survived YAML =="
+for pair in "EN:$EN" "JA:$JA"; do
+  n=${pair%%:*}; f=${pair#*:}
+  if grep -qE '<td>[0-9]+\.[0-9]+</td>' "$f"; then
+    bad "$n: itinerary time parsed as a number, quote it in front matter"
+  else
+    ok "$n: itinerary times are strings"
+  fi
+done
+
 echo "== Schedule marks the boundary exactly once =="
 # Match the rendered row, not the CSS rule (`tr.free-divider`) in the same file.
 for pair in "EN:$EN" "JA:$JA"; do

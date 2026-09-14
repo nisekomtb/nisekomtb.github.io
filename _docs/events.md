@@ -176,6 +176,15 @@ bilingual divider band ("Free from here. No ticket needed." / 「ここから先
 for an event whose later portion is free to attend, so the boundary between a
 ticketed part and a free part is unmissable in the schedule.
 
+A tier with both `adult` and `child` also accepts `childLabel`, which names the
+age band in the sidebar ("Under 16") instead of the generic "Child". Use it
+whenever the post states an age boundary elsewhere, so the page does not carry
+two different words for the same group.
+
+Quote itinerary `time` values. YAML 1.1 reads an unquoted `9:00` as a
+sexagesimal number and renders it as `540.0`. Times ending in `am`/`pm` are
+safe, 24-hour times are not.
+
 ### Prize grid
 
 Rendered by `_includes/prize-grid.html`. The include is **called from the post

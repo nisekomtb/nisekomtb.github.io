@@ -3,7 +3,7 @@ layout: event
 categories: events
 title: Twin Peaks Birthday
 subtitle: Three years of Twin Peaks
-description: "Twin Peaks Bike Park turns three. Book the Dig Morning to build trail with the crew, then stay for a free afternoon of games, prizes and a party open to everyone."
+description: "Twin Peaks Bike Park turns three. A ticket is only needed for the morning dig. The afternoon games, prize draw and party are free and open to everyone."
 startDate: 2026-09-19 09:00:00 +0900
 endDate: 2026-09-19 18:00:00 +0900
 days: 1
@@ -14,6 +14,7 @@ price:
   - name: Dig Morning (9am to 1pm)
     adult: ¥5,000
     child: ¥2,500
+    childLabel: Under 16
   - name: Birthday Party (from 1pm)
     adult: 0
 parts:

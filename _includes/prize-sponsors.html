@@ -12,6 +12,10 @@
         img: /assets/images/company/smith.png
         url: https://smithjapan.co.jp/
 
+  JA copy here uses zero-width spaces, not <wbr>: this include renders into the
+  body flow, and `_docs/bilingual.md` reserves <wbr> for front matter. Mixing the
+  two in adjacent paragraphs makes one block wrap unlike its neighbours.
+
   Logos run full colour on the page background with no panel behind them, which
   differs from `partners-wall.html` (greyscale at rest, colour on hover). Checked
   before dropping the panels: every current prize sponsor's mark is light or mid
@@ -54,7 +58,7 @@
 <div class="evprz">
   <p class="evprz-lead">
     {%- if page.lang == "ja" -%}
-      当日は{{ page.prizeCount }}点を<wbr>超える<wbr>賞品を<wbr>ご用意。<wbr>すべて<wbr>以下の<wbr>皆さまから<wbr>ご提供いただきました。<wbr>参加は<wbr>無料で、<wbr>何かを<wbr>買っていただく<wbr>必要は<wbr>ありません。
+      当日は{{ page.prizeCount }}点を超える​賞品を​ご用意。​すべて​以下の​皆さまから​ご提供いただきました。​参加は​無料で、​何かを​買っていただく​必要は​ありません。
     {%- else -%}
       Over {{ page.prizeCount }} prizes on the table, all donated by these legends. Playing is free and you never have to buy a thing.
     {%- endif -%}

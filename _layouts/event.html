@@ -579,10 +579,19 @@ layout: base
             <ul>
             {% for price in page.price %}
               {% if price.adult and price.child %}
+                {%- comment -%}
+                  `childLabel` lets a tier name its own age band, so the sidebar
+                  can say "Under 16" instead of an undefined "Child" when the
+                  post states a boundary elsewhere. Falls back to the generic
+                  label when a tier does not set one.
+                {%- endcomment -%}
+                {%- if price.childLabel -%}{%- assign child_label = price.childLabel -%}
+                {%- elsif page.lang == "ja" -%}{%- assign child_label = "子供" -%}
+                {%- else -%}{%- assign child_label = "Child" -%}{%- endif -%}
                 {% if page.lang == "en" %}
-                <li>{% if price.name %}<strong>{{ price.name }}</strong><br />{% endif %}Adult: {{ price.adult }}<br />Child: {{ price.child }}</li>
+                <li>{% if price.name %}<strong>{{ price.name }}</strong><br />{% endif %}Adult: {{ price.adult }}<br />{{ child_label }}: {{ price.child }}</li>
                 {% else %}
-                <li>{% if price.name %}<strong>{{ price.name }}</strong><br />{% endif %}大人: {{ price.adult }}<br />子供: {{ price.child }}</li>
+                <li>{% if price.name %}<strong>{{ price.name }}</strong><br />{% endif %}大人: {{ price.adult }}<br />{{ child_label }}: {{ price.child }}</li>
                 {% endif %}
               {% else %}
               <li><strong>{{ price.name }}</strong>: {% if price.adult == 0 and page.lang == "en" %}Free{% elsif price.adult == 0 %}無料{% else %}{{ price.adult }}{% endif %}</li>
