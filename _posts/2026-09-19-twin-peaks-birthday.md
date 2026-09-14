@@ -11,10 +11,10 @@ time: 9:00am - 6:00pm
 location: Twin Peaks Bike Park, Niseko
 address: 150, 2 Aza-150-1 Yamada, Kutchan, Abuta District, Hokkaido 044-0081
 price:
-  - name: Dig Morning (9:00–13:00)
+  - name: Dig Morning (9am to 1pm)
     adult: ¥5,000
     child: ¥2,500
-  - name: Birthday Party (from 13:00)
+  - name: Birthday Party (from 1pm)
     adult: 0
 parts:
   - name: Dig Morning
@@ -140,7 +140,9 @@ faq:
 
 NAMBA opened [Twin Peaks Bike Park](/twin-peaks/) in Niseko on 16 September 2023 with 10.4km of trail. It's now Japan's largest free-to-ride mountain bike park, almost 18km of it, built and looked after by this community.
 
-That's worth a party. Dig with us in the morning, eat with us at lunch, take on the bike games in the afternoon, then come down to Rhythm for a beer and the prize draw.
+That's worth a party, so we're doing it in two halves. Book the morning and dig
+with us. Then stick around, or just turn up at lunchtime, because the games, the
+prize draw and the party at Rhythm are free and open to everyone.
 
 {% include event-stats.html years="3" %}
 
@@ -150,25 +152,28 @@ That's worth a party. Dig with us in the morning, eat with us at lunch, take on 
    credit="Jinya Nishiwaki"
    creditUrl="https://instagram.com/jingypsy" %}
 
-## What's included
+{% include event-parts.html %}
 
-The day pass, ¥5,000 for adults and ¥2,500 for under 16s, covers everything from 9:00am to close:
+## Part one: the Dig Morning {#dig-morning}
 
-- A limited edition t-shirt, made for this event and not sold afterwards.
+**9:00am to 1:00pm. ¥5,000 adult, ¥2,500 under 16. Book in advance.**
+
+Spend the morning building trail alongside the NAMBA crew. Tools, instruction and
+the good kind of tired all provided. No experience needed, we'll show you how.
+
+We split into groups and take on different jobs across the park. Bring gloves, and
+wear something you don't mind getting dirty.
+
+Your ticket covers:
+
+- A morning of hands-on trail building with the NAMBA crew.
+- BBQ lunch, a Pow Bar, soft drinks, and a [Twin Peaks Bike Park Pale Ale](/beer/) from Yotei Brewing for the adults.
+- The limited edition Twin Peaks Birthday t-shirt, made for this event and not sold afterwards.
+- A pack of kit from our sponsors, handed out at check-in.
 - NAMBA and Twin Peaks stickers.
-- Hands-on trail building with the NAMBA crew.
-- BBQ lunch, a Pow Bar, soft drinks and a [Twin Peaks Bike Park Pale Ale](/beer/) from Yotei Brewing for the adults.
-- Entry to the after party at Rhythm.
-- Five game tickets, plus more to earn through the afternoon games.
 
-<!-- Evening only pass withdrawn, see the front matter note. -->
-
-
-## Out come the shovels
-
-The morning is your chance to see what actually goes into a trail. The NAMBA crew will show you how we build and maintain them, and you'll put real work into the ground while you learn.
-
-We split into groups and take on different jobs across the park. Bring gloves, and wear something you don't mind getting dirty.
+The ticket covers the morning. Everything from 1:00pm onwards is free and open to
+everyone.
 
 {% include event-figure.html
    src="/assets/images/events/2026/twin-peaks-birthday/dig.jpg"
@@ -179,11 +184,19 @@ We split into groups and take on different jobs across the park. Bring gloves, a
    credit="Chad Clark / Sea and Summit Media"
    creditUrl="https://seaandsummitmedia.com" %}
 
-## Let the games begin
+## Part two: the Birthday Party {#birthday-party}
 
-The afternoon is bike challenges and mini games, spread out across the park. Each one you finish earns extra game tickets, so the more you take on, the better your odds in the draw.
+**From 1:00pm. Free. No ticket needed.**
 
-We'll announce what the challenges are closer to the day. Games finish around 3:30pm, which leaves time to pack up and get down the hill.
+The afternoon is on us. Twin Peaks is a free public bike park, and the birthday is
+for everyone, whether you dug with us in the morning, rode over at lunchtime, or
+just came for the party.
+
+### Mini games, all afternoon
+
+Pump track time trial, dual slalom, log ride, bunny hop, track stand and a few
+dig day classics, spread across the park. Free to enter, as many as you like,
+right through to 3:30pm.
 
 {% include event-figure.html
    src="/assets/images/events/2026/twin-peaks-birthday/games-high-jump.jpg"
@@ -193,17 +206,17 @@ We'll announce what the challenges are closer to the day. Games finish around 3:
    src3="/assets/images/events/2026/twin-peaks-birthday/games-track-stand.jpg"
    alt3="Two riders holding a track stand on their bikes in a grassy clearing, feet off the ground" %}
 
-## After party at Rhythm {#after-party}
+### How the draw works
 
-Doors open at 4:00pm and happy hour runs until 6:00pm. Come and grab a beer with us and celebrate Twin Peaks turning three.
+Everyone at the Birthday Party gets five game tickets. Pick them up at the Party
+desk any time from 1:00pm, whether you dug with us this morning or just rolled in.
+Play the games to earn more. Game tickets aren't for sale and never have been. The
+only way to get them is to be here.
 
-The draw is at 5:00pm, and the day pass covers entry to the evening.
+The draw is at 5:00pm, before the party moves down to Rhythm. More people than
+ever this year, so the odds are longer and the party's bigger. Worth it, we reckon.
 
-## The giveaway {#giveaway}
-
-Everything on the prize table goes to someone on the night. Day pass holders start with five game tickets and earn more through the afternoon games.
-
-Game tickets only come with event entry. We don't sell them separately. More prizes are still landing, and we'll add them here and on [Instagram](https://www.instagram.com/nisekomtb/) as they're confirmed.
+{% include prize-sponsors.html %}
 
 {% include event-figure.html
    src="/assets/images/events/2026/twin-peaks-birthday/prizes.jpg"
@@ -211,13 +224,10 @@ Game tickets only come with event entry. We don't sell them separately. More pri
    src2="/assets/images/events/2026/twin-peaks-birthday/prizes-2.jpg"
    alt2="A crowd of riders gathered around the prize table as NAMBA staff hand out winnings" %}
 
-{%- comment -%}
-  Prizes are off the page for now. The `featuredPrize`, `prizes` and `prizesNote`
-  front matter is left intact and inert: nothing but this include reads it under
-  `layout: event`, so commenting out the one line hides the lot. Uncomment to
-  bring the whole grid back exactly as it was.
-{%- endcomment -%}
-{%- comment -%}{% include prize-grid.html %}{%- endcomment -%}
+### The party at Rhythm {#after-party}
+
+Free, everyone welcome. Doors from 4:00pm and happy hour until 6:00pm. Come and
+grab a beer with us and celebrate Twin Peaks turning three.
 
 ## Help out on the day {#volunteers}
 
