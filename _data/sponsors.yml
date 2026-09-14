@@ -284,6 +284,12 @@ tanuki:
       displayName: Clint Vosloo
       image: /assets/images/company/clintvosloo.png
       url: https://www.clintvosloo.com
+    - name: dt swiss
+      displayName: DT Swiss
+      image: /assets/images/company/dt-swiss.png
+      url: https://www.dtswiss.com/en
+      ja:
+        url: https://www.dtswiss.com/ja
     - name: explore niseko
       displayName: Explore Niseko
       image: /assets/images/company/explore-niseko.png
@@ -322,6 +328,10 @@ tanuki:
       displayName: Odin Property
       image: /assets/images/company/odin.png
       url: https://www.odin-property.com
+    - name: poc
+      displayName: POC
+      image: /assets/images/company/poc.png
+      url: https://www.fullmarksstore.jp/category/POC_MTB/
     - name: powbar
       displayName: PowBar
       image: /assets/images/company/powbar.png
@@ -330,6 +340,10 @@ tanuki:
       displayName: Powderlife
       image: /assets/images/company/powderlife.png
       url: https://www.powderlife.com
+    - name: raceface
+      displayName: Race Face
+      image: /assets/images/company/raceface.png
+      url: https://www.raceface.com/
     - name: roomboss
       displayName: RoomBoss
       image: /assets/images/company/roomboss.png
