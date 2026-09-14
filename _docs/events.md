@@ -56,6 +56,10 @@ Partner `img` paths are relative to `/assets/images/company/`.
 | `prizes` | Array of Objects | Three-across grid of prize cards. See prize grid below |
 | `prizesHeading` | String | Optional heading rendered above the prize grid |
 | `prizesIntro` | String | Optional paragraph rendered under `prizesHeading` |
+| `parts` | Array of Objects | Two-part "at a glance" block, for an event that splits into a ticketed part and a free part. Each entry takes `name`, `when`, `cost`, `booking`, `what`, plus optional `free: true` for accent styling. Rendered by `{% include event-parts.html %}` from the post body |
+| `prizeCount` | Integer | Number of prizes, used by the prize sponsor wall |
+| `prizeSponsors` | Array of Objects | Prize donors as `name`, `img`, `url`. Rendered by `{% include prize-sponsors.html %}`, which publishes a count and the donors and names no individual prize or value. Use this where the prize activity must stay clear of a paid transaction; use `prizes`/`featuredPrize` with `prize-grid.html` where itemising is fine |
+| `faq` | Array of Objects | `q`/`a` pairs, plain text. Rendered by the layout after the itinerary as an accordion plus `FAQPage` JSON-LD |
 
 ### Schedule
 
@@ -82,6 +86,11 @@ Partner `img` paths are relative to `/assets/images/company/`.
 | `cancelled` | Boolean | Shows "Cancelled" ribbon on event card and page |
 | `override_url` | String | Links to external event page instead of local post |
 | `draft` | Boolean | `true` hides from index listings |
+
+`isAccessibleForFree` in the Event JSON-LD is computed, not declared: it is
+`true` when `price` is `0`, or when any tier in a `price` array has `adult: 0`.
+An event with a paid part alongside a free one therefore emits both offers and
+reports itself as free to attend, which is what a reader can actually do.
 
 ---
 
@@ -160,6 +169,12 @@ itinerary:
 ```
 
 `location` in itinerary events can be a plain string or an object with `name` and `url`.
+
+Each event also accepts `free: true`. Those rows carry an accent left edge, and a
+bilingual divider band ("Free from here. No ticket needed." / 「ここから先は無料。
+チケットは不要です。」) is injected above the first of them, once per day. Use it
+for an event whose later portion is free to attend, so the boundary between a
+ticketed part and a free part is unmissable in the schedule.
 
 ### Prize grid
 
