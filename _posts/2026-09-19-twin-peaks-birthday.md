@@ -91,7 +91,7 @@ itinerary:
           name: Party at Rhythm, happy hour until 6:00pm
           free: true
         - time: 5:00pm
-          name: Prize draw
+          name: Prize draw at Rhythm
           free: true
         - time: 6:00pm
           name: Event ends
@@ -141,8 +141,8 @@ faq:
     a: No. Game tickets are not for sale and never have been. The only way to get them is to be at the Birthday Party.
   - q: Do I need to be there at 5:00pm to win?
     a: No. Leave your name and we'll get your prize to you.
-  - q: Is Twin Peaks free to visit?
-    a: Yes. Twin Peaks Bike Park is free and open to the public.
+  - q: Is Twin Peaks free to ride?
+    a: Yes, always. Twin Peaks Bike Park is free to ride all season, for everyone, with no membership, no booking and no gate. The birthday afternoon is free for the same reason the park is.
 ---
 
 ## What three years built
@@ -217,10 +217,15 @@ desk any time from 1:00pm, whether you dug with us this morning or just rolled i
 Play the games to earn more. Game tickets aren't for sale and never have been. The
 only way to get them is to be here.
 
-The draw is at 5:00pm, before the party moves down to Rhythm. More people than
+The draw is at 5:00pm at Rhythm, once the party's moved down. More people than
 ever this year, so the odds are longer and the party's bigger. Worth it, we reckon.
 
 {% include prize-sponsors.html %}
+
+The draw is free to enter and open to everyone, ticket or no ticket. Five game
+tickets each, more earned by playing. Prizes can't be exchanged for cash, and
+winners under 18 claim with a parent or guardian. The full
+[draw rules](/events/waiver/#prize-draws) are in our Event Participation Terms.
 
 {% include event-figure.html
    src="/assets/images/events/2026/twin-peaks-birthday/prizes.jpg"
