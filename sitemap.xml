@@ -12,7 +12,7 @@ layout: blank
     {%- if page.lang == "en" -%}
       {% unless page.noindex %}
         {% unless page.redirect or page.sitemap == false %}
-          {% if page.url != "/feed.xml" and page.url != "/assets/css/style.css" %}
+          {% if page.url != "/feed.xml" and page.url != "/assets/css/style.css" and page.url != "/redirects.json" %}
             {% assign index = true %}
           {% endif %}
         {% endunless %}
