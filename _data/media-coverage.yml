@@ -13,6 +13,21 @@
 # Deliberately-skipped URLs live in _data/media-coverage-ignored.yml; check
 # it before adding an item that may have been seen and rejected before.
 
+- slug: powderlife-twin-peaks-turning-three
+  date: 2026-09-10
+  type: article
+  source: powderlife
+  sourceName: Powderlife
+  thumb: /assets/images/media-coverage/2026/powderlife-twin-peaks-turning-three/thumb.jpg
+  title:
+    en: "Niseko's Mountain Bike Park Is Turning Three. Come Celebrate."
+    ja: "ニセコの<wbr>マウンテンバイクパークが<wbr>3周年。<wbr>お祝いに<wbr>来てください。"
+  quote:
+    en: "At three years old, the Twin Peaks Bike Park, now at 17.8km of trails, has expanded every season since its debut, and this year will be no exception."
+    ja: "3周年を<wbr>迎える<wbr>ツインピークス・バイクパークは、<wbr>現在17.8kmの<wbr>トレイルを<wbr>有し、<wbr>オープン以来<wbr>毎シーズン拡大を<wbr>続けており、<wbr>今年も<wbr>例外では<wbr>ありません。"
+  url:
+    en: https://www.powderlife.com/blog/nisekos-mountain-bike-park-is-turning-three-come-celebrate/
+
 - slug: sportsw-santacruz-twin-peaks-opening
   date: 2023-09-27
   type: article
