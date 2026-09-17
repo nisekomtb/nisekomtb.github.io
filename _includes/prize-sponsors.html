@@ -23,6 +23,15 @@
   capped, because max-height only ever shrinks and would leave a small SVG at its
   intrinsic size instead of scaling it up to target.
 
+  Measure the mark's opaque bounding box, not the canvas. Most of these files are
+  trimmed so the two are the same, but nomad-wellness.png carries a transparent
+  strip down its right edge worth a fifth of the width, and feeding the canvas
+  ratio to the formula sized it visibly under its row. Its 81 comes from the bbox
+  ratio; the canvas ratio would say 73. Check with:
+
+      python3 -c "from PIL import Image; im=Image.open(F).convert('RGBA'); \
+        print(im.size, im.getchannel('A').point(lambda a: 255 if a>8 else 0).getbbox())"
+
   The wall is flex, not grid, so a partial last row centres instead of hanging
   left, and each logo takes exactly the width its height implies.
 

@@ -146,6 +146,10 @@ prizeSponsors:
     img: /assets/images/company/burton.png
     url: https://www.burton.com
     height: 83
+  - name: Nomad Wellness
+    img: /assets/images/company/nomad-wellness.png
+    url: https://nomadwellnessniseko.com
+    height: 81
 faq:
   - q: ゲームや抽選会に参加するには、トレイル整備の朝のチケットが必要ですか？
     a: いいえ。ゲーム、抽選会、パーティーはすべて無料で、どなたでもご参加いただけます。13時以降のお好きな時間にお越しいただき、パーティー受付でゲームチケット5枚をお受け取りください。

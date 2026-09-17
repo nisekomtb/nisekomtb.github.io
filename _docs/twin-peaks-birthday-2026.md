@@ -244,8 +244,10 @@ credits are worth not losing.
 
 The bike is listed for completeness but belongs to the separate Specialized
 campaign and must not appear on this event page in any form. Row 1 is the bike,
-so the rest run 2 to 15. Confirmed rows 2 to 13 total 35 items, which is the
-figure `prizeCount` publishes; POC and Burton are unconfirmed and excluded.
+so the rest run 2 to 16. Confirmed rows 2 to 13 total 35 items, which is the
+figure `prizeCount` publishes; POC, Burton and Nomad Wellness are unconfirmed and
+excluded. `prizeCount` reads "over 35" on the page, so an unconfirmed donor can go
+on the sponsor wall without the count moving. Raise it once the contents land.
 
 | # | Prize | Qty | Sponsor |
 |---|---|---|---|
@@ -264,6 +266,7 @@ figure `prizeCount` publishes; POC and Burton are unconfirmed and excluded.
 | 13 | Baseball caps | 2 | Fox |
 | 14 | Swag, contents to be announced | to be announced | POC |
 | 15 | Swag, contents to be announced | to be announced | Burton |
+| 16 | Prizes, contents to be announced | to be announced | Nomad Wellness |
 
 The four Smith combos are four separate prizes because they genuinely differ.
 Each holds a Pilot helmet, Ultralite glasses and an Essential tee in its own
