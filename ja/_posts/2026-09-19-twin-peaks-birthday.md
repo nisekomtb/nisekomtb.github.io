@@ -110,6 +110,10 @@ tickets:
     label: トレイル整備の朝を予約
 prizeCount: 35
 prizeSponsors:
+  - name: Specialized
+    img: /assets/images/company/specialized.png
+    url: https://www.specialized-onlinestore.jp/
+    height: 46
   - name: Smith
     img: /assets/images/company/smith.png
     url: https://smithjapan.co.jp/
@@ -150,6 +154,14 @@ prizeSponsors:
     img: /assets/images/company/nomad-wellness.png
     url: https://nomadwellnessniseko.com
     height: 81
+  - name: ION
+    img: /assets/images/company/ion.png
+    url: https://sports-w.com/brands/ion/
+    height: 51
+  - name: Santa Cruz
+    img: /assets/images/company/santa-cruz.png
+    url: https://www.santacruzbicycles.com/
+    height: 92
 faq:
   - q: ゲームや抽選会に参加するには、トレイル整備の朝のチケットが必要ですか？
     a: いいえ。ゲーム、抽選会、パーティーはすべて無料で、どなたでもご参加いただけます。13時以降のお好きな時間にお越しいただき、パーティー受付でゲームチケット5枚をお受け取りください。

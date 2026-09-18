@@ -107,6 +107,10 @@ tickets:
     label: Book the Dig Morning
 prizeCount: 35
 prizeSponsors:
+  - name: Specialized
+    img: /assets/images/company/specialized.png
+    url: https://www.specialized-onlinestore.jp/
+    height: 46
   - name: Smith
     img: /assets/images/company/smith.png
     url: https://smithjapan.co.jp/
@@ -147,6 +151,14 @@ prizeSponsors:
     img: /assets/images/company/nomad-wellness.png
     url: https://nomadwellnessniseko.com
     height: 81
+  - name: ION
+    img: /assets/images/company/ion.png
+    url: https://sports-w.com/brands/ion/
+    height: 51
+  - name: Santa Cruz
+    img: /assets/images/company/santa-cruz.png
+    url: https://www.santacruzbicycles.com/
+    height: 92
 faq:
   - q: Do I need a Dig Morning ticket to play the games or enter the draw?
     a: No. The games, the draw and the party are free and open to everyone. Turn up any time from 1:00pm and collect your five game tickets at the Party desk.
