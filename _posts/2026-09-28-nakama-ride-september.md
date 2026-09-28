@@ -1,8 +1,10 @@
 ---
 layout: event
 categories: events
+cancelled: true
 title: "Nakama Ride: September"
 description: "NAMBA's monthly Nakama Ride: a relaxed social group ride at Twin Peaks, Niseko. Meet at the base 4pm, Monday 28 September 2026. Easy pace, all welcome."
+rescheduled: "⛈️ **Cancelled:** bad weather has put today's ride off. The next Nakama Ride is Monday 26 October, same place, same time. ⛈️"
 startDate: 2026-09-28 16:00:00 +0900
 endDate: 2026-09-28 18:00:00 +0900
 days: 1

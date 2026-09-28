@@ -1,10 +1,12 @@
 ---
 layout: event
 categories: events
+cancelled: true
 title: 仲間ライド：9月
 titleHtml: 仲間ライド：<wbr>9月
 description: NAMBAの毎月恒例、仲間ライド。ニセコのツインピークスでのんびり楽しむ社交的なグループライドです。9月28日（月）16時、ベースに集合。ゆったりペースで、どなたでも歓迎します。
 descriptionHtml: NAMBAの<wbr>毎月<wbr>恒例、<wbr>仲間ライド。<wbr>ニセコの<wbr>ツインピークスでのんびり<wbr>楽しむ社交的な<wbr>グループライドです。<wbr>9月28日<wbr>（月）<wbr>16時、<wbr>ベースに<wbr>集合。<wbr>ゆったりペースで、<wbr>どなたでも<wbr>歓迎します。
+rescheduled: "⛈️ <strong>中止：</strong>悪天候の​ため、​本日の​ライドは​中止と​なりました。​次回の​仲間ライドは​10月26日​（月）、​同じ​場所・​同じ​時間で​開催します。 ⛈️"
 startDate: 2026-09-28 16:00:00 +0900
 endDate: 2026-09-28 18:00:00 +0900
 days: 1

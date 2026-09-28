@@ -685,7 +685,7 @@ layout: base
   {% assign days = page.days | minus: 1 | times: 24 | times: 60 | times: 60 %}
   "endDate": "{% if page.endDate %}{{ page.endDate | date: "%FT%T%z" }}{% else %}{{ page.startDate | date: "%s" | plus: days | date: "%F" }}{% endif %}",
   "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-  "eventStatus": "https://schema.org/EventScheduled",
+  "eventStatus": "https://schema.org/{% if page.cancelled %}EventCancelled{% else %}EventScheduled{% endif %}",
   "location": {
     "@type": "Place",
     {% if page.address %}
