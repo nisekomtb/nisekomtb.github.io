@@ -425,7 +425,7 @@ Trail sponsorship is NAMBA's lifeblood. The website needs to function as a 24/7 
 - **Weekend vs weekday split:** Weekends consistently 1.5–2x weekday traffic — important for sponsors to understand when their brand gets the most eyeballs
 - **Trail network expansion driving deeper usage:** New counters on Cruz Control, Launch Control, and Repeat Offender show significant traffic once installed mid-2025, indicating riders are exploring more of the park as it grows
 - **100% trail funding success rate**
-- **20,000+ volunteer hours donated**
+- **¥0 board pay**: every board member is an unpaid volunteer (replaced "20,000+ volunteer hours", Oct 2026; see note below)
 
 **Section 2: The vision**
 - Brief version of the regional network story — Twin Peaks + Hirafu + Hanazono + future
@@ -618,7 +618,8 @@ The pitch deck presentations contain some of NAMBA's most powerful data points �
 
 **Data points that should be prominent on the website (sourced from presentations):**
 
-- **20,000+ hours of donated volunteer time** — This single number tells the entire grassroots story. Core team members contribute 1,000+ hours per person per year, unpaid.
+- **¥0 board pay (役員報酬 0円)**: every board member is an unpaid volunteer, and the trail crew are the only salaried people. Verifiable against the 活動計算書 in NAMBA's official filings, which matters to Japanese readers who assume NPO officers are paid.
+  - *Retired Oct 2026:* "20,000+ hours of donated volunteer time". It was an untracked estimate and has been removed from the site (impact, home, press). Don't reintroduce it without a tracked source.
 - **Founded by 6 keen mountain bikers in 2021** — Not a corporation. Not a government initiative. Six people who wanted trails to ride.
 - **Diverse board of 24** — Men, women, Japanese, Western, MTB and non-MTB backgrounds, competitors within the industry unified by a shared vision.
 - **93% privately funded** — This organization runs almost entirely on community belief. Only 7% comes from public/government sources.
@@ -881,7 +882,7 @@ The homepage must serve all four in under 10 seconds of scrolling. It's a routin
 
 **3. Impact stats bar — the proof**
 - 4–5 headline numbers displayed visually (icons or bold typography):
-  - "21km+ of trail" / "11,500+ riders in 2025" / "50+ partners" / "20,000+ volunteer hours" / "100% trail funding success"
+  - "21km+ of trail" / "11,500+ riders in 2025" / "50+ partners" / "¥0 board pay" / "100% trail funding success"
 - These numbers do the heavy lifting for every audience: riders see scale, sponsors see traction, media see a story
 - Link: "See our impact" → /impact/
 
