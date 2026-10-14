@@ -1,3 +1,8 @@
+# PAY STATUS — /team/ tags every person in this file "Unpaid volunteer" /
+# "無報酬ボランティア", and the page copy states that no board member or their company
+# is paid by NAMBA. Paid people belong in staff.yml (tagged "Paid staff"). If anyone
+# here ever becomes paid, update the team page copy in both languages.
+
 # BOARD COUNT — when you add or remove people here, the "N-person board" /
 # "N名の理事会" counts in page BODY copy and in-body JSON-LD update automatically
 # (computed as team entries minus anyone with namba_role: Auditor). But Jekyll does

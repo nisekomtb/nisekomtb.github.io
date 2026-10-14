@@ -1,7 +1,7 @@
 ---
 title: Our Team
 subtitle: Meet NAMBA's Founders & Board
-description: "Meet the 22-person board of NAMBA, the Niseko Area Mountain Bike Association. Founders, locals, and international community working together for Niseko."
+description: "Meet the 22-person unpaid volunteer board of NAMBA, the Niseko Area Mountain Bike Association: founders, locals and internationals working for Niseko."
 masthead:
   img: /assets/images/bg/bg-header-team.jpg
 og:
@@ -150,6 +150,28 @@ og:
       width: 100%;
     }
   }
+  .pay-tag {
+    display: inline-block;
+    font-size: 70%;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    line-height: 1.4;
+    padding: 2px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--color-accent);
+    color: var(--color-accent);
+    margin: 0 0 8px;
+  }
+
+  .pay-tag.is-paid {
+    border-color: var(--color-text-muted);
+    color: var(--color-text-muted);
+  }
+
+  .leader-card .pay-tag {
+    font-size: 80%;
+    margin-bottom: 10px;
+  }
 </style>
 
 <div class="t3-section-wrap">
@@ -163,6 +185,7 @@ og:
         data-delay="200">
         {%- assign board_count = site.data.team | where_exp: "m", "m.namba_role != 'Auditor'" | size -%}
         <p class="section-lede">Founded in 2021 by six riders, <a href="/about/">NAMBA</a> is now led by a {{ board_count }}-person board: men and women, Japanese and international, mountain bikers and not, all working toward the same vision for Niseko.</p>
+        <p class="section-lede">Every board member, the six founders included, is an unpaid volunteer. Nobody on the board takes a salary or fee from NAMBA, and NAMBA pays none of their companies. The money runs the other way: several of their businesses sponsor NAMBA.</p>
       </div>
     </div>
 
@@ -182,6 +205,7 @@ og:
       <div class="leader-card ja-animate" data-animation="move-from-bottom" data-delay="400">
         <img class="leader-photo" src="/assets/images/team/paulw.jpg" alt="Paul Wright" />
         <p class="leader-name">Paul Wright</p>
+        <span class="pay-tag">Unpaid volunteer</span>
         <p class="leader-title">NAMBA President<br>General Manager at Park Hyatt Niseko Hanazono</p>
         <div class="leader-quote">
           <p>NAMBA is an exciting development for Niseko. Resort towns around the world have shown what mountain biking does for a place: it turns a winter economy into a year-round one. The co-founders have moved fast since 2021, and I'm looking forward to seeing Niseko become as well-known for summer riding as it is for winter.</p>
@@ -192,6 +216,7 @@ og:
         <div class="leader-card ja-animate" style="flex:1; min-width:280px;" data-animation="move-from-bottom" data-delay="600">
           <img class="leader-photo" src="/assets/images/team/shunichi.jpg" alt="Shunichi Kimura" />
           <p class="leader-name">Shunichi Kimura</p>
+        <span class="pay-tag">Unpaid volunteer</span>
           <p class="leader-title">NAMBA Vice President<br>Kimura Restaurant Owner &amp; Yotei Niseko Cycling Association Vice President</p>
           <div class="leader-quote">
             <p>E-MTBs have opened the sport up: more people on bikes, which is what we want. NAMBA's trail network will give visitors a reason to come for summer too, not just winter. Trails close to town and the resorts mean locals and visitors both get something out of it.</p>
@@ -201,6 +226,7 @@ og:
         <div class="leader-card ja-animate" style="flex:1; min-width:280px;" data-animation="move-from-bottom" data-delay="800">
           <img class="leader-photo" src="/assets/images/team/ross.jpg" alt="Ross Carty" />
           <p class="leader-name">Ross Carty</p>
+        <span class="pay-tag">Unpaid volunteer</span>
           <p class="leader-title">Co-founder &amp; NAMBA Vice President<br>NOASC Adventures Founder / Owner</p>
           <div class="leader-quote">
             <p>I came to Niseko 30+ years ago when it was a quiet farm town. I've watched it become one of the world's top winter destinations. Mountain biking is what's next: same trajectory, just for summer.</p>
@@ -233,6 +259,7 @@ og:
         <div class="board-card ja-animate" data-animation="move-from-bottom" data-delay="item-{{ forloop.index0 }}">
           <img class="board-photo" src="{{ member.image }}" alt="{{ name }}" />
           <p class="board-name">{{ name }}</p>
+          <span class="pay-tag">Unpaid volunteer</span>
           {% if role %}<p class="board-title">{{ role }}</p>{% endif %}
           {% if affil %}<p class="board-subtitle">{{ affil }}</p>{% endif %}
           {% if affil2 %}<p class="board-subtitle">{{ affil2 }}</p>{% endif %}
@@ -263,6 +290,7 @@ og:
         <div class="board-card ja-animate" data-animation="move-from-bottom" data-delay="item-{{ forloop.index0 }}">
           <img class="board-photo" src="{{ member.image }}" alt="{{ name }}" />
           <p class="board-name">{{ name }}</p>
+          <span class="pay-tag">Unpaid volunteer</span>
           {% if title %}<p class="board-title">{{ title }}</p>{% endif %}
           {% if sub_title %}<p class="board-subtitle">{{ sub_title }}</p>{% endif %}
         </div>
@@ -283,7 +311,7 @@ og:
         class="features-desc ja-animate"
         data-animation="move-from-bottom"
         data-delay="400">
-        <p class="section-lede">Our paid trail crew. While the rest of NAMBA runs on volunteers, prepping new trails and maintaining existing ones is full-time work.</p>
+        <p class="section-lede">Our paid trail crew. Everyone else at NAMBA is an unpaid volunteer, but prepping new trails and maintaining existing ones is full-time work.</p>
         <p class="section-lede">Led by Pierre and Dan, the team runs day-to-day operations at Twin Peaks and maintains the network across Grand Hirafu and Hanazono too. They also prep new trails before construction begins.</p>
       </div>
     </div>
@@ -296,6 +324,7 @@ og:
         <div class="board-card ja-animate" data-animation="move-from-bottom" data-delay="item-{{ forloop.index0 }}">
           <img class="board-photo" src="{{ member.image }}" alt="{{ name }}" />
           <p class="board-name">{{ name }}</p>
+          <span class="pay-tag is-paid">Paid staff</span>
           {% if title %}<p class="board-title">{{ title }}</p>{% endif %}
         </div>
       {% endfor %}
@@ -335,7 +364,7 @@ og:
       "@id": "https://namba.ngo/team/#webpage",
       "url": "https://namba.ngo/team/",
       "name": "Our Team: Meet NAMBA's Founders & Board",
-      "description": "Meet the {{ board_count }}-person board of NAMBA, the Niseko Area Mountain Bike Association. Founders, locals, and international community working together for Niseko.",
+      "description": "Meet the {{ board_count }}-person unpaid volunteer board of NAMBA, the Niseko Area Mountain Bike Association: founders, locals and internationals working for Niseko.",
       "inLanguage": "en",
       "primaryImageOfPage": "https://namba.ngo/assets/images/bg/bg-header-team.jpg",
       "about": { "@id": "https://namba.ngo/#organization" },
