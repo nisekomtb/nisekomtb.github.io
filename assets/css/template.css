@@ -7004,12 +7004,14 @@ joomla-field-custom.field-custom-wrapper .input-group .input-group-btn .btn span
  * starts directly with a .module-title-wrap (no inner .t3-section).
  * Sections that wrap content in .t3-section already get 72px padding,
  * so this selector deliberately skips them to avoid doubling-up. */
-.section + .section > .module-title-wrap:first-child {
+.section + .section > .module-title-wrap:first-child,
+.phase-grid + .section > .module-title-wrap:first-child {
   margin-top: 72px;
 }
 
 @media (max-width: 767px) {
-  .section + .section > .module-title-wrap:first-child {
+  .section + .section > .module-title-wrap:first-child,
+  .phase-grid + .section > .module-title-wrap:first-child {
     margin-top: 36px;
   }
 }

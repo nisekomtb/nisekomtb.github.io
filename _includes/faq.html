@@ -5,10 +5,13 @@
       - q: Do I need a ticket?
         a: No. Turn up any time from 13:00.
 
-  `a` is plain text, not markdown: it feeds both the visible answer and the
-  schema, and the schema must not carry markup.
+  `a` is plain text, not markdown. Simple inline `<a href>` links are fine: the
+  visible answer renders them and the schema runs through strip_html.
 
-  Rendered by `_layouts/event.html` after the itinerary. `twin-peaks/commercial-pass/`
+  Pass `heading=false` when the page supplies its own section heading
+  (e.g. /about/ uses a module-title h2).
+
+  Rendered by `_layouts/event.html` after the itinerary, and on /about/. `twin-peaks/commercial-pass/`
   has its own hand-rolled copy of this pattern, written before the include
   existed. Migrating it is safe but unrelated; do it when next in that file.
 {%- endcomment -%}
@@ -47,12 +50,15 @@
   .faq details.is-open .faq-answer-wrap { grid-template-rows: 1fr; }
   .faq .faq-answer-inner { overflow: hidden; min-height: 0; }
   .faq .faq-answer { margin: 0; padding: 0 0 22px; font-size: 16px; color: #ccc; }
+  .faq .faq-answer a { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
   @media (prefers-reduced-motion: reduce) {
     .faq .faq-answer-wrap { transition: none; }
   }
 </style>
 
+{%- unless include.heading == false %}
 <h2>{% if page.lang == "ja" %}よく<wbr>ある<wbr>質問{% else %}Questions{% endif %}</h2>
+{%- endunless %}
 <div class="faq">
   {%- for item in page.faq %}
   <details>
