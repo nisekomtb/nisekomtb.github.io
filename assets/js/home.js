@@ -356,16 +356,20 @@
       if (v) v.textContent = prefix + formatNumber(target) + suffix;
     }
 
-    // Reserve the final string width on .value so digits don't shift
-    // the layout during the count-up animation.
+    // Reserve the widest string (start or final) on .value so digits
+    // don't shift the layout during the count animation.
     function lockWidth(stat) {
       var target = parseFloat(stat.dataset.target || '0');
+      var from = parseFloat(stat.dataset.from || '0');
       var prefix = stat.dataset.prefix || '';
       var suffix = stat.dataset.suffix || '';
       var v = stat.querySelector('.value');
       if (!v) return;
       var finalStr = prefix + formatNumber(target) + suffix;
-      v.style.minWidth = finalStr.length + 'ch';
+      var fromStr = prefix + formatNumber(from);
+      v.style.minWidth = Math.max(finalStr.length, fromStr.length) + 'ch';
+      // A count-down starts on its from value, not the HTML's 0 placeholder.
+      if (stat.dataset.from) v.textContent = fromStr;
     }
     stats.forEach(lockWidth);
 
@@ -379,6 +383,8 @@
         if (!entry.isIntersecting) return;
         var stat = entry.target;
         var target = parseFloat(stat.dataset.target || '0');
+        // data-from lets a stat count down (e.g. board pay to ¥0).
+        var from = parseFloat(stat.dataset.from || '0');
         var prefix = stat.dataset.prefix || '';
         var suffix = stat.dataset.suffix || '';
         var v = stat.querySelector('.value');
@@ -388,7 +394,7 @@
         function tick(now) {
           var t = Math.min((now - start) / duration, 1);
           var eased = 1 - Math.pow(1 - t, 4); // easeOutQuart
-          var current = target * eased;
+          var current = from + (target - from) * eased;
           // Suffix held back until the end so intermediate frames don't
           // read as wrong units (e.g. "100M+" mid-count-up to 196M+).
           v.textContent = prefix + formatNumber(current) + (t < 1 ? '': suffix);
